@@ -11,7 +11,7 @@
    <http://xmlns.com/foaf/0.1/account> <http://data.lblod.info/id/account/e842a393-1252-4e06-bab4-18df36c53808>;
    <http://xmlns.com/foaf/0.1/familyName> "Janssens";
    <http://xmlns.com/foaf/0.1/firstName> "Didier";
-   <http://xmlns.com/foaf/0.1/member> <http://data.lblod.info/id/bestuurseenheden/7831d6c59a6175731d8158454acd881850f1915a8628426f3d91d3510ea37950>.
+   <http://xmlns.com/foaf/0.1/member> <http://data.lblod.info/id/bestuurseenheden/003e84121111866af60611a59e13d4c478718f60472655936edec1e352a34c5f>.
 
 <http://data.lblod.info/id/persoon/7a790c2b-2f9a-4a37-ae30-ae4b41a79e74> a <http://xmlns.com/foaf/0.1/Person>;
    <http://mu.semte.ch/vocabularies/core/uuid> "7a790c2b-2f9a-4a37-ae30-ae4b41a79e74";
