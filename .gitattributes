@@ -1,0 +1,7 @@
+*.gz filter=lfs diff=lfs merge=lfs -text
+*.bz2 filter=lfs diff=lfs merge=lfs -text
+data/exports/ filter=lfs diff=lfs merge=lfs -text
+data/toLoad/* filter=lfs diff=lfs merge=lfs -text
+data/exports/mandaten.csv filter=lfs diff=lfs merge=lfs -text
+data/exports/mandaten.json filter=lfs diff=lfs merge=lfs -text
+data/exports/mandaten.ttl filter=lfs diff=lfs merge=lfs -text
