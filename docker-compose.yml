@@ -30,5 +30,5 @@ services:
     volumes:
       - ./config/resources:/config
   login:
-    image: lblod/mock-login-service
+    image: lblod/mock-login-service:0.1.0
     
