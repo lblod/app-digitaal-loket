@@ -1,0 +1,82 @@
+
+<http://data.lblod.info/id/bestuurseenheden/003e84121111866af60611a59e13d4c478718f60472655936edec1e352a34c5f> <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/positie/8d5b100d-06cc-4a88-8d2b-a2a752087ea1>,
+     <http://data.lblod.info/id/positie/97c53ede-dd2b-4d0a-86fc-c2727f2003f7>,
+     <http://data.lblod.info/id/positie/ade24485-4019-42c0-8d3b-41dae9671c24>,
+     <http://data.lblod.info/id/positie/55302d08-6996-4dc4-891f-1293c1b01470>;
+   <http://www.w3.org/ns/org#hasPrimarySite> <http://data.lblod.info/id/vestiging/62cdfe6c-299b-4646-9bb8-cefc482c811d>;
+   <http://www.w3.org/ns/org#linkedTo> <http://data.lblod.info/id/organisatie/30629e2c-563d-4148-98ad-8e07aa740093> .
+
+<http://data.lblod.info/id/contactpunt/1bae9809-00fa-4e03-b005-98a4497c7011> a <http://schema.org/ContactPoint>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "1bae9809-00fa-4e03-b005-98a4497c7011";
+   <http://schema.org/addressLocality> "Huldenberg";
+   <http://schema.org/email> <mailto:info@huldenberg.be>;
+   <http://schema.org/faxNumber> <tel:+3226866176>;
+   <http://schema.org/postalCode> "3040";
+   <http://schema.org/streetAddress> "Gemeenteplein 1";
+   <http://schema.org/telephone> <tel:+3226877007> .
+
+<http://data.lblod.info/id/contactpunt/6c113aae-9c28-4255-a79a-56bb083fb349> a <http://schema.org/ContactPoint>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "6c113aae-9c28-4255-a79a-56bb083fb349";
+   <http://schema.org/addressLocality> "Oud-Heverlee";
+   <http://schema.org/postalCode> "3051";
+   <http://schema.org/streetAddress> "Oude Nethensebaan 15" .
+
+<http://data.lblod.info/id/organisatie/30629e2c-563d-4148-98ad-8e07aa740093> a <http://www.w3.org/ns/org#Organization>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "30629e2c-563d-4148-98ad-8e07aa740093";
+   <http://schema.org/contactPoint> <http://data.lblod.info/id/contactpunt/6c113aae-9c28-4255-a79a-56bb083fb349>;
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Politiezone Dijleland";
+   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/positie/c3211d26-7d64-4f48-af9f-174778d2e5a2> .
+
+<http://data.lblod.info/id/persoon/62aa97b7-f017-4eab-95c0-d71015b907a7> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "";
+   <http://mu.semte.ch/vocabularies/core/uuid> "62aa97b7-f017-4eab-95c0-d71015b907a7";
+   <http://xmlns.com/foaf/0.1/familyName> "" .
+
+<http://data.lblod.info/id/persoon/6a85995a-db46-46d0-92c3-97f6f83edb07> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "";
+   <http://mu.semte.ch/vocabularies/core/uuid> "6a85995a-db46-46d0-92c3-97f6f83edb07";
+   <http://xmlns.com/foaf/0.1/familyName> "" .
+
+<http://data.lblod.info/id/persoon/b5dc2584-88f9-4994-8c9b-b39638ba3a30> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Hilde";
+   <http://mu.semte.ch/vocabularies/core/uuid> "b5dc2584-88f9-4994-8c9b-b39638ba3a30";
+   <http://xmlns.com/foaf/0.1/familyName> "De Keyser" .
+
+<http://data.lblod.info/id/persoon/c11ad001-d34a-4f51-93a1-8f18199870b7> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Jan";
+   <http://mu.semte.ch/vocabularies/core/uuid> "c11ad001-d34a-4f51-93a1-8f18199870b7";
+   <http://xmlns.com/foaf/0.1/familyName> "Daems" .
+
+<http://data.lblod.info/id/persoon/d5d098a9-21a1-4e75-95de-bc6777b4c92f> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Caroline";
+   <http://mu.semte.ch/vocabularies/core/uuid> "d5d098a9-21a1-4e75-95de-bc6777b4c92f";
+   <http://xmlns.com/foaf/0.1/familyName> "Peters" .
+
+<http://data.lblod.info/id/positie/55302d08-6996-4dc4-891f-1293c1b01470> a <http://www.w3.org/ns/org#Post>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "55302d08-6996-4dc4-891f-1293c1b01470";
+   <http://www.w3.org/ns/org#heldBy> <http://data.lblod.info/id/persoon/d5d098a9-21a1-4e75-95de-bc6777b4c92f>;
+   <http://www.w3.org/ns/org#role> <http://data.lblod.info/id/concept/bestuurseenheidRollen/66b95587-b24b-46a5-9231-b4dec06bddac> .
+
+<http://data.lblod.info/id/positie/8d5b100d-06cc-4a88-8d2b-a2a752087ea1> a <http://www.w3.org/ns/org#Post>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8d5b100d-06cc-4a88-8d2b-a2a752087ea1";
+   <http://www.w3.org/ns/org#heldBy> <http://data.lblod.info/id/persoon/b5dc2584-88f9-4994-8c9b-b39638ba3a30>;
+   <http://www.w3.org/ns/org#role> <http://data.lblod.info/id/concept/bestuurseenheidRollen/b83a1d0e-0390-4759-871a-e99c9ec00490> .
+
+<http://data.lblod.info/id/positie/97c53ede-dd2b-4d0a-86fc-c2727f2003f7> a <http://www.w3.org/ns/org#Post>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "97c53ede-dd2b-4d0a-86fc-c2727f2003f7";
+   <http://www.w3.org/ns/org#heldBy> <http://data.lblod.info/id/persoon/6a85995a-db46-46d0-92c3-97f6f83edb07>;
+   <http://www.w3.org/ns/org#role> <http://data.lblod.info/id/concept/bestuurseenheidRollen/f5a7bf88-f31b-4ea8-926b-233b4952fe13> .
+
+<http://data.lblod.info/id/positie/ade24485-4019-42c0-8d3b-41dae9671c24> a <http://www.w3.org/ns/org#Post>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ade24485-4019-42c0-8d3b-41dae9671c24";
+   <http://www.w3.org/ns/org#heldBy> <http://data.lblod.info/id/persoon/62aa97b7-f017-4eab-95c0-d71015b907a7>;
+   <http://www.w3.org/ns/org#role> <http://data.lblod.info/id/concept/bestuurseenheidRollen/8235802f-37fd-4971-826c-063205a1a31c> .
+
+<http://data.lblod.info/id/positie/c3211d26-7d64-4f48-af9f-174778d2e5a2> a <http://www.w3.org/ns/org#Post>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "c3211d26-7d64-4f48-af9f-174778d2e5a2";
+   <http://www.w3.org/ns/org#heldBy> <http://data.lblod.info/id/persoon/c11ad001-d34a-4f51-93a1-8f18199870b7>;
+   <http://www.w3.org/ns/org#role> <http://data.lblod.info/id/concept/bestuurseenheidRollen/a2e91f2b-6353-4042-ba8c-71d0015ea1d1> .
+
+<http://data.lblod.info/id/vestiging/62cdfe6c-299b-4646-9bb8-cefc482c811d> a <http://www.w3.org/ns/org#Site>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "62cdfe6c-299b-4646-9bb8-cefc482c811d";
+   <http://schema.org/contactPoint> <http://data.lblod.info/id/contactpunt/1bae9809-00fa-4e03-b005-98a4497c7011> .
