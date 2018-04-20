@@ -105,6 +105,9 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/accounts/"
   end
 
+  post "/validation-executions/*path" do
+    Proxy.forward conn, path, "http://validation/executions/"
+  end
   get "/validation-executions/*path" do
     Proxy.forward conn, path, "http://resource/validation-executions/"
   end
