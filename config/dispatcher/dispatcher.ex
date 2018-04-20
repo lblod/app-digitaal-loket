@@ -98,15 +98,23 @@ defmodule Dispatcher do
   match "/sessions/*path" do
     Proxy.forward conn, path, "http://login/sessions/"
   end
-
   match "/gebruikers/*path" do
     Proxy.forward conn, path, "http://cache/gebruikers/"
   end
-
   match "/accounts/*path" do
     Proxy.forward conn, path, "http://cache/accounts/"
   end
 
+  get "/validation-executions/*path" do
+    Proxy.forward conn, path, "http://resource/validation-executions/"
+  end
+  get "/validations/*path" do
+    Proxy.forward conn, path, "http://resource/validations/"
+  end
+  get "/validation-errors/*path" do
+    Proxy.forward conn, path, "http://resource/validation-errors/"
+  end
+  
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

@@ -25,4 +25,4 @@
 (add-prefix "nfo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#")
 (add-prefix "schema" "http://schema.org/")
 (add-prefix "export" "http://mu.semte.ch/vocabularies/ext/export/")
-
+(add-prefix "validation" "http://mu.semte.ch/vocabularies/validation/")

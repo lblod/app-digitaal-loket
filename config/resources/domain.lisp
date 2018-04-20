@@ -12,4 +12,5 @@
 (read-domain-file "master-organisatie-domain.lisp")
 (read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "master-users-domain.lisp")
+(read-domain-file "master-validations-domain.lisp")
 
