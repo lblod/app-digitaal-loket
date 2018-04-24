@@ -91,6 +91,9 @@ defmodule Dispatcher do
   match "/rollen/*path" do
     Proxy.forward conn, path, "http://cache/rollen/"
   end
+  match "/tijdsintervallen/*path" do
+    Proxy.forward conn, path, "http://cache/tijdsintervallen/"
+  end
   match "/organisaties/*path" do
     Proxy.forward conn, path, "http://cache/organisaties/"
   end
