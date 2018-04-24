@@ -8,8 +8,8 @@
   "when non-nil, all paginated listings will contain the number
    of responses in the result object's meta.")
 
-(read-domain-file "master-mandaat-domain.lisp")
-(read-domain-file "master-organisatie-domain.lisp")
+(read-domain-file "slave-mandaat-domain.lisp")
+(read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "master-users-domain.lisp")
 (read-domain-file "master-validations-domain.lisp")
