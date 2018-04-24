@@ -1,7 +1,7 @@
 (define-resource validation-execution ()
   :class (s-prefix "validation:Execution")
   :properties `((:status :string ,(s-prefix "validation:status"))
-                (:validation-set :uri ,(s-prefix "validation:validationSet"))                
+                (:validation-set :uri-set ,(s-prefix "validation:validationSet"))
                 (:created :datetime ,(s-prefix "dct:created")))
   :has-many `((validation-error :via ,(s-prefix "validation:producedBy")
                                 :inverse t

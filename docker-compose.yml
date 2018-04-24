@@ -36,7 +36,7 @@ services:
   login:
     image: lblod/mock-login-service:0.1.0
   validation:
-    image: semtech/mu-validation-service:0.2.0
+    image: semtech/mu-validation-service:0.2.1
     volumes:
       - ./config/validations:/config
 
