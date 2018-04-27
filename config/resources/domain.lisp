@@ -1,7 +1,7 @@
 (in-package :mu-cl-resources)
 
 (defparameter *cache-count-queries* nil)
-(defparameter *supply-cache-headers-p* t
+(defparameter *supply-cache-headers-p* nil
   "when non-nil, cache headers are supplied.  this works together with mu-cache.")
 (setf *cache-model-properties-p* t)
 (defparameter *include-count-in-paginated-responses* t
