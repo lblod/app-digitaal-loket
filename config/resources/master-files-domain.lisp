@@ -1,6 +1,6 @@
 (define-resource document-status ()
   :class (s-prefix "ext:DocumentStatus")
-  :properties `((:name :string ,(s-prefix "skos:prefLabel")))
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
   :resource-base (s-url "http://data.lblod.info/document-statuses/")
   :features `(no-pagination-defaults include-uri)
   :on-path "document-statuses")
