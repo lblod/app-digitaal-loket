@@ -3,7 +3,7 @@
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
 
 <http://data.lblod.info/document-statuses/verstuurd> a ext:DocumentStatus ;
-        mu:uuid	"a30d1e2c-ccec-4dbf-972a-6117cc490914" .
+        mu:uuid	"a30d1e2c-ccec-4dbf-972a-6117cc490914" ;
         skos:prefLabel	"verstuurd" .
 <http://data.lblod.info/document-statuses/opmerking> a ext:DocumentStatus ;
 	mu:uuid	"3c6de3e2-a3af-4ff3-84d8-c6628e8c035d" ;
