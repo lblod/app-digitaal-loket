@@ -19,7 +19,7 @@
 (define-resource bbcdr-report ()
   :class (s-prefix "bbcdr:Report") ;; subclass of nie:InformationElement > nfo:DataContainer
   :properties `((:created :datetime ,(s-prefix "dct:created"))
-                (:modified :string ,(s-prefix "dct:modified")))
+                (:modified :datetime ,(s-prefix "dct:modified")))
   :has-one `((document-status :via ,(s-prefix "adms:status")
                               :as "status")
              (gebruiker :via ,(s-prefix "ext:lastModifiedBy")
