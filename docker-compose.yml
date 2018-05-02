@@ -40,6 +40,6 @@ services:
     volumes:
       - ./config/validations:/config
   bbcdrrapporten:
-    image: lblod/create-bbcdr-rapporten-service
+    image: lblod/create-bbcdr-rapporten-service:0.1.1
 
   
