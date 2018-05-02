@@ -39,4 +39,7 @@ services:
     image: semtech/mu-validation-service:0.2.1
     volumes:
       - ./config/validations:/config
+  bbcdrrapporten:
+    image: lblod/create-bbcdr-rapporten-service
 
+  
