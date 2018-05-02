@@ -108,6 +108,16 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/accounts/"
   end
 
+  match "/document-statuses/*path" do
+    Proxy.forward conn, path, "http://cache/document-statuses/"
+  end
+  match "/files/*path" do
+    Proxy.forward conn, path, "http://resource/files/"
+  end
+  match "/bbcdr-reports/*path" do
+    Proxy.forward conn, path, "http://cache/bbcdr-reports/"
+  end
+
   post "/validation-executions/*path" do
     Proxy.forward conn, path, "http://validation/executions/"
   end
