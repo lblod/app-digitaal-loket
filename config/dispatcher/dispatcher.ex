@@ -131,8 +131,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/validation-errors/"
   end
 
-  post "/bbcdr-rapporten/*path" do
-    Proxy.forward conn, path, "http://bbcdrrapporten/bbcdr-rapporten/"
+  post "/bbcdr-reports/*path" do
+    Proxy.forward conn, path, "http://bbcdrrapporten/bbcdr-reports/"
   end
 
   match _ do
