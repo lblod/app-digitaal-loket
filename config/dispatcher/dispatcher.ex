@@ -114,8 +114,14 @@ defmodule Dispatcher do
   match "/files/*path" do
     Proxy.forward conn, path, "http://resource/files/"
   end
-  match "/bbcdr-reports/*path" do
-    Proxy.forward conn, path, "http://cache/bbcdr-reports/"
+  post "/bbcdr-reports/*path" do
+    Proxy.forward conn, path, "http://bbcdrrapporten/bbcdr-reports/"
+  end
+  delete "/bbcdr-reports/*path" do
+    Proxy.forward conn, path, "http://resource/bbcdr-reports/"
+  end
+  get "/bbcdr-reports/*path" do
+    Proxy.forward conn, path, "http://resource/bbcdr-reports/"
   end
 
   post "/validation-executions/*path" do
@@ -129,10 +135,6 @@ defmodule Dispatcher do
   end
   get "/validation-errors/*path" do
     Proxy.forward conn, path, "http://resource/validation-errors/"
-  end
-
-  post "/bbcdr-reports/*path" do
-    Proxy.forward conn, path, "http://bbcdrrapporten/bbcdr-reports/"
   end
 
   match _ do
