@@ -41,5 +41,7 @@ services:
       - ./config/validations:/config
   file-service:
     image: semtech/mu-file-service:2.4.0
+    environment:
+      STREAMING: "true"
     volumes:
       - ./data/files:/data
