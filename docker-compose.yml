@@ -45,3 +45,5 @@ services:
       STREAMING: "true"
     volumes:
       - ./data/files:/data
+  bbcdrrapporten:
+    image: lblod/create-bbcdr-rapporten-service:0.2.0
