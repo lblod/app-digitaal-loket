@@ -114,6 +114,9 @@ defmodule Dispatcher do
   match "/files/*path" do
     Proxy.forward conn, path, "http://resource/files/"
   end
+  match "/file-service/*path" do
+    Proxy.forward conn, path, "http://file-service/"
+  end
   match "/bbcdr-reports/*path" do
     Proxy.forward conn, path, "http://cache/bbcdr-reports/"
   end
@@ -130,7 +133,7 @@ defmodule Dispatcher do
   get "/validation-errors/*path" do
     Proxy.forward conn, path, "http://resource/validation-errors/"
   end
-  
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

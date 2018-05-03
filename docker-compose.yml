@@ -28,7 +28,7 @@ services:
   cache:
     image: semtech/mu-cache:0.5.0
     environment:
-      CACHE_BACKEND: http://resource/    
+      CACHE_BACKEND: http://resource/
   resource:
     image: semtech/mu-cl-resources:1.16.0
     volumes:
@@ -39,4 +39,7 @@ services:
     image: semtech/mu-validation-service:0.2.1
     volumes:
       - ./config/validations:/config
-
+  file-service:
+    image: semtech/mu-file-service:2.4.0
+    volumes:
+      - ./data/files:/data
