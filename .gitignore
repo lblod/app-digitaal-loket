@@ -3,7 +3,7 @@
 !/data/db/virtuoso.ini
 !/data/db/toLoad
 !/data/db/toLoad/*
-
+/data/files/*
 .DS_Store
 *~
 
