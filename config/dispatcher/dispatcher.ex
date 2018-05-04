@@ -126,7 +126,9 @@ defmodule Dispatcher do
   get "/bbcdr-reports/*path" do
     Proxy.forward conn, path, "http://resource/bbcdr-reports/"
   end
-
+  patch "/bbcdr-reports/*path" do
+    Proxy.forward conn, path, "http://resource/bbcdr-reports/"
+  end
   post "/validation-executions/*path" do
     Proxy.forward conn, path, "http://validation/executions/"
   end
