@@ -46,4 +46,4 @@ services:
     volumes:
       - ./data/files:/data
   bbcdrrapporten:
-    image: lblod/create-bbcdr-rapporten-service:0.2.0
+    image: lblod/create-bbcdr-rapporten-service:0.2.1
