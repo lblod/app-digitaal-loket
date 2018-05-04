@@ -47,3 +47,5 @@ services:
       - ./data/files:/data
   bbcdrrapporten:
     image: lblod/create-bbcdr-rapporten-service:0.2.1
+  packagereports:
+    image: lblod/package-bbcdr-rapporten-service
