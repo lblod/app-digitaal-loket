@@ -48,6 +48,6 @@ services:
   bbcdrrapporten:
     image: lblod/create-bbcdr-rapporten-service:0.2.1
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.1.2
+    image: lblod/package-bbcdr-rapporten-service:0.1.3
     volumes:
       - ./data/files:/data/files
