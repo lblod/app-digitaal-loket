@@ -43,8 +43,8 @@ services:
     image: semtech/mu-file-service:3.0.0
     volumes:
       - ./data/files:/shared
-  bbcdrrapporten:
-    image: lblod/create-bbcdr-rapporten-service:0.2.1
+  createreports:
+    image: lblod/create-bbcdr-rapporten-service:0.3.0
   packagereports:
     image: lblod/package-bbcdr-rapporten-service:0.1.4
     volumes:
