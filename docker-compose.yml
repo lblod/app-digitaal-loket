@@ -41,13 +41,11 @@ services:
       - ./config/validations:/config
   file-service:
     image: semtech/mu-file-service:3.0.0
-    environment:
-      STREAMING: "true"
     volumes:
-      - ./data/files:/data
+      - ./data/files:/shared
   bbcdrrapporten:
     image: lblod/create-bbcdr-rapporten-service:0.2.1
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.1.3
+    image: lblod/package-bbcdr-rapporten-service:0.1.4
     volumes:
       - ./data/files:/data/files
