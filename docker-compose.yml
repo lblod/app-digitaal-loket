@@ -40,7 +40,7 @@ services:
     volumes:
       - ./config/validations:/config
   file:
-    image: semtech/mu-file-service:latest
+    image: semtech/mu-file-service:3.0.0
     volumes:
       - ./data/files:/share
   createreports:
