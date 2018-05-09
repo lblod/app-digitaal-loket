@@ -111,11 +111,17 @@ defmodule Dispatcher do
   match "/document-statuses/*path" do
     Proxy.forward conn, path, "http://cache/document-statuses/"
   end
-  match "/files/*path" do
+  get "/files/:id/download" do
+    Proxy.forward conn, [], "http://file/files/" <> id <> "/download"
+  end
+  get "/files/*path" do
     Proxy.forward conn, path, "http://resource/files/"
   end
-  match "/file-service/*path" do
-    Proxy.forward conn, path, "http://file-service/"
+  post "/file-service/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
+  end
+  delete "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
   end
   post "/bbcdr-reports/*path" do
     Proxy.forward conn, path, "http://createreports/bbcdr-reports/"
