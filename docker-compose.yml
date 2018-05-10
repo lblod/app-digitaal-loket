@@ -39,10 +39,10 @@ services:
     image: semtech/mu-validation-service:0.2.1
     volumes:
       - ./config/validations:/config
-  file-service:
+  file:
     image: semtech/mu-file-service:3.0.0
     volumes:
-      - ./data/files:/shared
+      - ./data/files:/share
   createreports:
     image: lblod/create-bbcdr-rapporten-service:0.3.0
   packagereports:
