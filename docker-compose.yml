@@ -49,3 +49,7 @@ services:
     image: lblod/package-bbcdr-rapporten-service:0.1.6
     volumes:
       - ./data/files:/data/files
+  deliverreports:
+    image: lblod/deliver-bbcdr-rapporten-service:0.1.0
+    volumes:
+      - ./data/files:/data/files
