@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.1.1
+    image: lblod/frontend-loket:0.1.5
     links:
       - identifier:backend
   admin:
@@ -50,6 +50,6 @@ services:
     volumes:
       - ./data/files:/data/files
   deliverreports:
-    image: lblod/deliver-bbcdr-rapporten-service:0.1.0
+    image: lblod/deliver-bbcdr-rapporten-service:0.1.1
     volumes:
       - ./data/files:/data/files
