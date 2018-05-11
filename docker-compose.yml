@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.1.5
+    image: lblod/frontend-loket:0.1.6
     links:
       - identifier:backend
   admin:
