@@ -5,7 +5,7 @@ services:
     links:
       - identifier:backend
   admin:
-    image: lblod/frontend-loket-admin:0.3.2
+    image: lblod/frontend-loket-admin:0.3.3
     links:
       - identifier:backend
   identifier:
