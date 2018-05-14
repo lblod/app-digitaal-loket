@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.1.6
+    image: lblod/frontend-loket:0.1.7
     links:
       - identifier:backend
   admin:
@@ -46,7 +46,7 @@ services:
   createreports:
     image: lblod/create-bbcdr-rapporten-service:0.3.0
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.1.9
+    image: lblod/package-bbcdr-rapporten-service:0.1.10
     volumes:
       - ./data/files:/data/files
   deliverreports:
