@@ -148,6 +148,26 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/validation-errors/"
   end
 
+  match "/form-nodes/*path" do
+    Proxy.forward conn, path, "http://resource/form-nodes/"
+  end
+
+  match "/form-inputs/*path" do
+    Proxy.forward conn, path, "http://resource/form-inputs/"
+  end
+
+  match "/dynamic-subforms/*path" do
+    Proxy.forward conn, path, "http://resource/dynamic-subforms/"
+  end
+
+  match "/form-solutions/*path" do
+    Proxy.forward conn, path, "http://resource/form-solutions/"
+  end
+
+  match "/inzendingen-voor-toezicht/*path" do
+    Proxy.forward conn, path, "http://resource/inzendingen-voor-toezicht/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
