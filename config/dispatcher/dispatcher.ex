@@ -176,6 +176,12 @@ defmodule Dispatcher do
   match "/besluit-types/*path" do
     Proxy.forward conn, path, "http://resource/besluit-types"
   end
+  match "/tax-rates/*path" do
+    Proxy.forward conn, path, "http://resource/besluit-types"
+  end
+  match "/toezicht-inzending-types/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-inzending-types"
+  end
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
