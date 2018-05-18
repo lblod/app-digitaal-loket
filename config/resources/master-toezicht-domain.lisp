@@ -19,7 +19,10 @@
              (gebruiker :via ,(s-prefix "ext:lastModifiedBy")
                         :as "last-modifier")
              (bestuurseenheid :via ,(s-prefix "dct:subject")
-                              :as "bestuurseenheid"))
+                              :as "bestuurseenheid")
+             (form-solution :via ,(s-prefix "ext:hasInzendingVoorToezicht")
+                            :inverse t
+                            :as "form-solution"))
   :has-many `((file :via ,(s-prefix "nie:hasPart")
                     :as "files")
               (tax-rate :via ,(s-prefix "toezicht:taxRate")
