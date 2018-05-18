@@ -13,6 +13,8 @@
                 (:is-modification :boolean ,(s-prefix "toezicht:isModification"))
                 (:has-extra-tax-rates :boolean ,(s-prefix "toezicht:hasExtraTaxRates"))
                 (:agenda-item-count :integer ,(s-prefix "toezicht:agendaItemCount"))
+                (:session-date :datetime ,(s-prefix "toezicht:sessionDate"))
+                (:title :string ,(s-prefix "dct:string"))
                 )
   :has-one `((document-status :via ,(s-prefix "adms:status")
                               :as "status")
