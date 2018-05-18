@@ -34,6 +34,13 @@
   :on-path "inzendingen-voor-toezicht"
   )
 
+(define-resources tax-rate ()
+  :class (s-prefix "toezicht:TaxRate")
+  :properties `((:amount :float ,(s-prefix "toezicht:amoount"))
+                (:unit :string ,(s-prefix "toezicht:unit"))
+                (:base :string ,(s-prefix "toezicht:base"))
+                (:remark :string ,(s-prefix "ext:remark"))))
+
 (define-resource form-solution ()
   :class (s-prefix "ext:FormSolution")
   :properties `((:has-owner :string ,(s-prefix "ext:hasOwnerAsString")))
