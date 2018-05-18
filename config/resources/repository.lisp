@@ -29,3 +29,4 @@
 (add-prefix "export" "http://mu.semte.ch/vocabularies/ext/export/")
 (add-prefix "bbcdr" "http://mu.semte.ch/vocabularies/ext/bbcdr/")
 (add-prefix "validation" "http://mu.semte.ch/vocabularies/validation/")
+(add-prefix "toezicht" "http://mu.semte.ch/vocabularies/ext/supervision/")
