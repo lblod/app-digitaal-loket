@@ -98,6 +98,9 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/organisaties/"
   end
 
+  match "/mock/sessions/*path" do
+    Proxy.forward conn, path, "http://mocklogin/sessions/"
+  end
   match "/sessions/*path" do
     Proxy.forward conn, path, "http://login/sessions/"
   end
