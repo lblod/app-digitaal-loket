@@ -25,7 +25,7 @@
              (form-solution :via ,(s-prefix "ext:hasInzendingVoorToezicht")
                             :inverse t
                             :as "form-solution")
-             (toezicht-inzending-type :via ,(s-prefix "dcterms:type")
+             (toezicht-inzending-type :via ,(s-prefix "dct:type")
                                      :as "inzending-type")
              (besluit-type :via ,(s-prefix "toezicht:decisionType")
                            :as "besluit-type")
