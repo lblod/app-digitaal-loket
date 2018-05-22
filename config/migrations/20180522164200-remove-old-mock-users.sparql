@@ -8,5 +8,5 @@ WHERE {
   ?pp ?po;
   <http://xmlns.com/foaf/0.1/account> ?account.
   ?account ?ap ?ao;
-  ?account <http://xmlns.com/foaf/0.1/accountServiceHomepage> <https://github.com/lblod/mock-login-service>.
+   <http://xmlns.com/foaf/0.1/accountServiceHomepage> <https://github.com/lblod/mock-login-service>.
 }
