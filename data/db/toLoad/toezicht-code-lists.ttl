@@ -1,0 +1,104 @@
+
+<http://data.lblod.info/besluit-types/0936faeaf42a3e8c8349f1a6c4af904a9aa1ec8f1a0d62ad8f88b826dc3d6019> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "0936faeaf42a3e8c8349f1a6c4af904a9aa1ec8f1a0d62ad8f88b826dc3d6019";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over budget(wijziging) OCMW" .
+
+<http://data.lblod.info/besluit-types/327d43f79235d9fa188913a82c7072f786798b80cd8dc88cc30104fa36b6ee95> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "327d43f79235d9fa188913a82c7072f786798b80cd8dc88cc30104fa36b6ee95";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Lening ter sanering financiën" .
+
+<http://data.lblod.info/besluit-types/3e675c497c7655f05f8e6e989982211311d93bc378dbf88bf571a9d7e72f5e4e> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "3e675c497c7655f05f8e6e989982211311d93bc378dbf88bf571a9d7e72f5e4e";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Dwingende en onvoorziene kosten" .
+
+<http://data.lblod.info/besluit-types/422745f567a22a09277eb1647891dd4acd0267faf08151423138659b08b5d815> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "422745f567a22a09277eb1647891dd4acd0267faf08151423138659b08b5d815";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over meerjarenplan(aanpassing) OCMW-vereniging" .
+
+<http://data.lblod.info/besluit-types/596d9f9fe7bb1360868bc33eeb0b83613b46fa7cc55a9b722d6b392c8c349a8a> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "596d9f9fe7bb1360868bc33eeb0b83613b46fa7cc55a9b722d6b392c8c349a8a";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over budget(wijziging) OCMW-vereniging" .
+
+<http://data.lblod.info/besluit-types/68a14179321a5965c64dea60eee6c059c8f26fe80cf316a4d52231bcd3f3c244> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "68a14179321a5965c64dea60eee6c059c8f26fe80cf316a4d52231bcd3f3c244";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Meerjarenplan" .
+
+<http://data.lblod.info/besluit-types/72142c91acbb1d934d4f860316008856f6380a26d366ca13a1c4cb37c7216e78> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "72142c91acbb1d934d4f860316008856f6380a26d366ca13a1c4cb37c7216e78";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting van of deelname in EVA" .
+
+<http://data.lblod.info/besluit-types/7589404d0a9f631d9168fdcfad7c654423a670ce16b864a2a6dbcfcae70e735e> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "7589404d0a9f631d9168fdcfad7c654423a670ce16b864a2a6dbcfcae70e735e";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over meerjarenplan(aanpassing) OCMW" .
+
+<http://data.lblod.info/besluit-types/8762de80a2c6fa6b32d35ff188879dea8f0489639b7f5c44d579622c8fff33e2> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8762de80a2c6fa6b32d35ff188879dea8f0489639b7f5c44d579622c8fff33e2";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Wijziging statuten autonoom bedrijf" .
+
+<http://data.lblod.info/besluit-types/8ae4dfce02ae47e586c8b06c749ffa03989eac879fbbdd45d06963dd9e8471d4> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8ae4dfce02ae47e586c8b06c749ffa03989eac879fbbdd45d06963dd9e8471d4";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Jaarrekening" .
+
+<http://data.lblod.info/besluit-types/8b7ca84463f15d2c77e647bc01c7149523f9335d488388a1b806308a618fa790> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8b7ca84463f15d2c77e647bc01c7149523f9335d488388a1b806308a618fa790";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Budget" .
+
+<http://data.lblod.info/besluit-types/8fd5851d5e3822785efeb7f2f36e025c45addb17dbf98ef89cf07d5a8c5abe49> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8fd5851d5e3822785efeb7f2f36e025c45addb17dbf98ef89cf07d5a8c5abe49";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting autonoom bedrijf" .
+
+<http://data.lblod.info/besluit-types/93a164ba4d9250eeee6fb6053b6cc69eb298fcbd0fc774b29c63674f0ff7c2f1> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "93a164ba4d9250eeee6fb6053b6cc69eb298fcbd0fc774b29c63674f0ff7c2f1";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit overruling betaling" .
+
+<http://data.lblod.info/besluit-types/a93515b6aa00594ce35144387fd4c48280143c3e72e23c59afe293c639493eb3> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "a93515b6aa00594ce35144387fd4c48280143c3e72e23c59afe293c639493eb3";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Belasting of retributie" .
+
+<http://data.lblod.info/besluit-types/b644296deb99766cdbf4c4292b481db817a06bd0c0cf50fca704f026d28e9df0> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "b644296deb99766cdbf4c4292b481db817a06bd0c0cf50fca704f026d28e9df0";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Gemeenteraad" .
+
+<http://data.lblod.info/besluit-types/bf800065b6637f2f7ab34438bce50aaf3402d360bc822223b1260cecc18973a9> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "bf800065b6637f2f7ab34438bce50aaf3402d360bc822223b1260cecc18973a9";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Rechtspositieregeling" .
+
+<http://data.lblod.info/besluit-types/d9052181c748ccb84e48c74e3f57e61f93cb2c363d597b9d77fcb4a228464da8> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "d9052181c748ccb84e48c74e3f57e61f93cb2c363d597b9d77fcb4a228464da8";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Herschiking leningen" .
+
+<http://data.lblod.info/besluit-types/dafa329209ce2774a9c1377f15745802d890fc4a58dcbbb016ac5f1536aa4f8d> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "dafa329209ce2774a9c1377f15745802d890fc4a58dcbbb016ac5f1536aa4f8d";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit i.v.m. Financieel document eredienstbestuur" .
+
+<http://data.lblod.info/besluit-types/dd202b851ab35ecc8f03f8678cc1929be864fbf3c82a7a9470c2b72081560629> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "dd202b851ab35ecc8f03f8678cc1929be864fbf3c82a7a9470c2b72081560629";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting intergemeentelijke samenwerking" .
+
+<http://data.lblod.info/besluit-types/dd993287c7ba51a4906ea2e96096e14c8d340f3e3c80984ac0a35548d16f01af> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "dd993287c7ba51a4906ea2e96096e14c8d340f3e3c80984ac0a35548d16f01af";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting districtsbestuur" .
+
+<http://data.lblod.info/besluit-types/e2602eb1bb1f94109aa92569228134ac016683d4372dad7dabce29c5e84ec7c6> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "e2602eb1bb1f94109aa92569228134ac016683d4372dad7dabce29c5e84ec7c6";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over jaarrekening OCMW-vereniging" .
+
+<http://data.lblod.info/besluit-types/e5ea5931b19d4479a72a56cccf41298847e704c19d9c291fc56f41ebb90d2d03> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "e5ea5931b19d4479a72a56cccf41298847e704c19d9c291fc56f41ebb90d2d03";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit overruling visum" .
+
+<http://data.lblod.info/besluit-types/f5af88e53bc78aaefddd7ea9ef9bfcccb11ea4134d2539887ba8764648dce485> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f5af88e53bc78aaefddd7ea9ef9bfcccb11ea4134d2539887ba8764648dce485";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "College" .
+
+<http://data.lblod.info/besluit-types/f7314f3137921b5a1ffd517639dbf8fcb6463622ef5c3c13c90225f0af9c5459> a <http://mu.semte.ch/vocabularies/ext/supervision/decisionType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f7314f3137921b5a1ffd517639dbf8fcb6463622ef5c3c13c90225f0af9c5459";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over jaarrekening OCMW" .
+
+<http://data.lblod.info/toezicht-inzending-types/5c98dd3e35fbd3edde74f71ddf4620ead05c214775856bb13c7412fb769d9d26> a <http://mu.semte.ch/vocabularies/ext/supervision/InzendingType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "5c98dd3e35fbd3edde74f71ddf4620ead05c214775856bb13c7412fb769d9d26";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluitenlijst" .
+
+<http://data.lblod.info/toezicht-inzending-types/ef7041cc4d6ab0b4e672247ceca176b28d32731ecd90859bdd2e8170b8b047d3> a <http://mu.semte.ch/vocabularies/ext/supervision/InzendingType>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ef7041cc4d6ab0b4e672247ceca176b28d32731ecd90859bdd2e8170b8b047d3";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Inzendingsplichtig besluit" .

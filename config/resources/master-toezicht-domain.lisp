@@ -13,6 +13,8 @@
                 (:is-modification :boolean ,(s-prefix "toezicht:isModification"))
                 (:has-extra-tax-rates :boolean ,(s-prefix "toezicht:hasExtraTaxRates"))
                 (:agenda-item-count :integer ,(s-prefix "toezicht:agendaItemCount"))
+                (:session-date :datetime ,(s-prefix "toezicht:sessionDate"))
+                (:title :string ,(s-prefix "dct:string"))
                 )
   :has-one `((document-status :via ,(s-prefix "adms:status")
                               :as "status")
@@ -23,7 +25,7 @@
              (form-solution :via ,(s-prefix "ext:hasInzendingVoorToezicht")
                             :inverse t
                             :as "form-solution")
-             (toezicht-inzending-type :via ,(s-prefix "dcterms:type")
+             (toezicht-inzending-type :via ,(s-prefix "dct:type")
                                      :as "inzending-type")
              (besluit-type :via ,(s-prefix "toezicht:decisionType")
                            :as "besluit-type")
