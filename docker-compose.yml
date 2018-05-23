@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.1.7
+    image: lblod/frontend-loket:0.2.0
     links:
       - identifier:backend
   admin:
@@ -34,6 +34,12 @@ services:
     volumes:
       - ./config/resources:/config
   login:
+    image: lblod/acmidm-login-service:0.1.0
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
+      MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lblod.info/authorization/callback"
+  mocklogin:
     image: lblod/mock-login-service:0.1.0
   validation:
     image: semtech/mu-validation-service:0.2.1
