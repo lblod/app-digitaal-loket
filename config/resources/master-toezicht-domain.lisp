@@ -2,6 +2,7 @@
   :class (s-prefix "toezicht:InzendingVoorToezicht") ;; subclass of nie:InformationElement > nfo:DataContainer
   :properties `((:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
+                (:sent-date :datetime ,(s-prefix "nmo:sentDate"))
                 (:description :string ,(s-prefix "dct:description"))
                 (:remark :string ,(s-prefix "ext:remark"))
                 (:temporal-coverage :string ,(s-prefix "toezicht:temporalCoverage"))
@@ -9,7 +10,7 @@
                 (:business-name :string ,(s-prefix "toezicht:businessName"))
                 (:nomenclature :string ,(s-prefix "toezicht:nomenclature"))
                 (:date-of-entry-into-force :date ,(s-prefix "toezicht:dateOfEntryIntoForce"))
-                (:endDate :date ,(s-prefix "toezicht:endDate"))
+                (:end-date :date ,(s-prefix "toezicht:endDate"))
                 (:is-modification :boolean ,(s-prefix "toezicht:isModification"))
                 (:has-extra-tax-rates :boolean ,(s-prefix "toezicht:hasExtraTaxRates"))
                 (:agenda-item-count :integer ,(s-prefix "toezicht:agendaItemCount"))

@@ -163,10 +163,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/form-solutions/"
   end
 
-  match "/inzendingen-voor-toezicht/*path" do
-    Proxy.forward conn, path, "http://resource/inzendingen-voor-toezicht/"
-  end
-
   match "/document-types/*path" do
     Proxy.forward conn, path, "http://resource/document-types/"
   end
