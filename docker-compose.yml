@@ -180,3 +180,13 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  dbcleanup:
+    image: lblod/db-cleanup-service
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
