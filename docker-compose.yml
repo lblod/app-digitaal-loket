@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.2.0
+    image: lblod/frontend-loket:0.2.1
     links:
       - identifier:backend
     restart: always
@@ -181,7 +181,7 @@ services:
         max-size: "10m"
         max-file: "3"
   dbcleanup:
-    image: lblod/db-cleanup-service
+    image: lblod/db-cleanup-service:0.1.0
     restart: always
     labels:
       - "logging=true"
