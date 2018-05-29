@@ -1,19 +1,51 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.2.0
+    image: lblod/frontend-loket:0.2.2
     links:
       - identifier:backend
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   admin:
     image: lblod/frontend-loket-admin:0.3.3
     links:
       - identifier:backend
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   identifier:
     image: semtech/mu-identifier:1.3.0
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   dispatcher:
     image: semtech/mu-dispatcher:1.1.0
     volumes:
       - ./config/dispatcher:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   database:
     image: tenforce/virtuoso:1.3.1-virtuoso7.2.1
     environment:
@@ -21,41 +53,140 @@ services:
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
     volumes:
       - ./data/db:/data
+      - ./config/db/:/opt/virtuoso-scripts
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   migrations:
     image: semtech/mu-migrations-service:0.3.0
     volumes:
       - ./config/migrations:/data/migrations
+    labels:
+      - "logging=true"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   cache:
+    labels:
+      - "logging=true"
     image: semtech/mu-cache:0.5.0
     environment:
       CACHE_BACKEND: http://resource/
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   resource:
+    labels:
+      - "logging=true"
     image: semtech/mu-cl-resources:1.16.0
     volumes:
       - ./config/resources:/config
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   login:
     image: lblod/acmidm-login-service:0.1.0
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
       MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lblod.info/authorization/callback"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   mocklogin:
+    labels:
+      - "logging=true"
     image: lblod/mock-login-service:0.1.0
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   validation:
     image: semtech/mu-validation-service:0.2.1
+    labels:
+      - "logging=true"
     volumes:
       - ./config/validations:/config
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   file:
     image: semtech/mu-file-service:3.0.0
+    labels:
+      - "logging=true"
     volumes:
       - ./data/files:/share
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   createreports:
     image: lblod/create-bbcdr-rapporten-service:0.3.1
+    labels:
+      - "logging=true"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   packagereports:
     image: lblod/package-bbcdr-rapporten-service:0.1.10
+    labels:
+      - "logging=true"
     volumes:
       - ./data/files:/data/files
+    restart: always
+    environment:
+      PACKAGE_CRON_PATTERN: '*/30 * * * * *'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   deliverreports:
     image: lblod/deliver-bbcdr-rapporten-service:0.1.1
     volumes:
       - ./data/files:/data/files
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  dbcleanup:
+    image: lblod/db-cleanup-service:0.1.0
+    restart: always
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
