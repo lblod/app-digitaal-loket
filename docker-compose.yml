@@ -193,7 +193,7 @@ services:
   export:
     image: lblod/mandaten-download-generator-service:0.1.2
     environment:
-      EXPORT_CRON_PATTERN: "0 4 * * * *"
+      EXPORT_CRON_PATTERN: "0 0 4 * * *"
     volumes:
       - ./data/exports:/data/exports
       - ./config/export:/config
