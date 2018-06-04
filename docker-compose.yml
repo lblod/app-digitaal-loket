@@ -190,3 +190,17 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  export:
+    image: lblod/mandaten-download-generator-service:0.1.2
+    environment:
+      EXPORT_CRON_PATTERN: "0 4 * * * *"
+    volumes:
+      - ./data/exports:/data/exports
+      - ./config/export:/config
+    labels:
+      - "logging=true"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

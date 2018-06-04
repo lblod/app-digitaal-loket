@@ -1,0 +1,216 @@
+{
+  "prefixes": {
+    "mandaat": "http://data.vlaanderen.be/ns/mandaat#",
+    "besluit": "http://data.vlaanderen.be/ns/besluit#",
+    "persoon": "http://data.vlaanderen.be/ns/persoon#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "regorg": "https://www.w3.org/ns/regorg#",
+    "person": "http://www.w3.org/ns/person#",
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "mu": "http://mu.semte.ch/vocabularies/core/"
+  },
+  "types": [
+    {
+      "type": "mandaat:Mandataris",
+      "optionalProperties": [
+        "mandaat:start",
+        "mandaat:eind",
+        "mandaat:rangorde",
+        "mandaat:status",
+        "mandaat:isBestuurlijkeAliasVan",
+        "mandaat:isTijdelijkVervangenDoor",
+        "org:holds",
+        "mandaat:beleidsdomein",
+        "org:hasMembership"
+      ],
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "person:Person",
+            "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "foaf:familyName",
+        "persoon:gebruikteVoornaam",
+        "foaf:name",
+        "persoon:heeftGeboorte",
+        "adms:identifier",
+        "persoon:geslacht"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "mandaat:TijdsgebondenEntiteit",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "mandaat:bindingEinde",
+        "mandaat:bindingStart",
+        "mandaat:isTijdspecialisatieVan"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "mandaat:Fractie",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "regorg:legalName"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "besluit:Bestuurseenheid",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "besluit:werkingsgebied",
+        "besluit:classificatie",
+        "org:hasPrimarySite",
+        "org:linkedTo",
+        "schema:contactPoint",
+        "org:heldBy"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "prov:Location",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "rdfs:label",
+        "ext:werkingsgebiedNiveau"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "besluit:Bestuursorgaan",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "mandaat:bindingEinde",
+        "mandaat:bindingStart",
+        "besluit:bestuurt",
+        "besluit:classificatie",
+        "mandaat:isTijdspecialisatieVan",
+        "org:hasPost"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "persoon:Geboorte",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "persoon:datum"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "org:Membership",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "org:organisation",
+        "org:mumberDuring"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "mandaat:Mandaat",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "mandaat:aantalHouders",
+        "org:role"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:BestuursfunctieCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:MandatarisStatusCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:BeleidsdomeinCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:GeslachtCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:BestuurseenheidClassificatieCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:BestuursorgaanClassificatieCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    }
+  ]
+}
