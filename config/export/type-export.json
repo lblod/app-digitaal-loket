@@ -67,7 +67,9 @@
         "mu:uuid"
       ],
       "optionalProperties": [
-        "regorg:legalName"
+        "regorg:legalName",
+        "org:linkedTo",
+        "org:memberOf"
       ],
       "additionalFilter": ""
     },
@@ -82,7 +84,7 @@
         "besluit:classificatie",
         "org:hasPrimarySite",
         "org:linkedTo",
-        "schema:contactPoint",
+        "org:hasPrimarySite",
         "org:heldBy",
         "org:hasPost"
       ],
@@ -210,6 +212,63 @@
       "optionalProperties": [
         "skos:prefLabel",
         "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "org:Organization",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "schema:contactPoint",
+        "org:hasPost"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "schema:ContactPoint",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "schema:addressLocality",
+        "schema:postalCode",
+        "schema:streetAddress",
+        "rdf:type"
+      ]
+    },
+    {
+      "type": "org:Post",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "org:heldBy",
+        "org:role"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "org:Role",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:inScheme",
+        "skos:topConceptOf"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "org:Site",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "schema:contactPoint"
       ],
       "additionalFilter": ""
     }
