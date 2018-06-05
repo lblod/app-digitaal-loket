@@ -191,7 +191,7 @@ services:
         max-size: "10m"
         max-file: "3"
   export:
-    image: lblod/mandaten-download-generator-service:0.1.3
+    image: lblod/mandaten-download-generator-service:0.1.4
     environment:
       EXPORT_CRON_PATTERN: "0 0 4 * * *"
     volumes:

@@ -83,7 +83,8 @@
         "org:hasPrimarySite",
         "org:linkedTo",
         "schema:contactPoint",
-        "org:heldBy"
+        "org:heldBy",
+        "org:hasPost"
       ],
       "additionalFilter": ""
     },
