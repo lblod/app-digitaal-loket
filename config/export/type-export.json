@@ -236,6 +236,10 @@
         "schema:addressLocality",
         "schema:postalCode",
         "schema:streetAddress",
+        "schema:telephone",
+        "schema:faxNumber",
+        "schema:email",
+        "schema:url",
         "rdf:type"
       ]
     },
