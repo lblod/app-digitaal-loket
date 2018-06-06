@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   loket:
-    image: lblod/frontend-loket:0.2.2
+    image: lblod/frontend-loket:0.2.3
     links:
       - identifier:backend
     restart: always
