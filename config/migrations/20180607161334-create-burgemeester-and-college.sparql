@@ -37,11 +37,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 WITH <http://mu.semte.ch/application>
 
-<<<<<<< HEAD
 # insert burgemeester
-=======
-# insert burgemeetser
->>>>>>> 39f9c4364904ecfc108ee80b4f908c53c9a247fe
 DELETE {
   ?existingOrgaanInTijd org:hasPost ?mandaat .
 }
@@ -69,11 +65,7 @@ WHERE {
   ?orgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuurseenheid skos:prefLabel ?eenheidNaam .
 
-<<<<<<< HEAD
   BIND(CONCAT("Burgemeester ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
-=======
-  BIND(CONCAT(STR(?eenheidNaam), " ", "Burgemeester") AS ?bestuursorgaanNaam) .
->>>>>>> 39f9c4364904ecfc108ee80b4f908c53c9a247fe
   BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanNaam))) AS ?uuidOrgaan) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidOrgaan))) AS ?bestuursorgaan) .
   BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
@@ -109,11 +101,7 @@ WHERE {
   ?orgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuurseenheid skos:prefLabel ?eenheidNaam .
 
-<<<<<<< HEAD
   BIND(CONCAT("College van Burgemeester en Schepenen ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
-=======
-  BIND(CONCAT(STR(?eenheidNaam), " ", "College Van burgemeester en schepenen") AS ?bestuursorgaanNaam) .
->>>>>>> 39f9c4364904ecfc108ee80b4f908c53c9a247fe
   BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanNaam))) AS ?uuidOrgaan) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidOrgaan))) AS ?bestuursorgaan) .
   BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
@@ -137,8 +125,4 @@ WHERE {
   ?burgemeesterInTijd org:hasPost ?burgemeester .
   ?burgemeester org:role ?burgemeesterRol .
   ?burgemeesterRol mu:uuid "5ab0e9b8a3b2ca7c5e000013" .
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 39f9c4364904ecfc108ee80b4f908c53c9a247fe

@@ -67,17 +67,9 @@ WHERE {
   ?orgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuurseenheid skos:prefLabel ?eenheidNaam .
 
-<<<<<<< HEAD
   BIND(CONCAT("Districtscollege ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
-=======
-  BIND(CONCAT(STR(?eenheidNaam), " ", "Districtscollege") AS ?bestuursorgaanNaam) .
->>>>>>> 39f9c4364904ecfc108ee80b4f908c53c9a247fe
   BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanNaam))) AS ?uuidOrgaan) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidOrgaan))) AS ?bestuursorgaan) .
   BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", ?uuidInTijd)) AS ?bestuursorgaanInTijd) .
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 39f9c4364904ecfc108ee80b4f908c53c9a247fe
