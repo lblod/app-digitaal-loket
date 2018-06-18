@@ -35,7 +35,7 @@ services:
         max-size: "10m"
         max-file: "3"
   dispatcher:
-    image: semtech/mu-dispatcher:1.1.0
+    image: semtech/mu-dispatcher:1.1.1
     volumes:
       - ./config/dispatcher:/config
     labels:
