@@ -2,6 +2,8 @@ PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
+
 WITH <http://mu.semte.ch/application>
 INSERT {
   ?persoon a foaf:Person;
@@ -12,7 +14,8 @@ INSERT {
            foaf:account ?account.
   ?account a foaf:OnlineAccount;
            mu:uuid ?uuidAccount;
-           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-mandaatGebruiker". 
 }
 WHERE {
      ?bestuurseenheid a besluit:Bestuurseenheid;
