@@ -113,7 +113,7 @@ services:
   mocklogin:
     labels:
       - "logging=true"
-    image: lblod/mock-login-service:0.1.0
+    image: lblod/mock-login-service:0.2.0
     restart: always
     logging:
       driver: "json-file"
