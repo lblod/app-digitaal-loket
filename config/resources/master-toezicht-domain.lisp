@@ -40,24 +40,23 @@
               )
   :resource-base (s-url "http://data.lblod.info/inzendingen-voor-toezicht/")
   :features `(no-pagination-defaults include-uri)
-  :on-path "inzendingen-voor-toezicht"
-  )
+  :on-path "inzendingen-voor-toezicht")
 
 (define-resource toezicht-inzending-type ()
   :class (s-prefix "toezicht:InzendingType")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
   :resource-base (s-url "http://data.lblod.info/toezicht-inzending-types")
   :features `(inclure-uri)
-  :on-path "toezicht-inzending-types"
-  )
+  :on-path "toezicht-inzending-types")
+
 (define-resource besluit-type ()
-  :class (s-prefix "toezicht:decisionType")
+  :class (s-prefix "toezicht:DecisionType")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :has-many `((bestuurseenheid-classificatie-code :via ,(s-prefix "ext:decidableBy")
+                    :as "decidable-by"))  
   :resource-base (s-url "http://data.lblod.info/besluit-types")
   :features `(include-uri)
-  :on-path "besluit-types"
-  )
-
+  :on-path "besluit-types")
 
 (define-resource tax-rate ()
   :class (s-prefix "toezicht:TaxRate")
