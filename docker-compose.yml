@@ -117,14 +117,16 @@ services:
       - "logging=true"
     volumes:
       - ./data/files:/data/files
-    restart: always
     environment:
-      PACKAGE_CRON_PATTERN: '*/30 * * * * *'
+      PACKAGE_CRON_PATTERN: '0 0 * * * *'
+    restart: always
     logging: *default-logging
   deliverreports:
     image: lblod/deliver-bbcdr-rapporten-service:0.1.1
     volumes:
       - ./data/files:/data/files
+    environment:
+      PACKAGE_CRON_PATTERN: '0 0 * * * *'
     restart: always
     labels:
       - "logging=true"
