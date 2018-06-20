@@ -15,11 +15,11 @@ defmodule Acl.UserGroups.Config do
   end
 
   defp sparql_query_for_access_role( group_string ) do
-    "PREFIX http://mu.semte.ch/vocabularies/ext/ <http://mu.semte.ch/vocabularies/ext/>
+    "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     SELECT ?session_group ?session_role WHERE {
-      <SESSION_ID> http://mu.semte.ch/vocabularies/ext/sessionGroup/mu:uuid ?session_group;
-                   http://mu.semte.ch/vocabularies/ext/sessionRole ?session_role.
+      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                   ext:sessionRole ?session_role.
       FILTER( ?session_role = \"#{group_string}\" )
     }"
   end
