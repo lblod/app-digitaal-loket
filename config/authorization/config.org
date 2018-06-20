@@ -111,7 +111,7 @@ Abstract configuration for app-digitaal-loket
   | :: master-toezicht-domain ::         |      |     |       |         |        |      |      |
   | toezicht:InzendingVoorToezicht       |      |     |       |         | rwf    |      | x    |
   | toezicht:InzendingType               | r    |     |       |         |        |      | x    |
-  | toezicht:decisionType                | r    |     |       |         |        |      | x    |
+  | toezicht:DecisionType                | r    |     |       |         |        |      | x    |
   | toezicht:TaxRate                     |      |     |       |         | rwf    |      | x    |
   | ext:FormSolution                     |      |     |       |         | rwf    |      | x    |
   |--------------------------------------+------+-----+-------+---------+--------+------+------|

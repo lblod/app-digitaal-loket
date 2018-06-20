@@ -45,7 +45,7 @@ defmodule Acl.UserGroups.Config do
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
                         "http://www.w3.org/ns/adms#Identifier",
-                        "http://data.vlaanderen.be/ns/besluit#BestuursEenheid"
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
                       ] } } ] },
 
       # // PUBLIC
@@ -63,7 +63,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/DocumentStatus",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingType",
-                        "http://mu.semte.ch/vocabularies/ext/supervision/decisionType",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/DecisionType",
                         "http://www.w3.org/ns/prov#Location",
                         "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
                         "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
