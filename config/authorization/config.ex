@@ -89,10 +89,10 @@ defmodule Acl.UserGroups.Config do
         useage: [:read],
         access: %AccessByQuery{
           vars: ["session_group"],
-          query: "PREFIX http://mu.semte.ch/vocabularies/ext/ <http://mu.semte.ch/vocabularies/ext/>
+          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
                   SELECT ?session_group ?session_role WHERE {
-                    <SESSION_ID> http://mu.semte.ch/vocabularies/ext/sessionGroup/mu:uuid ?session_group.
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
                     }" },
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/org/",
