@@ -32,22 +32,6 @@ defmodule Acl.UserGroups.Config do
     # many ways.  The useage of a GroupSpec and GraphCleanup are
     # common.
     [
-      # // TEMPORARILY ACCEPT THE APPLICATION GRAPH
-
-      %GroupSpec{
-        name: "application",
-        useage: [:read,:write,:read_for_write],
-        access: %AlwaysAccessible{},
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/application",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://xmlns.com/foaf/0.1/Person",
-                        "http://xmlns.com/foaf/0.1/OnlineAccount",
-                        "http://www.w3.org/ns/adms#Identifier",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
-                      ] } } ] },
-
       # // PUBLIC
       %GroupSpec{
         name: "public",
@@ -82,7 +66,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#RechtstreekseVerkiezing",
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
-                        "http://www.w3.org/ns/org#Role"
+                        "http://www.w3.org/ns/org#Role",
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
                       ]
                     } } ] },
       %GroupSpec{
@@ -114,7 +99,8 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://xmlns.com/foaf/0.1/Person",
-                        "http://xmlns.com/foaf/0.1/OnlineAccount"
+                        "http://xmlns.com/foaf/0.1/OnlineAccount",
+                        "http://www.w3.org/ns/adms#Identifier"
                       ] } } ] },
 
       # // ORG-MANDATENBEHEER
