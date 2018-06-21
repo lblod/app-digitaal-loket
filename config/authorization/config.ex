@@ -75,7 +75,7 @@ defmodule Acl.UserGroups.Config do
         useage: [:write, :read_for_write],
         access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
         graphs: [%GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
@@ -95,7 +95,7 @@ defmodule Acl.UserGroups.Config do
                     <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
                     }" },
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/org/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://xmlns.com/foaf/0.1/Person",
@@ -109,7 +109,7 @@ defmodule Acl.UserGroups.Config do
         useage: [:read],
         access: access_by_role( "LoketLB-mandaatGebruiker" ),
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/o-mdb/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/validation/Execution",
@@ -141,7 +141,7 @@ defmodule Acl.UserGroups.Config do
         useage: [:write, :read_for_write],
         access: access_by_role( "LoketLB-mandaatGebruiker" ),
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/o-mdb/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
@@ -156,7 +156,7 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/org#Post",
                         "http://www.w3.org/ns/org#Organization" ] } },
                   %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/o-mdb/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [ "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid" ],
                       predicates: %NoPredicates{
@@ -172,7 +172,7 @@ defmodule Acl.UserGroups.Config do
         useage: [:read, :write, :read_for_write],
         access: access_by_role( "LoketLB-bbcdrGebruiker" ),
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/o-bbcdr/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/bbcdr/Report"
@@ -184,7 +184,7 @@ defmodule Acl.UserGroups.Config do
         useage: [:read, :write, :read_for_write],
         access: access_by_role( "LoketLB-toezichtGebruiker" ),
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/o-toez/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
