@@ -127,7 +127,7 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/org#Post",
                         "http://www.w3.org/ns/org#Organization" ] } },
                   %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/o-mdb/",
+                    graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [ "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid" ],
                       predicates: %NoPredicates{
