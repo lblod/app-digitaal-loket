@@ -32,7 +32,7 @@ INSERT {
     }
 
   }
-  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId, "LoketLB-toezichtGebruiker")) as ?graph)
+  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId, "/LoketLB-toezichtGebruiker")) as ?graph)
 }
 
 ;
