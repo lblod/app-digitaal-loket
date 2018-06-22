@@ -165,3 +165,23 @@ INSERT {
     ?pzPositie ?pzPositieP ?pzPositieO .
   }  
 }
+
+;
+
+INSERT {
+  GRAPH ?g {
+    ?positie org:heldBy ?person .
+    ?person ?personP ?personO .
+  }
+} WHERE {
+  GRAPH ?g {
+    FILTER(STRENDS(STR(?g), "/LoketLB-mandaatGebruiker")) 
+
+    ?positie a org:Post .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?positie org:heldBy ?person .
+    ?person ?personP ?personO .
+  }  
+}
