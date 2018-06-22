@@ -1,0 +1,10 @@
+PREFIX schema: <http://schema.org/>
+
+WITH <http://mu.semte.ch/application>
+DELETE {
+  ?s a schema:ContactPoint .
+} INSERT {
+  ?s a schema:PostalAddress .
+} WHERE {
+  ?s a schema:ContactPoint .
+}
