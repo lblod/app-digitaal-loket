@@ -165,15 +165,36 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/dynamic-subforms/"
   end
 
-  match "/form-solutions/*path" do
-    Proxy.forward conn, path, "http://resource/form-solutions/"
-  end
-
   match "/document-types/*path" do
     Proxy.forward conn, path, "http://resource/document-types/"
   end
+
+  ###############################################################
+  # master-toezicht-domain.lisp
+  ###############################################################
   match "/inzendingen-voor-toezicht/*path" do
     Proxy.forward conn, path, "http://resource/inzendingen-voor-toezicht/"
+  end
+  match "/toezicht-tax-types/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-tax-types/"
+  end
+  match "/toezicht-nomenclatures/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-nomenclatures/"
+  end
+  match "/toezicht-fiscal-periods/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-fiscal-periods/"
+  end
+  match "/toezicht-delivery-report-types/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-delivery-report-types/"
+  end
+  match "/toezicht-account-acceptance-statuses/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-account-acceptance-statuses/"
+  end
+  match "/toezicht-document-authenticity-types/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-document-authenticity-types/"
+  end
+  match "/toezicht-inzending-types/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-inzending-types/"
   end
   match "/besluit-types/*path" do
     Proxy.forward conn, path, "http://resource/besluit-types/"
@@ -181,9 +202,10 @@ defmodule Dispatcher do
   match "/tax-rates/*path" do
     Proxy.forward conn, path, "http://resource/tax-rates/"
   end
-  match "/toezicht-inzending-types/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-inzending-types/"
+  match "/form-solutions/*path" do
+    Proxy.forward conn, path, "http://resource/form-solutions/"
   end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
