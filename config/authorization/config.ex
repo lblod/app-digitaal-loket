@@ -188,6 +188,14 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/TaxType",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/Nomenclature",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/FiscalPeriod",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/DeliveryReportType",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/AccountAcceptanceStatus",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/DocumentAuthenticityType",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/InzendingType",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/DecisionType",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution"
                       ] } } ] }
