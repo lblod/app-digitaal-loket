@@ -1,0 +1,42 @@
+PREFIX schema: <http://schema.org/> 
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/31878281-4b31-4994-9e9b-1848d14ea919> schema:url ?url .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/31878281-4b31-4994-9e9b-1848d14ea919> schema:url <http://www.ledegem.be> .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/31878281-4b31-4994-9e9b-1848d14ea919> a schema:PostalAddress ;
+      schema:url ?url .
+  }
+}
+
+;
+
+DELETE WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/9d420262-6b9e-48e9-97e9-7f2069dbabac> <http://schema.org/url> ?url
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/bd8dc648-7547-40f0-95d7-481cc3b3bd47> schema:url ?url .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/bd8dc648-7547-40f0-95d7-481cc3b3bd47> schema:url <http://www.dilsen-stokkem.be> .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/contactpunt/bd8dc648-7547-40f0-95d7-481cc3b3bd47> a schema:PostalAddress ;
+      schema:url ?url .
+  }
+}
+
