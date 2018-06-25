@@ -66,22 +66,3 @@ INSERT {
     ?identificator ?identificatorP ?identificatorO .
   }
 }
-
-;
-
-INSERT {
-  GRAPH ?g {
-    ?geslacht ?geslachtP ?geslachtO .
-  }
-} WHERE {
-  GRAPH ?g {
-    FILTER(STRENDS(STR(?g), "/LoketLB-mandaatGebruiker")) 
-
-    ?persoon a person:Person .
-  }
-
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    ?persoon persoon:geslacht ?geslacht .
-    ?geslacht ?geslachtP ?geslachtO .
-  }
-}
