@@ -311,6 +311,22 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "97e5b6668e880814765814153a40a0911261bb31037d2aeb7b424d91fe2a918f";
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Herziening" .
 
+<http://data.lblod.info/FiscalPeriod/1ae488015b77e311e3bd4019f84a56a0cbe47b5fe6f488ff36e9d59b90a30408> a <http://mu.semte.ch/vocabularies/ext/supervision/FiscalPeriod>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "1ae488015b77e311e3bd4019f84a56a0cbe47b5fe6f488ff36e9d59b90a30408";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q3" .
+
+<http://data.lblod.info/FiscalPeriod/79992e6068738c5b07e7c07e62c807a020ebe23cf705e600fa428bbe785861d4> a <http://mu.semte.ch/vocabularies/ext/supervision/FiscalPeriod>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "79992e6068738c5b07e7c07e62c807a020ebe23cf705e600fa428bbe785861d4";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q2" .
+
+<http://data.lblod.info/FiscalPeriod/8d523dfc7d614ff6dfe74892de87e485cf36b0d1426738a2454a618d42344f3b> a <http://mu.semte.ch/vocabularies/ext/supervision/FiscalPeriod>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8d523dfc7d614ff6dfe74892de87e485cf36b0d1426738a2454a618d42344f3b";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q1" .
+
+<http://data.lblod.info/FiscalPeriod/a0140fb323d91fb8d8456cc3d961e1bef28d78cdf7a603ee0379827910995c2e> a <http://mu.semte.ch/vocabularies/ext/supervision/FiscalPeriod>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "a0140fb323d91fb8d8456cc3d961e1bef28d78cdf7a603ee0379827910995c2e";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q4" .
+
 <http://data.lblod.info/Nomenclature/06d669bb64d3959b0e515751a63a73cd2c4371686f7562111ab2e988141f9ea8> a <http://mu.semte.ch/vocabularies/ext/supervision/Nomenclature>;
    <http://mu.semte.ch/vocabularies/core/uuid> "06d669bb64d3959b0e515751a63a73cd2c4371686f7562111ab2e988141f9ea8";
    <http://mu.semte.ch/vocabularies/ext/supervision/nomeclatureCode> "MAR7305";
@@ -851,19 +867,3 @@
 <http://data.lblod.info/TaxType/6adc7281cbef681d2433a93a73275f246976ed77f72c9dd37a60182e063df44c> a <http://mu.semte.ch/vocabularies/ext/supervision/TaxType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "6adc7281cbef681d2433a93a73275f246976ed77f72c9dd37a60182e063df44c";
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Retributie" .
-
-<http://data.lblod.info/toezicht-fiscal-period/316e6d38fbdaa2b6aa042cf26fec2ea4cd6c0a10fde59667c9ee29281f9f56d8> a <http://mu.semte.ch/vocabularies/ext/supervision/toezicht-fiscal-period>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "316e6d38fbdaa2b6aa042cf26fec2ea4cd6c0a10fde59667c9ee29281f9f56d8";
-   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q2" .
-
-<http://data.lblod.info/toezicht-fiscal-period/3d37c5bd541ee8d8f0cf3045f429dbedb83da1cfae12589843fec9c86b504a14> a <http://mu.semte.ch/vocabularies/ext/supervision/toezicht-fiscal-period>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "3d37c5bd541ee8d8f0cf3045f429dbedb83da1cfae12589843fec9c86b504a14";
-   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q4" .
-
-<http://data.lblod.info/toezicht-fiscal-period/cac8fb79c67bba5e18d71d5a8d0ac686ab60e7c635a56f89835105c9f661589e> a <http://mu.semte.ch/vocabularies/ext/supervision/toezicht-fiscal-period>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "cac8fb79c67bba5e18d71d5a8d0ac686ab60e7c635a56f89835105c9f661589e";
-   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q3" .
-
-<http://data.lblod.info/toezicht-fiscal-period/e7d6afcbf471d339a52642a409ecb8c8ce94422707a09b1a2acc8fe80f5c0102> a <http://mu.semte.ch/vocabularies/ext/supervision/toezicht-fiscal-period>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "e7d6afcbf471d339a52642a409ecb8c8ce94422707a09b1a2acc8fe80f5c0102";
-   <http://www.w3.org/2004/02/skos/core#prefLabel> "Q1" .
