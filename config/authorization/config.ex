@@ -2,6 +2,7 @@ alias Acl.Accessibility.Always, as: AlwaysAccessible
 alias Acl.Accessibility.ByQuery, as: AccessByQuery
 alias Acl.GraphSpec.Constraint.Resource.AllPredicates, as: AllPredicates
 alias Acl.GraphSpec.Constraint.Resource.NoPredicates, as: NoPredicates
+alias Acl.GraphSpec.Constraint.ResourceFormat, as: ResourceFormatConstraint
 alias Acl.GraphSpec.Constraint.Resource, as: ResourceConstraint
 alias Acl.GraphSpec, as: GraphSpec
 alias Acl.GroupSpec, as: GroupSpec
@@ -75,6 +76,11 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/org#Role",
                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
                       ]
+                    } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/sessions",
+                    constraint: %ResourceFormatConstraint{
+                      resource_prefix: "http://mu.semte.ch/sessions/"
                     } } ] },
       %GroupSpec{
         name: "public-wf",
