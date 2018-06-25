@@ -116,12 +116,12 @@ Abstract configuration for app-digitaal-loket
   |--------------------------------------+------+-----+-------+---------+--------+------+------|
   | :: master-toezicht-domain ::         |      |     |       |         |        |      |      |
   | toezicht:InzendingVoorToezicht       |      |     |       |         | rwf    |      | x    |
-  | toezicht:TaxType                     |      |     |       |         | rwf    |      | x    |
-  | toezicht:Nomenclature                |      |     |       |         | rwf    |      | x    |
-  | toezicht:FiscalPeriod                |      |     |       |         | rwf    |      | x    |
-  | toezicht:DeliveryReportType          |      |     |       |         | rwf    |      | x    |
-  | toezicht:AccountAcceptanceStatus     |      |     |       |         | rwf    |      | x    |
-  | toezicht:DocumentAuthenticityType    |      |     |       |         | rwf    |      | x    |
+  | toezicht:TaxType                     | r    |     |       |         |        |      | x    |
+  | toezicht:Nomenclature                | r    |     |       |         |        |      | x    |
+  | toezicht:FiscalPeriod                | r    |     |       |         |        |      | x    |
+  | toezicht:DeliveryReportType          | r    |     |       |         |        |      | x    |
+  | toezicht:AccountAcceptanceStatus     | r    |     |       |         |        |      | x    |
+  | toezicht:DocumentAuthenticityType    | r    |     |       |         |        |      | x    |
   | toezicht:InzendingType               | r    |     |       |         |        |      | x    |
   | toezicht:DecisionType                | r    |     |       |         |        |      | x    |
   | toezicht:TaxRate                     |      |     |       |         | rwf    |      | x    |
