@@ -6,17 +6,21 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
                                                                              mu:uuid "10724bc2-c9d0-4a35-a499-91a8b7cb023b";
                                                                              dcterms:title "clean up dangling file uploads";
                                                                              cleanup:selectPattern """
-                                                                               ?resource a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject>;
+                                                                               GRAPH <http://mu.semte.ch/graphs/public> {
+                                                                                 ?resource a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject>;
                                                                                          ?p ?o;
                                                                                          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?source;
                                                                                          <http://purl.org/dc/terms/modified> ?modified.
                                                                                          ?source ?sourcep ?sourceo.
-                                                                                         BIND(NOW() - 86400 AS ?oneDayAgo)
-                                                                                         FILTER(?modified <= ?oneDayAgo)
-                                                                                         FILTER(NOT EXISTS { ?foo <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?resource})
+                                                                               }
+                                                                               BIND(NOW() - 86400 AS ?oneDayAgo)
+                                                                               FILTER(?modified <= ?oneDayAgo)
+                                                                               FILTER(NOT EXISTS { ?foo <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?resource})
                                                                              """;
                                                                              cleanup:deletePattern """
-                                                                               ?resource ?p ?o.
-                                                                               ?source ?sourcep ?sourceo.
+                                                                               GRAPH <http://mu.semte.ch/graphs/public> {
+                                                                                   ?resource ?p ?o.
+                                                                                   ?source ?sourcep ?sourceo.
+                                                                               }
                                                                              """.
 
