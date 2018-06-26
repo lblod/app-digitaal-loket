@@ -64,6 +64,8 @@ services:
     image: semtech/mu-migrations-service:0.3.0
     links:
       - virtuoso:database
+    environment:
+      MU_SPARQL_TIMEOUT: '300'
     volumes:
       - ./config/migrations:/data/migrations
     labels:
