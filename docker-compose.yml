@@ -150,9 +150,12 @@ services:
       - "logging=true"
     logging: *default-logging
   export:
-    image: lblod/mandaten-download-generator-service:0.1.4
+    image: lblod/mandaten-download-generator-service:0.2.0
+    links:
+      - virtuoso:database
     environment:
       EXPORT_CRON_PATTERN: "0 0 4 * * *"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system"
     volumes:
       - ./data/exports:/data/exports
       - ./config/export:/config
