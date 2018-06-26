@@ -202,7 +202,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution"
-                      ] } } ] }
+                      ] } } ] },
 
       # // USER HAS NO DATA
       # this was moved to org instead.
@@ -213,11 +213,11 @@ defmodule Acl.UserGroups.Config do
       # // CLEANUP
       # TODO: enable cleanup when services don't need application graph any longer
       #
-      # %GraphCleanup{
-      #   originating_graph: "http://mu.semte.ch/application",
-      #   useage: [:write],
-      #   name: "clean"
-      # }
+      %GraphCleanup{
+        originating_graph: "http://mu.semte.ch/application",
+        useage: [:write],
+        name: "clean"
+      }
     ]
   end
 end
