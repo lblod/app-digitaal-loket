@@ -120,13 +120,13 @@ services:
     restart: always
     logging: *default-logging
   createreports:
-    image: lblod/create-bbcdr-rapporten-service:latest
+    image: lblod/create-bbcdr-rapporten-service:0.4.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.1.10
+    image: lblod/package-bbcdr-rapporten-service:0.2.0
     labels:
       - "logging=true"
     volumes:
@@ -136,7 +136,7 @@ services:
     restart: always
     logging: *default-logging
   deliverreports:
-    image: lblod/deliver-bbcdr-rapporten-service:0.1.1
+    image: lblod/deliver-bbcdr-rapporten-service:0.2.0
     volumes:
       - ./data/files:/data/files
     environment:
