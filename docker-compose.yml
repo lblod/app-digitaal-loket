@@ -73,11 +73,11 @@ services:
     restart: always
     logging: *default-logging
   cache:
+    image: semtech/mu-cache:latest
+    links:
+      - resource:backend
     labels:
       - "logging=true"
-    image: semtech/mu-cache:0.5.0
-    environment:
-      CACHE_BACKEND: http://resource/
     restart: always
     logging: *default-logging
   resource:

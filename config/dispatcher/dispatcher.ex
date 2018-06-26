@@ -71,10 +71,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/mandataris-status-codes/"
   end
   match "/beleidsdomein-codes/*path" do
-    Proxy.forward conn, path, "http://resource/beleidsdomein-codes/"
+    Proxy.forward conn, path, "http://cache/beleidsdomein-codes/"
   end
   match "/personen/*path" do
-    Proxy.forward conn, path, "http://resource/personen/"
+    Proxy.forward conn, path, "http://cache/personen/"
   end
   match "/geslacht-codes/*path" do
     Proxy.forward conn, path, "http://cache/geslacht-codes/"
@@ -154,56 +154,56 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/validation-errors/"
   end
   match "/form-nodes/*path" do
-    Proxy.forward conn, path, "http://resource/form-nodes/"
+    Proxy.forward conn, path, "http://cache/form-nodes/"
   end
 
   match "/form-inputs/*path" do
-    Proxy.forward conn, path, "http://resource/form-inputs/"
+    Proxy.forward conn, path, "http://cache/form-inputs/"
   end
 
   match "/dynamic-subforms/*path" do
-    Proxy.forward conn, path, "http://resource/dynamic-subforms/"
+    Proxy.forward conn, path, "http://cache/dynamic-subforms/"
   end
 
   match "/document-types/*path" do
-    Proxy.forward conn, path, "http://resource/document-types/"
+    Proxy.forward conn, path, "http://cache/document-types/"
   end
 
   ###############################################################
   # master-toezicht-domain.lisp
   ###############################################################
   match "/inzendingen-voor-toezicht/*path" do
-    Proxy.forward conn, path, "http://resource/inzendingen-voor-toezicht/"
+    Proxy.forward conn, path, "http://cache/inzendingen-voor-toezicht/"
   end
   match "/toezicht-tax-types/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-tax-types/"
+    Proxy.forward conn, path, "http://cache/toezicht-tax-types/"
   end
   match "/toezicht-nomenclatures/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-nomenclatures/"
+    Proxy.forward conn, path, "http://cache/toezicht-nomenclatures/"
   end
   match "/toezicht-fiscal-periods/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-fiscal-periods/"
+    Proxy.forward conn, path, "http://cache/toezicht-fiscal-periods/"
   end
   match "/toezicht-delivery-report-types/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-delivery-report-types/"
+    Proxy.forward conn, path, "http://cache/toezicht-delivery-report-types/"
   end
   match "/toezicht-account-acceptance-statuses/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-account-acceptance-statuses/"
+    Proxy.forward conn, path, "http://cache/toezicht-account-acceptance-statuses/"
   end
   match "/toezicht-document-authenticity-types/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-document-authenticity-types/"
+    Proxy.forward conn, path, "http://cache/toezicht-document-authenticity-types/"
   end
   match "/toezicht-inzending-types/*path" do
-    Proxy.forward conn, path, "http://resource/toezicht-inzending-types/"
+    Proxy.forward conn, path, "http://cache/toezicht-inzending-types/"
   end
   match "/besluit-types/*path" do
-    Proxy.forward conn, path, "http://resource/besluit-types/"
+    Proxy.forward conn, path, "http://cache/besluit-types/"
   end
   match "/tax-rates/*path" do
-    Proxy.forward conn, path, "http://resource/tax-rates/"
+    Proxy.forward conn, path, "http://cache/tax-rates/"
   end
   match "/form-solutions/*path" do
-    Proxy.forward conn, path, "http://resource/form-solutions/"
+    Proxy.forward conn, path, "http://cache/form-solutions/"
   end
 
   match _ do
