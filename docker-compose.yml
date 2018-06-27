@@ -112,7 +112,7 @@ services:
     restart: always
     logging: *default-logging
   file:
-    image: semtech/mu-file-service:3.0.0
+    image: semtech/mu-file-service:3.1.0
     labels:
       - "logging=true"
     volumes:
