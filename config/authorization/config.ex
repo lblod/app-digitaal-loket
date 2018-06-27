@@ -42,6 +42,9 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://mu.semte.ch/vocabularies/validation/Execution",
+                        "http://mu.semte.ch/vocabularies/validation/Validation",
+                        "http://mu.semte.ch/vocabularies/validation/Error",
                         "http://mu.semte.ch/vocabularies/ext/FormNode",
                         "http://mu.semte.ch/vocabularies/ext/FormInput",
                         "http://mu.semte.ch/vocabularies/ext/DynamicSubform",
@@ -124,9 +127,6 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://mu.semte.ch/vocabularies/validation/Execution",
-                        "http://mu.semte.ch/vocabularies/validation/Validation",
-                        "http://mu.semte.ch/vocabularies/validation/Error",
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/org#Membership",

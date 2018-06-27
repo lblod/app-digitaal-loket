@@ -136,9 +136,9 @@ Abstract configuration for app-digitaal-loket
   | - dct:identifier                     | Arwf | r   |       |         |        |      | x    |
   |--------------------------------------+------+-----+-------+---------+--------+------+------|
   | :: master-validations-domain ::      |      |     |       |         |        |      |      |
-  | validation:Execution                 |      |     | rAwf  |         |        |      | x    |
-  | validation:Validation                |      |     | rAwf  |         |        |      | x    |
-  | validation:Error                     |      |     | rAwf  |         |        |      | x    |
+  | validation:Execution                 | rAwf |     |       |         |        |      | x    |
+  | validation:Validation                | rAwf |     |       |         |        |      | x    |
+  | validation:Error                     | rAwf |     |       |         |        |      | x    |
   |--------------------------------------+------+-----+-------+---------+--------+------+------|
   | :: slave-besluit-domain ::           |      |     |       |         |        |      |      |
   | besluit:Agenda                       |      |     |       |         |        |      |      |
