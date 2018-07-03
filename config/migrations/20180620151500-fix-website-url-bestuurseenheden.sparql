@@ -2,15 +2,15 @@ PREFIX schema: <http://schema.org/>
 
 DELETE {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/31878281-4b31-4994-9e9b-1848d14ea919> schema:url ?url .
+    <http://data.lblod.info/id/contactpunt/71fa6cff-5215-408b-b8e0-b518245f3a2f> schema:url ?url .
   }
 } INSERT {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/31878281-4b31-4994-9e9b-1848d14ea919> schema:url <http://www.ledegem.be> .
+    <http://data.lblod.info/id/contactpunt/71fa6cff-5215-408b-b8e0-b518245f3a2f> schema:url <http://www.ledegem.be> .
   }
 } WHERE {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/31878281-4b31-4994-9e9b-1848d14ea919> a schema:PostalAddress ;
+    <http://data.lblod.info/id/contactpunt/71fa6cff-5215-408b-b8e0-b518245f3a2f> a schema:PostalAddress ;
       schema:url ?url .
   }
 }
@@ -18,8 +18,8 @@ DELETE {
 ;
 
 DELETE WHERE {
-  GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/9d420262-6b9e-48e9-97e9-7f2069dbabac> <http://schema.org/url> ?url
+  GRAPH ?g { # Poperinge
+    <http://data.lblod.info/id/contactpunt/59ca1beb-4bd8-48b6-814f-842e81aeb204> <http://schema.org/url> ?url 
   }
 }
 
@@ -27,15 +27,15 @@ DELETE WHERE {
 
 DELETE {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/bd8dc648-7547-40f0-95d7-481cc3b3bd47> schema:url ?url .
+    <http://data.lblod.info/id/contactpunt/5c59a610-2b97-481f-b325-3716ca9b9f1d> schema:url ?url .
   }
 } INSERT {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/bd8dc648-7547-40f0-95d7-481cc3b3bd47> schema:url <http://www.dilsen-stokkem.be> .
+    <http://data.lblod.info/id/contactpunt/5c59a610-2b97-481f-b325-3716ca9b9f1d> schema:url <http://www.dilsen-stokkem.be> .
   }
 } WHERE {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/bd8dc648-7547-40f0-95d7-481cc3b3bd47> a schema:PostalAddress ;
+    <http://data.lblod.info/id/contactpunt/5c59a610-2b97-481f-b325-3716ca9b9f1d> a schema:PostalAddress ;
       schema:url ?url .
   }
 }

@@ -65,7 +65,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/bestuursfunctie-codes/"
   end
   match "/mandatarissen/*path" do
-    Proxy.forward conn, path, "http://resource/mandatarissen/"
+    Proxy.forward conn, path, "http://cache/mandatarissen/"
   end
   match "/mandataris-status-codes/*path" do
     Proxy.forward conn, path, "http://cache/mandataris-status-codes/"
