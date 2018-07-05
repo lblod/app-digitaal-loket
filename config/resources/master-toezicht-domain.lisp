@@ -14,8 +14,6 @@
                 (:agenda-item-count :integer ,(s-prefix "toezicht:agendaItemCount"))
                 (:session-date :datetime ,(s-prefix "toezicht:sessionDate"))
                 (:title :string ,(s-prefix "dct:string"))
-                (:administration-type :string ,(s-prefix "toezicht:administrationType"))
-                (:administration-name :string ,(s-prefix "toezicht:administrationName"))
                 (:decision-date-other-administration :date ,(s-prefix "toezicht:decisionDateOtherAdministration"))
                 (:decision-summary :string ,(s-prefix "toezicht:decisionSummary"))
                 (:date-handover :date ,(s-prefix "toezicht:dateHandover"))
