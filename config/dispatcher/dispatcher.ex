@@ -153,20 +153,18 @@ defmodule Dispatcher do
   get "/validation-errors/*path" do
     Proxy.forward conn, path, "http://resource/validation-errors/"
   end
+
+  ###############################################################
+  # dynamic-forms-domain.lisp
+  ###############################################################
   match "/form-nodes/*path" do
     Proxy.forward conn, path, "http://cache/form-nodes/"
   end
-
   match "/form-inputs/*path" do
     Proxy.forward conn, path, "http://cache/form-inputs/"
   end
-
   match "/dynamic-subforms/*path" do
     Proxy.forward conn, path, "http://cache/dynamic-subforms/"
-  end
-
-  match "/document-types/*path" do
-    Proxy.forward conn, path, "http://cache/document-types/"
   end
 
   ###############################################################

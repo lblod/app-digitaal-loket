@@ -73,13 +73,9 @@ services:
     restart: always
     logging: *default-logging
   cache:
-    image: semtech/mu-cache:latest
+    image: semtech/mu-cache:0.6.0
     links:
       - resource:backend
-    environment:
-      NODE_DEBUG: "http"
-    # volumes:
-    #   - /home/erika/mu-semtech/mu-cache/index.js:/app/index.js
     labels:
       - "logging=true"
     restart: always
