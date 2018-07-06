@@ -73,3 +73,41 @@ WHERE {
   BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", ?uuidInTijd)) AS ?bestuursorgaanInTijd) .
 };
+
+
+# insert gouverneur
+DELETE {
+  ?existingOrgaanInTijd org:hasPost ?mandaat .
+}
+
+INSERT {
+  ?bestuursorgaan a besluit:Bestuursorgaan .
+  ?bestuursorgaan mu:uuid ?uuidOrgaan .
+  ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/180a2fba-6ca9-4766-9b94-82006bb9c709> .
+  ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+  ?bestuursorgaan skos:prefLabel ?bestuursorgaanNaam .
+
+  ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+
+  ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
+  ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
+  ?bestuursorgaanInTijd mandaat:bindingStart "2012-10-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+  ?bestuursorgaanInTijd org:hasPost ?mandaat .
+}
+
+# match gouverneur
+WHERE {
+  ?bestuursfunctie mu:uuid ?uuid .
+  VALUES ?uuid { "d7c00cd1-baf1-4346-83c0-6796c0bedd85" } .
+  ?mandaat org:role ?bestuursfunctie .
+  ?mandaat ^org:hasPost ?existingOrgaanInTijd .
+  ?existingOrgaanInTijd mandaat:isTijdspecialisatieVan ?orgaan .
+  ?orgaan besluit:bestuurt ?bestuurseenheid .
+  ?bestuurseenheid skos:prefLabel ?eenheidNaam .
+
+  BIND(CONCAT("Gouverneur ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
+  BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanNaam))) AS ?uuidOrgaan) .
+  BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidOrgaan))) AS ?bestuursorgaan) .
+  BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
+  BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", ?uuidInTijd)) AS ?bestuursorgaanInTijd) .
+};
