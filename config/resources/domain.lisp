@@ -7,6 +7,7 @@
 (defparameter *include-count-in-paginated-responses* t
   "when non-nil, all paginated listings will contain the number
    of responses in the result object's meta.")
+(defparameter *max-group-sorted-properties* nil)
 
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-organisatie-domain.lisp")
