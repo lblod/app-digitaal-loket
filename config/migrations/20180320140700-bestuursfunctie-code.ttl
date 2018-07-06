@@ -119,18 +119,6 @@
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Ocmw-ondervoorzitter";
    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursfunctieCode> .
 
-<http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000024> a <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>,
-     <http://www.w3.org/2004/02/skos/core#Concept>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "5ab0e9b8a3b2ca7c5e000024";
-   <http://www.w3.org/2004/02/skos/core#prefLabel> "Ocmw-raadslid";
-   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursfunctieCode> .
-
-<http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000025> a <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>,
-     <http://www.w3.org/2004/02/skos/core#Concept>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "5ab0e9b8a3b2ca7c5e000025";
-   <http://www.w3.org/2004/02/skos/core#prefLabel> "Ocmw-voorzitter";
-   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursfunctieCode> .
-
 <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/855489b9-b584-4f34-90b2-39aea808cd9f> a <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>,
      <http://www.w3.org/2004/02/skos/core#Concept>;
    <http://mu.semte.ch/vocabularies/core/uuid> "855489b9-b584-4f34-90b2-39aea808cd9f";
@@ -195,4 +183,10 @@
      <http://www.w3.org/2004/02/skos/core#Concept>;
    <http://mu.semte.ch/vocabularies/core/uuid> "d7c00cd1-baf1-4346-83c0-6796c0bedd84";
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Financieel directeur-coördinator";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursfunctieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursfunctieCode/d7c00cd1-baf1-4346-83c0-6796c0bedd85> a <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "d7c00cd1-baf1-4346-83c0-6796c0bedd85";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Gouverneur";
    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursfunctieCode> .
