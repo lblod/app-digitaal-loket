@@ -30,4 +30,5 @@
 (add-prefix "bbcdr" "http://mu.semte.ch/vocabularies/ext/bbcdr/")
 (add-prefix "validation" "http://mu.semte.ch/vocabularies/validation/")
 (add-prefix "toezicht" "http://mu.semte.ch/vocabularies/ext/supervision/")
+(add-prefix "toezichtReport" "http://mu.semte.ch/vocabularies/ext/supervision/reporting/")
 (add-prefix "nmo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#")

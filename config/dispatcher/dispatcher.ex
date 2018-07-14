@@ -204,6 +204,14 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/form-solutions/"
   end
 
+  get "/toezicht-reports/*path" do
+    Proxy.forward conn, path, "http://resource/toezicht-reports/"
+  end
+
+  get "/rapporten/*path" do
+    Proxy.forward conn, path, "http://filehost/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

@@ -165,3 +165,22 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  toezichtreporting:
+    image: lblod/toezicht-inzending-reporting-service:0.1.0
+    volumes:
+      - ./data/toezicht-reports:/data/output
+    links:
+      - virtuoso:database
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  filehost:
+    image: nginx:1.15
+    volumes:
+      - ./data/toezicht-reports:/data/toezicht
+      - ./config/filehost:/etc/nginx/conf.d
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging

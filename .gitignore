@@ -1,6 +1,7 @@
 # Virtuoso files /data/db
 /data/db/*
 /data/exports/*
+/data/toezicht-reports/*
 !/data/db/virtuoso.ini
 !/data/db/toLoad
 !/data/db/toLoad/*
