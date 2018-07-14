@@ -77,7 +77,10 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://www.w3.org/ns/org#Role",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
+                        "http://mu.semte.ch/vocabularies/ext/FormSolution"
                       ]
                     } },
                   %GraphSpec{
@@ -211,7 +214,6 @@ defmodule Acl.UserGroups.Config do
 
 
       # // CLEANUP
-      # TODO: enable cleanup when services don't need application graph any longer
       #
       %GraphCleanup{
         originating_graph: "http://mu.semte.ch/application",
