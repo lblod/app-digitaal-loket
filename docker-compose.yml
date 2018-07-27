@@ -126,7 +126,7 @@ services:
     restart: always
     logging: *default-logging
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.2.2
+    image: lblod/package-bbcdr-rapporten-service:0.2.3
     labels:
       - "logging=true"
     volumes:
