@@ -39,7 +39,7 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:latest
+    image: semtech/mu-authorization:0.2.0
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
     volumes:
@@ -83,7 +83,7 @@ services:
   resource:
     labels:
       - "logging=true"
-    image: semtech/mu-cl-resources:latest
+    image: semtech/mu-cl-resources:1.17.0
     volumes:
       - ./config/resources:/config
     restart: always
