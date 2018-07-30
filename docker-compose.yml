@@ -9,7 +9,7 @@ x-logging:
   
 services:
   loket:
-    image: lblod/frontend-loket:0.5.1
+    image: lblod/frontend-loket:0.5.2
     links:
       - identifier:backend
     restart: always
