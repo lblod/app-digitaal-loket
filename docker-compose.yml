@@ -6,7 +6,7 @@ x-logging:
   options:
     max-size: "10m"
     max-file: "3"
-  
+
 services:
   loket:
     image: lblod/frontend-loket:0.5.3
@@ -126,7 +126,7 @@ services:
     restart: always
     logging: *default-logging
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.2.3
+    image: lblod/package-bbcdr-rapporten-service:0.2.4
     labels:
       - "logging=true"
     volumes:
