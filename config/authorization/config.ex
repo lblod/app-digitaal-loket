@@ -77,10 +77,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://www.w3.org/ns/org#Role",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-                        "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
-                        "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
-                        "http://mu.semte.ch/vocabularies/ext/FormSolution"
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
                       ]
                     } },
                   %GraphSpec{
@@ -97,10 +94,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                        "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
-                        "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
-                        "http://mu.semte.ch/vocabularies/ext/FormSolution"
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
                     } } ] },
 
@@ -197,11 +191,19 @@ defmodule Acl.UserGroups.Config do
                       ] } } ] },
 
       # // TOEZICHT
-      # %GroupSpec{
-      #   name: "o-toez-rwf",
-      #   useage: [:read, :write, :read_for_write],
-      #   access: access_by_role( "LoketLB-toezichtGebruiker" ),
-      #   graphs: [ ] },
+      %GroupSpec{
+        name: "o-toez-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-toezichtGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
+                        "http://mu.semte.ch/vocabularies/ext/FormSolution"
+                      ] } } ] },
+
 
       # // USER HAS NO DATA
       # this was moved to org instead.
