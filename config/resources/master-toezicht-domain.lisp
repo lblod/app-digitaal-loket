@@ -134,12 +134,3 @@
                                       :as "inzending-voor-toezicht"))
   :resource-base (s-url "http://data.lblod.info/form-solutions/")
   :on-path "form-solutions")
-
-(define-resource toezicht-report ()
-  :class (s-prefix "toezichtReport:Report")
-  :properties `((:filename :string ,(s-prefix "nfo:filename"))
-                (:format :string ,(s-prefix "dct:format"))
-                (:filesize :number ,(s-prefix "nfo:fileSize"))
-                (:created :datetime ,(s-prefix "dct:created")))
-  :resource-base (s-url "http://data.lblod.info/id/toezicht-reports/")
-  :on-path "toezicht-reports")

@@ -176,10 +176,11 @@ services:
     restart: always
     logging: *default-logging
   filehost:
-    image: nginx:1.15
+    image: nginx:1.15.2
     volumes:
-      - ./data/toezicht-reports:/data/toezicht
-      - ./config/filehost:/etc/nginx/conf.d
+      - ./config/filehost/nginx.conf:/etc/nginx/nginx.conf
+      - ./config/filehost/conf.d:/etc/nginx/conf.d
+      - ./data/files:/data:ro
     restart: always
     labels:
       - "logging=true"
