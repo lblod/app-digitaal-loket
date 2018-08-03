@@ -16,14 +16,6 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
-  admin:
-    image: lblod/frontend-loket-admin:0.3.3
-    links:
-      - identifier:backend
-    restart: always
-    labels:
-      - "logging=true"
-    logging: *default-logging
   identifier:
     image: semtech/mu-identifier:1.4.0
     restart: always
