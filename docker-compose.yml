@@ -97,12 +97,6 @@ services:
       MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
     restart: always
     logging: *default-logging
-  mocklogin:
-    image: lblod/mock-login-service:0.3.1
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   validation:
     image: semtech/mu-validation-service:0.3.0
     labels:
