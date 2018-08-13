@@ -75,7 +75,7 @@ services:
   resource:
     labels:
       - "logging=true"
-    image: semtech/mu-cl-resources:1.17.0
+    image: semtech/mu-cl-resources:1.17.1
     volumes:
       - ./config/resources:/config
     restart: always
