@@ -204,6 +204,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/FormSolution"
                       ] } } ] },
 
+
       # // USER HAS NO DATA
       # this was moved to org instead.
       # perhaps move some elements to public when needed for demo
@@ -211,7 +212,6 @@ defmodule Acl.UserGroups.Config do
 
 
       # // CLEANUP
-      # TODO: enable cleanup when services don't need application graph any longer
       #
       %GraphCleanup{
         originating_graph: "http://mu.semte.ch/application",

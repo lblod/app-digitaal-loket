@@ -139,7 +139,10 @@
   :class (s-prefix "person:Person")
   :properties `((:achternaam :string ,(s-prefix "foaf:familyName"))
                 (:alternatieve-naam :string ,(s-prefix "foaf:name"))
-                (:gebruikte-voornaam :string ,(s-prefix "persoon:gebruikteVoornaam")))
+                (:gebruikte-voornaam :string ,(s-prefix "persoon:gebruikteVoornaam"))
+;; TO BE REMOVED SEE:  LBLOD-615
+                (:verified-mandaten :boolean ,(s-prefix "ext:verifiedMandaten")))
+
   :has-many `((mandataris :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
                           :inverse t
                           :as "is-aangesteld-als")

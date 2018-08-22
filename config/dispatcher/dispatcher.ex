@@ -170,6 +170,10 @@ defmodule Dispatcher do
   ###############################################################
   # master-toezicht-domain.lisp
   ###############################################################
+  get "/toezicht/bestanden/*path" do
+    Proxy.forward conn, path, "http://filehost/"
+  end
+
   match "/inzendingen-voor-toezicht/*path" do
     Proxy.forward conn, path, "http://cache/inzendingen-voor-toezicht/"
   end

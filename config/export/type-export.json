@@ -32,7 +32,7 @@
       "requiredProperties": [
         "mu:uuid"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?resource org:holds ?mandaat .\n        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .\n        ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n        ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n        ?bestuurseenheid besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "person:Person",
@@ -47,7 +47,22 @@
         "adms:identifier",
         "persoon:geslacht"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "          ?resource ^mandaat:isBestuurlijkeAliasVan ?mandataris .\n          ?mandataris org:holds ?mandaat .\n          ?mandaat ^org:hasPost ?bestuursorgaanInTijd .\n          ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n          ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n          ?bestuurseenheid besluit:classificatie ?classificatie .\n          FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) # District"
+    },
+    {
+      "type": "person:Person",
+            "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "foaf:familyName",
+        "persoon:gebruikteVoornaam",
+        "foaf:name",
+        "persoon:heeftGeboorte",
+        "adms:identifier",
+        "persoon:geslacht"
+      ],
+      "additionalFilter": "?resource ^org:heldBy ?pos .\n          ?pos ^org:hasPost ?bestuurseenheid .\n          ?bestuurseenheid besluit:classificatie ?classificatie .\n          FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "mandaat:TijdsgebondenEntiteit",
@@ -71,7 +86,7 @@
         "org:linkedTo",
         "org:memberOf"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?resource ^org:organisation ?lidmaatschap .\n        ?lidmaatschap ^org:hasMembership ?mandataris .\n        ?mandataris org:holds ?mandaat .\n        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .\n        ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n        ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n        ?bestuurseenheid besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "besluit:Bestuurseenheid",
@@ -88,7 +103,7 @@
         "org:heldBy",
         "org:hasPost"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?resource besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "prov:Location",
@@ -99,7 +114,7 @@
         "rdfs:label",
         "ext:werkingsgebiedNiveau"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "          ?resource ^besluit:werkingsgebied ?bestuurseenheid .\n          ?bestuurseenheid besluit:classificatie ?classificatie .\n          FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "besluit:Bestuursorgaan",
@@ -115,7 +130,23 @@
         "mandaat:isTijdspecialisatieVan",
         "org:hasPost"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?resource mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n          ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n          ?bestuurseenheid besluit:classificatie ?classificatie .\n          FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
+    },
+     {
+      "type": "besluit:Bestuursorgaan",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "mandaat:bindingEinde",
+        "mandaat:bindingStart",
+        "besluit:bestuurt",
+        "besluit:classificatie",
+        "mandaat:isTijdspecialisatieVan",
+        "org:hasPost"
+      ],
+      "additionalFilter": "?resource besluit:bestuurt ?bestuurseenheid .\n          ?bestuurseenheid besluit:classificatie ?classificatie .\n          FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "persoon:Geboorte",
@@ -136,7 +167,7 @@
         "org:organisation",
         "org:mumberDuring"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?resource ^org:hasMembership ?mandataris .\n        ?mandataris org:holds ?mandaat .\n        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .\n        ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n        ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n        ?bestuurseenheid besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "mandaat:Mandaat",
@@ -147,7 +178,7 @@
         "mandaat:aantalHouders",
         "org:role"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?resource ^org:hasPost ?bestuursorgaanInTijd .\n        ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n        ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n        ?bestuurseenheid besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>)) #District"
     },
     {
       "type": "ext:BestuursfunctieCode",
@@ -224,8 +255,7 @@
         "skos:prefLabel",
         "schema:contactPoint",
         "org:hasPost"
-      ],
-      "additionalFilter": ""
+      ]
     },
     {
       "type": "schema:PostalAddress",
@@ -251,8 +281,7 @@
       "optionalProperties": [
         "org:heldBy",
         "org:role"
-      ],
-      "additionalFilter": ""
+      ]
     },
     {
       "type": "org:Role",

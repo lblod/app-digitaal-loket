@@ -87,3 +87,45 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9";
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Voorzitter van het Bijzonder Comité voor de Sociale Dienst";
    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/1afce932-53c1-46d8-8aab-90dcc331e67d> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "1afce932-53c1-46d8-8aab-90dcc331e67d";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Politieraad";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "013cc838-173a-4657-b1ae-b00c048df943";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Raad van bestuur";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "b52094ff-21a2-4da8-8dbe-f513365d1528";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Algemene vergadering";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "5733254e-73ff-4844-8d43-7afb7ec726e8";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Directiecomité";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/17e76b36-64a1-4db1-8927-def3064b4bf1> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "17e76b36-64a1-4db1-8927-def3064b4bf1";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Regionaal bestuurscomité";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "0dbc70ec-6be9-4997-b8e1-11b6c0542382";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Bevoegd beslissingsorgaan";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
+
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a9e30e31-0cd2-4f4a-9352-545c5d43be83> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+     <http://www.w3.org/2004/02/skos/core#Concept>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "a9e30e31-0cd2-4f4a-9352-545c5d43be83";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Zoneraad";
+   <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
