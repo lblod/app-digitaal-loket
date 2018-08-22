@@ -27,15 +27,15 @@ DELETE WHERE {
 
 DELETE {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/197efc36-6258-4c5a-a626-a768b117c7e1> schema:url ?url .
+    <http://data.lblod.info/id/contactpunt/5c59a610-2b97-481f-b325-3716ca9b9f1d> schema:url ?url .
   }
 } INSERT {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/197efc36-6258-4c5a-a626-a768b117c7e1> schema:url <http://www.dilsen-stokkem.be> .
+    <http://data.lblod.info/id/contactpunt/5c59a610-2b97-481f-b325-3716ca9b9f1d> schema:url <http://www.dilsen-stokkem.be> .
   }
 } WHERE {
   GRAPH ?g {
-    <http://data.lblod.info/id/contactpunt/197efc36-6258-4c5a-a626-a768b117c7e1> a schema:PostalAddress ;
+    <http://data.lblod.info/id/contactpunt/5c59a610-2b97-481f-b325-3716ca9b9f1d> a schema:PostalAddress ;
       schema:url ?url .
   }
 }
