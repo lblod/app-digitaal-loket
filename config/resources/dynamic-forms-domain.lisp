@@ -19,9 +19,19 @@
                 (:options :string ,(s-prefix "ext:string"))
                 (:identifier :string ,(s-prefix "adms:identifier")))
   :has-many `((dynamic-subform :via ,(s-prefix "ext:dynamicSubforms")
-                               :as "dynamic-subforms"))
+                               :as "dynamic-subforms")
+              (input-state :via ,(s-prefix "ext:inputStates")
+                           :as "input-states"))
   :resource-base (s-url "http://data.lblod.info/form-inputs/")
   :on-path "form-inputs")
+
+(define-resource input-state ()
+  :class (s-prefix "ext:InputState")
+  :properties `((:validation-name :string ,(s-prefix "ext:validationName"))
+                (:state-name :string ,(s-prefix "ext:stateName")))
+
+  :resource-base (s-url "http://data.lblod.info/input-states/")
+  :on-path "input-states")
 
 (define-resource dynamic-subform ()
   :class (s-prefix "ext:DynamicSubform")

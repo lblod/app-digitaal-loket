@@ -167,6 +167,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/dynamic-subforms/"
   end
 
+  match "/input-states/*path" do
+    Proxy.forward conn, path, "http://cache/input-states/"
+  end
+
   ###############################################################
   # master-toezicht-domain.lisp
   ###############################################################
