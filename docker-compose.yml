@@ -81,12 +81,13 @@ services:
     restart: always
     logging: *default-logging
   login:
-    image: lblod/acmidm-login-service:0.2.2
+    image: lblod/acmidm-login-service:0.3.0
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
       MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lblod.info/authorization/callback"
       MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
+      DEBUG_LOG_TOKENSETS: "true"
     labels:
       - "logging=true"
     restart: always
@@ -108,13 +109,13 @@ services:
     restart: always
     logging: *default-logging
   createreports:
-    image: lblod/create-bbcdr-rapporten-service:0.4.0
+    image: lblod/create-bbcdr-rapporten-service:0.5.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   packagereports:
-    image: lblod/package-bbcdr-rapporten-service:0.2.4
+    image: lblod/package-bbcdr-rapporten-service:0.3.0
     volumes:
       - ./data/files:/data/files
     environment:
@@ -124,7 +125,7 @@ services:
     restart: always
     logging: *default-logging
   deliverreports:
-    image: lblod/deliver-bbcdr-rapporten-service:0.2.2
+    image: lblod/deliver-bbcdr-rapporten-service:0.3.0
     volumes:
       - ./data/files:/data/files
     environment:
@@ -134,13 +135,13 @@ services:
     restart: always
     logging: *default-logging
   dbcleanup:
-    image: lblod/db-cleanup-service:0.2.0
+    image: lblod/db-cleanup-service:0.3.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   export:
-    image: lblod/mandaten-download-generator-service:0.2.0
+    image: lblod/mandaten-download-generator-service:0.3.0
     links:
       - virtuoso:database
     environment:
@@ -154,7 +155,7 @@ services:
     restart: always
     logging: *default-logging
   toezichtreporting:
-    image: lblod/toezicht-inzending-reporting-service:0.2.1
+    image: lblod/toezicht-inzending-reporting-service:0.3.0
     volumes:
       - ./data/toezicht-reports:/data/output
     links:
