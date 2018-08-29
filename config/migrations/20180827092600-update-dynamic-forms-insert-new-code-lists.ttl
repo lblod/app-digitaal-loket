@@ -9,39 +9,39 @@
 
 <http://data.lblod.info/DecisionType/02e210746b795a80ec114d09d5f372cd77be01b5f813776e09409c6044d39ef6> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "02e210746b795a80ec114d09d5f372cd77be01b5f813776e09409c6044d39ef6";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Rechtspositieregeling (RPR)" .
 
 <http://data.lblod.info/DecisionType/046218970f7311789b9cb8ed8d3421e9abd0216e220df3686e739264899def7a> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "046218970f7311789b9cb8ed8d3421e9abd0216e220df3686e739264899def7a";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit overruling visum" .
 
 <http://data.lblod.info/DecisionType/072413568f428f8490f55729f8e577979fcb9a28c4fc0727fbf539677bef1dce> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "072413568f428f8490f55729f8e577979fcb9a28c4fc0727fbf539677bef1dce";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Andere opgevraagde documenten BBC-beleidsrapporten" .
 
 <http://data.lblod.info/DecisionType/085dfaecd6d4aa70d6ccd3df85e17efa50a77edea59264d2ce7010728aea6760> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "085dfaecd6d4aa70d6ccd3df85e17efa50a77edea59264d2ce7010728aea6760";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Herschikking leningen" .
 
 <http://data.lblod.info/DecisionType/14e2a8eeab99d33914a408cff40567840dc8abc68edfef5754d02acdf72241c2> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -65,12 +65,12 @@
 
 <http://data.lblod.info/DecisionType/20e9d3a253e07d194238e8724b3ecce73830d370e3fc9e4114d7cbe9367c77ef> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "20e9d3a253e07d194238e8724b3ecce73830d370e3fc9e4114d7cbe9367c77ef";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000004>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000004>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Belasting of retributie" .
 
 <http://data.lblod.info/DecisionType/216b8dc9cccfd5a89365a48b391a9c2701b209a893662bb6abb9fe57ad1a9492> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -79,13 +79,13 @@
 
 <http://data.lblod.info/DecisionType/26697366c439cac0fd35581416baffec2368d765d61888bfb4bafd22ddbc8b33> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "26697366c439cac0fd35581416baffec2368d765d61888bfb4bafd22ddbc8b33";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Meerjarenplan(aanpassing)" .
 
 <http://data.lblod.info/DecisionType/2fd8c95a99d501b0a69947bd74e76265c46c6a3aca48b49da5ed656398e56fa6> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -108,24 +108,24 @@
 
 <http://data.lblod.info/DecisionType/3f305e68d741ebf3effca57aaca6737c869b358a6e7ecd5d7bc42be617958fc8> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "3f305e68d741ebf3effca57aaca6737c869b358a6e7ecd5d7bc42be617958fc8";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000004>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000004>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Rechtspositieregeling" .
 
 <http://data.lblod.info/DecisionType/46b254008bbca1354e632dc40cf550c6b313e523799cafd7200a48a19e09249f> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "46b254008bbca1354e632dc40cf550c6b313e523799cafd7200a48a19e09249f";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/a3922c6d-425b-474f-9a02-ffb71a436bfc>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/ea446861-2c51-45fa-afd3-4e4a37b71562>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000004>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/a3922c6d-425b-474f-9a02-ffb71a436bfc>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluitenlijst" .
 
 <http://data.lblod.info/DecisionType/4c7e8ce005e798d980ad0b7548b55a461cb6983c18eafbbb5e5cae617aae2e3d> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -152,8 +152,8 @@
 
 <http://data.lblod.info/DecisionType/745976e4387055028197a168132d2776b625fff6eb7df85a6791d7fd6154ba19> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "745976e4387055028197a168132d2776b625fff6eb7df85a6791d7fd6154ba19";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Lening ter sanering financiën" .
 
@@ -168,13 +168,13 @@
 
 <http://data.lblod.info/DecisionType/80536574a0ec8ea88685510b713aa566a5f16cfd575fabd8f7943bccaaad00e4> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "80536574a0ec8ea88685510b713aa566a5f16cfd575fabd8f7943bccaaad00e4";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Budget" .
 
 <http://data.lblod.info/DecisionType/8080ca54474be408fe1d952f2ec08e8087e0630460d5e5cc0163cac35bda8b7d> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -183,8 +183,10 @@
 
 <http://data.lblod.info/DecisionType/898539285cb768813b1078651adc0c31c057423dbf421e254c5ded013a436284> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "898539285cb768813b1078651adc0c31c057423dbf421e254c5ded013a436284";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Toetreding tot andere rechtspersoon" .
 
 <http://data.lblod.info/DecisionType/99f219a6330a3a812a13b3c92ed429fc418a3e4d3e06d13ac9b56724b19ced9b> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -193,14 +195,14 @@
 
 <http://data.lblod.info/DecisionType/9ce1fbfa68b14a5599b266f0e0211bf34b6be9d3792e4ee4a893de6525bd1331> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "9ce1fbfa68b14a5599b266f0e0211bf34b6be9d3792e4ee4a893de6525bd1331";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting van of deelname in EVA" .
 
 <http://data.lblod.info/DecisionType/a6f91929f3d9625991863c2fec4f6a4fe4287753eaefb901faaaa61002ba378a> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "a6f91929f3d9625991863c2fec4f6a4fe4287753eaefb901faaaa61002ba378a";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Wijziging statuten autonoom bedrijf" .
 
 <http://data.lblod.info/DecisionType/b1f2b7391aa9e4a04871186973aff527ab7abbc934eb2a5b53d1ad9d6f3475ad> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -213,8 +215,8 @@
 
 <http://data.lblod.info/DecisionType/c52ff4c14694c22c55dcf01b3f30b5dc00bc8b264260488b2d14de80953964be> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "c52ff4c14694c22c55dcf01b3f30b5dc00bc8b264260488b2d14de80953964be";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting autonoom bedrijf" .
 
 <http://data.lblod.info/DecisionType/c689378d878f32298e5177db67ba4c70f1c2e4d7848ea0f5368926c8390136e3> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -233,11 +235,11 @@
 
 <http://data.lblod.info/DecisionType/cfc9ce299466efd1dfa7a662ecca1c0eb08e113ca4e1848ec93b5a547b987f5f> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "cfc9ce299466efd1dfa7a662ecca1c0eb08e113ca4e1848ec93b5a547b987f5f";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit overruling betaling" .
 
 <http://data.lblod.info/DecisionType/d163e84639000eaa85c12ca42be19ee27c0736fb5c44af23379fa6cc04a762be> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -247,26 +249,27 @@
 
 <http://data.lblod.info/DecisionType/d68c36802386c988df798ed577b96d8e0f010441f74628f4d2dbd3196c1c6ac3> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "d68c36802386c988df798ed577b96d8e0f010441f74628f4d2dbd3196c1c6ac3";
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Oprichting ocmw-vereniging" .
 
 <http://data.lblod.info/DecisionType/d6e90eb6e3ceda4f9a47b214b3ab47274670d3621f34bf8984f4c7d99f97dcc2> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "d6e90eb6e3ceda4f9a47b214b3ab47274670d3621f34bf8984f4c7d99f97dcc2";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Jaarrekening" .
 
 <http://data.lblod.info/DecisionType/e8a8c4bde18bdd0b00027bdbcff116f3a4992c42fee5ce383366c5b98660175a> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "e8a8c4bde18bdd0b00027bdbcff116f3a4992c42fee5ce383366c5b98660175a";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Dwingende en onvoorziene kosten" .
 
 <http://data.lblod.info/DecisionType/e95eb08daa9892357e52914596cf77945c4a3086d850344ed17c80c96b9686a7> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
@@ -286,14 +289,13 @@
 
 <http://data.lblod.info/DecisionType/f1befb94c7f074a34d1e2b594141e6e53ce63b7c65a349885d1026779df581ed> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "f1befb94c7f074a34d1e2b594141e6e53ce63b7c65a349885d1026779df581ed";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit over budget AGB" .
 
 <http://data.lblod.info/DecisionType/f4f2380eb6f499681562c924867bfaec6e3a688490df10fe57cb29aa11a79965> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
    <http://mu.semte.ch/vocabularies/core/uuid> "f4f2380eb6f499681562c924867bfaec6e3a688490df10fe57cb29aa11a79965";
-   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>;
+   <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Besluit i.v.m. financieel document eredienstbestuur" .
 
 <http://data.lblod.info/DecisionType/f7f84bbbe90540a35531c6a4eb83e180f352ec5b90e81d6264ed86e4bc81c161> a <http://mu.semte.ch/vocabularies/ext/supervision/DecisionType>;
