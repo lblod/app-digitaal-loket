@@ -81,7 +81,7 @@ services:
     restart: always
     logging: *default-logging
   login:
-    image: lblod/acmidm-login-service:0.2.2
+    image: lblod/acmidm-login-service:0.2.3
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
@@ -171,3 +171,10 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
+  sink:
+    image: nginx:1.15.2
+    volumes:
+      - ./config/sink/sink.conf:/etc/nginx/conf.d/default.conf
+    restart: always
+    labels:
+      logging: true

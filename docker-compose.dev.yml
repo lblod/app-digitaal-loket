@@ -1,0 +1,46 @@
+version: '3.4'
+services:
+  proxy:
+    image: nginx:1.13
+    volumes:
+      - ./config/proxy:/etc/nginx/conf.d
+    ports:
+      - "443:443"
+  loket:
+    restart: "no"
+  identifier:
+    restart: "no"
+  dispatcher:
+    restart: "no"
+  database:
+    restart: "no"
+  virtuoso:
+    restart: "no"
+  migrations:
+    restart: "no"
+  cache:
+    restart: "no"
+  resource:
+    restart: "no"
+  login:
+    restart: "no"
+  validation:
+    restart: "no"
+  file:
+    restart: "no"
+  createreports:
+    restart: "no"
+  packagereports:
+    restart: "no"
+  deliverreports:
+    restart: "no"
+  dbcleanup:
+    restart: "no"
+  export:
+    restart: "no"
+  toezichtreporting:
+    restart: "no"
+  filehost:
+    restart: "no"
+  sink:
+    restart: "no"
