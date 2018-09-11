@@ -17,6 +17,8 @@ services:
   database:
     restart: "no"
   virtuoso:
+    ports:
+      - "8890:8890"
     restart: "no"
   migrations:
     restart: "no"
