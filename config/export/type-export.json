@@ -20,7 +20,7 @@
       "type": "mandaat:Mandataris",
       "optionalProperties": [
         "mandaat:start",
-        "mandaat:eind",
+        "mandaat:einde",
         "mandaat:rangorde",
         "mandaat:status",
         "mandaat:isBestuurlijkeAliasVan",
