@@ -155,7 +155,7 @@ services:
     restart: always
     logging: *default-logging
   toezichtreporting:
-    image: lblod/toezicht-inzending-reporting-service:0.3.1
+    image: lblod/toezicht-inzending-reporting-service:0.3.2
     volumes:
       - ./data/toezicht-reports:/data/output
     links:
