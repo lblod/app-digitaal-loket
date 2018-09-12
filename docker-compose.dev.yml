@@ -34,17 +34,17 @@ services:
     restart: "no"
   file:
     restart: "no"
-  createreports:
+  create-bbcdr:
     restart: "no"
-  packagereports:
+  package-bbcdr:
     restart: "no"
-  deliverreports:
+  deliver-bbcdr:
     restart: "no"
   dbcleanup:
     restart: "no"
   export:
     restart: "no"
-  toezichtreporting:
+  toezicht-reporting:
     restart: "no"
   filehost:
     restart: "no"

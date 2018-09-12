@@ -108,13 +108,13 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  createreports:
+  create-bbcdr:
     image: lblod/create-bbcdr-rapporten-service:0.5.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
-  packagereports:
+  package-bbcdr:
     image: lblod/package-bbcdr-rapporten-service:0.3.0
     volumes:
       - ./data/files:/data/files
@@ -124,7 +124,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  deliverreports:
+  deliver-bbcdr:
     image: lblod/deliver-bbcdr-rapporten-service:0.2.2
     volumes:
       - ./data/files:/data/files
@@ -154,7 +154,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  toezichtreporting:
+  toezicht-reporting:
     image: lblod/toezicht-inzending-reporting-service:0.3.2
     volumes:
       - ./data/toezicht-reports:/data/output

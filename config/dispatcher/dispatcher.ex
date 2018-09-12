@@ -130,7 +130,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://file/files/"
   end
   post "/bbcdr-reports/*path" do
-    Proxy.forward conn, path, "http://createreports/bbcdr-reports/"
+    Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end
   delete "/bbcdr-reports/*path" do
     Proxy.forward conn, path, "http://resource/bbcdr-reports/"
@@ -139,7 +139,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/bbcdr-reports/"
   end
   patch "/bbcdr-reports/*path" do
-    Proxy.forward conn, path, "http://createreports/bbcdr-reports/"
+    Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end
   post "/validation-executions/*path" do
     Proxy.forward conn, path, "http://validation/executions/"
