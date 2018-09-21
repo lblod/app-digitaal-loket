@@ -165,7 +165,7 @@ services:
     restart: always
     logging: *default-logging
   deliver-toezicht:
-    image: lblod/deliver-toezicht-dossier-service:latest
+    image: lblod/deliver-toezicht-dossier-service:0.1.0
     volumes:
       - ./data/files:/data/files
     environment:

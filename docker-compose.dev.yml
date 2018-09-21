@@ -44,6 +44,10 @@ services:
     restart: "no"
   export:
     restart: "no"
+  package-toezicht:
+    restart: "no"
+  deliver-toezicht:
+    restart: "no"
   toezicht-reporting:
     restart: "no"
   filehost:
