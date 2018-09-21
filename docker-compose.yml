@@ -125,7 +125,7 @@ services:
     restart: always
     logging: *default-logging
   deliver-bbcdr:
-    image: lblod/deliver-bbcdr-rapporten-service:0.2.2
+    image: lblod/deliver-bbcdr-rapporten-service:0.3.1
     volumes:
       - ./data/files:/data/files
     environment:
