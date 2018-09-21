@@ -154,6 +154,26 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  package-toezicht:
+    image: lblod/package-toezicht-dossier-service:0.1.0
+    volumes:
+      - ./data/files:/data/files
+    environment:
+      PACKAGE_CRON_PATTERN: '0 0 * * * *'
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  deliver-toezicht:
+    image: lblod/deliver-toezicht-dossier-service:latest
+    volumes:
+      - ./data/files:/data/files
+    environment:
+      PACKAGE_CRON_PATTERN: '0 0 * * * *'
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   toezicht-reporting:
     image: lblod/toezicht-inzending-reporting-service:0.3.3
     volumes:
