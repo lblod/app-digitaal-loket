@@ -28,7 +28,6 @@ INSERT {
     ?bestuurseenheid mu:uuid ?groupId .
  }
  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId, "/LoketLB-mandaatGebruiker")) as ?graph)
-  }
 }
 
 ;
@@ -47,7 +46,6 @@ INSERT {
     ?persoon persoon:heeftGeboorte ?geboorte .
   }
   ?geboorte ?geboorteP ?geboorteO .
-  }
 }
 
 ;
