@@ -45,7 +45,8 @@ INSERT {
 
   GRAPH <http://mu.semte.ch/graphs/public> {
     ?persoon persoon:heeftGeboorte ?geboorte .
-    ?geboorte ?geboorteP ?geboorteO .
+  }
+  ?geboorte ?geboorteP ?geboorteO .
   }
 }
 
