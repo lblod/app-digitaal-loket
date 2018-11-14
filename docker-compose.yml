@@ -155,7 +155,7 @@ services:
     restart: always
     logging: *default-logging
   package-toezicht:
-    image: lblod/package-toezicht-dossier-service:0.1.1
+    image: lblod/package-toezicht-dossier-service:0.1.2
     volumes:
       - ./data/files:/data/files
     environment:
