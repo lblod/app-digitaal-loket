@@ -215,20 +215,11 @@ defmodule Dispatcher do
   ###############################################################
   # master-messages-domain.lisp
   ###############################################################
-  get "/conversaties/*path" do
-    Proxy.forward conn, path, "http://resource/conversaties/"
-  end
-  post "/conversaties/*path" do
-    Proxy.forward conn, path, "http://resource/conversaties/"
-  end
-  put "/conversaties/*path" do
+  match "/conversaties/*path" do
     Proxy.forward conn, path, "http://resource/conversaties/"
   end
 
-  get "/berichten/*path" do
-    Proxy.forward conn, path, "http://resource/berichten/"
-  end
-  post "/berichten/*path" do
+  match "/berichten/*path" do
     Proxy.forward conn, path, "http://resource/berichten/"
   end
 

@@ -8,8 +8,7 @@
                     :as "berichten"))
   :resource-base (s-url "http://data.lblod.info/id/conversaties/")
   :features '(include-uri)
-  :on-path "conversaties"
-)
+  :on-path "conversaties")
 
 (define-resource bericht ()
   :class (s-prefix "schema:Message")
@@ -29,5 +28,4 @@
                     :as "bijlagen")
   :resource-base (s-url "http://data.lblod.info/id/berichten/")
   :features '(include-uri)
-  :on-path '"berichten"
-)
+  :on-path "berichten")
