@@ -212,6 +212,26 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/form-solutions/"
   end
 
+  ###############################################################
+  # master-messages-domain.lisp
+  ###############################################################
+  get "/conversaties/*path" do
+    Proxy.forward conn, path, "http://resource/conversaties/"
+  end
+  post "/conversaties/*path" do
+    Proxy.forward conn, path, "http://resource/conversaties/"
+  end
+  put "/conversaties/*path" do
+    Proxy.forward conn, path, "http://resource/conversaties/"
+  end
+
+  get "/berichten/*path" do
+    Proxy.forward conn, path, "http://resource/berichten/"
+  end
+  post "/berichten/*path" do
+    Proxy.forward conn, path, "http://resource/berichten/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
