@@ -25,7 +25,7 @@
                   ; :inverse t
                   ; :as "conversatie"))
   :has-many `((file :via ,(s-prefix "nie:hasPart")
-                    :as "bijlagen")
+                    :as "bijlagen"))
   :resource-base (s-url "http://data.lblod.info/id/berichten/")
   :features '(include-uri)
   :on-path "berichten")
