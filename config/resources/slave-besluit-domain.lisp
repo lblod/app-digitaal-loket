@@ -93,7 +93,9 @@
 
 (define-resource bestuurseenheid ()
   :class (s-prefix "besluit:Bestuurseenheid")
-  :properties `((:naam :string ,(s-prefix "skos:prefLabel")))
+  :properties `((:naam :string ,(s-prefix "skos:prefLabel"))
+                (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
+                (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties")))
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
