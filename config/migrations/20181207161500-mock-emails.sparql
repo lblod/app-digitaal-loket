@@ -2,9 +2,9 @@ INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     <http://data.lblod.info/id/mailboxes/1> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Mailbox>;
        <http://mu.semte.ch/vocabularies/core/uuid> "cf9cb7e4-9a00-4855-9ee0-e8e3bbeba9e9";
-       <fni:hasPart> <http://data.lblod.info/id/mail-folders/1>;
-       <fni:hasPart> <http://data.lblod.info/id/mail-folders/2>;
-       <fni:hasPart> <http://data.lblod.info/id/mail-folders/3>.
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/fni#hasPart> <http://data.lblod.info/id/mail-folders/1>;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/fni#hasPart> <http://data.lblod.info/id/mail-folders/2>;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/fni#hasPart> <http://data.lblod.info/id/mail-folders/3>.
 
     <http://data.lblod.info/id/mail-folders/1> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder>;
        <http://mu.semte.ch/vocabularies/core/uuid> "891c67e5-4719-47f8-aec2-d898ba2c09e8";
