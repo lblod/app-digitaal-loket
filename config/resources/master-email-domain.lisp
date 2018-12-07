@@ -11,7 +11,7 @@
   :class (s-prefix "nfo:Folder")
   :properties `((:name :string ,(s-prefix "nie:title"))
                 (:description :string ,(s-prefix "nie:description")))
-  :has-many `((mail :via ,(s-prefix "email:hasEmail");;hack, as mu-cl-resources doesn't support superclasses yet (http://oscaf.sourceforge.net/nmo.html#nmo:MailboxDataObject)
+  :has-many `((email :via ,(s-prefix "email:hasEmail");;hack, as mu-cl-resources doesn't support superclasses yet (http://oscaf.sourceforge.net/nmo.html#nmo:MailboxDataObject)
                     :as "emails")
              (folder :via ,(s-prefix "email:hasFolder");;hack, as mu-cl-resources doesn't support superclasses yet (http://oscaf.sourceforge.net/nmo.html#nmo:MailboxDataObject)
                     :as "folders"))
