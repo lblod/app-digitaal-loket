@@ -23,7 +23,10 @@ INSERT {
     ?lijst mandaat:behoortTot/mandaat:steltSamen ?bestuursorgaanInTijd.
   }
   GRAPH ?g {
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaanInTijd ?tijdspecialisatieVan ?bestuursorgaan .
+
+    VALUES ?tijdspecialisatieVan { mandaat:isTijdspecialisatieVan ext:isTijdspecialisatieVan }
+
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
     ?bestuurseenheid mu:uuid ?groupId .
  }
