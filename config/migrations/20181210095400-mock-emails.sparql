@@ -64,6 +64,33 @@ INSERT DATA {
        <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#receivedDate> "2018-12-08T09:10:00"^^xsd:dateTime;
        <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#inReplyTo> <http://data.lblod.info/id/emails/2>;
        <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isPartOf> <http://data.lblod.info/id/mail-folders/3>.
+       
+    <http://data.lblod.info/id/emails/4> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Email>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "9234286c-db7a-49a3-b7a5-46aab0e6f1a7";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#messageId> "19f5b61b-131c-4d84-90f8-b68968f615f6@test.be";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#messageFrom> "a@test.be";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#emailTo> "b@test.be";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#emailCc> "";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#messageSubject> "Notificatie: nieuw bericht";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#plainTextMessageContent> "Have a merry Christmas ...";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isRead> "false"^^xsd:boolean;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#sentDate> "2018-12-10T09:05:00"^^xsd:dateTime;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#receivedDate> "2018-12-10T09:10:00"^^xsd:dateTime;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isPartOf> <http://data.lblod.info/id/mail-folders/2>.
+       
+    <http://data.lblod.info/id/emails/5> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Email>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "d5dfb6c9-48b1-4820-8e5b-f2ebd5a65d4b";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#messageId> "124e6d24-09f0-46ba-b470-3bd5c7bff90d@test.be";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#messageFrom> "a@test.be";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#emailTo> "b@test.be";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#emailCc> "";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#messageSubject> "Notificatie: nieuw bericht";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#plainTextMessageContent> "... and a happy new year!";
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isRead> "false"^^xsd:boolean;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#sentDate> "2018-12-10T09:05:00"^^xsd:dateTime;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#receivedDate> "2018-12-10T09:10:00"^^xsd:dateTime;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#inReplyTo> <http://data.lblod.info/id/emails/4>;
+       <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isPartOf> <http://data.lblod.info/id/mail-folders/2>.
 
   }
 }
