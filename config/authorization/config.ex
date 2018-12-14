@@ -42,6 +42,8 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://schema.org/Message",
+                        "http://schema.org/Conversation",
                         "http://mu.semte.ch/vocabularies/validation/Execution",
                         "http://mu.semte.ch/vocabularies/validation/Validation",
                         "http://mu.semte.ch/vocabularies/validation/Error",
@@ -93,11 +95,12 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://schema.org/Message",
+                        "http://schema.org/Conversation",
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
                     } } ] },
-
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
         name: "org",
