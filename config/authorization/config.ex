@@ -205,7 +205,17 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution"
-                      ] } } ] },
+                      ] } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [ "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid" ],
+                      predicates: %NoPredicates{
+                        except: [
+                          "http://mu.semte.ch/vocabularies/ext/mailAdresVoorNotificaties",
+                          "http://mu.semte.ch/vocabularies/ext/wilMailOntvangen"
+                        ] }
+                    } } ] },
 
 
       # // USER HAS NO DATA
