@@ -15,5 +15,6 @@
 (read-domain-file "master-users-domain.lisp")
 (read-domain-file "master-validations-domain.lisp")
 (read-domain-file "master-files-domain.lisp")
-(read-domain-file "dynamic-forms-domain.lisp")
+(read-domain-file "master-dynamic-forms-domain.lisp")
 (read-domain-file "master-toezicht-domain.lisp")
+(read-domain-file "master-bbcdr-domain.lisp")

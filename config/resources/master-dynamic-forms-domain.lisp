@@ -29,7 +29,6 @@
   :class (s-prefix "ext:InputState")
   :properties `((:validation-name :string ,(s-prefix "ext:validationName"))
                 (:state-name :string ,(s-prefix "ext:stateName")))
-
   :resource-base (s-url "http://data.lblod.info/input-states/")
   :on-path "input-states")
 
