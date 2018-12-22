@@ -139,7 +139,7 @@
         "nfo:fileCreated",
         "nie:dataSource"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; nie:hasPart ?resource ."
     },
     {
       "type": "besluit:Bestuurseenheid",
@@ -188,7 +188,7 @@
         "foaf:firstName",
         "foaf:familyName"
       ],
-      "additionalFilter": ""
+      "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; ext:lastModifiedBy ?resource ."
     }    
   ]
 }
