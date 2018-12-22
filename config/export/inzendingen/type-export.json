@@ -43,7 +43,7 @@
         "ext:index",
         "ext:displayType",
         "dct:title",
-        "ext:string",
+        "ext:options",
         "adms:identifier",
         "ext:dynamicSubforms",
         "ext:inputStates"
@@ -105,7 +105,6 @@
         "toezicht:hasExtraTaxRates",
         "toezicht:agendaItemCount",
         "toezicht:sessionDate",
-        "dct:string",
         "toezicht:decisionDateOtherAdministration",
         "toezicht:decisionSummary",
         "toezicht:dateHandover",

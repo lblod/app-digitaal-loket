@@ -4,7 +4,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "aa5c87fc48b3b50278fc60947112783d41b60deec052c32c660169daed21b7ac";
    <http://mu.semte.ch/vocabularies/ext/displayType> "taxrates-input";
    <http://mu.semte.ch/vocabularies/ext/index> "8";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.taxRates" .
 
 <http://data.lblod.info/form-nodes/0ecb1654df3d058cf6a636237179e038a8dd65f4edaa3efdfd4d3b7f8311d354> a <http://mu.semte.ch/vocabularies/ext/FormNode>;
@@ -376,7 +376,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "1da56bdaaf3d3e483a9a659b773b1efa6eb6754895b3ff93694d97ba2c17cc55";
    <http://mu.semte.ch/vocabularies/ext/displayType> "taxrates-input";
    <http://mu.semte.ch/vocabularies/ext/index> "9";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.taxRates" .
 
 <http://data.lblod.info/form-inputs/21946d5b4acd4ca8a03e4470db27740070b9c77b09b9e3b24c3757319f8a1543> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -385,7 +385,7 @@
    <http://mu.semte.ch/vocabularies/ext/displayType> "date";
    <http://mu.semte.ch/vocabularies/ext/index> "13";
    <http://mu.semte.ch/vocabularies/ext/inputStates> <http://data.lblod.info/input-states/8ad52153c4e19417b45a64070d5c72d562ab001590107b0c621f2dd379a88dc5>;
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.decisionDateOtherAdministration" .
 
 <http://data.lblod.info/form-inputs/5e50a9bf41dce2d0aa1b8804627402e59e438ba350e66d2e4f9ab2f32df0c41c> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -393,7 +393,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "5e50a9bf41dce2d0aa1b8804627402e59e438ba350e66d2e4f9ab2f32df0c41c";
    <http://mu.semte.ch/vocabularies/ext/displayType> "dynamic-select";
    <http://mu.semte.ch/vocabularies/ext/index> "5";
-   <http://mu.semte.ch/vocabularies/ext/string> """{
+   <http://mu.semte.ch/vocabularies/ext/options> """{
         "queryModel": "toezicht-nomenclature",
         "displayProperty": "label",
         "filter": {
@@ -410,7 +410,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "6fc63092d04389e7722432bf04268da28322af22a6948b0282f8c21a0a1a9bc8";
    <http://mu.semte.ch/vocabularies/ext/displayType> "checkbox";
    <http://mu.semte.ch/vocabularies/ext/index> "10";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.hasExtraTaxRates" .
 
 <http://data.lblod.info/form-inputs/8f96334fbbd0dfba66e900ff6455cae10738c5e51304c8e5409cc153500a50ae> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -419,7 +419,7 @@
    <http://mu.semte.ch/vocabularies/ext/displayType> "dynamic-select";
    <http://mu.semte.ch/vocabularies/ext/index> "4";
    <http://mu.semte.ch/vocabularies/ext/inputStates> <http://data.lblod.info/input-states/8ad52153c4e19417b45a64070d5c72d562ab001590107b0c621f2dd379a88dc5>;
-   <http://mu.semte.ch/vocabularies/ext/string> """{
+   <http://mu.semte.ch/vocabularies/ext/options> """{
         "queryModel": "toezicht-tax-type",
         "displayProperty": "label",
         "filter": {
@@ -436,7 +436,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "974f89872b8eac585ef902490c34589724e01971bfebaf046394b20920791881";
    <http://mu.semte.ch/vocabularies/ext/displayType> "date";
    <http://mu.semte.ch/vocabularies/ext/index> "7";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.endDate" .
 
 <http://data.lblod.info/form-inputs/e012ba144db22e5e7bea2b62718740a31569752f00f06515d65e65492783c12a> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -444,7 +444,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "e012ba144db22e5e7bea2b62718740a31569752f00f06515d65e65492783c12a";
    <http://mu.semte.ch/vocabularies/ext/displayType> "date";
    <http://mu.semte.ch/vocabularies/ext/index> "6";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.dateOfEntryIntoForce" .
 
 <http://data.lblod.info/form-inputs/ef83b4e5e845f14336f388ff390f47c354c584c6747b0e741015ed73653ba27f> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1751,7 +1751,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "3022a024193d24753290aabaa51add28d543d5fb8374b53eb9672b501c05ba27";
    <http://mu.semte.ch/vocabularies/ext/displayType> "input";
    <http://mu.semte.ch/vocabularies/ext/index> "15";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.agendaItemCount" .
 
 <http://data.lblod.info/form-inputs/5bb7034c52e2f554df8d2f7dab65bb94c55ce56270a1c8a09766403e0b1c6fee> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1759,7 +1759,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "5bb7034c52e2f554df8d2f7dab65bb94c55ce56270a1c8a09766403e0b1c6fee";
    <http://mu.semte.ch/vocabularies/ext/displayType> "dynamic-select";
    <http://mu.semte.ch/vocabularies/ext/index> "16";
-   <http://mu.semte.ch/vocabularies/ext/string> """{
+   <http://mu.semte.ch/vocabularies/ext/options> """{
         "queryModel": "toezicht-document-authenticity-type",
         "displayProperty": "label",
         "filter": {
@@ -1782,7 +1782,7 @@
    <http://mu.semte.ch/vocabularies/ext/displayType> "input";
    <http://mu.semte.ch/vocabularies/ext/index> "14";
    <http://mu.semte.ch/vocabularies/ext/inputStates> <http://data.lblod.info/input-states/8ad52153c4e19417b45a64070d5c72d562ab001590107b0c621f2dd379a88dc5>;
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.temporalCoverage" .
 
 <http://data.lblod.info/form-inputs/2d9797a6a9563cfe96ca1bbe6adce55fb373de4238e6ff38946b6f4d0132c716> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1790,7 +1790,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "2d9797a6a9563cfe96ca1bbe6adce55fb373de4238e6ff38946b6f4d0132c716";
    <http://mu.semte.ch/vocabularies/ext/displayType> "input";
    <http://mu.semte.ch/vocabularies/ext/index> "12";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.businessIdentifier" .
 
 <http://data.lblod.info/form-inputs/637042ade236619b66e8488f90c017dfa37e407719748308d73d109808b47b85> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1799,7 +1799,7 @@
    <http://mu.semte.ch/vocabularies/ext/displayType> "input";
    <http://mu.semte.ch/vocabularies/ext/index> "11";
    <http://mu.semte.ch/vocabularies/ext/inputStates> <http://data.lblod.info/input-states/8ad52153c4e19417b45a64070d5c72d562ab001590107b0c621f2dd379a88dc5>;
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.businessName" .
 
 <http://data.lblod.info/form-inputs/7540b5e08b00a43ee251bd7462058297ad5f97dba0323b1ae0d8a0fc195f4cbc> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1808,7 +1808,7 @@
    <http://mu.semte.ch/vocabularies/ext/displayType> "toezicht-bestuursorgaan-select";
    <http://mu.semte.ch/vocabularies/ext/index> "1";
    <http://mu.semte.ch/vocabularies/ext/inputStates> <http://data.lblod.info/input-states/8ad52153c4e19417b45a64070d5c72d562ab001590107b0c621f2dd379a88dc5>;
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.bestuursorgaan" .
 
 <http://data.lblod.info/form-inputs/227b7e8d4d6482605fc01fe63793d10cd0e2ee6d20bb1f0fb25408d8607da9c5> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1817,7 +1817,7 @@
    <http://mu.semte.ch/vocabularies/ext/displayType> "date";
    <http://mu.semte.ch/vocabularies/ext/index> "2";
    <http://mu.semte.ch/vocabularies/ext/inputStates> <http://data.lblod.info/input-states/8ad52153c4e19417b45a64070d5c72d562ab001590107b0c621f2dd379a88dc5>;
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.sessionDate" .
 
 <http://data.lblod.info/form-inputs/56378586893139ebd9ff3a4e97591717eaa9883d0da9975923c72f00df0d6a4d> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1825,7 +1825,7 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "56378586893139ebd9ff3a4e97591717eaa9883d0da9975923c72f00df0d6a4d";
    <http://mu.semte.ch/vocabularies/ext/displayType> "text";
    <http://mu.semte.ch/vocabularies/ext/index> "17";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.remark" .
 
 <http://data.lblod.info/form-inputs/59520be8305540fff3230f1bcec59790659f9cc5fa442f5155be772e4ce586a1> a <http://mu.semte.ch/vocabularies/ext/FormInput>;
@@ -1833,5 +1833,5 @@
    <http://mu.semte.ch/vocabularies/core/uuid> "59520be8305540fff3230f1bcec59790659f9cc5fa442f5155be772e4ce586a1";
    <http://mu.semte.ch/vocabularies/ext/displayType> "text";
    <http://mu.semte.ch/vocabularies/ext/index> "3";
-   <http://mu.semte.ch/vocabularies/ext/string> "";
+   <http://mu.semte.ch/vocabularies/ext/options> "";
    <http://www.w3.org/ns/adms#identifier> "inzendingVoorToezicht.description" .

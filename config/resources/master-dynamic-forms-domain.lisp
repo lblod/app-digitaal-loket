@@ -16,7 +16,7 @@
   :properties `((:index :number ,(s-prefix "ext:index"))
                 (:display-type :string ,(s-prefix "ext:displayType"))
                 (:label :string ,(s-prefix "dct:title"))
-                (:options :string ,(s-prefix "ext:string"))
+                (:options :string ,(s-prefix "ext:options"))
                 (:identifier :string ,(s-prefix "adms:identifier")))
   :has-many `((dynamic-subform :via ,(s-prefix "ext:dynamicSubforms")
                                :as "dynamic-subforms")
