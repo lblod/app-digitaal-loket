@@ -1,0 +1,195 @@
+{
+  "prefixes": {
+    "mandaat": "http://data.vlaanderen.be/ns/mandaat#",
+    "besluit": "http://data.vlaanderen.be/ns/besluit#",
+    "persoon": "http://data.vlaanderen.be/ns/persoon#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "regorg": "https://www.w3.org/ns/regorg#",
+    "person": "http://www.w3.org/ns/person#",
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "mu": "http://mu.semte.ch/vocabularies/core/",
+    "toezicht": "http://mu.semte.ch/vocabularies/ext/supervision/",
+    "dct": "http://purl.org/dc/terms/",
+    "nmo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#",
+    "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#",
+    "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
+    "dbpedia": "http://dbpedia.org/ontology/"
+  },
+  "types": [
+    {
+      "type": "ext:FormNode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "ext:typeMap",
+        "ext:formInput",
+        "ext:hasFormNode"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:FormInput",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "ext:index",
+        "ext:displayType",
+        "dct:title",
+        "ext:string",
+        "adms:identifier",
+        "ext:dynamicSubforms",
+        "ext:inputStates"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:InputState",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "ext:validationName",
+        "ext:stateName"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:DynamicSubform",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "ext:key",
+        "ext:matchKind",
+        "ext:value",
+        "ext:hasFormNode"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:FormSolution",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "ext:hasOwnerAsString",
+        "ext:hasForm",
+        "ext:hasInzendingVoorToezicht"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "toezicht:InzendingVoorToezicht",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "dct:created",
+        "dct:modified",
+        "nmo:sentDate",
+        "dct:description",
+        "ext:remark",
+        "toezicht:temporalCoverage",
+        "toezicht:businessIdentifier",
+        "toezicht:businessName",
+        "toezicht:dateOfEntryIntoForce",
+        "toezicht:endDate",
+        "toezicht:hasExtraTaxRates",
+        "toezicht:agendaItemCount",
+        "toezicht:sessionDate",
+        "dct:string",
+        "toezicht:decisionDateOtherAdministration",
+        "toezicht:decisionSummary",
+        "toezicht:dateHandover",
+        "toezicht:text",
+        "adms:status",
+        "ext:lastModifiedBy",
+        "dct:subject",
+        "dct:type",
+        "toezicht:decisionType",
+        "toezicht:decidedBy",
+        "toezicht:authenticityType",
+        "toezicht:accountAcceptanceStatus",
+        "toezicht:deliveryReportType",
+        "toezicht:fiscalPeriod",
+        "toezicht:nomenclature",
+        "toezicht:taxType",
+        "nie:hasPart",
+        "toezicht:taxRate"
+      ],
+      "additionalFilter": "?resource adms:status <http://data.lblod.info/document-statuses/verstuurd>"
+    },
+    {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "nfo:fileCreated",
+        "nie:dataSource"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "besluit:Bestuurseenheid",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "besluit:werkingsgebied",
+        "besluit:classificatie"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "besluit:Bestuursorgaan",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "mandaat:bindingEinde",
+        "mandaat:bindingStart",
+        "besluit:bestuurt",
+        "besluit:classificatie",
+        "mandaat:isTijdspecialisatieVan"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "prov:Location",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "rdfs:label",
+        "ext:werkingsgebiedNiveau"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "foaf:Person",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "foaf:firstName",
+        "foaf:familyName"
+      ],
+      "additionalFilter": ""
+    }    
+  ]
+}
