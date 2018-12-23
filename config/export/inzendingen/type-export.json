@@ -149,7 +149,8 @@
       "optionalProperties": [
         "skos:prefLabel",
         "besluit:werkingsgebied",
-        "besluit:classificatie"
+        "besluit:classificatie",
+        "ext:inProvincie"
       ],
       "additionalFilter": ""
     },
