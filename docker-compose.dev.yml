@@ -42,7 +42,9 @@ services:
     restart: "no"
   dbcleanup:
     restart: "no"
-  export:
+  export-mandaten:
+    restart: "no"
+  export-inzendingen:
     restart: "no"
   package-toezicht:
     restart: "no"
