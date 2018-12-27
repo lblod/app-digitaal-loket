@@ -1,3 +1,19 @@
+;; Association resource which should describe properties associated with the form to use
+;; now only 'validity period' is specified, but could be extended with specific bestuursorgaan/eenheid/etc..
+(define-resource inzending-voor-toezicht-form-version ()
+  :class (s-prefix "toezicht:InzendingVoorToezichtFormVersion")
+  :properties `((:start :date ,(s-prefix "toezicht:inzendingVoorToezichtFormVersionStart"))
+                (:end :date ,(s-prefix "toezicht:inzendingVoorToezichtFormVersionEnd"))
+                (:description :string ,(s-prefix "dct:description"))
+                )
+
+  :has-one `((form-node :via ,(s-prefix "toezicht:inzendingVoorToezichtFormVersionFormNode")
+                        :as "form-node"))
+
+  :resource-base (s-url "http://data.lblod.info/inzending-voor-toezicht-form-version/")
+  :features `(include-uri)
+  :on-path "inzending-voor-toezicht-form-versions")
+
 (define-resource inzending-voor-toezicht ()
   :class (s-prefix "toezicht:InzendingVoorToezicht") ;; subclass of nie:InformationElement > nfo:DataContainer
   :properties `((:created :datetime ,(s-prefix "dct:created"))
@@ -111,7 +127,9 @@
   :class (s-prefix "toezicht:DecisionType")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
   :has-many `((bestuurseenheid-classificatie-code :via ,(s-prefix "ext:decidableBy")
-                    :as "decidable-by"))
+                                                  :as "decidable-by")
+              (inzending-voor-toezicht-form-version :via ,(s-prefix "toezicht:formVersionScope")
+                                                    :as "form-version"))
   :resource-base (s-url "http://data.lblod.info/besluit-types")
   :features `(include-uri)
   :on-path "besluit-types")
