@@ -17,7 +17,9 @@
                 (:decision-summary :string ,(s-prefix "toezicht:decisionSummary"))
                 (:date-handover :date ,(s-prefix "toezicht:dateHandover"))
                 (:text :string ,(s-prefix "toezicht:text"))
+                (:date-publication-webapp :date ,(s-prefix "toezicht:datePublicationWebapp"))
                 )
+
   :has-one `((document-status :via ,(s-prefix "adms:status")
                               :as "status")
              (gebruiker :via ,(s-prefix "ext:lastModifiedBy")
