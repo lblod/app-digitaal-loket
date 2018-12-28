@@ -2,7 +2,7 @@
   :class (s-prefix "schema:Conversation")
   :properties `((:dossiernummer :string ,(s-prefix "schema:identifier"))
                 (:betreft :string ,(s-prefix "schema:about"))
-                (:type-communicatie :string ,(s-prefix "dct:type"))
+                (:type-communicatie :string ,(s-prefix "dct:type")) ;; TODO: this should come from a code-list, rather than a string
                 (:reactietermijn :string ,(s-prefix "schema:processingTime")))
   :has-many `((bericht :via ,(s-prefix "schema:hasPart")
                     :as "berichten"))
