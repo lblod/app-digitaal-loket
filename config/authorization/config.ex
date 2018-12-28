@@ -42,8 +42,6 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://schema.org/Message",
-                        "http://schema.org/Conversation",
                         "http://mu.semte.ch/vocabularies/validation/Execution",
                         "http://mu.semte.ch/vocabularies/validation/Validation",
                         "http://mu.semte.ch/vocabularies/validation/Error",
@@ -95,8 +93,6 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://schema.org/Message",
-                        "http://schema.org/Conversation",
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
@@ -205,6 +201,19 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution"
+                      ] } } ] },
+
+      # // MESSAGING CENTRE
+      %GroupSpec{
+        name: "o-messaging-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-berichtenGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://schema.org/Message",
+                        "http://schema.org/Conversation"
                       ] } },
                   %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
@@ -216,6 +225,7 @@ defmodule Acl.UserGroups.Config do
                           "http://mu.semte.ch/vocabularies/ext/wilMailOntvangen"
                         ] }
                     } } ] },
+
 
 
       # // USER HAS NO DATA
