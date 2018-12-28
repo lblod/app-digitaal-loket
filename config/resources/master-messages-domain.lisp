@@ -6,6 +6,8 @@
                 (:reactietermijn :string ,(s-prefix "schema:processingTime")))
   :has-many `((bericht :via ,(s-prefix "schema:hasPart")
                     :as "berichten"))
+  :has-one `((bericht :via ,(s-prefix "ext:lastMessage")
+                      :as "laatste-bericht"))
   :resource-base (s-url "http://data.lblod.info/id/conversaties/")
   :features '(include-uri)
   :on-path "conversaties")
