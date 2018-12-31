@@ -21,7 +21,7 @@
 
 (define-resource file-address ()
   :class (s-prefix "ext:FileAddress")
-  :properties `((:address :url ,(s-prefix "ext:FileAddress")))
+  :properties `((:address :url ,(s-prefix "ext:fileAddress")))
   :resource-base (s-url "http://data.lblod.info/file-addresses/")
   :features `(no-pagination-defaults include-uri)
   :on-path "file-addresses")
