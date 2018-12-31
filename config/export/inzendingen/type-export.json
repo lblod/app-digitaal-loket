@@ -109,6 +109,7 @@
         "toezicht:decisionSummary",
         "toezicht:dateHandover",
         "toezicht:text",
+        "toezicht:datePublicationWebapp",
         "adms:status",
         "ext:lastModifiedBy",
         "dct:subject",
