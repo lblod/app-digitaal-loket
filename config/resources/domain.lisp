@@ -17,4 +17,6 @@
 (read-domain-file "master-files-domain.lisp")
 (read-domain-file "master-dynamic-forms-domain.lisp")
 (read-domain-file "master-toezicht-domain.lisp")
+(read-domain-file "master-messages-domain.lisp")
+(read-domain-file "master-email-domain.lisp")
 (read-domain-file "master-bbcdr-domain.lisp")

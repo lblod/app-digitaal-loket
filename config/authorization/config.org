@@ -51,6 +51,8 @@ Abstract configuration for app-digitaal-loket
   | - org:linkedTo                       | r    |     | wf    |         |        |      | x    |
   | - schema:contactPoint                | r    |     | wf    |         |        |      | x    |
   | - org:hasPost                        | r    |     | wf    |         |        |      | x    |
+  | - ext:mailAdresVoorNotificaties      |      |     |       |         | rwf    |      | x    |
+  | - ext:wilMailOntvangen               |      |     |       |         | rwf    |      | x    |
   | prov:Location                        | r    |     |       |         |        |      | x    |
   | ext:BestuurseenheidClassificatieCode | r    |     |       |         |        |      | x    |
   | besluit:Bestuursorgaan               | r    |     |       |         |        |      | x    |

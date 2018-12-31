@@ -32,3 +32,5 @@
 (add-prefix "toezicht" "http://mu.semte.ch/vocabularies/ext/supervision/")
 (add-prefix "toezichtReport" "http://mu.semte.ch/vocabularies/ext/supervision/reporting/")
 (add-prefix "nmo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#")
+
+(add-prefix "email" "http://mu.semte.ch/vocabularies/ext/email/")

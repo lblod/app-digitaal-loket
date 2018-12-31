@@ -97,7 +97,6 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
                     } } ] },
-
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
         name: "org",
@@ -203,6 +202,30 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution"
                       ] } } ] },
+
+      # // MESSAGING CENTRE
+      %GroupSpec{
+        name: "o-messaging-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-berichtenGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://schema.org/Message",
+                        "http://schema.org/Conversation"
+                      ] } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [ "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid" ],
+                      predicates: %NoPredicates{
+                        except: [
+                          "http://mu.semte.ch/vocabularies/ext/mailAdresVoorNotificaties",
+                          "http://mu.semte.ch/vocabularies/ext/wilMailOntvangen"
+                        ] }
+                    } } ] },
+
 
 
       # // USER HAS NO DATA
