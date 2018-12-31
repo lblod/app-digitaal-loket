@@ -129,6 +129,9 @@ defmodule Dispatcher do
   delete "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
+  match "/file-addresses/*path" do
+    Proxy.forward conn, path, "http://resource/file-addresses/"
+  end
   post "/bbcdr-reports/*path" do
     Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end

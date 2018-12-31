@@ -18,3 +18,10 @@
   :resource-base (s-url "http://data.lblod.info/files/")
   :features `(no-pagination-defaults include-uri)
   :on-path "files")
+
+(define-resource file-address ()
+  :class (s-prefix "ext:FileAddress")
+  :properties `((:address :url ,(s-prefix "ext:FileAddress")))
+  :resource-base (s-url "http://data.lblod.info/file-addresses/")
+  :features `(no-pagination-defaults include-uri)
+  :on-path "file-addresses")
