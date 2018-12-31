@@ -68,6 +68,7 @@
                     :as "files")
               (tax-rate :via ,(s-prefix "toezicht:taxRate")
                         :as "tax-rates")
+              (file-address :via ,(s-prefix "toezicht:fileAddress") as "file-adresses")
               )
   :resource-base (s-url "http://data.lblod.info/inzendingen-voor-toezicht/")
   :features `(no-pagination-defaults include-uri)
