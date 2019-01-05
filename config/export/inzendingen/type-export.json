@@ -144,6 +144,21 @@
       "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; nie:hasPart ?resource ."
     },
     {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "nfo:fileCreated",
+        "nie:dataSource"
+      ],
+      "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; nie:hasPart ?uploadFile . ?uploadFile ^nie:dataSource ?resource"
+    },
+    {
       "type": "ext:FileAddress",
       "requiredProperties": [
         "mu:uuid"
