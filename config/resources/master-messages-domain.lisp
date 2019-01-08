@@ -23,6 +23,8 @@
                   :as "auteur")
             (bestuurseenheid :via ,(s-prefix "schema:recipient")
                   :as "naar"))
+            (email :via ,(s-prefix "ext:notificatieEmail")
+                  :as "notificatie-email"))
             ; (conversatie :via ,(s-prefix "schema:hasPart")
                   ; :inverse t
                   ; :as "conversatie"))
