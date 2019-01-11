@@ -101,29 +101,63 @@
         "toezicht:businessIdentifier",
         "toezicht:businessName",
         "toezicht:dateOfEntryIntoForce",
-        "toezicht:endDate",
+        "toezicht:endDate"
+      ],
+      "additionalFilter": "?resource adms:status <http://data.lblod.info/document-statuses/verstuurd>"
+    },
+    {
+      "type": "toezicht:InzendingVoorToezicht",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
         "toezicht:hasExtraTaxRates",
         "toezicht:agendaItemCount",
         "toezicht:sessionDate",
         "toezicht:decisionDateOtherAdministration",
         "toezicht:decisionSummary",
         "toezicht:dateHandover",
+        "toezicht:nomenclature",
         "toezicht:text",
-        "toezicht:datePublicationWebapp",
-        "adms:status",
+        "toezicht:datePublicationWebapp"
+      ],
+      "additionalFilter": "?resource adms:status <http://data.lblod.info/document-statuses/verstuurd>"
+    },
+    {
+      "type": "toezicht:InzendingVoorToezicht",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
         "ext:lastModifiedBy",
         "dct:subject",
-        "dct:type",
         "toezicht:decisionType",
         "toezicht:decidedBy",
         "toezicht:authenticityType",
         "toezicht:accountAcceptanceStatus",
         "toezicht:deliveryReportType",
         "toezicht:fiscalPeriod",
-        "toezicht:nomenclature",
         "toezicht:taxType",
-        "nie:hasPart",
-        "toezicht:taxRate",
+        "toezicht:taxRate"
+      ],
+      "additionalFilter": "?resource adms:status <http://data.lblod.info/document-statuses/verstuurd>"
+    },
+    {
+      "type": "toezicht:InzendingVoorToezicht",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nie:hasPart"
+      ],
+      "additionalFilter": "?resource adms:status <http://data.lblod.info/document-statuses/verstuurd>"
+    },
+    {
+      "type": "toezicht:InzendingVoorToezicht",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
         "toezicht:fileAddress"
       ],
       "additionalFilter": "?resource adms:status <http://data.lblod.info/document-statuses/verstuurd>"
@@ -217,6 +251,6 @@
         "foaf:familyName"
       ],
       "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; ext:lastModifiedBy ?resource ."
-    }    
+    }
   ]
 }
