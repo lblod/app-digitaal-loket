@@ -1,0 +1,15 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuursorganen/6f3fb0ed-c62d-4847-96a0-e64621c1f8a3> skos:prefLabel ?label
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuursorganen/6f3fb0ed-c62d-4847-96a0-e64621c1f8a3> skos:prefLabel "Algemene vergadering Zorgbedrijf Vilvoorde"
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuursorganen/6f3fb0ed-c62d-4847-96a0-e64621c1f8a3> skos:prefLabel ?label
+  }
+}
