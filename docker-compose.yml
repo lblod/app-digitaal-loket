@@ -206,6 +206,7 @@ services:
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
       RUN_INTERVAL: 5
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-uit"
+      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-in"
       MAX_MESSAGE_AGE: 10
     links:
       - database:database
