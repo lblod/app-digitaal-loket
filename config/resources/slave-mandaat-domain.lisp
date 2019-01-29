@@ -10,7 +10,8 @@
 
 (define-resource fractie ()
   :class (s-prefix "mandaat:Fractie")
-  :properties `((:naam :string ,(s-prefix "regorg:legalName")))
+  :properties `((:naam :string ,(s-prefix "regorg:legalName"))
+                (:generated-from :uri-set ,(s-prefix "ext:generatedFrom"))) ;;if it e.g. comes from gelinkt-notuleren
   :resource-base (s-url "http://data.lblod.info/id/fracties/")
   :has-many `((bestuursorgaan :via ,(s-prefix "org:memberOf")
                               :as "bestuursorganen-in-tijd"))
@@ -97,7 +98,8 @@
                 (:start :datetime ,(s-prefix "mandaat:start"))
                 (:einde :datetime ,(s-prefix "mandaat:einde"))
                 (:datum-eedaflegging :datetime ,(s-prefix "ext:datumEedaflegging"))
-                (:datum-ministrieel-besluit :datetime ,(s-prefix "ext:datumMinistrieelBesluit")))
+                (:datum-ministrieel-besluit :datetime ,(s-prefix "ext:datumMinistrieelBesluit"))
+                (:generated-from :uri-set ,(s-prefix "ext:generatedFrom"))) ;;if it e.g. comes from gelinkt-notuleren
   :has-many `((rechtsgrond-aanstelling :via ,(s-prefix "mandaat:isAangesteldDoor")
                                        :as "rechtsgronden-aanstelling")
               (rechtsgrond-beeindiging :via ,(s-prefix "mandaat:isOntslagenDoor")
