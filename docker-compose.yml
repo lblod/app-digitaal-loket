@@ -231,3 +231,11 @@ services:
     restart: always
     labels:
       logging: true
+  download:
+    image: lblod/download-url-service:0.0.2
+    volumes:
+      - /data/files:/share
+    restart: always
+    logging: *default-logging
+    environment:
+      CRON_PATTERN: "0 0 * * * *" # run every hour for now
