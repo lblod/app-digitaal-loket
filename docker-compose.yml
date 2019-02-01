@@ -217,7 +217,7 @@ services:
     labels:
       logging: true
   download:
-    image: lblod/download-url-service:0.0.1
+    image: lblod/download-url-service:0.0.2
     volumes:
       - /data/files:/share
     restart: always
