@@ -232,12 +232,10 @@ services:
     labels:
       logging: true
   download:
-    image: lblod/download-url-service:0.0.2
+    image: lblod/download-url-service:0.0.3
     volumes:
       - /data/files:/share
     restart: always
     logging: *default-logging
-    links:
-      - virtuoso:database
     environment:
       CRON_PATTERN: "0 0 * * * *" # run every hour for now
