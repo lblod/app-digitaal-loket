@@ -237,5 +237,7 @@ services:
       - /data/files:/share
     restart: always
     logging: *default-logging
+    links:
+      - virtuoso:database
     environment:
       CRON_PATTERN: "0 0 * * * *" # run every hour for now
