@@ -56,3 +56,5 @@ services:
     restart: "no"
   sink:
     restart: "no"
+  berichtencentrum-sync-with-kalliope:
+    restart: "no"

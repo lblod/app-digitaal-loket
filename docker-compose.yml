@@ -199,6 +199,19 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  berichtencentrum-sync-with-kalliope:
+    image: lblod/berichtencentrum-sync-with-kalliope-service:latest
+    environment:
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
+      RUN_INTERVAL: 5
+      KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-uit"
+      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-in"
+      MAX_MESSAGE_AGE: 10
+    links:
+      - database:database
+    volumes:
+      - ./data/files:/data/files
   filehost:
     image: nginx:1.15.2
     volumes:
