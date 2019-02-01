@@ -202,8 +202,6 @@ services:
   berichtencentrum-sync-with-kalliope:
     image: lblod/berichtencentrum-sync-with-kalliope-service:0.1.0
     environment:
-      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
-      MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
       RUN_INTERVAL: 5
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-in"
