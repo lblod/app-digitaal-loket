@@ -212,6 +212,10 @@ services:
       - database:database
     volumes:
       - ./data/files:/data/files
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   filehost:
     image: nginx:1.15.2
     volumes:
