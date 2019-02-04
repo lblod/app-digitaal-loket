@@ -232,9 +232,9 @@ services:
     labels:
       logging: true
   download:
-    image: lblod/download-url-service:0.0.2
+    image: lblod/download-url-service:0.0.3
     volumes:
-      - /data/files:/share
+      - ./data/files:/share
     restart: always
     logging: *default-logging
     environment:
