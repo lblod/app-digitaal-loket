@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.13.9
+    image: lblod/frontend-loket:0.13.11
     links:
       - identifier:backend
     labels:
@@ -199,6 +199,21 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  berichtencentrum-sync-with-kalliope:
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.1.0
+    environment:
+      RUN_INTERVAL: 5
+      KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-uit"
+      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-in"
+      MAX_MESSAGE_AGE: 10
+    links:
+      - database:database
+    volumes:
+      - ./data/files:/data/files
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   filehost:
     image: nginx:1.15.2
     volumes:
@@ -216,3 +231,11 @@ services:
     restart: always
     labels:
       logging: true
+  download:
+    image: lblod/download-url-service:0.0.2
+    volumes:
+      - /data/files:/share
+    restart: always
+    logging: *default-logging
+    environment:
+      CRON_PATTERN: "0 0 * * * *" # run every hour for now
