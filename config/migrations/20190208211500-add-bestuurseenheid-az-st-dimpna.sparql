@@ -53,7 +53,7 @@ INSERT {
      ?account a foaf:OnlineAccount;
            mu:uuid ?uuidAccount;
            foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
-           ext:sessionRole "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-mandaatGebruiker". 
+           ext:sessionRole "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-mandaatGebruiker", "LoketLB-berichtenGebruiker", "LoketLB-leidinggevendenGebruiker" .
   }
 } WHERE {
      <http://data.lblod.info/id/bestuurseenheden/50ede269-5c49-41cd-be68-ac135314019c> a besluit:Bestuurseenheid;
