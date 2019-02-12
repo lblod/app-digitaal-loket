@@ -82,23 +82,9 @@ defmodule Dispatcher do
   match "/identificatoren/*path" do
     Proxy.forward conn, path, "http://cache/identificatoren/"
   end
-  match "/vestigingen/*path" do
-    Proxy.forward conn, path, "http://cache/vestigingen/"
-  end
-  match "/contact-punten/*path" do
-    Proxy.forward conn, path, "http://cache/contact-punten/"
-  end
-  match "/posities/*path" do
-    Proxy.forward conn, path, "http://cache/posities/"
-  end
-  match "/rollen/*path" do
-    Proxy.forward conn, path, "http://cache/rollen/"
-  end
+
   match "/tijdsintervallen/*path" do
     Proxy.forward conn, path, "http://cache/tijdsintervallen/"
-  end
-  match "/organisaties/*path" do
-    Proxy.forward conn, path, "http://cache/organisaties/"
   end
 
   match "/mock/sessions/*path" do
@@ -249,6 +235,33 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/email-headers/"
   end
 
+  #################################################################
+  # slave organisatie
+  #################################################################
+
+  match "/vestigingen/*path" do
+    Proxy.forward conn, path, "http://cache/vestigingen/"
+  end
+
+  match "/contact-punten/*path" do
+    Proxy.forward conn, path, "http://cache/contact-punten/"
+  end
+
+  match "/functionarissen/*path" do
+    Proxy.forward conn, path, "http://cache/functionarissen/"
+  end
+
+  match "/posities/*path" do
+    Proxy.forward conn, path, "http://cache/posities/"
+  end
+
+  match "/rollen/*path" do
+    Proxy.forward conn, path, "http://cache/rollen/"
+  end
+
+  match "/functionaris-status-codes/*path" do
+    Proxy.forward conn, path, "http://cache/functionaris-status-codes/"
+  end
 
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
