@@ -211,7 +211,8 @@
         "skos:prefLabel",
         "besluit:werkingsgebied",
         "besluit:classificatie",
-        "ext:inProvincie"
+        "ext:inProvincie",
+        "dcterms:identifier"
       ],
       "additionalFilter": ""
     },
