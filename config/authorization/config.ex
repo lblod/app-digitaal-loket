@@ -77,7 +77,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://www.w3.org/ns/org#Role",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                        "http://data.lblod.info/vocabularies/lblod/FunctionarisStatusCode"
                       ]
                     } },
                   %GraphSpec{
@@ -202,6 +203,26 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution",
                         "http://mu.semte.ch/vocabularies/ext/FileAddress"
+                      ] } } ] },
+
+      # // LEIDINGGEVENDE
+      %GroupSpec{
+        name: "o-leidinggevende-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-leidinggevendenGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://www.w3.org/ns/org#Site",
+                        "http://schema.org/PostalAddress",
+                        "http://www.w3.org/ns/org#Post",
+                        "http://www.w3.org/ns/org#Organization",
+                        "http://data.lblod.info/vocabularies/lblod/Functionaris",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://www.w3.org/ns/person#Person",
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://purl.org/dc/terms/PeriodOfTime"
                       ] } } ] },
 
       # // MESSAGING CENTRE
