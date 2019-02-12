@@ -259,6 +259,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/rollen/"
   end
 
+  match "/functionaris-status-codes/*path" do
+    Proxy.forward conn, path, "http://cache/functionaris-status-codes/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

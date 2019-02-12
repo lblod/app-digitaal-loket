@@ -77,7 +77,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://www.w3.org/ns/org#Role",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                        "http://data.lblod.info/vocabularies/lblod/FunctionarisStatusCode"
                       ]
                     } },
                   %GraphSpec{
