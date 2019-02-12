@@ -60,7 +60,7 @@
 (define-resource rol ()
   :class (s-prefix "org:Role")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://data.lblod.info/id/concept/bestuurseenheidRollen/")
+  :resource-base (s-url "http://data.lblod.info/id/concept/functionarisRol/")
   :features '(include-uri)
   :on-path "rollen"
 )
@@ -69,6 +69,6 @@
   ;;TODO: publish this somewhere
   :class (s-prefix "lblod:FunctionarisStatusCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://data.vlaanderen.be/id/concept/FunctionarisStatusCode/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/functionarisStatusCode/")
   :features '(include-uri)
   :on-path "functionaris-status-codes")
