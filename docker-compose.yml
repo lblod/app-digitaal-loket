@@ -232,10 +232,11 @@ services:
     labels:
       logging: true
   loket-download-url-service:
-    image: lblod/loket-download-url-service:0.0.1
+    image: lblod/loket-download-url-service:0.0.3
     environment:
       CACHING_MAX_RETRIES: 300
-      CACHING_CRON_PATTERN: '0 */4 * * * *'
+      CACHING_CRON_PATTERN: '0 */15 * * * *'
+      MAX_PENDING_TIME_IN_SECONDS: 7200
     links:
       - virtuoso:database
     volumes:
