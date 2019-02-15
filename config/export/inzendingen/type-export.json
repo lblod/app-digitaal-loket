@@ -212,7 +212,7 @@
         "besluit:werkingsgebied",
         "besluit:classificatie",
         "ext:inProvincie",
-        "dcterms:identifier"
+        "dct:identifier"
       ],
       "additionalFilter": ""
     },
