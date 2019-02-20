@@ -200,7 +200,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-email-notification:
-    image: lblod/berichtencentrum-email-notification-service:0.1.1
+    image: lblod/berichtencentrum-email-notification-service:0.1.2
     restart: always
     logging: *default-logging
   berichtencentrum-deliver-email-service:
