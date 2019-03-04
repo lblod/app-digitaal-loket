@@ -27,7 +27,7 @@
   :has-one `(
               (file :via ,(s-prefix "nie:dataSource")
                     :inverse t
-                    :as "cache-resource"))
+                    :as "replicated-file"))
   :resource-base (s-url "http://data.lblod.info/file-addresses/")
   :features `(no-pagination-defaults include-uri)
   :on-path "file-addresses")
