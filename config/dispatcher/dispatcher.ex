@@ -116,10 +116,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://file/files/"
   end
   match "/file-addresses/*path" do
-    Proxy.forward conn, path, "http://cache/file-addresses/"
+    Proxy.forward conn, path, "http://resource/file-addresses/"
   end
   match "/file-address-cache-statuses/*path" do
-    Proxy.forward conn, path, "http://cache/file-address-cache-statuses/"
+    Proxy.forward conn, path, "http://resource/file-address-cache-statuses/"
   end
   post "/bbcdr-reports/*path" do
     Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
