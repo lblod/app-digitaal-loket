@@ -239,11 +239,15 @@ services:
     restart: always
     labels:
       logging: true
-  download:
-    image: lblod/download-url-service:0.0.5
+  loket-download-url-service:
+    image: lblod/loket-download-url-service:0.0.3
+    environment:
+      CACHING_MAX_RETRIES: 300
+      CACHING_CRON_PATTERN: '0 */15 * * * *'
+      MAX_PENDING_TIME_IN_SECONDS: 7200
+    links:
+      - virtuoso:database
     volumes:
-      - ./data/files:/share
+      - ./data/files:/data/files
     restart: always
     logging: *default-logging
-    environment:
-      CRON_PATTERN: "0 0 * * * *" # run every hour for now
