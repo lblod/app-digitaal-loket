@@ -10,7 +10,8 @@
 <http://data.lblod.info/id/bestuurseenheden/f490a5f5-5f21-4c01-b70e-80d76ad8c256> <http://mu.semte.ch/vocabularies/core/uuid> "f490a5f5-5f21-4c01-b70e-80d76ad8c256" .
 <http://data.lblod.info/id/bestuurseenheden/f490a5f5-5f21-4c01-b70e-80d76ad8c256> <http://purl.org/dc/terms/identifier> "0689674948" .
 <http://data.lblod.info/id/bestuurseenheden/f490a5f5-5f21-4c01-b70e-80d76ad8c256> <http://mu.semte.ch/vocabularies/ext/kbonummer> "0689674948" .
-<http://data.lblod.info/id/bestuurseenheden/f490a5f5-5f21-4c01-b70e-80d76ad8c256> <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/5af10cf18afc4ec9acc2fcae4018b078> .
+<http://data.lblod.info/id/bestuurseenheden/f490a5f5-5f21-4c01-b70e-80d76ad8c256> <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/a0cc5b5e5fa2ff41dfe70066f4e4e579b39c8876c6772e81e0ddfd407d236f16> .
+<http://data.lblod.info/id/bestuurseenheden/96ceb4cf-ece3-417d-914b-3e6eff293e6a> <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/a9a0cabd376a2b3a8eb838f15f6aeb1b63ffe49d527598994962e0d15ad2081c> .
 <http://data.lblod.info/id/bestuursorganen/3a964c1c-05d7-416f-b139-907982def267> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> .
 <http://data.lblod.info/id/bestuursorganen/3a964c1c-05d7-416f-b139-907982def267> <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/91ce61e4-2327-47fa-b66b-da55ba52c7b9> .
 <http://data.lblod.info/id/bestuursorganen/3a964c1c-05d7-416f-b139-907982def267> <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
@@ -25,7 +26,3 @@
 <http://data.lblod.info/id/bestuursorganen/91ce61e4-2327-47fa-b66b-da55ba52c7b9> <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> .
 <http://data.lblod.info/id/bestuursorganen/91ce61e4-2327-47fa-b66b-da55ba52c7b9> <http://mu.semte.ch/vocabularies/core/uuid> "91ce61e4-2327-47fa-b66b-da55ba52c7b9" .
 # finished Zorg-Stekene at 2019-03-14T14:13:47+00:00
-
-<http://data.lblod.info/id/werkingsgebieden/5af10cf18afc4ec9acc2fcae4018b078> <http://mu.semte.ch/vocabularies/core/uuid> "5af10cf18afc4ec9acc2fcae4018b078".
-<http://data.lblod.info/id/werkingsgebieden/5af10cf18afc4ec9acc2fcae4018b078> <http://www.w3.org/2004/02/skos/core#prefLabel> "Zorg Stekene" .
-<http://data.lblod.info/id/werkingsgebieden/5af10cf18afc4ec9acc2fcae4018b078> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Location> .

@@ -11,6 +11,7 @@
 <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff> <http://www.w3.org/2004/02/skos/core#prefLabel> "Lokale politiezone Hasselt/Zonhoven/Diepenbeek/Halen/Herk-de-Stad/Lummen" .
 <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff> <http://mu.semte.ch/vocabularies/core/uuid> "ff7d80dc-ec00-43ac-ac7e-d51694df37ff" .
 <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff> <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/f5fb4bfdcace41c988294f5c1d87fed6> .
+<http://data.lblod.info/id/bestuurseenheden/96ceb4cf-ece3-417d-914b-3e6eff293e6a> <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/b6868be9ca6881b1020e6cff8d431531a1cff64b39dc92646a5173b3ee144516> .
 <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff> <http://mu.semte.ch/vocabularies/ext/kbonummer> "0642781089" .
 <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
 <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff> <http://purl.org/dc/terms/identifier> "0642781089" .
@@ -20,5 +21,4 @@
 <http://data.lblod.info/id/werkingsgebieden/f5fb4bfdcace41c988294f5c1d87fed6> <http://mu.semte.ch/vocabularies/core/uuid> "f5fb4bfdcace41c988294f5c1d87fed6".
 <http://data.lblod.info/id/werkingsgebieden/f5fb4bfdcace41c988294f5c1d87fed6> <http://www.w3.org/2004/02/skos/core#prefLabel> "Hasselt - Zonhoven - Diepenbeek - Halen - Herk-de-Stad - Lummen" .
 <http://data.lblod.info/id/werkingsgebieden/f5fb4bfdcace41c988294f5c1d87fed6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Location> .
-
-
+<http://data.lblod.info/id/werkingsgebieden/f5fb4bfdcace41c988294f5c1d87fed6> <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/b6868be9ca6881b1020e6cff8d431531a1cff64b39dc92646a5173b3ee144516> .
