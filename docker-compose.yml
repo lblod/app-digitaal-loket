@@ -208,14 +208,12 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.1.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.2.0
     environment:
+      KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
+      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
       RUN_INTERVAL: 5
-      KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-uit"
-      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-in"
-      MAX_MESSAGE_AGE: 10
-    links:
-      - database:database
+      MAX_MESSAGE_AGE: 1
     volumes:
       - ./data/files:/data/files
     labels:
