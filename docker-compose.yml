@@ -238,7 +238,7 @@ services:
     restart: always
     labels:
       logging: true
-  loket-download-url-service:
+  download-url-service:
     image: lblod/loket-download-url-service:0.0.3
     environment:
       CACHING_MAX_RETRIES: 300
