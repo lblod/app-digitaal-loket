@@ -1,0 +1,20 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE {
+  GRAPH ?g {
+    ?w ext:inProvincie ?wprov .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?w ext:inProvincie ?prov .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ext:inProvincie ?prov ; <http://data.vlaanderen.be/ns/besluit#werkingsgebied> ?w .
+    ?w ext:inProvincie ?wprov .
+
+    VALUES ?s {
+      <http://data.lblod.info/id/bestuurseenheden/ff7d80dc-ec00-43ac-ac7e-d51694df37ff>
+    }
+  }
+}
