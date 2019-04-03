@@ -195,6 +195,9 @@ defmodule Dispatcher do
   match "/toezicht-document-authenticity-types/*path" do
     Proxy.forward conn, path, "http://cache/toezicht-document-authenticity-types/"
   end
+  match "/toezicht-regulation-types/*path" do
+    Proxy.forward conn, path, "http://cache/toezicht-regulation-types/"
+  end
   match "/toezicht-inzending-types/*path" do
     Proxy.forward conn, path, "http://cache/toezicht-inzending-types/"
   end

@@ -58,6 +58,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/DeliveryReportType",
                         "http://mu.semte.ch/vocabularies/ext/supervision/AccountAcceptanceStatus",
                         "http://mu.semte.ch/vocabularies/ext/supervision/DocumentAuthenticityType",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/RegulationType",
                         "http://www.w3.org/ns/prov#Location",
                         "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
                         "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
