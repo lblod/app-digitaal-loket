@@ -50,6 +50,8 @@
                                      :as "inzending-type")
              (besluit-type :via ,(s-prefix "toezicht:decisionType")
                            :as "besluit-type")
+             (toezicht-regulation-type :via ,(s-prefix "toezicht:regulationType")
+                           :as "regulation-type")
              (bestuursorgaan :via ,(s-prefix "toezicht:decidedBy")
                              :as "bestuursorgaan")
              (toezicht-document-authenticity-type :via ,(s-prefix "toezicht:authenticityType")
@@ -135,6 +137,14 @@
   :resource-base (s-url "http://data.lblod.info/besluit-types")
   :features `(include-uri)
   :on-path "besluit-types")
+
+(define-resource toezicht-regulation-type ()
+  :class (s-prefix "toezicht:RegulationType")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+                (:position :number ,(s-prefix "schema:position")))
+  :resource-base (s-url "http://data.lblod.info/toezicht-regulation-types")
+  :features `(inclure-uri)
+  :on-path "toezicht-regulation-types")
 
 (define-resource tax-rate ()
   :class (s-prefix "toezicht:TaxRate")
