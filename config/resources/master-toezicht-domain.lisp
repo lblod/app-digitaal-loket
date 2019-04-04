@@ -19,6 +19,7 @@
   :properties `((:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
                 (:sent-date :datetime ,(s-prefix "nmo:sentDate"))
+                (:received-date :datetime ,(s-prefix "nmo:receivedDate"))
                 (:description :string ,(s-prefix "dct:description"))
                 (:remark :string ,(s-prefix "ext:remark"))
                 (:temporal-coverage :string ,(s-prefix "toezicht:temporalCoverage"))
