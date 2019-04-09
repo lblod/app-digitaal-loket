@@ -199,6 +199,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+<<<<<<< Updated upstream
   berichtencentrum-email-notification:
     image: lblod/berichtencentrum-email-notification-service:0.1.2
     restart: always
@@ -208,19 +209,44 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.2.2
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.4.1
     environment:
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
       RUN_INTERVAL: 15
       MAX_MESSAGE_AGE: 1
       MAX_SENDING_ATTEMPTS: 20
+      INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/toezicht/inzendingen"
     volumes:
       - ./data/files:/data/files
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
+=======
+  # berichtencentrum-email-notification:
+  #   image: lblod/berichtencentrum-email-notification-service:0.1.2
+  #   restart: always
+  #   logging: *default-logging
+  # berichtencentrum-deliver-email-service:
+  #   image: lblod/berichtencentrum-deliver-email-service:0.2.1
+  #   restart: always
+  #   logging: *default-logging
+  # berichtencentrum-sync-with-kalliope:
+  #   image: lblod/berichtencentrum-sync-with-kalliope-service:0.2.2
+  #   environment:
+  #     KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
+  #     KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
+  #     RUN_INTERVAL: 15
+  #     MAX_MESSAGE_AGE: 1
+  #     MAX_SENDING_ATTEMPTS: 20
+  #   volumes:
+  #     - ./data/files:/data/files
+  #   labels:
+  #     - "logging=true"
+  #   restart: always
+  #   logging: *default-logging
+>>>>>>> Stashed changes
   filehost:
     image: nginx:1.15.2
     volumes:
