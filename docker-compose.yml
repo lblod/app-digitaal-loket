@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.13.12
+    image: lblod/frontend-loket:0.14.2
     links:
       - identifier:backend
     labels:
@@ -208,14 +208,13 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.1.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.3.2
     environment:
-      RUN_INTERVAL: 5
-      KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-uit"
-      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/glapi/poststuk-in"
-      MAX_MESSAGE_AGE: 10
-    links:
-      - database:database
+      KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
+      KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
+      RUN_INTERVAL: 15
+      MAX_MESSAGE_AGE: 1
+      MAX_SENDING_ATTEMPTS: 20
     volumes:
       - ./data/files:/data/files
     labels:
@@ -239,11 +238,15 @@ services:
     restart: always
     labels:
       logging: true
-  download:
-    image: lblod/download-url-service:0.0.5
+  download-url-service:
+    image: lblod/loket-download-url-service:0.0.3
+    environment:
+      CACHING_MAX_RETRIES: 300
+      CACHING_CRON_PATTERN: '0 */15 * * * *'
+      MAX_PENDING_TIME_IN_SECONDS: 7200
+    links:
+      - virtuoso:database
     volumes:
-      - ./data/files:/share
+      - ./data/files:/data/files
     restart: always
     logging: *default-logging
-    environment:
-      CRON_PATTERN: "0 0 * * * *" # run every hour for now
