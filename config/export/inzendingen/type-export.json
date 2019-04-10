@@ -95,6 +95,7 @@
         "dct:created",
         "dct:modified",
         "nmo:sentDate",
+        "nmo:receivedDate",
         "dct:description",
         "ext:remark",
         "toezicht:temporalCoverage",
