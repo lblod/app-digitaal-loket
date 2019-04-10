@@ -11,7 +11,7 @@ WHERE {
   GRAPH ?g {
 
     ?s a  ?type.
-    FILTER (?type IN (toezicht:DecisionType ) ).
+    FILTER (?type IN (toezicht:DecisionType, toezicht:RegulationType) ).
     ?s ?p ?o.
  }
 }
