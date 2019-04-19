@@ -79,7 +79,11 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://www.w3.org/ns/org#Role",
                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-                        "http://data.lblod.info/vocabularies/lblod/FunctionarisStatusCode"
+                        "http://data.lblod.info/vocabularies/lblod/FunctionarisStatusCode",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
+                        "http://mu.semte.ch/vocabularies/ext/AcmIdmServiceLogEntry"
                       ]
                     } },
                   %GraphSpec{

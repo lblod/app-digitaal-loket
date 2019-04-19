@@ -1,0 +1,27 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/log-levels/0986a9b6-b543-4629-8ef8-08928ae42430> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "0986a9b6-b543-4629-8ef8-08928ae42430";
+       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#codeId> "TRACE".
+
+    <http://data.lblod.info/id/log-levels/fe6473d5-ac83-450c-83f8-3546357c7117> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "fe6473d5-ac83-450c-83f8-3546357c7117";
+       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#codeId> "DEBUG".
+
+    <http://data.lblod.info/id/log-levels/6f92baad-b4a1-42ce-8bdf-e28218b27ff9> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "6f92baad-b4a1-42ce-8bdf-e28218b27ff9";
+       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#codeId> "INFO".
+
+    <http://data.lblod.info/id/log-levels/62d2516b-e6b8-4866-aad1-e8347f2cdc70> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "62d2516b-e6b8-4866-aad1-e8347f2cdc70";
+       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#codeId> "WARN".
+
+    <http://data.lblod.info/id/log-levels/3af9ebe1-e6a8-495c-a392-16ced1f38ef1> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "3af9ebe1-e6a8-495c-a392-16ced1f38ef1";
+       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#codeId> "ERROR".
+
+    <http://data.lblod.info/id/log-levels/c679f915-1fdd-4b50-938d-6b565aa31278> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "c679f915-1fdd-4b50-938d-6b565aa31278";
+       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#codeId> "FATAL".
+   }
+}

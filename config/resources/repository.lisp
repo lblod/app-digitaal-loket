@@ -35,3 +35,5 @@
 (add-prefix "nmo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#")
 
 (add-prefix "email" "http://mu.semte.ch/vocabularies/ext/email/")
+
+(add-prefix "rlog" "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#")
