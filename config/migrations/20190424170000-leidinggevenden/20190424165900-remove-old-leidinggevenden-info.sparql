@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+    ?src ?refers ?s.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s a <http://www.w3.org/ns/org#Post>.
+    ?s ?p ?o.
+    OPTIONAL { ?src ?refers ?s }
+  }
+}
+
+;
