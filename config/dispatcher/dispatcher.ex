@@ -257,6 +257,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/status-codes/"
   end
 
+  match "/log-sources/*path" do
+    Proxy.forward conn, path, "http://resource/log-sources/"
+  end
+
   match "/status-codes/*path" do
     Proxy.forward conn, path, "http://resource/acm-idm-service-log-entries/"
   end
