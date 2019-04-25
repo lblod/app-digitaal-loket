@@ -1,3 +1,8 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+
 #########################################################
 # GEMEENTEBESTUUR
 ########################################################
@@ -9,7 +14,7 @@ INSERT {
     ?bestuursorgaan skos:prefLabel ?naam .
     ?bestuursorgaan besluit:classificatie ?classificatie.
     ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaanAlgVerg.
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.
     ?bestuursorgaanInTijd mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
     ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
 
@@ -46,7 +51,7 @@ INSERT {
     ?bestuursorgaan skos:prefLabel ?naam .
     ?bestuursorgaan besluit:classificatie ?classificatie.
     ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaanAlgVerg.
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.
     ?bestuursorgaanInTijd mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
     ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
 
@@ -79,9 +84,9 @@ INSERT {
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid.
     ?bestuursorgaan mu:uuid ?uuid .
     ?bestuursorgaan skos:prefLabel ?naam .
-    ?bestuursorgaanAlgVerg besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> .
+    ?bestuursorgaan besluit:classificatie ?classificatie.
     ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaanAlgVerg.
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.
     ?bestuursorgaanInTijd mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
     ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
 
@@ -101,7 +106,7 @@ WHERE {
   BIND(SHA256(CONCAT("yi5cheiReeph9seesah8vaiSaidie5bahzah9Oxeum3eS6er5ohL0iewoo4h", ":", STR(?bestuurseenheid), ?classificatieUuid )) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
   VALUES ?classificatie {
-      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b3e9ac5f-43d6-4f86-b746-78ee7dd64113>
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4>
   }
 };
 #########################################################
@@ -113,9 +118,9 @@ INSERT {
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid.
     ?bestuursorgaan mu:uuid ?uuid .
     ?bestuursorgaan skos:prefLabel ?naam .
-    ?bestuursorgaanAlgVerg besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> .
+    ?bestuursorgaan besluit:classificatie ?classificatie.
     ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaanAlgVerg.
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.
     ?bestuursorgaanInTijd mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
     ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
 
@@ -135,7 +140,7 @@ WHERE {
   BIND(SHA256(CONCAT("yi5cheiReeph9seesah8vaiSaidie5bahzah9Oxeum3eS6er5ohL0iewoo4h", ":", STR(?bestuurseenheid), ?classificatieUuid )) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
   VALUES ?classificatie {
-      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b3e9ac5f-43d6-4f86-b746-78ee7dd64113>
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4>
   }
 };
 #########################################################
@@ -147,9 +152,9 @@ INSERT {
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid.
     ?bestuursorgaan mu:uuid ?uuid .
     ?bestuursorgaan skos:prefLabel ?naam .
-    ?bestuursorgaanAlgVerg besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> .
+    ?bestuursorgaan besluit:classificatie ?classificatie.
     ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaanAlgVerg.
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.
     ?bestuursorgaanInTijd mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
     ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
 
@@ -169,7 +174,7 @@ WHERE {
   BIND(SHA256(CONCAT("yi5cheiReeph9seesah8vaiSaidie5bahzah9Oxeum3eS6er5ohL0iewoo4h", ":", STR(?bestuurseenheid), ?classificatieUuid )) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
   VALUES ?classificatie {
-      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b3e9ac5f-43d6-4f86-b746-78ee7dd64113>
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4>      
   }
 };
 
@@ -182,9 +187,9 @@ INSERT {
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid.
     ?bestuursorgaan mu:uuid ?uuid .
     ?bestuursorgaan skos:prefLabel ?naam .
-    ?bestuursorgaanAlgVerg besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> .
+    ?bestuursorgaan besluit:classificatie ?classificatie.
     ?bestuursorgaanInTijd a besluit:Bestuursorgaan .
-    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaanAlgVerg.
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.
     ?bestuursorgaanInTijd mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
     ?bestuursorgaanInTijd mu:uuid ?uuidInTijd .
 
@@ -204,6 +209,6 @@ WHERE {
   BIND(SHA256(CONCAT("yi5cheiReeph9seesah8vaiSaidie5bahzah9Oxeum3eS6er5ohL0iewoo4h", ":", STR(?bestuurseenheid), ?classificatieUuid )) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
   VALUES ?classificatie {
-      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b3e9ac5f-43d6-4f86-b746-78ee7dd64113>
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4>
   }
 }
