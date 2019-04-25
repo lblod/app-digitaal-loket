@@ -1,0 +1,131 @@
+{
+  "prefixes": {
+    "mandaat": "http://data.vlaanderen.be/ns/mandaat#",
+    "besluit": "http://data.vlaanderen.be/ns/besluit#",
+    "persoon": "http://data.vlaanderen.be/ns/persoon#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "org": "http://www.w3.org/ns/org#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "regorg": "https://www.w3.org/ns/regorg#",
+    "person": "http://www.w3.org/ns/person#",
+    "schema": "http://schema.org/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "mu": "http://mu.semte.ch/vocabularies/core/",
+    "lblodlg": "http://data.lblod.info/vocabularies/leidinggevenden/"
+  },
+  "types": [
+    {
+      "type": "besluit:Bestuurseenheid",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "besluit:werkingsgebied",
+        "besluit:classificatie",
+        "org:hasPrimarySite",
+        "org:linkedTo",
+        "org:hasPrimarySite",
+        "org:heldBy",
+        "org:hasPost"
+      ]
+    },
+    {
+      "type": "prov:Location",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "rdfs:label",
+        "ext:werkingsgebiedNiveau"
+      ]
+    },
+    {
+      "type": "besluit:Bestuursorgaan",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "mandaat:bindingEinde",
+        "mandaat:bindingStart",
+        "besluit:bestuurt",
+        "besluit:classificatie",
+        "mandaat:isTijdspecialisatieVan",
+        "lblodlg:heeftBestuursfunctie"
+      ]
+    },
+    {
+      "type": "ext:BestuursfunctieCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:BestuurseenheidClassificatieCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "ext:BestuursorgaanClassificatieCode",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "schema:PostalAddress",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "schema:addressLocality",
+        "schema:postalCode",
+        "schema:streetAddress",
+        "schema:telephone",
+        "schema:faxNumber",
+        "schema:email",
+        "schema:url",
+        "rdf:type"
+      ]
+    },
+    {
+      "type": "lblodlg:Bestuursfunctie",
+      "requiredProperties": [
+        "mu:uuid",
+        "org:role"
+      ],
+      "optionalProperties": [
+       "schema:contactPoint"
+      ]
+    },
+    {
+      "type": "lblodlg:FunctionarisStatusCode",
+      "requiredProperties": [
+        "mu:uuid",
+        "skos:prefLabel"
+      ],
+      "optionalProperties": [
+        "skos:scopeNote"
+      ]
+    }
+  ]
+}
