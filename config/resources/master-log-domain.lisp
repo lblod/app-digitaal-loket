@@ -8,7 +8,8 @@
                    :as "log-level")
               (status-code :via ,(s-prefix "rlog:hasCode")
                    :as "status-code")
-              (log-source :via ,(s-prefix "dct:source")))
+              (log-source :via ,(s-prefix "dct:source")
+                   :as "log-source"))
   :resource-base (s-url "http://data.lblod.info/id/log-entries/")
   :features `(include-uri)
   :on-path "log-entries")
@@ -33,7 +34,7 @@
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
   :resource-base (s-url "http://data.lblod.info/id/log-sources/")
   :features `(include-uri)
-  :on-path "log-levels")
+  :on-path "log-sources")
 
 (define-resource acm-idm-service-log-entry ()
   :class (s-prefix "ext:AcmIdmServiceLogEntry")
