@@ -83,7 +83,6 @@ defmodule Acl.UserGroups.Config do
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
-                        "http://mu.semte.ch/vocabularies/ext/AcmIdmServiceLogEntry",
                         "http://mu.semte.ch/vocabularies/ext/LogSource"
                       ]
                     } },
