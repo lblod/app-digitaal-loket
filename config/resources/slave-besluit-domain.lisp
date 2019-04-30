@@ -143,8 +143,9 @@
                        :inverse t
                        :as "heeft-tijdsspecialisaties")
               (mandaat :via ,(s-prefix "org:hasPost")
-                       :as "bevat"))
-
+                       :as "bevat")
+              (bestuursfunctie :via ,(s-prefix "lblodlg:heeftBestuursfunctie")
+                               :as "bevat-functionaris"))
   :resource-base (s-url "http://data.lblod.info/id/bestuursorganen/")
   :features '(include-uri)
   :on-path "bestuursorganen")
