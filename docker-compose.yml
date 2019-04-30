@@ -175,6 +175,7 @@ services:
       - virtuoso:database
     environment:
       EXPORT_CRON_PATTERN: "0 0 3 * * *"
+      EXPORT_FILE_BASE: "log-entries"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-log-entries"
     volumes:
       - ./data/exports/log-entries:/data/exports
