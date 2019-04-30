@@ -19,7 +19,6 @@
 (read-domain-file "master-bbcdr-domain.lisp")
 
 (read-domain-file "slave-mandaat-domain.lisp")
-(read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "slave-leidinggevenden-domain.lisp")
 (read-domain-file "slave-publicatie-gn-domain.lisp")
