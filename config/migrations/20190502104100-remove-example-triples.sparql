@@ -1,0 +1,10 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p <http://example.org/> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s ?p <http://example.org/> .
+  }
+}
