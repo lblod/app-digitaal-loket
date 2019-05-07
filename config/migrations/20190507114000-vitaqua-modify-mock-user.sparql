@@ -47,7 +47,7 @@ INSERT {
        <http://mu.semte.ch/graphs/public>
      }
 
-     GRAPH ?g {
+     GRAPH ?h {
        ?personToDelete a foaf:Person;
          foaf:member <http://data.lblod.info/id/bestuurseenheden/eac38ef4-6ba8-40a1-8c40-129f4ed30988> ;
          foaf:account ?accountToDelete.
