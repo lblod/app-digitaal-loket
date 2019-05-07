@@ -6,12 +6,10 @@ PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-
-
 DELETE {
   GRAPH ?h {
-    ?personToDelete ?p ?o .
-    ?accountToDelete ?p ?o .
+    ?personToDelete ?pPerson ?oPerson .
+    ?accountToDelete ?pAccount ?oAccount .
   }
 }
 INSERT {
@@ -49,7 +47,9 @@ INSERT {
 
      GRAPH ?h {
        ?personToDelete a foaf:Person;
+         ?pPerson ?oPerson ;
          foaf:member <http://data.lblod.info/id/bestuurseenheden/eac38ef4-6ba8-40a1-8c40-129f4ed30988> ;
-         foaf:account ?accountToDelete.
+         foaf:account ?accountToDelete .
+       ?accountToDelete ?pAccount ?oAccount .
      }
 }
