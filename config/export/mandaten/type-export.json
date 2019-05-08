@@ -302,6 +302,16 @@
         "schema:contactPoint"
       ],
       "additionalFilter": ""
+    },
+    {
+      "type": "besluit:Bestuurseenheid",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:altLabel"
+      ],
+      "additionalFilter": ""
     }
   ]
 }
