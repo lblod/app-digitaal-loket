@@ -13,6 +13,7 @@
 (read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "slave-toezicht-domain.lisp")
+(read-domain-file "slave-leidinggevenden-domain.lisp")
 (read-domain-file "master-users-domain.lisp")
 (read-domain-file "master-validations-domain.lisp")
 (read-domain-file "master-files-domain.lisp")
