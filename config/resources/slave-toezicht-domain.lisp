@@ -66,6 +66,9 @@
                                     :as "nomenclature")
              (toezicht-tax-type :via ,(s-prefix "toezicht:taxType")
                                 :as "tax-type")
+             (inzending-voor-toezicht-melding :via ,(s-prefix "dct:subject")
+                                :inverse t
+                                :as "melding")
              )
   :has-many `((file :via ,(s-prefix "nie:hasPart")
                     :as "files")
@@ -165,3 +168,24 @@
                                       :as "inzending-voor-toezicht"))
   :resource-base (s-url "http://data.lblod.info/form-solutions/")
   :on-path "form-solutions")
+
+(define-resource inzending-voor-toezicht-melding ()
+  :class (s-prefix "toezicht:InzendingVoorToezichtMelding")
+  :properties `((:description :string ,(s-prefix "dct:description")))
+  :has-one `((melding-status :via ,(s-prefix "adms:status")
+                             :as "status")
+             (inzending-voor-toezicht :via ,(s-prefix "dct:subject")
+                             :as "inzending-voor-toezicht"))
+  :resource-base (s-url "http://data.lblod.info/inzending-voor-toezicht-meldingen/")
+  :on-path "inzending-voor-toezicht-meldingen")
+
+(define-resource melding-status ()
+  :class (s-prefix "toezicht:MeldingStatus")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :has-many `((inzending-voor-toezicht-melding :via ,(s-prefix "adms:status")
+                                               :inverse t
+                                               :as "meldingen"))
+  :resource-base (s-url "http://data.lblod.info/melding-statuses/")
+  :features `(no-pagination-defaults include-uri)
+  :on-path "melding-statuses")
+
