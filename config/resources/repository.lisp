@@ -5,9 +5,8 @@
 
 (add-prefix "besluit" "http://data.vlaanderen.be/ns/besluit#")
 (add-prefix "mandaat" "http://data.vlaanderen.be/ns/mandaat#")
-(add-prefix "persoon" "http://data.vlaanderen.be/ns/persoon#")
-(add-prefix "generiek" "http://data.vlaanderen.be/ns/generiek#")
-(add-prefix "lblod" "http://data.lblod.info/vocabularies/lblod/")
+(add-prefix "persoon" "http://data.vlaanderen.be/ns/persoon#") ;;  TODO: this is incorrect, should be https
+(add-prefix "generiek" "http://data.vlaanderen.be/ns/generiek#") ;; TODO: this is incorrect, should be https
 
 (add-prefix "eli" "http://data.europa.eu/eli/ontology#")
 (add-prefix "m8g" "http://data.europa.eu/m8g/")

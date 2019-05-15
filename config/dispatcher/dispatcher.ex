@@ -266,27 +266,18 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # slave organisatie
+  # slave leidinggevenden
   #################################################################
-
-  match "/vestigingen/*path" do
-    Proxy.forward conn, path, "http://cache/vestigingen/"
-  end
-
-  match "/contact-punten/*path" do
-    Proxy.forward conn, path, "http://cache/contact-punten/"
+  match "/bestuursfuncties/*path" do
+    Proxy.forward conn, path, "http://cache/bestuursfuncties/"
   end
 
   match "/functionarissen/*path" do
     Proxy.forward conn, path, "http://cache/functionarissen/"
   end
 
-  match "/posities/*path" do
-    Proxy.forward conn, path, "http://cache/posities/"
-  end
-
-  match "/rollen/*path" do
-    Proxy.forward conn, path, "http://cache/rollen/"
+  match "/contact-punten/*path" do
+    Proxy.forward conn, path, "http://cache/contact-punten/"
   end
 
   match "/functionaris-status-codes/*path" do
