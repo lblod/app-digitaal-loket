@@ -84,10 +84,13 @@
 (define-resource bestuurseenheid ()
   :class (s-prefix "besluit:Bestuurseenheid")
   :properties `((:naam :string ,(s-prefix "skos:prefLabel"))
+                (:alternatieve-naam :string-set ,(s-prefix "skos:altLabel"))
                 (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
                 (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties")))
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
+             (werkingsgebied :via ,(s-prefix "ext:inProvincie")
+                             :as "provincie")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie")
              (vestiging :via ,(s-prefix "org:hasPrimarySite")

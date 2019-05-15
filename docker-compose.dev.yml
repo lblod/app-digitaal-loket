@@ -48,6 +48,8 @@ services:
     restart: "no"
   export-inzendingen:
     restart: "no"
+  export-log-entries:
+    restart: "no"
   package-toezicht:
     restart: "no"
   deliver-toezicht:

@@ -35,3 +35,5 @@
 
 (add-prefix "email" "http://mu.semte.ch/vocabularies/ext/email/")
 (add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
+
+(add-prefix "rlog" "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#")

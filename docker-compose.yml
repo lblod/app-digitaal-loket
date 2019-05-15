@@ -81,7 +81,7 @@ services:
     restart: always
     logging: *default-logging
   login:
-    image: lblod/acmidm-login-service:0.4.1
+    image: lblod/acmidm-login-service:0.7.0
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
@@ -179,6 +179,21 @@ services:
     volumes:
       - ./data/exports/inzendingen:/data/exports
       - ./config/export/inzendingen:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  export-log-entries:
+    image: lblod/mandaten-download-generator-service:0.3.3
+    links:
+      - virtuoso:database
+    environment:
+      EXPORT_CRON_PATTERN: "0 0 3 * * *"
+      EXPORT_FILE_BASE: "log-entries"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-log-entries"
+    volumes:
+      - ./data/exports/log-entries:/data/exports
+      - ./config/export/log-entries:/config
     labels:
       - "logging=true"
     restart: always

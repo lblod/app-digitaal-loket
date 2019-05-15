@@ -81,6 +81,10 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
                         "http://data.lblod.info/vocabularies/leidinggevenden/FunctionarisStatusCode",
                         "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
+                        "http://mu.semte.ch/vocabularies/ext/LogSource"
                       ]
                     } },
                   %GraphSpec{

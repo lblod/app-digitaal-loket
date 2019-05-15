@@ -99,7 +99,8 @@
         "org:linkedTo",
         "org:hasPrimarySite",
         "org:heldBy",
-        "org:hasPost"
+        "org:hasPost",
+        "skos:altLabel"
       ],
       "additionalFilter": "?resource besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>)) #District"
     },
