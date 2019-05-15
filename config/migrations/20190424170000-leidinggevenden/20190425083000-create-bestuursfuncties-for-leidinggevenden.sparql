@@ -9,7 +9,7 @@ PREFIX org: <http://www.w3.org/ns/org#>
 ########################################################
 INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTijd besluit:bevat ?bestuursfunctie.
+    ?bestuursorgaanInTijd lblodlg:heeftBestuursfunctie ?bestuursfunctie.
     ?bestuursfunctie a lblodlg:Bestuursfunctie;
                      mu:uuid ?uuid ;
                      skos:prefLabel ?naam;
@@ -40,7 +40,7 @@ WHERE {
 ########################################################
 INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTijd besluit:bevat ?bestuursfunctie.
+    ?bestuursorgaanInTijd lblodlg:heeftBestuursfunctie ?bestuursfunctie.
     ?bestuursfunctie a lblodlg:Bestuursfunctie;
                      mu:uuid ?uuid ;
                      skos:prefLabel ?naam;
@@ -69,7 +69,7 @@ WHERE {
 ########################################################
 INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTijd besluit:bevat ?bestuursfunctie.
+    ?bestuursorgaanInTijd lblodlg:heeftBestuursfunctie ?bestuursfunctie.
     ?bestuursfunctie a lblodlg:Bestuursfunctie;
                      mu:uuid ?uuid ;
                      skos:prefLabel ?naam;
