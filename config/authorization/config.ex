@@ -225,7 +225,14 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/person#Person",
                         "http://www.w3.org/ns/adms#Identifier"
-                      ] } } ] },
+                      ] } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [ "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie" ],
+                      predicates: %NoPredicates{
+                        except: [
+                          "http://schema.org/contactPoint" ] } } } ] },
 
       # // MESSAGING CENTRE
       %GroupSpec{
