@@ -1,8 +1,8 @@
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
-<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
+<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/39854196-f214-4688-87a1-d6ad12baa2fa> a <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>,
      <http://www.w3.org/2004/02/skos/core#Concept>;
-   <http://mu.semte.ch/vocabularies/core/uuid> "41caf7e6-b040-4720-9cc2-a96cfffed5b4";
+   <http://mu.semte.ch/vocabularies/core/uuid> "39854196-f214-4688-87a1-d6ad12baa2fa ;
    <http://www.w3.org/2004/02/skos/core#prefLabel> "Algemeen directeur";
    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> .
 

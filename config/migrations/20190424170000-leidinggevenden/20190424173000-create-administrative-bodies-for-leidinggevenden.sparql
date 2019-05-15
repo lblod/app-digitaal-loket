@@ -34,7 +34,7 @@ WHERE {
   BIND(SHA256(CONCAT("yi5cheiReeph9seesah8vaiSaidie5bahzah9Oxeum3eS6er5ohL0iewoo4h", ":", STR(?bestuurseenheid), ?classificatieUuid )) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
   VALUES ?classificatie {
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4>
+    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/39854196-f214-4688-87a1-d6ad12baa2fa>
     <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/11f0af9e-016c-4e0b-983a-d8bc73804abc>
     <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/62644b9c-4514-41dd-a660-4c35257f2b35>
     <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/ed40469e-3b6f-4f38-99ba-18912ee352b0>
