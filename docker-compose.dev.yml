@@ -44,6 +44,8 @@ services:
     restart: "no"
   export-mandaten:
     restart: "no"
+  export-leidinggevenden:
+    restart: "no"
   export-inzendingen:
     restart: "no"
   export-log-entries:

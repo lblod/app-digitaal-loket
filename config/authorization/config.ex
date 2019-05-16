@@ -79,7 +79,8 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://www.w3.org/ns/org#Role",
                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-                        "http://data.lblod.info/vocabularies/lblod/FunctionarisStatusCode",
+                        "http://data.lblod.info/vocabularies/leidinggevenden/FunctionarisStatusCode",
+                        "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
@@ -219,16 +220,19 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://www.w3.org/ns/org#Site",
                         "http://schema.org/PostalAddress",
-                        "http://www.w3.org/ns/org#Post",
-                        "http://www.w3.org/ns/org#Organization",
-                        "http://data.lblod.info/vocabularies/lblod/Functionaris",
+                        "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/person#Person",
-                        "http://www.w3.org/ns/adms#Identifier",
-                        "http://purl.org/dc/terms/PeriodOfTime"
-                      ] } } ] },
+                        "http://www.w3.org/ns/adms#Identifier"
+                      ] } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [ "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie" ],
+                      predicates: %NoPredicates{
+                        except: [
+                          "http://schema.org/contactPoint" ] } } } ] },
 
       # // MESSAGING CENTRE
       %GroupSpec{
