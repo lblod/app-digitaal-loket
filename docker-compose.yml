@@ -270,7 +270,7 @@ services:
     labels:
       logging: true
   download-url-service:
-    image: lblod/loket-download-url-service:0.0.3
+    image: lblod/loket-download-url-service:0.1.0
     environment:
       CACHING_MAX_RETRIES: 300
       CACHING_CRON_PATTERN: '0 */15 * * * *'
