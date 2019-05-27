@@ -24,6 +24,7 @@
       ],
       "optionalProperties": [
         "skos:prefLabel",
+        "skos:altLabel",
         "besluit:werkingsgebied",
         "besluit:classificatie",
         "org:hasPrimarySite",
