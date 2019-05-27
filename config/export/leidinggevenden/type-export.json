@@ -31,17 +31,8 @@
         "org:hasPrimarySite",
         "org:heldBy",
         "org:hasPost"
-      ]
-    },
-    {
-      "type": "prov:Location",
-      "requiredProperties": [
-        "mu:uuid"
       ],
-      "optionalProperties": [
-        "rdfs:label",
-        "ext:werkingsgebiedNiveau"
-      ]
+      "additionalFilter":"?resource ^besluit:bestuurt ?borg.\n ?borg ^mandaat:isTijdspecialisatieVan ?bot.\n ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie.\n ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie."
     },
     {
       "type": "besluit:Bestuursorgaan",
@@ -56,7 +47,24 @@
         "besluit:classificatie",
         "mandaat:isTijdspecialisatieVan",
         "lblodlg:heeftBestuursfunctie"
-      ]
+      ],
+      "additionalFilter":"?resource ^mandaat:isTijdspecialisatieVan ?bot.\n  ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie."
+    },
+    {
+      "type": "besluit:Bestuursorgaan",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "skos:prefLabel",
+        "mandaat:bindingEinde",
+        "mandaat:bindingStart",
+        "besluit:bestuurt",
+        "besluit:classificatie",
+        "mandaat:isTijdspecialisatieVan",
+        "lblodlg:heeftBestuursfunctie"
+      ],
+      "additionalFilter":"?resource lblodlg:heeftBestuursfunctie ?bestuursfunctie."
     },
     {
       "type": "ext:BestuursfunctieCode",
@@ -67,7 +75,83 @@
         "skos:prefLabel",
         "skos:scopeNote"
       ],
+      "additionalFilter":"?bestuursfunctie org:role ?resource.\n  ?bestuursfuncrie a lblodlg:Bestuursfunctie."
+    },
+    {
+      "type": "schema:PostalAddress",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "schema:addressLocality",
+        "schema:postalCode",
+        "schema:streetAddress",
+        "schema:telephone",
+        "schema:faxNumber",
+        "schema:email",
+        "schema:url",
+        "rdf:type"
+      ],
+      "additionalFilter":"?bestuursfunctie schema:contactPoint ?resource.\n  ?bestuursfuncrie a lblodlg:Bestuursfunctie."
+    },
+    {
+      "type": "lblodlg:Bestuursfunctie",
+      "requiredProperties": [
+        "mu:uuid",
+        "org:role"
+      ],
+      "optionalProperties": [
+       "schema:contactPoint"
+      ],
       "additionalFilter": ""
+    },
+    {
+      "type": "lblodlg:Functionaris",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "mandaat:start",
+        "mandaat:einde",
+        "org:holds",
+        "mandaat:status",
+        "mandaat:isBestuurlijkeAliasVan"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "lblodlg:FunctionarisStatusCode",
+      "requiredProperties": [
+        "mu:uuid",
+        "skos:prefLabel"
+      ],
+      "optionalProperties": [
+        "skos:scopeNote"
+      ],
+      "additionalFilter": ""
+    },
+    {
+      "type": "person:Person",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "foaf:familyName",
+        "persoon:gebruikteVoornaam",
+        "foaf:name"
+      ],
+      "additionalFilter":"?resource ^mandaat:isBestuurlijkeAliasVan ?functionaris.\n  ?functionaris a lblodlg:Functionaris."
+    },
+    {
+      "type": "prov:Location",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "rdfs:label",
+        "ext:werkingsgebiedNiveau"
+      ],
+      "additionalFilter":"?resource ^ext:inProvincie ?eenheid.\n  ?eenheid ^besluit:bestuurt ?borg.\n  ?borg ^mandaat:isTijdspecialisatieVan ?bot.\n  ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie."
     },
     {
       "type": "ext:BestuurseenheidClassificatieCode",
@@ -90,42 +174,6 @@
         "skos:scopeNote"
       ],
       "additionalFilter": ""
-    },
-    {
-      "type": "schema:PostalAddress",
-      "requiredProperties": [
-        "mu:uuid"
-      ],
-      "optionalProperties": [
-        "schema:addressLocality",
-        "schema:postalCode",
-        "schema:streetAddress",
-        "schema:telephone",
-        "schema:faxNumber",
-        "schema:email",
-        "schema:url",
-        "rdf:type"
-      ]
-    },
-    {
-      "type": "lblodlg:Bestuursfunctie",
-      "requiredProperties": [
-        "mu:uuid",
-        "org:role"
-      ],
-      "optionalProperties": [
-       "schema:contactPoint"
-      ]
-    },
-    {
-      "type": "lblodlg:FunctionarisStatusCode",
-      "requiredProperties": [
-        "mu:uuid",
-        "skos:prefLabel"
-      ],
-      "optionalProperties": [
-        "skos:scopeNote"
-      ]
     }
   ]
 }
