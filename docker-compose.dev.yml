@@ -62,3 +62,5 @@ services:
     restart: "no"
   berichtencentrum-sync-with-kalliope:
     restart: "no"
+  adressenregister:
+    restart: "no"

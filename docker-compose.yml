@@ -281,3 +281,7 @@ services:
       - ./data/files:/data/files
     restart: always
     logging: *default-logging
+  adressenregister:
+    image: lblod/adressenregister-fuzzy-search-service:0.3.0
+    restart: always
+    logging: *default-logging
