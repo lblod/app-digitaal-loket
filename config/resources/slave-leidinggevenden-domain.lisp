@@ -38,7 +38,7 @@
                 (:fax :string ,(s-prefix "schema:faxNumber"))
                 (:website :string ,(s-prefix "schema:url"))
                 (:adres-register-id :number ,(s-prefix "lblodlg:adresRegisterId"))
-                (:adres-register-uri :string ,(s-prefix "lblodlg:adresRegisterUri")))
+                (:adres-register-uri :url ,(s-prefix "lblodlg:adresRegisterUri")))
   :resource-base (s-url "http://data.lblod.info/id/contactpunt/")
   :features '(include-uri)
   :on-path "contact-punten"
