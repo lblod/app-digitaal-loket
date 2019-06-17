@@ -146,6 +146,7 @@ services:
       - virtuoso:database
     environment:
       EXPORT_CRON_PATTERN: "0 0 5 * * *"
+      EXPORT_FILE_BASE: "leidinggevenden"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-leidinggevenden"
     volumes:
       - ./data/exports/leidinggevenden:/data/exports
