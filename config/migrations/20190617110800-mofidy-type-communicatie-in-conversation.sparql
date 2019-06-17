@@ -1,0 +1,17 @@
+DELETE {
+  GRAPH ?g {
+    ?conversatie <http://purl.org/dc/terms/type> ?type .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?conversatie <http://mu.semte.ch/vocabularies/ext/currentType> ?type .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?message a <http://schema.org/Message> ;
+      <http://schema.org/hasPart> ?conversatie ;
+      <http://purl.org/dc/terms/type> ?type .
+  }
+}
