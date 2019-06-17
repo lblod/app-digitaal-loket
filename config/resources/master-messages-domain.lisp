@@ -25,10 +25,10 @@
             (bestuurseenheid :via ,(s-prefix "schema:recipient")
                   :as "naar")
             (email :via ,(s-prefix "ext:notificatieEmail")
-                  :as "notificatie-email")
-            (conversatie :via ,(s-prefix "schema:hasPart")
-                  :inverse t
-                  :as "conversatie"))
+                  :as "notificatie-email"))
+            ;  (conversatie :via ,(s-prefix "schema:hasPart")
+            ;        :inverse t
+            ;        :as "conversatie"))
   :has-many `((file :via ,(s-prefix "nie:hasPart")
                     :as "bijlagen"))
   :resource-base (s-url "http://data.lblod.info/id/berichten/")

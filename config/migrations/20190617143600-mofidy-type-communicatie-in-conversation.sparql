@@ -11,8 +11,9 @@ INSERT {
 WHERE {
   GRAPH ?g {
     ?message a <http://schema.org/Message> ;
-      <http://schema.org/hasPart> ?conversatie ;
+      ^<http://schema.org/hasPart> ?conversatie ;
       <http://purl.org/dc/terms/type> ?type .
     ?conversatie <http://purl.org/dc/terms/type> ?oldType .
   }
+  BIND (?g as ?h)
 }
