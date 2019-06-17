@@ -1,6 +1,6 @@
 DELETE {
   GRAPH ?h {
-    ?conversatie <http://purl.org/dc/terms/type> ?type .
+    ?conversatie <http://purl.org/dc/terms/type> ?oldType .
   }
 }
 INSERT {
@@ -13,6 +13,6 @@ WHERE {
     ?message a <http://schema.org/Message> ;
       <http://schema.org/hasPart> ?conversatie ;
       <http://purl.org/dc/terms/type> ?type .
+    ?conversatie <http://purl.org/dc/terms/type> ?oldType .
   }
-  BIND(?g as ?h)
 }
