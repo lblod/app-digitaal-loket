@@ -14,7 +14,10 @@
     "prov": "http://www.w3.org/ns/prov#",
     "adms": "http://www.w3.org/ns/adms#",
     "mu": "http://mu.semte.ch/vocabularies/core/",
-    "lblodlg": "http://data.lblod.info/vocabularies/leidinggevenden/"
+    "lblodlg": "http://data.lblod.info/vocabularies/leidinggevenden/",
+    "schema": "http://schema.org/",
+    "adres": "https://data.vlaanderen.be/ns/adres#",
+    "locn":  "http://www.w3.org/ns/locn#"
   },
   "types": [
     {
@@ -26,12 +29,7 @@
         "skos:prefLabel",
         "skos:altLabel",
         "besluit:werkingsgebied",
-        "besluit:classificatie",
-        "org:hasPrimarySite",
-        "org:linkedTo",
-        "org:hasPrimarySite",
-        "org:heldBy",
-        "org:hasPost"
+        "besluit:classificatie"
       ],
       "additionalFilter":"?resource ^besluit:bestuurt ?borg.\n ?borg ^mandaat:isTijdspecialisatieVan ?bot.\n ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie.\n ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie."
     },
@@ -79,21 +77,38 @@
       "additionalFilter":"?bestuursfunctie org:role ?resource.\n  ?bestuursfuncrie a lblodlg:Bestuursfunctie."
     },
     {
-      "type": "schema:PostalAddress",
+      "type": "schema:ContactPoint",
       "requiredProperties": [
         "mu:uuid"
       ],
       "optionalProperties": [
-        "schema:addressLocality",
-        "schema:postalCode",
-        "schema:streetAddress",
+        "locn:address",
         "schema:telephone",
         "schema:faxNumber",
         "schema:email",
         "schema:url",
         "rdf:type"
       ],
-      "additionalFilter":"?bestuursfunctie schema:contactPoint ?resource.\n  ?bestuursfuncrie a lblodlg:Bestuursfunctie."
+      "additionalFilter":"?bestuursfunctie schema:contactPoint ?resource.\n  ?bestuursfunctie a lblodlg:Bestuursfunctie."
+    },
+    {
+      "type": "locn:Address",
+      "requiredProperties": [
+        "locn:fullAddress"
+      ],
+      "optionalProperties": [
+        "locn:adminUnit1",
+        "locn:adminUnit2",
+        "locn:addressArea",
+        "adres:Adresvoorstelling.huisnummer",
+        "adres:Adresvoorstelling.busnummer",
+        "adres:land",
+        "locn:thoroughfare",
+        "adres:verwijstNaar",
+        "adres:gemeentenaam",
+        "adres:postcode"
+      ],
+      "additionalFilter": "?bestuursfunctie a lblodlg:Bestuursfunctie; schema:contactPoint/locn:address ?resource"
     },
     {
       "type": "lblodlg:Bestuursfunctie",
@@ -102,7 +117,8 @@
         "org:role"
       ],
       "optionalProperties": [
-       "schema:contactPoint"
+        "schema:contactPoint",
+        "skos:prefLabel"
       ],
       "additionalFilter": ""
     },
