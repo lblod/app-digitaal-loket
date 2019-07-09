@@ -27,8 +27,6 @@
   :features '(include-uri)
   :on-path "functionarissen")
 
-; Changer le concact-punt en un ContactInfo et créer AdresVoorstelling
-
 (define-resource contact-punt ()
   :class (s-prefix "schema:ContactPoint")
   :properties `((:aanschrijfprefix :language-string-set ,(s-prefix "vcard:honorific-prefix"))
@@ -60,7 +58,7 @@
                 (:adres-register-uri :url ,(s-prefix "lblodlg:adresRegisterUri")))
   :features '(include-uri)
   :resource-base (s-url "http://data.lbod.info/id/adressen/")
-  :on-path "addresses")
+  :on-path "adressen")
 
 (define-resource functionaris-status-code ()
   :class (s-prefix "lblodlg:FunctionarisStatusCode")
