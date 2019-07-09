@@ -37,3 +37,5 @@
 (add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
 
 (add-prefix "rlog" "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#")
+
+(add-prefix "locn" "http://www.w3.org/ns/locn#")

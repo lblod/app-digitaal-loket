@@ -280,6 +280,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/contact-punten/"
   end
 
+  match "/adressen/*path" do
+    Proxy.forward conn, path, "http://cache/adressen/"
+  end
+
   match "/functionaris-status-codes/*path" do
     Proxy.forward conn, path, "http://cache/functionaris-status-codes/"
   end

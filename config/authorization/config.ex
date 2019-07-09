@@ -141,7 +141,8 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://purl.org/dc/terms/PeriodOfTime",
                         "http://www.w3.org/ns/org#Site",
-                        "http://schema.org/PostalAddress",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
                         "http://www.w3.org/ns/org#Post",
                         "http://www.w3.org/ns/org#Organization" ] } },
                   %GraphSpec{
@@ -170,7 +171,8 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://purl.org/dc/terms/PeriodOfTime",
                         "http://www.w3.org/ns/org#Site",
-                        "http://schema.org/PostalAddress",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
                         "http://www.w3.org/ns/org#Post",
                         "http://www.w3.org/ns/org#Organization" ] } },
                   %GraphSpec{
@@ -220,7 +222,8 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://schema.org/PostalAddress",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
                         "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/person#Person",
