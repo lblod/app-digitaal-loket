@@ -38,7 +38,7 @@
   :has-one `((adres :via ,(s-prefix "locn:address")
                  :as "adres"))
   :features '(include-uri)
-  :resource-base (s-url "http://data.lbod.info/id/contact-punten/")
+  :resource-base (s-url "http://data.lblod.info/id/contact-punten/")
 :on-path "contact-punten")
 
 (define-resource adres ()
@@ -57,7 +57,7 @@
                 (:adres-register-id :number ,(s-prefix "lblodlg:adresRegisterId"))
                 (:adres-register-uri :url ,(s-prefix "lblodlg:adresRegisterUri")))
   :features '(include-uri)
-  :resource-base (s-url "http://data.lbod.info/id/adressen/")
+  :resource-base (s-url "http://data.lblod.info/id/adressen/")
   :on-path "adressen")
 
 (define-resource functionaris-status-code ()
