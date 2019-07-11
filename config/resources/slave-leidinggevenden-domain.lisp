@@ -23,7 +23,7 @@
                                      :as "status")
              (persoon :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
                       :as "is-bestuurlijke-alias-van"))
-  :resource-base (s-url "http://data.lbod.info/id/functionarissen/")
+  :resource-base (s-url "http://data.lblod.info/id/functionarissen/")
   :features '(include-uri)
   :on-path "functionarissen")
 
