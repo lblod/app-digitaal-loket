@@ -94,6 +94,7 @@
     {
       "type": "locn:Address",
       "requiredProperties": [
+        "mu:uuid",
         "locn:fullAddress"
       ],
       "optionalProperties": [
