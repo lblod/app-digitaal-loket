@@ -33,7 +33,7 @@ INSERT {
     ))
 
     ?nieuwBestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
-       mandaat:bindingStart "2019-08-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+       mandaat:bindingStart "2019-08-03"^^<http://www.w3.org/2001/XMLSchema#date> .
 
     ?vorigBestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
        mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
