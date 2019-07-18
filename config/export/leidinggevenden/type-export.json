@@ -74,7 +74,7 @@
         "skos:prefLabel",
         "skos:scopeNote"
       ],
-      "additionalFilter":"?bestuursfunctie org:role ?resource.\n  ?bestuursfuncrie a lblodlg:Bestuursfunctie."
+      "additionalFilter":"?bestuursfunctie org:role ?resource.\n  ?bestuursfunctie a lblodlg:Bestuursfunctie."
     },
     {
       "type": "schema:ContactPoint",
