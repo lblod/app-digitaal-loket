@@ -37,9 +37,6 @@ defmodule Dispatcher do
   match "/bestuursorgaan-classificatie-codes/*path" do
     Proxy.forward conn, path, "http://cache/bestuursorgaan-classificatie-codes/"
   end
-  match "/entiteiten/*path" do
-    Proxy.forward conn, path, "http://cache/entiteiten/"
-  end
   match "/fracties/*path" do
     Proxy.forward conn, path, "http://cache/fracties/"
   end
