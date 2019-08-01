@@ -1,6 +1,6 @@
 DELETE {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    ?s skos:prefLabel ?2 .
+    ?s skos:prefLabel ?l2 .
   }
 } WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
@@ -15,7 +15,7 @@ DELETE {
 
 DELETE {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    ?s skos:prefLabel ?2 .
+    ?s skos:prefLabel ?l2 .
   }
 } WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
