@@ -219,16 +219,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  toezicht-reporting:
-    image: lblod/toezicht-inzending-reporting-service:0.3.5
-    volumes:
-      - ./data/toezicht-reports:/data/output
-    links:
-      - virtuoso:database
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   berichtencentrum-email-notification:
     image: lblod/berichtencentrum-email-notification-service:0.1.2
     restart: always

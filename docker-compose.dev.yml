@@ -54,8 +54,6 @@ services:
     restart: "no"
   deliver-toezicht:
     restart: "no"
-  toezicht-reporting:
-    restart: "no"
   filehost:
     restart: "no"
   sink:
