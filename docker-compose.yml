@@ -130,6 +130,7 @@ services:
       - ./data/files:/data/files
     environment:
       PACKAGE_CRON_PATTERN: '0 0 * * * *'
+      MU_SPARQL_ENDPOINT: 'http://virtuoso:8890/sparql'
     labels:
       - "logging=true"
     restart: always
@@ -215,6 +216,7 @@ services:
       - ./data/files:/data/files
     environment:
       PACKAGE_CRON_PATTERN: '0 0 * * * *'
+      MU_SPARQL_ENDPOINT: 'http://virtuoso:8890/sparql'
     labels:
       - "logging=true"
     restart: always
