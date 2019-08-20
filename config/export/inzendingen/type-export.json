@@ -285,6 +285,19 @@
         "foaf:familyName"
       ],
       "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; ext:lastModifiedBy ?resource ."
+    },
+    {
+      "type": "toezicht:TaxRate",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "toezicht:amoount",
+        "toezicht:unit",
+        "toezicht:base",
+        "ext:remark"
+      ],
+      "additionalFilter": ""
     }
   ]
 }
