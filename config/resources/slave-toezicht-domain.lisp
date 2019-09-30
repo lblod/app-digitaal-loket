@@ -82,7 +82,10 @@
 
 (define-resource toezicht-tax-type ()
   :class (s-prefix "toezicht:TaxType")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :properties `(
+                (:label :string ,(s-prefix "skos:prefLabel"))
+                (:active :boolean ,(s-prefix "ext:isActiveToezichtCodeListEntry"))
+                )
   :resource-base (s-url "http://data.lblod.info/toezicht-tax-types")
   :features `(include-uri)
   :on-path "toezicht-tax-types")
