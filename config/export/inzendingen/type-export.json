@@ -306,7 +306,7 @@
         "mu:uuid"
       ],
       "optionalProperties": [
-        "toezicht:amoount",
+        "toezicht:amoount"
       ],
       "additionalFilter": ""
     }
