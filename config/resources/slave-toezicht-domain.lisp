@@ -74,6 +74,8 @@
                     :as "files")
               (tax-rate :via ,(s-prefix "toezicht:taxRate")
                         :as "tax-rates")
+              (simplified-tax-rate :via ,(s-prefix "toezicht:simplifiedTaxRate")
+                        :as "simplified-tax-rates")
               (file-address :via ,(s-prefix "toezicht:fileAddress") :as "file-addresses")
               )
   :resource-base (s-url "http://data.lblod.info/inzendingen-voor-toezicht/")
@@ -162,6 +164,13 @@
   :features `(include-uri)
   :on-path "tax-rates")
 
+(define-resource simplified-tax-rate ()
+  :class (s-prefix "toezicht:SimplifiedTaxRate")
+  :properties `((:amount :float ,(s-prefix "toezicht:amoount")))
+  :resource-base (s-url "http://data.lblod.info/simplified-tax-rates")
+  :features `(include-uri)
+  :on-path "simplified-tax-rates")
+
 (define-resource form-solution ()
   :class (s-prefix "ext:FormSolution")
   :properties `((:has-owner :string ,(s-prefix "ext:hasOwnerAsString")))
@@ -191,4 +200,3 @@
   :resource-base (s-url "http://data.lblod.info/melding-statuses/")
   :features `(no-pagination-defaults include-uri)
   :on-path "melding-statuses")
-

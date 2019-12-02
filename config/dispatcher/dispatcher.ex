@@ -207,6 +207,9 @@ defmodule Dispatcher do
   match "/tax-rates/*path" do
     Proxy.forward conn, path, "http://cache/tax-rates/"
   end
+  match "/simplified-tax-rates/*path" do
+    Proxy.forward conn, path, "http://cache/simplified-tax-rates/"
+  end
   match "/form-solutions/*path" do
     Proxy.forward conn, path, "http://cache/form-solutions/"
   end

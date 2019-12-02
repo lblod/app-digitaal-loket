@@ -179,6 +179,7 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
+                        "http://mu.semte.ch/vocabularies/ext/supervision/SimplifiedTaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution",
                         "http://mu.semte.ch/vocabularies/ext/FileAddress"
                       ] } } ] },
