@@ -62,3 +62,5 @@ services:
     restart: "no"
   adressenregister:
     restart: "no"
+  person-reconcilitation:
+    restart: "no"

@@ -13,7 +13,8 @@
     "schema": "http://schema.org/",
     "prov": "http://www.w3.org/ns/prov#",
     "adms": "http://www.w3.org/ns/adms#",
-    "mu": "http://mu.semte.ch/vocabularies/core/"
+    "mu": "http://mu.semte.ch/vocabularies/core/",
+    "owl": "http://www.w3.org/2002/07/owl#"
   },
   "types": [
     {
@@ -33,6 +34,12 @@
         "mu:uuid"
       ],
       "additionalFilter": "?resource org:holds ?mandaat .\n        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .\n        ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n        ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n        ?bestuurseenheid besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>)) #District"
+    },
+    {
+      "type": "person:Person",
+      "requiredProperties": [
+        "owl:sameAs"
+      ]
     },
     {
       "type": "person:Person",
@@ -156,6 +163,12 @@
         "persoon:datum"
       ],
       "additionalFilter": ""
+    },
+    {
+      "type": "persoon:Geboorte",
+      "requiredProperties": [
+        "owl:sameAs"
+      ]
     },
     {
       "type": "org:Membership",

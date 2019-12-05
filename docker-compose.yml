@@ -31,7 +31,7 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:0.2.0
+    image: semtech/mu-authorization:0.6.0-beta.2
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
     volumes:
@@ -276,3 +276,5 @@ services:
     image: lblod/adressenregister-fuzzy-search-service:0.4.0
     restart: always
     logging: *default-logging
+  person-reconciliation:
+    image: lblod/person-reconciliation-service:0.1.1
