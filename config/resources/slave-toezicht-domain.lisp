@@ -166,7 +166,7 @@
 
 (define-resource simplified-tax-rate ()
   :class (s-prefix "toezicht:SimplifiedTaxRate")
-  :properties `((:amount :float ,(s-prefix "toezicht:amoount")))
+  :properties `((:amount :string ,(s-prefix "toezicht:amoount")))
   :resource-base (s-url "http://data.lblod.info/simplified-tax-rates")
   :features `(include-uri)
   :on-path "simplified-tax-rates")
