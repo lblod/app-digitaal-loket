@@ -233,7 +233,7 @@ services:
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
       BERICHTEN_CRON_PATTERN: "*/5 * * * *"
-      INZENDINGEN_CRON_PATTERN: "* 22 * * *"
+      INZENDINGEN_CRON_PATTERN: "0 22 * * *"
       MAX_MESSAGE_AGE: 1
       MAX_SENDING_ATTEMPTS: 20
       INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/toezicht/inzendingen"
