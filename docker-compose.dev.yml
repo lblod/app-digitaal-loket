@@ -80,3 +80,5 @@ services:
     restart: "no"
   migrate-submission:
     restart: "no"
+  loket-mandatarissen-producer:
+    restart: "no"
