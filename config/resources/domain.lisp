@@ -16,6 +16,7 @@
 (read-domain-file "master-messages-domain.lisp")
 (read-domain-file "master-email-domain.lisp")
 (read-domain-file "master-bbcdr-domain.lisp")
+(read-domain-file "master-personeelsdatabank-domain.lisp")
 (read-domain-file "master-log-domain.lisp")
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-besluit-domain.lisp")

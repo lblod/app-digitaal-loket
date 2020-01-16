@@ -84,7 +84,12 @@ defmodule Acl.UserGroups.Config do
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
                         "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
-                        "http://mu.semte.ch/vocabularies/ext/LogSource"
+                        "http://mu.semte.ch/vocabularies/ext/LogSource",
+                        "http://lblod.data.gift/vocabularies/employee/EmployeeTimePeriod",
+                        "http://lblod.data.gift/vocabularies/employee/UnitMeasure",
+                        "http://lblod.data.gift/vocabularies/employee/EducationalLevel",
+                        "http://lblod.data.gift/vocabularies/employee/WorkingTimeCategory",
+                        "http://lblod.data.gift/vocabularies/employee/LegalStatus"
                       ]
                     } },
                   %GraphSpec{
@@ -231,6 +236,20 @@ defmodule Acl.UserGroups.Config do
                         ] }
                     } } ] },
 
+      # // EMPLOYEE NUMBERS DATABASE
+      %GroupSpec{
+        name: "o-employee-database-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-personeelsbeheer" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://lblod.data.gift/vocabularies/employee/EmployeeDataset",
+                        "http://lblod.data.gift/vocabularies/employee/EmployeePeriodSlice",
+                        "http://lblod.data.gift/vocabularies/employee/EmployeeObservation"
+                      ] } }
+                ] },
 
 
       # // USER HAS NO DATA
