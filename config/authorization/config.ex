@@ -121,7 +121,7 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
-                        "http://www.w3.org/ns/adms#Identifier"
+                        "http://www.w3.org/ns/adms#Identifier",
                       ] } } ] },
 
       # // ORG-MANDATENBEHEER
@@ -139,7 +139,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
                         "http://www.w3.org/ns/person#Person",
                         "http://www.w3.org/ns/adms#Identifier",
-                        "http://purl.org/dc/terms/PeriodOfTime" ] } } ] },
+                        "http://purl.org/dc/terms/PeriodOfTime",
+                        "http://lblod.data.gift/vocabularies/reporting/Report" ] } } ] },
       %GroupSpec{
         name: "o-mdb-wf",
         useage: [:write, :read_for_write],

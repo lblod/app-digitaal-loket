@@ -278,3 +278,9 @@ services:
     logging: *default-logging
   person-reconciliation:
     image: lblod/person-reconciliation-service:0.1.1
+  reportService:
+    image: lblod/loket-report-generation-service:0.0.1
+    links:
+      - database:database
+    volumes:
+      - ./data/files:/data/files
