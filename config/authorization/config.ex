@@ -139,8 +139,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
                         "http://www.w3.org/ns/person#Person",
                         "http://www.w3.org/ns/adms#Identifier",
-                        "http://purl.org/dc/terms/PeriodOfTime",
-                        "http://lblod.data.gift/vocabularies/reporting/Report" ] } } ] },
+                        "http://purl.org/dc/terms/PeriodOfTime" ] } } ] },
       %GroupSpec{
         name: "o-mdb-wf",
         useage: [:write, :read_for_write],
@@ -184,6 +183,18 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/FormSolution",
                         "http://mu.semte.ch/vocabularies/ext/FileAddress"
                       ] } } ] },
+    
+      # // LOKETADMIN
+        %GroupSpec{
+          name: "o-admin-rwf",
+          useage: [:read, :write, :read_for_write],
+          access: access_by_role( "LoketAdmin" ),
+          graphs: [ %GraphSpec{
+                      graph: "http://mu.semte.ch/graphs/organizations/",
+                      constraint: %ResourceConstraint{
+                        resource_types: [
+                          "http://lblod.data.gift/vocabularies/reporting/Report",
+                        ] } } ] },
 
       # // LEIDINGGEVENDEN
       %GroupSpec{
