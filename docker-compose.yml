@@ -284,3 +284,4 @@ services:
       - database:database
     volumes:
       - ./data/files:/data/files
+      - './data/reports:/app/reports'
