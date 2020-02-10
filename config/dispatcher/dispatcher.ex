@@ -333,6 +333,14 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://adressenregister/"
   end
 
+  #################################################################
+  # Reports
+  #################################################################
+
+  match "/reports/*path" do
+    Proxy.forward conn, path, "http://resource/reports/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
