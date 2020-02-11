@@ -14,38 +14,38 @@ export default {
     console.log('Generate Account Report')
     const queryString = `
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+        SELECT DISTINCT ?firstName ?familyName ?bestuurseenheid ?bestuurseenheidPrefix WHERE {
+          GRAPH <http://mu.semte.ch/graphs/public> {
+            ?eenheid a besluit:Bestuurseenheid;
+                      mu:uuid ?bestuurseenheidUUID;
+                      skos:prefLabel ?bestuurseenheid;
+                      besluit:classificatie ?classificatie.
+            ?classificatie skos:prefLabel ?bestuurseenheidPrefix.
+          }
+          BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?bestuurseenheidUUID)) as ?graph)
       
-      select distinct ?firstName ?familyName ?graph ?provider where {
-        GRAPH ?graph {
-          ?uri a foaf:Person;
-            foaf:firstName ?firstName;
-            foaf:familyName ?familyName;
-            foaf:account ?accountURI .
-          ?accountURI foaf:accountServiceHomepage ?provider.
-          FILTER(?provider != <https://github.com/lblod/mock-login-service>)
+          GRAPH ?graph {
+            ?uri a foaf:Person;
+              foaf:firstName ?firstName;
+              foaf:familyName ?familyName;
+              foaf:account ?accountURI .
+              ?accountURI foaf:accountServiceHomepage ?provider.
+              FILTER(?provider != <https://github.com/lblod/mock-login-service>)
+          }
         }
-      }
     `
     const queryResponse = await query(queryString)
-    const data = await Promise.all(queryResponse.results.bindings.map(async (account) => {
-      const bestuurseenheidUUID = account.graph.value.split('/').pop()
-      const bestuurseenheidQuery = `
-        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-        PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-        select distinct * where {
-          ?uri mu:uuid ${sparqlEscapeString(bestuurseenheidUUID)};
-            skos:prefLabel ?label .
-        }
-      `
-      const bestuurseenheidResponse = await query(bestuurseenheidQuery)
+    const data = queryResponse.results.bindings.map((account) => {
       
       return {
         firstName: account.firstName.value,
         familyName: account.familyName.value,
-        bestuurseenheid: bestuurseenheidResponse.results.bindings[0].label.value,
+        bestuurseenheid: `${account.bestuurseenheidPrefix.value} ${account.bestuurseenheid.value}`,
       }
-    }))
+    })
 
     await generateReportFromData(data, ['firstName', 'familyName', 'bestuurseenheid'], reportData)
   }
