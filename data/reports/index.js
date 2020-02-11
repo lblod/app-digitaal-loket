@@ -7,7 +7,7 @@ import sameRrnReport from './sameRrnReport'
 import failedSyncToMft from './failedSyncToMft'
 
 
-module.exports = [
+export default [
   BestuurseenhedenReport,
   BerichtencentrumMessagesReport,
   InzendingenReport,
