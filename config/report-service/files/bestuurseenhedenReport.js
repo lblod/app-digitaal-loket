@@ -16,22 +16,28 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       
-      select distinct ?name ?type ?province ?uri where {
-        ?uri a besluit:Bestuurseenheid;
-          skos:prefLabel ?name;
-          ext:inProvincie ?provinceURI;
-          besluit:classificatie ?typeURI .
-        ?provinceURI rdfs:label ?province.
-        ?typeURI skos:prefLabel ?type .
+      select distinct ?uri ?name ?type ?province where {
+        ?uri a besluit:Bestuurseenheid.
+        OPTIONAL {
+          ?uri skos:prefLabel ?name.
+        }
+        OPTIONAL {
+          ?uri ext:inProvincie ?provinceURI.
+          ?provinceURI rdfs:label ?province.
+        }
+        OPTIONAL {
+          ?uri besluit:classificatie ?typeURI.
+          ?typeURI skos:prefLabel ?type .
+        }
       }
     `
     const queryResponse = await query(queryString)
     const data = queryResponse.results.bindings.map((bestuurseenheid) => ({
-      name: bestuurseenheid.name.value,
-      type: bestuurseenheid.type.value,
-      province: bestuurseenheid.province.value,
       uri: bestuurseenheid.uri.value,
+      name: bestuurseenheid.name ? bestuurseenheid.name.value : '',
+      type: bestuurseenheid.type ? bestuurseenheid.type.value : '',
+      province: bestuurseenheid.province ? bestuurseenheid.province.value : '',
     }))
-    await generateReportFromData(data, ['name', 'type', 'province', 'uri'], reportData)
+    await generateReportFromData(data, ['uri', 'name', 'type', 'province'], reportData)
   }
 }

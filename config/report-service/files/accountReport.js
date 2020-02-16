@@ -17,23 +17,31 @@ export default {
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-        SELECT DISTINCT ?firstName ?familyName ?bestuurseenheid ?bestuurseenheidPrefix WHERE {
+        SELECT DISTINCT ?uri ?firstName ?familyName ?bestuurseenheid ?bestuurseenheidPrefix WHERE {
           GRAPH <http://mu.semte.ch/graphs/public> {
             ?eenheid a besluit:Bestuurseenheid;
-                      mu:uuid ?bestuurseenheidUUID;
-                      skos:prefLabel ?bestuurseenheid;
-                      besluit:classificatie ?classificatie.
-            ?classificatie skos:prefLabel ?bestuurseenheidPrefix.
+                      mu:uuid ?bestuurseenheidUUID.
+            OPTIONAL {
+              ?eenheid skos:prefLabel ?bestuurseenheid.
+            }
+            OPTIONAL {
+              ?eenheid besluit:classificatie ?classificatie.
+              ?classificatie skos:prefLabel ?bestuurseenheidPrefix.
+            }
           }
           BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?bestuurseenheidUUID)) as ?graph)
       
           GRAPH ?graph {
             ?uri a foaf:Person;
-              foaf:firstName ?firstName;
-              foaf:familyName ?familyName;
-              foaf:account ?accountURI .
-              ?accountURI foaf:accountServiceHomepage ?provider.
-              FILTER(?provider != <https://github.com/lblod/mock-login-service>)
+              foaf:account ?accountURI.
+            ?accountURI foaf:accountServiceHomepage ?provider.
+            OPTIONAL {
+              ?uri foaf:firstName ?firstName.
+            }
+            OPTIONAL {
+              ?uri foaf:familyName ?familyName.
+            }
+            FILTER(?provider != <https://github.com/lblod/mock-login-service>)
           }
         }
     `
@@ -41,12 +49,13 @@ export default {
     const data = queryResponse.results.bindings.map((account) => {
       
       return {
-        firstName: account.firstName.value,
-        familyName: account.familyName.value,
-        bestuurseenheid: `${account.bestuurseenheidPrefix.value} ${account.bestuurseenheid.value}`,
+        uri: account.uri.value,
+        firstName: account.firstName ? account.firstName.value : '',
+        familyName: account.familyName ? account.familyName.value : '',
+        bestuurseenheid: (account.bestuurseenheidPrefix && account.bestuurseenheid) ? `${account.bestuurseenheidPrefix.value} ${account.bestuurseenheid.value}` : '',
       }
     })
 
-    await generateReportFromData(data, ['firstName', 'familyName', 'bestuurseenheid'], reportData)
+    await generateReportFromData(data, ['uri', 'firstName', 'familyName', 'bestuurseenheid'], reportData)
   }
 }
