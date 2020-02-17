@@ -1,5 +1,4 @@
-import {sparqlEscapeString } from 'mu';
-import {generateReportFromData} from '../helpers.js'
+import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
@@ -10,8 +9,8 @@ export default {
       title: 'Accounts Report',
       description: 'All accounts and the bestuurseenheid they belong',
       filePrefix: 'accounts'
-    }
-    console.log('Generate Account Report')
+    };
+    console.log('Generate Account Report');
     const queryString = `
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
@@ -44,18 +43,17 @@ export default {
             FILTER(?provider != <https://github.com/lblod/mock-login-service>)
           }
         }
-    `
-    const queryResponse = await query(queryString)
+    `;
+    const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((account) => {
-      
       return {
         uri: account.uri.value,
         firstName: account.firstName ? account.firstName.value : '',
         familyName: account.familyName ? account.familyName.value : '',
         bestuurseenheid: (account.bestuurseenheidPrefix && account.bestuurseenheid) ? `${account.bestuurseenheidPrefix.value} ${account.bestuurseenheid.value}` : '',
-      }
-    })
+      };
+    });
 
-    await generateReportFromData(data, ['uri', 'firstName', 'familyName', 'bestuurseenheid'], reportData)
+    await generateReportFromData(data, ['uri', 'firstName', 'familyName', 'bestuurseenheid'], reportData);
   }
-}
+};

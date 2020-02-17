@@ -1,5 +1,5 @@
 import {query} from 'mu';
-import {generateReportFromData} from '../helpers.js'
+import {generateReportFromData} from '../helpers.js';
 
 export default {
   cronPattern: '0 0 * * *',
@@ -9,8 +9,8 @@ export default {
       title: 'Bestuurseenheden Report',
       description: 'All Bestuurseenheden',
       filePrefix: 'bestuurseenheden'
-    }
-    console.log('Generate Bestuurseenheden Report')
+    };
+    console.log('Generate Bestuurseenheden Report');
     const queryString = `
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
@@ -30,14 +30,14 @@ export default {
           ?typeURI skos:prefLabel ?type .
         }
       }
-    `
-    const queryResponse = await query(queryString)
+    `;
+    const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((bestuurseenheid) => ({
       uri: bestuurseenheid.uri.value,
       name: bestuurseenheid.name ? bestuurseenheid.name.value : '',
       type: bestuurseenheid.type ? bestuurseenheid.type.value : '',
       province: bestuurseenheid.province ? bestuurseenheid.province.value : '',
-    }))
-    await generateReportFromData(data, ['uri', 'name', 'type', 'province'], reportData)
+    }));
+    await generateReportFromData(data, ['uri', 'name', 'type', 'province'], reportData);
   }
-}
+};

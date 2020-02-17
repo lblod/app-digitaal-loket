@@ -1,4 +1,4 @@
-import {generateReportFromData} from '../helpers.js'
+import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
@@ -9,8 +9,8 @@ export default {
       title: 'Berichtencentrum Messages Report',
       description: 'All new messages in Berichtencentrum',
       filePrefix: 'berichtencentrumMessages'
-    }
-    console.log('Generate Berichtencentrum Messages Report')
+    };
+    console.log('Generate Berichtencentrum Messages Report');
     const queryString = `
       PREFIX schema: <http://schema.org/>
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
@@ -49,8 +49,8 @@ export default {
           }
         }
       } ORDER BY DESC(?datesent)
-    `
-    const queryResponse = await query(queryString)
+    `;
+    const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((row) => ({
       uri: row.uri ? row.uri.value : '',
       datesent: row.datesent ? row.datesent.value : '',
@@ -58,7 +58,7 @@ export default {
       dossiernr: row.dossiernr ? row.dossiernr.value : '',
       bestuurNaam: row.bestuurNaam ? row.bestuurNaam.value : '',
       bestuur: row.bestuur ? row.bestuur.value : '',
-    }))
-    await generateReportFromData(data, ['uri', 'datesent', 'betreft', 'dossiernr', 'bestuurNaam', 'bestuur'], reportData)
+    }));
+    await generateReportFromData(data, ['uri', 'datesent', 'betreft', 'dossiernr', 'bestuurNaam', 'bestuur'], reportData);
   }
-}
+};
