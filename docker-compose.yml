@@ -283,5 +283,5 @@ services:
     links:
       - database:database
     volumes:
-      - ./data/files:/data/files
+      - ./data/files:/share
       - ./config/report-service/files:/app/reports
