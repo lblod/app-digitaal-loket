@@ -259,7 +259,7 @@ services:
       - ./config/sink/sink.conf:/etc/nginx/conf.d/default.conf
     restart: always
     labels:
-      logging: true
+      logging: "true"
   download-url-service:
     image: lblod/loket-download-url-service:0.1.0
     environment:
