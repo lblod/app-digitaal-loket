@@ -64,3 +64,11 @@ services:
     restart: "no"
   person-reconciliation:
     restart: "no"
+  reportService:
+    ports:
+      - 8888:80
+      - 9229:9229
+    environment:
+      NODE_ENV: "development"
+    volumes:
+      - '/Users/oscar.rodriguez/dev/redpencil/loket-report-generation-service/:/app/'

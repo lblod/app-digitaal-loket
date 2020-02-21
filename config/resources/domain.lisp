@@ -24,3 +24,4 @@
 (read-domain-file "slave-contact-domain.lisp")
 (read-domain-file "slave-toezicht-domain.lisp")
 (read-domain-file "slave-publicatie-gn-domain.lisp")
+(read-domain-file "master-database-reports-domain.lisp")
