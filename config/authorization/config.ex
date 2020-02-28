@@ -188,18 +188,6 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/FormSolution",
                         "http://mu.semte.ch/vocabularies/ext/FileAddress"
                       ] } } ] },
-    
-      # // LOKETADMIN
-        %GroupSpec{
-          name: "o-admin-rwf",
-          useage: [:read, :write, :read_for_write],
-          access: access_by_role( "LoketAdmin" ),
-          graphs: [ %GraphSpec{
-                      graph: "http://mu.semte.ch/graphs/organizations/",
-                      constraint: %ResourceConstraint{
-                        resource_types: [
-                          "http://lblod.data.gift/vocabularies/reporting/Report",
-                        ] } } ] },
 
       # // LEIDINGGEVENDEN
       %GroupSpec{
@@ -262,6 +250,19 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/employee/EmployeeObservation"
                       ] } }
                 ] },
+
+
+      # // LOKETADMIN
+        %GroupSpec{
+          name: "o-admin-rwf",
+          useage: [:read, :write, :read_for_write],
+          access: access_by_role( "LoketAdmin" ),
+          graphs: [ %GraphSpec{
+                      graph: "http://mu.semte.ch/graphs/organizations/",
+                      constraint: %ResourceConstraint{
+                        resource_types: [
+                          "http://lblod.data.gift/vocabularies/reporting/Report",
+                        ] } } ] },
 
 
       # // USER HAS NO DATA
