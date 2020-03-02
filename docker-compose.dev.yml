@@ -50,10 +50,6 @@ services:
     restart: "no"
   export-log-entries:
     restart: "no"
-  package-toezicht:
-    restart: "no"
-  deliver-toezicht:
-    restart: "no"
   filehost:
     restart: "no"
   sink:
