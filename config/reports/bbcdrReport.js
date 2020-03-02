@@ -2,7 +2,7 @@ import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
-  cronPattern: '0 0 * * *',
+  cronPattern: '0 5 22 15 * 6',
   name: 'bbcdrDossiers',
   execute: async () => {
     const reportData = {

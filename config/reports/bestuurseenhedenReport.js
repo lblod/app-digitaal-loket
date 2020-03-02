@@ -2,7 +2,7 @@ import {query} from 'mu';
 import {generateReportFromData} from '../helpers.js';
 
 export default {
-  cronPattern: '0 0 * * *',
+  cronPattern: '0 10 22 * * 6',
   name: 'bestuurseenhedenReport',
   execute: async () => {
     const reportData = {

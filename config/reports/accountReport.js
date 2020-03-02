@@ -2,7 +2,7 @@ import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
-  cronPattern: '0 0 * * *',
+  cronPattern: '0 0 22 * * 6',
   name: 'accountsReport',
   execute: async () => {
     const reportData = {
@@ -29,7 +29,7 @@ export default {
             }
           }
           BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?bestuurseenheidUUID)) as ?graph)
-      
+
           GRAPH ?graph {
             ?uri a foaf:Person;
               foaf:account ?accountURI.

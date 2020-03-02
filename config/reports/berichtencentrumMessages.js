@@ -2,7 +2,7 @@ import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
-  cronPattern: '0 0 * * *',
+  cronPattern: '0 0 16 * * *',
   name: 'berichtencentrumMessagesReport',
   execute: async () => {
     const reportData = {
@@ -15,7 +15,7 @@ export default {
       PREFIX schema: <http://schema.org/>
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-      
+
       SELECT ?uri ?datesent ?betreft ?dossiernr ?bestuurNaam ?bestuur  WHERE {
         ?conversation a schema:Conversation;
           schema:hasPart ?uri.
