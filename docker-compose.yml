@@ -16,6 +16,14 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  dashboard:
+    image: lblod/frontend-dashboard:1.0.1
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   identifier:
     image: semtech/mu-identifier:1.7.0
     labels:

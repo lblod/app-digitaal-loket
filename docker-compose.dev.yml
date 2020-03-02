@@ -10,6 +10,8 @@ services:
     image: lblod/mock-login-service:0.3.1
   loket:
     restart: "no"
+  dashboard:
+    restart: "no"
   identifier:
     ports:
       - "80:80"
