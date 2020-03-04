@@ -5,6 +5,7 @@ import AccountReport from './accountReport';
 import bbcdrReport from './bbcdrReport';
 import sameRrnReport from './sameRrnReport';
 import failedSyncToMft from './failedSyncToMft';
+import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail'
 
 
 export default [
@@ -14,6 +15,7 @@ export default [
   AccountReport,
   bbcdrReport,
   sameRrnReport,
-  failedSyncToMft
+  failedSyncToMft,
+  bestuurseenhedenWithoutNotificationEmail
 ];
 
