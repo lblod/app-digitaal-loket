@@ -192,21 +192,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  export-log-entries:
-    image: lblod/mandaten-download-generator-service:0.3.4
-    links:
-      - virtuoso:database
-    environment:
-      EXPORT_CRON_PATTERN: "0 0 3 * * *"
-      EXPORT_FILE_BASE: "log-entries"
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-log-entries"
-    volumes:
-      - ./data/exports/log-entries:/data/exports
-      - ./config/export/log-entries:/config
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   berichtencentrum-email-notification:
     image: lblod/berichtencentrum-email-notification-service:0.1.2
     restart: always

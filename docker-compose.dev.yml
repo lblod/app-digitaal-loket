@@ -50,8 +50,6 @@ services:
     restart: "no"
   export-inzendingen:
     restart: "no"
-  export-log-entries:
-    restart: "no"
   filehost:
     restart: "no"
   sink:
