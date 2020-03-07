@@ -6,7 +6,7 @@ export default {
   name: 'bbcdrDossiers',
   execute: async () => {
     const reportData = {
-      title: 'BBC-DR Dossiers Report',
+      title: 'Totaal aantal BBC-DR Dossiers',
       description: 'Number of BBC-DR Dossiers',
       filePrefix: 'bbcdrDossiers'
     };

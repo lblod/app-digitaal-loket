@@ -6,7 +6,7 @@ export default {
   name: 'bestuurseenhedenReport',
   execute: async () => {
     const reportData = {
-      title: 'Bestuurseenheden Report',
+      title: 'Lijst van bestuurseenheden',
       description: 'All Bestuurseenheden',
       filePrefix: 'bestuurseenheden'
     };

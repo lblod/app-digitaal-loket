@@ -6,8 +6,8 @@ export default {
   name: 'sameRRN',
   execute: async () => {
     const reportData = {
-      title: 'Same RRN but different URI Report',
-      description: 'Number of persons with same RRN but different URI',
+      title: 'Lijst van dubbele personen',
+      description: 'Persons with the same RRN but a different URI',
       filePrefix: 'sameRRN'
     };
     console.log('Generate duplicate RRN report');

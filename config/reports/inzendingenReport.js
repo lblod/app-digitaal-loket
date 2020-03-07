@@ -6,7 +6,7 @@ export default {
   name: 'inzendingenReport',
   execute: async () => {
     const reportData = {
-      title: 'Inzendingen Report',
+      title: 'Aantal inzendingen per type besluit',
       description: 'Number of inzendingen by decision type',
       filePrefix: 'inzendingen'
     };

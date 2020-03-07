@@ -6,7 +6,7 @@ export default {
   name: 'berichtencentrumMessagesReport',
   execute: async () => {
     const reportData = {
-      title: 'Berichtencentrum Messages Report',
+      title: 'Lijst van nieuwe berichten in Berichtencentrum',
       description: 'All new messages in Berichtencentrum',
       filePrefix: 'berichtencentrumMessages'
     };

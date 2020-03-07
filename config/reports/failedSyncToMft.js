@@ -6,7 +6,7 @@ export default {
   name: 'failedSyncToMft',
   execute: async () => {
     const reportData = {
-      title: 'Number of failed synchronizations to MFT',
+      title: 'Aantal gefaalde synchronisaties naar MFT',
       description: 'Number of failed synchronizations to MFT',
       filePrefix: 'MftFailedSync'
     };
