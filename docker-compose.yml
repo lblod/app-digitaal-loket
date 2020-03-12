@@ -201,7 +201,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.4.13
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.5.0
     environment:
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
