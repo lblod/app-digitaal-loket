@@ -6,6 +6,7 @@ import bbcdrReport from './bbcdrReport';
 import sameRrnReport from './sameRrnReport';
 import failedSyncToMft from './failedSyncToMft';
 import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail'
+import internalMandatenReport from './internalMandatenReport'
 
 
 export default [
@@ -16,6 +17,7 @@ export default [
   bbcdrReport,
   sameRrnReport,
   failedSyncToMft,
-  bestuurseenhedenWithoutNotificationEmail
+  bestuurseenhedenWithoutNotificationEmail,
+  internalMandatenReport
 ];
 
