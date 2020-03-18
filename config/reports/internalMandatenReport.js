@@ -84,6 +84,7 @@ export default {
       }
     `;
     const queryResponse = await batchedQuery(queryString);
+
     const data = queryResponse.results.bindings.map( row => {
       return {
         mandataris: getSafeValue(row, 'mandataris'),
@@ -106,6 +107,7 @@ export default {
         geboortedatum: getSafeValue(row, 'geboortedatum')
       };
     });
+
     await generateReportFromData(data, [
       'mandataris', 'start', 'eind', 'rangorde', 'status', 'voornaam', 'achternaam', 'roepnaam',
       'bestuursfunctieLabel', 'bestuursorgaanLabel', 'bestuursorgaanClassificatieLabel', 'bestuurseenheidLabel',
