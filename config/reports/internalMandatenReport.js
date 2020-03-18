@@ -21,15 +21,15 @@ export default {
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX regorg: <https://www.w3.org/ns/regorg#>
-      
+
       SELECT DISTINCT (?s AS ?mandataris) ?start ?eind ?rangorde ?status ?voornaam ?achternaam ?roepnaam ?bestuursfunctieLabel ?bestuursorgaanLabel ?bestuursorgaanClassificatieLabel ?bestuurseenheidLabel ?bestuurseenheidClassificatieLabel ?werkingsgebiedLabel ?werkingsgebiedNiveau ?fractieNaam ?geslacht ?geboortedatum WHERE {
         ?s a mandaat:Mandataris .
         OPTIONAL { ?s mandaat:start ?start . }
         OPTIONAL { ?s mandaat:einde ?eind . }
         OPTIONAL { ?s mandaat:rangorde ?rangorde . }
         OPTIONAL { ?s mandaat:status ?status . }
-      
-      
+
+
         OPTIONAL {
           ?s mandaat:isBestuurlijkeAliasVan ?persoon .
           OPTIONAL { ?persoon foaf:familyName ?achternaam . }
@@ -38,14 +38,14 @@ export default {
           OPTIONAL { ?persoon persoon:geslacht ?geslacht }
           OPTIONAL { ?persoon persoon:heeftGeboorte/persoon:datum ?geboortedatum }
         }
-      
+
         OPTIONAL {
           ?s org:holds ?mandaat .
           OPTIONAL {
             ?mandaat org:role ?bestuursfunctie .
             OPTIONAL { ?bestuursfunctie skos:prefLabel ?bestuursfunctieLabel . }
           }
-      
+
           OPTIONAL {
             ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
             ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
@@ -54,7 +54,7 @@ export default {
               ?bestuursorgaan besluit:classificatie ?bestuursorgaanClassificatie .
               OPTIONAL { ?bestuursorgaanClassificatie skos:prefLabel ?bestuursorgaanClassificatieLabel }
             }
-      
+
             OPTIONAL {
               ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
               OPTIONAL { ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel . }
@@ -70,18 +70,18 @@ export default {
             }
           }
         }
-      
+
         OPTIONAL {
           ?s org:hasMembership/org:organisation ?fractie .
           OPTIONAL { ?fractie regorg:legalName ?fractieNaam . }
         }
-      
+
         OPTIONAL {
           ?s mandaat:beleidsdomein ?beleids .
           OPTIONAL { ?beleids skos:prefLabel ?beleidsdomeinLabel . }
           BIND(CONCAT(?beleidsdomeinLabel, " (", STR(?beleids), ")") as ?beleidsdomein)
         }
-      } 
+      }
     `;
     const queryResponse = await batchedQuery(queryString);
     const data = queryResponse.results.bindings.map( row => {
