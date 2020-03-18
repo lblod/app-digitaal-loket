@@ -84,33 +84,37 @@ export default {
       } 
     `;
     const queryResponse = await batchedQuery(queryString);
-    const data = queryResponse.results.bindings.map((row) => {
+    const data = queryResponse.results.bindings.map( row => {
       return {
-        mandataris: row.mandataris.value,
-        start: row.start.value,
-        eind: row.eind.value,
-        rangorde: row.rangorde.value,
-        status: row.status.value,
-        voornaam: row.voornaam.value,
-        achternaam: row.achternaam.value,
-        roepnaam: row.roepnaam.value,
-        bestuursfunctieLabel: row.bestuursfunctieLabel.value,
-        bestuursorgaanLabel: row.bestuursorgaanLabel.value,
-        bestuursorgaanClassificatieLabel: row.bestuursorgaanClassificatieLabel.value,
-        bestuurseenheidLabel: row.bestuurseenheidLabel.value,
-        bestuurseenheidClassificatieLabel: row.bestuurseenheidClassificatieLabel.value,
-        werkingsgebiedLabel: row.werkingsgebiedLabel.value,
-        werkingsgebiedNiveau: row.werkingsgebiedNiveau.value,
-        fractieNaam: row.fractieNaam.value,
-        geslacht: row.geslacht.value,
-        geboortedatum: row.geboortedatum.value,
+        mandataris: getSafeValue(row, 'mandataris'),
+        start: getSafeValue(row, 'start'),
+        eind: getSafeValue(row, 'eind'),
+        rangorde: getSafeValue(row, 'rangorde'),
+        status: getSafeValue(row, 'status'),
+        voornaam: getSafeValue(row, 'voornaam'),
+        achternaam: getSafeValue(row, 'achternaam'),
+        roepnaam: getSafeValue(row, 'roepnaam'),
+        bestuursfunctieLabel: getSafeValue(row, 'bestuursfunctieLabel'),
+        bestuursorgaanLabel: getSafeValue(row, 'bestuursorgaanLabel'),
+        bestuursorgaanClassificatieLabel:getSafeValue( row, 'bestuursorgaanClassificatieLabel'),
+        bestuurseenheidLabel: getSafeValue(row, 'bestuurseenheidLabel'),
+        bestuurseenheidClassificatieLabel: getSafeValue(row, 'bestuurseenheidClassificatieLabel'),
+        werkingsgebiedLabel: getSafeValue(row, 'werkingsgebiedLabel'),
+        werkingsgebiedNiveau: getSafeValue(row, 'werkingsgebiedNiveau'),
+        fractieNaam: getSafeValue(row, 'fractieNaam'),
+        geslacht: getSafeValue(row, 'geslacht'),
+        geboortedatum: getSafeValue(row, 'geboortedatum')
       };
     });
     await generateReportFromData(data, [
-      'mandataris', 'start', 'eind', 'rangorde', 'status', 'voornaam', 'achternaam', 'roepnaam', 
+      'mandataris', 'start', 'eind', 'rangorde', 'status', 'voornaam', 'achternaam', 'roepnaam',
       'bestuursfunctieLabel', 'bestuursorgaanLabel', 'bestuursorgaanClassificatieLabel', 'bestuurseenheidLabel',
       'bestuurseenheidClassificatieLabel', 'werkingsgebiedLabel', 'werkingsgebiedNiveau', 'fractieNaam', 'geslacht',
       'geboortedatum'
     ], reportData);
   }
 };
+
+function getSafeValue(entry, property){
+  return entry[property] ? entry[property].value: null;
+}
