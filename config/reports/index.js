@@ -5,9 +5,8 @@ import AccountReport from './accountReport';
 import bbcdrReport from './bbcdrReport';
 import sameRrnReport from './sameRrnReport';
 import failedSyncToMft from './failedSyncToMft';
-import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail'
-import internalMandatenReport from './internalMandatenReport'
-
+import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail';
+import internalMandatenReport from './internalMandatenReport';
 
 export default [
   BestuurseenhedenReport,
@@ -20,4 +19,3 @@ export default [
   bestuurseenhedenWithoutNotificationEmail,
   internalMandatenReport
 ];
-
