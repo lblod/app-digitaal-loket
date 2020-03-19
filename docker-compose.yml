@@ -252,7 +252,7 @@ services:
   person-reconciliation:
     image: lblod/person-reconciliation-service:0.1.1
   report-generation:
-    image: lblod/loket-report-generation-service:0.2.0
+    image: lblod/loket-report-generation-service:0.3.0
     links:
       - database:database
     volumes:
