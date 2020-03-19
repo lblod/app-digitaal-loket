@@ -1,8 +1,8 @@
 import {generateReportFromData, batchedQuery} from '../helpers.js';
-import { querySudo as query } from '@lblod/mu-auth-sudo';
+
 
 export default {
-  cronPattern: '0 15 22 * * 6',
+  cronPattern: '0 0 4 * * SUN',
   name: 'internalMandatenReport',
   execute: async () => {
     const reportData = {
