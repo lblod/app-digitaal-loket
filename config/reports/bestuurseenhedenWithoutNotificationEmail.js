@@ -26,9 +26,7 @@ export default {
       }
     `;
     const queryResponse = await query(queryString);
-    console.log('queryResponse: '+queryResponse);
     const data = queryResponse.results.bindings.map((row) => {
-      console.log(row);
       return {
         bestuurseenheid: row.bestuurseenheid.value,
         type: row.type.value,

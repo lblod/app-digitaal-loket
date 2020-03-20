@@ -18,9 +18,7 @@ export default {
       }
     `;
     const queryResponse = await query(queryString);
-    console.log('queryResponse: '+queryResponse);
     const data = queryResponse.results.bindings.map((row) => {
-      console.log(row);
       return {
         numberOfFailedSync: row.numberOfFailedSync.value,
       };
