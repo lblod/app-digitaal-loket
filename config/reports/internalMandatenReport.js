@@ -1,13 +1,12 @@
 import {generateReportFromData, batchedQuery} from '../helpers.js';
 
-
 export default {
   cronPattern: '0 0 4 * * 0',
   name: 'internalMandatenReport',
   execute: async () => {
     const reportData = {
-      title: 'Internal Mandaten Report',
-      description: 'Internal Mandaten Report',
+      title: 'Mandatendatabank CSV',
+      description: 'CSV data dump of Mandatendatabank',
       filePrefix: 'internalMandatenReport'
     };
     console.log('Generate Internal Mandaten Report');
@@ -71,7 +70,7 @@ export default {
           OPTIONAL { ?persoon persoon:heeftGeboorte/persoon:datum ?geboortedatum }
         }
       }
-    `
+    `;
 
     const queryResponsePart2 = await batchedQuery(queryStringPart2);
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
