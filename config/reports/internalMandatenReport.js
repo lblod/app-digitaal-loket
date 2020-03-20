@@ -39,12 +39,7 @@ export default {
         start: getSafeValue(row, 'start'),
         eind: getSafeValue(row, 'eind'),
         rangorde: getSafeValue(row, 'rangorde'),
-        status: getSafeValue(row, 'status'),
-        voornaam: getSafeValue(row, 'voornaam'),
-        achternaam: getSafeValue(row, 'achternaam'),
-        roepnaam: getSafeValue(row, 'roepnaam'),
-        geslacht: getSafeValue(row, 'geslacht'),
-        geboortedatum: getSafeValue(row, 'geboortedatum')
+        status: getSafeValue(row, 'status')
       };
       return acc;
     }, {});
