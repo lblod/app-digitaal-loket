@@ -9,6 +9,8 @@
    of responses in the result object's meta.")
 (defparameter *max-group-sorted-properties* nil)
 
+(defparameter sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
+
 (read-domain-file "master-users-domain.lisp")
 (read-domain-file "master-validations-domain.lisp")
 (read-domain-file "master-files-domain.lisp")
@@ -25,4 +27,6 @@
 (read-domain-file "slave-toezicht-domain.lisp")
 (read-domain-file "slave-publicatie-gn-domain.lisp")
 (read-domain-file "master-reports-domain.lisp")
+
+(read-domain-file "master-submissions-domain.lisp")
 
