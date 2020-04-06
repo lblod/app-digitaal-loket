@@ -340,11 +340,118 @@ defmodule Dispatcher do
   match "/reports/*path" do
     Proxy.forward conn, path, "http://resource/reports/"
   end
+  #################################################################
+  # Test Stack Auto Meldingen
+  #################################################################
+
+  match "/agendapunten/*path" do
+    Proxy.forward conn, path, "http://cache/agendapunten/"
+  end
+  match "/behandelingen-van-agendapunten/*path" do
+    Proxy.forward conn, path, "http://cache/behandelingen-van-agendapunten/"
+  end
+  match "/zittingen/*path" do
+    Proxy.forward conn, path, "http://cache/zittingen/"
+  end
+
+  match "/submissions/*path" do
+    Proxy.forward conn, path, "http://cache/submissions/"
+  end
+  match "/vendors/*p
+  math" do
+    Proxy.forward conn, path, "http://cache/vendors/"
+  end
+  match "/authenticity-types/*path" do
+    Proxy.forward conn, path, "http://cache/authenticity-types/"
+  end
+  match "/tax-types/*path" do
+    Proxy.forward conn, path, "http://cache/tax-types/"
+  end
+  match "/chart-of-accounts/*path" do
+    Proxy.forward conn, path, "http://cache/chart-of-accounts/"
+  end
+  match "/submission-document-statuses/*path" do
+    Proxy.forward conn, path, "http://cache/submission-document-statuses/"
+  end
+
+  # TODO redirect to cache instead of resource remote-urls
+
+  match "/remote-urls/*path" do
+    Proxy.forward conn, path, "http://resource/remote-urls/"
+  end
+
+  #################################################################
+  # automatic submission
+  #################################################################
+  match "/melding/*path" do
+    Proxy.forward conn, path, "http://automatic-submission/melding"
+  end
+
+  #################################################################
+  # verify submission (to be removed)
+  #################################################################
+  get "/verify/bestuurseenheid/*path" do
+    Proxy.forward conn, path, "http://verify-submission/bestuurseenheid"
+  end
+  get "/verify/inzending/*path" do
+    Proxy.forward conn, path, "http://verify-submission/inzending"
+  end
+
+  #################################################################
+  # manual submission
+  #################################################################
+
+  get "/submission-forms/*path" do
+    Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
+  end
+
+  delete "/submission-forms/*path" do
+    Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
+  end
+
+  put "/submission-forms/:id/flatten" do
+    Proxy.forward conn, [], "http://toezicht-flattened-form-data-generator/submission-documents/" <> id <> "/flatten"
+  end
+
+  put "/submission-forms/:id" do
+    Proxy.forward conn, [], "http://validate-submission/submission-documents/" <> id
+  end
+
+  post "/submission-forms/:id/submit" do
+    Proxy.forward conn, [], "http://validate-submission/submission-documents/" <> id <> "/submit"
+  end
+
+  match "/submission-documents/*path" do
+    Proxy.forward conn, path, "http://cache/submission-documents/"
+  end
+
+  get "/form-data/*path" do
+    Proxy.forward conn, path, "http://cache/form-data/"
+  end
+
+  get "/concept-schemes/*path" do
+    Proxy.forward conn, path, "http://cache/concept-schemes/"
+  end
+
+  get "/concepts/*path" do
+    Proxy.forward conn, path, "http://cache/concepts/"
+  end
+
+  #################################################################
+  # dummy publications (to be removed)
+  #################################################################
+
+  get "/publications/*path" do
+    Proxy.forward conn, path, "http://static-file/publications/"
+  end
 
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
 
-  
+  match _ do
+    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  end
+
 
 end
