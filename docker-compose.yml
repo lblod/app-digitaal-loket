@@ -234,7 +234,7 @@ services:
     labels:
       logging: "true"
   download-url-service:
-    image: lblod/loket-download-url-service:0.1.0
+    image: lblod/download-url-service:0.3.1
     environment:
       CACHING_MAX_RETRIES: 300
       CACHING_CRON_PATTERN: '0 */15 * * * *'
@@ -242,7 +242,7 @@ services:
     links:
       - virtuoso:database
     volumes:
-      - ./data/files:/data/files
+      - ./data/files:/share
     restart: always
     logging: *default-logging
   adressenregister:
@@ -258,5 +258,60 @@ services:
     volumes:
       - ./data/files:/share
       - ./config/reports:/app/reports
+    restart: always
+    logging: *default-logging
+  automatic-submission:
+    image: lblod/automatic-submission-service:0.7.0
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  import-submission:
+    image: lblod/import-submission-service:0.4.3
+    volumes:
+      - ./data/files:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  enrich-submission:
+    image: lblod/enrich-submission-service:0.4.0
+    volumes:
+      - ./data/files/submissions:/share/submissions
+      - ./data/static-files/semantic-forms-data:/data/semantic-forms
+  validate-submission:
+    image: lblod/validate-submission-service:0.6.5
+    volumes:
+      - ./data/files/submissions:/share/submissions
+      - ./data/static-files/semantic-forms-data:/data/semantic-forms
+  verify-submission:
+    image: lblod/verify-submission-service:0.1.0
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  static-file:
+    image: semtech/static-file-service:0.1.0
+    volumes:
+      - ./data/static-files:/data
+  toezicht-flattened-form-data-generator:
+    image: lblod/toezicht-flattened-form-data-generator:0.3.0
+    volumes:
+      - ./data/files/submissions:/share/submissions
+  export-submissions:
+    image: lblod/mandaten-download-generator-service:0.3.4
+    links:
+      - virtuoso:database
+    environment:
+      EXPORT_CRON_PATTERN: "0 0 3 * * *"
+      EXPORT_FILE_BASE: "submissions"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-submissions"
+    volumes:
+      - ./data/exports/submissions:/data/exports
+      - ./config/export/submissions:/config
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
