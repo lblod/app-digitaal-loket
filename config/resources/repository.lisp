@@ -48,3 +48,11 @@
 (add-prefix "sdmxCode" "http://purl.org/linked-data/sdmx/2009/code#")
 (add-prefix "qb" "http://purl.org/linked-data/cube#")
 (add-prefix "time" "http://www.w3.org/2006/time#")
+
+(add-prefix "meb" "http://rdf.myexperiment.org/ontologies/base/")
+(add-prefix "melding" "http://lblod.data.gift/vocabularies/automatische-melding/")
+(add-prefix "lblodBesluit" "http://lblod.data.gift/vocabularies/besluit/")
+(add-prefix "muAccount" "http://mu.semte.ch/vocabularies/account/")
+(add-prefix "elod" "http://linkedeconomy.org/ontology#")
+(add-prefix "rdfs" "https://www.w3.org/2000/01/rdf-schema#")
+
