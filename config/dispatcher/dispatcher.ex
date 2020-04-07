@@ -340,6 +340,7 @@ defmodule Dispatcher do
   match "/reports/*path" do
     Proxy.forward conn, path, "http://resource/reports/"
   end
+
   #################################################################
   # Test Stack Auto Meldingen
   #################################################################
@@ -357,8 +358,7 @@ defmodule Dispatcher do
   match "/submissions/*path" do
     Proxy.forward conn, path, "http://cache/submissions/"
   end
-  match "/vendors/*p
-  math" do
+  match "/vendors/*path" do
     Proxy.forward conn, path, "http://cache/vendors/"
   end
   match "/authenticity-types/*path" do
@@ -448,10 +448,5 @@ defmodule Dispatcher do
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
-
-  match _ do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
-  end
-
 
 end
