@@ -50,6 +50,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/DynamicSubform",
                         "http://mu.semte.ch/vocabularies/ext/DocumentStatus",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingType",
                         "http://mu.semte.ch/vocabularies/ext/supervision/DecisionType",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxType",
@@ -89,7 +90,16 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/employee/UnitMeasure",
                         "http://lblod.data.gift/vocabularies/employee/EducationalLevel",
                         "http://lblod.data.gift/vocabularies/employee/WorkingTimeCategory",
-                        "http://lblod.data.gift/vocabularies/employee/LegalStatus"
+                        "http://lblod.data.gift/vocabularies/employee/LegalStatus",
+                        "http://mu.semte.ch/vocabularies/ext/ChartOfAccount",
+                        "http://mu.semte.ch/vocabularies/ext/AuthenticityType",
+                        "http://mu.semte.ch/vocabularies/ext/TaxType",
+                        "http://mu.semte.ch/vocabularies/ext/SubmissionDocumentStatus",
+                        "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
+                        "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+                        "http://www.w3.org/2004/02/skos/core#Concept"
                       ]
                     } },
                   %GraphSpec{
@@ -106,7 +116,8 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
                       ]
                     } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
@@ -186,7 +197,24 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/supervision/SimplifiedTaxRate",
                         "http://mu.semte.ch/vocabularies/ext/FormSolution",
-                        "http://mu.semte.ch/vocabularies/ext/FileAddress"
+                        "http://mu.semte.ch/vocabularies/ext/FileAddress",
+                        "http://xmlns.com/foaf/0.1/Document",
+                        "http://rdf.myexperiment.org/ontologies/base/Submission",
+                        "http://mu.semte.ch/vocabularies/ext/SubmissionDocument",
+                        "http://lblod.data.gift/vocabularies/besluit/TaxRate",
+                        "http://lblod.data.gift/vocabularies/automatische-melding/FormData"
+                      ] } } ] },
+
+      # // AUTOMATIC SUBMISSION
+      %GroupSpec{
+        name: "o-toezicht-vendor-rwf",
+        useage: [:read],
+        access: %AlwaysAccessible{},
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/automatic-submission",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://mu.semte.ch/vocabularies/ext/Vendor"
                       ] } } ] },
 
       # // LEIDINGGEVENDEN

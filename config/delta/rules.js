@@ -39,7 +39,7 @@ export default [
       }
     },
     callback: {
-      url: 'http://download-url/process-remote-data-objects',
+      url: 'http://download-url-service/process-remote-data-objects',
       method: 'POST'
     },
     options: {
