@@ -427,14 +427,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/concepts/"
   end
 
-  #################################################################
-  # dummy publications (to be removed)
-  #################################################################
-
-  get "/publications/*path" do
-    Proxy.forward conn, path, "http://static-file/publications/"
-  end
-
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
