@@ -388,16 +388,6 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # verify submission (to be removed)
-  #################################################################
-  get "/verify/bestuurseenheid/*path" do
-    Proxy.forward conn, path, "http://verify-submission/bestuurseenheid"
-  end
-  get "/verify/inzending/*path" do
-    Proxy.forward conn, path, "http://verify-submission/inzending"
-  end
-
-  #################################################################
   # manual submission
   #################################################################
 

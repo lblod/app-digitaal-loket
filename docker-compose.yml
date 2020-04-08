@@ -294,14 +294,6 @@ services:
     volumes:
       - ./data/files/submissions:/share/submissions
       - ./data/static-files/semantic-forms-data:/data/semantic-forms
-  verify-submission:
-    image: lblod/verify-submission-service:0.1.0
-    environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   static-file:
     image: semtech/static-file-service:0.1.0
     volumes:
