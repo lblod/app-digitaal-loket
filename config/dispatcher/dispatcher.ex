@@ -345,16 +345,6 @@ defmodule Dispatcher do
   # Test Stack Auto Meldingen
   #################################################################
 
-  match "/agendapunten/*path" do
-    Proxy.forward conn, path, "http://cache/agendapunten/"
-  end
-  match "/behandelingen-van-agendapunten/*path" do
-    Proxy.forward conn, path, "http://cache/behandelingen-van-agendapunten/"
-  end
-  match "/zittingen/*path" do
-    Proxy.forward conn, path, "http://cache/zittingen/"
-  end
-
   match "/submissions/*path" do
     Proxy.forward conn, path, "http://cache/submissions/"
   end
