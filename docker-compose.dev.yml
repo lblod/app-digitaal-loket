@@ -56,7 +56,7 @@ services:
     restart: "no"
   berichtencentrum-sync-with-kalliope:
     restart: "no"
-  download-url-service:
+  download-url:
     restart: "no"
   adressenregister:
     restart: "no"
