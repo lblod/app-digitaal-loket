@@ -55,4 +55,4 @@
 (add-prefix "muAccount" "http://mu.semte.ch/vocabularies/account/")
 (add-prefix "elod" "http://linkedeconomy.org/ontology#")
 (add-prefix "rdfs" "https://www.w3.org/2000/01/rdf-schema#")
-
+(add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
