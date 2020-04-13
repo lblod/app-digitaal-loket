@@ -243,8 +243,8 @@ services:
     restart: always
     labels:
       logging: "true"
-  download-url:
-    image: lblod/download-url-service:0.3.1
+  download-url-service:
+    image: lblod/loket-download-url-service:0.1.0
     environment:
       CACHING_MAX_RETRIES: 300
       CACHING_CRON_PATTERN: '0 */15 * * * *'
@@ -252,7 +252,7 @@ services:
     links:
       - virtuoso:database
     volumes:
-      - ./data/files:/share
+      - ./data/files:/data/files
     restart: always
     logging: *default-logging
   adressenregister:
@@ -270,6 +270,14 @@ services:
       - ./config/reports:/app/reports
     restart: always
     logging: *default-logging
+  download-url:
+    image: lblod/download-url-service:0.3.1
+    volumes:
+      - ./data/files:/share
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   automatic-submission:
     image: lblod/automatic-submission-service:0.7.0
     labels:
