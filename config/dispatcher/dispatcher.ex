@@ -346,7 +346,7 @@ defmodule Dispatcher do
   #################################################################
 
   match "/submissions/*path" do
-    Proxy.forward conn, path, "http://cache/submissions/"
+    Proxy.forward conn, path, "http://resource/submissions/"
   end
   match "/vendors/*path" do
     Proxy.forward conn, path, "http://cache/vendors/"
@@ -406,7 +406,7 @@ defmodule Dispatcher do
   end
 
   get "/form-data/*path" do
-    Proxy.forward conn, path, "http://cache/form-data/"
+    Proxy.forward conn, path, "http://resource/form-data/"
   end
 
   get "/concept-schemes/*path" do
