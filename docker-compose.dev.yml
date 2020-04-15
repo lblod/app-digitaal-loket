@@ -14,7 +14,7 @@ services:
     restart: "no"
   identifier:
     ports:
-      - "80:80"
+      - "90:80"
     restart: "no"
   dispatcher:
     restart: "no"
@@ -77,4 +77,6 @@ services:
   toezicht-flattened-form-data-generator:
     restart: "no"
   export-submissions:
+    restart: "no"
+  migrate-submission:
     restart: "no"
