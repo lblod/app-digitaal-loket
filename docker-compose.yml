@@ -244,13 +244,13 @@ services:
     labels:
       logging: "true"
   download-url-service:
-    image: lblod/loket-download-url-service:0.1.0
+    image: lblod/loket-download-url-service:0.4.0
     environment:
       CACHING_MAX_RETRIES: 300
       CACHING_CRON_PATTERN: '0 */15 * * * *'
       MAX_PENDING_TIME_IN_SECONDS: 7200
     links:
-      - virtuoso:database
+      - database:database
     volumes:
       - ./data/files:/data/files
     restart: always
