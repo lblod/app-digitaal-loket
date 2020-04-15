@@ -325,3 +325,13 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  migrate-submission:
+    image: lblod/migrate-submission-service:0.5.0
+    links:
+      - virtuoso:database
+    volumes:
+      - ./data/files/submissions:/share/submissions
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
