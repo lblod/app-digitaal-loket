@@ -211,7 +211,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.5.3
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.5.4
     environment:
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
@@ -219,7 +219,7 @@ services:
       INZENDINGEN_CRON_PATTERN: "0 22 * * *"
       MAX_MESSAGE_AGE: 1
       MAX_SENDING_ATTEMPTS: 20
-      INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/toezicht/inzendingen"
+      INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/supervision/submissions"
     volumes:
       - ./data/files:/data/files
     labels:
