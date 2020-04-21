@@ -293,6 +293,37 @@
         "dct:type"
       ],
       "additionalFilter": "?s dct:source ?resource. ?s a ext:SubmissionDocument."
+    },
+    {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type",
+        "nie:dataSource"
+      ],
+      "additionalFilter": "?s dct:hasPart ?resource. ?s a melding:FormData."
+    },
+    {
+      "type": "nfo:RemoteDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nie:url",
+        "dct:created",
+        "adms:status",
+        "dct:modified",
+        "dct:creator"
+      ],
+      "additionalFilter": "?s nie:dataSource ?resource. ?s a nfo:FileDataObject."
     }
   ]
 }
