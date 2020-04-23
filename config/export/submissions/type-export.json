@@ -286,7 +286,8 @@
         "dbpedia:fileExtension",
         "dct:created",
         "dct:modified",
-        "dct:type"
+        "dct:type",
+        "nie:dataSource"
       ],
       "additionalFilter": "?resource nie:dataSource+ ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
     },
@@ -312,6 +313,7 @@
         "mu:uuid"
       ],
       "optionalProperties": [
+        "rdf:type",
         "nfo:fileName",
         "dct:format",
         "nfo:fileSize",
@@ -324,18 +326,23 @@
       "additionalFilter": "?s dct:hasPart ?resource. ?s a melding:FormData."
     },
     {
-      "type": "nfo:RemoteDataObject",
+      "type": "nfo:FileDataObject",
       "requiredProperties": [
         "mu:uuid"
       ],
       "optionalProperties": [
+        "rdf:type",
         "nie:url",
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
         "dct:created",
-        "adms:status",
         "dct:modified",
-        "dct:creator"
+        "dct:type",
+        "nie:dataSource"
       ],
-      "additionalFilter": "?s nie:dataSource ?resource. ?s a nfo:FileDataObject."
+      "additionalFilter": "?resource nie:dataSource ?virtualFile . ?s dct:hasPart ?virtualFile. ?s a melding:FormData."
     }
   ]
 }
