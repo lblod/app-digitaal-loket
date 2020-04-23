@@ -295,17 +295,13 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:0.4.2
     volumes:
+      - ./config/semantic-forms:/data/semantic-forms
       - ./data/files/submissions:/share/submissions
-      - ./data/static-files/semantic-forms-data:/data/semantic-forms
   validate-submission:
     image: lblod/validate-submission-service:0.6.6
     volumes:
-      - ./data/files/submissions:/share/submissions
       - ./data/static-files/semantic-forms-data:/data/semantic-forms
-  static-file:
-    image: semtech/static-file-service:0.1.0
-    volumes:
-      - ./data/static-files:/data
+      - ./data/files/submissions:/share/submissions
   toezicht-flattened-form-data-generator:
     image: lblod/toezicht-flattened-form-data-generator:0.3.0
     volumes:
