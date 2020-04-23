@@ -300,7 +300,7 @@ services:
   validate-submission:
     image: lblod/validate-submission-service:0.6.6
     volumes:
-      - ./data/static-files/semantic-forms-data:/data/semantic-forms
+      - ./config/semantic-forms:/data/semantic-forms
       - ./data/files/submissions:/share/submissions
   toezicht-flattened-form-data-generator:
     image: lblod/toezicht-flattened-form-data-generator:0.3.0
