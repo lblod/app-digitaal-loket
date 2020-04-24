@@ -72,8 +72,6 @@ services:
     restart: "no"
   validate-submission:
     restart: "no"
-  static-file:
-    restart: "no"
   toezicht-flattened-form-data-generator:
     restart: "no"
   export-submissions:
