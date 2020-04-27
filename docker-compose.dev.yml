@@ -24,6 +24,8 @@ services:
     ports:
       - "8890:8890"
     restart: "no"
+  deltanotifier:
+    restart: "no"
   migrations:
     restart: "no"
   cache:
@@ -65,6 +67,8 @@ services:
   report-generation:
     restart: "no"
   automatic-submission:
+    restart: "no"
+  download-url-service:
     restart: "no"
   import-submission:
     restart: "no"
