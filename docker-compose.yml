@@ -322,7 +322,7 @@ services:
     restart: always
     logging: *default-logging
   migrate-submission:
-    image: lblod/migrate-submission-service:0.5.0
+    image: lblod/migrate-submission-service:0.6.0
     links:
       - virtuoso:database
     volumes:
