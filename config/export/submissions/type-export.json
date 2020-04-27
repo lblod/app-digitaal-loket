@@ -255,7 +255,9 @@
       "optionalProperties": [
         "dct:hasPart",
         "ext:taxRateAmount",
-        "dct:type"
+        "dct:type",
+        "ext:decisionType",
+        "ext:regulationType"
       ],
       "additionalFilter": "?s prov:generated ?resource; adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
