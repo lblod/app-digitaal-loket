@@ -298,7 +298,7 @@ services:
       - ./config/semantic-forms:/data/semantic-forms
       - ./data/files/submissions:/share/submissions
   validate-submission:
-    image: lblod/validate-submission-service:0.6.6
+    image: lblod/validate-submission-service:0.7.0
     volumes:
       - ./config/semantic-forms:/data/semantic-forms
       - ./data/files/submissions:/share/submissions
