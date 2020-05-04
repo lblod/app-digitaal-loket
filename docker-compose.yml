@@ -314,5 +314,7 @@ services:
       - ./data/files/submissions:/share/submissions
     labels:
       - "logging=true"
+  person-uri-for-social-security-number-service:
+    image: lblod/person-uri-for-social-security-number-service:0.3.0
     restart: always
     logging: *default-logging
