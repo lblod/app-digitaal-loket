@@ -62,3 +62,5 @@ services:
     restart: "no"
   report-generation:
     restart: "no"
+  person-uri-for-social-security-number-service:
+    restart: "no"
