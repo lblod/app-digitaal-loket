@@ -336,15 +336,21 @@ defmodule Dispatcher do
   #################################################################
   # Reports
   #################################################################
-
   match "/reports/*path" do
     Proxy.forward conn, path, "http://resource/reports/"
+  end
+
+  #################################################################
+  # RRN SERVICE: person-uri-for-social-security-number-service
+  #################################################################
+  match "/person-uri-for-ssn/*path" do
+    Proxy.forward conn, path, "http://person-uri-for-social-security-number-service/"
   end
 
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
 
-  
+
 
 end
