@@ -255,7 +255,6 @@ services:
       - ./config/reports:/app/reports
     restart: always
     logging: *default-logging
-<<<<<<< HEAD
   download-url:
     image: lblod/download-url-service:0.3.1
     volumes:
