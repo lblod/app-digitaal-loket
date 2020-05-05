@@ -344,7 +344,7 @@ defmodule Dispatcher do
   # RRN SERVICE: person-uri-for-social-security-number-service
   #################################################################
   match "/rrn/*path" do
-    Proxy.forward conn, path, "http://person-uri-for-social-security-number-service/"
+    Proxy.forward conn, path, "http://person-uri-for-social-security-number/"
   end
 
   match _ do
