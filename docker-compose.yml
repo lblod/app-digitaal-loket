@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.25.0-beta.4
+    image: lblod/frontend-loket:0.25.0-beta.5
     links:
       - identifier:backend
     labels:
@@ -255,6 +255,7 @@ services:
       - ./config/reports:/app/reports
     restart: always
     logging: *default-logging
+<<<<<<< HEAD
   download-url:
     image: lblod/download-url-service:0.3.1
     volumes:
@@ -314,7 +315,7 @@ services:
       - ./data/files/submissions:/share/submissions
     labels:
       - "logging=true"
-  person-uri-for-social-security-number-service:
+  person-uri-for-social-security-number:
     image: lblod/person-uri-for-social-security-number-service:0.3.0
     restart: always
     logging: *default-logging

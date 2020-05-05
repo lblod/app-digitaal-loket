@@ -80,5 +80,5 @@ services:
     restart: "no"
   migrate-submission:
     restart: "no"
-  person-uri-for-social-security-number-service:
+  person-uri-for-social-security-number:
     restart: "no"
