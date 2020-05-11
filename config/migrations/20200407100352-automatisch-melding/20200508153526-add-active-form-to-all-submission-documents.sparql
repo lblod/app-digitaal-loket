@@ -4,7 +4,7 @@ PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 INSERT {
   GRAPH ?g {
      ?submissionDocument dct:source <share://semantic-forms/20200508151443-forms.ttl> .
-     <share://semantic-forms/20200508151443-forms.ttl> a <http://data.lblod.gift/concepts/form-file-type> .
+     <share://semantic-forms/20200508151443-forms.ttl> dct:type <http://data.lblod.gift/concepts/form-file-type> .
   }
 }
 WHERE {
