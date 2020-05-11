@@ -278,14 +278,14 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.6.0
+    image: lblod/enrich-submission-service:0.7.1
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
   validate-submission:
-    image: lblod/validate-submission-service:0.7.1
+    image: lblod/validate-submission-service:0.8.1
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
