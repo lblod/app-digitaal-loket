@@ -332,16 +332,16 @@ fields:7cd14dfd-81ff-4a5d-8374-5879c5877c4c a form:Field ;
     mu:uuid "7cd14dfd-81ff-4a5d-8374-5879c5877c4c" ;
     sh:name "Soort Belasting" ;
     sh:order 5000 ;
-    sh:path lblodBesluit:taxType ;
+    sh:path rdf:type ;
     form:validations
     [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         sh:resultMessage "Dit veld is verplicht."@nl
     ],
     [ a form:ConceptSchemeConstraint ; #TODO
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/3037c4f4-1c63-43ac-bfc4-b41d098b15a6>  ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
