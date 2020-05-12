@@ -10,5 +10,5 @@ WHERE {
   GRAPH ?h {
      ?submissionDocument a ext:SubmissionDocument . 
   }
-  BIND(?g as ?h)
+  BIND(?h as ?g)
 }
