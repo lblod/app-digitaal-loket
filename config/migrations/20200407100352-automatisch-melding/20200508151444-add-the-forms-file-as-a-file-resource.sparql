@@ -7,6 +7,7 @@ PREFIX dbpedia: <http://dbpedia.org/resource/>
 INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
    <share://semantic-forms/20200508151443-forms.ttl> a nfo:FileDataObject ;
+ 				  dct:type <http://data.lblod.gift/concepts/form-file-type> .
                                   mu:uuid "cdd621e6-1284-47b1-a24d-95f7521120bf" ;
                                   nfo:fileName "20200508151443-forms.ttl" ;
                                   dct:created "2020-05-08Z"^^xsd:dateTime;
