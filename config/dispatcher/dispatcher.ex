@@ -336,50 +336,48 @@ defmodule Dispatcher do
   #################################################################
   # Reports
   #################################################################
-
   match "/reports/*path" do
     Proxy.forward conn, path, "http://resource/reports/"
   end
 
   #################################################################
-  # Test Stack Auto Meldingen
-  #################################################################
-
-  match "/submissions/*path" do
-    Proxy.forward conn, path, "http://resource/submissions/"
-  end
-  match "/vendors/*path" do
-    Proxy.forward conn, path, "http://cache/vendors/"
-  end
-  match "/authenticity-types/*path" do
-    Proxy.forward conn, path, "http://cache/authenticity-types/"
-  end
-  match "/tax-types/*path" do
-    Proxy.forward conn, path, "http://cache/tax-types/"
-  end
-  match "/chart-of-accounts/*path" do
-    Proxy.forward conn, path, "http://cache/chart-of-accounts/"
-  end
-  match "/submission-document-statuses/*path" do
-    Proxy.forward conn, path, "http://cache/submission-document-statuses/"
-  end
-
-  # TODO redirect to cache instead of resource remote-urls
-
-  match "/remote-urls/*path" do
-    Proxy.forward conn, path, "http://resource/remote-urls/"
-  end
-
-  #################################################################
-  # automatic submission
+  # Automatic submission
   #################################################################
   match "/melding/*path" do
     Proxy.forward conn, path, "http://automatic-submission/melding"
   end
 
   #################################################################
-  # manual submission
+  # Toezicht / supervision
   #################################################################
+
+  match "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  match "/vendors/*path" do
+    Proxy.forward conn, path, "http://cache/vendors/"
+  end
+
+  match "/authenticity-types/*path" do
+    Proxy.forward conn, path, "http://cache/authenticity-types/"
+  end
+
+  match "/tax-types/*path" do
+    Proxy.forward conn, path, "http://cache/tax-types/"
+  end
+
+  match "/chart-of-accounts/*path" do
+    Proxy.forward conn, path, "http://cache/chart-of-accounts/"
+  end
+
+  match "/submission-document-statuses/*path" do
+    Proxy.forward conn, path, "http://cache/submission-document-statuses/"
+  end
+
+  match "/remote-urls/*path" do
+    Proxy.forward conn, path, "http://resource/remote-urls/"
+  end
 
   get "/submission-forms/*path" do
     Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
@@ -416,6 +414,13 @@ defmodule Dispatcher do
   get "/concepts/*path" do
     Proxy.forward conn, path, "http://cache/concepts/"
   end
+  
+  #################################################################
+  # RRN SERVICE: person-uri-for-social-security-number-service
+  #################################################################
+  match "/rrn/*path" do
+    Proxy.forward conn, path, "http://person-uri-for-social-security-number/"
+  end
 
   #################################################################
   # loket-mandatarissen sync
@@ -427,5 +432,4 @@ defmodule Dispatcher do
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
-
 end

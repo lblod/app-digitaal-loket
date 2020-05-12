@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.25.0-beta.1
+    image: lblod/frontend-loket:0.25.0
     links:
       - identifier:backend
     labels:
@@ -187,21 +187,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  export-inzendingen:
-    image: lblod/mandaten-download-generator-service:0.3.4
-    links:
-      - virtuoso:database
-    environment:
-      EXPORT_CRON_PATTERN: "0 0 3 * * *"
-      EXPORT_FILE_BASE: "inzendingen"
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-inzendingen"
-    volumes:
-      - ./data/exports/inzendingen:/data/exports
-      - ./config/export/inzendingen:/config
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   berichtencentrum-email-notification:
     image: lblod/berichtencentrum-email-notification-service:0.1.2
     restart: always
@@ -211,7 +196,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.5.3
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.5.7
     environment:
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
@@ -219,7 +204,7 @@ services:
       INZENDINGEN_CRON_PATTERN: "0 22 * * *"
       MAX_MESSAGE_AGE: 1
       MAX_SENDING_ATTEMPTS: 20
-      INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/toezicht/inzendingen"
+      INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/supervision/submissions"
     volumes:
       - ./data/files:/data/files
     labels:
@@ -285,7 +270,7 @@ services:
     restart: always
     logging: *default-logging
   import-submission:
-    image: lblod/import-submission-service:0.4.3
+    image: lblod/import-submission-service:0.4.4
     volumes:
       - ./data/files:/share
     labels:
@@ -293,21 +278,19 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.4.2
+    image: lblod/enrich-submission-service:0.7.1
+    environment:
+      ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     volumes:
+      - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
-      - ./data/static-files/semantic-forms-data:/data/semantic-forms
   validate-submission:
-    image: lblod/validate-submission-service:0.6.6
+    image: lblod/validate-submission-service:0.8.1
     volumes:
+      - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
-      - ./data/static-files/semantic-forms-data:/data/semantic-forms
-  static-file:
-    image: semtech/static-file-service:0.1.0
-    volumes:
-      - ./data/static-files:/data
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:0.3.0
+    image: lblod/toezicht-flattened-form-data-generator:0.4.0
     volumes:
       - ./data/files/submissions:/share/submissions
   export-submissions:
@@ -326,13 +309,15 @@ services:
     restart: always
     logging: *default-logging
   migrate-submission:
-    image: lblod/migrate-submission-service:0.5.0
+    image: lblod/migrate-submission-service:0.6.1
     links:
       - virtuoso:database
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
       - "logging=true"
+  person-uri-for-social-security-number:
+    image: lblod/person-uri-for-social-security-number-service:0.3.0
     restart: always
     logging: *default-logging
   loket-mandatarissen-producer:
