@@ -8,7 +8,8 @@ INSERT {
   }
 }
 WHERE {
-  GRAPH ?g {
+  GRAPH ?h {
      ?submissionDocument a ext:SubmissionDocument . 
   }
+  BIND(?g as ?h)
 }
