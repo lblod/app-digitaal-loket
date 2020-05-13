@@ -189,10 +189,14 @@ services:
     logging: *default-logging
   berichtencentrum-email-notification:
     image: lblod/berichtencentrum-email-notification-service:0.1.2
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   berichtencentrum-deliver-email-service:
     image: lblod/berichtencentrum-deliver-email-service:0.3.0
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
@@ -225,9 +229,10 @@ services:
     image: nginx:1.15.2
     volumes:
       - ./config/sink/sink.conf:/etc/nginx/conf.d/default.conf
-    restart: always
     labels:
-      logging: "true"
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   download-url-service:
     image: lblod/loket-download-url-service:0.4.0
     environment:
@@ -238,14 +243,19 @@ services:
       - database:database
     volumes:
       - ./data/files:/data/files
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.4.0
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   person-reconciliation:
     image: lblod/person-reconciliation-service:0.1.1
+    restart: "no"
   report-generation:
     image: lblod/loket-report-generation-service:0.3.0
     links:
@@ -259,10 +269,10 @@ services:
     image: lblod/download-url-service:0.3.1
     volumes:
       - ./data/files:/share
-    restart: always
-    logging: *default-logging
     labels:
       - "logging=true"
+    restart: always
+    logging: *default-logging
   automatic-submission:
     image: lblod/automatic-submission-service:0.8.0
     labels:
@@ -284,15 +294,27 @@ services:
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   validate-submission:
     image: lblod/validate-submission-service:0.8.1
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   toezicht-flattened-form-data-generator:
     image: lblod/toezicht-flattened-form-data-generator:0.5.0
     volumes:
       - ./data/files/submissions:/share/submissions
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   export-submissions:
     image: lblod/mandaten-download-generator-service:0.3.4
     links:
@@ -318,7 +340,10 @@ services:
       - ./data/files/submissions:/share/submissions
     labels:
       - "logging=true"
+    restart: "no"
   person-uri-for-social-security-number:
     image: lblod/person-uri-for-social-security-number-service:0.3.0
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
