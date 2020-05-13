@@ -309,7 +309,9 @@ services:
     restart: always
     logging: *default-logging
   migrate-submission:
-    image: lblod/migrate-submission-service:0.6.1
+    image: lblod/migrate-submission-service:0.7.1
+    environment:
+      ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     links:
       - virtuoso:database
     volumes:
