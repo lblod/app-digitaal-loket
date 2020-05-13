@@ -290,7 +290,7 @@ services:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:0.4.0
+    image: lblod/toezicht-flattened-form-data-generator:0.5.0
     volumes:
       - ./data/files/submissions:/share/submissions
   export-submissions:
