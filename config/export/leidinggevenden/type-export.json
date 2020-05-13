@@ -166,7 +166,8 @@
         "mu:uuid"
       ],
       "optionalProperties": [
-        "rdfs:label"
+        "rdfs:label",
+        "ext:werkingsgebiedNiveau"
       ],
       "additionalFilter":"?resource ^ext:inProvincie ?eenheid.\n  ?eenheid ^besluit:bestuurt ?borg.\n  ?borg ^mandaat:isTijdspecialisatieVan ?bot.\n  ?bot lblodlg:heeftBestuursfunctie ?bestuursfunctie."
     },
