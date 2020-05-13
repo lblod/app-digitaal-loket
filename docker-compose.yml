@@ -340,7 +340,7 @@ services:
       - ./data/files/submissions:/share/submissions
     labels:
       - "logging=true"
-    restart: "no"
+    restart: always
   person-uri-for-social-security-number:
     image: lblod/person-uri-for-social-security-number-service:0.3.0
     labels:
