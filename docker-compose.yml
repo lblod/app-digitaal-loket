@@ -270,7 +270,7 @@ services:
     restart: always
     logging: *default-logging
   import-submission:
-    image: lblod/import-submission-service:0.4.3
+    image: lblod/import-submission-service:0.4.4
     volumes:
       - ./data/files:/share
     labels:
@@ -278,17 +278,19 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.6.0
+    image: lblod/enrich-submission-service:0.7.1
+    environment:
+      ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     volumes:
-      - ./config/semantic-forms:/data/semantic-forms
+      - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
   validate-submission:
-    image: lblod/validate-submission-service:0.7.1
+    image: lblod/validate-submission-service:0.8.1
     volumes:
-      - ./config/semantic-forms:/data/semantic-forms
+      - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:0.4.0
+    image: lblod/toezicht-flattened-form-data-generator:0.5.0
     volumes:
       - ./data/files/submissions:/share/submissions
   export-submissions:
@@ -307,7 +309,9 @@ services:
     restart: always
     logging: *default-logging
   migrate-submission:
-    image: lblod/migrate-submission-service:0.6.1
+    image: lblod/migrate-submission-service:0.7.1
+    environment:
+      ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     links:
       - virtuoso:database
     volumes:

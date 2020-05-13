@@ -242,7 +242,6 @@
         "lblodBesluit:hasAdditionalTaxRate",
         "lblodBesluit:authenticityType",
         "lblodBesluit:chartOfAccount",
-        "lblodBesluit:taxType",
         "lblodBesluit:taxRate",
         "ext:sessionStartedAtTime"
       ],

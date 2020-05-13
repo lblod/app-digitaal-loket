@@ -332,16 +332,16 @@ fields:7cd14dfd-81ff-4a5d-8374-5879c5877c4c a form:Field ;
     mu:uuid "7cd14dfd-81ff-4a5d-8374-5879c5877c4c" ;
     sh:name "Soort Belasting" ;
     sh:order 5000 ;
-    sh:path lblodBesluit:taxType ;
+    sh:path rdf:type ;
     form:validations
     [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         sh:resultMessage "Dit veld is verplicht."@nl
     ],
     [ a form:ConceptSchemeConstraint ; #TODO
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/3037c4f4-1c63-43ac-bfc4-b41d098b15a6>  ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
@@ -2354,9 +2354,9 @@ fields:98b9fcb9-492c-467c-a2b5-94fc4123dd4e a form:ConditionalFieldGroup ;
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/3037c4f4-1c63-43ac-bfc4-b41d098b15a6> ;
-        form:customValue <http://lblod.data.gift/concepts/3a815e496cadcc497ead75d7ceea376a4a523f3ff765b32abf1ec608fe6b6746>
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/b2d0734d-13d0-44b4-9af8-1722933c5288>
       ] ;
     form:hasFieldGroup fieldGroups:487e5f38-72ff-4afa-a41b-5fcd840969a7 .###########Contantbelasting###########
 
@@ -2379,9 +2379,9 @@ fields:b9b99ee9-9b29-4b05-b024-79e56c5d52c9 a form:ConditionalFieldGroup ;
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/3037c4f4-1c63-43ac-bfc4-b41d098b15a6> ;
-        form:customValue <http://lblod.data.gift/concepts/50dcd5efc1a21ccb619bb761eef40e300eed9e6b59eb9cc9d49e9b47bbb57779>
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/4c22ef0a-f808-41dd-9c9f-2aff17fd851f>
       ] ;
     form:hasFieldGroup fieldGroups:35f82f0e-a28a-4e46-836f-5ea8b21bd36a .###########Kohierbelasting###########
 
@@ -2404,9 +2404,9 @@ fields:0c7d6a0d-146e-40bf-b834-12941feac885 a form:ConditionalFieldGroup ;
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:taxType ;
+        sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/3037c4f4-1c63-43ac-bfc4-b41d098b15a6> ;
-        form:customValue <http://lblod.data.gift/concepts/332f06e0ac5a934407648281bf2564c8bc796bdb9c5e79ab6d928d0788770d4e>
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/8597e056-b96d-4213-ad4c-37338f2aaf35>
       ] ;
     form:hasFieldGroup fieldGroups:577dcadb-89fb-4365-af2c-93a61c1b9264 .###########Belastingsreglement###########
 
