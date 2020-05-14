@@ -839,8 +839,8 @@ fieldGroups:c059770c-decd-49aa-abbe-82b29a286225 a form:FieldGroup ;
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d,
 
-                      ###Datum-zitting/besluitenlijst###
-                      fields:ba965704-5a74-4a77-b283-4f97f3b7ddbc,
+                      ###Datum-zitting/besluit###
+                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
                       ###Datum-van-publicatie-op-webtoepassing###
                       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
