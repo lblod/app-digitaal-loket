@@ -345,6 +345,25 @@
         "nie:dataSource"
       ],
       "additionalFilter": "?resource nie:dataSource ?virtualFile . ?s dct:hasPart ?virtualFile. ?s a melding:FormData."
+    },
+    {
+      "type": "nfo:RemoteDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "rdf:type",
+        "nie:url",
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type",
+        "nie:dataSource"
+      ],
+      "additionalFilter": "?formData dct:hasPart ?resource. ?formData a melding:FormData."
     }
   ]
 }
