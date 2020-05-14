@@ -361,7 +361,8 @@
         "dct:created",
         "dct:modified",
         "dct:type",
-        "nie:dataSource"
+        "nie:dataSource",
+        "adms:status"
       ],
       "additionalFilter": "?formData dct:hasPart ?resource. ?formData a melding:FormData."
     }
