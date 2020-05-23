@@ -291,7 +291,24 @@
         "dct:type",
         "nie:dataSource"
       ],
-      "additionalFilter": "?resource nie:dataSource+ ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
+      "additionalFilter": "?resource nie:dataSource ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
+    },
+    {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type",
+        "nie:dataSource"
+      ],
+      "additionalFilter": "?resource nie:dataSource/nie:dataSource ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
     },
     {
       "type": "nfo:FileDataObject",
