@@ -318,6 +318,10 @@ services:
       - ./data/files/submissions:/share/submissions
     labels:
       - "logging=true"
+  clean-up-submission:
+    image: lblod/clean-up-submission-service:0.1.0
+    volumes:
+      - ./data/files:/share
   person-uri-for-social-security-number:
     image: lblod/person-uri-for-social-security-number-service:0.3.0
     restart: always

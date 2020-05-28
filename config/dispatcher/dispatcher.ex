@@ -384,7 +384,7 @@ defmodule Dispatcher do
   end
 
   delete "/submission-forms/*path" do
-    Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
+    Proxy.forward conn, path, "http://clean-up-submission/submission-documents/"
   end
 
   put "/submission-forms/:id/flatten" do
