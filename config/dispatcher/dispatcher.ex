@@ -351,10 +351,6 @@ defmodule Dispatcher do
   # Toezicht / supervision
   #################################################################
 
-  match "/submissions/*path" do
-    Proxy.forward conn, path, "http://resource/submissions/"
-  end
-
   match "/vendors/*path" do
     Proxy.forward conn, path, "http://cache/vendors/"
   end
@@ -383,8 +379,24 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
   end
 
-  delete "/submission-forms/*path" do
-    Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
+  delete "/submissions/*path" do
+    Proxy.forward conn, path, "http://clean-up-submission/submissions/"
+  end
+
+  put "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  patch "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  post "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  get "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
   end
 
   put "/submission-forms/:id/flatten" do
