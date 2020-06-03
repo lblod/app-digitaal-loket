@@ -319,7 +319,7 @@ services:
     labels:
       - "logging=true"
   clean-up-submission:
-    image: lblod/clean-up-submission-service:0.1.0
+    image: lblod/clean-up-submission-service:0.2.0
     volumes:
       - ./data/files:/share
   person-uri-for-social-security-number:
