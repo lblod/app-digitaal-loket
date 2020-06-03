@@ -343,6 +343,10 @@ services:
     labels:
       - "logging=true"
     restart: always
+  clean-up-submission:
+    image: lblod/clean-up-submission-service:0.2.0
+    volumes:
+      - ./data/files:/share
   person-uri-for-social-security-number:
     image: lblod/person-uri-for-social-security-number-service:0.3.0
     labels:

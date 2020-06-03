@@ -121,27 +121,6 @@ export default [
   {
     match: {
       predicate: {
-        type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
-      },
-      object: {
-        type: 'uri',
-        value: 'http://lblod.data.gift/concepts/faa5110a-fdb2-47fa-a0d2-118e5542ef05'
-      }
-    },
-    callback: {
-      url: 'http://toezicht-flattened-form-data-generator/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
-  },
-  {
-    match: {
-      predicate: {
         type: "uri",
         value: "http://www.w3.org/ns/adms#status"
       },
