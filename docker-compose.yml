@@ -358,8 +358,6 @@ services:
   sync-with-kalliope-error-notification:
     image: lblod/sync-with-kalliope-error-notification-service:0.1.0
     environment:
-      MESSAGE_FROM: ""
-      MESSAGE_TO: ""
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
     labels:
