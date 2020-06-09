@@ -194,14 +194,16 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-deliver-email-service:
-    image: lblod/berichtencentrum-deliver-email-service:0.3.0
+    image: lblod/berichtencentrum-deliver-email-service:0.4.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.6.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.6.1
     environment:
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
       BERICHTEN_CRON_PATTERN: "*/5 * * * *"
