@@ -211,6 +211,8 @@ services:
       MAX_MESSAGE_AGE: 1
       MAX_SENDING_ATTEMPTS: 20
       INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/supervision/submissions"
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
     volumes:
       - ./data/files:/data/files
     labels:
@@ -354,7 +356,11 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
-    image: semtech/mu-javascript-template:0.1.2
+    image: lblod/sync-with-kalliope-error-notification-service:0.1.2
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
