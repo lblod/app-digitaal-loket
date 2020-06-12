@@ -194,13 +194,13 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-deliver-email-service:
-    image: lblod/berichtencentrum-deliver-email-service:0.4.0
+    image: lblod/berichtencentrum-deliver-email-service:0.4.1
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.6.1
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.6.2
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -354,7 +354,7 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
-    image: semtech/mu-javascript-template:0.1.0
+    image: semtech/mu-javascript-template:0.1.2
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
