@@ -237,20 +237,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  download-url-service:
-    image: lblod/loket-download-url-service:0.4.0
-    environment:
-      CACHING_MAX_RETRIES: 300
-      CACHING_CRON_PATTERN: '0 */15 * * * *'
-      MAX_PENDING_TIME_IN_SECONDS: 7200
-    links:
-      - database:database
-    volumes:
-      - ./data/files:/data/files
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.4.0
     labels:

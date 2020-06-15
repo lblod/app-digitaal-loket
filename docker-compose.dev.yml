@@ -66,8 +66,6 @@ services:
     restart: "no"
   automatic-submission:
     restart: "no"
-  download-url-service:
-    restart: "no"
   import-submission:
     restart: "no"
   enrich-submission:
