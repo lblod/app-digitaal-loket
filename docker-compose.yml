@@ -320,17 +320,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  migrate-submission:
-    image: lblod/migrate-submission-service:0.7.3
-    environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
-    links:
-      - virtuoso:database
-    volumes:
-      - ./data/files/submissions:/share/submissions
-    labels:
-      - "logging=true"
-    restart: always
   clean-up-submission:
     image: lblod/clean-up-submission-service:0.2.0
     volumes:
