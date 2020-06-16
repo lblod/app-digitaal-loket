@@ -76,7 +76,5 @@ services:
     restart: "no"
   export-submissions:
     restart: "no"
-  migrate-submission:
-    restart: "no"
   person-uri-for-social-security-number:
     restart: "no"
