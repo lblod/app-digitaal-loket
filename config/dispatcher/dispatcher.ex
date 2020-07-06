@@ -164,57 +164,6 @@ defmodule Dispatcher do
   end
 
   ###############################################################
-  # master-toezicht-domain.lisp
-  ###############################################################
-  match "/inzending-voor-toezicht-form-versions/*path" do
-    Proxy.forward conn, path, "http://cache/inzending-voor-toezicht-form-versions/"
-  end
-
-  get "/toezicht/bestanden/*path" do
-    Proxy.forward conn, path, "http://filehost/"
-  end
-
-  match "/inzendingen-voor-toezicht/*path" do
-    Proxy.forward conn, path, "http://cache/inzendingen-voor-toezicht/"
-  end
-  match "/toezicht-tax-types/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-tax-types/"
-  end
-  match "/toezicht-nomenclatures/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-nomenclatures/"
-  end
-  match "/toezicht-fiscal-periods/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-fiscal-periods/"
-  end
-  match "/toezicht-delivery-report-types/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-delivery-report-types/"
-  end
-  match "/toezicht-account-acceptance-statuses/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-account-acceptance-statuses/"
-  end
-  match "/toezicht-document-authenticity-types/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-document-authenticity-types/"
-  end
-  match "/toezicht-regulation-types/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-regulation-types/"
-  end
-  match "/toezicht-inzending-types/*path" do
-    Proxy.forward conn, path, "http://cache/toezicht-inzending-types/"
-  end
-  match "/besluit-types/*path" do
-    Proxy.forward conn, path, "http://cache/besluit-types/"
-  end
-  match "/tax-rates/*path" do
-    Proxy.forward conn, path, "http://cache/tax-rates/"
-  end
-  match "/simplified-tax-rates/*path" do
-    Proxy.forward conn, path, "http://cache/simplified-tax-rates/"
-  end
-  match "/form-solutions/*path" do
-    Proxy.forward conn, path, "http://cache/form-solutions/"
-  end
-
-  ###############################################################
   # master-messages-domain.lisp
   ###############################################################
   match "/conversaties/*path" do
@@ -351,10 +300,6 @@ defmodule Dispatcher do
   # Toezicht / supervision
   #################################################################
 
-  match "/submissions/*path" do
-    Proxy.forward conn, path, "http://resource/submissions/"
-  end
-
   match "/vendors/*path" do
     Proxy.forward conn, path, "http://cache/vendors/"
   end
@@ -383,8 +328,24 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
   end
 
-  delete "/submission-forms/*path" do
-    Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
+  delete "/submissions/*path" do
+    Proxy.forward conn, path, "http://clean-up-submission/submissions/"
+  end
+
+  put "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  patch "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  post "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
+  end
+
+  get "/submissions/*path" do
+    Proxy.forward conn, path, "http://resource/submissions/"
   end
 
   put "/submission-forms/:id/flatten" do

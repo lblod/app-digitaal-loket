@@ -7,6 +7,7 @@ import sameRrnReport from './sameRrnReport';
 import failedSyncToMft from './failedSyncToMft';
 import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail';
 import internalMandatenReport from './internalMandatenReport';
+import submissionsReport from './submissionsReport';
 
 export default [
   BestuurseenhedenReport,
@@ -17,5 +18,6 @@ export default [
   sameRrnReport,
   failedSyncToMft,
   bestuurseenhedenWithoutNotificationEmail,
-  internalMandatenReport
+  internalMandatenReport,
+  submissionsReport
 ];

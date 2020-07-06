@@ -242,7 +242,6 @@
         "lblodBesluit:hasAdditionalTaxRate",
         "lblodBesluit:authenticityType",
         "lblodBesluit:chartOfAccount",
-        "lblodBesluit:taxType",
         "lblodBesluit:taxRate",
         "ext:sessionStartedAtTime"
       ],
@@ -292,7 +291,24 @@
         "dct:type",
         "nie:dataSource"
       ],
-      "additionalFilter": "?resource nie:dataSource+ ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
+      "additionalFilter": "?resource nie:dataSource ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
+    },
+    {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type",
+        "nie:dataSource"
+      ],
+      "additionalFilter": "?resource nie:dataSource/nie:dataSource ?remoteFile. ?submission nie:hasPart ?remoteFile. ?submission a meb:Submission."
     },
     {
       "type": "nfo:FileDataObject",
@@ -308,7 +324,39 @@
         "dct:modified",
         "dct:type"
       ],
-      "additionalFilter": "?s dct:source ?resource. ?s a ext:SubmissionDocument."
+      "additionalFilter": "?resource dct:type <http://data.lblod.gift/concepts/meta-file-type> . ?s dct:source ?resource. ?s a ext:SubmissionDocument."
+    },
+    {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type"
+      ],
+      "additionalFilter": "?resource dct:type <http://data.lblod.gift/concepts/form-data-file-type> . ?s dct:source ?resource. ?s a ext:SubmissionDocument."
+    },
+    {
+      "type": "nfo:FileDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type"
+      ],
+      "additionalFilter": "?resource dct:type <http://data.lblod.gift/concepts/form-file-type> . ?s dct:source ?resource. ?s a ext:SubmissionDocument."
     },
     {
       "type": "nfo:FileDataObject",
@@ -346,6 +394,26 @@
         "nie:dataSource"
       ],
       "additionalFilter": "?resource nie:dataSource ?virtualFile . ?s dct:hasPart ?virtualFile. ?s a melding:FormData."
+    },
+    {
+      "type": "nfo:RemoteDataObject",
+      "requiredProperties": [
+        "mu:uuid"
+      ],
+      "optionalProperties": [
+        "rdf:type",
+        "nie:url",
+        "nfo:fileName",
+        "dct:format",
+        "nfo:fileSize",
+        "dbpedia:fileExtension",
+        "dct:created",
+        "dct:modified",
+        "dct:type",
+        "nie:dataSource",
+        "adms:status"
+      ],
+      "additionalFilter": "?formData dct:hasPart ?resource. ?formData a melding:FormData."
     }
   ]
 }

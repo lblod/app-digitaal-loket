@@ -66,8 +66,6 @@ services:
     restart: "no"
   automatic-submission:
     restart: "no"
-  download-url-service:
-    restart: "no"
   import-submission:
     restart: "no"
   enrich-submission:
@@ -77,8 +75,6 @@ services:
   toezicht-flattened-form-data-generator:
     restart: "no"
   export-submissions:
-    restart: "no"
-  migrate-submission:
     restart: "no"
   person-uri-for-social-security-number:
     restart: "no"

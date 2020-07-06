@@ -121,27 +121,6 @@ export default [
   {
     match: {
       predicate: {
-        type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
-      },
-      object: {
-        type: 'uri',
-        value: 'http://lblod.data.gift/concepts/faa5110a-fdb2-47fa-a0d2-118e5542ef05'
-      }
-    },
-    callback: {
-      url: 'http://toezicht-flattened-form-data-generator/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
-  },
-  {
-    match: {
-      predicate: {
         type: "uri",
         value: "http://www.w3.org/ns/adms#status"
       },
@@ -200,7 +179,28 @@ export default [
   },
   {
     match: {
-
+      predicate: {
+        type: 'uri',
+        value: 'http://purl.org/pav/createdBy'
+      },
+      object: {
+        type: 'uri',
+        value: 'http://lblod.data.gift/services/berichtencentrum-sync-with-kalliope-service'
+      }
+    },
+    callback: {
+      url: 'http://sync-with-kalliope-error-notification/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true
+    }
+  },
+  {
+    match: {
+      // anything
     },
     callback: {
       url: 'http://loket-mandatarissen-producer/delta',
