@@ -178,7 +178,7 @@ services:
     links:
       - virtuoso:database
     environment:
-      EXPORT_CRON_PATTERN: "0 0 4 * * *"
+      EXPORT_CRON_PATTERN: "0 0 4 * * 6" # only on saturday
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-mandatendatabank"
     volumes:
       - ./data/exports/mandaten:/data/exports
