@@ -340,7 +340,7 @@ services:
     restart: always
     logging: *default-logging
   loket-mandatarissen-producer:
-    image: semtech/mu-javascript-template:1.4.0-beta.4
+    image: lblod/loket-mandatarissen-producer:0.1.0
     volumes:
       - ./data/files:/share
     restart: always
