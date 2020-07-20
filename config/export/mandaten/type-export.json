@@ -177,7 +177,7 @@
       ],
       "optionalProperties": [
         "org:organisation",
-        "org:mumberDuring"
+        "org:memberDuring"
       ],
       "additionalFilter": "?resource ^org:hasMembership ?mandataris .\n        ?mandataris org:holds ?mandaat .\n        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .\n        ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan.\n        ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .\n        ?bestuurseenheid besluit:classificatie ?classificatie .\n        FILTER(?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, # Provincie\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, # Gemeente\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, # OCMW\n                                  <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>)) #District"
     },
