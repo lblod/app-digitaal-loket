@@ -343,6 +343,8 @@ services:
     image: lblod/loket-mandatarissen-producer:0.1.0
     volumes:
       - ./data/files:/share
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
 
