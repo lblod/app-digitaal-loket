@@ -1,5 +1,5 @@
 {
-  "conceptScheme": "",
+  "conceptScheme": "http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0",
   "prefixes": {
     "mandaat": "http://data.vlaanderen.be/ns/mandaat#",
     "besluit": "http://data.vlaanderen.be/ns/besluit#",
