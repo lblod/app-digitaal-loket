@@ -17,12 +17,17 @@
     "lblodlg": "http://data.lblod.info/vocabularies/leidinggevenden/",
     "schema": "http://schema.org/",
     "adres": "https://data.vlaanderen.be/ns/adres#",
-    "locn":  "http://www.w3.org/ns/locn#"
+    "locn": "http://www.w3.org/ns/locn#"
   },
   "export": [
     {
-      "type": "http://data.vlaanderen.be/ns/besluit#Bestuureenheid",
-      "pathToConceptScheme": [],
+      "type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "^http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -32,8 +37,27 @@
       ]
     },
     {
+      "type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/besluit#classificatie",
+        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "^http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "http://www.w3.org/2004/02/skos/core#scopeNote"
+      ]
+    },
+    {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -46,22 +70,13 @@
       ]
     },
     {
-      "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
-      "pathToConceptScheme": [],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://data.vlaanderen.be/ns/mandaat#bindingEinde",
-        "http://data.vlaanderen.be/ns/mandaat#bindingStart",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie"
-      ]
-    },
-    {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode",
-      "pathToConceptScheme": [],
+      "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/besluit#classificatie",
+        "^http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -70,7 +85,10 @@
     },
     {
       "type": "http://schema.org/ContactPoint",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "^http://schema.org/contactPoint",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/ns/locn#address",
@@ -83,7 +101,11 @@
     },
     {
       "type": "http://www.w3.org/ns/locn#Address",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "^http://www.w3.org/ns/locn#address",
+        "^http://schema.org/contactPoint",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/ns/locn#fullAddress",
@@ -101,7 +123,9 @@
     },
     {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/ns/org#role",
@@ -110,8 +134,23 @@
       ]
     },
     {
+      "type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode",
+      "pathToConceptScheme": [
+        "^http://www.w3.org/ns/org#role",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "http://www.w3.org/2004/02/skos/core#scopeNote"
+      ]
+    },
+    {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "http://www.w3.org/ns/org#holds",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://data.vlaanderen.be/ns/mandaat#start",
@@ -123,7 +162,11 @@
     },
     {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/FunctionarisStatusCode",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/mandaat#status",
+        "http://www.w3.org/ns/org#holds",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -132,7 +175,11 @@
     },
     {
       "type": "http://www.w3.org/ns/person#Person",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+        "http://www.w3.org/ns/org#holds",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://xmlns.com/foaf/0.1/familyName",
@@ -142,29 +189,17 @@
     },
     {
       "type": "http://www.w3.org/ns/prov#Location",
-      "pathToConceptScheme": [],
+      "pathToConceptScheme": [
+        "^http://mu.semte.ch/vocabularies/ext/inProvincie",
+        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "^http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2000/01/rdf-schema#label",
         "http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau"
-      ]
-    },
-    {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
-      "pathToConceptScheme": [],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
-      ]
-    },
-    {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
-      "pathToConceptScheme": [],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
       ]
     }
   ]
