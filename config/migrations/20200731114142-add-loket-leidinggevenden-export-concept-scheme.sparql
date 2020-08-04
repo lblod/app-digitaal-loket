@@ -7,11 +7,11 @@ INSERT {
     <http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0> a skos:ConceptScheme ;
     mu:uuid "06bad311-e964-48a4-9b6b-f765819e76e0" ;
     skos:prefLabel "Loket leidinggevenden export" .
-    ?bestuursfunctie skos:inScheme <http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0> .
+    ?code skos:inScheme <http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0> .
   }
 }
 WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
-   ?bestuursfunctie a lblodlg:Bestuursfunctie .
+   ?code a <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode> .
   }
-}
+}d
