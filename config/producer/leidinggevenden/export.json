@@ -64,6 +64,25 @@
       ]
     },
     {
+      "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
+      "pathToConceptScheme": [
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "http://data.vlaanderen.be/ns/mandaat#bindingEinde",
+        "http://data.vlaanderen.be/ns/mandaat#bindingStart",
+        "http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie"
+      ]
+    },
+    {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#classificatie",
@@ -78,10 +97,25 @@
       ]
     },
     {
+      "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "http://www.w3.org/2004/02/skos/core#scopeNote"
+      ]
+    },
+    {
       "type": "http://schema.org/ContactPoint",
       "pathToConceptScheme": [
         "^http://schema.org/contactPoint",
-        "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>",
+        "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
         "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
