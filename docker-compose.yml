@@ -340,9 +340,10 @@ services:
     restart: always
     logging: *default-logging
   loket-mandatarissen-producer:
-    image: lblod/loket-mandatarissen-producer:0.2.1
+    image: lblod/loket-mandatarissen-producer:0.2.2
     environment:
-       RELATIVE_FILE_PATH: "deltas/mandatarissen"
+      RELATIVE_FILE_PATH: "deltas/mandatarissen"
+      PUBLISHER_URI: "http://data.lblod.info/services/loket-mandatarissen-producer"
     volumes:
       - ./config/producer/mandatarissen:/config
       - ./data/files:/share
@@ -351,9 +352,10 @@ services:
     restart: always
     logging: *default-logging
   loket-leidinggevenden-producer:
-    image: lblod/loket-mandatarissen-producer:0.2.1
+    image: lblod/loket-mandatarissen-producer:0.2.2
     environment:
       RELATIVE_FILE_PATH: "deltas/leidinggevenden"
+      PUBLISHER_URI: "http://data.lblod.info/services/loket-leidinggevenden-producer"
     volumes:
       - ./config/producer/leidinggevenden:/config
       - ./data/files:/share
