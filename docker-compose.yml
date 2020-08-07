@@ -193,6 +193,12 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  submission-email-notification:
+    image: lblod/toezicht-submission-email-notification-service:0.1.4
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   berichtencentrum-deliver-email-service:
     image: lblod/berichtencentrum-deliver-email-service:0.4.1
     labels:
@@ -347,6 +353,4 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  submission-email-notification:
-    image: lblod/toezicht-submission-email-notification-service:0.1.4
 

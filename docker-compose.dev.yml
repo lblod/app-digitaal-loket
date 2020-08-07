@@ -54,7 +54,13 @@ services:
     restart: "no"
   sink:
     restart: "no"
+  berichtencentrum-email-notification:
+    restart: "no"
+  submission-email-notification:
+    restart: "no"
   berichtencentrum-sync-with-kalliope:
+    restart: "no"
+  berichtencentrum-deliver-email-service:
     restart: "no"
   download-url:
     restart: "no"
@@ -80,3 +86,4 @@ services:
     restart: "no"
   loket-mandatarissen-producer:
     restart: "no"
+
