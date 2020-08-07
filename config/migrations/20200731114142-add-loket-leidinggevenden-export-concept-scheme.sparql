@@ -14,4 +14,4 @@ WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
    ?code a <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode> .
   }
-}d
+}
