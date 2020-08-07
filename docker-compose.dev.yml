@@ -86,4 +86,5 @@ services:
     restart: "no"
   loket-mandatarissen-producer:
     restart: "no"
-
+  loket-leidinggevenden-producer:
+    restart: "no"
