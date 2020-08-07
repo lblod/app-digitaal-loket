@@ -347,4 +347,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  submission-email-notification:
+    image: lblod/toezicht-submission-email-notification-service:0.1.4
 
