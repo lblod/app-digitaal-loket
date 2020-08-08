@@ -163,7 +163,7 @@ services:
     links:
       - virtuoso:database
     environment:
-      EXPORT_CRON_PATTERN: "0 0 5 * * *"
+      EXPORT_CRON_PATTERN: "0 0 5 * * 6" # only on saturday
       EXPORT_FILE_BASE: "leidinggevenden"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-leidinggevenden"
     volumes:
