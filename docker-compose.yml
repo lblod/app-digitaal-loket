@@ -194,7 +194,7 @@ services:
     restart: always
     logging: *default-logging
   submission-email-notification:
-    image: lblod/toezicht-submission-email-notification-service:0.1.4
+    image: lblod/toezicht-submission-email-notification-service:0.2.0
     labels:
       - "logging=true"
     restart: always
