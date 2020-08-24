@@ -73,7 +73,7 @@ This repository harvest two setups.  The base of these setups resides in the sta
 
 ### Cleaning the database
 
-  At some times you may want te clean the database and make sure it's in a pristine state.
+  At some times you may want to clean the database and make sure it's in a pristine state.
 
       # Bring down our current setup
       docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
@@ -83,4 +83,4 @@ This repository harvest two setups.  The base of these setups resides in the sta
       # Bring the stack back up
       docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
-  Make sure to wait for the migrations to run.
+  Note that virtuoso can take a while to execute its first run, meanwhile the database is inaccessible. Make also sure to wait for the migrations to run.
