@@ -159,7 +159,7 @@ services:
     restart: always
     logging: *default-logging
   export-leidinggevenden:
-    image: lblod/mandaten-download-generator-service:0.3.4
+    image: lblod/mandaten-download-generator-service:0.3.6
     links:
       - virtuoso:database
     environment:
@@ -174,7 +174,7 @@ services:
     restart: always
     logging: *default-logging
   export-mandaten:
-    image: lblod/mandaten-download-generator-service:0.3.4
+    image: lblod/mandaten-download-generator-service:0.3.6
     links:
       - virtuoso:database
     environment:
@@ -312,7 +312,7 @@ services:
     restart: always
     logging: *default-logging
   export-submissions:
-    image: lblod/mandaten-download-generator-service:0.3.4
+    image: lblod/mandaten-download-generator-service:0.3.6
     links:
       - virtuoso:database
     environment:
