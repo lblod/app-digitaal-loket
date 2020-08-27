@@ -162,6 +162,34 @@ fields:e24d533f-3e63-4b36-a6af-21c65357e258 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+# custom bestuursorgaan-selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc a form:Field ;
+    mu:uuid "4c7820f0-4011-4ab4-a16a-e128800e11bc" ;
+    sh:name "Welk beslissingsorgaan nam het besluit?" ;
+    sh:order 2000 ;
+    sh:path eli:passed_by ;
+    form:validations
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path eli:passed_by ;
+        form:conceptScheme <http://data.lblod.info/concept-schemes/481c03f0-d07f-424e-9c2b-8d4cfb141c72> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ],
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path eli:passed_by ] ;
+    form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/481c03f0-d07f-424e-9c2b-8d4cfb141c72"}""" ;
+    form:displayType displayTypes:bestuursorgaanSelector ; # notice this changed too
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:303545a6-705b-43b3-86b7-b96436524be9 a form:Field ;
+    mu:uuid "303545a6-705b-43b3-86b7-b96436524be9" ;
+    sh:name "Bestuursorgaan classificatie code [hidden input]" ;
+    sh:order 1001 ;
+    sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+    sh:group fields:aDynamicPropertyGroup .
+
 fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb a form:Field ;
     mu:uuid "3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb" ;
     sh:name "Datum zitting/besluit" ;
@@ -408,6 +436,33 @@ fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b a form:Field ;
     form:displayType displayTypes:remoteUrls;
     sh:group fields:aDynamicPropertyGroup .
 
+# custom link validation for url required but file optional
+fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb a form:Field ;
+    mu:uuid "1e0f541f-61e9-43a7-bc5f-612eb44f52bb" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path ( dct:hasPart nie:url ) ;
+         sh:resultMessage "Gelieve minstens één URL op te geven."@nl
+     ];
+    form:displayType displayTypes:remoteUrls;
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:c7c5a589-0785-4032-a4bd-ee589add3c39 a form:Field ;
+    mu:uuid "c7c5a589-0785-4032-a4bd-ee589add3c39" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:displayType displayTypes:files;
+    sh:group fields:aDynamicPropertyGroup .
+
 fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a a form:Field ;
     mu:uuid "c955d641-b9b3-4ec7-9838-c2a477c7e95a" ;
     sh:name "Bestanden" ;
@@ -507,8 +562,8 @@ fields:eaf71eec-6ca8-4f63-b4a6-adfe4f21651b a form:Field ;
 ###########Advies-bij-jaarrekening-AGB###########
 
 fieldGroups:b8c40ca1-b2c4-416c-bc3f-e0e4bd50a493 a form:FieldGroup ;
-    mu:uuid "b8c40ca1-b2c4-416c-bc3f-e0e4bd50a493" ;
-    form:hasField
+    mu:uuid "b8c40ca1-b2c4-416c-bc3f-e0e4bd50a493" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -552,8 +607,8 @@ fields:c13981d3-33a2-4105-9ac0-9823aa52073a a form:ConditionalFieldGroup ;
 ###########Advies-bij-jaarrekening-APB###########
 
 fieldGroups:70fe1278-738f-4edf-b1a1-94056579c7a4 a form:FieldGroup ;
-    mu:uuid "70fe1278-738f-4edf-b1a1-94056579c7a4" ;
-    form:hasField
+    mu:uuid "70fe1278-738f-4edf-b1a1-94056579c7a4" ; 
+    form:hasField 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
@@ -586,7 +641,7 @@ fieldGroups:70fe1278-738f-4edf-b1a1-94056579c7a4 a form:FieldGroup ;
 
                       ###Bestanden###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
-
+                      
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
@@ -611,8 +666,8 @@ fields:24e1615a-7ee1-4f55-9aab-baa9140c3024 a form:ConditionalFieldGroup ;
 ###########Advies-bij-jaarrekening-eredienstbestuur###########
 
 fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
-    mu:uuid "91045004-2066-40f3-aac1-bf2309eb2b99" ;
-    form:hasField
+    mu:uuid "91045004-2066-40f3-aac1-bf2309eb2b99" ; 
+    form:hasField 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
@@ -670,8 +725,8 @@ fields:d6fee4ff-91f7-4a8d-873f-5394eb43c017 a form:ConditionalFieldGroup ;
 ###########Advies-jaarrekening-OCMW-vereniging###########
 
 fieldGroups:e5d8713c-338a-4775-a745-f6f4bad7189e a form:FieldGroup ;
-    mu:uuid "e5d8713c-338a-4775-a745-f6f4bad7189e" ;
-    form:hasField
+    mu:uuid "e5d8713c-338a-4775-a745-f6f4bad7189e" ; 
+    form:hasField 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d,
 
@@ -714,8 +769,8 @@ fields:22646d67-09ad-49ab-8f09-e9948c18cbec a form:ConditionalFieldGroup ;
 ###########Advies-samenvoeging-eredienstbesturen###########
 
 fieldGroups:53505d5d-d28c-49d2-afaf-910f673d34e1 a form:FieldGroup ;
-    mu:uuid "53505d5d-d28c-49d2-afaf-910f673d34e1" ;
-    form:hasField
+    mu:uuid "53505d5d-d28c-49d2-afaf-910f673d34e1" ; 
+    form:hasField 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
@@ -790,8 +845,8 @@ fields:e14b7ae5-f527-4fb8-b1b8-84779bac960b a form:ConditionalFieldGroup ;
 ###########Andere-documenten-BBC###########
 
 fieldGroups:35396e31-45cf-4382-a254-e74bba37ae4c a form:FieldGroup ;
-    mu:uuid "35396e31-45cf-4382-a254-e74bba37ae4c" ;
-    form:hasField
+    mu:uuid "35396e31-45cf-4382-a254-e74bba37ae4c" ; 
+    form:hasField 
                       ###Opmerking###
                       fields:0cdfe85f-ec65-498f-bd26-0ec611967de0,
 
@@ -839,8 +894,8 @@ fieldGroups:c059770c-decd-49aa-abbe-82b29a286225 a form:FieldGroup ;
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d,
 
-                      ###Datum-zitting/besluit###
-                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+                      ###Datum-zitting/besluitenlijst###
+                      fields:ba965704-5a74-4a77-b283-4f97f3b7ddbc,
 
                       ###Datum-van-publicatie-op-webtoepassing###
                       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
@@ -910,8 +965,8 @@ fields:767be21a-c431-4950-abe5-784361ea0fea a form:ConditionalFieldGroup ;
 ###########Besluit-budget-AGB###########
 
 fieldGroups:0cb3ea99-0555-4529-a367-0a76de0fc448 a form:FieldGroup ;
-    mu:uuid "0cb3ea99-0555-4529-a367-0a76de0fc448" ;
-    form:hasField
+    mu:uuid "0cb3ea99-0555-4529-a367-0a76de0fc448" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -972,8 +1027,8 @@ fields:40384e53-5fa2-49a8-aa52-fabcae68bc62 a form:ConditionalFieldGroup ;
 ###########Besluit-meerjarenplan(aanpassing)-AGB###########
 
 fieldGroups:c305e982-fbca-4142-b3d9-88f37aa5a9a0 a form:FieldGroup ;
-    mu:uuid "c305e982-fbca-4142-b3d9-88f37aa5a9a0" ;
-    form:hasField
+    mu:uuid "c305e982-fbca-4142-b3d9-88f37aa5a9a0" ; 
+    form:hasField 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
 
@@ -1040,8 +1095,8 @@ fields:e6e3271a-a6c9-4a8e-82f2-606856b063c7 a form:ConditionalFieldGroup ;
 ###########Besluit-over-budget(wijziging)-eredienstbestuur###########
 
 fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
-    mu:uuid "09fd371f-2afe-4b14-81a9-e780876de077" ;
-    form:hasField
+    mu:uuid "09fd371f-2afe-4b14-81a9-e780876de077" ; 
+    form:hasField 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
 
@@ -1105,8 +1160,8 @@ fields:a262ac48-1511-4744-a332-164f471c150d a form:ConditionalFieldGroup ;
 ###########Besluit-over-budget-APB###########
 
 fieldGroups:a0759a1e-ef65-4e39-8cc4-2787ff40d2c9 a form:FieldGroup ;
-    mu:uuid "a0759a1e-ef65-4e39-8cc4-2787ff40d2c9" ;
-    form:hasField
+    mu:uuid "a0759a1e-ef65-4e39-8cc4-2787ff40d2c9" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -1161,8 +1216,8 @@ fields:fe5ba124-5298-473f-a74b-3fa1237c3520 a form:ConditionalFieldGroup ;
 ###########Besluit-over-meerjarenplan(aanpassing)-eredienstbestuur###########
 
 fieldGroups:ae168679-82cf-4df6-8803-cbcbc6610f47 a form:FieldGroup ;
-    mu:uuid "ae168679-82cf-4df6-8803-cbcbc6610f47" ;
-    form:hasField
+    mu:uuid "ae168679-82cf-4df6-8803-cbcbc6610f47" ; 
+    form:hasField 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
 
@@ -1226,8 +1281,8 @@ fields:c5541662-1c03-446f-837c-8c56d3db5a27 a form:ConditionalFieldGroup ;
 ###########Besluit-over-meerjarenplan-APB###########
 
 fieldGroups:deb4e777-eb33-4884-a2cd-859e20c9cf71 a form:FieldGroup ;
-    mu:uuid "deb4e777-eb33-4884-a2cd-859e20c9cf71" ;
-    form:hasField
+    mu:uuid "deb4e777-eb33-4884-a2cd-859e20c9cf71" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -1522,23 +1577,11 @@ fields:90d80b85-5491-4e85-bff3-f7fbf73c7c87 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/6ca1d146-f439-4ad9-9e36-be026f43762f>
       ] ;
     form:hasFieldGroup fieldGroups:752ea48c-4729-435c-a765-c0707db004cc .
-
-
-###########Besluitenlijst###########
-
-fieldGroups:64b712f3-c061-4368-919e-6ea6afb45192 a form:FieldGroup ;
-    mu:uuid "64b712f3-c061-4368-919e-6ea6afb45192" ;
+fieldGroups:f46f59e8-c145-4498-95e4-f59151b9cc35 a form:FieldGroup ;
+    mu:uuid "f46f59e8-c145-4498-95e4-f59151b9cc35" ;
     form:hasField
-                      ###Welk-beslissingsorgaan-nam-het-besluit?###
-                      fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d,
 
-                      ###Datum-zitting/besluitenlijst###
-                      fields:ba965704-5a74-4a77-b283-4f97f3b7ddbc,
-
-                      ###Datum-van-publicatie-op-webtoepassing###
-                      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
-
-                      ###Links-naar-documenten###
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
@@ -1549,6 +1592,82 @@ fieldGroups:64b712f3-c061-4368-919e-6ea6afb45192 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:3a079210d-0f29-4ec8-b10a-502ab8be7735.
+
+fields:3a079210d-0f29-4ec8-b10a-502ab8be7735 a form:ConditionalFieldGroup ;
+    mu:uuid "3a079210d-0f29-4ec8-b10a-502ab8be7735";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> # burgemeester
+      ] ;
+    form:hasFieldGroup fieldGroups:f46f59e8-c145-4498-95e4-f59151b9cc35 .fieldGroups:a77e3890-edea-42e8-b78b-b92dc48aeac1 a form:FieldGroup ;
+    mu:uuid "a77e3890-edea-42e8-b78b-b92dc48aeac1" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:320f02cff-654c-4c6d-8641-82b0008d9fdc.
+
+fields:320f02cff-654c-4c6d-8641-82b0008d9fdc a form:ConditionalFieldGroup ;
+    mu:uuid "320f02cff-654c-4c6d-8641-82b0008d9fdc";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> # college van schepenen en burgermeester
+      ] ;
+    form:hasFieldGroup fieldGroups:a77e3890-edea-42e8-b78b-b92dc48aeac1 .###########Besluitenlijst###########
+
+fieldGroups:64b712f3-c061-4368-919e-6ea6afb45192 a form:FieldGroup ;
+    mu:uuid "64b712f3-c061-4368-919e-6ea6afb45192" ; 
+    form:hasField 
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+                      ###Datum-zitting/besluitenlijst###
+                      fields:ba965704-5a74-4a77-b283-4f97f3b7ddbc,
+
+                      ###Datum-van-publicatie-op-webtoepassing###
+                      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
+
+                      ### Bestuursorgaan classificatie code [hidden input] ###
+                      fields:303545a6-705b-43b3-86b7-b96436524be9.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:d75438e8-a4c5-4b39-a606-e198fdeb7aec.
 
@@ -1563,13 +1682,48 @@ fields:d75438e8-a4c5-4b39-a606-e198fdeb7aec a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:64b712f3-c061-4368-919e-6ea6afb45192 .
 
+fieldGroups:7e26db7b-e864-4afe-ad2b-1753434f3e3f a form:FieldGroup ;
+    mu:uuid "7e26db7b-e864-4afe-ad2b-1753434f3e3f" ;
+    form:hasField
 
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:335b1a8a-e6d6-11ea-bf88-8b5df92c347a.
+
+fields:335b1a8a-e6d6-11ea-bf88-8b5df92c347a a form:ConditionalFieldGroup ;
+    mu:uuid "335b1a8a-e6d6-11ea-bf88-8b5df92c347a";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> # gemeenteraad
+      ] ;
+    form:hasFieldGroup fieldGroups:7e26db7b-e864-4afe-ad2b-1753434f3e3f .
 
 ###########Budget###########
 
 fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 a form:FieldGroup ;
-    mu:uuid "8e826b62-3bce-4a9c-b8c1-e84db510c6a3" ;
-    form:hasField
+    mu:uuid "8e826b62-3bce-4a9c-b8c1-e84db510c6a3" ; 
+    form:hasField 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
@@ -1659,8 +1813,8 @@ fields:0dd4d0db-db4d-4e9a-8588-ea2082b65746 a form:ConditionalFieldGroup ;
 ###########Goedkeuringstoezicht-Voeren###########
 
 fieldGroups:7e841b1c-64a4-48a6-b39d-c18fe1a9394f a form:FieldGroup ;
-    mu:uuid "7e841b1c-64a4-48a6-b39d-c18fe1a9394f" ;
-    form:hasField
+    mu:uuid "7e841b1c-64a4-48a6-b39d-c18fe1a9394f" ; 
+    form:hasField 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d,
 
@@ -1681,7 +1835,7 @@ fieldGroups:7e841b1c-64a4-48a6-b39d-c18fe1a9394f a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:e929ed9d-3a37-4bf1-9b6c-d8285fa0ec0c.
 
 fields:e929ed9d-3a37-4bf1-9b6c-d8285fa0ec0c a form:ConditionalFieldGroup ;
@@ -1735,8 +1889,8 @@ fields:3a012f11-9a18-48ba-b8d5-cef8b13bb42b a form:ConditionalFieldGroup ;
 ###########Jaarrekening###########
 
 fieldGroups:7d5f1a08-598c-4a67-a102-a8bc07ac2f13 a form:FieldGroup ;
-    mu:uuid "7d5f1a08-598c-4a67-a102-a8bc07ac2f13" ;
-    form:hasField
+    mu:uuid "7d5f1a08-598c-4a67-a102-a8bc07ac2f13" ; 
+    form:hasField 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
@@ -1785,8 +1939,8 @@ fields:887f0b61-cbb6-41a9-a4d3-62d980760aa6 a form:ConditionalFieldGroup ;
 ###########Meerjarenplan(aanpassing)###########
 
 fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
-    mu:uuid "e0925be1-bdce-4890-b6e4-4f7640700581" ;
-    form:hasField
+    mu:uuid "e0925be1-bdce-4890-b6e4-4f7640700581" ; 
+    form:hasField 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
@@ -1841,8 +1995,8 @@ fields:8ba3d4c6-022e-401f-a47f-847b1220f669 a form:ConditionalFieldGroup ;
 ###########Meerjarenplan(aanpassing)-BBC2020###########
 
 fieldGroups:25818169-35e6-4798-bb78-c9bc4ea894d8 a form:FieldGroup ;
-    mu:uuid "25818169-35e6-4798-bb78-c9bc4ea894d8" ;
-    form:hasField
+    mu:uuid "25818169-35e6-4798-bb78-c9bc4ea894d8" ; 
+    form:hasField 
                       ###Datum-van-publicatie-op-webtoepassing###
                       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
 
@@ -1967,8 +2121,8 @@ fields:d441cb26-ea24-4ff7-b5fb-868e36e7d468 a form:ConditionalFieldGroup ;
 ###########Oprichting-IGS###########
 
 fieldGroups:ba1888ea-8741-4a4c-911b-74e2335a1680 a form:FieldGroup ;
-    mu:uuid "ba1888ea-8741-4a4c-911b-74e2335a1680" ;
-    form:hasField
+    mu:uuid "ba1888ea-8741-4a4c-911b-74e2335a1680" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -2004,7 +2158,7 @@ fieldGroups:ba1888ea-8741-4a4c-911b-74e2335a1680 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:0269fc98-4ba8-476a-b0d5-817f5f6928aa.
 
 fields:0269fc98-4ba8-476a-b0d5-817f5f6928aa a form:ConditionalFieldGroup ;
@@ -2023,8 +2177,8 @@ fields:0269fc98-4ba8-476a-b0d5-817f5f6928aa a form:ConditionalFieldGroup ;
 ###########Oprichting-autonoom-bedrijf###########
 
 fieldGroups:dc8585b7-891d-465f-b2b5-aea3f5323b48 a form:FieldGroup ;
-    mu:uuid "dc8585b7-891d-465f-b2b5-aea3f5323b48" ;
-    form:hasField
+    mu:uuid "dc8585b7-891d-465f-b2b5-aea3f5323b48" ; 
+    form:hasField 
                       ###Dossieromschrijving###
                       fields:bd6ee5ac-22d6-4279-bcba-3ed279021aac,
 
@@ -2085,8 +2239,8 @@ fields:f719b1da-c8c5-4a08-bc74-89c63de96961 a form:ConditionalFieldGroup ;
 ###########Oprichting-districtsbestuur###########
 
 fieldGroups:6749f691-29b3-459c-8054-f78a3d816db2 a form:FieldGroup ;
-    mu:uuid "6749f691-29b3-459c-8054-f78a3d816db2" ;
-    form:hasField
+    mu:uuid "6749f691-29b3-459c-8054-f78a3d816db2" ; 
+    form:hasField 
                       ###Opmerking###
                       fields:0cdfe85f-ec65-498f-bd26-0ec611967de0,
 
@@ -2128,7 +2282,7 @@ fieldGroups:6749f691-29b3-459c-8054-f78a3d816db2 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:6a56792c-5a47-473d-9db3-3362f96a1cda.
 
 fields:6a56792c-5a47-473d-9db3-3362f96a1cda a form:ConditionalFieldGroup ;
@@ -2147,8 +2301,8 @@ fields:6a56792c-5a47-473d-9db3-3362f96a1cda a form:ConditionalFieldGroup ;
 ###########Oprichting-ocmw-vereniging###########
 
 fieldGroups:831b8af6-4ce7-4b5c-8261-97a3a9309239 a form:FieldGroup ;
-    mu:uuid "831b8af6-4ce7-4b5c-8261-97a3a9309239" ;
-    form:hasField
+    mu:uuid "831b8af6-4ce7-4b5c-8261-97a3a9309239" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -2184,7 +2338,7 @@ fieldGroups:831b8af6-4ce7-4b5c-8261-97a3a9309239 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:fbc56ed1-bb0d-44fe-9dee-75d64f722ada.
 
 fields:fbc56ed1-bb0d-44fe-9dee-75d64f722ada a form:ConditionalFieldGroup ;
@@ -2203,8 +2357,8 @@ fields:fbc56ed1-bb0d-44fe-9dee-75d64f722ada a form:ConditionalFieldGroup ;
 ###########Oprichting-of-deelname-EVA###########
 
 fieldGroups:479990ad-12a3-43b1-a3cf-3d9897e59357 a form:FieldGroup ;
-    mu:uuid "479990ad-12a3-43b1-a3cf-3d9897e59357" ;
-    form:hasField
+    mu:uuid "479990ad-12a3-43b1-a3cf-3d9897e59357" ; 
+    form:hasField 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
@@ -2240,7 +2394,7 @@ fieldGroups:479990ad-12a3-43b1-a3cf-3d9897e59357 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:b13143f6-f547-4aa2-9ed0-485a0dc7a354.
 
 fields:b13143f6-f547-4aa2-9ed0-485a0dc7a354 a form:ConditionalFieldGroup ;
@@ -2294,8 +2448,8 @@ fields:8e149ca6-75e6-4b73-9744-31eae25ba10d a form:ConditionalFieldGroup ;
 ###########Rechtspositieregeling-(RPR)###########
 
 fieldGroups:02ffc029-d60c-49f7-8b13-5250a41615a6 a form:FieldGroup ;
-    mu:uuid "02ffc029-d60c-49f7-8b13-5250a41615a6" ;
-    form:hasField
+    mu:uuid "02ffc029-d60c-49f7-8b13-5250a41615a6" ; 
+    form:hasField 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
@@ -2319,7 +2473,7 @@ fieldGroups:02ffc029-d60c-49f7-8b13-5250a41615a6 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:d4a51632-72d3-459b-b6e5-0d87fbac188a.
 
 fields:d4a51632-72d3-459b-b6e5-0d87fbac188a a form:ConditionalFieldGroup ;
@@ -2411,8 +2565,8 @@ fields:0c7d6a0d-146e-40bf-b834-12941feac885 a form:ConditionalFieldGroup ;
     form:hasFieldGroup fieldGroups:577dcadb-89fb-4365-af2c-93a61c1b9264 .###########Belastingsreglement###########
 
 fieldGroups:ea903e93-a1c9-4542-ab11-8a274af5ee1c a form:FieldGroup ;
-    mu:uuid "ea903e93-a1c9-4542-ab11-8a274af5ee1c" ;
-    form:hasField
+    mu:uuid "ea903e93-a1c9-4542-ab11-8a274af5ee1c" ; 
+    form:hasField 
                       ###Soort Belasting###
                       fields:7cd14dfd-81ff-4a5d-8374-5879c5877c4c,
 
@@ -2441,8 +2595,8 @@ fields:92a18a28-444e-49e9-8b45-4967c5c18d66 a form:ConditionalFieldGroup ;
 ###########Reglementen-en-verordeningen###########
 
 fieldGroups:a5964067-defb-48ca-8cb2-04db3d6ecd13 a form:FieldGroup ;
-    mu:uuid "a5964067-defb-48ca-8cb2-04db3d6ecd13" ;
-    form:hasField
+    mu:uuid "a5964067-defb-48ca-8cb2-04db3d6ecd13" ; 
+    form:hasField 
                       ###Datum-van-publicatie-op-webtoepassing###
                       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
 
@@ -2469,7 +2623,7 @@ fieldGroups:a5964067-defb-48ca-8cb2-04db3d6ecd13 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4f8e79e3-3b13-4a6a-b6e0-1909ab6cfa2a.
 
 fields:4f8e79e3-3b13-4a6a-b6e0-1909ab6cfa2a a form:ConditionalFieldGroup ;
@@ -2488,8 +2642,8 @@ fields:4f8e79e3-3b13-4a6a-b6e0-1909ab6cfa2a a form:ConditionalFieldGroup ;
 ###########Schorsing-beslissing-eredienstbesturen###########
 
 fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
-    mu:uuid "6745c3c5-ed83-45e2-a9e7-ca77c18f0d05" ;
-    form:hasField
+    mu:uuid "6745c3c5-ed83-45e2-a9e7-ca77c18f0d05" ; 
+    form:hasField 
                       ###Naam-betreffend-bedrijf/bestuur###
                       fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
@@ -2522,7 +2676,7 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:40f6d026-11f0-44b3-8594-58210f2860c5.
 
 fields:40f6d026-11f0-44b3-8594-58210f2860c5 a form:ConditionalFieldGroup ;
@@ -2541,8 +2695,8 @@ fields:40f6d026-11f0-44b3-8594-58210f2860c5 a form:ConditionalFieldGroup ;
 ###########Statutenwijziging-IGS###########
 
 fieldGroups:81f3de49-f87b-46a7-97ad-8d3c1ba34f9d a form:FieldGroup ;
-    mu:uuid "81f3de49-f87b-46a7-97ad-8d3c1ba34f9d" ;
-    form:hasField
+    mu:uuid "81f3de49-f87b-46a7-97ad-8d3c1ba34f9d" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -2578,7 +2732,7 @@ fieldGroups:81f3de49-f87b-46a7-97ad-8d3c1ba34f9d a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:8f4d113b-ac51-4579-a2d7-ac77caedc303.
 
 fields:8f4d113b-ac51-4579-a2d7-ac77caedc303 a form:ConditionalFieldGroup ;
@@ -2597,8 +2751,8 @@ fields:8f4d113b-ac51-4579-a2d7-ac77caedc303 a form:ConditionalFieldGroup ;
 ###########Toetreding-rechtspersoon###########
 
 fieldGroups:46888726-9bc4-49ac-a0ef-848e37731a13 a form:FieldGroup ;
-    mu:uuid "46888726-9bc4-49ac-a0ef-848e37731a13" ;
-    form:hasField
+    mu:uuid "46888726-9bc4-49ac-a0ef-848e37731a13" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -2634,7 +2788,7 @@ fieldGroups:46888726-9bc4-49ac-a0ef-848e37731a13 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4d879983-4c39-4742-a3af-690ca3b84004.
 
 fields:4d879983-4c39-4742-a3af-690ca3b84004 a form:ConditionalFieldGroup ;
@@ -2653,8 +2807,8 @@ fields:4d879983-4c39-4742-a3af-690ca3b84004 a form:ConditionalFieldGroup ;
 ###########Verslag-lokale-betrokkenheid-eredienstbesturen###########
 
 fieldGroups:319fc495-408d-4b3d-b217-dcbdf6f414d5 a form:FieldGroup ;
-    mu:uuid "319fc495-408d-4b3d-b217-dcbdf6f414d5" ;
-    form:hasField
+    mu:uuid "319fc495-408d-4b3d-b217-dcbdf6f414d5" ; 
+    form:hasField 
                       ###Naam-betreffend-bedrijf/bestuur###
                       fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
@@ -2687,7 +2841,7 @@ fieldGroups:319fc495-408d-4b3d-b217-dcbdf6f414d5 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:d99c663e-32ae-4865-bdeb-f961fda68d61.
 
 fields:d99c663e-32ae-4865-bdeb-f961fda68d61 a form:ConditionalFieldGroup ;
@@ -2706,8 +2860,8 @@ fields:d99c663e-32ae-4865-bdeb-f961fda68d61 a form:ConditionalFieldGroup ;
 ###########Wijziging-autonoom-bedrijf###########
 
 fieldGroups:d450b149-4372-40d9-bd31-ee1f1402c630 a form:FieldGroup ;
-    mu:uuid "d450b149-4372-40d9-bd31-ee1f1402c630" ;
-    form:hasField
+    mu:uuid "d450b149-4372-40d9-bd31-ee1f1402c630" ; 
+    form:hasField 
                       ###Dossieromschrijving###
                       fields:bd6ee5ac-22d6-4279-bcba-3ed279021aac,
 
@@ -2749,7 +2903,7 @@ fieldGroups:d450b149-4372-40d9-bd31-ee1f1402c630 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:70be2b17-d91e-454b-8fda-a041432d94e8.
 
 fields:70be2b17-d91e-454b-8fda-a041432d94e8 a form:ConditionalFieldGroup ;
@@ -2768,8 +2922,8 @@ fields:70be2b17-d91e-454b-8fda-a041432d94e8 a form:ConditionalFieldGroup ;
 ###########Wijziging-ocmw-vereniging###########
 
 fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc a form:FieldGroup ;
-    mu:uuid "8f69f627-e0f0-44e9-95f2-7db5e421f0fc" ;
-    form:hasField
+    mu:uuid "8f69f627-e0f0-44e9-95f2-7db5e421f0fc" ; 
+    form:hasField 
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -2805,7 +2959,7 @@ fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-
+                      
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:0ae400e4-6897-4d86-982a-e1f74ead1f93.
 
 fields:0ae400e4-6897-4d86-982a-e1f74ead1f93 a form:ConditionalFieldGroup ;
