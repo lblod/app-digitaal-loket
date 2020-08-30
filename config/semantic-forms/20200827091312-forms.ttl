@@ -190,6 +190,13 @@ fields:303545a6-705b-43b3-86b7-b96436524be9 a form:Field ;
     sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
     sh:group fields:aDynamicPropertyGroup .
 
+fields:ac32a491-4b5c-4a7e-973f-fad6127c9433 a form:Field ;
+    mu:uuid "ac32a491-4b5c-4a7e-973f-fad6127c9433" ;
+    sh:name "Bestuurseenheid classificatie code [hidden input]" ;
+    sh:order 1001 ;
+    sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+    sh:group fields:aDynamicPropertyGroup .
+
 fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb a form:Field ;
     mu:uuid "3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb" ;
     sh:name "Datum zitting/besluit" ;
@@ -1577,8 +1584,8 @@ fields:90d80b85-5491-4e85-bff3-f7fbf73c7c87 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/6ca1d146-f439-4ad9-9e36-be026f43762f>
       ] ;
     form:hasFieldGroup fieldGroups:752ea48c-4729-435c-a765-c0707db004cc .
-fieldGroups:f46f59e8-c145-4498-95e4-f59151b9cc35 a form:FieldGroup ;
-    mu:uuid "f46f59e8-c145-4498-95e4-f59151b9cc35" ;
+fieldGroups:8a812873-604f-423c-b42e-d0b28aac5f53 a form:FieldGroup ;
+    mu:uuid "8a812873-604f-423c-b42e-d0b28aac5f53" ;
     form:hasField
 
                       ###Links-naar-documenten### # this one may be kept, the logic remains the same
@@ -1593,6 +1600,273 @@ fieldGroups:f46f59e8-c145-4498-95e4-f59151b9cc35 a form:FieldGroup ;
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:bbdc52b0-474f-463f-944e-7ccc336c99bc.
+
+fields:bbdc52b0-474f-463f-944e-7ccc336c99bc a form:ConditionalFieldGroup ;
+    mu:uuid "bbdc52b0-474f-463f-944e-7ccc336c99bc";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> # Algemene vergadering
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721> # Autonoom gemeentebedrijf
+      ] ;
+    form:hasFieldGroup fieldGroups:8a812873-604f-423c-b42e-d0b28aac5f53 .fieldGroups:22c1c769-e6e7-4daa-98e8-2f17614caead a form:FieldGroup ;
+    mu:uuid "22c1c769-e6e7-4daa-98e8-2f17614caead" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:0896ea73-1f49-4dcb-b244-165637747d56.
+
+fields:0896ea73-1f49-4dcb-b244-165637747d56 a form:ConditionalFieldGroup ;
+    mu:uuid "0896ea73-1f49-4dcb-b244-165637747d56";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> # Algemene vergadering
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d> # Autonoom provinciebedrijf
+      ] ;
+    form:hasFieldGroup fieldGroups:22c1c769-e6e7-4daa-98e8-2f17614caead .fieldGroups:8bfa3899-55fc-40a7-94a4-0f970f7e4469 a form:FieldGroup ;
+    mu:uuid "8bfa3899-55fc-40a7-94a4-0f970f7e4469" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:0627d094-22be-4d35-b964-7844ff8428b4.
+
+fields:0627d094-22be-4d35-b964-7844ff8428b4 a form:ConditionalFieldGroup ;
+    mu:uuid "0627d094-22be-4d35-b964-7844ff8428b4";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> # Algemene vergadering
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> # Dienstverlenende vereniging
+      ] ;
+    form:hasFieldGroup fieldGroups:8bfa3899-55fc-40a7-94a4-0f970f7e4469 .fieldGroups:7fe7bcb9-f262-4285-8f55-2690e68af484 a form:FieldGroup ;
+    mu:uuid "7fe7bcb9-f262-4285-8f55-2690e68af484" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:f0b22a54-8e1c-420c-9d38-162f2107c9a4.
+
+fields:f0b22a54-8e1c-420c-9d38-162f2107c9a4 a form:ConditionalFieldGroup ;
+    mu:uuid "f0b22a54-8e1c-420c-9d38-162f2107c9a4";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> # Algemene vergadering
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089> # OCMW vereniging
+      ] ;
+    form:hasFieldGroup fieldGroups:7fe7bcb9-f262-4285-8f55-2690e68af484 .fieldGroups:8794bebf-76be-40a1-a810-3176787e86b4 a form:FieldGroup ;
+    mu:uuid "8794bebf-76be-40a1-a810-3176787e86b4" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:2da18d55-4195-432a-b982-b41702d56e56.
+
+fields:2da18d55-4195-432a-b982-b41702d56e56 a form:ConditionalFieldGroup ;
+    mu:uuid "2da18d55-4195-432a-b982-b41702d56e56";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> # Algemene vergadering
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d> # Opdrachthoudende vereniging
+      ] ;
+    form:hasFieldGroup fieldGroups:8794bebf-76be-40a1-a810-3176787e86b4 .fieldGroups:4a41de32-e793-416b-9270-55c0617b1abf a form:FieldGroup ;
+    mu:uuid "4a41de32-e793-416b-9270-55c0617b1abf" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:e5a0028c-20e6-46fd-a6c0-2aa732e3124c.
+
+fields:e5a0028c-20e6-46fd-a6c0-2aa732e3124c a form:ConditionalFieldGroup ;
+    mu:uuid "e5a0028c-20e6-46fd-a6c0-2aa732e3124c";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> # Bevoegd beslissingsorgaan
+      ] ;
+    form:hasFieldGroup fieldGroups:4a41de32-e793-416b-9270-55c0617b1abf .fieldGroups:4c21f87c-e1bd-448e-b5d3-b40c8614e4f2 a form:FieldGroup ;
+    mu:uuid "4c21f87c-e1bd-448e-b5d3-b40c8614e4f2" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:4e717505-5784-4711-b494-5125b2c94b59.
+
+fields:4e717505-5784-4711-b494-5125b2c94b59 a form:ConditionalFieldGroup ;
+    mu:uuid "4e717505-5784-4711-b494-5125b2c94b59";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> # Bijzonder Comité voor de Sociale Dienst
+      ] ;
+    form:hasFieldGroup fieldGroups:4c21f87c-e1bd-448e-b5d3-b40c8614e4f2 .fieldGroups:f46f59e8-c145-4498-95e4-f59151b9cc35 a form:FieldGroup ;
+    mu:uuid "f46f59e8-c145-4498-95e4-f59151b9cc35" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 # this field is the custom bestuursorgaan selector
 fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:3a079210d-0f29-4ec8-b10a-502ab8be7735.
@@ -1646,7 +1920,177 @@ fields:320f02cff-654c-4c6d-8641-82b0008d9fdc a form:ConditionalFieldGroup ;
         form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> # college van schepenen en burgermeester
       ] ;
-    form:hasFieldGroup fieldGroups:a77e3890-edea-42e8-b78b-b92dc48aeac1 .###########Besluitenlijst###########
+    form:hasFieldGroup fieldGroups:a77e3890-edea-42e8-b78b-b92dc48aeac1 .fieldGroups:2f758e4f-45b0-4f53-a2d4-7153f73f553b a form:FieldGroup ;
+    mu:uuid "2f758e4f-45b0-4f53-a2d4-7153f73f553b" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:c8acd61d-a126-4ceb-b06f-afa714673931.
+
+fields:c8acd61d-a126-4ceb-b06f-afa714673931 a form:ConditionalFieldGroup ;
+    mu:uuid "c8acd61d-a126-4ceb-b06f-afa714673931";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000d> # deputatie
+      ] ;
+    form:hasFieldGroup fieldGroups:2f758e4f-45b0-4f53-a2d4-7153f73f553b .fieldGroups:77a831ca-cf28-45a3-a04b-9c91e9c373df a form:FieldGroup ;
+    mu:uuid "77a831ca-cf28-45a3-a04b-9c91e9c373df" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:e583e92c-d13c-4c0a-bf40-bb0be75f63eb.
+
+fields:e583e92c-d13c-4c0a-bf40-bb0be75f63eb a form:ConditionalFieldGroup ;
+    mu:uuid "e583e92c-d13c-4c0a-bf40-bb0be75f63eb";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> # directiecomité
+      ] ;
+    form:hasFieldGroup fieldGroups:77a831ca-cf28-45a3-a04b-9c91e9c373df .fieldGroups:1084826b-b56d-4f28-aed8-3d85c2981655 a form:FieldGroup ;
+    mu:uuid "1084826b-b56d-4f28-aed8-3d85c2981655" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:4167f824-2f68-424a-a91e-c820c9bb1d80.
+
+fields:4167f824-2f68-424a-a91e-c820c9bb1d80 a form:ConditionalFieldGroup ;
+    mu:uuid "4167f824-2f68-424a-a91e-c820c9bb1d80";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/9314533e-891f-4d84-a492-0338af104065> # Districtsburgemeester
+      ] ;
+    form:hasFieldGroup fieldGroups:1084826b-b56d-4f28-aed8-3d85c2981655 .fieldGroups:3dba68fb-b3f1-4cec-a4c7-8099e1f6be58 a form:FieldGroup ;
+    mu:uuid "3dba68fb-b3f1-4cec-a4c7-8099e1f6be58" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:63f71c95-39be-4516-a6b6-d88a880643c6.
+
+fields:63f71c95-39be-4516-a6b6-d88a880643c6 a form:ConditionalFieldGroup ;
+    mu:uuid "63f71c95-39be-4516-a6b6-d88a880643c6";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000b> # Districtscollege
+      ] ;
+    form:hasFieldGroup fieldGroups:3dba68fb-b3f1-4cec-a4c7-8099e1f6be58 .fieldGroups:3179bccc-8fc7-474d-87f6-5832fd81f4b9 a form:FieldGroup ;
+    mu:uuid "3179bccc-8fc7-474d-87f6-5832fd81f4b9" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:4ae5083e-84c3-43b5-9d9c-a158f99c4427.
+
+fields:4ae5083e-84c3-43b5-9d9c-a158f99c4427 a form:ConditionalFieldGroup ;
+    mu:uuid "4ae5083e-84c3-43b5-9d9c-a158f99c4427";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000a> # Districtsraad
+      ] ;
+    form:hasFieldGroup fieldGroups:3179bccc-8fc7-474d-87f6-5832fd81f4b9 .###########Besluitenlijst###########
 
 fieldGroups:64b712f3-c061-4368-919e-6ea6afb45192 a form:FieldGroup ;
     mu:uuid "64b712f3-c061-4368-919e-6ea6afb45192" ; 
@@ -1667,7 +2111,10 @@ fieldGroups:64b712f3-c061-4368-919e-6ea6afb45192 a form:FieldGroup ;
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
 
                       ### Bestuursorgaan classificatie code [hidden input] ###
-                      fields:303545a6-705b-43b3-86b7-b96436524be9.
+                      fields:303545a6-705b-43b3-86b7-b96436524be9,
+
+                      ### Bestuurseenheid classificatie code [hidden input] ###
+                      fields:ac32a491-4b5c-4a7e-973f-fad6127c9433.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:d75438e8-a4c5-4b39-a606-e198fdeb7aec.
 
@@ -1698,7 +2145,6 @@ fieldGroups:7e26db7b-e864-4afe-ad2b-1753434f3e3f a form:FieldGroup ;
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
-
 # this field is the custom bestuursorgaan selector
 fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:335b1a8a-e6d6-11ea-bf88-8b5df92c347a.
 
@@ -1717,7 +2163,245 @@ fields:335b1a8a-e6d6-11ea-bf88-8b5df92c347a a form:ConditionalFieldGroup ;
         form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> # gemeenteraad
       ] ;
-    form:hasFieldGroup fieldGroups:7e26db7b-e864-4afe-ad2b-1753434f3e3f .
+    form:hasFieldGroup fieldGroups:7e26db7b-e864-4afe-ad2b-1753434f3e3f .fieldGroups:1455df6c-53b0-4d01-9d4b-8c5f2bc3832f a form:FieldGroup ;
+    mu:uuid "1455df6c-53b0-4d01-9d4b-8c5f2bc3832f" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:cfe4b653-65ef-4a84-93bd-1dd1c2a60f59.
+
+fields:cfe4b653-65ef-4a84-93bd-1dd1c2a60f59 a form:ConditionalFieldGroup ;
+    mu:uuid "cfe4b653-65ef-4a84-93bd-1dd1c2a60f59";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/180a2fba-6ca9-4766-9b94-82006bb9c709> # Gouverneur
+      ] ;
+    form:hasFieldGroup fieldGroups:1455df6c-53b0-4d01-9d4b-8c5f2bc3832f .fieldGroups:617d86f7-321a-4b37-967a-333457cc1a80 a form:FieldGroup ;
+    mu:uuid "617d86f7-321a-4b37-967a-333457cc1a80" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:345911d9-48d0-4f4b-b261-8dc5ec4d4308.
+
+fields:345911d9-48d0-4f4b-b261-8dc5ec4d4308 a form:ConditionalFieldGroup ;
+    mu:uuid "345911d9-48d0-4f4b-b261-8dc5ec4d4308";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> # Raad voor Maatschappelijk Welzijn
+      ] ;
+    form:hasFieldGroup fieldGroups:617d86f7-321a-4b37-967a-333457cc1a80 .fieldGroups:c4e06af8-7dde-405d-b273-a5fd47ac8f2f a form:FieldGroup ;
+    mu:uuid "c4e06af8-7dde-405d-b273-a5fd47ac8f2f" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:60ebd2aa-12c4-4f63-9155-113d789e6ccc.
+
+fields:60ebd2aa-12c4-4f63-9155-113d789e6ccc a form:ConditionalFieldGroup ;
+    mu:uuid "60ebd2aa-12c4-4f63-9155-113d789e6ccc";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> # Provincieraad
+      ] ;
+    form:hasFieldGroup fieldGroups:c4e06af8-7dde-405d-b273-a5fd47ac8f2f .fieldGroups:c6913042-e84b-4ba9-a2f5-424b9cd5f005 a form:FieldGroup ;
+    mu:uuid "c6913042-e84b-4ba9-a2f5-424b9cd5f005" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:fc67c635-0ad3-4424-aaae-0b7c2cd4d814.
+
+fields:fc67c635-0ad3-4424-aaae-0b7c2cd4d814 a form:ConditionalFieldGroup ;
+    mu:uuid "fc67c635-0ad3-4424-aaae-0b7c2cd4d814";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> # Raad van bestuur
+      ] ;
+    form:hasFieldGroup fieldGroups:c6913042-e84b-4ba9-a2f5-424b9cd5f005 .fieldGroups:4960cd98-f4ad-488f-8250-9fc0e63c696f a form:FieldGroup ;
+    mu:uuid "4960cd98-f4ad-488f-8250-9fc0e63c696f" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:d4c8b02f-815c-47d9-85af-ba7a7e42bd4e.
+
+fields:d4c8b02f-815c-47d9-85af-ba7a7e42bd4e a form:ConditionalFieldGroup ;
+    mu:uuid "d4c8b02f-815c-47d9-85af-ba7a7e42bd4e";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/17e76b36-64a1-4db1-8927-def3064b4bf1> # Regionaal bestuurscomité
+      ] ;
+    form:hasFieldGroup fieldGroups:4960cd98-f4ad-488f-8250-9fc0e63c696f .fieldGroups:946669c2-f6eb-464d-a455-9633cc9a150c a form:FieldGroup ;
+    mu:uuid "946669c2-f6eb-464d-a455-9633cc9a150c" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:7d110233-1584-49ac-9668-a1ee8c73744c.
+
+fields:7d110233-1584-49ac-9668-a1ee8c73744c a form:ConditionalFieldGroup ;
+    mu:uuid "7d110233-1584-49ac-9668-a1ee8c73744c";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> # vast bureau
+      ] ;
+    form:hasFieldGroup fieldGroups:946669c2-f6eb-464d-a455-9633cc9a150c .fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d a form:FieldGroup ;
+    mu:uuid "cd043d7a-175a-4453-88cb-a3083e57086d" ;
+    form:hasField
+
+                      ###Links-naar-documenten### # this one may be kept, the logic remains the same
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:3a3c7b25-cce7-4b69-9412-4e79ae0bccb8.
+
+fields:3a3c7b25-cce7-4b69-9412-4e79ae0bccb8 a form:ConditionalFieldGroup ;
+    mu:uuid "3a3c7b25-cce7-4b69-9412-4e79ae0bccb8";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> # Voorzitter van het Bijzonder Comité voor de Sociale Dienst
+      ] ;
+    form:hasFieldGroup fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d .
 
 ###########Budget###########
 
