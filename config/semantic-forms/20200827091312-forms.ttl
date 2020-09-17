@@ -4906,13 +4906,45 @@ fields:70be2b17-d91e-454b-8fda-a041432d94e8 a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:d450b149-4372-40d9-bd31-ee1f1402c630 .
 
+fieldGroups:9a990f56-f8a4-11ea-b10d-936a9491d84b a form:FieldGroup ;
+    mu:uuid "9a990f56-f8a4-11ea-b10d-936a9491d84b" ;
+    form:hasField
 
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
 
-###########Wijziging-ocmw-vereniging###########
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:cfa2e2bc-f8a4-11ea-aab6-a36dfc0a5d1f.
+
+fields:cfa2e2bc-f8a4-11ea-aab6-a36dfc0a5d1f a form:ConditionalFieldGroup ;
+    mu:uuid "cfa2e2bc-f8a4-11ea-aab6-a36dfc0a5d1f";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/d9c3d177-6dc6-4775-8c6a-1055a9cbdcc6>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> # Algemene vergadering
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089> # OCMWV
+      ] ;
+    form:hasFieldGroup fieldGroups:9a990f56-f8a4-11ea-b10d-936a9491d84b .###########Wijziging-ocmw-vereniging###########
 
 fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc a form:FieldGroup ;
-    mu:uuid "8f69f627-e0f0-44e9-95f2-7db5e421f0fc" ; 
-    form:hasField 
+    mu:uuid "8f69f627-e0f0-44e9-95f2-7db5e421f0fc" ;
+    form:hasField
                       ###Ondernemingsnummer-betreffend-bedrijf/bestuur###
                       fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235,
 
@@ -4935,20 +4967,14 @@ fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc a form:FieldGroup ;
                       fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
-                      fields:bffbea8d-e55b-4e3d-86e8-ba7aaee7863d,
-
-                      ###Links-naar-documenten###
-                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
-
-                      ###Bestanden###
-                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
-                      
+
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:0ae400e4-6897-4d86-982a-e1f74ead1f93.
 
 fields:0ae400e4-6897-4d86-982a-e1f74ead1f93 a form:ConditionalFieldGroup ;
@@ -4961,8 +4987,41 @@ fields:0ae400e4-6897-4d86-982a-e1f74ead1f93 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/d9c3d177-6dc6-4775-8c6a-1055a9cbdcc6>
       ] ;
     form:hasFieldGroup fieldGroups:8f69f627-e0f0-44e9-95f2-7db5e421f0fc .
+fieldGroups:a3a1b08e-f8a5-11ea-883f-274cf7199c4a a form:FieldGroup ;
+    mu:uuid "a3a1b08e-f8a5-11ea-883f-274cf7199c4a" ;
+    form:hasField
 
-form:a0a120d2-87a8-4f45-a61b-61654997cf1e a form:Form ;
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:bb0cb84a-f8a5-11ea-a0f4-0fbac219f72e.
+
+fields:bb0cb84a-f8a5-11ea-a0f4-0fbac219f72e a form:ConditionalFieldGroup ;
+    mu:uuid "bb0cb84a-f8a5-11ea-a0f4-0fbac219f72e";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/d9c3d177-6dc6-4775-8c6a-1055a9cbdcc6>
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> # Raad van bestuur
+      ],
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:bestuurt besluit:classificatie ) ;
+        form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+        form:customValue <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089> # OCMWV
+      ] ;
+    form:hasFieldGroup fieldGroups:a3a1b08e-f8a5-11ea-883f-274cf7199c4a .form:a0a120d2-87a8-4f45-a61b-61654997cf1e a form:Form ;
     mu:uuid "a0a120d2-87a8-4f45-a61b-61654997cf1e" ;
     form:hasFieldGroup fieldGroups:allForms .
 fieldGroups:allForms a form:FieldGroup;
