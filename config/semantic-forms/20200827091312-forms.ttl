@@ -425,25 +425,41 @@ fields:e834ec56-2db3-43d8-8a54-baf6cc0463c6 a form:Field ;
 ##########################################################
 #  Files and links [First version]
 ##########################################################
-fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b a form:Field ;
-    mu:uuid "c955d641-b9b3-4ec7-9838-c2a477c7e95b" ;
-    sh:name "Links naar documenten" ;
-    sh:order 10000 ;
-    sh:path dct:hasPart;
+
+##########################################################
+# Hidden field required for all variations of URL or FILE
+# input field which require validation.
+# It makes sure there is a type attached to hasPart object.
+# This enables correct validation in both front and backend.
+##########################################################
+fields:355fe001-cdca-48cc-8a6e-88b3aab09874 a form:Field ;
+    mu:uuid "355fe001-cdca-48cc-8a6e-88b3aab09874" ;
+    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:order 10001 ;
+    sh:path ( dct:hasPart rdf:type );
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Hidden field required for all variation of URL
+# input field which require validation.
+# This enables correct validation in both front and backend.
+##########################################################
+fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db a form:Field ;
+    mu:uuid "d0052f0d-90bc-4543-a6b0-e90a1c1117db" ;
+    sh:name "RemoteDataObject/url [hidden input]" ;
+    sh:order 10001 ;
+    sh:path ( dct:hasPart nie:url );
     form:validations
      [ a form:UriConstraint ;
         form:grouping form:MatchEvery ;
         sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-         sh:path ( dct:hasPart nie:url ) ],
-     [ a form:RequiredConstraint ;
-         form:grouping form:Bag ;
-         sh:path dct:hasPart ;
-         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
+        sh:path ( dct:hasPart nie:url )
      ];
-    form:displayType displayTypes:remoteUrls;
-    sh:group fields:aDynamicPropertyGroup .
+     sh:group fields:aDynamicPropertyGroup .
 
-# custom link validation for url required but file optional
+##########################################################
+# Simple field for URL (required & valid URL)
+##########################################################
 fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb a form:Field ;
     mu:uuid "1e0f541f-61e9-43a7-bc5f-612eb44f52bb" ;
     sh:name "Links naar documenten" ;
@@ -459,15 +475,43 @@ fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb a form:Field ;
          sh:path ( dct:hasPart nie:url ) ;
          sh:resultMessage "Gelieve minstens één URL op te geven."@nl
      ];
-    form:displayType displayTypes:remoteUrls;
+    form:displayType <http://lblod.data.gift/display-types/remoteUrls/variation/1>;
     sh:group fields:aDynamicPropertyGroup .
 
+##########################################################
+# Simple field for File (no validations)
+##########################################################
 fields:c7c5a589-0785-4032-a4bd-ee589add3c39 a form:Field ;
     mu:uuid "c7c5a589-0785-4032-a4bd-ee589add3c39" ;
     sh:name "Bestanden" ;
     sh:order 10001 ;
     sh:path dct:hasPart;
-    form:displayType displayTypes:files;
+    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Custom files and links fields
+# Following fields should be considered as a pair.
+# Their validation is mutually dependent.
+# Either a file or url should be present
+##########################################################
+
+fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b a form:Field ;
+    mu:uuid "c955d641-b9b3-4ec7-9838-c2a477c7e95b" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path dct:hasPart ;
+         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
+     ];
+    form:displayType displayTypes:remoteUrls; # consider this v1.0
     sh:group fields:aDynamicPropertyGroup .
 
 fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a a form:Field ;
@@ -481,28 +525,13 @@ fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a a form:Field ;
           sh:path dct:hasPart;
           sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
      ];
-    form:displayType displayTypes:files;
+    form:displayType displayTypes:files; # consider this v1.0
     sh:group fields:aDynamicPropertyGroup .
 
-fields:355fe001-cdca-48cc-8a6e-88b3aab09874 a form:Field ;
-    mu:uuid "355fe001-cdca-48cc-8a6e-88b3aab09874" ;
-    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
-    sh:order 10001 ;
-    sh:path ( dct:hasPart rdf:type );
-    sh:group fields:aDynamicPropertyGroup .
+##########################################################
+# End Custom files and links fields
+##########################################################
 
-fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db a form:Field ;
-    mu:uuid "d0052f0d-90bc-4543-a6b0-e90a1c1117db" ;
-    sh:name "RemoteDataObject/url [hidden input]" ;
-    sh:order 10001 ;
-    sh:path ( dct:hasPart nie:url );
-    form:validations
-     [ a form:UriConstraint ;
-        form:grouping form:MatchEvery ;
-        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-        sh:path ( dct:hasPart nie:url )
-     ];
-     sh:group fields:aDynamicPropertyGroup .
 ##########################################################
 #  Files and links  [First version]
 ##########################################################
