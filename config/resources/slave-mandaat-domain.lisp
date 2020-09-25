@@ -92,7 +92,8 @@
                 (:einde :datetime ,(s-prefix "mandaat:einde"))
                 (:datum-eedaflegging :datetime ,(s-prefix "ext:datumEedaflegging"))
                 (:datum-ministrieel-besluit :datetime ,(s-prefix "ext:datumMinistrieelBesluit"))
-                (:generated-from :uri-set ,(s-prefix "ext:generatedFrom"))) ;;if it e.g. comes from gelinkt-notuleren
+                (:generated-from :uri-set ,(s-prefix "ext:generatedFrom")) ;;if it e.g. comes from gelinkt-notuleren
+                (:duplication-reason :string ,(s-prefix "skos:changeNote")))
   :has-many `((rechtsgrond-aanstelling :via ,(s-prefix "mandaat:isAangesteldDoor")
                                        :as "rechtsgronden-aanstelling")
               (rechtsgrond-beeindiging :via ,(s-prefix "mandaat:isOntslagenDoor")
@@ -108,7 +109,9 @@
              (persoon :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
                       :as "is-bestuurlijke-alias-van")
              (mandataris-status-code :via ,(s-prefix "mandaat:status")
-                                      :as "status"))
+                                     :as "status")
+             (mandataris :via ,(s-prefix "owl:sameAs")
+                         :as "duplicate-of"))
   :resource-base (s-url "http://data.lblod.info/id/mandatarissen/")
   :features '(include-uri)
   :on-path "mandatarissen")
