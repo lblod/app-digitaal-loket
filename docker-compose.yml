@@ -369,3 +369,9 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  mandataris-archive:
+    image: lblod/mandataris-archive-service:0.0.3
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging

@@ -90,3 +90,5 @@ services:
     restart: "no"
   loket-leidinggevenden-producer:
     restart: "no"
+  mandataris-archive:
+    restart: "no"
