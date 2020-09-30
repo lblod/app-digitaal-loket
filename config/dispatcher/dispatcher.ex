@@ -376,6 +376,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/concepts/"
   end
   
+  post "/mandataris-archive/:id/archive" do
+    Proxy.forward conn, [], "http://mandataris-archive/" <> id <> "/archive"
+  end
+
   #################################################################
   # RRN SERVICE: person-uri-for-social-security-number-service
   #################################################################
