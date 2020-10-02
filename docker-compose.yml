@@ -370,7 +370,7 @@ services:
     restart: always
     logging: *default-logging
   mandataris-archive:
-    image: lblod/mandataris-archive-service:0.0.3
+    image: lblod/mandataris-archive-service:0.0.4
     labels:
       - "logging=true"
     restart: always
