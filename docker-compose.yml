@@ -39,9 +39,10 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    image: semtech/mu-delta-notifier:0.1.0
+    image: dhugaerts/delta-notifier-fork:0.2.2-beta
     volumes:
       - ./config/delta:/config
+      - ./data/delta/queues:/queues
     labels:
       - "logging=true"
     restart: always
