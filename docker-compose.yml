@@ -252,7 +252,10 @@ services:
     logging: *default-logging
   person-reconciliation:
     image: lblod/person-reconciliation-service:0.1.1
-    restart: "no"
+    labels:
+      - "logging=true"
+    restart: 'no'
+    logging: *default-logging
   report-generation:
     image: lblod/loket-report-generation-service:0.3.0
     links:
@@ -260,6 +263,8 @@ services:
     volumes:
       - ./data/files:/share
       - ./config/reports:/app/reports
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   download-url:
@@ -331,6 +336,10 @@ services:
     image: lblod/clean-up-submission-service:0.2.0
     volumes:
       - ./data/files:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   person-uri-for-social-security-number:
     image: lblod/person-uri-for-social-security-number-service:0.3.0
     labels:
