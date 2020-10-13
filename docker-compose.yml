@@ -282,7 +282,7 @@ services:
     restart: always
     logging: *default-logging
   import-submission:
-    image: lblod/import-submission-service:0.4.7
+    image: lblod/import-submission-service:0.4.8
     volumes:
       - ./data/files:/share
     labels:
@@ -290,7 +290,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.7.3
+    image: lblod/enrich-submission-service:0.7.4
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     volumes:
