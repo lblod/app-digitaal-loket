@@ -217,6 +217,18 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/Vendor"
                       ] } } ] },
 
+      # // VENDOR MANAGEMENT
+      %GroupSpec{
+        name: "o-toezicht-vendor-management-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-vendorManagementGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/automatic-submission",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://mu.semte.ch/vocabularies/ext/Vendor"
+                      ] } } ] },
+
       # // LEIDINGGEVENDEN
       %GroupSpec{
         name: "o-leidinggevende-rwf",
