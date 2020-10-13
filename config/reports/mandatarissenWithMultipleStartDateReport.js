@@ -12,28 +12,26 @@ export default {
     };
     console.log('Generate mandatarissenWithMultipleStartDate Report');
     const queryString = `
-      SELECT DISTINCT ?mandataris ?startDate1 ?startDate2 ?firstName ?lastName
+      SELECT DISTINCT ?mandataris ?startDate ?firstName ?lastName
       WHERE {
         ?mandataris a <http://data.vlaanderen.be/ns/mandaat#Mandataris> ; 
-          <http://data.vlaanderen.be/ns/mandaat#start> ?startDate1, ?startDate2 ;
+          <http://data.vlaanderen.be/ns/mandaat#start> ?startDate, ?otherStartDate ;
           <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> ?person .
         ?person <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?firstName ;
           <http://xmlns.com/foaf/0.1/familyName> ?lastName .
-        FILTER(?startDate1 != ?startDate2)
-        FILTER(?startDate1 < ?startDate2)
+        FILTER(?startDate != ?otherStartDate)
       }
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((submission) => {
       return {
         mandataris: submission.mandataris.value,
-        startDate1: submission.startDate1.value,
-        startDate2: submission.startDate2.value,
+        startDate: submission.startDate.value,
         firstName: submission.firstName.value,
         lastName: submission.lastName.value
       };
     });
 
-    await generateReportFromData(data, ['mandataris', 'startDate1', 'startDate2', 'firstName', 'lastName'], reportData);
+    await generateReportFromData(data, ['mandataris', 'startDate', 'firstName', 'lastName'], reportData);
   }
 };

@@ -6,32 +6,29 @@ export default {
   name: 'personenWithMultipleNamesReport',
   execute: async () => {
     const reportData = {
-      title: 'List persons having two first names',
-      description: 'Persons with their different first names and last names.',
+      title: 'List persons having two different first names',
+      description: 'Persons with their first name and last name.',
       filePrefix: 'personenWithMultipleNames'
     };
     console.log('Generate personenWithMultipleNames Report');
     const queryString = `
-      SELECT DISTINCT ?person ?firstName1 ?lastName1 ?firstName2 ?lastName2
+      SELECT DISTINCT ?person ?firstName ?lastName
       WHERE {
         ?person a <http://www.w3.org/ns/person#Person> ;
-          <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?firstName1, ?firstName2 ;
-          <http://xmlns.com/foaf/0.1/familyName> ?lastName1, ?lastName2 .
-        filter(?firstName1 != ?firstName2)
-        filter(?firstName1 <= ?firstName2)
+          <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?firstName, ?differentFirstName ;
+          <http://xmlns.com/foaf/0.1/familyName> ?lastName .
+        filter(?firstName != ?differentFirstName)
       }
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((submission) => {
       return {
         person: submission.person.value,
-        firstName1: submission.firstName1.value,
-        firstName2: submission.firstName2.value,
-        lastName1: submission.lastName1.value,
-        lastName2: submission.lastName2.value
+        firstName: submission.firstName.value,
+        lastName: submission.lastName.value
       };
     });
 
-    await generateReportFromData(data, ['person', 'firstName1', 'firstName2', 'lastName1', 'lastName2'], reportData);
+    await generateReportFromData(data, ['person', 'firstName', 'lastName'], reportData);
   }
 };
