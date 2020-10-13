@@ -19,8 +19,9 @@ export default {
           <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> ?person .
         ?person <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?firstName ;
           <http://xmlns.com/foaf/0.1/familyName> ?lastName .
-        FILTER(?startDate != ?otherStartDate)
+        FILTER(str(?startDate) != str(?otherStartDate))
       }
+      ORDER BY ?mandataris
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((submission) => {

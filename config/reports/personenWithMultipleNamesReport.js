@@ -19,6 +19,7 @@ export default {
           <http://xmlns.com/foaf/0.1/familyName> ?lastName .
         filter(?firstName != ?differentFirstName)
       }
+      ORDER BY ?person
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((submission) => {
