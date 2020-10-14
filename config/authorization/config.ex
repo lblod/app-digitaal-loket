@@ -205,17 +205,6 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/automatische-melding/FormData"
                       ] } } ] },
 
-      # // AUTOMATIC SUBMISSION
-      %GroupSpec{
-        name: "o-toezicht-vendor-rwf",
-        useage: [:read],
-        access: %AlwaysAccessible{},
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/automatic-submission",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/Vendor"
-                      ] } } ] },
 
       # // VENDOR MANAGEMENT
       %GroupSpec{
