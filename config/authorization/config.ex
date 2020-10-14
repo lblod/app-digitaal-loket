@@ -25,6 +25,19 @@ defmodule Acl.UserGroups.Config do
     }"
   end
 
+  defp can_access_automatic_submission() do
+    %AccessByQuery{
+      vars: [],
+      query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+        PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+        SELECT ?session_group ?session_role WHERE {
+          ?session_id ext:sessionGroup/mu:uuid ?session_group;
+                       ext:sessionRole ?session_role.
+          FILTER( ?session_role = \"LoketLB-vendorManagementGebruiker\" )
+        }"
+      }
+  end
+
   def user_groups do
     # These elements are walked from top to bottom.  Each of them may
     # alter the quads to which the current query applies.  Quads are
@@ -205,12 +218,11 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/automatische-melding/FormData"
                       ] } } ] },
 
-
       # // VENDOR MANAGEMENT
       %GroupSpec{
         name: "o-toezicht-vendor-management-rwf",
         useage: [:read, :write, :read_for_write],
-        access: access_by_role( "LoketLB-vendorManagementGebruiker" ),
+        access: can_access_automatic_submission(),
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/automatic-submission",
                     constraint: %ResourceConstraint{
