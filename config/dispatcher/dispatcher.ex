@@ -61,6 +61,9 @@ defmodule Dispatcher do
   match "/bestuursfunctie-codes/*path" do
     Proxy.forward conn, path, "http://cache/bestuursfunctie-codes/"
   end
+  delete "/mandatarissen/:id" do
+    Proxy.forward conn, [], "http://mandataris-archive/" <> id <> "/archive"
+  end
   match "/mandatarissen/*path" do
     Proxy.forward conn, path, "http://cache/mandatarissen/"
   end
@@ -374,10 +377,6 @@ defmodule Dispatcher do
 
   get "/concepts/*path" do
     Proxy.forward conn, path, "http://cache/concepts/"
-  end
-  
-  post "/mandataris-archive/:id/archive" do
-    Proxy.forward conn, [], "http://mandataris-archive/" <> id <> "/archive"
   end
 
   #################################################################

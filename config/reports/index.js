@@ -8,6 +8,9 @@ import failedSyncToMft from './failedSyncToMft';
 import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail';
 import internalMandatenReport from './internalMandatenReport';
 import submissionsReport from './submissionsReport';
+import personenWithMultipleNamesReport from './personenWithMultipleNamesReport';
+import mandatarissenWithMultipleStartDateReport from './mandatarissenWithMultipleStartDateReport';
+import mandatarissenWithoutStartDateReport from './mandatarissenWithoutStartDateReport';
 
 export default [
   BestuurseenhedenReport,
@@ -19,5 +22,8 @@ export default [
   failedSyncToMft,
   bestuurseenhedenWithoutNotificationEmail,
   internalMandatenReport,
-  submissionsReport
+  submissionsReport,
+  personenWithMultipleNamesReport,
+  mandatarissenWithMultipleStartDateReport,
+  mandatarissenWithoutStartDateReport
 ];

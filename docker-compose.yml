@@ -251,7 +251,7 @@ services:
     restart: always
     logging: *default-logging
   person-reconciliation:
-    image: lblod/person-reconciliation-service:0.1.1
+    image: lblod/person-reconciliation-service:0.1.2
     labels:
       - "logging=true"
     restart: 'no'
@@ -282,7 +282,7 @@ services:
     restart: always
     logging: *default-logging
   import-submission:
-    image: lblod/import-submission-service:0.4.7
+    image: lblod/import-submission-service:0.4.8
     volumes:
       - ./data/files:/share
     labels:
@@ -290,7 +290,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.7.3
+    image: lblod/enrich-submission-service:0.7.4
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20200508151443-forms.ttl"
     volumes:
@@ -380,7 +380,7 @@ services:
     restart: always
     logging: *default-logging
   mandataris-archive:
-    image: lblod/mandataris-archive-service:0.0.5
+    image: lblod/mandataris-archive-service:0.0.6
     labels:
       - "logging=true"
     restart: always
