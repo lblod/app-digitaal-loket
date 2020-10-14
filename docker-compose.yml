@@ -24,6 +24,14 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  vendor-management:
+    image: lblod/frontend-vendor-access-management:0.1.1
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   identifier:
     image: semtech/mu-identifier:1.7.0
     labels:
