@@ -54,7 +54,7 @@ export default {
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX regorg: <https://www.w3.org/ns/regorg#>
-      SELECT DISTINCT (?s AS ?mandataris) ?voornaam ?achternaam ?roepnaam ?geslacht ?geboortedatum WHERE {
+      SELECT DISTINCT (?s AS ?mandataris) ?persoon ?voornaam ?achternaam ?roepnaam ?geslacht ?geboortedatum WHERE {
         ?s a mandaat:Mandataris .
         OPTIONAL {
           ?s mandaat:isBestuurlijkeAliasVan ?persoon .
@@ -71,6 +71,7 @@ export default {
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
       let dataPart = {
         mandataris: getSafeValue(row, 'mandataris'),
+        persoon: getSafeValue(row, 'persoon'),
         voornaam: getSafeValue(row, 'voornaam'),
         achternaam: getSafeValue(row, 'achternaam'),
         roepnaam: getSafeValue(row, 'roepnaam'),
@@ -92,7 +93,7 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX regorg: <https://www.w3.org/ns/regorg#>
 
-      SELECT DISTINCT (?s AS ?mandataris) ?bestuursfunctieLabel ?bestuursorgaanLabel ?bestuursorgaanClassificatieLabel ?bestuurseenheidLabel ?bestuurseenheidClassificatieLabel ?werkingsgebiedLabel ?werkingsgebiedNiveau WHERE {
+      SELECT DISTINCT (?s AS ?mandataris) ?bestuursfunctieLabel ?bestuursorgaanLabel ?bestuursorgaanClassificatieLabel ?bestuurseenheidLabel ?bestuurseenheidClassificatieLabel ?werkingsgebiedLabel ?werkingsgebiedNiveau ?bestuursPeriodeStart ?bestuursPeriodeEinde WHERE {
         ?s a mandaat:Mandataris .
 
         OPTIONAL {
@@ -104,6 +105,8 @@ export default {
 
           OPTIONAL {
             ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
+            OPTIONAL { ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursPeriodeStart }
+            OPTIONAL { ?bestuursorgaanInTijd mandaat:bindingEinde ?bestuursPeriodeEinde }
             ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
             OPTIONAL { ?bestuursorgaan skos:prefLabel ?bestuursorgaanLabel . }
             OPTIONAL {
@@ -138,7 +141,9 @@ export default {
         bestuurseenheidLabel: getSafeValue(row, 'bestuurseenheidLabel'),
         bestuurseenheidClassificatieLabel: getSafeValue(row, 'bestuurseenheidClassificatieLabel'),
         werkingsgebiedLabel: getSafeValue(row, 'werkingsgebiedLabel'),
-        werkingsgebiedNiveau: getSafeValue(row, 'werkingsgebiedNiveau')
+        werkingsgebiedNiveau: getSafeValue(row, 'werkingsgebiedNiveau'),
+        bestuursPeriodeStart: getSafeValue(row, 'bestuursPeriodeStart'),
+        bestuursPeriodeEinde: getSafeValue(row, 'bestuursPeriodeEinde')
       };
       acc[getSafeValue(row, 'mandataris')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 'mandataris')]);
       return acc;
@@ -176,9 +181,9 @@ export default {
     }, {});
 
     await generateReportFromData(Object.values(dataPart4), [
-      'mandataris', 'start', 'eind', 'rangorde', 'status', 'voornaam', 'achternaam', 'roepnaam',
+      'mandataris', 'start', 'eind', 'rangorde', 'status', 'persoon', 'voornaam', 'achternaam', 'roepnaam',
       'bestuursfunctieLabel', 'bestuursorgaanLabel', 'bestuursorgaanClassificatieLabel', 'bestuurseenheidLabel',
-      'bestuurseenheidClassificatieLabel', 'werkingsgebiedLabel', 'werkingsgebiedNiveau', 'fractieNaam', 'geslacht',
+      'bestuurseenheidClassificatieLabel', 'werkingsgebiedLabel', 'werkingsgebiedNiveau', 'bestuursPeriodeStart', 'bestuursPeriodeEinde', 'fractieNaam', 'geslacht',
       'geboortedatum'
     ], reportData);
   }
