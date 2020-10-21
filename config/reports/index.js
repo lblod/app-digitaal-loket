@@ -13,6 +13,7 @@ import mandatarissenWithMultipleStartDateReport from './mandatarissenWithMultipl
 import mandatarissenWithoutStartDateReport from './mandatarissenWithoutStartDateReport';
 import personsMissingDataReport from './personsMissingDataReport';
 import mandatarissenWithoutStatusReport from './mandatarissenWithoutStatusReport';
+import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
 
 export default [
   BestuurseenhedenReport,
@@ -29,5 +30,6 @@ export default [
   mandatarissenWithMultipleStartDateReport,
   mandatarissenWithoutStartDateReport,
   personsMissingDataReport,
-  mandatarissenWithoutStatusReport
+  mandatarissenWithoutStatusReport,
+  mandatarissenWithoutPersonReport
 ];
