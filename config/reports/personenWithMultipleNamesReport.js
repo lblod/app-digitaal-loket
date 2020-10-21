@@ -22,11 +22,11 @@ export default {
       ORDER BY ?person
     `;
     const queryResponse = await query(queryString);
-    const data = queryResponse.results.bindings.map((submission) => {
+    const data = queryResponse.results.bindings.map((result) => {
       return {
-        person: submission.person.value,
-        firstName: submission.firstName.value,
-        lastName: submission.lastName.value
+        person: result.person.value,
+        firstName: result.firstName.value,
+        lastName: result.lastName.value
       };
     });
 

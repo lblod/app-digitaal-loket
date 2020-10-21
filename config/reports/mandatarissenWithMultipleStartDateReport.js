@@ -24,12 +24,12 @@ export default {
       ORDER BY ?mandataris
     `;
     const queryResponse = await query(queryString);
-    const data = queryResponse.results.bindings.map((submission) => {
+    const data = queryResponse.results.bindings.map((result) => {
       return {
-        mandataris: submission.mandataris.value,
-        startDate: submission.startDate.value,
-        firstName: submission.firstName.value,
-        lastName: submission.lastName.value
+        mandataris: result.mandataris.value,
+        startDate: result.startDate.value,
+        firstName: result.firstName.value,
+        lastName: result.lastName.value
       };
     });
 
