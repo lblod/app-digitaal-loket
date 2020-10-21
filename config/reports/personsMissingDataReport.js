@@ -27,19 +27,12 @@ export default {
     `;
 
     const queryResponsePart1 = await batchedQuery(queryStringPart1);
-    const dataToEnrich = queryResponsePart1.results.bindings.map((row) => ({
-      person: getSafeValue(row, 'person'),
-      firstName: getSafeValue(row, 'firstName'),
-      lastName: getSafeValue(row, 'lastName')
-    }));
-    enrichWithHomonyms(dataToEnrich);
 
-    const dataPart1 = dataToEnrich.reduce( (acc, row) => {
-      acc[row.person] = {
-        person: row.person,
-        firstName: row.firstName,
-        lastName: row.lastName,
-        homonyms: row.homonyms
+    const dataPart1 = queryResponsePart1.results.bindings.reduce( (acc, row) => {
+      acc[getSafeValue(row, 'person')] = {
+        person: getSafeValue(row, 'person'),
+        firstName: getSafeValue(row, 'firstName'),
+        lastName: getSafeValue(row, 'lastName')
       };
       return acc;
     }, {});
@@ -57,12 +50,16 @@ export default {
     `;
 
     const queryResponsePart2 = await batchedQuery(queryStringPart2);
-
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
       let dataPart = {
         person: getSafeValue(row, 'person'),
         mandataris: getSafeValue(row, 'mandataris')
       };
+
+      if(acc[getSafeValue(row, 'person')] && acc[getSafeValue(row, 'person')].mandataris) {
+        dataPart.mandataris = `${acc[getSafeValue(row, 'person')].mandataris} ---and--- ${dataPart.mandataris}`;
+      }
+
       acc[getSafeValue(row, 'person')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 'person')]);
       return acc;
     }, {});
@@ -107,25 +104,11 @@ export default {
     }, {});
 
     await generateReportFromData(Object.values(dataPart3), [
-      'person', 'mandataris', 'rrn', 'gender', 'birthDate', 'firstName', 'lastName', 'homonyms'
+      'person', 'mandataris', 'rrn', 'gender', 'birthDate', 'firstName', 'lastName'
     ], reportData);
   }
 };
 
 function getSafeValue(entry, property){
   return entry[property] ? entry[property].value: null;
-}
-
-function enrichWithHomonyms(data) {
-  data.forEach(line => {
-    const homonyms = data.filter(homonym => (
-      homonym.firstName != "" && homonym.firstName == line.firstName &&
-      homonym.lastName != "" && homonym.lastName  == line.lastName &&
-      homonym.person  != line.person)
-    );
-
-    if (homonyms && homonyms.length) {
-      line.homonyms = homonyms.map(h => h.person).join(" ");
-    }
-  });
 }
