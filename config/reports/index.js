@@ -10,6 +10,7 @@ import internalMandatenReport from './internalMandatenReport';
 import submissionsReport from './submissionsReport';
 import personenWithMultipleNamesReport from './personenWithMultipleNamesReport';
 import mandatarissenWithMultipleStartDateReport from './mandatarissenWithMultipleStartDateReport';
+import mandatarissenWithMultipleEndDateReport from './mandatarissenWithMultipleEndDateReport';
 import mandatarissenWithoutStartDateReport from './mandatarissenWithoutStartDateReport';
 import personsMissingDataReport from './personsMissingDataReport';
 import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
@@ -28,6 +29,7 @@ export default [
   submissionsReport,
   personenWithMultipleNamesReport,
   mandatarissenWithMultipleStartDateReport,
+  mandatarissenWithMultipleEndDateReport,
   mandatarissenWithoutStartDateReport,
   personsMissingDataReport,
   mandatarissenWithoutPersonReport,

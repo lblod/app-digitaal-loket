@@ -2,7 +2,7 @@ import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
-  cronPattern: '0 30 22 * * *',
+  cronPattern: '0 40 22 * * *',
   name: 'mandatarissenWithEmptyPersonReport',
   execute: async () => {
     const reportData = {
