@@ -12,7 +12,6 @@ import personenWithMultipleNamesReport from './personenWithMultipleNamesReport';
 import mandatarissenWithMultipleStartDateReport from './mandatarissenWithMultipleStartDateReport';
 import mandatarissenWithoutStartDateReport from './mandatarissenWithoutStartDateReport';
 import personsMissingDataReport from './personsMissingDataReport';
-import mandatarissenWithoutStatusReport from './mandatarissenWithoutStatusReport';
 import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
 
@@ -31,7 +30,6 @@ export default [
   mandatarissenWithMultipleStartDateReport,
   mandatarissenWithoutStartDateReport,
   personsMissingDataReport,
-  mandatarissenWithoutStatusReport,
   mandatarissenWithoutPersonReport,
   mandatarissenWithEmptyPersonReport
 ];
