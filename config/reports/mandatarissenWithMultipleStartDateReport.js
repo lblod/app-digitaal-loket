@@ -23,7 +23,7 @@ export default {
           mandaat:isBestuurlijkeAliasVan ?person .
         ?person persoon:gebruikteVoornaam ?firstName ;
           foaf:familyName ?lastName .
-        FILTER(str(?endDate) != str(?otherEndDate))
+        FILTER(str(?startDate) != str(?otherStartDate))
       }
       ORDER BY ?mandataris
     `;
