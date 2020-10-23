@@ -99,7 +99,7 @@ export default {
         gender: getSafeValue(row, 'gender'),
         birthDate: getSafeValue(row, 'birthDate')
       };
-      acc[getSafeValue(row, 'person')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 'person')]);
+      acc[getSafeValue(row, 'person')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 'person')] || dataPart1[getSafeValue(row, 'person')]); // dataPart2 can be empty if no mandataris found
       return acc;
     }, {});
 
