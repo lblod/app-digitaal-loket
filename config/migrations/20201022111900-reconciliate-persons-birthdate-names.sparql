@@ -22,7 +22,7 @@ DELETE {
 } WHERE {
   GRAPH ?g {
     ?person persoon:heeftGeboorte ?birthDateUri1, ?birthDateUri2, ?birthDateUri3 .
-    FILTER(str(?birthDateUri1) < str(?birthDateUri2) AND str(?birthDateUri1) < str(?birthDateUri3))
+    FILTER(str(?birthDateUri1) < str(?birthDateUri2) AND str(?birthDateUri2) < str(?birthDateUri3))
     FILTER(str(?birthDateUri1) != str(?birthDateUri2))
     FILTER(str(?birthDateUri1) != str(?birthDateUri3))
     FILTER(str(?birthDateUri2) != str(?birthDateUri3))
