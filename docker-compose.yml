@@ -258,7 +258,7 @@ services:
     restart: always
     logging: *default-logging
   person-reconciliation:
-    image: lblod/person-reconciliation-service:0.2.0
+    image: lblod/person-reconciliation-service:0.1.2
     labels:
       - "logging=true"
     restart: 'no'
