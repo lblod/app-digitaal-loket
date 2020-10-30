@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dbpedia: <http://dbpedia.org/resource/>
 
 INSERT DATA{
-  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> {
+  GRAPH <http://mu.semte.ch/graphs/public> {
    <share://semantic-forms/20201028125351-forms.ttl> a nfo:FileDataObject ;
  				  dct:type <http://data.lblod.gift/concepts/form-file-type> ;
                                   mu:uuid "899df36a-76d7-438b-a595-898f216fa979" ;
