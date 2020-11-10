@@ -19,7 +19,7 @@ DELETE {
         ?birth a <http://data.vlaanderen.be/ns/persoon#Geboorte> ;
           <http://data.vlaanderen.be/ns/persoon#datum> ?otherDate .
       }
-      FILTER ( ?date != ?otherDate )
+      FILTER ( str(?date) != str(?otherDate) )
     }
     GROUP BY ?birth
   }
