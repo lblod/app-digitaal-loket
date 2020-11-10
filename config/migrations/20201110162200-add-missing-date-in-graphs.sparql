@@ -1,0 +1,16 @@
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX person: <http://www.w3.org/ns/person#>
+
+INSERT {
+  GRAPH ?g {
+    ?person persoon:heeftGeboorte ?birth .
+    ?birth ?p ?o .
+  }
+}
+WHERE {
+  ?person persoon:heeftGeboorte ?birth .
+  ?birth ?p ?o .
+  GRAPH ?g {
+    ?person a person:Person .
+  }
+}

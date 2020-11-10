@@ -1,0 +1,16 @@
+PREFIX person: <http://www.w3.org/ns/person#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+
+INSERT {
+  GRAPH ?g {
+    ?person adms:identifier ?identifier .
+    ?identifier ?p ?o .
+  }
+}
+WHERE {
+  ?person adms:identifier ?identifier .
+  ?identifier ?p ?o .
+  GRAPH ?g {
+    ?person a person:Person .
+  }
+}
