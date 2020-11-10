@@ -1,4 +1,5 @@
 PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 DELETE {
   GRAPH ?g {
