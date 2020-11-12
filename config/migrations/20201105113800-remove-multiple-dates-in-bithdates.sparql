@@ -1,0 +1,31 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+DELETE {
+  GRAPH ?g {
+    ?birth <http://data.vlaanderen.be/ns/persoon#datum> ?date .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?birth <http://data.vlaanderen.be/ns/persoon#datum> ?minDate .
+  }
+} WHERE {
+  {
+    SELECT distinct ?birth min(?date) as ?minDate WHERE {
+      GRAPH ?g {
+        ?birth a <http://data.vlaanderen.be/ns/persoon#Geboorte> ;
+          <http://data.vlaanderen.be/ns/persoon#datum> ?date .
+      }
+      GRAPH ?h {
+        ?birth a <http://data.vlaanderen.be/ns/persoon#Geboorte> ;
+          <http://data.vlaanderen.be/ns/persoon#datum> ?otherDate .
+      }
+      FILTER ( str(?date) != str(?otherDate) )
+    }
+    GROUP BY ?birth
+  }
+  { 
+    GRAPH ?g {
+      ?birth <http://data.vlaanderen.be/ns/persoon#datum> ?date .
+    }
+  }
+}

@@ -1,0 +1,22 @@
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?birth .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?s ?p ?masterBirth .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ?p ?birth .
+  }
+  GRAPH ?h {
+    ?birth owl:sameAs ?masterBirth .
+  }
+  GRAPH ?i {
+    ?masterBirth a persoon:Geboorte .
+  }
+}

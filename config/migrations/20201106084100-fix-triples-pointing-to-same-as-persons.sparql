@@ -1,0 +1,21 @@
+PREFIX person: <http://www.w3.org/ns/person#>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?person .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?s ?p ?masterPerson .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ?p ?person .
+  }
+  GRAPH ?h {
+    ?person owl:sameAs ?masterPerson .
+  }
+  GRAPH ?i {
+    ?masterPerson a person:Person .
+  }
+}
