@@ -31,7 +31,7 @@ defmodule Acl.UserGroups.Config do
       query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
         PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
         SELECT ?session_group ?session_role WHERE {
-          ?session_id ext:sessionGroup/mu:uuid ?session_group;
+          <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                        ext:sessionRole ?session_role.
           FILTER( ?session_role = \"LoketLB-vendorManagementGebruiker\" )
         }"
