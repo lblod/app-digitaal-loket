@@ -230,7 +230,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
                         "http://schema.org/ContactPoint",
                         "http://schema.org/BankAccount",
-                        "http://dbpedia.org/ontology/TimePeriod"
+                        "https://www.gleif.org/ontology/Base/Period"
                       ] } } ] },
 
       # // VENDOR MANAGEMENT

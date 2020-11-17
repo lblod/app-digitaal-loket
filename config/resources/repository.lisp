@@ -58,3 +58,4 @@
 (add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
 (add-prefix "lblodBesluit" "http://lblod.data.gift/vocabularies/besluit/")
 (add-prefix "lblodSubsidie" "http://lblod.data.gift/vocabularies/subsidie/")
+(add-prefix "gleif" "https://www.gleif.org/ontology/Base/")

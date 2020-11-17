@@ -407,6 +407,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-applications-management/active-form-data/"
   end
 
+  match "/subsidie-aanvragen/*path" do
+    Proxy.forward conn, path, "http://resource/subsidie-aanvragen/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
