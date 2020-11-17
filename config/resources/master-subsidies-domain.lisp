@@ -11,9 +11,9 @@
                            :as "bank-account")
              (time-block :via ,(s-prefix "dbpedia:TimePeriod")
                          :as "time-block"))
-  :resource-base (s-url "http://data.lblod.info/subsidie-aanvraagen/")
+  :resource-base (s-url "http://data.lblod.info/subsidie-aanvragen/")
   :features '(include-uri)
-  :on-path "subsidie-aanvraagen")
+  :on-path "subsidie-aanvragen")
 
 (define-resource contact-point ()
   :class (s-prefix "schema:ContactPoint")
