@@ -392,3 +392,11 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  subsidy-applications-management:
+    image: lblod/subsidy-applications-management-service:0.1.1
+    volumes:
+      - ./config/semantic-forms/subsidy-applications:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging

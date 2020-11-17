@@ -400,6 +400,13 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://loket-leidinggevenden-producer/files/"
   end
 
+  #################################################################
+  # subsidy-applications
+  #################################################################
+  get "/subsidy-applications-active-form-data/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/active-form-data/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
