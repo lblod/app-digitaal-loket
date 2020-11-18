@@ -31,11 +31,8 @@ fields:147a32fe-f3dd-47f0-9dc5-43e46acc32cb a form:Field ;
 ##########################################################
 fieldGroups:main a form:FieldGroup ;
     mu:uuid "70eebdf0-14dc-47f7-85df-e1cfd41c3855" ;
-    form:hasField
+    form:hasField fields:147a32fe-f3dd-47f0-9dc5-43e46acc32cb . ### Basic input-field
 
-                ### Basic input-field
-                fields:147a32fe-f3dd-47f0-9dc5-43e46acc32cb,
-
-form: a form:Form ;
+form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
     form:hasFieldGroup fieldGroups:main .
