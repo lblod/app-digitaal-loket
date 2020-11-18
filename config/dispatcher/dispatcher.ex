@@ -407,8 +407,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-applications-management/active-form-data/"
   end
 
-  match "/subsidie-aanvragen/*path" do
-    Proxy.forward conn, path, "http://resource/subsidie-aanvragen/"
+  match "/application-forms/*path" do
+    Proxy.forward conn, path, "http://resource/application-forms/"
   end
 
   match _ do

@@ -1,5 +1,5 @@
-(define-resource subsidie-aanvraag ()
-  :class (s-prefix "subsidie:Aanvraag")
+(define-resource application-form ()
+  :class (s-prefix "lblodSubsidie:ApplicationForm")
   :properties `((:aangevraagd-bedrag :number ,(s-prefix "subsidie:aangevraagdBedrag"))
                 (:aanvraagdatum :datetime ,(s-prefix "subsidie:aanvraagdatum"))
                 (:can-be-paid-on-known-bank-account :bool ,(s-prefix "lblodSubsidie:canBePaidOnKnownBankAccount")))
@@ -13,7 +13,7 @@
                          :as "time-block"))
   :resource-base (s-url "http://data.lblod.info/subsidie-aanvragen/")
   :features '(include-uri)
-  :on-path "subsidie-aanvragen")
+  :on-path "application-forms")
 
 (define-resource bank-account ()
   :class (s-prefix "schema:BankAccount")
