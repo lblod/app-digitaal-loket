@@ -9,7 +9,7 @@
                             :as "contactinfo")
              (bank-account :via ,(s-prefix "schema:bankAccount")
                            :as "bank-account")
-             (time-block :via ,(s-prefix "dbpedia:TimePeriod")
+             (time-block :via ,(s-prefix "lblodSubsidie:timeBlock")
                          :as "time-block"))
   :resource-base (s-url "http://data.lblod.info/subsidie-aanvragen/")
   :features '(include-uri)
