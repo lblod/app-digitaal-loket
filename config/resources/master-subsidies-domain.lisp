@@ -2,6 +2,8 @@
   :class (s-prefix "lblodSubsidie:ApplicationForm")
   :properties `((:aangevraagd-bedrag :number ,(s-prefix "subsidie:aangevraagdBedrag"))
                 (:aanvraagdatum :datetime ,(s-prefix "subsidie:aanvraagdatum"))
+                (:created :datetime ,(s-prefix "dct:created"))
+                (:modified :datetime ,(s-prefix "dct:modified"))
                 (:can-be-paid-on-known-bank-account :bool ,(s-prefix "lblodSubsidie:canBePaidOnKnownBankAccount")))
   :has-one `((bestuurseenheid :via ,(s-prefix "pav:createdBy")
                               :as "organization")
