@@ -407,6 +407,18 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-applications-management/active-form-data/"
   end
 
+  get "/management-application-forms/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+  end
+
+  put "/management-application-forms/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+  end
+
+  delete "/management-application-forms/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+  end
+
   match "/application-forms/*path" do
     Proxy.forward conn, path, "http://resource/application-forms/"
   end
