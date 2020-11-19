@@ -4,6 +4,7 @@
                 (:aanvraagdatum :datetime ,(s-prefix "subsidie:aanvraagdatum"))
                 (:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
+                (:usedFormFile :uri ,(s-prefix "lblodSubsidie:usedFormFile"))
                 (:can-be-paid-on-known-bank-account :bool ,(s-prefix "lblodSubsidie:canBePaidOnKnownBankAccount")))
   :has-one `((bestuurseenheid :via ,(s-prefix "pav:createdBy")
                               :as "organization")
@@ -30,11 +31,13 @@
   :features '(include-uri)
   :on-path "bank-accounts")
 
-(define-resource time-block ()
+(define-resource time-block () ;; subclass of skos:Concept
   :class (s-prefix "gleif:Period")
   :properties `((:label :string ,(s-prefix "skos:label"))
                 (:start :date ,(s-prefix "gleif:hasStart"))
                 (:end :date ,(s-prefix "gleif:hasEnd")))
-  :resource-base (s-url "http://data.lblod.info/time-blocks/")
+  :has-one `((concept-scheme :via ,(s-prefix "skos:inScheme")
+                              :as "concept-scheme"))
+  :resource-base (s-url "http://lblod.data.gift/concepts/")
   :features '(include-uri)
   :on-path "time-blocks")
