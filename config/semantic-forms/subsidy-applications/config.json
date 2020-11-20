@@ -29,7 +29,8 @@
       "pav:createdBy/skos:prefLabel",
 
       "schema:contactPoint",
-      "schema:contactPoint/foaf:name",
+      "schema:contactPoint/foaf:firstName",
+      "schema:contactPoint/foaf:familyName",
       "schema:contactPoint/schema:telephone",
       "schema:contactPoint/schema:email",
 
