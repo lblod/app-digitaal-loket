@@ -423,6 +423,14 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/application-forms/"
   end
 
+  match "/time-blocks/*path" do
+    Proxy.forward conn, path, "http://resource/time-blocks/"
+  end
+
+  match "/bank-accounts/*path" do
+    Proxy.forward conn, path, "http://resource/bank-accounts/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
