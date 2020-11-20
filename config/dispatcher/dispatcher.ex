@@ -403,8 +403,8 @@ defmodule Dispatcher do
   #################################################################
   # subsidy-applications
   #################################################################
-  get "/subsidy-applications-active-form-data/*path" do
-    Proxy.forward conn, path, "http://subsidy-applications-management/active-form-data/"
+  get "/management-active-form-file/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/active-form-file/"
   end
 
   get "/management-application-forms/*path" do

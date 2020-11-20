@@ -92,3 +92,5 @@ services:
     restart: "no"
   mandataris-archive:
     restart: "no"
+  subsidy-applications-management:
+    restart: "no"
