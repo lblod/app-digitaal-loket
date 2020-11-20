@@ -4,6 +4,8 @@
                 (:email :string ,(s-prefix "schema:email"))
                 (:fax :string ,(s-prefix "schema:faxNumber"))
                 (:naam :string ,(s-prefix "foaf:name"))
+                (:voornaam :string ,(s-prefix "foaf:firstName"))
+                (:achternaam :string ,(s-prefix "foaf:familyName"))
                 (:website :url ,(s-prefix "foaf:page"))
                 (:telefoon :string ,(s-prefix "schema:telephone")))
   :has-one `((adres :via ,(s-prefix "locn:address")
