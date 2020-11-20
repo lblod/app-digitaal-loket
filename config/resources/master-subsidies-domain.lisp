@@ -27,6 +27,8 @@
 (define-resource bank-account ()
   :class (s-prefix "schema:BankAccount")
   :properties `((:bank-account-number :string ,(s-prefix "schema:identifier")))
+  :has-one `((file :via ,(s-prefix "dct:hasPart")
+                    :as "confirmationLetter"))
   :resource-base (s-url "http://data.lblod.info/bank-accounts/")
   :features '(include-uri)
   :on-path "bank-accounts")

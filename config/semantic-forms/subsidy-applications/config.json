@@ -36,6 +36,7 @@
 
       "schema:bankAccount",
       "schema:bankAccount/schema:identifier",
+      "schema:bankAccount/dct:hasPart",
 
       "lblodSubsidie:timeBlock",
       "lblodSubsidie:timeBlock/skos:label",
