@@ -10,6 +10,9 @@
 @prefix lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>.
 @prefix dct: <http://purl.org/dc/terms/>.
 
+##########################################################
+# Property groups
+##########################################################
 
 fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 a form:PropertyGroup;
     mu:uuid "4558f2d6-1ba4-4211-beb9-5e3a4b65b975";
@@ -30,6 +33,16 @@ fields:386530d7-b4b4-41c9-8146-e2d8d629d77f a form:PropertyGroup;
     sh:name "Betaling" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
+fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 a form:PropertyGroup;
+    mu:uuid "7e84b8db-1198-4585-a0a2-e5bc48af3f08";
+    sh:description "application form";
+    sh:order 5;
+    sh:name "Aanvraagformulier" ;
+    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+
+##########################################################
+# Contact person info
+##########################################################
 
 fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
     mu:uuid "e19e245a-c24b-4fb5-84b8-a7e2744ce9a0";
@@ -63,6 +76,9 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
 
+##########################################################
+# Bank account
+##########################################################
 
 fields:e0ac9843-3482-4277-9113-e21b76841d36 a form:Field ;
     mu:uuid "e0ac9843-3482-4277-9113-e21b76841d36";
@@ -109,25 +125,42 @@ fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 a form:Field ;
     form:displayType displayTypes:files ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
+##########################################################
+# Application form
+##########################################################
+
+fields:9462b7b4-313a-4eae-bedd-079811219dcb a form:Field ;
+    mu:uuid "9462b7b4-313a-4eae-bedd-079811219dcb";
+    sh:order 50 ;
+    sh:path lblodSubsidie:applicationFormTable ;
+    form:displayType displayTypes:applicationFormTable ;
+    sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08  .
+
+##########################################################
+# Field groups
+##########################################################
 
 fieldGroups:main a form:FieldGroup ;
     mu:uuid "70eebdf0-14dc-47f7-85df-e1cfd41c3855" ;
     form:hasField
 
-
+        ### First name contact person
         fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 ,
 
-
+        ### First name contact person
         fields:82258a58-6c67-4b0a-a26d-0676b88886ad ,
 
-
+        ### Phone
         fields:6285341d-a0ad-4933-bb5f-c49016b0f935 ,
 
-
+        ### Email
         fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb ,
 
+        ### Can be paid on known bank account ?
+        fields:e0ac9843-3482-4277-9113-e21b76841d36 ,
 
-        fields:e0ac9843-3482-4277-9113-e21b76841d36 .
+        ### Application form table
+        fields:9462b7b4-313a-4eae-bedd-079811219dcb .
 
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;

@@ -56,7 +56,13 @@
       "adms:status",
       "adms:status/skos:prefLabel",
 
-      "skos:prefLabel"
+      "lblodSubsidie:applicationFormTable",
+      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry",
+      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:actorName",
+      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:numberChildrenForFullDay",
+      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:numberChildrenForHalfDay",
+      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:numberChildrenPerInfrastructure",
+      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:totalAmount"
     ]
   }
 }

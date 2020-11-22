@@ -230,7 +230,9 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm",
                         "http://schema.org/ContactPoint",
                         "http://schema.org/BankAccount",
-                        "https://www.gleif.org/ontology/Base/Period"
+                        "https://www.gleif.org/ontology/Base/Period",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
+                        "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
                       ] } } ] },
 
       # // VENDOR MANAGEMENT
