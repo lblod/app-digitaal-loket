@@ -22,7 +22,7 @@
                         :as "creator")
              (submission-document-status :via ,(s-prefix "adms:status")
                                          :as "status"))
-  :resource-base (s-url "http://data.lblod.info/subsidie-aanvragen/")
+  :resource-base (s-url "http://data.lblod.info/application-forms/")
   :features '(include-uri)
   :on-path "application-forms")
 
