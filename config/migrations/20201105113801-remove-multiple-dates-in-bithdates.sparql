@@ -2,8 +2,9 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 INSERT DATA {
   GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
-    <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> a <http://data.vlaanderen.be/ns/persoon#Geboorte> ;
-      <http://data.vlaanderen.be/ns/persoon#datum> "foo" .
+    <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> a <http://data.vlaanderen.be/ns/persoon#Geboorte> .
+    <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> <http://data.vlaanderen.be/ns/persoon#datum> "foo" .
+    <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> <http://data.vlaanderen.be/ns/persoon#datum> "bar" .
   }
 }
 
@@ -41,11 +42,14 @@ DELETE {
 
 ;
 
-DELETE DATA {
-  GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
-    <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> a <http://data.vlaanderen.be/ns/persoon#Geboorte> ;
-      <http://data.vlaanderen.be/ns/persoon#datum> "foo" .
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
   }
 }
-
-;
+WHERE {
+  BIND(<http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> as ?s)
+  GRAPH ?g {
+   ?s ?p ?o.
+ }
+}
