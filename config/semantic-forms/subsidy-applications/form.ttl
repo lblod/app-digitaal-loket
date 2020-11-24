@@ -61,7 +61,7 @@ fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
 
 fields:82258a58-6c67-4b0a-a26d-0676b88886ad a form:Field ;
     mu:uuid "82258a58-6c67-4b0a-a26d-0676b88886ad";
-    sh:name "Achternaam" ;
+    sh:name "Familienaam" ;
     sh:order 31 ;
     sh:path ( schema:contactPoint foaf:familyName ) ;
     form:validations
