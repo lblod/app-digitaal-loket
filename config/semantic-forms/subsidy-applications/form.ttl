@@ -25,6 +25,7 @@ fields:2232cd10-01d6-4f67-966a-2c22932437b4 a form:PropertyGroup;
     sh:description "contact person information";
     sh:order 3;
     sh:name "Contactgegevens" ;
+    form:help "Dit is de persoon die gecontacteerd wordt bij vragen over en opvolging van dit dossier." ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 fields:386530d7-b4b4-41c9-8146-e2d8d629d77f a form:PropertyGroup;
@@ -61,7 +62,7 @@ fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
 
 fields:82258a58-6c67-4b0a-a26d-0676b88886ad a form:Field ;
     mu:uuid "82258a58-6c67-4b0a-a26d-0676b88886ad";
-    sh:name "Achternaam" ;
+    sh:name "Familienaam" ;
     sh:order 31 ;
     sh:path ( schema:contactPoint foaf:familyName ) ;
     form:validations
@@ -115,7 +116,8 @@ fields:e0ac9843-3482-4277-9113-e21b76841d36 a form:Field ;
     sh:name "Mag de subsidie uitbetaald worden op het bankrekeningnummer waarop het aandeel in het Gemeentefonds wordt gestort?" ;
     sh:order 40 ;
     sh:path lblodSubsidie:canBePaidOnKnownBankAccount ;
-    form:displayType displayTypes:switch ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f ;
     form:hasConditionalFieldGroup fields:a72abfc0-8593-4fd9-a959-321861646ed6. ## Bank account info
 
@@ -124,7 +126,7 @@ fields:a72abfc0-8593-4fd9-a959-321861646ed6 a form:ConditionalFieldGroup ;
     form:conditions
       [ a form:ExactValueConstraint ;
         form:grouping form:MatchSome ;
-        form:customValue "1" ;
+        form:customValue "https://data.vlaanderen.be/id/concept/SubsidyCanBePaidOnBankAccount/8c7e83c6-5a06-4e19-9157-d890f244201c" ;
         sh:path lblodSubsidie:canBePaidOnKnownBankAccount
       ] ;
     form:hasFieldGroup fieldGroups:d06d0596-5c51-4ac3-8e4b-f8f9be7797da .
