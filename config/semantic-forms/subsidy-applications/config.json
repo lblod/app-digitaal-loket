@@ -14,7 +14,7 @@
       "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>",
       "PREFIX adms: <http://www.w3.org/ns/adms#>"
     ],
-    "paths": [
+    "properties": [
       "rdf:type",
       "mu:uuid",
       "dct:source",
@@ -24,45 +24,75 @@
       "dct:modified",
       "lblodSubsidie:usedFormFile",
       "lblodSubsidie:canBePaidOnKnownBankAccount",
-
-      "pav:createdBy",
-      "pav:createdBy/skos:prefLabel",
-
-      "schema:contactPoint",
-      "schema:contactPoint/foaf:firstName",
-      "schema:contactPoint/foaf:familyName",
-      "schema:contactPoint/schema:telephone",
-      "schema:contactPoint/schema:email",
-
-      "schema:bankAccount",
-      "schema:bankAccount/schema:identifier",
-      "schema:bankAccount/dct:hasPart",
-
-      "lblodSubsidie:timeBlock",
-      "lblodSubsidie:timeBlock/skos:label",
-      "lblodSubsidie:timeBlock/gleif:hasStart",
-      "lblodSubsidie:timeBlock/gleif:hasEnd",
-      "lblodSubsidie:timeBlock/skos:inScheme",
-      "lblodSubsidie:timeBlock/skos:inScheme/skos:prefLabel",
-
-      "ext:lastModifiedBy",
-      "ext:lastModifiedBy/foaf:firstName",
-      "ext:lastModifiedBy/foaf:familyName",
-
-      "dct:creator",
-      "dct:creator/foaf:firstName",
-      "dct:creator/foaf:familyName",
-
-      "adms:status",
-      "adms:status/skos:prefLabel",
-
-      "lblodSubsidie:applicationFormTable",
-      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry",
-      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:actorName",
-      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:numberChildrenForFullDay",
-      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:numberChildrenForHalfDay",
-      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:numberChildrenPerInfrastructure",
-      "lblodSubsidie:applicationFormTable/ext:applicationFormEntry/ext:totalAmount"
+      {
+        "s-prefix" : "pav:createdBy",
+        "properties" : ["skos:prefLabel"]
+      },
+      {
+        "s-prefix": "schema:contactPoint",
+        "properties": [
+          "foaf:firstName",
+          "foaf:familyName",
+          "schema:telephone",
+          "schema:email"
+        ]
+      },
+      {
+        "s-prefix": "schema:bankAccount",
+        "properties": [
+          "schema:identifier",
+          "dct:hasPart"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:timeBlock",
+        "properties": [
+          "skos:label",
+          "gleif:hasStart",
+          "gleif:hasEnd",
+          {
+            "s-prefix": "skos:inScheme",
+            "properties": [
+              "skos:prefLabel"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "ext:lastModifiedBy",
+        "properties": [
+          "foaf:firstName",
+          "foaf:familyName"
+        ]
+      },
+      {
+        "s-prefix": "dct:creator",
+        "properties": [
+          "foaf:firstName",
+          "foaf:familyName"
+        ]
+      },
+      {
+        "s-prefix": "adms:status",
+        "properties": [
+          "skos:prefLabel"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:applicationFormTable",
+        "properties": [
+          {
+            "s-prefix": "ext:applicationFormEntry",
+            "properties": [
+              "ext:actorName",
+              "ext:numberChildrenForFullDay",
+              "ext:numberChildrenForHalfDay",
+              "ext:numberChildrenPerInfrastructure",
+              "ext:totalAmount"
+            ]
+          }
+        ]
+      }
     ]
   }
 }

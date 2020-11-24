@@ -9,6 +9,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>.
 @prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
 ##########################################################
 # Property groups
@@ -49,6 +50,12 @@ fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
     sh:name "Voornaam contactpersoon" ;
     sh:order 30 ;
     sh:path ( schema:contactPoint foaf:firstName ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path ( schema:contactPoint foaf:firstName ) ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
 
