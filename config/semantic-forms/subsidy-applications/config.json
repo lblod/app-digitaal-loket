@@ -63,6 +63,18 @@
         ]
       },
       {
+        "s-prefix": "lblodSubsidie:subsidyMeasure",
+        "properties": [
+          "skos:label",
+          {
+            "s-prefix": "skos:inScheme",
+            "properties": [
+              "skos:prefLabel"
+            ]
+          }
+        ]
+      },
+      {
         "s-prefix": "ext:lastModifiedBy",
         "properties": [
           "foaf:firstName",

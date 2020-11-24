@@ -233,6 +233,7 @@ defmodule Acl.UserGroups.Config do
                         "https://www.gleif.org/ontology/Base/Period",
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
                         "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
+                        "http://lblod.data.gift/vocabularies/subsidie/SubsidyMeasure",
                       ] } } ] },
 
       # // VENDOR MANAGEMENT
