@@ -24,7 +24,7 @@ fields:2232cd10-01d6-4f67-966a-2c22932437b4 a form:PropertyGroup;
     mu:uuid "2232cd10-01d6-4f67-966a-2c22932437b4";
     sh:description "contact person information";
     sh:order 3;
-    sh:name "Contactgegevens" ;
+    sh:name "Contactgegevens contactpersoon" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 fields:386530d7-b4b4-41c9-8146-e2d8d629d77f a form:PropertyGroup;
