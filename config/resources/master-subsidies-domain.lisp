@@ -1,7 +1,6 @@
 (define-resource application-form ()
   :class (s-prefix "lblodSubsidie:ApplicationForm")
-  :properties `((:aangevraagd-bedrag :number ,(s-prefix "subsidie:aangevraagdBedrag"))
-                (:aanvraagdatum :datetime ,(s-prefix "subsidie:aanvraagdatum"))
+  :properties `((:aanvraagdatum :datetime ,(s-prefix "subsidie:aanvraagdatum"))
                 (:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
                 (:usedFormFile :uri ,(s-prefix "lblodSubsidie:usedFormFile"))
