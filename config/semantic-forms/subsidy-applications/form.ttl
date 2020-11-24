@@ -25,7 +25,6 @@ fields:2232cd10-01d6-4f67-966a-2c22932437b4 a form:PropertyGroup;
     sh:description "contact person information";
     sh:order 3;
     sh:name "Contactgegevens" ;
-    form:help "Dit is de persoon die gecontacteerd wordt bij vragen over en opvolging van dit dossier." ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 fields:386530d7-b4b4-41c9-8146-e2d8d629d77f a form:PropertyGroup;
@@ -79,6 +78,7 @@ fields:6285341d-a0ad-4933-bb5f-c49016b0f935 a form:Field ;
     sh:name "Telefoonnummer" ;
     sh:order 32 ;
     sh:path ( schema:contactPoint schema:telephone ) ;
+    form:help "Dit is de persoon die gecontacteerd wordt bij de opvolging van dit dossier." ;
     form:validations
     [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
@@ -93,6 +93,7 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
     sh:name "Mailadres" ;
     sh:order 33 ;
     sh:path ( schema:contactPoint schema:email ) ;
+    form:help "Dit is de persoon die gecontacteerd wordt bij de opvolging van dit dossier." ;
     form:validations
     [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
