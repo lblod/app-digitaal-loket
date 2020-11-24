@@ -419,6 +419,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
   end
 
+  post "/management-application-forms/:id/submit" do
+    Proxy.forward conn, [], "http://subsidy-applications-management/application-forms/" <> id <> "/submit"
+  end
+
   match "/application-forms/*path" do
     Proxy.forward conn, path, "http://resource/application-forms/"
   end
