@@ -1,0 +1,21 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>;
+      <http://mu.semte.ch/vocabularies/core/uuid> "a3293c46-06b7-458d-a15c-2f312294773f" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Subsidy timeblocks"@en .
+
+    <http://lblod.data.gift/concept/ef073502-d7c4-4b0c-b399-a73b429f877d> a <http://www.w3.org/2004/02/skos/core#Concept>,
+      <http://www.w3.org/2000/01/rdf-schema#Class>;
+      <http://mu.semte.ch/vocabularies/core/uuid> "ef073502-d7c4-4b0c-b399-a73b429f877d" ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Autumn break timeblock"@en;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f>;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Herfsvakantie"@nl .
+
+    <http://lblod.data.gift/concept/5e1474df-dfc2-432c-94af-039298222257> a <http://www.w3.org/2004/02/skos/core#Concept>,
+      <http://www.w3.org/2000/01/rdf-schema#Class>;
+      <http://mu.semte.ch/vocabularies/core/uuid> "5e1474df-dfc2-432c-94af-039298222257" ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Christmas break timeblock"@en;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f>;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Kerstvakantie"@nl .
+  }
+}
