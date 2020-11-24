@@ -97,6 +97,11 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
         form:grouping form:Bag ;
         sh:path ( schema:contactPoint schema:email ) ;
         sh:resultMessage "Dit veld is verplicht."@nl
+    ] ,
+    [ a form:ValidEmail ;
+        form:grouping form:MatchEvery ;
+        sh:path ( schema:contactPoint schema:email ) ;
+        sh:resultMessage "Geef een geldig e-mailadres op."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
@@ -147,6 +152,11 @@ fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 a form:Field ;
         form:grouping form:Bag ;
         sh:path ( schema:bankAccount schema:identifier ) ;
         sh:resultMessage "Dit veld is verplicht."@nl
+    ] ,
+    [ a form:ValidIBAN ;
+        form:grouping form:MatchEvery ;
+        sh:path ( schema:bankAccount schema:identifier ) ;
+        sh:resultMessage "Geef een geldig IBAN op."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
