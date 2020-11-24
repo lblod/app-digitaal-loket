@@ -47,7 +47,7 @@ fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 a form:PropertyGroup;
 
 fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
     mu:uuid "e19e245a-c24b-4fb5-84b8-a7e2744ce9a0";
-    sh:name "Voornaam contactpersoon" ;
+    sh:name "Voornaam" ;
     sh:order 30 ;
     sh:path ( schema:contactPoint foaf:firstName ) ;
     form:validations
@@ -61,9 +61,15 @@ fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
 
 fields:82258a58-6c67-4b0a-a26d-0676b88886ad a form:Field ;
     mu:uuid "82258a58-6c67-4b0a-a26d-0676b88886ad";
-    sh:name "Achternaam contactpersoon" ;
+    sh:name "Achternaam" ;
     sh:order 31 ;
     sh:path ( schema:contactPoint foaf:familyName ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path ( schema:contactPoint foaf:familyName ) ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
 
@@ -72,6 +78,12 @@ fields:6285341d-a0ad-4933-bb5f-c49016b0f935 a form:Field ;
     sh:name "Telefoonnummer" ;
     sh:order 32 ;
     sh:path ( schema:contactPoint schema:telephone ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path ( schema:contactPoint schema:telephone ) ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
 
@@ -80,6 +92,12 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
     sh:name "Mailadres" ;
     sh:order 33 ;
     sh:path ( schema:contactPoint schema:email ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path ( schema:contactPoint schema:email ) ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
 
@@ -124,6 +142,12 @@ fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 a form:Field ;
     form:help "IBAN: BE00 0000 0000 0000" ;
     sh:order 41 ;
     sh:path ( schema:bankAccount schema:identifier ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path ( schema:bankAccount schema:identifier ) ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
@@ -132,6 +156,12 @@ fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 a form:Field ;
     sh:name "Voeg een bevestingsbrief dat dit rekeningnummer gebruikt mag worden toe, ondertekend door de burgemeester en medeondertekend door de financieel directeur." ;
     sh:order 42 ;
     sh:path ( schema:bankAccount dct:hasPart ) ;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één bestand op te geven."@nl
+     ];
     form:displayType displayTypes:files ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
@@ -147,7 +177,7 @@ fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 a form:Field ;
     sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
     sh:order 43 ;
     sh:path ( schema:bankAccount dct:hasPart rdf:type );
-    sh:group fields:aDynamicPropertyGroup .
+    sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
 ##########################################################
 # Application form
@@ -190,9 +220,3 @@ fieldGroups:main a form:FieldGroup ;
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
     form:hasFieldGroup fieldGroups:main .
-
-fields:aDynamicPropertyGroup a form:PropertyGroup ;
-    mu:uuid "88acfa64-07f0-41a5-a111-072ea3c94fbc" ;
-    sh:description "A dynamic property group" ;
-    sh:order 3 ;
-    sh:name "aDynamicPropertyGroup".
