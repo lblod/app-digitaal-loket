@@ -101,7 +101,7 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
 
 fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
     mu:uuid "e19e245a-c24b-4fb5-84b8-a7e2744ce9a0";
-    sh:name "Voornaam" ;
+    sh:name "Voornaam contactpersoon" ;
     sh:order 30 ;
     sh:path ( schema:contactPoint foaf:firstName ) ;
     form:validations
@@ -115,7 +115,7 @@ fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
 
 fields:82258a58-6c67-4b0a-a26d-0676b88886ad a form:Field ;
     mu:uuid "82258a58-6c67-4b0a-a26d-0676b88886ad";
-    sh:name "Familienaam" ;
+    sh:name "Familienaam contactpersoon" ;
     sh:order 31 ;
     sh:path ( schema:contactPoint foaf:familyName ) ;
     form:validations
