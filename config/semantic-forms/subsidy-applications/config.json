@@ -27,6 +27,7 @@
       "lblodSubsidie:daysOfChildcareForWholePeriod",
       "lblodSubsidie:timeBlock",
       "lblodSubsidie:subsidyMeasure",
+      "adms:status",
       {
         "s-prefix" : "pav:createdBy",
         "properties" : ["skos:prefLabel"]
@@ -64,12 +65,6 @@
         "properties": [
           "foaf:firstName",
           "foaf:familyName"
-        ]
-      },
-      {
-        "s-prefix": "adms:status",
-        "properties": [
-          "skos:prefLabel"
         ]
       },
       {
