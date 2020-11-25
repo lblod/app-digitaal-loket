@@ -35,7 +35,7 @@
 <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	skos:Concept .
 @prefix ns4:	<http://lblod.data.gift/concept-schemes/> .
 <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	skos:inScheme	ns4:a3293c46-06b7-458d-a15c-2f312294773f ;
-	skos:prefLabel	"Kerstvakantie (21-12-2020 - 03-01-2021)"@nl ; # custom label for front-end, to be enriched
+	skos:prefLabel	"Kerstvakantie (21-12-2020 — 03-01-2021)"@nl ; # custom label for front-end, to be enriched
 	skos:definition	"Christmas break 2020 Belgium"@en .
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
 <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	ns2:hasEnd	"2021-01-03"^^xsd:datetime ;
@@ -47,7 +47,7 @@ ns7:ef073502-d7c4-4b0c-b399-a73b429f877d	rdf:type	ns2:Period ,
 		skos:Concept ,
 		rdfs:Class ;
 	skos:inScheme	ns4:a3293c46-06b7-458d-a15c-2f312294773f ;
-	skos:prefLabel	"Herfsvakantie (02-11-2020 - 08-11-2020)"@nl ; # custom label for front-end, to be enriched
+	skos:prefLabel	"Herfsvakantie (02-11-2020 — 08-11-2020)"@nl ; # custom label for front-end, to be enriched
 	skos:definition	"Autumn break 2020 Belgium"@en ;
 	ns2:hasEnd	"2020-11-08"^^xsd:datetime ;
 	ns2:hasStart	"2020-11-02"^^xsd:datetime ;
