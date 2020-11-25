@@ -157,7 +157,7 @@ fields:a72abfc0-8593-4fd9-a959-321861646ed6 a form:ConditionalFieldGroup ;
     form:conditions
       [ a form:ExactValueConstraint ;
         form:grouping form:MatchSome ;
-        form:customValue "https://data.vlaanderen.be/id/concept/SubsidyCanBePaidOnBankAccount/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b" ;
+        form:customValue "http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b" ;
         sh:path lblodSubsidie:canBePaidOnKnownBankAccount
       ] ;
     form:hasFieldGroup fieldGroups:d06d0596-5c51-4ac3-8e4b-f8f9be7797da .

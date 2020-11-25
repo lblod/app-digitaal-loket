@@ -25,6 +25,8 @@
       "lblodSubsidie:canBePaidOnKnownBankAccount",
       "lblodSubsidie:uniqueChildrenNumbenForWholePeriod",
       "lblodSubsidie:daysOfChildcareForWholePeriod",
+      "lblodSubsidie:timeBlock",
+      "lblodSubsidie:subsidyMeasure",
       {
         "s-prefix" : "pav:createdBy",
         "properties" : ["skos:prefLabel"]
@@ -46,32 +48,6 @@
             "s-prefix": "dct:hasPart",
             "properties": [
               "rdf:type"
-            ]
-          }
-        ]
-      },
-      {
-        "s-prefix": "lblodSubsidie:timeBlock",
-        "properties": [
-          "skos:label",
-          "gleif:hasStart",
-          "gleif:hasEnd",
-          {
-            "s-prefix": "skos:inScheme",
-            "properties": [
-              "skos:prefLabel"
-            ]
-          }
-        ]
-      },
-      {
-        "s-prefix": "lblodSubsidie:subsidyMeasure",
-        "properties": [
-          "skos:label",
-          {
-            "s-prefix": "skos:inScheme",
-            "properties": [
-              "skos:prefLabel"
             ]
           }
         ]
