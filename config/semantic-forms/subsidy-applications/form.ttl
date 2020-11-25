@@ -57,7 +57,19 @@ fields:68e149ec-1821-477b-a901-72924236ef9c a form:Field ;
     sh:name "Kies subsidiemaatregel" ;
     sh:order 20 ;
     sh:path lblodSubsidie:subsidyMeasure ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2"}""" ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:subsidyMeasure ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:subsidyMeasure
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2", "searchEnabled": false}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
 
@@ -67,7 +79,19 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
     form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
     sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f"}""" ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:timeBlock ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:timeBlock
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f", "searchEnabled": false}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
 
@@ -77,7 +101,7 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
 
 fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
     mu:uuid "e19e245a-c24b-4fb5-84b8-a7e2744ce9a0";
-    sh:name "Voornaam" ;
+    sh:name "Voornaam contactpersoon" ;
     sh:order 30 ;
     sh:path ( schema:contactPoint foaf:firstName ) ;
     form:validations
@@ -91,7 +115,7 @@ fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
 
 fields:82258a58-6c67-4b0a-a26d-0676b88886ad a form:Field ;
     mu:uuid "82258a58-6c67-4b0a-a26d-0676b88886ad";
-    sh:name "Familienaam" ;
+    sh:name "Familienaam contactpersoon" ;
     sh:order 31 ;
     sh:path ( schema:contactPoint foaf:familyName ) ;
     form:validations
@@ -147,7 +171,19 @@ fields:e0ac9843-3482-4277-9113-e21b76841d36 a form:Field ;
     sh:name "Mag de subsidie uitbetaald worden op het bankrekeningnummer waarop het aandeel in het Gemeentefonds wordt gestort?" ;
     sh:order 40 ;
     sh:path lblodSubsidie:canBePaidOnKnownBankAccount ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d"}""" ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:canBePaidOnKnownBankAccount ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:canBePaidOnKnownBankAccount
+          ] ;
+    form:options  """{"conceptScheme": "http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d", "searchEnabled": false}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f ;
     form:hasConditionalFieldGroup fields:a72abfc0-8593-4fd9-a959-321861646ed6. ## Bank account info
@@ -157,7 +193,7 @@ fields:a72abfc0-8593-4fd9-a959-321861646ed6 a form:ConditionalFieldGroup ;
     form:conditions
       [ a form:ExactValueConstraint ;
         form:grouping form:MatchSome ;
-        form:customValue "https://data.vlaanderen.be/id/concept/SubsidyCanBePaidOnBankAccount/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b" ;
+        form:customValue "http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b" ;
         sh:path lblodSubsidie:canBePaidOnKnownBankAccount
       ] ;
     form:hasFieldGroup fieldGroups:d06d0596-5c51-4ac3-8e4b-f8f9be7797da .

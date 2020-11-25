@@ -39,7 +39,7 @@
 
 (define-resource time-block () ;; subclass of skos:Concept
   :class (s-prefix "gleif:Period")
-  :properties `((:label :string ,(s-prefix "skos:label"))
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
                 (:start :date ,(s-prefix "gleif:hasStart"))
                 (:end :date ,(s-prefix "gleif:hasEnd")))
   :has-one `((concept-scheme :via ,(s-prefix "skos:inScheme")
@@ -50,7 +50,7 @@
 
 (define-resource subsidy-measure () ;; subclass of skos:Concept
   :class (s-prefix "lblodSubsidie:SubsidyMeasure")
-  :properties `((:label :string ,(s-prefix "skos:label")))
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
   :has-one `((concept-scheme :via ,(s-prefix "skos:inScheme")
                               :as "concept-scheme"))
   :resource-base (s-url "http://lblod.data.gift/concepts/")
