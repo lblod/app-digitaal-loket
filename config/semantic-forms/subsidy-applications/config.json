@@ -23,7 +23,7 @@
       "dct:modified",
       "lblodSubsidie:usedFormFile",
       "lblodSubsidie:canBePaidOnKnownBankAccount",
-      "lblodSubsidie:uniqueChildrenNumbenForWholePeriod",
+      "lblodSubsidie:uniqueChildrenNumberForWholePeriod",
       "lblodSubsidie:daysOfChildcareForWholePeriod",
       {
         "s-prefix" : "pav:createdBy",
@@ -105,8 +105,7 @@
               "ext:actorName",
               "ext:numberChildrenForFullDay",
               "ext:numberChildrenForHalfDay",
-              "ext:numberChildrenPerInfrastructure",
-              "ext:totalAmount"
+              "ext:numberChildrenPerInfrastructure"
             ]
           }
         ]
