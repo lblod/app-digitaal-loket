@@ -23,6 +23,8 @@
       "dct:modified",
       "lblodSubsidie:usedFormFile",
       "lblodSubsidie:canBePaidOnKnownBankAccount",
+      "lblodSubsidie:uniqueChildrenNumbenForWholePeriod",
+      "lblodSubsidie:daysOfChildcareForWholePeriod",
       {
         "s-prefix" : "pav:createdBy",
         "properties" : ["skos:prefLabel"]

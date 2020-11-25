@@ -233,6 +233,35 @@ fields:9462b7b4-313a-4eae-bedd-079811219dcb a form:Field ;
     form:displayType displayTypes:applicationFormTable ;
     sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08  .
 
+fields:0337b621-42e7-49a6-8532-7f53a3f02d12 a form:Field ;
+    mu:uuid "0337b621-42e7-49a6-8532-7f53a3f02d12";
+    sh:name "Aantal unieke kinderen opgevangen voor alle actoren tijdens de ganse periode" ;
+    sh:order 51 ;
+    sh:path lblodSubsidie:uniqueChildrenNumbenForWholePeriod ;
+    form:help "Dit is een geheel getal." ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:uniqueChildrenNumbenForWholePeriod ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
+
+fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
+    mu:uuid "8430e0db-27f1-4034-acc8-09730d331df7";
+    sh:name "Aantal kalenderdagen opvang georganiseerd voor alle actoren tijdens de ganse periode" ;
+    sh:order 52 ;
+    sh:path lblodSubsidie:daysOfChildcareForWholePeriod ;
+    form:help "Dit is een geheel getal." ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:daysOfChildcareForWholePeriod ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
 
 ##########################################################
 # Field groups
@@ -263,7 +292,13 @@ fieldGroups:main a form:FieldGroup ;
         fields:e0ac9843-3482-4277-9113-e21b76841d36 ,
 
         ### Application form table
-        fields:9462b7b4-313a-4eae-bedd-079811219dcb .
+        fields:9462b7b4-313a-4eae-bedd-079811219dcb ,
+
+        ### Number of unique children taken care of for all actors during the whole period
+        fields:0337b621-42e7-49a6-8532-7f53a3f02d12 ,
+
+        ### Number of calendar days of childcare organized for all actors during the whole period
+        fields:8430e0db-27f1-4034-acc8-09730d331df7 .
 
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
