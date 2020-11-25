@@ -202,7 +202,7 @@ fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 a form:Field ;
     form:validations
      [ a  form:RequiredConstraint ;
           form:grouping form:Bag ;
-          sh:path dct:hasPart;
+          sh:path ( schema:bankAccount dct:hasPart ) ;
           sh:resultMessage "Gelieve minstens één bestand op te geven."@nl
      ];
     form:displayType displayTypes:files ;
