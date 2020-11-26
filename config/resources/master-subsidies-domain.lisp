@@ -4,7 +4,6 @@
                 (:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
                 (:used-form-file :url ,(s-prefix "lblodSubsidie:usedFormFile"))
-                (:subsidy-measure :url ,(s-prefix "lblodSubsidie:subsidyMeasure"))
                 (:can-be-paid-on-known-bank-account :url ,(s-prefix "lblodSubsidie:canBePaidOnKnownBankAccount")))
   :has-one `((bestuurseenheid :via ,(s-prefix "pav:createdBy")
                               :as "organization")
