@@ -218,6 +218,24 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/automatische-melding/FormData"
                       ] } } ] },
 
+      # // SUBSIDIES
+      %GroupSpec{
+        name: "o-subs-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-subsidies" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm",
+                        "http://schema.org/ContactPoint",
+                        "http://schema.org/BankAccount",
+                        "https://www.gleif.org/ontology/Base/Period",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
+                        "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
+                        "http://lblod.data.gift/vocabularies/subsidie/SubsidyMeasure",
+                      ] } } ] },
+
       # // VENDOR MANAGEMENT
       %GroupSpec{
         name: "o-toezicht-vendor-management-rwf",

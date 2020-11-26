@@ -400,6 +400,53 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://loket-leidinggevenden-producer/files/"
   end
 
+  #################################################################
+  # subsidy-applications
+  #################################################################
+  get "/management-active-form-file/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/active-form-file/"
+  end
+
+  get "/management-application-forms/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+  end
+
+  put "/management-application-forms/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+  end
+
+  delete "/management-application-forms/*path" do
+    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+  end
+
+  post "/management-application-forms/:id/submit" do
+    Proxy.forward conn, [], "http://subsidy-applications-management/application-forms/" <> id <> "/submit"
+  end
+
+  match "/application-forms/*path" do
+    Proxy.forward conn, path, "http://resource/application-forms/"
+  end
+
+  match "/time-blocks/*path" do
+    Proxy.forward conn, path, "http://resource/time-blocks/"
+  end
+
+  match "/subsidy-measures/*path" do
+    Proxy.forward conn, path, "http://resource/subsidy-measures/"
+  end
+
+  match "/bank-accounts/*path" do
+    Proxy.forward conn, path, "http://resource/bank-accounts/"
+  end
+
+  match "/application-form-tables/*path" do
+    Proxy.forward conn, path, "http://resource/application-form-tables/"
+  end
+
+  match "/application-form-entries/*path" do
+    Proxy.forward conn, path, "http://resource/application-form-entries/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
