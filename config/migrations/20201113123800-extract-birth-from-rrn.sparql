@@ -12,7 +12,7 @@ INSERT {
       persoon:datum ?newBirthDate .
   }
 }
-WHERE { 
+WHERE {
   GRAPH ?g {
     ?person a person:Person ;
       adms:identifier ?identifier .
@@ -24,6 +24,8 @@ WHERE {
       ?birthDateUri persoon:datum ?birthDate .
     }
     FILTER ( NOT EXISTS { ?person persoon:heeftGeboorte ?birthDateUri . } )
+
+    FILTER(STRLEN( ?rrn ) >= 11 )
 
     BIND ( SUBSTR(STR(?rrn), 1, 2) AS ?year ) .
     BIND ( SUBSTR(STR(?rrn), 3, 2) AS ?month ) .

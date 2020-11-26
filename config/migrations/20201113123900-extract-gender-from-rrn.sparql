@@ -9,7 +9,7 @@ INSERT {
     ?person persoon:geslacht ?newGender .
   }
 }
-WHERE { 
+WHERE {
   GRAPH ?g {
     ?person a person:Person ;
       adms:identifier ?identifier .
@@ -21,6 +21,7 @@ WHERE {
     }
 
     FILTER ( NOT EXISTS { ?person persoon:geslacht ?gender . } )
+    FILTER(STRLEN( ?rrn ) >= 11 )
 
     BIND ( xsd:float(SUBSTR(STR(?rrn), 7, 3)) as ?genderPart ) .
     BIND ( (?genderPart/2 =  FLOOR(?genderPart/2)) AS ?isAWoman ) .
