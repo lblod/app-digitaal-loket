@@ -1,6 +1,5 @@
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-### TRICK TO AVOID QUERY CRASHING IF NO TRIPLE FOUND ###
 INSERT DATA {
   GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
     <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> a <http://data.vlaanderen.be/ns/persoon#Geboorte> .
@@ -8,7 +7,6 @@ INSERT DATA {
     <http://dumm/data/3403c05f-8c45-4c5e-8d90-5772ef2df411> <http://data.vlaanderen.be/ns/persoon#datum> "bar" .
   }
 }
-### END OF TRICK ###
 
 ;
 
@@ -35,7 +33,7 @@ DELETE {
     }
     GROUP BY ?birth
   }
-  { 
+  {
     GRAPH ?g {
       ?birth <http://data.vlaanderen.be/ns/persoon#datum> ?date .
     }
@@ -44,7 +42,10 @@ DELETE {
 
 ;
 
+<<<<<<< HEAD:config/migrations/20201105113800-remove-multiple-dates-in-bithdates.sparql
 ### TRICK TO AVOID QUERY CRASHING IF NO TRIPLE FOUND ###
+=======
+>>>>>>> development:config/migrations/20201105113801-remove-multiple-dates-in-bithdates.sparql
 DELETE {
   GRAPH ?g {
     ?s ?p ?o.
@@ -55,5 +56,9 @@ WHERE {
   GRAPH ?g {
    ?s ?p ?o.
  }
+<<<<<<< HEAD:config/migrations/20201105113800-remove-multiple-dates-in-bithdates.sparql
 }
 ### END OF TRICK ###
+=======
+}
+>>>>>>> development:config/migrations/20201105113801-remove-multiple-dates-in-bithdates.sparql
