@@ -27,6 +27,7 @@
       "lblodSubsidie:daysOfChildcareForWholePeriod",
       "lblodSubsidie:timeBlock",
       "lblodSubsidie:subsidyMeasure",
+      "lblodSubsidie:userDeclaresDataIsExact",
       "adms:status",
       {
         "s-prefix" : "pav:createdBy",
