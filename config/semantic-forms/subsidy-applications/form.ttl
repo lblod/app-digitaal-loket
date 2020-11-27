@@ -48,6 +48,13 @@ fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 a form:PropertyGroup;
     sh:name "Aanvraagformulier" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
+fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 a form:PropertyGroup;
+    mu:uuid "7c9ca554-e539-4876-bcd0-efa0cfc5db09";
+    sh:description "declarations";
+    sh:order 6;
+    sh:name "Verklaringen" ;
+    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+
 ##########################################################
 # Subsidy info
 ##########################################################
@@ -316,6 +323,25 @@ fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
     sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
 
 ##########################################################
+# Verklaringen
+##########################################################
+
+fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
+    mu:uuid "c0726406-ac7a-41da-b905-506f5ab33069";
+    sh:name "De gegevens over het aantal effectief opgevangen kinderen, zijn correct." ;
+    sh:order 60 ;
+    sh:path lblodSubsidie:userDeclaresDataIsExact ;
+    form:validations
+    [ a form:ExactValueConstraint ;
+        form:grouping form:MatchSome ;
+        form:customValue "1" ;
+        sh:path lblodSubsidie:userDeclaresDataIsExact ;
+        sh:resultMessage "Geef een geldig nummer op."@nl
+    ] ;
+    form:displayType displayTypes:switch ;
+    sh:group fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 .
+
+##########################################################
 # Field groups
 ##########################################################
 
@@ -350,7 +376,10 @@ fieldGroups:main a form:FieldGroup ;
         fields:0337b621-42e7-49a6-8532-7f53a3f02d12 ,
 
         ### Number of calendar days of childcare organized for all actors during the whole period
-        fields:8430e0db-27f1-4034-acc8-09730d331df7 .
+        fields:8430e0db-27f1-4034-acc8-09730d331df7 ,
+
+        ### Declaration
+        fields:c0726406-ac7a-41da-b905-506f5ab33069 .
 
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
