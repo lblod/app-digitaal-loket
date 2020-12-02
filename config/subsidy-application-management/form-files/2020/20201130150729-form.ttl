@@ -346,9 +346,8 @@ fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
         form:grouping form:MatchSome ;
         form:customValue "1" ;
         sh:path lblodSubsidie:userDeclaresDataIsExact ;
-        sh:resultMessage "Geef een geldig nummer op."@nl
     ] ;
-    form:displayType displayTypes:switch ;
+    form:displayType displayTypes:checkbox ;
     sh:group fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 .
 
 ##########################################################
