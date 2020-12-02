@@ -321,12 +321,12 @@ fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
     ]  ,
     [ a form:ValidInteger ;
         form:grouping form:MatchEvery ;
-        sh:path lblodSubsidie:uniqueChildrenNumberForWholePeriod ;
+        sh:path lblodSubsidie:daysOfChildcareForWholePeriod ;
         sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
     ] ,
     [ a form:PositiveNumber ;
         form:grouping form:MatchEvery ;
-        sh:path lblodSubsidie:uniqueChildrenNumberForWholePeriod ;
+        sh:path lblodSubsidie:daysOfChildcareForWholePeriod ;
         sh:resultMessage "Geef een positief aantal op."@nl
     ] ;
     form:displayType displayTypes:numericalInput ;
