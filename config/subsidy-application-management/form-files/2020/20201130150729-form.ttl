@@ -282,7 +282,6 @@ fields:9462b7b4-313a-4eae-bedd-079811219dcb a form:Field ;
          a form:ValidChildcareSubsidyTable ;
          form:grouping form:MatchEvery ;
          sh:path lblodSubsidie:applicationFormTable ;
-         form:max "20" ;
          sh:resultMessage "Gelieve een geldige tabel in te dienen."@nl
      ] ;
     form:displayType displayTypes:applicationFormTable ;
