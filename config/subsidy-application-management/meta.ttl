@@ -28,20 +28,20 @@
 <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>	ns4:uuid	"1df4b56a-3ccd-450d-93dc-317fda1ada38" .
 @prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
-<http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	rdfs:Class .
+# <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	rdfs:Class .
 @prefix ns2:	<https://www.gleif.org/ontology/Base/> .
-<http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	ns2:Period .
+# <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	ns2:Period .
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
-<http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	skos:Concept .
+# <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	rdf:type	skos:Concept .
 @prefix ns4:	<http://lblod.data.gift/concept-schemes/> .
-<http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	skos:inScheme	ns4:a3293c46-06b7-458d-a15c-2f312294773f ;
-	skos:prefLabel	"Kerstvakantie (21 december 2020 — 03 januari 2021)"@nl ; # custom label for front-end, to be enriched
-	skos:definition	"Christmas break 2020 Belgium"@en .
+# <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	skos:inScheme	ns4:a3293c46-06b7-458d-a15c-2f312294773f ;
+# 	skos:prefLabel	"Kerstvakantie (21 december 2020 — 03 januari 2021)"@nl ; # custom label for front-end, to be enriched
+# 	skos:definition	"Christmas break 2020 Belgium"@en .
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
-<http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	ns2:hasEnd	"2021-01-03"^^xsd:datetime ;
-	ns2:hasStart	"2020-12-21"^^xsd:datetime .
+# <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	ns2:hasEnd	"2021-01-03"^^xsd:datetime ;
+# 	ns2:hasStart	"2020-12-21"^^xsd:datetime .
 @prefix ns6:	<http://mu.semte.ch/vocabularies/core/> .
-<http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	ns6:uuid	"5e1474df-dfc2-432c-94af-039298222257" .
+# <http://lblod.data.gift/concepts/5e1474df-dfc2-432c-94af-039298222257>	ns6:uuid	"5e1474df-dfc2-432c-94af-039298222257" .
 @prefix ns7:	<http://lblod.data.gift/concepts/> .
 ns7:ef073502-d7c4-4b0c-b399-a73b429f877d	rdf:type	ns2:Period ,
 		skos:Concept ,
