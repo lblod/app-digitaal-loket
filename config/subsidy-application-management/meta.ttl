@@ -1,3 +1,6 @@
+# Use of Concepts in scheme <http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b>
+# is deprecated in new versions of the forms.
+
 @prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
 <http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b>	rdf:type	rdfs:Class .
