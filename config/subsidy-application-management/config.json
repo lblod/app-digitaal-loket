@@ -77,7 +77,8 @@
               "ext:actorName",
               "ext:numberChildrenForFullDay",
               "ext:numberChildrenForHalfDay",
-              "ext:numberChildrenPerInfrastructure"
+              "ext:numberChildrenPerInfrastructure",
+              "dct:created"
             ]
           }
         ]
