@@ -9,15 +9,15 @@ INSERT DATA {
     <http://lblod.data.gift/concepts/957d98bc-cccf-4e12-b58a-faf9b2eff150>
         a <http://www.w3.org/2000/01/rdf-schema#Class>, <https://www.gleif.org/ontology/Base/Period>;
         <http://mu.semte.ch/vocabularies/core/uuid> "957d98bc-cccf-4e12-b58a-faf9b2eff150" ;
-        <http://www.w3.org/2004/02/skos/core#definition> "Autumn break 2020 Belgium submission-period"@en;
-        <https://www.gleif.org/ontology/Base/hasStart> "2020-11-02"^^<http://www.w3.org/2001/XMLSchema#date>;
-        <https://www.gleif.org/ontology/Base/hasEnd> "2020-11-08"^^<http://www.w3.org/2001/XMLSchema#date>.
+        <http://www.w3.org/2004/02/skos/core#definition> "Autumn break 2020 Belgium Submission Period"@en;
+        <https://www.gleif.org/ontology/Base/hasStart> "2020-12-14"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <https://www.gleif.org/ontology/Base/hasEnd> "2021-07-31"^^<http://www.w3.org/2001/XMLSchema#date>.
 
     <http://lblod.data.gift/concepts/9c656ab1-a17f-4e4a-b6a0-093c1773a941>
         a <http://www.w3.org/2000/01/rdf-schema#Class>, <https://www.gleif.org/ontology/Base/Period>;
         <http://mu.semte.ch/vocabularies/core/uuid> "9c656ab1-a17f-4e4a-b6a0-093c1773a941" ;
-        <http://www.w3.org/2004/02/skos/core#definition> "Autumn break 2020 Belgium submission-period"@en;
-        <https://www.gleif.org/ontology/Base/hasStart> "2020-12-21"^^<http://www.w3.org/2001/XMLSchema#date>;
-        <https://www.gleif.org/ontology/Base/hasEnd> "2021-01-03"^^<http://www.w3.org/2001/XMLSchema#date>.
+        <http://www.w3.org/2004/02/skos/core#definition> "Christmas break 2020 Belgium Submission Period"@en;
+        <https://www.gleif.org/ontology/Base/hasStart> "2020-12-14"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <https://www.gleif.org/ontology/Base/hasEnd> "2021-07-31"^^<http://www.w3.org/2001/XMLSchema#date>.
   }
 }
