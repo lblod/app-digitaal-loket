@@ -178,50 +178,6 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
 # Bank account
 ##########################################################
 
-fields:e0ac9843-3482-4277-9113-e21b76841d36 a form:Field ;
-    mu:uuid "e0ac9843-3482-4277-9113-e21b76841d36";
-    sh:name "Mag de subsidie uitbetaald worden op het bankrekeningnummer waarop het aandeel in het Gemeentefonds wordt gestort?" ;
-    sh:order 40 ;
-    sh:path lblodSubsidie:canBePaidOnKnownBankAccount ;
-    form:validations
-          [ a form:ConceptSchemeConstraint ;
-            form:grouping form:Bag ;
-            sh:path lblodSubsidie:canBePaidOnKnownBankAccount ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d> ;
-            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
-          ],
-          [ a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht."@nl;
-            sh:path lblodSubsidie:canBePaidOnKnownBankAccount
-          ] ;
-    form:options  """{"conceptScheme": "http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f ;
-    form:hasConditionalFieldGroup fields:a72abfc0-8593-4fd9-a959-321861646ed6. ## Bank account info
-
-fields:a72abfc0-8593-4fd9-a959-321861646ed6 a form:ConditionalFieldGroup ;
-    mu:uuid "a72abfc0-8593-4fd9-a959-321861646ed6";
-    form:conditions
-      [ a form:ExactValueConstraint ;
-        form:grouping form:MatchSome ;
-        form:customValue "http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b" ;
-        sh:path lblodSubsidie:canBePaidOnKnownBankAccount
-      ] ;
-    form:hasFieldGroup fieldGroups:d06d0596-5c51-4ac3-8e4b-f8f9be7797da .
-
-fieldGroups:d06d0596-5c51-4ac3-8e4b-f8f9be7797da a form:FieldGroup;
-    mu:uuid "d06d0596-5c51-4ac3-8e4b-f8f9be7797da" ;
-    form:hasField
-                ### Bank account number ###
-                fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
-
-                ### Confirmation letter ###
-                fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 .
-
-                ### Type RemoteDataObject or FileDataObject ###
-                #fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 .
-
 fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 a form:Field ;
     mu:uuid "9b706641-f834-4f91-87ab-d490f7aa0ed7";
     sh:name "Alternatief rekeningnummer uitbetaling" ;
@@ -245,14 +201,9 @@ fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 a form:Field ;
 fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 a form:Field ;
     mu:uuid "5f2ae097-ce97-4a52-a5db-501cf9e114c4";
     sh:name "Voeg een bevestingsbrief toe dat dit rekeningnummer gebruikt mag worden, ondertekend door de burgemeester en medeondertekend door de financieel directeur." ;
+    form:help "Deze brief moet enkel toegevoegd worden als dit niet het rekeningnummer is waarop het aandeel van het gemeentefonds wordt gestort." ;
     sh:order 42 ;
     sh:path ( schema:bankAccount dct:hasPart ) ;
-    form:validations
-     [ a  form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:path ( schema:bankAccount dct:hasPart ) ;
-          sh:resultMessage "Gelieve minstens één bestand op te geven."@nl
-     ];
     form:displayType displayTypes:files ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
@@ -386,8 +337,11 @@ fieldGroups:main a form:FieldGroup ;
         ### Email
         fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb ,
 
-        ### Can be paid on known bank account ?
-        fields:e0ac9843-3482-4277-9113-e21b76841d36 ,
+        ### Bank account number ###
+        fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
+
+        ### Confirmation letter ###
+        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
 
         ### Application form table
         fields:9462b7b4-313a-4eae-bedd-079811219dcb ,

@@ -8,8 +8,6 @@
                               :as "organization")
              (contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contactinfo")
-             (concept :via ,(s-prefix "lblodSubsidie:canBePaidOnKnownBankAccount")
-                                         :as "can-be-paid-on-known-bank-account")
              (bank-account :via ,(s-prefix "schema:bankAccount")
                            :as "bank-account")
              (time-block :via ,(s-prefix "lblodSubsidie:timeBlock")
