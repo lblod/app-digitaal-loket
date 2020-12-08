@@ -8,6 +8,10 @@
                               :as "organization")
              (contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contactinfo")
+             (concept :via ,(s-prefix "lblodSubsidie:canBePaidOnKnownBankAccount")
+                                         :as "can-be-paid-on-known-bank-account")
+             (bank-account :via ,(s-prefix "schema:bankAccount")
+                           :as "bank-account")
              (time-block :via ,(s-prefix "lblodSubsidie:timeBlock")
                          :as "time-block")
              (subsidy-measure :via ,(s-prefix "lblodSubsidie:subsidyMeasure")
@@ -23,6 +27,15 @@
   :resource-base (s-url "http://data.lblod.info/application-forms/")
   :features '(include-uri)
   :on-path "application-forms")
+
+(define-resource bank-account ()
+  :class (s-prefix "schema:BankAccount")
+  :properties `((:bank-account-number :string ,(s-prefix "schema:identifier")))
+  :has-one `((file :via ,(s-prefix "dct:hasPart")
+                    :as "confirmationLetter"))
+  :resource-base (s-url "http://data.lblod.info/bank-accounts/")
+  :features '(include-uri)
+  :on-path "bank-accounts")
 
 (define-resource time-block () ;; subclass of skos:Concept
   :class (s-prefix "gleif:Period")
