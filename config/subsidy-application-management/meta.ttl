@@ -25,8 +25,8 @@
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
 <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>	rdf:type	rdfs:Class ;
 	skos:inScheme	<http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
-	skos:prefLabel	"Kinderopvang"@nl ;
-	skos:definition	"Subsidy Measure: day-care"@en .
+	skos:prefLabel	"Noodopvang (kinderen)"@nl ;
+	skos:definition	"Subsidy Measure: emergency child care"@en .
 @prefix ns4:	<http://mu.semte.ch/vocabularies/core/> .
 <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>	ns4:uuid	"1df4b56a-3ccd-450d-93dc-317fda1ada38" .
 @prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
