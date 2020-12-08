@@ -138,6 +138,12 @@ fields:6285341d-a0ad-4933-bb5f-c49016b0f935 a form:Field ;
         form:grouping form:Bag ;
         sh:path ( schema:contactPoint schema:telephone ) ;
         sh:resultMessage "Dit veld is verplicht."@nl
+    ] ,
+    [ a form:ValidPhoneNumber ;
+        form:grouping form:MatchEvery ;
+        form:defaultCountry "BE" ;
+        sh:path ( schema:contactPoint schema:telephone ) ;
+        sh:resultMessage "Geef een geldig telefoonnummer in."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
