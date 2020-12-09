@@ -87,7 +87,7 @@
                 (:alternatieve-naam :string-set ,(s-prefix "skos:altLabel"))
                 (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
                 (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties"))
-                (:submission-trial-user :string ,(s-prefix "ext:submissionTrialUser")))
+                (:is-trial-user :boolean ,(s-prefix "ext:isTrailUser")))
 
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
