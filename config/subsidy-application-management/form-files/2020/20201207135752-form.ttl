@@ -304,6 +304,11 @@ fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
     sh:order 60 ;
     sh:path lblodSubsidie:userDeclaresDataIsExact ;
     form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:userDeclaresDataIsExact ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ,
     [ a form:ExactValueConstraint ;
         form:grouping form:MatchSome ;
         form:customValue "1" ;
