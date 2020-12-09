@@ -246,7 +246,7 @@ fields:9462b7b4-313a-4eae-bedd-079811219dcb a form:Field ;
 
 fields:0337b621-42e7-49a6-8532-7f53a3f02d12 a form:Field ;
     mu:uuid "0337b621-42e7-49a6-8532-7f53a3f02d12";
-    sh:name "Aantal unieke kinderen opgevangen voor alle actoren tijdens de ganse periode" ;
+    sh:name "Aantal unieke kinderen opgevangen door alle organisatoren tijdens de ganse periode" ;
     sh:order 52 ;
     sh:path lblodSubsidie:uniqueChildrenNumberForWholePeriod ;
     form:help "Dit is een geheel getal." ;
@@ -271,7 +271,7 @@ fields:0337b621-42e7-49a6-8532-7f53a3f02d12 a form:Field ;
 
 fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
     mu:uuid "8430e0db-27f1-4034-acc8-09730d331df7";
-    sh:name "Aantal kalenderdagen opvang georganiseerd voor alle actoren tijdens de ganse periode" ;
+    sh:name "Aantal kalenderdagen opvang georganiseerd door alle organisatoren tijdens de ganse periode	" ;
     sh:order 53 ;
     sh:path lblodSubsidie:daysOfChildcareForWholePeriod ;
     form:help "Dit is een geheel getal." ;
