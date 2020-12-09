@@ -300,7 +300,7 @@ fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
 
 fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
     mu:uuid "c0726406-ac7a-41da-b905-506f5ab33069";
-    sh:name "De gegevens over het aantal effectief opgevangen kinderen, zijn correct." ;
+    sh:name "De gegevens over het aantal effectief opgevangen kinderen, zijn correct. De organisator heeft de voorwaarden nageleefd, zoals vermeld van het besluit van de Vlaamse Regering van 20 november 2020 tot toekenning van een projectsubsidie ter compensatie van de kosten voor noodopvang van schoolkinderen." ;
     sh:order 60 ;
     sh:path lblodSubsidie:userDeclaresDataIsExact ;
     form:validations
