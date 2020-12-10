@@ -319,7 +319,7 @@ fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
 
 fields:746f3461-06a2-4f77-b3fa-3b037d5abd68 a form:Field ;
     mu:uuid "746f3461-06a2-4f77-b3fa-3b037d5abd68";
-    sh:name "De organisator heeft de voorwaarden nageleefd, zoals vermeld van het besluit van de Vlaamse Regering van 20 november 2020tot toekenning van een projectsubsidie ter compensatie van de kosten voor noodopvang van schoolkinderen." ;
+    sh:name "De organisator heeft de voorwaarden nageleefd, zoals vermeld in het besluit van de Vlaamse Regering van 20 november 2020 tot toekenning van een projectsubsidie ter compensatie van de kosten voor noodopvang van schoolkinderen." ;
     sh:order 61 ;
     sh:path lblodSubsidie:userCompliesWithEmergencyChildcareConditions ;
     form:validations
