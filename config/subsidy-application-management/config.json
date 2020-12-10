@@ -28,6 +28,7 @@
       "lblodSubsidie:timeBlock",
       "lblodSubsidie:subsidyMeasure",
       "lblodSubsidie:userDeclaresDataIsExact",
+      "lblodSubsidie:userCompliesWithEmergencyChildcareConditions",
       "adms:status",
       {
         "s-prefix" : "pav:createdBy",

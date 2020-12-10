@@ -317,6 +317,25 @@ fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
     form:displayType displayTypes:checkbox ;
     sh:group fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 .
 
+fields:746f3461-06a2-4f77-b3fa-3b037d5abd68 a form:Field ;
+    mu:uuid "746f3461-06a2-4f77-b3fa-3b037d5abd68";
+    sh:name "De organisator heeft de voorwaarden nageleefd, zoals vermeld van het besluit van de Vlaamse Regering van 20 november 2020tot toekenning van een projectsubsidie ter compensatie van de kosten voor noodopvang van schoolkinderen." ;
+    sh:order 61 ;
+    sh:path lblodSubsidie:userCompliesWithEmergencyChildcareConditions ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:userCompliesWithEmergencyChildcareConditions ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+    ] ,
+    [ a form:ExactValueConstraint ;
+        form:grouping form:MatchSome ;
+        form:customValue "1" ;
+        sh:path lblodSubsidie:userCompliesWithEmergencyChildcareConditions ;
+    ] ;
+    form:displayType displayTypes:checkbox ;
+    sh:group fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 .
+
 ##########################################################
 # Field groups
 ##########################################################
@@ -357,8 +376,11 @@ fieldGroups:main a form:FieldGroup ;
         ### Number of calendar days of childcare organized for all actors during the whole period
         fields:8430e0db-27f1-4034-acc8-09730d331df7 ,
 
-        ### Declaration
-        fields:c0726406-ac7a-41da-b905-506f5ab33069 .
+        ### User declares filled in data is correct
+        fields:c0726406-ac7a-41da-b905-506f5ab33069 ,
+
+        ### User declares filled in data complies with emergy childcare conditions
+        fields:746f3461-06a2-4f77-b3fa-3b037d5abd68 .
 
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
