@@ -180,7 +180,7 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
 
 fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 a form:Field ;
     mu:uuid "9b706641-f834-4f91-87ab-d490f7aa0ed7";
-    sh:name "Alternatief rekeningnummer uitbetaling" ;
+    sh:name "Rekeningnummer uitbetaling" ;
     form:help "IBAN: BE00 0000 0000 0000" ;
     sh:order 41 ;
     sh:path ( schema:bankAccount schema:identifier ) ;
