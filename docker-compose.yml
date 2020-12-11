@@ -25,7 +25,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-management:
-    image: lblod/frontend-vendor-access-management:0.3.0
+    image: lblod/frontend-vendor-access-management:0.4.0
     links:
       - identifier:backend
     labels:
