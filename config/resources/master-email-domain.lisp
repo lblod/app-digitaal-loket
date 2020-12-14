@@ -1,7 +1,7 @@
 (define-resource mailbox ()
   :class (s-prefix "nmo:Mailbox")
   :properties `((:id :string ,(s-prefix "nie:identifier")))
-  :has-many `((folder :via ,(s-prefix "fni:hasPart")
+  :has-many `((folder :via ,(s-prefix "nie:hasPart")
                     :as "folders"))
   :resource-base (s-url "http://data.lblod.info/id/mailboxes/")
   :features '(include-uri)
