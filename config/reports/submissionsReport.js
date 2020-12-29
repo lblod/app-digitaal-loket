@@ -154,7 +154,6 @@ export default {
     }, {});
 
     await generateReportFromData(Object.values(dataPart2), [
-      's',
       'verstuurd',
       'typeDossier',
       'typeReglementOfVerordening',
