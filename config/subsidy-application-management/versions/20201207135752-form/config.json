@@ -21,8 +21,6 @@
       "subsidie:aanvraagdatum",
       "dct:created",
       "dct:modified",
-      "lblodSubsidie:usedFormFile",
-      "lblodSubsidie:canBePaidOnKnownBankAccount",
       "lblodSubsidie:uniqueChildrenNumberForWholePeriod",
       "lblodSubsidie:daysOfChildcareForWholePeriod",
       "lblodSubsidie:timeBlock",

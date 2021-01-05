@@ -1,16 +1,7 @@
-# Use of Concepts in scheme <http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b>
-# is deprecated in new versions of the forms.
-
 @prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
-<http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b>	rdf:type	rdfs:Class .
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
-<http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b>	rdf:type	skos:Concept ;
-	skos:inScheme	<http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d> ;
-	skos:prefLabel	"Nee, gebruik een alternatief bankrekeningnummer"@nl ;
-	skos:definition	"The subsidy can not be paid on known bank account"@en .
 @prefix ns3:	<http://mu.semte.ch/vocabularies/core/> .
-<http://lblod.data.gift/concepts/54adc1e3-865a-4e5a-a3e2-03465ccd5f5b>	ns3:uuid	"54adc1e3-865a-4e5a-a3e2-03465ccd5f5b" .
 <http://lblod.data.gift/concepts/8c7e83c6-5a06-4e19-9157-d890f244201c>	rdf:type	skos:Concept ,
 		rdfs:Class ;
 	skos:inScheme	<http://lblod.data.gift/concept-schemes/99b07146-80b1-4bfa-8835-7c43bccd264d> ;
