@@ -1,3 +1,27 @@
+;; Official model from https://data.vlaanderen.be/doc/applicatieprofiel/besluit-subsidie/#Participatie
+
+(define-resource aanvraag ()
+  :class (s-prefix "subsidie:Aanvraag")
+  :properties `((:aanvraagdatum :date ,(s-prefix "subsidie:aanvraagdatum")))
+  :has-one `((aangevraagd-bedrag :via ,(s-prefix "subsidie:aangevraagdBedrag")
+                    :as "aangevraagd-bedrag")
+             (application-form :via ,(s-prefix "prov:used")
+                    :as "application-form"))
+  :resource-base (s-url "http://data.lblod.info/aanvraagen/")
+  :features '(include-uri)
+  :on-path "aanvraagen")
+
+(define-resource aangevraagd-bedrag ()
+  :class (s-prefix "schema:MonetaryAmount")
+  :properties `((:value :number ,(s-prefix "subsidie:aanvraagdatum"))
+                (:currency :string ,(s-prefix "subsidie:aanvraagdatum")))
+  :resource-base (s-url "http://data.lblod.info/aangevraagd-bedragen/")
+  :features '(include-uri)
+  :on-path "aangevraagd-bedragen")
+
+
+;; Dirty space
+
 (define-resource application-form ()
   :class (s-prefix "lblodSubsidie:ApplicationForm")
   :properties `((:aanvraagdatum :datetime ,(s-prefix "subsidie:aanvraagdatum"))
