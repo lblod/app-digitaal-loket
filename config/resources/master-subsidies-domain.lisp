@@ -31,13 +31,64 @@
 
 (define-resource subsidiemaatregel-aanbod () ;; subclass of skos:Concept
   :class (s-prefix "subsidie:SubsidiemaatregelAanbod")
-  :properties `((:naam :string ,(s-prefix "dct:title")) ;; nneded for aanbod
+  :properties `((:naam :string ,(s-prefix "dct:title")) ;; needed for aanbod
                 (:label :string ,(s-prefix "skos:prefLabel"))) ;; needed for concept
-  :has-one `((concept-scheme :via ,(s-prefix "skos:inScheme")
+  :has-one `((criterium :via ,(s-prefix "m8g:hasCriterion")
+                        :as "criterium")
+             (subsidieprocedurestap :via ,(s-prefix "cpsv:follows")
+                                    :as "subsidieprocedurestap")
+             (concept-scheme :via ,(s-prefix "skos:inScheme")
                              :as "concept-scheme"))
   :resource-base (s-url "http://lblod.data.gift/concepts/")
   :features '(include-uri)
   :on-path "subsidiemaatregel-aandbiedingen")
+
+(define-resource subsidieprocedurestap ()
+  :class (s-prefix "subsidie:Subsidieprocedurestap")
+  :properties `((:beschrijving :string ,(s-prefix "dct:description"))
+                (:type :uri-set ,(s-prefix "subsidie:Subsidieprocedurestap.type")))
+  :has-one `((periode :via ,(s-prefix "mobiliteit:periode")
+                      :as "periode"))
+  :resource-base (s-url "http://data.lblod.info/subsidieprocedurestappen/")
+  :features '(include-uri)
+  :on-path "subsidieprocedurestappen")
+
+(define-resource periode ()
+  :class (s-prefix "m8g:PeriodOfTime")
+  :properties `((:begin :datetime ,(s-prefix "m8g:startTime"))
+                (:einde :datetime ,(s-prefix "m8g:endTime")))
+  :resource-base (s-url "http://data.lblod.info/perioden/")
+  :features '(include-uri)
+  :on-path "perioden")
+
+(define-resource criterium ()
+  :class (s-prefix "m8g:Criterion")
+  :properties `((:naam :datetime ,(s-prefix "dct:title"))
+                (:type :uri-set ,(s-prefix "m8g:criterionType")))
+  :has-one `((vereistengroep :via ,(s-prefix "m8g:fulfilledByRequirementGroup")
+                             :as "vereistengroep")
+             (subsidieprocedurestap :via ,(s-prefix "dct:isPartOf")
+                                    :as "subsidieprocedurestap"))
+  :resource-base (s-url "http://data.lblod.info/criteriums/")
+  :features '(include-uri)
+  :on-path "criteriums")
+
+(define-resource vereistengroep ()
+  :class (s-prefix "m8g:RequirementGroup")
+  :has-one `((vereistengroep :via ,(s-prefix "m8g:hasCriterionRequirement")
+                             :as "vereistengroep"))
+  :resource-base (s-url "http://data.lblod.info/vereistengroepen/")
+  :features '(include-uri)
+  :on-path "vereistengroepen")
+
+(define-resource criteriumvereiste ()
+  :class (s-prefix "m8g:CriterionRequirement")
+  :has-one `((periode :via ,(s-prefix "m8g:applicableInPeriodOfTime")
+                      :as "periode"))
+  :resource-base (s-url "http://data.lblod.info/criteriumvereisten/")
+  :features '(include-uri)
+  :on-path "criteriumvereisten")
+
 
 ;; Dirty space
 
