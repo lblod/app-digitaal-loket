@@ -16,10 +16,13 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       
-      select distinct ?uri ?name ?type ?province where {
+      select distinct ?uri ?name ?kbonummer ?type ?province where {
         ?uri a besluit:Bestuurseenheid.
         OPTIONAL {
           ?uri skos:prefLabel ?name.
+        }
+        OPTIONAL {
+          ?uri ext:kbonummer ?kbonummer.
         }
         OPTIONAL {
           ?uri ext:inProvincie ?provinceURI.
