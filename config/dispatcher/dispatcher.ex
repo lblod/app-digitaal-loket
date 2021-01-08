@@ -431,8 +431,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/time-blocks/"
   end
 
-  match "/subsidy-measures/*path" do
-    Proxy.forward conn, path, "http://resource/subsidy-measures/"
+  match "/subsidiemaatregel-aandbiedingen/*path" do
+    Proxy.forward conn, path, "http://resource/subsidiemaatregel-aandbiedingen/"
   end
 
   match "/bank-accounts/*path" do

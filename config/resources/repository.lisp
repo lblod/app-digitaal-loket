@@ -59,3 +59,4 @@
 (add-prefix "lblodBesluit" "http://lblod.data.gift/vocabularies/besluit/")
 (add-prefix "lblodSubsidie" "http://lblod.data.gift/vocabularies/subsidie/")
 (add-prefix "gleif" "https://www.gleif.org/ontology/Base/")
+(add-prefix "transactie" "http://data.vlaanderen.be/ns/transactie#")

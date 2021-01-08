@@ -1,12 +1,22 @@
 ;; Official model from https://data.vlaanderen.be/doc/applicatieprofiel/besluit-subsidie/#Participatie
 
+(define-resource subsidiemaatregel-consumptie ()
+  :class (s-prefix "subsidie:SubsidiemaatregelConsumptie")
+  :has-one `((aanvraag :via ,(s-prefix "prov:wasGeneratedBy")
+                       :as "aanvraag")
+             (subsidiemaatregel-aanbod :via ,(s-prefix "transactie:isInstantieVan")
+                                       :as "subsidiemaatregel-aanbod"))
+  :resource-base (s-url "http://data.lblod.info/subsidiemaatregel-consumpties/")
+  :features '(include-uri)
+  :on-path "subsidiemaatregel-consumpties")
+
 (define-resource aanvraag ()
   :class (s-prefix "subsidie:Aanvraag")
   :properties `((:aanvraagdatum :date ,(s-prefix "subsidie:aanvraagdatum")))
   :has-one `((aangevraagd-bedrag :via ,(s-prefix "subsidie:aangevraagdBedrag")
-                    :as "aangevraagd-bedrag")
+                                 :as "aangevraagd-bedrag")
              (application-form :via ,(s-prefix "prov:used")
-                    :as "application-form"))
+                               :as "application-form"))
   :resource-base (s-url "http://data.lblod.info/aanvraagen/")
   :features '(include-uri)
   :on-path "aanvraagen")
@@ -19,6 +29,15 @@
   :features '(include-uri)
   :on-path "aangevraagd-bedragen")
 
+(define-resource subsidiemaatregel-aanbod () ;; subclass of skos:Concept
+  :class (s-prefix "subsidie:SubsidiemaatregelAanbod")
+  :properties `((:naam :string ,(s-prefix "dct:title")) ;; nneded for aanbod
+                (:label :string ,(s-prefix "skos:prefLabel"))) ;; needed for concept
+  :has-one `((concept-scheme :via ,(s-prefix "skos:inScheme")
+                             :as "concept-scheme"))
+  :resource-base (s-url "http://lblod.data.gift/concepts/")
+  :features '(include-uri)
+  :on-path "subsidiemaatregel-aandbiedingen")
 
 ;; Dirty space
 
@@ -30,13 +49,13 @@
   :has-one `((bestuurseenheid :via ,(s-prefix "pav:createdBy")
                               :as "organization")
              (contact-punt :via ,(s-prefix "schema:contactPoint")
-                            :as "contactinfo")
+                           :as "contactinfo")
              (bank-account :via ,(s-prefix "schema:bankAccount")
                            :as "bank-account")
              (time-block :via ,(s-prefix "lblodSubsidie:timeBlock")
                          :as "time-block")
-             (subsidy-measure :via ,(s-prefix "lblodSubsidie:subsidyMeasure")
-                              :as "subsidy-measure")
+             (subsidiemaatregel-aanbod :via ,(s-prefix "lblodSubsidie:subsidyMeasure")
+                                       :as "subsidy-measure")
              (application-form-table :via ,(s-prefix "lblodSubsidie:applicationFormTable")
                                      :as "application-form-table")
              (gebruiker :via ,(s-prefix "ext:lastModifiedBy")
@@ -53,7 +72,7 @@
   :class (s-prefix "schema:BankAccount")
   :properties `((:bank-account-number :string ,(s-prefix "schema:identifier")))
   :has-one `((file :via ,(s-prefix "dct:hasPart")
-                    :as "confirmation-letter"))
+                   :as "confirmation-letter"))
   :resource-base (s-url "http://data.lblod.info/bank-accounts/")
   :features '(include-uri)
   :on-path "bank-accounts")
@@ -64,21 +83,12 @@
                 (:start :date ,(s-prefix "gleif:hasStart"))
                 (:end :date ,(s-prefix "gleif:hasEnd")))
   :has-one `((time-block :via ,(s-prefix "ext:submissionPeriod")
-                              :as "submission-period")
+                         :as "submission-period")
              (concept-scheme :via ,(s-prefix "skos:inScheme")
-                              :as "concept-scheme"))
+                             :as "concept-scheme"))
   :resource-base (s-url "http://lblod.data.gift/concepts/")
   :features '(include-uri)
   :on-path "time-blocks")
-
-(define-resource subsidy-measure () ;; subclass of skos:Concept
-  :class (s-prefix "lblodSubsidie:SubsidyMeasure")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :has-one `((concept-scheme :via ,(s-prefix "skos:inScheme")
-                              :as "concept-scheme"))
-  :resource-base (s-url "http://lblod.data.gift/concepts/")
-  :features '(include-uri)
-  :on-path "subsidy-measures")
 
 (define-resource application-form-table ()
   :class (s-prefix "lblodSubsidie:ApplicationFormTable")

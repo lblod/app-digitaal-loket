@@ -1,0 +1,50 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX schema: <http://schema.org/>
+PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+# Update subsidy measure to become an aanbod (type and property prefixes)
+DELETE {
+  GRAPH ?g {
+    ?measure a lblodSubsidie:SubsidyMeasure .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?measure a subsidie:SubsidiemaatregelAanbod ;
+      dct:title ?label .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?measure a lblodSubsidie:SubsidyMeasure ;
+      mu:uuid "1df4b56a-3ccd-450d-93dc-317fda1ada38" ; # Noodopvang
+      skos:prefLabel ?label .
+  }
+}
+
+;
+
+#  Generate a SubsidiemaatregelConsumptie and link it everywhere
+INSERT {
+  GRAPH ?g {
+    ?consumptie a subsidie:SubsidiemaatregelConsumptie ;
+      mu:uuid ?uuidConsumptie ;
+      prov:wasGeneratedBy ?aanvraag ;
+      transactie:isInstantieVan ?aanbod .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?applicationForm a lblodSubsidie:ApplicationForm ;
+      lblodSubsidie:subsidyMeasure ?aanbod .
+    ?aanvraag prov:used ?applicationForm .
+  }
+
+  BIND(MD5(CONCAT(?applicationForm, "SubsidiemaatregelConsumptie")) as ?uuidConsumptie)
+  BIND(IRI(CONCAT("http://data.lblod.info/id/subsidiemaatregel-consumpties/", ?uuidConsumptie)) AS ?consumptie)
+}
