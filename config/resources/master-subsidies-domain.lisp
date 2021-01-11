@@ -6,6 +6,9 @@
                        :as "aanvraag")
              (subsidiemaatregel-aanbod :via ,(s-prefix "transactie:isInstantieVan")
                                        :as "subsidiemaatregel-aanbod"))
+  :has-many `((participatie :via ,(s-prefix "m8g:hasParticipation")
+                            :inverse t
+                            :as "participaties"))
   :resource-base (s-url "http://data.lblod.info/subsidiemaatregel-consumpties/")
   :features '(include-uri)
   :on-path "subsidiemaatregel-consumpties")
@@ -89,6 +92,14 @@
   :features '(include-uri)
   :on-path "criteriumvereisten")
 
+
+(define-resource participatie ()
+  :class (s-prefix "m8g:Participation")
+  :properties `((:beschrijving :string ,(s-prefix "dct:description"))
+                (:rol :uri-set ,(s-prefix "m8g:role")))
+  :resource-base (s-url "http://data.lblod.info/participaties/")
+  :features '(include-uri)
+  :on-path "participaties")
 
 ;; Dirty space
 
