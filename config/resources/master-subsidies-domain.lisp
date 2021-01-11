@@ -26,8 +26,8 @@
 
 (define-resource aangevraagd-bedrag ()
   :class (s-prefix "schema:MonetaryAmount")
-  :properties `((:value :number ,(s-prefix "subsidie:aanvraagdatum"))
-                (:currency :string ,(s-prefix "subsidie:aangevraagdBedrag")))
+  :properties `((:value :number ,(s-prefix "schema:value"))
+                (:currency :string ,(s-prefix "schema:currency")))
   :resource-base (s-url "http://data.lblod.info/aangevraagd-bedragen/")
   :features '(include-uri)
   :on-path "aangevraagd-bedragen")

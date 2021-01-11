@@ -18,8 +18,8 @@ mapping['<http://lblod.data.gift/vocabularies/subsidie/subsidyMeasure>'] = {
 mapping['<http://lblod.data.gift/vocabularies/subsidie/totalAmount>'] = {
   type: 'property',
   required: false,
-  resource: 'request',
-  's-prefix': 'http://data.vlaanderen.be/ns/subsidie#aangevraagdBedrag',
+  resource: 'requested_amount',
+  's-prefix': 'http://schema.org/value',
 };
 
 /* RESOURCE DECLARATIONS */
@@ -92,8 +92,26 @@ resource_declarations['request'] = {
       via: 'http://www.w3.org/ns/prov#generated',
       as: 'consumption',
     },
+    {
+      via: 'http://data.vlaanderen.be/ns/subsidie#aangevraagdBedrag',
+      as: 'requested_amount',
+    },
   ]
 };
+
+resource_declarations['requested_amount'] = {
+  type: 'http://schema.org/MonetaryAmount',
+  base: 'http://data.lblod.info/aangevraagd-bedragen/',
+  properties: [
+    {
+      predicate: 'http://schema.org/currency',
+      object: {
+        value: 'EUR',
+        datatype: 'string'
+      }
+    }
+  ],
+}
 
 module.exports = {
   resource_declarations, mapping
