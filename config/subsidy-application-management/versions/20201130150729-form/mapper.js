@@ -47,14 +47,14 @@ resource_declarations['applicant_participation'] = {
     {
       predicate: 'http://purl.org/dc/terms/description',
       object: {
-        value: 'applicant who requested the subsidy',
+        value: 'Aanvrager van de subsidie',
         datatype: 'string',
       }
     },
     {
       predicate: 'http://data.europa.eu/m8g/role',
       object: {
-        value: 'http://whatever-the-applicant-role-will-be', // TODO add the correct role
+        value: 'http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a',
         datatype: 'uri',
       }
     },
