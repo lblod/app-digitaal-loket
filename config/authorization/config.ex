@@ -239,7 +239,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
                         "http://data.europa.eu/m8g/Participation",
                         "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                        "http://schema.org/MonetaryAmount"
                       ] } } ] },
 
       # // VENDOR MANAGEMENT
