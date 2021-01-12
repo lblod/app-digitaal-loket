@@ -111,7 +111,6 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
-                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
                         "http://www.w3.org/2004/02/skos/core#ConceptScheme",
                         "http://www.w3.org/2004/02/skos/core#Concept"
                       ]
@@ -236,6 +235,7 @@ defmodule Acl.UserGroups.Config do
                         "https://www.gleif.org/ontology/Base/Period",
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
                         "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
+                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
                         "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
                         "http://data.europa.eu/m8g/Participation",
                         "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
