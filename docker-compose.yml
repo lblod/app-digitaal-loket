@@ -393,7 +393,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.4.0-beta
+    image: lblod/subsidy-applications-management-service:0.4.0-beta.1
     volumes:
       - ./config/subsidy-application-management:/share
     labels:
