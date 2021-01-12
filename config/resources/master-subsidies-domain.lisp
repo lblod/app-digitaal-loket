@@ -108,7 +108,7 @@
   :properties `((:aanvraagdatum :date ,(s-prefix "subsidie:aanvraagdatum"))
                 (:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
-                (:total-amount :number ,(s-prefix "lblodSubsidie:totalAmount")))
+                (:total-amount :float ,(s-prefix "lblodSubsidie:totalAmount")))
   :has-one `((bestuurseenheid :via ,(s-prefix "pav:createdBy")
                               :as "organization")
              (contact-punt :via ,(s-prefix "schema:contactPoint")
