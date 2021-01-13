@@ -40,7 +40,8 @@ export default {
       name: bestuurseenheid.name ? bestuurseenheid.name.value : '',
       type: bestuurseenheid.type ? bestuurseenheid.type.value : '',
       province: bestuurseenheid.province ? bestuurseenheid.province.value : '',
+      kbonummer: bestuurseenheid.kbonummer ? bestuurseenheid.kbonummer.value: ''
     }));
-    await generateReportFromData(data, ['uri', 'name', 'type', 'province'], reportData);
+    await generateReportFromData(data, ['uri', 'name', 'kbonummer', 'type', 'province'], reportData);
   }
 };
