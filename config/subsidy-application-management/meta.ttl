@@ -55,3 +55,21 @@ ns7:ef073502-d7c4-4b0c-b399-a73b429f877d	rdf:type	ns2:Period ,
 	ns2:hasEnd	"2020-11-13"^^xsd:datetime ;
 	ns2:hasStart	"2020-11-09"^^xsd:datetime ;
 	ns6:uuid	"ef073502-d7c4-4b0c-b399-a73b429f877d" .
+ns7:6cb8bc01-5f99-4c9e-87a0-9b674efa3848	rdf:type	ns2:Period ,
+		skos:Concept ,
+		rdfs:Class ;
+	skos:inScheme	ns4:a3293c46-06b7-458d-a15c-2f312294773f ;
+	skos:prefLabel	"Winter 2020 (16 november 2020 - 31 december 2020)"@nl ; # custom label for front-end, to be enriched
+	skos:definition	"Winter 2020"@en ;
+	ns2:hasEnd	"2020-12-31"^^xsd:date ;
+	ns2:hasStart	"2020-11-16"^^xsd:date ;
+	ns6:uuid	"6cb8bc01-5f99-4c9e-87a0-9b674efa3848" .
+ns7:a26aee99-8ea6-44d1-a72d-c04d3a37b690	rdf:type	ns2:Period ,
+		skos:Concept ,
+		rdfs:Class ;
+	skos:inScheme	ns4:a3293c46-06b7-458d-a15c-2f312294773f ;
+	skos:prefLabel	"Winter 2021 (01 januari 2021 - 12 februari 2020)"@nl ; # custom label for front-end, to be enriched
+	skos:definition	"Winter 2021"@en ;
+	ns2:hasEnd	"2021-02-12"^^xsd:date ;
+	ns2:hasStart	"2021-01-01"^^xsd:date ;
+	ns6:uuid	"a26aee99-8ea6-44d1-a72d-c04d3a37b690" .
