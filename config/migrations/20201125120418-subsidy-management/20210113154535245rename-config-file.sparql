@@ -1,0 +1,34 @@
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <share://versions/2021011315032436-form> <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "2021011315032436-form" .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <share://versions/2021011315032436-form> <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "20210113150324-form" .
+  }
+}
+;
+DELETE {
+  GRAPH ?g {
+    ?a ?b <share://versions/2021011315032436-form> .
+  }
+  GRAPH ?h {
+    <share://versions/2021011315032436-form> ?p ?o .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?a ?b <share://versions/20210113150324-form> .
+  }
+  GRAPH ?h {
+    <share://versions/20210113150324-form> ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?a ?b <share://versions/2021011315032436-form> .
+  }
+  GRAPH ?h {
+    <share://versions/2021011315032436-form> ?p ?o .
+  }
+}
