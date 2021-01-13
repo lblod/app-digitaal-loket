@@ -1,0 +1,28 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+
+INSERT {
+  GRAPH ?g {
+    ?applicationForm lblodSubsidie:totalAmount ?totalAmount .
+  }
+}
+WHERE {
+  {
+    SELECT ?g ?applicationForm SUM(?amountEntry) as ?totalAmount
+    WHERE {
+      GRAPH ?g {
+        ?applicationForm a lblodSubsidie:ApplicationForm ;
+          lblodSubsidie:applicationFormTable ?table .
+        
+        ?table ext:applicationFormEntry ?entry .
+
+        ?entry ext:numberChildrenForFullDay ?numberChildrenForFullDay ;
+          ext:numberChildrenForHalfDay ?numberChildrenForHalfDay ;
+          ext:numberChildrenPerInfrastructure ?numberChildrenPerInfrastructure .
+
+        BIND (xsd:float(?numberChildrenForFullDay*20 + ?numberChildrenForHalfDay*10 + ?numberChildrenPerInfrastructure*10) as ?amountEntry)
+      }
+    }
+    GROUP BY ?g ?applicationForm
+  }
+}
