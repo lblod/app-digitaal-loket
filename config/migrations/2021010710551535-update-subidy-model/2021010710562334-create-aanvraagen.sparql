@@ -1,0 +1,46 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX schema: <http://schema.org/>
+PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+
+INSERT {
+  GRAPH ?g {
+    ?aanvraag a subsidie:Aanvraag ;
+      mu:uuid ?uuidAanvraag ;
+      subsidie:aanvraagdatum ?aanvraagdatum ;
+      subsidie:aangevraagdBedrag ?bedrag ;
+      prov:used ?applicationForm .
+    ?bedrag a schema:MonetaryAmount ;
+      mu:uuid ?uuidBedrag ;
+      schema:amount ?totalAmount ;
+      schema:currency "euro" .
+  }
+}
+WHERE {
+  {
+    SELECT ?g ?applicationForm ?aanvraagdatum SUM(?amountEntry) as ?totalAmount
+    WHERE {
+      GRAPH ?g {
+        ?applicationForm a lblodSubsidie:ApplicationForm ;
+          subsidie:aanvraagdatum ?aanvraagdatum ;
+          lblodSubsidie:applicationFormTable ?table .
+        
+        ?table ext:applicationFormEntry ?entry .
+
+        ?entry ext:numberChildrenForFullDay ?numberChildrenForFullDay ;
+          ext:numberChildrenForHalfDay ?numberChildrenForHalfDay ;
+          ext:numberChildrenPerInfrastructure ?numberChildrenPerInfrastructure .
+
+        BIND ((?numberChildrenForFullDay*20 + ?numberChildrenForHalfDay*10 + ?numberChildrenPerInfrastructure*10) as ?amountEntry)
+      }
+    }
+    GROUP BY ?g ?applicationForm ?aanvraagdatum
+  }
+
+  BIND(MD5(CONCAT(?applicationForm, ?aanvraagdatum)) as ?uuidAanvraag)
+  BIND(MD5(CONCAT(?applicationForm, ?totalAmount)) as ?uuidBedrag)
+  BIND(IRI(CONCAT("http://data.lblod.info/id/aanvraagen/", ?uuidAanvraag)) AS ?aanvraag)
+  BIND(IRI(CONCAT("http://data.lblod.info/id/aangevraagd-bedragen/", ?uuidBedrag)) AS ?bedrag)
+}

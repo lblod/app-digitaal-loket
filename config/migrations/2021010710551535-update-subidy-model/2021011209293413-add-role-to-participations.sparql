@@ -1,0 +1,13 @@
+PREFIX m8g: <http://data.europa.eu/m8g/>
+
+INSERT {
+  GRAPH ?h {
+    ?participatie m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?participatie a m8g:Participation .
+  }
+  BIND (?g as ?h)
+}
