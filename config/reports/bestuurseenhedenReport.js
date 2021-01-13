@@ -16,10 +16,13 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       
-      select distinct ?uri ?name ?type ?province where {
+      select distinct ?uri ?name ?kbonummer ?type ?province where {
         ?uri a besluit:Bestuurseenheid.
         OPTIONAL {
           ?uri skos:prefLabel ?name.
+        }
+        OPTIONAL {
+          ?uri ext:kbonummer ?kbonummer.
         }
         OPTIONAL {
           ?uri ext:inProvincie ?provinceURI.
@@ -37,7 +40,8 @@ export default {
       name: bestuurseenheid.name ? bestuurseenheid.name.value : '',
       type: bestuurseenheid.type ? bestuurseenheid.type.value : '',
       province: bestuurseenheid.province ? bestuurseenheid.province.value : '',
+      kbonummer: bestuurseenheid.kbonummer ? bestuurseenheid.kbonummer.value: ''
     }));
-    await generateReportFromData(data, ['uri', 'name', 'type', 'province'], reportData);
+    await generateReportFromData(data, ['uri', 'name', 'kbonummer', 'type', 'province'], reportData);
   }
 };
