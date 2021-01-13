@@ -10,7 +10,6 @@ export default {
       filePrefix: 'internalMandatenReport'
     };
     console.log('Generate Internal Mandaten Report');
-
     const queryStringPart1 = `
       PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
@@ -24,10 +23,14 @@ export default {
 
       SELECT DISTINCT (?s AS ?mandataris) ?start ?eind ?rangorde ?status WHERE {
         ?s a mandaat:Mandataris .
+        ?s org:holds ?mandaat .
+        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
+        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursperiodeStart .
         OPTIONAL { ?s mandaat:start ?start . }
         OPTIONAL { ?s mandaat:einde ?eind . }
         OPTIONAL { ?s mandaat:rangorde ?rangorde . }
         OPTIONAL { ?s mandaat:status ?status . }
+        FILTER (?bestuursperiodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
 
       }
     `;
@@ -58,11 +61,15 @@ export default {
         ?s a mandaat:Mandataris .
         OPTIONAL {
           ?s mandaat:isBestuurlijkeAliasVan ?persoon .
+          ?s org:holds ?mandaat .
+          ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
+          ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursperiodeStart .
           OPTIONAL { ?persoon foaf:familyName ?achternaam . }
           OPTIONAL { ?persoon persoon:gebruikteVoornaam ?voornaam . }
           OPTIONAL { ?persoon foaf:name ?roepnaam . }
           OPTIONAL { ?persoon persoon:geslacht ?geslacht }
           OPTIONAL { ?persoon persoon:heeftGeboorte/persoon:datum ?geboortedatum }
+          FILTER (?bestuursperiodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
         }
       }
     `;
@@ -95,7 +102,9 @@ export default {
 
       SELECT DISTINCT (?s AS ?mandataris) ?bestuursfunctieLabel ?bestuursorgaanLabel ?bestuursorgaanClassificatieLabel ?bestuurseenheidLabel ?bestuurseenheidClassificatieLabel ?werkingsgebiedLabel ?werkingsgebiedNiveau ?bestuursPeriodeStart ?bestuursPeriodeEinde WHERE {
         ?s a mandaat:Mandataris .
-
+        ?s org:holds ?mandaat .
+        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
+        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursperiodeStart .
         OPTIONAL {
           ?s org:holds ?mandaat .
           OPTIONAL {
@@ -129,6 +138,7 @@ export default {
             }
           }
         }
+        FILTER (?bestuursperiodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
       }
     `;
     const queryResponsePart3 = await batchedQuery(queryStringPart3);
