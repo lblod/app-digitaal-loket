@@ -1,62 +1,71 @@
+/* USED PREFIXES */
 
-/* MAPPINGS TO BE PROCESSED (harvested, mapped, enhanced)*/
+let prefixes = {
+  pav: 'http://purl.org/pav/',
+  lblodSubsidie: 'http://lblod.data.gift/vocabularies/subsidie/',
+  transactie: 'https://data.vlaanderen.be/ns/transactie#',
+  schema: 'http://schema.org/',
+  subsidie: 'http://data.vlaanderen.be/ns/subsidie#',
+  prov: 'http://www.w3.org/ns/prov#',
+  m8g: 'http://data.europa.eu/m8g/',
+  terms: 'http://purl.org/dc/terms/',
+};
+
+/* MAPPINGS TO BE PROCESSED (harvested, mapped, enhanced) */
 let mapping = {};
 
-mapping['<http://purl.org/pav/createdBy>'] = {
-  type: 'resource',
+mapping['pav:createdBy'] = {
   required: true,
-  resource: 'applicant',
+  as: 'applicant',
 };
 
-mapping['<http://lblod.data.gift/vocabularies/subsidie/subsidyMeasure>'] = {
-  type: 'property',
+mapping['lblodSubsidie:subsidyMeasure'] = {
   required: true,
   resource: 'consumption',
-  's-prefix': 'https://data.vlaanderen.be/ns/transactie#isInstantieVan',
+  's-prefix': 'transactie:isInstantieVan',
 };
 
-mapping['<http://lblod.data.gift/vocabularies/subsidie/totalAmount>'] = {
-  type: 'property',
+mapping['lblodSubsidie:totalAmount'] = {
   required: false,
   resource: 'requested_amount',
-  's-prefix': 'http://schema.org/value',
+  's-prefix': 'schema:value',
 };
 
 /* RESOURCE DECLARATIONS */
 let resource_declarations = {};
 
 resource_declarations['consumption'] = {
-  type: 'http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie',
+  type: 'subsidie:SubsidiemaatregelConsumptie',
   base: 'http://data.lblod.info/subsidiemaatregel-consumpties/',
   references: [
     {
-      via: 'http://www.w3.org/ns/prov#wasGeneratedBy',
+      via: 'prov:wasGeneratedBy',
       as: 'request',
     },
     {
-      via: 'http://data.europa.eu/m8g/hasParticipation',
+      via: 'm8g:hasParticipation',
       as: 'applicant_participation',
     },
   ],
 };
 
 resource_declarations['applicant_participation'] = {
-  type: 'http://data.europa.eu/m8g/Participation',
+  type: 'm8g:Participation',
   base: 'http://data.lblod.info/participaties/',
   properties: [
     {
-      predicate: 'http://purl.org/dc/terms/description',
+      predicate: 'terms:description',
       object: {
         value: 'Aanvrager van de subsidie',
         datatype: 'string',
-      }
+      },
     },
     {
-      predicate: 'http://data.europa.eu/m8g/role',
+      predicate: 'm8g:role',
       object: {
         value: 'http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a',
         datatype: 'uri',
-      }
+      },
     },
   ],
 };
@@ -64,55 +73,55 @@ resource_declarations['applicant_participation'] = {
 resource_declarations['applicant'] = {
   references: [
     {
-      via: 'http://data.europa.eu/m8g/playsRole',
+      via: 'm8g:playsRole',
       as: 'applicant_participation',
     },
   ],
 };
 
 resource_declarations['request'] = {
-  type: 'http://data.vlaanderen.be/ns/subsidie#Aanvraag',
+  type: 'subsidie:Aanvraag',
   base: 'http://data.lblod.info/aanvraagen/',
   properties: [
     {
-      predicate: 'http://data.vlaanderen.be/ns/subsidie#aanvraagdatum',
+      predicate: 'subsidie:aanvraagdatum',
       object: {
         value: '$NOW',
-      }
+      },
     },
     {
-      predicate: 'http://www.w3.org/ns/prov#used',
+      predicate: 'prov:used',
       object: {
         value: '$ROOT',
-      }
-    }
+      },
+    },
   ],
   references: [
     {
-      via: 'http://www.w3.org/ns/prov#generated',
+      via: 'prov:generated',
       as: 'consumption',
     },
     {
-      via: 'http://data.vlaanderen.be/ns/subsidie#aangevraagdBedrag',
+      via: 'subsidie:aangevraagdBedrag',
       as: 'requested_amount',
     },
-  ]
+  ],
 };
 
 resource_declarations['requested_amount'] = {
-  type: 'http://schema.org/MonetaryAmount',
+  type: 'schema:MonetaryAmount',
   base: 'http://data.lblod.info/aangevraagd-bedragen/',
   properties: [
     {
-      predicate: 'http://schema.org/currency',
+      predicate: 'schema:currency',
       object: {
         value: 'EUR',
-        datatype: 'string'
-      }
-    }
+        datatype: 'string',
+      },
+    },
   ],
-}
+};
 
 module.exports = {
-  resource_declarations, mapping
+  prefixes, resource_declarations, mapping,
 };
