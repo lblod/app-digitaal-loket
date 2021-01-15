@@ -207,7 +207,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  berichtencentrum-deliver-email-service:
+  deliver-email-service:
     image: redpencil/deliver-email-service:0.1.3
     environment:
       MAILBOX_URI: 'http://data.lblod.info/id/mailboxes/1'
