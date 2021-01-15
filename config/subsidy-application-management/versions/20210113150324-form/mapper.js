@@ -1,118 +1,124 @@
+/* USED PREFIXES */
 
-/* MAPPINGS TO BE PROCESSED (harvested, mapped, enhanced)*/
-let mapping = {};
-
-mapping['<http://purl.org/pav/createdBy>'] = {
-  type: 'resource',
-  required: true,
-  resource: 'applicant',
+let prefixes = {
+  pav: 'http://purl.org/pav/',
+  lblodSubsidie: 'http://lblod.data.gift/vocabularies/subsidie/',
+  transactie: 'https://data.vlaanderen.be/ns/transactie#',
+  schema: 'http://schema.org/',
+  subsidie: 'http://data.vlaanderen.be/ns/subsidie#',
+  prov: 'http://www.w3.org/ns/prov#',
+  m8g: 'http://data.europa.eu/m8g/',
+  terms: 'http://purl.org/dc/terms/',
 };
 
-mapping['<http://lblod.data.gift/vocabularies/subsidie/subsidyMeasure>'] = {
-  type: 'property',
-  required: true,
-  resource: 'consumption',
-  's-prefix': 'https://data.vlaanderen.be/ns/transactie#isInstantieVan',
-};
-
-mapping['<http://lblod.data.gift/vocabularies/subsidie/totalAmount>'] = {
-  type: 'property',
-  required: false,
-  resource: 'requested_amount',
-  's-prefix': 'http://schema.org/value',
-};
+/* MAPPINGS TO BE PROCESSED (in order) */
+let mapping = [
+  {
+    type: 'resource',
+    from: 'pav:createdBy',
+    as: 'applicant',
+  },
+  {
+    type: 'property',
+    from: 'lblodSubsidie:subsidyMeasure',
+    resource: 'consumption',
+    predicate: 'transactie:isInstantieVan',
+  },
+  {
+    type: 'property',
+    from: 'lblodSubsidie:subsidyMeasure',
+    resource: 'requested_amount',
+    predicate: 'schema:value',
+  }
+]
 
 /* RESOURCE DECLARATIONS */
-let resource_declarations = {};
+let resource_definitions = {};
 
-resource_declarations['consumption'] = {
-  type: 'http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie',
+resource_definitions['consumption'] = {
+  type: 'subsidie:SubsidiemaatregelConsumptie',
   base: 'http://data.lblod.info/subsidiemaatregel-consumpties/',
   references: [
     {
-      via: 'http://www.w3.org/ns/prov#wasGeneratedBy',
+      via: 'prov:wasGeneratedBy',
       as: 'request',
     },
     {
-      via: 'http://data.europa.eu/m8g/hasParticipation',
+      via: 'm8g:hasParticipation',
       as: 'applicant_participation',
     },
   ],
 };
 
-resource_declarations['applicant_participation'] = {
-  type: 'http://data.europa.eu/m8g/Participation',
+resource_definitions['applicant_participation'] = {
+  type: 'm8g:Participation',
   base: 'http://data.lblod.info/participaties/',
   properties: [
     {
-      predicate: 'http://purl.org/dc/terms/description',
+      predicate: 'terms:description',
       object: {
         value: 'Aanvrager van de subsidie',
         datatype: 'string',
-      }
+      },
     },
     {
-      predicate: 'http://data.europa.eu/m8g/role',
+      predicate: 'm8g:role',
       object: {
         value: 'http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a',
         datatype: 'uri',
-      }
+      },
     },
   ],
 };
 
-resource_declarations['applicant'] = {
+resource_definitions['applicant'] = {
   references: [
     {
-      via: 'http://data.europa.eu/m8g/playsRole',
+      via: 'm8g:playsRole',
       as: 'applicant_participation',
     },
   ],
 };
 
-resource_declarations['request'] = {
-  type: 'http://data.vlaanderen.be/ns/subsidie#Aanvraag',
+resource_definitions['request'] = {
+  type: 'subsidie:Aanvraag',
   base: 'http://data.lblod.info/aanvraagen/',
   properties: [
     {
-      predicate: 'http://data.vlaanderen.be/ns/subsidie#aanvraagdatum',
-      object: {
-        value: '$NOW',
-      }
+      predicate: 'subsidie:aanvraagdatum',
+      object: '$NOW',
     },
     {
-      predicate: 'http://www.w3.org/ns/prov#used',
-      object: {
-        value: '$ROOT',
-      }
-    }
+      predicate: 'prov:used',
+      object: '$ROOT',
+    },
   ],
   references: [
     {
-      via: 'http://www.w3.org/ns/prov#generated',
+      via: 'prov:generated',
       as: 'consumption',
     },
     {
-      via: 'http://data.vlaanderen.be/ns/subsidie#aangevraagdBedrag',
+      via: 'subsidie:aangevraagdBedrag',
       as: 'requested_amount',
     },
-  ]
+  ],
 };
 
-resource_declarations['requested_amount'] = {
-  type: 'http://schema.org/MonetaryAmount',
+resource_definitions['requested_amount'] = {
+  type: 'schema:MonetaryAmount',
   base: 'http://data.lblod.info/aangevraagd-bedragen/',
   properties: [
     {
-      predicate: 'http://schema.org/currency',
+      predicate: 'schema:currency',
       object: {
         value: 'EUR',
-        datatype: 'string'
-      }
-    }
+        datatype: 'string',
+      },
+    },
   ],
-}
+};
 
 module.exports = {
-  resource_declarations, mapping
+  prefixes, resource_definitions, mapping,
 };
