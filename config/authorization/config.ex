@@ -130,7 +130,9 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                       ]
                     } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA

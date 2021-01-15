@@ -1,0 +1,23 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concepts/6cb8bc01-5f99-4c9e-87a0-9b674efa3848>
+        a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <https://www.gleif.org/ontology/Base/Period>;
+        <http://mu.semte.ch/vocabularies/core/uuid> "6cb8bc01-5f99-4c9e-87a0-9b674efa3848" ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Winter 2020"@en;
+        <https://www.gleif.org/ontology/Base/hasStart> "2020-11-16"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <https://www.gleif.org/ontology/Base/hasEnd> "2020-12-31"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/concepts/957d98bc-cccf-4e12-b58a-faf9b2eff150>;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f>;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Winter"@nl .
+
+    <http://lblod.data.gift/concepts/a26aee99-8ea6-44d1-a72d-c04d3a37b690>
+        a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <https://www.gleif.org/ontology/Base/Period>;
+        <http://mu.semte.ch/vocabularies/core/uuid> "a26aee99-8ea6-44d1-a72d-c04d3a37b690" ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Winter 2021"@en;
+        <https://www.gleif.org/ontology/Base/hasStart> "2021-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <https://www.gleif.org/ontology/Base/hasEnd> "2021-02-12"^^<http://www.w3.org/2001/XMLSchema#date>;
+        <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/concepts/957d98bc-cccf-4e12-b58a-faf9b2eff150>;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f>;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Winter"@nl .
+  }
+}

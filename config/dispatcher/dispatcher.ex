@@ -408,19 +408,19 @@ defmodule Dispatcher do
   end
 
   get "/management-application-forms/*path" do
-    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+    Proxy.forward conn, path, "http://subsidy-applications-management/semantic-forms/"
   end
 
   put "/management-application-forms/*path" do
-    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+    Proxy.forward conn, path, "http://subsidy-applications-management/semantic-forms/"
   end
 
   delete "/management-application-forms/*path" do
-    Proxy.forward conn, path, "http://subsidy-applications-management/application-forms/"
+    Proxy.forward conn, path, "http://subsidy-applications-management/semantic-forms/"
   end
 
   post "/management-application-forms/:id/submit" do
-    Proxy.forward conn, [], "http://subsidy-applications-management/application-forms/" <> id <> "/submit"
+    Proxy.forward conn, [], "http://subsidy-applications-management/semantic-forms/" <> id <> "/submit"
   end
 
   match "/application-forms/*path" do
