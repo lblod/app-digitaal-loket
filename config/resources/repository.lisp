@@ -61,3 +61,4 @@
 (add-prefix "gleif" "https://www.gleif.org/ontology/Base/")
 (add-prefix "transactie" "http://data.vlaanderen.be/ns/transactie#")
 (add-prefix "mobiliteit" "https://data.vlaanderen.be/ns/mobiliteit#")
+(add-prefix "task" "http://redpencil.data.gift/vocabularies/tasks/")
