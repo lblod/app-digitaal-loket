@@ -25,12 +25,12 @@ export default {
         ?s a mandaat:Mandataris .
         ?s org:holds ?mandaat .
         ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
-        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursperiodeStart .
+        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursPeriodeStart .
         OPTIONAL { ?s mandaat:start ?start . }
         OPTIONAL { ?s mandaat:einde ?eind . }
         OPTIONAL { ?s mandaat:rangorde ?rangorde . }
         OPTIONAL { ?s mandaat:status ?status . }
-        FILTER (?bestuursperiodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
+        FILTER (?bestuursPeriodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
 
       }
     `;
@@ -59,18 +59,18 @@ export default {
       PREFIX regorg: <https://www.w3.org/ns/regorg#>
       SELECT DISTINCT (?s AS ?mandataris) ?persoon ?voornaam ?achternaam ?roepnaam ?geslacht ?geboortedatum WHERE {
         ?s a mandaat:Mandataris .
-        OPTIONAL {
-          ?s mandaat:isBestuurlijkeAliasVan ?persoon .
-          ?s org:holds ?mandaat .
-          ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
-          ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursperiodeStart .
-          OPTIONAL { ?persoon foaf:familyName ?achternaam . }
-          OPTIONAL { ?persoon persoon:gebruikteVoornaam ?voornaam . }
-          OPTIONAL { ?persoon foaf:name ?roepnaam . }
-          OPTIONAL { ?persoon persoon:geslacht ?geslacht }
-          OPTIONAL { ?persoon persoon:heeftGeboorte/persoon:datum ?geboortedatum }
-          FILTER (?bestuursperiodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
-        }
+        ?s mandaat:isBestuurlijkeAliasVan ?persoon .
+        ?s org:holds ?mandaat .
+        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
+        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursPeriodeStart .
+
+        OPTIONAL { ?persoon foaf:familyName ?achternaam . }
+        OPTIONAL { ?persoon persoon:gebruikteVoornaam ?voornaam . }
+        OPTIONAL { ?persoon foaf:name ?roepnaam . }
+        OPTIONAL { ?persoon persoon:geslacht ?geslacht }
+        OPTIONAL { ?persoon persoon:heeftGeboorte/persoon:datum ?geboortedatum }
+
+        FILTER (?bestuursPeriodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
       }
     `;
 
@@ -104,41 +104,29 @@ export default {
         ?s a mandaat:Mandataris .
         ?s org:holds ?mandaat .
         ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
-        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursperiodeStart .
-        OPTIONAL {
-          ?s org:holds ?mandaat .
-          OPTIONAL {
-            ?mandaat org:role ?bestuursfunctie .
-            OPTIONAL { ?bestuursfunctie skos:prefLabel ?bestuursfunctieLabel . }
-          }
+        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursPeriodeStart .
+        ?s org:holds ?mandaat .
+        ?mandaat org:role ?bestuursfunctie .
 
-          OPTIONAL {
-            ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
-            OPTIONAL { ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursPeriodeStart }
-            OPTIONAL { ?bestuursorgaanInTijd mandaat:bindingEinde ?bestuursPeriodeEinde }
-            ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
-            OPTIONAL { ?bestuursorgaan skos:prefLabel ?bestuursorgaanLabel . }
-            OPTIONAL {
-              ?bestuursorgaan besluit:classificatie ?bestuursorgaanClassificatie .
-              OPTIONAL { ?bestuursorgaanClassificatie skos:prefLabel ?bestuursorgaanClassificatieLabel }
-            }
-
-            OPTIONAL {
-              ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
-              OPTIONAL { ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel . }
-              OPTIONAL {
-                ?bestuurseenheid besluit:classificatie ?bestuurseenheidClassificatie .
-                OPTIONAL { ?bestuurseenheidClassificatie skos:prefLabel ?bestuurseenheidClassificatieLabel . }
-              }
-              OPTIONAL {
+       ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+       ?bestuursorgaan skos:prefLabel ?bestuursorgaanLabel .
+       ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+       ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel .
+       ?bestuurseenheid besluit:classificatie ?bestuurseenheidClassificatie .
+       ?bestuurseenheidClassificatie skos:prefLabel ?bestuurseenheidClassificatieLabel .
+       ?bestuursorgaan besluit:classificatie ?bestuursorgaanClassificatie .
+       ?bestuursorgaanClassificatie skos:prefLabel ?bestuursorgaanClassificatieLabel.
+       OPTIONAL {
                 ?bestuurseenheid besluit:werkingsgebied ?werkingsgebied .
                 OPTIONAL { ?werkingsgebied rdfs:label ?werkingsgebiedLabel . }
                 OPTIONAL { ?werkingsgebied ext:werkingsgebiedNiveau ?werkingsgebiedNiveau . }
-              }
-            }
-          }
         }
-        FILTER (?bestuursperiodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
+        OPTIONAL {
+          ?bestuursfunctie skos:prefLabel ?bestuursfunctieLabel .
+        }
+
+        OPTIONAL { ?bestuursorgaanInTijd mandaat:bindingEinde ?bestuursPeriodeEinde }
+        FILTER (?bestuursPeriodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
       }
     `;
     const queryResponsePart3 = await batchedQuery(queryStringPart3);
@@ -173,11 +161,16 @@ export default {
 
       SELECT DISTINCT (?s AS ?mandataris) ?fractieNaam WHERE {
         ?s a mandaat:Mandataris .
+        ?s mandaat:isBestuurlijkeAliasVan ?persoon .
+        ?s org:holds ?mandaat .
+        ?mandaat ^org:hasPost ?bestuursorgaanInTijd .
+        ?bestuursorgaanInTijd mandaat:bindingStart ?bestuursPeriodeStart .
 
         OPTIONAL {
           ?s org:hasMembership/org:organisation ?fractie .
           OPTIONAL { ?fractie regorg:legalName ?fractieNaam . }
         }
+        FILTER (?bestuursPeriodeStart >= "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>)
       }
     `;
 
