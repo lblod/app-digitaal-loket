@@ -11,34 +11,31 @@ let prefixes = {
   terms: 'http://purl.org/dc/terms/',
 };
 
-/* MAPPINGS TO BE PROCESSED (harvested, mapped, enhanced) */
-let mapping = {};
-
-mapping['pav:createdBy'] = {
-  required: true,
-  as: 'applicant',
-};
-
-mapping['lblodSubsidie:subsidyMeasure'] = {
-  required: true,
-  resource: 'consumption',
-  's-prefix': 'transactie:isInstantieVan',
-};
-
-mapping['lblodSubsidie:totalAmount'] = {
-  required: false,
-  resource: 'requested_amount',
-  's-prefix': 'schema:value',
-};
-
-mapping['lblodSubsidie:totalAmount'] = {
-  required: false
-};
+/* MAPPINGS TO BE PROCESSED (in order) */
+let mapping = [
+  {
+    type: 'resource',
+    from: 'pav:createdBy',
+    as: 'applicant',
+  },
+  {
+    type: 'property',
+    from: 'lblodSubsidie:subsidyMeasure',
+    resource: 'consumption',
+    predicate: 'transactie:isInstantieVan',
+  },
+  {
+    type: 'property',
+    from: 'lblodSubsidie:subsidyMeasure',
+    resource: 'requested_amount',
+    predicate: 'schema:value',
+  }
+]
 
 /* RESOURCE DECLARATIONS */
-let resource_declarations = {};
+let resource_definitions = {};
 
-resource_declarations['consumption'] = {
+resource_definitions['consumption'] = {
   type: 'subsidie:SubsidiemaatregelConsumptie',
   base: 'http://data.lblod.info/subsidiemaatregel-consumpties/',
   references: [
@@ -53,7 +50,7 @@ resource_declarations['consumption'] = {
   ],
 };
 
-resource_declarations['applicant_participation'] = {
+resource_definitions['applicant_participation'] = {
   type: 'm8g:Participation',
   base: 'http://data.lblod.info/participaties/',
   properties: [
@@ -74,7 +71,7 @@ resource_declarations['applicant_participation'] = {
   ],
 };
 
-resource_declarations['applicant'] = {
+resource_definitions['applicant'] = {
   references: [
     {
       via: 'm8g:playsRole',
@@ -83,21 +80,17 @@ resource_declarations['applicant'] = {
   ],
 };
 
-resource_declarations['request'] = {
+resource_definitions['request'] = {
   type: 'subsidie:Aanvraag',
   base: 'http://data.lblod.info/aanvraagen/',
   properties: [
     {
       predicate: 'subsidie:aanvraagdatum',
-      object: {
-        value: '$NOW',
-      },
+      object: '$NOW',
     },
     {
       predicate: 'prov:used',
-      object: {
-        value: '$ROOT',
-      },
+      object: '$ROOT',
     },
   ],
   references: [
@@ -112,7 +105,7 @@ resource_declarations['request'] = {
   ],
 };
 
-resource_declarations['requested_amount'] = {
+resource_definitions['requested_amount'] = {
   type: 'schema:MonetaryAmount',
   base: 'http://data.lblod.info/aangevraagd-bedragen/',
   properties: [
@@ -127,5 +120,5 @@ resource_declarations['requested_amount'] = {
 };
 
 module.exports = {
-  prefixes, resource_declarations, mapping,
+  prefixes, resource_definitions, mapping,
 };
