@@ -26,7 +26,7 @@ let mapping = [
   },
   {
     type: 'property',
-    from: 'lblodSubsidie:subsidyMeasure',
+    from: 'lblodSubsidie:totalAmount',
     resource: 'requested_amount',
     predicate: 'schema:value',
   }
