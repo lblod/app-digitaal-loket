@@ -46,7 +46,7 @@ DELETE {
 # Avoid sprintf error
 DELETE DATA {
   GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
-    <share://versions/2021011315032436-form> <http://dummy/data/predicate> <http://dummy/data/object> .
-    <http://dummy/data/subject> <http://dummy/data/other-predicate> <share://versions/2021011315032436-form> .
+    <share://versions/20210113150324-form> <http://dummy/data/predicate> <http://dummy/data/object> .
+    <http://dummy/data/subject> <http://dummy/data/other-predicate> <share://versions/20210113150324-form> .
   }
 }
