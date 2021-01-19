@@ -28,14 +28,14 @@ export default {
       ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone ?accountNumber
       ?aantalUniekeKinderen ?aantalKalenderdagen ?naamOrganisator ?aantalKinderenVoorAlleVolleDagen
       ?aantalKinderenVoorAlleHalveDagen ?aantalKinderenInAanmerking
-      (?reekLabel as ?reek) ?reekStart ?reekEnd ?createdByName ?modifiedByName ?subsidie
+      (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidie
       WHERE {
         ?subsidie a lblodSubsidie:ApplicationForm ;
           subsidie:aanvraagdatum ?aanvraagdatum ;
           pav:createdBy ?bestuurseenheid ;
           dct:creator ?createdBy ;
           ext:lastModifiedBy ?modifiedBy ;
-          lblodSubsidie:timeBlock ?reek ;
+          lblodSubsidie:timeBlock ?reeks ;
           schema:contactPoint ?contactPoint ;
           schema:bankAccount ?bankAccount ;
           lblodSubsidie:uniqueChildrenNumberForWholePeriod ?aantalUniekeKinderen  ;
@@ -46,9 +46,9 @@ export default {
 
         ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel .
 
-        ?reek skos:prefLabel ?reekLabel ;
-          gleif:hasStart ?reekStart ;
-          gleif:hasEnd ?reekEnd ;
+        ?reeks skos:prefLabel ?reeksLabel ;
+          gleif:hasStart ?reeksStart ;
+          gleif:hasEnd ?reeksEnd ;
           ext:submissionPeriod ?submissionPeriod .
 
         ?createdBy foaf:firstName ?createdByFirstName ;
@@ -100,9 +100,9 @@ export default {
         aantalKinderenVoorAlleVolleDagen: subsidie.aantalKinderenVoorAlleVolleDagen.value,
         aantalKinderenVoorAlleHalveDagen: subsidie.aantalKinderenVoorAlleHalveDagen.value,
         aantalKinderenInAanmerking: subsidie.aantalKinderenInAanmerking.value,
-        reek: subsidie.reek.value,
-        reekStart: subsidie.reekStart.value,
-        reekEnd: subsidie.reekEnd.value,
+        reeks: subsidie.reeks.value,
+        reeksStart: subsidie.reeksStart.value,
+        reeksEnd: subsidie.reeksEnd.value,
         createdByName: subsidie.createdByName.value,
         modifiedByName: subsidie.modifiedByName.value,
         subsidie: subsidie.subsidie.value
@@ -125,9 +125,9 @@ export default {
        'aantalKinderenVoorAlleHalveDagen',
        'aantalKinderenVoorAlleHalveDagen',
        'aantalKinderenInAanmerking',
-       'reek',
-       'reekStart',
-       'reekEnd',
+       'reeks',
+       'reeksStart',
+       'reeksEnd',
        'createdByName',
        'modifiedByName',
        'subsidie'
