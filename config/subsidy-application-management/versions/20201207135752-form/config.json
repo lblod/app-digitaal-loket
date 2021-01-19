@@ -28,6 +28,7 @@
       "lblodSubsidie:userDeclaresDataIsExact",
       "lblodSubsidie:userCompliesWithEmergencyChildcareConditions",
       "adms:status",
+      "lblodSubsidie:totalAmount",
       {
         "s-prefix" : "pav:createdBy",
         "properties" : ["skos:prefLabel"]
