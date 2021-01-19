@@ -60,7 +60,7 @@ services:
     restart: "no"
   berichtencentrum-sync-with-kalliope:
     restart: "no"
-  berichtencentrum-deliver-email-service:
+  deliver-email-service:
     restart: "no"
   download-url:
     restart: "no"
