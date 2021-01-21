@@ -57,3 +57,30 @@ ns7:a26aee99-8ea6-44d1-a72d-c04d3a37b690	rdf:type	ns2:Period ,
 	ns2:hasEnd	"2021-02-12"^^xsd:date ;
 	ns2:hasStart	"2021-01-01"^^xsd:date ;
 	ns6:uuid	"a26aee99-8ea6-44d1-a72d-c04d3a37b690" .
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://lblod.data.gift/vocabularies/subsidie/> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	ns1:SubsidyMeasure .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	rdfs:Class .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	skos:Concept ,
+		skos:ConceptScheme .
+@prefix ns4:	<http://mu.semte.ch/vocabularies/core/> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	ns4:uuid	"2697fbe1-4226-4325-807b-5dfa58e40a95" ;
+	skos:inScheme	<http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
+	skos:prefLabel	"Contact-en bronopsporing"@nl ;
+	skos:definition	"Subsidy measure offer: contact and source tracking"@en .
+@prefix ns5:	<http://lblod.data.gift/concepts/> .
+ns5:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	rdfs:Class .
+@prefix ns6:	<https://www.gleif.org/ontology/Base/> .
+ns5:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	ns6:Period ,
+		skos:Concept ;
+	ns4:uuid	"a43f99ce-710f-4e81-8aa1-d56660146765" ;
+	skos:inScheme	<http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
+	skos:prefLabel	"november 2020 \u2014 maart 2020"@nl ;
+	skos:definition	"Timeblock: november and march"@en .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+ns5:a43f99ce-710f-4e81-8aa1-d56660146765	ns6:hasEnd	"2021-03-31"^^xsd:date ;
+	ns6:hasStart	"2020-11-01"^^xsd:date .
+@prefix ns8:	<http://mu.semte.ch/vocabularies/ext/> .
+ns5:a43f99ce-710f-4e81-8aa1-d56660146765	ns8:submissionPeriod	ns5:f90004eb-e65d-4cd5-91ae-e342b0d26700 .
