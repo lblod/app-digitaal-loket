@@ -103,6 +103,28 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
 
+fields:dcfb437e-1219-4d1e-891d-057f262da9d6 a form:Field ;
+    mu:uuid "dcfb437e-1219-4d1e-891d-057f262da9d6";
+    sh:name "Selecteer reeks" ;
+    form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
+    sh:order 21 ;
+    sh:path lblodSubsidie:timeBlock ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:timeBlock ;
+            form:conceptScheme <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:timeBlock
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
+
 ##########################################################
 # Contact person info
 ##########################################################
@@ -348,9 +370,6 @@ fieldGroups:main a form:FieldGroup ;
         ### Subsidy measure
         fields:68e149ec-1821-477b-a901-72924236ef9c ,
 
-        ### Selecteer reeks
-        fields:96323450-81c7-4326-84df-6adb9a992d12 ,
-
         ### First name contact person
         fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 ,
 
@@ -367,7 +386,17 @@ fieldGroups:main a form:FieldGroup ;
         fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
 
         ### Confirmation letter ###
-        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
+        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 .
+
+form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
+    mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
+    form:hasFieldGroup fieldGroups:main .
+
+fieldGroups:daycare a form:FieldGroup ;
+    mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
+    form:hasField
+        ### Select daycare timeblock
+        fields:96323450-81c7-4326-84df-6adb9a992d12 ,
 
         ### Application form table
         fields:9462b7b4-313a-4eae-bedd-079811219dcb ,
@@ -381,9 +410,38 @@ fieldGroups:main a form:FieldGroup ;
         ### User declares filled in data is correct
         fields:c0726406-ac7a-41da-b905-506f5ab33069 ,
 
-        ### User declares filled in data complies with emergy childcare conditions
+        ### User declares filled in data complies with emergency childcare conditions
         fields:746f3461-06a2-4f77-b3fa-3b037d5abd68 .
 
-form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
-    mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
-    form:hasFieldGroup fieldGroups:main .
+fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:daycare.
+
+fields:daycare a form:ConditionalFieldGroup ;
+    mu:uuid "51b3ccfb-1d5f-4d60-bec2-cda95ba8a7cf";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:subsidyMeasure ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
+        form:customValue <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>
+      ] ;
+    form:hasFieldGroup fieldGroups:daycare .
+
+fieldGroups:contact-and-source-tracking a form:FieldGroup ;
+    mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
+    form:hasField
+        ### Select contact-and-source-tracking timeblock
+        fields:dcfb437e-1219-4d1e-891d-057f262da9d6 .
+
+fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:contact-and-source-tracking.
+
+fields:contact-and-source-tracking a form:ConditionalFieldGroup ;
+    mu:uuid "51b3ccfb-1d5f-4d60-bec2-cda95ba8a7cf";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:subsidyMeasure ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
+        form:customValue <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>
+      ] ;
+    form:hasFieldGroup fieldGroups:contact-and-source-tracking .
+

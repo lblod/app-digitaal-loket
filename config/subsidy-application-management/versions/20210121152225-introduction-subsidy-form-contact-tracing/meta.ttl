@@ -76,8 +76,8 @@ ns5:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	rdfs:Class .
 ns5:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	ns6:Period ,
 		skos:Concept ;
 	ns4:uuid	"a43f99ce-710f-4e81-8aa1-d56660146765" ;
-	skos:inScheme	<http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
-	skos:prefLabel	"november 2020 \u2014 maart 2020"@nl ;
+	skos:inScheme	<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
+	skos:prefLabel	"november \u2014 maart"@nl ;
 	skos:definition	"Timeblock: november and march"@en .
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
 ns5:a43f99ce-710f-4e81-8aa1-d56660146765	ns6:hasEnd	"2021-03-31"^^xsd:date ;

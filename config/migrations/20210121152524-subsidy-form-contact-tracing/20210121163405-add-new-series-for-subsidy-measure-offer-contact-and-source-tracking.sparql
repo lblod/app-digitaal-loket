@@ -9,8 +9,8 @@ INSERT DATA {
             <http://www.w3.org/2004/02/skos/core#definition> "Timeblock: november and march"@en;
             <https://www.gleif.org/ontology/Base/hasStart> "2020-11-01"^^<http://www.w3.org/2001/XMLSchema#date>;
             <https://www.gleif.org/ontology/Base/hasEnd> "2021-03-31"^^<http://www.w3.org/2001/XMLSchema#date>;
-            <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "november 2020 — maart 2020"@nl ;
+            <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "november — maart"@nl ;
             <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/concepts/f90004eb-e65d-4cd5-91ae-e342b0d26700>.
 
         <http://lblod.data.gift/concepts/f90004eb-e65d-4cd5-91ae-e342b0d26700>
