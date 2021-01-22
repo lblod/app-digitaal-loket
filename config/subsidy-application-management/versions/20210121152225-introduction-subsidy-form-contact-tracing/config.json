@@ -29,6 +29,8 @@
       "lblodSubsidie:userCompliesWithEmergencyChildcareConditions",
       "adms:status",
       "lblodSubsidie:totalAmount",
+      "lblodSubsidie:isCollaboration",
+      "lblodSubsidie:collaborator",
       {
         "s-prefix" : "pav:createdBy",
         "properties" : ["skos:prefLabel"]

@@ -56,6 +56,13 @@ fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 a form:PropertyGroup;
     sh:name "Verklaringen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
+fields:df9b7800-1161-45c3-84c3-61d1313e143a a form:PropertyGroup;
+    mu:uuid "df9b7800-1161-45c3-84c3-61d1313e143a";
+    sh:description "daycare declarations";
+    sh:order 5;
+    sh:name "Type aanvraag" ;
+    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+
 ##########################################################
 # Subsidy Measure Offer
 ##########################################################
@@ -327,7 +334,7 @@ fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
     sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
 
 ##########################################################
-# Daycare Verklaringen
+# Daycare Declarations
 ##########################################################
 
 fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
@@ -367,6 +374,77 @@ fields:746f3461-06a2-4f77-b3fa-3b037d5abd68 a form:Field ;
     ] ;
     form:displayType displayTypes:checkbox ;
     sh:group fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 .
+
+##########################################################
+# contact-and-source-tracking: did collaboration?
+##########################################################
+
+fields:3fdef076-1b12-4575-b04c-4395acf0adc2 a form:Field ;
+    mu:uuid "3fdef076-1b12-4575-b04c-4395acf0adc2";
+    sh:name "Betreft deze subsidieaanvraag een aanvraag voor een samenwerkingsverband tussen gemeenten?" ;
+    sh:order 50 ;
+    sh:path lblodSubsidie:isCollaboration ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:isCollaboration ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:isCollaboration
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    form:help """Bij een samenwerkingsverband dient één gemeente de aanvraag in.""" ;
+    sh:group fields:df9b7800-1161-45c3-84c3-61d1313e143a .
+
+fields:3fdef076-1b12-4575-b04c-4395acf0adc2 form:hasConditionalFieldGroup fields:c445addc-8056-4a41-93b5-0e611532aaab.
+
+fields:c445addc-8056-4a41-93b5-0e611532aaab a form:ConditionalFieldGroup ;
+    mu:uuid "c445addc-8056-4a41-93b5-0e611532aaab";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:isCollaboration ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
+        form:customValue <http://lblod.data.gift/concepts/9ffe7dd4-42b7-4af3-bdba-ccd080195715>
+      ] ;
+    form:hasFieldGroup fieldGroups:c5f7a590-11f3-498e-856f-161fc3f8f49c .
+
+fieldGroups:c5f7a590-11f3-498e-856f-161fc3f8f49c a form:FieldGroup ;
+    mu:uuid "c5f7a590-11f3-498e-856f-161fc3f8f49c" ;
+    form:hasField
+
+        ### Select contact-and-source-tracking: collaboration
+        fields:4c7820f0-4011-4ab4-a16a-e128800e11bc .
+
+##########################################################
+# contact-and-source-tracking: collaboration
+##########################################################
+
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc a form:Field ;
+    mu:uuid "4c7820f0-4011-4ab4-a16a-e128800e11bc" ;
+    sh:name "Welke gemeenten maakten deel uit van het samenwerkingsverband?" ;
+    sh:order  51;
+    sh:path lblodSubsidie:collaborator ;
+    form:validations
+      [ a form:Codelist ;
+        form:grouping form:MatchEvery ;
+        sh:path lblodSubsidie:collaborator ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ],
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:collaborator ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6"}""" ;
+    form:displayType displayTypes:conceptSchemeMultiSelector ;
+    form:help """Typ of selecteer ook de gemeente die de aanvraag indient. Je kan meerdere opties aanduiden.""" ;
+    sh:group fields:df9b7800-1161-45c3-84c3-61d1313e143a .
 
 ##########################################################
 # Field groups
@@ -438,7 +516,10 @@ fieldGroups:contact-and-source-tracking a form:FieldGroup ;
     mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
     form:hasField
         ### Select contact-and-source-tracking timeblock
-        fields:dcfb437e-1219-4d1e-891d-057f262da9d6 .
+        fields:dcfb437e-1219-4d1e-891d-057f262da9d6 ,
+
+        ### Select contact-and-source-tracking: is collaboration
+        fields:3fdef076-1b12-4575-b04c-4395acf0adc2 .
 
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:contact-and-source-tracking.
 
