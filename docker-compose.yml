@@ -301,7 +301,7 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:0.7.4
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20201028125351-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20210120121332-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -398,6 +398,12 @@ services:
     image: lblod/subsidy-applications-management-service:0.4.0
     volumes:
       - ./config/subsidy-application-management:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  berichtencentrum-warning:
+    image: lblod/berichtencentrum-warning-service:0.0.1
     labels:
       - "logging=true"
     restart: always
