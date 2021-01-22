@@ -58,29 +58,37 @@ ns7:a26aee99-8ea6-44d1-a72d-c04d3a37b690	rdf:type	ns2:Period ,
 	ns2:hasStart	"2021-01-01"^^xsd:date ;
 	ns6:uuid	"a26aee99-8ea6-44d1-a72d-c04d3a37b690" .
 @prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix ns1:	<http://data.vlaanderen.be/ns/subsidie#> .
-<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	ns1:SubsidiemaatregelAanbod .
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
 <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	rdfs:Class .
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
-<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	skos:Concept ,
-		skos:ConceptScheme .
-@prefix ns4:	<http://mu.semte.ch/vocabularies/core/> .
-<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	ns4:uuid	"2697fbe1-4226-4325-807b-5dfa58e40a95" ;
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	skos:ConceptScheme .
+@prefix ns3:	<http://data.vlaanderen.be/ns/subsidie#> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	ns3:SubsidiemaatregelAanbod ,
+		skos:Concept .
+@prefix ns4:	<http://data.europa.eu/m8g/> .
+@prefix ns5:	<http://data.lblod.info/criteriums/> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	ns4:hasCriterion	ns5:d24b6ac6-afa7-4f23-b5aa-ade16ed505ae .
+@prefix ns6:	<http://purl.org/vocab/cpsv#> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	ns6:follows	<http://data.lblod.info/subsidieprocedurestappen/457c23ba-4d54-4092-9f9c-e575cc7bd880> ;
 	skos:inScheme	<http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
-	skos:prefLabel	"Contact-en bronopsporing"@nl ;
+	skos:prefLabel	"Contact-en bronopsporing"@nl .
+@prefix ns7:	<http://mu.semte.ch/vocabularies/core/> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	ns7:uuid	"2697fbe1-4226-4325-807b-5dfa58e40a95" .
+@prefix ns8:	<http://purl.org/dc/terms/> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	ns8:title	"Contact-en bronopsporing"@nl ;
 	skos:definition	"Subsidy measure offer: contact and source tracking"@en .
-@prefix ns5:	<http://lblod.data.gift/concepts/> .
-ns5:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	rdfs:Class .
-@prefix ns6:	<https://www.gleif.org/ontology/Base/> .
-ns5:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	ns6:Period ,
-		skos:Concept ;
-	ns4:uuid	"a43f99ce-710f-4e81-8aa1-d56660146765" ;
+@prefix ns9:	<http://lblod.data.gift/concepts/> .
+ns9:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	skos:Concept .
+@prefix ns10:	<https://www.gleif.org/ontology/Base/> .
+ns9:a43f99ce-710f-4e81-8aa1-d56660146765	rdf:type	ns10:Period ,
+		rdfs:Class .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+ns9:a43f99ce-710f-4e81-8aa1-d56660146765	ns10:hasEnd	"2021-03-31"^^xsd:date ;
+	ns10:hasStart	"2020-11-01"^^xsd:date .
+@prefix ns12:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns13:	<http://lblod.data.gift/periods/> .
+ns9:a43f99ce-710f-4e81-8aa1-d56660146765	ns12:submissionPeriod	ns13:f90004eb-e65d-4cd5-91ae-e342b0d26700 ;
 	skos:inScheme	<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
 	skos:prefLabel	"november \u2014 maart"@nl ;
+	ns7:uuid	"a43f99ce-710f-4e81-8aa1-d56660146765" ;
 	skos:definition	"Timeblock: november and march"@en .
-@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
-ns5:a43f99ce-710f-4e81-8aa1-d56660146765	ns6:hasEnd	"2021-03-31"^^xsd:date ;
-	ns6:hasStart	"2020-11-01"^^xsd:date .
-@prefix ns8:	<http://mu.semte.ch/vocabularies/ext/> .
-ns5:a43f99ce-710f-4e81-8aa1-d56660146765	ns8:submissionPeriod	ns5:f90004eb-e65d-4cd5-91ae-e342b0d26700 .

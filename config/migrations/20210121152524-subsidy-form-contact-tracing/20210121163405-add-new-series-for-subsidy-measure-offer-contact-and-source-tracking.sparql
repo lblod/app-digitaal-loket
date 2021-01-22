@@ -1,6 +1,5 @@
 INSERT DATA {
     GRAPH <http://mu.semte.ch/graphs/public> {
-
         <http://lblod.data.gift/concepts/a43f99ce-710f-4e81-8aa1-d56660146765>
             a   <http://www.w3.org/2004/02/skos/core#Concept>,
                 <http://www.w3.org/2000/01/rdf-schema#Class>,
@@ -11,9 +10,8 @@ INSERT DATA {
             <https://www.gleif.org/ontology/Base/hasEnd> "2021-03-31"^^<http://www.w3.org/2001/XMLSchema#date>;
             <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "november — maart"@nl ;
-            <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/concepts/f90004eb-e65d-4cd5-91ae-e342b0d26700>.
-
-        <http://lblod.data.gift/concepts/f90004eb-e65d-4cd5-91ae-e342b0d26700>
+            <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/periods/f90004eb-e65d-4cd5-91ae-e342b0d26700>.
+        <http://lblod.data.gift/periods/f90004eb-e65d-4cd5-91ae-e342b0d26700>
             a   <http://www.w3.org/2000/01/rdf-schema#Class>,
                 <https://www.gleif.org/ontology/Base/Period>;
             <http://mu.semte.ch/vocabularies/core/uuid> "f90004eb-e65d-4cd5-91ae-e342b0d26700" ;
