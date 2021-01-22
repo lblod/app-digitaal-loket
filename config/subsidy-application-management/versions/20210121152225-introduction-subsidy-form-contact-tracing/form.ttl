@@ -44,20 +44,20 @@ fields:386530d7-b4b4-41c9-8146-e2d8d629d77f a form:PropertyGroup;
 
 fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 a form:PropertyGroup;
     mu:uuid "7e84b8db-1198-4585-a0a2-e5bc48af3f08";
-    sh:description "application form";
+    sh:description "daycare application form table";
     sh:order 5;
     sh:name "Aanvraagformulier" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 fields:7c9ca554-e539-4876-bcd0-efa0cfc5db09 a form:PropertyGroup;
     mu:uuid "7c9ca554-e539-4876-bcd0-efa0cfc5db09";
-    sh:description "declarations";
+    sh:description "daycare declarations";
     sh:order 6;
     sh:name "Verklaringen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 ##########################################################
-# Subsidy info
+# Subsidy Measure Offer
 ##########################################################
 
 fields:68e149ec-1821-477b-a901-72924236ef9c a form:Field ;
@@ -81,6 +81,10 @@ fields:68e149ec-1821-477b-a901-72924236ef9c a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
 
+##########################################################
+# Daycare Series
+##########################################################
+
 fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
     mu:uuid "96323450-81c7-4326-84df-6adb9a992d12";
     sh:name "Selecteer reeks" ;
@@ -91,7 +95,7 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
           [ a form:ConceptSchemeConstraint ;
             form:grouping form:Bag ;
             sh:path lblodSubsidie:timeBlock ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f> ;
+            form:conceptScheme <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
             sh:resultMessage "Selecteer een waarde uit de lijst."@nl
           ],
           [ a form:RequiredConstraint ;
@@ -99,9 +103,13 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:timeBlock
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f", "searchEnabled": false}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38", "searchEnabled": false}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
+
+##########################################################
+# Contact And Source Tracking Series
+##########################################################
 
 fields:dcfb437e-1219-4d1e-891d-057f262da9d6 a form:Field ;
     mu:uuid "dcfb437e-1219-4d1e-891d-057f262da9d6";
@@ -244,7 +252,7 @@ fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 a form:Field ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
 ##########################################################
-# Application form
+# Daycare Application Form Table
 ##########################################################
 
 fields:9462b7b4-313a-4eae-bedd-079811219dcb a form:Field ;
@@ -319,7 +327,7 @@ fields:8430e0db-27f1-4034-acc8-09730d331df7 a form:Field ;
     sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
 
 ##########################################################
-# Verklaringen
+# Daycare Verklaringen
 ##########################################################
 
 fields:c0726406-ac7a-41da-b905-506f5ab33069 a form:Field ;
@@ -398,7 +406,7 @@ fieldGroups:daycare a form:FieldGroup ;
         ### Select daycare timeblock
         fields:96323450-81c7-4326-84df-6adb9a992d12 ,
 
-        ### Application form table
+        ### Daycare Application Form Table
         fields:9462b7b4-313a-4eae-bedd-079811219dcb ,
 
         ### Number of unique children taken care of for all actors during the whole period
