@@ -58,8 +58,8 @@ ns7:a26aee99-8ea6-44d1-a72d-c04d3a37b690	rdf:type	ns2:Period ,
 	ns2:hasStart	"2021-01-01"^^xsd:date ;
 	ns6:uuid	"a26aee99-8ea6-44d1-a72d-c04d3a37b690" .
 @prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix ns1:	<http://lblod.data.gift/vocabularies/subsidie/> .
-<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	ns1:SubsidyMeasure .
+@prefix ns1:	<http://data.vlaanderen.be/ns/subsidie#> .
+<http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	ns1:SubsidiemaatregelAanbod .
 @prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
 <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>	rdf:type	rdfs:Class .
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
