@@ -94,3 +94,5 @@ services:
     restart: "no"
   subsidy-applications-management:
     restart: "no"
+  berichtencentrum-warning:
+    restart: "no"
