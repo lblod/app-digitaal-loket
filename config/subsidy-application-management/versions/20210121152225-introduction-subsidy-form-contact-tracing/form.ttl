@@ -63,6 +63,13 @@ fields:df9b7800-1161-45c3-84c3-61d1313e143a a form:PropertyGroup;
     sh:name "Type aanvraag" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
+fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 a form:PropertyGroup;
+    mu:uuid "97ce85f4-5df9-428a-a943-8c12e0f964f6";
+    sh:description "daycare declarations";
+    sh:order 6;
+    sh:name "Op welke opties werd, naast de huidige werking, bijkomend ingezet?" ;
+    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+
 ##########################################################
 # Subsidy Measure Offer
 ##########################################################
@@ -446,6 +453,116 @@ fields:4c7820f0-4011-4ab4-a16a-e128800e11bc a form:Field ;
     form:help """Typ of selecteer ook de gemeente die de aanvraag indient. Je kan meerdere opties aanduiden.""" ;
     sh:group fields:df9b7800-1161-45c3-84c3-61d1313e143a .
 
+##################################################################
+# contact-and-source-tracking: additional source tracking measures
+##################################################################
+
+fields:5fb86f2a-2f05-428e-ac5b-04b1918e1604 a form:Field ;
+    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    sh:name "November" ;
+    sh:order 52 ;
+    sh:path lblodSubsidie:temp-1 ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:temp-1 ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:temp-1
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
+
+fields:4fe45d61-3fcc-4ab9-a2b8-dd704b42b5fb a form:Field ;
+    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    sh:name "December" ;
+    sh:order 53 ;
+    sh:path lblodSubsidie:temp-2 ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:temp-2 ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:temp-2
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
+
+fields:4c30c0f7-18e5-4ec9-8bea-11614c947229 a form:Field ;
+    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    sh:name "Januari" ;
+    sh:order 54 ;
+    sh:path lblodSubsidie:temp-3 ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:temp-3 ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:temp-3
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
+
+
+fields:f7d063d1-ac4b-43a1-a2b3-f374fecf2ce4 a form:Field ;
+    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    sh:name "Februari" ;
+    sh:order 55 ;
+    sh:path lblodSubsidie:temp-4 ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:temp-4 ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:temp-4
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
+
+fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
+    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    sh:name "Maart" ;
+    sh:order 56 ;
+    sh:path lblodSubsidie:temp-5 ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:temp-5 ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:temp-5
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
+
 ##########################################################
 # Field groups
 ##########################################################
@@ -519,7 +636,22 @@ fieldGroups:contact-and-source-tracking a form:FieldGroup ;
         fields:dcfb437e-1219-4d1e-891d-057f262da9d6 ,
 
         ### Select contact-and-source-tracking: is collaboration
-        fields:3fdef076-1b12-4575-b04c-4395acf0adc2 .
+        fields:3fdef076-1b12-4575-b04c-4395acf0adc2 ,
+
+        ### Select additional measures November
+        fields:5fb86f2a-2f05-428e-ac5b-04b1918e1604 ,
+
+        ### Select additional measures December
+        fields:4fe45d61-3fcc-4ab9-a2b8-dd704b42b5fb ,
+
+        ### Select additional measures Januari
+        fields:4c30c0f7-18e5-4ec9-8bea-11614c947229,
+
+        ### Select additional measures Februari
+        fields:f7d063d1-ac4b-43a1-a2b3-f374fecf2ce4 ,
+
+        ### Select additional measures Maart
+        fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 .
 
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:contact-and-source-tracking.
 
