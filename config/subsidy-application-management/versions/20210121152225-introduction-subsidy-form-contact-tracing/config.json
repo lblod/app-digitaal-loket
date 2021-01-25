@@ -31,6 +31,11 @@
       "lblodSubsidie:totalAmount",
       "lblodSubsidie:isCollaboration",
       "lblodSubsidie:collaborator",
+      "lblodSubsidie:extraContactTracingMeasuresNovember",
+      "lblodSubsidie:extraContactTracingMeasuresDecember",
+      "lblodSubsidie:extraContactTracingMeasuresJanuary",
+      "lblodSubsidie:extraContactTracingMeasuresFebruary",
+      "lblodSubsidie:extraContactTracingMeasuresMarch",
       {
         "s-prefix" : "pav:createdBy",
         "properties" : ["skos:prefLabel"]
