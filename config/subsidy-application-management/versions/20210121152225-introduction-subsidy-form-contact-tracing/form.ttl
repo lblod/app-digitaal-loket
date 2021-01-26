@@ -403,8 +403,8 @@ fields:3fdef076-1b12-4575-b04c-4395acf0adc2 a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:isCollaboration
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
     form:help """Bij een samenwerkingsverband dient één gemeente de aanvraag in.""" ;
     sh:group fields:df9b7800-1161-45c3-84c3-61d1313e143a .
 
@@ -474,12 +474,12 @@ fields:5fb86f2a-2f05-428e-ac5b-04b1918e1604 a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:extraContactTracingMeasuresNovember
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
 fields:4fe45d61-3fcc-4ab9-a2b8-dd704b42b5fb a form:Field ;
-    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    mu:uuid "4fe45d61-3fcc-4ab9-a2b8-dd704b42b5fb";
     sh:name "December" ;
     sh:order 53 ;
     sh:path lblodSubsidie:extraContactTracingMeasuresDecember ;
@@ -495,12 +495,12 @@ fields:4fe45d61-3fcc-4ab9-a2b8-dd704b42b5fb a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:extraContactTracingMeasuresDecember
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
 fields:4c30c0f7-18e5-4ec9-8bea-11614c947229 a form:Field ;
-    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    mu:uuid "4c30c0f7-18e5-4ec9-8bea-11614c947229";
     sh:name "Januari" ;
     sh:order 54 ;
     sh:path lblodSubsidie:extraContactTracingMeasuresJanuary;
@@ -516,13 +516,13 @@ fields:4c30c0f7-18e5-4ec9-8bea-11614c947229 a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:extraContactTracingMeasuresJanuary
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
 
 fields:f7d063d1-ac4b-43a1-a2b3-f374fecf2ce4 a form:Field ;
-    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    mu:uuid "f7d063d1-ac4b-43a1-a2b3-f374fecf2ce4";
     sh:name "Februari" ;
     sh:order 55 ;
     sh:path lblodSubsidie:extraContactTracingMeasuresFebruary ;
@@ -538,12 +538,12 @@ fields:f7d063d1-ac4b-43a1-a2b3-f374fecf2ce4 a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:extraContactTracingMeasuresFebruary
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
 fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
-    mu:uuid "5fb86f2a-2f05-428e-ac5b-04b1918e1604";
+    mu:uuid "ef2536a2-571f-4796-b1e7-6fbde128a6b7";
     sh:name "Maart" ;
     sh:order 56 ;
     sh:path lblodSubsidie:extraContactTracingMeasuresMarch;
@@ -559,8 +559,8 @@ fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:extraContactTracingMeasuresMarch
           ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7", "searchEnabled": false}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
 ##########################################################
