@@ -65,9 +65,16 @@ fields:df9b7800-1161-45c3-84c3-61d1313e143a a form:PropertyGroup;
 
 fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 a form:PropertyGroup;
     mu:uuid "97ce85f4-5df9-428a-a943-8c12e0f964f6";
-    sh:description "daycare declarations";
+    sh:description "contact-and-source-tracking:: extra-measures";
     sh:order 6;
     sh:name "Op welke opties werd, naast de huidige werking, bijkomend ingezet?" ;
+    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+
+fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf a form:PropertyGroup;
+    mu:uuid "b078fd57-0856-4c8a-a49b-73b90bb3bfdf";
+    sh:description "contact-and-source-tracking: objective 1";
+    sh:order 7;
+    sh:name "Doelstelling 1: Sensibilisering en preventie met focus op de risicogroepen en de kwetsbare personen/groepen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 ##########################################################
@@ -448,7 +455,7 @@ fields:4c7820f0-4011-4ab4-a16a-e128800e11bc a form:Field ;
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht."@nl;
         sh:path lblodSubsidie:collaborator ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6", "searchEnabled": true}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelector ;
     form:help """Typ of selecteer ook de gemeente die de aanvraag indient. Je kan meerdere opties aanduiden.""" ;
     sh:group fields:df9b7800-1161-45c3-84c3-61d1313e143a .
@@ -563,6 +570,55 @@ fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
+##################################################################
+# contact-and-source-tracking: objective 1
+##################################################################
+
+fields:08b4b969-efe9-49b8-8f1c-71a6c03ff28d a form:Field ;
+    mu:uuid "08b4b969-efe9-49b8-8f1c-71a6c03ff28d";
+    sh:name "Prioriteit doelstelling 1" ;
+    sh:order 57 ;
+    sh:path (lblodSubsidie:contactAndSourceTrackingObjectiveOne lblodSubsidie:priority) ;
+    form:validations
+          [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path (lblodSubsidie:contactAndSourceTrackingObjectiveOne lblodSubsidie:priority) ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl ;
+            sh:path (lblodSubsidie:contactAndSourceTrackingObjectiveOne lblodSubsidie:priority) ;
+          ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f", "searchEnabled": false}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    form:help "Selecteer welke prioriteit deze doelstelling had." ;
+    sh:group fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf .
+
+fields:3bbea4d1-42c5-491c-b4e7-d4f48f3770ac a form:Field ;
+    mu:uuid "3bbea4d1-42c5-491c-b4e7-d4f48f3770ac";
+    sh:name "Acties doelstelling 1" ;
+    sh:order 58 ;
+    sh:path (lblodSubsidie:contactAndSourceTrackingObjectiveOne dct:description) ;
+    form:validations
+          [ a form:MaxLength ;
+            form:grouping form:MatchEvery ;
+            sh:path (lblodSubsidie:contactAndSourceTrackingObjectiveOne dct:description) ;
+            form:max 1000 ;
+            sh:resultMessage "max. van 1.000 karakters overschreden."@nl
+          ],
+          [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl ;
+            sh:path (lblodSubsidie:contactAndSourceTrackingObjectiveOne dct:description) ;
+          ] ;
+    form:displayType displayTypes:textArea ;
+    form:help """Geef een korte beschrijving (max. 1.000 karakters) van de belangrijkste acties (max. 5) die je hebt genomen.
+                 Geef in de beschrijving ook aan in welke mate deze acties complementair waren op de werking van de COVID19-team van de betrokken eerstelijnszone.
+                 Indien je voor deze doelstelling geen actie hebt genomen, typ je ‘Geen actie’.""" ;
+    sh:group fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf .
+
 ##########################################################
 # Field groups
 ##########################################################
@@ -651,7 +707,13 @@ fieldGroups:contact-and-source-tracking a form:FieldGroup ;
         fields:f7d063d1-ac4b-43a1-a2b3-f374fecf2ce4 ,
 
         ### Select additional measures Maart
-        fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 .
+        fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 ,
+
+        ### Priority level for objective 1
+        fields:08b4b969-efe9-49b8-8f1c-71a6c03ff28d ,
+
+        ### Actions for objective 1
+        fields:3bbea4d1-42c5-491c-b4e7-d4f48f3770ac .
 
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:contact-and-source-tracking.
 

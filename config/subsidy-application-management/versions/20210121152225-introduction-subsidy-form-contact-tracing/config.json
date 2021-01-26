@@ -89,6 +89,13 @@
             ]
           }
         ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveOne",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
       }
     ]
   }
