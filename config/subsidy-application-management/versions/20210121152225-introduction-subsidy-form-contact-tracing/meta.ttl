@@ -3615,3 +3615,38 @@ ns1:eb99fc40-4a7e-4544-80ab-20d00dd3a0c4	ns5:uuid	"eb99fc40-4a7e-4544-80ab-20d00
 	skos:prefLabel	"Sensibilisering, preventie, bronopsporing, quarantaine coaching"@nl ;
 	ns5:uuid	"6d28bd69-ff30-4539-9a79-4faec57a1156" ;
 	skos:definition	"Awareness raising, prevention, source tracing, quarantine coaching"@en .
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+<http://lblod.data.gift/concepts/0326a5f6-5481-41d8-8e19-b5b156b091c3>	rdf:type	rdfs:Class .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+<http://lblod.data.gift/concepts/0326a5f6-5481-41d8-8e19-b5b156b091c3>	rdf:type	skos:Concept .
+@prefix ns3:	<http://mu.semte.ch/vocabularies/core/> .
+<http://lblod.data.gift/concepts/0326a5f6-5481-41d8-8e19-b5b156b091c3>	ns3:uuid	"0326a5f6-5481-41d8-8e19-b5b156b091c3" ;
+	skos:inScheme	<http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f> ;
+	skos:prefLabel	"4 = zeer lage prioriteit"@nl ;
+	skos:definition	"priority-level: very-low"@en .
+@prefix ns4:	<http://lblod.data.gift/concepts/> .
+ns4:aca6c496-4fc1-44c6-acab-a4d09a0c1a25	rdf:type	skos:Concept ,
+		rdfs:Class ;
+	ns3:uuid	"aca6c496-4fc1-44c6-acab-a4d09a0c1a25" ;
+	skos:inScheme	<http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f> ;
+	skos:prefLabel	"3 = lage prioriteit"@nl ;
+	skos:definition	"priority-level: low"@en .
+<http://lblod.data.gift/concepts/1c656d71-419c-4af8-96a0-ee23a9d4ee0b>	rdf:type	rdfs:Class ,
+		skos:Concept ;
+	ns3:uuid	"1c656d71-419c-4af8-96a0-ee23a9d4ee0b" ;
+	skos:inScheme	<http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f> ;
+	skos:prefLabel	"2 = hoge prioriteit"@nl ;
+	skos:definition	"priority-level: high"@en .
+<http://lblod.data.gift/concepts/4cd11157-146f-4589-8023-d9c4138e0e81>	rdf:type	skos:Concept ,
+		rdfs:Class ;
+	ns3:uuid	"4cd11157-146f-4589-8023-d9c4138e0e81" ;
+	skos:inScheme	<http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f> ;
+	skos:prefLabel	"1 = zeer hoge prioriteit"@nl ;
+	skos:definition	"priority-level: urgent"@en .
+<http://lblod.data.gift/concepts/5572e330-1d6a-4ae9-881d-0cb3cd623977>	rdf:type	skos:Concept ,
+		rdfs:Class ;
+	ns3:uuid	"5572e330-1d6a-4ae9-881d-0cb3cd623977" ;
+	skos:inScheme	<http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f> ;
+	skos:prefLabel	"0 = geen actie ondernomen"@nl ;
+	skos:definition	"priority-level: none"@en .
