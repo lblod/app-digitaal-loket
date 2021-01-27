@@ -235,6 +235,8 @@ defmodule Acl.UserGroups.Config do
                         "https://www.gleif.org/ontology/Base/Period",
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
                         "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
+                        "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
+                        "http://mu.semte.ch/vocabularies/ext/EngagementEntry",
                         "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
                         "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
                         "http://data.europa.eu/m8g/Participation",

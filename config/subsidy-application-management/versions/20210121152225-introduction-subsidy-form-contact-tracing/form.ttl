@@ -70,10 +70,17 @@ fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 a form:PropertyGroup;
     sh:name "Op welke opties werd, naast de huidige werking, bijkomend ingezet?" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
+fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe a form:PropertyGroup;
+    mu:uuid "92c418e5-5c6b-490f-bbcd-66bdeac2cbbe";
+    sh:description "contact tracing engagement";
+    sh:order 7;
+    sh:name "Globale evaluatie engagementen" ;
+    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+
 fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf a form:PropertyGroup;
     mu:uuid "b078fd57-0856-4c8a-a49b-73b90bb3bfdf";
     sh:description "contact-and-source-tracking: objective 1";
-    sh:order 7;
+    sh:order 8;
     sh:name "Doelstelling 1: Sensibilisering en preventie met focus op de risicogroepen en de kwetsbare personen/groepen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
@@ -620,6 +627,29 @@ fields:3bbea4d1-42c5-491c-b4e7-d4f48f3770ac a form:Field ;
     sh:group fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf .
 
 ##########################################################
+# contact-and-source-tracking: engagement table
+##########################################################
+
+fields:f6840939-353d-45af-818a-0bee29d1c4e2 a form:Field ;
+    mu:uuid "f6840939-353d-45af-818a-0bee29d1c4e2";
+    sh:order 70 ;
+    sh:path lblodSubsidie:engagementTable ;
+    form:validations
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path lblodSubsidie:engagementTable ;
+         sh:resultMessage "Gelieve minstens één subsidie aanvraag."@nl
+     ] ,
+     [ a form:ValidEngagementTable ;
+         form:grouping form:MatchEvery ;
+         form:max "1000000" ;
+         sh:path lblodSubsidie:engagementTable ;
+         sh:resultMessage "Gelieve een geldige tabel in te dienen."@nl
+     ] ;
+    form:displayType displayTypes:engagementTable ;
+    sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe  .
+
+##########################################################
 # Field groups
 ##########################################################
 
@@ -708,6 +738,9 @@ fieldGroups:contact-and-source-tracking a form:FieldGroup ;
 
         ### Select additional measures Maart
         fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 ,
+
+        ### Engagement table
+        fields:f6840939-353d-45af-818a-0bee29d1c4e2 ,
 
         ### Priority level for objective 1
         fields:08b4b969-efe9-49b8-8f1c-71a6c03ff28d ,
