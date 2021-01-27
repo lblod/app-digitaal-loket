@@ -96,6 +96,22 @@
           "lblodSubsidie:priority",
           "dct:description"
         ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:engagementTable",
+        "properties": [
+          {
+            "s-prefix": "ext:engagementEntry",
+            "properties": [
+              "ext:target",
+              "ext:existingStaff",
+              "ext:additionalStaff",
+              "ext:volunteers",
+              "ext:estimatedCost",
+              "ext:index"
+            ]
+          }
+        ]
       }
     ]
   }
