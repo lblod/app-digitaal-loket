@@ -372,8 +372,6 @@ services:
     volumes:
       - ./config/producer/mandatarissen:/config
       - ./data/files:/share
-    labels:
-      - "logging=true"
     restart: always
     logging: *default-logging
   loket-leidinggevenden-producer:
@@ -384,8 +382,6 @@ services:
     volumes:
       - ./config/producer/leidinggevenden:/config
       - ./data/files:/share
-    labels:
-      - "logging=true"
     restart: always
     logging: *default-logging
   mandataris-archive:
