@@ -29,6 +29,9 @@
       "lblodSubsidie:userCompliesWithEmergencyChildcareConditions",
       "adms:status",
       "lblodSubsidie:totalAmount",
+      "ext:lastModifiedBy",
+      "dct:creator",
+      "pav:createdBy",
       "lblodSubsidie:isCollaboration",
       "lblodSubsidie:collaborator",
       "lblodSubsidie:extraContactTracingMeasuresNovember",
@@ -36,10 +39,6 @@
       "lblodSubsidie:extraContactTracingMeasuresJanuary",
       "lblodSubsidie:extraContactTracingMeasuresFebruary",
       "lblodSubsidie:extraContactTracingMeasuresMarch",
-      {
-        "s-prefix" : "pav:createdBy",
-        "properties" : ["skos:prefLabel"]
-      },
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
@@ -59,20 +58,6 @@
               "rdf:type"
             ]
           }
-        ]
-      },
-      {
-        "s-prefix": "ext:lastModifiedBy",
-        "properties": [
-          "foaf:firstName",
-          "foaf:familyName"
-        ]
-      },
-      {
-        "s-prefix": "dct:creator",
-        "properties": [
-          "foaf:firstName",
-          "foaf:familyName"
         ]
       },
       {
