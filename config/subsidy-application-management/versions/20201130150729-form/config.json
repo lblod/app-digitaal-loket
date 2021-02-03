@@ -31,10 +31,9 @@
       "lblodSubsidie:userCompliesWithEmergencyChildcareConditions",
       "adms:status",
       "lblodSubsidie:totalAmount",
-      {
-        "s-prefix" : "pav:createdBy",
-        "properties" : ["skos:prefLabel"]
-      },
+      "ext:lastModifiedBy",
+      "dct:creator",
+      "pav:createdBy",
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
@@ -54,20 +53,6 @@
               "rdf:type"
             ]
           }
-        ]
-      },
-      {
-        "s-prefix": "ext:lastModifiedBy",
-        "properties": [
-          "foaf:firstName",
-          "foaf:familyName"
-        ]
-      },
-      {
-        "s-prefix": "dct:creator",
-        "properties": [
-          "foaf:firstName",
-          "foaf:familyName"
         ]
       },
       {

@@ -32,6 +32,13 @@
       "ext:lastModifiedBy",
       "dct:creator",
       "pav:createdBy",
+      "lblodSubsidie:isCollaboration",
+      "lblodSubsidie:collaborator",
+      "lblodSubsidie:extraContactTracingMeasuresNovember",
+      "lblodSubsidie:extraContactTracingMeasuresDecember",
+      "lblodSubsidie:extraContactTracingMeasuresJanuary",
+      "lblodSubsidie:extraContactTracingMeasuresFebruary",
+      "lblodSubsidie:extraContactTracingMeasuresMarch",
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
@@ -67,7 +74,62 @@
             ]
           }
         ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveOne",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveTwo",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveThree",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveFour",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:engagementTable",
+        "properties": [
+          {
+            "s-prefix": "ext:engagementEntry",
+            "properties": [
+              "ext:target",
+              "ext:existingStaff",
+              "ext:additionalStaff",
+              "ext:volunteers",
+              "ext:estimatedCost",
+              "ext:index"
+            ]
+          }
+        ]
       }
+    ]
+  },
+  "meta": {
+    "concept-schemes": [
+      "http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2",
+      "http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38",
+      "http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95",
+      "http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2",
+      "http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6",
+      "http://lblod.data.gift/concept-schemes/dd44f316-7a30-45ab-b0f3-5dd642e0b6c7",
+      "http://lblod.data.gift/concept-schemes/2c0ec673-a430-4cd3-861d-8666991b790f"
     ]
   }
 }
