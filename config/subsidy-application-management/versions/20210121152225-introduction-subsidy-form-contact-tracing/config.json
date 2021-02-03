@@ -83,6 +83,27 @@
         ]
       },
       {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveTwo",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveThree",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:contactAndSourceTrackingObjectiveFour",
+        "properties": [
+          "lblodSubsidie:priority",
+          "dct:description"
+        ]
+      },
+      {
         "s-prefix": "lblodSubsidie:engagementTable",
         "properties": [
           {
