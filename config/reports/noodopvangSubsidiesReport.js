@@ -24,10 +24,10 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX gleif: <https://www.gleif.org/ontology/Base/>
 
-      SELECT DISTINCT ?aanvraagdatum ?bedrag (?bestuurseenheidLabel as ?bestuurseenheid)
+      SELECT DISTINCT ?aanvraagdatum (?bestuurseenheidLabel as ?bestuurseenheid)
       ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone ?accountNumber
       ?aantalUniekeKinderen ?aantalKalenderdagen ?naamOrganisator ?aantalKinderenVoorAlleVolleDagen
-      ?aantalKinderenVoorAlleHalveDagen ?aantalKinderenInAanmerking
+      ?aantalKinderenVoorAlleHalveDagen ?aantalKinderenPerInfrastructuur ?totaalBedrag
       (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidie
       WHERE {
         ?subsidie a lblodSubsidie:ApplicationForm ;
@@ -73,13 +73,12 @@ export default {
         ?formEntry ext:actorName ?naamOrganisator ;
           ext:numberChildrenForFullDay ?aantalKinderenVoorAlleVolleDagen ;
           ext:numberChildrenForHalfDay ?aantalKinderenVoorAlleHalveDagen ;
-          ext:numberChildrenPerInfrastructure ?aantalKinderenInAanmerking  .
-
+          ext:numberChildrenPerInfrastructure ?aantalKinderenPerInfrastructuur  .
 
         OPTIONAL {
           ?subsidie lblodSubsidie:totalAmount ?amount .
         }
-        BIND(IF(BOUND(?amount), ?amount, xsd:float(0)) as ?bedrag)
+        BIND(IF(BOUND(?amount), ?amount, xsd:float(0)) as ?totaalBedrag)
       }
       ORDER BY DESC(?aanvraagdatum)
     `;
@@ -87,7 +86,6 @@ export default {
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
         aanvraagdatum: subsidie.aanvraagdatum.value,
-        bedrag: subsidie.bedrag.value,
         bestuurseenheid: subsidie.bestuurseenheid.value,
         contactFirstName: subsidie.contactFirstName.value,
         contactLastName: subsidie.contactLastName.value,
@@ -99,7 +97,8 @@ export default {
         naamOrganisator: subsidie.naamOrganisator.value,
         aantalKinderenVoorAlleVolleDagen: subsidie.aantalKinderenVoorAlleVolleDagen.value,
         aantalKinderenVoorAlleHalveDagen: subsidie.aantalKinderenVoorAlleHalveDagen.value,
-        aantalKinderenInAanmerking: subsidie.aantalKinderenInAanmerking.value,
+        aantalKinderenPerInfrastructuur: subsidie.aantalKinderenPerInfrastructuur.value,
+        totaalBedrag: subsidie.totaalBedrag.value.toString().replace('.', ','),
         reeks: subsidie.reeks.value,
         reeksStart: subsidie.reeksStart.value,
         reeksEnd: subsidie.reeksEnd.value,
@@ -109,28 +108,28 @@ export default {
       };
     });
 
-     await generateReportFromData(data, [
-       'aanvraagdatum',
-       'bedrag',
-       'bestuurseenheid',
-       'contactFirstName',
-       'contactLastName',
-       'contactEmail',
-       'contactTelephone',
-       'aantalUniekeKinderen',
-       'aantalKalenderdagen',
-       'accountNumber',
-       'naamOrganisator',
-       'aantalKinderenVoorAlleVolleDagen',
-       'aantalKinderenVoorAlleHalveDagen',
-       'aantalKinderenVoorAlleHalveDagen',
-       'aantalKinderenInAanmerking',
-       'reeks',
-       'reeksStart',
-       'reeksEnd',
-       'createdByName',
-       'modifiedByName',
-       'subsidie'
-      ], reportData);
+    await generateReportFromData(data, [
+      'aanvraagdatum',
+      'bestuurseenheid',
+      'contactFirstName',
+      'contactLastName',
+      'contactEmail',
+      'contactTelephone',
+      'aantalUniekeKinderen',
+      'aantalKalenderdagen',
+      'accountNumber',
+      'naamOrganisator',
+      'aantalKinderenVoorAlleVolleDagen',
+      'aantalKinderenVoorAlleHalveDagen',
+      'aantalKinderenVoorAlleHalveDagen',
+      'aantalKinderenPerInfrastructuur',
+      'totaalBedrag',
+      'reeks',
+      'reeksStart',
+      'reeksEnd',
+      'createdByName',
+      'modifiedByName',
+      'subsidie'
+    ], reportData);
   }
 };

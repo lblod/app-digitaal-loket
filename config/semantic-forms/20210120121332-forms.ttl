@@ -3020,10 +3020,10 @@ fieldGroups:479990ad-12a3-43b1-a3cf-3d9897e59357 a form:FieldGroup ;
                       fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
