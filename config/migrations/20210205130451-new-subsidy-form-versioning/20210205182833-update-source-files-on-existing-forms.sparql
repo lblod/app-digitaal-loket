@@ -1,0 +1,119 @@
+PREFIX dct: <<http://purl.org/dc/terms/>>
+
+# Update source for semantic-forms with version <share://versions/20201130150729-form>
+DELETE {
+  GRAPH ?h {
+    ?s dct:source <share://versions/20201130150729-form> .
+  }
+} INSERT {
+  GRAPH ?h {
+    ?s dct:source <config://versions/20201130150729/form.ttl> ,
+                  <config://versions/20201130150729/config.json> ,
+                  <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:source <share://versions/20201130150729-form> .
+  }
+  BIND(?g as ?h)
+}
+
+;
+
+# Update source for semantic-forms with version <share://versions/20201207135752-form>
+DELETE {
+  GRAPH ?h {
+    ?s dct:source <share://versions/20201207135752-form> .
+  }
+} INSERT {
+  GRAPH ?h {
+    ?s dct:source <config://versions/20201207135752/form.ttl> ,
+                  <config://versions/20201207135752/config.json> ,
+                  <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:source <share://versions/20201207135752-form> .
+  }
+  BIND(?g as ?h)
+}
+
+;
+
+# Update source for semantic-forms with version <share://versions/20210108094916-form>
+DELETE {
+  GRAPH ?h {
+    ?s dct:source <share://versions/20210108094916-form> .
+  }
+} INSERT {
+  GRAPH ?h {
+    ?s dct:source <config://versions/20210108094916/form.ttl> ,
+                  <config://versions/20210108094916/config.json> ,
+                  <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:source <share://versions/20210108094916-form> .
+  }
+  BIND(?g as ?h)
+}
+
+;
+
+# Update source for semantic-forms with version <share://versions/20210108094916-form>
+DELETE {
+  GRAPH ?h {
+    ?s dct:source <share://versions/20210113150324-form> .
+  }
+} INSERT {
+  GRAPH ?h {
+    ?s dct:source <config://versions/20210113150324/form.ttl> ,
+                  <config://versions/20210113150324/config.json> ,
+                  <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:source <share://versions/20210113150324-form> .
+  }
+  BIND(?g as ?h)
+}
+
+;
+
+# Update source for semantic-forms with version <share://versions/20210113153339-form>
+DELETE {
+  GRAPH ?h {
+    ?s dct:source <share://versions/20210113153339-form> .
+  }
+} INSERT {
+  GRAPH ?h {
+    ?s dct:source <config://versions/20210113153339/form.ttl> ,
+                  <config://versions/20210113153339/config.json> ,
+                  <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:source <share://versions/20210113153339-form> .
+  }
+  BIND(?g as ?h)
+}
+
+;
+
+# Update source for semantic-forms with version <share://versions/20210121152225-introduction-subsidy-form-contact-tracing>
+DELETE {
+  GRAPH ?h {
+    ?s dct:source <share://versions/20210121152225-introduction-subsidy-form-contact-tracing> .
+  }
+} INSERT {
+  GRAPH ?h {
+    ?s dct:source <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.ttl> ,
+                  <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/config.json> ,
+                  <data://meta-files/20210204172412-after-contact-tracing-meta.ttl> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:source <share://versions/20210121152225-introduction-subsidy-form-contact-tracing> .
+  }
+  BIND(?g as ?h)
+}

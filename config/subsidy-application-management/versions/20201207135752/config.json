@@ -15,9 +15,6 @@
       "PREFIX adms: <http://www.w3.org/ns/adms#>"
     ],
     "properties": [
-      "rdf:type",
-      "mu:uuid",
-      "dct:source",
       "subsidie:aanvraagdatum",
       "dct:created",
       "dct:modified",
