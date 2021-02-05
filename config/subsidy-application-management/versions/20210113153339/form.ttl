@@ -91,7 +91,7 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
           [ a form:ConceptSchemeConstraint ;
             form:grouping form:Bag ;
             sh:path lblodSubsidie:timeBlock ;
-            form:conceptScheme http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38 ;
+            form:conceptScheme <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
             sh:resultMessage "Selecteer een waarde uit de lijst."@nl
           ],
           [ a form:RequiredConstraint ;
