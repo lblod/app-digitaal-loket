@@ -107,8 +107,7 @@
 
 (define-resource application-form ()
   :class (s-prefix "lblodSubsidie:ApplicationForm")
-  :properties `((:aanvraagdatum :date ,(s-prefix "subsidie:aanvraagdatum"))
-                (:created :datetime ,(s-prefix "dct:created"))
+  :properties `((:created :datetime ,(s-prefix "dct:created"))
                 (:modified :datetime ,(s-prefix "dct:modified"))
                 (:total-amount :float ,(s-prefix "lblodSubsidie:totalAmount")))
   :has-one `((bestuurseenheid :via ,(s-prefix "pav:createdBy")
