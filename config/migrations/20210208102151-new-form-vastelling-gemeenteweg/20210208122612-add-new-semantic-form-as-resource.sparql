@@ -10,8 +10,8 @@ INSERT DATA{
  				  dct:type <http://data.lblod.gift/concepts/form-file-type> ;
                                   mu:uuid "cca21232-4662-46f4-9cab-b1169d5599f8" ;
                                   nfo:fileName "20210208122305-forms.ttl" ;
-                                  dct:created "2021-02-08Z"^^xsd:dateTime;
-                                  dct:modified "2021-02-08Z"^^xsd:dateTime;
+                                  dct:created "2021-02-08Z"^^xsd:dateTime ;
+                                  dct:modified "2021-02-08Z"^^xsd:dateTime ;
                                   dct:format "text/turtle";
                                   # TODO nfo:fileSize "248000"^^xsd:integer;
                                   dbpedia:fileExtension "ttl" .

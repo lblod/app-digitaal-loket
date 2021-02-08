@@ -3,8 +3,8 @@ INSERT DATA {
     <http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc>
         a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
         <http://mu.semte.ch/vocabularies/core/uuid> "60d620a5-ec34-4a91-ba84-fff0813d0ccc" ;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Municipal road procedure type"@en
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Type procedure voor een gemeenteweg"@nl
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Municipal road procedure type"@en ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Type procedure voor een gemeenteweg"@nl .
 
     <http://lblod.data.gift/concepts/0588da5c-08b2-4209-ab3c-efd1b94e1326>
         a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;

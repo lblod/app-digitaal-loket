@@ -3,8 +3,8 @@ INSERT DATA {
     <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16>
         a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
         <http://mu.semte.ch/vocabularies/core/uuid> "a995bb71-3c87-4385-a06b-a786f2fa0d16" ;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Decision adoption type"@en
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Type vaststelling van het besluit"@nl
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Decision adoption type"@en ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Type vaststelling van het besluit"@nl .
 
     <http://lblod.data.gift/concepts/055d66b8-204c-47da-80d9-d41601503616>
         a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
