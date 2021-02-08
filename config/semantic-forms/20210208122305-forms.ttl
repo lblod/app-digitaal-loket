@@ -3099,10 +3099,10 @@ fieldGroups:479990ad-12a3-43b1-a3cf-3d9897e59357 a form:FieldGroup ;
                       fields:78bfbd91-0778-4573-a52d-4c53b3c512eb,
 
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -4963,16 +4963,10 @@ fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a a form:FieldGroup ;
     mu:uuid "f7e0c669-2634-4264-b01f-cc76cfa24b1a" ;
     form:hasField
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
 
                       ###Bestanden###
-                      fields:43c48290-8cc0-4066-aeee-8545bca7c68d, # with custom helper text
-
-                      ###Type RemoteDataObject or FileDataObject###
-                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
-
-                      ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:43c48290-8cc0-4066-aeee-8545bca7c68d. # with custom helper text
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:f831b57d-905a-4002-9a1d-60d2723c6672.
 
@@ -4999,16 +4993,10 @@ fieldGroups:98a3e371-6c90-446b-8547-901e47d3b047 a form:FieldGroup ;
     mu:uuid "98a3e371-6c90-446b-8547-901e47d3b047" ;
     form:hasField
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
 
                       ###Bestanden###
-                      fields:2aecc67c-687d-448c-be01-94ad42fb51c1 , # with custom helper text
-
-                      ###Type RemoteDataObject or FileDataObject###
-                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
-
-                      ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:2aecc67c-687d-448c-be01-94ad42fb51c1 . # with custom helper text
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:083a2c18-e46b-4f2a-a29d-358412f310bf.
 
@@ -5071,16 +5059,10 @@ fieldGroups:5e1cc9c8-59df-4802-a1d5-f776b6364617 a form:FieldGroup ;
     mu:uuid "5e1cc9c8-59df-4802-a1d5-f776b6364617" ;
     form:hasField
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
 
                       ###Bestanden###
-                      fields:f1fa5e64-1c68-4355-894a-2e0531f4412f, # with custom helper text
-
-                      ###Type RemoteDataObject or FileDataObject###
-                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
-
-                      ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:f1fa5e64-1c68-4355-894a-2e0531f4412f. # with custom helper text
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:c9dfaf9c-31cb-4443-8084-bf383fb950b8.
 
@@ -5107,16 +5089,10 @@ fieldGroups:6f7eeed2-6f6e-4999-b225-a43ed0de5e4c a form:FieldGroup ;
     mu:uuid "6f7eeed2-6f6e-4999-b225-a43ed0de5e4c" ;
     form:hasField
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
-                      fields:6f7cb360-26df-4233-988a-a11ac9c33ba4, # with custom helper text
-
-                      ###Type RemoteDataObject or FileDataObject###
-                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
-
-                      ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:6f7cb360-26df-4233-988a-a11ac9c33ba4. # with custom helper text
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:20f49493-ff36-49c2-bb6f-e1711f8799d2.
 
