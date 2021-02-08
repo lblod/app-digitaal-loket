@@ -81,7 +81,7 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 a form:Field ;
     mu:uuid "b9d831c5-da21-40d6-aac8-65feb4783d76" ;
     sh:name "Gaat het over een voorlopige of definitieve vaststelling?" ;
-    sh:order 700 ;
+    sh:order 3800 ;
     sh:path lblodBesluit:AdoptionType ;
     form:validations
       [ a form:ConceptSchemeConstraint ;
@@ -97,7 +97,7 @@ fields:b9d831c5-da21-40d6-aac8-65feb4783d76 a form:Field ;
 fields:a7073ee1-3717-4798-ae10-fe69b29fabc1 a form:Field ;
     mu:uuid "a7073ee1-3717-4798-ae10-fe69b29fabc1" ;
     sh:name "Gaat het over een aanleg/verplaatsing/wijziging of over een opheffing van een gemeenteweg?" ;
-    sh:order 800 ;
+    sh:order 3900 ;
     sh:path lblodBesluit:MunicipalRoadProcedureType ;
     form:validations
       [ a form:ConceptSchemeConstraint ;
@@ -4909,7 +4909,7 @@ fields:b05954eb-73fb-4a68-a8cc-cdf51b7a8e2a a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:2a680569-0262-4030-842e-0925e1348446 .
 
-###########Vastelling gemeenteweg###########
+###########Vaststelling gemeenteweg###########
 
 fieldGroups:c7d584e4-ebd8-49d5-a570-11670200d7b9 a form:FieldGroup ;
     mu:uuid "c7d584e4-ebd8-49d5-a570-11670200d7b9" ;
