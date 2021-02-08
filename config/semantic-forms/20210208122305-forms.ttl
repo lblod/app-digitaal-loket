@@ -521,6 +521,54 @@ fields:c7c5a589-0785-4032-a4bd-ee589add3c39 a form:Field ;
     form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
     sh:group fields:aDynamicPropertyGroup .
 
+########################################################################################################################
+# Simple field for File (with custom helper text for "voorlopige aanleg, verplaatsing of wijzeging van een gemeenteweg")
+########################################################################################################################
+fields:f1fa5e64-1c68-4355-894a-2e0531f4412f a form:Field ;
+    mu:uuid "f1fa5e64-1c68-4355-894a-2e0531f4412f" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+############################################################################
+# Simple field for File (with custom helper text for "voorlopige opheffing")
+############################################################################
+fields:6f7cb360-26df-4233-988a-a11ac9c33ba4 a form:Field ;
+    mu:uuid "6f7cb360-26df-4233-988a-a11ac9c33ba4" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#########################################################################################################################
+# Simple field for File (with custom helper text for "definitieve aanleg, verplaatsing of wijzeging van een gemeenteweg")
+#########################################################################################################################
+fields:43c48290-8cc0-4066-aeee-8545bca7c68d a form:Field ;
+    mu:uuid "43c48290-8cc0-4066-aeee-8545bca7c68d" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+############################################################################
+# Simple field for File (with custom helper text for "definitive opheffing")
+############################################################################
+fields:2aecc67c-687d-448c-be01-94ad42fb51c1 a form:Field ;
+    mu:uuid "2aecc67c-687d-448c-be01-94ad42fb51c1" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
 ##########################################################
 # Custom files and links fields
 # Following fields should be considered as a pair.
@@ -4909,6 +4957,78 @@ fields:b05954eb-73fb-4a68-a8cc-cdf51b7a8e2a a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:2a680569-0262-4030-842e-0925e1348446 .
 
+###########Definitieve aanleg, verplaatsing of wijziging van een gemeenteweg###########
+
+fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a a form:FieldGroup ;
+    mu:uuid "f7e0c669-2634-4264-b01f-cc76cfa24b1a" ;
+    form:hasField
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:43c48290-8cc0-4066-aeee-8545bca7c68d, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:f831b57d-905a-4002-9a1d-60d2723c6672.
+
+fields:f831b57d-905a-4002-9a1d-60d2723c6672 a form:ConditionalFieldGroup ;
+    mu:uuid "f831b57d-905a-4002-9a1d-60d2723c6672";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16> ;
+        form:customValue <http://lblod.data.gift/concepts/28da07ad-4a25-460e-b1be-92bd4b7b8927>
+      ] ,
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:MunicipalRoadProcedureType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc> ;
+        form:customValue <http://lblod.data.gift/concepts/0588da5c-08b2-4209-ab3c-efd1b94e1326>
+      ] ;
+    form:hasFieldGroup fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a .
+
+###########Definitieve Opheving###########
+
+fieldGroups:98a3e371-6c90-446b-8547-901e47d3b047 a form:FieldGroup ;
+    mu:uuid "98a3e371-6c90-446b-8547-901e47d3b047" ;
+    form:hasField
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:2aecc67c-687d-448c-be01-94ad42fb51c1 , # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:083a2c18-e46b-4f2a-a29d-358412f310bf.
+
+fields:083a2c18-e46b-4f2a-a29d-358412f310bf a form:ConditionalFieldGroup ;
+    mu:uuid "083a2c18-e46b-4f2a-a29d-358412f310bf";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16> ;
+        form:customValue <http://lblod.data.gift/concepts/28da07ad-4a25-460e-b1be-92bd4b7b8927>
+      ] ,
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:MunicipalRoadProcedureType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc> ;
+        form:customValue <http://lblod.data.gift/concepts/82813418-356b-49a6-be9e-c5ef1b7a70bc>
+      ] ;
+    form:hasFieldGroup fieldGroups:98a3e371-6c90-446b-8547-901e47d3b047 .
+
 ###########Vaststelling gemeenteweg###########
 
 fieldGroups:c7d584e4-ebd8-49d5-a570-11670200d7b9 a form:FieldGroup ;
@@ -4928,19 +5048,7 @@ fieldGroups:c7d584e4-ebd8-49d5-a570-11670200d7b9 a form:FieldGroup ;
                       fields:49dbe1be-877a-4890-8465-1510ff18ce18,
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
-                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
-
-                      ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
-
-                      ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
-
-                      ###Type RemoteDataObject or FileDataObject###
-                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
-
-                      ### RemoteDataObject/url ###
-                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:5b5ed2f1-f7be-49b7-bbcf-e1eece89b10c.
 
@@ -4956,6 +5064,78 @@ fields:5b5ed2f1-f7be-49b7-bbcf-e1eece89b10c a form:ConditionalFieldGroup ;
     form:hasFieldGroup fieldGroups:c7d584e4-ebd8-49d5-a570-11670200d7b9 .
 
 
+
+###########Voorlopige aanleg, verplaatsing of wijziging###########
+
+fieldGroups:5e1cc9c8-59df-4802-a1d5-f776b6364617 a form:FieldGroup ;
+    mu:uuid "5e1cc9c8-59df-4802-a1d5-f776b6364617" ;
+    form:hasField
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:f1fa5e64-1c68-4355-894a-2e0531f4412f, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:c9dfaf9c-31cb-4443-8084-bf383fb950b8.
+
+fields:c9dfaf9c-31cb-4443-8084-bf383fb950b8 a form:ConditionalFieldGroup ;
+    mu:uuid "c9dfaf9c-31cb-4443-8084-bf383fb950b8";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16> ;
+        form:customValue <http://lblod.data.gift/concepts/055d66b8-204c-47da-80d9-d41601503616>
+      ] ,
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:MunicipalRoadProcedureType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc> ;
+        form:customValue <http://lblod.data.gift/concepts/0588da5c-08b2-4209-ab3c-efd1b94e1326>
+      ] ;
+    form:hasFieldGroup fieldGroups:5e1cc9c8-59df-4802-a1d5-f776b6364617 .
+
+###########Voorlopige Opheving###########
+
+fieldGroups:6f7eeed2-6f6e-4999-b225-a43ed0de5e4c a form:FieldGroup ;
+    mu:uuid "6f7eeed2-6f6e-4999-b225-a43ed0de5e4c" ;
+    form:hasField
+                      ###Links-naar-documenten###
+                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+
+                      ###Bestanden###
+                      fields:6f7cb360-26df-4233-988a-a11ac9c33ba4, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:20f49493-ff36-49c2-bb6f-e1711f8799d2.
+
+fields:20f49493-ff36-49c2-bb6f-e1711f8799d2 a form:ConditionalFieldGroup ;
+    mu:uuid "20f49493-ff36-49c2-bb6f-e1711f8799d2";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16> ;
+        form:customValue <http://lblod.data.gift/concepts/055d66b8-204c-47da-80d9-d41601503616>
+      ] ,
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:MunicipalRoadProcedureType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc> ;
+        form:customValue <http://lblod.data.gift/concepts/82813418-356b-49a6-be9e-c5ef1b7a70bc>
+      ] ;
+    form:hasFieldGroup fieldGroups:6f7eeed2-6f6e-4999-b225-a43ed0de5e4c .
 
 ###########Verslag-lokale-betrokkenheid-eredienstbesturen###########
 
