@@ -78,6 +78,38 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+fields:b9d831c5-da21-40d6-aac8-65feb4783d76 a form:Field ;
+    mu:uuid "b9d831c5-da21-40d6-aac8-65feb4783d76" ;
+    sh:name "Gaat het over een voorlopige of definitieve vaststelling?" ;
+    sh:order 700 ;
+    sh:path lblodBesluit:AdoptionType ;
+    form:validations
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16>;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/a995bb71-3c87-4385-a06b-a786f2fa0d16"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:a7073ee1-3717-4798-ae10-fe69b29fabc1 a form:Field ;
+    mu:uuid "a7073ee1-3717-4798-ae10-fe69b29fabc1" ;
+    sh:name "Gaat het over een aanleg/verplaatsing/wijziging of over een opheffing van een gemeenteweg?" ;
+    sh:order 800 ;
+    sh:path lblodBesluit:MunicipalRoadProcedureType ;
+    form:validations
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:MunicipalRoadProcedureType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc>;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/60d620a5-ec34-4a91-ba84-fff0813d0ccc"}""" ;
+    form:displayType displayTypes:conceptSchemeRadioButtons ;
+    sh:group fields:aDynamicPropertyGroup .
+
 fields:6ffb0ed7-769a-41e4-b5a9-f6fb0287b235 a form:Field ;
     mu:uuid "6ffb0ed7-769a-41e4-b5a9-f6fb0287b235" ;
     sh:name "Ondernemingsnummer betreffend bedrijf/bestuur" ;
@@ -593,7 +625,6 @@ fields:eaf71eec-6ca8-4f63-b4a6-adfe4f21651b a form:Field ;
 ##########################################################
 #  END VLABEL [First version]
 ##########################################################
-
 
 ###########Advies-bij-jaarrekening-AGB###########
 
@@ -4883,14 +4914,12 @@ fields:b05954eb-73fb-4a68-a8cc-cdf51b7a8e2a a form:ConditionalFieldGroup ;
 fieldGroups:c7d584e4-ebd8-49d5-a570-11670200d7b9 a form:FieldGroup ;
     mu:uuid "c7d584e4-ebd8-49d5-a570-11670200d7b9" ;
     form:hasField
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
                       ###Gaat het over een voorlopige of definitieve vaststelling?###
-                      # TODO fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+                      fields:b9d831c5-da21-40d6-aac8-65feb4783d76,
 
                       ###Gaat het over een aanleg/verplaatsing/wijziging of over een opheffing van een gemeenteweg?###
-                      # TODO fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+                      fields:a7073ee1-3717-4798-ae10-fe69b29fabc1,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -4913,10 +4942,10 @@ fieldGroups:c7d584e4-ebd8-49d5-a570-11670200d7b9 a form:FieldGroup ;
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
-fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:8640f3ff-2302-40eb-85c6-d932628250ed.
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:5b5ed2f1-f7be-49b7-bbcf-e1eece89b10c.
 
-fields:8640f3ff-2302-40eb-85c6-d932628250ed a form:ConditionalFieldGroup ;
-    mu:uuid "8640f3ff-2302-40eb-85c6-d932628250ed";
+fields:5b5ed2f1-f7be-49b7-bbcf-e1eece89b10c a form:ConditionalFieldGroup ;
+    mu:uuid "5b5ed2f1-f7be-49b7-bbcf-e1eece89b10c";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
