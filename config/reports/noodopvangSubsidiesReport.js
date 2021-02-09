@@ -31,7 +31,6 @@ export default {
       (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidie
       WHERE {
         ?subsidie a lblodSubsidie:ApplicationForm ;
-          subsidie:aanvraagdatum ?aanvraagdatum ;
           pav:createdBy ?bestuurseenheid ;
           dct:creator ?createdBy ;
           ext:lastModifiedBy ?modifiedBy ;
@@ -43,6 +42,9 @@ export default {
           lblodSubsidie:applicationFormTable ?formTable ;
           lblodSubsidie:subsidyMeasure <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
           adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
+
+        ?aanvraag prov:used ?subsidie ;
+          subsidie:aanvraagdatum ?aanvraagdatum .
 
         ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel .
 
