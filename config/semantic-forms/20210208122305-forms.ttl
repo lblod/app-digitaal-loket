@@ -521,54 +521,6 @@ fields:c7c5a589-0785-4032-a4bd-ee589add3c39 a form:Field ;
     form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
     sh:group fields:aDynamicPropertyGroup .
 
-########################################################################################################################
-# Simple field for File (with custom helper text for "voorlopige aanleg, verplaatsing of wijzeging van een gemeenteweg")
-########################################################################################################################
-fields:f1fa5e64-1c68-4355-894a-2e0531f4412f a form:Field ;
-    mu:uuid "f1fa5e64-1c68-4355-894a-2e0531f4412f" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
-    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-############################################################################
-# Simple field for File (with custom helper text for "voorlopige opheffing")
-############################################################################
-fields:6f7cb360-26df-4233-988a-a11ac9c33ba4 a form:Field ;
-    mu:uuid "6f7cb360-26df-4233-988a-a11ac9c33ba4" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
-    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-#########################################################################################################################
-# Simple field for File (with custom helper text for "definitieve aanleg, verplaatsing of wijzeging van een gemeenteweg")
-#########################################################################################################################
-fields:43c48290-8cc0-4066-aeee-8545bca7c68d a form:Field ;
-    mu:uuid "43c48290-8cc0-4066-aeee-8545bca7c68d" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
-    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
-############################################################################
-# Simple field for File (with custom helper text for "definitive opheffing")
-############################################################################
-fields:2aecc67c-687d-448c-be01-94ad42fb51c1 a form:Field ;
-    mu:uuid "2aecc67c-687d-448c-be01-94ad42fb51c1" ;
-    sh:name "Bestanden" ;
-    sh:order 10001 ;
-    sh:path dct:hasPart;
-    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
-    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
-    sh:group fields:aDynamicPropertyGroup .
-
 ##########################################################
 # Custom files and links fields
 # Following fields should be considered as a pair.
@@ -606,6 +558,78 @@ fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a a form:Field ;
           sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
      ];
     form:displayType displayTypes:files; # consider this v1.0
+    sh:group fields:aDynamicPropertyGroup .
+
+#####################################################################################################
+# File with custom helper text for "voorlopige aanleg, verplaatsing of wijzeging van een gemeenteweg"
+#####################################################################################################
+fields:f1fa5e64-1c68-4355-894a-2e0531f4412f a form:Field ;
+    mu:uuid "f1fa5e64-1c68-4355-894a-2e0531f4412f" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#########################################################
+# File with custom helper text for "voorlopige opheffing"
+#########################################################
+fields:6f7cb360-26df-4233-988a-a11ac9c33ba4 a form:Field ;
+    mu:uuid "6f7cb360-26df-4233-988a-a11ac9c33ba4" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+######################################################################################################
+# File with custom helper text for "definitieve aanleg, verplaatsing of wijzeging van een gemeenteweg"
+######################################################################################################
+fields:43c48290-8cc0-4066-aeee-8545bca7c68d a form:Field ;
+    mu:uuid "43c48290-8cc0-4066-aeee-8545bca7c68d" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+#########################################################
+# File with custom helper text for "definitive opheffing"
+#########################################################
+fields:2aecc67c-687d-448c-be01-94ad42fb51c1 a form:Field ;
+    mu:uuid "2aecc67c-687d-448c-be01-94ad42fb51c1" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de definitieve beslissing, grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
     sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
@@ -4966,7 +4990,13 @@ fieldGroups:f7e0c669-2634-4264-b01f-cc76cfa24b1a a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
 
                       ###Bestanden###
-                      fields:43c48290-8cc0-4066-aeee-8545bca7c68d. # with custom helper text
+                      fields:43c48290-8cc0-4066-aeee-8545bca7c68d, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:f831b57d-905a-4002-9a1d-60d2723c6672.
 
@@ -4993,10 +5023,16 @@ fieldGroups:98a3e371-6c90-446b-8547-901e47d3b047 a form:FieldGroup ;
     mu:uuid "98a3e371-6c90-446b-8547-901e47d3b047" ;
     form:hasField
                       ###Links-naar-documenten###
-                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
-                      fields:2aecc67c-687d-448c-be01-94ad42fb51c1 . # with custom helper text
+                      fields:2aecc67c-687d-448c-be01-94ad42fb51c1, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:083a2c18-e46b-4f2a-a29d-358412f310bf.
 
@@ -5059,10 +5095,16 @@ fieldGroups:5e1cc9c8-59df-4802-a1d5-f776b6364617 a form:FieldGroup ;
     mu:uuid "5e1cc9c8-59df-4802-a1d5-f776b6364617" ;
     form:hasField
                       ###Links-naar-documenten###
-                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
-                      fields:f1fa5e64-1c68-4355-894a-2e0531f4412f. # with custom helper text
+                      fields:f1fa5e64-1c68-4355-894a-2e0531f4412f, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:c9dfaf9c-31cb-4443-8084-bf383fb950b8.
 
@@ -5092,7 +5134,13 @@ fieldGroups:6f7eeed2-6f6e-4999-b225-a43ed0de5e4c a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden###
-                      fields:6f7cb360-26df-4233-988a-a11ac9c33ba4. # with custom helper text
+                      fields:6f7cb360-26df-4233-988a-a11ac9c33ba4, # with custom helper text
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 form:hasConditionalFieldGroup fields:20f49493-ff36-49c2-bb6f-e1711f8799d2.
 
