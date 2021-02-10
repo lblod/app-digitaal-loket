@@ -26,25 +26,3 @@ WHERE {
       skos:prefLabel ?label .
   }
 }
-
-;
-
-#  Generate a SubsidiemaatregelConsumptie and link it everywhere
-INSERT {
-  GRAPH ?g {
-    ?consumptie a subsidie:SubsidiemaatregelConsumptie ;
-      mu:uuid ?uuidConsumptie ;
-      prov:wasGeneratedBy ?aanvraag ;
-      transactie:isInstantieVan ?aanbod .
-  }
-}
-WHERE {
-  GRAPH ?g {
-    ?applicationForm a lblodSubsidie:ApplicationForm ;
-      lblodSubsidie:subsidyMeasure ?aanbod .
-    ?aanvraag prov:used ?applicationForm .
-  }
-
-  BIND(MD5(CONCAT(?applicationForm, "SubsidiemaatregelConsumptie")) as ?uuidConsumptie)
-  BIND(IRI(CONCAT("http://data.lblod.info/id/subsidiemaatregel-consumpties/", ?uuidConsumptie)) AS ?consumptie)
-}
