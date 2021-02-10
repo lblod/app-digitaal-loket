@@ -399,7 +399,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-warning:
-    image: lblod/berichtencentrum-warning-service:0.0.1
+    image: lblod/berichtencentrum-warning-service:0.0.2
     labels:
       - "logging=true"
     restart: always
