@@ -1,5 +1,5 @@
 {
-  "resource": {
+  "source": {
     "prefixes": [
       "PREFIX mu: <http://mu.semte.ch/vocabularies/core/>",
       "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
@@ -118,7 +118,7 @@
     ]
   },
   "meta": {
-    "concept-schemes": [
+    "schemes": [
       "http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2",
       "http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38",
       "http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95",
