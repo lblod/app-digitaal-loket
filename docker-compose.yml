@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.36.0
+    image: lblod/frontend-loket:0.36.2
     links:
       - identifier:backend
     labels:
@@ -277,7 +277,7 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    image: lblod/download-url-service:0.3.1
+    image: lblod/download-url-service:0.4.1
     volumes:
       - ./data/files:/share
     labels:
@@ -299,9 +299,9 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.7.4
+    image: lblod/enrich-submission-service:0.7.5
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20210120121332-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20210208122305-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -404,7 +404,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-warning:
-    image: lblod/berichtencentrum-warning-service:0.0.1
+    image: lblod/berichtencentrum-warning-service:0.0.2
     labels:
       - "logging=true"
     restart: always

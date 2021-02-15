@@ -15,7 +15,6 @@
       "PREFIX adms: <http://www.w3.org/ns/adms#>"
     ],
     "properties": [
-      "subsidie:aanvraagdatum",
       "dct:created",
       "dct:modified",
       "lblodSubsidie:uniqueChildrenNumberForWholePeriod",
