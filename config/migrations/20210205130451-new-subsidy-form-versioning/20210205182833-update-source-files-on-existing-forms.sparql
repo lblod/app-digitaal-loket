@@ -25,7 +25,8 @@ DELETE {
 } INSERT {
   GRAPH ?h {
     ?s dct:source <config://versions/20201130150729/form.ttl> ,
-                  <config://versions/20201130150729/config.json> ,
+                  <config://versions/20201130150729/form.json> ,
+                  <config://versions/20201130150729/mapper.js> ,
                   <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
   }
 } WHERE {
@@ -45,7 +46,8 @@ DELETE {
 } INSERT {
   GRAPH ?h {
     ?s dct:source <config://versions/20201207135752/form.ttl> ,
-                  <config://versions/20201207135752/config.json> ,
+                  <config://versions/20201207135752/form.json> ,
+                  <config://versions/20201207135752/mapper.js> ,
                   <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
   }
 } WHERE {
@@ -65,7 +67,8 @@ DELETE {
 } INSERT {
   GRAPH ?h {
     ?s dct:source <config://versions/20210108094916/form.ttl> ,
-                  <config://versions/20210108094916/config.json> ,
+                  <config://versions/20210108094916/form.json> ,
+                  <config://versions/20210108094916/mapper.js> ,
                   <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
   }
 } WHERE {
@@ -85,7 +88,8 @@ DELETE {
 } INSERT {
   GRAPH ?h {
     ?s dct:source <config://versions/20210113150324/form.ttl> ,
-                  <config://versions/20210113150324/config.json> ,
+                  <config://versions/20210113150324/form.json> ,
+                  <config://versions/20210113150324/mapper.js>
                   <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
   }
 } WHERE {
@@ -105,7 +109,8 @@ DELETE {
 } INSERT {
   GRAPH ?h {
     ?s dct:source <config://versions/20210113153339/form.ttl> ,
-                  <config://versions/20210113153339/config.json> ,
+                  <config://versions/20210113153339/form.json> ,
+                  <config://versions/20210113153339/mapper.js> ,
                   <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> .
   }
 } WHERE {
@@ -125,7 +130,8 @@ DELETE {
 } INSERT {
   GRAPH ?h {
     ?s dct:source <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.ttl> ,
-                  <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/config.json> ,
+                  <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.json> ,
+                  <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/mapper.js> ,
                   <data://meta-files/20210204172413-after-contact-tracing-meta.ttl> .
   }
 } WHERE {
@@ -142,22 +148,28 @@ DELETE DATA {
   GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
     <http://dummy/data/form> a <http://lblod.data.gift/vocabularies/subsidie/ApplicationForm> ;
             dct:source <config://versions/20201130150729/form.ttl> ,
-                       <config://versions/20201130150729/config.json> ,
+                       <config://versions/20201130150729/form.json> ,
+                       <config://versions/20201130150729/mapper.js> ,
                        <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> ,
                        <config://versions/20201207135752/form.ttl> ,
-                       <config://versions/20201207135752/config.json> ,
+                       <config://versions/20201207135752/form.json> ,
+                       <config://versions/20201207135752/mapper.js> ,
                        <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> ,
                        <config://versions/20210108094916/form.ttl> ,
-                       <config://versions/20210108094916/config.json> ,
+                       <config://versions/20210108094916/form.json> ,
+                       <config://versions/20210108094916/mapper.js> ,
                        <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> ,
                        <config://versions/20210113150324/form.ttl> ,
-                       <config://versions/20210113150324/config.json> ,
+                       <config://versions/20210113150324/form.json> ,
+                       <config://versions/20210113150324/mapper.js> ,
                        <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> ,
                        <config://versions/20210113153339/form.ttl> ,
-                       <config://versions/20210113153339/config.json> ,
+                       <config://versions/20210113153339/form.json> ,
+                       <config://versions/20210113153339/mapper.js> ,
                        <data://meta-files/20210204172412-before-contact-tracing-meta.ttl> ,
                        <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.ttl> ,
-                       <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/config.json> ,
+                       <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.json> ,
+                       <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/mapper.js> ,
                        <data://meta-files/20210204172412-after-contact-tracing-meta.ttl> .
   }
 }
