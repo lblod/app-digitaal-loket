@@ -391,7 +391,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.5.0-alpha.5 # temporary alpha version (needs testing)
+    image: lblod/subsidy-applications-management-service:0.5.0-beta # temporary beta version (needs testing)
     environment:
       VERSIONED_CONFIGURATION_WATCHER: "true"
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
