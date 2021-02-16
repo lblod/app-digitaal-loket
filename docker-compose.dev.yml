@@ -95,7 +95,6 @@ services:
   subsidy-applications-management:
     environment:
       VERSIONED_CONFIGURATION_WATCHER: null
-      META_DATA_CRON: "*/15 * * * * *"
     restart: "no"
   berichtencentrum-warning:
     restart: "no"
