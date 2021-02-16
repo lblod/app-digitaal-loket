@@ -395,7 +395,7 @@ services:
     environment:
       VERSIONED_CONFIGURATION_WATCHER: "true"
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
-      META_DATA_CRON: "* */15 8-18 * * 1-5"
+      META_DATA_CRON: "0 */15 8-18 * * 1-5"
     volumes:
       - ./config/subsidy-application-management:/config
       - ./data/files/subsidies:/data
