@@ -68,7 +68,7 @@
 
 (define-resource criterium ()
   :class (s-prefix "m8g:Criterion")
-  :properties `((:naam :datetime ,(s-prefix "dct:title"))
+  :properties `((:naam :string ,(s-prefix "dct:title"))
                 (:type :uri-set ,(s-prefix "m8g:criterionType")))
   :has-one `((vereistengroep :via ,(s-prefix "m8g:fulfilledByRequirementGroup")
                              :as "vereistengroep")
@@ -148,7 +148,8 @@
 
 (define-resource time-block () ;; subclass of skos:Concept
   :class (s-prefix "gleif:Period")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+  :properties `((:naam :string ,(s-prefix "dct:title"))
+                (:label :string ,(s-prefix "skos:prefLabel"))
                 (:start :date ,(s-prefix "gleif:hasStart"))
                 (:end :date ,(s-prefix "gleif:hasEnd")))
   :has-one `((time-block :via ,(s-prefix "ext:submissionPeriod")
