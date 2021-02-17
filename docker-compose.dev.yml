@@ -98,3 +98,5 @@ services:
     restart: "no"
   berichtencentrum-warning:
     restart: "no"
+  download-url-warning:
+    restart: "no"
