@@ -410,7 +410,7 @@ services:
     restart: always
     logging: *default-logging
   download-url-warning:
-    image: lblod/download-url-warning-service:0.0.1
+    image: lblod/download-url-warning-service:0.0.2
     labels:
       - "logging=true"
     restart: always
