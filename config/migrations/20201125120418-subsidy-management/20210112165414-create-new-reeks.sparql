@@ -7,7 +7,7 @@ INSERT DATA {
         <https://www.gleif.org/ontology/Base/hasStart> "2020-11-16"^^<http://www.w3.org/2001/XMLSchema#date>;
         <https://www.gleif.org/ontology/Base/hasEnd> "2020-12-31"^^<http://www.w3.org/2001/XMLSchema#date>;
         <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/concepts/957d98bc-cccf-4e12-b58a-faf9b2eff150>;
-        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f>;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "Winter 2020 (16 november 2020 — 31 december 2020)"@nl .
 
     <http://lblod.data.gift/concepts/a26aee99-8ea6-44d1-a72d-c04d3a37b690>
@@ -17,7 +17,7 @@ INSERT DATA {
         <https://www.gleif.org/ontology/Base/hasStart> "2021-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
         <https://www.gleif.org/ontology/Base/hasEnd> "2021-02-12"^^<http://www.w3.org/2001/XMLSchema#date>;
         <http://mu.semte.ch/vocabularies/ext/submissionPeriod> <http://lblod.data.gift/concepts/957d98bc-cccf-4e12-b58a-faf9b2eff150>;
-        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/a3293c46-06b7-458d-a15c-2f312294773f>;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "Winter 2021 (01 januari 2021 — 12 februari 2021)"@nl .
   }
 }
