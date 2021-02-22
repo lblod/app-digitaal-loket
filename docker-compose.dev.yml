@@ -93,6 +93,10 @@ services:
   mandataris-archive:
     restart: "no"
   subsidy-applications-management:
+    environment:
+      VERSIONED_CONFIGURATION_WATCHER: null
     restart: "no"
   berichtencentrum-warning:
+    restart: "no"
+  download-url-warning:
     restart: "no"
