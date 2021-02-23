@@ -84,6 +84,11 @@ fields:b9d831c5-da21-40d6-aac8-65feb4783d76 a form:Field ;
     sh:order 3800 ;
     sh:path lblodBesluit:AdoptionType ;
     form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:AdoptionType ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
       [ a form:ConceptSchemeConstraint ;
         form:grouping form:Bag ;
         sh:path lblodBesluit:AdoptionType ;
@@ -100,6 +105,11 @@ fields:a7073ee1-3717-4798-ae10-fe69b29fabc1 a form:Field ;
     sh:order 3900 ;
     sh:path lblodBesluit:MunicipalRoadProcedureType ;
     form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:MunicipalRoadProcedureType ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
       [ a form:ConceptSchemeConstraint ;
         form:grouping form:Bag ;
         sh:path lblodBesluit:MunicipalRoadProcedureType ;
