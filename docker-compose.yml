@@ -303,7 +303,7 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:0.7.5
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20210208122305-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20210222214348-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
