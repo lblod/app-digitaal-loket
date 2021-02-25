@@ -585,7 +585,19 @@ fields:f1fa5e64-1c68-4355-894a-2e0531f4412f a form:Field ;
           sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
      ];
     form:displayType displayTypes:files; # consider this v1.0
-    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    form:help """
+    <div class="au-c-content">
+      <p>Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp gemeentelijk rooilijnplan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt).</p>
+      <p>
+        Het Departement MOW verleent momenteel enkel niet-dossierspecifiek advies. Het decreet Gemeentewegen kent nieuwe taken toe aan het Departement. Gezien de vrij recente goedkeuring van dit decreet en de mogelijke impact op de organisatie loopt de transitie die gepaard gaat met het opnemen van deze taken momenteel nog.
+        We willen benadrukken dat uw beslissing moet voldoen aan de doelstellingen en principes zoals geformuleerd in artikel 3 en 4 van het decreet Gemeentewegen:
+        <ul class="au-u-margin-bottom">
+          <li>het belang van de huidige en toekomstige behoeften van de zachte mobiliteit staat voorop.</li>
+          <li>de noodzaak om een geïntegreerd beleid te voeren, dat leidt tot de uitbouw van veilige wegen op lokaal niveau en op de herwaardering en bescherming van de trage wegen.</li>
+        </ul>
+        Eventuele wijzigingen van het gemeentelijk wegennet moeten dan ook altijd van algemeen belang zijn, waarbij wijzigingen en afschaffingen uitzonderingsmaatregelen zijn. Het is ook van belang om de wijzigingen te bekijken in een ruimere context dan enkel het eigen gemeentelijk niveau. Verder vragen we u de vormvereisten van het decreet Gemeentewegen na te leven, oog te hebben voor de eventuele meer- en minwaarden die het dossier met zich kan meebrengen en het goede huisvader-principe niet te verwaarlozen.
+      </p>
+    </div>""" ;
     sh:group fields:aDynamicPropertyGroup .
 
 #########################################################
@@ -603,7 +615,19 @@ fields:6f7cb360-26df-4233-988a-a11ac9c33ba4 a form:Field ;
           sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
      ];
     form:displayType displayTypes:files; # consider this v1.0
-    form:help """Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt)""" ;
+    form:help """
+    <div class="au-c-content">
+      <p>Volgende documenten moeten bezorgd worden: uittreksel uit de gemeenteraad met de voorlopige beslissing, ontwerp grafisch plan, gemeentelijk beleidskader (indien opgemaakt), gemeentelijk actieplan (indien opgemaakt).</p>
+      <p>
+        Het Departement MOW verleent momenteel enkel niet-dossierspecifiek advies. Het decreet Gemeentewegen kent nieuwe taken toe aan het Departement. Gezien de vrij recente goedkeuring van dit decreet en de mogelijke impact op de organisatie loopt de transitie die gepaard gaat met het opnemen van deze taken momenteel nog.
+        We willen benadrukken dat uw beslissing moet voldoen aan de doelstellingen en principes zoals geformuleerd in artikel 3 en 4 van het decreet Gemeentewegen:
+        <ul class="au-u-margin-bottom">
+          <li>het belang van de huidige en toekomstige behoeften van de zachte mobiliteit staat voorop.</li>
+          <li>de noodzaak om een geïntegreerd beleid te voeren, dat leidt tot de uitbouw van veilige wegen op lokaal niveau en op de herwaardering en bescherming van de trage wegen.</li>
+        </ul>
+        Eventuele wijzigingen van het gemeentelijk wegennet moeten dan ook altijd van algemeen belang zijn, waarbij wijzigingen en afschaffingen uitzonderingsmaatregelen zijn. Het is ook van belang om de wijzigingen te bekijken in een ruimere context dan enkel het eigen gemeentelijk niveau. Verder vragen we u de vormvereisten van het decreet Gemeentewegen na te leven, oog te hebben voor de eventuele meer- en minwaarden die het dossier met zich kan meebrengen en het goede huisvader-principe niet te verwaarlozen.
+      </p>
+    </div>""" ;
     sh:group fields:aDynamicPropertyGroup .
 
 ######################################################################################################
