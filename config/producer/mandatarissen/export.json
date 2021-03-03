@@ -76,26 +76,6 @@
         "http://xmlns.com/foaf/0.1/familyName",
         "http://xmlns.com/foaf/0.1/name",
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
-        "http://www.w3.org/2002/07/owl#sameAs",
-        "http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
-        "http://data.vlaanderen.be/ns/persoon#geslacht"
-      ]
-    },
-    {
-      "type": "http://data.vlaanderen.be/ns/persoon#Geboorte",
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
-        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://data.vlaanderen.be/ns/persoon#datum",
         "http://www.w3.org/2002/07/owl#sameAs"
       ]
     },
