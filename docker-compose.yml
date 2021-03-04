@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.38.2
+    image: lblod/frontend-loket:0.38.3
     links:
       - identifier:backend
     labels:
@@ -312,7 +312,7 @@ services:
     restart: always
     logging: *default-logging
   validate-submission:
-    image: lblod/validate-submission-service:0.9.0
+    image: lblod/validate-submission-service:0.9.1
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
