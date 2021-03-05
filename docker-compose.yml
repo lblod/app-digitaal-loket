@@ -313,6 +313,8 @@ services:
     logging: *default-logging
   validate-submission:
     image: lblod/validate-submission-service:0.10.0
+    environment:
+      MAX_BODY_SIZE: "10000kb"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
