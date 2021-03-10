@@ -1147,7 +1147,7 @@ fields:fiets a form:ConditionalFieldGroup ;
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:subsidyMeasure ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/0f4d1d82-9c6f-4eaa-8e34-2300c7c4239f> ;
-        form:customValue <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
+        form:customValue <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2>
       ] ;
     form:hasFieldGroup fieldGroups:fiets .
