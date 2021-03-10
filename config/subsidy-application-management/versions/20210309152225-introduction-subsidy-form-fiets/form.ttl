@@ -108,14 +108,14 @@ fields:bf8ce9ac-243c-43d9-952f-6a8cdb5ff052 a form:PropertyGroup;
 fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e a form:PropertyGroup;
     mu:uuid "c1ba7dcf-2e7c-4f70-b61d-88f6b339771e";
     sh:description "Fiets information";
-    sh:order 2;
+    sh:order 12;
     sh:name "Algemeen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
     mu:uuid "ecd33526-7220-4e57-9d3d-1df7fdc196e3";
     sh:description "Estimated amount of kilometers";
-    sh:order 3;
+    sh:order 13;
     sh:name "Geschat aantal kilometer" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
