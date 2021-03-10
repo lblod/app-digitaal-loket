@@ -369,6 +369,7 @@ services:
   loket-mandatarissen-producer:
     image: lblod/loket-mandatarissen-producer:0.2.5
     environment:
+      MAX_BODY_SIZE: "50mb"
       RELATIVE_FILE_PATH: "deltas/mandatarissen"
       PUBLISHER_URI: "http://data.lblod.info/services/loket-mandatarissen-producer"
     volumes:
