@@ -418,7 +418,7 @@ services:
     restart: always
     logging: *default-logging
   case-number-generator:
-    image: lblod/case-number-service:1.0.0
+    image: lblod/case-number-service:2.0.0
     labels:
       - "logging=true"
     restart: always
