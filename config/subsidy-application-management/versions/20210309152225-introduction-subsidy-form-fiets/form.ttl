@@ -838,11 +838,8 @@ fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd a form:Field ;
     sh:name "Projectnaam" ;
     sh:order 10 ;
     sh:path lblodSubsidie:projectName ;
-    form:options """{}""" ;
     form:displayType displayTypes:defaultInput ;
-    
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
-
 
 
 ##########################################################
@@ -853,9 +850,7 @@ fields:99b6bb7f-c0dd-40b6-93a4-a70abb048ff2 a form:Field ;
     sh:name "Identificatienummer Project" ;
     sh:order 11 ;
     sh:path lblodSubsidie:identificationNumber ;
-    form:options """{}""" ;
     form:displayType displayTypes:defaultInput ;
-    
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
@@ -866,7 +861,6 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     sh:name "Raming totale kostprijs" ;
     sh:order 12 ;
     sh:path lblodSubsidie:totaleEstimateCost ;
-    form:options """{}""" ;
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
@@ -889,9 +883,7 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     form:help "Laad hier de gemeenteraadsbeslissing of de beslissing van het College van Burgemeester en schepenen tot aanvraag van het project";
     sh:order 13 ;
     sh:path lblodSubsidie:descisionUpload ;
-    form:options """{}""" ;
     form:displayType displayTypes:files ;
-    
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
@@ -902,7 +894,7 @@ fields:d88f6b6d-8295-42db-967b-29931b7c9546 a form:Field ;
     sh:name "slechts één kant van de weg:" ;
     sh:order 20 ;
     sh:path lblodSubsidie:improvementOneSide ;
-    form:options """{}""" ;
+
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
@@ -922,18 +914,17 @@ fields:896155ed-892e-4e69-b220-fd5a0484305a a form:Field ;
     mu:uuid "896155ed-892e-4e69-b220-fd5a0484305a";
     sh:name "aan beide kanten van de weg" ;
     sh:order 21 ;
-    sh:path lblodSubsidie:improvenementBothSide ;
-    form:options """{}""" ;
+    sh:path lblodSubsidie:improvementBothSides ;
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:improvenementBothSide ],
+      sh:path lblodSubsidie:improvementBothSides ],
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:improvenementBothSide ] ;
+      sh:path lblodSubsidie:improvementBothSides ] ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
 
 
@@ -945,7 +936,6 @@ fields:83558993-8859-4fda-b9cb-229a22aa1ec6 a form:Field ;
     sh:name "slechts één kant van de weg:" ;
     sh:order 22 ;
     sh:path lblodSubsidie:newOneSide ;
-    form:options """{}""" ;
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
@@ -966,7 +956,6 @@ fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead a form:Field ;
     sh:name "aan beide kanten van de weg" ;
     sh:order 23 ;
     sh:path lblodSubsidie:newBothSides ;
-    form:options """{}""" ;
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
