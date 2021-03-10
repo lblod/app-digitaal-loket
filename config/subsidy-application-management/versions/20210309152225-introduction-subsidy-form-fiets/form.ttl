@@ -10,6 +10,7 @@
 @prefix lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>.
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
 
 ##########################################################
 # Property groups
@@ -829,6 +830,25 @@ fields:f6840939-353d-45af-818a-0bee29d1c4e2 a form:Field ;
     form:displayType displayTypes:engagementTable ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe  .
 
+##########################################################
+# Bike: case-number
+##########################################################
+
+ fields:82e06728-0654-4038-803f-babaa45bf042 a form:Field ;
+ mu:uuid "82e06728-0654-4038-803f-babaa45bf042";
+ sh:name "Dossiernummer" ;
+ sh:order 25 ;
+ sh:path nie:identifier ;
+ form:validations
+   [ a form:RequiredConstraint ;
+   form:grouping form:Bag ;
+   sh:resultMessage "Dit veld is verplicht."@nl;
+   sh:path nie:identifier
+   ] ;
+ form:options  """{"prefix" : "fiets-subsidie-"}""" ;
+ form:help "Dit nummer werd uniek gegenereerd voor uw subsidie aanvraag" ;
+ form:displayType displayTypes:caseNumber ;
+ sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1  .
 
 ##########################################################
 # Fiets: project name
@@ -1104,6 +1124,10 @@ fields:contact-and-source-tracking a form:ConditionalFieldGroup ;
 fieldGroups:fiets a form:FieldGroup ;
     mu:uuid "89a08699-c028-4df6-b448-c3e9189298c9" ;
     form:hasField
+
+        ### Case number
+        fields:82e06728-0654-4038-803f-babaa45bf042,
+
         ### Project name
         fields:eea274cf-b422-4b8e-bb83-b066edbff8b1,
 

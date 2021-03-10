@@ -12,7 +12,8 @@
       "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
       "PREFIX gleif: <https://www.gleif.org/ontology/Base/>",
       "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>",
-      "PREFIX adms: <http://www.w3.org/ns/adms#>"
+      "PREFIX adms: <http://www.w3.org/ns/adms#>",
+      "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
     ],
     "properties": [
       "dct:created",
@@ -43,7 +44,7 @@
       "lblodSubsidie:improvementBothSides",
       "lblodSubsidie:newOneSide",
       "lblodSubsidie:newBothSides",
-
+      "nie:identifier",
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
