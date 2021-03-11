@@ -205,7 +205,7 @@ fields:31107180-f065-4986-b6b7-641b9e65a85d a form:Field ;
     mu:uuid "31107180-f065-4986-b6b7-641b9e65a85d";
     sh:name "Selecteer reeks" ;
     form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
-    sh:order 10 ;
+    sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
     form:validations
           [ a form:ConceptSchemeConstraint ;
@@ -1136,8 +1136,11 @@ fields:contact-and-source-tracking a form:ConditionalFieldGroup ;
 
 
 fieldGroups:fiets a form:FieldGroup ;
-    mu:uuid "89a08699-c028-4df6-b448-c3e9189298c9" ;
+    mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
     form:hasField
+
+        ### Select fiets timeblock
+        fields:31107180-f065-4986-b6b7-641b9e65a85d ,
 
         ### Case number
         fields:82e06728-0654-4038-803f-babaa45bf042,
@@ -1169,7 +1172,7 @@ fieldGroups:fiets a form:FieldGroup ;
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:fiets.
 
 fields:fiets a form:ConditionalFieldGroup ;
-    mu:uuid "0a2836a3-b901-4cee-8ddb-83c8bbca3a30";
+    mu:uuid "51b3ccfb-1d5f-4d60-bec2-cda95ba8a7cf";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
