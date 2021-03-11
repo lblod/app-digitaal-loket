@@ -121,7 +121,7 @@ fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
     form:help "Ten minste één veld moet een positief geschat aantal kilometers hebben" ;
     form:validations
     [ a form:HasOneNumberGreaterThanInFields ;
-      form:grouping form:MatchEvery ;
+      form:grouping form:Bag ;
       sh:path lblodSubsidie:improvementOneSide ;
       sh:path lblodSubsidie:improvementBothSides ;
       sh:path lblodSubsidie:newOneSide ;
@@ -924,11 +924,7 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een positief aantal op." ;
       sh:path lblodSubsidie:totalEstimateCost
-    ],
-    [ a form:ValidInteger ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:totalEstimateCost ] ;
+    ] ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
