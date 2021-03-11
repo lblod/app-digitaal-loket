@@ -39,12 +39,22 @@
       "lblodSubsidie:projectName",
       "lblodSubsidie:identificationNumber",
       "lblodSubsidie:totalEstimateCost",
-      "lblodSubsidie:decisionUpload",
       "lblodSubsidie:improvementOneSide",
       "lblodSubsidie:improvementBothSides",
       "lblodSubsidie:newOneSide",
       "lblodSubsidie:newBothSides",
       "nie:identifier",
+      {
+        "s-prefix": "lblodSubsidie:decisionUpload",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
