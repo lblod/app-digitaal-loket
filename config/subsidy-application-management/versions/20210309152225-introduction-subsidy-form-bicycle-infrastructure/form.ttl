@@ -110,6 +110,7 @@ fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e a form:PropertyGroup;
     mu:uuid "c1ba7dcf-2e7c-4f70-b61d-88f6b339771e";
     sh:description "Bicycle infrastructure information";
     sh:order 12;
+    sh:name "Algemeen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
@@ -884,6 +885,12 @@ fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd a form:Field ;
     sh:name "Projectnaam" ;
     sh:order 11 ;
     sh:path lblodSubsidie:projectName ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:projectName
+      ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
@@ -894,17 +901,23 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     mu:uuid "0db3aed1-0e15-454f-8584-0707129b367b";
     sh:name "Raming totale kostprijs" ;
     sh:order 12 ;
-    sh:path lblodSubsidie:totalAmount ;
+    sh:path lblodSubsidie:totalEstimateCost ;
     form:displayType displayTypes:numericalInput ;
     form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:totalEstimateCost
+    ] ,
     [ a form:PositiveNumber ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:totalEstimateCost ],
+      sh:path lblodSubsidie:totalEstimateCost
+    ],
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:totaleEstimateCost ] ;
+      sh:path lblodSubsidie:totalEstimateCost ] ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
@@ -917,6 +930,12 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     form:help "Laad hier de gemeenteraadsbeslissing of de beslissing van het College van Burgemeester en schepenen tot aanvraag van het project";
     sh:order 13 ;
     sh:path lblodSubsidie:decisionUpload ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:decisionUpload
+      ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
