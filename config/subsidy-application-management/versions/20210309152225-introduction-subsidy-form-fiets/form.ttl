@@ -896,19 +896,6 @@ fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd a form:Field ;
 
 
 ##########################################################
-# Fiets: identification-number
-##########################################################
-fields:99b6bb7f-c0dd-40b6-93a4-a70abb048ff2 a form:Field ;
-    mu:uuid "99b6bb7f-c0dd-40b6-93a4-a70abb048ff2";
-    sh:name "Identificatienummer Project" ;
-    sh:order 12 ;
-    sh:path lblodSubsidie:identificationNumber ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
-
-
-
-##########################################################
 # Fiets: total-estimate-cost
 ##########################################################
 fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
@@ -1179,17 +1166,14 @@ fieldGroups:fiets a form:FieldGroup ;
         ### Case number
         fields:82e06728-0654-4038-803f-babaa45bf042,
 
-        ### Project name
+        ### Descision Upload
         fields:eea274cf-b422-4b8e-bb83-b066edbff8b1,
 
-        ### Identification number
+        ### Estimate Totale cost
         fields:0db3aed1-0e15-454f-8584-0707129b367b,
 
-        ### Totale price
+        ### Project name
         fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd ,
-
-        ### Desision upload
-        fields:99b6bb7f-c0dd-40b6-93a4-a70abb048ff2 ,
 
         ### Fietspad Improvement one side
         fields:d88f6b6d-8295-42db-967b-29931b7c9546 ,
