@@ -909,7 +909,7 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     mu:uuid "0db3aed1-0e15-454f-8584-0707129b367b";
     sh:name "Raming totale kostprijs" ;
     sh:order 13 ;
-    sh:path lblodSubsidie:totaleEstimateCost ;
+    sh:path lblodSubsidie:totalEstimateCost ;
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
@@ -919,7 +919,7 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:totaleEstimateCost ] ;
+      sh:path lblodSubsidie:totalEstimateCost ] ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
