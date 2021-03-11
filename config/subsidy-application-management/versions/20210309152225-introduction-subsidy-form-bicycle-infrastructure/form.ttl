@@ -935,14 +935,28 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     sh:name "Upload beslissing" ;
     form:help "Laad hier de gemeenteraadsbeslissing of de beslissing van het College van Burgemeester en schepenen tot aanvraag van het project";
     sh:order 13 ;
-    sh:path lblodSubsidie:decisionUpload ;
+    sh:path ( lblodSubsidie:decisionUpload dct:hasPart ) ;
     form:validations
-      [ a form:RequiredConstraint ;
+    [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
       sh:path lblodSubsidie:decisionUpload
-      ] ;
+    ] ;
     form:displayType displayTypes:files ;
+    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
+
+##########################################################
+# Hidden field required for all variations of URL or FILE
+# input field which require validation.
+# It makes sure there is a type attached to hasPart object.
+# This enables correct validation in both front and backend.
+##########################################################
+
+fields:d00a14b2-f565-494a-8ad7-54908d89671a a form:Field ;
+    mu:uuid "d00a14b2-f565-494a-8ad7-54908d89671a" ;
+    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:order 14 ;
+    sh:path ( lblodSubsidie:decisionUpload dct:hasPart rdf:type );
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
@@ -1087,6 +1101,10 @@ fieldGroups:main a form:FieldGroup ;
         ### Confirmation letter ###
         fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 .
 
+        ### Confirmation letter HIDDEN ###
+        fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 .
+
+
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
     form:hasFieldGroup fieldGroups:main .
@@ -1209,6 +1227,9 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
         ### Decision-upload
         fields:eea274cf-b422-4b8e-bb83-b066edbff8b1,
 
+        ### Decision-upload HIDDEN
+        fields:d00a14b2-f565-494a-8ad7-54908d89671a,
+
         ### Bike lane Improvement one side
         fields:d88f6b6d-8295-42db-967b-29931b7c9546 ,
 
@@ -1220,6 +1241,7 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
 
         ### Bike lane Improvement both sides
         fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead .
+
 
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:bicycle-infrastructure.
 
