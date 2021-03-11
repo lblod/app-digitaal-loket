@@ -888,13 +888,13 @@ fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd a form:Field ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
-# Fiets: total-estimate-cost
+# Bicycle infrastructure: total-estimate-cost
 ##########################################################
 fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     mu:uuid "0db3aed1-0e15-454f-8584-0707129b367b";
     sh:name "Raming totale kostprijs" ;
-    sh:order 13 ;
-    sh:path lblodSubsidie:totaleEstimateCost ;
+    sh:order 12 ;
+    sh:path lblodSubsidie:totalAmount ;
     form:displayType displayTypes:numericalInput ;
     form:validations
     [ a form:PositiveNumber ;
@@ -909,19 +909,19 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
 
 
 ##########################################################
-# Fiets: Descision-upload
+# Bicycle infrastructure: decision-upload
 ##########################################################
 fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     mu:uuid "eea274cf-b422-4b8e-bb83-b066edbff8b1";
     sh:name "Upload beslissing" ;
     form:help "Laad hier de gemeenteraadsbeslissing of de beslissing van het College van Burgemeester en schepenen tot aanvraag van het project";
-    sh:order 14 ;
-    sh:path lblodSubsidie:descisionUpload ;
+    sh:order 13 ;
+    sh:path lblodSubsidie:decisionUpload ;
     form:displayType displayTypes:files ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
-# Fiets: improvement one side
+# Bicycle infrastructure: improvement one side
 ##########################################################
 fields:d88f6b6d-8295-42db-967b-29931b7c9546 a form:Field ;
     mu:uuid "d88f6b6d-8295-42db-967b-29931b7c9546";
@@ -942,7 +942,7 @@ fields:d88f6b6d-8295-42db-967b-29931b7c9546 a form:Field ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
 
 ##########################################################
-# Fiets: improvement both sides
+# Bicycle infrastructure: improvement both sides
 ##########################################################
 fields:896155ed-892e-4e69-b220-fd5a0484305a a form:Field ;
     mu:uuid "896155ed-892e-4e69-b220-fd5a0484305a";
@@ -963,7 +963,7 @@ fields:896155ed-892e-4e69-b220-fd5a0484305a a form:Field ;
 
 
 ##########################################################
-# Fiets: New fietspad one sides
+# Bicycle infrastructure: New bike lane one side
 ##########################################################
 fields:83558993-8859-4fda-b9cb-229a22aa1ec6 a form:Field ;
     mu:uuid "83558993-8859-4fda-b9cb-229a22aa1ec6";
@@ -983,7 +983,7 @@ fields:83558993-8859-4fda-b9cb-229a22aa1ec6 a form:Field ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
 
 ##########################################################
-# Fiets: New fietspad both sides
+# Bicycle infrastructure: New bike lane both sides
 ##########################################################
 fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead a form:Field ;
     mu:uuid "b1bf6eab-9032-4e23-abb4-3b31f2d52ead";
@@ -1135,11 +1135,11 @@ fields:contact-and-source-tracking a form:ConditionalFieldGroup ;
     form:hasFieldGroup fieldGroups:contact-and-source-tracking .
 
 
-fieldGroups:fiets a form:FieldGroup ;
+fieldGroups:bicycle-infrastructure a form:FieldGroup ;
     mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
     form:hasField
 
-        ### Select fiets timeblock
+        ### Select bicycle-infrastructure timeblock
         fields:31107180-f065-4986-b6b7-641b9e65a85d ,
 
         ### Case number
@@ -1157,21 +1157,21 @@ fieldGroups:fiets a form:FieldGroup ;
         ### Desision upload
         fields:99b6bb7f-c0dd-40b6-93a4-a70abb048ff2 ,
 
-        ### Fietspad Improvement one side
+        ### Bike lane Improvement one side
         fields:d88f6b6d-8295-42db-967b-29931b7c9546 ,
 
-        ### Fietspad Improvement both sides
+        ### Bike lane Improvement both sides
         fields:896155ed-892e-4e69-b220-fd5a0484305a ,
 
-        ### Fietspad Improvement one side
+        ### Bike lane Improvement one side
         fields:83558993-8859-4fda-b9cb-229a22aa1ec6 ,
 
-        ### Fietspad Improvement both sides
+        ### Bike lane Improvement both sides
         fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead .
 
-fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:fiets.
+fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:bicycle-infrastructure.
 
-fields:fiets a form:ConditionalFieldGroup ;
+fields:bicycle-infrastructure a form:ConditionalFieldGroup ;
     mu:uuid "51b3ccfb-1d5f-4d60-bec2-cda95ba8a7cf";
     form:conditions
       [ a form:SingleCodelistValue ;
@@ -1180,4 +1180,4 @@ fields:fiets a form:ConditionalFieldGroup ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/33e233eb-6a9b-4141-b607-2ff72fe2ded2> ;
         form:customValue <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2>
       ] ;
-    form:hasFieldGroup fieldGroups:fiets .
+    form:hasFieldGroup fieldGroups:bicycle-infrastructure .
