@@ -120,7 +120,7 @@ fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
     sh:name "Geschat aantal kilometer" ;
     form:validations
     [ a form:HasOneNumberGreaterThanInFields ;
-      form:grouping form:MatchEvery ;
+      form:grouping form:Bag ;
       sh:path lblodSubsidie:improvementOneSide ;
       sh:path lblodSubsidie:improvementBothSides ;
       sh:path lblodSubsidie:newOneSide ;
