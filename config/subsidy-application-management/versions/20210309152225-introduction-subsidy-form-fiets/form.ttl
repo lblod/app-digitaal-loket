@@ -885,6 +885,12 @@ fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd a form:Field ;
     sh:name "Projectnaam" ;
     sh:order 11 ;
     sh:path lblodSubsidie:projectName ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:projectName
+      ] ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
@@ -912,14 +918,21 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     sh:path lblodSubsidie:totalEstimateCost ;
     form:displayType displayTypes:numericalInput ;
     form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:totalEstimateCost
+    ] ,
     [ a form:PositiveNumber ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:totalEstimateCost ],
+      sh:path lblodSubsidie:totalEstimateCost 
+    ],
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Aantal moet een een geheel getal zijn." ;
       sh:path lblodSubsidie:totalEstimateCost ] ;
+
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
@@ -932,6 +945,12 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     form:help "Laad hier de gemeenteraadsbeslissing of de beslissing van het College van Burgemeester en schepenen tot aanvraag van het project";
     sh:order 14 ;
     sh:path lblodSubsidie:descisionUpload ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:descisionUpload
+      ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
