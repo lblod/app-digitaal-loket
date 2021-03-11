@@ -1146,16 +1146,13 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
         fields:82e06728-0654-4038-803f-babaa45bf042,
 
         ### Project name
+        fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd,
+
+        ### Total price
+        fields:0db3aed1-0e15-454f-8584-0707129b367b ,
+
+        ### Decision-upload
         fields:eea274cf-b422-4b8e-bb83-b066edbff8b1,
-
-        ### Identification number
-        fields:0db3aed1-0e15-454f-8584-0707129b367b,
-
-        ### Totale price
-        fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd ,
-
-        ### Desision upload
-        fields:99b6bb7f-c0dd-40b6-93a4-a70abb048ff2 ,
 
         ### Bike lane Improvement one side
         fields:d88f6b6d-8295-42db-967b-29931b7c9546 ,
