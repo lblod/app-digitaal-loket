@@ -117,6 +117,16 @@ fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
     sh:description "Estimated amount of kilometers";
     sh:order 13;
     sh:name "Geschat aantal kilometer" ;
+    form:validations
+    [ a form:HasOneNumberGreaterThanInFields ;
+      form:grouping form:MatchEvery ;
+      sh:path lblodSubsidie:improvementOneSide ;
+      sh:path lblodSubsidie:improvementBothSides ;
+      sh:path lblodSubsidie:newOneSide ;
+      sh:path lblodSubsidie:newBothSides ;
+      form:threshold 0 ;
+      sh:resultMessage "Ten minste één veld moet een positief geschat aantal kilometers hebben"@nl
+    ] ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 ##########################################################
@@ -894,17 +904,24 @@ fields:d88f6b6d-8295-42db-967b-29931b7c9546 a form:Field ;
     sh:name "slechts één kant van de weg:" ;
     sh:order 20 ;
     sh:path lblodSubsidie:improvementOneSide ;
-
     form:displayType displayTypes:numericalInput ;
+    form:defaultValue 0;
     form:validations
-    [ a form:PositiveNumber ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:improvementOneSide ],
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl ;
+      sh:path lblodSubsidie:improvementOneSide ;
+    ] ,
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:improvementOneSide ] ;
+      sh:path lblodSubsidie:improvementOneSide ;
+      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
+    ] ,
+    [ a form:PositiveNumber ;
+        form:grouping form:MatchEvery ;
+        sh:path lblodSubsidie:improvementOneSide ;
+        sh:resultMessage "Geef een positief aantal op."@nl
+    ] ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
 
 ##########################################################
@@ -916,15 +933,23 @@ fields:896155ed-892e-4e69-b220-fd5a0484305a a form:Field ;
     sh:order 21 ;
     sh:path lblodSubsidie:improvementBothSides ;
     form:displayType displayTypes:numericalInput ;
+    form:defaultValue 0;
     form:validations
-    [ a form:PositiveNumber ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:improvementBothSides ],
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl ;
+      sh:path lblodSubsidie:improvementBothSides ;
+    ] ,
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:improvementBothSides ] ;
+      sh:path lblodSubsidie:improvementBothSides ;
+      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
+    ] ,
+    [ a form:PositiveNumber ;
+        form:grouping form:MatchEvery ;
+        sh:path lblodSubsidie:improvementBothSides ;
+        sh:resultMessage "Geef een positief aantal op."@nl
+    ] ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
 
 
@@ -937,15 +962,23 @@ fields:83558993-8859-4fda-b9cb-229a22aa1ec6 a form:Field ;
     sh:order 22 ;
     sh:path lblodSubsidie:newOneSide ;
     form:displayType displayTypes:numericalInput ;
+    form:defaultValue 0;
     form:validations
-    [ a form:PositiveNumber ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:newOneSide ],
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl ;
+      sh:path lblodSubsidie:newOneSide ;
+    ] ,
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:newOneSide ] ;
+      sh:path lblodSubsidie:newOneSide ;
+      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
+    ] ,
+    [ a form:PositiveNumber ;
+        form:grouping form:MatchEvery ;
+        sh:path lblodSubsidie:newOneSide ;
+        sh:resultMessage "Geef een positief aantal op."@nl
+    ] ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
 
 ##########################################################
@@ -957,17 +990,24 @@ fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead a form:Field ;
     sh:order 23 ;
     sh:path lblodSubsidie:newBothSides ;
     form:displayType displayTypes:numericalInput ;
+    form:defaultValue 0;
     form:validations
-    [ a form:PositiveNumber ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:newBothSides ],
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl ;
+      sh:path lblodSubsidie:newBothSides ;
+    ] ,
     [ a form:ValidInteger ;
       form:grouping form:MatchEvery ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn." ;
-      sh:path lblodSubsidie:newBothSides ] ;
+      sh:path lblodSubsidie:newBothSides ;
+      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
+    ] ,
+    [ a form:PositiveNumber ;
+        form:grouping form:MatchEvery ;
+        sh:path lblodSubsidie:newBothSides ;
+        sh:resultMessage "Geef een positief aantal op."@nl
+    ] ;
     sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
-
 
 
 ##########################################################
