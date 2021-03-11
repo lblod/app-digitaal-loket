@@ -118,6 +118,7 @@ fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
     sh:description "Estimated amount of kilometers";
     sh:order 13;
     sh:name "Geschat aantal kilometer" ;
+    form:help "Ten minste één veld moet een positief geschat aantal kilometers hebben" ;
     form:validations
     [ a form:HasOneNumberGreaterThanInFields ;
       form:grouping form:Bag ;
