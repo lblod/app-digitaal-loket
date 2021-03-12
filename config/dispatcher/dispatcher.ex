@@ -447,6 +447,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/application-form-entries/"
   end
 
+  match "/case-number-generator/*path" do
+    Proxy.forward conn, path, "http://case-number-generator/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

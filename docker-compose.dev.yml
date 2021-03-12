@@ -100,3 +100,5 @@ services:
     restart: "no"
   download-url-warning:
     restart: "no"
+  case-number-generator:
+    restart: "no"
