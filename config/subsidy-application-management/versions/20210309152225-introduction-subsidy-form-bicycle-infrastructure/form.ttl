@@ -1138,17 +1138,7 @@ fieldGroups:main a form:FieldGroup ;
         fields:6285341d-a0ad-4933-bb5f-c49016b0f935 ,
 
         ### Email
-        fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb ,
-
-        ### Bank account number ###
-        fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
-
-        ### Confirmation letter ###
-        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 .
-
-        ### Confirmation letter HIDDEN ###
-        fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 .
-
+        fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb .
 
 form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
     mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
@@ -1157,6 +1147,13 @@ form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
 fieldGroups:daycare a form:FieldGroup ;
     mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
     form:hasField
+
+        ### Bank account number ###
+        fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
+
+        ### Confirmation letter ###
+        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
+
         ### Select daycare timeblock
         fields:96323450-81c7-4326-84df-6adb9a992d12 ,
 
@@ -1191,6 +1188,12 @@ fields:daycare a form:ConditionalFieldGroup ;
 fieldGroups:contact-and-source-tracking a form:FieldGroup ;
     mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
     form:hasField
+        ### Bank account number ###
+        fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
+
+        ### Confirmation letter ###
+        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
+
         ### Select contact-and-source-tracking timeblock
         fields:dcfb437e-1219-4d1e-891d-057f262da9d6 ,
 
@@ -1251,7 +1254,6 @@ fields:contact-and-source-tracking a form:ConditionalFieldGroup ;
         form:customValue <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95>
       ] ;
     form:hasFieldGroup fieldGroups:contact-and-source-tracking .
-
 
 fieldGroups:bicycle-infrastructure a form:FieldGroup ;
     mu:uuid "4931ea4d-00bc-4800-ae38-555e641c6925" ;
