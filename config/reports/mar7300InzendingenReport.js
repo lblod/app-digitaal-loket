@@ -25,18 +25,17 @@ export default {
       PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
       PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
       PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+      PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
 
-      select ?sessionDate ?sentDate ?bestuursorgaan ?dateOfEntryInForce ?datePublication ?dateNoLongerInForce ?dateSessionStartedAtTime ?attachmentName ?hasAdditionalTaxRate ?taxRateAmount ?inzending where {
+      SELECT ?sentDate ?bestuursorgaan ?dateOfEntryInForce ?datePublication ?dateNoLongerInForce ?dateSessionStartedAtTime ?attachmentName ?hasAdditionalTaxRate ?taxRateAmount ?submission where {
         GRAPH ?g {
-          ?inzending a toezicht:InzendingVoorToezicht ;
-            toezicht:nomenclature <http://data.lblod.info/Nomenclature/0ce2d45f1bb5414e7cd4d9de7929097e7278260434ded0b16d336bb407e9f0ec> ;
-            toezicht:decisionType <http://data.lblod.info/DecisionType/5b3955cc006323233e711c482f3a6bf39a8d3eba6bbdb2c672bdfcf2b2985b03> ;
-            toezicht:regulationType <http://data.lblod.info/RegulationType/ef35b053c004a25069c58090d967ade753dd02586b0f76b916a0ca82b7294d0b> ;
-            toezicht:sessionDate ?sessionDate;
-            nmo:sentDate ?sentDate.
-          ?submission dct:source ?inzending ;
+          ?submission a meb:Submission ;
+            nmo:sentDate ?sentDate;
             prov:generated ?form .
-          ?form eli:passed_by ?orgaanInTijd ;
+          ?form ext:decisionType <https://data.vlaanderen.be/id/concept/BesluitType/67378dd0-5413-474b-8996-d992ef81637a> ;
+            ext:regulationType <https://data.vlaanderen.be/id/concept/BesluitType/efa4ec5a-b006-453f-985f-f986ebae11bc> ;
+            ext:taxType <https://data.vlaanderen.be/id/concept/BesluitType/b2d0734d-13d0-44b4-9af8-1722933c5288> ;
+            eli:passed_by ?orgaanInTijd ;
             eli:first_date_entry_in_force ?dateOfEntryInForce ;
             eli:date_no_longer_in_force ?dateNoLongerInForce ;
             ext:sessionStartedAtTime ?dateSessionStartedAtTime ;
@@ -57,7 +56,6 @@ export default {
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((inzendingen) => ({
-      sessionDate: inzendingen.sessionDate.value,
       sentDate: inzendingen.sentDate.value,
       bestuursorgaan: inzendingen.bestuursorgaan.value,
       dateOfEntryInForce: inzendingen.dateOfEntryInForce.value,
@@ -66,10 +64,10 @@ export default {
       dateSessionStartedAtTime: inzendingen.dateSessionStartedAtTime.value,
       attachmentName: inzendingen.attachmentName.value,
       hasAdditionalTaxRate: inzendingen.hasAdditionalTaxRate ? inzendingen.hasAdditionalTaxRate.value : '',
-      taxRateAmount: inzendingen.taxRateAmount ? inzendingen.taxRateAmount.value : ''
+      taxRateAmount: inzendingen.taxRateAmount ? inzendingen.taxRateAmount.value : '',
+      submission: inzendingen.submission.value
     }));
     await generateReportFromData(data, [
-      'sessionDate',
       'sentDate',
       'bestuursorgaan',
       'dateOfEntryInForce',
@@ -78,7 +76,8 @@ export default {
       'dateSessionStartedAtTime',
       'attachmentName',
       'hasAdditionalTaxRate',
-      'taxRateAmount'
+      'taxRateAmount',
+      'submission'
     ], reportData);
   }
 };
