@@ -26,21 +26,20 @@ export default {
       PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
       PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
       PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
-
-      SELECT ?sentDate ?bestuursorgaan ?dateOfEntryInForce ?datePublication ?dateNoLongerInForce ?dateSessionStartedAtTime ?attachmentName ?hasAdditionalTaxRate ?taxRateAmount ?submission where {
+      SELECT DISTINCT ?sentDate ?bestuursorgaan ?dateOfEntryInForce ?datePublication ?dateNoLongerInForce ?dateSessionStartedAtTime ?attachmentName ?hasAdditionalTaxRate ?taxRateAmount ?submission WHERE {
         GRAPH ?g {
           ?submission a meb:Submission ;
             nmo:sentDate ?sentDate;
             prov:generated ?form .
-          ?form ext:decisionType <https://data.vlaanderen.be/id/concept/BesluitType/67378dd0-5413-474b-8996-d992ef81637a> ;
+?form ext:decisionType <https://data.vlaanderen.be/id/concept/BesluitType/67378dd0-5413-474b-8996-d992ef81637a> ;
             ext:regulationType <https://data.vlaanderen.be/id/concept/BesluitType/efa4ec5a-b006-453f-985f-f986ebae11bc> ;
-            ext:taxType <https://data.vlaanderen.be/id/concept/BesluitType/b2d0734d-13d0-44b4-9af8-1722933c5288> ;
-            eli:passed_by ?orgaanInTijd ;
-            eli:first_date_entry_in_force ?dateOfEntryInForce ;
-            eli:date_no_longer_in_force ?dateNoLongerInForce ;
-            ext:sessionStartedAtTime ?dateSessionStartedAtTime ;
-            dct:hasPart ?attachment .
+            <http://lblod.data.gift/vocabularies/besluit/chartOfAccount> <http://lblod.data.gift/concepts/26c19fe6b53e2e759a0b9467ce33ef37fc268dd9467cfba91381214549a01d19> .
+            ?form eli:passed_by ?orgaanInTijd .
 
+          OPTIONAL {  ?form eli:first_date_entry_in_force ?dateOfEntryInForce . }
+          OPTIONAL {  ?form eli:date_no_longer_in_force ?dateNoLongerInForce . }
+          OPTIONAL {  ?form ext:sessionStartedAtTime ?dateSessionStartedAtTime . }
+          OPTIONAL {  ?form dct:hasPart ?attachment . }
           OPTIONAL { ?form eli:date_publication ?datePublication . }
           OPTIONAL { ?form ext:taxRateAmount ?taxRateAmount . }
           OPTIONAL { ?form lblodBesluit:hasAdditionalTaxRate ?hasAdditionalTaxRate . }
