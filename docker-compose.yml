@@ -396,9 +396,8 @@ services:
     restart: always
     logging: *default-logging
   subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.5.2
+    image: lblod/subsidy-applications-management-service:0.5.3
     environment:
-      VERSIONED_CONFIGURATION_WATCHER: "true"
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
       META_DATA_CRON: "0 */15 8-18 * * 1-5"
     volumes:
