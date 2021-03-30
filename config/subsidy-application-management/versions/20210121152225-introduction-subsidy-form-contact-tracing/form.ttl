@@ -136,8 +136,8 @@ fields:68e149ec-1821-477b-a901-72924236ef9c a form:Field ;
 
 fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
     mu:uuid "96323450-81c7-4326-84df-6adb9a992d12";
-    sh:name "Selecteer reeks" ;
-    form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
+    sh:name "Selecteer periode" ;
+    form:help "Indien de periode niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
     sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
     form:validations
