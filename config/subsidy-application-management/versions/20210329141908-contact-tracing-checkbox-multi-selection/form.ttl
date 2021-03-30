@@ -678,6 +678,23 @@ fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
     sh:group fields:97ce85f4-5df9-428a-a943-8c12e0f964f6 .
 
 ##################################################################
+# contact-and-source-tracking: estimated extra costs
+##################################################################
+
+fields:65060496-0ca8-4540-b0a8-d72211b74ff7 a form:Field ;
+    mu:uuid "65060496-0ca8-4540-b0a8-d72211b74ff7";
+    sh:name """Als u, naast personeelskosten, nog andere specifieke uitgaven heeft gedaan, kan u hier een schatting van de kopsrijs (€) geven""" ;
+    sh:order 70 ;
+    sh:path lblodSubsidie:estimatedExtraCosts ;
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+    [ a form:PositiveNumber ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Geef een positief aantal op." ;
+      sh:path lblodSubsidie:estimatedExtraCosts
+    ] ;
+    sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe .
+##################################################################
 # contact-and-source-tracking: focused at-risk and vulnerable populations
 ##################################################################
 
@@ -993,7 +1010,7 @@ fields:3be95e68-d2ef-4c4b-bfc2-c5528c02ffde a form:Field ;
 
 fields:f6840939-353d-45af-818a-0bee29d1c4e2 a form:Field ;
     mu:uuid "f6840939-353d-45af-818a-0bee29d1c4e2";
-    sh:order 70 ;
+    sh:order 69 ;
     sh:path lblodSubsidie:engagementTable ;
     form:validations
      [ a form:RequiredConstraint ;
@@ -1331,6 +1348,9 @@ fieldGroups:contact-and-source-tracking a form:FieldGroup ;
 
         ### Engagement table
         fields:f6840939-353d-45af-818a-0bee29d1c4e2 ,
+
+        ### Estimated extra costs
+        fields:65060496-0ca8-4540-b0a8-d72211b74ff7 ,
 
         ### Focused at-risk and vulnerable populations
         fields:5c854e33-7aa1-4571-b2e5-8ced8969f6e5 ,
