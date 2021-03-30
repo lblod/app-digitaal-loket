@@ -694,7 +694,7 @@ fields:5c854e33-7aa1-4571-b2e5-8ced8969f6e5 a form:Field ;
 fields:283fffe3-d838-49bd-811f-53ba41191ca9 a form:ConditionalFieldGroup ;
     mu:uuid "283fffe3-d838-49bd-811f-53ba41191ca9";
     form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ContainsCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:focusedPopulation ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/b956a95b-bfb6-4094-b7f7-6b612e650c4f> ;
@@ -727,7 +727,7 @@ fields:5a2999d9-28a6-45cd-b91b-cf3e4b99fb60 a form:Field ;
 fields:1d92fc99-eeda-424e-b087-58bfc2f152c0 a form:ConditionalFieldGroup ;
     mu:uuid "1d92fc99-eeda-424e-b087-58bfc2f152c0";
     form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ContainsCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:typesOfContacts ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/c319af9d-2e1f-4d2e-befd-43f0e895604b> ;
@@ -786,7 +786,7 @@ fields:3bbea4d1-42c5-491c-b4e7-d4f48f3770ac a form:Field ;
 fields:aa5f2868-97ec-4182-8f29-ec27d50b98a8 a form:ConditionalFieldGroup ;
     mu:uuid "aa5f2868-97ec-4182-8f29-ec27d50b98a8";
     form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ContainsCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:preventionMethods ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/9410a32e-308e-4bf0-a3b0-af8f9c9c19b2> ;
@@ -846,7 +846,7 @@ fields:364dfe9b-d8ad-4cdf-87c9-7853c082e409 a form:Field ;
 fields:2ee46e3b-b373-4f15-9485-0f3769fc22f3 a form:ConditionalFieldGroup ;
     mu:uuid "2ee46e3b-b373-4f15-9485-0f3769fc22f3";
     form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ContainsCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:sourceDetectionActions ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/6fb38b16-9d92-49da-ae56-945505c12e1a> ;
@@ -906,7 +906,7 @@ fields:3197b7cd-ec23-4a91-8e09-91d2637a5585 a form:Field ;
 fields:8141e520-a081-4740-87f9-031f473db2f0 a form:ConditionalFieldGroup ;
     mu:uuid "8141e520-a081-4740-87f9-031f473db2f0";
     form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ContainsCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:quarantaineCoachingMethods ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/85b363cc-6d69-4aa4-88ed-ab5ba50b1993> ;
@@ -966,7 +966,7 @@ fields:16eecbb9-0f22-42b0-8bd6-1aeef80b3610 a form:Field ;
 fields:50e8f373-fe2f-453c-a02e-6b2fe52a6876 a form:ConditionalFieldGroup ;
     mu:uuid "50e8f373-fe2f-453c-a02e-6b2fe52a6876";
     form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ContainsCodelistValue ;
         form:grouping form:Bag ;
         sh:path lblodSubsidie:vulnerableGroupsHelp ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/4135a965-2cd9-425f-8c45-1223307c66d4> ;
