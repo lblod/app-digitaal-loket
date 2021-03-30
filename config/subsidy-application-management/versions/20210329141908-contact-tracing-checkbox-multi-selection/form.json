@@ -44,6 +44,7 @@
       "lblodSubsidie:newOneSide",
       "lblodSubsidie:newBothSides",
       "nie:identifier",
+      "lblodSubsidie:estimatedExtraCosts",
       "lblodSubsidie:focusedPopulation",
       "lblodSubsidie:focusedPopulationAndereOption",
       "lblodSubsidie:typesOfContacts",
