@@ -45,11 +45,17 @@
       "lblodSubsidie:newBothSides",
       "nie:identifier",
       "lblodSubsidie:focusedPopulation",
+      "lblodSubsidie:focusedPopulationAndereOption",
       "lblodSubsidie:typesOfContacts",
+      "lblodSubsidie:typesOfContactsAndereOption",
       "lblodSubsidie:preventionMethods",
+      "lblodSubsidie:preventionMethodsAndereOption",
       "lblodSubsidie:sourceDetectionActions",
+      "lblodSubsidie:sourceDetectionActionsAndereOption",
       "lblodSubsidie:quarantaineCoachingMethods",
+      "lblodSubsidie:quarantaineCoachingMethodsAndereOption",
       "lblodSubsidie:vulnerableGroupsHelp",
+      "lblodSubsidie:vulnerableGroupsHelpAndereOption",
       {
         "s-prefix": "lblodSubsidie:decisionUpload",
         "properties": [
