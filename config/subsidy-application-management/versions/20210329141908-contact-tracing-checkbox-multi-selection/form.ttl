@@ -686,7 +686,7 @@ fields:5c854e33-7aa1-4571-b2e5-8ced8969f6e5 a form:Field ;
     sh:name "Op welke risicogroepen en kwetsbare personen heeft uw bestuur zich gefocust?" ;
     sh:order 71 ;
     sh:path lblodSubsidie:focusedPopulation ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/b956a95b-bfb6-4094-b7f7-6b612e650c4f", "searchEnabled": false}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/b956a95b-bfb6-4094-b7f7-6b612e650c4f", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe ;
     form:hasConditionalFieldGroup fields:283fffe3-d838-49bd-811f-53ba41191ca9 .
