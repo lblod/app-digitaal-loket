@@ -348,7 +348,7 @@ fieldGroups:main a form:FieldGroup ;
         ### Subsidy measure
         fields:68e149ec-1821-477b-a901-72924236ef9c ,
 
-        ### Selecteer reeks
+        ### Selecteer periode/reeks
         fields:96323450-81c7-4326-84df-6adb9a992d12 ,
 
         ### First name contact person

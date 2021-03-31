@@ -216,8 +216,8 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
 
 fields:dcfb437e-1219-4d1e-891d-057f262da9d6 a form:Field ;
     mu:uuid "dcfb437e-1219-4d1e-891d-057f262da9d6";
-    sh:name "Selecteer reeks" ;
-    form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
+    sh:name "Selecteer periode" ;
+    form:help "Indien de periode niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
     sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
     form:validations
@@ -243,8 +243,8 @@ fields:dcfb437e-1219-4d1e-891d-057f262da9d6 a form:Field ;
 
 fields:31107180-f065-4986-b6b7-641b9e65a85d a form:Field ;
     mu:uuid "31107180-f065-4986-b6b7-641b9e65a85d";
-    sh:name "Selecteer reeks" ;
-    form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
+    sh:name "Selecteer periode" ;
+    form:help "Indien de periode niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
     sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
     form:validations
