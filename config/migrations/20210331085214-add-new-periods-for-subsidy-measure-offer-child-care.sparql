@@ -57,7 +57,7 @@ INSERT DATA {
                 <https://www.gleif.org/ontology/Base/Period>;
             <http://mu.semte.ch/vocabularies/core/uuid> "02a7807e-5352-44e3-b87c-c69b3876be66" ;
             <http://www.w3.org/2004/02/skos/core#definition> "Submission period for a subsidy season"@en;
-            # TODO <https://www.gleif.org/ontology/Base/hasStart> "2021-01-31"^^<http://www.w3.org/2001/XMLSchema#date>;
+            # TODO Should be date of release <https://www.gleif.org/ontology/Base/hasStart> "2021-01-31"^^<http://www.w3.org/2001/XMLSchema#date>;
             <https://www.gleif.org/ontology/Base/hasEnd> "2021-07-31"^^<http://www.w3.org/2001/XMLSchema#date>.
     }
 }
