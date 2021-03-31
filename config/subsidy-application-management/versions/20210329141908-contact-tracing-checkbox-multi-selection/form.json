@@ -138,12 +138,9 @@
           {
             "s-prefix": "ext:engagementEntry",
             "properties": [
-              "ext:target",
               "ext:existingStaff",
               "ext:additionalStaff",
-              "ext:volunteers",
-              "ext:estimatedCost",
-              "ext:index"
+              "ext:volunteers"
             ]
           }
         ]
