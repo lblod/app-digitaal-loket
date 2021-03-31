@@ -236,8 +236,8 @@ fieldGroups:195cb7e8-5989-46d2-b425-7dc862ea171d a form:FieldGroup ;
 
 fields:dcfb437e-1219-4d1e-891d-057f262da9d6 a form:Field ;
     mu:uuid "dcfb437e-1219-4d1e-891d-057f262da9d6";
-    sh:name "Selecteer reeks" ;
-    form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
+    sh:name "Selecteer periode" ;
+    form:help "Indien de periode niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
     sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
     form:validations
@@ -263,8 +263,8 @@ fields:dcfb437e-1219-4d1e-891d-057f262da9d6 a form:Field ;
 
 fields:31107180-f065-4986-b6b7-641b9e65a85d a form:Field ;
     mu:uuid "31107180-f065-4986-b6b7-641b9e65a85d";
-    sh:name "Selecteer reeks" ;
-    form:help "Indien de reeks niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
+    sh:name "Selecteer periode" ;
+    form:help "Indien de periode niet beschikbaar is, is deze niet beschikbaar of gestart, of inmiddels afgelopen." ;
     sh:order 21 ;
     sh:path lblodSubsidie:timeBlock ;
     form:validations
@@ -595,7 +595,7 @@ fields:4c7820f0-4011-4ab4-a16a-e128800e11bc a form:Field ;
         sh:resultMessage "Dit veld is verplicht."@nl;
         sh:path lblodSubsidie:collaborator ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6", "searchEnabled": true}""" ;
-    form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
+    form:displayType displayTypes:conceptSchemeMultiSelector ;
     form:help """Typ of selecteer ook de gemeente die de aanvraag indient. Je kan meerdere opties aanduiden.""" ;
     sh:group fields:df9b7800-1161-45c3-84c3-61d1313e143a .
 
@@ -715,7 +715,7 @@ fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
 
 fields:65060496-0ca8-4540-b0a8-d72211b74ff7 a form:Field ;
     mu:uuid "65060496-0ca8-4540-b0a8-d72211b74ff7";
-    sh:name """Als u, naast personeelskosten, nog andere specifieke uitgaven heeft gedaan, kan u hier een schatting van de kopsrijs (€) geven""" ;
+    sh:name """Als u, naast personeelskosten, nog andere specifieke uitgaven heeft gedaan, kan u hier een schatting van de kostprijs (€) geven""" ;
     sh:order 70 ;
     sh:path lblodSubsidie:estimatedExtraCosts ;
     form:displayType displayTypes:numericalInput ;
