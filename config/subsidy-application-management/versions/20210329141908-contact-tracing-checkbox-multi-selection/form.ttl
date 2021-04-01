@@ -765,6 +765,12 @@ fields:3be51f5b-52ff-4c1d-af8b-53818cba13f1 a form:Field ;
     sh:name "Andere" ;
     sh:order 72 ;
     sh:path lblodSubsidie:focusedPopulationAndereOption ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:focusedPopulationAndereOption
+      ] ;
     form:displayType displayTypes:textArea ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe .
 
@@ -803,6 +809,12 @@ fields:1d65dd04-ad80-424c-b8e0-9296d9d59925 a form:Field ;
     sh:name "Andere" ;
     sh:order 74 ;
     sh:path lblodSubsidie:typesOfContactsAndereOption ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:typesOfContactsAndereOption
+      ] ;
     form:displayType displayTypes:textArea ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe .
 
@@ -867,6 +879,12 @@ fields:96902512-3b98-4599-a51b-be4f91f4b8dc a form:Field ;
     sh:name "Andere" ;
     sh:order 82 ;
     sh:path lblodSubsidie:preventionMethodsAndereOption ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:preventionMethodsAndereOption
+      ] ;
     form:displayType displayTypes:textArea ;
     sh:group fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf .
 
@@ -932,6 +950,12 @@ fields:28492a39-57eb-4052-9117-5383a6a360f3 a form:Field ;
     sh:name "Andere" ;
     sh:order 92 ;
     sh:path lblodSubsidie:sourceDetectionActionsAndereOption ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:sourceDetectionActionsAndereOption
+      ] ;
     form:displayType displayTypes:textArea ;
     sh:group fields:f08a2648-bc2c-47ef-9b43-9ce6528d4619 .
 
@@ -997,6 +1021,12 @@ fields:a188f0ae-7ddf-4abc-b4b8-f1711aa8ad99 a form:Field ;
     sh:name "Andere" ;
     sh:order 102 ;
     sh:path lblodSubsidie:quarantaineCoachingMethodsAndereOption ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:quarantaineCoachingMethodsAndereOption
+      ] ;
     form:displayType displayTypes:textArea ;
     sh:group fields:3b9eebe6-59e6-4f9f-b901-b7c737763d9b .
 
@@ -1062,6 +1092,12 @@ fields:3be95e68-d2ef-4c4b-bfc2-c5528c02ffde a form:Field ;
     sh:name "Andere" ;
     sh:order 112 ;
     sh:path lblodSubsidie:vulnerableGroupsHelpAndereOption ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:vulnerableGroupsHelpAndereOption
+      ] ;
     form:displayType displayTypes:textArea ;
     sh:group fields:bf8ce9ac-243c-43d9-952f-6a8cdb5ff052 .
 
