@@ -62,3 +62,5 @@
 (add-prefix "transactie" "http://data.vlaanderen.be/ns/transactie#")
 (add-prefix "mobiliteit" "https://data.vlaanderen.be/ns/mobiliteit#")
 (add-prefix "task" "http://redpencil.data.gift/vocabularies/tasks/")
+(add-prefix "common" "http://www.w3.org/2007/uwa/context/common.owl#")
+(add-prefix "xkos" "http://rdf-vocabulary.ddialliance.org/xkos#")
