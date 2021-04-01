@@ -210,6 +210,26 @@ fields:96323450-81c7-4326-84df-6adb9a992d12 a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1 .
 
+fields:96323450-81c7-4326-84df-6adb9a992d12 form:hasConditionalFieldGroup fields:4c2045b8-1411-4e24-9c7a-338376132b12 .
+
+fields:4c2045b8-1411-4e24-9c7a-338376132b12 a form:ConditionalFieldGroup ;
+    mu:uuid "4c2045b8-1411-4e24-9c7a-338376132b12";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lblodSubsidie:timeBlock ;
+        form:conceptScheme <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
+        form:customValue <http://lblod.data.gift/concepts/5578af16-8dc2-4361-98e0-12cddcdd9de5>
+      ] ;
+    form:hasFieldGroup fieldGroups:195cb7e8-5989-46d2-b425-7dc862ea171d .
+
+fieldGroups:195cb7e8-5989-46d2-b425-7dc862ea171d a form:FieldGroup ;
+    mu:uuid "195cb7e8-5989-46d2-b425-7dc862ea171d" ;
+    form:hasField
+
+        ### Checkbox: used parent contribution
+        fields:36a2470b-9e1e-4cda-b036-57a77fcf2dd7 .
+
 ##########################################################
 # Contact And Source Tracking Series
 ##########################################################
@@ -382,12 +402,24 @@ fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 a form:Field ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
 ##########################################################
+# Daycare (children): used parental contribution
+##########################################################
+
+fields:36a2470b-9e1e-4cda-b036-57a77fcf2dd7 a form:Field ;
+    mu:uuid "36a2470b-9e1e-4cda-b036-57a77fcf2dd7";
+    sh:name "Werd er een ouderbijdrage gevraagd?" ;
+    sh:order 50 ;
+    sh:path lblodSubsidie:usedParentalContribution ;
+    form:displayType displayTypes:checkbox ;
+    sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
+
+##########################################################
 # Daycare Application Form Table
 ##########################################################
 
 fields:9462b7b4-313a-4eae-bedd-079811219dcb a form:Field ;
     mu:uuid "9462b7b4-313a-4eae-bedd-079811219dcb";
-    sh:order 50 ;
+    sh:order 51 ;
     sh:path lblodSubsidie:applicationFormTable ;
     form:validations
      [ a form:RequiredConstraint ;

@@ -57,6 +57,7 @@
       "lblodSubsidie:quarantaineCoachingMethodsAndereOption",
       "lblodSubsidie:vulnerableGroupsHelp",
       "lblodSubsidie:vulnerableGroupsHelpAndereOption",
+      "lblodSubsidie:usedParentalContribution",
       {
         "s-prefix": "lblodSubsidie:decisionUpload",
         "properties": [
