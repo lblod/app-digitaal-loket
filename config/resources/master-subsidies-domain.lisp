@@ -114,9 +114,9 @@
                 (:type :uri-set ,(s-prefix "subsidie:Subsidieprocedurestap.type")))
   :has-one `((period-of-time :via ,(s-prefix "mobiliteit:periode")
                       :as "period")
-             ((subsidy-measure-offer-series) :via ,(s-prefix "lblodSubsidie:heeftSubsidieprocedurestap")
-                                               :inverse t
-                                               :as "subsidy-measure-offer-series")
+             (subsidy-measure-offer-series :via ,(s-prefix "lblodSubsidie:heeftSubsidieprocedurestap")
+                                             :inverse t
+                                              :as "subsidy-measure-offer-series")
              (subsidy-measure-offer :via ,(s-prefix "cpsv:follows")
                                        :inverse t
                                        :as "subsidy-measure-offer"))
