@@ -715,7 +715,7 @@ fields:ef2536a2-571f-4796-b1e7-6fbde128a6b7 a form:Field ;
 
 fields:65060496-0ca8-4540-b0a8-d72211b74ff7 a form:Field ;
     mu:uuid "65060496-0ca8-4540-b0a8-d72211b74ff7";
-    sh:name """Als u, naast personeelskosten, nog andere specifieke uitgaven heeft gedaan, kan u hier een schatting van de kostprijs (€) geven""" ;
+    sh:name """Als u, naast personeelskosten, nog andere specifieke uitgaven heeft gedaan, kan u hier een schatting van de kostprijs (€) geven?""" ;
     sh:order 70 ;
     sh:path lblodSubsidie:estimatedExtraCosts ;
     form:displayType displayTypes:numericalInput ;
@@ -735,6 +735,11 @@ fields:5c854e33-7aa1-4571-b2e5-8ced8969f6e5 a form:Field ;
     sh:name "Op welke risicogroepen en kwetsbare personen heeft uw bestuur zich gefocust?" ;
     sh:order 71 ;
     sh:path lblodSubsidie:focusedPopulation ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:focusedPopulation ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/b956a95b-bfb6-4094-b7f7-6b612e650c4f", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe ;
@@ -760,7 +765,7 @@ fields:3be51f5b-52ff-4c1d-af8b-53818cba13f1 a form:Field ;
     sh:name "Andere" ;
     sh:order 72 ;
     sh:path lblodSubsidie:focusedPopulationAndereOption ;
-    form:displayType displayTypes:defaultInput ;
+    form:displayType displayTypes:textArea ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe .
 
 fields:5a2999d9-28a6-45cd-b91b-cf3e4b99fb60 a form:Field ;
@@ -768,6 +773,11 @@ fields:5a2999d9-28a6-45cd-b91b-cf3e4b99fb60 a form:Field ;
     sh:name "Welk type contacten heeft het bestuur gehad tijdens de duur van het project?" ;
     sh:order 73 ;
     sh:path lblodSubsidie:typesOfContacts ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:typesOfContacts ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/c319af9d-2e1f-4d2e-befd-43f0e895604b", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe ;
@@ -793,7 +803,7 @@ fields:1d65dd04-ad80-424c-b8e0-9296d9d59925 a form:Field ;
     sh:name "Andere" ;
     sh:order 74 ;
     sh:path lblodSubsidie:typesOfContactsAndereOption ;
-    form:displayType displayTypes:defaultInput ;
+    form:displayType displayTypes:textArea ;
     sh:group fields:92c418e5-5c6b-490f-bbcd-66bdeac2cbbe .
 
 ##################################################################
@@ -827,6 +837,11 @@ fields:3bbea4d1-42c5-491c-b4e7-d4f48f3770ac a form:Field ;
     sh:name "Welk methodes heeft u gebruikt ?" ;
     sh:order 81 ;
     sh:path lblodSubsidie:preventionMethods ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:preventionMethods ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/9410a32e-308e-4bf0-a3b0-af8f9c9c19b2", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf ;
@@ -852,7 +867,7 @@ fields:96902512-3b98-4599-a51b-be4f91f4b8dc a form:Field ;
     sh:name "Andere" ;
     sh:order 82 ;
     sh:path lblodSubsidie:preventionMethodsAndereOption ;
-    form:displayType displayTypes:defaultInput ;
+    form:displayType displayTypes:textArea ;
     sh:group fields:b078fd57-0856-4c8a-a49b-73b90bb3bfdf .
 
 
@@ -887,6 +902,11 @@ fields:364dfe9b-d8ad-4cdf-87c9-7853c082e409 a form:Field ;
     sh:name "Welke acties heb je ondernomen? " ;
     sh:order 91 ;
     sh:path lblodSubsidie:sourceDetectionActions ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:sourceDetectionActions ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/6fb38b16-9d92-49da-ae56-945505c12e1a", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:f08a2648-bc2c-47ef-9b43-9ce6528d4619 ;
@@ -912,7 +932,7 @@ fields:28492a39-57eb-4052-9117-5383a6a360f3 a form:Field ;
     sh:name "Andere" ;
     sh:order 92 ;
     sh:path lblodSubsidie:sourceDetectionActionsAndereOption ;
-    form:displayType displayTypes:defaultInput ;
+    form:displayType displayTypes:textArea ;
     sh:group fields:f08a2648-bc2c-47ef-9b43-9ce6528d4619 .
 
 
@@ -947,6 +967,11 @@ fields:3197b7cd-ec23-4a91-8e09-91d2637a5585 a form:Field ;
     sh:name "Welke methodes heeft u gebruikt?" ;
     sh:order 101 ;
     sh:path lblodSubsidie:quarantaineCoachingMethods ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:quarantaineCoachingMethods ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/85b363cc-6d69-4aa4-88ed-ab5ba50b1993", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:3b9eebe6-59e6-4f9f-b901-b7c737763d9b ;
@@ -972,7 +997,7 @@ fields:a188f0ae-7ddf-4abc-b4b8-f1711aa8ad99 a form:Field ;
     sh:name "Andere" ;
     sh:order 102 ;
     sh:path lblodSubsidie:quarantaineCoachingMethodsAndereOption ;
-    form:displayType displayTypes:defaultInput ;
+    form:displayType displayTypes:textArea ;
     sh:group fields:3b9eebe6-59e6-4f9f-b901-b7c737763d9b .
 
 
@@ -1007,6 +1032,11 @@ fields:16eecbb9-0f22-42b0-8bd6-1aeef80b3610 a form:Field ;
     sh:name "Welke hulp heeft u georganiseerd?" ;
     sh:order 111 ;
     sh:path lblodSubsidie:vulnerableGroupsHelp ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path lblodSubsidie:vulnerableGroupsHelp ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/4135a965-2cd9-425f-8c45-1223307c66d4", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group fields:bf8ce9ac-243c-43d9-952f-6a8cdb5ff052 ;
@@ -1032,7 +1062,7 @@ fields:3be95e68-d2ef-4c4b-bfc2-c5528c02ffde a form:Field ;
     sh:name "Andere" ;
     sh:order 112 ;
     sh:path lblodSubsidie:vulnerableGroupsHelpAndereOption ;
-    form:displayType displayTypes:defaultInput ;
+    form:displayType displayTypes:textArea ;
     sh:group fields:bf8ce9ac-243c-43d9-952f-6a8cdb5ff052 .
 
 
