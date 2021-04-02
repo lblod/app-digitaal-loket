@@ -184,18 +184,12 @@
                 (:total-amount :float ,(s-prefix "lblodSubsidie:totalAmount")))
   :has-one `((subsidy-application-flow-step :via ,(s-prefix "dct:isPartOf")
                                              :as "subsidy-application-flow-step")
-             ;;TODO: remove this from API
-             (bestuurseenheid :via ,(s-prefix "pav:createdBy")
-                              :as "organization")
              (contact-punt :via ,(s-prefix "schema:contactPoint")
                            :as "contactinfo")
              (bank-account :via ,(s-prefix "schema:bankAccount")
                            :as "bank-account")
              (time-block :via ,(s-prefix "lblodSubsidie:timeBlock")
                          :as "time-block")
-             ;;TODO: remove this from API
-             (subsidy-measure-offer :via ,(s-prefix "lblodSubsidie:subsidyMeasure")
-                                       :as "subsidy-measure")
              (application-form-table :via ,(s-prefix "lblodSubsidie:applicationFormTable")
                                      :as "application-form-table")
              (engagement-table :via ,(s-prefix "lblodSubsidie:engagementTable")
