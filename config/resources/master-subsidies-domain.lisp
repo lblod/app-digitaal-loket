@@ -164,7 +164,7 @@
 (define-resource participation ()
   :class (s-prefix "m8g:Participation")
   :properties `((:description :string ,(s-prefix "dct:description"))
-                (:role :uri-set ,(s-prefix "m8g:role")))
+                (:role :url ,(s-prefix "m8g:role")))
   :has-one `((bestuurseenheid :via ,(s-prefix "m8g:playsRole")
                             :inverse t
                             :as "participating-bestuurseenheid"))
