@@ -1,0 +1,41 @@
+# migration correction due to error in previous migration
+# https://github.com/lblod/app-digitaal-loket/pull/29/files#diff-15ee36d8786a446e989f8405558b91338d3f57e8a6ae25a5ad50cbc8cc277b08L49
+# duplicate useage of uuid
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+DELETE {
+  GRAPH ?g {
+    ?s mu:uuid ?uuid.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s mu:uuid ?newUuid.
+  }
+}
+WHERE {
+  {
+    SELECT DISTINCT ?uuid ?totalS WHERE {
+
+      {
+        SELECT ?uuid count( distinct(?s)) as ?totalS
+          WHERE {
+            ?s mu:uuid ?uuid.
+            ?s a ?typeF.
+            FILTER(?typeF IN (<http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie>, <http://data.europa.eu/m8g/Participation>))
+          }
+
+      }
+    }
+
+    GROUP BY ?uuid
+    HAVING (?totalS > 1)
+    ORDER BY DESC(?totalS)
+  }
+
+  GRAPH ?g {
+    ?s mu:uuid ?uuid.
+    ?s a <http://data.europa.eu/m8g/Participation>
+  }
+  BIND(SHA256(CONCAT(STR(?s), "m8g:Participation")) as ?newUuid) .
+}
