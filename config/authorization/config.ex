@@ -112,7 +112,18 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://www.w3.org/2004/02/skos/core#ConceptScheme",
-                        "http://www.w3.org/2004/02/skos/core#Concept"
+                        "http://www.w3.org/2004/02/skos/core#Concept",
+                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelConsumptieStatus",
+                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
+                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFlow",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationStep",
+                        "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap",
+                        "http://data.europa.eu/m8g/PeriodOfTime",
+                        "http://data.europa.eu/m8g/Criterion",
+                        "http://data.europa.eu/m8g/RequirementGroup",
+                        "http://data.europa.eu/m8g/CriterionRequirement",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm"
                       ]
                     } },
                   %GraphSpec{
@@ -230,20 +241,9 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
-                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelConsumptieStatus",
                         "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
                         "http://schema.org/MonetaryAmount",
-                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
-                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFlow",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationStep",
-                        "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap",
-                        "http://data.europa.eu/m8g/PeriodOfTime",
-                        "http://data.europa.eu/m8g/Criterion",
-                        "http://data.europa.eu/m8g/RequirementGroup",
-                        "http://data.europa.eu/m8g/CriterionRequirement",
                         "http://data.europa.eu/m8g/Participation",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm",
                         "http://schema.org/BankAccount",
                         "https://www.gleif.org/ontology/Base/Period",
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",

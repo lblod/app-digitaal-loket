@@ -215,6 +215,7 @@
   :features '(include-uri)
   :on-path "bank-accounts")
 
+;;TODO still needed?
 (define-resource time-block () ;; subclass of skos:Concept
   :class (s-prefix "gleif:Period")
   :properties `((:naam :string ,(s-prefix "dct:title"))
