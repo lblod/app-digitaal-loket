@@ -122,8 +122,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/PeriodOfTime",
                         "http://data.europa.eu/m8g/Criterion",
                         "http://data.europa.eu/m8g/RequirementGroup",
-                        "http://data.europa.eu/m8g/CriterionRequirement",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm"
+                        "http://data.europa.eu/m8g/CriterionRequirement"
                       ]
                     } },
                   %GraphSpec{
@@ -240,6 +239,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm",
                         "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
                         "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
                         "http://schema.org/MonetaryAmount",
