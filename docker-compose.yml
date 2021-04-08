@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.42.1
+    image: lblod/frontend-loket:0.43.0
     links:
       - identifier:backend
     labels:
@@ -167,7 +167,7 @@ services:
     restart: always
     logging: *default-logging
   export-leidinggevenden:
-    image: lblod/mandaten-download-generator-service:0.3.6
+    image: lblod/mandaten-download-generator-service:0.3.7
     links:
       - virtuoso:database
     environment:
@@ -182,7 +182,7 @@ services:
     restart: always
     logging: *default-logging
   export-mandaten:
-    image: lblod/mandaten-download-generator-service:0.3.6
+    image: lblod/mandaten-download-generator-service:0.3.7
     links:
       - virtuoso:database
     environment:
