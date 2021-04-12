@@ -492,6 +492,10 @@ defmodule Dispatcher do
     Proxy.forward conn, [], "http://subsidy-applications-management/semantic-forms/" <> id <> "/submit"
   end
 
+  match "/flow-management/*path" do
+    Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
