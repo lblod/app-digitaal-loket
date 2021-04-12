@@ -204,7 +204,7 @@
                                       :as "collaborators"))
   :resource-base (s-url "http://data.lblod.info/id/application-forms/")
   :features '(include-uri)
-  :on-path "application-forms")
+  :on-path "subsidy-application-forms")
 
 (define-resource bank-account ()
   :class (s-prefix "schema:BankAccount")

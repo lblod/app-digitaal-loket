@@ -460,8 +460,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/participations/"
   end
 
-  match "/application-forms/*path" do
-    Proxy.forward conn, path, "http://cache/application-forms/"
+  match "/subsidy-application-forms/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-application-forms/"
   end
 
   #################################################################
