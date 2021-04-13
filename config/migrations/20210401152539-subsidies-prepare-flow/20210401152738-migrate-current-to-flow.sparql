@@ -196,7 +196,7 @@ WHERE {
 
 ;
 
-# step : migrate subsidieprocedurestappen, flow, flow-step -> link to consumptie etc
+# step : migrate subsidieprocedurestappen, flow, flow-step
 PREFIX mobiliteit: <https://data.vlaanderen.be/ns/mobiliteit#>
 PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -249,11 +249,6 @@ INSERT {
 
     ?ps mobiliteit:periode ?periodPs.
   }
-
-  GRAPH ?g {
-    ?consumptie cpsv:follows ?af.
-    ?consumptie common:active ?afs.
-  }
 }
 WHERE {
 
@@ -264,15 +259,6 @@ WHERE {
       <https://www.gleif.org/ontology/Base/hasStart> ?startReeks.
     ?aanbod a subsidie:SubsidiemaatregelAanbod.
     ?aanbod lblodSubsidie:heeftReeks ?reeks.
-  }
-
-  OPTIONAL {
-    GRAPH ?g {
-      ?consumptie transactie:isInstantieVan ?aanbod.
-      ?consumptie a subsidie:SubsidiemaatregelConsumptie.
-      ?consumptie dct:source ?applicationform.
-      ?applicationform a lblodSubsidie:ApplicationForm.
-    }
   }
 
   BIND(SHA256(CONCAT(STR(?reeks), "subsidie:Subsidieprocedurestap")) as ?psUuid) .
