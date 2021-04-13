@@ -123,7 +123,7 @@ fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
     mu:uuid "ecd33526-7220-4e57-9d3d-1df7fdc196e3";
     sh:description "Estimated amount of kilometers";
     sh:order 13;
-    sh:name "Raming" ;
+    sh:name "Doelstelling in kilometer" ;
     form:displayType displayTypes:propertyGroup ;
     form:validations
     [ a form:HasOneNumberGreaterThanInFields ;
@@ -1141,7 +1141,7 @@ fields:f6840939-353d-45af-818a-0bee29d1c4e2 a form:Field ;
    sh:path nie:identifier
    ] ;
  form:options  """{"prefix" : "fiets-subsidie-"}""" ;
- form:help "Dit nummer werd uniek gegenereerd voor uw subsidie aanvraag" ;
+ form:help "Dit nummer werd uniek gegenereerd voor uw subsidie aanvraag. Gelieve dit bij iedere communicatie te vermelden." ;
  form:displayType displayTypes:caseNumber ;
  sh:group fields:d93dfe7a-a668-4a49-a77f-981433f49ba1  .
 
@@ -1169,19 +1169,8 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     mu:uuid "0db3aed1-0e15-454f-8584-0707129b367b";
     sh:name "Raming totale kostprijs" ;
     sh:order 12 ;
-    sh:path lblodSubsidie:totalEstimateCost ;
-    form:displayType displayTypes:numericalInput ;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:totalEstimateCost
-    ] ,
-    [ a form:PositiveNumber ;
-      form:grouping form:MatchEvery ;
-      sh:resultMessage "Geef een positief aantal op." ;
-      sh:path lblodSubsidie:totalEstimateCost
-    ] ;
+    sh:path lblodSubsidie:estimatedCostTable ;
+    form:displayType displayTypes:estimatedCostTable ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
@@ -1204,6 +1193,24 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
+# Bicycle infrastructure: picture-upload
+##########################################################
+fields:d7c19de5-1012-4d9d-a611-af26038c788a a form:Field ;
+    mu:uuid "d7c19de5-1012-4d9d-a611-af26038c788a";
+    sh:name "Foto's" ;
+    form:help "Laad hier één of meerdere foto's op van de situatie voor de opstart van het project";
+    sh:order 14 ;
+    sh:path ( lblodSubsidie:picturesUpload dct:hasPart ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path lblodSubsidie:picturesUpload
+    ] ;
+    form:displayType displayTypes:files ;
+    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
+
+##########################################################
 # Hidden field required for all variations of URL or FILE
 # input field which require validation.
 # It makes sure there is a type attached to hasPart object.
@@ -1213,8 +1220,15 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
 fields:d00a14b2-f565-494a-8ad7-54908d89671a a form:Field ;
     mu:uuid "d00a14b2-f565-494a-8ad7-54908d89671a" ;
     sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
-    sh:order 14 ;
+    sh:order 15 ;
     sh:path ( lblodSubsidie:decisionUpload dct:hasPart rdf:type );
+    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
+
+fields:4f9bbe22-c562-4ff0-87ac-cc47cc01e224 a form:Field ;
+    mu:uuid "4f9bbe22-c562-4ff0-87ac-cc47cc01e224" ;
+    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:order 16 ;
+    sh:path ( lblodSubsidie:picturesUpload dct:hasPart rdf:type );
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
@@ -1506,14 +1520,20 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
         ### Project name
         fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd,
 
-        ### Total price
+        ### Estimate total cost table
         fields:0db3aed1-0e15-454f-8584-0707129b367b ,
 
         ### Decision-upload
         fields:eea274cf-b422-4b8e-bb83-b066edbff8b1,
 
+        ### Pictures-upload
+        fields:d7c19de5-1012-4d9d-a611-af26038c788a,
+
         ### Decision-upload HIDDEN
         fields:d00a14b2-f565-494a-8ad7-54908d89671a,
+        
+        ### Pictures-upload HIDDEN
+        fields:4f9bbe22-c562-4ff0-87ac-cc47cc01e224,
 
         ### stub form field to help with rendering nested property groups HIDDEN
         fields:2a36568a-4d09-4d16-92f0-e28db48680ed,

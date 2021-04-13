@@ -58,8 +58,20 @@
       "lblodSubsidie:vulnerableGroupsHelp",
       "lblodSubsidie:vulnerableGroupsHelpAndereOption",
       "lblodSubsidie:usedParentalContribution",
+      "lblodSubsidie:estimatedCostTable",
       {
         "s-prefix": "lblodSubsidie:decisionUpload",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:picturesUpload",
         "properties": [
           {
             "s-prefix": "dct:hasPart",
