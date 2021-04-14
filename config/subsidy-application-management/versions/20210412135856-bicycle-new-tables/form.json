@@ -58,7 +58,6 @@
       "lblodSubsidie:vulnerableGroupsHelp",
       "lblodSubsidie:vulnerableGroupsHelpAndereOption",
       "lblodSubsidie:usedParentalContribution",
-      "lblodSubsidie:estimatedCostTable",
       {
         "s-prefix": "lblodSubsidie:decisionUpload",
         "properties": [
@@ -154,6 +153,20 @@
               "ext:existingStaff",
               "ext:additionalStaff",
               "ext:volunteers"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:estimatedCostTable",  
+        "properties": [
+          {
+            "s-prefix": "ext:estimatedCostEntry",
+            "properties": [
+              "ext:description",
+              "ext:cost",
+              "ext:share",
+              "ext:index"
             ]
           }
         ]
