@@ -13,7 +13,8 @@
       "PREFIX gleif: <https://www.gleif.org/ontology/Base/>",
       "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>",
       "PREFIX adms: <http://www.w3.org/ns/adms#>",
-      "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
+      "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>",
+      "PREFIX bicycleInfrastructure: <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#>"
     ],
     "properties": [
       "dct:created",
@@ -39,10 +40,6 @@
       "lblodSubsidie:projectName",
       "lblodSubsidie:identificationNumber",
       "lblodSubsidie:totalEstimateCost",
-      "lblodSubsidie:improvementOneSide",
-      "lblodSubsidie:improvementBothSides",
-      "lblodSubsidie:newOneSide",
-      "lblodSubsidie:newBothSides",
       "nie:identifier",
       "lblodSubsidie:estimatedExtraCosts",
       "lblodSubsidie:focusedPopulation",
@@ -158,14 +155,14 @@
         ]
       },
       {
-        "s-prefix": "lblodSubsidie:estimatedCostTable",  
+        "s-prefix": "bicycleInfrastructure:EstimatedCostTable",  
         "properties": [
           {
-            "s-prefix": "ext:estimatedCostEntry",
+            "s-prefix": "bicycleInfrastructure:EstimatedCostEntry",
             "properties": [
-              "ext:description",
-              "ext:cost",
-              "ext:share",
+              "bicycleInfrastructure:costEstimationType",
+              "bicycleInfrastructure:cost",
+              "bicycleInfrastructure:share",
               "ext:index"
             ]
           }

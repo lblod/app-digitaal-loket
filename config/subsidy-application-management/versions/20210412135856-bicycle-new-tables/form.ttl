@@ -11,6 +11,7 @@
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
+@prefix bicycleInfrastructure: <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#>.
 
 ##########################################################
 # Property groups
@@ -112,52 +113,6 @@ fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e a form:PropertyGroup;
     sh:order 12;
     sh:name "Algemeen" ;
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
-
-##########################################################
-# Start Nested property groups for bicyle-lanes
-# Please note: there is a quirck,
-# see field "2a36568a-4d09-4d16-92f0-e28db48680ed"
-# for more explanation
-##########################################################
-fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 a form:PropertyGroup;
-    mu:uuid "ecd33526-7220-4e57-9d3d-1df7fdc196e3";
-    sh:description "Estimated amount of kilometers";
-    sh:order 13;
-    sh:name "Doelstelling in kilometer" ;
-    form:displayType displayTypes:propertyGroup ;
-    form:validations
-    [ a form:HasOneNumberGreaterThanInFields ;
-      form:grouping form:Bag ;
-      sh:path lblodSubsidie:improvementOneSide ;
-      sh:path lblodSubsidie:improvementBothSides ;
-      sh:path lblodSubsidie:newOneSide ;
-      sh:path lblodSubsidie:newBothSides ;
-      form:threshold 0 ;
-      sh:resultMessage "Ten minste één veld moet een positief geschat aantal kilometers bevatten"@nl
-    ] ;
-    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
-
-fields:3f15344d-31cb-441d-a95f-8f2c1620a4eb a form:PropertyGroup;
-    a form:Field;
-    mu:uuid "3f15344d-31cb-441d-a95f-8f2c1620a4eb";
-    sh:description "Bicycle infrastructure (verbeteringen)";
-    sh:order 14;
-    form:displayType displayTypes:propertyGroup ;
-    sh:name "Geschat aantal kilometer fietspad dat verbeterd zal worden aan" ;
-    sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
-
-fields:f08c51f5-1edd-4929-8ff2-47711ed8fff5 a form:PropertyGroup;
-    a form:Field;
-    mu:uuid "f08c51f5-1edd-4929-8ff2-47711ed8fff5";
-    sh:description "Bicycle infrastructure (nieuw)";
-    form:displayType displayTypes:propertyGroup ;
-    sh:order 15;
-    sh:name "Geschat aantal kilometer nieuw aan te leggen fietspad" ;
-    sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
-
-##########################################################
-# End ested property groups for bicyle-lanes
-##########################################################
 
 ##########################################################
 # Subsidy Measure Offer
@@ -1169,7 +1124,7 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     mu:uuid "0db3aed1-0e15-454f-8584-0707129b367b";
     sh:name "Raming totale kostprijs" ;
     sh:order 12 ;
-    sh:path lblodSubsidie:estimatedCostTable ;
+    sh:path bicycleInfrastructure:EstimatedCostTable ;
     form:displayType displayTypes:estimatedCostTable ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
@@ -1231,135 +1186,19 @@ fields:4f9bbe22-c562-4ff0-87ac-cc47cc01e224 a form:Field ;
     sh:path ( lblodSubsidie:picturesUpload dct:hasPart rdf:type );
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
+##########################################################
+# Bicycle infrastructure: objective table
+##########################################################
 
-##########################################################
-# Bicycle infrastructure: stub field
-# The next part of the form uses directly nested
-# property-groups.
-# but (deue to performance reasons) this does not work
-# without at least one form:Field attatched to the parent
-# property-
-##########################################################
-fields:2a36568a-4d09-4d16-92f0-e28db48680ed a form:Field ;
-    mu:uuid "2a36568a-4d09-4d16-92f0-e28db48680ed" ;
-    sh:name "Stub field for workaround nested property-groups [hidden input]" ;
-    sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
-
-##########################################################
-# Bicycle infrastructure: improvement one side
-##########################################################
-fields:d88f6b6d-8295-42db-967b-29931b7c9546 a form:Field ;
-    mu:uuid "d88f6b6d-8295-42db-967b-29931b7c9546";
-    sh:name "slechts één kant van de weg:" ;
-    sh:order 15 ;
-    sh:path lblodSubsidie:improvementOneSide ;
-    form:displayType displayTypes:numericalInput ;
-    form:defaultValue 0;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl ;
-      sh:path lblodSubsidie:improvementOneSide ;
-    ] ,
-    [ a form:ValidInteger ;
-      form:grouping form:MatchEvery ;
-      sh:path lblodSubsidie:improvementOneSide ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
-    ] ,
-    [ a form:PositiveNumber ;
-        form:grouping form:MatchEvery ;
-        sh:path lblodSubsidie:improvementOneSide ;
-        sh:resultMessage "Geef een positief aantal op."@nl
-    ] ;
-    sh:group fields:3f15344d-31cb-441d-a95f-8f2c1620a4eb .
-
-##########################################################
-# Bicycle infrastructure: improvement both sides
-##########################################################
-fields:896155ed-892e-4e69-b220-fd5a0484305a a form:Field ;
-    mu:uuid "896155ed-892e-4e69-b220-fd5a0484305a";
-    sh:name "aan beide kanten van de weg " ;
-    form:help """Noteer: Als u bvb. bij een traject van 1km langs beide kanten van de weg een fietspad aanlegt of vernieuwt, vul dan 2km in""";
-    sh:order 21 ;
-    sh:path lblodSubsidie:improvementBothSides ;
-    form:displayType displayTypes:numericalInput ;
-    form:defaultValue 0;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl ;
-      sh:path lblodSubsidie:improvementBothSides ;
-    ] ,
-    [ a form:ValidInteger ;
-      form:grouping form:MatchEvery ;
-      sh:path lblodSubsidie:improvementBothSides ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
-    ] ,
-    [ a form:PositiveNumber ;
-        form:grouping form:MatchEvery ;
-        sh:path lblodSubsidie:improvementBothSides ;
-        sh:resultMessage "Geef een positief aantal op."@nl
-    ] ;
-    sh:group fields:3f15344d-31cb-441d-a95f-8f2c1620a4eb .
-
-
-##########################################################
-# Bicycle infrastructure: New bike lane one side
-##########################################################
-fields:83558993-8859-4fda-b9cb-229a22aa1ec6 a form:Field ;
-    mu:uuid "83558993-8859-4fda-b9cb-229a22aa1ec6";
-    sh:name "slechts één kant van de weg:" ;
+fields:1aa3f0a9-2914-4263-ac22-6fc6f4451b0a a form:Field ;
+    mu:uuid "1aa3f0a9-2914-4263-ac22-6fc6f4451b0a";
+    sh:name "Doelstelling in kilometer" ;
+    form:help "Als u bvb. bij een traject van 1km langs beide kanten van de weg een fietspad aanlegt of vernieuwt, vul dan 2km in";
     sh:order 17 ;
-    sh:path lblodSubsidie:newOneSide ;
-    form:displayType displayTypes:numericalInput ;
-    form:defaultValue 0;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl ;
-      sh:path lblodSubsidie:newOneSide ;
-    ] ,
-    [ a form:ValidInteger ;
-      form:grouping form:MatchEvery ;
-      sh:path lblodSubsidie:newOneSide ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
-    ] ,
-    [ a form:PositiveNumber ;
-        form:grouping form:MatchEvery ;
-        sh:path lblodSubsidie:newOneSide ;
-        sh:resultMessage "Geef een positief aantal op."@nl
-    ] ;
-    sh:group fields:f08c51f5-1edd-4929-8ff2-47711ed8fff5 .
+    sh:path lblodSubsidie:objectiveTable ;
+    form:displayType displayTypes:objectiveTable ;
+    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e  .
 
-##########################################################
-# Bicycle infrastructure: New bike lane both sides
-##########################################################
-fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead a form:Field ;
-    mu:uuid "b1bf6eab-9032-4e23-abb4-3b31f2d52ead";
-    sh:name "aan beide kanten van de weg" ;
-    form:help """Noteer: Als u bvb. bij een traject van 1km langs beide kanten van de weg een fietspad aanlegt of vernieuwt, vul dan 2km in""";
-    sh:order 18 ;
-    sh:path lblodSubsidie:newBothSides ;
-    form:displayType displayTypes:numericalInput ;
-    form:defaultValue 0;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl ;
-      sh:path lblodSubsidie:newBothSides ;
-    ] ,
-    [ a form:ValidInteger ;
-      form:grouping form:MatchEvery ;
-      sh:path lblodSubsidie:newBothSides ;
-      sh:resultMessage "Aantal moet een een geheel getal zijn."@nl
-    ] ,
-    [ a form:PositiveNumber ;
-        form:grouping form:MatchEvery ;
-        sh:path lblodSubsidie:newBothSides ;
-        sh:resultMessage "Geef een positief aantal op."@nl
-    ] ;
-    #sh:group fields:ecd33526-7220-4e57-9d3d-1df7fdc196e3 .
-    sh:group fields:f08c51f5-1edd-4929-8ff2-47711ed8fff5 .
 
 ##########################################################
 # Field groups
@@ -1535,21 +1374,8 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
         ### Pictures-upload HIDDEN
         fields:4f9bbe22-c562-4ff0-87ac-cc47cc01e224,
 
-        ### stub form field to help with rendering nested property groups HIDDEN
-        fields:2a36568a-4d09-4d16-92f0-e28db48680ed,
-
-        ### Bike lane Improvement one side
-        fields:d88f6b6d-8295-42db-967b-29931b7c9546 ,
-
-        ### Bike lane Improvement both sides
-        fields:896155ed-892e-4e69-b220-fd5a0484305a ,
-
-        ### Bike lane Improvement one side
-        fields:83558993-8859-4fda-b9cb-229a22aa1ec6 ,
-
-        ### Bike lane Improvement both sides
-        fields:b1bf6eab-9032-4e23-abb4-3b31f2d52ead .
-
+        ### Objective table
+        fields:1aa3f0a9-2914-4263-ac22-6fc6f4451b0a.
 
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:bicycle-infrastructure.
 
