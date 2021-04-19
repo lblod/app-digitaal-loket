@@ -1,0 +1,32 @@
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX common: <http://www.w3.org/2007/uwa/context/common.owl#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+
+DELETE {
+  GRAPH ?g {
+     ?af <http://lblod.data.gift/vocabularies/subsidie/timeBlock> ?reeks.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?af dct:isPartOf ?step.
+    ?smc cpsv:follows ?flow.
+    ?smc common:active ?step.
+  }
+}
+WHERE
+{
+  GRAPH ?g
+  {
+    ?af a lblodSubsidie:ApplicationForm.
+    ?af <http://lblod.data.gift/vocabularies/subsidie/timeBlock> ?reeks.
+    ?smc <http://purl.org/dc/terms/source> ?af.
+    ?smc a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie>.
+  }
+
+ ?reeks <http://www.w3.org/2007/uwa/context/common.owl#active> ?flow.
+ ?flow <http://rdf-vocabulary.ddialliance.org/xkos#next> ?step.
+}

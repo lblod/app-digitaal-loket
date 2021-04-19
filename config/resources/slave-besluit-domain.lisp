@@ -104,9 +104,8 @@
               (vendor :via ,(s-prefix "muAccount:canActOnBehalfOf")
                               :inverse t
                               :as "vendors")
-              (participatie :via ,(s-prefix "m8g:playsRole")
-                            :inverse t
-                            :as "participaties"))
+              (participation :via ,(s-prefix "m8g:playsRole")
+                            :as "participations"))
 
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
   :features '(include-uri)
