@@ -47,12 +47,14 @@ INSERT DATA {
     <http://lblod.data.info/id/subsidie-application-flow-steps/b9034a4b-adf6-4077-8dae-f9bebae4515e> a lblodSubsidie:ApplicationStep;
       mu:uuid "b9034a4b-adf6-4077-8dae-f9bebae4515e";
       qb:order 0;
+      xkos:next <http://lblod.data.info/id/subsidie-application-flow-steps/c50d7726-4880-43e2-b098-c356722a3096>;
       dct:references <http://data.lblod.info/id/subsidy-procedural-steps/d6ec1fb1-a991-47ba-95f1-afdd87e4553c>;
       dct:isPartOf <http://lblod.data.info/id/subsidie-application-flows/83353c51-0d65-44bb-b3a7-6b8701b395c9>.
 
     <http://lblod.data.info/id/subsidie-application-flow-steps/c50d7726-4880-43e2-b098-c356722a3096> a lblodSubsidie:ApplicationStep;
       mu:uuid "c50d7726-4880-43e2-b098-c356722a3096";
       qb:order 1;
+      xkos:previous <http://lblod.data.info/id/subsidie-application-flow-steps/b9034a4b-adf6-4077-8dae-f9bebae4515e>;
       dct:references <http://data.lblod.info/id/subsidy-procedural-steps/233f0b64-d261-469e-9ef3-e0e2d64d42de>;
       dct:isPartOf <http://lblod.data.info/id/subsidie-application-flows/83353c51-0d65-44bb-b3a7-6b8701b395c9>.
 
