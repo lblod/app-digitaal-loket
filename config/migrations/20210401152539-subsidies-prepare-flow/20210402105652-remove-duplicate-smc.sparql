@@ -1,4 +1,4 @@
-# This migration removes dubplicate subsidie-maatregel-consumpties linked to an applicationform
+# This migration removes duplicate subsidie-maatregel-consumpties linked to an applicationform
 # which have been wrongly created due to a bug
 
 PREFIX mobiliteit: <https://data.vlaanderen.be/ns/mobiliteit#>
@@ -11,6 +11,18 @@ PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX common: <http://www.w3.org/2007/uwa/context/common.owl#>
 PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
+
+### TRICK TO AVOID QUERY CRASHING IF NO TRIPLE FOUND - sprintf error ###
+INSERT DATA {
+  GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
+    <http://dummy/application> a lblodSubsidie:ApplicationForm.
+    <http://data.lblod.info/id/subsidiemaatregel-consumpties/1> <http://purl.org/dc/terms/source> <http://dummy/application>.
+    <http://data.lblod.info/id/subsidiemaatregel-consumpties/2> <http://purl.org/dc/terms/source> <http://dummy/application>.
+  }
+}
+### END OF TRICK ###
+
+;
 
 DELETE {
   GRAPH ?g {
@@ -45,3 +57,18 @@ WHERE {
 
   FILTER (regex(STR(?smc), 'http://data.lblod.info/id/subsidiemaatregel-consumpties/')) .
 }
+
+;
+
+### TRICK TO AVOID QUERY CRASHING IF NO TRIPLE FOUND - sprintf error ###
+DELETE {
+  GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5>  {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5>  {
+    ?s ?p ?o .
+  }
+}
+### END OF TRICK ###
