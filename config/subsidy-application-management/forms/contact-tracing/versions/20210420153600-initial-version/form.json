@@ -29,7 +29,6 @@
       "lblodSubsidie:quarantaineCoachingMethodsAndereOption",
       "lblodSubsidie:vulnerableGroupsHelp",
       "lblodSubsidie:vulnerableGroupsHelpAndereOption",
-      "lblodSubsidie:usedParentalContribution",
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
