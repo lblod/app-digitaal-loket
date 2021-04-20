@@ -1195,7 +1195,7 @@ fields:1aa3f0a9-2914-4263-ac22-6fc6f4451b0a a form:Field ;
     sh:name "Doelstelling in kilometer" ;
     form:help "Als u bvb. bij een traject van 1km langs beide kanten van de weg een fietspad aanlegt of vernieuwt, vul dan 2km in";
     sh:order 17 ;
-    sh:path lblodSubsidie:objectiveTable ;
+    sh:path bicycleInfrastructure:ObjectiveTable ;
     form:displayType displayTypes:objectiveTable ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e  .
 
