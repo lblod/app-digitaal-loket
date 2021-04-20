@@ -167,6 +167,21 @@
             ]
           }
         ]
+      },
+      {
+        "s-prefix": "bicycleInfrastructure:ObjectiveTable",  
+        "properties": [
+          {
+            "s-prefix": "bicycleInfrastructure:ObjectiveEntry",
+            "properties": [
+              "rdf:type",
+              "bicycleInfrastructure:approachType",
+              "bicycleInfrastructure:directionType",
+              "bicycleInfrastructure:bikeLaneType",
+              "bicycleInfrastructure:kilometers"
+            ]
+          }
+        ]
       }
     ]
   }
