@@ -53,7 +53,7 @@ fields:69519aa9-b827-4a73-af1f-9e8a76540195 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodSubsidie:climateTable ] ;
+      sh:path ( lblodSubsidie:climateTable lblodSubsidie:validClimateTable )] ;
     sh:group fields:da0923ca-5dac-4bf8-a5fd-dacb47304ab0 .
 
 ##########################################################
