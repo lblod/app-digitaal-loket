@@ -15,9 +15,10 @@ DELETE {
 }
 INSERT {
   GRAPH ?h {
-    <http://lblod.data.info/id/subsidy-measure-offer-series/87b87f00-6f87-4412-be26-ea531220457c> # 
+    <http://lblod.data.info/id/subsidy-measure-offers/64d40351-8128-464f-990f-41066154583e>
       m8g:hasCriterion ?criterion ;
-      subsidie:biedtAan ?subsidyAmount .
+      subsidie:biedtAan ?subsidyAmount ;
+      lblodSubsidie:heeftReeks <http://lblod.data.info/id/subsidy-measure-offer-series/87b87f00-6f87-4412-be26-ea531220457c> .
     
     ?subsidyAmount a subsidie:Subsidiebebdrag ;
       mu:uuid ?subsidyAmountUuid ;
