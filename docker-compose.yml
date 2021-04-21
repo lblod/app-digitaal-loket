@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.42.1
+    image: lblod/frontend-loket:0.43.1
     links:
       - identifier:backend
     labels:
@@ -167,7 +167,7 @@ services:
     restart: always
     logging: *default-logging
   export-leidinggevenden:
-    image: lblod/mandaten-download-generator-service:0.3.6
+    image: lblod/mandaten-download-generator-service:0.3.7
     links:
       - virtuoso:database
     environment:
@@ -182,7 +182,7 @@ services:
     restart: always
     logging: *default-logging
   export-mandaten:
-    image: lblod/mandaten-download-generator-service:0.3.6
+    image: lblod/mandaten-download-generator-service:0.3.7
     links:
       - virtuoso:database
     environment:
@@ -277,7 +277,7 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    image: lblod/download-url-service:0.4.1
+    image: lblod/download-url-service:0.4.3
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
@@ -396,7 +396,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.6.5
+    image: lblod/subsidy-applications-management-service:0.7.1-alpha
     environment:
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
       META_DATA_CRON: "0 */15 8-18 * * 1-5"
@@ -421,6 +421,12 @@ services:
     logging: *default-logging
   case-number-generator:
     image: lblod/case-number-service:2.0.0
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  subsidy-application-flow-management:
+    image: lblod/subsidy-application-flow-management-service:0.1.0
     labels:
       - "logging=true"
     restart: always

@@ -1,6 +1,6 @@
 alias Acl.Accessibility.Always, as: AlwaysAccessible
 alias Acl.Accessibility.ByQuery, as: AccessByQuery
-alias Acl.GraphSpec.Constraint.Resource.AllPredicates, as: AllPredicates
+#alias Acl.GraphSpec.Constraint.Resource.AllPredicates, as: AllPredicates
 alias Acl.GraphSpec.Constraint.Resource.NoPredicates, as: NoPredicates
 alias Acl.GraphSpec.Constraint.ResourceFormat, as: ResourceFormatConstraint
 alias Acl.GraphSpec.Constraint.Resource, as: ResourceConstraint
@@ -112,7 +112,17 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://www.w3.org/2004/02/skos/core#ConceptScheme",
-                        "http://www.w3.org/2004/02/skos/core#Concept"
+                        "http://www.w3.org/2004/02/skos/core#Concept",
+                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelConsumptieStatus",
+                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
+                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFlow",
+                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationStep",
+                        "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap",
+                        "http://data.europa.eu/m8g/PeriodOfTime",
+                        "http://data.europa.eu/m8g/Criterion",
+                        "http://data.europa.eu/m8g/RequirementGroup",
+                        "http://data.europa.eu/m8g/CriterionRequirement"
                       ]
                     } },
                   %GraphSpec{
@@ -230,19 +240,17 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm",
-                        "http://schema.org/ContactPoint",
+                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
+                        "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
+                        "http://schema.org/MonetaryAmount",
+                        "http://data.europa.eu/m8g/Participation",
                         "http://schema.org/BankAccount",
                         "https://www.gleif.org/ontology/Base/Period",
                         "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
                         "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
                         "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
                         "http://mu.semte.ch/vocabularies/ext/EngagementEntry",
-                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
-                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
-                        "http://data.europa.eu/m8g/Participation",
-                        "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
-                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-                        "http://schema.org/MonetaryAmount"
+                        "http://schema.org/ContactPoint"
                       ] } } ] },
 
       # // VENDOR MANAGEMENT
