@@ -169,6 +169,18 @@ fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 a form:Field ;
     sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
 
 ##########################################################
+# Daycare (children): used parental contribution
+##########################################################
+
+fields:36a2470b-9e1e-4cda-b036-57a77fcf2dd7 a form:Field ;
+    mu:uuid "36a2470b-9e1e-4cda-b036-57a77fcf2dd7";
+    sh:name "Werd er een ouderbijdrage gevraagd?" ;
+    sh:order 50 ;
+    sh:path lblodSubsidie:usedParentalContribution ;
+    form:displayType displayTypes:checkbox ;
+    sh:group fields:7e84b8db-1198-4585-a0a2-e5bc48af3f08 .
+
+##########################################################
 # Daycare Application Form Table
 ##########################################################
 
@@ -308,6 +320,9 @@ fieldGroups:main a form:FieldGroup ;
 
         ### Confirmation letter ###
         fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
+
+        ### Checkbox: used parent contribution
+        fields:36a2470b-9e1e-4cda-b036-57a77fcf2dd7 ,
 
         ### Daycare Application Form Table
         fields:9462b7b4-313a-4eae-bedd-079811219dcb ,
