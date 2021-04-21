@@ -11,18 +11,19 @@
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/>.
 
 
 ##########################################################
 # Form definition
 ##########################################################
 
-form:7d9e731f-6561-42bb-8edc-42deb3b8c1fb a form:Form ;
-    mu:uuid "7d9e731f-6561-42bb-8edc-42deb3b8c1fb" ;
-    form:hasFieldGroup fieldGroups:0dfad5b1-be24-44c8-a522-1428832d9a22 .
+form:3ff36255-f108-4527-990c-6d7896f4b989 a form:Form ;
+    mu:uuid "3ff36255-f108-4527-990c-6d7896f4b989" ;
+    form:hasFieldGroup fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f .
 
-fieldGroups:0dfad5b1-be24-44c8-a522-1428832d9a22 a form:FieldGroup ;
-    mu:uuid "0dfad5b1-be24-44c8-a522-1428832d9a22" .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f a form:FieldGroup ;
+    mu:uuid "1f3cf92c-aa5f-4708-85c6-77aabbc8989f" .
 
 ##########################################################
 # Property groups
@@ -33,30 +34,24 @@ fields:2524865a-d463-4e0b-9528-924b8439e9e6 a form:PropertyGroup;
     sh:description "parent property-group, used to group fields and property-groups together";
     sh:order 1 .
 
-fields:da0923ca-5dac-4bf8-a5fd-dacb47304ab0 a form:PropertyGroup;
-    mu:uuid "da0923ca-5dac-4bf8-a5fd-dacb47304ab0";
+fields:91fda733-791e-48ea-9f48-5ee7a284de37 a form:PropertyGroup;
+    mu:uuid "91fda733-791e-48ea-9f48-5ee7a284de37";
     sh:order 2;
-    sh:name "Op welke acties wenst het bestuur in te zetten?" ;
-    form:help "Algemene beleidsdoelstellingen" .
+    sh:name "Indienen Aanvraag" ;
+    form:help "Nog niet beschikbaar" .
 
 ##########################################################
-# Climate: climate table
+# Hidden input to trigger property groups
 ##########################################################
 
-fields:69519aa9-b827-4a73-af1f-9e8a76540195 a form:Field ;
-    mu:uuid "69519aa9-b827-4a73-af1f-9e8a76540195";
+fields:d0a69063-5eb5-41a6-84a4-5fd2934b71b3 a form:Field ;
+    mu:uuid "d0a69063-5eb5-41a6-84a4-5fd2934b71b3";
     sh:order 24 ;
-    sh:path lblodSubsidie:climateTable ;
+    sh:path ext:stubPformPath ;
     form:options """{}""" ;
-    form:displayType displayTypes:climateSubsidyCostTable ;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht." ;
-      sh:path ( lblodSubsidie:climateTable lblodSubsidie:validClimateTable )] ;
-    sh:group fields:da0923ca-5dac-4bf8-a5fd-dacb47304ab0 .
+    sh:group fields:91fda733-791e-48ea-9f48-5ee7a284de37 .
 
 ##########################################################
 # Linking fields to form
 ##########################################################
-fieldGroups:0dfad5b1-be24-44c8-a522-1428832d9a22 form:hasField fields:69519aa9-b827-4a73-af1f-9e8a76540195 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:d0a69063-5eb5-41a6-84a4-5fd2934b71b3 .
