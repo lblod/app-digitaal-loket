@@ -155,10 +155,11 @@
         ]
       },
       {
-        "s-prefix": "bicycleInfrastructure:EstimatedCostTable",  
+        "s-prefix": "bicycleInfrastructure:estimatedCostTable",  
         "properties": [
+          "bicycleInfrastructure:validEstimatedCostTable",
           {
-            "s-prefix": "bicycleInfrastructure:EstimatedCostEntry",
+            "s-prefix": "bicycleInfrastructure:estimatedCostEntry",
             "properties": [
               "bicycleInfrastructure:costEstimationType",
               "bicycleInfrastructure:cost",
@@ -169,10 +170,11 @@
         ]
       },
       {
-        "s-prefix": "bicycleInfrastructure:ObjectiveTable",  
+        "s-prefix": "bicycleInfrastructure:objectiveTable",  
         "properties": [
+          "bicycleInfrastructure:validObjectiveTable",
           {
-            "s-prefix": "bicycleInfrastructure:ObjectiveEntry",
+            "s-prefix": "bicycleInfrastructure:objectiveEntry",
             "properties": [
               "rdf:type",
               "bicycleInfrastructure:approachType",

@@ -1124,10 +1124,21 @@ fields:0db3aed1-0e15-454f-8584-0707129b367b a form:Field ;
     mu:uuid "0db3aed1-0e15-454f-8584-0707129b367b";
     sh:name "Raming totale kostprijs" ;
     sh:order 12 ;
-    sh:path bicycleInfrastructure:EstimatedCostTable ;
+    sh:path bicycleInfrastructure:estimatedCostTable ;
     form:displayType displayTypes:estimatedCostTable ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Gelieve de tabel correct in te vullen." ;
+      sh:path ( bicycleInfrastructure:estimatedCostTable bicycleInfrastructure:validEstimatedCostTable ) ] ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
+fields:97e68286-a489-4c1c-8a7c-96bf586e4f97 a form:Field ;
+    mu:uuid "97e68286-a489-4c1c-8a7c-96bf586e4f97" ;
+    sh:name "Valid Climate Table [hidden input]" ;
+    sh:order 14 ;
+    sh:path ( bicycleInfrastructure:estimatedCostTable bicycleInfrastructure:validEstimatedCostTable );
+    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 ##########################################################
 # Bicycle infrastructure: decision-upload
@@ -1195,9 +1206,21 @@ fields:1aa3f0a9-2914-4263-ac22-6fc6f4451b0a a form:Field ;
     sh:name "Doelstelling in kilometer" ;
     form:help "Als u bvb. bij een traject van 1km langs beide kanten van de weg een fietspad aanlegt of vernieuwt, vul dan 2km in";
     sh:order 17 ;
-    sh:path bicycleInfrastructure:ObjectiveTable ;
+    sh:path bicycleInfrastructure:objectiveTable ;
     form:displayType displayTypes:objectiveTable ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Gelieve de tabel correct in te vullen." ;
+      sh:path ( bicycleInfrastructure:objectiveTable bicycleInfrastructure:validObjectiveTable ) ] ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e  .
+
+fields:18f6a206-6b08-4f00-b5f3-0618d39ad195 a form:Field ;
+    mu:uuid "18f6a206-6b08-4f00-b5f3-0618d39ad195" ;
+    sh:name "Valid Objective Table [hidden input]" ;
+    sh:order 18 ;
+    sh:path ( bicycleInfrastructure:objectiveTable bicycleInfrastructure:validObjectiveTable );
+    sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
 
 
 ##########################################################
@@ -1360,7 +1383,10 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
         fields:aff69ddb-40f9-4544-9bbc-a12afe842bbd,
 
         ### Estimate total cost table
-        fields:0db3aed1-0e15-454f-8584-0707129b367b ,
+        fields:0db3aed1-0e15-454f-8584-0707129b367b,
+
+        ### Estimate validation input HIDDEN
+        fields:97e68286-a489-4c1c-8a7c-96bf586e4f97, 
 
         ### Decision-upload
         fields:eea274cf-b422-4b8e-bb83-b066edbff8b1,
@@ -1375,7 +1401,10 @@ fieldGroups:bicycle-infrastructure a form:FieldGroup ;
         fields:4f9bbe22-c562-4ff0-87ac-cc47cc01e224,
 
         ### Objective table
-        fields:1aa3f0a9-2914-4263-ac22-6fc6f4451b0a.
+        fields:1aa3f0a9-2914-4263-ac22-6fc6f4451b0a,
+
+        ### Objective validation input HIDDEN
+        fields:18f6a206-6b08-4f00-b5f3-0618d39ad195.
 
 fields:68e149ec-1821-477b-a901-72924236ef9c form:hasConditionalFieldGroup fields:bicycle-infrastructure.
 
