@@ -251,7 +251,15 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
                         "http://mu.semte.ch/vocabularies/ext/EngagementEntry",
                         "http://schema.org/ContactPoint"
-                      ] } } ] },
+                      ] } },
+                      %GraphSpec{
+                        graph: "http://mu.semte.ch/graphs/organizations/",
+                        constraint: %ResourceConstraint{
+                          resource_types: [ "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid" ],
+                          predicates: %NoPredicates{
+                            except: [
+                              "http://data.europa.eu/m8g/playsRole"
+                            ] } } } ] },
 
       # // VENDOR MANAGEMENT
       %GroupSpec{
