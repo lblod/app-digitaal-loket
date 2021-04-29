@@ -222,6 +222,7 @@ services:
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
+      KALLIOPE_PS_UIT_CONFIRMATION_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit/ontvangstbevestiging"
       BERICHTEN_CRON_PATTERN: "*/5 * * * *"
       INZENDINGEN_CRON_PATTERN: "0 22 * * *"
       MAX_MESSAGE_AGE: 1
