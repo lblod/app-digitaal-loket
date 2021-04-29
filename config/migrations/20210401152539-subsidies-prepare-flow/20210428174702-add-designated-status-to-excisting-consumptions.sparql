@@ -1,0 +1,82 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+
+################################################
+# Set all consumptions with no status to CONCEPT
+INSERT {
+    GRAPH ?h {
+        ?consumption adms:status <http://lblod.data.gift/concepts/6373b454-22b6-4b65-b98f-3d86541f2fcf> .
+    }
+} WHERE {
+    GRAPH ?g {
+        ?consumption
+            a subsidie:SubsidiemaatregelConsumptie ;
+            dct:source ?application .
+        FILTER NOT EXISTS {
+            ?consumption
+                adms:status ?status .
+        }
+    }
+    BIND(?g as ?h)
+}
+;
+####################################################################################
+# Set status "ACTIEF" on consumptions that have a submitted forms
+DELETE {
+    GRAPH ?h {
+        ?consumption adms:status ?status .
+    }
+}
+INSERT {
+    GRAPH ?h {
+        ?consumption adms:status <http://lblod.data.gift/concepts/c849ca98-455d-4f31-9e95-a3d9d06e4497> .
+    }
+} WHERE {
+    GRAPH ?g {
+        ?consumption
+            a subsidie:SubsidiemaatregelConsumptie ;
+            dct:source ?application ;
+            adms:status ?status .
+
+        ?application
+            a lblodSubsidie:ApplicationForm ;
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ; # SENT
+            dct:isPartOf ?afs .
+    }
+    BIND(?g as ?h)
+}
+;
+#######################################################################################
+# Set status "INGEDIEND" on consumptions that have a submitted form for step "AANVRAAG"
+DELETE {
+    GRAPH ?h {
+        ?consumption adms:status ?status .
+    }
+}
+INSERT {
+    GRAPH ?h {
+        ?consumption adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> .
+    }
+} WHERE {
+    GRAPH ?g {
+        ?consumption
+            a subsidie:SubsidiemaatregelConsumptie ;
+            dct:source ?application ;
+            adms:status ?status .
+
+        ?application
+            a lblodSubsidie:ApplicationForm ;
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ; # SENT
+            dct:isPartOf ?afs .
+    }
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?afs dct:references ?step .
+        ?step subsidie:Subsidieprocedurestap.type <http://lblod.data.gift/concepts/ee855aae-eb10-44aa-ae01-38c4f6cca0f6> .
+    }
+    BIND(?g as ?h)
+}
