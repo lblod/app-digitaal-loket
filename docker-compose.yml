@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.43.1
+    image: lblod/frontend-loket:0.45.0
     links:
       - identifier:backend
     labels:
@@ -216,12 +216,13 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.6.5
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.7.1
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
+      KALLIOPE_PS_UIT_CONFIRMATION_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit/ontvangstbevestiging"
       BERICHTEN_CRON_PATTERN: "*/5 * * * *"
       INZENDINGEN_CRON_PATTERN: "0 22 * * *"
       MAX_MESSAGE_AGE: 1
