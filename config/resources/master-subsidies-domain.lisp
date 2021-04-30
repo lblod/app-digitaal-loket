@@ -57,7 +57,8 @@
 
 (define-resource subsidy-measure-offer ()
   :class (s-prefix "subsidie:SubsidiemaatregelAanbod")
-  :properties `((:title :string ,(s-prefix "dct:title")))
+  :properties `((:title :string ,(s-prefix "dct:title"))
+                (:external-information :uri ,(s-prefix "skos:related")))
   :has-many `((criterion :via ,(s-prefix "m8g:hasCriterion")
                         :as "criteria")
              (subsidy-procedural-step :via ,(s-prefix "cpsv:follows")
