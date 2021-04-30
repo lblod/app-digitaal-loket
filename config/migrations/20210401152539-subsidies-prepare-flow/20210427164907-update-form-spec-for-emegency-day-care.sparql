@@ -13,7 +13,8 @@ INSERT DATA {
                        <config://versions/20210113153339/form.ttl> ,
                        <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.ttl> ,
                        <config://versions/20210309152225-introduction-subsidy-form-bicycle-infrastructure/form.ttl> ,
-                       <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl> ;
+                       <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl> ,
+                       <config://versions/20210412135856-bicycle-new-tables/form.ttl>;
             dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/a4f532111679b2d1aada56fc4e71aa8217247d3ddd08f9024551e6f6f3f44827> ,
                          <http://lblod.data.info/id/subsidie-application-flow-steps/126ff5d8460a5d9af8f7428fcc156c18bbd6876e6c0c82b40e7630d1f322d86e> ,
                          <http://lblod.data.info/id/subsidie-application-flow-steps/2ed9cead49d5d4a1953836986c1274052a5ee27e9c3f9b001bc30f116aa3ef3d> ,
@@ -43,6 +44,7 @@ DELETE {
             <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl>
             <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.ttl>
             <config://versions/20210309152225-introduction-subsidy-form-bicycle-infrastructure/form.ttl>
+            <config://versions/20210412135856-bicycle-new-tables/form.ttl>
         }
         ?form a lblodSubsidie:ApplicationForm ;
               dct:source ?spec ;

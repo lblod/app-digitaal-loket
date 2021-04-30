@@ -20,6 +20,7 @@ DELETE {
             <config://versions/20210121152225-introduction-subsidy-form-contact-tracing/form.ttl>
             <config://versions/20210309152225-introduction-subsidy-form-bicycle-infrastructure/form.ttl>
             <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl>
+            <config://versions/20210412135856-bicycle-new-tables/form.ttl>
         }
         ?spec a nfo:FileDataObject;
               nie:dataSource ?virtual .

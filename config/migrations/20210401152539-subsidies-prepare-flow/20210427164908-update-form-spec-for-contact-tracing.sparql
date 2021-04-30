@@ -16,7 +16,9 @@ PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
 INSERT DATA {
     GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
         <http://dummy/application/6c68539a-f6de-4488-8c1b-1c182e07a142> a lblodSubsidie:ApplicationForm ;
-            dct:source <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl> ;
+            dct:source <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl> ,
+                       <config://versions/20210309152225-introduction-subsidy-form-bicycle-infrastructure/form.ttl> ,
+                       <config://versions/20210412135856-bicycle-new-tables/form.ttl> ;
             dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/d461c5280b0cfbbb21fa68c2104c261ec53fa6647007d20ebb76aed5a2a2bbae> .
     }
 }
@@ -37,6 +39,8 @@ DELETE {
     GRAPH ?g {
         VALUES ?spec {
             <config://versions/20210329141908-contact-tracing-checkbox-multi-selection/form.ttl>
+            <config://versions/20210309152225-introduction-subsidy-form-bicycle-infrastructure/form.ttl>
+            <config://versions/20210412135856-bicycle-new-tables/form.ttl>
         }
         ?form a lblodSubsidie:ApplicationForm ;
               dct:source ?spec ;
