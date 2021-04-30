@@ -6,7 +6,7 @@ DELETE {
   }
 } INSERT {
   GRAPH ?h {
-    <http://lblod.data.gift/concepts/2e77f4ea-05f6-4771-ae4b-8cee72d2459f>  skos:prefLabel  "26 februari 2021 — 30 september 2022 (aanmelding)"@nl .
+    <http://lblod.data.gift/concepts/2e77f4ea-05f6-4771-ae4b-8cee72d2459f>  skos:prefLabel  """26 februari 2021 — 30 september 2022 (aanmelding)"""@nl .
   }
 } WHERE {
   GRAPH ?g {
