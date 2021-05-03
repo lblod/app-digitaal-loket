@@ -44,7 +44,8 @@ fields:07372422-b306-4157-9970-60fdd79ac57f a form:PropertyGroup;
     mu:uuid "07372422-b306-4157-9970-60fdd79ac57f";
     sh:description "Ondertekend pact";
     sh:order 3 ;
-    sh:name "Ondertekend pact" .
+    sh:name "Ondertekend pact" ;
+    form:help "Het voltooien van deze stap geldt als aanvraag van het trekkingsrecht voor de subsidieerbare klimaatacties." .
 
 ##########################################################
 # Contact person info

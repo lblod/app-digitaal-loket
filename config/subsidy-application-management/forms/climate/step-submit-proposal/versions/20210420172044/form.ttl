@@ -36,8 +36,8 @@ fields:2524865a-d463-4e0b-9528-924b8439e9e6 a form:PropertyGroup;
 fields:da0923ca-5dac-4bf8-a5fd-dacb47304ab0 a form:PropertyGroup;
     mu:uuid "da0923ca-5dac-4bf8-a5fd-dacb47304ab0";
     sh:order 2;
-    sh:name "Op welke acties wenst het bestuur in te zetten?" ;
-    form:help "Algemene beleidsdoelstellingen" .
+    sh:name "Simulatie verdeling subsidies" ;
+    form:help "Gebruik deze stap -vrijblijvend- om een planning voor de verdeling van middelen op te maken. U krijgt een overzicht van de subsidieerbare klimaatacties. Er wordt telkens een indicatieve waarde in euro vastgesteld per item als inspiratie, die u kan aanpassen naar de situatie in uw bestuur." .
 
 ##########################################################
 # Climate: climate table
