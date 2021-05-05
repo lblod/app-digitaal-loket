@@ -36,7 +36,7 @@ DELETE {
 }
 ;
 ###################################################################
-# INSERT claim & deadline for emergency contact-tracing, Winter
+# INSERT claim & deadline for bicycle, 2021 - 2022
 INSERT DATA {
     GRAPH <http://mu.semte.ch/graphs/public> {
 
