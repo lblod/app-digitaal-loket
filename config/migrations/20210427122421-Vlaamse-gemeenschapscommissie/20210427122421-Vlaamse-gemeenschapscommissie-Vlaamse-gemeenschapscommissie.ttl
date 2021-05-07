@@ -25,4 +25,5 @@
 <http://data.lblod.info/id/bestuurseenheden/9e6b6eb3-2f0b-4723-876b-178dfaecfddf> <http://mu.semte.ch/vocabularies/ext/kbonummer> "0240682635" .
 <http://data.lblod.info/id/bestuurseenheden/9e6b6eb3-2f0b-4723-876b-178dfaecfddf> <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/a8040e566e7a22dfc6a83a7176d105abc68ab1bf1a89e94a1333c8f049131837> .
 <http://data.lblod.info/id/bestuurseenheden/9e6b6eb3-2f0b-4723-876b-178dfaecfddf> <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/b6868be9ca6881b1020e6cff8d431531a1cff64b39dc92646a5173b3ee144516> .
+<http://data.lblod.info/id/bestuurseenheden/9e6b6eb3-2f0b-4723-876b-178dfaecfddf> <http://www.w3.org/2004/02/skos/core#altLabel> "VGC" .
 # finished /data/20210427122421-Vlaamse-gemeenschapscommissie-Vlaamse-gemeenschapscommissie.ttl at 2021-04-27T12:24:21+00:00
