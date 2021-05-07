@@ -12,6 +12,7 @@ DELETE {
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?series
             dct:title ?title ;
+            dct:description ?description ;
             mobiliteit:periode ?claim .
         ?claim ?cp ?co .
         ?step mobiliteit:periode ?deadline .
@@ -24,6 +25,7 @@ DELETE {
         }
         ?series
             dct:title ?title ;
+            dct:description ?description ;
             mobiliteit:periode ?claim ;
             lblodSubsidie:heeftSubsidieprocedurestap ?step .
 
@@ -35,7 +37,7 @@ DELETE {
 }
 ;
 ###################################################################
-# INSERT claim & deadline for Climate, 2022
+# INSERT claim & deadline for emergency Climate, 2022
 INSERT DATA {
     GRAPH <http://mu.semte.ch/graphs/public> {
 
