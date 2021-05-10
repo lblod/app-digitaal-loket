@@ -138,22 +138,6 @@
       "additionalFilter": ""
     },
     {
-      "type": "lblodlg:ArchivedFunctionaris",
-      "requiredProperties": [
-        "mu:uuid"
-      ],
-      "optionalProperties": [
-        "mandaat:start",
-        "mandaat:einde",
-        "org:holds",
-        "mandaat:status",
-        "mandaat:isBestuurlijkeAliasVan",
-        "owl:sameAs",
-        "skos:changeNote"
-      ],
-      "additionalFilter": ""
-    },
-    {
       "type": "lblodlg:FunctionarisStatusCode",
       "requiredProperties": [
         "mu:uuid",
