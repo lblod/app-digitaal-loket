@@ -1,0 +1,80 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Avoid sprintf error
+INSERT DATA {
+  GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
+    <http://data.lblod.info/id/functionarissen/dummy/for/sprintf> a <http://data.lblod.info/dummy/Type> .
+  }
+}
+;
+# Wrong functionarissen clean-up
+DELETE {
+  GRAPH ?g {
+    ?functionaris ?p ?o .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/graveyard/functionarissen> {
+    ?functionaris
+      skos:changeNote "Has been archived due to a user error." ;
+      ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?functionaris ?p ?o .
+  }
+  VALUES ?functionaris {
+    <http://data.lblod.info/id/functionarissen/5D80E8E2A3ACB60008000324>
+    <http://data.lblod.info/id/functionarissen/5D80EA53A3ACB6000800032A>
+    <http://data.lblod.info/id/functionarissen/5D80E79EA3ACB6000800031A>
+    <http://data.lblod.info/id/functionarissen/6076AB73FC620200090002AF>
+    <http://data.lblod.info/id/functionarissen/dummy/for/sprintf>
+  }
+}
+;
+# Duplicated functionarissen clean-up
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/graveyard/functionarissen> {
+    ?functionaris
+      owl:sameAs ?sameAs .
+  }
+} WHERE {
+  VALUES (?functionaris ?sameAs) {
+    (<http://data.lblod.info/id/functionarissen/5D80E8E2A3ACB60008000324> <http://data.lblod.info/id/functionarissen/5D80E8C0A3ACB60008000323>)
+    (<http://data.lblod.info/id/functionarissen/5D80EA53A3ACB6000800032A> <http://data.lblod.info/id/functionarissen/5D80EA37A3ACB60008000329>)
+    (<http://data.lblod.info/id/functionarissen/dummy/for/sprintf> <http://data.lblod.info/id/functionarissen/dummy/for/sprintf/same/as>)
+  }
+}
+;
+# Update type of archived functionarissen
+DELETE {
+  GRAPH ?g {
+    ?functionaris a ?type .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?functionaris
+      a <http://data.lblod.info/vocabularies/leidinggevenden/ArchivedFunctionaris> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?functionaris a ?type .
+  }
+  VALUES ?functionaris {
+    <http://data.lblod.info/id/functionarissen/5D80E8E2A3ACB60008000324>
+    <http://data.lblod.info/id/functionarissen/5D80EA53A3ACB6000800032A>
+    <http://data.lblod.info/id/functionarissen/5D80E79EA3ACB6000800031A>
+    <http://data.lblod.info/id/functionarissen/6076AB73FC620200090002AF>
+    <http://data.lblod.info/id/functionarissen/dummy/for/sprintf>
+  }
+}
+;
+# Avoid sprintf error
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/functionarissen/dummy/for/sprintf> ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/functionarissen/dummy/for/sprintf> ?p ?o .
+  }
+}
