@@ -1,0 +1,53 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX sbc: <http://data.lblod.info/vocabularies/subsidie/climate/>
+
+# Delets all instances of ext for the climate table
+
+DELETE {
+  GRAPH ?g {
+    ?sub ext:actionDescription ?desc;
+          ext:toRealiseUnits ?tru;
+          ext:costPerUnit ?cpu;
+          ext:restitution ?rtn;
+          ext:amountPerAction ?apa.
+  }
+} 
+INSERT {
+  GRAPH ?g {
+    ?sub sbc:actionDescription ?desc;
+          sbc:toRealiseUnits ?tru;
+          sbc:costPerUnit ?cpu;
+          sbc:restitution ?rtn;
+          sbc:amountPerAction ?apa.
+    }
+} 
+WHERE {
+  GRAPH ?g {
+    ?sub ext:actionDescription ?desc;
+          ext:toRealiseUnits ?tru;
+          ext:costPerUnit ?cpu;
+          ext:restitution ?rtn;
+          ext:amountPerAction ?apa.
+  }
+}
+
+# replace instances for ClimateEntry object & climateEntry predicate
+
+DELETE {
+  GRAPH ?g {
+    ?sub ?desc ext:ClimateEntry.
+    ?rf ext:climateEntry ?obj.
+  }
+} 
+INSERT {
+  GRAPH ?g {
+     ?sub ?desc sbc:ClimateEntry.
+     ?rf sbc:climateEntry ?obj.
+    }
+} 
+WHERE {
+  GRAPH ?g {
+    ?sub ?desc ext:ClimateEntry.
+    ?rf ext:climateEntry ?obj.
+  }
+}
