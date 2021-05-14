@@ -1,53 +1,55 @@
 PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 PREFIX sbc: <http://data.lblod.info/vocabularies/subsidie/climate/>
+PREFIX dummy: <http://data.lblod.info/id/climate/dummy/for/>
 
-# Delets all instances of ext for the climate table
-
-DELETE {
-  GRAPH ?g {
-    ?sub ext:actionDescription ?desc;
-          ext:toRealiseUnits ?tru;
-          ext:costPerUnit ?cpu;
-          ext:restitution ?rtn;
-          ext:amountPerAction ?apa.
-  }
-} 
-INSERT {
-  GRAPH ?g {
-    ?sub sbc:actionDescription ?desc;
-          sbc:toRealiseUnits ?tru;
-          sbc:costPerUnit ?cpu;
-          sbc:restitution ?rtn;
-          sbc:amountPerAction ?apa.
-    }
-} 
-WHERE {
-  GRAPH ?g {
-    ?sub ext:actionDescription ?desc;
-          ext:toRealiseUnits ?tru;
-          ext:costPerUnit ?cpu;
-          ext:restitution ?rtn;
-          ext:amountPerAction ?apa.
+# Avoid sprintf error
+INSERT DATA {
+  GRAPH <http://dummy/data/graph/0dc61f81-6ec6-4e16-80d3-26a61079c3c5> {
+    dummy:sprintf a <http://data.lblod.info/dummy/Type> .
   }
 }
 
-# replace instances for ClimateEntry object & climateEntry predicate
-
 DELETE {
   GRAPH ?g {
-    ?sub ?desc ext:ClimateEntry.
-    ?rf ext:climateEntry ?obj.
+    dummy:sprintf a ?dummyType.
+    ?sub ext:actionDescription ?description;
+          ext:toRealiseUnits ?toRealiseUnitsValue;
+          ext:costPerUnit ?costPerUnitValue;
+          ext:restitution ?restitutionValue;
+          ext:amountPerAction ?amountPerActionValue.
+
   }
 } 
 INSERT {
   GRAPH ?g {
-     ?sub ?desc sbc:ClimateEntry.
-     ?rf sbc:climateEntry ?obj.
+    ext:sprintf a ?dummyType.
+    ?sub sbc:actionDescription ?description;
+          sbc:toRealiseUnits ?toRealiseUnitsValue;
+          sbc:costPerUnit ?costPerUnitValue;
+          sbc:restitution ?restitutionValue;
+          sbc:amountPerAction ?amountPerActionValue.
     }
 } 
 WHERE {
   GRAPH ?g {
-    ?sub ?desc ext:ClimateEntry.
-    ?rf ext:climateEntry ?obj.
+    dummy:sprintf a ?dummyType.
+    OPTIONAL {
+      ?sub ext:actionDescription ?description;
+            ext:toRealiseUnits ?toRealiseUnitsValue;
+            ext:costPerUnit ?costPerUnitValue;
+            ext:restitution ?restitutionValue;
+            ext:amountPerAction ?amountPerActionValue.
+    }
+  }
+}
+
+# Avoid sprintf error
+DELETE {
+  GRAPH ?g {
+    ext:sprintf ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ext:sprintf ?p ?o .
   }
 }
