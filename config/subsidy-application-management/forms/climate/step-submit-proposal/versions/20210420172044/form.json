@@ -12,6 +12,7 @@
       "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
       "PREFIX gleif: <https://www.gleif.org/ontology/Base/>",
       "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>",
+      "PREFIX sbc: <http://data.lblod.info/vocabularies/subsidie/climate/>",
       "PREFIX adms: <http://www.w3.org/ns/adms#>",
       "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
     ],
@@ -28,14 +29,14 @@
         "s-prefix": "lblodSubsidie:climateTable",
         "properties": [
           {
-            "s-prefix": "ext:climateEntry",
+            "s-prefix": "sbc:climateEntry",
             "properties": [
-              "ext:actionDescription",
-              "ext:costPerUnit",
-              "ext:amountPerAction",
-              "ext:restitution",
-              "ext:toRealiseUnits",
-              "ext:index"
+              "sbc:actionDescription",
+              "sbc:costPerUnit",
+              "sbc:amountPerAction",
+              "sbc:restitution",
+              "sbc:toRealiseUnits",
+              "sbc:index"
             ]
           }
          ]
