@@ -12,6 +12,7 @@ INSERT DATA {
 DELETE {
   GRAPH ?g {
     dummy:sprintf a ?dummyType.
+
     ?sub ext:actionDescription ?description;
           ext:toRealiseUnits ?toRealiseUnitsValue;
           ext:costPerUnit ?costPerUnitValue;
@@ -19,26 +20,27 @@ DELETE {
           ext:amountPerAction ?amountPerActionValue.
 
   }
-} 
+}
 INSERT {
   GRAPH ?g {
     ext:sprintf a ?dummyType.
+
     ?sub sbc:actionDescription ?description;
           sbc:toRealiseUnits ?toRealiseUnitsValue;
           sbc:costPerUnit ?costPerUnitValue;
           sbc:restitution ?restitutionValue;
           sbc:amountPerAction ?amountPerActionValue.
     }
-} 
+}
 WHERE {
   GRAPH ?g {
     dummy:sprintf a ?dummyType.
-    OPTIONAL {
-      ?sub ext:actionDescription ?description;
-            ext:toRealiseUnits ?toRealiseUnitsValue;
-            ext:costPerUnit ?costPerUnitValue;
-            ext:restitution ?restitutionValue;
-            ext:amountPerAction ?amountPerActionValue.
+
+    OPTIONAL { ?sub ext:actionDescription ?description. }
+    OPTIONAL { ?sub ext:toRealiseUnits ?toRealiseUnitsValue. }
+    OPTIONAL { ?sub ext:costPerUnit ?costPerUnitValue. }
+    OPTIONAL { ?sub ext:restitution ?restitutionValue. }
+    OPTIONAL { ?sub ext:amountPerAction ?amountPerActionValue. }
     }
   }
 }
