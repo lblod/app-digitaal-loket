@@ -401,8 +401,77 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # subsidy-applications
+  # subsidy-applications: resources
   #################################################################
+
+  match "/subsidy-measure-consumptions/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-measure-consumptions/"
+  end
+
+  match "/subsidy-measure-consumption-statuses/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-measure-consumption-statuses/"
+  end
+
+  match "/subsidy-requests/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-requests/"
+  end
+
+  match "/monetary-amounts/*path" do
+    Proxy.forward conn, path, "http://cache/monetary-amounts/"
+  end
+
+  match "/subsidy-measure-offers/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-measure-offers/"
+  end
+
+  match "/subsidy-measure-offer-series/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-measure-offer-series/"
+  end
+
+  match "/subsidy-application-flows/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-application-flows/"
+  end
+
+  match "/subsidy-application-flow-steps/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-application-flow-steps/"
+  end
+
+  match "/subsidy-procedural-steps/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-procedural-steps/"
+  end
+
+  match "/periods-of-time/*path" do
+    Proxy.forward conn, path, "http://cache/periods-of-time/"
+  end
+
+  match "/criteria/*path" do
+    Proxy.forward conn, path, "http://cache/criteria/"
+  end
+
+  match "/requirement-groups/*path" do
+    Proxy.forward conn, path, "http://cache/requirement-groups/"
+  end
+
+  match "/criterion-requirements/*path" do
+    Proxy.forward conn, path, "http://cache/criterion-requirements/"
+  end
+
+  match "/participations/*path" do
+    Proxy.forward conn, path, "http://cache/participations/"
+  end
+
+  match "/subsidy-application-forms/*path" do
+    Proxy.forward conn, path, "http://cache/subsidy-application-forms/"
+  end
+
+  #################################################################
+  # subsidy-applications: custom API endpoints
+  #################################################################
+
+  match "/case-number-generator/*path" do
+    Proxy.forward conn, path, "http://case-number-generator/"
+  end
+
   get "/management-active-form-file/*path" do
     Proxy.forward conn, path, "http://subsidy-applications-management/active-form-file/"
   end
@@ -423,32 +492,8 @@ defmodule Dispatcher do
     Proxy.forward conn, [], "http://subsidy-applications-management/semantic-forms/" <> id <> "/submit"
   end
 
-  match "/application-forms/*path" do
-    Proxy.forward conn, path, "http://resource/application-forms/"
-  end
-
-  match "/time-blocks/*path" do
-    Proxy.forward conn, path, "http://resource/time-blocks/"
-  end
-
-  match "/subsidiemaatregel-aandbiedingen/*path" do
-    Proxy.forward conn, path, "http://resource/subsidiemaatregel-aandbiedingen/"
-  end
-
-  match "/bank-accounts/*path" do
-    Proxy.forward conn, path, "http://resource/bank-accounts/"
-  end
-
-  match "/application-form-tables/*path" do
-    Proxy.forward conn, path, "http://resource/application-form-tables/"
-  end
-
-  match "/application-form-entries/*path" do
-    Proxy.forward conn, path, "http://resource/application-form-entries/"
-  end
-
-  match "/case-number-generator/*path" do
-    Proxy.forward conn, path, "http://case-number-generator/"
+  match "/flow-management/*path" do
+    Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
   match _ do
