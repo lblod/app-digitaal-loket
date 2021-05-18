@@ -102,3 +102,9 @@ services:
     restart: "no"
   case-number-generator:
     restart: "no"
+  delta-producer-background-jobs-initiator-leidinggevenden:
+    restart: "no"
+  delta-producer-dump-file-publisher-leidinggevenden:
+    restart: "no"
+  delta-producer-report-generator:
+    restart: "no"
