@@ -37,7 +37,7 @@ export default {
           transactie:isInstantieVan <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
           cpsv:follows ?applicationFlow ;
           dct:source ?applicationForm ;
-          prov:wasGeneratedBy ?aanvraag ;
+          dct:modified ?aanvraagdatum ;
           m8g:hasParticipation ?participation ;
           ext:lastModifiedBy ?modifiedBy ;
           dct:creator ?createdBy .
@@ -47,8 +47,6 @@ export default {
         ?measureOfferSeries dct:title ?reeksLabel ;
           mobiliteit:periode/m8g:startTime ?reeksStart ;
           mobiliteit:periode/m8g:endTime ?reeksEnd .
-
-        ?aanvraag subsidie:aanvraagdatum ?aanvraagdatum .
 
         ?bestuur m8g:playsRole ?participation ;
           skos:prefLabel ?bestuurseenheid .
@@ -83,7 +81,7 @@ export default {
         BIND(CONCAT(?modifiedByFirstName, " ", ?modifiedByLastName) as ?modifiedByName)
 
         OPTIONAL {
-          ?aanvraag subsidie:aangevraagdBedrag/schema:value ?amount .
+          ?applicationForm lblodSubsidie:totalAmount ?amount .
         }
         BIND(IF(BOUND(?amount), ?amount, xsd:float(0)) as ?totaalBedrag)
       }

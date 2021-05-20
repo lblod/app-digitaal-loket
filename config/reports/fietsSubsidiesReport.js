@@ -17,13 +17,13 @@ export default {
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
       PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
       PREFIX m8g: <http://data.europa.eu/m8g/>
+      PREFIX dct: <http://purl.org/dc/terms/>
 
       SELECT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie
       WHERE {
         ?subsidiemaatregelConsumptie transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
-          prov:wasGeneratedBy ?aanvraag ;
+          dct:modified ?submissionDate ;
           m8g:hasParticipation ?participation .
-        ?aanvraag subsidie:aanvraagdatum ?submissionDate .
         ?bestuur m8g:playsRole ?participation ; skos:prefLabel ?bestuurseenheid .
       }
       ORDER BY DESC(?submissionDate)

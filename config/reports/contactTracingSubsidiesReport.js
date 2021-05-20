@@ -27,9 +27,8 @@ export default {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
           dct:source ?applicationForm ;
-          prov:wasGeneratedBy ?aanvraag ;
+          dct:modified ?submissionDate ;
           m8g:hasParticipation ?participation .
-        ?aanvraag subsidie:aanvraagdatum ?submissionDate .
         ?bestuur m8g:playsRole ?participation ;
           skos:prefLabel ?bestuurseenheid .
         ?applicationForm schema:bankAccount/schema:identifier ?rekeningnummer ;
