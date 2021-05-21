@@ -12,46 +12,63 @@ export default {
     };
     console.log('Generate Subsidies Report');
     const queryString = `
-      PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-      PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
-      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
       PREFIX prov: <http://www.w3.org/ns/prov#>
-      PREFIX schema: <http://schema.org/>
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
       PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
+      PREFIX m8g: <http://data.europa.eu/m8g/>
+      PREFIX schema: <http://schema.org/>
       PREFIX dct: <http://purl.org/dc/terms/>
+      PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+      PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
       PREFIX pav: <http://purl.org/pav/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
-      PREFIX gleif: <https://www.gleif.org/ontology/Base/>
+      PREFIX mobiliteit: <https://data.vlaanderen.be/ns/mobiliteit#>
+      PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+      PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
 
-      SELECT DISTINCT ?aanvraagdatum (?bestuurseenheidLabel as ?bestuurseenheid)
-      ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone ?accountNumber
-      ?aantalUniekeKinderen ?aantalKalenderdagen ?naamOrganisator ?aantalKinderenVoorAlleVolleDagen
-      ?aantalKinderenVoorAlleHalveDagen ?aantalKinderenPerInfrastructuur ?totaalBedrag
-      (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidie
+      SELECT DISTINCT ?aanvraagdatum ?bestuurseenheid
+            ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone ?accountNumber
+            ?aantalUniekeKinderen ?aantalKalenderdagen ?naamOrganisator ?aantalKinderenVoorAlleVolleDagen
+            ?aantalKinderenVoorAlleHalveDagen ?aantalKinderenPerInfrastructuur ?totaalBedrag
+            (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidiemaatregelConsumptie
       WHERE {
-        ?subsidie a lblodSubsidie:ApplicationForm ;
-          pav:createdBy ?bestuurseenheid ;
-          dct:creator ?createdBy ;
+        ?subsidiemaatregelConsumptie
+          transactie:isInstantieVan <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
+          cpsv:follows ?applicationFlow ;
+          dct:source ?applicationForm ;
+          dct:modified ?aanvraagdatum ;
+          m8g:hasParticipation ?participation ;
           ext:lastModifiedBy ?modifiedBy ;
-          lblodSubsidie:timeBlock ?reeks ;
+          dct:creator ?createdBy .
+
+        ?applicationFlow xkos:belongsTo ?measureOfferSeries .
+
+        ?measureOfferSeries dct:title ?reeksLabel ;
+          mobiliteit:periode/m8g:startTime ?reeksStart ;
+          mobiliteit:periode/m8g:endTime ?reeksEnd .
+
+        ?bestuur m8g:playsRole ?participation ;
+          skos:prefLabel ?bestuurseenheid .
+
+        ?applicationForm
+          schema:bankAccount/schema:identifier ?accountNumber ;
           schema:contactPoint ?contactPoint ;
-          schema:bankAccount ?bankAccount ;
           lblodSubsidie:uniqueChildrenNumberForWholePeriod ?aantalUniekeKinderen  ;
           lblodSubsidie:daysOfChildcareForWholePeriod ?aantalKalenderdagen ;
-          lblodSubsidie:applicationFormTable ?formTable ;
-          lblodSubsidie:subsidyMeasure <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
-          adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
+          lblodSubsidie:applicationFormTable ?formTable .
 
-        ?aanvraag prov:used ?subsidie ;
-          subsidie:aanvraagdatum ?aanvraagdatum .
+        ?contactPoint foaf:firstName ?contactFirstName ;
+          foaf:familyName ?contactLastName ;
+          schema:email ?contactEmail ;
+          schema:telephone ?contactTelephone .
 
-        ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel .
+        ?formTable ext:applicationFormEntry ?formEntry .
 
-        ?reeks skos:prefLabel ?reeksLabel ;
-          gleif:hasStart ?reeksStart ;
-          gleif:hasEnd ?reeksEnd ;
-          ext:submissionPeriod ?submissionPeriod .
+        ?formEntry ext:actorName ?naamOrganisator ;
+          ext:numberChildrenForFullDay ?aantalKinderenVoorAlleVolleDagen ;
+          ext:numberChildrenForHalfDay ?aantalKinderenVoorAlleHalveDagen ;
+          ext:numberChildrenPerInfrastructure ?aantalKinderenPerInfrastructuur  .
 
         ?createdBy foaf:firstName ?createdByFirstName ;
           foaf:familyName ?createdByLastName .
@@ -63,22 +80,8 @@ export default {
 
         BIND(CONCAT(?modifiedByFirstName, " ", ?modifiedByLastName) as ?modifiedByName)
 
-        ?contactPoint foaf:firstName ?contactFirstName ;
-          foaf:familyName ?contactLastName ;
-          schema:email ?contactEmail ;
-          schema:telephone ?contactTelephone .
-
-        ?bankAccount schema:identifier ?accountNumber .
-
-        ?formTable ext:applicationFormEntry ?formEntry .
-
-        ?formEntry ext:actorName ?naamOrganisator ;
-          ext:numberChildrenForFullDay ?aantalKinderenVoorAlleVolleDagen ;
-          ext:numberChildrenForHalfDay ?aantalKinderenVoorAlleHalveDagen ;
-          ext:numberChildrenPerInfrastructure ?aantalKinderenPerInfrastructuur  .
-
         OPTIONAL {
-          ?subsidie lblodSubsidie:totalAmount ?amount .
+          ?applicationForm lblodSubsidie:totalAmount ?amount .
         }
         BIND(IF(BOUND(?amount), ?amount, xsd:float(0)) as ?totaalBedrag)
       }
@@ -106,7 +109,7 @@ export default {
         reeksEnd: subsidie.reeksEnd.value,
         createdByName: subsidie.createdByName.value,
         modifiedByName: subsidie.modifiedByName.value,
-        subsidie: subsidie.subsidie.value
+        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value
       };
     });
 
@@ -131,7 +134,7 @@ export default {
       'reeksEnd',
       'createdByName',
       'modifiedByName',
-      'subsidie'
+      'subsidiemaatregelConsumptie'
     ], reportData);
   }
 };
