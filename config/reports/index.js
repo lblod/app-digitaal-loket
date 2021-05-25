@@ -17,6 +17,8 @@ import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
 import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
 import mar7300InzendingenReport from './mar7300InzendingenReport';
+import fietsSubsidiesReport from './fietsSubsidiesReport';
+import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 
 export default [
   BestuurseenhedenReport,
@@ -37,5 +39,7 @@ export default [
   mandatarissenWithoutPersonReport,
   mandatarissenWithEmptyPersonReport,
   noodopvangSubsidiesReport,
-  mar7300InzendingenReport
+  mar7300InzendingenReport,
+  fietsSubsidiesReport,
+  contactTracingSubsidiesReport
 ];
