@@ -1,164 +1,185 @@
 export default [
   {
     match: {
-      subject: { }
+      subject: {},
     },
     callback: {
-      url: "http://resource/.mu/delta",
-      method: "POST"
+      url: 'http://resource/.mu/delta',
+      method: 'POST',
     },
     options: {
-      resourceFormat: "v0.0.1",
+      resourceFormat: 'v0.0.1',
       gracePeriod: 250,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/file-download-statuses/ready-to-be-cached'
-      }
+        value: 'http://lblod.data.gift/file-download-statuses/ready-to-be-cached',
+      },
     },
     callback: {
       url: 'http://download-url/process-remote-data-objects',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/file-download-statuses/success'
-      }
+        value: 'http://lblod.data.gift/file-download-statuses/success',
+      },
     },
     callback: {
       url: 'http://import-submission/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/automatische-melding-statuses/ready-for-enrichment'
-      }
+        value: 'http://lblod.data.gift/automatische-melding-statuses/ready-for-enrichment',
+      },
     },
     callback: {
       url: 'http://enrich-submission/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/automatische-melding-statuses/ready-for-validation'
-      }
+        value: 'http://lblod.data.gift/automatische-melding-statuses/ready-for-validation',
+      },
     },
     callback: {
       url: 'http://validate-submission/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/automatische-melding-statuses/successful-sent'
-      }
+        value: 'http://lblod.data.gift/concepts/f6330856-e261-430f-b949-8e510d20d0ff', // Inzendbaar
+      },
     },
     callback: {
       url: 'http://toezicht-flattened-form-data-generator/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
-        type: "uri",
-        value: "http://www.w3.org/ns/adms#status"
+        type: 'uri',
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
-        type: "uri",
-        value: "http://lblod.data.gift/automatische-melding-statuses/successful-concept"
-      }
+        type: 'uri',
+        value: 'http://lblod.data.gift/automatische-melding-statuses/successful-sent',
+      },
     },
     callback: {
-      method: "POST",
-      url: "http://toezicht-flattened-form-data-generator/delta"
+      url: 'http://toezicht-flattened-form-data-generator/delta',
+      method: 'POST',
     },
     options: {
-      resourceFormat: "v0.0.1",
+      resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://purl.org/pav/createdBy'
+        value: 'http://www.w3.org/ns/adms#status',
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/services/berichtencentrum-sync-with-kalliope-service'
-      }
+        value: 'http://lblod.data.gift/automatische-melding-statuses/successful-concept',
+      },
+    },
+    callback: {
+      method: 'POST',
+      url: 'http://toezicht-flattened-form-data-generator/delta',
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+    },
+  },
+  {
+    match: {
+      predicate: {
+        type: 'uri',
+        value: 'http://purl.org/pav/createdBy',
+      },
+      object: {
+        type: 'uri',
+        value: 'http://lblod.data.gift/services/berichtencentrum-sync-with-kalliope-service',
+      },
     },
     callback: {
       url: 'http://sync-with-kalliope-error-notification/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
@@ -166,13 +187,13 @@ export default [
     },
     callback: {
       url: 'http://loket-mandatarissen-producer/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
+      ignoreFromSelf: true,
+    },
   },
   {
     match: {
@@ -180,12 +201,12 @@ export default [
     },
     callback: {
       url: 'http://loket-leidinggevenden-producer/delta',
-      method: 'POST'
+      method: 'POST',
     },
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
-  }
+      ignoreFromSelf: true,
+    },
+  },
 ];
