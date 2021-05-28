@@ -38,7 +38,6 @@ export default {
       }
     `;
     const queryResponse = await batchedQuery(queryString);
-    console.log()
     const data = queryResponse.results.bindings.map((person) => {
       return {
         person: person.person.value,
