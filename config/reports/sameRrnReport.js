@@ -16,10 +16,14 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
       SELECT DISTINCT ?person1 ?person2 WHERE {
-        ?person1 a person:Person.
-        ?person2 a person:Person.
-        ?person1 adms:identifier/skos:notation ?rrn.
-        ?person2 adms:identifier/skos:notation ?rrn.
+        GRAPH ?g {
+          ?person1 a person:Person ;
+          adms:identifier/skos:notation ?rrn .
+        }
+        GRAPH ?h {
+          ?person2 a person:Person ;
+          adms:identifier/skos:notation ?rrn .
+        }
         FILTER (?person1 != ?person2)
       }
     `;
