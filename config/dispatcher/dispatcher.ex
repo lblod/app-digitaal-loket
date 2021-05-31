@@ -496,6 +496,36 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
+  #################################################################
+  # jobs
+  #################################################################
+  match "/jobs/*path" do
+    Proxy.forward conn, path, "http://resource/jobs/"
+  end
+
+  match "/tasks/*path" do
+    Proxy.forward conn, path, "http://resource/tasks/"
+  end
+
+  match "/data-containers/*path" do
+    Proxy.forward conn, path, "http://resource/data-containers/"
+  end
+
+  match "/job-errors/*path"  do
+    Proxy.forward conn, path, "http://resource/job-errors/"
+  end
+
+  #################################################################
+  # DCAT
+  #################################################################
+  match "/datasets/*path" do
+    Proxy.forward conn, path, "http://cache/datasets/"
+  end
+
+  match "/distributions/*path" do
+    Proxy.forward conn, path, "http://cache/distributions/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
