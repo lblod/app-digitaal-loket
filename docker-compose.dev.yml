@@ -107,4 +107,5 @@ services:
   delta-producer-dump-file-publisher-leidinggevenden:
     restart: "no"
   delta-producer-report-generator:
+  subsidy-application-flow-management:
     restart: "no"

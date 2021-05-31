@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.45.0
+    image: lblod/frontend-loket:0.46.1
     links:
       - identifier:backend
     labels:
@@ -397,7 +397,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.6.4
+    image: lblod/subsidy-applications-management-service:0.7.2-alpha
     environment:
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
       META_DATA_CRON: "0 */15 8-18 * * 1-5"
@@ -453,6 +453,10 @@ services:
     image: lblod/delta-producer-report-generator:0.1.0
     volumes:
       - ./config/delta/report-generator:/config
+=======
+  subsidy-application-flow-management:
+    image: lblod/subsidy-application-flow-management-service:0.2.0-beta
+>>>>>>> development
     labels:
       - "logging=true"
     restart: always
