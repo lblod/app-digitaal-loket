@@ -369,27 +369,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  loket-mandatarissen-producer:
-    image: lblod/loket-mandatarissen-producer:0.2.5
-    environment:
-      MAX_BODY_SIZE: "50mb"
-      RELATIVE_FILE_PATH: "deltas/mandatarissen"
-      PUBLISHER_URI: "http://data.lblod.info/services/loket-mandatarissen-producer"
-    volumes:
-      - ./config/producer/mandatarissen:/config
-      - ./data/files:/share
-    restart: always
-    logging: *default-logging
-  loket-leidinggevenden-producer:
-    image: lblod/loket-mandatarissen-producer:0.2.5
-    environment:
-      RELATIVE_FILE_PATH: "deltas/leidinggevenden"
-      PUBLISHER_URI: "http://data.lblod.info/services/loket-leidinggevenden-producer"
-    volumes:
-      - ./config/producer/leidinggevenden:/config
-      - ./data/files:/share
-    restart: always
-    logging: *default-logging
   mandataris-archive:
     image: lblod/mandataris-archive-service:0.0.6
     labels:
