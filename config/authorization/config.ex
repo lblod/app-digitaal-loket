@@ -346,6 +346,9 @@ defmodule Acl.UserGroups.Config do
                       constraint: %ResourceConstraint{
                         resource_types: [
                           "http://lblod.data.gift/vocabularies/reporting/Report",
+                          "http://vocab.deri.ie/cogs#Job",
+                          "http://open-services.net/ns/core#Error",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
 
 
