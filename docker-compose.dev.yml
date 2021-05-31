@@ -86,10 +86,6 @@ services:
     restart: "no"
   sync-with-kalliope-error-notification:
     restart: "no"
-  loket-mandatarissen-producer:
-    restart: "no"
-  loket-leidinggevenden-producer:
-    restart: "no"
   mandataris-archive:
     restart: "no"
   subsidy-applications-management:
@@ -102,10 +98,17 @@ services:
     restart: "no"
   case-number-generator:
     restart: "no"
+  subsidy-application-flow-management:
+    restart: "no"
+  loket-mandatarissen-producer:
+    restart: "no"
+  delta-producer-report-generator:
+    restart: "no"
   delta-producer-background-jobs-initiator-leidinggevenden:
+    restart: "no"
+  delta-producer-cache-maintainer-leidinggevenden:
     restart: "no"
   delta-producer-dump-file-publisher-leidinggevenden:
     restart: "no"
-  delta-producer-report-generator:
-  subsidy-application-flow-management:
+  delta-producer-json-diff-file-publisher-leidinggevenden:
     restart: "no"

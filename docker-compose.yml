@@ -97,7 +97,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:1.19.0
+    image: semtech/mu-cl-resources:1.20.0
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -166,35 +166,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  export-leidinggevenden:
-    image: lblod/mandaten-download-generator-service:0.3.7
-    links:
-      - virtuoso:database
-    environment:
-      EXPORT_CRON_PATTERN: "0 0 5 * * 6" # only on saturday
-      EXPORT_FILE_BASE: "leidinggevenden"
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-leidinggevenden"
-    volumes:
-      - ./data/exports/leidinggevenden:/data/exports
-      - ./config/export/leidinggevenden:/config
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  export-mandaten:
-    image: lblod/mandaten-download-generator-service:0.3.7
-    links:
-      - virtuoso:database
-    environment:
-      EXPORT_CRON_PATTERN: "0 0 4 * * 6" # only on saturday
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-mandatendatabank"
-    volumes:
-      - ./data/exports/mandaten:/data/exports
-      - ./config/export/mandaten:/config
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   berichtencentrum-email-notification:
     image: lblod/berichtencentrum-email-notification-service:0.1.5
     labels:
@@ -228,8 +199,6 @@ services:
       MAX_MESSAGE_AGE: 1
       MAX_SENDING_ATTEMPTS: 20
       INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/supervision/submissions"
-      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
-      MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
     volumes:
       - ./data/files:/data/files
     labels:
@@ -411,32 +380,127 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+
+################################################################################
+# DELTA GENERAL
+################################################################################
+  delta-producer-report-generator:
+    image: lblod/delta-producer-report-generator:0.1.0
+    volumes:
+      - ./config/delta/report-generator:/config
+################################################################################
+# DELTA TO BE DEPRECATED
+################################################################################
+  export-leidinggevenden:
+    image: lblod/mandaten-download-generator-service:0.3.7
+    links:
+      - virtuoso:database
+    environment:
+      EXPORT_CRON_PATTERN: "0 0 5 * * 6" # only on saturday
+      EXPORT_FILE_BASE: "leidinggevenden"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-leidinggevenden"
+    volumes:
+      - ./data/exports/leidinggevenden:/data/exports
+      - ./config/export/leidinggevenden:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  export-mandaten:
+    image: lblod/mandaten-download-generator-service:0.3.7
+    links:
+      - virtuoso:database
+    environment:
+      EXPORT_CRON_PATTERN: "0 0 4 * * 6" # only on saturday
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-mandatendatabank"
+    volumes:
+      - ./data/exports/mandaten:/data/exports
+      - ./config/export/mandaten:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA MANDATARISSEN: START (old way)
+################################################################################
+  loket-mandatarissen-producer:
+    image: lblod/loket-mandatarissen-producer:0.2.5
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      RELATIVE_FILE_PATH: "deltas/mandatarissen"
+      PUBLISHER_URI: "http://data.lblod.info/services/loket-mandatarissen-producer"
+    volumes:
+      - ./config/producer/mandatarissen:/config
+      - ./data/files:/share
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA MANDATARISSEN: END
+################################################################################
+################################################################################
+# DELTA LEDIDINGGEVENDEN: START
+################################################################################
   delta-producer-background-jobs-initiator-leidinggevenden:
     image: lblod/delta-producer-background-jobs-initiator:0.2.0
     environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/cacheGraphDumping/leidinggevenden'
       INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initibalCacheGraphSyncing/leidinggevenden'
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltaHealingLeidinggevenden'
-      CRON_PATTERN_DUMP_JOB: '0 0 0 * * *'
-      START_INITIAL_SYNC: 'false'
-   labels:
+      CRON_PATTERN_DUMP_JOB: '0 0 0 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
+      START_INITIAL_SYNC: 'false' # for now disable it because stack is not supporting
+    labels:
      - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-dump-file-publisher-leidinggevenden:
-    image: lblod/delta-producer-dump-file-publisher:0.1.0
+  delta-producer-cache-maintainer-leidinggevenden:
+    image: lblod/delta-producer-concept-scheme-based-cache-maintainer:0.1.1
     environment:
-      EXPORT_FILE_BASE_NAME: "delta-dump-leidinggevenden"
-      GRAPH_TO_DUMP: "http://redpencil.data.gift/id/deltas/producer/loket-functionarissen-producer"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden'
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/leidinggevenden"
+      CACHE_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltaHealingLeidinggevenden'
+      INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initibalCacheGraphSyncing/leidinggevenden'
+      QUEUE_POLL_INTERVAL: 3000
     volumes:
-      - ./data/exports:/share/exports
+      - ./config/producer/leidinggevenden:/config
+      - ./data/files/:/share
 # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
 #    labels:
 #      - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-report-generator:
-    image: lblod/delta-producer-report-generator:0.1.0
+  delta-producer-json-diff-file-publisher-leidinggevenden:
+    image: lblod/delta-producer-json-diff-file-publisher:0.2.0
+    environment:
+      ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/leidinggevenden"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager-leidinggevenden"
+      CACHE_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
     volumes:
-      - ./config/delta/report-generator:/config
+     - ./data/files:/share
+    labels:
+     - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-dump-file-publisher-leidinggevenden:
+    image: lblod/delta-producer-dump-file-publisher:0.2.0-beta.1
+    environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      EXPORT_FILE_BASE_NAME: "leidinggevenden"
+      GRAPH_TO_DUMP: "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer"
+      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/cacheGraphDumping/leidinggevenden"
+      DCAT_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump"
+    volumes:
+      - ./data/files:/share
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA LEDIDINGGEVENDEN: END
+################################################################################
