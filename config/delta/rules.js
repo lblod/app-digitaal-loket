@@ -197,41 +197,6 @@ export default [
   },
   {
     match: {
-      // anything
-    },
-    callback: {
-      url: 'http://loket-leidinggevenden-producer/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
-  },
-  {
-    match: {
-      predicate: {
-        type: 'uri',
-        value: 'http://redpencil.data.gift/vocabularies/tasks/operation'
-      },
-      object: {
-        type: 'uri',
-        value: 'http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation'
-      }
-    },
-    callback: {
-      url: 'http://delta-producer-dump-file-publisher-leidinggevenden/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
-  },
-  {
-    match: {
       predicate: {
         type: 'uri',
         value: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
@@ -285,6 +250,58 @@ export default [
     },
     callback: {
       url: 'http://delta-producer-report-generator/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true
+    }
+  },
+  {
+    match: {
+      // anything
+    },
+    callback: {
+      url: 'http://delta-producer-cache-maintainer-leidinggevenden/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true
+    }
+  },
+  {
+    match: {
+      graph: {
+        type: 'uri',
+        value: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
+      }
+    },
+    callback: {
+      url: 'http://delta-producer-json-diff-file-publisher-leidinggevenden/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true
+    }
+  },
+  {
+    match: {
+      predicate: {
+        type: 'uri',
+        value: 'http://www.w3.org/ns/adms#status'
+      },
+      object: {
+        type: 'uri',
+        value: 'http://redpencil.data.gift/id/concept/JobStatus/scheduled'
+      }
+    },
+    callback: {
+      url: 'http://delta-producer-dump-file-publisher-service-leidinggevenden/delta',
       method: 'POST'
     },
     options: {
