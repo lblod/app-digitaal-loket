@@ -433,8 +433,9 @@ services:
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden'
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden'
       CRON_PATTERN_DUMP_JOB: '0 0 0 * * *'
-    labels:
-      - "logging=true"
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher-leidinggevenden:
@@ -445,18 +446,17 @@ services:
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden'
     volumes:
       - ./data/exports:/share/exports
-    labels:
-      - "logging=true"
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
     restart: always
     logging: *default-logging
   delta-producer-report-generator:
     image: lblod/delta-producer-report-generator:0.1.0
     volumes:
       - ./config/delta/report-generator:/config
-=======
   subsidy-application-flow-management:
     image: lblod/subsidy-application-flow-management-service:0.2.0-beta
->>>>>>> development
     labels:
       - "logging=true"
     restart: always
