@@ -441,9 +441,9 @@ services:
     image: lblod/delta-producer-background-jobs-initiator:0.2.0
     environment:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/cacheGraphDumping/leidinggevenden'
-      INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initibalCacheGraphSyncing/leidinggevenden'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltaHealingLeidinggevenden'
+      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden'
+      INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialCacheGraphSyncing/leidinggevenden'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden'
       CRON_PATTERN_DUMP_JOB: '0 0 0 * * 6' # weekly on saturday
       CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
       START_INITIAL_SYNC: 'false' # for now disable it because stack is not supporting
@@ -458,8 +458,8 @@ services:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       RELATIVE_FILE_PATH: "deltas/leidinggevenden"
       CACHE_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltaHealingLeidinggevenden'
-      INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initibalCacheGraphSyncing/leidinggevenden'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden'
+      INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialCacheGraphSyncing/leidinggevenden'
       QUEUE_POLL_INTERVAL: 3000
     volumes:
       - ./config/delta-producer/leidinggevenden:/config
@@ -491,7 +491,7 @@ services:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       EXPORT_FILE_BASE_NAME: "leidinggevenden"
       GRAPH_TO_DUMP: "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer"
-      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/cacheGraphDumping/leidinggevenden"
+      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden"
       DCAT_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump"
     volumes:
       - ./data/files:/share
