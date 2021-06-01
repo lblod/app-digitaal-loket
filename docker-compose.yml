@@ -457,6 +457,7 @@ services:
   delta-producer-cache-maintainer-leidinggevenden:
     image: lblod/delta-producer-concept-scheme-based-cache-maintainer:0.1.1
     environment:
+      MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       RELATIVE_FILE_PATH: "deltas/leidinggevenden"
       CACHE_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
@@ -474,6 +475,7 @@ services:
   delta-producer-json-diff-file-publisher-leidinggevenden:
     image: lblod/delta-producer-json-diff-file-publisher:0.2.0
     environment:
+      MAX_BODY_SIZE: "50mb"
       ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       RELATIVE_FILE_PATH: "deltas/leidinggevenden"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager-leidinggevenden"
