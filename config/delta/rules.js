@@ -199,6 +199,23 @@ export default [
     match: {
       predicate: {
         type: 'uri',
+        value: 'http://www.w3.org/ns/adms#status'
+      }
+    },
+    callback: {
+      method: 'POST',
+      url: 'http://jobs-controller/delta'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true
+    }
+  },
+  {
+    match: {
+      predicate: {
+        type: 'uri',
         value: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
       },
       object: {
@@ -301,7 +318,7 @@ export default [
       }
     },
     callback: {
-      url: 'http://delta-producer-dump-file-publisher-service-leidinggevenden/delta',
+      url: 'http://delta-producer-dump-file-publisher-leidinggevenden/delta',
       method: 'POST'
     },
     options: {

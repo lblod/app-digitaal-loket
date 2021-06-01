@@ -380,14 +380,17 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-
+  jobs-controller:
+    image: lblod/job-controller-service:0.6.0
+    volumes:
+      - ./config/jobs-controller/:/config/
 ################################################################################
 # DELTA GENERAL
 ################################################################################
   delta-producer-report-generator:
     image: lblod/delta-producer-report-generator:0.1.0
     volumes:
-      - ./config/delta/report-generator:/config
+      - ./config/delta-producer/report-generator:/config
 ################################################################################
 # DELTA TO BE DEPRECATED
 ################################################################################
@@ -420,9 +423,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-################################################################################
-# DELTA MANDATARISSEN: START (old way)
-################################################################################
   loket-mandatarissen-producer:
     image: lblod/loket-mandatarissen-producer:0.2.5
     environment:
@@ -430,13 +430,10 @@ services:
       RELATIVE_FILE_PATH: "deltas/mandatarissen"
       PUBLISHER_URI: "http://data.lblod.info/services/loket-mandatarissen-producer"
     volumes:
-      - ./config/producer/mandatarissen:/config
+      - ./config/delta-producer/mandatarissen:/config
       - ./data/files:/share
     restart: always
     logging: *default-logging
-################################################################################
-# DELTA MANDATARISSEN: END
-################################################################################
 ################################################################################
 # DELTA LEDIDINGGEVENDEN: START
 ################################################################################
@@ -465,7 +462,7 @@ services:
       INITIAL_CACHE_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initibalCacheGraphSyncing/leidinggevenden'
       QUEUE_POLL_INTERVAL: 3000
     volumes:
-      - ./config/producer/leidinggevenden:/config
+      - ./config/delta-producer/leidinggevenden:/config
       - ./data/files/:/share
 # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
 #    labels:

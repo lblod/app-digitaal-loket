@@ -1,0 +1,29 @@
+{
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initibalCacheGraphSyncing/leidinggevenden" : {
+    "tasksConfiguration": [
+      {
+        "currentOperation": null,
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "nextIndex": "0"
+      }
+     ]
+   },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltaHealingLeidinggevenden": {
+    "tasksConfiguration": [
+      {
+        "currentOperation": null,
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchCacheGraph",
+        "nextIndex": "0"
+      }
+    ]
+  },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/cacheGraphDumping/leidinggevenden": {
+    "tasksConfiguration": [
+      {
+        "currentOperation": null,
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
+        "nextIndex": "0"
+      }
+    ]
+  }
+}
