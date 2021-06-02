@@ -19,6 +19,7 @@ import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
 import mar7300InzendingenReport from './mar7300InzendingenReport';
 import fietsSubsidiesReport from './fietsSubsidiesReport';
 import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
+import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
 
 export default [
   BestuurseenhedenReport,
@@ -41,5 +42,6 @@ export default [
   noodopvangSubsidiesReport,
   mar7300InzendingenReport,
   fietsSubsidiesReport,
-  contactTracingSubsidiesReport
+  contactTracingSubsidiesReport,
+  contactTracingSubsidiesDetailedReport
 ];
