@@ -388,7 +388,7 @@ services:
 # DELTA GENERAL
 ################################################################################
   delta-producer-report-generator:
-    image: lblod/delta-producer-report-generator:0.1.0
+    image: lblod/delta-producer-report-generator:0.2.0
     volumes:
       - ./config/delta-producer/report-generator:/config
 ################################################################################
@@ -452,7 +452,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-cache-maintainer-leidinggevenden:
-    image: lblod/delta-producer-concept-scheme-based-cache-maintainer:0.1.1
+    image: lblod/delta-producer-concept-scheme-based-cache-maintainer:0.1.2
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
