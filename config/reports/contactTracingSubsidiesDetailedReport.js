@@ -467,7 +467,7 @@ export default {
 
         OPTIONAL {
           ?applicationForm lblodSubsidie:quarantaineCoachingMethods ?uitleggenVanMaatregelenRule .
-          VALUES ?uitleggenVanMaatregelenRule { <http://data.lblod.info/id/subsidies/rules/e8fe4796-64be-4995-82ce-ba9f355fb5b4> }
+          VALUES ?uitleggenVanMaatregelenRule { <http://data.lblod.info/id/subsidies/rules/60306cda-a2d2-40ea-99d2-0ec1bfa0805d> }
         }
         BIND(IF(BOUND(?uitleggenVanMaatregelenRule), "ja", "nee") AS ?uitleggenVanMaatregelen)
 
@@ -485,7 +485,7 @@ export default {
 
         OPTIONAL {
           ?applicationForm lblodSubsidie:quarantaineCoachingMethods ?financieleHulpvragenDoorgevenNaarDeJuisteInstantiesRule .
-          VALUES ?financieleHulpvragenDoorgevenNaarDeJuisteInstantiesRule { <http://data.lblod.info/id/subsidies/rules/85b363cc-6d69-4aa4-88ed-ab5ba50b1993> }
+          VALUES ?financieleHulpvragenDoorgevenNaarDeJuisteInstantiesRule { <http://data.lblod.info/id/subsidies/rules/92af1821-29f6-4b73-b9b5-95f1bf92fe3d> }
         }
         BIND(IF(BOUND(?financieleHulpvragenDoorgevenNaarDeJuisteInstantiesRule), "ja", "nee") AS ?financieleHulpvragenDoorgevenNaarDeJuisteInstanties)
 
