@@ -85,7 +85,7 @@ export default {
       PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT ?smc ?rekeningnummer ?samenwerkingsverband ?ledenSamenwerking
+      SELECT ?smc ?rekeningnummer ?samenwerkingsverband (group_concat(?ledenSamenwerking;separator=";") as ?ledenSamenwerking)
       WHERE {
         ?smc transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
           dct:source ?applicationForm .
@@ -95,6 +95,7 @@ export default {
         
         OPTIONAL { ?applicationForm lblodSubsidie:collaborator/skos:prefLabel ?ledenSamenwerking . }
       }
+      GROUP BY ?smc ?rekeningnummer ?samenwerkingsverband
     `;
 
     const queryResponsePart3 = await batchedQuery(queryStringPart3);
