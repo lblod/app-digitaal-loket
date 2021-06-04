@@ -18,13 +18,17 @@ export default {
       PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
       PREFIX m8g: <http://data.europa.eu/m8g/>
       PREFIX dct: <http://purl.org/dc/terms/>
+      PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie
+      SELECT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?status
       WHERE {
-        ?subsidiemaatregelConsumptie transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
+        ?subsidiemaatregelConsumptie
+          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
+          adms:status/skos:prefLabel ?status ;
           dct:modified ?submissionDate ;
           m8g:hasParticipation ?participation .
-        ?bestuur m8g:playsRole ?participation ; skos:prefLabel ?bestuurseenheid .
+        ?bestuur m8g:playsRole ?participation ;
+          skos:prefLabel ?bestuurseenheid .
       }
       ORDER BY DESC(?submissionDate)
     `;
@@ -33,14 +37,16 @@ export default {
       return {
         submissionDate: subsidie.submissionDate.value,
         bestuurseenheid: subsidie.bestuurseenheid.value,
-        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value
+        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value,
+        status: subsidie.status.value
       };
     });
 
     await generateReportFromData(data, [
       'submissionDate',
       'bestuurseenheid',
-      'subsidiemaatregelConsumptie'
+      'subsidiemaatregelConsumptie',
+      'status'
     ], reportData);
   }
 };
