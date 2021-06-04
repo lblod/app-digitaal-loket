@@ -44,6 +44,6 @@ export default [
   mar7300InzendingenReport,
   fietsSubsidiesReport,
   contactTracingSubsidiesReport,
-  electedPersonsReport
+  electedPersonsReport,
   contactTracingSubsidiesDetailedReport
 ];
