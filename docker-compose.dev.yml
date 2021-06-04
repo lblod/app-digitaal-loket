@@ -112,3 +112,5 @@ services:
     restart: "no"
   delta-producer-json-diff-file-publisher-leidinggevenden:
     restart: "no"
+  delta-producer-json-diff-file-publisher-leidinggevenden:
+    restart: "no"

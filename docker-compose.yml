@@ -448,7 +448,7 @@ services:
       CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
       START_INITIAL_SYNC: 'false' # for now disable it because stack is not supporting
     labels:
-     - "logging=true"
+      - "logging=true"
     restart: always
     logging: *default-logging
   delta-producer-cache-maintainer-leidinggevenden:
@@ -480,9 +480,9 @@ services:
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
     volumes:
-     - ./data/files:/share
+      - ./data/files:/share
     labels:
-     - "logging=true"
+      - "logging=true"
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher-leidinggevenden:
@@ -498,6 +498,19 @@ services:
 # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
 #    labels:
 #      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-json-diff-file-publisher-leidinggevenden:
+    image: lblod/delta-producer-json-diff-file-publisher:0.2.2
+    environment:
+      RELATIVE_FILE_PATH: "deltas/leidinggevenden"
+      PUBLISHER_URI: "http://delta-producer-json-diff-file-publisher-leidinggevenden"
+      CACHE_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
+    volumes:
+      - ./data/files:/share
+    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+    #    labels:
+    #      - "logging=true"
     restart: always
     logging: *default-logging
 ################################################################################
