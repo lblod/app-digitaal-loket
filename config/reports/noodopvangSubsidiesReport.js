@@ -35,6 +35,7 @@ export default {
       WHERE {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
+          adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> ;
           cpsv:follows ?applicationFlow ;
           dct:source ?applicationForm ;
           dct:modified ?aanvraagdatum ;
