@@ -12,13 +12,16 @@ export default {
     };
     console.log('Generate duplicate RRN report');
     const queryString = `
-      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-      PREFIX dct: <http://purl.org/dc/terms/>
+      PREFIX person: <http://www.w3.org/ns/person#>
+      PREFIX adms: <http://www.w3.org/ns/adms#>
+
       SELECT DISTINCT ?person1 ?person2 WHERE {
-        ?person1 a foaf:Person.
-        ?person2 a foaf:Person.
-        ?person1 dct:identifier ?rrn.
-        ?person2 dct:identifier ?rrn.
+        ?person1 a person:Person ;
+          adms:identifier/skos:notation ?rrn .
+
+        ?person2 a person:Person ;
+          adms:identifier/skos:notation ?rrn .
+
         FILTER (?person1 != ?person2)
       }
     `;
@@ -27,6 +30,6 @@ export default {
       person1: row.person1.value,
       person2: row.person2.value,
     }));
-    await generateReportFromData(data, ['sameRRN'], reportData);
+    await generateReportFromData(data, ['person1', 'person2'], reportData);
   }
 };

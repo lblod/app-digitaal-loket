@@ -19,6 +19,7 @@ import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
 import mar7300InzendingenReport from './mar7300InzendingenReport';
 import fietsSubsidiesReport from './fietsSubsidiesReport';
 import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
+import electedPersonsReport from './electedPersonsReport';
 import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
 
 export default [
@@ -43,5 +44,6 @@ export default [
   mar7300InzendingenReport,
   fietsSubsidiesReport,
   contactTracingSubsidiesReport,
+  electedPersonsReport
   contactTracingSubsidiesDetailedReport
 ];
