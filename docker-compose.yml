@@ -427,7 +427,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-application-flow-management:
-    image: lblod/subsidy-application-flow-management-service:0.2.0-beta
+    image: lblod/subsidy-application-flow-management-service:0.2.1-beta
     labels:
       - "logging=true"
     restart: always
