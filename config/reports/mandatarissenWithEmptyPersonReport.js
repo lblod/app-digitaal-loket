@@ -32,9 +32,9 @@ export default {
     const data = queryResponse.results.bindings.map((result) => {
       return {
         mandataris: result.mandataris.value,
-        start: result.start.value,
-        end: result.end.value,
-        role: result.role.value,
+        start: getSafeValue(result, 'start'),
+        end: getSafeValue(result, 'end'),
+        role: getSafeValue(result, 'role'),
         person: result.person.value
       };
     });
@@ -42,3 +42,12 @@ export default {
     await generateReportFromData(data, ['mandataris', 'start', 'end', 'role', 'person'], reportData);
   }
 };
+
+function getSafeValue(entry, property){
+  return entry[property] ? wrapInQuote(entry[property].value) : null;
+}
+
+// Some values might contain comas, wrapping them in escapes quotes doesn't disturb the colomns
+function wrapInQuote(value) {
+  return `\"${value}\"`;
+}

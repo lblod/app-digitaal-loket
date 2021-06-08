@@ -1,5 +1,4 @@
-import {generateReportFromData} from '../helpers.js';
-import { querySudo as query } from '@lblod/mu-auth-sudo';
+import { generateReportFromData, batchedQuery } from '../helpers.js';
 
 export default {
   cronPattern: '0 0 23 * * *',
@@ -36,10 +35,9 @@ export default {
             <http://lblod.data.gift/vocabularies/besluit/chartOfAccount> <http://lblod.data.gift/concepts/26c19fe6b53e2e759a0b9467ce33ef37fc268dd9467cfba91381214549a01d19> .
             ?form eli:passed_by ?orgaanInTijd .
 
-          OPTIONAL {  ?form eli:first_date_entry_in_force ?dateOfEntryInForce . }
-          OPTIONAL {  ?form eli:date_no_longer_in_force ?dateNoLongerInForce . }
-          OPTIONAL {  ?form ext:sessionStartedAtTime ?dateSessionStartedAtTime . }
-          OPTIONAL {  ?form dct:hasPart ?attachment . }
+          OPTIONAL { ?form eli:first_date_entry_in_force ?dateOfEntryInForce . }
+          OPTIONAL { ?form eli:date_no_longer_in_force ?dateNoLongerInForce . }
+          OPTIONAL { ?form ext:sessionStartedAtTime ?dateSessionStartedAtTime . }
           OPTIONAL { ?form eli:date_publication ?datePublication . }
           OPTIONAL { ?form ext:taxRateAmount ?taxRateAmount . }
           OPTIONAL { ?form lblodBesluit:hasAdditionalTaxRate ?hasAdditionalTaxRate . }
@@ -47,23 +45,28 @@ export default {
         GRAPH ?h {
           ?orgaanInTijd mandaat:isTijdspecialisatieVan/skos:prefLabel ?bestuursorgaan .
         }
-        GRAPH ?i {
-          ?attachment nie:url|nfo:fileName ?attachmentName .
+        OPTIONAL {
+          GRAPH ?g {
+            ?form dct:hasPart ?attachment .
+          }
+          GRAPH ?i {
+            ?attachment nie:url|nfo:fileName ?attachmentName .
+          }
         }
       }
       ORDER BY DESC(?sentDate)
     `;
-    const queryResponse = await query(queryString);
+    const queryResponse = await batchedQuery(queryString);
     const data = queryResponse.results.bindings.map((inzendingen) => ({
       sentDate: inzendingen.sentDate.value,
       bestuursorgaan: inzendingen.bestuursorgaan.value,
-      dateOfEntryInForce: inzendingen.dateOfEntryInForce.value,
-      datePublication: inzendingen.datePublication.value,
-      dateNoLongerInForce: inzendingen.dateNoLongerInForce.value,
-      dateSessionStartedAtTime: inzendingen.dateSessionStartedAtTime.value,
-      attachmentName: inzendingen.attachmentName.value,
-      hasAdditionalTaxRate: inzendingen.hasAdditionalTaxRate ? inzendingen.hasAdditionalTaxRate.value : '',
-      taxRateAmount: inzendingen.taxRateAmount ? inzendingen.taxRateAmount.value : '',
+      dateOfEntryInForce: getSafeValue(inzendingen, 'dateOfEntryInForce'),
+      datePublication: getSafeValue(inzendingen, 'datePublication'),
+      dateNoLongerInForce: getSafeValue(inzendingen, 'dateNoLongerInForce'),
+      dateSessionStartedAtTime: getSafeValue(inzendingen, 'dateSessionStartedAtTime'),
+      attachmentName: getSafeValue(inzendingen, 'attachmentName'),
+      hasAdditionalTaxRate: getSafeValue(inzendingen, 'hasAdditionalTaxRate'),
+      taxRateAmount: getSafeValue(inzendingen, 'taxRateAmount'),
       submission: inzendingen.submission.value
     }));
     await generateReportFromData(data, [
@@ -80,4 +83,13 @@ export default {
     ], reportData);
   }
 };
+
+function getSafeValue(entry, property){
+  return entry[property] ? wrapInQuote(entry[property].value) : null;
+}
+
+// Some values might contain comas, wrapping them in escapes quotes doesn't disturb the colomns
+function wrapInQuote(value) {
+  return `\"${value}\"`;
+}
 
