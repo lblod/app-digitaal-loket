@@ -500,19 +500,6 @@ services:
 #      - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-json-diff-file-publisher-leidinggevenden:
-    image: lblod/delta-producer-json-diff-file-publisher:0.2.2
-    environment:
-      RELATIVE_FILE_PATH: "deltas/leidinggevenden"
-      PUBLISHER_URI: "http://delta-producer-json-diff-file-publisher-leidinggevenden"
-      CACHE_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
-    volumes:
-      - ./data/files:/share
-    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
-    #    labels:
-    #      - "logging=true"
-    restart: always
-    logging: *default-logging
 ################################################################################
 # DELTA LEDIDINGGEVENDEN: END
 ################################################################################
