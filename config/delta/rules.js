@@ -10,7 +10,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 250,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -31,7 +32,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -52,7 +54,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -73,7 +76,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -94,7 +98,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -115,7 +120,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -136,7 +142,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -157,7 +164,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -178,7 +186,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -192,7 +201,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -209,7 +219,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -230,7 +241,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -247,7 +259,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -261,7 +274,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -278,7 +292,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   },
   {
@@ -299,7 +314,8 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
-      ignoreFromSelf: true
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
     }
   }
 ];
