@@ -106,7 +106,7 @@ services:
     restart: "no"
   delta-producer-background-jobs-initiator-leidinggevenden:
     restart: "no"
-  delta-producer-cache-maintainer-leidinggevenden:
+  delta-producer-publication-graph-maintainer-leidinggevenden:
     restart: "no"
   delta-producer-dump-file-publisher-leidinggevenden:
     restart: "no"

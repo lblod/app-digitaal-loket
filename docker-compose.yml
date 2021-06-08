@@ -438,7 +438,7 @@ services:
 # DELTA LEDIDINGGEVENDEN: START
 ################################################################################
   delta-producer-background-jobs-initiator-leidinggevenden:
-    image: lblod/delta-producer-background-jobs-initiator:0.2.0
+    image: lblod/delta-producer-background-jobs-initiator:0.3.0
     environment:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden'
@@ -451,8 +451,8 @@ services:
      - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-cache-maintainer-leidinggevenden:
-    image: lblod/delta-producer-concept-scheme-based-cache-maintainer:0.1.2
+  delta-producer-publication-graph-maintainer-leidinggevenden:
+    image: lblod/delta-producer-publication-graph-maintainer:0.2.0
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -470,7 +470,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-json-diff-file-publisher-leidinggevenden:
-    image: lblod/delta-producer-json-diff-file-publisher:0.2.0
+    image: lblod/delta-producer-json-diff-file-publisher:0.2.3
     environment:
       MAX_BODY_SIZE: "50mb"
       ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
