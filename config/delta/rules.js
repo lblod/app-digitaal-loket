@@ -192,21 +192,6 @@ export default [
   },
   {
     match: {
-      // anything
-    },
-    callback: {
-      url: 'http://loket-mandatarissen-producer/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true,
-      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
-    }
-  },
-  {
-    match: {
       predicate: {
         type: 'uri',
         value: 'http://www.w3.org/ns/adms#status'
@@ -327,6 +312,78 @@ export default [
     },
     callback: {
       url: 'http://delta-producer-json-diff-file-publisher-leidinggevenden/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true
+    }
+  },
+  {
+    match: {
+      // anything
+    },
+    callback: {
+      url: 'http://delta-producer-publication-graph-maintainer-mandatarissen/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
+    }
+  },
+  {
+    match: {
+      graph: {
+        type: 'uri',
+        value: 'http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer'
+      }
+    },
+    callback: {
+      url: 'http://delta-producer-json-diff-file-publisher-mandatarissen/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
+    }
+  },
+  {
+    match: {
+      predicate: {
+        type: 'uri',
+        value: 'http://www.w3.org/ns/adms#status'
+      },
+      object: {
+        type: 'uri',
+        value: 'http://redpencil.data.gift/id/concept/JobStatus/scheduled'
+      }
+    },
+    callback: {
+      url: 'http://delta-producer-dump-file-publisher-mandatarissen/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
+    }
+  },
+  {
+    match: {
+      graph: {
+        type: 'uri',
+        value: 'http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer'
+      }
+    },
+    callback: {
+      url: 'http://delta-producer-json-diff-file-publisher-mandatarissen/delta',
       method: 'POST'
     },
     options: {

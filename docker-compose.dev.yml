@@ -100,8 +100,6 @@ services:
     restart: "no"
   subsidy-application-flow-management:
     restart: "no"
-  loket-mandatarissen-producer:
-    restart: "no"
   delta-producer-report-generator:
     restart: "no"
   delta-producer-background-jobs-initiator-leidinggevenden:
