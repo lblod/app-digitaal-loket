@@ -47,7 +47,7 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    image: semtech/mu-delta-notifier:0.1.0
+    image: cecemel/delta-notifier:0.2.0-beta.2
     volumes:
       - ./config/delta:/config
     labels:
@@ -55,9 +55,11 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:0.6.0-beta.4
+    image: cecemel/mu-authorization:0.6.0-beta.8
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_OVERLOAD_RECOVERY: "true"
+      LOG_DATABASE_OVERLOAD_TICK: "true"
     volumes:
       - ./config/authorization:/config
     labels:
@@ -441,7 +443,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-leidinggevenden:
-    image: lblod/delta-producer-publication-graph-maintainer:0.2.0
+    image: lblod/delta-producer-publication-graph-maintainer:0.2.1
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -510,7 +512,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-mandatarissen:
-    image: lblod/delta-producer-publication-graph-maintainer:0.2.0
+    image: lblod/delta-producer-publication-graph-maintainer:0.2.1
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
