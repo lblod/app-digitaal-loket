@@ -437,7 +437,7 @@ services:
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden'
       CRON_PATTERN_DUMP_JOB: '0 0 0 * * 6' # weekly on saturday
       CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
-      START_INITIAL_SYNC: 'false' # for now disable it because stack is not supporting
+      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
     labels:
       - "logging=true"
     restart: always
@@ -506,7 +506,7 @@ services:
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen'
       CRON_PATTERN_DUMP_JOB: '0 0 1 * * 6' # weekly on saturday
       CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
-      START_INITIAL_SYNC: 'true' # for now disable it because stack is not supporting
+      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
     labels:
       - "logging=true"
     restart: always
