@@ -126,7 +126,7 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
 
 fields:fbd15091-9155-4c73-a12a-0df4e4eda7b9 a form:Field ;
     mu:uuid "fbd15091-9155-4c73-a12a-0df4e4eda7b9";
-    sh:name "Voeg het ondertekende pact toe" ;
+    sh:name "Voeg het gemeenteraadsbesluit (ondertekend pact) toe" ;
     sh:order 20 ;
     sh:path ( lblodSubsidie:signedPact dct:hasPart );
     form:options """{}""" ;

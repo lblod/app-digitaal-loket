@@ -37,7 +37,7 @@ fields:2524865a-d463-4e0b-9528-924b8439e9e6 a form:PropertyGroup;
 fields:91fda733-791e-48ea-9f48-5ee7a284de37 a form:PropertyGroup;
     mu:uuid "91fda733-791e-48ea-9f48-5ee7a284de37";
     sh:order 2;
-    sh:name "Indienen Aanvraag" ;
+    sh:name "Indienen Opvolgmoment" ;
     form:help "Nog niet beschikbaar" ;
     sh:group fields:2524865a-d463-4e0b-9528-924b8439e9e6 .
 
