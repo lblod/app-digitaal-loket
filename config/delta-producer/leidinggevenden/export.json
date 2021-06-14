@@ -22,7 +22,7 @@
   "export": [
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -34,7 +34,7 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
@@ -49,7 +49,7 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
@@ -64,7 +64,7 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
         "http://data.vlaanderen.be/ns/besluit#bestuurt",
@@ -81,7 +81,7 @@
     },
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://data.vlaanderen.be/ns/besluit#bestuurt",
@@ -96,7 +96,7 @@
     },
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
@@ -112,7 +112,7 @@
     },
     {
       "type": "http://schema.org/ContactPoint",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
       "pathToConceptScheme": [
         "^http://schema.org/contactPoint",
         "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
@@ -133,7 +133,7 @@
     },
     {
       "type": "http://www.w3.org/ns/locn#Address",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/locn#address",
         "^http://schema.org/contactPoint",
@@ -160,7 +160,7 @@
     },
     {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
@@ -177,7 +177,7 @@
     },
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#role",
         "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
@@ -194,7 +194,7 @@
     },
     {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
         "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
@@ -214,7 +214,7 @@
     },
     {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/FunctionarisStatusCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#status",
         "http://www.w3.org/ns/org#holds",
@@ -232,8 +232,7 @@
     },
     {
       "type": "http://www.w3.org/ns/person#Person",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public",
-                        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
                         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
@@ -253,7 +252,7 @@
     },
     {
       "type": "http://www.w3.org/ns/prov#Location",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public", "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://mu.semte.ch/vocabularies/ext/inProvincie",
         "^http://data.vlaanderen.be/ns/besluit#bestuurt",
