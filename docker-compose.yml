@@ -59,6 +59,8 @@ services:
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
+      # Note: not sure wether it does something, it is meant for healing-process which may make
+      # heavy queries
       QUERY_MAX_PROCESSING_TIME: 605000
       QUERY_MAX_EXECUTION_TIME: 605000
     volumes:
