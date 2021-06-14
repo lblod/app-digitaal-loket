@@ -1,13 +1,13 @@
 {
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialCacheGraphSyncing/leidinggevenden" : {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden" : {
     "tasksConfiguration": [
       {
         "currentOperation": null,
-        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialPublicationGraphSyncing",
         "nextIndex": "0"
       },
       {
-        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialPublicationGraphSyncing",
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
         "nextIndex": "1"
       }
@@ -17,11 +17,11 @@
     "tasksConfiguration": [
       {
         "currentOperation": null,
-        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchCacheGraph",
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchPublicationGraph",
         "nextIndex": "0"
       },
       {
-        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchCacheGraph",
+        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchPublicationGraph",
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/reportGeneration",
         "nextIndex": "1"
       }
@@ -36,15 +36,15 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialCacheGraphSyncing/mandatarissen" : {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen" : {
     "tasksConfiguration": [
       {
         "currentOperation": null,
-        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialPublicationGraphSyncing",
         "nextIndex": "0"
       },
       {
-        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialPublicationGraphSyncing",
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
         "nextIndex": "1"
       }
@@ -54,11 +54,11 @@
     "tasksConfiguration": [
       {
         "currentOperation": null,
-        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchCacheGraph",
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchPublicationGraph",
         "nextIndex": "0"
       },
       {
-        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchCacheGraph",
+        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/patchPublicationGraph",
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/healing/reportGeneration",
         "nextIndex": "1"
       }
