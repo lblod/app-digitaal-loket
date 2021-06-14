@@ -59,7 +59,8 @@ services:
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
-      LOG_DATABASE_OVERLOAD_TICK: "true"
+      QUERY_MAX_PROCESSING_TIME: 605000
+      QUERY_MAX_EXECUTION_TIME: 605000
     volumes:
       - ./config/authorization:/config
     labels:
