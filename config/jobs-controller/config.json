@@ -5,6 +5,11 @@
         "currentOperation": null,
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
         "nextIndex": "0"
+      },
+      {
+        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
+        "nextIndex": "1"
       }
      ]
    },
@@ -37,6 +42,11 @@
         "currentOperation": null,
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
         "nextIndex": "0"
+      },
+      {
+        "currentOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/initialCacheGraphSyncing",
+        "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
+        "nextIndex": "1"
       }
      ]
    },
