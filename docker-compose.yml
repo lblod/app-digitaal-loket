@@ -59,7 +59,7 @@ services:
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
-      # Note: not sure wether it does something, it is meant for healing-process which may make
+      # Note: not sure wether it gets picked up properly, it is meant for healing-process which may make
       # heavy queries
       QUERY_MAX_PROCESSING_TIME: 605000
       QUERY_MAX_EXECUTION_TIME: 605000
@@ -524,6 +524,7 @@ services:
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen'
       INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen'
       QUEUE_POLL_INTERVAL: 3000
+      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
     volumes:
       - ./config/delta-producer/mandatarissen:/config
       - ./data/files/:/share
