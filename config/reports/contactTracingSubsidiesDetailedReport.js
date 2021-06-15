@@ -117,7 +117,8 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT distinct ?smc ?november ?december ?januari ?februari ?maart ?bestaandPersoneelskader ?extraAangeworven
+      SELECT distinct ?smc ?november ?december ?januari ?februari ?maart ?april ?mei ?juni ?juli
+              ?augustus ?bestaandPersoneelskader ?extraAangeworven
               ?vrijwilligers ?specifiekeUitgaven ?anderstaligen ?65plussers ?personenMetEenHandicap
               ?ondernemers ?personenMetBeperkteMobiliteit ?werklozen ?daklozen ?woonwagenbewoners
               ?personenMetEenLaagInkomen ?jongeren ?telefonischeContacten ?huisAanHuisBezoekenContact
@@ -125,17 +126,23 @@ export default {
       WHERE {
         ?smc transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
           dct:source ?applicationForm .
-        ?applicationForm lblodSubsidie:extraContactTracingMeasuresNovember/skos:prefLabel ?november ;
-          lblodSubsidie:extraContactTracingMeasuresDecember/skos:prefLabel ?december ;
-          lblodSubsidie:extraContactTracingMeasuresJanuary/skos:prefLabel ?januari ;
-          lblodSubsidie:extraContactTracingMeasuresFebruary/skos:prefLabel ?februari ;
-          lblodSubsidie:extraContactTracingMeasuresMarch/skos:prefLabel ?maart ;
-          lblodSubsidie:engagementTable/ext:engagementEntry ?entry ;
+        ?applicationForm lblodSubsidie:engagementTable/ext:engagementEntry ?entry ;
           adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
         ?entry ext:existingStaff ?bestaandPersoneelskader ;
           ext:additionalStaff ?extraAangeworven ;
           ext:volunteers ?vrijwilligers .
         
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresNovember/skos:prefLabel ?november . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresDecember/skos:prefLabel ?december . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresJanuary/skos:prefLabel ?januari . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresFebruary/skos:prefLabel ?februari . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresMarch/skos:prefLabel ?maart . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresApril/skos:prefLabel ?april . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresMay/skos:prefLabel ?mei . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresJune/skos:prefLabel ?juni . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresJuly/skos:prefLabel ?juli . }
+        OPTIONAL { ?applicationForm lblodSubsidie:extraContactTracingMeasuresAugust/skos:prefLabel ?augustus . }
+
         OPTIONAL { ?applicationForm lblodSubsidie:estimatedExtraCosts ?specifiekeUitgaven . }
 
         OPTIONAL { ?applicationForm lblodSubsidie:collaborator/skos:prefLabel ?ledenSamenwerking . }
@@ -238,6 +245,11 @@ export default {
         januari: getSafeValue(row, 'januari'),
         februari: getSafeValue(row, 'februari'),
         maart: getSafeValue(row, 'maart'),
+        april: getSafeValue(row, 'april'),
+        mei: getSafeValue(row, 'mei'),
+        juni: getSafeValue(row, 'juni'),
+        juli: getSafeValue(row, 'juli'),
+        augustus: getSafeValue(row, 'augustus'),
         bestaandPersoneelskader: getSafeValue(row, 'bestaandPersoneelskader'),
         extraAangeworven: getSafeValue(row, 'extraAangeworven'),
         vrijwilligers: getSafeValue(row, 'vrijwilligers'),
@@ -607,6 +619,11 @@ export default {
       'januari',
       'februari',
       'maart',
+      'april',
+      'mei',
+      'juni',
+      'juli',
+      'augustus',
       'bestaandPersoneelskader',
       'extraAangeworven',
       'vrijwilligers',

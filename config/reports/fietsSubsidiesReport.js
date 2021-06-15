@@ -20,7 +20,7 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?status
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?status
       WHERE {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
