@@ -481,7 +481,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher-leidinggevenden:
-    image: lblod/delta-producer-dump-file-publisher:0.2.0-beta.1
+    image: lblod/delta-producer-dump-file-publisher:0.2.1
     environment:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       EXPORT_FILE_BASE_NAME: "leidinggevenden"
@@ -551,7 +551,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher-mandatarissen:
-    image: lblod/delta-producer-dump-file-publisher:0.2.0-beta.1
+    image: lblod/delta-producer-dump-file-publisher:0.2.1
     environment:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       EXPORT_FILE_BASE_NAME: "mandatarissen"
