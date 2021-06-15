@@ -390,14 +390,14 @@ defmodule Dispatcher do
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
-    Proxy.forward conn, path, "http://loket-mandatarissen-producer/files/"
+    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-mandatarissen/files/"
   end
 
   #################################################################
   # loket-leidinggevenden sync
   #################################################################
   get "/sync/leidinggevenden/files/*path" do
-    Proxy.forward conn, path, "http://loket-leidinggevenden-producer/files/"
+    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-leidinggevenden/files/"
   end
 
   #################################################################
