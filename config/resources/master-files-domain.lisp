@@ -16,7 +16,10 @@
                    :inverse t
                    :as "download")
               (file-address :via ,(s-prefix "nie:dataSource")
-                   :as "data-source")
+                            :as "data-source")
+              (data-container :via ,(s-prefix "task:hasFile")
+                :inverse t
+                :as "data-container")
               (email :via ,(s-prefix "email:hasEmail")
                   :as "email"))
   :resource-base (s-url "http://data.lblod.info/files/")

@@ -500,19 +500,19 @@ defmodule Dispatcher do
   # jobs
   #################################################################
   match "/jobs/*path" do
-    Proxy.forward conn, path, "http://resource/jobs/"
+    Proxy.forward conn, path, "http://cache/jobs/"
   end
 
   match "/tasks/*path" do
-    Proxy.forward conn, path, "http://resource/tasks/"
+    Proxy.forward conn, path, "http://cache/tasks/"
   end
 
   match "/data-containers/*path" do
-    Proxy.forward conn, path, "http://resource/data-containers/"
+    Proxy.forward conn, path, "http://cache/data-containers/"
   end
 
   match "/job-errors/*path"  do
-    Proxy.forward conn, path, "http://resource/job-errors/"
+    Proxy.forward conn, path, "http://cache/job-errors/"
   end
 
   #################################################################
