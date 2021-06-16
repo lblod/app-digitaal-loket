@@ -15,6 +15,12 @@ defmodule Acl.UserGroups.Config do
       query: sparql_query_for_access_role( group_string ) }
   end
 
+  defp access_by_role_for_single_graph( group_string ) do
+    %AccessByQuery{
+      vars: [],
+      query: sparql_query_for_access_role( group_string ) }
+  end
+
   defp sparql_query_for_access_role( group_string ) do
     "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -351,6 +357,20 @@ defmodule Acl.UserGroups.Config do
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
 
+        # //LOKETADMIN -> TODO: duplicate. We need to move the data in this graph to "http://mu.semte.ch/graphs/organizations/"
+        %GroupSpec{
+          name: "o-admin-rwf",
+          useage: [:read, :write, :read_for_write],
+          access: access_by_role_for_single_graph( "LoketAdmin" ), #access_by_role_for_single_graph( "LoketAdmin" ),
+          graphs: [ %GraphSpec{
+                      graph: "http://mu.semte.ch/graphs/harvesting",
+                      constraint: %ResourceConstraint{
+                        resource_types: [
+                          "http://lblod.data.gift/vocabularies/reporting/Report",
+                          "http://vocab.deri.ie/cogs#Job",
+                          "http://open-services.net/ns/core#Error",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
+                        ] } } ] },
 
       # // USER HAS NO DATA
       # this was moved to org instead.
