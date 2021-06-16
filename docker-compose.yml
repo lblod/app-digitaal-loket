@@ -397,6 +397,16 @@ services:
     image: lblod/delta-producer-report-generator:0.2.0
     volumes:
       - ./config/delta-producer/report-generator:/config
+  delta-producer-dump-file-publisher:
+    image: lblod/delta-producer-dump-file-publisher:0.3.0
+    volumes:
+      - ./config/delta-producer/dump-file-publisher:/config
+      - ./data/files:/share
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
+    restart: always
+    logging: *default-logging
 ################################################################################
 # DELTA TO BE DEPRECATED
 ################################################################################
@@ -481,21 +491,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-dump-file-publisher-leidinggevenden:
-    image: lblod/delta-producer-dump-file-publisher:0.2.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      EXPORT_FILE_BASE_NAME: "leidinggevenden"
-      GRAPH_TO_DUMP: "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer"
-      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden"
-      DCAT_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump"
-    volumes:
-      - ./data/files:/share
-# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
-#    labels:
-#      - "logging=true"
-    restart: always
-    logging: *default-logging
 ################################################################################
 # DELTA LEIDINGGEVENDEN: END
 ################################################################################
@@ -549,21 +544,6 @@ services:
       - ./data/files:/share
     labels:
       - "logging=true"
-    restart: always
-    logging: *default-logging
-  delta-producer-dump-file-publisher-mandatarissen:
-    image: lblod/delta-producer-dump-file-publisher:0.2.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      EXPORT_FILE_BASE_NAME: "mandatarissen"
-      GRAPH_TO_DUMP: "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer"
-      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen"
-      DCAT_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/MandatarissenCacheGraphDump"
-    volumes:
-      - ./data/files:/share
-# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
-#    labels:
-#      - "logging=true"
     restart: always
     logging: *default-logging
 ################################################################################

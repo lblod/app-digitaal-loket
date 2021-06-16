@@ -102,13 +102,17 @@ services:
     restart: "no"
   delta-producer-report-generator:
     restart: "no"
+  delta-producer-dump-file-publisher:
+    restart: "no"
   delta-producer-background-jobs-initiator-leidinggevenden:
     restart: "no"
   delta-producer-publication-graph-maintainer-leidinggevenden:
     restart: "no"
-  delta-producer-dump-file-publisher-leidinggevenden:
-    restart: "no"
   delta-producer-json-diff-file-publisher-leidinggevenden:
     restart: "no"
-  delta-producer-json-diff-file-publisher-leidinggevenden:
+  delta-producer-background-jobs-initiator-mandatarissen:
+    restart: "no"
+  delta-producer-publication-graph-maintainer-mandatarissen:
+    restart: "no"
+  delta-producer-json-diff-file-publisher-mandatarissen:
     restart: "no"

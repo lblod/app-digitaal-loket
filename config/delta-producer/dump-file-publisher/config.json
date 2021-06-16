@@ -1,0 +1,12 @@
+{
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden" : {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer",
+    "fileBaseName": "dump-leidinggevenden"
+  },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden" : {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer",
+    "fileBaseName": "dump-leidinggevenden"
+  }
+}
