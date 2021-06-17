@@ -305,23 +305,6 @@ export default [
   },
   {
     match: {
-      graph: {
-        type: 'uri',
-        value: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
-      }
-    },
-    callback: {
-      url: 'http://delta-producer-json-diff-file-publisher-leidinggevenden/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true
-    }
-  },
-  {
-    match: {
       // anything
     },
     callback: {
@@ -351,23 +334,6 @@ export default [
       gracePeriod: 1000,
       ignoreFromSelf: true,
       optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ]
-    }
-  },
-  {
-    match: {
-      graph: {
-        type: 'uri',
-        value: 'http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer'
-      }
-    },
-    callback: {
-      url: 'http://delta-producer-json-diff-file-publisher-mandatarissen/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true
     }
   }
 ];
