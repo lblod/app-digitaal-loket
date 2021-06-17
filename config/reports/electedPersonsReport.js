@@ -19,13 +19,12 @@ export default {
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?person ?firstName ?lastName ?rrn (?kandidatenlijstLabel as ?kandidatenlijst) ?bestuurseenheid
+      SELECT DISTINCT ?person ?firstName ?lastName (?kandidatenlijstLabel as ?kandidatenlijst) ?bestuurseenheid
       WHERE {
         GRAPH ?g {
           ?person a person:Person ;
             persoon:gebruikteVoornaam ?firstName ;
-            foaf:familyName ?lastName ;
-            adms:identifier/skos:notation ?rrn .
+            foaf:familyName ?lastName .
         }
         GRAPH ?h {
           ?kandidatenlijst mandaat:heeftKandidaat ?person ;
@@ -43,7 +42,6 @@ export default {
         person: person.person.value,
         firstName: person.firstName.value,
         lastName: person.lastName.value,
-        rrn: person.rrn.value,
         kandidatenlijst: person.kandidatenlijst.value,
         bestuurseenheid: person.bestuurseenheid.value,
       };
@@ -53,7 +51,6 @@ export default {
       'person',
       'firstName',
       'lastName',
-      'rrn',
       'kandidatenlijst',
       'bestuurseenheid'
     ], reportData);
