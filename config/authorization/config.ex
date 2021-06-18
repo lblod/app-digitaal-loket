@@ -24,7 +24,7 @@ defmodule Acl.UserGroups.Config do
   defp sparql_query_for_access_role( group_string ) do
     "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-    SELECT ?session_group ?session_role WHERE {
+    SELECT DISTINCT ?session_group ?session_role WHERE {
       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                    ext:sessionRole ?session_role.
       FILTER( ?session_role = \"#{group_string}\" )
@@ -36,7 +36,7 @@ defmodule Acl.UserGroups.Config do
       vars: [],
       query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
         PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-        SELECT ?session_group ?session_role WHERE {
+        SELECT DISTINCT ?session_group ?session_role WHERE {
           <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                        ext:sessionRole ?session_role.
           FILTER( ?session_role = \"LoketLB-vendorManagementGebruiker\" )
