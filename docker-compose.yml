@@ -75,7 +75,7 @@ services:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
     volumes:
-      - ./data/virtuoso:/data
+      - ./data/db:/data
       - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini # Note: on production override this setting
       - ./config/virtuoso/:/opt/virtuoso-scripts
     labels:
