@@ -13,7 +13,7 @@ INSERT DATA {
                                 <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>, <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
 
                                 <http://mu.semte.ch/vocabularies/core/uuid> "f4b1b40a-4ac4-4e12-bdd2-84966f274edc";
-                                <http://mu.semte.ch/vocabularies/ext/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>;
+                                <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>;
                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Algemeen Toezicht" .
   }
 }
