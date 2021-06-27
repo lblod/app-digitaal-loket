@@ -394,7 +394,7 @@ services:
 # DELTA GENERAL
 ################################################################################
   delta-producer-report-generator:
-    image: lblod/delta-producer-report-generator:0.2.0
+    image: lblod/delta-producer-report-generator:0.3.0
     volumes:
       - ./config/delta-producer/report-generator:/config
   delta-producer-dump-file-publisher:
