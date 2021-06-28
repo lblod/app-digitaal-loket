@@ -71,14 +71,10 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-      SELECT DISTINCT ?person ?mandataris ?rrn ?gender ?birthDate
+      SELECT DISTINCT ?person ?mandataris ?gender ?birthDate
       WHERE { 
         GRAPH ?g {
           ?person a person:Person .
-          OPTIONAL {
-            ?person adms:identifier ?identifier .
-            ?identifier skos:notation ?rrn .
-          }
           OPTIONAL {
             ?person persoon:geslacht ?gender .
           }
@@ -95,7 +91,6 @@ export default {
     const dataPart3 = queryResponsePart3.results.bindings.reduce( (acc, row) => {
       let dataPart = {
         person: getSafeValue(row, 'person'),
-        rrn: getSafeValue(row, 'rrn'),
         gender: getSafeValue(row, 'gender'),
         birthDate: getSafeValue(row, 'birthDate')
       };
@@ -104,7 +99,7 @@ export default {
     }, {});
 
     await generateReportFromData(Object.values(dataPart3), [
-      'person', 'mandataris', 'rrn', 'gender', 'birthDate', 'firstName', 'lastName'
+      'person', 'mandataris', 'gender', 'birthDate', 'firstName', 'lastName'
     ], reportData);
   }
 };
