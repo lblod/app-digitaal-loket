@@ -9,7 +9,6 @@
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -28,7 +27,6 @@
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -46,7 +44,6 @@
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -73,7 +70,6 @@
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -93,7 +89,6 @@
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -111,7 +106,6 @@
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -128,7 +122,6 @@
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -145,7 +138,6 @@
         "^http://www.w3.org/ns/org#role",
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -161,7 +153,6 @@
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -177,7 +168,6 @@
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -192,9 +182,6 @@
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
       "properties": [
@@ -208,6 +195,7 @@
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -223,6 +211,9 @@
       "type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/besluit#classificatie",
+        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
       "properties": [
@@ -237,6 +228,7 @@
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#werkingsgebied",
+        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
