@@ -397,6 +397,12 @@ services:
     image: lblod/delta-producer-report-generator:0.3.0
     volumes:
       - ./config/delta-producer/report-generator:/config
+    environment:
+      OUTBOX: "http://data.lblod.info/id/mail-folders/2"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   delta-producer-dump-file-publisher:
     image: lblod/delta-producer-dump-file-publisher:0.3.1
     volumes:
