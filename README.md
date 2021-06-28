@@ -52,6 +52,40 @@ This repository harvest two setups.  The base of these setups resides in the sta
 
   Once the migrations have ran, you can start developing your application by connecting the ember frontend application to this backend.  See <https://github.com/lblod/frontend-loket> for more information on development with the ember application.
 
+### Setting up the delta-producers related services
+
+To make sure the app can share data, producers need to be set up. There is an intial sync, that is potentially very expensive, and must be started manually
+
+#### producers mandatarissen/leidinggevenden
+
+(Note: similar for leidinggevenden)
+
+1. make sure the app is up and running, the migrations have run
+2. in docker-compose.override.yml, make sure the following configuration is provided:
+```
+  delta-producer-background-jobs-initiator-mandatarissen: # or
+    environment:
+      START_INITIAL_SYNC: 'true'
+```
+3. `drc up -d delta-producer-background-jobs-initiator-mandatarissen`
+4. You can follow the status of the job, through the dashboard
+
+##### Additional notes
+
+###### Performance
+- The default virtuoso settings might be too weak if you need to ingest the production data. Hence, there is better config, you can take over in your `docker-compose.override.yml`
+```
+  virtuoso:
+    volumes:
+      - ./data/db:/data
+      - ./config/virtuoso/virtuoso-production.ini:/data/virtuoso.ini
+      - ./config/virtuoso/:/opt/virtuoso-scripts
+```
+###### delta-producer-report-generator
+Not all required parameters are provided, since deploy specific, see [report-generator](https://github.com/lblod/delta-producer-report-generator)
+###### deliver-email-service
+Should have credentials provided, see [deliver-email-service](https://github.com/redpencilio/deliver-email-service)
+
 ### Upgrading your setup
 
   Once installed, you may desire to upgrade your current setup to follow development of the main stack.  The following example describes how to do this easily for both the demo setup, as well as for the dev setup.
