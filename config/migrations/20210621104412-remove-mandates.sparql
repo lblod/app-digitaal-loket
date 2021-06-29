@@ -13,14 +13,8 @@ DELETE {
   }
 } WHERE {
   GRAPH ?g {
-    ?mandate ?p ?o .
-  }
-  VALUES ?mandate {
-    <http://data.lblod.info/id/mandatarissen/60D0846DCA2C91000800005C>
-    <http://data.lblod.info/id/mandatarissen/609A46FFABD6E00008000053>
-    <http://data.lblod.info/id/mandatarissen/5D36DBAFA3ACB600080001AA>
-    <http://data.lblod.info/id/mandatarissen/60A24614ABD6E00008000051>
-    <http://data.lblod.info/id/mandatarissen/609A4541ABD6E0000800004D>
+    ?mandate ?p ?o ;
+      <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> <http://data.lblod.info/id/personen/60D08441CA2C91000800005A> .
   }
 }
 ;
@@ -36,13 +30,7 @@ DELETE {
   }
 } WHERE {
   GRAPH <http://mu.semte.ch/graphs/graveyard/mandatarissen> {
-    ?mandate a ?type .
-  }
-  VALUES ?mandate {
-    <http://data.lblod.info/id/mandatarissen/60D0846DCA2C91000800005C>
-    <http://data.lblod.info/id/mandatarissen/609A46FFABD6E00008000053>
-    <http://data.lblod.info/id/mandatarissen/5D36DBAFA3ACB600080001AA>
-    <http://data.lblod.info/id/mandatarissen/60A24614ABD6E00008000051>
-    <http://data.lblod.info/id/mandatarissen/609A4541ABD6E0000800004D>
+    ?mandate a ?type ;
+      <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> <http://data.lblod.info/id/personen/60D08441CA2C91000800005A> .
   }
 }
