@@ -8,21 +8,27 @@ PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/d60eb90b-926b-4c64-b87c-866c0cf92f0a> a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2004/02/skos/core#Concept>;
-                                <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
-                                <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>, <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/d60eb90b-926b-4c64-b87c-866c0cf92f0a>
+      a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2004/02/skos/core#Concept>;
 
-                                <http://mu.semte.ch/vocabularies/core/uuid> "d60eb90b-926b-4c64-b87c-866c0cf92f0a";
-                                <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>;
-                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Bijzonder Administratief Toezicht" .
+    <http://www.w3.org/2004/02/skos/core#topConceptOf>
+      <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>, <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>;
+
+    <http://www.w3.org/2004/02/skos/core#inScheme>
+      <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>, <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
+
+    <http://mu.semte.ch/vocabularies/core/uuid> "d60eb90b-926b-4c64-b87c-866c0cf92f0a";
+    <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Bijzonder Administratief Toezicht" .
   }
 }
 
+;
 
-INSERT DATA{ 
+INSERT DATA{
   GRAPH <http://mu.semte.ch/graphs/public> {
     <share://semantic-forms/20210628105019-forms.ttl> a nfo:FileDataObject ;
- 				   dct:type <http://data.lblod.gift/concepts/form-file-type> ;
+           dct:type <http://data.lblod.gift/concepts/form-file-type> ;
                                   mu:uuid "d5ea6d81-55f9-4373-955f-b727e1c00260" ;
                                   nfo:fileName "20210628105019-forms.ttl" ;
                                   dct:created "2021-06-28Z"^^xsd:dateTime ;
@@ -33,11 +39,14 @@ INSERT DATA{
   }
 }
 
-INSERT DATA{ 
+;
+
+INSERT DATA{
   GRAPH <http://mu.semte.ch/graphs/public> {
     <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>, <http://www.w3.org/2000/01/rdf-schema#Class>;
         <http://mu.semte.ch/vocabularies/core/uuid> "d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545";
-        <http://www.w3.org/2004/02/skos/core#prefLabel>	"Categorie voor toezicht"@nl.
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Categorieën voor administratief toezicht VGC"@nl;
+        <http://www.w3.org/2004/02/skos/core#definition> "Categorieën voor administratief toezicht VGC"@nl.
 
     <http://lblod.data.gift/concept/b3c657d2-882c-413c-9712-58076667ab31> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>;
         <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
@@ -55,5 +64,3 @@ INSERT DATA{
         <http://www.w3.org/2004/02/skos/core#prefLabel> "Personeel"@nl.
   }
 }
-
-

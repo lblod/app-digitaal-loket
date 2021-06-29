@@ -8,27 +8,17 @@ PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/f4b1b40a-4ac4-4e12-bdd2-84966f274edc> a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2004/02/skos/core#Concept>;
-                                <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
-                                <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>, <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/f4b1b40a-4ac4-4e12-bdd2-84966f274edc>
+      a <http://www.w3.org/2000/01/rdf-schema#Class>, <http://www.w3.org/2004/02/skos/core#Concept>;
 
-                                <http://mu.semte.ch/vocabularies/core/uuid> "f4b1b40a-4ac4-4e12-bdd2-84966f274edc";
-                                <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>;
-                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Algemeen Toezicht" .
-  }
-}
+    <http://www.w3.org/2004/02/skos/core#topConceptOf>
+      <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>, <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>;
 
+    <http://www.w3.org/2004/02/skos/core#inScheme>
+      <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>, <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>;
 
-INSERT DATA{ 
-  GRAPH <http://mu.semte.ch/graphs/public> {
-   <share://semantic-forms/20210624171055-forms.ttl> a nfo:FileDataObject ;
- 				  dct:type <http://data.lblod.gift/concepts/form-file-type> ;
-                                  mu:uuid "8d4097f5-7f2c-49fa-9a25-c2cd5d446fc8" ;
-                                  nfo:fileName "20210624171055-forms.ttl" ;
-                                  dct:created "2021-06-25Z"^^xsd:dateTime ;
-                                  dct:modified "2021-06-25Z"^^xsd:dateTime ;
-                                  dct:format "text/turtle";
-                                  nfo:fileSize "269622"^^xsd:integer;
-                                  dbpedia:fileExtension "ttl" .
+    <http://mu.semte.ch/vocabularies/core/uuid> "f4b1b40a-4ac4-4e12-bdd2-84966f274edc";
+    <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Algemeen Toezicht" .
   }
 }
