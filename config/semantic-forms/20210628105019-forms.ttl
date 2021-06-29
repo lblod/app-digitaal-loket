@@ -1052,10 +1052,16 @@ fieldGroups:fdfae030-6345-407d-9c77-77fe7ab13ac7 a form:FieldGroup ;
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
 
                       ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb.
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4a36c15b-ed7a-4c72-bc45-68658d95eb48.
 
@@ -2546,7 +2552,9 @@ fields:3a3c7b25-cce7-4b69-9412-4e79ae0bccb8 a form:ConditionalFieldGroup ;
         form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> # Voorzitter van het Bijzonder Comité voor de Sociale Dienst
       ] ;
-    form:hasFieldGroup fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d .###########VGC Bijzonder adminstratief toezicht###########
+    form:hasFieldGroup fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d .
+
+###########VGC Bijzonder adminstratief toezicht###########
 
 fieldGroups:473b2370-fa80-41bf-8e0f-842d63093b5a a form:FieldGroup ;
     mu:uuid "473b2370-fa80-41bf-8e0f-842d63093b5a" ;
@@ -2562,10 +2570,16 @@ fieldGroups:473b2370-fa80-41bf-8e0f-842d63093b5a a form:FieldGroup ;
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
 
                       ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95a,
 
                       ###Links-naar-documenten###
-                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b.
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:f038bf93-0f8b-46e4-a095-50dc10caae5a.
 
