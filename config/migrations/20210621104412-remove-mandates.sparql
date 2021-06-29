@@ -1,0 +1,36 @@
+# Archive correct mandatarissen, linked to person <http://data.lblod.info/id/personen/60D08441CA2C91000800005A>
+# who is merged from <http://data.lblod.info/id/personen/f6d29ac8-73f3-4962-8917-f24b97995d15>, based
+# on the mandates showing in Gemeente Herent which are wrong
+
+# Part 1
+DELETE {
+  GRAPH ?g {
+    ?mandate ?p ?o .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/graveyard/mandatarissen> {
+    ?mandate ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?mandate ?p ?o ;
+      <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> <http://data.lblod.info/id/personen/60D08441CA2C91000800005A> .
+  }
+}
+;
+# Part 2
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/graveyard/mandatarissen> {
+    ?mandate a ?type .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/graveyard/mandatarissen> {
+    ?mandate a <http://lblod.data.gift/vocabularies/mandaat/ArchivedMandataris> ;
+      <http://www.w3.org/2004/02/skos/core#historyNote> "Mandataris archived because linked to the wrong person" .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/graveyard/mandatarissen> {
+    ?mandate a ?type ;
+      <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> <http://data.lblod.info/id/personen/60D08441CA2C91000800005A> .
+  }
+}
