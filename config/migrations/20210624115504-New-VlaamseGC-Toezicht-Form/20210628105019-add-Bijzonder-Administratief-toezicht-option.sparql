@@ -38,29 +38,3 @@ INSERT DATA{
                                   dbpedia:fileExtension "ttl" .
   }
 }
-
-;
-
-INSERT DATA{
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>, <http://www.w3.org/2000/01/rdf-schema#Class>;
-        <http://mu.semte.ch/vocabularies/core/uuid> "d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545";
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Categorieën voor administratief toezicht VGC"@nl;
-        <http://www.w3.org/2004/02/skos/core#definition> "Categorieën voor administratief toezicht VGC"@nl.
-
-    <http://lblod.data.gift/concept/b3c657d2-882c-413c-9712-58076667ab31> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>;
-        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
-        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Begroting/rekening"@nl.
-
-    <http://lblod.data.gift/concept/61a2fcce-428b-4316-b146-fbdc02c88636> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>;
-        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
-        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Overheidsopdrachten"@nl.
-
-    <http://lblod.data.gift/concept/7aeb531a-b4a9-4275-b899-8f1420286603> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>;
-        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
-        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Personeel"@nl.
-  }
-}

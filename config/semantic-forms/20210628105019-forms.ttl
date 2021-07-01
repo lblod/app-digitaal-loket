@@ -732,32 +732,6 @@ fields:eaf71eec-6ca8-4f63-b4a6-adfe4f21651b a form:Field ;
 #  END VLABEL [First version]
 ##########################################################
 
-
-##########################################################
-#  Category
-##########################################################
-
-fields:94a7694e-2547-4f45-9dc8-39a63cbc60f8 a form:Field ;
-    mu:uuid "94a7694e-2547-4f45-9dc8-39a63cbc60f8" ;
-    sh:name "Categorie" ;
-    sh:order 3800 ;
-    sh:path rdf:type ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path rdf:type ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ],
-    [ a form:ConceptSchemeConstraint ; #TODO
-        form:grouping form:Bag ;
-        sh:path rdf:type ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545>  ;
-        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
-      ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/d9dc8ba1-5dc5-4cfc-9e65-a8a70c9bb545"}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
-    sh:group fields:aDynamicPropertyGroup .
-
 ###########Advies-bij-jaarrekening-AGB###########
 
 fieldGroups:b8c40ca1-b2c4-416c-bc3f-e0e4bd50a493 a form:FieldGroup ;
@@ -2552,16 +2526,11 @@ fields:3a3c7b25-cce7-4b69-9412-4e79ae0bccb8 a form:ConditionalFieldGroup ;
         form:conceptScheme <http://data.vlaanderen.be/id/conceptscheme/BestuursorgaanClassificatieCode> ;
         form:customValue <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> # Voorzitter van het Bijzonder Comité voor de Sociale Dienst
       ] ;
-    form:hasFieldGroup fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d .
-
-###########VGC Bijzonder adminstratief toezicht###########
+    form:hasFieldGroup fieldGroups:cd043d7a-175a-4453-88cb-a3083e57086d .###########VGC Bijzonder adminstratief toezicht###########
 
 fieldGroups:473b2370-fa80-41bf-8e0f-842d63093b5a a form:FieldGroup ;
     mu:uuid "473b2370-fa80-41bf-8e0f-842d63093b5a" ;
     form:hasField
-
-                      ###categorie###
-                      fields:94a7694e-2547-4f45-9dc8-39a63cbc60f8,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,

@@ -302,7 +302,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.8.0
+    image: lblod/enrich-submission-service:0.9.0
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20210628105019-forms.ttl"
     volumes:
