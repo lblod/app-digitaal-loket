@@ -21,7 +21,7 @@ export default {
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX schema: <http://schema.org/>
 
-      SELECT ?modified ?status ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone
+      SELECT DISTINCT ?modified ?status ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone
              ?bestuurseenheid ?classificatie
       WHERE {
         ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
