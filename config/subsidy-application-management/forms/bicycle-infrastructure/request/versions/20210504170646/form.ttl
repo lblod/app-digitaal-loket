@@ -266,6 +266,7 @@ fields:1f17de22-e0c9-4166-ad32-a0d1dc11e375 a form:Field ;
     sh:order 32 ;
     sh:path bicycleInfrastructure:estimatedCostTable ;
     form:displayType displayTypes:estimatedCostTable ;
+    form:options """{"isAanvraagStep" : true}""" ;
     form:validations
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
