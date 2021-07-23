@@ -101,11 +101,11 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/tijdsintervallen/"
   end
 
-  match "/mock/sessions/*path" do
+  match "/mock/sessions/*path", %{ layer: :api_services, accept: %{ json: true } } do
     Proxy.forward conn, path, "http://mocklogin/sessions/"
   end
 
-  match "/sessions/*path" do
+  match "/sessions/*path", %{ layer: :api_services, accept: %{ json: true } } do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
@@ -121,7 +121,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/document-statuses/"
   end
 
-  get "/files/:id/download" do
+  get "/files/:id/download", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, [], "http://file/files/" <> id <> "/download"
   end
 
@@ -133,11 +133,11 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/files/"
   end
 
-  post "/file-service/files/*path" do
+  post "/file-service/files/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://file/files/"
   end
 
-  delete "/files/*path" do
+  delete "/files/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://file/files/"
   end
 
@@ -149,7 +149,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/file-address-cache-statuses/"
   end
 
-  post "/bbcdr-reports/*path" do
+  post "/bbcdr-reports/*path", %{ layer: :api_services, accept: %{ json: true } } do
     Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end
 
@@ -161,11 +161,11 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/bbcdr-reports/"
   end
 
-  patch "/bbcdr-reports/*path" do
+  patch "/bbcdr-reports/*path", %{ layer: :api_services, accept: %{ json: true } } do
     Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end
 
-  post "/validation-executions/*path" do
+  post "/validation-executions/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://validation/executions/"
   end
 
@@ -315,7 +315,7 @@ defmodule Dispatcher do
   #################################################################
   # adressenregister
   #################################################################
-  match "/adressenregister/*path" do
+  match "/adressenregister/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://adressenregister/"
   end
 
@@ -329,7 +329,7 @@ defmodule Dispatcher do
   #################################################################
   # Automatic submission
   #################################################################
-  match "/melding/*path" do
+  match "/melding/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://automatic-submission/melding"
   end
 
@@ -361,11 +361,11 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/remote-urls/"
   end
 
-  get "/submission-forms/*path" do
+  get "/submission-forms/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://enrich-submission/submission-documents/"
   end
 
-  delete "/submissions/*path" do
+  delete "/submissions/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://clean-up-submission/submissions/"
   end
 
@@ -385,15 +385,15 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/submissions/"
   end
 
-  put "/submission-forms/:id/flatten" do
+  put "/submission-forms/:id/flatten", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, [], "http://toezicht-flattened-form-data-generator/submission-documents/" <> id <> "/flatten"
   end
 
-  put "/submission-forms/:id" do
+  put "/submission-forms/:id", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, [], "http://validate-submission/submission-documents/" <> id
   end
 
-  post "/submission-forms/:id/submit" do
+  post "/submission-forms/:id/submit", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, [], "http://validate-submission/submission-documents/" <> id <> "/submit"
   end
 
@@ -416,21 +416,21 @@ defmodule Dispatcher do
   #################################################################
   # RRN SERVICE: person-uri-for-social-security-number-service
   #################################################################
-  match "/rrn/*path" do
+  match "/rrn/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://person-uri-for-social-security-number/"
   end
 
   #################################################################
   # loket-mandatarissen sync
   #################################################################
-  get "/sync/mandatarissen/files/*path" do
+  get "/sync/mandatarissen/files/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-mandatarissen/files/"
   end
 
   #################################################################
   # loket-leidinggevenden sync
   #################################################################
-  get "/sync/leidinggevenden/files/*path" do
+  get "/sync/leidinggevenden/files/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-leidinggevenden/files/"
   end
 
@@ -502,31 +502,31 @@ defmodule Dispatcher do
   # subsidy-applications: custom API endpoints
   #################################################################
 
-  match "/case-number-generator/*path" do
+  match "/case-number-generator/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://case-number-generator/"
   end
 
-  get "/management-active-form-file/*path" do
+  get "/management-active-form-file/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://subsidy-applications-management/active-form-file/"
   end
 
-  get "/management-application-forms/*path" do
+  get "/management-application-forms/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://subsidy-applications-management/semantic-forms/"
   end
 
-  put "/management-application-forms/*path" do
+  put "/management-application-forms/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://subsidy-applications-management/semantic-forms/"
   end
 
-  delete "/management-application-forms/*path" do
+  delete "/management-application-forms/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://subsidy-applications-management/semantic-forms/"
   end
 
-  post "/management-application-forms/:id/submit" do
+  post "/management-application-forms/:id/submit", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, [], "http://subsidy-applications-management/semantic-forms/" <> id <> "/submit"
   end
 
-  match "/flow-management/*path" do
+  match "/flow-management/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
