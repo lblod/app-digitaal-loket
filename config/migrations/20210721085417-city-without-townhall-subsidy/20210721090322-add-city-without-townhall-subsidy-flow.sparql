@@ -52,7 +52,7 @@ INSERT DATA {
 
     <http://data.lblod.info/id/periodes/e98dfdd6-f696-41cb-86d1-beff5bea9641> a <http://data.europa.eu/m8g/PeriodOfTime>;
       mu:uuid "e98dfdd6-f696-41cb-86d1-beff5bea9641";
-      <http://data.europa.eu/m8g/startTime> "2021-09-01T03:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-      <http://data.europa.eu/m8g/endTime> "2021-11-30T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
+      <http://data.europa.eu/m8g/startTime> "2021-09-20T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+      <http://data.europa.eu/m8g/endTime> "2021-11-28T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
   }
 }
