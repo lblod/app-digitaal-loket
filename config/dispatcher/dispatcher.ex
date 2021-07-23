@@ -69,7 +69,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/bestuursfunctie-codes/"
   end
 
-  delete "/mandatarissen/:id" do
+  delete "/mandatarissen/:id", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, [], "http://mandataris-archive/" <> id <> "/archive"
   end
   
@@ -101,11 +101,11 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/tijdsintervallen/"
   end
 
-  match "/mock/sessions/*path", %{ layer: :api_services, accept: %{ json: true } } do
+  match "/mock/sessions/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://mocklogin/sessions/"
   end
 
-  match "/sessions/*path", %{ layer: :api_services, accept: %{ json: true } } do
+  match "/sessions/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://login/sessions/"
   end
 
@@ -149,7 +149,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/file-address-cache-statuses/"
   end
 
-  post "/bbcdr-reports/*path", %{ layer: :api_services, accept: %{ json: true } } do
+  post "/bbcdr-reports/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end
 
@@ -161,7 +161,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/bbcdr-reports/"
   end
 
-  patch "/bbcdr-reports/*path", %{ layer: :api_services, accept: %{ json: true } } do
+  patch "/bbcdr-reports/*path", %{ layer: :api_services, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://create-bbcdr/bbcdr-reports/"
   end
 
@@ -322,7 +322,7 @@ defmodule Dispatcher do
   #################################################################
   # Reports
   #################################################################
-  match "/reports/*path", %{ layer: :resources, accept: %{ json: true } } do
+  match "/reports/*path", %{ layer: :resources, accept: %{ any: true } } do
     Proxy.forward conn, path, "http://resource/reports/"
   end
 
