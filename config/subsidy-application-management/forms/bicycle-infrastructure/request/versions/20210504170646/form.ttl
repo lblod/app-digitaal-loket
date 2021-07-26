@@ -92,6 +92,7 @@ fields:76f52496-718f-443e-929b-0b77a019917e a form:Field ;
       sh:path lblodSubsidie:projectName
       ] ;
     form:displayType displayTypes:defaultInput ;
+    form:valueFromMeta "true" ;
     sh:group fields:fa794936-ba3a-4ddc-8954-32c6ca9af884 .
 
 
@@ -111,6 +112,7 @@ fields:16dab59a-37f9-4a36-9cad-a7a9b96f8826 a form:Field ;
         sh:resultMessage "Dit veld is verplicht."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
+    form:valueFromMeta "true" ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
 fields:a66690d9-a6bd-46b4-ab4a-b20a76c8c11d a form:Field ;
@@ -125,6 +127,7 @@ fields:a66690d9-a6bd-46b4-ab4a-b20a76c8c11d a form:Field ;
         sh:resultMessage "Dit veld is verplicht."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
+    form:valueFromMeta "true" ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
 fields:71d71bd2-0c42-4710-9650-0b261eeb6a36 a form:Field ;
@@ -145,6 +148,7 @@ fields:71d71bd2-0c42-4710-9650-0b261eeb6a36 a form:Field ;
         sh:resultMessage "Geef een geldig telefoonnummer in."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
+    form:valueFromMeta "true" ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
 fields:18f00849-eac8-4d03-a487-f7a78625ee3c a form:Field ;
@@ -164,6 +168,7 @@ fields:18f00849-eac8-4d03-a487-f7a78625ee3c a form:Field ;
         sh:resultMessage "Geef een geldig e-mailadres op."@nl
     ] ;
     form:displayType displayTypes:defaultInput ;
+    form:valueFromMeta "true" ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
 ##########################################################
@@ -182,6 +187,7 @@ fields:0109b0d8-7f34-42cc-957a-c04024a4a73b a form:Field ;
       sh:path lblodSubsidie:decisionUpload
     ] ;
     form:displayType displayTypes:files ;
+    form:valueFromMeta "true" ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
 ##########################################################
@@ -272,6 +278,7 @@ fields:1f17de22-e0c9-4166-ad32-a0d1dc11e375 a form:Field ;
       form:grouping form:Bag ;
       sh:resultMessage "Gelieve de tabel correct in te vullen." ;
       sh:path ( bicycleInfrastructure:estimatedCostTable bicycleInfrastructure:validEstimatedCostTable ) ] ;
+    form:valueFromMeta "true" ;
     sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c .
 
 fields:2d154583-7e39-4bbf-9a53-ea7fd95e2c96 a form:Field ;
@@ -286,6 +293,7 @@ fields:2d154583-7e39-4bbf-9a53-ea7fd95e2c96 a form:Field ;
       form:grouping form:Bag ;
       sh:resultMessage "Gelieve de tabel correct in te vullen." ;
       sh:path ( bicycleInfrastructure:objectiveTable bicycleInfrastructure:validObjectiveTable ) ] ;
+    form:valueFromMeta "true" ;
     sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c  .
 
 

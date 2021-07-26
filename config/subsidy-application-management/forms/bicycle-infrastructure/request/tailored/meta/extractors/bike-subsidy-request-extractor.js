@@ -10,7 +10,6 @@ module.exports = {
     const previousForm = await getPreviousForm(form.uri, mu, sudo);
 
     const info = await getPreviousStepInfo(previousForm, mu, sudo);
-    console.log('INFOOOOOOOOOOOOOOOOOO', info)
     if (info) {
       store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('projectName'), info.projectName, graphs.additions);
       store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('decisionUpload'), info.decisionUpload, graphs.additions);
