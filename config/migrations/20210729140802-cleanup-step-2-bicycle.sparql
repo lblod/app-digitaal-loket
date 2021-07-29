@@ -1,0 +1,19 @@
+# This mainly to clean up QA
+DELETE {
+  GRAPH ?g {
+   ?s a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie>;
+     <http://www.w3.org/2007/uwa/context/common.owl#active> <http://lblod.data.info/id/subsidie-application-flow-steps/eb633b90fee29738872ee370ec24d60da792c9bdf5b97e125c7a34653d5e4397>.
+  }
+}
+INSERT {
+  GRAPH ?g {
+   ?s a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie>;
+     <http://www.w3.org/2007/uwa/context/common.owl#active> <http://lblod.data.info/id/subsidie-application-flow-steps/f135ee39-fff1-4cae-9b87-bf3cd9098b3e>.
+  }
+}
+WHERE {
+  GRAPH ?g {
+   ?s a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie>;
+     <http://www.w3.org/2007/uwa/context/common.owl#active> <http://lblod.data.info/id/subsidie-application-flow-steps/eb633b90fee29738872ee370ec24d60da792c9bdf5b97e125c7a34653d5e4397>.
+  }
+}

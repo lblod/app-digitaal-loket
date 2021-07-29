@@ -1,3 +1,4 @@
+# Run the inverse to re-activate again
 DELETE DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
 
@@ -19,6 +20,6 @@ DELETE DATA {
 
   <http://lblod.data.info/id/subsidie-application-flow-steps/f135ee39-fff1-4cae-9b87-bf3cd9098b3e>
     <http://rdf-vocabulary.ddialliance.org/xkos#next>
-      <http://lblod.data.info/id/subsidie-application-flow-steps/eb633b90fee29738872ee370ec24d60da792c9bdf5b97e125c7a34653d5e4397>
+      <http://lblod.data.info/id/subsidie-application-flow-steps/eb633b90fee29738872ee370ec24d60da792c9bdf5b97e125c7a34653d5e4397>.
   }
 }
