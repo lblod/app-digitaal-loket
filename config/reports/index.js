@@ -22,6 +22,7 @@ import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 import electedPersonsReport from './electedPersonsReport';
 import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
 import climateSubsidiePactsReport from './climateSubsidiePactsReport';
+import gemeentewegenReport from './gemeentewegenReport';
 
 export default [
   BestuurseenhedenReport,
@@ -47,5 +48,6 @@ export default [
   contactTracingSubsidiesReport,
   electedPersonsReport,
   contactTracingSubsidiesDetailedReport,
-  climateSubsidiePactsReport
+  climateSubsidiePactsReport,
+  gemeentewegenReport
 ];
