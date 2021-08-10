@@ -10,51 +10,54 @@ module.exports = {
       const DCT = new $rdf.Namespace('http://purl.org/dc/terms/');
       const RDF = new $rdf.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
       const EXT = new $rdf.Namespace('http://mu.semte.ch/vocabularies/ext/');
+      const URI_TEMPLATE = 'http://data.lblod.info/form-data/nodes/';
 
       const previousForm = await getPreviousForm(form.uri, mu, sudo);
 
       const info = await getPreviousStepInfo(previousForm, mu, sudo);
-      if (info) {
-        store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('projectName'), info.projectName, graphs.additions);
-        store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('decisionUpload'), $rdf.sym(info.decisionUpload), graphs.additions);
-        store.add($rdf.sym(form.uri), BICYCLE_INFRASTRUCTURE('estimatedCostTable'), $rdf.sym(info.estimatedCostTable), graphs.additions);
-        store.add($rdf.sym(info.estimatedCostTable), BICYCLE_INFRASTRUCTURE('validEstimatedCostTable'), info.validEstimatedCostTable, graphs.additions);
-        store.add($rdf.sym(form.uri), BICYCLE_INFRASTRUCTURE('objectiveTable'), $rdf.sym(info.objectiveTable), graphs.additions);
-        store.add($rdf.sym(info.objectiveTable), BICYCLE_INFRASTRUCTURE('validObjectiveTable'), info.validObjectiveTable, graphs.additions);
-        store.add($rdf.sym(form.uri), SCHEMA('contactPoint'), $rdf.sym(info.contactPoint), graphs.additions);
-        store.add($rdf.sym(info.contactPoint), FOAF('firstName'), info.firstName, graphs.additions);
-        store.add($rdf.sym(info.contactPoint), FOAF('familyName'), info.familyName, graphs.additions);
-        store.add($rdf.sym(info.contactPoint), SCHEMA('email'), info.email, graphs.additions);
-        store.add($rdf.sym(info.contactPoint), SCHEMA('telephone'), info.telephone, graphs.additions);
 
-        const filesInfo = await getFilesInfo(info.decisionUpload, mu, sudo);
-        if (filesInfo && filesInfo.length) {
-          filesInfo.forEach(fileInfo => {
-            store.add($rdf.sym(info.decisionUpload), DCT('hasPart'), $rdf.sym(fileInfo.decisionUploadFile), graphs.additions);
-            store.add($rdf.sym(fileInfo.decisionUploadFile), RDF('type'), $rdf.sym(fileInfo.decisionUploadFileType), graphs.additions);
-          })
-        }
+      // TODO
+      // - Vérifier les données (objective table sauvegardé deux fois ..?
+      // - Mettre un "disabled" pour certains fields comme le project name
+
+      if (info) {
+        const contactPointUri = new $rdf.NamedNode(URI_TEMPLATE + mu.uuid());
+
+        store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('projectName'), info.projectName, graphs.additions);
+        store.add($rdf.sym(form.uri), SCHEMA('contactPoint'), $rdf.sym(contactPointUri), graphs.additions);
+        store.add($rdf.sym(contactPointUri), FOAF('firstName'), info.firstName, graphs.additions);
+        store.add($rdf.sym(contactPointUri), FOAF('familyName'), info.familyName, graphs.additions);
+        store.add($rdf.sym(contactPointUri), SCHEMA('email'), info.email, graphs.additions);
+        store.add($rdf.sym(contactPointUri), SCHEMA('telephone'), info.telephone, graphs.additions);
 
         const estimatedCostEntriesInfo = await getEstimatedCostEntriesInfo(info.estimatedCostTable, mu, sudo);
         if (estimatedCostEntriesInfo && estimatedCostEntriesInfo.length) {
+          const estimatedCostTableUri = new $rdf.NamedNode(URI_TEMPLATE + mu.uuid());
           estimatedCostEntriesInfo.forEach(estimatedCostEntryInfo => {
-            store.add($rdf.sym(info.estimatedCostTable), BICYCLE_INFRASTRUCTURE('estimatedCostEntry'), $rdf.sym(estimatedCostEntryInfo.estimatedCostEntry), graphs.additions);
-            store.add($rdf.sym(estimatedCostEntryInfo.estimatedCostEntry), EXT('index'), estimatedCostEntryInfo.index, graphs.additions);
-            store.add($rdf.sym(estimatedCostEntryInfo.estimatedCostEntry), BICYCLE_INFRASTRUCTURE('costEstimationType'), estimatedCostEntryInfo.costEstimationType, graphs.additions);
-            store.add($rdf.sym(estimatedCostEntryInfo.estimatedCostEntry), BICYCLE_INFRASTRUCTURE('cost'), estimatedCostEntryInfo.cost, graphs.additions);
-            store.add($rdf.sym(estimatedCostEntryInfo.estimatedCostEntry), BICYCLE_INFRASTRUCTURE('share'), estimatedCostEntryInfo.share, graphs.additions);
+            const estimatedCostEntryUri = new $rdf.NamedNode(URI_TEMPLATE + mu.uuid());
+            store.add($rdf.sym(form.uri), BICYCLE_INFRASTRUCTURE('estimatedCostTable'), $rdf.sym(estimatedCostTableUri), graphs.additions);
+            store.add($rdf.sym(estimatedCostTableUri), BICYCLE_INFRASTRUCTURE('validEstimatedCostTable'), info.validEstimatedCostTable, graphs.additions);
+            store.add($rdf.sym(estimatedCostTableUri), BICYCLE_INFRASTRUCTURE('estimatedCostEntry'), $rdf.sym(estimatedCostEntryUri), graphs.additions);
+            store.add($rdf.sym(estimatedCostEntryUri), EXT('index'), estimatedCostEntryInfo.index, graphs.additions);
+            store.add($rdf.sym(estimatedCostEntryUri), BICYCLE_INFRASTRUCTURE('costEstimationType'), estimatedCostEntryInfo.costEstimationType, graphs.additions);
+            store.add($rdf.sym(estimatedCostEntryUri), BICYCLE_INFRASTRUCTURE('cost'), estimatedCostEntryInfo.cost, graphs.additions);
+            store.add($rdf.sym(estimatedCostEntryUri), BICYCLE_INFRASTRUCTURE('share'), estimatedCostEntryInfo.share, graphs.additions);
           })
         }
 
         const objectiveEntriesInfo = await getObjectiveEntriesInfo(info.objectiveTable, mu, sudo);
         if (objectiveEntriesInfo && objectiveEntriesInfo.length) {
+          const objectiveTableUri = new $rdf.NamedNode(URI_TEMPLATE + mu.uuid());
           objectiveEntriesInfo.forEach(objectiveEntryInfo => {
-            store.add($rdf.sym(info.objectiveTable), BICYCLE_INFRASTRUCTURE('objectiveEntry'), $rdf.sym(objectiveEntryInfo.objectiveEntry), graphs.additions);
-            store.add($rdf.sym(objectiveEntryInfo.objectiveEntry), RDF('type'), objectiveEntryInfo.objectiveEntryType, graphs.additions);
-            store.add($rdf.sym(objectiveEntryInfo.objectiveEntry), BICYCLE_INFRASTRUCTURE('approachType'), objectiveEntryInfo.approachType, graphs.additions);
-            store.add($rdf.sym(objectiveEntryInfo.objectiveEntry), BICYCLE_INFRASTRUCTURE('directionType'), objectiveEntryInfo.directionType, graphs.additions);
-            store.add($rdf.sym(objectiveEntryInfo.objectiveEntry), BICYCLE_INFRASTRUCTURE('bikeLaneType'), objectiveEntryInfo.bikeLaneType, graphs.additions);
-            store.add($rdf.sym(objectiveEntryInfo.objectiveEntry), BICYCLE_INFRASTRUCTURE('kilometers'), objectiveEntryInfo.kilometers, graphs.additions);
+            const objectiveEntryUri = new $rdf.NamedNode(URI_TEMPLATE + mu.uuid());
+            store.add($rdf.sym(form.uri), BICYCLE_INFRASTRUCTURE('objectiveTable'), $rdf.sym(objectiveTableUri), graphs.additions);
+            store.add($rdf.sym(objectiveTableUri), BICYCLE_INFRASTRUCTURE('validObjectiveTable'), info.validObjectiveTable, graphs.additions);
+            store.add($rdf.sym(objectiveTableUri), BICYCLE_INFRASTRUCTURE('objectiveEntry'), $rdf.sym(objectiveEntryUri), graphs.additions);
+            store.add($rdf.sym(objectiveEntryUri), RDF('type'), $rdf.sym(objectiveEntryInfo.objectiveEntryType), graphs.additions);
+            store.add($rdf.sym(objectiveEntryUri), BICYCLE_INFRASTRUCTURE('approachType'), objectiveEntryInfo.approachType, graphs.additions);
+            store.add($rdf.sym(objectiveEntryUri), BICYCLE_INFRASTRUCTURE('directionType'), objectiveEntryInfo.directionType, graphs.additions);
+            store.add($rdf.sym(objectiveEntryUri), BICYCLE_INFRASTRUCTURE('bikeLaneType'), objectiveEntryInfo.bikeLaneType, graphs.additions);
+            store.add($rdf.sym(objectiveEntryUri), BICYCLE_INFRASTRUCTURE('kilometers'), objectiveEntryInfo.kilometers, graphs.additions);
           })
         }
       }
@@ -148,35 +151,6 @@ async function getPreviousStepInfo(formUri, mu, sudo) {
       email,
       telephone
     };
-  }
-
-  return null;
-}
-
-async function getFilesInfo(decisionUploadUri, mu, sudo) {
-  const queryResult = await sudo.querySudo(`
-    PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
-    PREFIX bicycleInfrastructure: <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#>
-    PREFIX schema: <http://schema.org/>
-    PREFIX dct: <http://purl.org/dc/terms/>
-    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-
-    SELECT DISTINCT ?decisionUploadFile ?decisionUploadFileType
-    WHERE {
-      GRAPH ?g {
-        ${mu.sparqlEscapeUri(decisionUploadUri)} dct:hasPart ?decisionUploadFile .
-        ?decisionUploadFile a ?decisionUploadFileType .
-      }
-    }
-  `);
-
-  if (queryResult.results.bindings.length) {
-    return queryResult.results.bindings.map(binding => {
-      return {
-        decisionUploadFile: binding.decisionUploadFile.value,
-        decisionUploadFileType: binding.decisionUploadFileType.value
-      };
-    })
   }
 
   return null;
