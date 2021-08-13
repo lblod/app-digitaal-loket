@@ -16,10 +16,6 @@ module.exports = {
 
       const info = await getPreviousStepInfo(previousForm, mu, sudo);
 
-      // TODO
-      // - Vérifier les données (objective table sauvegardé deux fois ..?
-      // - Mettre un "disabled" pour certains fields comme le project name
-
       if (info) {
         const contactPointUri = new $rdf.NamedNode(URI_TEMPLATE + mu.uuid());
 
