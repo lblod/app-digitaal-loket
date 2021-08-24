@@ -160,7 +160,8 @@
     },
     {
       "type": "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/public",
+                        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
       "pathToConceptScheme": [
         "^http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
