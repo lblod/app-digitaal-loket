@@ -14,6 +14,18 @@
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/>.
 @prefix bicycleInfrastructure: <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#>.
 
+
+##########################################################
+# Form definition
+##########################################################
+
+form:3ff36255-f108-4527-990c-6d7896f4b989 a form:Form ;
+    mu:uuid "3ff36255-f108-4527-990c-6d7896f4b989" ;
+    form:hasFieldGroup fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f .
+
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f a form:FieldGroup ;
+    mu:uuid "1f3cf92c-aa5f-4708-85c6-77aabbc8989f" .
+
 ##########################################################
 # Property groups
 ##########################################################
@@ -68,7 +80,6 @@ sh:group fields:fa794936-ba3a-4ddc-8954-32c6ca9af884  .
 ##########################################################
 # Bicycle infrastructure: project name
 ##########################################################
-
 fields:76f52496-718f-443e-929b-0b77a019917e a form:Field ;
     mu:uuid "76f52496-718f-443e-929b-0b77a019917e";
     sh:name "Projectnaam" ;
@@ -158,7 +169,6 @@ fields:18f00849-eac8-4d03-a487-f7a78625ee3c a form:Field ;
 ##########################################################
 # Bicycle infrastructure: decision-upload
 ##########################################################
-
 fields:0109b0d8-7f34-42cc-957a-c04024a4a73b a form:Field ;
     mu:uuid "0109b0d8-7f34-42cc-957a-c04024a4a73b";
     sh:name "Upload beslissing" ;
@@ -174,17 +184,9 @@ fields:0109b0d8-7f34-42cc-957a-c04024a4a73b a form:Field ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
-fields:f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c a form:Field ;
-    mu:uuid "f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c" ;
-    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
-    sh:order 26 ;
-    sh:path ( lblodSubsidie:decisionUpload dct:hasPart rdf:type );
-    sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
-
 ##########################################################
 # Bicycle infrastructure: report-upload
 ##########################################################
-
 fields:9b6544a0-84d9-4969-b3b5-982e76c020f4 a form:Field ;
     mu:uuid "9b6544a0-84d9-4969-b3b5-982e76c020f4";
     sh:name "Upload verslag" ;
@@ -200,13 +202,28 @@ fields:9b6544a0-84d9-4969-b3b5-982e76c020f4 a form:Field ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
 
+
+##########################################################
+# Hidden field required for all variations of URL or FILE
+# input field which require validation.
+# It makes sure there is a type attached to hasPart object.
+# This enables correct validation in both front and backend.
+##########################################################
+
+fields:f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c a form:Field ;
+    mu:uuid "f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c" ;
+    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:order 26 ;
+    sh:path ( lblodSubsidie:decisionUpload dct:hasPart rdf:type );
+    sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
+
 fields:94f3ab67-edb9-44fb-a79a-75685d2e3a5d a form:Field ;
     mu:uuid "94f3ab67-edb9-44fb-a79a-75685d2e3a5d" ;
     sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
     sh:order 27 ;
     sh:path ( lblodSubsidie:reportUpload dct:hasPart rdf:type );
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
-
+    
 ##########################################################
 # Payment info
 ##########################################################
@@ -241,9 +258,8 @@ fields:d91b1cc3-f2a1-4704-884c-e89f612cba33 a form:Field ;
     sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c .
 
 ##########################################################
-# Bicycle infrastructure: Estimated Cost Table
+# Bicycle infrastructure: total-estimate-cost
 ##########################################################
-
 fields:1f17de22-e0c9-4166-ad32-a0d1dc11e375 a form:Field ;
     mu:uuid "1f17de22-e0c9-4166-ad32-a0d1dc11e375";
     sh:name "Totale kostprijs" ;
@@ -257,18 +273,6 @@ fields:1f17de22-e0c9-4166-ad32-a0d1dc11e375 a form:Field ;
       sh:resultMessage "Gelieve de tabel correct in te vullen." ;
       sh:path ( bicycleInfrastructure:estimatedCostTable bicycleInfrastructure:validEstimatedCostTable ) ] ;
     sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c .
-
-
-fields:53152ac9-fe5c-4305-8d56-67476c60c5b5 a form:Field ;
-    mu:uuid "53152ac9-fe5c-4305-8d56-67476c60c5b5" ;
-    sh:name "Valid Estimated Cost Table [hidden input]" ;
-    sh:order 14 ;
-    sh:path ( bicycleInfrastructure:estimatedCostTable bicycleInfrastructure:validEstimatedCostTable );
-    sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c .
-
-##########################################################
-# Bicycle infrastructure: Objective Table
-##########################################################
 
 fields:2d154583-7e39-4bbf-9a53-ea7fd95e2c96 a form:Field ;
     mu:uuid "2d154583-7e39-4bbf-9a53-ea7fd95e2c96";
@@ -285,69 +289,32 @@ fields:2d154583-7e39-4bbf-9a53-ea7fd95e2c96 a form:Field ;
     sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c  .
 
 
-fields:9eff2bbe-e226-45f6-9405-91d7e5a813b8 a form:Field ;
-    mu:uuid "f94a1676-3a80-4108-9e20-585c58268b83" ;
-    sh:name "Valid Objective Table [hidden input]" ;
-    sh:order 18 ;
-    sh:path ( bicycleInfrastructure:objectiveTable bicycleInfrastructure:validObjectiveTable );
-    sh:group fields:ffad2684-459f-45cd-bf6e-a1dcb3c7e24c .
+##########################################################
+# Hidden input to trigger property groups
+##########################################################
+
+fields:d0a69063-5eb5-41a6-84a4-5fd2934b71b3 a form:Field ;
+    mu:uuid "d0a69063-5eb5-41a6-84a4-5fd2934b71b3";
+    sh:order 34 ;
+    sh:path ext:stubformPath ;
+    form:options """{}""" ;
+    sh:group fields:91fda733-791e-48ea-9f48-5ee7a284de37 .
 
 ##########################################################
 # Linking fields to form
 ##########################################################
 
-fieldGroups:main a form:FieldGroup ;
-    mu:uuid "1f3cf92c-aa5f-4708-85c6-77aabbc8989f" ;
-    form:hasField
-
-        ### Case number
-        fields:409aad80-560b-46fc-86d1-8cbeeddc4dec ,
-
-        ### Project name
-        fields:76f52496-718f-443e-929b-0b77a019917e ,
-
-        ### Contact person info
-        fields:16dab59a-37f9-4a36-9cad-a7a9b96f8826 ,
-
-        ### Familyname
-        fields:a66690d9-a6bd-46b4-ab4a-b20a76c8c11d ,
-
-        ### Telephone number
-        fields:71d71bd2-0c42-4710-9650-0b261eeb6a36 ,
-
-        ### Mail address
-        fields:18f00849-eac8-4d03-a487-f7a78625ee3c ,
-
-        ### Desicion upload
-        fields:0109b0d8-7f34-42cc-957a-c04024a4a73b ,
-
-        ### Report upload
-        fields:9b6544a0-84d9-4969-b3b5-982e76c020f4 ,
-
-        ### Desicion upload [HIDDEN]
-        fields:f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c ,
-
-        ### Report upload [HIDDEN]
-        fields:94f3ab67-edb9-44fb-a79a-75685d2e3a5d ,
-
-        ### Bank account
-        fields:39b5f8a3-f163-4198-bf0d-82efeb2c0254 ,
-
-        ### Confirmation letter
-        fields:d91b1cc3-f2a1-4704-884c-e89f612cba33 ,
-
-        ### Estimated cost Table
-        fields:1f17de22-e0c9-4166-ad32-a0d1dc11e375 ,
-
-        ### Estimated cost Table [HIDDEN]
-        fields:53152ac9-fe5c-4305-8d56-67476c60c5b5 ,
-
-        ### Objective Table
-        fields:2d154583-7e39-4bbf-9a53-ea7fd95e2c96 ,
-
-        ### Objective Table [HIDDEN]
-        fields:9eff2bbe-e226-45f6-9405-91d7e5a813b8 .
-
-form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
-    mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
-    form:hasFieldGroup fieldGroups:main .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:409aad80-560b-46fc-86d1-8cbeeddc4dec .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:76f52496-718f-443e-929b-0b77a019917e .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:16dab59a-37f9-4a36-9cad-a7a9b96f8826 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:a66690d9-a6bd-46b4-ab4a-b20a76c8c11d .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:71d71bd2-0c42-4710-9650-0b261eeb6a36 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:18f00849-eac8-4d03-a487-f7a78625ee3c .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:0109b0d8-7f34-42cc-957a-c04024a4a73b .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:9b6544a0-84d9-4969-b3b5-982e76c020f4 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:94f3ab67-edb9-44fb-a79a-75685d2e3a5d .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:39b5f8a3-f163-4198-bf0d-82efeb2c0254 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:d91b1cc3-f2a1-4704-884c-e89f612cba33 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:1f17de22-e0c9-4166-ad32-a0d1dc11e375 .
+fieldGroups:1f3cf92c-aa5f-4708-85c6-77aabbc8989f form:hasField fields:2d154583-7e39-4bbf-9a53-ea7fd95e2c96 .
