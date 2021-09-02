@@ -6,21 +6,27 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 
 DELETE {
   GRAPH ?g {
-    ?form adms:status <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd> . # concept
+    ?formStepTwo adms:status <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd> . # concept
   }
 }
 INSERT {
   GRAPH ?g {
     ?s owl:active <http://lblod.data.info/id/subsidie-application-flow-steps/eb633b90fee29738872ee370ec24d60da792c9bdf5b97e125c7a34653d5e4397> . # step 2
-    ?form adms:status <http://lblod.data.gift/concepts/6b7ae118-4653-48f2-9d9a-4712f8c30da9> . # new
+    ?formStepTwo adms:status <http://lblod.data.gift/concepts/6b7ae118-4653-48f2-9d9a-4712f8c30da9> . # new
   }
 }
 WHERE {
   GRAPH ?g {
     ?s a subsidie:SubsidiemaatregelConsumptie ;
       transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ; # bike subsidy
-      dct:source ?form .
-    ?form adms:status <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd> . # concept
+      dct:source ?formStepOne .
+    ?formStepOne adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> . # vertuurd
+
+    OPTIONAL {
+      ?s dct:source ?formStepTwo .
+      ?formStepTwo adms:status <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd> . # concept
+    }
+
     FILTER NOT EXISTS { ?s owl:active ?activeStep . }
   }
 }
