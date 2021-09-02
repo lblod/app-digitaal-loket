@@ -101,8 +101,10 @@
 (define-resource subsidy-application-flow-step ()
   :class (s-prefix "lblodSubsidie:ApplicationStep")
   :properties `((:order :integer ,(s-prefix "qb:order")))
-  :has-one `((subsidy-procedural-step :via ,(s-prefix "dct:references")
-                                    :as "subsidy-procedural-step")
+  :has-one `((file :via ,(s-prefix "dct:source")
+                   :as "form-specification")
+             (subsidy-procedural-step :via ,(s-prefix "dct:references")
+                                      :as "subsidy-procedural-step")
              (subsidy-application-flow :via ,(s-prefix "dct:isPartOf")
                                         :as "application-flow")
              (subsidy-application-flow-step :via ,(s-prefix "xkos:previous")
@@ -110,8 +112,6 @@
              (subsidy-application-flow-step :via ,(s-prefix "xkos:next")
                                              :as "next-application-step"))
              ;;TODO:add CRITERION, but we need better feeling with the cases we need to support
-  :has-many `((file :via ,(s-prefix "dct:source")
-                    :as "form-specifications"))
   :resource-base (s-url "http://lblod.data.info/id/subsidy-application-flow-steps/")
   :on-path "subsidy-application-flow-steps")
 
