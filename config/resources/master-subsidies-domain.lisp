@@ -104,7 +104,7 @@
   :has-one `((file :via ,(s-prefix "dct:source")
                    :as "form-specification")
              (subsidy-procedural-step :via ,(s-prefix "dct:references")
-                                    :as "subsidy-procedural-step")
+                                      :as "subsidy-procedural-step")
              (subsidy-application-flow :via ,(s-prefix "dct:isPartOf")
                                         :as "application-flow")
              (subsidy-application-flow-step :via ,(s-prefix "xkos:previous")

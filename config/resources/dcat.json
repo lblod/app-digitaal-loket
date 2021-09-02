@@ -40,7 +40,7 @@
             "features": [
                 "include-uri"
             ],
-            "new-resource-base": "http://themis.vlaanderen.be/id/catalog/"
+            "new-resource-base": "http://data.lblod.info/id/catalog/"
         },
         "datasets": {
             "class": "dcat:Dataset",
@@ -97,7 +97,7 @@
             "features": [
                 "include-uri"
             ],
-            "new-resource-base": "http://themis.vlaanderen.be/id/dataset/"
+            "new-resource-base": "http://data.lblod.info/id/dataset/"
         },
         "distributions": {
             "class": "dcat:Distribution",
@@ -151,7 +151,7 @@
             "features": [
                 "include-uri"
             ],
-            "new-resource-base": "http://themis.vlaanderen.be/id/distribution/"
+            "new-resource-base": "http://data.lblod.info/id/distribution/"
         }
     }
 }
