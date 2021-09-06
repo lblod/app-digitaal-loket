@@ -17,12 +17,13 @@ import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
 import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
 import mar7300InzendingenReport from './mar7300InzendingenReport';
-import fietsSubsidiesReport from './fietsSubsidiesReport';
+import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 import electedPersonsReport from './electedPersonsReport';
 import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
 import climateSubsidiePactsReport from './climateSubsidiePactsReport';
 import gemeentewegenReport from './gemeentewegenReport';
+import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 
 export default [
   BestuurseenhedenReport,
@@ -44,10 +45,11 @@ export default [
   mandatarissenWithEmptyPersonReport,
   noodopvangSubsidiesReport,
   mar7300InzendingenReport,
-  fietsSubsidiesReport,
+  fietsSubsidieProposalsReport,
   contactTracingSubsidiesReport,
   electedPersonsReport,
   contactTracingSubsidiesDetailedReport,
   climateSubsidiePactsReport,
-  gemeentewegenReport
+  gemeentewegenReport,
+  fietsSubsidieRequestsReport
 ];
