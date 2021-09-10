@@ -255,7 +255,7 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    image: lblod/download-url-service:0.4.3
+    image: lblod/download-url-service:0.4.4
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
