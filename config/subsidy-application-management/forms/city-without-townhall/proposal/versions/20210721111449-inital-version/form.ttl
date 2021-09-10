@@ -167,7 +167,7 @@ fieldGroups:1c9b3ebf-549c-49ed-b06a-1c13d8e05062 a form:FieldGroup ;
 
 fields:8fa4216d-97b3-467a-bacc-c76b7ea6a242 a form:Field ;
     mu:uuid "8fa4216d-97b3-467a-bacc-c76b7ea6a242" ;
-    sh:name "Welke gemeenten maakten deel uit van het samenwerkingsverband?" ;
+    sh:name "Welke gemeenten of intergemeentelijke samenwerkingsverbanden maken deel uit van dit samenwerkingsverband?" ;
     sh:order  31;
     sh:path lblodSubsidie:collaborator ;
     form:validations
@@ -268,7 +268,7 @@ fields:7dc15808-4c94-4047-96ed-2f4163ebe857 a form:Field ;
 
 fields:9e37a2c4-6d8c-464c-a9a4-f03d43f91445 a form:Field ;
     mu:uuid "9e37a2c4-6d8c-464c-a9a4-f03d43f91445" ;
-    sh:name "Type project" ;
+    sh:name "Thema" ;
     sh:order  45;
     sh:path lblodSubsidie:projectType ;
     form:validations
@@ -291,7 +291,7 @@ fields:9e37a2c4-6d8c-464c-a9a4-f03d43f91445 a form:Field ;
 ##########################################################
 fields:00867b55-03c5-4f46-86eb-2081d6eb6582 a form:Field ;
     mu:uuid "00867b55-03c5-4f46-86eb-2081d6eb6582" ;
-    sh:name "Upload beslissing" ;
+    sh:name "Upload documenten" ;
     form:help "<a href=\"https://gzg.vlaanderen.be/\" target=\"_blank\">Raadpleeg hier de checklist om te zien welke documenten u hier moet opladen</a>" ;
     sh:order 46 ;
     sh:path ( lblodSubsidie:attachment dct:hasPart ) ;
