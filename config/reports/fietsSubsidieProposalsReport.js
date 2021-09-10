@@ -3,14 +3,14 @@ import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
   cronPattern: '0 40 23 * * *',
-  name: 'fietsSubsidiesReport',
+  name: 'fietsSubsidieProposalsReport',
   execute: async () => {
     const reportData = {
-      title: 'List of fiets subsidies',
-      description: 'All bike subsidies that have been sent with their related information',
-      filePrefix: 'fietsSubsidiesReport'
+      title: 'List of proposals of fiets subsidies',
+      description: 'All proposals for bike subsidies that have been sent with their related information',
+      filePrefix: 'fietsSubsidieProposalsReport'
     };
-    console.log('Generate Fiets Subsidies Report');
+    console.log('Generate Fiets Subsidie Proposals Report');
     const queryString = `
       PREFIX pav: <http://purl.org/pav/>
       PREFIX prov: <http://www.w3.org/ns/prov#>
@@ -29,6 +29,12 @@ export default {
           m8g:hasParticipation ?participation .
         ?bestuur m8g:playsRole ?participation ;
           skos:prefLabel ?bestuurseenheid .
+
+        FILTER EXISTS {
+          ?subsidiemaatregelConsumptie dct:source ?applicationForm .
+          ?applicationForm dct:isPartOf ?step .
+          ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
+        }
       }
       ORDER BY DESC(?submissionDate)
     `;
