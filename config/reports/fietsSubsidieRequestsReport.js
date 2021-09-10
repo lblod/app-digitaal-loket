@@ -37,6 +37,10 @@ export default {
           ?applicationForm dct:isPartOf ?step .
           ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/52f0b7dd244e42e0cda83804508e2e89d94ed098f3df8b4f9913a14f2be2423d> .
         }
+
+        FILTER NOT EXISTS {
+          ?applicationForm adms:status <http://lblod.data.gift/concepts/6b7ae118-4653-48f2-9d9a-4712f8c30da9> .
+        }
       }
       ORDER BY DESC(?submissionDate)
     `;
