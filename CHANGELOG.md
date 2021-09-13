@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.48.0 (future)
+
+### :rocket: Enhancement
+ - Adjustments GZG
+ - Report for fietssubsidies
+
+### :bug: Bug Fix
+ - Download URL: correct working with streams
+
 ## 1.47.1 (2021-09-10)
 
 ### :bug: Bug Fix
