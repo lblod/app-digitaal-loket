@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.48.0 (future)
+## 1.48.0 (2021-09-16)
 
 ### :rocket: Enhancement
  - Adjustments GZG
