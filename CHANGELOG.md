@@ -5,9 +5,12 @@
 ### :rocket: Enhancement
  - Adjustments GZG
  - Report for fietssubsidies
+ - Download URL: consistent handling of file download streams
+ - update deadline fietssubsidie
 
 ### :bug: Bug Fix
- - Download URL: correct working with streams
+ - ACM/IDM: switch betuurseeneid needed updated after breaking changes ember-acm-idm
+ - Fix empty susbsidy form: DL-3028
 
 ## 1.47.1 (2021-09-10)
 
