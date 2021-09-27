@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.48.1 (2021-09-27)
+
+### :rocket: Enhancement
+- sync-with-kalliope-service: improve error handling: added gracefully handling of non-connection type of errors.
+- Fietssubsidies: Improve validation on table fietssubsidies: make sure some fields cannot be left empty
+
+### :bug: Bug Fix
+- escape helpers for sparqlEscape URI: don't escape `'`
+- Fietssubsidies don't show empty table on transition to next step
+
 ## 1.48.0 (2021-09-16)
 
 ### :rocket: Enhancement
