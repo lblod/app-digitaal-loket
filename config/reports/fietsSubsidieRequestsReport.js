@@ -20,16 +20,18 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?status ?iban
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?subsidiemaatregelConsumptieStatus ?formStatus ?iban
       WHERE {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
-          adms:status/skos:prefLabel ?status ;
+          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
           dct:modified ?submissionDate ;
           m8g:hasParticipation ?participation ;
           dct:source ?applicationForm .
         ?bestuur m8g:playsRole ?participation ;
           skos:prefLabel ?bestuurseenheid .
+
+        ?applicationForm adms:status/skos:prefLabel ?formStatus .
 
         OPTIONAL { ?applicationForm <http://schema.org/bankAccount>/<http://schema.org/identifier> ?iban . }
 
@@ -50,7 +52,8 @@ export default {
         submissionDate: getSafeValue(subsidie, 'submissionDate'),
         bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
         subsidiemaatregelConsumptie: getSafeValue(subsidie, 'subsidiemaatregelConsumptie'),
-        status: getSafeValue(subsidie, 'status'),
+        subsidiemaatregelConsumptieStatus: getSafeValue(subsidie, 'subsidiemaatregelConsumptieStatus'),
+        formStatus: getSafeValue(subsidie, 'formStatus'),
         iban: getSafeValue(subsidie, 'iban'),
       };
     });
@@ -59,7 +62,8 @@ export default {
       'submissionDate',
       'bestuurseenheid',
       'subsidiemaatregelConsumptie',
-      'status',
+      'subsidiemaatregelConsumptieStatus',
+      'formStatus',
       'iban'
     ], reportData);
   }
