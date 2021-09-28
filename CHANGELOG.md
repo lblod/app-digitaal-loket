@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.48.2 (2021-09-28)
+
+### :bug: Bug Fix
+- prepared Loket to reconcile user.
+
 ## 1.48.1 (2021-09-27)
 
 ### :rocket: Enhancement
