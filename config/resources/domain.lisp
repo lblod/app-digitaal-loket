@@ -29,3 +29,15 @@
 (read-domain-file "master-subsidies-domain.lisp")
 (read-domain-file "master-job-domain.lisp")
 (read-domain-file "dcat.json")
+
+(before (:list file) (resource)
+  (let ((request-filters-on-uri
+          (some (lambda (args)
+                  (let ((components (getf args :components)))
+                    (and (= 1 (length components))
+                         (string= (elt components 0)
+                                  ":uri:"))))
+                (extract-filters-from-request))))
+    (if request-filters-on-uri
+        resource
+        (error 'access-denied :operation :list :resource resource :id :none))))
