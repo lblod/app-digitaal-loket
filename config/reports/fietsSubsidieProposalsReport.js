@@ -20,18 +20,20 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?status
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?subsidiemaatregelConsumptieStatus ?formStatus
       WHERE {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
-          adms:status/skos:prefLabel ?status ;
+          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
           dct:modified ?submissionDate ;
-          m8g:hasParticipation ?participation .
+          m8g:hasParticipation ?participation ;
+          dct:source ?applicationForm .
         ?bestuur m8g:playsRole ?participation ;
           skos:prefLabel ?bestuurseenheid .
 
+        ?applicationForm adms:status/skos:prefLabel ?formStatus .
+
         FILTER EXISTS {
-          ?subsidiemaatregelConsumptie dct:source ?applicationForm .
           ?applicationForm dct:isPartOf ?step .
           ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
         }
@@ -44,7 +46,8 @@ export default {
         submissionDate: subsidie.submissionDate.value,
         bestuurseenheid: subsidie.bestuurseenheid.value,
         subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value,
-        status: subsidie.status.value
+        subsidiemaatregelConsumptieStatus: subsidie.subsidiemaatregelConsumptieStatus.value,
+        formStatus: subsidie.formStatus.value
       };
     });
 
@@ -52,7 +55,8 @@ export default {
       'submissionDate',
       'bestuurseenheid',
       'subsidiemaatregelConsumptie',
-      'status'
+      'subsidiemaatregelConsumptieStatus',
+      'formStatus'
     ], reportData);
   }
 };
