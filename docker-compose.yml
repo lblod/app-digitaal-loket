@@ -265,7 +265,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:0.10.0-beta
+    image: lblod/automatic-submission-service:0.10.0-beta.1
     labels:
       - "logging=true"
     restart: always
@@ -393,7 +393,7 @@ services:
     volumes:
       - ./config/jobs-controller/:/config/
   error-alert:
-    image: lblod/loket-error-alert-service:1.0.0-beta.1
+    image: lblod/loket-error-alert-service:1.0.0-beta.2
     volumes:
       - ./config/error-alert:/config/
     labels:
