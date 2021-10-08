@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.48.3 (2021-10-08)
+
+### :house: Internal
+- unblock accidentally submitted form
+- change deadline subsidy
+
 ## 1.48.2 (2021-09-28)
 
 ### :bug: Bug Fix
