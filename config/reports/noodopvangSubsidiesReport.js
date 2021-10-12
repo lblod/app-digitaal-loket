@@ -35,8 +35,10 @@ export default {
       WHERE {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
-          adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> ;
-          cpsv:follows ?applicationFlow ;
+          adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484>.
+
+       OPTIONAL {
+          ?subsidiemaatregelConsumptie cpsv:follows ?applicationFlow ;
           dct:source ?applicationForm ;
           dct:modified ?aanvraagdatum ;
           m8g:hasParticipation ?participation ;
@@ -85,36 +87,38 @@ export default {
           ?applicationForm lblodSubsidie:totalAmount ?amount .
         }
         BIND(IF(BOUND(?amount), ?amount, xsd:float(0)) as ?totaalBedrag)
+       }
       }
       ORDER BY DESC(?aanvraagdatum)
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
-        aanvraagdatum: subsidie.aanvraagdatum.value,
-        bestuurseenheid: subsidie.bestuurseenheid.value,
-        contactFirstName: subsidie.contactFirstName.value,
-        contactLastName: subsidie.contactLastName.value,
-        contactEmail: subsidie.contactEmail.value,
-        contactTelephone: subsidie.contactTelephone.value,
-        aantalUniekeKinderen: subsidie.aantalUniekeKinderen.value,
-        aantalKalenderdagen: subsidie.aantalKalenderdagen.value,
-        accountNumber: subsidie.accountNumber.value,
-        naamOrganisator: subsidie.naamOrganisator.value,
-        aantalKinderenVoorAlleVolleDagen: subsidie.aantalKinderenVoorAlleVolleDagen.value,
-        aantalKinderenVoorAlleHalveDagen: subsidie.aantalKinderenVoorAlleHalveDagen.value,
-        aantalKinderenPerInfrastructuur: subsidie.aantalKinderenPerInfrastructuur.value,
-        totaalBedrag: subsidie.totaalBedrag.value.toString().replace('.', ','),
-        reeks: subsidie.reeks.value,
-        reeksStart: subsidie.reeksStart.value,
-        reeksEnd: subsidie.reeksEnd.value,
-        createdByName: subsidie.createdByName.value,
-        modifiedByName: subsidie.modifiedByName.value,
-        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value
+        aanvraagdatum: subsidie.aanvraagdatum ? subsidie.aanvraagdatum.value : null,
+        bestuurseenheid: subsidie.bestuurseenheid ? subsidie.bestuurseenheid.value : null,
+        contactFirstName: subsidie.contactFirstName ? subsidie.contactFirstName.value : null,
+        contactLastName: subsidie.contactLastName ? subsidie.contactLastName.value : null,
+        contactEmail: subsidie.contactEmail ? subsidie.contactEmail.value : null,
+        contactTelephone: subsidie.contactTelephone ? subsidie.contactTelephone.value : null,
+        aantalUniekeKinderen: subsidie.aantalUniekeKinderen ? subsidie.aantalUniekeKinderen.value : null,
+        aantalKalenderdagen: subsidie.aantalKalenderdagen ? subsidie.aantalKalenderdagen.value : null,
+        accountNumber: subsidie.accountNumber ? subsidie.accountNumber.value : null,
+        naamOrganisator: subsidie.naamOrganisator ? subsidie.naamOrganisator.value : null,
+        aantalKinderenVoorAlleVolleDagen: subsidie.aantalKinderenVoorAlleVolleDagen ? subsidie.aantalKinderenVoorAlleVolleDagen.value : null,
+        aantalKinderenVoorAlleHalveDagen: subsidie.aantalKinderenVoorAlleHalveDagen ? subsidie.aantalKinderenVoorAlleHalveDagen.value : null,
+        aantalKinderenPerInfrastructuur: subsidie.aantalKinderenPerInfrastructuur ? subsidie.aantalKinderenPerInfrastructuur.value : null,
+        totaalBedrag: subsidie.totaalBedrag ? subsidie.totaalBedrag.value.toString().replace('.', ',') : null,
+        reeks: subsidie.reeks ? subsidie.reeks.value : null,
+        reeksStart: subsidie.reeksStart ? subsidie.reeksStart.value : null,
+        reeksEnd: subsidie.reeksEnd ? subsidie.reeksEnd.value : null,
+        createdByName: subsidie.createdByName ? subsidie.createdByName.value : null,
+        modifiedByName: subsidie.modifiedByName ? subsidie.modifiedByName.value : null,
+        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie ? subsidie.subsidiemaatregelConsumptie.value : null
       };
     });
 
     await generateReportFromData(data, [
+      'subsidiemaatregelConsumptie',
       'aanvraagdatum',
       'bestuurseenheid',
       'contactFirstName',
@@ -134,8 +138,7 @@ export default {
       'reeksStart',
       'reeksEnd',
       'createdByName',
-      'modifiedByName',
-      'subsidiemaatregelConsumptie'
+      'modifiedByName'
     ], reportData);
   }
 };
