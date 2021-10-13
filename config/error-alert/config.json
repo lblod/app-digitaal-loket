@@ -1,5 +1,6 @@
 {
   "creators": [
-    "http://lblod.data.gift/services/automatic-submission-service"
+    "http://lblod.data.gift/services/automatic-submission-service",
+    "http://lblod.data.gift/services/loket-report-generation-service"
   ]
 }

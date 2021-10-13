@@ -244,7 +244,7 @@ services:
     restart: 'no'
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.3.0
+    image: lblod/loket-report-generation-service:0.4.0-beta
     links:
       - database:database
     volumes:
