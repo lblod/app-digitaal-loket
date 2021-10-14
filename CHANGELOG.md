@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.49.0 (2021-10-14)
+
+### :house: Internal
+- introduce alert service to get more error notifications
+- improve some subisdy reports
+- automatic submission service should give us alerts
+
+### :bug: Bug Fix
+- subsidy-application-flow-management-service: uncaught error
+- subsidy-application-management-service: return correct http error when inconsistent state
+
+### :rocket: Enhancement
+- Introduce super SSN request
+- Improve attachmenet fetching: not only text/html should be fixed
+- authentication for download-url
+
 ## 1.48.4 (2021-10-08)
 
 ### :house: Internal
