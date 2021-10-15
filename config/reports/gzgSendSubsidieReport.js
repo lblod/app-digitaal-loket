@@ -25,42 +25,35 @@ export default {
       PREFIX schema: <http://schema.org/>
   
       SELECT DISTINCT ?aanvraagdatum ?bestuurseenheid ?contactFirstName ?contactLastName ?contactTelephone ?contactEmail
-          ?samenwerkingsverband ?isSamenwerkingsverband ?projectNaam ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor ?gewijzigdDoor ?status
+          ?isSamenwerkingsverband ?projectNaam ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor ?gewijzigdDoor ?status
+          ?samenwerkingsverband
       WHERE {
         ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
         transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff>;
         m8g:hasParticipation ?participation ;
         dct:modified ?aanvraagdatum ;
+        dct:creator ?creator;
+        ext:lastModifiedBy ?lastModified;
         dct:source ?form .
   
         ?bestuur m8g:playsRole ?participation ;
                 skos:prefLabel ?bestuurseenheid .
   
         ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a>.
-  
-        OPTIONAL {
-          GRAPH ?g {
-            ?s dct:creator ?createdBy .
-          }
-          GRAPH ?i {
-            ?createdBy foaf:firstName ?angemaaktDoorFirstName ;
-              foaf:familyName ?angemaaktDoorLastName .
-          }
-          BIND(CONCAT(?angemaaktDoorFirstName, " ", ?angemaaktDoorLastName) as ?aangemaaktDoor)
-        }
-        OPTIONAL {
-          GRAPH ?g {
-            ?s ext:lastModifiedBy ?modifiedBy .
-          }
-          GRAPH ?i {
-            ?modifiedBy foaf:firstName ?gewijzigdDoorFirstName ;
-              foaf:familyName ?gewijzigdDoorLastName .
-          }
-          BIND(CONCAT(?gewijzigdDoorFirstName, " ", ?gewijzigdDoorLastName) as ?gewijzigdDoor)
-        }
+
+        ?creator foaf:firstName ?creatorNaam.
+        ?creator foaf:familyName ?creatorFamilienaam.
+
+        BIND(CONCAT(?creatorNaam, " ", ?creatorFamilienaam) as ?aangemaaktDoor)
+
+        ?lastModified foaf:firstName ?modifierNaam.
+        ?lastModified foaf:familyName ?modifierFamilienaam.
+
+        BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
 
         ?form dct:modified ?modified. 
-        ?form adms:status/skos:prefLabel ?status.
+        ?form adms:status ?statusCode.
+        ?statusCode skos:prefLabel ?status.
 
         ?form schema:contactPoint ?contactPoint .
         ?contactPoint foaf:firstName ?contactFirstName . 
@@ -77,7 +70,7 @@ export default {
         ?form lblodSubsidie:totalAmount ?aanvraagBedrag. 
         ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
 
-        FILTER(?status = <http://lblod.data.gift/concepts/6b7ae118-4653-48f2-9d9a-4712f8c30da9>)
+        FILTER(?statusCode = <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>)
       }
       ORDER BY DESC(?modified)
     `;
