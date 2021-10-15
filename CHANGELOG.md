@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.49.1 (2021-10-15)
+
+### :bug: Bug Fix
+- subsidy-application-flow-management-service: Wrong branch was released, new branch for new release
+- Migrations to correct subsidies which have been harmed.
+
 ## 1.49.0 (2021-10-14)
 
 ### :house: Internal
