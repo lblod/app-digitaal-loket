@@ -144,27 +144,6 @@ DELETE {
     }
 }
 ;
-# Remove B info
-DELETE {
-    GRAPH ?g {
-        ?form schema:bankAccount ?backAccount .
-        ?backAccount ?p ?o .
-    }
-} WHERE {
-    VALUES ?consumptionId {
-        "6167F46BE5754600090000C8"
-        "616826BDE57546000900018F"
-        "61681ED2E575460009000147"
-    }
-    GRAPH ?g {
-        ?consumptionURI a subsidie:SubsidiemaatregelConsumptie ;
-            mu:uuid ?consumptionId ;
-            dct:source ?form .
-        ?form schema:bankAccount ?backAccount .
-        ?backAccount ?p ?o .
-    }
-}
-;
 # Remove Contact Info
 DELETE {
     GRAPH ?g {
