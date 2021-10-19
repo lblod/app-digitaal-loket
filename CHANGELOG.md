@@ -1,16 +1,29 @@
 # Changelog
 
+## 1.49.2 (2021-10-19)
+
+### :ambulance: Hotfix
+- Moved subsidy-consumption one step back per request of a user, accidental submission by user
+- Removed identical subsidy-consumptions per request of a user
+
+### :house: Internal
+- Moved up submission-date for Climate Subsidy's Proposal to 2022-10-31
+
+### :bug: Bug Fix
+- subsidy-application-flow-management-service: Wrong branch was released, new branch for new release
+- Migrations to correct subsidies which have been harmed
+
 ## 1.49.1 (2021-10-15)
 
 ### :bug: Bug Fix
 - subsidy-application-flow-management-service: Wrong branch was released, new branch for new release
-- Migrations to correct subsidies which have been harmed.
+- Migrations to correct subsidies which have been harmed
 
 ## 1.49.0 (2021-10-14)
 
 ### :house: Internal
 - introduce alert service to get more error notifications
-- improve some subisdy reports
+- improve some subsidy reports
 - automatic submission service should give us alerts
 
 ### :bug: Bug Fix
