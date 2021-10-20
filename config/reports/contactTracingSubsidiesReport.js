@@ -27,18 +27,20 @@ export default {
       WHERE {
         ?subsidiemaatregelConsumptie
           transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
-          adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> ;
-          dct:source ?applicationForm ;
-          dct:modified ?submissionDate ;
-          m8g:hasParticipation ?participation .
-        ?bestuur m8g:playsRole ?participation ;
-          skos:prefLabel ?bestuurseenheid .
-        ?applicationForm schema:bankAccount/schema:identifier ?rekeningnummer ;
-          lblodSubsidie:engagementTable/ext:engagementEntry/ext:existingStaff ?bestaandPersoneelskader ;
-          lblodSubsidie:engagementTable/ext:engagementEntry/ext:additionalStaff ?extraBestaandPersoneelskader ;
-          lblodSubsidie:engagementTable/ext:engagementEntry/ext:volunteers ?vrijwilligers .
+          adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> .
+        OPTIONAL {
+          ?subsidiemaatregelConsumptie dct:source ?applicationForm ;
+            dct:modified ?submissionDate ;
+            m8g:hasParticipation ?participation .
+          ?bestuur m8g:playsRole ?participation ;
+            skos:prefLabel ?bestuurseenheid .
+          ?applicationForm schema:bankAccount/schema:identifier ?rekeningnummer ;
+            lblodSubsidie:engagementTable/ext:engagementEntry/ext:existingStaff ?bestaandPersoneelskader ;
+            lblodSubsidie:engagementTable/ext:engagementEntry/ext:additionalStaff ?extraBestaandPersoneelskader ;
+            lblodSubsidie:engagementTable/ext:engagementEntry/ext:volunteers ?vrijwilligers .
 
-        OPTIONAL { ?applicationForm lblodSubsidie:estimatedExtraCosts ?specifiekeUitgaven . }
+          OPTIONAL { ?applicationForm lblodSubsidie:estimatedExtraCosts ?specifiekeUitgaven . }
+        }
       }
       ORDER BY DESC(?submissionDate)
     `;
