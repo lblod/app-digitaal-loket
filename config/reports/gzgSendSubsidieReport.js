@@ -1,8 +1,7 @@
-import { generateReportFromData } from '../helpers.js';
-import { querySudo as query } from '@lblod/mu-auth-sudo';
+import { generateReportFromData, batchedQuery } from '../helpers.js';
 
 export default {
-  cronPattern: '0 44 23 * * 0',
+  cronPattern: '0 0 0 * * *',
   name: 'gzgSendSubsidieReport',
   execute: async () => { 
     const reportData = {
@@ -11,7 +10,7 @@ export default {
       filePrefix: 'gzgSendSubsidieReport'
     };
 
-    const queryString = `
+    const queryStringPart1 = `
       PREFIX foaf: <http://xmlns.com/foaf/0.1/>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
@@ -24,87 +23,133 @@ export default {
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX schema: <http://schema.org/>
   
-      SELECT DISTINCT ?aanvraagdatum ?bestuurseenheid ?contactFirstName ?contactLastName ?contactTelephone ?contactEmail
-          ?isSamenwerkingsverband ?projectNaam ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor ?gewijzigdDoor ?status
-          ?samenwerkingsverband
+      SELECT DISTINCT ?subsidie ?aanvraagdatum ?bestuurseenheid ?contactFirstName ?contactLastName
+                      ?contactTelephone ?contactEmail ?projectNaam
+                      ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor
+                      ?gewijzigdDoor ?subsidiemaatregelConsumptieStatus ?stepOneFormStatus
       WHERE {
         ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
-        transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff>;
-        m8g:hasParticipation ?participation ;
-        dct:modified ?aanvraagdatum ;
-        dct:creator ?creator;
-        ext:lastModifiedBy ?lastModified;
-        dct:source ?form .
+          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+
+        OPTIONAL {
+          ?subsidie adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
+          m8g:hasParticipation ?participation ;
+          dct:modified ?aanvraagdatum ;
+          dct:creator ?creator ;
+          ext:lastModifiedBy ?lastModified ;
+          dct:source ?form .
   
-        ?bestuur m8g:playsRole ?participation ;
-                skos:prefLabel ?bestuurseenheid .
-  
-        ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a>.
+          ?bestuur m8g:playsRole ?participation ;
+                  skos:prefLabel ?bestuurseenheid .
+    
+          ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a>.
 
-        ?creator foaf:firstName ?creatorNaam.
-        ?creator foaf:familyName ?creatorFamilienaam.
+          ?creator foaf:firstName ?creatorNaam.
+          ?creator foaf:familyName ?creatorFamilienaam.
 
-        BIND(CONCAT(?creatorNaam, " ", ?creatorFamilienaam) as ?aangemaaktDoor)
+          BIND(CONCAT(?creatorNaam, " ", ?creatorFamilienaam) as ?aangemaaktDoor)
 
-        ?lastModified foaf:firstName ?modifierNaam.
-        ?lastModified foaf:familyName ?modifierFamilienaam.
+          ?lastModified foaf:firstName ?modifierNaam.
+          ?lastModified foaf:familyName ?modifierFamilienaam.
 
-        BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
+          BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
 
-        ?form dct:modified ?modified. 
-        ?form adms:status ?statusCode.
-        ?statusCode skos:prefLabel ?status.
+          ?form dct:modified ?modified. 
+          ?form adms:status/skos:prefLabel ?stepOneFormStatus.
 
-        ?form schema:contactPoint ?contactPoint .
-        ?contactPoint foaf:firstName ?contactFirstName . 
-        ?contactPoint foaf:familyName ?contactLastName . 
-        ?contactPoint schema:email ?contactEmail . 
-        ?contactPoint schema:telephone ?contactTelephone . 
+          ?form schema:contactPoint ?contactPoint .
+          ?contactPoint foaf:firstName ?contactFirstName . 
+          ?contactPoint foaf:familyName ?contactLastName . 
+          ?contactPoint schema:email ?contactEmail . 
+          ?contactPoint schema:telephone ?contactTelephone . 
 
-        ?form lblodSubsidie:isCollaboration/skos:prefLabel ?isSamenwerkingsverband. 
-        ?form lblodSubsidie:collaborator/skos:prefLabel ?samenwerkingsverband. 
+          ?form lblodSubsidie:projectName ?projectNaam. 
+          ?form lblodSubsidie:projectStartDate ?projectStartDatum. 
+          ?form lblodSubsidie:projectEndDate ?projectEindDatum. 
+          ?form lblodSubsidie:totalAmount ?aanvraagBedrag. 
+          ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
 
-        ?form lblodSubsidie:projectName ?projectNaam. 
-        ?form lblodSubsidie:projectStartDate ?projectStartDatum. 
-        ?form lblodSubsidie:projectEndDate ?projectEindDatum. 
-        ?form lblodSubsidie:totalAmount ?aanvraagBedrag. 
-        ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
-
-        FILTER(?statusCode = <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>)
+          FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
+        }
       }
-      ORDER BY DESC(?modified)
+      ORDER BY DESC(?aanvraagdatum)
     `;
-    const queryResponse = await query(queryString);
-    const data = queryResponse.results.bindings.map((subsidie) => {
-      return {
-        aanvraagdatum: getSafeValue(subsidie, 'aanvraagdatum'),
-        bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
-        contactFirstName: getSafeValue(subsidie, 'contactFirstName'),
-        contactLastName: getSafeValue(subsidie, 'contactLastName'),
-        contactEmail: getSafeValue(subsidie, 'contactEmail'),
-        contactTelephone: getSafeValue(subsidie, 'contactTelephone'),
-        isSamenwerkingsverband: getSafeValue(subsidie, 'isSamenwerkingsverband'),
-        samenwerkingsverband: getSafeValue(subsidie, 'samenwerkingsverband'),
-        projectNaam: getSafeValue(subsidie, 'projectNaam'),
-        projectStartDatum: getSafeValue(subsidie, 'projectStartDatum'),
-        projectEindDatum: getSafeValue(subsidie, 'projectEindDatum'),
-        aanvraagBedrag: getSafeValue(subsidie, 'aanvraagBedrag'),
-        thema: getSafeValue(subsidie, 'thema'),
-        aangemaaktDoor: getSafeValue(subsidie, 'aangemaaktDoor'),
-        gewijzigdDoor: getSafeValue(subsidie, 'gewijzigdDoor'),
-        status: getSafeValue(subsidie, 'status'),
-      };
-    });
 
-    await generateReportFromData(data, [
+    const queryResponsePart1 = await batchedQuery(queryStringPart1);
+    const dataPart1 = queryResponsePart1.results.bindings.reduce( (acc, row) => {
+      acc[getSafeValue(row, 'subsidie')] = {
+          subsidie: getSafeValue(row, 'subsidie'),
+          aanvraagdatum: getSafeValue(row, 'aanvraagdatum'),
+          bestuurseenheid: getSafeValue(row, 'bestuurseenheid'),
+          contactFirstName: getSafeValue(row, 'contactFirstName'),
+          contactLastName: getSafeValue(row, 'contactLastName'),
+          contactEmail: getSafeValue(row, 'contactEmail'),
+          contactTelephone: getSafeValue(row, 'contactTelephone'),
+          projectNaam: getSafeValue(row, 'projectNaam'),
+          projectStartDatum: getSafeValue(row, 'projectStartDatum'),
+          projectEindDatum: getSafeValue(row, 'projectEindDatum'),
+          aanvraagBedrag: getSafeValue(row, 'aanvraagBedrag'),
+          thema: getSafeValue(row, 'thema'),
+          aangemaaktDoor: getSafeValue(row, 'aangemaaktDoor'),
+          gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor'),
+          subsidiemaatregelConsumptieStatus: getSafeValue(row, 'subsidiemaatregelConsumptieStatus'),
+          stepOneFormStatus: getSafeValue(row, 'stepOneFormStatus'),
+      };
+      return acc;
+    }, {});
+
+    const queryStringPart2 = `
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+      PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+      PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+      PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
+      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+      PREFIX m8g: <http://data.europa.eu/m8g/>
+      PREFIX dct: <http://purl.org/dc/terms/>
+      PREFIX adms: <http://www.w3.org/ns/adms#>
+      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+      PREFIX schema: <http://schema.org/>
+  
+      SELECT DISTINCT ?subsidie ?isSamenwerkingsverband
+                      (group_concat(DISTINCT ?samenwerkingsverband;separator=";") as ?samenwerkingsverbanden)
+      WHERE {
+        ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+
+        OPTIONAL {
+          ?subsidie dct:modified ?aanvraagdatum ;
+          dct:source ?form .
+
+          ?form lblodSubsidie:isCollaboration/skos:prefLabel ?isSamenwerkingsverband .
+          OPTIONAL { ?form lblodSubsidie:collaborator/skos:prefLabel ?samenwerkingsverband . }
+
+          FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
+        }
+      }
+      GROUP BY ?subsidie ?aanvraagdatum ?form ?isSamenwerkingsverband
+      ORDER BY DESC(?aanvraagdatum)
+    `;
+
+    const queryResponsePart2 = await batchedQuery(queryStringPart2);
+    const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
+      let dataPart = {
+        isSamenwerkingsverband: getSafeValue(row, 'isSamenwerkingsverband'),
+        samenwerkingsverbanden: getSafeValue(row, 'samenwerkingsverbanden')
+      };
+      acc[getSafeValue(row, 'subsidie')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 'subsidie')]);
+      return acc;
+    }, {});
+
+    await generateReportFromData(Object.values(dataPart2), [
       'aanvraagdatum',
       'bestuurseenheid',
       'contactFirstName',
       'contactLastName',
       'contactTelephone',
       'contactEmail',
-      'samenwerkingsverband',
-      'bestuurseenheidConditinal',
+      'isSamenwerkingsverband',
+      'samenwerkingsverbanden',
       'projectNaam',
       'projectStartDatum',
       'projectEindDatum',
@@ -112,9 +157,9 @@ export default {
       'thema',
       'aangemaaktDoor',
       'gewijzigdDoor',
-      'status'
+      'subsidiemaatregelConsumptieStatus',
+      'stepOneFormStatus',
     ], reportData);
-      
   }
 };
 
