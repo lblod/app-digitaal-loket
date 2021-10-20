@@ -22,37 +22,38 @@ export default {
       PREFIX schema: <http://schema.org/>
 
       SELECT DISTINCT ?modified ?status ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone
-             ?bestuurseenheid ?classificatie
+                      ?bestuurseenheid ?classificatie
       WHERE {
         ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
           transactie:isInstantieVan
-              <http://lblod.data.info/id/subsidy-measure-offers/64d40351-8128-464f-990f-41066154583e> ;
-          m8g:hasParticipation ?participation ;
-          dct:source ?form .
+              <http://lblod.data.info/id/subsidy-measure-offers/64d40351-8128-464f-990f-41066154583e> .
+        OPTIONAL {
+          ?subsidie m8g:hasParticipation ?participation ;
+            dct:source ?form .
 
-        ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a> .
+          ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a> .
 
-        ?bestuurseenheidURI skos:prefLabel ?bestuurseenheid ;
-          m8g:playsRole ?participation ;
-          besluit:classificatie ?classURI .
+          ?bestuurseenheidURI skos:prefLabel ?bestuurseenheid ;
+            m8g:playsRole ?participation ;
+            besluit:classificatie ?classURI .
 
-        ?classURI skos:prefLabel ?classificatie .
+          ?classURI skos:prefLabel ?classificatie .
 
-        ?form dct:modified ?modified ;
-          adms:status/skos:prefLabel ?status ;
-          dct:isPartOf ?step .
+          ?form dct:modified ?modified ;
+            adms:status/skos:prefLabel ?status ;
+            dct:isPartOf ?step .
 
-        ?step dct:references
-          <http://data.lblod.info/id/subsidy-procedural-steps/d6ec1fb1-a991-47ba-95f1-afdd87e4553c> .
+          ?step dct:references
+            <http://data.lblod.info/id/subsidy-procedural-steps/d6ec1fb1-a991-47ba-95f1-afdd87e4553c> .
 
-        OPTIONAL { 
-          ?form schema:contactPoint ?contactPoint .
-          OPTIONAL { ?contactPoint foaf:firstName ?contactFirstName . }
-          OPTIONAL { ?contactPoint foaf:familyName ?contactLastName . }
-          OPTIONAL { ?contactPoint schema:email ?contactEmail . }
-          OPTIONAL { ?contactPoint schema:telephone ?contactTelephone . }
+          OPTIONAL {
+            ?form schema:contactPoint ?contactPoint .
+            OPTIONAL { ?contactPoint foaf:firstName ?contactFirstName . }
+            OPTIONAL { ?contactPoint foaf:familyName ?contactLastName . }
+            OPTIONAL { ?contactPoint schema:email ?contactEmail . }
+            OPTIONAL { ?contactPoint schema:telephone ?contactTelephone . }
+          }
         }
-
       }
       ORDER BY DESC(?modified)
     `;
