@@ -534,54 +534,58 @@ export default {
               ?informatieOpMaat ?coachingMetTolk ?huisbezoek ?psychologischeOfMentaleOndersteuning
               ?financieleOndersteuning ?vulnerableGroupsHelpAndereOption
       WHERE {
-        ?smc transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
-          dct:source ?applicationForm .
-        ?applicationForm lblodSubsidie:contactAndSourceTrackingObjectiveFour/lblodSubsidie:priority/skos:prefLabel ?prioVierdeDoelstelling ;
-          adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
+        ?smc transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> .
 
         OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?boodschappenGedaanVoorDeGezinnenRule .
-          VALUES ?boodschappenGedaanVoorDeGezinnenRule { <http://data.lblod.info/id/subsidies/rules/2ddf912c-e71a-45ae-847b-f9e94ab90d70> }
-        }
-        BIND(IF(BOUND(?boodschappenGedaanVoorDeGezinnenRule), "ja", "nee") AS ?boodschappenGedaanVoorDeGezinnen)
+          ?smc dct:source ?applicationForm .
 
-        OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?samenaankoopactieGeorganiseerdRule .
-          VALUES ?samenaankoopactieGeorganiseerdRule { <http://data.lblod.info/id/subsidies/rules/c34db3c6-157c-4115-86dd-de0cb953a240> }
-        }
-        BIND(IF(BOUND(?samenaankoopactieGeorganiseerdRule), "ja", "nee") AS ?samenaankoopactieGeorganiseerd)
+          ?applicationForm lblodSubsidie:contactAndSourceTrackingObjectiveFour/lblodSubsidie:priority/skos:prefLabel ?prioVierdeDoelstelling ;
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
 
-        OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?informatieOpMaatRule .
-          VALUES ?informatieOpMaatRule { <http://data.lblod.info/id/subsidies/rules/1bdfcee0-339e-4c94-8b76-386481b142cb> }
-        }
-        BIND(IF(BOUND(?informatieOpMaatRule), "ja", "nee") AS ?informatieOpMaat)
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?boodschappenGedaanVoorDeGezinnenRule .
+            VALUES ?boodschappenGedaanVoorDeGezinnenRule { <http://data.lblod.info/id/subsidies/rules/2ddf912c-e71a-45ae-847b-f9e94ab90d70> }
+          }
+          BIND(IF(BOUND(?boodschappenGedaanVoorDeGezinnenRule), "ja", "nee") AS ?boodschappenGedaanVoorDeGezinnen)
 
-        OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?coachingMetTolkRule .
-          VALUES ?coachingMetTolkRule { <http://data.lblod.info/id/subsidies/rules/4e035c5b-195f-42ff-b9b7-9f356949370d> }
-        }
-        BIND(IF(BOUND(?coachingMetTolkRule), "ja", "nee") AS ?coachingMetTolk)
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?samenaankoopactieGeorganiseerdRule .
+            VALUES ?samenaankoopactieGeorganiseerdRule { <http://data.lblod.info/id/subsidies/rules/c34db3c6-157c-4115-86dd-de0cb953a240> }
+          }
+          BIND(IF(BOUND(?samenaankoopactieGeorganiseerdRule), "ja", "nee") AS ?samenaankoopactieGeorganiseerd)
 
-        OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?huisbezoekRule .
-          VALUES ?huisbezoekRule { <http://data.lblod.info/id/subsidies/rules/5458ea7e-8692-459c-8208-fef02601a757> }
-        }
-        BIND(IF(BOUND(?huisbezoekRule), "ja", "nee") AS ?huisbezoek)
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?informatieOpMaatRule .
+            VALUES ?informatieOpMaatRule { <http://data.lblod.info/id/subsidies/rules/1bdfcee0-339e-4c94-8b76-386481b142cb> }
+          }
+          BIND(IF(BOUND(?informatieOpMaatRule), "ja", "nee") AS ?informatieOpMaat)
 
-        OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?psychologischeOfMentaleOndersteuningRule .
-          VALUES ?psychologischeOfMentaleOndersteuningRule { <http://data.lblod.info/id/subsidies/rules/8a5c1696-7198-41af-8f41-d63f9a53f1a1> }
-        }
-        BIND(IF(BOUND(?psychologischeOfMentaleOndersteuningRule), "ja", "nee") AS ?psychologischeOfMentaleOndersteuning)
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?coachingMetTolkRule .
+            VALUES ?coachingMetTolkRule { <http://data.lblod.info/id/subsidies/rules/4e035c5b-195f-42ff-b9b7-9f356949370d> }
+          }
+          BIND(IF(BOUND(?coachingMetTolkRule), "ja", "nee") AS ?coachingMetTolk)
 
-        OPTIONAL {
-          ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?financieleOndersteuningRule .
-          VALUES ?financieleOndersteuningRule { <http://data.lblod.info/id/subsidies/rules/e7c07f5f-803f-4c0a-b5e1-d1ac03a82dac> }
-        }
-        BIND(IF(BOUND(?financieleOndersteuningRule), "ja", "nee") AS ?financieleOndersteuning)
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?huisbezoekRule .
+            VALUES ?huisbezoekRule { <http://data.lblod.info/id/subsidies/rules/5458ea7e-8692-459c-8208-fef02601a757> }
+          }
+          BIND(IF(BOUND(?huisbezoekRule), "ja", "nee") AS ?huisbezoek)
 
-        OPTIONAL { ?applicationForm lblodSubsidie:vulnerableGroupsHelpAndereOption ?vulnerableGroupsHelpAndereOption . }
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?psychologischeOfMentaleOndersteuningRule .
+            VALUES ?psychologischeOfMentaleOndersteuningRule { <http://data.lblod.info/id/subsidies/rules/8a5c1696-7198-41af-8f41-d63f9a53f1a1> }
+          }
+          BIND(IF(BOUND(?psychologischeOfMentaleOndersteuningRule), "ja", "nee") AS ?psychologischeOfMentaleOndersteuning)
+
+          OPTIONAL {
+            ?applicationForm lblodSubsidie:vulnerableGroupsHelp ?financieleOndersteuningRule .
+            VALUES ?financieleOndersteuningRule { <http://data.lblod.info/id/subsidies/rules/e7c07f5f-803f-4c0a-b5e1-d1ac03a82dac> }
+          }
+          BIND(IF(BOUND(?financieleOndersteuningRule), "ja", "nee") AS ?financieleOndersteuning)
+
+          OPTIONAL { ?applicationForm lblodSubsidie:vulnerableGroupsHelpAndereOption ?vulnerableGroupsHelpAndereOption . }
+        }
       }
     `;
 
