@@ -19,29 +19,35 @@ export default {
       PREFIX m8g: <http://data.europa.eu/m8g/>
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
+      PREFIX owl: <http://www.w3.org/2007/uwa/context/common.owl#>
+      PREFIX qb: <http://purl.org/linked-data/cube#>
 
       SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?subsidiemaatregelConsumptieStatus ?formStatus ?iban
       WHERE {
         ?subsidiemaatregelConsumptie
-          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
-          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
-          dct:modified ?submissionDate ;
-          m8g:hasParticipation ?participation ;
-          dct:source ?applicationForm .
-        ?bestuur m8g:playsRole ?participation ;
-          skos:prefLabel ?bestuurseenheid .
+          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> .
 
-        ?applicationForm adms:status/skos:prefLabel ?formStatus .
-
-        OPTIONAL { ?applicationForm <http://schema.org/bankAccount>/<http://schema.org/identifier> ?iban . }
-
-        FILTER EXISTS {
-          ?applicationForm dct:isPartOf ?step .
-          ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/52f0b7dd244e42e0cda83804508e2e89d94ed098f3df8b4f9913a14f2be2423d> .
+        OPTIONAL {
+          ?subsidiemaatregelConsumptie owl:active/qb:order ?activeStepOrder .
         }
+        FILTER ( ?activeStepOrder > 0 || NOT EXISTS { ?subsidiemaatregelConsumptie owl:active/qb:order ?activeStepOrder . } )
 
-        FILTER NOT EXISTS {
-          ?applicationForm adms:status <http://lblod.data.gift/concepts/6b7ae118-4653-48f2-9d9a-4712f8c30da9> .
+        OPTIONAL {
+          ?subsidiemaatregelConsumptie adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
+            dct:modified ?submissionDate ;
+            m8g:hasParticipation ?participation ;
+            dct:source ?applicationForm .
+          ?bestuur m8g:playsRole ?participation ;
+            skos:prefLabel ?bestuurseenheid .
+
+          ?applicationForm adms:status/skos:prefLabel ?formStatus .
+
+          OPTIONAL { ?applicationForm <http://schema.org/bankAccount>/<http://schema.org/identifier> ?iban . }
+
+          FILTER EXISTS {
+            ?applicationForm dct:isPartOf ?step .
+            ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/52f0b7dd244e42e0cda83804508e2e89d94ed098f3df8b4f9913a14f2be2423d> .
+          }
         }
       }
       ORDER BY DESC(?submissionDate)
