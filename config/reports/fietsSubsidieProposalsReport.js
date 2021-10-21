@@ -23,19 +23,22 @@ export default {
       SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?subsidiemaatregelConsumptieStatus ?formStatus
       WHERE {
         ?subsidiemaatregelConsumptie
-          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
-          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
-          dct:modified ?submissionDate ;
-          m8g:hasParticipation ?participation ;
-          dct:source ?applicationForm .
-        ?bestuur m8g:playsRole ?participation ;
-          skos:prefLabel ?bestuurseenheid .
+          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> .
 
-        ?applicationForm adms:status/skos:prefLabel ?formStatus .
+        OPTIONAL {
+          ?subsidiemaatregelConsumptie adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
+            dct:modified ?submissionDate ;
+            m8g:hasParticipation ?participation ;
+            dct:source ?applicationForm .
+          ?bestuur m8g:playsRole ?participation ;
+            skos:prefLabel ?bestuurseenheid .
 
-        FILTER EXISTS {
-          ?applicationForm dct:isPartOf ?step .
-          ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
+          ?applicationForm adms:status/skos:prefLabel ?formStatus .
+
+          FILTER EXISTS {
+            ?applicationForm dct:isPartOf ?step .
+            ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
+          }
         }
       }
       ORDER BY DESC(?submissionDate)
