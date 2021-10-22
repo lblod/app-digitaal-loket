@@ -244,7 +244,7 @@ services:
     restart: 'no'
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.3.0
+    image: lblod/loket-report-generation-service:0.4.0
     links:
       - database:database
     volumes:
@@ -383,7 +383,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-application-flow-management:
-    image: lblod/subsidy-application-flow-management-service:0.2.1
+    image: lblod/subsidy-application-flow-management-service:0.3.0
     labels:
       - "logging=true"
     restart: always
@@ -404,7 +404,7 @@ services:
 # DELTA GENERAL
 ################################################################################
   delta-producer-report-generator:
-    image: lblod/delta-producer-report-generator:0.3.0
+    image: lblod/delta-producer-report-generator:0.4.0
     volumes:
       - ./config/delta-producer/report-generator:/config
     environment:
