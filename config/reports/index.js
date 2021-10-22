@@ -24,6 +24,7 @@ import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDeta
 import climateSubsidiePactsReport from './climateSubsidiePactsReport';
 import gemeentewegenReport from './gemeentewegenReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
+import gzgSendSubsidieReport from './gzgSendSubsidieReport';
 
 export default [
   BestuurseenhedenReport,
@@ -51,5 +52,6 @@ export default [
   contactTracingSubsidiesDetailedReport,
   climateSubsidiePactsReport,
   gemeentewegenReport,
-  fietsSubsidieRequestsReport
+  fietsSubsidieRequestsReport,
+  gzgSendSubsidieReport
 ];
