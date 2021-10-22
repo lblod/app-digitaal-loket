@@ -3,7 +3,7 @@ import { generateReportFromData, batchedQuery } from '../helpers.js';
 export default {
   cronPattern: '0 0 0 * * *',
   name: 'gzgSendSubsidieReport',
-  execute: async () => { 
+  execute: async () => {
     const reportData = {
       title: 'List of Send GzG Report',
       description: 'All GzG subsidy forms that have been send',
@@ -22,7 +22,7 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX schema: <http://schema.org/>
-  
+
       SELECT DISTINCT ?subsidie ?aanvraagdatum ?bestuurseenheid ?contactFirstName ?contactLastName
                       ?contactTelephone ?contactEmail ?projectNaam
                       ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor
@@ -38,10 +38,10 @@ export default {
           dct:creator ?creator ;
           ext:lastModifiedBy ?lastModified ;
           dct:source ?form .
-  
+
           ?bestuur m8g:playsRole ?participation ;
                   skos:prefLabel ?bestuurseenheid .
-    
+
           ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a>.
 
           ?creator foaf:firstName ?creatorNaam.
@@ -54,19 +54,19 @@ export default {
 
           BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
 
-          ?form dct:modified ?modified. 
+          ?form dct:modified ?modified.
           ?form adms:status/skos:prefLabel ?stepOneFormStatus.
 
           ?form schema:contactPoint ?contactPoint .
-          ?contactPoint foaf:firstName ?contactFirstName . 
-          ?contactPoint foaf:familyName ?contactLastName . 
-          ?contactPoint schema:email ?contactEmail . 
-          ?contactPoint schema:telephone ?contactTelephone . 
+          ?contactPoint foaf:firstName ?contactFirstName .
+          ?contactPoint foaf:familyName ?contactLastName .
+          ?contactPoint schema:email ?contactEmail .
+          ?contactPoint schema:telephone ?contactTelephone .
 
-          ?form lblodSubsidie:projectName ?projectNaam. 
-          ?form lblodSubsidie:projectStartDate ?projectStartDatum. 
-          ?form lblodSubsidie:projectEndDate ?projectEindDatum. 
-          ?form lblodSubsidie:totalAmount ?aanvraagBedrag. 
+          ?form lblodSubsidie:projectName ?projectNaam.
+          ?form lblodSubsidie:projectStartDate ?projectStartDatum.
+          ?form lblodSubsidie:projectEndDate ?projectEindDatum.
+          ?form lblodSubsidie:totalAmount ?aanvraagBedrag.
           ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
 
           FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
@@ -110,7 +110,7 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX schema: <http://schema.org/>
-  
+
       SELECT DISTINCT ?subsidie ?isSamenwerkingsverband
                       (group_concat(DISTINCT ?samenwerkingsverband;separator=";") as ?samenwerkingsverbanden)
       WHERE {
