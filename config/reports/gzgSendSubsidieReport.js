@@ -34,7 +34,7 @@ export default {
             adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
             dct:source ?form .
 
-          ?form dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/df90cea3-70d7-49a3-bae6-df2e278d0fcf> ;
+          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidy-procedural-steps/ea1ea2d2-b6ba-4566-b27e-7a3229cd9243> ;
             adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
             adms:status/skos:prefLabel ?stepOneFormStatus .
 
