@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.49.3 (2021-10-21)
+
+### :ambulance: Hotfix
+- Moved 2 bike subsidy-consumption one step back per request of a user, accidental submission by user
+
 ## 1.49.2 (2021-10-19)
 
 ### :ambulance: Hotfix
