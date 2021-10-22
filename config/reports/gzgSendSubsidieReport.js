@@ -28,16 +28,24 @@ export default {
                       ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor
                       ?gewijzigdDoor ?subsidiemaatregelConsumptieStatus ?stepOneFormStatus
       WHERE {
+
+      {
         ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
-          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> ;
+          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
+          dct:source ?form .
+
+
+         ?form dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/df90cea3-70d7-49a3-bae6-df2e278d0fcf>.
+
+         ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>.
+         ?form adms:status/skos:prefLabel ?stepOneFormStatus.
 
         OPTIONAL {
-          ?subsidie adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
-          m8g:hasParticipation ?participation ;
+          ?subsidie m8g:hasParticipation ?participation ;
           dct:modified ?aanvraagdatum ;
           dct:creator ?creator ;
-          ext:lastModifiedBy ?lastModified ;
-          dct:source ?form .
+          ext:lastModifiedBy ?lastModified.
 
           ?bestuur m8g:playsRole ?participation ;
                   skos:prefLabel ?bestuurseenheid .
@@ -55,7 +63,6 @@ export default {
           BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
 
           ?form dct:modified ?modified.
-          ?form adms:status/skos:prefLabel ?stepOneFormStatus.
 
           ?form schema:contactPoint ?contactPoint .
           ?contactPoint foaf:firstName ?contactFirstName .
@@ -68,9 +75,15 @@ export default {
           ?form lblodSubsidie:projectEndDate ?projectEindDatum.
           ?form lblodSubsidie:totalAmount ?aanvraagBedrag.
           ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
-
-          FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
         }
+      }
+      UNION {
+        ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+        FILTER NOT EXISTS {
+          ?subsidie dct:source ?anyForm.
+        }
+      }
       }
       ORDER BY DESC(?aanvraagdatum)
     `;
