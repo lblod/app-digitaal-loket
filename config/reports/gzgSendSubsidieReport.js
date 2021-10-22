@@ -28,63 +28,61 @@ export default {
                       ?projectStartDatum ?projectEindDatum ?aanvraagBedrag ?thema ?aangemaaktDoor
                       ?gewijzigdDoor ?subsidiemaatregelConsumptieStatus ?stepOneFormStatus
       WHERE {
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> ;
+            adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
+            dct:source ?form .
 
-      {
-        ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
-          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> ;
-          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
-          dct:source ?form .
+          ?form dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/df90cea3-70d7-49a3-bae6-df2e278d0fcf> ;
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
+            adms:status/skos:prefLabel ?stepOneFormStatus .
 
+          OPTIONAL {
+            ?subsidie m8g:hasParticipation ?participation ;
+            dct:modified ?aanvraagdatum ;
+            dct:creator ?creator ;
+            ext:lastModifiedBy ?lastModified.
 
-         ?form dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/df90cea3-70d7-49a3-bae6-df2e278d0fcf>.
+            ?bestuur m8g:playsRole ?participation ;
+                    skos:prefLabel ?bestuurseenheid .
 
-         ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>.
-         ?form adms:status/skos:prefLabel ?stepOneFormStatus.
+            ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a>.
 
-        OPTIONAL {
-          ?subsidie m8g:hasParticipation ?participation ;
-          dct:modified ?aanvraagdatum ;
-          dct:creator ?creator ;
-          ext:lastModifiedBy ?lastModified.
+            ?creator foaf:firstName ?creatorNaam.
+            ?creator foaf:familyName ?creatorFamilienaam.
 
-          ?bestuur m8g:playsRole ?participation ;
-                  skos:prefLabel ?bestuurseenheid .
+            BIND(CONCAT(?creatorNaam, " ", ?creatorFamilienaam) as ?aangemaaktDoor)
 
-          ?participation m8g:role <http://lblod.data.gift/concepts/d8b8f3d1-7574-4baf-94df-188a7bd84a3a>.
+            ?lastModified foaf:firstName ?modifierNaam.
+            ?lastModified foaf:familyName ?modifierFamilienaam.
 
-          ?creator foaf:firstName ?creatorNaam.
-          ?creator foaf:familyName ?creatorFamilienaam.
+            BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
 
-          BIND(CONCAT(?creatorNaam, " ", ?creatorFamilienaam) as ?aangemaaktDoor)
+            ?form dct:modified ?modified.
 
-          ?lastModified foaf:firstName ?modifierNaam.
-          ?lastModified foaf:familyName ?modifierFamilienaam.
+            ?form schema:contactPoint ?contactPoint .
+            ?contactPoint foaf:firstName ?contactFirstName .
+            ?contactPoint foaf:familyName ?contactLastName .
+            ?contactPoint schema:email ?contactEmail .
+            ?contactPoint schema:telephone ?contactTelephone .
 
-          BIND(CONCAT(?modifierNaam, " ", ?modifierFamilienaam) as ?gewijzigdDoor)
-
-          ?form dct:modified ?modified.
-
-          ?form schema:contactPoint ?contactPoint .
-          ?contactPoint foaf:firstName ?contactFirstName .
-          ?contactPoint foaf:familyName ?contactLastName .
-          ?contactPoint schema:email ?contactEmail .
-          ?contactPoint schema:telephone ?contactTelephone .
-
-          ?form lblodSubsidie:projectName ?projectNaam.
-          ?form lblodSubsidie:projectStartDate ?projectStartDatum.
-          ?form lblodSubsidie:projectEndDate ?projectEindDatum.
-          ?form lblodSubsidie:totalAmount ?aanvraagBedrag.
-          ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
+            ?form lblodSubsidie:projectName ?projectNaam.
+            ?form lblodSubsidie:projectStartDate ?projectStartDatum.
+            ?form lblodSubsidie:projectEndDate ?projectEindDatum.
+            ?form lblodSubsidie:totalAmount ?aanvraagBedrag.
+            ?form lblodSubsidie:projectType/skos:prefLabel ?thema.
+          }
         }
-      }
-      UNION {
-        ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
-          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
-        FILTER NOT EXISTS {
-          ?subsidie dct:source ?anyForm.
-          ?anyForm dct:isPartOf ?step.
+        UNION
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+          FILTER NOT EXISTS {
+            ?subsidie dct:source ?anyForm.
+            ?anyForm dct:isPartOf ?step.
+          }
         }
-      }
       }
       ORDER BY DESC(?aanvraagdatum)
     `;
@@ -128,17 +126,31 @@ export default {
       SELECT DISTINCT ?subsidie ?isSamenwerkingsverband
                       (group_concat(DISTINCT ?samenwerkingsverband;separator=";") as ?samenwerkingsverbanden)
       WHERE {
-        ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
-          transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> ;
+            dct:source ?form .
 
-        OPTIONAL {
-          ?subsidie dct:modified ?aanvraagdatum ;
-          dct:source ?form .
+          ?form dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/df90cea3-70d7-49a3-bae6-df2e278d0fcf> ;
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
 
-          ?form lblodSubsidie:isCollaboration/skos:prefLabel ?isSamenwerkingsverband .
-          OPTIONAL { ?form lblodSubsidie:collaborator/skos:prefLabel ?samenwerkingsverband . }
+          OPTIONAL {
+            ?subsidie dct:modified ?aanvraagdatum .
 
-          FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
+            ?form lblodSubsidie:isCollaboration/skos:prefLabel ?isSamenwerkingsverband .
+            OPTIONAL { ?form lblodSubsidie:collaborator/skos:prefLabel ?samenwerkingsverband . }
+
+            FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
+          }
+        }
+        UNION
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
+          FILTER NOT EXISTS {
+            ?subsidie dct:source ?anyForm.
+            ?anyForm dct:isPartOf ?step.
+          }
         }
       }
       GROUP BY ?subsidie ?aanvraagdatum ?form ?isSamenwerkingsverband
@@ -156,6 +168,7 @@ export default {
     }, {});
 
     await generateReportFromData(Object.values(dataPart2), [
+      'subsidie',
       'aanvraagdatum',
       'bestuurseenheid',
       'contactFirstName',
