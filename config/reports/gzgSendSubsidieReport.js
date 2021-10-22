@@ -82,6 +82,7 @@ export default {
           transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> .
         FILTER NOT EXISTS {
           ?subsidie dct:source ?anyForm.
+          ?anyForm dct:isPartOf ?step.
         }
       }
       }
