@@ -23,23 +23,42 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
       SELECT DISTINCT ?submissionDate ?bestuurseenheid ?rekeningnummer ?bestaandPersoneelskader
-              ?extraBestaandPersoneelskader ?vrijwilligers ?specifiekeUitgaven ?subsidiemaatregelConsumptie
+              ?extraBestaandPersoneelskader ?vrijwilligers ?specifiekeUitgaven ?subsidie
       WHERE {
-        ?subsidiemaatregelConsumptie
-          transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
-          adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> .
-        OPTIONAL {
-          ?subsidiemaatregelConsumptie dct:source ?applicationForm ;
-            dct:modified ?submissionDate ;
-            m8g:hasParticipation ?participation .
-          ?bestuur m8g:playsRole ?participation ;
-            skos:prefLabel ?bestuurseenheid .
-          ?applicationForm schema:bankAccount/schema:identifier ?rekeningnummer ;
-            lblodSubsidie:engagementTable/ext:engagementEntry/ext:existingStaff ?bestaandPersoneelskader ;
-            lblodSubsidie:engagementTable/ext:engagementEntry/ext:additionalStaff ?extraBestaandPersoneelskader ;
-            lblodSubsidie:engagementTable/ext:engagementEntry/ext:volunteers ?vrijwilligers .
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
+            adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> ;
+            dct:source ?form .
+          ?form dct:isPartOf/dct:references ?references ;
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
 
-          OPTIONAL { ?applicationForm lblodSubsidie:estimatedExtraCosts ?specifiekeUitgaven . }
+          VALUES ?references {
+            <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
+            <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+          }
+
+          OPTIONAL {
+            ?subsidie dct:modified ?submissionDate ;
+              m8g:hasParticipation ?participation .
+            ?bestuur m8g:playsRole ?participation ;
+              skos:prefLabel ?bestuurseenheid .
+            ?form schema:bankAccount/schema:identifier ?rekeningnummer ;
+              lblodSubsidie:engagementTable/ext:engagementEntry/ext:existingStaff ?bestaandPersoneelskader ;
+              lblodSubsidie:engagementTable/ext:engagementEntry/ext:additionalStaff ?extraBestaandPersoneelskader ;
+              lblodSubsidie:engagementTable/ext:engagementEntry/ext:volunteers ?vrijwilligers .
+
+            OPTIONAL { ?form lblodSubsidie:estimatedExtraCosts ?specifiekeUitgaven . }
+          }
+        }
+        UNION
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> .
+          FILTER NOT EXISTS {
+            ?subsidie dct:source ?anyForm.
+            ?anyForm dct:isPartOf ?step.
+          }
         }
       }
       ORDER BY DESC(?submissionDate)
@@ -47,14 +66,14 @@ export default {
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
-        submissionDate: subsidie.submissionDate.value,
-        bestuurseenheid: subsidie.bestuurseenheid.value,
-        rekeningnummer: subsidie.rekeningnummer.value,
-        bestaandPersoneelskader: subsidie.bestaandPersoneelskader.value,
-        extraBestaandPersoneelskader: subsidie.extraBestaandPersoneelskader.value,
-        vrijwilligers: subsidie.vrijwilligers.value,
+        submissionDate: getSafeValue(subsidie, 'submissionDate'),
+        bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
+        rekeningnummer: getSafeValue(subsidie, 'rekeningnummer'),
+        bestaandPersoneelskader: getSafeValue(subsidie, 'bestaandPersoneelskader'),
+        extraBestaandPersoneelskader: getSafeValue(subsidie, 'extraBestaandPersoneelskader'),
+        vrijwilligers: getSafeValue(subsidie, 'vrijwilligers'),
         specifiekeUitgaven: getSafeValue(subsidie, 'specifiekeUitgaven'),
-        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value
+        subsidie: getSafeValue(subsidie, 'subsidie'),
       };
     });
 
@@ -66,7 +85,7 @@ export default {
       'extraBestaandPersoneelskader',
       'vrijwilligers',
       'specifiekeUitgaven',
-      'subsidiemaatregelConsumptie'
+      'subsidie'
     ], reportData);
   }
 };
