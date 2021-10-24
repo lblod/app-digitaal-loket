@@ -19,34 +19,37 @@ export default {
       PREFIX m8g: <http://data.europa.eu/m8g/>
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
-      PREFIX owl: <http://www.w3.org/2007/uwa/context/common.owl#>
-      PREFIX qb: <http://purl.org/linked-data/cube#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?subsidiemaatregelConsumptieStatus ?formStatus ?iban
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?iban
       WHERE {
-        ?subsidiemaatregelConsumptie
-          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> .
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
+            dct:source ?form .
+          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidieprocedurestappen/52f0b7dd244e42e0cda83804508e2e89d94ed098f3df8b4f9913a14f2be2423d> ;
+            adms:status ?formStatus .
 
-        OPTIONAL {
-          ?subsidiemaatregelConsumptie owl:active/qb:order ?activeStepOrder .
+          VALUES ?formStatus {
+            <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>
+            <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>
+          }
+
+          OPTIONAL {
+            ?subsidie adms:status/skos:prefLabel ?subsidieStatus ;
+              dct:modified ?submissionDate ;
+              m8g:hasParticipation ?participation .
+            ?bestuur m8g:playsRole ?participation ;
+              skos:prefLabel ?bestuurseenheid .
+            OPTIONAL { ?form <http://schema.org/bankAccount>/<http://schema.org/identifier> ?iban . }
+          }
         }
-        FILTER ( ?activeStepOrder > 0 || NOT EXISTS { ?subsidiemaatregelConsumptie owl:active/qb:order ?activeStepOrder . } )
-
-        OPTIONAL {
-          ?subsidiemaatregelConsumptie adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
-            dct:modified ?submissionDate ;
-            m8g:hasParticipation ?participation ;
-            dct:source ?applicationForm .
-          ?bestuur m8g:playsRole ?participation ;
-            skos:prefLabel ?bestuurseenheid .
-
-          ?applicationForm adms:status/skos:prefLabel ?formStatus .
-
-          OPTIONAL { ?applicationForm <http://schema.org/bankAccount>/<http://schema.org/identifier> ?iban . }
-
-          FILTER EXISTS {
-            ?applicationForm dct:isPartOf ?step .
-            ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/52f0b7dd244e42e0cda83804508e2e89d94ed098f3df8b4f9913a14f2be2423d> .
+        UNION
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> .
+          FILTER NOT EXISTS {
+            ?subsidie dct:source ?anyForm.
+            ?anyForm dct:isPartOf ?step.
           }
         }
       }
@@ -57,8 +60,8 @@ export default {
       return {
         submissionDate: getSafeValue(subsidie, 'submissionDate'),
         bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
-        subsidiemaatregelConsumptie: getSafeValue(subsidie, 'subsidiemaatregelConsumptie'),
-        subsidiemaatregelConsumptieStatus: getSafeValue(subsidie, 'subsidiemaatregelConsumptieStatus'),
+        subsidie: getSafeValue(subsidie, 'subsidie'),
+        subsidieStatus: getSafeValue(subsidie, 'subsidieStatus'),
         formStatus: getSafeValue(subsidie, 'formStatus'),
         iban: getSafeValue(subsidie, 'iban'),
       };
@@ -67,8 +70,8 @@ export default {
     await generateReportFromData(data, [
       'submissionDate',
       'bestuurseenheid',
-      'subsidiemaatregelConsumptie',
-      'subsidiemaatregelConsumptieStatus',
+      'subsidie',
+      'subsidieStatus',
       'formStatus',
       'iban'
     ], reportData);
