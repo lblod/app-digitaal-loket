@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.50.0 (2021-10-25)
+
+### :house: Internal
+- Update email adresses for automatic submission
+- Update delta-producer-report-generator to use error notifications
+
+### :rocket: Enhancement
+- GzG report subsidies
+- Force status for mandataris
+
 ## 1.49.3 (2021-10-21)
 
 ### :ambulance: Hotfix
