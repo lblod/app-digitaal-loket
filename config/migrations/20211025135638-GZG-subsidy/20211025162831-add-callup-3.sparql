@@ -50,7 +50,7 @@ INSERT DATA {
         qb:order 0 ;
         dct:references <http://data.lblod.info/id/subsidy-procedural-steps/f61dc47f-e7f8-46f3-b37d-27730c440ec0> ;
         dct:isPartOf <http://lblod.data.info/id/subsidie-application-flows/98d555e9-99d7-48cf-8e17-bc4a6c39aa81> ;
-        dct:source <config://forms/GZG/proposal/versions/20211025162830-callup-3/form.ttl> .
+        dct:source <config://forms/GZG/proposal/versions/20211025162830-third-call/form.ttl> .
 
     # Subsidy Active Submission Flow
     <http://lblod.data.info/id/subsidie-application-flows/98d555e9-99d7-48cf-8e17-bc4a6c39aa81>
