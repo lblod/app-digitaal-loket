@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.50.2 (2021-10-28)
+
+### :ambulance: Hotfix
+- Moved Climate subsidy-consumptions one step back per request of users, accidental submission by user
+
 ## 1.50.1 (2021-10-26)
 
 ### :ambulance: Hotfix
