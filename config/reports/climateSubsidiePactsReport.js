@@ -44,13 +44,11 @@ export default {
 
             ?form dct:modified ?modified .
 
-            OPTIONAL {
-              ?form schema:contactPoint ?contactPoint .
-              OPTIONAL { ?contactPoint foaf:firstName ?contactFirstName . }
-              OPTIONAL { ?contactPoint foaf:familyName ?contactLastName . }
-              OPTIONAL { ?contactPoint schema:email ?contactEmail . }
-              OPTIONAL { ?contactPoint schema:telephone ?contactTelephone . }
-            }
+            ?form schema:contactPoint ?contactPoint .
+            ?contactPoint foaf:firstName ?contactFirstName .
+            ?contactPoint foaf:familyName ?contactLastName .
+            ?contactPoint schema:email ?contactEmail .
+            ?contactPoint schema:telephone ?contactTelephone .
           }
         }
         UNION
@@ -68,6 +66,7 @@ export default {
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
+        subsidie: getSafeValue(subsidie, 'subsidie'),
         modified: getSafeValue(subsidie, 'modified'),
         status: getSafeValue(subsidie, 'status'),
         contactFirstName: getSafeValue(subsidie, 'contactFirstName'),
@@ -80,6 +79,7 @@ export default {
     });
 
     await generateReportFromData(data, [
+      'subsidie',
       'modified',
       'status',
       'contactFirstName',
