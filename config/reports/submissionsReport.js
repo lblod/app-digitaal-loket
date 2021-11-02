@@ -67,8 +67,11 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
       PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+      PREFIX eli: <http://data.europa.eu/eli/ontology#>
+      PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 
-      SELECT ?s ?verstuurd ?typeDossier ?typeReglementOfVerordening ?soortBelasting ?bestuurseenheidLabel ?typeBestuur ?datumZitting ?statusLabel ?angemaaktDoor ?gewijzigdDoor ?link WHERE { 
+      SELECT ?s ?verstuurd ?typeDossier ?typeReglementOfVerordening ?soortBelasting ?bestuurseenheidLabel ?typeBestuur ?datumZitting ?statusLabel ?angemaaktDoor ?gewijzigdDoor ?link ?bot ?bestuursorgaan ?bestuursorgaanLabel ?bestuursorgaanClassificatieLabel
+       WHERE { 
         GRAPH ?g { 
           ?s a meb:Submission ;
             nmo:sentDate ?verstuurd ;
@@ -132,6 +135,17 @@ export default {
               nie:url ?link .
           }
         }
+        OPTIONAL {
+          GRAPH ?g {
+            ?formData eli:passed_by ?bot .
+          }
+          GRAPH <http://mu.semte.ch/graphs/public> {
+           ?bot mandaat:isTijdspecialisatieVan ?bestuursorgaan.
+           ?bestuursorgaan skos:prefLabel ?bestuursorgaanLabel.
+           ?bestuursorgaan besluit:classificatie/skos:prefLabel ?bestuursorgaanClassificatieLabel.
+          }
+        }
+
       }
     `;
 
@@ -143,6 +157,10 @@ export default {
         typeReglementOfVerordening: getSafeValue(row, 'typeReglementOfVerordening'),
         soortBelasting: getSafeValue(row, 'soortBelasting'),
         bestuurseenheidLabel: getSafeValue(row, 'bestuurseenheidLabel'),
+        bestuursorgaanInTijd: getSafeValue(row, 'bot'),
+        bestuursorgaan: getSafeValue(row, 'bestuursorgaan'),
+        bestuursorgaanLabel: getSafeValue(row, 'bestuursorgaanLabel'),
+        bestuursorgaanClassificatie: getSafeValue(row, 'bestuursorgaanClassificatieLabel'),
         typeBestuur: getSafeValue(row, 'typeBestuur'),
         angemaaktDoor: getSafeValue(row, 'angemaaktDoor'),
         gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor'),
@@ -159,6 +177,10 @@ export default {
       'typeReglementOfVerordening',
       'soortBelasting',
       'bestuurseenheidLabel',
+      'bestuursorgaanInTijd',
+      'bestuursorgaan',
+      'bestuursorgaanLabel',
+      'bestuursorgaanClassificatie',
       'typeBestuur',
       'angemaaktDoor',
       'gewijzigdDoor',
