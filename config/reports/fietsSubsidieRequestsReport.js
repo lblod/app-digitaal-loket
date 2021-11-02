@@ -20,7 +20,7 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?iban
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?iban ?formStatusLabel
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
@@ -33,6 +33,8 @@ export default {
             <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>
             <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>
           }
+
+          ?formStatus skos:prefLabel ?formStatusLabel.
 
           OPTIONAL {
             ?subsidie adms:status/skos:prefLabel ?subsidieStatus ;
@@ -62,8 +64,8 @@ export default {
         bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
         subsidie: getSafeValue(subsidie, 'subsidie'),
         subsidieStatus: getSafeValue(subsidie, 'subsidieStatus'),
-        formStatus: getSafeValue(subsidie, 'formStatus'),
-        iban: getSafeValue(subsidie, 'iban'),
+        formStatus: getSafeValue(subsidie, 'formStatusLabel'),
+        iban: getSafeValue(subsidie, 'iban')
       };
     });
 
