@@ -954,6 +954,7 @@ export default {
 
 
     await generateReportFromData(Object.values(dataPart12), [
+      'subsidie',
       'bestuurseenheid',
       'aangemaaktOp',
       'bewerktOp',
