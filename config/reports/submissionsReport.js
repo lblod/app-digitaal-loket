@@ -22,8 +22,8 @@ export default {
       PREFIX prov: <http://www.w3.org/ns/prov#>
       PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
 
-      SELECT ?s ?file WHERE { 
-        GRAPH ?g { 
+      SELECT ?s ?file WHERE {
+        GRAPH ?g {
           ?s a meb:Submission ;
             nmo:sentDate ?verstuurd ;
             prov:generated ?formData .
@@ -70,9 +70,24 @@ export default {
       PREFIX eli: <http://data.europa.eu/eli/ontology#>
       PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 
-      SELECT ?s ?verstuurd ?typeDossier ?typeReglementOfVerordening ?soortBelasting ?bestuurseenheidLabel ?typeBestuur ?datumZitting ?statusLabel ?angemaaktDoor ?gewijzigdDoor ?link ?bot ?bestuursorgaan ?bestuursorgaanLabel ?bestuursorgaanClassificatieLabel
-       WHERE { 
-        GRAPH ?g { 
+      SELECT ?s
+        ?verstuurd
+        ?typeDossier
+        ?typeReglementOfVerordening
+        ?soortBelasting
+        ?bestuurseenheidLabel
+        ?typeBestuur
+        ?datumZitting
+        ?statusLabel
+        ?angemaaktDoor
+        ?gewijzigdDoor
+        ?link
+        ?bot
+        ?bestuursorgaan
+        ?bestuursorgaanLabel
+        ?bestuursorgaanClassificatieLabel
+       WHERE {
+        GRAPH ?g {
           ?s a meb:Submission ;
             nmo:sentDate ?verstuurd ;
             pav:createdBy ?bestuurseenheid ;
