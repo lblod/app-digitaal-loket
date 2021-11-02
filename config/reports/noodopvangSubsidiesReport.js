@@ -31,15 +31,19 @@ export default {
             ?contactFirstName ?contactLastName ?contactEmail ?contactTelephone ?accountNumber
             ?aantalUniekeKinderen ?aantalKalenderdagen ?naamOrganisator ?aantalKinderenVoorAlleVolleDagen
             ?aantalKinderenVoorAlleHalveDagen ?aantalKinderenPerInfrastructuur ?totaalBedrag
-            (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidie
+            (?reeksLabel as ?reeks) ?reeksStart ?reeksEnd ?createdByName ?modifiedByName ?subsidie ?subsidieStatusLabel ?formStatusLabel
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
             transactie:isInstantieVan <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38> ;
-            adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> ;
+            adms:status ?smcStatus ;
             dct:source ?form .
+
+          ?smcStatus skos:prefLabel ?subsidieStatusLabel.
+
           ?form dct:isPartOf/dct:references ?references ;
-            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
+            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>.
+          <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> skos:prefLabel ?formStatusLabel.
 
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/aabe45ba93f31abbcb488cb090aac0158241c5f08e61cb41e1497ad386010aeb>
@@ -136,6 +140,8 @@ export default {
         createdByName: getSafeValue(subsidie, 'createdByName'),
         modifiedByName: getSafeValue(subsidie, 'modifiedByName'),
         subsidie: getSafeValue(subsidie, 'subsidie'),
+        subsidieStatus: getSafeValue(subsidie, 'subsidieStatusLabel'),
+        formulierStatus: getSafeValue(subsidie, 'formStatusLabel')
       };
     });
 
@@ -160,7 +166,9 @@ export default {
       'reeksStart',
       'reeksEnd',
       'createdByName',
-      'modifiedByName'
+      'modifiedByName',
+      'subsidieStatus',
+      'formulierStatus'
     ], reportData);
   }
 };
