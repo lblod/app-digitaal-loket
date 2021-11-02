@@ -70,9 +70,9 @@ export default {
     });
 
     await generateReportFromData(data, [
+      'subsidie',
       'submissionDate',
       'bestuurseenheid',
-      'subsidie',
       'subsidieStatus',
       'formStatus',
       'iban'

@@ -28,7 +28,7 @@ export default {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
             transactie:isInstantieVan <http://lblod.data.gift/concepts/2697fbe1-4226-4325-807b-5dfa58e40a95> ;
-            adms:status <http://lblod.data.gift/concepts/2ea29fbf-6d46-4f08-9343-879282a9f484> ;
+            adms:status ?status ;
             dct:source ?form .
           ?form dct:isPartOf/dct:references ?references ;
             adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
@@ -78,6 +78,7 @@ export default {
     });
 
     await generateReportFromData(data, [
+      'subsidie',
       'submissionDate',
       'bestuurseenheid',
       'rekeningnummer',
@@ -85,7 +86,6 @@ export default {
       'extraBestaandPersoneelskader',
       'vrijwilligers',
       'specifiekeUitgaven',
-      'subsidie'
     ], reportData);
   }
 };
