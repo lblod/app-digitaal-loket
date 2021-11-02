@@ -98,6 +98,9 @@ export default {
 
           FILTER ( ?verstuurd >= "${dateFrom}"^^xsd:dateTime )
         }
+
+        FILTER(REGEX(str(?g), """http://mu.semte.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker"""))
+
         GRAPH ?h {
           ?type skos:prefLabel ?typeDossier .
           ?bestuurseenheid skos:prefLabel ?bestuurseenheidLabel ;
@@ -160,7 +163,6 @@ export default {
            ?bestuursorgaan besluit:classificatie/skos:prefLabel ?bestuursorgaanClassificatieLabel.
           }
         }
-
       }
     `;
 
