@@ -1,0 +1,29 @@
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/conversaties/342d38f8-3d4c-11ec-a2ab-0242c0a8a006> ?pconv ?oconv .
+    ?message ?pmessage ?omessage .
+  }
+  GRAPH ?h {
+    ?file ?pfile ?ofile .
+  }
+  GRAPH ?i {
+    ?email ?pemail ?oemail .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/conversaties/342d38f8-3d4c-11ec-a2ab-0242c0a8a006>
+      <http://schema.org/hasPart> ?message ;
+      ?pconv ?oconv .
+
+    ?message
+      <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?file ;
+      <http://mu.semte.ch/vocabularies/ext/notificatieEmail> ?email ;
+      ?pmessage ?omessage .
+  }
+  GRAPH ?h {
+    ?file ?pfile ?ofile .
+  }
+  GRAPH ?i {
+    ?email ?pemail ?oemail .
+  }
+}
