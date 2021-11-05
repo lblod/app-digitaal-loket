@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.50.3 (2021-11-04)
+
+### :ambulance: Hotfix
+- Deleted a message in the berichtencentrum that wasn't intended for this bestuurseenheid
+
 ## 1.50.2 (2021-10-29)
 
 ### :ambulance: Hotfix
