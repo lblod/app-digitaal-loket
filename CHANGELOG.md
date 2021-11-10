@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.51.0 (2021-11-10)
+
+### :rocket: Enhancement
+- GzG oproep 2 and 3
+- Oproep contact tracing 'nazomer'
+
 ## 1.50.3 (2021-11-04)
 
 ### :ambulance: Hotfix
