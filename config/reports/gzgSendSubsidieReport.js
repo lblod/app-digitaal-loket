@@ -5,8 +5,8 @@ export default {
   name: 'gzgSendSubsidieReport',
   execute: async () => {
     const reportData = {
-      title: 'List of Send GzG Report',
-      description: 'All GzG subsidy forms that have been send',
+      title: 'List of GzG Report step 1',
+      description: 'All GzG subsidy forms step 1',
       filePrefix: 'gzgSendSubsidieReport'
     };
 
@@ -35,8 +35,11 @@ export default {
             dct:source ?form .
 
           ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidy-procedural-steps/ea1ea2d2-b6ba-4566-b27e-7a3229cd9243> ;
-            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
+            adms:status ?status;
             adms:status/skos:prefLabel ?stepOneFormStatus .
+
+           FILTER(?status IN (<http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>,
+                              <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>))
 
           OPTIONAL {
             ?subsidie m8g:hasParticipation ?participation ;
@@ -132,7 +135,11 @@ export default {
             dct:source ?form .
 
           ?form dct:isPartOf <http://lblod.data.info/id/subsidie-application-flow-steps/df90cea3-70d7-49a3-bae6-df2e278d0fcf> ;
-            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> .
+            adms:status ?status .
+
+           FILTER(?status IN (<http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>,
+                              <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>))
+
 
           OPTIONAL {
             ?subsidie dct:modified ?aanvraagdatum .
