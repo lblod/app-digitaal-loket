@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.52.0 (2021-11-11)
+
+### :rocket: Enhancement
+- Report GzG: include concept status
+- General improvement reports: make less assumptions, so potential issues with forms become more visible.
+- Update submissions report to show bestuursorgaan + performance improvement
+- Update GzG oproep 3: deadline
+
 ## 1.51.0 (2021-11-10)
 
 ### :rocket: Enhancement
