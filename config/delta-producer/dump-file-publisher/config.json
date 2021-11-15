@@ -19,14 +19,14 @@
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer",
     "fileBaseName": "dump-mandatarissen"
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions/public" : {
-    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubmissionsPublicCacheGraphDump",
-    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-submissions/public",
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions" : {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubmissionsCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-submissions",
     "fileBaseName": "dump-submissions-public"
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions/public" : {
-    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubmissionsPublicCacheGraphDump",
-    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-submissions/public",
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions" : {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubmissionsCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-submissions",
     "fileBaseName": "dump-submissions-public"
   }
 

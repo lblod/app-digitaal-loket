@@ -593,6 +593,8 @@ services:
       INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions'
       QUEUE_POLL_INTERVAL: 3000
       USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
+      SKIP_MU_AUTH_INITIAL_SYNC: 'true'
+      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
     volumes:
       - ./config/delta-producer/submissions:/config
       - ./data/files/:/share
