@@ -128,7 +128,7 @@
         "http://purl.org/dc/terms/created",
         "http://purl.org/dc/terms/modified"
       ],
-      "additionalFilter": "?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?subject. \n ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission> ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?subject. \n ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -144,7 +144,7 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource"
       ],
-      "additionalFilter": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?remoteFile. \n ?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?remoteFile. \n ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?remoteFile. \n ?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?remoteFile. \n ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -160,7 +160,7 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource"
       ],
-      "additionalFilter": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>/<http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?remoteFile. ?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?remoteFile. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>/<http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?remoteFile. ?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?remoteFile. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -175,7 +175,7 @@
         "http://purl.org/dc/terms/modified",
         "http://purl.org/dc/terms/type"
       ],
-      "additionalFilter": "?subject <http://purl.org/dc/terms/type> <http://data.lblod.gift/concepts/meta-file-type>. ?s <http://purl.org/dc/terms/source> ?subject. ?s a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument>. ?submission <http://purl.org/dc/terms/subject> ?s. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?subject <http://purl.org/dc/terms/type> <http://data.lblod.gift/concepts/meta-file-type>. ?s <http://purl.org/dc/terms/source> ?subject. ?s a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument>. ?submission <http://purl.org/dc/terms/subject> ?s. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -190,7 +190,7 @@
         "http://purl.org/dc/terms/modified",
         "http://purl.org/dc/terms/type"
       ],
-      "additionalFilter": "?subject <http://purl.org/dc/terms/type> <http://data.lblod.gift/concepts/form-data-file-type>. ?s <http://purl.org/dc/terms/source> ?subject. ?s a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument>. ?submission <http://purl.org/dc/terms/subject> ?s. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?subject <http://purl.org/dc/terms/type> <http://data.lblod.gift/concepts/form-data-file-type>. ?s <http://purl.org/dc/terms/source> ?subject. ?s a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument>. ?submission <http://purl.org/dc/terms/subject> ?s. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -205,7 +205,7 @@
         "http://purl.org/dc/terms/modified",
         "http://purl.org/dc/terms/type"
       ],
-      "additionalFilter": "?subject <http://purl.org/dc/terms/type> <http://data.lblod.gift/concepts/form-file-type>. ?s <http://purl.org/dc/terms/source> ?subject. ?s a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument>. ?submission <http://purl.org/dc/terms/subject> ?s. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?subject <http://purl.org/dc/terms/type> <http://data.lblod.gift/concepts/form-file-type>. ?s <http://purl.org/dc/terms/source> ?subject. ?s a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument>. ?submission <http://purl.org/dc/terms/subject> ?s. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -221,7 +221,7 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource"
       ],
-      "additionalFilter": "?formData <http://purl.org/dc/terms/hasPart> ?subject. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?formData <http://purl.org/dc/terms/hasPart> ?subject. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
@@ -238,11 +238,11 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource"
       ],
-      "additionalFilter": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?virtualFile . ?formData <http://purl.org/dc/terms/hasPart> ?virtualFile. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?virtualFile . ?formData <http://purl.org/dc/terms/hasPart> ?virtualFile. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
-      "optionalProperties": [
+      "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url",
@@ -256,7 +256,7 @@
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource",
         "http://www.w3.org/ns/adms#status"
       ],
-      "additionalFilter": "?formData <http://purl.org/dc/terms/hasPart> ?subject. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>. ?submission <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
+      "additionalFilter": "?formData <http://purl.org/dc/terms/hasPart> ?subject. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>; \n <http://www.w3.org/ns/adms#status> <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>."
     }
   ]
 }
