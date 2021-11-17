@@ -2,7 +2,7 @@
   "export": [
     {
       "type": "http://rdf.myexperiment.org/ontologies/base/Submission",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/*/LoketLB-toezichtGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker" ],
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -21,7 +21,7 @@
     },
     {
       "type": "http://mu.semte.ch/vocabularies/ext/SubmissionDocument",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/*/LoketLB-toezichtGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker" ],
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -40,7 +40,7 @@
     },
     {
       "type": "http://lblod.data.gift/vocabularies/besluit/TaxRate",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/*/LoketLB-toezichtGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker" ],
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -90,7 +90,7 @@
     },
     {
       "type": "http://lblod.data.gift/vocabularies/automatische-melding/FormData",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/*/LoketLB-toezichtGebruiker" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker" ],
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
