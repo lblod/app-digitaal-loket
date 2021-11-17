@@ -20,22 +20,32 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidiemaatregelConsumptie ?subsidiemaatregelConsumptieStatus ?formStatus
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus
       WHERE {
-        ?subsidiemaatregelConsumptie
-          transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
-          adms:status/skos:prefLabel ?subsidiemaatregelConsumptieStatus ;
-          dct:modified ?submissionDate ;
-          m8g:hasParticipation ?participation ;
-          dct:source ?applicationForm .
-        ?bestuur m8g:playsRole ?participation ;
-          skos:prefLabel ?bestuurseenheid .
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
+            dct:source ?form .
+          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
+          OPTIONAL {
+            ?subsidie adms:status/skos:prefLabel ?subsidieStatus ;
+              dct:modified ?submissionDate ;
+              m8g:hasParticipation ?participation ;
+              dct:source ?form .
+            ?bestuur m8g:playsRole ?participation ;
+              skos:prefLabel ?bestuurseenheid .
 
-        ?applicationForm adms:status/skos:prefLabel ?formStatus .
-
-        FILTER EXISTS {
-          ?applicationForm dct:isPartOf ?step .
-          ?step dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
+            ?form adms:status/skos:prefLabel ?formStatus .
+          }
+        }
+        UNION
+        {
+          ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
+            transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> .
+          FILTER NOT EXISTS {
+            ?subsidie dct:source ?anyForm.
+            ?anyForm dct:isPartOf ?step.
+          }
         }
       }
       ORDER BY DESC(?submissionDate)
@@ -43,20 +53,29 @@ export default {
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
-        submissionDate: subsidie.submissionDate.value,
-        bestuurseenheid: subsidie.bestuurseenheid.value,
-        subsidiemaatregelConsumptie: subsidie.subsidiemaatregelConsumptie.value,
-        subsidiemaatregelConsumptieStatus: subsidie.subsidiemaatregelConsumptieStatus.value,
-        formStatus: subsidie.formStatus.value
+        submissionDate: getSafeValue(subsidie, 'submissionDate'),
+        bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
+        subsidie: getSafeValue(subsidie, 'subsidie'),
+        subsidieStatus: getSafeValue(subsidie, 'subsidieStatus'),
+        formStatus: getSafeValue(subsidie, 'formStatus'),
       };
     });
 
     await generateReportFromData(data, [
+      'subsidie',
       'submissionDate',
       'bestuurseenheid',
-      'subsidiemaatregelConsumptie',
-      'subsidiemaatregelConsumptieStatus',
+      'subsidieStatus',
       'formStatus'
     ], reportData);
   }
 };
+
+function getSafeValue(entry, property){
+  return entry[property] ? wrapInQuote(entry[property].value) : null;
+}
+
+// Some values might contain comas, wrapping them in escapes quotes doesn't disturb the colomns
+function wrapInQuote(value) {
+  return `\"${value}\"`;
+}
