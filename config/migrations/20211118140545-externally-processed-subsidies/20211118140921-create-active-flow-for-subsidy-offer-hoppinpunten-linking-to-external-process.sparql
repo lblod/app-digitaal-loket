@@ -1,0 +1,31 @@
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX common: <http://www.w3.org/2007/uwa/context/common.owl#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+    # Active submission-flow for latest hoppinpunten subsidy series
+    <http://lblod.data.info/id/subsidie-application-flows/394add49-28c4-48a4-bc67-c34db51502e3>
+        a lblodSubsidie:ApplicationFlow;
+        mu:uuid "394add49-28c4-48a4-bc67-c34db51502e3";
+        xkos:belongsTo <http://lblod.data.info/id/subsidy-measure-offer-series/3bfba485-f211-445c-80b7-e340c410ce1d>;
+        xkos:next <http://lblod.data.info/id/subsidie-application-flow-steps/0a1bfaab-a3aa-478c-a843-9ad1444ad192>.
+
+    # Step(s) of the active submission-flow
+    <http://lblod.data.info/id/subsidie-application-flow-steps/0a1bfaab-a3aa-478c-a843-9ad1444ad192>
+        a lblodSubsidie:ApplicationStep;
+        mu:uuid "0a1bfaab-a3aa-478c-a843-9ad1444ad192";
+        qb:order 0;
+        dct:references <http://data.lblod.info/id/subsidy-procedural-steps/570fb5da-4874-46f5-8adb-3467cf88f3f2>;
+        dct:isPartOf <http://lblod.data.info/id/subsidie-application-flows/394add49-28c4-48a4-bc67-c34db51502e3>;
+        dct:isReplacedBy <https://subsidie.hoppinpunten.vlaanderen.be/>.
+
+    # Activate the flow by adding it to the series
+    <http://lblod.data.info/id/subsidy-measure-offer-series/3bfba485-f211-445c-80b7-e340c410ce1d>
+        common:active <http://lblod.data.info/id/subsidie-application-flows/394add49-28c4-48a4-bc67-c34db51502e3> .
+  }
+}

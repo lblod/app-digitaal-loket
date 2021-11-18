@@ -1,0 +1,13 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concepts/3ded9eab-ff5b-4a20-a095-0825de486f42>
+        a skos:Concept, rdfs:Class;
+        mu:uuid "3ded9eab-ff5b-4a20-a095-0825de486f42" ;
+        skos:prefLabel "Externe verwerking"@nl ;
+        skos:inScheme <http://lblod.data.gift/concept-schemes/77604806-1006-459b-9228-583d279c7a1c> .
+  }
+}

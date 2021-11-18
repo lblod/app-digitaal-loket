@@ -96,11 +96,13 @@
                                               :inverse t
                                               :as "defined-steps"))
   :resource-base (s-url "http://lblod.data.info/id/subsidy-application-flows/")
+  :features '(include-uri)
   :on-path "subsidy-application-flows")
 
 (define-resource subsidy-application-flow-step ()
   :class (s-prefix "lblodSubsidie:ApplicationStep")
-  :properties `((:order :integer ,(s-prefix "qb:order")))
+  :properties `((:order :integer ,(s-prefix "qb:order"))
+                (:isReplacedBy :uri ,(s-prefix "dct:isReplacedBy")))
   :has-one `((file :via ,(s-prefix "dct:source")
                    :as "form-specification")
              (subsidy-procedural-step :via ,(s-prefix "dct:references")
