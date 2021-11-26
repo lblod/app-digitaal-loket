@@ -1,0 +1,38 @@
+PREFIX meb:     <http://rdf.myexperiment.org/ontologies/base/>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX schema:  <http://schema.org/>
+
+INSERT {
+   GRAPH ?g {
+    ?sub schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
+   }
+}
+WHERE {
+   GRAPH ?g {
+    ?sub
+        a meb:Submission ;
+        adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ; # SENT
+        prov:generated ?form .
+
+    # TODO double check that it is "http" or "httpS"
+    VALUES ?decisionType {
+        <https://data.vlaanderen.be/id/concept/BesluitType/a0a709a7-ac07-4457-8d40-de4aea9b1432>
+        <https://data.vlaanderen.be/id/concept/BesluitType/8bdc614a-d2f2-44c0-8cb1-447b1017d312>
+        <https://data.vlaanderen.be/id/concept/BesluitType/e44c535d-4339-4d15-bdbf-d4be6046de2c>
+        <https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
+        <https://data.vlaanderen.be/id/concept/BesluitType/2f189152-1786-4b55-a3a9-d7f06de63f1c>
+        <https://data.vlaanderen.be/id/concept/BesluitType/bd0b0c42-ba5e-4acc-b644-95f6aad904c7>
+        <https://data.vlaanderen.be/id/concept/BesluitType/380674ee-0894-4c41-bcc1-9deaeb9d464c>
+        <https://data.vlaanderen.be/id/concept/BesluitType/1105564e-30c7-4371-a864-6b7329cdae6f>
+        <https://data.vlaanderen.be/id/concept/BesluitType/b69c9f18-967c-4feb-90a8-8eea3c8ce46b>
+        <https://data.vlaanderen.be/id/concept/BesluitType/f8c070bd-96e4-43a1-8c6e-532bcd771251>
+        <https://data.vlaanderen.be/id/concept/BesluitType/fb21d14b-734b-48f4-bd4e-888163fd08e8>
+        <https://data.vlaanderen.be/id/concept/BesluitType/c945b531-4742-43fe-af55-b13da6ecc6fe>
+    }
+    ?form
+        ext:decisionType ?decisionType .
+    FILTER(?g NOT IN (<http://redpencil.data.gift/id/deltas/producer/loket-submissions>))
+   }
+}
