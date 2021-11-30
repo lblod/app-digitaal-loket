@@ -5,18 +5,16 @@ PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
 PREFIX schema:  <http://schema.org/>
 
 INSERT {
-   GRAPH ?g {
+  GRAPH ?h {
     ?sub schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
-   }
+  }
 }
 WHERE {
-   GRAPH ?g {
-    ?sub
-        a meb:Submission ;
+  GRAPH ?g {
+    ?sub a meb:Submission ;
         adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ; # SENT
         prov:generated ?form .
 
-    # TODO double check that it is "http" or "httpS"
     VALUES ?decisionType {
         <https://data.vlaanderen.be/id/concept/BesluitType/a0a709a7-ac07-4457-8d40-de4aea9b1432>
         <https://data.vlaanderen.be/id/concept/BesluitType/8bdc614a-d2f2-44c0-8cb1-447b1017d312>
@@ -34,5 +32,6 @@ WHERE {
     ?form
         ext:decisionType ?decisionType .
     FILTER(?g NOT IN (<http://redpencil.data.gift/id/deltas/producer/loket-submissions>))
-   }
+  }
+  BIND(?g as ?h)
 }

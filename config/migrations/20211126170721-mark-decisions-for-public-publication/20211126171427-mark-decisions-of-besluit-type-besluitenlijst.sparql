@@ -9,12 +9,12 @@ prefix mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 PREFIX schema:  <http://schema.org/>
 
 INSERT {
-   GRAPH ?g {
+  GRAPH ?h {
     ?sub schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
-   }
+  }
 }
 WHERE {
-   GRAPH ?g {
+  GRAPH ?g {
     ?sub
         a meb:Submission ;
         adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ; # SENT
@@ -26,17 +26,15 @@ WHERE {
         eli:passed_by ?bestuursorgaan .
 
     FILTER(?g NOT IN (<http://redpencil.data.gift/id/deltas/producer/loket-submissions>))
-   }
+  }
 
-   GRAPH <http://mu.semte.ch/graphs/public> {
-
-   # TODO double check that it is "http" or "httpS"
-   VALUES (?bestuursorgaanClassificatieCode ?bestuurseenheidClassificatieCode) {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    VALUES (?bestuursorgaanClassificatieCode ?bestuurseenheidClassificatieCode) {
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> )
-        (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> <https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9>)
-        (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> <https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9>)
+        (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9>)
+        (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000a> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71>)
@@ -44,10 +42,10 @@ WHERE {
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>)
         (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>)
-   }
+    }
 
-   ?bestuursorgaan mandaat:isTijdspecialisatieVan/besluit:classificatie ?bestuursorgaanClassificatieCode .
-   ?bestuurseenheid besluit:classificatie ?bestuurseenheidClassificatieCode .
-
-   }
+    ?bestuursorgaan mandaat:isTijdspecialisatieVan/besluit:classificatie ?bestuursorgaanClassificatieCode .
+    ?bestuurseenheid besluit:classificatie ?bestuurseenheidClassificatieCode .
+  }
+  BIND(?g as ?h)
 }

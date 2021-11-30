@@ -34,7 +34,7 @@
     },
     {
       "orgaan": "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943",
-      "eenheid": "https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9"
+      "eenheid": "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9"
     },
     {
       "orgaan": "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528",
@@ -61,8 +61,8 @@
       "eenheid": "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002"
     },
     {
-      "orgaan": "https://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528",
-      "eenheid": "https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9"
+      "orgaan": "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528",
+      "eenheid": "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9"
     }
   ],
   "regulationTypes": [
