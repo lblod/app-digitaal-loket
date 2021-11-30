@@ -400,6 +400,14 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  prepare-submissions-for-export:
+    image: lblod/prepare-submissions-for-export-service:0.1.0
+    volumes:
+      - ./config/delta-producer/submissions/prepare/:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
 ################################################################################
 # DELTA GENERAL
 ################################################################################
