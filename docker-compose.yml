@@ -423,6 +423,10 @@ services:
 #      - "logging=true"
     restart: always
     logging: *default-logging
+  delta-files-share:
+    image: cecemel/file-service-share:0.0.4-beta.2
+    volumes:
+      - ./data/files:/share
 ################################################################################
 # DELTA TO BE DEPRECATED
 ################################################################################

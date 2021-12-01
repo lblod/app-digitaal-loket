@@ -387,6 +387,13 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # delta-files-share
+  #################################################################
+  get "/delta-files-share/download/*path" do
+    Proxy.forward conn, path, "http://delta-files-share/download/"
+  end
+
+  #################################################################
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
