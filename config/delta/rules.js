@@ -126,14 +126,7 @@ export default [
   },
   {
     match: {
-      predicate: {
-        type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
-      },
-      object: {
-        type: 'uri',
-        value: 'http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c' // Sent
-      }
+      // anything
     },
     callback: {
       url: 'http://prepare-submissions-for-export/delta',
