@@ -431,6 +431,10 @@ services:
 #      - "logging=true"
     restart: always
     logging: *default-logging
+  delta-files-share:
+    image: cecemel/file-service-share:0.0.4-beta.2
+    volumes:
+      - ./data/files:/share
 ################################################################################
 # DELTA TO BE DEPRECATED
 ################################################################################
@@ -591,7 +595,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-submissions:
-    image: lblod/delta-producer-publication-graph-maintainer:0.6.1
+    image: lblod/delta-producer-publication-graph-maintainer:0.8.0 #Note: this version is more advanced, since we can experiment a bit.
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
