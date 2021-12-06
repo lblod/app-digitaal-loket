@@ -319,8 +319,6 @@ services:
     volumes:
       - ./data/exports/submissions:/data/exports
       - ./config/export/submissions:/config
-    labels:
-      - "logging=true"
     restart: always
     logging: *default-logging
   clean-up-submission:
