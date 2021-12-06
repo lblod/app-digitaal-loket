@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.53.0 (2021-12-06)
+### :rocket: Enhancement
+- Subsidies: improve behaviour of delete button. Don't allow delete when submitting, saving or transition to next step.
+- Subsidies: GzG oproep 4
+- Upgrade virtuoso version to tenforce/virtuoso:1.3.2-virtuoso7.2.5.1
+
+### :house: Internal
+- Remove export leidinggevenden and mandaten, as these are covered by delta-producers
+- Remove logging to app-http-logger on export-submissions. To decrease load.
+- Bump automatic-submission, to have configurable endpoint to resolve json-ld endpoints.
+
 ## 1.52.0 (2021-11-11)
 
 ### :rocket: Enhancement
