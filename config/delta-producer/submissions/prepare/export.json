@@ -70,6 +70,10 @@
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
       "pathToSubmission": "?formData <http://purl.org/dc/terms/hasPart> ?subject. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>."
+    },
+    {
+      "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#LocalFileDataObject",
+      "pathToSubmission": "?subject <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?vfile. ?formData <http://purl.org/dc/terms/hasPart> ?vfile. ?formData a <http://lblod.data.gift/vocabularies/automatische-melding/FormData>. ?submission <http://www.w3.org/ns/prov#generated> ?formData. ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>."
     }
   ]
 }
