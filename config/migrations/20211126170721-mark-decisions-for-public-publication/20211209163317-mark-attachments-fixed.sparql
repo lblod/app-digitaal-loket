@@ -20,6 +20,7 @@ WHERE {
     ?submission schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> ;
       nie:hasPart |
       nie:hasPart/^nie:dataSource |
+      dct:hasPart/^nie:dataSource |
       nie:hasPart/^nie:dataSource/^nie:dataSource |
       prov:generated/dct:hasPart |
       prov:generated/dct:hasPart/nie:dataSource ?attachment .
@@ -29,7 +30,7 @@ WHERE {
     ?submission schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> ;
       dct:subject/dct:source ?attachment.
     ?attachment dct:type ?type .
-  
+
     FILTER (?type IN (
       <http://data.lblod.gift/concepts/meta-file-type>,
       <http://data.lblod.gift/concepts/form-data-file-type>,
