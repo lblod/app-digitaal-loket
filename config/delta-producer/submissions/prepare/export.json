@@ -8,10 +8,6 @@
       "pathToSubmission": "?submission <http://purl.org/dc/terms/subject> ?subject; \n a <http://rdf.myexperiment.org/ontologies/base/Submission>."
     },
     {
-      "type": "http://mu.semte.ch/vocabularies/ext/SubmissionDocumentStatus",
-      "pathToSubmission": "?submission <http://www.w3.org/ns/adms#status> ?subject; \n a <http://rdf.myexperiment.org/ontologies/base/Submission>."
-    },
-    {
       "type": "http://lblod.data.gift/vocabularies/besluit/TaxRate",
       "pathToSubmission": "?submission <http://www.w3.org/ns/prov#generated> ?formData; \n a <http://rdf.myexperiment.org/ontologies/base/Submission>. \n ?formData <http://lblod.data.gift/vocabularies/besluit/taxRate> ?subject."
     },
