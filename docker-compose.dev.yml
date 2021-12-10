@@ -46,10 +46,6 @@ services:
     restart: "no"
   dbcleanup:
     restart: "no"
-  export-mandaten:
-    restart: "no"
-  export-leidinggevenden:
-    restart: "no"
   filehost:
     restart: "no"
   sink:
