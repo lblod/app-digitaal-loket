@@ -399,7 +399,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.2.3
+    image: lblod/prepare-submissions-for-export-service:0.3.0
     volumes:
       - ./config/delta-producer/submissions/prepare/:/config
     labels:
