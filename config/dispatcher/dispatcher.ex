@@ -387,6 +387,13 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # delta-files-share
+  #################################################################
+  get "/delta-files-share/download/*path" do
+    Proxy.forward conn, path, "http://delta-files-share/download/"
+  end
+
+  #################################################################
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
@@ -398,6 +405,13 @@ defmodule Dispatcher do
   #################################################################
   get "/sync/leidinggevenden/files/*path" do
     Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-leidinggevenden/files/"
+  end
+
+  #################################################################
+  # loket-submissions sync
+  #################################################################
+  get "/sync/submissions/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-submissions/files/"
   end
 
   #################################################################

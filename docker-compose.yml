@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 
 x-logging:
   &default-logging
@@ -412,7 +412,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher:
-    image: lblod/delta-producer-dump-file-publisher:0.3.1
+    image: lblod/delta-producer-dump-file-publisher:0.4.0
     volumes:
       - ./config/delta-producer/dump-file-publisher:/config
       - ./data/files:/share
@@ -421,6 +421,10 @@ services:
 #      - "logging=true"
     restart: always
     logging: *default-logging
+  delta-files-share:
+    image: cecemel/file-service-share:0.0.4-beta.2
+    volumes:
+      - ./data/files:/share
 ################################################################################
 # DELTA LEIDINGGEVENDEN: START
 ################################################################################
@@ -439,7 +443,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-leidinggevenden:
-    image: lblod/delta-producer-publication-graph-maintainer:0.4.1
+    image: lblod/delta-producer-publication-graph-maintainer:0.6.1
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -494,7 +498,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-mandatarissen:
-    image: lblod/delta-producer-publication-graph-maintainer:0.4.1
+    image: lblod/delta-producer-publication-graph-maintainer:0.6.1
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -530,4 +534,61 @@ services:
     logging: *default-logging
 ################################################################################
 # DELTA MANDATARISSEN: END
+################################################################################
+################################################################################
+# DELTA SUBMISSIONS: START
+################################################################################
+  delta-producer-background-jobs-initiator-submissions:
+    image: lblod/delta-producer-background-jobs-initiator:0.3.1
+    environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions'
+      CRON_PATTERN_DUMP_JOB: '0 0 4 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
+      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-publication-graph-maintainer-submissions:
+    image: lblod/delta-producer-publication-graph-maintainer:0.8.0 #Note: this version is more advanced, since we can experiment a bit.
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/submissions"
+      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-submissions'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions'
+      QUEUE_POLL_INTERVAL: 3000
+      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
+      SKIP_MU_AUTH_INITIAL_SYNC: 'true'
+      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
+    volumes:
+      - ./config/delta-producer/submissions:/config
+      - ./data/files/:/share
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-json-diff-file-publisher-submissions:
+    image: lblod/delta-producer-json-diff-file-publisher:0.2.3
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/submissions"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager/submissions"
+      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-submissions'
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
+    volumes:
+      - ./data/files:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA SUBMISSIONS: END
 ################################################################################
