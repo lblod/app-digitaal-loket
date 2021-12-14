@@ -112,3 +112,5 @@ services:
     restart: "no"
   delta-producer-json-diff-file-publisher-mandatarissen:
     restart: "no"
+  prepare-submissions-for-export:
+    restart: "no"
