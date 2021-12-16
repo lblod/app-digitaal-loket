@@ -21,9 +21,11 @@ export default {
       PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
+      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?rekeningnummer ?bestaandPersoneelskader
-              ?extraBestaandPersoneelskader ?vrijwilligers ?specifiekeUitgaven ?subsidie
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?kbo ?classificatie ?rekeningnummer
+                      ?bestaandPersoneelskader ?extraBestaandPersoneelskader ?vrijwilligers
+                      ?specifiekeUitgaven ?subsidie
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
@@ -42,7 +44,9 @@ export default {
             ?subsidie dct:modified ?submissionDate ;
               m8g:hasParticipation ?participation .
             ?bestuur m8g:playsRole ?participation ;
-              skos:prefLabel ?bestuurseenheid .
+              skos:prefLabel ?bestuurseenheid ;
+              ext:kbonummer ?kbo ;
+              besluit:classificatie/skos:prefLabel ?classificatie .
             ?form schema:bankAccount/schema:identifier ?rekeningnummer ;
               lblodSubsidie:engagementTable/ext:engagementEntry/ext:existingStaff ?bestaandPersoneelskader ;
               lblodSubsidie:engagementTable/ext:engagementEntry/ext:additionalStaff ?extraBestaandPersoneelskader ;
@@ -68,6 +72,8 @@ export default {
       return {
         submissionDate: getSafeValue(subsidie, 'submissionDate'),
         bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
+        kbo: getSafeValue(subsidie, 'kbo'),
+        classificatie: getSafeValue(subsidie, 'classificatie'),
         rekeningnummer: getSafeValue(subsidie, 'rekeningnummer'),
         bestaandPersoneelskader: getSafeValue(subsidie, 'bestaandPersoneelskader'),
         extraBestaandPersoneelskader: getSafeValue(subsidie, 'extraBestaandPersoneelskader'),
@@ -81,6 +87,8 @@ export default {
       'subsidie',
       'submissionDate',
       'bestuurseenheid',
+      'kbo',
+      'classificatie',
       'rekeningnummer',
       'bestaandPersoneelskader',
       'extraBestaandPersoneelskader',
