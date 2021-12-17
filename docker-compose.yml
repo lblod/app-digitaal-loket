@@ -470,13 +470,12 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-json-diff-file-publisher-leidinggevenden:
-    image: lblod/delta-producer-json-diff-file-publisher:0.2.3
+    image: lblod/delta-producer-json-diff-file-publisher:0.5.0
     environment:
       MAX_BODY_SIZE: "50mb"
       ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       RELATIVE_FILE_PATH: "deltas/leidinggevenden"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager-leidinggevenden"
-      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer'
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
     volumes:
@@ -525,13 +524,12 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-json-diff-file-publisher-mandatarissen:
-    image: lblod/delta-producer-json-diff-file-publisher:0.2.3
+    image: lblod/delta-producer-json-diff-file-publisher:0.5.0
     environment:
       MAX_BODY_SIZE: "50mb"
       ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       RELATIVE_FILE_PATH: "deltas/mandatarissen"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager-mandatarissen"
-      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer'
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
     volumes:
@@ -583,13 +581,12 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-json-diff-file-publisher-submissions:
-    image: lblod/delta-producer-json-diff-file-publisher:0.3.1
+    image: lblod/delta-producer-json-diff-file-publisher:0.5.0
     environment:
       MAX_BODY_SIZE: "50mb"
       ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
       RELATIVE_FILE_PATH: "deltas/submissions"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager/submissions"
-      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-submissions'
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
     volumes:
