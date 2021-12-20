@@ -430,7 +430,7 @@ services:
     restart: always
     logging: *default-logging
   delta-files-share:
-    image: cecemel/file-service-share:0.0.4-beta.2
+    image: redpencil/file-share-sync:0.0.4
     volumes:
       - ./data/files:/share
 ################################################################################
