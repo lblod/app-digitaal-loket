@@ -1,4 +1,14 @@
 # Changelog
+## 1.54.0 (2021-12-21)
+### :rocket: Enhancement
+- Create publication producer: this will make sure submissions can be consumed by app-public-decisions
+- Improve file-download-service: allow file type guessing if none is provided. (mainly to tackle VGC case)
+
+### :house: Internal
+- Validate-submission: less agressive rescheduling of remote-dataobjects, when submitting.
+- Bump mu-java-script-template in multiple services, as to handle edge cases for nasty URL's
+- General performance improvements on the passing of delta's by using mu-scope-ids.
+- Bump all producers
 
 ## 1.53.0 (2021-12-06)
 ### :rocket: Enhancement
