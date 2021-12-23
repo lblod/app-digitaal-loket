@@ -1,4 +1,9 @@
 # Changelog
+## 1.55.0 (2021-12-23)
+### :rocket: Enhancement
+- New report GZG: oproep 2
+- Update report contactracing: KBO-number
+
 ## 1.54.0 (2021-12-21)
 ### :rocket: Enhancement
 - Create publication producer: this will make sure submissions can be consumed by app-public-decisions
