@@ -32,6 +32,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -94,6 +95,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -148,6 +150,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -190,7 +193,7 @@ export default {
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
 
       SELECT distinct ?subsidie ?november ?december ?januari ?februari ?maart ?april ?mei ?juni ?juli
-              ?augustus ?bestaandPersoneelskader ?extraAangeworven
+              ?augustus ?september ?oktober ?bestaandPersoneelskader ?extraAangeworven
               ?vrijwilligers ?specifiekeUitgaven
       WHERE {
         {
@@ -203,6 +206,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -210,7 +214,7 @@ export default {
             ?entry ext:existingStaff ?bestaandPersoneelskader ;
               ext:additionalStaff ?extraAangeworven ;
               ext:volunteers ?vrijwilligers .
-            
+
             OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresNovember/skos:prefLabel ?november . }
             OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresDecember/skos:prefLabel ?december . }
             OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresJanuary/skos:prefLabel ?januari . }
@@ -221,6 +225,8 @@ export default {
             OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresJune/skos:prefLabel ?juni . }
             OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresJuly/skos:prefLabel ?juli . }
             OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresAugust/skos:prefLabel ?augustus . }
+            OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresSeptember/skos:prefLabel ?september .}
+            OPTIONAL { ?form lblodSubsidie:extraContactTracingMeasuresOctober/skos:prefLabel ?oktober .}
 
             OPTIONAL { ?form lblodSubsidie:estimatedExtraCosts ?specifiekeUitgaven . }
 
@@ -252,6 +258,8 @@ export default {
         juni: getSafeValue(row, 'juni'),
         juli: getSafeValue(row, 'juli'),
         augustus: getSafeValue(row, 'augustus'),
+        september: getSafeValue(row, 'september'),
+        oktober: getSafeValue(row, 'oktober'),
         bestaandPersoneelskader: getSafeValue(row, 'bestaandPersoneelskader'),
         extraAangeworven: getSafeValue(row, 'extraAangeworven'),
         vrijwilligers: getSafeValue(row, 'vrijwilligers'),
@@ -283,6 +291,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -385,6 +394,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -477,6 +487,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -485,19 +496,19 @@ export default {
               VALUES ?contactenViaMutualiteitenRule { <http://data.lblod.info/id/subsidies/rules/aa995916-6deb-478b-b332-9300f494044d> }
             }
             BIND(IF(BOUND(?contactenViaMutualiteitenRule), "ja", "nee") AS ?contactenViaMutualiteiten)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?viaInfluencersRule .
               VALUES ?viaInfluencersRule { <http://data.lblod.info/id/subsidies/rules/e2ab52dc-7b22-40a7-9fa4-51973c3bad5a> }
             }
             BIND(IF(BOUND(?viaInfluencersRule), "ja", "nee") AS ?viaInfluencers)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?viaArmoedeorganisatiesRule .
               VALUES ?viaArmoedeorganisatiesRule { <http://data.lblod.info/id/subsidies/rules/d0c60eba-dbd0-46a5-a237-7d26f465af28> }
             }
             BIND(IF(BOUND(?viaArmoedeorganisatiesRule), "ja", "nee") AS ?viaArmoedeorganisaties)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?viaDeVoedselbankRule .
               VALUES ?viaDeVoedselbankRule { <http://data.lblod.info/id/subsidies/rules/dee57634-9b26-454d-bb33-f32f4d1c9bf6> }
@@ -552,29 +563,30 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
             ?form lblodSubsidie:contactAndSourceTrackingObjectiveOne/lblodSubsidie:priority/skos:prefLabel ?prioEersteDoelstelling .
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?verspreidingVanFoldersRule .
               VALUES ?verspreidingVanFoldersRule { <http://data.lblod.info/id/subsidies/rules/04a7e1c6-407a-4154-819e-de1cfa4dee92> }
             }
             BIND(IF(BOUND(?verspreidingVanFoldersRule), "ja", "nee") AS ?verspreidingVanFolders)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?viaWebsiteRule .
               VALUES ?viaWebsiteRule { <http://data.lblod.info/id/subsidies/rules/dd80f93f-e013-4cbb-840d-53b3c3a888fb> }
             }
             BIND(IF(BOUND(?viaWebsiteRule), "ja", "nee") AS ?viaWebsite)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?telefonischeContactenRule .
               VALUES ?telefonischeContactenRule { <http://data.lblod.info/id/subsidies/rules/1afe28e2-e6b7-4af3-86b6-1254e8ae7d87> }
             }
             BIND(IF(BOUND(?telefonischeContactenRule), "ja", "nee") AS ?telefonischeContacten)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:preventionMethods ?huisAanHuisBezoekenRule .
               VALUES ?huisAanHuisBezoekenRule { <http://data.lblod.info/id/subsidies/rules/f5d4ce8c-6baf-4304-8037-0aa7afe631e5> }
@@ -628,47 +640,48 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
             ?form lblodSubsidie:contactAndSourceTrackingObjectiveTwo/lblodSubsidie:priority/skos:prefLabel ?prioTweedeDoelstelling .
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?contacterenVanBesmettePersonenRule .
               VALUES ?contacterenVanBesmettePersonenRule { <http://data.lblod.info/id/subsidies/rules/e8fe4796-64be-4995-82ce-ba9f355fb5b4> }
             }
             BIND(IF(BOUND(?contacterenVanBesmettePersonenRule), "ja", "nee") AS ?contacterenVanBesmettePersonen)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?meldenVanClustersRule .
               VALUES ?meldenVanClustersRule { <http://data.lblod.info/id/subsidies/rules/acd2e32c-fdcd-4ff5-991b-b0399296ec24> }
             }
             BIND(IF(BOUND(?meldenVanClustersRule), "ja", "nee") AS ?meldenVanClusters)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?monitorenVanEvenementenRule .
               VALUES ?monitorenVanEvenementenRule { <http://data.lblod.info/id/subsidies/rules/9bd53c83-f67e-48a4-8b65-051e018cc3bf> }
             }
             BIND(IF(BOUND(?monitorenVanEvenementenRule), "ja", "nee") AS ?monitorenVanEvenementen)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?verzamelenVanHorecalijstenRule .
               VALUES ?verzamelenVanHorecalijstenRule { <http://data.lblod.info/id/subsidies/rules/06720e8f-f786-43cc-8d4a-3355505f7278> }
             }
             BIND(IF(BOUND(?verzamelenVanHorecalijstenRule), "ja", "nee") AS ?verzamelenVanHorecalijsten)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?doorgevenVanContactenRule .
               VALUES ?doorgevenVanContactenRule { <http://data.lblod.info/id/subsidies/rules/a13b8675-10fb-44d4-bdb0-e7bf141e96e5> }
             }
             BIND(IF(BOUND(?doorgevenVanContactenRule), "ja", "nee") AS ?doorgevenVanContacten)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?overlegMetDeZorgraadRule .
               VALUES ?overlegMetDeZorgraadRule { <http://data.lblod.info/id/subsidies/rules/0bef5e29-c866-427c-88f9-187331b4bf3c> }
             }
             BIND(IF(BOUND(?overlegMetDeZorgraadRule), "ja", "nee") AS ?overlegMetDeZorgraad)
-            
+
             OPTIONAL {
               ?form lblodSubsidie:sourceDetectionActions ?isolerenOfTijdelijkeSluitingVanClustersRule .
               VALUES ?isolerenOfTijdelijkeSluitingVanClustersRule { <http://data.lblod.info/id/subsidies/rules/d3dd104d-dac1-422e-9ad5-d9dabbcb2bbe> }
@@ -727,6 +740,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -802,6 +816,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -878,6 +893,7 @@ export default {
           VALUES ?references {
             <http://data.lblod.info/id/subsidieprocedurestappen/84464f95b2278b3394d0178478d8772d9dde89480827bfddf49db25a677c9491>
             <http://data.lblod.info/id/subsidy-procedural-steps/6e6b1f8a-0758-42e8-95e6-bec36e04864e>
+            <http://data.lblod.info/id/subsidy-procedural-steps/17dff916-16a3-4239-b74d-36890145336a>
           }
 
           OPTIONAL {
@@ -983,6 +999,8 @@ export default {
       'juni',
       'juli',
       'augustus',
+      'september',
+      'oktober',
       'bestaandPersoneelskader',
       'extraAangeworven',
       'vrijwilligers',
