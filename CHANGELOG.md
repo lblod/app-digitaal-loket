@@ -1,4 +1,8 @@
 # Changelog
+## 1.56.0 (2021-12-23)
+### :rocket: Enhancement
+- Update report contactracing: added nazomer.
+
 ## 1.55.0 (2021-12-23)
 ### :rocket: Enhancement
 - New report GZG: oproep 2
