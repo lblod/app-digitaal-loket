@@ -18,8 +18,9 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 
-      SELECT DISTINCT ?subsidie ?bestuurseenheid ?aangemaaktOp ?bewerktOp ?gewijzigdDoor
+      SELECT DISTINCT ?subsidie ?bestuurseenheid ?kbo ?classificatie ?aangemaaktOp ?bewerktOp ?gewijzigdDoor
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
@@ -39,7 +40,9 @@ export default {
               ext:lastModifiedBy ?lastModifiedBy ;
               m8g:hasParticipation ?participation .
             ?bestuur m8g:playsRole ?participation ;
-              skos:prefLabel ?bestuurseenheid .
+              skos:prefLabel ?bestuurseenheid ;
+              ext:kbonummer ?kbo ;
+              besluit:classificatie/skos:prefLabel ?classificatie .
             ?lastModifiedBy foaf:familyName ?familyName ;
               foaf:firstName ?firstName .
             BIND(CONCAT(?firstName, " ", ?familyName) AS ?gewijzigdDoor)
@@ -62,6 +65,8 @@ export default {
       acc[getSafeValue(row, 'subsidie')] = {
         subsidie: getSafeValue(row, 'subsidie'),
         bestuurseenheid: getSafeValue(row, 'bestuurseenheid'),
+        kbo: getSafeValue(row, 'kbo'),
+        classificatie: getSafeValue(row, 'classificatie'),
         aangemaaktOp: getSafeValue(row, 'aangemaaktOp'),
         bewerktOp: getSafeValue(row, 'bewerktOp'),
         gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor')
@@ -956,6 +961,8 @@ export default {
     await generateReportFromData(Object.values(dataPart12), [
       'subsidie',
       'bestuurseenheid',
+      'kbo',
+      'classificatie',
       'aangemaaktOp',
       'bewerktOp',
       'gewijzigdDoor',
