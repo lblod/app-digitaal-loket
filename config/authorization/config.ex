@@ -313,7 +313,8 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://schema.org/Message",
-                        "http://schema.org/Conversation"
+                        "http://schema.org/Conversation",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } },
                   %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
