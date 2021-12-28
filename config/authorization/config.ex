@@ -212,7 +212,8 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/bbcdr/Report"
+                        "http://mu.semte.ch/vocabularies/ext/bbcdr/Report",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } } ] },
 
       # // TOEZICHT
