@@ -31,7 +31,7 @@ INSERT DATA {
             common:active <http://lblod.data.info/id/subsidie-application-flows/124d07b9-5b97-4164-97b1-4693fb2e079e>.
 
         # Link the reeks to the offer
-        <http://lblod.data.info/id/subsidy-measure-offers/03cf66c0-ef21-47d8-b3fc-c9425da3a355>
+        <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>
             lblodSubsidie:heeftReeks <http://lblod.data.info/id/subsidy-measure-offer-series/e548807f-c39b-4190-9dc9-e32f21dbb095> .
 
         # The first step

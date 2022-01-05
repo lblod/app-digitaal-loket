@@ -13,11 +13,12 @@ PREFIX m8g: <http://data.europa.eu/m8g/>
 
 INSERT DATA {
     GRAPH <http://mu.semte.ch/graphs/public> {
+
         # Submission period of the step
         <http://data.lblod.info/id/periodes/75d444ef-8831-499d-a860-364d9edc8a76>
             a m8g:PeriodOfTime;
             mu:uuid """75d444ef-8831-499d-a860-364d9edc8a76""";
-            m8g:startTime "2022-01-01T03:00:00Z"^^xsd:dateTime;
+            m8g:startTime "2022-01-17T03:00:00Z"^^xsd:dateTime;
             m8g:endTime "2022-05-31T21:59:59Z"^^xsd:dateTime.
 
         # The subsidy-procedural-step for "Aanvraag" in 2022
@@ -29,11 +30,20 @@ INSERT DATA {
             dct:description """Aanvraag""";
             mobiliteit:periode <http://data.lblod.info/id/periodes/75d444ef-8831-499d-a860-364d9edc8a76>.
 
-        <http://lblod.data.info/id/subsidy-measure-offers/03cf66c0-ef21-47d8-b3fc-c9425da3a355>
-            a subsidie:SubsidiemaatregelAanbod;
-            mu:uuid """03cf66c0-ef21-47d8-b3fc-c9425da3a355""";
-            dct:title """Noodopvang (kinderen)"""@nl;
+        # Update the subsidy with new "related" and 2022 "Aanvraag" step
+        <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>
             skos:related <https://lokaalbestuur.vlaanderen.be/subsidie/noodopvang-basisschoolkinderen>;
             cpsv:follows <http://data.lblod.info/id/subsidy-procedural-steps/ae857ac3-50b2-4172-b3ea-2c35b3a794a7>.
+
+    }
+}
+;
+DELETE DATA {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+
+        # Remove old and broken "related" link
+        <http://lblod.data.gift/concepts/1df4b56a-3ccd-450d-93dc-317fda1ada38>
+            skos:related <https://lokaalbestuur.vlaanderen.be/projectsubsidie-noodopvang-schoolkinderen-vanaf-9-november-2020>.
+
     }
 }
