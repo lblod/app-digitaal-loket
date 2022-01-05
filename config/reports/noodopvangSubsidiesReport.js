@@ -53,6 +53,7 @@ export default {
             <http://data.lblod.info/id/subsidieprocedurestappen/8bee70b3f7b762d48c57944302d0897f8360bed5d8d49f32264772d6ebf8bef7>
             <http://data.lblod.info/id/subsidieprocedurestappen/7da2c107da4c8fc3aaad374da2dd5392a8f88b2f1e192ce3813cee16038d6a09>
             <http://data.lblod.info/id/subsidieprocedurestappen/d87de1deddc1bd6f9c8119c1e43dd26688e08ad56aa2e5c0fc287ecf0e202ba7>
+            <http://data.lblod.info/id/subsidy-procedural-steps/ae857ac3-50b2-4172-b3ea-2c35b3a794a7>
           }
 
           OPTIONAL {
