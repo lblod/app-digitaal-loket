@@ -1,0 +1,39 @@
+PREFIX mobiliteit: <https://data.vlaanderen.be/ns/mobiliteit#>
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+PREFIX gleif: <https://www.gleif.org/ontology/Base/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX common: <http://www.w3.org/2007/uwa/context/common.owl#>
+PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX m8g: <http://data.europa.eu/m8g/>
+
+INSERT DATA {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        # Submission period of the step
+        <http://data.lblod.info/id/periodes/75d444ef-8831-499d-a860-364d9edc8a76>
+            a m8g:PeriodOfTime;
+            mu:uuid """75d444ef-8831-499d-a860-364d9edc8a76""";
+            m8g:startTime "2022-01-01T03:00:00Z"^^xsd:dateTime;
+            m8g:endTime "2022-05-31T21:59:59Z"^^xsd:dateTime.
+
+        # The subsidy-procedural-step for "Aanvraag" in 2022
+        <http://data.lblod.info/id/subsidy-procedural-steps/ae857ac3-50b2-4172-b3ea-2c35b3a794a7>
+            a subsidie:Subsidieprocedurestap;
+            # NOTE: mark as final
+            subsidie:Subsidieprocedurestap.type <http://lblod.data.gift/concepts/ee855aae-eb10-44aa-ae01-38c4f6cca0f6>;
+            mu:uuid "ae857ac3-50b2-4172-b3ea-2c35b3a794a7";
+            dct:description """Aanvraag""";
+            mobiliteit:periode <http://data.lblod.info/id/periodes/75d444ef-8831-499d-a860-364d9edc8a76>.
+
+        <http://lblod.data.info/id/subsidy-measure-offers/03cf66c0-ef21-47d8-b3fc-c9425da3a355>
+            a subsidie:SubsidiemaatregelAanbod;
+            mu:uuid """03cf66c0-ef21-47d8-b3fc-c9425da3a355""";
+            dct:title """Noodopvang (kinderen)"""@nl;
+            skos:related <https://lokaalbestuur.vlaanderen.be/subsidie/noodopvang-basisschoolkinderen>;
+            cpsv:follows <http://data.lblod.info/id/subsidy-procedural-steps/ae857ac3-50b2-4172-b3ea-2c35b3a794a7>.
+    }
+}
