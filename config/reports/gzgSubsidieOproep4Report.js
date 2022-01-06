@@ -2,7 +2,7 @@ import { generateReportFromData, batchedQuery } from '../helpers.js';
 
 export default {
   cronPattern: '0 0 0 * * *',
-  name: 'gzgSubsidieOproepTwoReport',
+  name: 'gzgSubsidieOproepFourReport',
   execute: async () => {
     const reportData = {
       title: 'List of GzG Report oproep 4, step 1',

@@ -2,7 +2,7 @@ import { generateReportFromData, batchedQuery } from '../helpers.js';
 
 export default {
   cronPattern: '0 0 0 * * *',
-  name: 'gzgSubsidieOproepTwoReport',
+  name: 'gzgSubsidieOproepThreeReport',
   execute: async () => {
     const reportData = {
       title: 'List of GzG Report oproep 3, step 1',
@@ -134,7 +134,7 @@ export default {
             transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/8379a4ea-fd83-47cc-89fa-1a72ee4fbaff> ;
             dct:source ?form .
 
-          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidy-procedural-steps/f61dc47f-e7f8-46f3-b37d-27730c440ec0>> ;
+          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidy-procedural-steps/f61dc47f-e7f8-46f3-b37d-27730c440ec0> ;
             adms:status ?status .
 
            FILTER(?status IN (<http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>,
