@@ -255,7 +255,7 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    image: lblod/download-url-service:0.6.0
+    image: lblod/download-url-service:0.7.0
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
@@ -265,7 +265,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:0.11.1
+    image: lblod/automatic-submission-service:0.12.0
     labels:
       - "logging=true"
     restart: always
@@ -279,7 +279,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.9.1
+    image: lblod/enrich-submission-service:0.10.1
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20210706102126-forms.ttl"
     volumes:
@@ -290,7 +290,7 @@ services:
     restart: always
     logging: *default-logging
   validate-submission:
-    image: lblod/validate-submission-service:0.11.0
+    image: lblod/validate-submission-service:0.12.0
     environment:
       MAX_BODY_SIZE: "10000kb"
     volumes:
