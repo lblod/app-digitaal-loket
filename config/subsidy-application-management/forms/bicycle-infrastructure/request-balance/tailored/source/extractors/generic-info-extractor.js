@@ -12,21 +12,22 @@ module.exports = {
     const NIE = new $rdf.Namespace(
         'http://www.semanticdesktop.org/ontologies/2007/01/19/nie#');
 
-    const info = await getGenericInfo(source.uri, mu, sudo);
+    const {projectName, identifier} =
+        await getGenericInfo(source.uri, mu, sudo);
 
-    if (info) {
-      const {projectName, identifier} = info;
+    if (projectName)
       store.add(
           $rdf.sym(target.uri),
           LBLOD_SUBSIDIE('projectName'),
           projectName.value,
           graphs.additions);
+
+    if (identifier)
       store.add(
           $rdf.sym(target.uri),
           NIE('identifier'),
           identifier.value,
           graphs.additions);
-    }
   },
 };
 
@@ -37,9 +38,12 @@ PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
 SELECT DISTINCT ?projectName ?identifier
 WHERE {
   GRAPH ?g {
-    ${mu.sparqlEscapeUri(source.uri)}
-      lblodSubsidie:projectName ?projectName ;
-      nie:identifier ?identifier .
+    OPTIONAL { 
+        ${mu.sparqlEscapeUri(uri)} lblodSubsidie:projectName ?projectName.
+    }
+    OPTIONAL { 
+        ${mu.sparqlEscapeUri(uri)} nie:identifier ?identifier.
+    }
   }
 }`);
 

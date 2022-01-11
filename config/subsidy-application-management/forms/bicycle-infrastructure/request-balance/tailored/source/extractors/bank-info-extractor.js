@@ -4,7 +4,7 @@ module.exports = {
   name: 'bike-subsidy/request-balance/bank-info-extractor',
   execute: async (store, graphs, lib, target, source = null) => {
 
-    if(!source)
+    if (!source)
       source = target;
 
     const {$rdf, mu, sudo} = lib;
@@ -24,13 +24,13 @@ module.exports = {
         $rdf.sym(bankAccount),
         graphs.additions);
 
-    const info = await getGenericInfo(source.uri, mu, sudo);
+    const {iban} = await getGenericInfo(source.uri, mu, sudo);
 
-    if (info)
+    if (iban)
       store.add(
           $rdf.sym(bankAccount),
           SCHEMA('identifier'),
-          info.iban.value,
+          iban.value,
           graphs.additions);
 
     const letters = await getConfirmationLetters(source.uri, mu, sudo);
@@ -59,9 +59,10 @@ SELECT DISTINCT ?iban
 WHERE {
   GRAPH ?g {
     ${mu.sparqlEscapeUri(uri)}
-      schema:bankAccount ?bankAccount.    
-    ?bankAccount
-        schema:identifier ?iban.
+      schema:bankAccount ?bankAccount.   
+    OPTIONAL { 
+       ?bankAccount schema:identifier ?iban.
+    }
   }
 }`);
 

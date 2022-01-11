@@ -20,31 +20,33 @@ module.exports = {
         $rdf.sym(contactPoint),
         graphs.additions);
 
-    const info = await getGenericInfo(source.uri, mu, sudo);
+    const {firstName, familyName, email, telephone} =
+        await getGenericInfo(source.uri, mu, sudo);
 
-    if (info) {
-      const {firstName, familyName, email, telephone} = info;
-      store.add(
-          $rdf.sym(contactPoint),
-          FOAF('firstName'),
-          firstName.value,
-          graphs.additions);
+    if (familyName)
       store.add(
           $rdf.sym(contactPoint),
           FOAF('familyName'),
           familyName.value,
           graphs.additions);
+    if (firstName)
+      store.add(
+          $rdf.sym(contactPoint),
+          FOAF('firstName'),
+          firstName.value,
+          graphs.additions);
+    if (email)
       store.add(
           $rdf.sym(contactPoint),
           SCHEMA('email'),
           email.value,
           graphs.additions);
+    if (telephone)
       store.add(
           $rdf.sym(contactPoint),
           SCHEMA('telephone'),
           telephone.value,
           graphs.additions);
-    }
   },
 };
 
@@ -52,6 +54,7 @@ async function getGenericInfo(uri, mu, sudo) {
   const {results} = await sudo.querySudo(`PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
 PREFIX schema: <http://schema.org/>
 PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 SELECT DISTINCT ?firstName ?familyName ?email ?telephone
 WHERE {
@@ -59,12 +62,19 @@ WHERE {
     ${mu.sparqlEscapeUri(uri)}
       schema:contactPoint ?contactPoint.
 
-    ?contactPoint 
-        schema:email ?email;
-        schema:telephone ?telephone;
-        foaf:firstName ?firstName;
-        foaf:familyName ?familyName.
-  }
+    OPTIONAL { 
+        ?contactPoint foaf:familyName ?familyName.
+    }
+    OPTIONAL { 
+        ?contactPoint foaf:firstName ?firstName.
+    }
+    OPTIONAL { 
+        ?contactPoint schema:email ?email.
+    }  
+    OPTIONAL { 
+        ?contactPoint schema:telephone ?telephone.
+    }
+  }          
 }`);
 
   if (results.bindings.length) {
