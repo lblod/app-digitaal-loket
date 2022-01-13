@@ -34,7 +34,7 @@ export default {
             <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>
           }
 
-          ?formStatus skos:prefLabel ?formStatusLabel@en.
+          ?formStatus skos:prefLabel ?formStatusLabel.
 
           OPTIONAL {
             ?subsidie adms:status/skos:prefLabel ?subsidieStatus ;
