@@ -24,8 +24,10 @@ import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDeta
 import climateSubsidiePactsReport from './climateSubsidiePactsReport';
 import gemeentewegenReport from './gemeentewegenReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
-import gzgSubsidieOproepOneReport from './gzgSubsidieOproepOneReport';
-import gzgSubsidieOproepTwoReport from './gzgSubsidieOproepTwoReport';
+import gzgSubsidieOproepOneReport from './gzgSubsidieOproep1Report';
+import gzgSubsidieOproepTwoReport from './gzgSubsidieOproep2Report';
+import gzgSubsidieOproepThreeReport from './gzgSubsidieOproep3Report';
+import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
 
 export default [
   BestuurseenhedenReport,
@@ -55,5 +57,7 @@ export default [
   gemeentewegenReport,
   fietsSubsidieRequestsReport,
   gzgSubsidieOproepOneReport,
-  gzgSubsidieOproepTwoReport
+  gzgSubsidieOproepTwoReport,
+  gzgSubsidieOproepThreeReport,
+  gzgSubsidieOproepFourReport,
 ];
