@@ -115,8 +115,11 @@ defmodule Dispatcher do
   post "/file-service/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
+  #TODO: there is an issue in virtuoso, where a file remaning in more than 2 graphs, will
+  # not be properly deleted by the file service. (Mainly virtuoso issue).
+  # so here, only the meta-data will be removed
   delete "/files/*path" do
-    Proxy.forward conn, path, "http://file/files/"
+    Proxy.forward conn, path, "http://resource/files/"
   end
   match "/file-addresses/*path" do
     Proxy.forward conn, path, "http://resource/file-addresses/"
