@@ -357,6 +357,8 @@ defmodule Acl.UserGroups.Config do
                           "http://lblod.data.gift/vocabularies/reporting/Report",
                           "http://vocab.deri.ie/cogs#Job",
                           "http://open-services.net/ns/core#Error",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
 
@@ -372,6 +374,8 @@ defmodule Acl.UserGroups.Config do
                           "http://lblod.data.gift/vocabularies/reporting/Report",
                           "http://vocab.deri.ie/cogs#Job",
                           "http://open-services.net/ns/core#Error",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
 
