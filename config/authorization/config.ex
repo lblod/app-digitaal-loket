@@ -69,7 +69,6 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/DynamicSubform",
                         "http://mu.semte.ch/vocabularies/ext/DocumentStatus",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingType",
                         "http://mu.semte.ch/vocabularies/ext/supervision/DecisionType",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxType",
@@ -145,10 +144,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder" #TODO: not sure why this is here
                       ]
                     } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
@@ -212,7 +208,8 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/bbcdr/Report"
+                        "http://mu.semte.ch/vocabularies/ext/bbcdr/Report",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } } ] },
 
       # // TOEZICHT
@@ -233,7 +230,9 @@ defmodule Acl.UserGroups.Config do
                         "http://rdf.myexperiment.org/ontologies/base/Submission",
                         "http://mu.semte.ch/vocabularies/ext/SubmissionDocument",
                         "http://lblod.data.gift/vocabularies/besluit/TaxRate",
-                        "http://lblod.data.gift/vocabularies/automatische-melding/FormData"
+                        "http://lblod.data.gift/vocabularies/automatische-melding/FormData",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
                       ] } } ] },
 
       # // SUBSIDIES
@@ -313,7 +312,8 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://schema.org/Message",
-                        "http://schema.org/Conversation"
+                        "http://schema.org/Conversation",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } },
                   %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
@@ -354,6 +354,8 @@ defmodule Acl.UserGroups.Config do
                           "http://lblod.data.gift/vocabularies/reporting/Report",
                           "http://vocab.deri.ie/cogs#Job",
                           "http://open-services.net/ns/core#Error",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
 
@@ -369,6 +371,8 @@ defmodule Acl.UserGroups.Config do
                           "http://lblod.data.gift/vocabularies/reporting/Report",
                           "http://vocab.deri.ie/cogs#Job",
                           "http://open-services.net/ns/core#Error",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
+                          "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
 

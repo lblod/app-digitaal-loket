@@ -112,5 +112,11 @@ services:
     restart: "no"
   delta-producer-json-diff-file-publisher-mandatarissen:
     restart: "no"
+  delta-producer-background-jobs-initiator-submissions:
+    restart: "no"
+  delta-producer-publication-graph-maintainer-submissions:
+    restart: "no"
+  delta-producer-json-diff-file-publisher-submissions:
+    restart: "no"
   prepare-submissions-for-export:
     restart: "no"
