@@ -1,4 +1,34 @@
 # Changelog
+## 1.56.0 (2021-12-23)
+### :rocket: Enhancement
+- Update report contactracing: added nazomer.
+
+## 1.55.0 (2021-12-23)
+### :rocket: Enhancement
+- New report GZG: oproep 2
+- Update report contactracing: KBO-number
+
+## 1.54.0 (2021-12-21)
+### :rocket: Enhancement
+- Create publication producer: this will make sure submissions can be consumed by app-public-decisions
+- Improve file-download-service: allow file type guessing if none is provided. (mainly to tackle VGC case)
+
+### :house: Internal
+- Validate-submission: less agressive rescheduling of remote-dataobjects, when submitting.
+- Bump mu-java-script-template in multiple services, as to handle edge cases for nasty URL's
+- General performance improvements on the passing of delta's by using mu-scope-ids.
+- Bump all producers
+
+## 1.53.0 (2021-12-06)
+### :rocket: Enhancement
+- Subsidies: improve behaviour of delete button. Don't allow delete when submitting, saving or transition to next step.
+- Subsidies: GzG oproep 4
+- Upgrade virtuoso version to tenforce/virtuoso:1.3.2-virtuoso7.2.5.1
+
+### :house: Internal
+- Remove export leidinggevenden and mandaten, as these are covered by delta-producers
+- Remove logging to app-http-logger on export-submissions. To decrease load.
+- Bump automatic-submission, to have configurable endpoint to resolve json-ld endpoints.
 
 ## 1.52.0 (2021-11-11)
 

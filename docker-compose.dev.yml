@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 services:
   proxy:
     image: nginx:1.13
@@ -45,10 +45,6 @@ services:
   deliver-bbcdr:
     restart: "no"
   dbcleanup:
-    restart: "no"
-  export-mandaten:
-    restart: "no"
-  export-leidinggevenden:
     restart: "no"
   filehost:
     restart: "no"
@@ -115,4 +111,12 @@ services:
   delta-producer-publication-graph-maintainer-mandatarissen:
     restart: "no"
   delta-producer-json-diff-file-publisher-mandatarissen:
+    restart: "no"
+  delta-producer-background-jobs-initiator-submissions:
+    restart: "no"
+  delta-producer-publication-graph-maintainer-submissions:
+    restart: "no"
+  delta-producer-json-diff-file-publisher-submissions:
+    restart: "no"
+  prepare-submissions-for-export:
     restart: "no"

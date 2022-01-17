@@ -115,8 +115,11 @@ defmodule Dispatcher do
   post "/file-service/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
+  #TODO: there is an issue in virtuoso, where a file remaning in more than 2 graphs, will
+  # not be properly deleted by the file service. (Mainly virtuoso issue).
+  # so here, only the meta-data will be removed
   delete "/files/*path" do
-    Proxy.forward conn, path, "http://file/files/"
+    Proxy.forward conn, path, "http://resource/files/"
   end
   match "/file-addresses/*path" do
     Proxy.forward conn, path, "http://resource/file-addresses/"
@@ -387,6 +390,13 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # delta-files-share
+  #################################################################
+  get "/delta-files-share/download/*path" do
+    Proxy.forward conn, path, "http://delta-files-share/download/"
+  end
+
+  #################################################################
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
@@ -398,6 +408,13 @@ defmodule Dispatcher do
   #################################################################
   get "/sync/leidinggevenden/files/*path" do
     Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-leidinggevenden/files/"
+  end
+
+  #################################################################
+  # loket-submissions sync
+  #################################################################
+  get "/sync/submissions/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-submissions/files/"
   end
 
   #################################################################
