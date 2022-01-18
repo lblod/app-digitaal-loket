@@ -12,7 +12,8 @@
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/MandatarissenCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer",
-    "fileBaseName": "dump-mandatarissen"
+    "fileBaseName": "dump-mandatarissen",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql"
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/MandatarissenCacheGraphDump",
