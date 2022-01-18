@@ -581,27 +581,18 @@ services:
       SKIP_MU_AUTH_INITIAL_SYNC: 'true'
       HEALING_PATCH_GRAPH_BATCH_SIZE: 500
       UPDATE_PUBLICATION_GRAPH_SLEEP: 200
+      SERVE_DELTA_FILES: "true"
+      RELATIVE_FILE_PATH: "deltas/submissions"
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
     volumes:
       - ./config/delta-producer/submissions:/config
       - ./data/files/:/share
 # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
 #    labels:
 #      - "logging=true"
-    restart: always
-    logging: *default-logging
-  delta-producer-json-diff-file-publisher-submissions:
-    image: lblod/delta-producer-json-diff-file-publisher:0.5.0
-    environment:
-      MAX_BODY_SIZE: "50mb"
-      ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      RELATIVE_FILE_PATH: "deltas/submissions"
-      PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager/submissions"
-      DELTA_INTERVAL_MS: 10000
-      PRETTY_PRINT_DIFF_JSON: "true"
-    volumes:
-      - ./data/files:/share
-    labels:
-      - "logging=true"
     restart: always
     logging: *default-logging
 ################################################################################
