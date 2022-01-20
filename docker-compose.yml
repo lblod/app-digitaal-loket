@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.54.1
+    image: lblod/frontend-loket:0.54.2
     links:
       - identifier:backend
     labels:
@@ -322,7 +322,7 @@ services:
     restart: always
     logging: *default-logging
   clean-up-submission:
-    image: lblod/clean-up-submission-service:0.2.0
+    image: lblod/clean-up-submission-service:0.3.2
     volumes:
       - ./data/files:/share
     labels:
@@ -351,7 +351,7 @@ services:
     restart: always
     logging: *default-logging
   subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.9.1
+    image: lblod/subsidy-applications-management-service:0.10.1
     environment:
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
       META_DATA_CRON: "0 */15 8-18 * * 1-5"
@@ -399,7 +399,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.3.3
+    image: lblod/prepare-submissions-for-export-service:0.3.4
     volumes:
       - ./config/delta-producer/submissions/prepare/:/config
     labels:
