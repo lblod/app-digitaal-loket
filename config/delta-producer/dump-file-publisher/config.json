@@ -23,12 +23,14 @@
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubmissionsCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-submissions",
-    "fileBaseName": "dump-submissions-public"
+    "fileBaseName": "dump-submissions-public",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql"
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubmissionsCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-submissions",
-    "fileBaseName": "dump-submissions-public"
+    "fileBaseName": "dump-submissions-public",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql"
   }
 
 }
