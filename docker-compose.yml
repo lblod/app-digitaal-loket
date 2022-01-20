@@ -322,7 +322,7 @@ services:
     restart: always
     logging: *default-logging
   clean-up-submission:
-    image: lblod/clean-up-submission-service:0.2.0
+    image: lblod/clean-up-submission-service:0.3.2
     volumes:
       - ./data/files:/share
     labels:
