@@ -1,4 +1,17 @@
 # Changelog
+## 1.57.0 (2022-01-21)
+### :house: Internal
+ - move files to org-graphs: migrations and update corresponding services to handle new location
+ - subsidy-applications-managenent: improve and simplify code tailored-data
+### :rocket: Enhancement
+- new bestuurseenheid: Politie Deinze-Zulte-Lievegem
+#### subsidies
+- Noodopvang Kerst 2012:
+  - 7 new series forms
+  - reports
+- Fietsinfrastructuur: new step + reports
+- Reports GzG operoep 3 and 4
+
 ## 1.56.0 (2021-12-23)
 ### :rocket: Enhancement
 - Update report contactracing: added nazomer.
