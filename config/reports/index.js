@@ -39,7 +39,7 @@ export default [
   sameRrnReport,
   failedSyncToMft,
   bestuurseenhedenWithoutNotificationEmail,
-  internalMandatenReport,
+  //internalMandatenReport, TODO: since the introduction ofg the publication graph, this report became too heavy)
   submissionsReport,
   personenWithMultipleNamesReport,
   mandatarissenWithMultipleStartDateReport,
