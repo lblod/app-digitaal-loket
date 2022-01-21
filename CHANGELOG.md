@@ -1,4 +1,7 @@
 # Changelog
+## 1.57.1 (2022-01-21)
+### :house: Internal
+ - disable the internal mandaten report, because performance concerns
 ## 1.57.0 (2022-01-21)
 ### :house: Internal
  - move files to org-graphs: migrations and update corresponding services to handle new location
