@@ -1,4 +1,7 @@
 # Changelog
+## 1.57.2 (2022-01-21)
+### :house: Internal
+ - fixed missing migration: move attachments of manually created submissions
 ## 1.57.1 (2022-01-21)
 ### :house: Internal
  - disable the internal mandaten report, because performance concerns
