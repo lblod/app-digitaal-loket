@@ -1,4 +1,7 @@
 # Changelog
+## 1.57.3 (2022-01-23)
+### :house: Internal
+ - Update file service to deal with performance issues of files deletion residing in multiple graphs
 ## 1.57.2 (2022-01-21)
 ### :house: Internal
  - fixed missing migration: move attachments of manually created submissions
