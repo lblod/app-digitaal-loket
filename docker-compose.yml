@@ -442,6 +442,8 @@ services:
     image: redpencil/file-share-sync:0.0.4
     volumes:
       - ./data/files:/share
+    environment:
+      ALLOW_SUPER_CONSUMER: "true"
 ################################################################################
 # DELTA LEIDINGGEVENDEN: START
 ################################################################################
