@@ -89,7 +89,7 @@ Should have credentials provided, see [deliver-email-service](https://github.com
 ###### Deltas submissions: extra considerations
 
 ####### Separate publication-triplestore
-Due to performance issues, related to the high useage of this module, a seperate triplestore (virtuoso) has been introduced to offload the publication of the data.
+Due to performance issues, related to the high usage of this module, a separate triplestore (virtuoso) has been introduced to offload the publication of the data.
 This architectural change is currently under evaluation. The criteria for evaluation will be: the performance win vs the practical consequences of such change.
 
 If deemed succesful, we might consider moving the other publication graphs to the triplestore too.
