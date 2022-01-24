@@ -72,11 +72,6 @@ To make sure the app can share data, producers need to be set up. There is an in
 
 ##### Additional notes
 
-###### delta-producer-publication-graph-maintainer-submissions and publication-triplestore
-Due to performance issues, related to the high useage of this module, a seperate triplestore (virtuoso) has been introduced to offload the publication of the data.
-This architectural change is currently under evaluation. The criteria for evaluation will be: the performance win vs the practical consequences of such change.
-
-If deemed succesful, we might consider moving the other publication graphs to the triplestore too.
 ###### Performance (mandatarissen/leidinggevenden)
 - The default virtuoso settings might be too weak if you need to ingest the production data. Hence, there is better config, you can take over in your `docker-compose.override.yml`
 ```
@@ -90,6 +85,26 @@ If deemed succesful, we might consider moving the other publication graphs to th
 Not all required parameters are provided, since deploy specific, see [report-generator](https://github.com/lblod/delta-producer-report-generator)
 ###### deliver-email-service
 Should have credentials provided, see [deliver-email-service](https://github.com/redpencilio/deliver-email-service)
+
+###### Deltas submissions: extra considerations
+
+####### Separate publication-triplestore
+Due to performance issues, related to the high useage of this module, a seperate triplestore (virtuoso) has been introduced to offload the publication of the data.
+This architectural change is currently under evaluation. The criteria for evaluation will be: the performance win vs the practical consequences of such change.
+
+If deemed succesful, we might consider moving the other publication graphs to the triplestore too.
+
+As a consequence, `delta-producer-publication-graph-maintainer-submissions` will also publish and host the json-diff files. Mainly to simplify the transition to a separate publication triple store (else we would need a separate mu-auth and deltanotifier).
+In essence, it takes over https://github.com/lblod/delta-producer-json-diff-file-publisher, although both can still be combined.
+
+####### Sharing of attachments and other file data of the submisssions
+If files need to be shared over deltas (attachments, form-data, cached-files) you will need to set in a docker-compose.override.yml
+```
+  delta-producer-publication-graph-maintainer-submissions:
+    KEY: "foo-bar
+```
+This will needs to be set in the consuming stack too.
+
 
 ### Upgrading your setup
 
