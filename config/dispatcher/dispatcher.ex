@@ -410,8 +410,15 @@ defmodule Dispatcher do
   #################################################################
   # loket-submissions sync
   #################################################################
+  post "/sync/submissions/login/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-submissions/login/"
+  end
+
+  #################################################################
+  # loket-submissions sync
+  #################################################################
   get "/sync/submissions/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-submissions/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-submissions/files/"
   end
 
   #################################################################

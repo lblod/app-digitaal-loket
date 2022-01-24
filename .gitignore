@@ -1,4 +1,5 @@
 # Virtuoso files /data/db
+/data/publication-triplestore/*
 /data/db/*
 /data/exports/*
 /data/toezicht-reports/*
