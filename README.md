@@ -56,7 +56,7 @@ This repository harvest two setups.  The base of these setups resides in the sta
 
 To make sure the app can share data, producers need to be set up. There is an intial sync, that is potentially very expensive, and must be started manually
 
-#### producers mandatarissen/leidinggevenden
+#### producers mandatarissen/leidinggevenden/submissions
 
 (Note: similar for leidinggevenden)
 
@@ -72,7 +72,12 @@ To make sure the app can share data, producers need to be set up. There is an in
 
 ##### Additional notes
 
-###### Performance
+###### delta-producer-publication-graph-maintainer-submissions and publication-triplestore
+Due to performance issues, related to the high useage of this module, a seperate triplestore (virtuoso) has been introduced to offload the publication of the data.
+This architectural change is currently under evaluation. The criteria for evaluation will be: the performance win vs the practical consequences of such change.
+
+If deemed succesful, we might consider moving the other publication graphs to the triplestore too.
+###### Performance (mandatarissen/leidinggevenden)
 - The default virtuoso settings might be too weak if you need to ingest the production data. Hence, there is better config, you can take over in your `docker-compose.override.yml`
 ```
   virtuoso:
