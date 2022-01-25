@@ -1,4 +1,10 @@
 # Changelog
+## 1.58.0 (2022-01-25)
+### :house: Internal
+ - Re-organise migration files
+ - Update performance of delta-publication flow for submissions (a separate triple store has been introduced)
+### :rocket: Enhancement
+ - Included forms vastelling gemeentelijk beleidskader
 ## 1.57.3 (2022-01-23)
 ### :house: Internal
  - Update file service to deal with performance issues of files deletion residing in multiple graphs
