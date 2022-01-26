@@ -1,0 +1,24 @@
+# Those triples have a notion of versionning.
+# We will delete them if they are old enough and have a more recent version of them.
+# That way we ensure keeping at least one version, even if it's an old one.
+
+# Datasets and distributions : removing if deprecated and older than a month
+
+DELETE {
+  GRAPH ?g {
+    ?dataset ?pdataset ?odataset .
+    ?distribution ?pdistribution ?odistribution .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?dataset <http://purl.org/dc/terms/modified> ?datasetModified ;
+      <http://www.w3.org/ns/prov#wasRevisionOf> ?newerDataset ;
+      <http://www.w3.org/ns/dcat#distribution> ?distribution .
+      
+
+    FILTER (?datasetModified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?dataset ?pdataset ?odataset .
+    ?distribution ?pdistribution ?odistribution .
+  }
+}

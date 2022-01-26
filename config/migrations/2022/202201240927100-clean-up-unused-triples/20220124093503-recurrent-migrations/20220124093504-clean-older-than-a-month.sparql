@@ -1,0 +1,181 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX task: <http://redpencil.data.gift/vocabularies/tasks/>
+PREFIX rlog: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#>
+
+# In this file we delete triples linked to certain data types for which the data 
+# becomes obsolete after some time.
+# As there are recent occurences of those types, we assume they are still in use
+# and we shouldn't delete all of them. It's why we remove the ones from the past years.
+
+# Delete older than a month, based on dct:modified
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s a ?type ;
+      dct:modified ?modified .
+
+    FILTER (?type IN (
+      <http://vocab.deri.ie/cogs#Job>,
+      <http://oscaf.sourceforge.net/ndo.html#DownloadEvent>,
+      <http://lblod.data.gift/vocabularies/automatische-melding/AutomaticSubmissionTask>
+    ))
+    FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Delete older than a month, based on dct:modified, specific to tasks and related containers
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?resultsContainer ?presultsContainer ?oresultsContainer .
+    ?inputContainer ?pinputContainer ?oinputContainer .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s a task:Task ;
+      dct:modified ?modified .
+
+    FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    OPTIONAL {
+      ?s task:resultsContainer ?resultsContainer .
+      ?resultsContainer ?presultsContainer ?oresultsContainer .
+    }
+
+    OPTIONAL {
+      ?s task:inputContainer ?inputContainer .
+      ?inputContainer ?pinputContainer ?oinputContainer .
+    }
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Delete older than a month, based on dct:created 
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s a ?type ;
+      dct:created ?created .
+
+    FILTER (?type IN (
+      <http://open-services.net/ns/core#Error>,
+      <http://mu.semte.ch/vocabularies/ext/export/Export>
+    ))
+    FILTER (?created < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Delete older than a month, based on nmo:sentDate 
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s a <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Email> ;
+      nmo:sentDate ?sentDate .
+
+    FILTER (?sentDate < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Delete older than a month, based on pav:createdOn
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s a <http://mu.semte.ch/vocabularies/ext/KalliopeSyncError> ;
+      pav:createdOn ?createdOn .
+
+    FILTER (?createdOn < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Delete older than a month, based on rlog:date
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry> ;
+      rlog:date ?date .
+
+    FILTER (?date < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Delete sessions older than a month. They don't have a type, so check based on their URI
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s dct:modified ?modified .
+
+    FILTER NOT EXISTS { ?s a ?type . }
+    FILTER (strstarts(str(?s), 'http://mu.semte.ch/sessions/'))
+    FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# If the container has no task linked, then the task has been removed earlier
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ?p ?o
+
+    FILTER NOT EXISTS { ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?s . }
+    FILTER NOT EXISTS { ?s a ?type . }
+    FILTER (strstarts(str(?s), 'http://redpencil.data.gift/id/dataContainers/'))
+  }
+}

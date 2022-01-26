@@ -1,0 +1,26 @@
+# Delete data without a type based on their URI
+
+## Dummy data used for tricks when running migrations
+
+## Application forms half removed, probably due to a bug with form steps that is now solved
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+  GRAPH ?h {
+    ?a ?b ?s .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+
+    FILTER NOT EXISTS { ?s a ?type . }
+    FILTER (strstarts(str(?s), 'http://data.lblod.info/form-data/'))
+  }
+  OPTIONAL {
+    GRAPH ?h {
+      ?a ?b ?s .
+    }
+  }
+}
