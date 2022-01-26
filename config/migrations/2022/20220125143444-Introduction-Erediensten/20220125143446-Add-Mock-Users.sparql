@@ -18,7 +18,7 @@ INSERT {
      ?account a foaf:OnlineAccount;
            mu:uuid ?uuidAccount;
            foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
-           ext:sessionRole "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-mandaatGebruiker", "LoketLB-berichtenGebruiker", "LoketLB-leidinggevendenGebruiker", "LoketLB-personeelsbeheer", "LoketLB-subsidies".
+           ext:sessionRole "LoketLB-toezichtGebruiker".
   }
   GRAPH <http://mu.semte.ch/graphs/public> {
      ?persoon a foaf:Person;
@@ -30,7 +30,7 @@ INSERT {
      ?account a foaf:OnlineAccount;
            mu:uuid ?uuidAccount;
            foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
-           ext:sessionRole "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-mandaatGebruiker", "LoketLB-berichtenGebruiker", "LoketLB-leidinggevendenGebruiker", "LoketLB-personeelsbeheer", "LoketLB-subsidies".
+           ext:sessionRole "LoketLB-toezichtGebruiker".
   }
 } WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
