@@ -4,12 +4,12 @@ PREFIX pav: <http://purl.org/pav/>
 PREFIX task: <http://redpencil.data.gift/vocabularies/tasks/>
 PREFIX rlog: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#>
 
-# In this file we delete triples linked to certain data types for which the data 
+# In this file we delete triples linked to certain data types for which the data
 # becomes obsolete after some time.
 # As there are recent occurences of those types, we assume they are still in use
 # and we shouldn't delete all of them. It's why we remove the ones from the past years.
 
-# Delete older than a month, based on dct:modified
+# Delete DownloadEvent than a month, based on dct:modified
 
 DELETE {
   GRAPH ?g {
@@ -17,14 +17,8 @@ DELETE {
   }
 } WHERE {
   GRAPH ?g {
-    ?s a ?type ;
+    ?s a <http://oscaf.sourceforge.net/ndo.html#DownloadEvent> ;
       dct:modified ?modified .
-
-    FILTER (?type IN (
-      <http://vocab.deri.ie/cogs#Job>,
-      <http://oscaf.sourceforge.net/ndo.html#DownloadEvent>,
-      <http://lblod.data.gift/vocabularies/automatische-melding/AutomaticSubmissionTask>
-    ))
     FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?s ?p ?o .
@@ -33,38 +27,80 @@ DELETE {
 
 ;
 
-# Delete older than a month, based on dct:modified, specific to tasks and related containers
+# Delete tasks  older than a month, with containers, based on dct:modified
 
 DELETE {
   GRAPH ?g {
-    ?s ?p ?o .
+    ?task ?taskP ?taskO.
     ?resultsContainer ?presultsContainer ?oresultsContainer .
     ?inputContainer ?pinputContainer ?oinputContainer .
   }
 } WHERE {
   GRAPH ?g {
-    ?s a task:Task ;
+    VALUES ?operation {
+      <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
+      <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden>
+    }
+
+    ?job a <http://vocab.deri.ie/cogs#Job> ;
+      task:operation ?operation;
       dct:modified ?modified .
 
     FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
 
+    ?job ?jobP ?jobO .
+    ?task dct:isPartOf ?job.
+    ?task ?taskP ?taskO.
+
     OPTIONAL {
-      ?s task:resultsContainer ?resultsContainer .
+      ?task task:resultsContainer ?resultsContainer .
       ?resultsContainer ?presultsContainer ?oresultsContainer .
     }
 
     OPTIONAL {
-      ?s task:inputContainer ?inputContainer .
+      ?task task:inputContainer ?inputContainer .
       ?inputContainer ?pinputContainer ?oinputContainer .
     }
 
-    ?s ?p ?o .
   }
 }
 
 ;
 
-# Delete older than a month, based on dct:created 
+# Delete jobs, based on dct:modified
+
+DELETE {
+  GRAPH ?g {
+    ?job ?jobP ?jobO
+  }
+} WHERE {
+  GRAPH ?g {
+    VALUES ?operation {
+      <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
+      <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden>
+    }
+
+    ?job a <http://vocab.deri.ie/cogs#Job> ;
+      task:operation ?operation;
+      dct:modified ?modified .
+
+    FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+
+    ?job ?jobP ?jobO .
+  }
+}
+
+;
+
+# Delete older than a month, based on dct:created
 
 DELETE {
   GRAPH ?g {
@@ -87,7 +123,7 @@ DELETE {
 
 ;
 
-# Delete older than a month, based on nmo:sentDate 
+# Delete older than a month, based on nmo:sentDate
 
 DELETE {
   GRAPH ?g {
@@ -163,19 +199,3 @@ DELETE {
 }
 
 ;
-
-# If the container has no task linked, then the task has been removed earlier
-
-DELETE {
-  GRAPH ?g {
-    ?s ?p ?o
-  }
-} WHERE {
-  GRAPH ?g {
-    ?s ?p ?o
-
-    FILTER NOT EXISTS { ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?s . }
-    FILTER NOT EXISTS { ?s a ?type . }
-    FILTER (strstarts(str(?s), 'http://redpencil.data.gift/id/dataContainers/'))
-  }
-}
