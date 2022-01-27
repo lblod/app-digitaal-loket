@@ -17,7 +17,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List mandatarissen having two start dates" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List mandatarissen having two start dates" ;
@@ -41,7 +41,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List mandatarissen having two end dates" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List mandatarissen having two end dates" ;
@@ -65,7 +65,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List mandatarissen having no start date" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List mandatarissen having no start date" ;
@@ -89,7 +89,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List mandatarissen having no person linked" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List mandatarissen having no person linked" ;
@@ -113,7 +113,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List mandatarissen linked to an empty person" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List mandatarissen linked to an empty person" ;
@@ -137,7 +137,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 2, step 1" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 2, step 1" ;
@@ -161,7 +161,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 1, step 1" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 1, step 1" ;
@@ -185,7 +185,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 4, step 1" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 4, step 1" ;
@@ -209,7 +209,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 3, step 1" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List of GzG Report oproep 3, step 1" ;
@@ -233,7 +233,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "List of GzG Report step 1" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "List of GzG Report step 1" ;

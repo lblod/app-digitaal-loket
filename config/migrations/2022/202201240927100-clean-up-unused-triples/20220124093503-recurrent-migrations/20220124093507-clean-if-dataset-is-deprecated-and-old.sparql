@@ -14,7 +14,7 @@ DELETE {
     ?dataset <http://purl.org/dc/terms/modified> ?datasetModified ;
       <http://www.w3.org/ns/prov#wasRevisionOf> ?newerDataset ;
       <http://www.w3.org/ns/dcat#distribution> ?distribution .
-      
+
 
     FILTER (?datasetModified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
 

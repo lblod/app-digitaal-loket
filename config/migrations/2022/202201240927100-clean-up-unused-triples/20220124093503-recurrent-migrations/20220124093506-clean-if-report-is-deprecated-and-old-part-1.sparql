@@ -17,7 +17,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Aantal gefaalde synchronisaties naar MFT" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Aantal gefaalde synchronisaties naar MFT" ;
@@ -41,7 +41,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Aantal inzendingen per type besluit" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Aantal inzendingen per type besluit" ;
@@ -65,7 +65,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Bestuurseenheden zonder notificatie emailadres in Berichtencentrum" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Bestuurseenheden zonder notificatie emailadres in Berichtencentrum" ;
@@ -89,7 +89,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Elected Persons CSV" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Elected Persons CSV" ;
@@ -113,7 +113,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Inzendingen of type MAR7300" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Inzendingen of type MAR7300" ;
@@ -137,7 +137,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Lijst van accounts per bestuurseenheid" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Lijst van accounts per bestuurseenheid" ;
@@ -161,7 +161,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Lijst van bestuurseenheden" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Lijst van bestuurseenheden" ;
@@ -185,7 +185,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Lijst van dubbele personen" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Lijst van dubbele personen" ;
@@ -209,7 +209,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Lijst van nieuwe berichten in Berichtencentrum" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Lijst van nieuwe berichten in Berichtencentrum" ;
@@ -233,7 +233,7 @@ DELETE {
       <http://purl.org/dc/terms/title> "Lijst van noodopvang subsidies" ;
       <http://purl.org/dc/terms/created> ?createdReportToProcess .
 
-    FILTER (?createdReportToProcess < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
+    FILTER (?createdReportToProcess < "2021-11-30"^^<http://www.w3.org/2001/XMLSchema#date>)
 
     ?reportToCompare a <http://lblod.data.gift/vocabularies/reporting/Report> ;
       <http://purl.org/dc/terms/title> "Lijst van noodopvang subsidies" ;
