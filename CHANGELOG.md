@@ -1,4 +1,6 @@
 # Changelog
+## 1.58.1 (2022-01-27)
+- Extend the period of subsidy GzG - callup 4
 ## 1.58.0 (2022-01-25)
 ### :house: Internal
  - Re-organise migration files
