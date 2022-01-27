@@ -9,7 +9,7 @@ PREFIX rlog: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#>
 # As there are recent occurences of those types, we assume they are still in use
 # and we shouldn't delete all of them. It's why we remove the ones from the past years.
 
-# Delete DownloadEvent than a month, based on dct:modified
+# Delete DownloadEvent older than a month, based on dct:modified
 
 DELETE {
   GRAPH ?g {
@@ -27,7 +27,7 @@ DELETE {
 
 ;
 
-# Delete tasks  older than a month, with containers, based on dct:modified
+# Delete tasks older than a month, with containers, based on dct:modified
 
 DELETE {
   GRAPH ?g {
@@ -52,7 +52,6 @@ DELETE {
 
     FILTER (?modified < "2021-12-31"^^<http://www.w3.org/2001/XMLSchema#date>)
 
-    ?job ?jobP ?jobO .
     ?task dct:isPartOf ?job.
     ?task ?taskP ?taskO.
 
