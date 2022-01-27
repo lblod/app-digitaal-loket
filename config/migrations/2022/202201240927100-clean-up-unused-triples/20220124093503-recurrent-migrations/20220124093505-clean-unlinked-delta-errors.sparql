@@ -8,7 +8,7 @@ DELETE {
 } WHERE {
   GRAPH ?g {
     ?s a <http://redpencil.data.gift/vocabularies/deltas/Error> .
-    
+
     FILTER NOT EXISTS { ?a ?b ?s . }
 
     ?s ?p ?o .
