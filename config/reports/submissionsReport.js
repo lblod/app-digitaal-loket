@@ -78,7 +78,6 @@ export default {
         ?bestuurseenheidLabel
         ?typeBestuur
         ?datumZitting
-        ?datumPublicatie
         ?statusLabel
         ?angemaaktDoor
         ?gewijzigdDoor
@@ -95,8 +94,7 @@ export default {
             adms:status ?status ;
             prov:generated ?formData .
           ?formData ext:decisionType ?type ;
-            ext:sessionStartedAtTime ?datumZitting ;
-            eli:date_publication ?datumPublicatie .
+            ext:sessionStartedAtTime ?datumZitting .
 
           FILTER ( ?verstuurd >= "${dateFrom}"^^xsd:dateTime )
         }
@@ -164,7 +162,7 @@ export default {
            ?bestuursorgaan skos:prefLabel ?bestuursorgaanLabel.
            ?bestuursorgaan besluit:classificatie/skos:prefLabel ?bestuursorgaanClassificatieLabel.
           }
-        }
+        }    
       }
     `;
 
@@ -185,13 +183,46 @@ export default {
         gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor'),
         statusLabel: getSafeValue(row, 'statusLabel'),
         datumZitting: getSafeValue(row, 'datumZitting'),
-        datumPublicatie: getSafeValue(row, 'datumPublicatie'),
         link: getSafeValue(row, 'link')      };
       acc[getSafeValue(row, 's')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 's')]);
       return acc;
     }, {});
 
-    await generateReportFromData(Object.values(dataPart2), [
+    // Get the submissions date of publication
+    const queryStringPart3 = `
+      PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
+      PREFIX nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
+      PREFIX prov: <http://www.w3.org/ns/prov#>
+      PREFIX eli: <http://data.europa.eu/eli/ontology#>
+
+      SELECT 
+        ?s
+        ?datumPublicatie
+       WHERE {
+        GRAPH ?g {
+          ?s a meb:Submission ;
+            nmo:sentDate ?verstuurd ;
+            prov:generated ?formData .
+          FILTER ( ?verstuurd >= "${dateFrom}"^^xsd:dateTime )
+        }
+        OPTIONAL {
+          GRAPH ?g {
+            ?formData eli:date_publication ?datumPublicatie .
+          }
+        }        
+      }
+    `;
+
+    const queryResponsePart3 = await batchedQuery(queryStringPart3);
+    const dataPart3 = queryResponsePart3.results.bindings.reduce( (acc, row) => {
+      let dataPart = {
+        datumPublicatie: getSafeValue(row, 'datumPublicatie')
+      };
+      acc[getSafeValue(row, 's')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 's')]);
+      return acc;
+    }, {});
+
+    await generateReportFromData(Object.values(dataPart3), [
       'verstuurd',
       'typeDossier',
       'typeReglementOfVerordening',
