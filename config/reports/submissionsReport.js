@@ -78,6 +78,7 @@ export default {
         ?bestuurseenheidLabel
         ?typeBestuur
         ?datumZitting
+        ?datumPublicatie
         ?statusLabel
         ?angemaaktDoor
         ?gewijzigdDoor
@@ -94,7 +95,8 @@ export default {
             adms:status ?status ;
             prov:generated ?formData .
           ?formData ext:decisionType ?type ;
-            ext:sessionStartedAtTime ?datumZitting .
+            ext:sessionStartedAtTime ?datumZitting ;
+            eli:date_publication ?datumPublicatie .
 
           FILTER ( ?verstuurd >= "${dateFrom}"^^xsd:dateTime )
         }
@@ -183,6 +185,7 @@ export default {
         gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor'),
         statusLabel: getSafeValue(row, 'statusLabel'),
         datumZitting: getSafeValue(row, 'datumZitting'),
+        datumPublicatie: getSafeValue(row, 'datumPublicatie'),
         link: getSafeValue(row, 'link')      };
       acc[getSafeValue(row, 's')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 's')]);
       return acc;
@@ -203,6 +206,7 @@ export default {
       'gewijzigdDoor',
       'statusLabel',
       'datumZitting',
+      'datumPublicatie',
       'link',
       'files'
     ], reportData);
