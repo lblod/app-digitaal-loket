@@ -255,7 +255,8 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
                         "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
                         "http://mu.semte.ch/vocabularies/ext/EngagementEntry",
-                        "http://schema.org/ContactPoint"
+                        "http://schema.org/ContactPoint",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } },
                       %GraphSpec{
                         graph: "http://mu.semte.ch/graphs/organizations/",
