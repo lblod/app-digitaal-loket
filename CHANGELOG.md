@@ -1,4 +1,7 @@
 # Changelog
+## 1.58.3 (2022-02-4)
+### :memo: Reports
+- Submission reports now include a column for publication-date
 ## 1.58.2 (2022-02-4)
 - Fix authorization rule for subsidies: didn't have access to the files
 ## 1.58.1 (2022-01-27)
