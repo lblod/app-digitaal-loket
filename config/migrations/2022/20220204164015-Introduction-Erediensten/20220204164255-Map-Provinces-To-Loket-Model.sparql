@@ -32,7 +32,7 @@ WHERE {
 
     # Selecting relevant data from an Eredienst
     ?eredienst
-      a erediensten:BestuurVanDeEredienst;
+      a ?type;
       # Nested resource in OP
       org:hasPrimarySite ?primarySiteEredienst.
 
