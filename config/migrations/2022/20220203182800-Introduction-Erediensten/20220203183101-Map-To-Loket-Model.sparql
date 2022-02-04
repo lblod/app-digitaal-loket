@@ -1,5 +1,5 @@
 PREFIX erediensten: <http://data.lblod.info/vocabularies/erediensten/>
-PREFIX organisatie: <http://lblod.data.gift/vocabularies/organisatie/>
+PREFIX lblodOrg: <http://lblod.data.gift/vocabularies/organisatie/>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX generiek: <https://data.vlaanderen.be/ns/generiek#>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -66,7 +66,7 @@ WHERE {
 
     # Selecting relevant data from Eredienst classificatie
     ?classificationEredienst
-      a organisatie:BestuurseenheidClassificatieCode.
+      a lblodOrg:BestuurseenheidClassificatieCode.
 
     # Selecting relevant data from Bestuursoorgaan
     ?bestuursorgaan
@@ -78,7 +78,7 @@ WHERE {
 
     # Selecting relevant data from Bestuursorgaan classificatie
     ?classificationBestuursorgaan
-      a organisatie:BestuursorgaanClassificatieCode.
+      a lblodOrg:BestuursorgaanClassificatieCode.
 
     # Selecting relevant data from **tijdspecialisatie** Bestuursoorgaan
     ?tijdspecialisatie
