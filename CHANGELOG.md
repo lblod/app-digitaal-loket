@@ -1,4 +1,8 @@
 # Changelog
+## 1.58.4
+### :busts_in_silhouette: Gebruikers
+- **[NEW]** OCMW vereniging: Welzijnsvereniging Ter Nethe
+- **[NEW]** OCMW vereniging: De Zilveren Zwaan
 ## 1.58.3 (2022-02-4)
 ### :memo: Reports
 - Submission reports now include a column for publication-date
