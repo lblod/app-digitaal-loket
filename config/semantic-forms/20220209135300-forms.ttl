@@ -2657,6 +2657,67 @@ fields:0dd4d0db-db4d-4e9a-8588-ea2082b65746 a form:ConditionalFieldGroup ;
     form:hasFieldGroup fieldGroups:9f364ec1-bb5f-4b7d-9dea-b0341bc5d5bc .
 
 
+########### Eredienst notulen ###########
+
+# Conditionally add the form fields to the "type dossier" field
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:27c26cbe-4f46-4404-b937-6f0d56ca2700.
+
+# Only add the fields if the user selected the "Notulen" option
+fields:27c26cbe-4f46-4404-b937-6f0d56ca2700 a form:ConditionalFieldGroup ;
+    mu:uuid "27c26cbe-4f46-4404-b937-6f0d56ca2700";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/408a3838-6fcd-4add-937f-dffd9e531b26>
+      ] ;
+    form:hasFieldGroup fieldGroups:f660f439-6f92-4c60-ab02-d6388d52ad79 .
+
+fieldGroups:f660f439-6f92-4c60-ab02-d6388d52ad79 a form:FieldGroup ;
+    mu:uuid "f660f439-6f92-4c60-ab02-d6388d52ad79" ;
+
+    form:hasField
+      # TODO: This probably needs to be a custom field since it requires different options?
+      ### Welk-beslissingsorgaan-nam-het-besluit? ###
+      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+      ### Datum-zitting/besluit ###
+      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+      ### Links-naar-documenten ###
+      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+
+      ### File uploader with custom help text
+      fields:aa79095a-a04b-4104-a605-b900c7bf1639,
+
+      ###Type RemoteDataObject or FileDataObject###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+############################################################################################
+# Custom form fields for the "Eredienst notulen" form
+############################################################################################
+
+## File upload with custom help text
+fields:aa79095a-a04b-4104-a605-b900c7bf1639 a form:Field ;
+    mu:uuid "aa79095a-a04b-4104-a605-b900c7bf1639" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Let er op dat het toegevoegde bestand ondertekend moet zijn.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
 ###########Goedkeuringstoezicht-Voeren###########
 
 fieldGroups:7e841b1c-64a4-48a6-b39d-c18fe1a9394f a form:FieldGroup ;
