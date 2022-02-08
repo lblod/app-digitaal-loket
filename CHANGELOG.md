@@ -1,5 +1,5 @@
 # Changelog
-## 1.58.4
+## 1.58.4 (2022-02-08)
 ### :busts_in_silhouette: Gebruikers
 - **[NEW]** OCMW vereniging: Welzijnsvereniging Ter Nethe
 - **[NEW]** OCMW vereniging: De Zilveren Zwaan
