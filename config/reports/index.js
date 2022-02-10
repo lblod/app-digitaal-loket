@@ -6,7 +6,6 @@ import bbcdrReport from './bbcdrReport';
 import sameRrnReport from './sameRrnReport';
 import failedSyncToMft from './failedSyncToMft';
 import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail';
-import internalMandatenReport from './internalMandatenReport';
 import submissionsReport from './submissionsReport';
 import personenWithMultipleNamesReport from './personenWithMultipleNamesReport';
 import mandatarissenWithMultipleStartDateReport from './mandatarissenWithMultipleStartDateReport';
@@ -29,6 +28,7 @@ import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
+import toezichtReport from './toezicht-report';
 
 export default [
   BestuurseenhedenReport,
@@ -62,4 +62,5 @@ export default [
   gzgSubsidieOproepTwoReport,
   gzgSubsidieOproepThreeReport,
   gzgSubsidieOproepFourReport,
+  toezichtReport
 ];
