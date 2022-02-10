@@ -5533,6 +5533,78 @@ fields:d99c663e-32ae-4865-bdeb-f961fda68d61 a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:319fc495-408d-4b3d-b217-dcbdf6f414d5 .
 
+########### Voorstellen in verband met het saneringsplan ###########
+
+# Conditionally add the form fields to the "type dossier" field
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:4faea096-c61b-4495-84f6-5cccf154226e.
+
+# Only add the fields if the user selected the "Voorstellen in verband met het saneringsplan" option
+fields:4faea096-c61b-4495-84f6-5cccf154226e a form:ConditionalFieldGroup ;
+    mu:uuid "4faea096-c61b-4495-84f6-5cccf154226e";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/4511f992-2b52-42fe-9cb6-feae6241ad26>
+      ] ;
+    form:hasFieldGroup fieldGroups:3670383c-6d1c-4959-b27d-cfd616fa8035 .
+
+fieldGroups:3670383c-6d1c-4959-b27d-cfd616fa8035 a form:FieldGroup ;
+    mu:uuid "3670383c-6d1c-4959-b27d-cfd616fa8035" ;
+
+    form:hasField
+      ### Welk-beslissingsorgaan-nam-het-besluit? ###
+      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+      ### Datum-zitting/besluit ###
+      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+      ### Datum van publicatie op webtoepassing
+      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
+
+      ### Simple field for URL (required & valid URL) ###
+      fields:1f41766c-2ae4-4dd2-b6ba-7ceedadd3430,
+
+      ### Hidden field required for all variations of URL or FILE ###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+############################################################################################
+# Custom form fields for the "Voorstellen in verband met het saneringsplan" form
+############################################################################################
+
+## Simple field for URL (required & valid URL) with custom help text
+fields:1f41766c-2ae4-4dd2-b6ba-7ceedadd3430 a form:Field ;
+    mu:uuid "1f41766c-2ae4-4dd2-b6ba-7ceedadd3430" ;
+    sh:name "Links naar documenten" ;
+    sh:order 10000 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a form:UriConstraint ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+         sh:path ( dct:hasPart nie:url ) ],
+     [ a form:RequiredConstraint ;
+         form:grouping form:Bag ;
+         sh:path ( dct:hasPart nie:url ) ;
+         sh:resultMessage "Gelieve minstens één URL op te geven."@nl
+     ];
+    form:displayType <http://lblod.data.gift/display-types/remoteUrls/variation/1>;
+    form:help """
+    <div class="au-c-content au-c-content--tiny">
+      <p>
+        De voorstellen van de raad van bestuur om de continuïteit van de vereniging te vrijwaren ('het plan overeenkomstig artikel 457 DLB')
+        moeten gepubliceerd worden op de website van de vereniging, binnen 10 dagen nadat de besluiten genomen zijn (art. 467, eerste lid, 2° DLB).
+      </p>
+      <p>
+        Op dezelfde dag als deze publicatie op uw website, moet u hier een melding maken dat u de voorstellen hebt gepubliceerd, met daarbij
+        een link naar uw eigen website waar de voorstellen zijn gepubliceerd (art. 467, vierde lid DLB). U moet hier dus niet het besluit zelf opladen.
+      </p>
+    </div>""" ;
+    sh:group fields:aDynamicPropertyGroup .
 
 
 ###########Wijziging-autonoom-bedrijf###########
