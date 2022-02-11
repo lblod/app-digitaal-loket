@@ -13,7 +13,7 @@ INSERT DATA {
       dct:created "2022-02-09T13:53:00"^^xsd:dateTime ;
       dct:modified "2022-02-09T13:53:00"^^xsd:dateTime ;
       dct:format "text/turtle";
-      nfo:fileSize "281446"^^xsd:integer;
+      nfo:fileSize "293986"^^xsd:integer;
       dbpedia:fileExtension "ttl" .
   }
 }
