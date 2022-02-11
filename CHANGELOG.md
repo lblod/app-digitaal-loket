@@ -1,4 +1,13 @@
 # Changelog
+## 1.58.5 (2022-02-11)
+### :memo: Reports
+- **[NEW]** Toezicht module:
+  - Produces two CSVs in the dashboard: 
+    - Meldingen
+    - Geuploade bestanden
+- **[DEPRECATED]** Submissions 
+### :rocket: Enhancement
+- Bumped publication-graph-maintainer to latest
 ## 1.58.4 (2022-02-08)
 ### :busts_in_silhouette: Gebruikers
 - **[NEW]** OCMW vereniging: Welzijnsvereniging Ter Nethe
