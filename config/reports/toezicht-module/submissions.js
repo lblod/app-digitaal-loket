@@ -1,48 +1,39 @@
-import {generateReportFromData, batchedQuery} from '../../helpers.js';
+import {batchedQuery} from '../../helpers.js';
+import {generateReportFromQueryResult} from '../util/report-helpers';
 
-const metadata = {
-  title: 'Toezicht Module: Meldingen',
-  description: 'List of all "Meldingen" made in the Toezicht module of Loket, for THIS year',
-  filePrefix: `toezicht-meldingen`,
-};
 
-export default async function() {
-  let bindings = [];
+export default async function(date = new Date()) {
+  const metadata = {
+    title: `Toezicht module: Meldingen ${date.getFullYear()}`,
+    description: `Bevat alle meldingen gemaakt in de Toezicht module van het jaar ${date.getFullYear()} tot nu.`,
+    filePrefix: `toezicht-meldingen-${date.getFullYear()}`,
+  };
   try {
-    const queryString = generateMotherOfAllQueries();
-    const {results} = await batchedQuery(queryString, 10000);
-    bindings = results.bindings;
+    const queryString = generateMotherOfAllQueries(date);
+    const result = await batchedQuery(queryString, 10000);
+    await generateReportFromQueryResult(result, metadata);
   } catch (e) {
-    throw `Something unexpected went wrong when executing the batched-query for [${metadata.title}]`;
-  }
-  if (bindings.length === 0) {
-    console.warn('[WARN] No meldingen could be found, no report will be generated.');
-  } else {
-    const data = bindings.map(row => {
-      const getSafeValue = (entry, property) => entry[property] ? `\"${entry[property].value}\"` : null;
-      return {
-        submission: getSafeValue(row, 'submission'),
-        typeBestuur: getSafeValue(row, 'labelBestuurseenheidClassification'),
-        bestuurseenheid: getSafeValue(row, 'labelBestuurseenheid'),
-        typeBestuursorgaan: getSafeValue(row,
-            'labelBestuursorgaanClassificatie'),
-        bestuursorgaanInTijd: getSafeValue(row, 'bestuursorgaanInTijd'),
-        aangemaaktDoor: getSafeValue(row, 'aangemaaktDoor'),
-        datumZitting: getSafeValue(row, 'datumZitting'),
-        datumPublicatie: getSafeValue(row, 'datumPublicatie'),
-        datumVerstuurd: getSafeValue(row, 'datumVerstuurd'),
-        typeDossier: getSafeValue(row, 'labelDecisionType'),
-        typeReglementOfVerordening: getSafeValue(row, 'labelRegulationType'),
-        typeBelasting: getSafeValue(row, 'labelTaxType'),
-        meldingURL: getSafeValue(row, 'submittedResource')
-      };
-    });
-    await generateReportFromData(data, Object.keys(data[0]), metadata);
+    throw `Something unexpected went wrong when executing report for [${metadata.title}]`;
   }
 }
 
-// TODO document this ...
-const generateMotherOfAllQueries = (date = new Date()) => `PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+/**
+ * Query that **attempts** to extract all UNIQUE submissions made for the Toezicht module.
+ *
+ * The query exists out of three nested sub-queries (from most outer to inner):
+ * - Ensure we only get the latest session-started-date and date-publication, to counteract doubles
+ * - Little hack to counteract rare instance off double form-data (this works as the doubles that currently exist are exact copies)
+ * - Get me all Submissions, within the Toezicht module, sent after given date (to optimize for OPTIONAL usage)
+ *
+ * Known ambiguities (resulting in more lines per submission):
+ *  - some have multiple creators
+ *  - some have multiple decision-types
+ *  - some have multiple bestuursorganen-in-tijd
+ *  - some have multiple submitted-resources
+ *
+ **/
+const generateMotherOfAllQueries = (date = new Date()) => `
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
 PREFIX nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
@@ -59,31 +50,28 @@ PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
 PREFIX eli: <http://data.europa.eu/eli/ontology#>
 PREFIX ma: <http://www.w3.org/ns/ma-ont#>
 PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
-SELECT 
-?submission 
-?labelBestuurseenheidClassification 
-?labelBestuurseenheid
-?labelBestuursorgaanClassificatie
+SELECT DISTINCT 
+(?submission AS ?melding) 
+(?labelBestuurseenheidClassification AS ?typeBestuur) 
+(?labelBestuurseenheid AS ?bestuurseenheid)
+(?labelBestuursorgaanClassificatie AS ?typeBestuursorgaan)
 ?bestuursorgaanInTijd
 ?aangemaaktDoor
 ?datumZitting
 ?datumPublicatie
 ?datumVerstuurd
-?labelDecisionType
-?labelRegulationType
-?labelTaxType
-?submittedResource
+(?labelDecisionType AS ?typeDossier)
+(?labelRegulationType AS ?typeReglementOfVerordening)
+(?labelTaxType AS ?typeBelasting)
+(?submittedResource AS ?meldingLink)
 WHERE {
   {
-    # Ensure we only get the latest session-started-date and date-publication, to counter act doubles 
     SELECT ?toezichtGraph ?submission ?datumVerstuurd ?formData (MAX(?sessionStartedAtTime) AS ?datumZitting) (MAX(?datePublication) AS ?datumPublicatie)
     WHERE {
       {
-        # Little hack to counter act double form-data (this works as the doubles that currently exsist are exact copies)
         SELECT ?toezichtGraph ?submission ?datumVerstuurd (MIN(?generatedDataSubmission) AS ?formData)
         WHERE {
           {
-            # Get me all Submissions, within the the Toezicht module, sent after ...
             SELECT DISTINCT ?toezichtGraph ?submission ?datumVerstuurd
             WHERE {
               GRAPH ?toezichtGraph {
@@ -121,7 +109,6 @@ WHERE {
     ?bestuurseenheid skos:prefLabel ?labelBestuurseenheid;
                      besluit:classificatie/skos:prefLabel ?labelBestuurseenheidClassification.
   }
-  # OPTIONAL VALUES: values that could be empty
   OPTIONAL {
     GRAPH ?toezichtGraph {
       ?formData eli:passed_by ?bestuursorgaanInTijd .
