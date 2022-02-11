@@ -570,7 +570,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-submissions:
-    image: lblod/delta-producer-publication-graph-maintainer:0.11.0
+    image: lblod/delta-producer-publication-graph-maintainer:0.12.0
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -589,6 +589,7 @@ services:
       PRETTY_PRINT_DIFF_JSON: "true"
       PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
       PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
     volumes:
       - ./config/delta-producer/submissions:/config
       - ./data/files/:/share
