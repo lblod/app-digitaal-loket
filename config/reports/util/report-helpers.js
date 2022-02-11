@@ -20,7 +20,7 @@ export async function generateReportFromQueryResult({results, head}, metadata) {
       });
       return obj;
     });
-    await generateReportFromData(data, Object.keys(data[0]), metadata);
+    await generateReportFromData(data, vars, metadata);
   }
 }
 
