@@ -1,5 +1,8 @@
 import {generateReportFromData, batchedQuery} from '../helpers.js';
 
+/**
+ * [DEPRECATED] go see {@link toezicht-module-report}
+ */
 export default {
   cronPattern: '0 0 22 * * 6',
   name: 'submissions',
