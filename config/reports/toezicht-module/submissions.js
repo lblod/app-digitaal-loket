@@ -63,7 +63,7 @@ SELECT DISTINCT
 (?labelDecisionType AS ?typeDossier)
 (?labelRegulationType AS ?typeReglementOfVerordening)
 (?labelTaxType AS ?typeBelasting)
-(?submittedResource AS ?meldingLink)
+(?submittedResource AS ?link)
 WHERE {
   {
     SELECT ?toezichtGraph ?submission ?datumVerstuurd ?formData (MAX(?sessionStartedAtTime) AS ?datumZitting) (MAX(?datePublication) AS ?datumPublicatie)
