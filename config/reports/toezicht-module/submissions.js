@@ -4,9 +4,9 @@ import {generateReportFromQueryResult} from '../util/report-helpers';
 
 export default async function(date = new Date()) {
   const metadata = {
-    title: `Toezicht module: Meldingen ${date.getFullYear()}`,
+    title: `Toezicht module: Meldingen`,
     description: `Bevat alle meldingen gemaakt in de Toezicht module van het jaar ${date.getFullYear()} tot nu.`,
-    filePrefix: `toezicht-meldingen-${date.getFullYear()}`,
+    filePrefix: `toezicht-meldingen`,
   };
   try {
     const queryString = generateMotherOfAllQueries(date);
