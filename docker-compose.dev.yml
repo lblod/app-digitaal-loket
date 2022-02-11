@@ -12,6 +12,8 @@ services:
     restart: "no"
   dashboard:
     restart: "no"
+  vendor-management:
+    restart: "no"
   identifier:
     ports:
       - "90:80"
@@ -78,6 +80,8 @@ services:
     restart: "no"
   export-submissions:
     restart: "no"
+  clean-up-submission:
+    restart: "no"
   person-uri-for-social-security-number:
     restart: "no"
   sync-with-kalliope-error-notification:
@@ -119,6 +123,8 @@ services:
   delta-producer-background-jobs-initiator-submissions:
     restart: "no"
   delta-producer-publication-graph-maintainer-submissions:
+    restart: "no"
+  error-alert:
     restart: "no"
   prepare-submissions-for-export:
     restart: "no"
