@@ -10,7 +10,7 @@ export default {
   name: 'toezicht-module-report',
   execute: async () => {
     const startTime = new Date();
-    const reportTime = new Date();
+    const reportTime = new Date('2021-01-01');
     console.log(
         `[INFO] Starting with reports for [${metadata.title}] @ ${startTime.toISOString()}`);
     await Promise.all([
