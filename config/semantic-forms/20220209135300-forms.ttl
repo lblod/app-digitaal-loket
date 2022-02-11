@@ -2692,6 +2692,64 @@ fields:a633a5bd-0ceb-4ead-8c53-27b7304100c5 a form:Field ;
       </p>
     </div>""" ;
     sh:group fields:aDynamicPropertyGroup .
+########### Collectieve motie van wantrouwen ###########
+
+# Conditionally add the form fields to the "type dossier" field
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:5e1e0aa7-564a-4191-a7bf-f30b68311126.
+
+# Only add the fields if the user selected the "Collective motie van wantrouwen" option
+fields:5e1e0aa7-564a-4191-a7bf-f30b68311126 a form:ConditionalFieldGroup ;
+    mu:uuid "5e1e0aa7-564a-4191-a7bf-f30b68311126";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/cb361927-1aab-4016-bd8a-1a84841391ba>
+      ] ;
+    form:hasFieldGroup fieldGroups:ce41b18d-680d-4747-8f76-1ef4a1efea37 .
+
+fieldGroups:ce41b18d-680d-4747-8f76-1ef4a1efea37 a form:FieldGroup ;
+    mu:uuid "ce41b18d-680d-4747-8f76-1ef4a1efea37" ;
+
+    form:hasField
+      ### Welk-beslissingsorgaan-nam-het-besluit? ###
+      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+      ### Datum-zitting/besluit ###
+      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+      ### Links-naar-documenten ###
+      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+
+      ### File uploader with custom help text
+      fields:d67e38fb-e68e-4b57-9622-b3017e81feaa,
+
+      ###Type RemoteDataObject or FileDataObject###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+############################################################################################
+# Custom form fields for the "Collectieve motie van wantrouwen" form
+############################################################################################
+
+## File upload with custom help text
+fields:d67e38fb-e68e-4b57-9622-b3017e81feaa a form:Field ;
+    mu:uuid "d67e38fb-e68e-4b57-9622-b3017e81feaa" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Indien een collectieve motie van wantrouwen wordt aangenomen, moet u hier de ingediende collectieve motie en de beslissing van de gemeenteraad (of districtsraad) hierover opladen, dit is de kennisgeving zoals bepaald in artikel 46, §5 (of artikel 124/1, §5) van het DLB.""" ;
+    sh:group fields:aDynamicPropertyGroup .
 ###########Onvoorziene kosten###########
 
 fieldGroups:9f364ec1-bb5f-4b7d-9dea-b0341bc5d5bc a form:FieldGroup ;
