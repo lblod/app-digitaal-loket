@@ -13,13 +13,11 @@ export default {
     const reportTime = new Date('2021-01-01');
     console.log(
         `[INFO] Starting with reports for [${metadata.title}] @ ${startTime.toISOString()}`);
-    await Promise.all([
-      generateSubmissionsReport(reportTime),
-      generateUploadedFilesReport(reportTime),
-    ]);
+    await generateSubmissionsReport(reportTime);
+    await generateUploadedFilesReport(reportTime);
     console.log(
         `[INFO] Finished reports for [${metadata.title}] @ ${new Date().toISOString()}. ` +
-        `Time elapsed: ${Math.abs(new Date() - startTime)}ms`
+        `Time elapsed: ${Math.abs(new Date() - startTime)}ms`,
     );
   },
 };
