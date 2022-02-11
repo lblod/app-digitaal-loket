@@ -2620,6 +2620,78 @@ fields:8640f3ff-2302-40eb-85c6-d932628250ed a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 .
 
+########### Code van goed bestuur ###########
+
+# Conditionally add the form fields to the "type dossier" field
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:515dc238-beb7-4888-9f7f-04cbdda5385e.
+
+# Only add the fields if the user selected the "Code van goed bestuur" option
+fields:515dc238-beb7-4888-9f7f-04cbdda5385e a form:ConditionalFieldGroup ;
+    mu:uuid "515dc238-beb7-4888-9f7f-04cbdda5385e";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/b04bc642-c892-4aae-ac1f-f6ff21362704>
+      ] ;
+    form:hasFieldGroup fieldGroups:0ec0bd00-3b93-4ccd-974c-dd18f99c877b .
+
+fieldGroups:0ec0bd00-3b93-4ccd-974c-dd18f99c877b a form:FieldGroup ;
+    mu:uuid "0ec0bd00-3b93-4ccd-974c-dd18f99c877b" ;
+
+    form:hasField
+      ### Welk-beslissingsorgaan-nam-het-besluit? ###
+      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+
+      ### Datum-zitting/besluit ###
+      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
+
+      ### Datum van publicatie op webtoepassing
+      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
+
+      ### Links-naar-documenten ###
+      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b ,
+
+      ### File uploader with custom help text
+      fields:a633a5bd-0ceb-4ead-8c53-27b7304100c5,
+
+      ###Type RemoteDataObject or FileDataObject###
+      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+      ### RemoteDataObject/url ###
+      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+############################################################################################
+# Custom form fields for the "Code van goed bestuur" form
+############################################################################################
+
+## File upload with custom help text
+fields:a633a5bd-0ceb-4ead-8c53-27b7304100c5 a form:Field ;
+    mu:uuid "a633a5bd-0ceb-4ead-8c53-27b7304100c5" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """
+    <div class="au-c-content au-c-content--tiny">
+      <p>
+        Nadat de code van goed bestuur is goedgekeurd door de algemene vergadering, moet hij gepubliceerd worden
+        op de website van de vereniging binnen 10 dagen nadat het besluit genomen is (art. 467, eerste lid, 3° DLB).
+      </p>
+      <p>
+        Op dezelfde dag als deze publicatie op uw website, moet u hier een melding maken dat u de code hebt gepubliceerd,
+        met daarbij een link naar uw eigen website waar de code gepubliceerd is. Door het hier opladen van de link
+        van de code op uw website, voldoet u automatisch ook aan de mededelingsplicht van art. 434, §5 DLB.
+      </p>
+    </div>""" ;
+    sh:group fields:aDynamicPropertyGroup .
 ###########Onvoorziene kosten###########
 
 fieldGroups:9f364ec1-bb5f-4b7d-9dea-b0341bc5d5bc a form:FieldGroup ;
