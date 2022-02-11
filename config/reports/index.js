@@ -6,7 +6,6 @@ import bbcdrReport from './bbcdrReport';
 import sameRrnReport from './sameRrnReport';
 import failedSyncToMft from './failedSyncToMft';
 import bestuurseenhedenWithoutNotificationEmail from './bestuurseenhedenWithoutNotificationEmail';
-import submissionsReport from './submissionsReport';
 import personenWithMultipleNamesReport from './personenWithMultipleNamesReport';
 import mandatarissenWithMultipleStartDateReport from './mandatarissenWithMultipleStartDateReport';
 import mandatarissenWithMultipleEndDateReport from './mandatarissenWithMultipleEndDateReport';
@@ -28,7 +27,7 @@ import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
-import toezichtReport from './toezicht-report';
+import toezichtModuleReport from './toezicht-module-report';
 
 export default [
   BestuurseenhedenReport,
@@ -40,7 +39,6 @@ export default [
   failedSyncToMft,
   bestuurseenhedenWithoutNotificationEmail,
   //internalMandatenReport, TODO: since the introduction ofg the publication graph, this report became too heavy)
-  submissionsReport,
   personenWithMultipleNamesReport,
   mandatarissenWithMultipleStartDateReport,
   mandatarissenWithMultipleEndDateReport,
@@ -62,5 +60,6 @@ export default [
   gzgSubsidieOproepTwoReport,
   gzgSubsidieOproepThreeReport,
   gzgSubsidieOproepFourReport,
-  toezichtReport
+  // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
+  toezichtModuleReport
 ];
