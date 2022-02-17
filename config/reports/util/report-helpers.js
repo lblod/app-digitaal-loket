@@ -1,5 +1,22 @@
 import {generateReportFromData} from '../../helpers.js';
 
+export async function report(execute, metadata) {
+  const {cronPattern, name, title} = metadata;
+  return {
+    cronPattern,
+    name,
+    execute: async () => {
+      const startTime = new Date();
+      console.log(
+          `[INFO] Starting with reports for [${title}] @ ${startTime.toISOString()}`);
+      await execute();
+      console.log(
+          `[INFO] Finished reports for [${title}] @ ${new Date().toISOString()}. ` +
+          `Time elapsed: ${Math.abs(new Date() - startTime)}ms`,
+      );
+    },
+  };
+}
 /**
  * Generates a CSV for the given sparql query-result
  *
