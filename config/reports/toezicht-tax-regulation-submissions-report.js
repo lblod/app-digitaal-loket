@@ -1,5 +1,5 @@
 import {batchedQuery} from '../helpers.js';
-import {generateReportFromQueryResult} from '../../util/report-helpers';
+import {generateReportFromQueryResult} from './util/report-helpers';
 
 const metadata = {
   title: 'Toezicht module: Meldingen voor de MAR-codes 7300, 7304 en 7305',
