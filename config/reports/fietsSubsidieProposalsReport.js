@@ -20,7 +20,7 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?dossierNummer
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
@@ -36,6 +36,7 @@ export default {
               skos:prefLabel ?bestuurseenheid .
 
             ?form adms:status/skos:prefLabel ?formStatus .
+            OPTIONAL { ?form <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#identifier> ?dossierNummer. }
           }
         }
         UNION
@@ -58,6 +59,7 @@ export default {
         subsidie: getSafeValue(subsidie, 'subsidie'),
         subsidieStatus: getSafeValue(subsidie, 'subsidieStatus'),
         formStatus: getSafeValue(subsidie, 'formStatus'),
+        dossierNummer: getSafeValue(subsidie, 'dossierNummer')
       };
     });
 
@@ -66,7 +68,8 @@ export default {
       'submissionDate',
       'bestuurseenheid',
       'subsidieStatus',
-      'formStatus'
+      'formStatus',
+      'dossierNummer'
     ], reportData);
   }
 };

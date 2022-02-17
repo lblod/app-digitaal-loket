@@ -20,7 +20,7 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?iban ?formStatusLabel
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?iban ?formStatusLabel ?dossierNummer
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
@@ -43,6 +43,7 @@ export default {
             ?bestuur m8g:playsRole ?participation ;
               skos:prefLabel ?bestuurseenheid .
             OPTIONAL { ?form <http://schema.org/bankAccount>/<http://schema.org/identifier> ?iban . }
+            OPTIONAL { ?form <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#identifier> ?dossierNummer. }
           }
         }
         UNION
@@ -65,7 +66,8 @@ export default {
         subsidie: getSafeValue(subsidie, 'subsidie'),
         subsidieStatus: getSafeValue(subsidie, 'subsidieStatus'),
         formStatus: getSafeValue(subsidie, 'formStatusLabel'),
-        iban: getSafeValue(subsidie, 'iban')
+        iban: getSafeValue(subsidie, 'iban'),
+        dossierNummer: getSafeValue(subsidie, 'dossierNummer')
       };
     });
 
@@ -75,7 +77,8 @@ export default {
       'bestuurseenheid',
       'subsidieStatus',
       'formStatus',
-      'iban'
+      'iban',
+      'dossierNummer'
     ], reportData);
   }
 };
