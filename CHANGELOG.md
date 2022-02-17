@@ -1,4 +1,11 @@
 # Changelog
+
+## 1.58.7 (2022-02-11)
+### :house: Internal
+- cleanup double subsidy bierbeek climate
+## 1.58.6 (2022-02-11)
+### :rocket: Enhancement
+- extend deadline gzg subisdy oproep 4
 ## 1.58.5 (2022-02-11)
 ### :memo: Reports
 - **[NEW]** Toezicht module:
