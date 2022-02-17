@@ -1,4 +1,4 @@
-import {batchedQuery} from '../../../helpers.js';
+import {batchedQuery} from '../helpers.js';
 import {generateReportFromQueryResult} from '../../util/report-helpers';
 
 const metadata = {
