@@ -4,7 +4,7 @@ import {generateReportFromQueryResult} from './util/report-helpers';
 const metadata = {
   title: 'Toezicht module: Meldingen voor de MAR-codes 7300, 7304 en 7305',
   description: "Bevat alle meldingen gemaakt in de Toezicht module tot nu met als MAR-code: 7300, MAR7304 of MAR7305",
-  filePrefix: `toezicht-tax-regulation-submissions`,
+  filePrefix: `toezicht-belastingreglement-meldingen`,
 };
 
 const MAR_CODES = [
