@@ -3,17 +3,17 @@ import {generateReportFromQueryResult} from './util/report-helpers';
 
 const metadata = {
   title: 'Toezicht module: Meldingen voor de MAR-codes 7300, 7304 en 7305',
-  description: "Bevat alle meldingen gemaakt in de Toezicht module tot nu met als MAR-code: 7300, 7304 of 7305",
+  description: 'Bevat alle belastingreglement meldingen ingediend in de Toezicht module met als gekozen MAR-code: 7300, 7304 of 7305',
   filePrefix: `toezicht-belastingreglement-meldingen`,
 };
 
 const MAR_CODES = [
-   // MAR 7300
+  // MAR 7300
   'http://lblod.data.gift/concepts/26c19fe6b53e2e759a0b9467ce33ef37fc268dd9467cfba91381214549a01d19',
   // MAR 7304
   'http://lblod.data.gift/concepts/fad34acdd5a6d17b59d58678542b65e9c364d2c84bf49fea8611ecc2d6ce3411',
   // MAR 7305
-  'http://lblod.data.gift/concepts/514defe410ee9b1b6e01433fbbca7ce16c48d24f0785c1f3c2cb86c44af3e50a'
+  'http://lblod.data.gift/concepts/514defe410ee9b1b6e01433fbbca7ce16c48d24f0785c1f3c2cb86c44af3e50a',
 ];
 
 export default {
@@ -25,7 +25,7 @@ export default {
         `[INFO] Starting with reports for [${metadata.title}] @ ${startTime.toISOString()}`);
     try {
       const queryString = generateMotherOfAllQueries(MAR_CODES);
-      const result = await batchedQuery(queryString)
+      const result = await batchedQuery(queryString);
       await generateReportFromQueryResult(result, metadata);
     } catch (e) {
       throw `Something unexpected went wrong when executing report for [${metadata.title}]`;
@@ -111,7 +111,7 @@ WHERE {
         ?chartOfAccount
         WHERE {
           VALUES ?chartOfAccount {
-            ${codes.map(code => `<${code}>`).join("\n            ")}
+            ${codes.map(code => `<${code}>`).join('\n            ')}
           }
           GRAPH ?toezichtGraph {
             ?submission a meb:Submission;
