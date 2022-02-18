@@ -14,7 +14,6 @@ import personsMissingDataReport from './personsMissingDataReport';
 import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
 import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
-import mar7300InzendingenReport from './mar7300InzendingenReport';
 import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 import electedPersonsReport from './electedPersonsReport';
 import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
@@ -48,7 +47,6 @@ export default [
   mandatarissenWithoutPersonReport,
   mandatarissenWithEmptyPersonReport,
   noodopvangSubsidiesReport,
-  mar7300InzendingenReport,
   contactTracingSubsidiesReport,
   electedPersonsReport,
   contactTracingSubsidiesDetailedReport,
