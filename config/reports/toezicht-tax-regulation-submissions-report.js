@@ -3,7 +3,7 @@ import {generateReportFromQueryResult} from './util/report-helpers';
 
 const metadata = {
   title: 'Toezicht module: Meldingen voor de MAR-codes 7300, 7304 en 7305',
-  description: "Bevat alle meldingen gemaakt in de Toezicht module tot nu met als MAR-code: 7300, MAR7304 of MAR7305",
+  description: "Bevat alle meldingen gemaakt in de Toezicht module tot nu met als MAR-code: 7300, 7304 of 7305",
   filePrefix: `toezicht-belastingreglement-meldingen`,
 };
 
@@ -38,20 +38,20 @@ export default {
 };
 
 /**
- * Query that **attempts** to extract all submissions made for the Toezicht module for the given MAR-codes.
+ * Query that **attempts** to extract all tax-regulation submissions made in the Toezicht module for the given MAR-codes.
  *
  * The query exists out of two nested sub-queries (from most outer to inner):
  * - Ensure we only get the latest: session-started-date, date-publication, date-in-force and date-no-longer-in-force to counteract doubles
- * - Get me all Submissions, within the Toezicht module, that: have a sent-date and have a MAR-code
+ * - Get me all tax-regulation Submissions for the given MAR-code, within the Toezicht module, that have a sent-date
  *
  * Known array values (resulting in more lines per submission):
- *  - some have multiple links-to-documents
- *  - some have multiple files
- *  - some have multiple tax-rate-amount
+ *  - links-to-documents
+ *  - uploaded files
+ *  - tax-rate-amount (opcentiem-bedrag)
  *
  * Known ambiguities (resulting in more lines per submission):
- *  - some have multiple bestuursorganen-in-tijd
- *  - some have multiple submitted-resources
+ *  - some could have multiple bestuursorganen-in-tijd
+ *  - some could have multiple submitted-resources
  **/
 const generateMotherOfAllQueries = (codes) => `
 PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
@@ -87,8 +87,8 @@ SELECT DISTINCT
 ?datumGeldtVanaf
 ?datumGeldtTot
 (?fileName AS ?bestandsnaam)
-(?url AS ?link)
-(?submittedResource AS ?automatischeMeldingLink)
+(?url AS ?linkNaarDocument)
+(?submittedResource AS ?linkMeldingsplichtige)
 WHERE {
   {
     SELECT 
@@ -218,5 +218,4 @@ WHERE {
     }
   }
 }
-GROUP BY ?submission
 ORDER BY DESC(?datumVerstuurd) ?submission`;
