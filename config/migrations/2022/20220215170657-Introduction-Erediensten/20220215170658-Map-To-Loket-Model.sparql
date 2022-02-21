@@ -10,13 +10,6 @@ PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
-
-DELETE {
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    ?tijdspecialisatie mandaat:bindingStart ?bindingStart;
-      mandaat:bindingEinde ?bindingEinde.
-  }
-}
 INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
 
@@ -48,10 +41,6 @@ INSERT {
       dct:identifier ?KBONummer;
       # From adms:identifier/generiek:gestructureerdeIdentificator/generiek:lokaleIdentificator
       ext:kbonummer ?KBONummer.
-
-    ?tijdspecialisatie mandaat:bindingStart ?newBindingStart;
-      mandaat:bindingEinde ?newBindingEinde.
-
   }
 }
 WHERE {
@@ -96,15 +85,8 @@ WHERE {
     # Selecting relevant data from **tijdspecialisatie** Bestuursoorgaan
     ?tijdspecialisatie
       a besluit:Bestuursorgaan;
-      mandaat:bindingStart ?bindingStart;
       generiek:isTijdspecialisatieVan ?bestuursorgaan. # Link to current bestuursorgaan
 
-    OPTIONAL {
-     ?tijdspecialisatie mandaat:bindingEinde ?bindingEinde.
-    }
-
     BIND(CONCAT(?classificationBestuursorgaanLabel, ?bestuurseenheidLabel) as ?newBestuursorgaanLabel)
-    BIND(STRDT(STR(?bindingStart), xsd:date) AS ?newBindingStart)
-    BIND(STRDT(STR(?bindingEinde), xsd:date) AS ?newBindingEinde)
   }
 }
