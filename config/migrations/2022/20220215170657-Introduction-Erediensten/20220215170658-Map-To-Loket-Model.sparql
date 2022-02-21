@@ -10,6 +10,13 @@ PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?tijdspecialisatie mandaat:bindingStart ?bindingStart;
+      mandaat:bindingEinde ?bindingEinde.
+  }
+}
 INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
 
@@ -25,7 +32,8 @@ INSERT {
     # Map Bestuursoorgaan
     ?bestuursorgaan
       # From org:classification
-      besluit:classificatie ?classificationBestuursorgaan.
+      besluit:classificatie ?classificationBestuursorgaan;
+      skos:prefLabel ?newBestuursorgaanLabel.
 
     # Map Bestuurseenheid classificatie
     ?classificationEredienst a
@@ -41,6 +49,9 @@ INSERT {
       # From adms:identifier/generiek:gestructureerdeIdentificator/generiek:lokaleIdentificator
       ext:kbonummer ?KBONummer.
 
+    ?tijdspecialisatie mandaat:bindingStart ?newBindingStart;
+      mandaat:bindingEinde ?newBindingEinde.
+
   }
 }
 WHERE {
@@ -54,7 +65,8 @@ WHERE {
       a ?type;
       org:classification ?classificationEredienst;
       # Nested resource in OP
-      adms:identifier ?identifierEredienst.
+      adms:identifier ?identifierEredienst;
+      skos:prefLabel ?bestuurseenheidLabel.
 
     # Selecting relevant data from Identifier
     OPTIONAL {
@@ -78,11 +90,18 @@ WHERE {
 
     # Selecting relevant data from Bestuursorgaan classificatie
     ?classificationBestuursorgaan
-      a lblodOrg:BestuursorgaanClassificatieCode.
+      a lblodOrg:BestuursorgaanClassificatieCode;
+      skos:prefLabel ?classificationBestuursorgaanLabel.
 
     # Selecting relevant data from **tijdspecialisatie** Bestuursoorgaan
     ?tijdspecialisatie
       a besluit:Bestuursorgaan;
+      mandaat:bindingStart ?bindingStart;
+      mandaat:bindingEinde ?bindingEinde;
       generiek:isTijdspecialisatieVan ?bestuursorgaan. # Link to current bestuursorgaan
+
+    BIND(CONCAT(?classificationBestuursorgaanLabel, ?bestuurseenheidLabel) as ?newBestuursorgaanLabel)
+    BIND(STRDT(STR(?bindingStart), xsd:date) AS ?newBindingStart)
+    BIND(STRDT(STR(?bindingEinde), xsd:date) AS ?newBindingEinde)
   }
 }
