@@ -98,7 +98,7 @@ WHERE {
       a besluit:Bestuursorgaan;
       mandaat:bindingStart ?bindingStart;
       generiek:isTijdspecialisatieVan ?bestuursorgaan. # Link to current bestuursorgaan
-`
+
     OPTIONAL {
      ?tijdspecialisatie mandaat:bindingEinde ?bindingEinde.
     }
