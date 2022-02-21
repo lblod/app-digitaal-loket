@@ -97,8 +97,11 @@ WHERE {
     ?tijdspecialisatie
       a besluit:Bestuursorgaan;
       mandaat:bindingStart ?bindingStart;
-      mandaat:bindingEinde ?bindingEinde;
       generiek:isTijdspecialisatieVan ?bestuursorgaan. # Link to current bestuursorgaan
+`
+    OPTIONAL {
+     ?tijdspecialisatie mandaat:bindingEinde ?bindingEinde.
+    }
 
     BIND(CONCAT(?classificationBestuursorgaanLabel, ?bestuurseenheidLabel) as ?newBestuursorgaanLabel)
     BIND(STRDT(STR(?bindingStart), xsd:date) AS ?newBindingStart)
