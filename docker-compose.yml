@@ -193,7 +193,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.12.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.13.0
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -208,6 +208,7 @@ services:
       MAX_CONFIRMATION_ATTEMPTS: 20
       INZENDING_BASE_URL: "https://besluiten.abb.lblod.info/supervision/submissions"
     volumes:
+      - ./config/berichtencentrum-sync-with-kalliope:/config
       - ./data/files:/data/files
     labels:
       - "logging=true"
