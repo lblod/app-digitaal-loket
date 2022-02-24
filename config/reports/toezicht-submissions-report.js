@@ -1,13 +1,13 @@
-import generateSubmissionsReport from './toezicht-module/submissions';
-import generateUploadedFilesReport from './toezicht-module/uploaded-files';
+import generateSubmissionsReport from './toezicht-submissions/submissions';
+import generateUploadedFilesReport from './toezicht-submissions/uploaded-files';
 
 const metadata = {
-  title: 'Toezicht module',
+  title: 'Toezicht module: Meldingen',
 };
 
 export default {
   cronPattern: '0 0 22 * * 6',
-  name: 'toezicht-module-report',
+  name: 'toezicht-submissions',
   execute: async () => {
     const startTime = new Date();
     const reportTime = new Date('2021-01-01');

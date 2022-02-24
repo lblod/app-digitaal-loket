@@ -14,7 +14,6 @@ import personsMissingDataReport from './personsMissingDataReport';
 import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
 import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
-import mar7300InzendingenReport from './mar7300InzendingenReport';
 import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 import electedPersonsReport from './electedPersonsReport';
 import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
@@ -27,7 +26,8 @@ import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
-import toezichtModuleReport from './toezicht-module-report';
+import toezichtSubmissionsReport from './toezicht-submissions-report';
+import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 
 export default [
   BestuurseenhedenReport,
@@ -47,7 +47,6 @@ export default [
   mandatarissenWithoutPersonReport,
   mandatarissenWithEmptyPersonReport,
   noodopvangSubsidiesReport,
-  mar7300InzendingenReport,
   contactTracingSubsidiesReport,
   electedPersonsReport,
   contactTracingSubsidiesDetailedReport,
@@ -61,5 +60,6 @@ export default [
   gzgSubsidieOproepThreeReport,
   gzgSubsidieOproepFourReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
-  toezichtModuleReport
+  toezichtSubmissionsReport,
+  toezichtTaxRegulationSubmissionReport
 ];
