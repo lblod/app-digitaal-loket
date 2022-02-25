@@ -1,5 +1,15 @@
 # Changelog
-
+## 1.59.0 (2022-02-25)
+### :house: Internal
+ - Improved reports MAR-code
+ - clean up database for obsolete information
+ - Introduce config file berichtencentrum sync with kalliope
+### :rocket: Enhancement
+- New inzendingen voor toezicht:
+  - Collective notie van wantrouwen
+  - Code goed bestuur
+  - Overzicht presentiegelden
+  - Voorstellen in verband saneringsplan
 ## 1.58.7 (2022-02-11)
 ### :house: Internal
 - cleanup double subsidy bierbeek climate
@@ -9,10 +19,10 @@
 ## 1.58.5 (2022-02-11)
 ### :memo: Reports
 - **[NEW]** Toezicht module:
-  - Produces two CSVs in the dashboard: 
+  - Produces two CSVs in the dashboard:
     - Meldingen
     - Geuploade bestanden
-- **[DEPRECATED]** Submissions 
+- **[DEPRECATED]** Submissions
 ### :rocket: Enhancement
 - Bumped publication-graph-maintainer to latest
 ## 1.58.4 (2022-02-08)
