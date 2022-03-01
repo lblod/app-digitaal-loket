@@ -1,4 +1,7 @@
 # Changelog
+## 1.60.0 (2022-03-01)
+### :house: Internal
+  - update export submissions config, to include missing besluitenlijsten
 ## 1.59.1 (2022-03-01)
 ### :house: Internal
   - update publicaiton graph maintainer config
