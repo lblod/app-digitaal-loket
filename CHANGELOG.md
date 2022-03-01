@@ -1,4 +1,7 @@
 # Changelog
+## 1.59.1 (2022-03-01)
+### :house: Internal
+  - update publicaiton graph maintainer config
 ## 1.59.0 (2022-02-25)
 ### :house: Internal
  - Improved reports MAR-code
