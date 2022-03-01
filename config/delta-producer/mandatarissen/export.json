@@ -63,7 +63,8 @@
     {
       "type": "http://www.w3.org/ns/person#Person",
       "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
-                        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker"
+                        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
+                        "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
                         ],
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
