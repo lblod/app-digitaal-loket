@@ -23,6 +23,7 @@ import gzgSubsidieOproepOneReport from './gzgSubsidieOproep1Report';
 import gzgSubsidieOproepTwoReport from './gzgSubsidieOproep2Report';
 import gzgSubsidieOproepThreeReport from './gzgSubsidieOproep3Report';
 import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
+import gzgSubsidieOproepFiveReport from './gzgSubsidieOproep5Report';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
@@ -59,6 +60,7 @@ export default [
   gzgSubsidieOproepTwoReport,
   gzgSubsidieOproepThreeReport,
   gzgSubsidieOproepFourReport,
+  gzgSubsidieOproepFiveReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport
