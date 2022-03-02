@@ -42,6 +42,7 @@ fields:590ec414-829e-4232-88eb-95c205773fae a form:PropertyGroup;
     sh:description "Financiële stimulans";
     sh:order 4;
     sh:name "Financiële stimulans" ;
+    form:help """<a href=\"https://www.plansamenleven.be\" target=\"_blank\">Hier</a> vind je meer info over deze financiële stimulansen""";
     sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
 
 
@@ -237,7 +238,14 @@ fields:53c583fe-e4c0-4c43-b693-ec318008910b a form:Field ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
       sh:path planSamenleven:usesSocialImpactBoundProposal
-      ] ;
+      ] ,
+      [ a form:MaxLength ;
+          form:max 2500;
+          form:grouping form:MatchEvery ;
+          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
+          sh:path planSamenleven:mentorshipActionDetails
+      ]
+      ;
     form:displayType displayTypes:textArea ;
     sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
 
@@ -305,10 +313,17 @@ fields:a545a2d0-aa48-4667-83d1-29a1c0d2c75c a form:Field ;
     sh:path planSamenleven:mentorshipActionDetails ;
     form:validations
       [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path planSamenleven:mentorshipActionDetails
-      ] ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht."@nl;
+          sh:path planSamenleven:mentorshipActionDetails
+      ],
+      [ a form:MaxLength ;
+          form:max 2500;
+          form:grouping form:MatchEvery ;
+          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
+          sh:path planSamenleven:mentorshipActionDetails
+      ]
+      ;
     form:displayType displayTypes:textArea ;
     sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
 
