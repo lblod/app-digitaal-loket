@@ -162,7 +162,7 @@ fields:18f00849-eac8-4d03-a487-f7a78625ee3c a form:Field ;
 fields:0109b0d8-7f34-42cc-957a-c04024a4a73b a form:Field ;
     mu:uuid "0109b0d8-7f34-42cc-957a-c04024a4a73b";
     sh:name "Upload beslissing" ;
-    form:help "Laad hier een kopie van de gunningsbeslissing en de overeenkomst met de opdrachtnemer(s) op.";
+    form:help "Laad hier een kopie van de gunningsbeslissing en de overeenkomst met de opdrachtnemer(s) op, of zeker die pagina's uit de offerte waaruit de prijs van de werken blijkt.";
     sh:order 24 ;
     sh:path ( lblodSubsidie:decisionUpload dct:hasPart ) ;
     form:validations
@@ -188,7 +188,7 @@ fields:f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c a form:Field ;
 fields:9b6544a0-84d9-4969-b3b5-982e76c020f4 a form:Field ;
     mu:uuid "9b6544a0-84d9-4969-b3b5-982e76c020f4";
     sh:name "Upload verslag" ;
-    form:help "Laad hier een verslag op van de projectstuurgroep, zoals vermeld in art. 26 van het decreet van 26 april 2019 betreffende de basisbereikbaarheid.";
+    form:help "Laad hier een verslag op van de projectstuurgroep, zoals vermeld in art. 26 van het decreet van 26 april 2019 betreffende de basisbereikbaarheid, waaruit de consensus duidelijk blijkt.";
     sh:order 25 ;
     sh:path ( lblodSubsidie:reportUpload dct:hasPart ) ;
     form:validations
