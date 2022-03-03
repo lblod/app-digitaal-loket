@@ -194,7 +194,7 @@ fields:30fdc26c-7f61-403f-a7da-507c2b90e750 a form:Field ;
 fields:85515be8-407e-41ac-a97d-66df37685e7c a form:Field ;
     mu:uuid "85515be8-407e-41ac-a97d-66df37685e7c";
     sh:name "Willen jullie als gemeente gebruik maken van het instrument 'Social Impact Bond'?" ;
-    sh:order 51 ;
+    sh:order 60 ;
     sh:path planSamenleven:usesSocialImpactBound ;
     form:validations
         [ a form:ConceptSchemeConstraint ;
@@ -216,7 +216,7 @@ fields:85515be8-407e-41ac-a97d-66df37685e7c a form:Field ;
 fields:1d72bc54-2d6f-4331-a0be-9f2769cce0c9 a form:ConditionalFieldGroup ;
     mu:uuid "1d72bc54-2d6f-4331-a0be-9f2769cce0c9";
     form:conditions
-      [ a form:ContainsCodelistValue ;
+      [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
         sh:path planSamenleven:usesSocialImpactBound ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
@@ -231,7 +231,7 @@ fields:1d72bc54-2d6f-4331-a0be-9f2769cce0c9 a form:ConditionalFieldGroup ;
 fields:53c583fe-e4c0-4c43-b693-ec318008910b a form:Field ;
     mu:uuid "53c583fe-e4c0-4c43-b693-ec318008910b";
     sh:name "Geef hier aan wat het concrete voorstel is voor jullie gemeente voor de 'Social Impact Bond'." ;
-    sh:order 52 ;
+    sh:order 70 ;
     sh:path planSamenleven:usesSocialImpactBoundProposal ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -255,7 +255,7 @@ fields:53c583fe-e4c0-4c43-b693-ec318008910b a form:Field ;
 fields:4cfdb602-4b1c-4891-a3c3-cb70e1244132 a form:Field ;
     mu:uuid "4cfdb602-4b1c-4891-a3c3-cb70e1244132";
     sh:name "Willen jullie als gemeente het mentorschap opnemen over een bepaalde actie?" ;
-    sh:order 52 ;
+    sh:order 80 ;
     sh:path planSamenleven:proposesMentorship ;
     form:validations
         [ a form:ConceptSchemeConstraint ;
@@ -277,7 +277,7 @@ fields:4cfdb602-4b1c-4891-a3c3-cb70e1244132 a form:Field ;
 fields:86aab42b-4b79-43e6-8e65-59af22ff1566 a form:ConditionalFieldGroup ;
     mu:uuid "86aab42b-4b79-43e6-8e65-59af22ff1566";
     form:conditions
-      [ a form:ContainsCodelistValue ;
+      [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
         sh:path planSamenleven:proposesMentorship ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
@@ -291,7 +291,7 @@ fields:86aab42b-4b79-43e6-8e65-59af22ff1566 a form:ConditionalFieldGroup ;
 fields:26f5b41d-a410-4c0d-b1a8-60208fe2bb49 a form:Field ;
     mu:uuid "26f5b41d-a410-4c0d-b1a8-60208fe2bb49";
     sh:name "Geef hier aan voor welke actie dit van toepassing is:" ;
-    sh:order 54 ;
+    sh:order 90 ;
     sh:path planSamenleven:mentorshipAction ;
     form:validations
     [ a form:RequiredConstraint ;
@@ -309,7 +309,7 @@ fields:26f5b41d-a410-4c0d-b1a8-60208fe2bb49 a form:Field ;
 fields:a545a2d0-aa48-4667-83d1-29a1c0d2c75c a form:Field ;
     mu:uuid "a545a2d0-aa48-4667-83d1-29a1c0d2c75c";
     sh:name "Op welke manier hebben jullie expertise rond deze actie verzameld? Motiveer waarom en hoe jullie deze rol als mentor zouden opnemen." ;
-    sh:order 55 ;
+    sh:order 100 ;
     sh:path planSamenleven:mentorshipActionDetails ;
     form:validations
       [ a form:RequiredConstraint ;
