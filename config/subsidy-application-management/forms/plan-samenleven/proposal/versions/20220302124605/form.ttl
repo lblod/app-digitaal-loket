@@ -356,6 +356,9 @@ fieldGroups:main a form:FieldGroup ;
         ### Confirmation letter ###
         fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
 
+        ### Confirmation letter: hidden ###
+        fields:ccb94821-be31-43fa-87df-ef64e3c4ce45,
+
         ### hasCollaborationWithOtherLBNonEu ###
         fields:30fdc26c-7f61-403f-a7da-507c2b90e750 ,
 
