@@ -37,6 +37,50 @@
         ]
       },
       {
+        "s-prefix": "lblodSubsidie:awardReportUpload",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:accountabilityNoteUpload",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:justificationCostsUpload",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:justificationExpropriationsUpload",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
         "s-prefix": "schema:contactPoint",
         "properties": [
           "foaf:firstName",
