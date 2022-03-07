@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.54.2
+    image: lblod/frontend-loket:0.56.0
     links:
       - identifier:backend
     labels:
