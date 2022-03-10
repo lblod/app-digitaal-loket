@@ -169,7 +169,7 @@ fields:0109b0d8-7f34-42cc-957a-c04024a4a73b a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:decisionUpload
+      sh:path ( lblodSubsidie:decisionUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
@@ -195,7 +195,7 @@ fields:9b6544a0-84d9-4969-b3b5-982e76c020f4 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:reportUpload
+      sh:path ( lblodSubsidie:reportUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
@@ -221,7 +221,7 @@ fields:7e4a42c0-2372-4876-b085-07aa0585b55a a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:awardReportUpload
+      sh:path ( lblodSubsidie:awardReportUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
@@ -247,7 +247,7 @@ fields:d5ad7ffe-2301-4009-8a05-6bcc93d5b078 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:accountabilityNoteUpload
+      sh:path ( lblodSubsidie:accountabilityNoteUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
@@ -273,7 +273,7 @@ fields:45504443-5841-4bac-b22f-7f36c0bddc17 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:justificationCostsUpload
+      sh:path ( lblodSubsidie:justificationCostsUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
@@ -299,7 +299,7 @@ fields:67e91caf-457c-44c0-97c1-2a17f466dfa0 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:justificationExpropriationsUpload
+      sh:path ( lblodSubsidie:justificationExpropriationsUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c9068fc7-7cdb-4cc3-9128-ff768a2c765d .
