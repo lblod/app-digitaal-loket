@@ -1,4 +1,7 @@
 # Changelog
+## 1.61.0 (2022-03-10)
+#### subsidies
+  - New GZG Oproep 5 reeks + report
 ## 1.60.1 (2022-03-07)
 ### :house: Internal
   - update export submissions config, to include missing besluitenlijsten
