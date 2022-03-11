@@ -112,6 +112,11 @@ defmodule Dispatcher do
   patch "/files/*path" do
     Proxy.forward conn, path, "http://resource/files/"
   end
+  post "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
+  end
+  # TODO: find all usage of this endpoint and replace it with `POST /files`
+  # This is kept to maintain compatibility with code that uses the "old" endpoint.
   post "/file-service/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end

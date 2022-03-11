@@ -169,7 +169,7 @@ fields:2dd1f378-fa30-46a4-b7a6-969838bc89fd a form:Field ;
 fields:965d24ef-99ae-4f07-9a5d-7a9e083a7ca1 a form:Field ;
     mu:uuid "965d24ef-99ae-4f07-9a5d-7a9e083a7ca1";
     sh:name "Upload foto's" ;
-    form:help "laad hier een of meerdere foto’s op van de situatie na de afronding van het project.";
+    form:help "Laad hier een of meerdere foto’s op van de situatie na de afronding van het project.";
     sh:order 14 ;
     sh:path ( lblodSubsidie:picturesUpload dct:hasPart ) ;
     form:validations
@@ -195,7 +195,7 @@ fields:4f9bbe22-c562-4ff0-87ac-cc47cc01e224 a form:Field ;
 fields:36210e53-38f0-4135-b338-23ec58153c7d a form:Field ;
     mu:uuid "36210e53-38f0-4135-b338-23ec58153c7d";
     sh:name "Upload Facturen" ;
-    form:help "laad hier alle facturen op voor het afgeronde project.";
+    form:help "Laad hier alle facturen op voor het afgeronde project.";
     sh:order 24 ;
     sh:path ( lblodSubsidie:invoiceUpload dct:hasPart ) ;
     form:validations
@@ -221,7 +221,7 @@ fields:f30c5cef-0fd2-42d9-86de-82e7ea0d4d7c a form:Field ;
 fields:ca288d9e-7917-4c7a-8b1d-510b32892548 a form:Field ;
     mu:uuid "ca288d9e-7917-4c7a-8b1d-510b32892548";
     sh:name "Upload verslag oplevering van de werken" ;
-    form:help "laad hier het verslag op van de oplevering van de werken.";
+    form:help "Laad hier het verslag op van de oplevering van de werken.";
     sh:order 25 ;
     sh:path ( lblodSubsidie:reportUpload dct:hasPart ) ;
     form:validations
