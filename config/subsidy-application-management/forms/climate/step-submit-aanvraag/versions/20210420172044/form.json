@@ -21,7 +21,27 @@
       "adms:status",
       "ext:lastModifiedBy",
       "dct:creator",
-      "pav:createdBy"
+      "pav:createdBy",
+      {
+        "s-prefix": "schema:contactPoint",
+        "properties": [
+          "foaf:firstName",
+          "foaf:familyName",
+          "schema:telephone",
+          "schema:email"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:attachment",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      }
     ]
   },
   "meta": {
