@@ -47,11 +47,10 @@ module.exports = {
           SCHEMA('telephone'),
           telephone.value,
           graphs.additions);
-  },
+  }
 };
 
 async function getGenericInfo(uri, mu, sudo) {
-  console.log("debug")
   const { results } = await sudo.querySudo(`
     PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
     PREFIX schema: <http://schema.org/>
@@ -62,19 +61,19 @@ async function getGenericInfo(uri, mu, sudo) {
       GRAPH ?g {
         ${mu.sparqlEscapeUri(uri)}
           schema:contactPoint ?contactPoint.
-        OPTIONAL { 
+        OPTIONAL {
             ?contactPoint foaf:familyName ?familyName.
         }
-        OPTIONAL { 
+        OPTIONAL {
             ?contactPoint foaf:firstName ?firstName.
         }
-        OPTIONAL { 
+        OPTIONAL {
             ?contactPoint schema:email ?email.
-        }  
-        OPTIONAL { 
+        }
+        OPTIONAL {
             ?contactPoint schema:telephone ?telephone.
         }
-      }          
+      }
     }`
   );
 
