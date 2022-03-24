@@ -703,6 +703,23 @@ fields:7465c000-c844-4ba9-82cc-bd173cbe41a3 a form:Field ;
     form:help """Voeg hier budget en beleidsnota toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
+#########################################################
+# File with custom helper text for "Meerjarenplan(aanpassing)"
+#########################################################
+fields:95c9236e-e849-4888-82ae-b812f906e75d a form:Field ;
+    mu:uuid "95c9236e-e849-4888-82ae-b812f906e75d" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier volgende bijlagen toe: meerjarenplan, strategische nota, individuele afsprakennota.""" ;
+    sh:group fields:aDynamicPropertyGroup .
 
 ##########################################################
 # End Custom files and links fields
@@ -2602,7 +2619,7 @@ fields:f038bf93-0f8b-46e4-a095-50dc10caae5a a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:473b2370-fa80-41bf-8e0f-842d63093b5a .
 
-
+###########Budget-Andere###########
 
 fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
     mu:uuid "5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95" ;
@@ -2641,22 +2658,23 @@ fields:3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f a form:ConditionalFieldGroup ;
              );
       ] ;
     form:hasFieldGroup fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 .
-    
+###########Budget-Eredienst###########
+
 fieldGroups:acabf4e0-a124-4d68-b3f1-f93e86c7b1e5 a form:FieldGroup ;
     mu:uuid "acabf4e0-a124-4d68-b3f1-f93e86c7b1e5" ;
     form:hasField
 
-                      ###Links-naar-documenten (SIMPLE) ###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
-                      ###Bestanden (CUSTOM) ###
+                      ###Bestanden (custom)###
                       fields:7465c000-c844-4ba9-82cc-bd173cbe41a3.
 
 # this field is the custom bestuursorgaan selector
-fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:3a079210d-0f29-4ec8-b10a-502ab8be7735.
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:29e7bd94-1aa4-4ad2-9b43-b7ececf46348.
 
-fields:3a079210d-0f29-4ec8-b10a-502ab8be7735 a form:ConditionalFieldGroup ;
-    mu:uuid "3a079210d-0f29-4ec8-b10a-502ab8be7735";
+fields:29e7bd94-1aa4-4ad2-9b43-b7ececf46348 a form:ConditionalFieldGroup ;
+    mu:uuid "29e7bd94-1aa4-4ad2-9b43-b7ececf46348";
     form:conditions
       [ a form:SingleCodelistValue ;
         form:grouping form:Bag ;
@@ -2675,8 +2693,7 @@ fields:3a079210d-0f29-4ec8-b10a-502ab8be7735 a form:ConditionalFieldGroup ;
             <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> );
       ] ;
     form:hasFieldGroup fieldGroups:acabf4e0-a124-4d68-b3f1-f93e86c7b1e5 .
-    
-    ###########Budget###########
+###########Budget###########
 
 fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 a form:FieldGroup ;
     mu:uuid "8e826b62-3bce-4a9c-b8c1-e84db510c6a3" ; 
@@ -2711,6 +2728,7 @@ fields:8640f3ff-2302-40eb-85c6-d932628250ed a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873>
       ] ;
     form:hasFieldGroup fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 .
+
 
 ########### Code van goed bestuur ###########
 
@@ -2998,6 +3016,85 @@ fields:887f0b61-cbb6-41a9-a4d3-62d980760aa6 a form:ConditionalFieldGroup ;
     form:hasFieldGroup fieldGroups:7d5f1a08-598c-4a67-a102-a8bc07ac2f13 .
 
 
+###########Meerjarenplan(aanpassing)-andere###########
+
+fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
+    mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
+    form:hasField
+                    
+                    ###Datum-van-publicatie-op-webtoepassing###
+                    fields:49dbe1be-877a-4890-8465-1510ff18ce18,
+                    
+                    ###Links-naar-documenten###
+                    fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
+                    
+                    ###Bestanden###
+                    fields:c7c5a589-0785-4032-a4bd-ee589add3c39.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:8a4f42d4-8f18-41c8-ac9b-76d327ba0df5.
+
+fields:8a4f42d4-8f18-41c8-ac9b-76d327ba0df5 a form:ConditionalFieldGroup ;
+    mu:uuid "8a4f42d4-8f18-41c8-ac9b-76d327ba0df5";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
+      ],
+      [ a form:MatchValues ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:valuesNotIn (
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/04f65457bf125b2dc59fd71917ac3d08>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b475fa47e17a8a05ae04a9e1fb9c9258>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/90a9ec83cb93b9369bba7ff29d9ce5ce>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a0701624aefb115b7eda2ff39139c2dd>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> 
+             );
+      ] ;
+    form:hasFieldGroup fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 .                      
+###########Meerjarenplan(aanpassing)-Eredienst###########
+
+fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
+    mu:uuid "5a21ed58-c0cf-4042-8b59-bd14ca595aae" ;
+    form:hasField
+
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden (CUSTOM) ###
+                      fields:95c9236e-e849-4888-82ae-b812f906e75d.
+
+# this field is the custom bestuursorgaan selector
+fields:4c7820f0-4011-4ab4-a16a-e128800e11bc form:hasConditionalFieldGroup fields:13a56126-4b73-4d92-a5d2-ddb2433f191b.
+
+fields:13a56126-4b73-4d92-a5d2-ddb2433f191b a form:ConditionalFieldGroup ;
+    mu:uuid "13a56126-4b73-4d92-a5d2-ddb2433f191b";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
+      ],
+      [ a form:MatchValues ;
+        form:grouping form:Bag ;
+        sh:path ( eli:passed_by mandaat:isTijdspecialisatieVan besluit:classificatie ) ;
+        form:valuesIn (
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/04f65457bf125b2dc59fd71917ac3d08>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b475fa47e17a8a05ae04a9e1fb9c9258>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/90a9ec83cb93b9369bba7ff29d9ce5ce>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a0701624aefb115b7eda2ff39139c2dd>
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> );
+      ] ;
+    form:hasFieldGroup fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae .
+
+
+
+
+
 
 ###########Meerjarenplan(aanpassing)###########
 
@@ -3013,26 +3110,8 @@ fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
-                      ###Datum-zitting/besluit###
-                      fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
-
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
-                      fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
-
-                      ###Datum-van-publicatie-op-webtoepassing###
-                      fields:49dbe1be-877a-4890-8465-1510ff18ce18,
-
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
-
-                      ###Links-naar-documenten###
-                      fields:1e0f541f-61e9-43a7-bc5f-612eb44f52bb,
-
-                      ###Bestanden###
-                      fields:c7c5a589-0785-4032-a4bd-ee589add3c39,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
