@@ -8,6 +8,7 @@ const extractor = {
 async function execute( store, graphs, lib, form ){
     const source = await findFormFromStep1(lib, form);
 
+    //Note: this loop is still overkill, but at least it is 'prepared'
     for (let extractor of [ contactInfoExtractor ]) {
       try {
         await extractor.execute(store, graphs, lib, form, { uri: source });
