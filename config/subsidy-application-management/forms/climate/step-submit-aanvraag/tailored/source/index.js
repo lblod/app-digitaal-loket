@@ -11,7 +11,11 @@ firstFormExtractor = (extractors) =>
       execute: async (store, graphs, lib, form) => {
         const {mu, sudo} = lib;
 
-        const { results } = await sudo.querySudo(`SELECT DISTINCT ?firstForm where {
+        const { results } = await sudo.querySudo(`
+         PREFIX dct: <http://purl.org/dc/terms/>
+         PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
+
+         SELECT DISTINCT ?firstForm where {
           GRAPH ?g {
             ${mu.sparqlEscapeUri(form.uri)} dct:isPartOf ?currentStep .
             ?smc dct:source ${mu.sparqlEscapeUri(form.uri)} .
@@ -23,7 +27,7 @@ firstFormExtractor = (extractors) =>
             ?step2 xkos:previous ?step1.
           }
         }`);
-        
+
         if (!results.bindings.length)
           throw `Failed to find a preciding form for <${form.uri}>, are you sure this is part of a flow?`;
 
