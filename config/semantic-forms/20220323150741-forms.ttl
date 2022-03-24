@@ -2601,6 +2601,9 @@ fields:f038bf93-0f8b-46e4-a095-50dc10caae5a a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/d60eb90b-926b-4c64-b87c-866c0cf92f0a>
       ] ;
     form:hasFieldGroup fieldGroups:473b2370-fa80-41bf-8e0f-842d63093b5a .
+
+
+
 fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
     mu:uuid "5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95" ;
     form:hasField
@@ -2624,7 +2627,7 @@ fields:3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f a form:ConditionalFieldGroup ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/doc/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873>
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873>
       ],
       [ a form:MatchValues ;
         form:grouping form:Bag ;
@@ -2634,7 +2637,8 @@ fields:3aa3da45-d29b-4ad4-83c3-b2eb99b3b13f a form:ConditionalFieldGroup ;
             <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b475fa47e17a8a05ae04a9e1fb9c9258>
             <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/90a9ec83cb93b9369bba7ff29d9ce5ce>
             <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a0701624aefb115b7eda2ff39139c2dd>
-            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> );
+            <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183> 
+             );
       ] ;
     form:hasFieldGroup fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 .
     
@@ -2658,7 +2662,7 @@ fields:3a079210d-0f29-4ec8-b10a-502ab8be7735 a form:ConditionalFieldGroup ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/doc/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873> 
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873> 
       ],
       [ a form:MatchValues ;
         form:grouping form:Bag ;
