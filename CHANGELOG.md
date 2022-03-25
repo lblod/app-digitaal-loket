@@ -1,4 +1,12 @@
 # Changelog
+## 1.62.0 (2022-03-25)
+#### subsidies
+  - Update bike subsidy: added extra file upload fields
+  - extend filtering beschikbare subsidiemaatregelen: not all types of eenheden can now subite for all subsidies
+  - update labeling climate subsidy
+### :house: Internal
+  - huge frontend maintenance: removal of webuniversum dependencies, update ember and other maintenance
+  - update publication graph maintainer (some fixes/improvements)
 ## 1.61.0 (2022-03-10)
 #### subsidies
   - New GZG Oproep 5 reeks + report
