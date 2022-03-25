@@ -2,7 +2,7 @@
 ## 1.62.0 (2022-03-25)
 #### subsidies
   - Update bike subsidy: added extra file upload fields
-  - extend filtering beschikbare subsidiemaatregelen: not all types of eenheden can now subite for all subsidies
+  - extend filtering beschikbare subsidiemaatregelen: not all types of eenheden can now submit for all subsidies
   - update labeling climate subsidy
 ### :house: Internal
   - huge frontend maintenance: removal of webuniversum dependencies, update ember and other maintenance
