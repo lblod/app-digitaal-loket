@@ -38,6 +38,21 @@
           }
         ]
       },
+      {
+        "s-prefix": "lblodSubsidie:planLivingTogetherTable",
+        "properties": [
+          {
+            "s-prefix": "planSamenleven:planLivingTogetherEntry",
+            "properties": [
+              "planSamenleven:description",
+              "planSamenleven:currentRange",
+              "planSamenleven:plannedRange",
+              "planSamenleven:contribution",
+              "planSamenleven:priority"
+            ]
+          }
+        ]
+      },
       "planSamenleven:hasCollaborationWithOtherLBNonEu",
       "planSamenleven:usesSocialImpactBound",
       "planSamenleven:usesSocialImpactBoundProposal",
