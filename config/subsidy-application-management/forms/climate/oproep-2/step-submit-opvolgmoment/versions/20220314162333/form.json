@@ -16,12 +16,6 @@
       "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
     ],
     "properties": [
-      "dct:created",
-      "dct:modified",
-      "adms:status",
-      "ext:lastModifiedBy",
-      "dct:creator",
-      "pav:createdBy"
     ]
   },
   "meta": {
