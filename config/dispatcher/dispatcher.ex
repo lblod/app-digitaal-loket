@@ -402,7 +402,7 @@ defmodule Dispatcher do
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-mandatarissen/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-mandatarissen/files/"
   end
 
   #################################################################
