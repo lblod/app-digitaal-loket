@@ -409,7 +409,7 @@ defmodule Dispatcher do
   # loket-leidinggevenden sync
   #################################################################
   get "/sync/leidinggevenden/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-leidinggevenden/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-leidinggevenden/files/"
   end
 
   #################################################################
