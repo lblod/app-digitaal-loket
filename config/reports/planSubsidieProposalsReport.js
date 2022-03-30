@@ -46,17 +46,23 @@ export default {
 
         ?form dct:modified ?modified.
 
-        ?form schema:contactPoint ?contactPoint .
-        ?contactPoint foaf:firstName ?contactFirstName .
-        ?contactPoint foaf:familyName ?contactLastName .
-        ?contactPoint schema:email ?contactEmail .
-        ?contactPoint schema:telephone ?contactTelephone .
+        OPTIONAL {
+          ?form schema:contactPoint ?contactPoint .
+          ?contactPoint foaf:firstName ?contactFirstName .
+          ?contactPoint foaf:familyName ?contactLastName .
+          ?contactPoint schema:email ?contactEmail .
+          ?contactPoint schema:telephone ?contactTelephone .
+        }
 
-        ?form schema:bankAccount/schema:identifier ?rekeningnummer .
-
-        ?form planSamenleven:hasCollaborationWithOtherLBNonEu/skos:prefLabel ?samenwerking;
-              planSamenleven:usesSocialImpactBound/skos:prefLabel ?socialImpactBond;
-              planSamenleven:proposesMentorship/skos:prefLabel ?mentorschap.
+        OPTIONAL { 
+          ?form schema:bankAccount/schema:identifier ?rekeningnummer .
+        }
+ 
+        OPTIONAL {
+          ?form planSamenleven:hasCollaborationWithOtherLBNonEu/skos:prefLabel ?samenwerking;
+                planSamenleven:usesSocialImpactBound/skos:prefLabel ?socialImpactBond;
+                planSamenleven:proposesMentorship/skos:prefLabel ?mentorschap.
+        }
 
         OPTIONAL {
           ?form planSamenleven:mentorshipAction ?mentorschapActie.
@@ -70,6 +76,7 @@ export default {
           ?form planSamenleven:mentorshipActionDetails ?mentorschapMotivering.
         }
       }
+      ORDER BY DESC(?modified)
     `;
 
     const queryResponse = await query(queryString);
@@ -77,6 +84,7 @@ export default {
       return {
         subsidieURI: getSafeValue(subsidie, 'subsidie'),
         modified: getSafeValue(subsidie, 'modified'),
+        status: getSafeValue(subsidie, 'status'),
         contactFirstName: getSafeValue(subsidie, 'contactFirstName'),
         contactLastName: getSafeValue(subsidie, 'contactLastName'),
         contactTelephone: getSafeValue(subsidie, 'contactTelephone'),
@@ -97,6 +105,7 @@ export default {
     await generateReportFromData(data, [
       'subsidieURI',
       'modified',
+      'status',
       'contactFirstName',
       'contactLastName',
       'contactTelephone',
