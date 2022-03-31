@@ -1,7 +1,10 @@
 # Changelog
-## 1.63.0 (2022-03-??)
+## 1.63.0 (2022-03-31)
+### :house: Internal
+  - simplified producers: remove json-diff-file-producers (since provided by other services)
 #### subsidies
   - update deadline climate/oproep-1/opvolgmoment
+  - added plan samenleven
 ## 1.62.0 (2022-03-25)
 #### subsidies
   - Update bike subsidy: added extra file upload fields
