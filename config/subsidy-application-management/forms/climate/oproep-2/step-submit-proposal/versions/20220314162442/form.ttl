@@ -53,7 +53,7 @@ fields:69519aa9-b827-4a73-af1f-9e8a76540195 a form:Field ;
     sh:order 24 ;
     sh:path lblodSubsidie:climateTable ;
     form:options """{}""" ;
-    <http://data.lblod.info/climate-tables/allowCustomData>   true;
+    <http://data.lblod.info/climate-tables/allowNewActions> true;
     form:displayType displayTypes:climateSubsidyCostTable ;
     form:validations
     [ a form:RequiredConstraint ;
