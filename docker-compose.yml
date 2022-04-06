@@ -573,6 +573,7 @@ services:
       PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
       PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-submissions"
     volumes:
       - ./config/delta-producer/submissions:/config
       - ./data/files/:/share
