@@ -430,7 +430,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher:
-    image: lblod/delta-producer-dump-file-publisher:0.6.0
+    image: lblod/delta-producer-dump-file-publisher:0.7.0
     volumes:
       - ./config/delta-producer/dump-file-publisher:/config
       - ./data/files:/share
@@ -603,7 +603,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-persons-sensitive:
-    image: lblod/delta-producer-publication-graph-maintainer:0.15.0
+    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
