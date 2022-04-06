@@ -224,22 +224,6 @@ INSERT DATA {
         range:maximum "4"^^xsd:integer;
         contribution:multiplier "5800"^^xsd:integer.
 
-    <http://data.lblod.info/id/subsidies/rules/2952c920-fbe5-403a-a267-c94c0813f85f> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
-        mu:uuid "2952c920-fbe5-403a-a267-c94c0813f85f" ;
-        skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        skos:prefLabel '1 gemeenschap'@nl ;
-        dct:description 'Jongeren van buitenlandse herkomst en jongeren met een handicap in contact brengen met jeugdwerk.'@nl ;
-        range:label "jongeren van buitenlandse herkomst";
-        range:maximum "150"^^xsd:integer;
-        contribution:multiplier "210"^^xsd:integer.
-
-    <http://data.lblod.info/id/subsidies/rules/17afa0d1-c0be-4800-a9bc-9f48506346eb> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
-        mu:uuid "17afa0d1-c0be-4800-a9bc-9f48506346eb" ;
-        skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        range:label "jongeren met een handicap";
-        range:maximum "30"^^xsd:integer;
-        contribution:multiplier "210"^^xsd:integer.
-
     <http://data.lblod.info/id/subsidies/rules/e4effa35-4453-426a-95af-17767e23ed64> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
         mu:uuid "e4effa35-4453-426a-95af-17767e23ed64" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
