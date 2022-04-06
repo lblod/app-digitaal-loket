@@ -427,6 +427,20 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # loket-persons-sensitive sync
+  #################################################################
+  post "/sync/persons-sensitive/login/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/login/"
+  end
+
+  #################################################################
+  # loket-persons-sensitive sync
+  #################################################################
+  get "/sync/persons-sensitive/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/files/"
+  end
+
+  #################################################################
   # subsidy-applications: resources
   #################################################################
 
