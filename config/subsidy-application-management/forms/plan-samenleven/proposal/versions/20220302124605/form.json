@@ -55,7 +55,9 @@
       },
       "planSamenleven:hasCollaborationWithOtherLBNonEu",
       "planSamenleven:usesSocialImpactBound",
-      "planSamenleven:usesSocialImpactBoundProposal",
+      "planSamenleven:socialImpactBoundProgress",
+      "planSamenleven:unresolvedSocialProblems",
+      "planSamenleven:learningNetworkWillingness",
       "planSamenleven:proposesMentorship",
       "planSamenleven:mentorshipAction",
       "planSamenleven:mentorshipActionDetails"
