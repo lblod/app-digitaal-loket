@@ -1,4 +1,10 @@
 # Changelog
+## 1.63.0 (2022-03-31)
+### :house: Internal
+  - simplified producers: remove json-diff-file-producers (since provided by other services)
+#### subsidies
+  - update deadline climate/oproep-1/opvolgmoment
+  - added plan samenleven
 ## 1.62.0 (2022-03-25)
 #### subsidies
   - Update bike subsidy: added extra file upload fields
@@ -8,6 +14,8 @@
   - huge frontend maintenance: removal of webuniversum dependencies, update ember and other maintenance
   - update publication graph maintainer (some fixes/improvements)
 ## 1.61.0 (2022-03-10)
+#### erediensten
+  - adding new bestuurseenheden
 #### subsidies
   - New GZG Oproep 5 reeks + report
 ## 1.60.1 (2022-03-07)

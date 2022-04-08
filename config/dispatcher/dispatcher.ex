@@ -402,14 +402,14 @@ defmodule Dispatcher do
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-mandatarissen/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-mandatarissen/files/"
   end
 
   #################################################################
   # loket-leidinggevenden sync
   #################################################################
   get "/sync/leidinggevenden/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-json-diff-file-publisher-leidinggevenden/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-leidinggevenden/files/"
   end
 
   #################################################################
@@ -424,6 +424,20 @@ defmodule Dispatcher do
   #################################################################
   get "/sync/submissions/files/*path" do
     Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-submissions/files/"
+  end
+
+  #################################################################
+  # loket-persons-sensitive sync
+  #################################################################
+  post "/sync/persons-sensitive/login/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/login/"
+  end
+
+  #################################################################
+  # loket-persons-sensitive sync
+  #################################################################
+  get "/sync/persons-sensitive/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/files/"
   end
 
   #################################################################
