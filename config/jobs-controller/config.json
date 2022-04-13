@@ -1,5 +1,5 @@
 {
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden" : {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
@@ -11,8 +11,8 @@
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
         "nextIndex": "1"
       }
-     ]
-   },
+    ]
+  },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden": {
     "tasksConfiguration": [
       {
@@ -36,7 +36,7 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen" : {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
@@ -48,8 +48,8 @@
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
         "nextIndex": "1"
       }
-     ]
-   },
+    ]
+  },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen": {
     "tasksConfiguration": [
       {
@@ -73,7 +73,7 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions" : {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
@@ -85,8 +85,8 @@
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
         "nextIndex": "1"
       }
-     ]
-   },
+    ]
+  },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions": {
     "tasksConfiguration": [
       {
@@ -110,7 +110,7 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive" : {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
@@ -122,8 +122,8 @@
         "nextOperation": "http://redpencil.data.gift/id/jobs/concept/TaskOperation/deltas/deltaDumpFileCreation",
         "nextIndex": "1"
       }
-     ]
-   },
+    ]
+  },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive": {
     "tasksConfiguration": [
       {
