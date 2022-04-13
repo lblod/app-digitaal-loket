@@ -254,22 +254,67 @@ fields:1d72bc54-2d6f-4331-a0be-9f2769cce0c9 a form:ConditionalFieldGroup ;
 # Financiële stimulans: social impact bound Proposal
 ##########################################################
 
-fields:53c583fe-e4c0-4c43-b693-ec318008910b a form:Field ;
-    mu:uuid "53c583fe-e4c0-4c43-b693-ec318008910b";
-    sh:name "Geef hier aan wat het concrete voorstel is voor jullie gemeente voor de 'Social Impact Bond'." ;
-    sh:order 70 ;
-    sh:path planSamenleven:usesSocialImpactBoundProposal ;
+fields:7b92308a-0098-4d7c-a6af-fcb1871e21a9 a form:Field ;
+    mu:uuid "7b92308a-0098-4d7c-a6af-fcb1871e21a9";
+    sh:name "Informatie over de bestaande expertise rond Sociale Impact Obligatie" ;
+    sh:description "Geef hier een kort overzicht van hoever het lokaal bestuur staat in het denken en het opzet van een Sociale Impact Obligatie. Zijn er al concrete acties ondernomen?" ;
+    sh:order 61 ;
+    sh:path planSamenleven:socialImpactBoundProgress ;
     form:validations
       [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path planSamenleven:usesSocialImpactBoundProposal
+      sh:path planSamenleven:socialImpactBoundProgress
+      ] ,
+      [ a form:MaxLength ; 
+          form:max 2500;
+          form:grouping form:MatchEvery ;
+          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
+          sh:path planSamenleven:socialImpactBoundProgress
+      ]
+      ;
+    form:displayType displayTypes:textArea ;
+    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
+
+fields:7ae506bd-5370-4b50-9324-a81cb9bc6905 a form:Field ;
+    mu:uuid "7ae506bd-5370-4b50-9324-a81cb9bc6905";
+    sh:name "Maatschappelijke problemen" ;
+    sh:description "Welke maatschappelijk probleem willen jullie aanpakken via een Sociale Impact Obligatie waar tot op heden geen oplossing voor is en aan welke acties van plan Samenleven koppel je dit?" ;
+    sh:order 62 ;
+    sh:path planSamenleven:unresolvedSocialProblems ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path planSamenleven:unresolvedSocialProblems
       ] ,
       [ a form:MaxLength ;
           form:max 2500;
           form:grouping form:MatchEvery ;
           sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
-          sh:path planSamenleven:usesSocialImpactBoundProposal
+          sh:path planSamenleven:unresolvedSocialProblems
+      ]
+      ;
+    form:displayType displayTypes:textArea ;
+    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
+
+fields:b8b63c63-f468-4c31-b3e3-866f7ccda184 a form:Field ;
+    mu:uuid "b8b63c63-f468-4c31-b3e3-866f7ccda184";
+    sh:name "Interesse in lerend netwerk" ;
+    sh:description "Omschrijf in welke mate het lokaal bestuur bereid is deel te nemen aan een lerend netwerk. Geef aan wat de verwachting is van het lokaal bestuur ten aanzien van dit lerend netwerk en wat de eigen bijdrage zou kunnen zijn.";
+    sh:order 63 ;
+    sh:path planSamenleven:learningNetworkWillingness  ;
+    form:validations
+      [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path planSamenleven:learningNetworkWillingness
+      ] ,
+      [ a form:MaxLength ;
+          form:max 2500;
+          form:grouping form:MatchEvery ;
+          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
+          sh:path planSamenleven:learningNetworkWillingness
       ]
       ;
     form:displayType displayTypes:textArea ;
@@ -404,9 +449,16 @@ fieldGroups:main a form:FieldGroup ;
 
 fieldGroups:b3b32ccd-25b9-42c2-bc8a-712958e0ff4d a form:FieldGroup ;
     mu:uuid "b3b32ccd-25b9-42c2-bc8a-712958e0ff4d" ;
+    form:hasField
 
     ### planSamenleven:usesSocialImpactBoundProposal ###
-    form:hasField fields:53c583fe-e4c0-4c43-b693-ec318008910b .
+    fields:7b92308a-0098-4d7c-a6af-fcb1871e21a9 ,
+
+    ### planSamenleven:usesSocialImpactBoundProposal ###
+    fields:7ae506bd-5370-4b50-9324-a81cb9bc6905 ,
+
+    ### planSamenleven:usesSocialImpactBoundProposal ###
+    fields:b8b63c63-f468-4c31-b3e3-866f7ccda184 .
 
 ##########################################################
 # Branch: proposesMentorship == ja

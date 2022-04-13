@@ -16,7 +16,7 @@ INSERT DATA {
         mu:uuid "7f7f1d20-942d-48ac-85a0-748db7f3d835" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
         skos:prefLabel 'Veiligheid en leefbaarheid'@nl ;
-        dct:description 'Ontwikkelen van een lokaal actieplan voor de aanpak van negatieve polarisatie en zetten in op de uitrol ervan.'@nl ;
+        dct:description 'Ontwikkelen van een lokaal actieplan voor de aanpak van polarisatie en zetten in op de uitrol ervan.'@nl ;
         range:label "lokaal actieplan";
         range:maximum "1"^^xsd:integer;
         contribution:multiplier "12500"^^xsd:integer.
@@ -43,7 +43,7 @@ INSERT DATA {
         mu:uuid "15217ddf-e56a-4529-9352-f0c82d433546" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
         skos:prefLabel 'Competenties'@nl ;
-        dct:description 'Begeleiden van kwetsbare kinderen in het secundair onderwijs naar hogere studies.'@nl ;
+        dct:description 'Begeleiden van kwetsbare kinderen naar hogere studies.'@nl ;
         range:label "kwetsbare kinderen";
         range:maximum "150"^^xsd:integer;
         contribution:multiplier "650"^^xsd:integer.
@@ -70,14 +70,14 @@ INSERT DATA {
     <http://data.lblod.info/id/subsidies/rules/a7643e23-3eee-477c-baf4-bd1eb93d9aa5> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
         mu:uuid "a7643e23-3eee-477c-baf4-bd1eb93d9aa5" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        range:label "personen met een handicap";
+        range:label "begeleide personen met een handicap";
         range:maximum "38"^^xsd:integer;
         contribution:multiplier "650"^^xsd:integer.
 
     <http://data.lblod.info/id/subsidies/rules/88388d78-f277-43ee-963e-6e111fc28d46> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
         mu:uuid "88388d78-f277-43ee-963e-6e111fc28d46" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        range:label "55-plussers";
+        range:label "begeleide 55-plussers";
         range:maximum "75"^^xsd:integer;
         contribution:multiplier "650"^^xsd:integer.
 
@@ -93,14 +93,14 @@ INSERT DATA {
     <http://data.lblod.info/id/subsidies/rules/8bae2cec-4b7c-4e16-acc2-e747d9e3b853> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
         mu:uuid "8bae2cec-4b7c-4e16-acc2-e747d9e3b853" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        range:label "vrouwen";
+        range:label "begeleide vrouwen";
         range:maximum "30"^^xsd:integer;
         contribution:multiplier "650"^^xsd:integer.
 
     <http://data.lblod.info/id/subsidies/rules/619edfa8-0004-45d3-af51-7faf71d477d5> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
         mu:uuid "619edfa8-0004-45d3-af51-7faf71d477d5" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        range:label "personen met een handicap";
+        range:label "begeleide personen met een handicap";
         range:maximum "15"^^xsd:integer;
         contribution:multiplier "650"^^xsd:integer.
 
@@ -133,8 +133,8 @@ INSERT DATA {
         mu:uuid "5faefdda-75aa-45cd-acd4-1ee051e806fd" ;
         skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
         skos:prefLabel 'Netwerk'@nl ;
-        dct:description 'Kwetsbare jongeren in contact brengen met opleidingen, stages, jobs en ondernemerschap'@nl ;
-        range:label "kwetbare jongeren";
+        dct:description 'Jongeren met een grotere afstand tot de arbeidsmarkt in contact brengen met opleidingen, stages, jobs en ondernemerschap'@nl ;
+        range:label "jongeren met grotere afstand tot de arbeidsmarkt";
         range:maximum "180"^^xsd:integer;
         contribution:multiplier "210"^^xsd:integer.
 
@@ -223,22 +223,6 @@ INSERT DATA {
         range:label "pleinmakers";
         range:maximum "4"^^xsd:integer;
         contribution:multiplier "5800"^^xsd:integer.
-
-    <http://data.lblod.info/id/subsidies/rules/2952c920-fbe5-403a-a267-c94c0813f85f> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
-        mu:uuid "2952c920-fbe5-403a-a267-c94c0813f85f" ;
-        skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        skos:prefLabel '1 gemeenschap'@nl ;
-        dct:description 'Jongeren van buitenlandse herkomst en jongeren met een handicap in contact brengen met jeugdwerk.'@nl ;
-        range:label "jongeren van buitenlandse herkomst";
-        range:maximum "150"^^xsd:integer;
-        contribution:multiplier "210"^^xsd:integer.
-
-    <http://data.lblod.info/id/subsidies/rules/17afa0d1-c0be-4800-a9bc-9f48506346eb> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
-        mu:uuid "17afa0d1-c0be-4800-a9bc-9f48506346eb" ;
-        skos:inScheme <http://lblod.data.gift/concept-schemes/646b3381-9a63-48d3-8686-4d877502db8c> ;
-        range:label "jongeren met een handicap";
-        range:maximum "30"^^xsd:integer;
-        contribution:multiplier "210"^^xsd:integer.
 
     <http://data.lblod.info/id/subsidies/rules/e4effa35-4453-426a-95af-17767e23ed64> a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class>, <http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule>;
         mu:uuid "e4effa35-4453-426a-95af-17767e23ed64" ;
