@@ -37,16 +37,16 @@
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive",
     "fileBaseName": "dump-persons-sensitive-public",
     "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
-    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta",
-    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta"
+    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas",
+    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas"
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/PersonsSensitiveCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive",
     "fileBaseName": "dump-persons-sensitive-public",
     "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
-    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta",
-    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta"
+    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas",
+    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas"
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/SubsidiesCacheGraphDump",
