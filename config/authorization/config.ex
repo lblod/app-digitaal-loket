@@ -64,6 +64,26 @@ defmodule Acl.UserGroups.Config do
       }
   end
 
+  defp can_access_deltas_subsidies_data() do
+    %AccessByQuery{
+      vars: [ ],
+      query: "
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+        SELECT DISTINCT ?onlineAccount WHERE {
+          <SESSION_ID> muAccount:account ?onlineAccount.
+
+          ?onlineAccount  a foaf:OnlineAccount.
+
+          ?agent a foaf:Agent;
+            foaf:account ?onlineAccount.
+
+          <http://data.lblod.info/foaf/group/id/fcc0cfd2-ad12-4cd2-94b5-49fa428d9589> foaf:member ?agent;
+            foaf:name \"subsidies-deltas\".
+        }"
+      }
+  end
+
   def user_groups do
     # These elements are walked from top to bottom.  Each of them may
     # alter the quads to which the current query applies.  Quads are
@@ -403,6 +423,19 @@ defmodule Acl.UserGroups.Config do
         access: can_access_deltas_persons_sensitive_data(),
         graphs: [ %GraphSpec{
                     graph: "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.w3.org/ns/dcat#Dataset",
+                        "http://www.w3.org/ns/dcat#Distribution",
+                      ] } } ] },
+
+      %GroupSpec{
+        name: "o-subsidies-deltas-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: can_access_deltas_subsidies_data(),
+        graphs: [ %GraphSpec{
+                    graph: "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
