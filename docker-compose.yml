@@ -426,6 +426,9 @@ services:
     volumes:
       - ./config/delta-producer/report-generator:/config
     environment:
+      EMAIL_FROM: "noreply@lblod.info"
+      EMAIL_TO: "support+lblod@redpencil.io"
+      APP_NAME: "app-digitaal-loket-dev"
       OUTBOX: "http://data.lblod.info/id/mail-folders/2"
     labels:
       - "logging=true"
