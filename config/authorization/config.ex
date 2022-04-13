@@ -44,13 +44,13 @@ defmodule Acl.UserGroups.Config do
       }
   end
 
-  defp can_access_deltas_persons_sensitive_data() do
+  defp access_sensitive_delta_producer_data() do
     %AccessByQuery{
-      vars: [ ],
+      vars: [ "group_name" ],
       query: "
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
-        SELECT DISTINCT ?onlineAccount WHERE {
+        SELECT DISTINCT ?group_name WHERE {
           <SESSION_ID> muAccount:account ?onlineAccount.
 
           ?onlineAccount  a foaf:OnlineAccount.
@@ -58,28 +58,8 @@ defmodule Acl.UserGroups.Config do
           ?agent a foaf:Agent;
             foaf:account ?onlineAccount.
 
-          <http://data.lblod.info/foaf/group/id/e0cae0c1-69e1-4318-9ac2-91210a6d133e> foaf:member ?agent;
-            foaf:name \"persons-sensitive-deltas\".
-        }"
-      }
-  end
-
-  defp can_access_deltas_subsidies_data() do
-    %AccessByQuery{
-      vars: [ ],
-      query: "
-        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-        PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
-        SELECT DISTINCT ?onlineAccount WHERE {
-          <SESSION_ID> muAccount:account ?onlineAccount.
-
-          ?onlineAccount  a foaf:OnlineAccount.
-
-          ?agent a foaf:Agent;
-            foaf:account ?onlineAccount.
-
-          <http://data.lblod.info/foaf/group/id/fcc0cfd2-ad12-4cd2-94b5-49fa428d9589> foaf:member ?agent;
-            foaf:name \"subsidies-deltas\".
+          ?group foaf:member ?agent;
+            foaf:name ?group_name.
         }"
       }
   end
@@ -419,23 +399,10 @@ defmodule Acl.UserGroups.Config do
 
       %GroupSpec{
         name: "o-persons-sensitive-deltas-rwf",
-        useage: [:read, :write, :read_for_write],
-        access: can_access_deltas_persons_sensitive_data(),
+        useage: [ :read ],
+        access: access_sensitive_delta_producer_data(),
         graphs: [ %GraphSpec{
-                    graph: "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                        "http://www.w3.org/ns/dcat#Dataset",
-                        "http://www.w3.org/ns/dcat#Distribution",
-                      ] } } ] },
-
-      %GroupSpec{
-        name: "o-subsidies-deltas-rwf",
-        useage: [:read, :write, :read_for_write],
-        access: can_access_deltas_subsidies_data(),
-        graphs: [ %GraphSpec{
-                    graph: "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas",
+                    graph: "http://redpencil.data.gift/id/deltas/producer/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
