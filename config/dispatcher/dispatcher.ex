@@ -441,6 +441,20 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # loket-subsidies sync
+  #################################################################
+  post "/sync/subsidies/login/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/login/"
+  end
+
+  #################################################################
+  # loket-subsidies sync
+  #################################################################
+  get "/sync/subsidies/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/files/"
+  end
+
+  #################################################################
   # subsidy-applications: resources
   #################################################################
 
