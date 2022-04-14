@@ -282,9 +282,7 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:0.10.1
     environment:
-      #ACTIVE_FORM_FILE: "share://semantic-forms/20220224134509-forms.ttl" 
-      #ACTIVE_FORM_FILE: "share://semantic-forms/20220323150741-forms.ttl"
-      ACTIVE_FORM_FILE: "share://semantic-forms/20220407103851-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20220224134509-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -426,6 +424,9 @@ services:
     volumes:
       - ./config/delta-producer/report-generator:/config
     environment:
+      EMAIL_FROM: "noreply@lblod.info"
+      EMAIL_TO: "support+lblod@redpencil.io"
+      APP_NAME: "app-digitaal-loket-dev"
       OUTBOX: "http://data.lblod.info/id/mail-folders/2"
     labels:
       - "logging=true"
@@ -637,4 +638,56 @@ services:
     logging: *default-logging
 ################################################################################
 # DELTA PERSONS-SENSITIVE: END
+################################################################################
+################################################################################
+# DELTA SUBSIDIES: START
+################################################################################
+  delta-producer-background-jobs-initiator-subsidies:
+    image: lblod/delta-producer-background-jobs-initiator:0.3.1
+    environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies'
+      CRON_PATTERN_DUMP_JOB: '0 0 4 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
+      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-publication-graph-maintainer-subsidies:
+    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/subsidies"
+      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-subsidies'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies'
+      QUEUE_POLL_INTERVAL: 3000
+      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
+      SKIP_MU_AUTH_INITIAL_SYNC: 'true'
+      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
+      UPDATE_PUBLICATION_GRAPH_SLEEP: 200
+      SERVE_DELTA_FILES: "true"
+      RELATIVE_FILE_PATH: "deltas/subsidies"
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
+      PUBLISHER_URI: 'http://data.lblod.info/services/delta-producer-publication-graph-maintainer-subsidies'
+      FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas"
+      ACCOUNT: "http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
+    volumes:
+      - ./config/delta-producer/subsidies:/config
+      - ./data/files/:/share
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA SUBSIDIES: END
 ################################################################################
