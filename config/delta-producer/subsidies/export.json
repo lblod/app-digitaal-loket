@@ -70,12 +70,12 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://purl.org/dc/terms/description",
-        "http://data.lblod.info/vocabularies/plan-samenleven-subsidies/contribution/multiplier",
-        "http://data.lblod.info/vocabularies/plan-samenleven-subsidies/range/maximum",
-        "http://data.lblod.info/vocabularies/plan-samenleven-subsidies/range/label",
+        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/contribution/multiplier",
+        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/range/maximum",
+        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/range/label",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
-      "type": "http://data.lblod.info/vocabularies/plan-living-together-subsidies/PlanLivingTogetherSubsidyWithdrawalRule"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/PlanLivingTogetherSubsidyWithdrawalRule"
     },
     {
       "properties": [
