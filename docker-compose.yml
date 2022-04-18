@@ -433,7 +433,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher:
-    image: lblod/delta-producer-dump-file-publisher:0.7.0
+    image: lblod/delta-producer-dump-file-publisher:0.7.1
     volumes:
       - ./config/delta-producer/dump-file-publisher:/config
       - ./data/files:/share
