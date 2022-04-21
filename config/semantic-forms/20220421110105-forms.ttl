@@ -78,6 +78,27 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
+fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
+    mu:uuid "e578e3ff-240b-421b-a32c-f411489c3806" ;
+    sh:name "Rapportperiode" ;
+    sh:order 2100 ;
+    sh:path lblodBesluit:reportingPeriod ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
 fields:b9d831c5-da21-40d6-aac8-65feb4783d76 a form:Field ;
     mu:uuid "b9d831c5-da21-40d6-aac8-65feb4783d76" ;
     sh:name "Gaat het over een voorlopige of definitieve vaststelling?" ;
@@ -145,7 +166,7 @@ fields:78bfbd91-0778-4573-a52d-4c53b3c512eb a form:Field ;
 fields:41737f90-02d6-4036-8d60-5d5b6ccf939c a form:Field ;
     mu:uuid "41737f90-02d6-4036-8d60-5d5b6ccf939c" ;
     sh:name "Rapportjaar" ;
-    sh:order 1800 ;
+    sh:order 2100 ;
     sh:path elod:financialYear ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -741,12 +762,11 @@ fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f a form:Field ;
     form:help """Voeg hier jaarrekening, uittreksel werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
 
-
 #########################################################
 # File with custom helper text for "Eindrekening"
 #########################################################
-fields:1a4f05ef-6b22-4750-9878-f138b9a6d5ed a form:Field ;
-    mu:uuid "1a4f05ef-6b22-4750-9878-f138b9a6d5ed" ;
+fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22 a form:Field ;
+    mu:uuid "e5aa62e8-08b7-4216-8b9c-5fea766e9a22" ;
     sh:name "Bestanden" ;
     sh:order 10001 ;
     sh:path dct:hasPart;
@@ -3004,7 +3024,7 @@ fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden (custom)###
-                      fields:1a4f05ef-6b22-4750-9878-f138b9a6d5ed,
+                      fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -3071,8 +3091,8 @@ fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
 
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+                      ###Rapportperiode###
+                      fields:e578e3ff-240b-421b-a32c-f411489c3806,
                       
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -3325,6 +3345,8 @@ fields:5d0edb7c-3676-42cc-bd54-7f5712ec0b06 a form:ConditionalFieldGroup ;
 fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
     mu:uuid "5a21ed58-c0cf-4042-8b59-bd14ca595aae" ;
     form:hasField
+                      ###Rapportperiode###
+                      fields:e578e3ff-240b-421b-a32c-f411489c3806,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -3366,9 +3388,6 @@ fields:13a56126-4b73-4d92-a5d2-ddb2433f191b a form:ConditionalFieldGroup ;
 fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
     mu:uuid "e0925be1-bdce-4890-b6e4-4f7640700581" ; 
     form:hasField 
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
 
@@ -3403,7 +3422,9 @@ fields:8ba3d4c6-022e-401f-a47f-847b1220f669 a form:ConditionalFieldGroup ;
 fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
     mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
     form:hasField
-                    
+                    ###Rapportjaar###
+                    fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
                     ###Datum-van-publicatie-op-webtoepassing###
                     fields:49dbe1be-877a-4890-8465-1510ff18ce18,
                     
