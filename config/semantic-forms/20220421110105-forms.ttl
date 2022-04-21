@@ -743,6 +743,26 @@ fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f a form:Field ;
 
 
 #########################################################
+# File with custom helper text for "Eindrekening"
+#########################################################
+fields:1a4f05ef-6b22-4750-9878-f138b9a6d5ed a form:Field ;
+    mu:uuid "1a4f05ef-6b22-4750-9878-f138b9a6d5ed" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier eindrekening, uittreksel werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+
+#########################################################
 # File with custom helper text for "Budget" for centrale besturen eredienst
 #########################################################
 fields:9dd53fc5-077b-439c-aad9-5530f95083e8 a form:Field ;
@@ -2984,7 +3004,7 @@ fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden (custom)###
-                      fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f,
+                      fields:1a4f05ef-6b22-4750-9878-f138b9a6d5ed,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
