@@ -1,4 +1,15 @@
 # Changelog
+## 1.64.0 (2022-04-19)
+### :rocket: Enhancement
+ - subsidies plan samenleven deltas
+ - subsidies plan samenleven
+ - subsidies plan samenleven report
+ - person-sensitive data deltas
+### :bug: Bug Fix
+ - BBCDR fix files list
+### :house: Internal
+ - refactor a bit authorization of deltas
+ - lots of improvements in ember-submission-form-fields: deduplication, bugfixes, new components
 ## 1.63.0 (2022-03-31)
 ### :house: Internal
   - simplified producers: remove json-diff-file-producers (since provided by other services)

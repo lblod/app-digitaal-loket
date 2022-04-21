@@ -215,11 +215,11 @@ fields:30fdc26c-7f61-403f-a7da-507c2b90e750 a form:Field ;
     sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
 
 ##########################################################
-# Financiële stimulans: social impact bound
+# Financiële stimulans: social impact obligatie
 ##########################################################
 fields:85515be8-407e-41ac-a97d-66df37685e7c a form:Field ;
     mu:uuid "85515be8-407e-41ac-a97d-66df37685e7c";
-    sh:name "Willen jullie als gemeente gebruik maken van het instrument 'Social Impact Bond'?" ;
+    sh:name "Willen jullie als gemeente gebruik maken van het instrument 'Social Impact Obligatie'?" ;
     sh:order 60 ;
     sh:path planSamenleven:usesSocialImpactBound ;
     form:validations
