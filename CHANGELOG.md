@@ -1,4 +1,6 @@
 # Changelog
+## 1.64.1 (2022-04-25)
+ - tweaking cronjob setting
 ## 1.64.0 (2022-04-19)
 ### :rocket: Enhancement
  - subsidies plan samenleven deltas

@@ -548,8 +548,8 @@ services:
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions'
       INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions'
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions'
-      CRON_PATTERN_DUMP_JOB: '0 0 4 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
+      CRON_PATTERN_DUMP_JOB: '0 0 1 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 23 * * 6' #weekly on saturday
       START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
     labels:
       - "logging=true"
@@ -597,7 +597,7 @@ services:
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive'
       INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive'
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive'
-      CRON_PATTERN_DUMP_JOB: '0 0 4 * * 6' # weekly on saturday
+      CRON_PATTERN_DUMP_JOB: '0 0 6 * * 6' # weekly on saturday
       CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
       START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
     labels:
@@ -649,7 +649,7 @@ services:
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies'
       INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies'
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies'
-      CRON_PATTERN_DUMP_JOB: '0 0 4 * * 6' # weekly on saturday
+      CRON_PATTERN_DUMP_JOB: '0 0 5 * * 6' # weekly on saturday
       CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
       START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
     labels:
