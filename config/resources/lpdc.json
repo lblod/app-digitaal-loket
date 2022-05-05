@@ -442,7 +442,11 @@
           "type": "string",
           "predicate": "dct:title"
         }
-      }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/output/"
     },
     "financial-advantages": {
       "class": "lpdcExt:FinancialAdvantage",
