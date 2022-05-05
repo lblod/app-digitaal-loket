@@ -29,7 +29,7 @@
 (read-domain-file "master-subsidies-domain.lisp")
 (read-domain-file "master-job-domain.lisp")
 (read-domain-file "dcat.json")
-(read-domain-file "ldpc.json")
+(read-domain-file "lpdc.json")
 
 (before (:list file) (resource)
   (let ((request-filters-on-uri

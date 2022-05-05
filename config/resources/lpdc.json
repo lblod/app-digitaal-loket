@@ -2,13 +2,13 @@
   "version": "0.1",
   "prefixes": {
     "adms": "http://www.w3.org/ns/adms#",
-    "code": "http://lblod.data.gift/vocabularies/public-services/",
+    "code": "http://lblod.data.gift/concepts/public-services/",
     "cspv": "http://purl.org/vocab/cpsv#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "dct": "http://purl.org/dc/terms/",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "locn": "http://www.w3.org/ns/locn#",
-    "lpdcExt": "http://mu.semte.ch/vocabularies/lpdcExt/",
+    "lpdcExt": "http://lblod.data.gift/vocabularies/lpdcExt",
     "m8g": "http://data.europa.eu/m8g/",
     "prov": "http://www.w3.org/ns/prov#",
     "ps": "http://vocab.belgif.be/ns/publicservice#",
@@ -81,7 +81,7 @@
         },
         "hasInstance": {
           "target": "public-services",
-          "predicate": "lpdcExt:hasInstance",
+          "predicate": "dct:source",
           "cardinality": "many"
         },
         "hasCompetentAuthority": {
@@ -152,6 +152,11 @@
         "type": {
           "target": "serviceTypes",
           "predicate": "dct:type",
+          "cardinality": "many"
+        },
+        "hasCost": {
+          "target": "conceptual-public-services",
+          "predicate": "m8g:hasCost",
           "cardinality": "many"
         }
       },
@@ -245,7 +250,7 @@
         },
         "playsRole": {
           "target": "agents",
-          "predicate": "lpdcExt:playsRole",
+          "predicate": "m8g:playsRole",
           "cardinality": "many",
           "inverse": true
         },
