@@ -153,14 +153,16 @@
 
 (define-resource requirement-group ()
   :class (s-prefix "m8g:RequirementGroup")
-  :has-one `((criterion-requirement :via ,(s-prefix "m8g:hasCriterionRequirement")
-                             :as "criterion-requirement"))
+  :has-many `((criterion-requirement :via ,(s-prefix "m8g:hasCriterionRequirement")
+                             :as "criterion-requirements"))
   :resource-base (s-url "http://data.lblod.info/id/requirement-groups/")
   :features '(include-uri)
   :on-path "requirement-groups")
 
 (define-resource criterion-requirement ()
   :class (s-prefix "m8g:CriterionRequirement")
+  :properties `((:is-satisfiable-by :url ,(s-prefix "lblodSubsidie:isSatisfiableBy"))
+                (:description :string,(s-prefix "dct:description")))
   :has-one `((period-of-time :via ,(s-prefix "m8g:applicableInPeriodOfTime")
                       :as "applicable-period"))
   :resource-base (s-url "http://data.lblod.info/id/criterion-requirements/")

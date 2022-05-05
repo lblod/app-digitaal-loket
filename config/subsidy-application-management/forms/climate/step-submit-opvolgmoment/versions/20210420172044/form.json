@@ -16,12 +16,26 @@
       "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
     ],
     "properties": [
-      "dct:created",
-      "dct:modified",
-      "adms:status",
-      "ext:lastModifiedBy",
-      "dct:creator",
-      "pav:createdBy"
+      {
+        "s-prefix": "schema:contactPoint",
+        "properties": [
+          "foaf:firstName",
+          "foaf:familyName",
+          "schema:telephone",
+          "schema:email"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:attachment",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      }
     ]
   },
   "meta": {

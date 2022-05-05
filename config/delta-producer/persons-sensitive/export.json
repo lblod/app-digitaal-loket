@@ -1,0 +1,90 @@
+{
+  "conceptScheme": "http://lblod.data.gift/concept-schemes/0887b850-b810-40d4-be0f-cafd01d3259b",
+  "export": [
+    {
+      "type": "http://www.w3.org/ns/person#Person",
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
+        "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
+      ],
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+        "http://www.w3.org/ns/org#holds",
+        "^http://www.w3.org/ns/org#hasPost",
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://www.w3.org/ns/adms#identifier",
+        "http://data.vlaanderen.be/ns/persoon#geslacht",
+        "http://data.vlaanderen.be/ns/persoon#heeftGeboorte"
+      ]
+    },
+    {
+      "type": "http://www.w3.org/ns/adms#Identifier",
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
+        "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
+      ],
+      "pathToConceptScheme": [
+        "^http://www.w3.org/ns/adms#identifier",
+        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+        "http://www.w3.org/ns/org#holds",
+        "^http://www.w3.org/ns/org#hasPost",
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2004/02/skos/core#notation"
+      ]
+    },
+    {
+      "type": "http://data.vlaanderen.be/ns/persoon#Geboorte",
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
+        "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
+      ],
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
+        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+        "http://www.w3.org/ns/org#holds",
+        "^http://www.w3.org/ns/org#hasPost",
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://data.vlaanderen.be/ns/persoon#datum"
+      ]
+    },
+    {
+      "type": "http://www.w3.org/2004/02/skos/core#Concept",
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
+        "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
+      ],
+      "pathToConceptScheme": [
+        "^http://data.vlaanderen.be/ns/persoon#geslacht",
+        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+        "http://www.w3.org/ns/org#holds",
+        "^http://www.w3.org/ns/org#hasPost",
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://www.w3.org/2004/02/skos/core#prefLabel",
+        "http://www.w3.org/2004/02/skos/core#topConceptOf",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ]
+    }
+  ]
+}

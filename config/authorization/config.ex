@@ -44,6 +44,26 @@ defmodule Acl.UserGroups.Config do
       }
   end
 
+  defp access_sensitive_delta_producer_data() do
+    %AccessByQuery{
+      vars: [ "group_name" ],
+      query: "
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+        SELECT DISTINCT ?group_name WHERE {
+          <SESSION_ID> muAccount:account ?onlineAccount.
+
+          ?onlineAccount  a foaf:OnlineAccount.
+
+          ?agent a foaf:Agent;
+            foaf:account ?onlineAccount.
+
+          ?group foaf:member ?agent;
+            foaf:name ?group_name.
+        }"
+      }
+  end
+
   def user_groups do
     # These elements are walked from top to bottom.  Each of them may
     # alter the quads to which the current query applies.  Quads are
@@ -342,7 +362,6 @@ defmodule Acl.UserGroups.Config do
                       ] } }
                 ] },
 
-
       # // LOKETADMIN
         %GroupSpec{
           name: "o-admin-rwf",
@@ -376,6 +395,20 @@ defmodule Acl.UserGroups.Config do
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                           "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
                         ] } } ] },
+
+
+      %GroupSpec{
+        name: "o-persons-sensitive-deltas-rwf",
+        useage: [ :read ],
+        access: access_sensitive_delta_producer_data(),
+        graphs: [ %GraphSpec{
+                    graph: "http://redpencil.data.gift/id/deltas/producer/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.w3.org/ns/dcat#Dataset",
+                        "http://www.w3.org/ns/dcat#Distribution",
+                      ] } } ] },
 
       # // USER HAS NO DATA
       # this was moved to org instead.

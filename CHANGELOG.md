@@ -1,5 +1,36 @@
 # Changelog
+## 1.64.2 (2022-04-26)
+ - bumped identifier
+## 1.64.1 (2022-04-25)
+ - tweaking cronjob setting
+## 1.64.0 (2022-04-19)
+### :rocket: Enhancement
+ - subsidies plan samenleven deltas
+ - subsidies plan samenleven
+ - subsidies plan samenleven report
+ - person-sensitive data deltas
+### :bug: Bug Fix
+ - BBCDR fix files list
+### :house: Internal
+ - refactor a bit authorization of deltas
+ - lots of improvements in ember-submission-form-fields: deduplication, bugfixes, new components
+## 1.63.0 (2022-03-31)
+### :house: Internal
+  - simplified producers: remove json-diff-file-producers (since provided by other services)
+#### subsidies
+  - update deadline climate/oproep-1/opvolgmoment
+  - added plan samenleven
+## 1.62.0 (2022-03-25)
+#### subsidies
+  - Update bike subsidy: added extra file upload fields
+  - extend filtering beschikbare subsidiemaatregelen: not all types of eenheden can now submit for all subsidies
+  - update labeling climate subsidy
+### :house: Internal
+  - huge frontend maintenance: removal of webuniversum dependencies, update ember and other maintenance
+  - update publication graph maintainer (some fixes/improvements)
 ## 1.61.0 (2022-03-10)
+#### erediensten
+  - adding new bestuurseenheden
 #### subsidies
   - New GZG Oproep 5 reeks + report
 ## 1.60.1 (2022-03-07)
