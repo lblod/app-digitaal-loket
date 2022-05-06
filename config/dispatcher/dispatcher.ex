@@ -580,6 +580,97 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/distributions/"
   end
 
+  #################################################################
+  # Public Services - LPDC-IPDC-PoC
+  #################################################################
+  match "/conceptual-public-services/*path" do
+    Proxy.forward conn, path, "http://resource/conceptual-public-services/"
+  end
+
+  match "/identifiers/*path" do
+    Proxy.forward conn, path, "http://resource/identifiers/"
+  end
+
+  match "/public-services/*path" do
+    Proxy.forward conn, path, "http://resource/public-services/"
+  end
+
+  match "/public-organizations/*path" do
+    Proxy.forward conn, path, "http://resource/public-organizations/"
+  end
+
+  # match "/participations/*path" do
+  #   Proxy.forward conn, path, "http://resource/participations/"
+  # end
+
+  match "/agents/*path" do
+    Proxy.forward conn, path, "http://resource/agents/"
+  end
+
+  match "/groups/*path" do
+    Proxy.forward conn, path, "http://resource/groups/"
+  end
+
+  match "/requirements/*path" do
+    Proxy.forward conn, path, "http://resource/requirements/"
+  end
+
+  match "/evidences/*path" do
+    Proxy.forward conn, path, "http://resource/evidences/"
+  end
+
+  match "/rules/*path" do
+    Proxy.forward conn, path, "http://resource/rules/"
+  end
+
+  match "/costs/*path" do
+    Proxy.forward conn, path, "http://resource/costs/"
+  end
+
+  match "/output/*path" do
+    Proxy.forward conn, path, "http://resource/output/"
+  end
+
+  match "/financial-advantages/*path" do
+    Proxy.forward conn, path, "http://resource/financial-advantages/"
+  end
+
+  match "/legal-resources/*path" do
+    Proxy.forward conn, path, "http://resource/legal-resources/"
+  end
+
+  match "/contact-points/*path" do
+    Proxy.forward conn, path, "http://resource/contact-points/"
+  end
+
+  match "/documents/*path" do
+    Proxy.forward conn, path, "http://resource/documents/"
+  end
+
+  match "/locations/*path" do
+    Proxy.forward conn, path, "http://resource/locations/"
+  end
+
+  match "/lifecycle-statuses/*path" do
+    Proxy.forward conn, path, "http://resource/lifecycleStatuses/"
+  end
+
+  match "/sectors/*path" do
+    Proxy.forward conn, path, "http://resource/sectors/"
+  end
+
+  match "/target-audiences/*path" do
+    Proxy.forward conn, path, "http://resource/targetAudiences/"
+  end
+
+  match "/thematic-areas/*path" do
+    Proxy.forward conn, path, "http://resource/thematicAreas/"
+  end
+
+  match "/service-types/*path" do
+    Proxy.forward conn, path, "http://resource/serviceTypes/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

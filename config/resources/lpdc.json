@@ -17,7 +17,8 @@
     "schema": "http://schema.org/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "eli": "http://data.europa.eu/eli/ontology#"
   },
   "resources": {
     "conceptual-public-services": {
@@ -577,7 +578,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/location/"
     },
-    "lifecycleStatuses": {
+    "lifecycle-statuses": {
       "class": "code:LifecycleStatus",
       "attributes": {
         "label": {
@@ -598,7 +599,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "targetAudiences": {
+    "target-audiences": {
       "class": "code:TargetAudience",
       "attributes": {
         "label": {
@@ -608,7 +609,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "thematicAreas": {
+    "thematic-areas": {
       "class": "code:ThematicArea",
       "attributes": {
         "label": {
@@ -618,7 +619,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "serviceTypes": {
+    "service-types": {
       "TODO": "COFOG Code list? cfr dienstencataloog AP",
       "class": "code:ServiceType",
       "attributes": {
