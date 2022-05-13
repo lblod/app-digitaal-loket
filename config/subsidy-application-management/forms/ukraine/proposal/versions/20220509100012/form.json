@@ -13,7 +13,8 @@
       "PREFIX gleif: <https://www.gleif.org/ontology/Base/>",
       "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>",
       "PREFIX adms: <http://www.w3.org/ns/adms#>",
-      "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
+      "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>",
+      "PREFIX ukraine: <http://lblod.data.gift/vocabularies/subsidie/ukraine/>"
     ],
     "properties": [
       {
@@ -41,12 +42,12 @@
         "s-prefix": "lblodSubsidie:accountabilityTable",
         "properties": [
           {
-            "s-prefix": "ext:accountabilityEntry",
+            "s-prefix": "lblodSubsidie:accountabilityEntry",
             "properties": [
-              "ext:address",
-              "ext:bedroomCount",
-              "ext:sharedInvoice",
-              "ext:hasFiles",
+              "ukraine:address",
+              "ukraine:bedroomCount",
+              "ukraine:sharedInvoice",
+              "ukraine:hasFiles",
               "dct:created"
             ]
           }
