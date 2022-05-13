@@ -170,9 +170,14 @@ fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 a form:Field ;
 
 fields:a4da0b61-46c2-48c6-b92a-686ce02ade5d a form:Field ;
     mu:uuid "a4da0b61-46c2-48c6-b92a-686ce02ade5d";
-    sh:order 69 ;
+    sh:order 51 ;
     sh:path lblodSubsidie:accountabilityTable ;
     form:displayType displayTypes:accountabilityTable ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Gelieve de tabel correct in te vullen." ;
+      sh:path ( lblodSubsidie:accountabilityTable lblodSubsidie:validAccountabilityTable ) ] ;
     sh:group fields:d8bbe7f4-56d3-4c01-9f98-bad3d5baf261  .
 
 ##########################################################
