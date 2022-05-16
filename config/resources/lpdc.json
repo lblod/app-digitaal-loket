@@ -22,7 +22,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "resources": {
-    "conceptual-public-service": {
+     "conceptual-public-services": {
       "class": "lpdcExt:ConceptualPublicService",
       "attributes": {
         "name": {
@@ -71,58 +71,58 @@
         }
       },
       "relationships": {
-        "identifier": {
-          "target": "identifier",
+        "identifiers": {
+          "target": "identifiers",
           "predicate": "dct:identifier",
           "cardinality": "one"
         },
         "related": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "dct:relation",
           "cardinality": "many"
         },
         "instances": {
-          "target": "public-service",
+          "target": "public-services",
           "predicate": "dct:source",
           "cardinality": "many"
         },
         "competent-authority": {
-          "target": "public-organization",
+          "target": "public-organizations",
           "predicate": "m8g:hasCompetentAuthority",
           "cardinality": "many"
         },
         "participations": {
-          "target": "participation",
+          "target": "participations",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many"
         },
         "requirements": {
-          "target": "requirement",
+          "target": "requirements",
           "predicate": "ps:hasRequirement",
           "cardinality": "many"
         },
         "follows": {
-          "target": "rule",
+          "target": "rules",
           "predicate": "cspv:follows",
           "cardinality": "many"
         },
         "produces": {
-          "target": "financial-advantage",
+          "target": "financial-advantages",
           "predicate": "cspv:produces",
           "cardinality": "many"
         },
         "legal-resources": {
-          "target": "legal-resource",
+          "target": "legal-resources",
           "predicate": "m8g:hasLegalResource",
           "cardinality": "many"
         },
         "contact-points": {
-          "target": "contact-point",
+          "target": "contact-points",
           "predicate": "m8g:hasContactPoint",
           "cardinality": "many"
         },
         "attachments": {
-          "target": "document",
+          "target": "documents",
           "predicate": "lpdcExt:attachment",
           "cardinality": "many"
         },
@@ -132,22 +132,22 @@
           "cardinality": "one"
         },
         "sectors": {
-          "target": "sector",
+          "target": "sectors",
           "predicate": "m8g:sector",
           "cardinality": "many"
         },
         "spatial": {
-          "target": "location",
+          "target": "locations",
           "predicate": "dct:spatial",
           "cardinality": "many"
         },
         "target-audiences": {
-          "target": "target-audience",
+          "target": "target-audiences",
           "predicate": "lpdcExt:targetAudience",
           "cardinality": "many"
         },
         "thematic-areas": {
-          "target": "thematic-area",
+          "target": "thematic-areas",
           "predicate": "m8g:thematicArea",
           "cardinality": "many"
         },
@@ -156,8 +156,8 @@
           "predicate": "dct:type",
           "cardinality": "many"
         },
-        "cost": {
-          "target": "cost",
+        "costs": {
+          "target": "costs",
           "predicate": "m8g:hasCost",
           "cardinality": "many"
         }
@@ -167,7 +167,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/conceptual-public-service/"
     },
-    "identifier": {
+    "identifiers": {
       "class": "adms:Identifier",
       "attributes": {
         "id-name": {
@@ -178,24 +178,24 @@
       "relationships": {
         "structured-identifier": {
           "predicate": "adms:identifier",
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "cardinality": "one",
           "inverse": true
         }
       },
       "new-resource-base": "http://data.lblod.info/id/identificatoren/"
     },
-    "public-service": {
+    "public-services": {
       "class": "cspv:PublicService",
       "super": [
-        "conceptual-public-service"
+         "conceptual-public-services"
       ],
       "attributes": {
 
       },
       "relationships": {
         "instances": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "lpdcExt:hasInstance",
           "cardinality": "one",
           "inverse": true
@@ -206,7 +206,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/public-service/"
     },
-    "public-organization": {
+    "public-organizations": {
       "class": "m8g:PublicOrganisation",
       "attributes": {
         "name": {
@@ -221,25 +221,25 @@
       "relationships": {
         "identifiers": {
           "predicate": "adms:identifier",
-          "target": "identifier",
+          "target": "identifiers",
           "cardinality": "many"
         },
         "scope": {
           "predicate": "dct:spatial",
-          "target": "location",
+          "target": "locations",
           "cardinality": "many"
         }
       },
       "new-resource-base": "http://data.lblod.info/id/organisaties/"
     },
-    "participation": {
+    "participations": {
       "class": "m8g:Participation",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         }
@@ -251,13 +251,13 @@
           "cardinality": "many"
         },
         "plays-roles": {
-          "target": "agent",
+          "target": "agents",
           "predicate": "m8g:playsRole",
           "cardinality": "many",
           "inverse": true
         },
         "participations": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many",
           "inverse": true
@@ -268,7 +268,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/participation/"
     },
-    "agent": {
+    "agents": {
       "class": "foaf:Agent",
       "attributes": {
         "name": {
@@ -278,7 +278,7 @@
       },
       "relationships": {
         "plays-roles": {
-          "target": "participation",
+          "target": "participations",
           "predicate": "m8g:playsRole",
           "cardinality": "many"
         }
@@ -288,10 +288,10 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/agent/"
     },
-    "group": {
+    "groups": {
       "class": "foaf:Group",
       "super": [
-        "agent"
+        "agents"
       ],
       "attributes": {
 
@@ -304,14 +304,14 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/group/"
     },
-    "requirement": {
+    "requirements": {
       "class": "m8g:Requirement",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -326,14 +326,14 @@
           "predicate": "m8g:hasSupportingEvidence",
           "cardinality": "many"
         },
-        "requirement": {
-          "target": "conceptual-public-service",
+        "requirements": {
+          "target":  "conceptual-public-services",
           "predicate": "m8g:hasRequirement",
           "cardinality": "many",
           "inverse": true
         },
         "next": {
-          "target": "requirement",
+          "target": "requirements",
           "predicate": "xkos:next",
           "cardinality": "one"
         }
@@ -350,7 +350,7 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -365,7 +365,7 @@
       },
       "relationships": {
         "supportingEvidence": {
-          "target": "requirement",
+          "target": "requirements",
           "predicate": "m8g:hasSupportingEvidence",
           "cardinality": "many",
           "inverse": true
@@ -376,14 +376,14 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/evidence/"
     },
-    "rule": {
+    "rules": {
       "class": "cspv:Rule",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -394,13 +394,13 @@
       },
       "relationships": {
         "follows": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "cspv:follows",
           "cardinality": "many",
           "inverse": true
         },
         "next": {
-          "target": "rule",
+          "target": "rules",
           "predicate": "xkos:next",
           "cardinality": "one"
         }
@@ -410,14 +410,14 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/rule/"
     },
-    "cost": {
+    "costs": {
       "class": "m8g:Cost",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -427,8 +427,8 @@
         }
       },
       "relationships": {
-        "cost": {
-          "target": "conceptual-public-service",
+        "costs": {
+          "target":  "conceptual-public-services",
           "predicate": "m8g:hasCost",
           "cardinality": "many",
           "inverse": true
@@ -446,7 +446,7 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -460,14 +460,14 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/output/"
     },
-    "financial-advantage": {
+    "financial-advantages": {
       "class": "lpdcExt:FinancialAdvantage",
       "super": [
         "output"
       ],
       "relationships": {
         "produces": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "cspv:produces",
           "cardinality": "many",
           "inverse": true
@@ -478,14 +478,14 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/financial-advantage/"
     },
-    "legal-resource": {
+    "legal-resources": {
       "class": "eli:LegalResource",
       "attributes":  {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -496,7 +496,7 @@
       },
       "relationships": {
         "legal-resources": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "m8g:hasLegalResource",
           "cardinality": "many",
           "inverse": true
@@ -507,7 +507,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/legal-resource/"
     },
-    "contact-point": {
+    "contact-points": {
       "class": "schema:ContactPoint",
       "attributes": {
         "email": {
@@ -537,7 +537,7 @@
       },
       "relationships": {
         "contact-points": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "m8g:hasContactPoint",
           "cardinality": "many",
           "inverse": true
@@ -545,14 +545,14 @@
       },
       "new-resource-base": "http://data.lblod.info/id/contact-punten/"
     },
-    "document": {
+    "documents": {
       "class": "dcat:Distribution",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
+        "identifiers": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -563,7 +563,7 @@
       },
       "relationships": {
         "attachment": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "lpdcExt:attachment",
           "cardinality": "many",
           "inverse": true
@@ -574,11 +574,11 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/requirement/"
     },
-    "location": {
+    "locations": {
       "class": "dct:Location",
       "relationships": {
         "attachment": {
-          "target": "conceptual-public-service",
+          "target":  "conceptual-public-services",
           "predicate": "dct:spatial",
           "cardinality": "many",
           "inverse": true
@@ -599,7 +599,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "sector": {
+    "sectors": {
       "class": "code:Sector",
       "attributes": {
         "label": {
@@ -609,7 +609,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "target-audience": {
+    "target-audiences": {
       "class": "code:TargetAudience",
       "attributes": {
         "label": {
@@ -619,7 +619,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "thematic-area": {
+    "thematic-areas": {
       "class": "code:ThematicArea",
       "attributes": {
         "label": {
@@ -629,7 +629,7 @@
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
-    "service-type": {
+    "service-types": {
       "class": "code:IPDCServiceType",
       "attributes": {
         "label": {
