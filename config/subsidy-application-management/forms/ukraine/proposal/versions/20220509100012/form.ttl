@@ -190,7 +190,7 @@ fieldGroups:main a form:FieldGroup ;
         ### First name contact person
         fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 ,
 
-        ### First name contact person
+        ### Last name contact person
         fields:82258a58-6c67-4b0a-a26d-0676b88886ad ,
 
         ### Phone
