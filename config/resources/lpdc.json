@@ -80,22 +80,22 @@
           "predicate": "dct:relation",
           "cardinality": "many"
         },
-        "hasInstance": {
+        "instance": {
           "target": "public-services",
           "predicate": "dct:source",
           "cardinality": "many"
         },
-        "hasCompetentAuthority": {
+        "competentAuthority": {
           "target": "public-organizations",
           "predicate": "m8g:hasCompetentAuthority",
           "cardinality": "many"
         },
-        "hasParticipation": {
+        "participation": {
           "target": "participations",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many"
         },
-        "hasRequirement": {
+        "requirement": {
           "target": "requirements",
           "predicate": "ps:hasRequirement",
           "cardinality": "many"
@@ -110,17 +110,17 @@
           "predicate": "cspv:produces",
           "cardinality": "many"
         },
-        "hasLegalResource": {
+        "legalResource": {
           "target": "legal-resources",
           "predicate": "m8g:hasLegalResource",
           "cardinality": "many"
         },
-        "hasContactPoint": {
+        "contactPoint": {
           "target": "contact-points",
           "predicate": "m8g:hasContactPoint",
           "cardinality": "many"
         },
-        "hasAttachement": {
+        "attachement": {
           "target": "documents",
           "predicate": "lpdcExt:attachment",
           "cardinality": "many"
@@ -155,7 +155,7 @@
           "predicate": "dct:type",
           "cardinality": "many"
         },
-        "hasCost": {
+        "cost": {
           "target": "conceptual-public-services",
           "predicate": "m8g:hasCost",
           "cardinality": "many"
@@ -193,7 +193,7 @@
 
       },
       "relationships": {
-        "hasInstance": {
+        "instance": {
           "target": "conceptual-public-services",
           "predicate": "lpdcExt:hasInstance",
           "cardinality": "one",
@@ -255,7 +255,7 @@
           "cardinality": "many",
           "inverse": true
         },
-        "hasParticipation": {
+        "participation": {
           "target": "conceptual-public-services",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many",
@@ -320,12 +320,12 @@
         }
       },
       "relationships": {
-        "hasSupportingEvidence": {
+        "supportingEvidence": {
           "target": "evidences",
           "predicate": "m8g:hasSupportingEvidence",
           "cardinality": "many"
         },
-        "hasRequirement": {
+        "requirement": {
           "target": "conceptual-public-services",
           "predicate": "m8g:hasRequirement",
           "cardinality": "many",
@@ -358,7 +358,7 @@
         }
       },
       "relationships": {
-        "hasSupportingEvidence": {
+        "supportingEvidence": {
           "target": "requirements",
           "predicate": "m8g:hasSupportingEvidence",
           "cardinality": "many",
@@ -416,7 +416,7 @@
         }
       },
       "relationships": {
-        "hasCost": {
+        "cost": {
           "target": "conceptual-public-services",
           "predicate": "m8g:hasCost",
           "cardinality": "many",
@@ -484,7 +484,7 @@
         }
       },
       "relationships": {
-        "hasLegalResource": {
+        "legalResource": {
           "target": "conceptual-public-services",
           "predicate": "m8g:hasLegalResource",
           "cardinality": "many",
@@ -525,7 +525,7 @@
         }
       },
       "relationships": {
-        "hasContactPoint": {
+        "contactPoint": {
           "target": "conceptual-public-services",
           "predicate": "m8g:hasContactPoint",
           "cardinality": "many",
@@ -551,7 +551,7 @@
         }
       },
       "relationships": {
-        "hasAttachment": {
+        "attachment": {
           "target": "conceptual-public-services",
           "predicate": "lpdcExt:attachment",
           "cardinality": "many",
@@ -566,7 +566,7 @@
     "locations": {
       "class": "dct:Location",
       "relationships": {
-        "hasAttachment": {
+        "attachment": {
           "target": "conceptual-public-services",
           "predicate": "dct:spatial",
           "cardinality": "many",
