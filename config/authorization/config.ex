@@ -147,30 +147,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/PeriodOfTime",
                         "http://data.europa.eu/m8g/Criterion",
                         "http://data.europa.eu/m8g/RequirementGroup",
-                        "http://data.europa.eu/m8g/CriterionRequirement",
-                        "http://lblod.data.gift/vocabularies/lpdcExtConceptualPublicService",
-                        "http://www.w3.org/ns/adms#Identifier",
-                        "http://purl.org/vocab/cpsv#:PublicService",
-                        "http://data.europa.eu/m8g/PublicOrganisation",
-                        "http://data.europa.eu/m8g/Participation",
-                        "http://xmlns.com/foaf/0.1/Agent",
-                        "http://xmlns.com/foaf/0.1/Group",
-                        "http://data.europa.eu/m8g/Requirement",
-                        "http://data.europa.eu/m8g/Evidence",
-                        "http://purl.org/vocab/cpsv#:Rule",
-                        "http://data.europa.eu/m8g/Cost",
-                        "http://data.europa.eu/m8g/Output",
-                        "http://lblod.data.gift/vocabularies/lpdcExtFinancialAdvantage",
-                        "http://data.europa.eu/eli/ontology#LegalResource",
-                        "http://schema.org/ContactPoint",
-                        "http://www.w3.org/ns/dcat#Distribution",
-                        "http://purl.org/dc/terms/Location",
-                        "http://lblod.data.gift/concepts/public-services/LifecycleStatus",
-                        "http://lblod.data.gift/concepts/public-services/Sector",
-                        "http://lblod.data.gift/concepts/public-services/TargetAudience",
-                        "http://lblod.data.gift/concepts/public-services/ThematicArea",
-                        "http://lblod.data.gift/concepts/public-services/ServiceType",
-                        "http://lblod.data.gift/concepts/public-services/Role"
+                        "http://data.europa.eu/m8g/CriterionRequirement"
                       ]
                     } },
                   %GraphSpec{
@@ -190,6 +167,38 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder" #TODO: not sure why this is here
                       ]
                     } } ] },
+      # // LPDC-IPDC
+      %GroupSpec{
+        name: "o-ipdc-lpdc-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-LPDCGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://lblod.data.gift/vocabularies/lpdcExtConceptualPublicService",
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://purl.org/vocab/cpsv#PublicService",
+                        "http://data.europa.eu/m8g/PublicOrganisation",
+                        "http://data.europa.eu/m8g/Participation",
+                        "http://xmlns.com/foaf/0.1/Agent",
+                        "http://xmlns.com/foaf/0.1/Group",
+                        "http://data.europa.eu/m8g/Requirement",
+                        "http://data.europa.eu/m8g/Evidence",
+                        "http://purl.org/vocab/cpsv#Rule",
+                        "http://data.europa.eu/m8g/Cost",
+                        "http://data.europa.eu/m8g/Output",
+                        "http://lblod.data.gift/vocabularies/lpdcExtFinancialAdvantage",
+                        "http://data.europa.eu/eli/ontology#LegalResource",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/dcat#Distribution",
+                        "http://purl.org/dc/terms/Location",
+                        "http://lblod.data.gift/concepts/public-services/LifecycleStatus",
+                        "http://lblod.data.gift/concepts/public-services/Sector",
+                        "http://lblod.data.gift/concepts/public-services/TargetAudience",
+                        "http://lblod.data.gift/concepts/public-services/ThematicArea",
+                        "http://lblod.data.gift/concepts/public-services/ServiceType",
+                        "http://lblod.data.gift/concepts/public-services/Role" ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
         name: "org",
