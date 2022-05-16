@@ -615,8 +615,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/requirements/"
   end
 
-  match "/evidences/*path" do
-    Proxy.forward conn, path, "http://resource/evidences/"
+  match "/evidence/*path" do
+    Proxy.forward conn, path, "http://resource/evidence/"
   end
 
   match "/rules/*path" do
@@ -660,15 +660,15 @@ defmodule Dispatcher do
   end
 
   match "/target-audiences/*path" do
-    Proxy.forward conn, path, "http://resource/targetAudiences/"
+    Proxy.forward conn, path, "http://resource/target-audiences/"
   end
 
   match "/thematic-areas/*path" do
-    Proxy.forward conn, path, "http://resource/thematicAreas/"
+    Proxy.forward conn, path, "http://resource/thematic-areas/"
   end
 
   match "/service-types/*path" do
-    Proxy.forward conn, path, "http://resource/serviceTypes/"
+    Proxy.forward conn, path, "http://resource/service-types/"
   end
 
   match _ do
