@@ -630,7 +630,7 @@
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "service-type": {
-      "class": "code:ServiceType",
+      "class": "code:IPDCServiceType",
       "attributes": {
         "label": {
           "type": "string",
