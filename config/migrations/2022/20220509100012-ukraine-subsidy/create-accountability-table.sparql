@@ -54,6 +54,6 @@ INSERT DATA {
     <http://data.lblod.info/id/periodes/9e11f337-8575-4c8f-a9e5-34d7d91988da> a <http://data.europa.eu/m8g/PeriodOfTime>;
       mu:uuid "9e11f337-8575-4c8f-a9e5-34d7d91988da";
       <http://data.europa.eu/m8g/startTime> "2022-03-14T03:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-      <http://data.europa.eu/m8g/endTime> "2022-12-31T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
+      <http://data.europa.eu/m8g/endTime> "2022-12-31T21:59:58Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
   }
 }
