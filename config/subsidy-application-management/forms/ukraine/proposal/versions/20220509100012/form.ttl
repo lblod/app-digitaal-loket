@@ -202,6 +202,9 @@ fieldGroups:main a form:FieldGroup ;
         ### Bank account number ###
         fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
 
+        ### Confirmation letter ###
+        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
+
         ### Accountability Table
         fields:a4da0b61-46c2-48c6-b92a-686ce02ade5d .
 
