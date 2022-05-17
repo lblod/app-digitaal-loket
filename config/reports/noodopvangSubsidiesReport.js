@@ -41,8 +41,7 @@ export default {
 
           ?smcStatus skos:prefLabel ?subsidieStatusLabel.
 
-          ?form dct:isPartOf/dct:references ?references ;
-            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>.
+          ?form dct:isPartOf/dct:references ?references .
           <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> skos:prefLabel ?formStatusLabel.
 
           VALUES ?references {
@@ -54,6 +53,24 @@ export default {
             <http://data.lblod.info/id/subsidieprocedurestappen/7da2c107da4c8fc3aaad374da2dd5392a8f88b2f1e192ce3813cee16038d6a09>
             <http://data.lblod.info/id/subsidieprocedurestappen/d87de1deddc1bd6f9c8119c1e43dd26688e08ad56aa2e5c0fc287ecf0e202ba7>
             <http://data.lblod.info/id/subsidy-procedural-steps/ae857ac3-50b2-4172-b3ea-2c35b3a794a7>
+          }
+
+          ?form schema:contactPoint ?contactPoint .
+
+          OPTIONAL {
+            ?contactPoint foaf:firstName ?contactFirstName .
+          }
+
+          OPTIONAL {
+            ?contactPoint foaf:familyName ?contactLastName .
+          }
+
+          OPTIONAL {
+            ?contactPoint schema:email ?contactEmail .
+          }
+
+          OPTIONAL {
+            ?contactPoint schema:telephone ?contactTelephone .
           }
 
           OPTIONAL {
@@ -73,15 +90,9 @@ export default {
               skos:prefLabel ?bestuurseenheid .
 
             ?form schema:bankAccount/schema:identifier ?accountNumber ;
-              schema:contactPoint ?contactPoint ;
               lblodSubsidie:uniqueChildrenNumberForWholePeriod ?aantalUniekeKinderen  ;
               lblodSubsidie:daysOfChildcareForWholePeriod ?aantalKalenderdagen ;
               lblodSubsidie:applicationFormTable ?formTable .
-
-            ?contactPoint foaf:firstName ?contactFirstName ;
-              foaf:familyName ?contactLastName ;
-              schema:email ?contactEmail ;
-              schema:telephone ?contactTelephone .
 
             ?formTable ext:applicationFormEntry ?formEntry .
 
