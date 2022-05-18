@@ -2,7 +2,7 @@ import { generateReportFromData, batchedQuery } from "../helpers.js";
 import { getSafeValue } from "./util/report-helpers";
 
 export default {
-  cronPattern: "0 0 0 * * *",
+  cronPattern: "0 30 23 * * *",
   name: "ukraineSubsidyOproepOneReport",
   execute: async () => {
     const reportData = {
