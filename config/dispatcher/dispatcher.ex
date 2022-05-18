@@ -584,91 +584,95 @@ defmodule Dispatcher do
   # Public Services - LPDC-IPDC-PoC
   #################################################################
   match "/conceptual-public-services/*path" do
-    Proxy.forward conn, path, "http://resource/conceptual-public-services/"
+    Proxy.forward conn, path, "http://cache/conceptual-public-services/"
   end
 
   match "/identifiers/*path" do
-    Proxy.forward conn, path, "http://resource/identifiers/"
+    Proxy.forward conn, path, "http://cache/identifiers/"
   end
 
   match "/public-services/*path" do
-    Proxy.forward conn, path, "http://resource/public-services/"
+    Proxy.forward conn, path, "http://cache/public-services/"
   end
 
   match "/public-organizations/*path" do
-    Proxy.forward conn, path, "http://resource/public-organizations/"
+    Proxy.forward conn, path, "http://cache/public-organizations/"
   end
 
   # match "/participations/*path" do
-  #   Proxy.forward conn, path, "http://resource/participations/"
+  #   Proxy.forward conn, path, "http://cache/participations/"
   # end
 
   match "/agents/*path" do
-    Proxy.forward conn, path, "http://resource/agents/"
+    Proxy.forward conn, path, "http://cache/agents/"
   end
 
   match "/groups/*path" do
-    Proxy.forward conn, path, "http://resource/groups/"
+    Proxy.forward conn, path, "http://cache/groups/"
   end
 
   match "/requirements/*path" do
-    Proxy.forward conn, path, "http://resource/requirements/"
+    Proxy.forward conn, path, "http://cache/requirements/"
   end
 
   match "/evidence/*path" do
-    Proxy.forward conn, path, "http://resource/evidence/"
+    Proxy.forward conn, path, "http://cache/evidence/"
   end
 
   match "/rules/*path" do
-    Proxy.forward conn, path, "http://resource/rules/"
+    Proxy.forward conn, path, "http://cache/rules/"
   end
 
   match "/costs/*path" do
-    Proxy.forward conn, path, "http://resource/costs/"
+    Proxy.forward conn, path, "http://cache/costs/"
   end
 
   match "/output/*path" do
-    Proxy.forward conn, path, "http://resource/output/"
+    Proxy.forward conn, path, "http://cache/output/"
   end
 
   match "/financial-advantages/*path" do
-    Proxy.forward conn, path, "http://resource/financial-advantages/"
+    Proxy.forward conn, path, "http://cache/financial-advantages/"
   end
 
   match "/legal-resources/*path" do
-    Proxy.forward conn, path, "http://resource/legal-resources/"
+    Proxy.forward conn, path, "http://cache/legal-resources/"
   end
 
   match "/contact-points/*path" do
-    Proxy.forward conn, path, "http://resource/contact-points/"
+    Proxy.forward conn, path, "http://cache/contact-points/"
   end
 
   match "/documents/*path" do
-    Proxy.forward conn, path, "http://resource/documents/"
+    Proxy.forward conn, path, "http://cache/documents/"
   end
 
   match "/locations/*path" do
-    Proxy.forward conn, path, "http://resource/locations/"
+    Proxy.forward conn, path, "http://cache/locations/"
   end
 
   match "/lifecycle-statuses/*path" do
-    Proxy.forward conn, path, "http://resource/lifecycleStatuses/"
+    Proxy.forward conn, path, "http://cache/lifecycleStatuses/"
   end
 
   match "/sectors/*path" do
-    Proxy.forward conn, path, "http://resource/sectors/"
+    Proxy.forward conn, path, "http://cache/sectors/"
   end
 
   match "/target-audiences/*path" do
-    Proxy.forward conn, path, "http://resource/target-audiences/"
+    Proxy.forward conn, path, "http://cache/target-audiences/"
   end
 
   match "/thematic-areas/*path" do
-    Proxy.forward conn, path, "http://resource/thematic-areas/"
+    Proxy.forward conn, path, "http://cache/thematic-areas/"
   end
 
   match "/service-types/*path" do
-    Proxy.forward conn, path, "http://resource/service-types/"
+    Proxy.forward conn, path, "http://cache/service-types/"
+  end
+
+  match "/roles/*path" do
+    Proxy.forward conn, path, "http://cache/roles/"
   end
 
   match _ do
