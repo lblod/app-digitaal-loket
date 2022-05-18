@@ -1,4 +1,8 @@
 # Changelog
+## 1.64.3 (2022-04-26)
+- hotfix: show reports in concept for noodopvang
+- hotfix: change deadline plan samenleven
+- hotfix: fix/workaround performance persons sensitive
 ## 1.64.2 (2022-04-26)
  - bumped identifier
 ## 1.64.1 (2022-04-25)
