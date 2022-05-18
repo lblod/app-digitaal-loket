@@ -45,9 +45,11 @@ export default {
         ?x xkos:belongsTo ?reeksInfo.
         ?reeksInfo dct:title ?reeks;
                    mobiliteit:periode ?reeksperiode.
-        ?reeksperiode m8g:startTime ?reeksStart;
-                      m8g:endTime ?reeksEnd.
-                   
+        ?reeksperiode m8g:startTime ?reeksStartDateTime;
+                      m8g:endTime ?reeksEndDateTime.
+        
+        BIND(CONCAT(YEAR(?reeksStartDateTime), "-",MONTH(?reeksStartDateTime), "-", DAY(?reeksStartDateTime)) as ?reeksStart)
+        BIND(CONCAT(YEAR(?reeksEndDateTime), "-",MONTH(?reeksEndDateTime), "-", DAY(?reeksEndDateTime)) as ?reeksEnd)  
 
         ?bestuur m8g:playsRole ?participation ;
                 skos:prefLabel ?bestuurseenheid ;
@@ -82,7 +84,7 @@ export default {
       ORDER BY DESC(?modified)
     `;
 
-    const queryResponse = await query(queryString);
+    const queryResponse = await batchedQuery(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
         subsidieURI: getSafeValue(subsidie, "subsidie"),
