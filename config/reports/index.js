@@ -30,6 +30,7 @@ import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsRe
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import planSubsidieProposalsReport from './planSubsidieProposalsReport';
+import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 
 export default [
   BestuurseenhedenReport,
@@ -65,5 +66,6 @@ export default [
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
-  planSubsidieProposalsReport
+  planSubsidieProposalsReport,
+  ukraineSubsidyOproepOneReport
 ];
