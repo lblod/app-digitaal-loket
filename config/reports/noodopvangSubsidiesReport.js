@@ -74,9 +74,14 @@ export default {
           }
 
           OPTIONAL {
+            ?subsidie m8g:hasParticipation ?participation.
+            ?bestuur m8g:playsRole ?participation ;
+              skos:prefLabel ?bestuurseenheid .
+          }
+
+          OPTIONAL {
             ?subsidie cpsv:follows ?applicationFlow ;
               dct:modified ?aanvraagdatum ;
-              m8g:hasParticipation ?participation ;
               ext:lastModifiedBy ?modifiedBy ;
               dct:creator ?createdBy .
 
@@ -85,9 +90,6 @@ export default {
             ?measureOfferSeries dct:title ?reeksLabel ;
               mobiliteit:periode/m8g:startTime ?reeksStart ;
               mobiliteit:periode/m8g:endTime ?reeksEnd .
-
-            ?bestuur m8g:playsRole ?participation ;
-              skos:prefLabel ?bestuurseenheid .
 
             ?form schema:bankAccount/schema:identifier ?accountNumber ;
               lblodSubsidie:uniqueChildrenNumberForWholePeriod ?aantalUniekeKinderen  ;
