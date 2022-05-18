@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?subject a <http://www.w3.org/ns/adms#identifier>
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?subject a <http://www.w3.org/ns/adms#Identifier>
+  }
+}
+WHERE {
+    GRAPH ?g {
+      ?subject a <http://www.w3.org/ns/adms#identifier>
+  }
+}
