@@ -9,7 +9,7 @@
     "eli": "http://data.europa.eu/eli/ontology#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "locn": "http://www.w3.org/ns/locn#",
-    "lpdcExt": "http://lblod.data.gift/vocabularies/lpdcExt",
+    "lpdcExt": "http://lblod.data.gift/vocabularies/lpdc-ipdc/",
     "m8g": "http://data.europa.eu/m8g/",
     "prov": "http://www.w3.org/ns/prov#",
     "ps": "http://vocab.belgif.be/ns/publicservice#",
@@ -610,7 +610,7 @@
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "target-audiences": {
-      "class": "code:TargetAudience",
+      "class": "lpdcExt:TargetAudience",
       "attributes": {
         "label": {
           "type": "string",
@@ -620,7 +620,7 @@
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "thematic-areas": {
-      "class": "code:ThematicArea",
+      "class": "lpdcExt:IPDCThema",
       "attributes": {
         "label": {
           "type": "string",
@@ -630,7 +630,7 @@
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "service-types": {
-      "class": "code:IPDCServiceType",
+      "class": "lpdcExt:IPDCServiceType",
       "attributes": {
         "label": {
           "type": "string",
@@ -641,7 +641,7 @@
     }
   },
   "roles": {
-    "class": "code:Role",
+    "class": "lpdcExt:Role",
     "attributes": {
       "label": {
         "type": "string",
