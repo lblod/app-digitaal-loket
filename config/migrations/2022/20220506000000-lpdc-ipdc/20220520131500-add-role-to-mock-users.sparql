@@ -4,12 +4,15 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
 PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
 
-WITH <http://mu.semte.ch/application>
 INSERT {
-  ?account a foaf:OnlineAccount;
-           ext:sessionRole "LoketLB-LPDCGebruiker". 
+  GRAPH ?g {
+    ?account a foaf:OnlineAccount;
+      ext:sessionRole "LoketLB-LPDCGebruiker". 
+  }
 }
 WHERE {
-  ?account a foaf:OnlineAccount;
-           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>
+  GRAPH ?g {
+    ?account a foaf:OnlineAccount;
+      foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>
+  }
 }
