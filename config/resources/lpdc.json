@@ -340,10 +340,9 @@
           "cardinality": "many"
         },
         "requirements": {
-          "target":  "abstract-conceptual-public-services",
-          "predicate": "m8g:hasRequirement",
-          "cardinality": "many",
-          "inverse": true
+          "target":  "requirements",
+          "predicate": "ps:hasRequirement",
+          "cardinality": "many"
         },
         "next": {
           "target": "requirements",
