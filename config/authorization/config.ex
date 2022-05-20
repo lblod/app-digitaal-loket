@@ -176,7 +176,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://lblod.data.gift/vocabularies/lpdcExtConceptualPublicService",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/ConceptualPublicService",
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://purl.org/vocab/cpsv#PublicService",
                         "http://data.europa.eu/m8g/PublicOrganisation",
@@ -188,17 +188,17 @@ defmodule Acl.UserGroups.Config do
                         "http://purl.org/vocab/cpsv#Rule",
                         "http://data.europa.eu/m8g/Cost",
                         "http://data.europa.eu/m8g/Output",
-                        "http://lblod.data.gift/vocabularies/lpdcExtFinancialAdvantage",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/FinancialAdvantage",
                         "http://data.europa.eu/eli/ontology#LegalResource",
                         "http://schema.org/ContactPoint",
                         "http://www.w3.org/ns/dcat#Distribution",
                         "http://purl.org/dc/terms/Location",
                         "http://lblod.data.gift/concepts/public-services/LifecycleStatus",
                         "http://lblod.data.gift/concepts/public-services/Sector",
-                        "http://lblod.data.gift/concepts/public-services/TargetAudience",
-                        "http://lblod.data.gift/concepts/public-services/ThematicArea",
-                        "http://lblod.data.gift/concepts/public-services/ServiceType",
-                        "http://lblod.data.gift/concepts/public-services/Role" ] } } ] },
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/TargetAudience",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/Role" ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
         name: "org",
