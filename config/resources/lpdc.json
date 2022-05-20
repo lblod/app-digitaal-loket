@@ -152,9 +152,9 @@
           "cardinality": "many"
         },
         "type": {
-          "target": "serviceTypes",
+          "target": "service-types",
           "predicate": "dct:type",
-          "cardinality": "many"
+          "cardinality": "one"
         },
         "costs": {
           "target": "costs",
