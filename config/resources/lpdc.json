@@ -127,7 +127,7 @@
           "cardinality": "many"
         },
         "lifecycle-status": {
-          "target": "lifecycle-status",
+          "target": "lifecycle-statuses",
           "predicate": "ps:lifecycleStatus",
           "cardinality": "one"
         },
@@ -589,7 +589,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/location/"
     },
-    "lifecycle-status": {
+    "lifecycle-statuses": {
       "class": "code:LifecycleStatus",
       "attributes": {
         "label": {

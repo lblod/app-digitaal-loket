@@ -652,7 +652,7 @@ defmodule Dispatcher do
   end
 
   match "/lifecycle-statuses/*path" do
-    Proxy.forward conn, path, "http://cache/lifecycleStatuses/"
+    Proxy.forward conn, path, "http://cache/lifecycle-statuses/"
   end
 
   match "/sectors/*path" do
