@@ -22,8 +22,8 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "resources": {
-     "abstract-conceptual-public-services": {
-      "class": "lpdcExt:AbstractConceptualPublicService",
+     "abstract-public-services": {
+      "class": "lpdcExt:AbstractPublicService",
       "attributes": {
         "name": {
           "type": "string",
@@ -188,7 +188,7 @@
     "conceptual-public-services": {
       "class": "lpdcExt:ConceptualPublicService",
       "super": [
-         "abstract-conceptual-public-services"
+         "abstract-public-services"
       ],
       "attributes": {
 
@@ -201,7 +201,7 @@
     "public-services": {
       "class": "cspv:PublicService",
       "super": [
-         "abstract-conceptual-public-services"
+         "abstract-public-services"
       ],
       "attributes": {
 
