@@ -1,0 +1,13 @@
+PREFIX dcterms: <http://purl.org/dc/terms/> 
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/public-services/a139c22b4691447ca9ab3409d380c95c> dcterms:identifier <http://data.lblod.info/id/lpdc-ipdc/identifier/997fc5a6-42d7-4ad5-8cf8-2ca02bd222d0>.
+
+  <http://data.lblod.info/id/lpdc-ipdc/identifier/997fc5a6-42d7-4ad5-8cf8-2ca02bd222d0> a <http://www.w3.org/ns/adms#Identifier> ;
+    mu:uuid "997fc5a6-42d7-4ad5-8cf8-2ca02bd222d0";
+    skos:notation "12XYZ" .
+  }
+
+}
