@@ -3,89 +3,89 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<http://lblod.data.gift/id/concept/channel/a4d2c96a39c71680bec70e529c01404c> a <http://data.europa.eu/m8g/Channel> ;
+<http://data.lblod.info/id/concept/channel/a4d2c96a39c71680bec70e529c01404c> a <http://data.europa.eu/m8g/Channel> ;
     dcterms:description "www.vlaanderen.be"@nl ;
     dcterms:identifier "a4d2c96a39c71680bec70e529c01404c" .
 
-<http://lblod.data.gift/id/concept/channel/d50f3025e1bcf22f729c9a2486618726> a <http://data.europa.eu/m8g/Channel> ;
+<http://data.lblod.info/id/concept/channel/d50f3025e1bcf22f729c9a2486618726> a <http://data.europa.eu/m8g/Channel> ;
     dcterms:description "Productencatalogus (IPDC)"@nl ;
     dcterms:identifier "d50f3025e1bcf22f729c9a2486618726" .
 
-<http://lblod.data.gift/id/concept/channel/ff0f4ef4cc63cb69481cdd47f6fb13fa> a <http://data.europa.eu/m8g/Channel> ;
+<http://data.lblod.info/id/concept/channel/ff0f4ef4cc63cb69481cdd47f6fb13fa> a <http://data.europa.eu/m8g/Channel> ;
     dcterms:description "Contactcenter"@nl ;
     dcterms:identifier "ff0f4ef4cc63cb69481cdd47f6fb13fa" .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/05505c3713360666d5d27a0aae7a8797> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/05505c3713360666d5d27a0aae7a8797> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "05505c3713360666d5d27a0aae7a8797" ;
     skos:prefLabel "Mobiliteit en Openbare Werken"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/130e4416a311fe6b33a88dae29e0097f> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/130e4416a311fe6b33a88dae29e0097f> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "130e4416a311fe6b33a88dae29e0097f" ;
     skos:prefLabel "Sport en Vrije Tijd"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/3699633f9a60511acd8328fe454b5852> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/3699633f9a60511acd8328fe454b5852> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "3699633f9a60511acd8328fe454b5852" ;
     skos:prefLabel "Welzijn en Gezondheid"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/3eea80dd7bcdc76de5f6f1aa06dd622a> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/3eea80dd7bcdc76de5f6f1aa06dd622a> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "3eea80dd7bcdc76de5f6f1aa06dd622a" ;
     skos:prefLabel "Cultuur"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/7bf2a776cbfbfe7b04cd47cc11ab5542> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/7bf2a776cbfbfe7b04cd47cc11ab5542> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "7bf2a776cbfbfe7b04cd47cc11ab5542" ;
     skos:prefLabel "Onderwijs en Wetenschap"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/814a08e9c9b698f8d482b84b6c2acb23> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/814a08e9c9b698f8d482b84b6c2acb23> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "814a08e9c9b698f8d482b84b6c2acb23" ;
     skos:prefLabel "Milieu en Energie"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/973d52f17009289ed4166a22db1b1cab> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/973d52f17009289ed4166a22db1b1cab> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "973d52f17009289ed4166a22db1b1cab" ;
     skos:prefLabel "Bouwen en Wonen"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/af1a1d7dbf9b12d423315706133141b8> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/af1a1d7dbf9b12d423315706133141b8> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "af1a1d7dbf9b12d423315706133141b8" ;
     skos:prefLabel "Burger en Overheid"@nl .
 
-<http://lblod.data.gift/id/concept/ipdc-thema/b9aaa68f742290171102a35887b4d591> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema>,
+<http://data.lblod.info/id/concept/ipdc-thema/b9aaa68f742290171102a35887b4d591> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCThema>,
         skos:Concept ;
     ns1:uuid "b9aaa68f742290171102a35887b4d591" ;
     skos:prefLabel "Economie en Werk"@nl .
 
-<http://data.lblod.info/id/concept/organisatie/0044d2a642463bb24e7500ce9793c896> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/Organisatie>,
+<http://data.lblod.info/id/concept/organisatie/0044d2a642463bb24e7500ce9793c896> a <http://data.lblod.info/vocabularies/lpdc-ipdc/Organisatie>,
         skos:Concept ;
     ns1:uuid "0044d2a642463bb24e7500ce9793c896" ;
     skos:prefLabel "Vlaamse overheid"@nl .
 
-<http://data.lblod.info/id/concept/organisatie/3b2c68d762d998533208dc3d3d78c6c7> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/Organisatie>,
+<http://data.lblod.info/id/concept/organisatie/3b2c68d762d998533208dc3d3d78c6c7> a <http://data.lblod.info/vocabularies/lpdc-ipdc/Organisatie>,
         skos:Concept ;
     ns1:uuid "3b2c68d762d998533208dc3d3d78c6c7" ;
     skos:prefLabel "Derden"@nl .
 
-<http://data.lblod.info/id/concept/organisatie/850014ce76bc73007f166437ec6ddce9> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/Organisatie>,
+<http://data.lblod.info/id/concept/organisatie/850014ce76bc73007f166437ec6ddce9> a <http://data.lblod.info/vocabularies/lpdc-ipdc/Organisatie>,
         skos:Concept ;
     ns1:uuid "850014ce76bc73007f166437ec6ddce9" ;
     skos:prefLabel "Provinciale overheid"@nl .
 
-<http://data.lblod.info/id/concept/organisatie/c30ca7d9d00ee044edc058cee10fd548> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/Organisatie>,
+<http://data.lblod.info/id/concept/organisatie/c30ca7d9d00ee044edc058cee10fd548> a <http://data.lblod.info/vocabularies/lpdc-ipdc/Organisatie>,
         skos:Concept ;
     ns1:uuid "c30ca7d9d00ee044edc058cee10fd548" ;
     skos:prefLabel "Lokale overheid"@nl .
 
-<http://data.lblod.info/id/concept/organisatie/e3b06565249fb4273d056f4e4e0c8cc7> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/Organisatie>,
+<http://data.lblod.info/id/concept/organisatie/e3b06565249fb4273d056f4e4e0c8cc7> a <http://data.lblod.info/vocabularies/lpdc-ipdc/Organisatie>,
         skos:Concept ;
     ns1:uuid "e3b06565249fb4273d056f4e4e0c8cc7" ;
     skos:prefLabel "Federale overheid"@nl .
 
-<http://data.lblod.info/id/concept/organisatie/f1b93b876fb40c4c4f49aa558480a7ac> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/Organisatie>,
+<http://data.lblod.info/id/concept/organisatie/f1b93b876fb40c4c4f49aa558480a7ac> a <http://data.lblod.info/vocabularies/lpdc-ipdc/Organisatie>,
         skos:Concept ;
     ns1:uuid "f1b93b876fb40c4c4f49aa558480a7ac" ;
     skos:prefLabel "Europese overheid"@nl .
@@ -110,57 +110,57 @@
     rdfs:label "Provincie"@nl ;
     dcterms:identifier "e8188ca714aeb52a1fac9b477f037c53" .
 
-<http://lblod.data.gift/id/concept/service-type/0f987ff3acd2082c36df760a4e7700d8> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/0f987ff3acd2082c36df760a4e7700d8> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "0f987ff3acd2082c36df760a4e7700d8" ;
     skos:prefLabel "Beschikbaar stellen van infrastructuur en materiaal"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/15c07a1de3a1d33825a088914b401705> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/15c07a1de3a1d33825a088914b401705> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "15c07a1de3a1d33825a088914b401705" ;
     skos:prefLabel "Advies en begeleiding"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/35728c565ba38a68d464a252b99bab5c> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/35728c565ba38a68d464a252b99bab5c> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "35728c565ba38a68d464a252b99bab5c" ;
     skos:prefLabel "Bewijs"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/3adc5571b26c261ab1b9349aab5459d0> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/3adc5571b26c261ab1b9349aab5459d0> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "3adc5571b26c261ab1b9349aab5459d0" ;
     skos:prefLabel "Toelating"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/5ea3c015c3261d477f002777cf0a99c7> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/5ea3c015c3261d477f002777cf0a99c7> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "5ea3c015c3261d477f002777cf0a99c7" ;
     skos:prefLabel "Financieel voordeel"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/60a43a4d7b36a6ddc1389e7acfa60f56> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/60a43a4d7b36a6ddc1389e7acfa60f56> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "60a43a4d7b36a6ddc1389e7acfa60f56" ;
     skos:prefLabel "Nog te definiëren"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/c0ee4897f0e0d788bed1ff9f90073377> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/c0ee4897f0e0d788bed1ff9f90073377> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "c0ee4897f0e0d788bed1ff9f90073377" ;
     skos:prefLabel "Voorwerp"@nl .
 
-<http://lblod.data.gift/id/concept/service-type/d868f02435c3fa172c39ecbc1389202c> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType>,
+<http://data.lblod.info/id/concept/service-type/d868f02435c3fa172c39ecbc1389202c> a <http://data.lblod.info/vocabularies/lpdc-ipdc/IPDCServiceType>,
         skos:Concept ;
     ns1:uuid "d868f02435c3fa172c39ecbc1389202c" ;
     skos:prefLabel "Financiële verplichting"@nl .
 
-<http://lblod.data.gift/id/concept/target-audience/496451f3d45d2f22ba6695e53b3a2e12> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/TargetAudience>,
+<http://data.lblod.info/id/concept/target-audience/496451f3d45d2f22ba6695e53b3a2e12> a <http://data.lblod.info/vocabularies/lpdc-ipdc/TargetAudience>,
         skos:Concept ;
     ns1:uuid "496451f3d45d2f22ba6695e53b3a2e12" ;
     skos:prefLabel "Burger"@nl .
 
-<http://lblod.data.gift/id/concept/target-audience/6e233ea762d8743a9bfb5814994e1c1f> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/TargetAudience>,
+<http://data.lblod.info/id/concept/target-audience/6e233ea762d8743a9bfb5814994e1c1f> a <http://data.lblod.info/vocabularies/lpdc-ipdc/TargetAudience>,
         skos:Concept ;
     ns1:uuid "6e233ea762d8743a9bfb5814994e1c1f" ;
     skos:prefLabel "Organisatie"@nl .
 
-<http://lblod.data.gift/id/concept/target-audience/854aae0b1e6f283e9c64456d15842d1e> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/TargetAudience>,
+<http://data.lblod.info/id/concept/target-audience/854aae0b1e6f283e9c64456d15842d1e> a <http://data.lblod.info/vocabularies/lpdc-ipdc/TargetAudience>,
         skos:Concept ;
     ns1:uuid "854aae0b1e6f283e9c64456d15842d1e" ;
     skos:prefLabel "Onderneming"@nl .

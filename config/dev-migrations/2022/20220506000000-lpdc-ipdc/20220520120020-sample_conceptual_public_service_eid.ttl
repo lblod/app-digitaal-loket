@@ -30,10 +30,10 @@ Vanaf 15 jaar bent u verplicht om uw identiteitskaart altijd bij u te hebben."""
     <https://www.ejustice.just.fgov.be/eli/besluit/2021/01/15/2021040202>,
     <http://www.ejustice.just.fgov.be/eli/wet/2020/06/18/2020010412>;
   m8g:hasCompetentAuthority <http://data.lblod.info/id/concept/organisatie/e3b06565249fb4273d056f4e4e0c8cc7> ;
-  m8g:thematicArea <http://lblod.data.gift/id/concept/ipdc-thema/af1a1d7dbf9b12d423315706133141b8> ;
+  m8g:thematicArea <http://data.lblod.info/id/concept/ipdc-thema/af1a1d7dbf9b12d423315706133141b8> ;
   mu:uuid "a139c22b4691447ca9ab3409d380c95c" ;
-  lpdcExt:targetAudience <http://lblod.data.gift/id/concept/target-audience/496451f3d45d2f22ba6695e53b3a2e12> ;
-  dct:type <http://lblod.data.gift/id/concept/service-type/35728c565ba38a68d464a252b99bab5c> ;
+  lpdcExt:targetAudience <http://data.lblod.info/id/concept/target-audience/496451f3d45d2f22ba6695e53b3a2e12> ;
+  dct:type <http://data.lblod.info/id/concept/service-type/35728c565ba38a68d464a252b99bab5c> ;
   dcat:keyword "e-id"@nl,
     "eid"@nl,
     "electronisch"@nl,
