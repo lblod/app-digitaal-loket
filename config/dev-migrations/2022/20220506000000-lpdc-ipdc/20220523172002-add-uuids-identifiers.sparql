@@ -1,0 +1,28 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+INSERT {
+  GRAPH ?g {
+    ?id mu:uuid ?uuid.
+  }
+}
+WHERE {
+
+  VALUES ?type {
+    <http://lblod.data.gift/vocabularies/lpdc-ipdc/ConceptualPublicService>
+    <http://purl.org/vocab/cpsv#PublicService>
+  }
+
+  GRAPH ?g {
+    ?s a ?type;
+      dcterms:identifier ?id.
+
+    ?id a <http://www.w3.org/ns/adms#Identifier>.
+  }
+
+  FILTER NOT EXISTS {
+    ?id mu:uuid ?anUuid.
+  }
+
+  BIND(STR(SHA256(STR(?id))) as ?uuid)
+}
