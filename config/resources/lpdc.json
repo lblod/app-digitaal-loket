@@ -71,7 +71,7 @@
         }
       },
       "relationships": {
-        "identifiers": {
+        "identifier": {
           "target": "identifiers",
           "predicate": "dct:identifier",
           "cardinality": "one"
@@ -81,7 +81,7 @@
           "predicate": "dct:relation",
           "cardinality": "many"
         },
-        "competent-authority": {
+        "competent-authorities": {
           "target": "public-organizations",
           "predicate": "m8g:hasCompetentAuthority",
           "cardinality": "many"
@@ -121,7 +121,7 @@
           "predicate": "lpdcExt:attachment",
           "cardinality": "many"
         },
-        "lifecycle-status": {
+        "status": {
           "target": "lifecycle-statuses",
           "predicate": "ps:lifecycleStatus",
           "cardinality": "one"
