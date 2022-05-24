@@ -66,7 +66,7 @@
           "predicate": "dct:modified"
         },
         "language": {
-          "type" : "url",
+          "type" : "uri-set",
           "predicate": "dct:language"
         }
       },
