@@ -208,14 +208,7 @@
           "predicate": "skos:notation"
         }
       },
-      "relationships": {
-        "structured-identifier": {
-          "predicate": "adms:identifier",
-          "target": "abstract-public-services",
-          "cardinality": "one",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
