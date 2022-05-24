@@ -294,18 +294,6 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/participation/"
     },
-    "groups": {
-      "class": "foaf:Group",
-      "super": [
-        "agents"
-      ],
-      "attributes": {},
-      "relationships": {},
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/group/"
-    },
     "requirements": {
       "class": "m8g:Requirement",
       "attributes": {
