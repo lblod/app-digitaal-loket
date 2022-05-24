@@ -261,18 +261,6 @@
           "target": "roles",
           "predicate": "m8g:role",
           "cardinality": "many"
-        },
-        "plays-roles": {
-          "target": "agents",
-          "predicate": "m8g:playsRole",
-          "cardinality": "many",
-          "inverse": true
-        },
-        "participations": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasParticipation",
-          "cardinality": "many",
-          "inverse": true
         }
       },
       "features": [
