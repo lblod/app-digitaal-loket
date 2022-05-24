@@ -26,7 +26,7 @@
       "class": "lpdcExt:AbstractPublicService",
       "attributes": {
         "name": {
-          "type": "string",
+          "type": "string-set",
           "predicate": "dct:title"
         },
         "description": {
