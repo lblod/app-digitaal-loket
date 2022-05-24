@@ -148,7 +148,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/Criterion",
                         "http://data.europa.eu/m8g/RequirementGroup",
                         "http://data.europa.eu/m8g/CriterionRequirement",
-                        "http://data.europa.eu/m8g/Requirement"
+                        "http://data.europa.eu/m8g/Requirement",
+                        "http://xmlns.com/foaf/0.1/Document"
                       ]
                     } },
                   %GraphSpec{
@@ -177,6 +178,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://xmlns.com/foaf/0.1/Document",
                         "http://lblod.data.gift/vocabularies/lpdc-ipdc/ConceptualPublicService",
                         "http://lblod.data.gift/vocabularies/lpdc-ipdc/AbstractPublicService",
                         "http://purl.org/vocab/cpsv#PublicService",

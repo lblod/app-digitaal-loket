@@ -37,10 +37,6 @@
           "type": "string-set",
           "predicate": "dcat:keyword"
         },
-        "more-info": {
-          "type": "uri",
-          "predicate": "lpdcExt:moreInfo"
-        },
         "regulations": {
           "type": "string",
           "predicate": "lpdcExt:regulation"
@@ -71,6 +67,11 @@
         }
       },
       "relationships": {
+        "more-info": {
+          "target": "websites",
+          "predicate": "rdfs:seeAlso",
+          "cardinality": "many"
+        },
         "identifier": {
           "target": "identifiers",
           "predicate": "dct:identifier",
@@ -644,6 +645,24 @@
         }
       },
       "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "websites": {
+      "class": "foaf:Document",
+      "attributes": {
+        "description": {
+          "type": "string",
+          "predicate": "dct:description"
+        },
+        "title": {
+          "type": "string",
+          "predicate": "dct:title"
+        },
+        "location": {
+          "type": "url",
+          "predicate": "schema:url"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/website/id/"
     }
   },
   "roles": {
