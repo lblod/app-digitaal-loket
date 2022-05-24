@@ -209,17 +209,9 @@
 
       },
       "relationships": {
-        "conceptual-public-service": {
+        "concept": {
           "target": "conceptual-public-services",
           "predicate": "dct:source",
-          "cardinality": "one",
-          "inverse": true
-        }
-      },
-      "relationships": {
-        "instances": {
-          "target":  "abstract-public-services",
-          "predicate": "lpdcExt:hasInstance",
           "cardinality": "one",
           "inverse": true
         }
