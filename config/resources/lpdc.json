@@ -663,16 +663,16 @@
         }
       },
       "new-resource-base": "http://data.lblod.info/website/id/"
-    }
-  },
-  "roles": {
-    "class": "lpdcExt:Role",
-    "attributes": {
-      "label": {
-        "type": "string",
-        "predicate": "skos:prefLabel"
-      }
     },
-    "new-resource-base": "http://lblod.data.gift/concepts/"
+    "roles": {
+      "class": "lpdcExt:Role",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    }
   }
 }
