@@ -616,7 +616,7 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://lblod.data.gift/concepts/"
+      "new-resource-base": "http://data.lblod.info/concept/id/"
     },
     "sectors": {
       "class": "code:Sector",
@@ -629,7 +629,7 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://lblod.data.gift/concepts/"
+      "new-resource-base": "http://data.lblod.info/concept/id/"
     },
     "target-audiences": {
       "class": "lpdcExt:TargetAudience",
@@ -642,7 +642,7 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://lblod.data.gift/concepts/"
+      "new-resource-base": "http://data.lblod.info/concept/id/"
     },
     "thematic-areas": {
       "class": "lpdcExt:IPDCThema",
@@ -655,7 +655,7 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://lblod.data.gift/concepts/"
+      "new-resource-base": "http://data.lblod.info/concept/id/"
     },
     "service-types": {
       "class": "lpdcExt:IPDCServiceType",
@@ -668,7 +668,7 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://lblod.data.gift/concepts/"
+      "new-resource-base": "http://data.lblod.info/concept/id/"
     },
     "websites": {
       "class": "foaf:Document",
@@ -702,7 +702,7 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://lblod.data.gift/concepts/"
+      "new-resource-base": "http://data.lblod.info/concept/id/"
     }
   }
 }
