@@ -179,6 +179,9 @@
           "inverse": true
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://data.lblod.info/id/identificatoren/"
     },
     "conceptual-public-services": {
@@ -242,6 +245,9 @@
           "cardinality": "many"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://data.lblod.info/id/organisaties/"
     },
     "participations": {
@@ -550,6 +556,9 @@
           "inverse": true
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://data.lblod.info/id/contact-punten/"
     },
     "documents": {
@@ -604,6 +613,9 @@
           "predicate": "skos:prefLabel"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "sectors": {
@@ -614,6 +626,9 @@
           "predicate": "skos:prefLabel"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "target-audiences": {
@@ -624,6 +639,9 @@
           "predicate": "skos:prefLabel"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "thematic-areas": {
@@ -634,6 +652,9 @@
           "predicate": "skos:prefLabel"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "service-types": {
@@ -644,6 +665,9 @@
           "predicate": "skos:prefLabel"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "websites": {
@@ -662,6 +686,9 @@
           "predicate": "schema:url"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://data.lblod.info/website/id/"
     },
     "roles": {
@@ -672,6 +699,9 @@
           "predicate": "skos:prefLabel"
         }
       },
+      "features": [
+        "include-uri"
+      ],
       "new-resource-base": "http://lblod.data.gift/concepts/"
     }
   }
