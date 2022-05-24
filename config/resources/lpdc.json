@@ -22,7 +22,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "resources": {
-     "abstract-public-services": {
+    "abstract-public-services": {
       "class": "lpdcExt:AbstractPublicService",
       "attributes": {
         "name": {
@@ -66,7 +66,7 @@
           "predicate": "dct:modified"
         },
         "language": {
-          "type" : "uri-set",
+          "type": "uri-set",
           "predicate": "dct:language"
         }
       },
@@ -77,7 +77,7 @@
           "cardinality": "one"
         },
         "related": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "dct:relation",
           "cardinality": "many"
         },
@@ -173,7 +173,7 @@
       "relationships": {
         "structured-identifier": {
           "predicate": "adms:identifier",
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "cardinality": "one",
           "inverse": true
         }
@@ -183,11 +183,9 @@
     "conceptual-public-services": {
       "class": "lpdcExt:ConceptualPublicService",
       "super": [
-         "abstract-public-services"
+        "abstract-public-services"
       ],
-      "attributes": {
-
-      },
+      "attributes": {},
       "relationships": {
         "instances": {
           "target": "public-services",
@@ -203,11 +201,9 @@
     "public-services": {
       "class": "cspv:PublicService",
       "super": [
-         "abstract-public-services"
+        "abstract-public-services"
       ],
-      "attributes": {
-
-      },
+      "attributes": {},
       "relationships": {
         "concept": {
           "target": "conceptual-public-services",
@@ -272,7 +268,7 @@
           "inverse": true
         },
         "participations": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many",
           "inverse": true
@@ -308,12 +304,8 @@
       "super": [
         "agents"
       ],
-      "attributes": {
-
-      },
-      "relationships": {
-
-      },
+      "attributes": {},
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -342,7 +334,7 @@
           "cardinality": "many"
         },
         "requirements": {
-          "target":  "requirements",
+          "target": "requirements",
           "predicate": "ps:hasRequirement",
           "cardinality": "many"
         },
@@ -408,7 +400,7 @@
       },
       "relationships": {
         "follows": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "cspv:follows",
           "cardinality": "many",
           "inverse": true
@@ -442,7 +434,7 @@
       },
       "relationships": {
         "costs": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "m8g:hasCost",
           "cardinality": "many",
           "inverse": true
@@ -455,7 +447,7 @@
     },
     "output": {
       "class": "m8g:Output",
-      "attributes":  {
+      "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
@@ -481,7 +473,7 @@
       ],
       "relationships": {
         "produces": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "cspv:produces",
           "cardinality": "many",
           "inverse": true
@@ -494,7 +486,7 @@
     },
     "legal-resources": {
       "class": "eli:LegalResource",
-      "attributes":  {
+      "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
@@ -510,7 +502,7 @@
       },
       "relationships": {
         "legal-resources": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "m8g:hasLegalResource",
           "cardinality": "many",
           "inverse": true
@@ -551,7 +543,7 @@
       },
       "relationships": {
         "contact-points": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "m8g:hasContactPoint",
           "cardinality": "many",
           "inverse": true
@@ -577,7 +569,7 @@
       },
       "relationships": {
         "attachment": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "lpdcExt:attachment",
           "cardinality": "many",
           "inverse": true
@@ -592,7 +584,7 @@
       "class": "dct:Location",
       "relationships": {
         "attachment": {
-          "target":  "abstract-public-services",
+          "target": "abstract-public-services",
           "predicate": "dct:spatial",
           "cardinality": "many",
           "inverse": true
