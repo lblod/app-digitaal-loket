@@ -187,7 +187,6 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/PublicOrganisation",
                         "http://data.europa.eu/m8g/Participation",
                         "http://xmlns.com/foaf/0.1/Agent",
-                        "http://xmlns.com/foaf/0.1/Group",
                         "http://data.europa.eu/m8g/Requirement",
                         "http://data.europa.eu/m8g/Evidence",
                         "http://purl.org/vocab/cpsv#Rule",

@@ -607,10 +607,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/agents/"
   end
 
-  match "/groups/*path" do
-    Proxy.forward conn, path, "http://cache/groups/"
-  end
-
   match "/requirements/*path" do
     Proxy.forward conn, path, "http://cache/requirements/"
   end
