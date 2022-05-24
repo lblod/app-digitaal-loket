@@ -178,6 +178,8 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://lblod.data.gift/vocabularies/lpdc-ipdc/ConceptualPublicService",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/AbstractPublicService",
+                        "http://purl.org/vocab/cpsv#PublicService",
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://purl.org/vocab/cpsv#PublicService",
                         "http://data.europa.eu/m8g/PublicOrganisation",
