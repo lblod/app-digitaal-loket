@@ -81,11 +81,6 @@
           "predicate": "dct:relation",
           "cardinality": "many"
         },
-        "instances": {
-          "target": "public-services",
-          "predicate": "dct:source",
-          "cardinality": "many"
-        },
         "competent-authority": {
           "target": "public-organizations",
           "predicate": "m8g:hasCompetentAuthority",
@@ -192,6 +187,13 @@
       ],
       "attributes": {
 
+      },
+      "relationships": {
+        "instances": {
+          "target": "public-services",
+          "predicate": "dct:source",
+          "cardinality": "many"
+        }
       },
       "features": [
         "include-uri"
