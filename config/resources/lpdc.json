@@ -67,20 +67,40 @@
         }
       },
       "relationships": {
-        "more-info": {
-          "target": "websites",
-          "predicate": "rdfs:seeAlso",
-          "cardinality": "many"
-        },
         "identifier": {
           "target": "identifiers",
           "predicate": "dct:identifier",
           "cardinality": "one"
         },
-        "related": {
-          "target": "abstract-public-services",
-          "predicate": "dct:relation",
+        "type": {
+          "target": "service-types",
+          "predicate": "dct:type",
+          "cardinality": "one"
+        },
+        "target-audiences": {
+          "target": "target-audiences",
+          "predicate": "lpdcExt:targetAudience",
           "cardinality": "many"
+        },
+        "thematic-areas": {
+          "target": "thematic-areas",
+          "predicate": "m8g:thematicArea",
+          "cardinality": "many"
+        },
+        "spatial": {
+          "target": "locations",
+          "predicate": "dct:spatial",
+          "cardinality": "many"
+        },
+        "sectors": {
+          "target": "sectors",
+          "predicate": "m8g:sector",
+          "cardinality": "many"
+        },
+        "status": {
+          "target": "lifecycle-statuses",
+          "predicate": "ps:lifecycleStatus",
+          "cardinality": "one"
         },
         "competent-authorities": {
           "target": "public-organizations",
@@ -102,6 +122,11 @@
           "predicate": "cspv:follows",
           "cardinality": "many"
         },
+        "costs": {
+          "target": "costs",
+          "predicate": "m8g:hasCost",
+          "cardinality": "many"
+        },
         "produces": {
           "target": "financial-advantages",
           "predicate": "cspv:produces",
@@ -110,6 +135,11 @@
         "legal-resources": {
           "target": "legal-resources",
           "predicate": "m8g:hasLegalResource",
+          "cardinality": "many"
+        },
+        "related": {
+          "target": "abstract-public-services",
+          "predicate": "dct:relation",
           "cardinality": "many"
         },
         "contact-points": {
@@ -122,39 +152,9 @@
           "predicate": "lpdcExt:attachment",
           "cardinality": "many"
         },
-        "status": {
-          "target": "lifecycle-statuses",
-          "predicate": "ps:lifecycleStatus",
-          "cardinality": "one"
-        },
-        "sectors": {
-          "target": "sectors",
-          "predicate": "m8g:sector",
-          "cardinality": "many"
-        },
-        "spatial": {
-          "target": "locations",
-          "predicate": "dct:spatial",
-          "cardinality": "many"
-        },
-        "target-audiences": {
-          "target": "target-audiences",
-          "predicate": "lpdcExt:targetAudience",
-          "cardinality": "many"
-        },
-        "thematic-areas": {
-          "target": "thematic-areas",
-          "predicate": "m8g:thematicArea",
-          "cardinality": "many"
-        },
-        "type": {
-          "target": "service-types",
-          "predicate": "dct:type",
-          "cardinality": "one"
-        },
-        "costs": {
-          "target": "costs",
-          "predicate": "m8g:hasCost",
+        "more-info": {
+          "target": "websites",
+          "predicate": "rdfs:seeAlso",
           "cardinality": "many"
         }
       },
@@ -162,27 +162,6 @@
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/conceptual-public-service/"
-    },
-    "identifiers": {
-      "class": "adms:Identifier",
-      "attributes": {
-        "id-name": {
-          "type": "string",
-          "predicate": "skos:notation"
-        }
-      },
-      "relationships": {
-        "structured-identifier": {
-          "predicate": "adms:identifier",
-          "target": "abstract-public-services",
-          "cardinality": "one",
-          "inverse": true
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/identificatoren/"
     },
     "conceptual-public-services": {
       "class": "lpdcExt:ConceptualPublicService",
@@ -220,6 +199,27 @@
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/public-service/"
+    },
+    "identifiers": {
+      "class": "adms:Identifier",
+      "attributes": {
+        "id-name": {
+          "type": "string",
+          "predicate": "skos:notation"
+        }
+      },
+      "relationships": {
+        "structured-identifier": {
+          "predicate": "adms:identifier",
+          "target": "abstract-public-services",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/identificatoren/"
     },
     "public-organizations": {
       "class": "m8g:PublicOrganisation",
