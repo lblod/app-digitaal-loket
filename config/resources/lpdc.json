@@ -215,7 +215,7 @@
       "new-resource-base": "http://data.lblod.info/id/identificatoren/"
     },
     "public-organizations": {
-      "TODO": "this should be the super-class of bestuurseenheden, currently not working"
+      "TODO": "this should be the super-class of bestuurseenheden, currently not working",
       "class": "m8g:PublicOrganisation",
       "attributes": {
         "name": {
@@ -250,13 +250,14 @@
         "description": {
           "type": "string",
           "predicate": "dct:description"
-        },
-        "identifiers": {
-          "type": "string",
-          "predicate": "dct:identifier"
         }
       },
       "relationships": {
+        "identifier": {
+          "target": "identifiers",
+          "predicate": "dct:identifier",
+          "cardinality": "one"
+        },
         "role": {
           "target": "roles",
           "predicate": "m8g:role",
