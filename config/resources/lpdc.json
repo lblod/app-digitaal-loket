@@ -214,14 +214,32 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/identificatoren/"
     },
-    "public-organizations": {
-      "TODO": "this should be the super-class of bestuurseenheden, currently not working",
-      "class": "m8g:PublicOrganisation",
+    "agents": {
+      "class": "foaf:Agent",
       "attributes": {
         "name": {
           "type": "string",
-          "predicate": "skos:prefLabel"
-        },
+          "predicate": "dct:title"
+        }
+      },
+      "relationships": {
+        "plays-roles": {
+          "target": "participations",
+          "predicate": "m8g:playsRole",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/agent/"
+    },
+    "organisations": {
+      "class": "org:Organization",
+      "super": [
+        "agents"
+      ],
+      "attributes": {
         "alternative-name": {
           "type": "string",
           "predicate": "skos:altLabel"
@@ -242,7 +260,14 @@
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://data.lblod.info/id/organisaties/"
+      "new-resource-base": "http://data.lblod.info/id/organisations/"
+    },
+    "public-organizations": {
+      "TODO": "this should be the super-class of bestuurseenheden, currently not working",
+      "class": "m8g:PublicOrganisation",
+      "super": [
+        "organisations"
+      ]
     },
     "participations": {
       "class": "m8g:Participation",
@@ -268,26 +293,6 @@
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/participation/"
-    },
-    "agents": {
-      "class": "foaf:Agent",
-      "attributes": {
-        "name": {
-          "type": "string",
-          "predicate": "dct:title"
-        }
-      },
-      "relationships": {
-        "plays-roles": {
-          "target": "participations",
-          "predicate": "m8g:playsRole",
-          "cardinality": "many"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/agent/"
     },
     "groups": {
       "class": "foaf:Group",
