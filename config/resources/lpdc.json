@@ -362,6 +362,11 @@
           "target": "rules",
           "predicate": "xkos:next",
           "cardinality": "one"
+        },
+        "online-procedure": {
+          "target": "websites",
+          "predicate": "lpdcExt:hasOnlineProcedure",
+          "cardinality": "one"
         }
       },
       "features": [
@@ -385,14 +390,7 @@
           "predicate": "dct:title"
         }
       },
-      "relationships": {
-        "costs": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasCost",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -424,14 +422,7 @@
       "super": [
         "output"
       ],
-      "relationships": {
-        "produces": {
-          "target": "abstract-public-services",
-          "predicate": "cspv:produces",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -453,14 +444,7 @@
           "predicate": "dct:title"
         }
       },
-      "relationships": {
-        "legal-resources": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasLegalResource",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -477,60 +461,38 @@
           "type": "string",
           "predicate": "schema:telephone"
         },
-        "fax": {
-          "type": "string",
-          "predicate": "schema:faxNumber"
-        },
         "website": {
           "type": "uri",
           "predicate": "foaf:page"
-        },
-        "type": {
-          "type": "string",
-          "predicate": "schema:contactType"
         },
         "opening-hours": {
           "type": "string",
           "predicate": "schema:openingHours"
         }
       },
-      "relationships": {
-        "contact-points": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasContactPoint",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/contact-punten/"
     },
     "documents": {
-      "class": "dcat:Distribution",
+      "class": "foaf:Document",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifier": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        },
         "name": {
           "type": "string",
           "predicate": "dct:title"
+        },
+        "document": {
+          "type": "url",
+          "predicate": "schema:url"
         }
       },
-      "relationships": {
-        "attachment": {
-          "target": "abstract-public-services",
-          "predicate": "lpdcExt:attachment",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -538,14 +500,7 @@
     },
     "locations": {
       "class": "dct:Location",
-      "relationships": {
-        "attachment": {
-          "target": "abstract-public-services",
-          "predicate": "dct:spatial",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
