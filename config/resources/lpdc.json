@@ -34,7 +34,7 @@
           "predicate": "dct:description"
         },
         "keyword": {
-          "type": "string",
+          "type": "string-set",
           "predicate": "dcat:keyword"
         },
         "more-info": {
