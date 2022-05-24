@@ -200,20 +200,6 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/public-service/"
     },
-    "identifiers": {
-      "class": "adms:Identifier",
-      "attributes": {
-        "id-name": {
-          "type": "string",
-          "predicate": "skos:notation"
-        }
-      },
-      "relationships": {},
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/identificatoren/"
-    },
     "agents": {
       "class": "foaf:Agent",
       "attributes": {
