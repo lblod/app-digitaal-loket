@@ -27,8 +27,7 @@
       "attributes": {
         "identifier": {
           "type": "string",
-          "predicate": "dct:identifier",
-          "cardinality": "one"
+          "predicate": "dct:identifier"
         },
         "name": {
           "type": "string-set",
@@ -203,6 +202,10 @@
     "agents": {
       "class": "foaf:Agent",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
         "name": {
           "type": "string",
           "predicate": "dct:title"
@@ -232,11 +235,6 @@
         }
       },
       "relationships": {
-        "identifiers": {
-          "predicate": "adms:identifier",
-          "target": "identifiers",
-          "cardinality": "many"
-        },
         "scope": {
           "predicate": "dct:spatial",
           "target": "locations",
@@ -261,14 +259,13 @@
         "description": {
           "type": "string",
           "predicate": "dct:description"
+        },
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
         }
       },
       "relationships": {
-        "identifier": {
-          "target": "identifiers",
-          "predicate": "dct:identifier",
-          "cardinality": "one"
-        },
         "role": {
           "target": "roles",
           "predicate": "m8g:role",
@@ -283,6 +280,10 @@
     "requirements": {
       "class": "m8g:Requirement",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
         "description": {
           "type": "string",
           "predicate": "dct:description"
@@ -293,10 +294,6 @@
         }
       },
       "relationships": {
-        "identifiers": {
-          "type": "identifiers",
-          "predicate": "dct:identifier"
-        },
         "supportingEvidence": {
           "target": "evidence",
           "predicate": "m8g:hasSupportingEvidence",
@@ -321,6 +318,10 @@
     "evidence": {
       "class": "m8g:Evidence",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
         "description": {
           "type": "string",
           "predicate": "dct:description"
@@ -334,8 +335,7 @@
           "predicate": "foaf:page"
         }
       },
-      "relationships": {}
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -358,12 +358,6 @@
         }
       },
       "relationships": {
-        "follows": {
-          "target": "abstract-public-services",
-          "predicate": "cspv:follows",
-          "cardinality": "many",
-          "inverse": true
-        },
         "next": {
           "target": "rules",
           "predicate": "xkos:next",
