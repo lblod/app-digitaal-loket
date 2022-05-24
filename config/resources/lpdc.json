@@ -25,6 +25,11 @@
     "abstract-public-services": {
       "class": "lpdcExt:AbstractPublicService",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier",
+          "cardinality": "one"
+        },
         "name": {
           "type": "string-set",
           "predicate": "dct:title"
@@ -67,11 +72,6 @@
         }
       },
       "relationships": {
-        "identifier": {
-          "target": "identifiers",
-          "predicate": "dct:identifier",
-          "cardinality": "one"
-        },
         "type": {
           "target": "service-types",
           "predicate": "dct:type",
@@ -301,16 +301,16 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        },
         "name": {
           "type": "string",
           "predicate": "skos:prefLabel"
         }
       },
       "relationships": {
+        "identifiers": {
+          "type": "identifiers",
+          "predicate": "dct:identifier"
+        },
         "supportingEvidence": {
           "target": "evidence",
           "predicate": "m8g:hasSupportingEvidence",
@@ -339,10 +339,6 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        },
         "name": {
           "type": "string",
           "predicate": "dct:title"
@@ -352,13 +348,7 @@
           "predicate": "foaf:page"
         }
       },
-      "relationships": {
-        "supportingEvidence": {
-          "target": "requirements",
-          "predicate": "m8g:hasSupportingEvidence",
-          "cardinality": "many",
-          "inverse": true
-        }
+      "relationships": {}
       },
       "features": [
         "include-uri"
