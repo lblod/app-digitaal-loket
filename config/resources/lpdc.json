@@ -71,18 +71,23 @@
         }
       },
       "relationships": {
+        "language": {
+          "target": "concepts",
+          "predicate": "dct:language",
+          "cardinality": "many"
+        },
         "type": {
-          "target": "service-types",
+          "target": "concepts",
           "predicate": "dct:type",
           "cardinality": "one"
         },
         "target-audiences": {
-          "target": "target-audiences",
+          "target": "concepts",
           "predicate": "lpdcExt:targetAudience",
           "cardinality": "many"
         },
         "thematic-areas": {
-          "target": "thematic-areas",
+          "target": "concepts",
           "predicate": "m8g:thematicArea",
           "cardinality": "many"
         },
@@ -92,12 +97,12 @@
           "cardinality": "many"
         },
         "sectors": {
-          "target": "sectors",
+          "target": "concepts",
           "predicate": "m8g:sector",
           "cardinality": "many"
         },
         "status": {
-          "target": "lifecycle-statuses",
+          "target": "concepts",
           "predicate": "ps:lifecycleStatus",
           "cardinality": "one"
         },
@@ -247,11 +252,17 @@
       "new-resource-base": "http://data.lblod.info/id/organisations/"
     },
     "public-organizations": {
-      "TODO": "this should be the super-class of bestuurseenheden, currently not working",
       "class": "m8g:PublicOrganisation",
       "super": [
         "organisations"
-      ]
+      ],
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+     "new-resource-base": "http://data.lblod.info/id/public-organisations/"
     },
     "participations": {
       "class": "m8g:Participation",
@@ -500,76 +511,30 @@
     },
     "locations": {
       "class": "dct:Location",
-      "relationships": {},
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+       },
       "features": [
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/location/"
     },
-    "lifecycle-statuses": {
-      "class": "code:LifecycleStatus",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
+    "lpdc-concept-schemes": {
+      "class": "lpdcExt:LPDC-Concept-Scheme",
+      "super": [
+        "concept-schemes"
       ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
+     "new-resource-base": "http://data.lblod.info/id/lpdc-concept-schemes/id/"
     },
-    "sectors": {
-      "class": "code:Sector",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
+    "lpdc-concepts": {
+      "class": "lpdcExt:LPDC-Concept",
+      "super": [
+        "concepts"
       ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
-    },
-    "target-audiences": {
-      "class": "lpdcExt:TargetAudience",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
-    },
-    "thematic-areas": {
-      "class": "lpdcExt:IPDCThema",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
-    },
-    "service-types": {
-      "class": "lpdcExt:IPDCServiceType",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
+     "new-resource-base": "http://data.lblod.info/id/lpdc-concepts/id/"
     },
     "websites": {
       "class": "foaf:Document",

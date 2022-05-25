@@ -149,7 +149,9 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/RequirementGroup",
                         "http://data.europa.eu/m8g/CriterionRequirement",
                         "http://data.europa.eu/m8g/Requirement",
-                        "http://xmlns.com/foaf/0.1/Document"
+                        "http://xmlns.com/foaf/0.1/Document",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme",
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept"
                       ]
                     } },
                   %GraphSpec{
@@ -197,11 +199,6 @@ defmodule Acl.UserGroups.Config do
                         "http://schema.org/ContactPoint",
                         "http://www.w3.org/ns/dcat#Distribution",
                         "http://purl.org/dc/terms/Location",
-                        "http://lblod.data.gift/concepts/public-services/LifecycleStatus",
-                        "http://lblod.data.gift/concepts/public-services/Sector",
-                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/TargetAudience",
-                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCThema",
-                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCServiceType",
                         "http://lblod.data.gift/vocabularies/lpdc-ipdc/Role" ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
