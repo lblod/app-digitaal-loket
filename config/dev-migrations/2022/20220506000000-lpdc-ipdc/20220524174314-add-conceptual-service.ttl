@@ -17,7 +17,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix schema: <http://schema.org/>.
 
-<http://data.lblod.info/id/requirement/5a3fc814838f4c1183c49c37ddca65cc_2>
+<http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_2>
   rdf:type  cpsv:Rule ;
   mu:uuid  "5a3fc814838f4c1183c49c37ddca65cc_2" ;
   dct:description   "- uw oude identiteitskaart\n- de brief die u thuis kreeg met de vraag uw identiteitskaart af te halen en waarop ook uw pin- en pukcode vermeld staan."@nl ;
@@ -32,9 +32,9 @@
   dct:title "Procedure ID-card FGOV".
 
 
-<http://data.lblod.info/id/requirement/5a3fc814838f4c1183c49c37ddca65cc_1>
+<http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_1>
   rdf:type	cpsv:Rule ;
-  xkos:next	<http://data.lblod.info/id/requirement/5a3fc814838f4c1183c49c37ddca65cc_2> ;
+  xkos:next	<http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_2> ;
   mu:uuid	"5a3fc814838f4c1183c49c37ddca65cc_1" ;
   dct:description	"- uw oproepingskaart\n- een recente kleurenpasfoto (maximaal 6 maanden oud) die voldoet aan de voorwaarden voor pasfoto's, vermeld op de oproepingskaart\n- uw huidige identiteitskaart of (in geval van verlies of diefstal) het vervangingsattest."@nl ;
   lpdcExt:hasOnlineProcedure <http://data.lblod.info/id/website/ac71fc7d-8c47-4b27-95b5-f95e57cb42c9> ;
@@ -49,25 +49,25 @@
   dct:title	"Kostprijs"@nl .
 
 
-<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_2>
+<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_2>
   rdf:type	cpsv:Rule ;
-  xkos:next	<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_3> ;
+  xkos:next	<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_3> ;
   mu:uuid	"33b49d1600014ffebf84d03dd7f8f96b_2" ;
   dct:description	"Na 2 tot 3 weken krijgt u per brief bericht dat uw eID klaar ligt. Om de elektronische handtekening te kunnen gebruiken, staan in die brief ook een pincode en een pukcode.\n- Neem de brief met de codes mee naar het gemeentehuis als u uw eID afhaalt.\n- Uw pincode kunt u bij de afhaling nog wijzigen als u dat wenst (minimum 4, maximum 12 cijfers). U hebt uw pincode nodig elke keer u uw eID wilt gebruiken.\n- U hebt uw pukcode nodig om uw pincode de eerste keer in te stellen of, als u uw pincode niet meer kent, de pincode wilt wijzigen of deblokkeren.\n"@nl ;
   dct:title	"Afhalen" .
 
 
-<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_1>
+<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_1>
   rdf:type	cpsv:Rule ;
-  xkos:next	<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_2> ;
+  xkos:next	<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_2> ;
   mu:uuid	"33b49d1600014ffebf84d03dd7f8f96b_1" ;
   dct:description	"- Vanaf de leeftijd van 12 jaar krijgt u, van de gemeente waar u woont, automatisch een oproepingskaart om uw eID aan te vragen bij de dienst Burgerzaken van uw gemeente. Ook als de geldigheidsperiode van uw eID verloopt, krijgt u automatisch een oproepingskaart om een nieuwe eID aan te vragen.\n- In een aantal gevallen kunt u ook op eigen initiatief een eID aanvragen bij uw gemeente:\n  - als uw eID verloren, gestolen of beschadigd is\n  - als uw pasfoto niet meer gelijkend is\n  - als u van naam of geslacht verandert\n  - bij een inschrijving na verblijf in het buitenland of ambtelijke schrapping\n  - als u een kaart aanvraagt in een andere landstaal.\n- Ga met uw oproepingskaart, een recente pasfoto en uw huidige identiteitskaart naar uw gemeente om de eID aan te vragen.\n"@nl ;
   dct:title	"Aanvragen (met oproepingskaart of op eigen initiatief)" .
 
 
-<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_3>
+<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_3>
   rdf:type	cpsv:Rule ;
-  xkos:next	<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_4> ;
+  xkos:next	<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_4> ;
   mu:uuid	"33b49d1600014ffebf84d03dd7f8f96b_3" ;
   dct:description	"De tarieven voor een eID verschillen van gemeente tot gemeente. In dringende gevallen kunt u een spoedprocedure aanvragen met levering 1 dag later. Daarvoor betaalt u wel een hogere kostprijs. Neem voor meer info contact op met uw gemeente."@nl ;
   lpdcExt::hasOnlineProcedure <http://data.lblod.info/id/website/6ba76283-854f-43cb-afcc-7f80cea98f0c> ;
@@ -97,11 +97,11 @@ lblodLpdc:a139c22b4691447ca9ab3409d380c95c
   belgif:hasRequirement	<http://data.lblod.info/id/requirement/3f7d6ac1e48b4308a2ef19d0a09ada33> ;
   dct:title	"Elektronische identiteitskaart (eID)"@nl ;
   dct:spatial <http://data.lblod.info/id/concept/plaats/05205ec41c6d82162e70447b9609695e>;
-  cpsv:follows	<http://data.lblod.info/id/requirement/5a3fc814838f4c1183c49c37ddca65cc_2> , <http://data.lblod.info/id/requirement/5a3fc814838f4c1183c49c37ddca65cc_1> , <http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_2> , <http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_1> , <http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_3> , <http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_4> ;
+  cpsv:follows	<http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_2> , <http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_1> , <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_2> , <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_1> , <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_3> , <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_4> ;
   dct:type	<http://data.lblod.info/id/concept/service-type/35728c565ba38a68d464a252b99bab5c> .
 
 
-<http://data.lblod.info/id/requirement/33b49d1600014ffebf84d03dd7f8f96b_4>
+<http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_4>
   rdf:type	cpsv:Rule ;
   mu:uuid	"33b49d1600014ffebf84d03dd7f8f96b_4" ;
   dct:description	"Belgen ouder dan 12 jaar die in het buitenland wonen, kunnen een eID krijgen bij de Belgische consulaire beroepspost waar ze zijn ingeschreven. De levertermijn is wel langer.\n\nVanaf 21 juni 2021 kunnen ook de Belgische gemeenten aanvragen van eID behandelen voor Belgen ingeschreven in een consulair bevolkingsregister. Enkel de spoedprocedure is mogelijk, waarbij de kaart en bijhorende codes worden afgeleverd bij de gemeente (de codes worden niet apart naar het thuisadres verzonden). Maak eerst een afspraak met:\n- als u in een Belgische gemeente ingeschreven bent geweest: de laatste gemeente (van inschrijving) in Belgi\u00EB\n- als u nooit in een Belgische gemeente ingeschreven bent geweest, maar wel in Belgi\u00EB bent geboren: de Belgische gemeente van geboorte\n- in alle andere gevallen: een Belgische gemeente naar keuze."@nl ;
