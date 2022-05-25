@@ -94,6 +94,8 @@ services:
     environment:
       VERSIONED_CONFIGURATION_WATCHER: null
     restart: "no"
+  lpdc-management:
+    restart: "no"
   berichtencentrum-warning:
     restart: "no"
   download-url-warning:
