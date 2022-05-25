@@ -169,7 +169,7 @@
   :features '(include-uri)
   :on-path "criterion-requirements")
 
-
+;;TODO: remove :role and participating-bestuurseenheid, but this has a breaking change in the fronted
 (define-resource participation ()
   :class (s-prefix "m8g:Participation")
   :properties `((:description :string ,(s-prefix "dct:description"))
