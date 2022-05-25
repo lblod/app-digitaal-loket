@@ -107,7 +107,7 @@
           "cardinality": "many"
         },
         "participations": {
-          "target": "participations",
+          "target": "participation",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many"
         },
@@ -211,13 +211,6 @@
           "predicate": "dct:title"
         }
       },
-      "relationships": {
-        "plays-roles": {
-          "target": "participations",
-          "predicate": "m8g:playsRole",
-          "cardinality": "many"
-        }
-      },
       "features": [
         "include-uri"
       ],
@@ -258,30 +251,6 @@
         }
       },
      "new-resource-base": "http://data.lblod.info/id/public-organisations/"
-    },
-    "participations": {
-      "class": "m8g:Participation",
-      "attributes": {
-        "description": {
-          "type": "string",
-          "predicate": "dct:description"
-        },
-        "identifier": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        }
-      },
-      "relationships": {
-        "role": {
-          "target": "roles",
-          "predicate": "m8g:role",
-          "cardinality": "many"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/participation/"
     },
     "requirements": {
       "class": "m8g:Requirement",
