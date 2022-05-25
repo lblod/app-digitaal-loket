@@ -616,10 +616,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/agents/"
   end
 
-  match "/groups/*path" do
-    Proxy.forward conn, path, "http://cache/groups/"
-  end
-
   match "/requirements/*path" do
     Proxy.forward conn, path, "http://cache/requirements/"
   end
@@ -660,28 +656,20 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/locations/"
   end
 
-  match "/lifecycle-statuses/*path" do
-    Proxy.forward conn, path, "http://cache/lifecycle-statuses/"
-  end
-
-  match "/sectors/*path" do
-    Proxy.forward conn, path, "http://cache/sectors/"
-  end
-
-  match "/target-audiences/*path" do
-    Proxy.forward conn, path, "http://cache/target-audiences/"
-  end
-
-  match "/thematic-areas/*path" do
-    Proxy.forward conn, path, "http://cache/thematic-areas/"
-  end
-
-  match "/service-types/*path" do
-    Proxy.forward conn, path, "http://cache/service-types/"
+  match "/roles/*path" do
+    Proxy.forward conn, path, "http://cache/roles/"
   end
 
   match "/roles/*path" do
     Proxy.forward conn, path, "http://cache/roles/"
+  end
+
+  match "/lpdc-concept-schemes/*path" do
+    Proxy.forward conn, path, "http://cache/lpdc-concept-schemes/"
+  end
+
+  match "/lpdc-concepts/*path" do
+    Proxy.forward conn, path, "http://cache/lpdc-concepts/"
   end
 
   match "/websites/*path" do

@@ -25,6 +25,10 @@
     "abstract-public-services": {
       "class": "lpdcExt:AbstractPublicService",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
         "name": {
           "type": "string-set",
           "predicate": "dct:title"
@@ -67,23 +71,23 @@
         }
       },
       "relationships": {
-        "identifier": {
-          "target": "identifiers",
-          "predicate": "dct:identifier",
-          "cardinality": "one"
+        "language": {
+          "target": "concepts",
+          "predicate": "dct:language",
+          "cardinality": "many"
         },
         "type": {
-          "target": "service-types",
+          "target": "concepts",
           "predicate": "dct:type",
           "cardinality": "one"
         },
         "target-audiences": {
-          "target": "target-audiences",
+          "target": "concepts",
           "predicate": "lpdcExt:targetAudience",
           "cardinality": "many"
         },
         "thematic-areas": {
-          "target": "thematic-areas",
+          "target": "concepts",
           "predicate": "m8g:thematicArea",
           "cardinality": "many"
         },
@@ -93,12 +97,12 @@
           "cardinality": "many"
         },
         "sectors": {
-          "target": "sectors",
+          "target": "concepts",
           "predicate": "m8g:sector",
           "cardinality": "many"
         },
         "status": {
-          "target": "lifecycle-statuses",
+          "target": "concepts",
           "predicate": "ps:lifecycleStatus",
           "cardinality": "one"
         },
@@ -200,88 +204,13 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/public-service/"
     },
-    "identifiers": {
-      "class": "adms:Identifier",
-      "attributes": {
-        "id-name": {
-          "type": "string",
-          "predicate": "skos:notation"
-        }
-      },
-      "relationships": {},
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/identificatoren/"
-    },
-    "public-organizations": {
-      "class": "m8g:PublicOrganisation",
-      "attributes": {
-        "name": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        },
-        "alternative-name": {
-          "type": "string",
-          "predicate": "skos:altLabel"
-        }
-      },
-      "relationships": {
-        "identifiers": {
-          "predicate": "adms:identifier",
-          "target": "identifiers",
-          "cardinality": "many"
-        },
-        "scope": {
-          "predicate": "dct:spatial",
-          "target": "locations",
-          "cardinality": "many"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/organisaties/"
-    },
-    "participations": {
-      "class": "m8g:Participation",
-      "attributes": {
-        "description": {
-          "type": "string",
-          "predicate": "dct:description"
-        },
-        "identifiers": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        }
-      },
-      "relationships": {
-        "role": {
-          "target": "roles",
-          "predicate": "m8g:role",
-          "cardinality": "many"
-        },
-        "plays-roles": {
-          "target": "agents",
-          "predicate": "m8g:playsRole",
-          "cardinality": "many",
-          "inverse": true
-        },
-        "participations": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasParticipation",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/participation/"
-    },
     "agents": {
       "class": "foaf:Agent",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
         "name": {
           "type": "string",
           "predicate": "dct:title"
@@ -299,28 +228,76 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/agent/"
     },
-    "groups": {
-      "class": "foaf:Group",
+    "organisations": {
+      "class": "org:Organization",
       "super": [
         "agents"
       ],
-      "attributes": {},
-      "relationships": {},
+      "attributes": {
+        "alternative-name": {
+          "type": "string",
+          "predicate": "skos:altLabel"
+        }
+      },
+      "relationships": {
+        "scope": {
+          "predicate": "dct:spatial",
+          "target": "locations",
+          "cardinality": "many"
+        }
+      },
       "features": [
         "include-uri"
       ],
-      "new-resource-base": "http://data.lblod.info/id/group/"
+      "new-resource-base": "http://data.lblod.info/id/organisations/"
     },
-    "requirements": {
-      "class": "m8g:Requirement",
+    "public-organizations": {
+      "class": "m8g:PublicOrganisation",
+      "super": [
+        "organisations"
+      ],
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+     "new-resource-base": "http://data.lblod.info/id/public-organisations/"
+    },
+    "participations": {
+      "class": "m8g:Participation",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
+        "identifier": {
           "type": "string",
           "predicate": "dct:identifier"
+        }
+      },
+      "relationships": {
+        "role": {
+          "target": "roles",
+          "predicate": "m8g:role",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/participation/"
+    },
+    "requirements": {
+      "class": "m8g:Requirement",
+      "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
+        "description": {
+          "type": "string",
+          "predicate": "dct:description"
         },
         "name": {
           "type": "string",
@@ -352,13 +329,13 @@
     "evidence": {
       "class": "m8g:Evidence",
       "attributes": {
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        },
         "description": {
           "type": "string",
           "predicate": "dct:description"
-        },
-        "identifiers": {
-          "type": "string",
-          "predicate": "dct:identifier"
         },
         "name": {
           "type": "string",
@@ -369,14 +346,7 @@
           "predicate": "foaf:page"
         }
       },
-      "relationships": {
-        "supportingEvidence": {
-          "target": "requirements",
-          "predicate": "m8g:hasSupportingEvidence",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -389,7 +359,7 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
+        "identifier": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -399,15 +369,14 @@
         }
       },
       "relationships": {
-        "follows": {
-          "target": "abstract-public-services",
-          "predicate": "cspv:follows",
-          "cardinality": "many",
-          "inverse": true
-        },
         "next": {
           "target": "rules",
           "predicate": "xkos:next",
+          "cardinality": "one"
+        },
+        "online-procedure": {
+          "target": "websites",
+          "predicate": "lpdcExt:hasOnlineProcedure",
           "cardinality": "one"
         }
       },
@@ -423,7 +392,7 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
+        "identifier": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -432,14 +401,7 @@
           "predicate": "dct:title"
         }
       },
-      "relationships": {
-        "costs": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasCost",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -452,7 +414,7 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
+        "identifier": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -471,14 +433,7 @@
       "super": [
         "output"
       ],
-      "relationships": {
-        "produces": {
-          "target": "abstract-public-services",
-          "predicate": "cspv:produces",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -491,7 +446,7 @@
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
+        "identifier": {
           "type": "string",
           "predicate": "dct:identifier"
         },
@@ -500,14 +455,7 @@
           "predicate": "dct:title"
         }
       },
-      "relationships": {
-        "legal-resources": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasLegalResource",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -524,60 +472,38 @@
           "type": "string",
           "predicate": "schema:telephone"
         },
-        "fax": {
-          "type": "string",
-          "predicate": "schema:faxNumber"
-        },
         "website": {
           "type": "uri",
           "predicate": "foaf:page"
-        },
-        "type": {
-          "type": "string",
-          "predicate": "schema:contactType"
         },
         "opening-hours": {
           "type": "string",
           "predicate": "schema:openingHours"
         }
       },
-      "relationships": {
-        "contact-points": {
-          "target": "abstract-public-services",
-          "predicate": "m8g:hasContactPoint",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/contact-punten/"
     },
     "documents": {
-      "class": "dcat:Distribution",
+      "class": "foaf:Document",
       "attributes": {
         "description": {
           "type": "string",
           "predicate": "dct:description"
         },
-        "identifiers": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        },
         "name": {
           "type": "string",
           "predicate": "dct:title"
+        },
+        "document": {
+          "type": "url",
+          "predicate": "schema:url"
         }
       },
-      "relationships": {
-        "attachment": {
-          "target": "abstract-public-services",
-          "predicate": "lpdcExt:attachment",
-          "cardinality": "many",
-          "inverse": true
-        }
-      },
+      "relationships": {},
       "features": [
         "include-uri"
       ],
@@ -585,83 +511,30 @@
     },
     "locations": {
       "class": "dct:Location",
-      "relationships": {
-        "attachment": {
-          "target": "abstract-public-services",
-          "predicate": "dct:spatial",
-          "cardinality": "many",
-          "inverse": true
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
         }
-      },
+       },
       "features": [
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/location/"
     },
-    "lifecycle-statuses": {
-      "class": "code:LifecycleStatus",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
+    "lpdc-concept-schemes": {
+      "class": "lpdcExt:LPDC-Concept-Scheme",
+      "super": [
+        "concept-schemes"
       ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
+     "new-resource-base": "http://data.lblod.info/id/lpdc-concept-schemes/id/"
     },
-    "sectors": {
-      "class": "code:Sector",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
+    "lpdc-concepts": {
+      "class": "lpdcExt:LPDC-Concept",
+      "super": [
+        "concepts"
       ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
-    },
-    "target-audiences": {
-      "class": "lpdcExt:TargetAudience",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
-    },
-    "thematic-areas": {
-      "class": "lpdcExt:IPDCThema",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
-    },
-    "service-types": {
-      "class": "lpdcExt:IPDCServiceType",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/concept/id/"
+     "new-resource-base": "http://data.lblod.info/id/lpdc-concepts/id/"
     },
     "websites": {
       "class": "foaf:Document",

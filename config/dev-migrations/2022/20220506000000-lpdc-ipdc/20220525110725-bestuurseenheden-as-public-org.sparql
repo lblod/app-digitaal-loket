@@ -1,0 +1,16 @@
+# This adds all gemeentes to public organisations as well. This makes it easier to manage select boxes
+# For later migrations with new eenheden, some stuff will need to be added
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>, skos:Concept, <http://data.europa.eu/m8g/PublicOrganisation>;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>.
+  }
+
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>; # gemeente
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>.
+  }
+}
