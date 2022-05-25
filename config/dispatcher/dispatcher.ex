@@ -607,8 +607,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/requirements/"
   end
 
-  match "/evidence/*path" do
-    Proxy.forward conn, path, "http://cache/evidence/"
+  match "/evidences/*path" do
+    Proxy.forward conn, path, "http://cache/evidences/"
   end
 
   match "/rules/*path" do

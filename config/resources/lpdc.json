@@ -269,8 +269,8 @@
         }
       },
       "relationships": {
-        "supportingEvidence": {
-          "target": "evidence",
+        "supporting-evidence": {
+          "target": "evidences",
           "predicate": "m8g:hasSupportingEvidence",
           "cardinality": "many"
         },
@@ -290,7 +290,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/requirement/"
     },
-    "evidence": {
+    "evidences": {
       "class": "m8g:Evidence",
       "attributes": {
         "identifier": {
