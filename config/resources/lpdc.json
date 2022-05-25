@@ -522,7 +522,7 @@
       "new-resource-base": "http://data.lblod.info/website/id/"
     },
     "roles": {
-      "class": "lpdcExt:Role",
+      "class": "m8g:Role",
       "attributes": {
         "label": {
           "type": "string",
