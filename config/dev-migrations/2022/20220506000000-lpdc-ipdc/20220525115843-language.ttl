@@ -1,0 +1,38 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>,
+  <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme>;
+  mu:uuid "2bc477b5-4f18-47ae-b627-476b73aef9f6";
+  <http://www.w3.org/2004/02/skos/core#definition> "Languages LPDC/IPDC";
+  <http://www.w3.org/2004/02/skos/core#prefLabel> "Languages LPDC/IPDC".
+
+<http://publications.europa.eu/resource/authority/language/NLD> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    mu:uuid "c4ecacc7-dceb-4c6d-a47a-9a4c33b02ce0" ;
+    skos:prefLabel "Nederlands"@nl .
+
+<http://publications.europa.eu/resource/authority/language/ENG> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    mu:uuid "9bec5d8d-4e2b-45c7-9f60-ee2e09d9812e" ;
+    skos:prefLabel "Engels"@nl .
+
+<http://publications.europa.eu/resource/authority/language/FRA> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    mu:uuid "fa8cf5d4-434b-497e-a1c2-7e927e3856c2" ;
+    skos:prefLabel "Frans"@nl .
+
+<http://publications.europa.eu/resource/authority/language/DEU> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6>;
+    mu:uuid "14d02c0f-8fb7-46f8-8cb5-819919799be4" ;
+    skos:prefLabel "Duits"@nl .
