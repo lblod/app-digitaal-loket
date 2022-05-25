@@ -91,7 +91,7 @@
   dct:identifier "123";
   dct:description "De jongere mag maximaal 18 jaar oud zijn. <br> En een moeilijke jeugd";
   skos:prefLabel "Noodzakelijke voorwaarde jeudinstelling";
-  m8g:hasSupportingEvidence <http://data.lbold.info/id/evidence/27a52bd7-0ec5-4b51-ad96-2e396ecf54ab>;
+  m8g:hasSupportingEvidence <http://data.lblod.info/id/evidence/27a52bd7-0ec5-4b51-ad96-2e396ecf54ab>;
   xkos:next <http://data.lblod.info/id/requirements/e5415268-954f-40d4-8fa6-01002faa0caf>.
 
 <http://data.lblod.info/id/requirements/e5415268-954f-40d4-8fa6-01002faa0caf> a m8g:Requirement;
