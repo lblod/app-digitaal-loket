@@ -15,7 +15,12 @@
 
 ##########################################################
 # Property groups
-##########################################################http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6
+##########################################################
+
+fields:9d9d8f89-9d27-4a94-8f1a-092495c84247 a form:PropertyGroup;
+    mu:uuid "9d9d8f89-9d27-4a94-8f1a-092495c84247";
+    sh:description "parent property-group, used to group fields and property-groups together";
+    sh:order 1 .
 
 fields:064e0194-8db9-4676-b901-6dfc12d4c62b a form:PropertyGroup;
     mu:uuid "064e0194-8db9-4676-b901-6dfc12d4c62b";
