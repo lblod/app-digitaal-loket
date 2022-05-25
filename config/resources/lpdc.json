@@ -64,10 +64,6 @@
         "modified": {
           "type": "datetime",
           "predicate": "dct:modified"
-        },
-        "language": {
-          "type": "uri-set",
-          "predicate": "dct:language"
         }
       },
       "relationships": {
