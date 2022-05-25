@@ -550,6 +550,15 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
+
+  #################################################################
+  # lpdc-management: custom API endpoints
+  #################################################################
+
+  post "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
   #################################################################
   # jobs
   #################################################################
