@@ -43,7 +43,7 @@
     skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
     skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>.
 
-# provincie (already existing)
+# provincie
 <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
     skos:Concept;
     skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;

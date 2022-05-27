@@ -1,0 +1,18 @@
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://www.w3.org/ns/org#classification> ?class
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+    # gemeente; provincie
+    VALUES ?class {
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>
+    }
+
+    ?s a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> ?class.
+  }
+}
