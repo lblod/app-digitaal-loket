@@ -3,6 +3,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+# Some notes:
+# - ABB has the exhaustive list of lokale and provinciale overheden; they will replace provinciale and lokale overheid.
+# - Probably we want a more fine grained list then the one below for other overheden too. 
 <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>,
   <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme>;
   mu:uuid "b790e1d2-fd96-4476-8c07-c76a017fed09";
@@ -22,20 +25,6 @@
     skos:topConceptOf <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>;
     mu:uuid "3b2c68d762d998533208dc3d3d78c6c7" ;
     skos:prefLabel "Derden"@nl .
-
-<http://data.lblod.info/id/concept/organisatie/850014ce76bc73007f166437ec6ddce9> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
-        skos:Concept, <http://data.europa.eu/m8g/PublicOrganisation>;
-    skos:inScheme <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>;
-    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>;
-    mu:uuid "850014ce76bc73007f166437ec6ddce9" ;
-    skos:prefLabel "Provinciale overheid"@nl .
-
-<http://data.lblod.info/id/concept/organisatie/c30ca7d9d00ee044edc058cee10fd548> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
-        skos:Concept, <http://data.europa.eu/m8g/PublicOrganisation>;
-    skos:inScheme <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>;
-    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09>;
-    mu:uuid "c30ca7d9d00ee044edc058cee10fd548" ;
-    skos:prefLabel "Lokale overheid"@nl .
 
 <http://data.lblod.info/id/concept/organisatie/e3b06565249fb4273d056f4e4e0c8cc7> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
         skos:Concept, <http://data.europa.eu/m8g/PublicOrganisation>;

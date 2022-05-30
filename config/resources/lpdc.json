@@ -18,8 +18,7 @@
     "schema": "http://schema.org/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "xkso": "http://rdf-vocabulary.ddialliance.org/xkos#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "xkos": "http://rdf-vocabulary.ddialliance.org/xkos#"
   },
   "resources": {
     "abstract-public-services": {
@@ -64,10 +63,6 @@
         "modified": {
           "type": "datetime",
           "predicate": "dct:modified"
-        },
-        "language": {
-          "type": "uri-set",
-          "predicate": "dct:language"
         }
       },
       "relationships": {
@@ -112,7 +107,7 @@
           "cardinality": "many"
         },
         "participations": {
-          "target": "participations",
+          "target": "participation",
           "predicate": "m8g:hasParticipation",
           "cardinality": "many"
         },
@@ -216,13 +211,6 @@
           "predicate": "dct:title"
         }
       },
-      "relationships": {
-        "plays-roles": {
-          "target": "participations",
-          "predicate": "m8g:playsRole",
-          "cardinality": "many"
-        }
-      },
       "features": [
         "include-uri"
       ],
@@ -264,30 +252,6 @@
       },
      "new-resource-base": "http://data.lblod.info/id/public-organisations/"
     },
-    "participations": {
-      "class": "m8g:Participation",
-      "attributes": {
-        "description": {
-          "type": "string",
-          "predicate": "dct:description"
-        },
-        "identifier": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        }
-      },
-      "relationships": {
-        "role": {
-          "target": "roles",
-          "predicate": "m8g:role",
-          "cardinality": "many"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "new-resource-base": "http://data.lblod.info/id/participation/"
-    },
     "requirements": {
       "class": "m8g:Requirement",
       "attributes": {
@@ -305,8 +269,8 @@
         }
       },
       "relationships": {
-        "supportingEvidence": {
-          "target": "evidence",
+        "supporting-evidence": {
+          "target": "evidences",
           "predicate": "m8g:hasSupportingEvidence",
           "cardinality": "many"
         },
@@ -326,7 +290,7 @@
       ],
       "new-resource-base": "http://data.lblod.info/id/requirement/"
     },
-    "evidence": {
+    "evidences": {
       "class": "m8g:Evidence",
       "attributes": {
         "identifier": {
@@ -558,7 +522,7 @@
       "new-resource-base": "http://data.lblod.info/website/id/"
     },
     "roles": {
-      "class": "lpdcExt:Role",
+      "class": "m8g:Role",
       "attributes": {
         "label": {
           "type": "string",

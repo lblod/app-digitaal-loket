@@ -169,14 +169,20 @@
   :features '(include-uri)
   :on-path "criterion-requirements")
 
-
+;;TODO: remove :role and participating-bestuurseenheid, but this has a breaking change in the fronted
 (define-resource participation ()
   :class (s-prefix "m8g:Participation")
   :properties `((:description :string ,(s-prefix "dct:description"))
-                (:role :url ,(s-prefix "m8g:role")))
+                (:role :url ,(s-prefix "m8g:role"))
+                (:identifier :string ,(s-prefix "dct:identifier")))
   :has-one `((bestuurseenheid :via ,(s-prefix "m8g:playsRole")
                             :inverse t
                             :as "participating-bestuurseenheid"))
+  :has-many `((agents :via ,(s-prefix "m8g:playsRole")
+                             :inverse t
+                             :as "participating-agents")
+              (roles :via ,(s-prefix "m8g:role")
+                             :as "roles"))
   :resource-base (s-url "http://data.lblod.info/id/participations/")
   :features '(include-uri)
   :on-path "participations")
