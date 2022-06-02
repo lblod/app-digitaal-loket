@@ -367,7 +367,7 @@ services:
   lpdc-management:
     image: lblod/lpdc-management-service:0.0.1
     volumes:
-      - ./config/subsidy-application-management:/config
+      - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
     labels:
       - "logging=true"
