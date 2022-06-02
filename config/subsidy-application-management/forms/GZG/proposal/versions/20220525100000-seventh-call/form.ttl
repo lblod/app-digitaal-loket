@@ -174,14 +174,14 @@ fields:8fa4216d-97b3-467a-bacc-c76b7ea6a242 a form:Field ;
         [ a form:Codelist ;
             form:grouping form:MatchEvery ;
             sh:path lblodSubsidie:collaborator ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/7db0bcc4-7ccf-4848-affd-cbd41124ef71> ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6> ;
             sh:resultMessage "Selecteer een waarde uit de lijst."@nl
         ],
         [ a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:collaborator ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/7db0bcc4-7ccf-4848-affd-cbd41124ef71", "searchEnabled": true}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/dcfb437e-1219-4d1e-891d-057f262da9d6", "searchEnabled": true}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelector ;
     form:help """Typ of selecteer ook de gemeente die de aanvraag indient. Je kan meerdere opties aanduiden.""" ;
     sh:group fields:84baa661-ae79-4531-becc-b8636a928103 .
