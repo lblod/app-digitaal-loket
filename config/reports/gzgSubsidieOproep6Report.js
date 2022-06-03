@@ -1,5 +1,5 @@
 import { generateReportFromData, batchedQuery } from '../helpers.js';
-import getSafeValue from './util/report-helpers';
+import {getSafeValue} from './util/report-helpers';
 
 export default {
   cronPattern: '0 0 0 * * *',
@@ -147,8 +147,6 @@ export default {
 
             ?form lblodSubsidie:isCollaboration/skos:prefLabel ?isSamenwerkingsverband .
             OPTIONAL { ?form lblodSubsidie:collaborator/skos:prefLabel ?samenwerkingsverband . }
-
-            FILTER EXISTS { ?form adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> }
           }
         }
         UNION
