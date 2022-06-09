@@ -608,6 +608,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://lpdc-management/public-services/"
   end
 
+  delete "/public-services/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/public-services/"
+  end
+
   match "/public-services/*path" do
     Proxy.forward conn, path, "http://cache/public-services/"
   end
