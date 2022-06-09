@@ -555,10 +555,6 @@ defmodule Dispatcher do
   # lpdc-management: custom API endpoints
   #################################################################
 
-  post "/lpdc-management/*path" do
-    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
-  end
-
   get "/lpdc-management/*path" do
     Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
   end
@@ -606,6 +602,10 @@ defmodule Dispatcher do
 
   match "/identifiers/*path" do
     Proxy.forward conn, path, "http://cache/identifiers/"
+  end
+
+  post "/public-services/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/public-services/"
   end
 
   match "/public-services/*path" do
