@@ -20,7 +20,7 @@
 @prefix lblodIpdcThema:	<http://data.lblod.info/id/concept/ipdc-thema/> .
 @prefix belgif:	<http://vocab.belgif.be/ns/publicservice#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix schema: <http://schema.org>.
+@prefix schema: <http://schema.org/>.
 
 ##########################################################
 # form
