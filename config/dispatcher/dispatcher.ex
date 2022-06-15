@@ -612,6 +612,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://lpdc-management/public-services/"
   end
 
+  get "/public-services/*path" do
+    Proxy.forward conn, path, "http://resource/public-services/"  ## TODO: solve cache issue in frontend
+  end
+
   match "/public-services/*path" do
     Proxy.forward conn, path, "http://cache/public-services/"
   end
