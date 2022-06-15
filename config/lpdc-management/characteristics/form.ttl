@@ -38,7 +38,7 @@ ext:form a form:Form, form:TopLevelForm ;
 #  property-group: status
 ##########################################################
 ext:statusPg a form:PropertyGroup;
-    sh:order 1 .
+    sh:order 10 .
 
   ##########################################################
   #  field: status
@@ -57,14 +57,14 @@ ext:statusPg a form:PropertyGroup;
 ext:generalPg a form:PropertyGroup;
     sh:name "Beschrijving" ;
     form:help "Hier kan u de beschrijving van de dienstverlening aanbrengen/wijzigen.";
-    sh:order 2 .
+    sh:order 20 .
 
   ##########################################################
   #  field: product type
   ##########################################################
   ext:productTypeF a form:Field ;
       sh:name "Product type" ;
-      sh:order 1 ;
+      sh:order 20 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/9357bf70-ae33-40e6-bd2a-80e842f92d9a"}""" ;
       sh:path dct:type ;
       form:displayType displayTypes:conceptSchemeSelector ;
@@ -75,7 +75,7 @@ ext:generalPg a form:PropertyGroup;
   ##########################################################
   ext:targetF a form:Field ;
       sh:name "Doelgroepen" ;
-      sh:order 1 ;
+      sh:order 30 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/1c648cd2-29fc-4ee1-a4e2-a82f57ab592d"}""" ;
       sh:path lpdcExt:targetAudience ;
       form:displayType displayTypes:conceptSchemeSelector ;
@@ -86,7 +86,7 @@ ext:generalPg a form:PropertyGroup;
   ##########################################################
   ext:themeF a form:Field ;
       sh:name "Thema's" ;
-      sh:order 1 ;
+      sh:order 40 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842"}""" ;
       sh:path m8g:thematicArea ;
       form:displayType displayTypes:conceptSchemeSelector ;
@@ -97,7 +97,7 @@ ext:generalPg a form:PropertyGroup;
   ##########################################################
   ext:languageF a form:Field ;
       sh:name "Talen" ;
-      sh:order 1 ;
+      sh:order 50 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6"}""" ;
       sh:path dct:language ;
       form:displayType displayTypes:conceptSchemeSelector ;
@@ -108,39 +108,41 @@ ext:generalPg a form:PropertyGroup;
 ##########################################################
 ext:authorityPg a form:PropertyGroup;
     sh:name "Bevoegdheid" ;
-    sh:order 3 .
+    sh:order 30.
 
   ##########################################################
   #  field: geografische toepassingsgebied
   ##########################################################
   ext:applicationAreaF a form:Field ;
       sh:name "Geografisch toepassingsgebied" ;
-      sh:order 1 ;
       sh:path dct:applicationArea ;
       form:displayType displayTypes:textArea ;
+      sh:order 10 ;
       sh:group ext:authorityPg .
 
+      sh:order 20 ;
+      sh:order 30 ;
 ##########################################################
 #  property-group: gerelateerde producten TODO
 ##########################################################
 ext:relatedPg a form:PropertyGroup;
     sh:name "Gerelateerd" ;
-    sh:order 3 .
+    sh:order 30 .
 
   ##########################################################
   #  field: gerelateerde producten
   ##########################################################
   ext:relatedProductsF a form:Field ;
-      sh:order 1 ;
       sh:path dct:relatedProducts ;
       form:displayType displayTypes:textArea ;
+      sh:order 10 ;
       sh:group ext:relatedPg .
 
   ##########################################################
   #  field: tags
   ##########################################################
   ext:tagsF a form:Field ;
-      sh:order 1 ;
       sh:path dct:tags ;
       form:displayType displayTypes:textArea ;
+      sh:order 20 ;
       sh:group ext:relatedPg .
