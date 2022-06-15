@@ -28,10 +28,16 @@
 ##########################################################
 ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:statusF;
+    form:includes ext:sectorF;
     form:includes ext:productTypeF;
     form:includes ext:targetF;
     form:includes ext:themeF;
-    form:includes ext:languageF.
+    form:includes ext:languageF;
+    form:includes ext:applicationAreaF;
+    form:includes ext:competentAuthorityF;
+    form:includes ext:executingAuthorityF;
+    form:includes ext:relatedProductsF;
+    form:includes ext:tagsF.
 
 
 ##########################################################
@@ -55,9 +61,19 @@ ext:statusPg a form:PropertyGroup;
 #  property-group: Algemene info
 ##########################################################
 ext:generalPg a form:PropertyGroup;
-    sh:name "Beschrijving" ;
-    form:help "Hier kan u de beschrijving van de dienstverlening aanbrengen/wijzigen.";
+    sh:name "Algemene info" ;
     sh:order 20 .
+
+  ##########################################################
+  #  field: sector
+  ##########################################################
+  ext:sectorF a form:Field ;
+      sh:name "Sector" ;
+      sh:order 10 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/TODO"}""" ;
+      sh:path m8g:sector ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:generalPg .
 
   ##########################################################
   #  field: product type
@@ -78,7 +94,8 @@ ext:generalPg a form:PropertyGroup;
       sh:order 30 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/1c648cd2-29fc-4ee1-a4e2-a82f57ab592d"}""" ;
       sh:path lpdcExt:targetAudience ;
-      form:displayType displayTypes:conceptSchemeSelector ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:help "Meerdere doelgroepen kunnen worden toegewezen";
       sh:group ext:generalPg .
 
   ##########################################################
@@ -89,7 +106,8 @@ ext:generalPg a form:PropertyGroup;
       sh:order 40 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842"}""" ;
       sh:path m8g:thematicArea ;
-      form:displayType displayTypes:conceptSchemeSelector ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:help "Meerdere thema's kunnen worden toegewezen";
       sh:group ext:generalPg .
 
   ##########################################################
@@ -100,7 +118,8 @@ ext:generalPg a form:PropertyGroup;
       sh:order 50 ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6"}""" ;
       sh:path dct:language ;
-      form:displayType displayTypes:conceptSchemeSelector ;
+      form:help "Meerdere talen kunnen worden toegewezen";
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:generalPg .
 
 ##########################################################
@@ -115,13 +134,37 @@ ext:authorityPg a form:PropertyGroup;
   ##########################################################
   ext:applicationAreaF a form:Field ;
       sh:name "Geografisch toepassingsgebied" ;
-      sh:path dct:applicationArea ;
-      form:displayType displayTypes:textArea ;
       sh:order 10 ;
+      sh:path dct:spatial ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:authorityPg .
 
+  ##########################################################
+  #  field: bevoegde overheid
+  ##########################################################
+  ext:competentAuthorityF a form:Field ;
+      sh:name "Bevoegde overheid" ;
       sh:order 20 ;
+      sh:path m8g:hasCompetentAuthority ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09"}""" ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:authorityPg .
+
+  ##########################################################
+  #  field: uitvoerende overheid
+  ##########################################################
+  ext:executingAuthorityF a form:Field ;
+      sh:name "Uitvoerend overheid" ;
       sh:order 30 ;
+      #TODO: this should need an improvement of the forms OR come from the backend (because it seems it will always be the eenheid creating the service)
+      sh:path ext:TODO ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:authorityPg .
+
+
 ##########################################################
 #  property-group: gerelateerde producten TODO
 ##########################################################
@@ -133,16 +176,23 @@ ext:relatedPg a form:PropertyGroup;
   #  field: gerelateerde producten
   ##########################################################
   ext:relatedProductsF a form:Field ;
-      sh:path dct:relatedProducts ;
-      form:displayType displayTypes:textArea ;
+      sh:name "Gerelateerde producten" ;
+      form:help "Selecteer hier de gerelateerde produceten";
       sh:order 10 ;
+      sh:path dct:relation ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:relatedPg .
 
   ##########################################################
   #  field: tags
   ##########################################################
   ext:tagsF a form:Field ;
-      sh:path dct:tags ;
-      form:displayType displayTypes:textArea ;
+      sh:name "Tags" ;
+      form:help "Selecteer hier uit reeds bestaande tags, of voeg er nieuwe toe";
       sh:order 20 ;
+      sh:path dcat:keyword ;
+      #TODO: this is not going to be a multi-selectbox
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:relatedPg .
