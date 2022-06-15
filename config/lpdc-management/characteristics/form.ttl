@@ -37,7 +37,9 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:competentAuthorityF;
     form:includes ext:executingAuthorityF;
     form:includes ext:relatedProductsF;
-    form:includes ext:tagsF.
+    form:includes ext:tagsF;
+    form:includes ext:startDateF;
+    form:includes ext:endDateF.
 
 
 ##########################################################
@@ -63,6 +65,26 @@ ext:statusPg a form:PropertyGroup;
 ext:generalPg a form:PropertyGroup;
     sh:name "Algemene info" ;
     sh:order 20 .
+
+   ##########################################################
+   # Field: geldig vanaf
+   ##########################################################
+   ext:startDateF a form:Field ;
+      sh:name "Geldig vanaf" ;
+      sh:order 1 ;
+      sh:path schema:startDate ;
+      form:displayType displayTypes:dateTime ;
+      sh:group ext:generalPg .
+
+   ##########################################################
+   # Field: geldig tot
+   ##########################################################
+   ext:endDateF a form:Field ;
+      sh:name "Geldig Tot" ;
+      sh:order 2 ;
+      sh:path schema:endDate ;
+      form:displayType displayTypes:dateTime ;
+      sh:group ext:generalPg .
 
   ##########################################################
   #  field: sector
