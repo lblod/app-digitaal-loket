@@ -1,11 +1,14 @@
 # Changelog
-## 1.65.0 (2022-06-??)
+## 1.65.0 (2022-06-16)
 - Frontend updates: incremental updates/bugfixes and new components
 - Prepare subsidies Oekraine (temporarily offline)
 - Subsidy-applications-management service: new JS template
 - Forms erediensten
 - Klimaatsubsidies oproep 2
 - GZG oproep 6 + 7 and reports
+- GZG oproep 6 + 7 extra pick-list entries
+- plan samenleven: update deadline
+- Bicycle subsidies: AGB should be able to fetch these
 ## 1.64.4 (2022-04-26)
 - hotfix: change subsidy gzg deadline + codelists
 ## 1.64.3 (2022-04-26)
