@@ -363,6 +363,16 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+
+  lpdc-management:
+    image: lblod/lpdc-management-service:0.1.0
+    volumes:
+      - ./config/lpdc-management:/config
+      - ./data/files/lpdc:/data
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   berichtencentrum-warning:
     image: lblod/berichtencentrum-warning-service:0.0.2
     labels:

@@ -550,6 +550,19 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
+
+  #################################################################
+  # lpdc-management: custom API endpoints
+  #################################################################
+
+  get "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
+  put "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
   #################################################################
   # jobs
   #################################################################
@@ -589,6 +602,18 @@ defmodule Dispatcher do
 
   match "/identifiers/*path" do
     Proxy.forward conn, path, "http://cache/identifiers/"
+  end
+
+  post "/public-services/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/public-services/"
+  end
+
+  delete "/public-services/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/public-services/"
+  end
+
+  get "/public-services/*path" do
+    Proxy.forward conn, path, "http://resource/public-services/"  ## TODO: solve cache issue in frontend
   end
 
   match "/public-services/*path" do
