@@ -275,14 +275,14 @@ fields:9e37a2c4-6d8c-464c-a9a4-f03d43f91445 a form:Field ;
         [ a form:Codelist ;
             form:grouping form:MatchEvery ;
             sh:path lblodSubsidie:projectType ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/7db0bcc4-7ccf-4848-affd-cbd41124ef71> ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/6e9129dc-06aa-409f-af5e-fc450bf87123> ;
             sh:resultMessage "Selecteer een waarde uit de lijst."@nl
         ],
         [ a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht."@nl;
             sh:path lblodSubsidie:projectType ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/7db0bcc4-7ccf-4848-affd-cbd41124ef71", "searchEnabled": true}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/6e9129dc-06aa-409f-af5e-fc450bf87123", "searchEnabled": true}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:9435f123-e749-4e6c-890b-a1419c5cce18 .
 
