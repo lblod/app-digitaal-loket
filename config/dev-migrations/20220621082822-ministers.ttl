@@ -1,0 +1,3574 @@
+@prefix adres: <https://data.vlaanderen.be/ns/adres#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ere: <http://data.lblod.info/vocabularies/erediensten/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix mandaat: <http://data.vlaanderen.be/ns/mandaat#> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix ns1: <http://data.lblod.info/vocabularies/contacthub/> .
+@prefix ns2: <https://data.vlaanderen.be/ns/persoon#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix persoon: <http://data.vlaanderen.be/ns/persoon#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.lblod.info/id/rollenBedienaar/61373447375CFC000A0002DB> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61373447375CFC000A0002DB" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61373445375CFC000A0002D8>,
+        <http://data.lblod.info/id/contact-punten/61373446375CFC000A0002D9> ;
+    org:heldBy <http://data.lblod.info/id/personen/61373340375CFC000A0002D6> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61373446375CFC000A0002DA> .
+
+<http://data.lblod.info/id/rollenBedienaar/61449032375CFC000A000475> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61449032375CFC000A000475" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61449031375CFC000A000472>,
+        <http://data.lblod.info/id/contact-punten/61449031375CFC000A000473> ;
+    org:heldBy <http://data.lblod.info/id/personen/61448F78375CFC000A000470> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61449031375CFC000A000474> .
+
+<http://data.lblod.info/id/rollenBedienaar/614C6B84375CFC000A0004C3> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "614C6B84375CFC000A0004C3" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/614C6B83375CFC000A0004C0>,
+        <http://data.lblod.info/id/contact-punten/614C6B83375CFC000A0004C1> ;
+    org:heldBy <http://data.lblod.info/id/personen/614C6B6E375CFC000A0004BE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/614C6B84375CFC000A0004C2> .
+
+<http://data.lblod.info/id/rollenBedienaar/6156C06C375CFC000A000549> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-05-10"^^xsd:date ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6156C06C375CFC000A000549" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6156C06B375CFC000A000546>,
+        <http://data.lblod.info/id/contact-punten/6156C06B375CFC000A000547> ;
+    org:heldBy <http://data.lblod.info/id/personen/6156C043375CFC000A000544> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6156C06B375CFC000A000548> .
+
+<http://data.lblod.info/id/rollenBedienaar/615AF1B7375CFC000A0005A6> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-03-15"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615AF1B7375CFC000A0005A6" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615AF1B6375CFC000A0005A3>,
+        <http://data.lblod.info/id/contact-punten/615AF1B6375CFC000A0005A4> ;
+    org:heldBy <http://data.lblod.info/id/personen/615AF183375CFC000A0005A1> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615AF1B6375CFC000A0005A5> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C0FBA375CFC000A0005DC> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C0FBA375CFC000A0005DC" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C0FB8375CFC000A0005D9>,
+        <http://data.lblod.info/id/contact-punten/615C0FB9375CFC000A0005DA> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C0F22375CFC000A0005D7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C0FB9375CFC000A0005DB> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C102A375CFC000A0005E5> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C102A375CFC000A0005E5" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C1029375CFC000A0005E2>,
+        <http://data.lblod.info/id/contact-punten/615C1029375CFC000A0005E3> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C1001375CFC000A0005E0> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C1029375CFC000A0005E4> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C1194375CFC000A0005EE> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C1194375CFC000A0005EE" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C1193375CFC000A0005EB>,
+        <http://data.lblod.info/id/contact-punten/615C1193375CFC000A0005EC> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C10E6375CFC000A0005E9> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C1194375CFC000A0005ED> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C136A375CFC000A000600> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C136A375CFC000A000600" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C1369375CFC000A0005FD>,
+        <http://data.lblod.info/id/contact-punten/615C1369375CFC000A0005FE> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C1310375CFC000A0005FB> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C1369375CFC000A0005FF> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C14D5375CFC000A000609> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C14D5375CFC000A000609" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C14D3375CFC000A000606>,
+        <http://data.lblod.info/id/contact-punten/615C14D4375CFC000A000607> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C147A375CFC000A000604> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C14D4375CFC000A000608> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C16EE375CFC000A00061B> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C16EE375CFC000A00061B" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C16ED375CFC000A000618>,
+        <http://data.lblod.info/id/contact-punten/615C16ED375CFC000A000619> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C16A2375CFC000A000616> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C16EE375CFC000A00061A> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C1BB5375CFC000A000635> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C1BB5375CFC000A000635" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C1BB4375CFC000A000632>,
+        <http://data.lblod.info/id/contact-punten/615C1BB4375CFC000A000633> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C1B56375CFC000A000630> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C1BB5375CFC000A000634> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C1DB3375CFC000A00063E> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C1DB3375CFC000A00063E" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C1DB2375CFC000A00063B>,
+        <http://data.lblod.info/id/contact-punten/615C1DB3375CFC000A00063C> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C1D5B375CFC000A000639> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C1DB3375CFC000A00063D> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C2047375CFC000A000647> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C2047375CFC000A000647" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C2046375CFC000A000644>,
+        <http://data.lblod.info/id/contact-punten/615C2047375CFC000A000645> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C1FEA375CFC000A000642> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C2047375CFC000A000646> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C365E375CFC000A000650> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C365E375CFC000A000650" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C365D375CFC000A00064D>,
+        <http://data.lblod.info/id/contact-punten/615C365E375CFC000A00064E> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C3601375CFC000A00064B> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C365E375CFC000A00064F> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C3871375CFC000A00065B> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C3871375CFC000A00065B" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C3870375CFC000A000658>,
+        <http://data.lblod.info/id/contact-punten/615C3870375CFC000A000659> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C37DD375CFC000A000656> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C3870375CFC000A00065A> .
+
+<http://data.lblod.info/id/rollenBedienaar/615C3F29375CFC000A00066E> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615C3F29375CFC000A00066E" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615C3F28375CFC000A00066B>,
+        <http://data.lblod.info/id/contact-punten/615C3F29375CFC000A00066C> ;
+    org:heldBy <http://data.lblod.info/id/personen/615C3EC7375CFC000A000669> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615C3F29375CFC000A00066D> .
+
+<http://data.lblod.info/id/rollenBedienaar/615EED54375CFC000A0006FD> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "615EED54375CFC000A0006FD" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/615EED53375CFC000A0006FA>,
+        <http://data.lblod.info/id/contact-punten/615EED53375CFC000A0006FB> ;
+    org:heldBy <http://data.lblod.info/id/personen/615EED2D375CFC000A0006F8> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/615EED53375CFC000A0006FC> .
+
+<http://data.lblod.info/id/rollenBedienaar/616436FD375CFC000A00077C> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "616436FD375CFC000A00077C" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/616436FC375CFC000A000779>,
+        <http://data.lblod.info/id/contact-punten/616436FD375CFC000A00077A> ;
+    org:heldBy <http://data.lblod.info/id/personen/616436D0375CFC000A000777> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/616436FD375CFC000A00077B> .
+
+<http://data.lblod.info/id/rollenBedienaar/61B747D73C1A230C43B451E6> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-11-20T23:00:00+00:00"^^xsd:dateTime ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61B747D73C1A230C43B451E6" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61B747D63C1A230C43B451E3>,
+        <http://data.lblod.info/id/contact-punten/61B747D63C1A230C43B451E4> ;
+    org:heldBy <http://data.lblod.info/id/personen/61B7478F3C1A230C43B451E1> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61B747D63C1A230C43B451E5> .
+
+<http://data.lblod.info/id/rollenBedienaar/61C1A7043C1A230C43B452ED> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2023-04-29T22:00:00+00:00"^^xsd:dateTime ;
+    ns1:startdatum "2021-11-17T23:00:00+00:00"^^xsd:dateTime ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61C1A7043C1A230C43B452ED" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61C1A7043C1A230C43B452EA>,
+        <http://data.lblod.info/id/contact-punten/61C1A7043C1A230C43B452EB> ;
+    org:heldBy <http://data.lblod.info/id/personen/61C1A60F3C1A230C43B452E8> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61C1A7043C1A230C43B452EC> .
+
+<http://data.lblod.info/id/rollenBedienaar/61DEDAAABA00DD4BE2501B5C> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-11-15"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61DEDAAABA00DD4BE2501B5C" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61DEDAA9BA00DD4BE2501B59>,
+        <http://data.lblod.info/id/contact-punten/61DEDAA9BA00DD4BE2501B5A> ;
+    org:heldBy <http://data.lblod.info/id/personen/61DEDA48BA00DD4BE2501B57> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61DEDAA9BA00DD4BE2501B5B> .
+
+<http://data.lblod.info/id/rollenBedienaar/61E0222CBA00DD4BE2501BC9> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-08-31T22:00:00+00:00"^^xsd:dateTime ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61E0222CBA00DD4BE2501BC9" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61E0222ABA00DD4BE2501BC6>,
+        <http://data.lblod.info/id/contact-punten/61E0222BBA00DD4BE2501BC7> ;
+    org:heldBy <http://data.lblod.info/id/personen/61E021D0BA00DD4BE2501BC4> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61E0222BBA00DD4BE2501BC8> .
+
+<http://data.lblod.info/id/rollenBedienaar/61EAC54BBA00DD4BE2501C76> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-08-31T22:00:00+00:00"^^xsd:dateTime ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "61EAC54BBA00DD4BE2501C76" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/61EAC54ABA00DD4BE2501C73>,
+        <http://data.lblod.info/id/contact-punten/61EAC54ABA00DD4BE2501C74> ;
+    org:heldBy <http://data.lblod.info/id/personen/61EAC4D8BA00DD4BE2501C71> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/61EAC54BBA00DD4BE2501C75> .
+
+<http://data.lblod.info/id/rollenBedienaar/620B6CEF5747C883CA1D2DD2> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-10-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "620B6CEF5747C883CA1D2DD2" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/620B6CEE5747C883CA1D2DCF>,
+        <http://data.lblod.info/id/contact-punten/620B6CEE5747C883CA1D2DD0> ;
+    org:heldBy <http://data.lblod.info/id/personen/620B6CB35747C883CA1D2DCD> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/620B6CEE5747C883CA1D2DD1> .
+
+<http://data.lblod.info/id/rollenBedienaar/620BBA625747C883CA1D2DFA> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "1900-01-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "620BBA625747C883CA1D2DFA" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/620BBA615747C883CA1D2DF7>,
+        <http://data.lblod.info/id/contact-punten/620BBA615747C883CA1D2DF8> ;
+    org:heldBy <http://data.lblod.info/id/personen/620BB9AC5747C883CA1D2DF5> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/620BBA615747C883CA1D2DF9> .
+
+<http://data.lblod.info/id/rollenBedienaar/620E28AF5747C883CA1D2E9A> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-12-02"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "620E28AF5747C883CA1D2E9A" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/620E28AD5747C883CA1D2E97>,
+        <http://data.lblod.info/id/contact-punten/620E28AE5747C883CA1D2E98> ;
+    org:heldBy <http://data.lblod.info/id/personen/620E28305747C883CA1D2E95> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/620E28AE5747C883CA1D2E99> .
+
+<http://data.lblod.info/id/rollenBedienaar/620E5BD45747C883CA1D2ECF> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-09-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "620E5BD45747C883CA1D2ECF" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/620E5BD25747C883CA1D2ECC>,
+        <http://data.lblod.info/id/contact-punten/620E5BD35747C883CA1D2ECD> ;
+    org:heldBy <http://data.lblod.info/id/personen/620E5B595747C883CA1D2EC5> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/620E5BD35747C883CA1D2ECE> .
+
+<http://data.lblod.info/id/rollenBedienaar/62173DDE5747C883CA1D33F8> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-12-19"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62173DDE5747C883CA1D33F8" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62173DDD5747C883CA1D33F5>,
+        <http://data.lblod.info/id/contact-punten/62173DDE5747C883CA1D33F6> ;
+    org:heldBy <http://data.lblod.info/id/personen/62173D4B5747C883CA1D33F3> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62173DDE5747C883CA1D33F7> .
+
+<http://data.lblod.info/id/rollenBedienaar/6217410D5747C883CA1D33FE> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-12-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6217410D5747C883CA1D33FE" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6217410C5747C883CA1D33FB>,
+        <http://data.lblod.info/id/contact-punten/6217410C5747C883CA1D33FC> ;
+    org:heldBy <http://data.lblod.info/id/personen/621740E35747C883CA1D33F9> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6217410D5747C883CA1D33FD> .
+
+<http://data.lblod.info/id/rollenBedienaar/62174F565747C883CA1D3412> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2020-07-29"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62174F565747C883CA1D3412" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62174F545747C883CA1D340F>,
+        <http://data.lblod.info/id/contact-punten/62174F555747C883CA1D3410> ;
+    org:heldBy <http://data.lblod.info/id/personen/62174E845747C883CA1D340D> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62174F555747C883CA1D3411> .
+
+<http://data.lblod.info/id/rollenBedienaar/621755E85747C883CA1D341D> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2017-04-18"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "621755E85747C883CA1D341D" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/621755E75747C883CA1D341A>,
+        <http://data.lblod.info/id/contact-punten/621755E75747C883CA1D341B> ;
+    org:heldBy <http://data.lblod.info/id/personen/621755745747C883CA1D3418> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/621755E85747C883CA1D341C> .
+
+<http://data.lblod.info/id/rollenBedienaar/62177EC55747C883CA1D347C> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2017-03-28"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62177EC55747C883CA1D347C" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62177EC45747C883CA1D3479>,
+        <http://data.lblod.info/id/contact-punten/62177EC45747C883CA1D347A> ;
+    org:heldBy <http://data.lblod.info/id/personen/62177E4A5747C883CA1D3476> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62177EC55747C883CA1D347B> .
+
+<http://data.lblod.info/id/rollenBedienaar/6217822D5747C883CA1D3497> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2017-04-27"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6217822D5747C883CA1D3497" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6217822B5747C883CA1D3494>,
+        <http://data.lblod.info/id/contact-punten/6217822C5747C883CA1D3495> ;
+    org:heldBy <http://data.lblod.info/id/personen/621781485747C883CA1D348D> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6217822D5747C883CA1D3496> .
+
+<http://data.lblod.info/id/rollenBedienaar/62179D355747C883CA1D34AC> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2017-05-03"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62179D355747C883CA1D34AC" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62179D335747C883CA1D34A9>,
+        <http://data.lblod.info/id/contact-punten/62179D345747C883CA1D34AA> ;
+    org:heldBy <http://data.lblod.info/id/personen/62179CCC5747C883CA1D34A7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62179D345747C883CA1D34AB> .
+
+<http://data.lblod.info/id/rollenBedienaar/6217A07A5747C883CA1D34D0> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2017-04-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6217A07A5747C883CA1D34D0" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6217A0795747C883CA1D34CD>,
+        <http://data.lblod.info/id/contact-punten/6217A0795747C883CA1D34CE> ;
+    org:heldBy <http://data.lblod.info/id/personen/6217A0005747C883CA1D34C6> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6217A07A5747C883CA1D34CF> .
+
+<http://data.lblod.info/id/rollenBedienaar/621C93CB5747C883CA1D35D7> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2021-12-07"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "621C93CB5747C883CA1D35D7" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/621C93C95747C883CA1D35D4>,
+        <http://data.lblod.info/id/contact-punten/621C93CA5747C883CA1D35D5> ;
+    org:heldBy <http://data.lblod.info/id/personen/621C93515747C883CA1D35D1> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/621C93CA5747C883CA1D35D6> .
+
+<http://data.lblod.info/id/rollenBedienaar/621DDAA85747C883CA1D3647> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2017-11-03"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "621DDAA85747C883CA1D3647" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/621DDAA75747C883CA1D3644>,
+        <http://data.lblod.info/id/contact-punten/621DDAA75747C883CA1D3645> ;
+    org:heldBy <http://data.lblod.info/id/personen/621DDA0F5747C883CA1D3642> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/621DDAA85747C883CA1D3646> .
+
+<http://data.lblod.info/id/rollenBedienaar/621DDEBE5747C883CA1D3667> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2020-06-16"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "621DDEBE5747C883CA1D3667" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/621DDEBD5747C883CA1D3664>,
+        <http://data.lblod.info/id/contact-punten/621DDEBD5747C883CA1D3665> ;
+    org:heldBy <http://data.lblod.info/id/personen/621DDE9F5747C883CA1D3662> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/621DDEBE5747C883CA1D3666> .
+
+<http://data.lblod.info/id/rollenBedienaar/621E191A5747C883CA1D36D1> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2020-09-03"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "621E191A5747C883CA1D36D1" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/621E19195747C883CA1D36CE>,
+        <http://data.lblod.info/id/contact-punten/621E19195747C883CA1D36CF> ;
+    org:heldBy <http://data.lblod.info/id/personen/621E18C35747C883CA1D36CC> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/621E191A5747C883CA1D36D0> .
+
+<http://data.lblod.info/id/rollenBedienaar/6228A61881DC67FB9E9ADEC3> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-03-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6228A61881DC67FB9E9ADEC3" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6228A61681DC67FB9E9ADEC0>,
+        <http://data.lblod.info/id/contact-punten/6228A61681DC67FB9E9ADEC1> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6228A61781DC67FB9E9ADEC2> .
+
+<http://data.lblod.info/id/rollenBedienaar/62398FFFD6E5DACC64C76E9B> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2023-03-16"^^xsd:date ;
+    ns1:startdatum "2022-03-22"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62398FFFD6E5DACC64C76E9B" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A7A7BBD265AA4E63B7EB5> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62398FFED6E5DACC64C76E9A> .
+
+<http://data.lblod.info/id/rollenBedienaar/62399373D6E5DACC64C76EA1> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-03-21"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62399373D6E5DACC64C76EA1" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62399372D6E5DACC64C76E9E>,
+        <http://data.lblod.info/id/contact-punten/62399372D6E5DACC64C76E9F> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A75481DC67FB9E9ADECD> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62399372D6E5DACC64C76EA0> .
+
+<http://data.lblod.info/id/rollenBedienaar/6239A678519A6EAA5A70F466> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-03-22"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6239A678519A6EAA5A70F466" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6239A66D519A6EAA5A70F463>,
+        <http://data.lblod.info/id/contact-punten/6239A66E519A6EAA5A70F464> ;
+    org:heldBy <http://data.lblod.info/id/personen/6239A613519A6EAA5A70F461> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6239A677519A6EAA5A70F465> .
+
+<http://data.lblod.info/id/rollenBedienaar/6246CBC0C3ACCAFF66C7E23F> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2025-04-01"^^xsd:date ;
+    ns1:startdatum "2022-04-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6246CBC0C3ACCAFF66C7E23F" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6246CBBEC3ACCAFF66C7E23C>,
+        <http://data.lblod.info/id/contact-punten/6246CBBFC3ACCAFF66C7E23D> ;
+    org:heldBy <http://data.lblod.info/id/personen/62189F7B5747C883CA1D351D> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6246CBBFC3ACCAFF66C7E23E> .
+
+<http://data.lblod.info/id/rollenBedienaar/6246DE9FC3ACCAFF66C7E25A> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6246DE9FC3ACCAFF66C7E25A" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6246DE9EC3ACCAFF66C7E257>,
+        <http://data.lblod.info/id/contact-punten/6246DE9EC3ACCAFF66C7E258> ;
+    org:heldBy <http://data.lblod.info/id/personen/6246DD05C3ACCAFF66C7E240> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6246DE9EC3ACCAFF66C7E259> .
+
+<http://data.lblod.info/id/rollenBedienaar/624B0DD4E9DEF518D63C4AAA> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-04"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "624B0DD4E9DEF518D63C4AAA" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62585B29933343F9DB241BE7>,
+        <http://data.lblod.info/id/contact-punten/62585B7A933343F9DB241BE9> ;
+    org:heldBy <http://data.lblod.info/id/personen/624B0CD8E9DEF518D63C4AA0> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/624B0DD3E9DEF518D63C4AA9> .
+
+<http://data.lblod.info/id/rollenBedienaar/62567F5EB1E70F0703B70C38> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62567F5EB1E70F0703B70C38" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A2FEFBD265AA4E63B7E66> ;
+    org:heldBy <http://data.lblod.info/id/personen/8ab59de1000e7db62ea65e26f3818c05> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62567F5EB1E70F0703B70C37> .
+
+<http://data.lblod.info/id/rollenBedienaar/62568E02B1E70F0703B70C3D> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-04-17"^^xsd:date ;
+    ns1:startdatum "2022-04-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62568E02B1E70F0703B70C3D" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62568E01B1E70F0703B70C3A>,
+        <http://data.lblod.info/id/contact-punten/62568E01B1E70F0703B70C3B> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62568E01B1E70F0703B70C3C> .
+
+<http://data.lblod.info/id/rollenBedienaar/62569E53B1E70F0703B70C43> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-04-22"^^xsd:date ;
+    ns1:startdatum "2022-04-06"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62569E53B1E70F0703B70C43" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62569E50B1E70F0703B70C40>,
+        <http://data.lblod.info/id/contact-punten/62569E51B1E70F0703B70C41> ;
+    org:heldBy <http://data.lblod.info/id/personen/f89287e617045efb695e26de0fc755e7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62569E52B1E70F0703B70C42> .
+
+<http://data.lblod.info/id/rollenBedienaar/6256A239B1E70F0703B70C48> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-04-30"^^xsd:date ;
+    ns1:startdatum "2022-04-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6256A239B1E70F0703B70C48" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6256A237B1E70F0703B70C45>,
+        <http://data.lblod.info/id/contact-punten/6256A238B1E70F0703B70C46> ;
+    org:heldBy <http://data.lblod.info/id/personen/620E0EAE5747C883CA1D2E4A> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6256A238B1E70F0703B70C47> .
+
+<http://data.lblod.info/id/rollenBedienaar/6256BD59B1E70F0703B70C5D> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-11"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6256BD59B1E70F0703B70C5D" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6256BE8DB1E70F0703B70C63>,
+        <http://data.lblod.info/id/contact-punten/6256BE8EB1E70F0703B70C64> ;
+    org:heldBy <http://data.lblod.info/id/personen/6256BD2CB1E70F0703B70C58> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6256BD58B1E70F0703B70C5C> .
+
+<http://data.lblod.info/id/rollenBedienaar/6256C16BB1E70F0703B70C71> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-04-20"^^xsd:date ;
+    ns1:startdatum "2022-04-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6256C16BB1E70F0703B70C71" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6256BE46B1E70F0703B70C60> ;
+    org:heldBy <http://data.lblod.info/id/personen/6256B43BB1E70F0703B70C4D> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6256C16AB1E70F0703B70C70> .
+
+<http://data.lblod.info/id/rollenBedienaar/62588CE9933343F9DB241BF9> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-12"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62588CE9933343F9DB241BF9" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/3c4d987185fac04e748eb736314502a2>,
+        <http://data.lblod.info/id/contact-punten/6258880B933343F9DB241BF3> ;
+    org:heldBy <http://data.lblod.info/id/personen/b7173f16a1bc7a335ddd1fc056ecdd43> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62588CE9933343F9DB241BF8> .
+
+<http://data.lblod.info/id/rollenBedienaar/62592B818243CA0E34AC1DC9> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-05-11"^^xsd:date ;
+    ns1:startdatum "2022-04-15"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62592B818243CA0E34AC1DC9" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6275477ABD265AA4E63B7E4B> ;
+    org:heldBy <http://data.lblod.info/id/personen/625929218243CA0E34AC1DC7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62592B808243CA0E34AC1DC8> .
+
+<http://data.lblod.info/id/rollenBedienaar/6259399E8243CA0E34AC1DD6> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-04-23"^^xsd:date ;
+    ns1:startdatum "2022-04-15"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6259399E8243CA0E34AC1DD6" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62864775012B4A57DF3BAFBE> ;
+    org:heldBy <http://data.lblod.info/id/personen/625935358243CA0E34AC1DCC> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6259399C8243CA0E34AC1DD2> .
+
+<http://data.lblod.info/id/rollenBedienaar/625939ED8243CA0E34AC1DD9> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-15"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "625939ED8243CA0E34AC1DD9" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6259399D8243CA0E34AC1DD4>,
+        <http://data.lblod.info/id/contact-punten/6259399E8243CA0E34AC1DD5> ;
+    org:heldBy <http://data.lblod.info/id/personen/625939CC8243CA0E34AC1DD7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/625939EC8243CA0E34AC1DD8> .
+
+<http://data.lblod.info/id/rollenBedienaar/62593AB78243CA0E34AC1DDC> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-15"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62593AB78243CA0E34AC1DDC" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6259399D8243CA0E34AC1DD4>,
+        <http://data.lblod.info/id/contact-punten/6259399E8243CA0E34AC1DD5> ;
+    org:heldBy <http://data.lblod.info/id/personen/6239A5E9519A6EAA5A70F45C> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62593AB78243CA0E34AC1DDB> .
+
+<http://data.lblod.info/id/rollenBedienaar/626005B98243CA0E34AC1E08> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-20"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "626005B98243CA0E34AC1E08" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/620E0EC55747C883CA1D2E4C>,
+        <http://data.lblod.info/id/contact-punten/620E0EC55747C883CA1D2E4D> ;
+    org:heldBy <http://data.lblod.info/id/personen/620E0EAE5747C883CA1D2E4A> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/626005B98243CA0E34AC1E07> .
+
+<http://data.lblod.info/id/rollenBedienaar/6262AA634588C1EDD5598839> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-21"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6262AA634588C1EDD5598839" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6262AA624588C1EDD5598837> ;
+    org:heldBy <http://data.lblod.info/id/personen/6262A07D4588C1EDD559882B> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6262AA634588C1EDD5598838> .
+
+<http://data.lblod.info/id/rollenBedienaar/6262B0384588C1EDD5598849> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-21"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6262B0384588C1EDD5598849" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6262AA934588C1EDD559883B> ;
+    org:heldBy <http://data.lblod.info/id/personen/6262A07D4588C1EDD559882B> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6262B0374588C1EDD5598848> .
+
+<http://data.lblod.info/id/rollenBedienaar/626A7BF3BD265AA4E63B7E23> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-04-28"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "626A7BF3BD265AA4E63B7E23" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/626A7BF2BD265AA4E63B7E21> ;
+    org:heldBy <http://data.lblod.info/id/personen/626A6750BD265AA4E63B7E1F> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/626A7BF2BD265AA4E63B7E22> .
+
+<http://data.lblod.info/id/rollenBedienaar/62726E62BD265AA4E63B7E3A> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-03"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62726E62BD265AA4E63B7E3A" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A79D8BD265AA4E63B7EB3> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62726E61BD265AA4E63B7E39> .
+
+<http://data.lblod.info/id/rollenBedienaar/62726EAFBD265AA4E63B7E3C> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-04"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62726EAFBD265AA4E63B7E3C" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6278D61FBD265AA4E63B7E58> ;
+    org:heldBy <http://data.lblod.info/id/personen/f89287e617045efb695e26de0fc755e7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62726EAFBD265AA4E63B7E3B> .
+
+<http://data.lblod.info/id/rollenBedienaar/62726F73BD265AA4E63B7E3E> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:eindedatum "2022-12-08"^^xsd:date ;
+    ns1:startdatum "2022-05-04"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62726F73BD265AA4E63B7E3E" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A7946BD265AA4E63B7EB1> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62726F71BD265AA4E63B7E3D> .
+
+<http://data.lblod.info/id/rollenBedienaar/62733DAABD265AA4E63B7E45> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "62733DAABD265AA4E63B7E45" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6273BE35BD265AA4E63B7E4A> ;
+    org:heldBy <http://data.lblod.info/id/personen/620E0EAE5747C883CA1D2E4A> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/62733DA9BD265AA4E63B7E44> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A2BFFBD265AA4E63B7E60> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A2BFFBD265AA4E63B7E60" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/626A7BF2BD265AA4E63B7E21> ;
+    org:heldBy <http://data.lblod.info/id/personen/626A6750BD265AA4E63B7E1F> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A2BFEBD265AA4E63B7E5F> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A307ABD265AA4E63B7E69> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A307ABD265AA4E63B7E69" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6259399D8243CA0E34AC1DD4>,
+        <http://data.lblod.info/id/contact-punten/6259399E8243CA0E34AC1DD5> ;
+    org:heldBy <http://data.lblod.info/id/personen/625939CC8243CA0E34AC1DD7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A3079BD265AA4E63B7E68> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A30E4BD265AA4E63B7E6D> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/997073905f839ac6bafe92b76050ab0b> ;
+    mu:uuid "627A30E4BD265AA4E63B7E6D" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A30E2BD265AA4E63B7E6B> ;
+    org:heldBy <http://data.lblod.info/id/personen/627A3004BD265AA4E63B7E67> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A30E3BD265AA4E63B7E6C> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A30FABD265AA4E63B7E6F> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A30FABD265AA4E63B7E6F" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/626A7BF2BD265AA4E63B7E21> ;
+    org:heldBy <http://data.lblod.info/id/personen/626A6750BD265AA4E63B7E1F> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A30F9BD265AA4E63B7E6E> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A320ABD265AA4E63B7E71> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A320ABD265AA4E63B7E71" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6259399D8243CA0E34AC1DD4>,
+        <http://data.lblod.info/id/contact-punten/6259399E8243CA0E34AC1DD5> ;
+    org:heldBy <http://data.lblod.info/id/personen/625939CC8243CA0E34AC1DD7> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A3209BD265AA4E63B7E70> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A5FC8BD265AA4E63B7E8B> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A5FC8BD265AA4E63B7E8B" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A7A7BBD265AA4E63B7EB5> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A5FC8BD265AA4E63B7E8A> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A6136BD265AA4E63B7E8E> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A6136BD265AA4E63B7E8E" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A69D1BD265AA4E63B7EA5> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A6136BD265AA4E63B7E8D> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A61A5BD265AA4E63B7E92> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2013-05-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/997073905f839ac6bafe92b76050ab0b> ;
+    mu:uuid "627A61A5BD265AA4E63B7E92" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A61A4BD265AA4E63B7E90> ;
+    org:heldBy <http://data.lblod.info/id/personen/627A6069BD265AA4E63B7E8C> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A61A4BD265AA4E63B7E91> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A6307BD265AA4E63B7E94> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A6307BD265AA4E63B7E94" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A6577BD265AA4E63B7E9E>,
+        <http://data.lblod.info/id/contact-punten/627A6578BD265AA4E63B7E9F> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A75481DC67FB9E9ADECD> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A6306BD265AA4E63B7E93> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A684DBD265AA4E63B7EA3> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A684DBD265AA4E63B7EA3" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A69D1BD265AA4E63B7EA5> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A684CBD265AA4E63B7EA2> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A7E1CBD265AA4E63B7EBC> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A7E1CBD265AA4E63B7EBC" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A7E1BBD265AA4E63B7EBA> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A7E1BBD265AA4E63B7EBB> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A7EF4BD265AA4E63B7EC3> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A7EF4BD265AA4E63B7EC3" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A7EF3BD265AA4E63B7EC1> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A7EF4BD265AA4E63B7EC2> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A7F95BD265AA4E63B7EC7> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A7F95BD265AA4E63B7EC7" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A7F94BD265AA4E63B7EC5> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A7F94BD265AA4E63B7EC6> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A80E0BD265AA4E63B7ECC> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-10"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/997073905f839ac6bafe92b76050ab0b> ;
+    mu:uuid "627A80E0BD265AA4E63B7ECC" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A80DFBD265AA4E63B7ECA> ;
+    org:heldBy <http://data.lblod.info/id/personen/627A8044BD265AA4E63B7EC8> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A80DFBD265AA4E63B7ECB> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A8221BD265AA4E63B7ED0> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A8221BD265AA4E63B7ED0" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A8220BD265AA4E63B7ECE> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A8220BD265AA4E63B7ECF> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A82A7BD265AA4E63B7ED4> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A82A7BD265AA4E63B7ED4" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A82A7BD265AA4E63B7ED2> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A82A7BD265AA4E63B7ED3> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A83EBBD265AA4E63B7ED9> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A83EBBD265AA4E63B7ED9" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A83EABD265AA4E63B7ED6>,
+        <http://data.lblod.info/id/contact-punten/627A83EABD265AA4E63B7ED7> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A83EBBD265AA4E63B7ED8> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A86CCBD265AA4E63B7EE0> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A86CCBD265AA4E63B7EE0" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A86CBBD265AA4E63B7EDE> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A86CCBD265AA4E63B7EDF> .
+
+<http://data.lblod.info/id/rollenBedienaar/627A89FFBD265AA4E63B7EEB> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-09"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627A89FFBD265AA4E63B7EEB" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627A89FEBD265AA4E63B7EE9> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627A89FFBD265AA4E63B7EEA> .
+
+<http://data.lblod.info/id/rollenBedienaar/627B5F3CBD265AA4E63B7EF0> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-06"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/997073905f839ac6bafe92b76050ab0b> ;
+    mu:uuid "627B5F3CBD265AA4E63B7EF0" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627B5F3ABD265AA4E63B7EEE> ;
+    org:heldBy <http://data.lblod.info/id/personen/627B5DCABD265AA4E63B7EEC> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627B5F3BBD265AA4E63B7EEF> .
+
+<http://data.lblod.info/id/rollenBedienaar/627CDA9DBD265AA4E63B7F0B> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2013-05-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627CDA9DBD265AA4E63B7F0B" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627CE0A6BD265AA4E63B7F0D> ;
+    org:heldBy <http://data.lblod.info/id/personen/627CDA45BD265AA4E63B7F05> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627CDA9DBD265AA4E63B7F0A> .
+
+<http://data.lblod.info/id/rollenBedienaar/627D2120BD265AA4E63B7F3A> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2013-05-01"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627D2120BD265AA4E63B7F3A" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E1A86BD265AA4E63B7F5F> ;
+    org:heldBy <http://data.lblod.info/id/personen/627D20BCBD265AA4E63B7F34> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627D2120BD265AA4E63B7F39> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E1B56BD265AA4E63B7F64> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-12"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E1B56BD265AA4E63B7F64" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E1A86BD265AA4E63B7F5F> ;
+    org:heldBy <http://data.lblod.info/id/personen/627D20BCBD265AA4E63B7F34> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E1B55BD265AA4E63B7F63> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E1CA4BD265AA4E63B7F74> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-11"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E1CA4BD265AA4E63B7F74" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E1CA4BD265AA4E63B7F72> ;
+    org:heldBy <http://data.lblod.info/id/personen/627E1C96BD265AA4E63B7F70> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E1CA4BD265AA4E63B7F73> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E1D05BD265AA4E63B7F79> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-12"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E1D05BD265AA4E63B7F79" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E1D04BD265AA4E63B7F77> ;
+    org:heldBy <http://data.lblod.info/id/personen/627E1CF2BD265AA4E63B7F75> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E1D05BD265AA4E63B7F78> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E1E1DBD265AA4E63B7F89> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-12"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E1E1DBD265AA4E63B7F89" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E1ED6BD265AA4E63B7F8B> ;
+    org:heldBy <http://data.lblod.info/id/personen/627E1E0ABD265AA4E63B7F85> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E1E1DBD265AA4E63B7F88> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E41F2BD265AA4E63B7F9F> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-11"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E41F2BD265AA4E63B7F9F" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E41F1BD265AA4E63B7F9D> ;
+    org:heldBy <http://data.lblod.info/id/personen/627E41DFBD265AA4E63B7F9B> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E41F2BD265AA4E63B7F9E> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E6B86408C9CEF53BB236A> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E6B86408C9CEF53BB236A" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E6B85408C9CEF53BB2368> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E6B85408C9CEF53BB2369> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E6C04408C9CEF53BB236E> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E6C04408C9CEF53BB236E" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E6C03408C9CEF53BB236C> ;
+    org:heldBy <http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E6C04408C9CEF53BB236D> .
+
+<http://data.lblod.info/id/rollenBedienaar/627E72D7408C9CEF53BB237E> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-13"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "627E72D7408C9CEF53BB237E" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/627E72D7408C9CEF53BB237C> ;
+    org:heldBy <http://data.lblod.info/id/personen/627E72A0408C9CEF53BB237A> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/627E72D7408C9CEF53BB237D> .
+
+<http://data.lblod.info/id/rollenBedienaar/6282087A408C9CEF53BB2384> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-16"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6282087A408C9CEF53BB2384" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/62820879408C9CEF53BB2382> ;
+    org:heldBy <http://data.lblod.info/id/personen/6282077F408C9CEF53BB2380> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6282087A408C9CEF53BB2383> .
+
+<http://data.lblod.info/id/rollenBedienaar/6294A96384E574A276AA5675> a ns1:AgentInPositie,
+        ere:RolBedienaar ;
+    ns1:startdatum "2022-05-30"^^xsd:date ;
+    ere:financiering <http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> ;
+    mu:uuid "6294A96384E574A276AA5675" ;
+    schema1:contactPoint <http://data.lblod.info/id/contact-punten/6294A96184E574A276AA5673> ;
+    org:heldBy <http://data.lblod.info/id/personen/6294A8FF84E574A276AA5671> ;
+    org:holds <http://data.lblod.info/id/positiesBedienaar/6294A96284E574A276AA5674> .
+
+<http://data.lblod.info/id/adressen/61373445375CFC000A0002D7> a locn:Address ;
+    mu:uuid "61373445375CFC000A0002D7" ;
+    locn:fullAddress "Tremelobaan 212, 3140 Keerbergen" ;
+    locn:postCode "3140" ;
+    locn:thoroughfare "Tremelobaan" ;
+    adres:Adresvoorstelling.busnummer "" ;
+    adres:Adresvoorstelling.huisnummer "212" ;
+    adres:gemeentenaam "Keerbergen" .
+
+<http://data.lblod.info/id/adressen/61449030375CFC000A000471> a locn:Address ;
+    mu:uuid "61449030375CFC000A000471" ;
+    locn:adminUnitL2 "Vlaams-Brabant" ;
+    locn:fullAddress "Kliniekstraat 52, 3300 Tienen" ;
+    locn:postCode "3300" ;
+    locn:thoroughfare "Kliniekstraat" ;
+    adres:Adresvoorstelling.huisnummer "52" ;
+    adres:gemeentenaam "Tienen" .
+
+<http://data.lblod.info/id/adressen/614C6B83375CFC000A0004BF> a locn:Address ;
+    mu:uuid "614C6B83375CFC000A0004BF" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/6156C06A375CFC000A000545> a locn:Address ;
+    mu:uuid "6156C06A375CFC000A000545" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/615AF1B5375CFC000A0005A2> a locn:Address ;
+    mu:uuid "615AF1B5375CFC000A0005A2" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/615C0FB8375CFC000A0005D8> a locn:Address ;
+    mu:uuid "615C0FB8375CFC000A0005D8" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Ter Rivierenlaan 153, 2100 Antwerpen" ;
+    locn:postCode "2100" ;
+    locn:thoroughfare "Ter Rivierenlaan" ;
+    adres:Adresvoorstelling.huisnummer "153" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/615C1028375CFC000A0005E1> a locn:Address ;
+    mu:uuid "615C1028375CFC000A0005E1" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/615C1192375CFC000A0005EA> a locn:Address ;
+    mu:uuid "615C1192375CFC000A0005EA" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Kortemarkstraat 66, 2600 Antwerpen" ;
+    locn:postCode "2600" ;
+    locn:thoroughfare "Kortemarkstraat" ;
+    adres:Adresvoorstelling.huisnummer "66" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/615C1368375CFC000A0005FC> a locn:Address ;
+    mu:uuid "615C1368375CFC000A0005FC" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Lange Winkelstraat 5, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Lange Winkelstraat" ;
+    adres:Adresvoorstelling.huisnummer "5" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/615C14D3375CFC000A000605> a locn:Address ;
+    mu:uuid "615C14D3375CFC000A000605" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Tabakvest 59, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Tabakvest" ;
+    adres:Adresvoorstelling.huisnummer "59" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/615C16ED375CFC000A000617> a locn:Address ;
+    mu:uuid "615C16ED375CFC000A000617" ;
+    locn:fullAddress "Wipstraat 1, 3010 Leuven" ;
+    locn:postCode "3010" ;
+    locn:thoroughfare "Wipstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Leuven" .
+
+<http://data.lblod.info/id/adressen/615C1BB4375CFC000A000631> a locn:Address ;
+    mu:uuid "615C1BB4375CFC000A000631" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/615C1DB2375CFC000A00063A> a locn:Address ;
+    mu:uuid "615C1DB2375CFC000A00063A" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Plantin en Moretuslei 155, 2140 Antwerpen" ;
+    locn:postCode "2140" ;
+    locn:thoroughfare "Plantin en Moretuslei" ;
+    adres:Adresvoorstelling.huisnummer "155" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/615C2046375CFC000A000643> a locn:Address ;
+    mu:uuid "615C2046375CFC000A000643" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Bredabaan 220, 2170 Antwerpen" ;
+    locn:postCode "2170" ;
+    locn:thoroughfare "Bredabaan" ;
+    adres:Adresvoorstelling.huisnummer "220" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/615C365D375CFC000A00064C> a locn:Address ;
+    mu:uuid "615C365D375CFC000A00064C" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Heislagsebaan 80, 2930 Brasschaat" ;
+    locn:postCode "2930" ;
+    locn:thoroughfare "Heislagsebaan" ;
+    adres:Adresvoorstelling.huisnummer "80" ;
+    adres:gemeentenaam "Brasschaat" .
+
+<http://data.lblod.info/id/adressen/615C386F375CFC000A000657> a locn:Address ;
+    mu:uuid "615C386F375CFC000A000657" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Appelkantstraat 2, 2530 Boechout" ;
+    locn:postCode "2530" ;
+    locn:thoroughfare "Appelkantstraat" ;
+    adres:Adresvoorstelling.huisnummer "2" ;
+    adres:gemeentenaam "Boechout" .
+
+<http://data.lblod.info/id/adressen/615C3F28375CFC000A00066A> a locn:Address ;
+    mu:uuid "615C3F28375CFC000A00066A" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Ruiten 44, 2300 Turnhout" ;
+    locn:postCode "2300" ;
+    locn:thoroughfare "Ruiten" ;
+    adres:Adresvoorstelling.huisnummer "44" ;
+    adres:gemeentenaam "Turnhout" .
+
+<http://data.lblod.info/id/adressen/615EED52375CFC000A0006F9> a locn:Address ;
+    mu:uuid "615EED52375CFC000A0006F9" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/616436FC375CFC000A000778> a locn:Address ;
+    mu:uuid "616436FC375CFC000A000778" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/61B747D53C1A230C43B451E2> a locn:Address ;
+    mu:uuid "61B747D53C1A230C43B451E2" ;
+    locn:fullAddress "Tielensteenweg 15, 2460 Kasterlee" ;
+    locn:postCode "2460" ;
+    locn:thoroughfare "Tielensteenweg" ;
+    adres:Adresvoorstelling.huisnummer "15" ;
+    adres:gemeentenaam "Kasterlee" .
+
+<http://data.lblod.info/id/adressen/61C1A7033C1A230C43B452E9> a locn:Address ;
+    mu:uuid "61C1A7033C1A230C43B452E9" ;
+    locn:fullAddress "Klinkstraat 68, 2300 Turnhout" ;
+    locn:postCode "2300" ;
+    locn:thoroughfare "Klinkstraat" ;
+    adres:Adresvoorstelling.huisnummer "68" ;
+    adres:gemeentenaam "Turnhout" .
+
+<http://data.lblod.info/id/adressen/61DEDAA8BA00DD4BE2501B58> a locn:Address ;
+    mu:uuid "61DEDAA8BA00DD4BE2501B58" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/61E0222ABA00DD4BE2501BC5> a locn:Address ;
+    mu:uuid "61E0222ABA00DD4BE2501BC5" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/61EAC54ABA00DD4BE2501C72> a locn:Address ;
+    mu:uuid "61EAC54ABA00DD4BE2501C72" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/620B6CED5747C883CA1D2DCE> a locn:Address ;
+    mu:uuid "620B6CED5747C883CA1D2DCE" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/620BBA605747C883CA1D2DF6> a locn:Address ;
+    mu:uuid "620BBA605747C883CA1D2DF6" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/620E0EC55747C883CA1D2E4B> a locn:Address ;
+    mu:uuid "620E0EC55747C883CA1D2E4B" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Vlaams-Brabant" ;
+    locn:fullAddress "Gemeentestraat 10, 3010 Leuven" ;
+    locn:postCode "3010" ;
+    locn:thoroughfare "Gemeentestraat" ;
+    adres:Adresvoorstelling.huisnummer "10" ;
+    adres:gemeentenaam "Leuven" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/843889> .
+
+<http://data.lblod.info/id/adressen/620E28AD5747C883CA1D2E96> a locn:Address ;
+    mu:uuid "620E28AD5747C883CA1D2E96" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Ossenmarkt 14, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Ossenmarkt" ;
+    adres:Adresvoorstelling.huisnummer "14" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/620E5BD25747C883CA1D2ECB> a locn:Address ;
+    mu:uuid "620E5BD25747C883CA1D2ECB" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Turfakkers 10 A, 2460 Kasterlee" ;
+    locn:postCode "2460" ;
+    locn:thoroughfare "Turfakkers" ;
+    adres:Adresvoorstelling.busnummer "A" ;
+    adres:Adresvoorstelling.huisnummer "10" ;
+    adres:gemeentenaam "Kasterlee" .
+
+<http://data.lblod.info/id/adressen/62173DDD5747C883CA1D33F4> a locn:Address ;
+    mu:uuid "62173DDD5747C883CA1D33F4" ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Grote Markt 24 101, 9120 Beveren" ;
+    locn:postCode "9120" ;
+    locn:thoroughfare "Grote Markt" ;
+    adres:Adresvoorstelling.busnummer "101" ;
+    adres:Adresvoorstelling.huisnummer "24" ;
+    adres:gemeentenaam "Beveren" .
+
+<http://data.lblod.info/id/adressen/6217410B5747C883CA1D33FA> a locn:Address ;
+    mu:uuid "6217410B5747C883CA1D33FA" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/62174F545747C883CA1D340E> a locn:Address ;
+    mu:uuid "62174F545747C883CA1D340E" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Handelslei 99, 2980 Zoersel" ;
+    locn:postCode "2980" ;
+    locn:thoroughfare "Handelslei" ;
+    adres:Adresvoorstelling.huisnummer "99" ;
+    adres:gemeentenaam "Zoersel" .
+
+<http://data.lblod.info/id/adressen/621755E75747C883CA1D3419> a locn:Address ;
+    mu:uuid "621755E75747C883CA1D3419" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Einhoven 29, 2980 Zoersel" ;
+    locn:postCode "2980" ;
+    locn:thoroughfare "Einhoven" ;
+    adres:Adresvoorstelling.huisnummer "29" ;
+    adres:gemeentenaam "Zoersel" .
+
+<http://data.lblod.info/id/adressen/62177EC35747C883CA1D3478> a locn:Address ;
+    mu:uuid "62177EC35747C883CA1D3478" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Moerstraat 14, 2242 Zandhoven" ;
+    locn:postCode "2242" ;
+    locn:thoroughfare "Moerstraat" ;
+    adres:Adresvoorstelling.huisnummer "14" ;
+    adres:gemeentenaam "Zandhoven" .
+
+<http://data.lblod.info/id/adressen/6217822B5747C883CA1D3493> a locn:Address ;
+    mu:uuid "6217822B5747C883CA1D3493" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/62179D335747C883CA1D34A8> a locn:Address ;
+    mu:uuid "62179D335747C883CA1D34A8" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Slijkstraat 1, 2990 Wuustwezel" ;
+    locn:postCode "2990" ;
+    locn:thoroughfare "Slijkstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Wuustwezel" .
+
+<http://data.lblod.info/id/adressen/6217A0785747C883CA1D34CC> a locn:Address ;
+    mu:uuid "6217A0785747C883CA1D34CC" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/621C93C85747C883CA1D35D3> a locn:Address ;
+    mu:uuid "621C93C85747C883CA1D35D3" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Klein Engeland 73, 2300 Turnhout" ;
+    locn:postCode "2300" ;
+    locn:thoroughfare "Klein Engeland" ;
+    adres:Adresvoorstelling.huisnummer "73" ;
+    adres:gemeentenaam "Turnhout" .
+
+<http://data.lblod.info/id/adressen/621DDAA65747C883CA1D3643> a locn:Address ;
+    mu:uuid "621DDAA65747C883CA1D3643" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Halle Velden 12, 2980 Zoersel" ;
+    locn:postCode "2980" ;
+    locn:thoroughfare "Halle Velden" ;
+    adres:Adresvoorstelling.huisnummer "12" ;
+    adres:gemeentenaam "Zoersel" .
+
+<http://data.lblod.info/id/adressen/621DDEBD5747C883CA1D3663> a locn:Address ;
+    mu:uuid "621DDEBD5747C883CA1D3663" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/621E19195747C883CA1D36CD> a locn:Address ;
+    mu:uuid "621E19195747C883CA1D36CD" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/6228A61581DC67FB9E9ADEBF> a locn:Address ;
+    mu:uuid "6228A61581DC67FB9E9ADEBF" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "West-Vlaanderen" ;
+    locn:fullAddress "Sint-Salvatorskoorstraat 8, 8000 Brugge" ;
+    locn:postCode "8000" ;
+    locn:thoroughfare "Sint-Salvatorskoorstraat",
+        "panstreet" ;
+    adres:Adresvoorstelling.busnummer "2" ;
+    adres:Adresvoorstelling.huisnummer "1",
+        "8" ;
+    adres:gemeentenaam "Brugge",
+        "Ganshoren" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1720936> .
+
+<http://data.lblod.info/id/adressen/62399371D6E5DACC64C76E9D> a locn:Address ;
+    mu:uuid "62399371D6E5DACC64C76E9D" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/6239A66D519A6EAA5A70F462> a locn:Address ;
+    mu:uuid "6239A66D519A6EAA5A70F462" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Statiebeekstraat 8, 8480 Ichtegem" ;
+    locn:postCode "8480" ;
+    locn:thoroughfare "Statiebeekstraat" ;
+    adres:Adresvoorstelling.huisnummer "8" ;
+    adres:gemeentenaam "Ichtegem" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1564785> .
+
+<http://data.lblod.info/id/adressen/6246CBBDC3ACCAFF66C7E23B> a locn:Address ;
+    mu:uuid "6246CBBDC3ACCAFF66C7E23B" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Moldaustraat 1, 8820 Torhout" ;
+    locn:postCode "8820" ;
+    locn:thoroughfare "Moldaustraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Torhout" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/788404> .
+
+<http://data.lblod.info/id/adressen/6246DE9EC3ACCAFF66C7E256> a locn:Address ;
+    mu:uuid "6246DE9EC3ACCAFF66C7E256" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Teststraat 123 a, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Teststraat" ;
+    adres:Adresvoorstelling.busnummer "a" ;
+    adres:Adresvoorstelling.huisnummer "123" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/62568E00B1E70F0703B70C39> a locn:Address ;
+    mu:uuid "62568E00B1E70F0703B70C39" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Limburg" ;
+    locn:fullAddress "Kebbinglei 11, 2830 Willebroek" ;
+    locn:postCode "2830" ;
+    locn:thoroughfare "Kebbinglei" ;
+    adres:Adresvoorstelling.huisnummer "11" ;
+    adres:gemeentenaam "Willebroek" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/495995> .
+
+<http://data.lblod.info/id/adressen/62569E50B1E70F0703B70C3F> a locn:Address ;
+    mu:uuid "62569E50B1E70F0703B70C3F" ;
+    locn:fullAddress "" .
+
+<http://data.lblod.info/id/adressen/6256A237B1E70F0703B70C44> a locn:Address ;
+    mu:uuid "6256A237B1E70F0703B70C44" ;
+    locn:adminUnitL2 "West-Vlaanderen" ;
+    locn:fullAddress "Molenstraat 1, 8400 Oostende" ;
+    locn:postCode "8400" ;
+    locn:thoroughfare "Molenstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Oostende" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/2068117> .
+
+<http://data.lblod.info/id/adressen/6256BE46B1E70F0703B70C5F> a locn:Address ;
+    mu:uuid "6256BE46B1E70F0703B70C5F" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Taaiboomstraat 1, 1702 Dilbeek" ;
+    locn:postCode "1702" ;
+    locn:thoroughfare "Taaiboomstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Dilbeek" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/2051655> .
+
+<http://data.lblod.info/id/adressen/6256BE8DB1E70F0703B70C62> a locn:Address ;
+    mu:uuid "6256BE8DB1E70F0703B70C62" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Teststraat 123, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Teststraat" ;
+    adres:Adresvoorstelling.huisnummer "123" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/62585B79933343F9DB241BE8> a locn:Address ;
+    mu:uuid "62585B79933343F9DB241BE8" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Molenstraat 50, 2560 Nijlen" ;
+    locn:postCode "2560" ;
+    locn:thoroughfare "Molenstraat" ;
+    adres:Adresvoorstelling.huisnummer "50" ;
+    adres:gemeentenaam "Nijlen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1576368> .
+
+<http://data.lblod.info/id/adressen/6258880A933343F9DB241BF2> a locn:Address ;
+    mu:uuid "6258880A933343F9DB241BF2" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Lange Achteromstraat 10, 2018 Antwerpen" ;
+    locn:postCode "2018" ;
+    locn:thoroughfare "Lange Achteromstraat" ;
+    adres:Adresvoorstelling.huisnummer "10" ;
+    adres:gemeentenaam "Antwerpen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1293699> .
+
+<http://data.lblod.info/id/adressen/6259399D8243CA0E34AC1DD3> a locn:Address ;
+    mu:uuid "6259399D8243CA0E34AC1DD3" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Oppelsenweg 1, 3520 Zonhoven" ;
+    locn:postCode "3520" ;
+    locn:thoroughfare "Oppelsenweg" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Zonhoven" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/273175> .
+
+<http://data.lblod.info/id/adressen/6262AA624588C1EDD5598836> a locn:Address ;
+    mu:uuid "6262AA624588C1EDD5598836" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Michael Van Breedamstraat 11, 2830 Willebroek" ;
+    locn:postCode "2830" ;
+    locn:thoroughfare "Michael Van Breedamstraat" ;
+    adres:Adresvoorstelling.huisnummer "11" ;
+    adres:gemeentenaam "Willebroek" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/2339526> .
+
+<http://data.lblod.info/id/adressen/6262AA924588C1EDD559883A> a locn:Address ;
+    mu:uuid "6262AA924588C1EDD559883A" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Nicolaas Cleynaertslaan 10, 3500 Hasselt" ;
+    locn:postCode "3500" ;
+    locn:thoroughfare "Nicolaas Cleynaertslaan" ;
+    adres:Adresvoorstelling.huisnummer "10" ;
+    adres:gemeentenaam "Hasselt" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/569838> .
+
+<http://data.lblod.info/id/adressen/626A7BF1BD265AA4E63B7E20> a locn:Address ;
+    mu:uuid "626A7BF1BD265AA4E63B7E20" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Molenstraat 15, 2640 Mortsel" ;
+    locn:postCode "2640" ;
+    locn:thoroughfare "Molenstraat" ;
+    adres:Adresvoorstelling.huisnummer "15" ;
+    adres:gemeentenaam "Mortsel" .
+
+<http://data.lblod.info/id/adressen/6273BE34BD265AA4E63B7E49> a locn:Address ;
+    mu:uuid "6273BE34BD265AA4E63B7E49" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Limburg" ;
+    locn:fullAddress "Kerkakker 1, 2380 Ravels" ;
+    locn:postCode "2380" ;
+    locn:thoroughfare "Kerkakker" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Ravels" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/3750041> .
+
+<http://data.lblod.info/id/adressen/6278D61EBD265AA4E63B7E57> a locn:Address ;
+    mu:uuid "6278D61EBD265AA4E63B7E57" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Kerkakker 1, 8340 Damme" ;
+    locn:postCode "8340" ;
+    locn:thoroughfare "Kerkakker" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Damme" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1685852> .
+
+<http://data.lblod.info/id/adressen/627A2FEEBD265AA4E63B7E65> a locn:Address ;
+    mu:uuid "627A2FEEBD265AA4E63B7E65" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Raadhuislaan 1, 3010 Leuven" ;
+    locn:postCode "3010" ;
+    locn:thoroughfare "Raadhuislaan" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Leuven" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/823515> .
+
+<http://data.lblod.info/id/adressen/627A30E2BD265AA4E63B7E6A> a locn:Address ;
+    mu:uuid "627A30E2BD265AA4E63B7E6A" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Naamsesteenweg 1, 3001 Leuven" ;
+    locn:postCode "3001" ;
+    locn:thoroughfare "Naamsesteenweg" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Leuven" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/325832> .
+
+<http://data.lblod.info/id/adressen/627A61A3BD265AA4E63B7E8F> a locn:Address ;
+    mu:uuid "627A61A3BD265AA4E63B7E8F" ;
+    locn:fullAddress "Lange Schipstraat 104, 2800 Mechelen" ;
+    locn:postCode "2800" ;
+    locn:thoroughfare "Lange Schipstraat" ;
+    adres:Adresvoorstelling.huisnummer "104" ;
+    adres:gemeentenaam "Mechelen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/888919> .
+
+<http://data.lblod.info/id/adressen/627A6577BD265AA4E63B7E9D> a locn:Address ;
+    mu:uuid "627A6577BD265AA4E63B7E9D" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Teststraat 123 A, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Teststraat" ;
+    adres:Adresvoorstelling.busnummer "A" ;
+    adres:Adresvoorstelling.huisnummer "123" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/627A69D1BD265AA4E63B7EA4> a locn:Address ;
+    mu:uuid "627A69D1BD265AA4E63B7EA4" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Teststraat 123 A, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Teststraat" ;
+    adres:Adresvoorstelling.busnummer "A" ;
+    adres:Adresvoorstelling.huisnummer "123" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/627A7946BD265AA4E63B7EB0> a locn:Address ;
+    mu:uuid "627A7946BD265AA4E63B7EB0" ;
+    locn:adminUnitL2 "West-Vlaanderen" ;
+    locn:fullAddress "Knokke Teststraat 321, 8300 Knokke-Heist" ;
+    locn:postCode "8300" ;
+    locn:thoroughfare "Knokke Teststraat" ;
+    adres:Adresvoorstelling.huisnummer "321" ;
+    adres:gemeentenaam "Knokke-Heist" .
+
+<http://data.lblod.info/id/adressen/627A79D8BD265AA4E63B7EB2> a locn:Address ;
+    mu:uuid "627A79D8BD265AA4E63B7EB2" ;
+    locn:adminUnitL2 "West-Vlaanderen" ;
+    locn:fullAddress "Heist teststraat 2, 8300 Knokke-Heist" ;
+    locn:postCode "8300" ;
+    locn:thoroughfare "Heist teststraat" ;
+    adres:Adresvoorstelling.huisnummer "2" ;
+    adres:gemeentenaam "Knokke-Heist" .
+
+<http://data.lblod.info/id/adressen/627A7A7ABD265AA4E63B7EB4> a locn:Address ;
+    mu:uuid "627A7A7ABD265AA4E63B7EB4" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Jeneverbeslaan 10, 2910 Essen" ;
+    locn:postCode "2910" ;
+    locn:thoroughfare "Jeneverbeslaan" ;
+    adres:Adresvoorstelling.huisnummer "10" ;
+    adres:gemeentenaam "Essen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/3678964> .
+
+<http://data.lblod.info/id/adressen/627A7E1ABD265AA4E63B7EB9> a locn:Address ;
+    mu:uuid "627A7E1ABD265AA4E63B7EB9" ;
+    locn:fullAddress "Houthalenstaat 10, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Houthalenstaat" ;
+    adres:Adresvoorstelling.huisnummer "10" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/627A7EF3BD265AA4E63B7EC0> a locn:Address ;
+    mu:uuid "627A7EF3BD265AA4E63B7EC0" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Testersbaan 99 C1, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Testersbaan" ;
+    adres:Adresvoorstelling.busnummer "C1" ;
+    adres:Adresvoorstelling.huisnummer "99" ;
+    adres:gemeentenaam "Antwerpen" .
+
+<http://data.lblod.info/id/adressen/627A7F94BD265AA4E63B7EC4> a locn:Address ;
+    mu:uuid "627A7F94BD265AA4E63B7EC4" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Keramiekstraat 1, 2801 Mechelen" ;
+    locn:postCode "2801" ;
+    locn:thoroughfare "Keramiekstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Mechelen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1383335> .
+
+<http://data.lblod.info/id/adressen/627A80DFBD265AA4E63B7EC9> a locn:Address ;
+    mu:uuid "627A80DFBD265AA4E63B7EC9" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Naamselaan 1, 3970 Leopoldsburg" ;
+    locn:postCode "3970" ;
+    locn:thoroughfare "Naamselaan" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Leopoldsburg" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/3514093> .
+
+<http://data.lblod.info/id/adressen/627A821FBD265AA4E63B7ECD> a locn:Address ;
+    mu:uuid "627A821FBD265AA4E63B7ECD" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Kuurnsesteenweg 1, 8500 Kortrijk" ;
+    locn:postCode "8500" ;
+    locn:thoroughfare "Kuurnsesteenweg" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Kortrijk" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/274039> .
+
+<http://data.lblod.info/id/adressen/627A82A6BD265AA4E63B7ED1> a locn:Address ;
+    mu:uuid "627A82A6BD265AA4E63B7ED1" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Kurassiersstraat 17, 2800 Mechelen" ;
+    locn:postCode "2800" ;
+    locn:thoroughfare "Kurassiersstraat" ;
+    adres:Adresvoorstelling.huisnummer "17" ;
+    adres:gemeentenaam "Mechelen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1120809> .
+
+<http://data.lblod.info/id/adressen/627A83E9BD265AA4E63B7ED5> a locn:Address ;
+    mu:uuid "627A83E9BD265AA4E63B7ED5" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Kurassiersstraat 1, 2800 Mechelen" ;
+    locn:postCode "2800" ;
+    locn:thoroughfare "Kurassiersstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Mechelen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1687881> .
+
+<http://data.lblod.info/id/adressen/627A86CBBD265AA4E63B7EDD> a locn:Address ;
+    mu:uuid "627A86CBBD265AA4E63B7EDD" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Gentse Baan 102, 9100 Sint-Niklaas" ;
+    locn:postCode "9100" ;
+    locn:thoroughfare "Gentse Baan" ;
+    adres:Adresvoorstelling.huisnummer "102" ;
+    adres:gemeentenaam "Sint-Niklaas" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/261202> .
+
+<http://data.lblod.info/id/adressen/627A89FEBD265AA4E63B7EE8> a locn:Address ;
+    mu:uuid "627A89FEBD265AA4E63B7EE8" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Bilzerbaan 106, 3620 Lanaken" ;
+    locn:postCode "3620" ;
+    locn:thoroughfare "Bilzerbaan" ;
+    adres:Adresvoorstelling.huisnummer "106" ;
+    adres:gemeentenaam "Lanaken" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/767129> .
+
+<http://data.lblod.info/id/adressen/627B5F39BD265AA4E63B7EED> a locn:Address ;
+    mu:uuid "627B5F39BD265AA4E63B7EED" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "West-Vlaanderen" ;
+    locn:fullAddress "Molstraat 136, 8870 Izegem" ;
+    locn:postCode "8870" ;
+    locn:thoroughfare "Molstraat" ;
+    adres:Adresvoorstelling.huisnummer "136" ;
+    adres:gemeentenaam "Izegem" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/265331> .
+
+<http://data.lblod.info/id/adressen/627CE0A6BD265AA4E63B7F0C> a locn:Address ;
+    mu:uuid "627CE0A6BD265AA4E63B7F0C" ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Lange Schipstraat 104, 2800 Mechelen" ;
+    locn:postCode "2800" ;
+    locn:thoroughfare "Lange Schipstraat" ;
+    adres:Adresvoorstelling.huisnummer "104" ;
+    adres:gemeentenaam "Mechelen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/888919> .
+
+<http://data.lblod.info/id/adressen/627E1A86BD265AA4E63B7F5E> a locn:Address ;
+    mu:uuid "627E1A86BD265AA4E63B7F5E" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Limburg" ;
+    locn:fullAddress "Bergstraat 30, 1560 Hoeilaart" ;
+    locn:postCode "1560" ;
+    locn:thoroughfare "Bergstraat" ;
+    adres:Adresvoorstelling.huisnummer "30" ;
+    adres:gemeentenaam "Hoeilaart" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1027886> .
+
+<http://data.lblod.info/id/adressen/627E1CA3BD265AA4E63B7F71> a locn:Address ;
+    mu:uuid "627E1CA3BD265AA4E63B7F71" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:fullAddress "Kerkakker 1, 8340 Damme" ;
+    locn:postCode "8340" ;
+    locn:thoroughfare "Kerkakker" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Damme" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1685852> .
+
+<http://data.lblod.info/id/adressen/627E1D04BD265AA4E63B7F76> a locn:Address ;
+    mu:uuid "627E1D04BD265AA4E63B7F76" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Limburg" ;
+    locn:fullAddress "Malachietstraat 1, 2030 Antwerpen" ;
+    locn:postCode "2030" ;
+    locn:thoroughfare "Malachietstraat" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Antwerpen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/2486983> .
+
+<http://data.lblod.info/id/adressen/627E1ED5BD265AA4E63B7F8A> a locn:Address ;
+    mu:uuid "627E1ED5BD265AA4E63B7F8A" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Vlaams-Brabant" ;
+    locn:fullAddress "Kerkakker 1, 2380 Ravels" ;
+    locn:postCode "2380" ;
+    locn:thoroughfare "Kerkakker" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Ravels" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/3750041> .
+
+<http://data.lblod.info/id/adressen/627E41F1BD265AA4E63B7F9C> a locn:Address ;
+    mu:uuid "627E41F1BD265AA4E63B7F9C" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Limburg" ;
+    locn:fullAddress "Kerkakker 1, 9270 Laarne" ;
+    locn:postCode "9270" ;
+    locn:thoroughfare "Kerkakker" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Laarne" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/30062627> .
+
+<http://data.lblod.info/id/adressen/627E6B84408C9CEF53BB2367> a locn:Address ;
+    mu:uuid "627E6B84408C9CEF53BB2367" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Brugsesteenweg 325, 9000 Gent" ;
+    locn:postCode "9000" ;
+    locn:thoroughfare "Brugsesteenweg" ;
+    adres:Adresvoorstelling.huisnummer "325" ;
+    adres:gemeentenaam "Gent" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/626837> .
+
+<http://data.lblod.info/id/adressen/627E6C03408C9CEF53BB236B> a locn:Address ;
+    mu:uuid "627E6C03408C9CEF53BB236B" ;
+    locn:adminUnitL2 "Oost-Vlaanderen" ;
+    locn:fullAddress "Testersebaan 123 a, 9000 Gent" ;
+    locn:postCode "9000" ;
+    locn:thoroughfare "Testersebaan" ;
+    adres:Adresvoorstelling.busnummer "a" ;
+    adres:Adresvoorstelling.huisnummer "123" ;
+    adres:gemeentenaam "Gent" .
+
+<http://data.lblod.info/id/adressen/627E72D6408C9CEF53BB237B> a locn:Address ;
+    mu:uuid "627E72D6408C9CEF53BB237B" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Groenplaats 1, 2000 Antwerpen" ;
+    locn:postCode "2000" ;
+    locn:thoroughfare "Groenplaats" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Antwerpen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1466854> .
+
+<http://data.lblod.info/id/adressen/62820879408C9CEF53BB2381> a locn:Address ;
+    mu:uuid "62820879408C9CEF53BB2381" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Sint-Lambertusstraat 38, 2600 Antwerpen" ;
+    locn:postCode "2600" ;
+    locn:thoroughfare "Sint-Lambertusstraat" ;
+    adres:Adresvoorstelling.huisnummer "38" ;
+    adres:gemeentenaam "Antwerpen" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1303027> .
+
+<http://data.lblod.info/id/adressen/62864774012B4A57DF3BAFBD> a locn:Address ;
+    mu:uuid "62864774012B4A57DF3BAFBD" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Moldaustraat 12, 8820 Torhout" ;
+    locn:postCode "8820" ;
+    locn:thoroughfare "Moldaustraat" ;
+    adres:Adresvoorstelling.huisnummer "12" ;
+    adres:gemeentenaam "Torhout" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/3267027> .
+
+<http://data.lblod.info/id/adressen/6294A96184E574A276AA5672> a locn:Address ;
+    mu:uuid "6294A96184E574A276AA5672" ;
+    dcterms:source <http://lblod.data.gift/concepts/e59c97a9-4e95-4d65-9696-756de47fbc1f> ;
+    locn:adminUnitL2 "Antwerpen" ;
+    locn:fullAddress "Postbaan 1, 3290 Diest" ;
+    locn:postCode "3290" ;
+    locn:thoroughfare "Postbaan" ;
+    adres:Adresvoorstelling.huisnummer "1" ;
+    adres:gemeentenaam "Diest" ;
+    adres:verwijstNaar <https://data.vlaanderen.be/id/adres/1357749> .
+
+<http://data.lblod.info/id/contact-punten/3c4d987185fac04e748eb736314502a2> a schema1:ContactPoint ;
+    mu:uuid "3c4d987185fac04e748eb736314502a2" ;
+    schema1:contactType "Primary" ;
+    schema1:email "langesdfsf@gmail.com" ;
+    schema1:telephone "4444444" ;
+    locn:address <http://data.lblod.info/id/adressen/6258880A933343F9DB241BF2> .
+
+<http://data.lblod.info/id/contact-punten/61373445375CFC000A0002D8> a schema1:ContactPoint ;
+    mu:uuid "61373445375CFC000A0002D8" ;
+    schema1:contactType "Primary" ;
+    schema1:email "leonce@eraly.telenet.be" ;
+    schema1:telephone "016533361" ;
+    locn:address <http://data.lblod.info/id/adressen/61373445375CFC000A0002D7> .
+
+<http://data.lblod.info/id/contact-punten/61373446375CFC000A0002D9> a schema1:ContactPoint ;
+    mu:uuid "61373446375CFC000A0002D9" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/61449031375CFC000A000472> a schema1:ContactPoint ;
+    mu:uuid "61449031375CFC000A000472" ;
+    schema1:contactType "Primary" ;
+    schema1:email "predikant@ekleuven.be" ;
+    schema1:telephone "016843724" ;
+    locn:address <http://data.lblod.info/id/adressen/61449030375CFC000A000471> .
+
+<http://data.lblod.info/id/contact-punten/61449031375CFC000A000473> a schema1:ContactPoint ;
+    mu:uuid "61449031375CFC000A000473" ;
+    schema1:contactType "Primary",
+        "Secondary" ;
+    schema1:telephone "0498152140" .
+
+<http://data.lblod.info/id/contact-punten/614C6B83375CFC000A0004C0> a schema1:ContactPoint ;
+    mu:uuid "614C6B83375CFC000A0004C0" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/614C6B83375CFC000A0004BF> .
+
+<http://data.lblod.info/id/contact-punten/614C6B83375CFC000A0004C1> a schema1:ContactPoint ;
+    mu:uuid "614C6B83375CFC000A0004C1" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/6156C06B375CFC000A000546> a schema1:ContactPoint ;
+    mu:uuid "6156C06B375CFC000A000546" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/6156C06A375CFC000A000545> .
+
+<http://data.lblod.info/id/contact-punten/6156C06B375CFC000A000547> a schema1:ContactPoint ;
+    mu:uuid "6156C06B375CFC000A000547" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615AF1B6375CFC000A0005A3> a schema1:ContactPoint ;
+    mu:uuid "615AF1B6375CFC000A0005A3" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/615AF1B5375CFC000A0005A2> .
+
+<http://data.lblod.info/id/contact-punten/615AF1B6375CFC000A0005A4> a schema1:ContactPoint ;
+    mu:uuid "615AF1B6375CFC000A0005A4" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C0FB8375CFC000A0005D9> a schema1:ContactPoint ;
+    mu:uuid "615C0FB8375CFC000A0005D9" ;
+    schema1:contactType "Primary" ;
+    schema1:email "angeloskamalidis@hotmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/615C0FB8375CFC000A0005D8> .
+
+<http://data.lblod.info/id/contact-punten/615C0FB9375CFC000A0005DA> a schema1:ContactPoint ;
+    mu:uuid "615C0FB9375CFC000A0005DA" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C1029375CFC000A0005E2> a schema1:ContactPoint ;
+    mu:uuid "615C1029375CFC000A0005E2" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/615C1028375CFC000A0005E1> .
+
+<http://data.lblod.info/id/contact-punten/615C1029375CFC000A0005E3> a schema1:ContactPoint ;
+    mu:uuid "615C1029375CFC000A0005E3" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C1193375CFC000A0005EB> a schema1:ContactPoint ;
+    mu:uuid "615C1193375CFC000A0005EB" ;
+    schema1:contactType "Primary" ;
+    schema1:email "barrykriekaard@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/615C1192375CFC000A0005EA> .
+
+<http://data.lblod.info/id/contact-punten/615C1193375CFC000A0005EC> a schema1:ContactPoint ;
+    mu:uuid "615C1193375CFC000A0005EC" ;
+    schema1:contactType "Primary" ;
+    schema1:telephone "0493/819652" .
+
+<http://data.lblod.info/id/contact-punten/615C1369375CFC000A0005FD> a schema1:ContactPoint ;
+    mu:uuid "615C1369375CFC000A0005FD" ;
+    schema1:contactType "Primary" ;
+    schema1:email "neelslos@gmail.com" ;
+    schema1:telephone "03/7072992" ;
+    locn:address <http://data.lblod.info/id/adressen/615C1368375CFC000A0005FC> .
+
+<http://data.lblod.info/id/contact-punten/615C1369375CFC000A0005FE> a schema1:ContactPoint ;
+    mu:uuid "615C1369375CFC000A0005FE" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C14D3375CFC000A000606> a schema1:ContactPoint ;
+    mu:uuid "615C14D3375CFC000A000606" ;
+    schema1:contactType "Primary" ;
+    schema1:email "Lutherse.Kerk@skynet.be" ;
+    schema1:telephone "03/2336250" ;
+    locn:address <http://data.lblod.info/id/adressen/615C14D3375CFC000A000605> .
+
+<http://data.lblod.info/id/contact-punten/615C14D4375CFC000A000607> a schema1:ContactPoint ;
+    mu:uuid "615C14D4375CFC000A000607" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C16ED375CFC000A000618> a schema1:ContactPoint ;
+    mu:uuid "615C16ED375CFC000A000618" ;
+    schema1:contactType "Primary" ;
+    schema1:email "info-ig@alihsaan.be" ;
+    locn:address <http://data.lblod.info/id/adressen/615C16ED375CFC000A000617> .
+
+<http://data.lblod.info/id/contact-punten/615C16ED375CFC000A000619> a schema1:ContactPoint ;
+    mu:uuid "615C16ED375CFC000A000619" ;
+    schema1:contactType "Primary" ;
+    schema1:telephone "0484122538" .
+
+<http://data.lblod.info/id/contact-punten/615C1BB4375CFC000A000632> a schema1:ContactPoint ;
+    mu:uuid "615C1BB4375CFC000A000632" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/615C1BB4375CFC000A000631> .
+
+<http://data.lblod.info/id/contact-punten/615C1BB4375CFC000A000633> a schema1:ContactPoint ;
+    mu:uuid "615C1BB4375CFC000A000633" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C1DB2375CFC000A00063B> a schema1:ContactPoint ;
+    mu:uuid "615C1DB2375CFC000A00063B" ;
+    schema1:contactType "Primary" ;
+    schema1:email "" ;
+    locn:address <http://data.lblod.info/id/adressen/615C1DB2375CFC000A00063A> .
+
+<http://data.lblod.info/id/contact-punten/615C1DB3375CFC000A00063C> a schema1:ContactPoint ;
+    mu:uuid "615C1DB3375CFC000A00063C" ;
+    schema1:contactType "Primary" ;
+    schema1:telephone "0495/892177" .
+
+<http://data.lblod.info/id/contact-punten/615C2046375CFC000A000644> a schema1:ContactPoint ;
+    mu:uuid "615C2046375CFC000A000644" ;
+    schema1:contactType "Primary" ;
+    schema1:email "degpa@skynet.be" ;
+    schema1:telephone "03/6589001" ;
+    locn:address <http://data.lblod.info/id/adressen/615C2046375CFC000A000643> .
+
+<http://data.lblod.info/id/contact-punten/615C2047375CFC000A000645> a schema1:ContactPoint ;
+    mu:uuid "615C2047375CFC000A000645" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C365D375CFC000A00064D> a schema1:ContactPoint ;
+    mu:uuid "615C365D375CFC000A00064D" ;
+    schema1:contactType "Primary" ;
+    schema1:email "katelijne.depoortere@skynet.be" ;
+    schema1:telephone "03/2368154" ;
+    locn:address <http://data.lblod.info/id/adressen/615C365D375CFC000A00064C> .
+
+<http://data.lblod.info/id/contact-punten/615C365E375CFC000A00064E> a schema1:ContactPoint ;
+    mu:uuid "615C365E375CFC000A00064E" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/615C3870375CFC000A000658> a schema1:ContactPoint ;
+    mu:uuid "615C3870375CFC000A000658" ;
+    schema1:contactType "Primary" ;
+    schema1:email "predikant@vpkbboechout.be" ;
+    schema1:telephone "03/4544014" ;
+    locn:address <http://data.lblod.info/id/adressen/615C386F375CFC000A000657> .
+
+<http://data.lblod.info/id/contact-punten/615C3870375CFC000A000659> a schema1:ContactPoint ;
+    mu:uuid "615C3870375CFC000A000659" ;
+    schema1:contactType "Primary",
+        "Secondary" ;
+    schema1:telephone "0468/451820" .
+
+<http://data.lblod.info/id/contact-punten/615C3F28375CFC000A00066B> a schema1:ContactPoint ;
+    mu:uuid "615C3F28375CFC000A00066B" ;
+    schema1:contactType "Primary" ;
+    schema1:email "marcel.pool@telenet.be" ;
+    schema1:telephone "014/710377" ;
+    locn:address <http://data.lblod.info/id/adressen/615C3F28375CFC000A00066A> .
+
+<http://data.lblod.info/id/contact-punten/615C3F29375CFC000A00066C> a schema1:ContactPoint ;
+    mu:uuid "615C3F29375CFC000A00066C" ;
+    schema1:contactType "Primary",
+        "Secondary" ;
+    schema1:telephone "0472/335438" .
+
+<http://data.lblod.info/id/contact-punten/615EED53375CFC000A0006FA> a schema1:ContactPoint ;
+    mu:uuid "615EED53375CFC000A0006FA" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/615EED52375CFC000A0006F9> .
+
+<http://data.lblod.info/id/contact-punten/615EED53375CFC000A0006FB> a schema1:ContactPoint ;
+    mu:uuid "615EED53375CFC000A0006FB" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/616436FC375CFC000A000779> a schema1:ContactPoint ;
+    mu:uuid "616436FC375CFC000A000779" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/616436FC375CFC000A000778> .
+
+<http://data.lblod.info/id/contact-punten/616436FD375CFC000A00077A> a schema1:ContactPoint ;
+    mu:uuid "616436FD375CFC000A00077A" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/61B747D63C1A230C43B451E3> a schema1:ContactPoint ;
+    mu:uuid "61B747D63C1A230C43B451E3" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/61B747D53C1A230C43B451E2> .
+
+<http://data.lblod.info/id/contact-punten/61B747D63C1A230C43B451E4> a schema1:ContactPoint ;
+    mu:uuid "61B747D63C1A230C43B451E4" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/61C1A7043C1A230C43B452EA> a schema1:ContactPoint ;
+    mu:uuid "61C1A7043C1A230C43B452EA" ;
+    schema1:contactType "Primary" ;
+    schema1:email "ronny.evrard@telenet.be" ;
+    schema1:telephone "014729177" ;
+    locn:address <http://data.lblod.info/id/adressen/61C1A7033C1A230C43B452E9> .
+
+<http://data.lblod.info/id/contact-punten/61C1A7043C1A230C43B452EB> a schema1:ContactPoint ;
+    mu:uuid "61C1A7043C1A230C43B452EB" ;
+    schema1:contactType "Primary",
+        "Secondary" ;
+    schema1:telephone "0479279724" .
+
+<http://data.lblod.info/id/contact-punten/61DEDAA9BA00DD4BE2501B59> a schema1:ContactPoint ;
+    mu:uuid "61DEDAA9BA00DD4BE2501B59" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/61DEDAA8BA00DD4BE2501B58> .
+
+<http://data.lblod.info/id/contact-punten/61DEDAA9BA00DD4BE2501B5A> a schema1:ContactPoint ;
+    mu:uuid "61DEDAA9BA00DD4BE2501B5A" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/61E0222ABA00DD4BE2501BC6> a schema1:ContactPoint ;
+    mu:uuid "61E0222ABA00DD4BE2501BC6" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/61E0222ABA00DD4BE2501BC5> .
+
+<http://data.lblod.info/id/contact-punten/61E0222BBA00DD4BE2501BC7> a schema1:ContactPoint ;
+    mu:uuid "61E0222BBA00DD4BE2501BC7" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/61EAC54ABA00DD4BE2501C73> a schema1:ContactPoint ;
+    mu:uuid "61EAC54ABA00DD4BE2501C73" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/61EAC54ABA00DD4BE2501C72> .
+
+<http://data.lblod.info/id/contact-punten/61EAC54ABA00DD4BE2501C74> a schema1:ContactPoint ;
+    mu:uuid "61EAC54ABA00DD4BE2501C74" ;
+    schema1:contactType "Primary" ;
+    schema1:telephone "+32470870471" .
+
+<http://data.lblod.info/id/contact-punten/620B6CEE5747C883CA1D2DCF> a schema1:ContactPoint ;
+    mu:uuid "620B6CEE5747C883CA1D2DCF" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/620B6CED5747C883CA1D2DCE> .
+
+<http://data.lblod.info/id/contact-punten/620B6CEE5747C883CA1D2DD0> a schema1:ContactPoint ;
+    mu:uuid "620B6CEE5747C883CA1D2DD0" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/620BBA615747C883CA1D2DF7> a schema1:ContactPoint ;
+    mu:uuid "620BBA615747C883CA1D2DF7" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/620BBA605747C883CA1D2DF6> .
+
+<http://data.lblod.info/id/contact-punten/620BBA615747C883CA1D2DF8> a schema1:ContactPoint ;
+    mu:uuid "620BBA615747C883CA1D2DF8" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/620E0EC55747C883CA1D2E4C> a schema1:ContactPoint ;
+    mu:uuid "620E0EC55747C883CA1D2E4C" ;
+    schema1:contactType "Primary" ;
+    schema1:email "mail@adres.com" ;
+    schema1:telephone "+3211211555" ;
+    locn:address <http://data.lblod.info/id/adressen/620E0EC55747C883CA1D2E4B> .
+
+<http://data.lblod.info/id/contact-punten/620E0EC55747C883CA1D2E4D> a schema1:ContactPoint ;
+    mu:uuid "620E0EC55747C883CA1D2E4D" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+3211211444" .
+
+<http://data.lblod.info/id/contact-punten/620E28AD5747C883CA1D2E97> a schema1:ContactPoint ;
+    mu:uuid "620E28AD5747C883CA1D2E97" ;
+    schema1:contactType "Primary" ;
+    schema1:email "marcinderdziuk@gmail.com" ;
+    schema1:telephone "0474624031" ;
+    locn:address <http://data.lblod.info/id/adressen/620E28AD5747C883CA1D2E96> .
+
+<http://data.lblod.info/id/contact-punten/620E28AE5747C883CA1D2E98> a schema1:ContactPoint ;
+    mu:uuid "620E28AE5747C883CA1D2E98" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/620E5BD25747C883CA1D2ECC> a schema1:ContactPoint ;
+    mu:uuid "620E5BD25747C883CA1D2ECC" ;
+    schema1:contactType "Primary" ;
+    schema1:email "sofie.broeckx@telenet.be" ;
+    locn:address <http://data.lblod.info/id/adressen/620E5BD25747C883CA1D2ECB> .
+
+<http://data.lblod.info/id/contact-punten/620E5BD35747C883CA1D2ECD> a schema1:ContactPoint ;
+    mu:uuid "620E5BD35747C883CA1D2ECD" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/62173DDD5747C883CA1D33F5> a schema1:ContactPoint ;
+    mu:uuid "62173DDD5747C883CA1D33F5" ;
+    schema1:contactType "Primary" ;
+    schema1:email "patrickdebaets@gmail.com" ;
+    schema1:telephone "0477940696" ;
+    locn:address <http://data.lblod.info/id/adressen/62173DDD5747C883CA1D33F4> .
+
+<http://data.lblod.info/id/contact-punten/62173DDE5747C883CA1D33F6> a schema1:ContactPoint ;
+    mu:uuid "62173DDE5747C883CA1D33F6" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/6217410C5747C883CA1D33FB> a schema1:ContactPoint ;
+    mu:uuid "6217410C5747C883CA1D33FB" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/6217410B5747C883CA1D33FA> .
+
+<http://data.lblod.info/id/contact-punten/6217410C5747C883CA1D33FC> a schema1:ContactPoint ;
+    mu:uuid "6217410C5747C883CA1D33FC" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/62174F545747C883CA1D340F> a schema1:ContactPoint ;
+    mu:uuid "62174F545747C883CA1D340F" ;
+    schema1:contactType "Primary" ;
+    schema1:email "bogaerts.sebreghts@skynet.be" ;
+    schema1:telephone "033834469" ;
+    locn:address <http://data.lblod.info/id/adressen/62174F545747C883CA1D340E> .
+
+<http://data.lblod.info/id/contact-punten/62174F555747C883CA1D3410> a schema1:ContactPoint ;
+    mu:uuid "62174F555747C883CA1D3410" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0479744052" .
+
+<http://data.lblod.info/id/contact-punten/621755E75747C883CA1D341A> a schema1:ContactPoint ;
+    mu:uuid "621755E75747C883CA1D341A" ;
+    schema1:contactType "Primary" ;
+    schema1:email "christinegonnissen@telenet.be" ;
+    schema1:telephone "033122179" ;
+    locn:address <http://data.lblod.info/id/adressen/621755E75747C883CA1D3419> .
+
+<http://data.lblod.info/id/contact-punten/621755E75747C883CA1D341B> a schema1:ContactPoint ;
+    mu:uuid "621755E75747C883CA1D341B" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0475293361" .
+
+<http://data.lblod.info/id/contact-punten/62177EC45747C883CA1D3479> a schema1:ContactPoint ;
+    mu:uuid "62177EC45747C883CA1D3479" ;
+    schema1:contactType "Primary" ;
+    schema1:email "herman.huygels@telenet.be" ;
+    locn:address <http://data.lblod.info/id/adressen/62177EC35747C883CA1D3478> .
+
+<http://data.lblod.info/id/contact-punten/62177EC45747C883CA1D347A> a schema1:ContactPoint ;
+    mu:uuid "62177EC45747C883CA1D347A" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0472456232" .
+
+<http://data.lblod.info/id/contact-punten/6217822B5747C883CA1D3494> a schema1:ContactPoint ;
+    mu:uuid "6217822B5747C883CA1D3494" ;
+    schema1:contactType "Primary" ;
+    schema1:email "chris.smits@telenet.be" ;
+    schema1:telephone "033347744" ;
+    locn:address <http://data.lblod.info/id/adressen/6217822B5747C883CA1D3493> .
+
+<http://data.lblod.info/id/contact-punten/6217822C5747C883CA1D3495> a schema1:ContactPoint ;
+    mu:uuid "6217822C5747C883CA1D3495" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0499457456" .
+
+<http://data.lblod.info/id/contact-punten/62179D335747C883CA1D34A9> a schema1:ContactPoint ;
+    mu:uuid "62179D335747C883CA1D34A9" ;
+    schema1:contactType "Primary" ;
+    schema1:email "mln.vochten@telenet.be" ;
+    locn:address <http://data.lblod.info/id/adressen/62179D335747C883CA1D34A8> .
+
+<http://data.lblod.info/id/contact-punten/62179D345747C883CA1D34AA> a schema1:ContactPoint ;
+    mu:uuid "62179D345747C883CA1D34AA" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0473771082" .
+
+<http://data.lblod.info/id/contact-punten/6217A0795747C883CA1D34CD> a schema1:ContactPoint ;
+    mu:uuid "6217A0795747C883CA1D34CD" ;
+    schema1:contactType "Primary" ;
+    schema1:email "magda.speltincx@telenet.be" ;
+    schema1:telephone "036333397" ;
+    locn:address <http://data.lblod.info/id/adressen/6217A0785747C883CA1D34CC> .
+
+<http://data.lblod.info/id/contact-punten/6217A0795747C883CA1D34CE> a schema1:ContactPoint ;
+    mu:uuid "6217A0795747C883CA1D34CE" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0478392403" .
+
+<http://data.lblod.info/id/contact-punten/621C93C95747C883CA1D35D4> a schema1:ContactPoint ;
+    mu:uuid "621C93C95747C883CA1D35D4" ;
+    schema1:contactType "Primary" ;
+    schema1:email "dirk.godecharle@hivset.be" ;
+    locn:address <http://data.lblod.info/id/adressen/621C93C85747C883CA1D35D3> .
+
+<http://data.lblod.info/id/contact-punten/621C93CA5747C883CA1D35D5> a schema1:ContactPoint ;
+    mu:uuid "621C93CA5747C883CA1D35D5" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0497281909" .
+
+<http://data.lblod.info/id/contact-punten/621DDAA75747C883CA1D3644> a schema1:ContactPoint ;
+    mu:uuid "621DDAA75747C883CA1D3644" ;
+    schema1:contactType "Primary" ;
+    schema1:email "ludo.vanrossum@gmail.com" ;
+    schema1:telephone "033834634" ;
+    locn:address <http://data.lblod.info/id/adressen/621DDAA65747C883CA1D3643> .
+
+<http://data.lblod.info/id/contact-punten/621DDAA75747C883CA1D3645> a schema1:ContactPoint ;
+    mu:uuid "621DDAA75747C883CA1D3645" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0484624924" .
+
+<http://data.lblod.info/id/contact-punten/621DDEBD5747C883CA1D3664> a schema1:ContactPoint ;
+    mu:uuid "621DDEBD5747C883CA1D3664" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/621DDEBD5747C883CA1D3663> .
+
+<http://data.lblod.info/id/contact-punten/621DDEBD5747C883CA1D3665> a schema1:ContactPoint ;
+    mu:uuid "621DDEBD5747C883CA1D3665" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/621E19195747C883CA1D36CE> a schema1:ContactPoint ;
+    mu:uuid "621E19195747C883CA1D36CE" ;
+    schema1:contactType "Primary" ;
+    schema1:email "cis.marinus@gmail.com" ;
+    schema1:telephone "014266712" ;
+    locn:address <http://data.lblod.info/id/adressen/621E19195747C883CA1D36CD> .
+
+<http://data.lblod.info/id/contact-punten/621E19195747C883CA1D36CF> a schema1:ContactPoint ;
+    mu:uuid "621E19195747C883CA1D36CF" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0473411999" .
+
+<http://data.lblod.info/id/contact-punten/6228A61681DC67FB9E9ADEC0> a schema1:ContactPoint ;
+    mu:uuid "6228A61681DC67FB9E9ADEC0" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    schema1:telephone "+3232801425" ;
+    locn:address <http://data.lblod.info/id/adressen/6228A61581DC67FB9E9ADEBF> .
+
+<http://data.lblod.info/id/contact-punten/6228A61681DC67FB9E9ADEC1> a schema1:ContactPoint ;
+    mu:uuid "6228A61681DC67FB9E9ADEC1" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+32470123456" .
+
+<http://data.lblod.info/id/contact-punten/62399372D6E5DACC64C76E9E> a schema1:ContactPoint ;
+    mu:uuid "62399372D6E5DACC64C76E9E" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/62399371D6E5DACC64C76E9D> .
+
+<http://data.lblod.info/id/contact-punten/62399372D6E5DACC64C76E9F> a schema1:ContactPoint ;
+    mu:uuid "62399372D6E5DACC64C76E9F" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/6239A66D519A6EAA5A70F463> a schema1:ContactPoint ;
+    mu:uuid "6239A66D519A6EAA5A70F463" ;
+    schema1:contactType "Primary" ;
+    schema1:email "chris@mail.com" ;
+    schema1:telephone "+32485633410" ;
+    locn:address <http://data.lblod.info/id/adressen/6239A66D519A6EAA5A70F462> .
+
+<http://data.lblod.info/id/contact-punten/6239A66E519A6EAA5A70F464> a schema1:ContactPoint ;
+    mu:uuid "6239A66E519A6EAA5A70F464" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "0485633410" .
+
+<http://data.lblod.info/id/contact-punten/6246CBBEC3ACCAFF66C7E23C> a schema1:ContactPoint ;
+    mu:uuid "6246CBBEC3ACCAFF66C7E23C" ;
+    schema1:contactType "Primary" ;
+    schema1:email "zelim@mail.com" ;
+    schema1:telephone "+32485633410" ;
+    locn:address <http://data.lblod.info/id/adressen/6246CBBDC3ACCAFF66C7E23B> .
+
+<http://data.lblod.info/id/contact-punten/6246CBBFC3ACCAFF66C7E23D> a schema1:ContactPoint ;
+    mu:uuid "6246CBBFC3ACCAFF66C7E23D" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+3256842159" .
+
+<http://data.lblod.info/id/contact-punten/6246DE9EC3ACCAFF66C7E257> a schema1:ContactPoint ;
+    mu:uuid "6246DE9EC3ACCAFF66C7E257" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/6246DE9EC3ACCAFF66C7E256> .
+
+<http://data.lblod.info/id/contact-punten/6246DE9EC3ACCAFF66C7E258> a schema1:ContactPoint ;
+    mu:uuid "6246DE9EC3ACCAFF66C7E258" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/62568E01B1E70F0703B70C3A> a schema1:ContactPoint ;
+    mu:uuid "62568E01B1E70F0703B70C3A" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/62568E00B1E70F0703B70C39> .
+
+<http://data.lblod.info/id/contact-punten/62568E01B1E70F0703B70C3B> a schema1:ContactPoint ;
+    mu:uuid "62568E01B1E70F0703B70C3B" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/62569E50B1E70F0703B70C40> a schema1:ContactPoint ;
+    mu:uuid "62569E50B1E70F0703B70C40" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/62569E50B1E70F0703B70C3F> .
+
+<http://data.lblod.info/id/contact-punten/62569E51B1E70F0703B70C41> a schema1:ContactPoint ;
+    mu:uuid "62569E51B1E70F0703B70C41" ;
+    schema1:contactType "Secondary" .
+
+<http://data.lblod.info/id/contact-punten/6256A237B1E70F0703B70C45> a schema1:ContactPoint ;
+    mu:uuid "6256A237B1E70F0703B70C45" ;
+    schema1:contactType "Primary" ;
+    schema1:email "owkay89736@gmail.com" ;
+    schema1:telephone "+3211211430" ;
+    locn:address <http://data.lblod.info/id/adressen/6256A237B1E70F0703B70C44> .
+
+<http://data.lblod.info/id/contact-punten/6256A238B1E70F0703B70C46> a schema1:ContactPoint ;
+    mu:uuid "6256A238B1E70F0703B70C46" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+3211999444" .
+
+<http://data.lblod.info/id/contact-punten/6256BE46B1E70F0703B70C60> a schema1:ContactPoint ;
+    mu:uuid "6256BE46B1E70F0703B70C60" ;
+    schema1:contactType "Primary" ;
+    schema1:email "mail@adres.com" ;
+    locn:address <http://data.lblod.info/id/adressen/6256BE46B1E70F0703B70C5F> .
+
+<http://data.lblod.info/id/contact-punten/6256BE8DB1E70F0703B70C63> a schema1:ContactPoint ;
+    mu:uuid "6256BE8DB1E70F0703B70C63" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    schema1:telephone "+3232801425" ;
+    locn:address <http://data.lblod.info/id/adressen/6256BE8DB1E70F0703B70C62> .
+
+<http://data.lblod.info/id/contact-punten/6256BE8EB1E70F0703B70C64> a schema1:ContactPoint ;
+    mu:uuid "6256BE8EB1E70F0703B70C64" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+32470123456" .
+
+<http://data.lblod.info/id/contact-punten/62585B29933343F9DB241BE7> a schema1:ContactPoint ;
+    mu:uuid "62585B29933343F9DB241BE7" ;
+    schema1:contactType "Primary" ;
+    schema1:email "tezerzzez@gmail.com" ;
+    schema1:telephone "5454" ;
+    locn:address <http://data.lblod.info/id/adressen/62585B79933343F9DB241BE8> .
+
+<http://data.lblod.info/id/contact-punten/62585B7A933343F9DB241BE9> a schema1:ContactPoint ;
+    mu:uuid "62585B7A933343F9DB241BE9" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "121314" .
+
+<http://data.lblod.info/id/contact-punten/6258880B933343F9DB241BF3> a schema1:ContactPoint ;
+    mu:uuid "6258880B933343F9DB241BF3" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "222222222222222" .
+
+<http://data.lblod.info/id/contact-punten/6262AA624588C1EDD5598837> a schema1:ContactPoint ;
+    mu:uuid "6262AA624588C1EDD5598837" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/6262AA624588C1EDD5598836> .
+
+<http://data.lblod.info/id/contact-punten/6262AA934588C1EDD559883B> a schema1:ContactPoint ;
+    mu:uuid "6262AA934588C1EDD559883B" ;
+    schema1:contactType "Primary" ;
+    schema1:email "theo.aerts1@hotmail.com" ;
+    schema1:telephone "+3211211430" ;
+    locn:address <http://data.lblod.info/id/adressen/6262AA924588C1EDD559883A> .
+
+<http://data.lblod.info/id/contact-punten/6273BE35BD265AA4E63B7E4A> a schema1:ContactPoint ;
+    mu:uuid "6273BE35BD265AA4E63B7E4A" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/6273BE34BD265AA4E63B7E49> .
+
+<http://data.lblod.info/id/contact-punten/6275477ABD265AA4E63B7E4B> a schema1:ContactPoint ;
+    mu:uuid "6275477ABD265AA4E63B7E4B" ;
+    schema1:contactType "Primary" .
+
+<http://data.lblod.info/id/contact-punten/6278D61FBD265AA4E63B7E58> a schema1:ContactPoint ;
+    mu:uuid "6278D61FBD265AA4E63B7E58" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/6278D61EBD265AA4E63B7E57> .
+
+<http://data.lblod.info/id/contact-punten/627A2FEFBD265AA4E63B7E66> a schema1:ContactPoint ;
+    mu:uuid "627A2FEFBD265AA4E63B7E66" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A2FEEBD265AA4E63B7E65> .
+
+<http://data.lblod.info/id/contact-punten/627A30E2BD265AA4E63B7E6B> a schema1:ContactPoint ;
+    mu:uuid "627A30E2BD265AA4E63B7E6B" ;
+    schema1:contactType "Primary" ;
+    schema1:email "pater@kerk.be" ;
+    locn:address <http://data.lblod.info/id/adressen/627A30E2BD265AA4E63B7E6A> .
+
+<http://data.lblod.info/id/contact-punten/627A61A4BD265AA4E63B7E90> a schema1:ContactPoint ;
+    mu:uuid "627A61A4BD265AA4E63B7E90" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A61A3BD265AA4E63B7E8F> .
+
+<http://data.lblod.info/id/contact-punten/627A6577BD265AA4E63B7E9E> a schema1:ContactPoint ;
+    mu:uuid "627A6577BD265AA4E63B7E9E" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    schema1:telephone "+3232801425" ;
+    locn:address <http://data.lblod.info/id/adressen/627A6577BD265AA4E63B7E9D> .
+
+<http://data.lblod.info/id/contact-punten/627A6578BD265AA4E63B7E9F> a schema1:ContactPoint ;
+    mu:uuid "627A6578BD265AA4E63B7E9F" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+32470123456" .
+
+<http://data.lblod.info/id/contact-punten/627A7946BD265AA4E63B7EB1> a schema1:ContactPoint ;
+    mu:uuid "627A7946BD265AA4E63B7EB1" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A7946BD265AA4E63B7EB0> .
+
+<http://data.lblod.info/id/contact-punten/627A79D8BD265AA4E63B7EB3> a schema1:ContactPoint ;
+    mu:uuid "627A79D8BD265AA4E63B7EB3" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627A79D8BD265AA4E63B7EB2> .
+
+<http://data.lblod.info/id/contact-punten/627A7E1BBD265AA4E63B7EBA> a schema1:ContactPoint ;
+    mu:uuid "627A7E1BBD265AA4E63B7EBA" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A7E1ABD265AA4E63B7EB9> .
+
+<http://data.lblod.info/id/contact-punten/627A7EF3BD265AA4E63B7EC1> a schema1:ContactPoint ;
+    mu:uuid "627A7EF3BD265AA4E63B7EC1" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A7EF3BD265AA4E63B7EC0> .
+
+<http://data.lblod.info/id/contact-punten/627A7F94BD265AA4E63B7EC5> a schema1:ContactPoint ;
+    mu:uuid "627A7F94BD265AA4E63B7EC5" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A7F94BD265AA4E63B7EC4> .
+
+<http://data.lblod.info/id/contact-punten/627A80DFBD265AA4E63B7ECA> a schema1:ContactPoint ;
+    mu:uuid "627A80DFBD265AA4E63B7ECA" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A80DFBD265AA4E63B7EC9> .
+
+<http://data.lblod.info/id/contact-punten/627A8220BD265AA4E63B7ECE> a schema1:ContactPoint ;
+    mu:uuid "627A8220BD265AA4E63B7ECE" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A821FBD265AA4E63B7ECD> .
+
+<http://data.lblod.info/id/contact-punten/627A82A7BD265AA4E63B7ED2> a schema1:ContactPoint ;
+    mu:uuid "627A82A7BD265AA4E63B7ED2" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A82A6BD265AA4E63B7ED1> .
+
+<http://data.lblod.info/id/contact-punten/627A83EABD265AA4E63B7ED6> a schema1:ContactPoint ;
+    mu:uuid "627A83EABD265AA4E63B7ED6" ;
+    schema1:contactType "Primary" ;
+    schema1:telephone "+3232801425" ;
+    locn:address <http://data.lblod.info/id/adressen/627A83E9BD265AA4E63B7ED5> .
+
+<http://data.lblod.info/id/contact-punten/627A83EABD265AA4E63B7ED7> a schema1:ContactPoint ;
+    mu:uuid "627A83EABD265AA4E63B7ED7" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+32470123456" .
+
+<http://data.lblod.info/id/contact-punten/627A86CBBD265AA4E63B7EDE> a schema1:ContactPoint ;
+    mu:uuid "627A86CBBD265AA4E63B7EDE" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627A86CBBD265AA4E63B7EDD> .
+
+<http://data.lblod.info/id/contact-punten/627A89FEBD265AA4E63B7EE9> a schema1:ContactPoint ;
+    mu:uuid "627A89FEBD265AA4E63B7EE9" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A89FEBD265AA4E63B7EE8> .
+
+<http://data.lblod.info/id/contact-punten/627B5F3ABD265AA4E63B7EEE> a schema1:ContactPoint ;
+    mu:uuid "627B5F3ABD265AA4E63B7EEE" ;
+    schema1:contactType "Primary" ;
+    schema1:email "dries.beheydt2@vlaanderen.be" ;
+    schema1:telephone "+3251306672" ;
+    locn:address <http://data.lblod.info/id/adressen/627B5F39BD265AA4E63B7EED> .
+
+<http://data.lblod.info/id/contact-punten/627CE0A6BD265AA4E63B7F0D> a schema1:ContactPoint ;
+    mu:uuid "627CE0A6BD265AA4E63B7F0D" ;
+    schema1:contactType "Primary" ;
+    schema1:email "predikant.dupont@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627CE0A6BD265AA4E63B7F0C> .
+
+<http://data.lblod.info/id/contact-punten/627E1CA4BD265AA4E63B7F72> a schema1:ContactPoint ;
+    mu:uuid "627E1CA4BD265AA4E63B7F72" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627E1CA3BD265AA4E63B7F71> .
+
+<http://data.lblod.info/id/contact-punten/627E1D04BD265AA4E63B7F77> a schema1:ContactPoint ;
+    mu:uuid "627E1D04BD265AA4E63B7F77" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627E1D04BD265AA4E63B7F76> .
+
+<http://data.lblod.info/id/contact-punten/627E1ED6BD265AA4E63B7F8B> a schema1:ContactPoint ;
+    mu:uuid "627E1ED6BD265AA4E63B7F8B" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627E1ED5BD265AA4E63B7F8A> .
+
+<http://data.lblod.info/id/contact-punten/627E41F1BD265AA4E63B7F9D> a schema1:ContactPoint ;
+    mu:uuid "627E41F1BD265AA4E63B7F9D" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627E41F1BD265AA4E63B7F9C> .
+
+<http://data.lblod.info/id/contact-punten/627E6B85408C9CEF53BB2368> a schema1:ContactPoint ;
+    mu:uuid "627E6B85408C9CEF53BB2368" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627E6B84408C9CEF53BB2367> .
+
+<http://data.lblod.info/id/contact-punten/627E6C03408C9CEF53BB236C> a schema1:ContactPoint ;
+    mu:uuid "627E6C03408C9CEF53BB236C" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627E6C03408C9CEF53BB236B> .
+
+<http://data.lblod.info/id/contact-punten/627E72D7408C9CEF53BB237C> a schema1:ContactPoint ;
+    mu:uuid "627E72D7408C9CEF53BB237C" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627E72D6408C9CEF53BB237B> .
+
+<http://data.lblod.info/id/contact-punten/62820879408C9CEF53BB2382> a schema1:ContactPoint ;
+    mu:uuid "62820879408C9CEF53BB2382" ;
+    schema1:contactType "Primary" ;
+    schema1:telephone "+3232801425" ;
+    locn:address <http://data.lblod.info/id/adressen/62820879408C9CEF53BB2381> .
+
+<http://data.lblod.info/id/contact-punten/62864775012B4A57DF3BAFBE> a schema1:ContactPoint ;
+    mu:uuid "62864775012B4A57DF3BAFBE" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kfffh@mail.com" ;
+    schema1:telephone "0485633410" ;
+    locn:address <http://data.lblod.info/id/adressen/62864774012B4A57DF3BAFBD> .
+
+<http://data.lblod.info/id/contact-punten/6294A96184E574A276AA5673> a schema1:ContactPoint ;
+    mu:uuid "6294A96184E574A276AA5673" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/6294A96184E574A276AA5672> .
+
+<http://data.lblod.info/id/personen/61373340375CFC000A0002D6> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61373340375CFC000A0002D6" ;
+    foaf:familyName "59e510df32d22f19ab137ecda61bf505a48b71bd" ;
+    foaf:givenName "2386c5b78eb76647c8f224e59d94280f778f1c06" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/FEMALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/6137333F375CFC000A0002D3> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/6137333F375CFC000A0002D5> .
+
+<http://data.lblod.info/id/personen/61448F78375CFC000A000470> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61448F78375CFC000A000470" ;
+    foaf:familyName "b478565a07477c42d42bc77aaafca2bf82547285" ;
+    foaf:givenName "ecd34f4e24c3d577ea9e71198d5a9dc779a979a7" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/61448F77375CFC000A00046D> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/61448F78375CFC000A00046F> .
+
+<http://data.lblod.info/id/personen/614C6B6E375CFC000A0004BE> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "614C6B6E375CFC000A0004BE" ;
+    foaf:familyName "42c666b93a7530cdbbc409448a42feb77c5316ce" ;
+    foaf:givenName "710dd4b5fd9c4098b4b85abdd4e471d906b3c1d2" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/614C6B6D375CFC000A0004BB> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/614C6B6D375CFC000A0004BD> .
+
+<http://data.lblod.info/id/personen/6156C043375CFC000A000544> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "6156C043375CFC000A000544" ;
+    foaf:familyName "b9164a85d362e10ae4ba2ecd6656769e02531dff" ;
+    foaf:givenName "604e750fc28ffc82d6fa51fc0f28a8d222940c71" ;
+    ns2:gebruikteVoornaam "Canon" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/6156C042375CFC000A000541> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/6156C043375CFC000A000543> .
+
+<http://data.lblod.info/id/personen/615AF183375CFC000A0005A1> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615AF183375CFC000A0005A1" ;
+    foaf:familyName "428a50a6290c47097af5cded5515806ba6ba4e07" ;
+    foaf:givenName "d5e9aa2d04a634c76fc635447caccc27f67264dc" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615AF182375CFC000A00059E> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615AF182375CFC000A0005A0> .
+
+<http://data.lblod.info/id/personen/615C0F22375CFC000A0005D7> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C0F22375CFC000A0005D7" ;
+    foaf:familyName "78fc1b0f04b845ea1658974fb662ef20bdef23e5" ;
+    foaf:givenName "5b6efb3dc396f0f18e058a97a9a6725b149460b4" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C0F22375CFC000A0005D4> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C0F22375CFC000A0005D6> .
+
+<http://data.lblod.info/id/personen/615C1001375CFC000A0005E0> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C1001375CFC000A0005E0" ;
+    foaf:familyName "ef4ffb3fae237567a746de525a43cccb37e88a68" ;
+    foaf:givenName "4c9a8a283f02c8859ff4658007a908ca86082953" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C1000375CFC000A0005DD> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C1000375CFC000A0005DF> .
+
+<http://data.lblod.info/id/personen/615C10E6375CFC000A0005E9> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C10E6375CFC000A0005E9" ;
+    foaf:familyName "2bfc6d406cec0c99b546503919224f1fce80efc3" ;
+    foaf:givenName "1c4948114c9e7818d4487a132051722df40bb02e" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C10E5375CFC000A0005E6> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C10E5375CFC000A0005E8> .
+
+<http://data.lblod.info/id/personen/615C1310375CFC000A0005FB> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C1310375CFC000A0005FB" ;
+    foaf:familyName "8892e37232f3c3cdf71b7f1bdddb7093c57f04a7" ;
+    foaf:givenName "7a9e9bdd9f591c96600db961033366a4f69a9daa" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C130F375CFC000A0005F8> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C1310375CFC000A0005FA> .
+
+<http://data.lblod.info/id/personen/615C147A375CFC000A000604> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C147A375CFC000A000604" ;
+    foaf:familyName "7727292387755defd4b123bea56c9d5d3ec33ded" ;
+    foaf:givenName "0a09ef191da1222aad0d30eee8ab5390cb50a513" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C1479375CFC000A000601> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C1479375CFC000A000603> .
+
+<http://data.lblod.info/id/personen/615C16A2375CFC000A000616> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C16A2375CFC000A000616" ;
+    foaf:familyName "9a639eb99a8a433e67e41d4c96ae189e82406102" ;
+    foaf:givenName "7d83e0f80ef398a7b32a2c187af1ce9d7b012bbf" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C16A1375CFC000A000613> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C16A1375CFC000A000615> .
+
+<http://data.lblod.info/id/personen/615C1B56375CFC000A000630> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C1B56375CFC000A000630" ;
+    foaf:familyName "ab7e30922e7b514914381eb87d3f2f884c530620" ;
+    foaf:givenName "827dd2e5fc34ea10e22e7a5dca693ba43398dd47" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C1B55375CFC000A00062D> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C1B55375CFC000A00062F> .
+
+<http://data.lblod.info/id/personen/615C1D5B375CFC000A000639> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C1D5B375CFC000A000639" ;
+    foaf:familyName "6cdc7b6d1355729eced2bbbecd8a776cafd79347" ;
+    foaf:givenName "63dacede13041cf6c981238b641bb3d5fadda6c0" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C1D5A375CFC000A000636> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C1D5A375CFC000A000638> .
+
+<http://data.lblod.info/id/personen/615C1FEA375CFC000A000642> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C1FEA375CFC000A000642" ;
+    foaf:familyName "e6ffc627fe97bf00b53251be11b350197d96414a" ;
+    foaf:givenName "31c699eacdc45f1a41d2007092acc3c7efdc9f4b" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C1FE9375CFC000A00063F> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C1FEA375CFC000A000641> .
+
+<http://data.lblod.info/id/personen/615C3601375CFC000A00064B> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C3601375CFC000A00064B" ;
+    foaf:familyName "f8d99d6fac46cf84ee31ca6e02f80f5020b0fb68" ;
+    foaf:givenName "d722c3148292bb9b0f307e76406186127a335c32" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C3600375CFC000A000648> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C3601375CFC000A00064A> .
+
+<http://data.lblod.info/id/personen/615C37DD375CFC000A000656> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C37DD375CFC000A000656" ;
+    foaf:familyName "d1f78a79f3b01b1ae2bb72a11df71b750e3e21b8" ;
+    foaf:givenName "3e182b1ea9376483a38614d916a0b666ef531b6d" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C37DD375CFC000A000653> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C37DD375CFC000A000655> .
+
+<http://data.lblod.info/id/personen/615C3EC7375CFC000A000669> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615C3EC7375CFC000A000669" ;
+    foaf:familyName "778627418cb4b30cdfe47281afdbf30f1a173700" ;
+    foaf:givenName "a7faaa25ec6756d5324b94ac2d572722a547a195" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615C3EC6375CFC000A000666> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615C3EC7375CFC000A000668> .
+
+<http://data.lblod.info/id/personen/615EED2D375CFC000A0006F8> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "615EED2D375CFC000A0006F8" ;
+    foaf:familyName "f8653d4f345e483c41d713833f96c4a65a2c3fc7" ;
+    foaf:givenName "50f4793162befb0db993742f28f6a7f68495d56f" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/615EED2C375CFC000A0006F5> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/615EED2C375CFC000A0006F7> .
+
+<http://data.lblod.info/id/personen/616436D0375CFC000A000777> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "616436D0375CFC000A000777" ;
+    foaf:familyName "b7761a5de15b56b7d9ebc0220109d30793de4518" ;
+    foaf:givenName "6e67cd66855bbdf6c4f4501a8252cb25963007ff" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/616436CF375CFC000A000774> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/616436D0375CFC000A000776> .
+
+<http://data.lblod.info/id/personen/61B7478F3C1A230C43B451E1> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61B7478F3C1A230C43B451E1" ;
+    foaf:familyName "423e89b405859862c67e25b8ac6048f776db389d" ;
+    foaf:givenName "bbd3e35f9f742006d5238c53a196868df0e09518" .
+
+<http://data.lblod.info/id/personen/61C1A60F3C1A230C43B452E8> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61C1A60F3C1A230C43B452E8" ;
+    foaf:familyName "4c17585e7e708b0160678317f7169e82eb4bcf29" ;
+    foaf:givenName "4683ada43d54b2a2eb9e8a1360ae7a45f80fb042" .
+
+<http://data.lblod.info/id/personen/61DEDA48BA00DD4BE2501B57> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61DEDA48BA00DD4BE2501B57" ;
+    foaf:familyName "cheurfa" ;
+    foaf:givenName "Janis" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> .
+
+<http://data.lblod.info/id/personen/61E021D0BA00DD4BE2501BC4> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61E021D0BA00DD4BE2501BC4" ;
+    foaf:familyName "9cb90242276dab01d398c7b36c354007d8babc46" ;
+    foaf:givenName "06c16c2f4b1a7fe3729a293c76331d3425105ef3" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> .
+
+<http://data.lblod.info/id/personen/61EAC4D8BA00DD4BE2501C71> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "61EAC4D8BA00DD4BE2501C71" ;
+    foaf:familyName "aa3ab4106b46aa908e2b09ecb51c69542dc1249b" ;
+    foaf:givenName "21fe320b546b8cfaef00af8621869c69146c0d63" ;
+    ns2:gebruikteVoornaam "priester Karel" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> .
+
+<http://data.lblod.info/id/personen/620B6CB35747C883CA1D2DCD> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "620B6CB35747C883CA1D2DCD" ;
+    foaf:familyName "9cdf07a4cfed64ae7bda714c4246ad82be2f0b34" ;
+    foaf:givenName "1001b22c8e4adeb77ef10481ad06ff9c35006cb3" .
+
+<http://data.lblod.info/id/personen/620BB9AC5747C883CA1D2DF5> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "620BB9AC5747C883CA1D2DF5" ;
+    foaf:familyName "b18ce27453ad80adc7c3d81417bede2d01e2f7a1" ;
+    foaf:givenName "16b46e5841548587ec7610ae2f2f1b86348333da" ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> .
+
+<http://data.lblod.info/id/personen/620E28305747C883CA1D2E95> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "620E28305747C883CA1D2E95" ;
+    foaf:familyName "cae5e6e88b65fa68b09fc77e558f6b145ca7159c" ;
+    foaf:givenName "1cf52227958603e9cfb4ae0794790e148035ce40" .
+
+<http://data.lblod.info/id/personen/620E5B595747C883CA1D2EC5> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "620E5B595747C883CA1D2EC5" ;
+    foaf:familyName "3c6201be92ef5fa1bfd7517cd2820e24062ec97a" ;
+    foaf:givenName "5a820695a69049302935633e131d1b5fc9cd31ba" .
+
+<http://data.lblod.info/id/personen/62173D4B5747C883CA1D33F3> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "62173D4B5747C883CA1D33F3" ;
+    foaf:familyName "a942b3001bf4d39a123e0ffdd61c24717ff5426e" ;
+    foaf:givenName "57ad79649b677cf8f889ba6dc5fb4f98ada2767e" .
+
+<http://data.lblod.info/id/personen/621740E35747C883CA1D33F9> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621740E35747C883CA1D33F9" ;
+    foaf:familyName "31a9d3776e1aaeaf557610fd5163d2356593e7be" ;
+    foaf:givenName "0bc2dbb1c74b904b66ce6f7467e86b30ae3694e5" .
+
+<http://data.lblod.info/id/personen/62174E845747C883CA1D340D> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "62174E845747C883CA1D340D" ;
+    foaf:familyName "da399d73c817cda23dd5bf1cbd59ffedc5b2bfc1" ;
+    foaf:givenName "3e182b1ea9376483a38614d916a0b666ef531b6d" .
+
+<http://data.lblod.info/id/personen/621755745747C883CA1D3418> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621755745747C883CA1D3418" ;
+    foaf:familyName "440f942f6e6bee4aa84117ba976b0e77d519a162" ;
+    foaf:givenName "7c6dbed8e14ba50cb06dbcdbd1ea197425a627de" .
+
+<http://data.lblod.info/id/personen/62177E4A5747C883CA1D3476> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "62177E4A5747C883CA1D3476" ;
+    foaf:familyName "3d7ba33414c02df345b030749e71a279af2d27c6" ;
+    foaf:givenName "8d57a8f0a03c99c4ee948fa082a658f8ba8c2a9d" .
+
+<http://data.lblod.info/id/personen/621781485747C883CA1D348D> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621781485747C883CA1D348D" ;
+    foaf:familyName "320d3c27fbef4519932427b0887e53174a2308aa" ;
+    foaf:givenName "1001b22c8e4adeb77ef10481ad06ff9c35006cb3" .
+
+<http://data.lblod.info/id/personen/62179CCC5747C883CA1D34A7> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "62179CCC5747C883CA1D34A7" ;
+    foaf:familyName "f5d0ec64ffa561401e382404f50e72b274b8fd94" ;
+    foaf:givenName "0633b0dfe23f6ab618abdc03ea936eb1cd7a4874" .
+
+<http://data.lblod.info/id/personen/6217A0005747C883CA1D34C6> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "6217A0005747C883CA1D34C6" ;
+    foaf:familyName "429d2eef982b567781b629d7e6563efb55754efc" ;
+    foaf:givenName "20ef5513a2603a8759fa3b03a44d8ed40cecf1ab" .
+
+<http://data.lblod.info/id/personen/62189F7B5747C883CA1D351D> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "62189F7B5747C883CA1D351D" ;
+    foaf:familyName "Souleimanov" ;
+    foaf:givenName "Zelim" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/c2dc14bf-0638-446c-b19d-6ddb8999> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/093d20e7-d837-430a-8907-d0b1edc0> .
+
+<http://data.lblod.info/id/personen/621C93515747C883CA1D35D1> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621C93515747C883CA1D35D1" ;
+    foaf:familyName "8bf7f81692f5a7b0eaabdee0d632ee9c3e648c49" ;
+    foaf:givenName "2ff32840fab8dc056a0e36b755d116ead921f231" .
+
+<http://data.lblod.info/id/personen/621DDA0F5747C883CA1D3642> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621DDA0F5747C883CA1D3642" ;
+    foaf:familyName "7b8f959b6fb72c43059398a74578ccc7c157f111" ;
+    foaf:givenName "cf35ff862c9a285f4876e55420c8a7351c88e61d" .
+
+<http://data.lblod.info/id/personen/621DDE9F5747C883CA1D3662> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621DDE9F5747C883CA1D3662" ;
+    foaf:familyName "15aa4ed814103ad0986ed19df9ea5a6e8669061e" ;
+    foaf:givenName "e50f3474ae97f4a1455f21fcc02afcc6268703ea" .
+
+<http://data.lblod.info/id/personen/621E18C35747C883CA1D36CC> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "621E18C35747C883CA1D36CC" ;
+    foaf:familyName "db5a811fa98a468cf272ce34bd22a84b8b1c2cd7" ;
+    foaf:givenName "b266cbad5777644a42405060426a3f51c88cc94b" .
+
+<http://data.lblod.info/id/personen/6239A5E9519A6EAA5A70F45C> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6239A5E9519A6EAA5A70F45C" ;
+    foaf:familyName "Janssens" ;
+    foaf:givenName "Jan" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/2b96fb81-b8a1-4e0e-9345-09f334fa> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/b0caed82-f3ee-4f85-b227-96737765> .
+
+<http://data.lblod.info/id/personen/6239A613519A6EAA5A70F461> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6239A613519A6EAA5A70F461" ;
+    foaf:familyName "Staes" ;
+    foaf:givenName "Chris" ;
+    ns2:gebruikteVoornaam "Chriske" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/NST> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/8017f811-d294-11ec-b670-bb376f38db50> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/8017f812-d294-11ec-b670-bb376f38db50> .
+
+<http://data.lblod.info/id/personen/6246DD05C3ACCAFF66C7E240> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6246DD05C3ACCAFF66C7E240" ;
+    foaf:familyName "Selie" ;
+    foaf:givenName "Peter" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/136e3f50-eb01-483f-bb48-301defb6> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/24ba7687-723d-40d2-a1d5-bd94369e> .
+
+<http://data.lblod.info/id/personen/624B0CD8E9DEF518D63C4AA0> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "624B0CD8E9DEF518D63C4AA0" ;
+    foaf:familyName "Testing Sofie 2" ;
+    foaf:givenName "jan" .
+
+<http://data.lblod.info/id/personen/6256B43BB1E70F0703B70C4D> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6256B43BB1E70F0703B70C4D" ;
+    foaf:familyName "grimber" ;
+    foaf:givenName "mathieu" .
+
+<http://data.lblod.info/id/personen/6256BD2CB1E70F0703B70C58> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6256BD2CB1E70F0703B70C58" ;
+    foaf:familyName "Ipsum" ;
+    foaf:givenName "Lorem" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/NKN> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/4cad98f8-2343-4f8b-a1a8-e6d13505> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/93795803-ff72-486a-aa82-073fb075> .
+
+<http://data.lblod.info/id/personen/625929218243CA0E34AC1DC7> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "625929218243CA0E34AC1DC7" ;
+    foaf:familyName "Schlossberg" ;
+    foaf:givenName "Jannick" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/ffb7c4c5-3321-4636-b514-864175a3> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/FRA> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/38168c5f-4a06-4983-b148-71c6b17b> .
+
+<http://data.lblod.info/id/personen/625935358243CA0E34AC1DCC> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "625935358243CA0E34AC1DCC" ;
+    foaf:familyName "Rogier" ;
+    foaf:givenName "Julien" .
+
+<http://data.lblod.info/id/personen/627A3004BD265AA4E63B7E67> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627A3004BD265AA4E63B7E67" ;
+    foaf:familyName "Paterson" ;
+    foaf:givenName "Pater" .
+
+<http://data.lblod.info/id/personen/627A6069BD265AA4E63B7E8C> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627A6069BD265AA4E63B7E8C" ;
+    foaf:familyName "Dupont" ;
+    foaf:givenName "Frank" .
+
+<http://data.lblod.info/id/personen/627A8044BD265AA4E63B7EC8> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627A8044BD265AA4E63B7EC8" ;
+    foaf:familyName "Saska" ;
+    foaf:givenName "Saska" .
+
+<http://data.lblod.info/id/personen/627B5DCABD265AA4E63B7EEC> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627B5DCABD265AA4E63B7EEC" ;
+    foaf:familyName "BEHEYDT" ;
+    foaf:givenName "Dries" ;
+    ns2:gebruikteVoornaam "Dries" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/4aa80e71-d0f7-11ec-b670-bb376f38db50> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/4aa80e72-d0f7-11ec-b670-bb376f38db50> .
+
+<http://data.lblod.info/id/personen/627CDA45BD265AA4E63B7F05> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627CDA45BD265AA4E63B7F05" ;
+    foaf:familyName "Dupont2" ;
+    foaf:givenName "Frank" .
+
+<http://data.lblod.info/id/personen/627E1C96BD265AA4E63B7F70> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627E1C96BD265AA4E63B7F70" ;
+    foaf:familyName "bartin2" ;
+    foaf:givenName "bartin" .
+
+<http://data.lblod.info/id/personen/627E1CF2BD265AA4E63B7F75> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627E1CF2BD265AA4E63B7F75" ;
+    foaf:familyName "corkeoen" ;
+    foaf:givenName "corentin2" .
+
+<http://data.lblod.info/id/personen/627E1E0ABD265AA4E63B7F85> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627E1E0ABD265AA4E63B7F85" ;
+    foaf:familyName "likehi" ;
+    foaf:givenName "kaieo" .
+
+<http://data.lblod.info/id/personen/627E41DFBD265AA4E63B7F9B> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627E41DFBD265AA4E63B7F9B" ;
+    foaf:familyName "lastick" ;
+    foaf:givenName "koko" .
+
+<http://data.lblod.info/id/personen/627E72A0408C9CEF53BB237A> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627E72A0408C9CEF53BB237A" ;
+    foaf:familyName "Smith" ;
+    foaf:givenName "John" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/7986f8a0-d2cd-11ec-ae7d-454cc0b71bab> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> .
+
+<http://data.lblod.info/id/personen/6282077F408C9CEF53BB2380> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6282077F408C9CEF53BB2380" ;
+    foaf:familyName "Doe Smith" ;
+    foaf:givenName "John" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/f902b821-d4ef-11ec-ae7d-454cc0b71bab> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/f902b822-d4ef-11ec-ae7d-454cc0b71bab> .
+
+<http://data.lblod.info/id/personen/6294A8FF84E574A276AA5671> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6294A8FF84E574A276AA5671" ;
+    foaf:familyName "Briant" ;
+    foaf:givenName "Arthur" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/d0e9a2b1-e00a-11ec-87c3-b34b2b93a961> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/GBR> .
+
+<http://data.lblod.info/id/personen/8ab59de1000e7db62ea65e26f3818c05> a <http://www.w3.org/ns/person#Person> ;
+    mandaat:isAangesteldAls <http://data.lblod.info/id/mandatarissen/5093ed6df7228bc0642cc11b7563f177>,
+        <http://data.lblod.info/id/mandatarissen/c297b24ddbf89af4901d8c247dabd04e>,
+        <http://data.lblod.info/id/mandatarissen/e5bf2d6f91005b904324b2826403d3c7> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "8ab59de1000e7db62ea65e26f3818c05" ;
+    foaf:familyName "bittich" ;
+    foaf:givenName "Nordine" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/76600ce2-932a-40e2-9222-cb25a410> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/c9a683b2-ab63-4f6b-b803-27678776> .
+
+<http://data.lblod.info/id/personen/b7173f16a1bc7a335ddd1fc056ecdd43> a <http://www.w3.org/ns/person#Person> ;
+    mandaat:isAangesteldAls <http://data.lblod.info/id/mandatarissen/1c3340c2af58a9d87b3edc8eef9d7523>,
+        <http://data.lblod.info/id/mandatarissen/e8c67db1e0a4a56091ae036b69f6b571>,
+        <http://data.lblod.info/id/mandatarissen/f7ff8a5403304b03e2b0e01659c0a785> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "b7173f16a1bc7a335ddd1fc056ecdd43" ;
+    foaf:familyName "Bouwens" ;
+    foaf:givenName "Jan" .
+
+<http://data.lblod.info/id/positiesBedienaar/61373446375CFC000A0002DA> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/689b3123e29cff78e310df38a774b9bb> ;
+    mu:uuid "61373446375CFC000A0002DA" .
+
+<http://data.lblod.info/id/positiesBedienaar/61449031375CFC000A000474> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/83d50e9184ae4a628851370079d162f6> ;
+    mu:uuid "61449031375CFC000A000474" .
+
+<http://data.lblod.info/id/positiesBedienaar/614C6B84375CFC000A0004C2> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> ;
+    mu:uuid "614C6B84375CFC000A0004C2" .
+
+<http://data.lblod.info/id/positiesBedienaar/6156C06B375CFC000A000548> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/689b3123e29cff78e310df38a774b9bb> ;
+    mu:uuid "6156C06B375CFC000A000548" .
+
+<http://data.lblod.info/id/positiesBedienaar/615AF1B6375CFC000A0005A5> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/e357bc8f4cc3a694fde2239748768a22> ;
+    mu:uuid "615AF1B6375CFC000A0005A5" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C0FB9375CFC000A0005DB> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/689b3123e29cff78e310df38a774b9bb> ;
+    mu:uuid "615C0FB9375CFC000A0005DB" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C1029375CFC000A0005E4> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C1029375CFC000A0005E4" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C1194375CFC000A0005ED> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C1194375CFC000A0005ED" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C1369375CFC000A0005FF> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C1369375CFC000A0005FF" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C14D4375CFC000A000608> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C14D4375CFC000A000608" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C16EE375CFC000A00061A> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/e357bc8f4cc3a694fde2239748768a22> ;
+    mu:uuid "615C16EE375CFC000A00061A" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C1BB5375CFC000A000634> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C1BB5375CFC000A000634" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C1DB3375CFC000A00063D> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C1DB3375CFC000A00063D" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C2047375CFC000A000646> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C2047375CFC000A000646" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C365E375CFC000A00064F> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C365E375CFC000A00064F" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C3870375CFC000A00065A> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C3870375CFC000A00065A" .
+
+<http://data.lblod.info/id/positiesBedienaar/615C3F29375CFC000A00066D> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "615C3F29375CFC000A00066D" .
+
+<http://data.lblod.info/id/positiesBedienaar/615EED53375CFC000A0006FC> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/e357bc8f4cc3a694fde2239748768a22> ;
+    mu:uuid "615EED53375CFC000A0006FC" .
+
+<http://data.lblod.info/id/positiesBedienaar/616436FD375CFC000A00077B> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "616436FD375CFC000A00077B" .
+
+<http://data.lblod.info/id/positiesBedienaar/61B747D63C1A230C43B451E5> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "61B747D63C1A230C43B451E5" .
+
+<http://data.lblod.info/id/positiesBedienaar/61C1A7043C1A230C43B452EC> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/689b3123e29cff78e310df38a774b9bb> ;
+    mu:uuid "61C1A7043C1A230C43B452EC" .
+
+<http://data.lblod.info/id/positiesBedienaar/61DEDAA9BA00DD4BE2501B5B> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/83d50e9184ae4a628851370079d162f6> ;
+    mu:uuid "61DEDAA9BA00DD4BE2501B5B" .
+
+<http://data.lblod.info/id/positiesBedienaar/61E0222BBA00DD4BE2501BC8> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/e357bc8f4cc3a694fde2239748768a22> ;
+    mu:uuid "61E0222BBA00DD4BE2501BC8" .
+
+<http://data.lblod.info/id/positiesBedienaar/61EAC54BBA00DD4BE2501C75> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/689b3123e29cff78e310df38a774b9bb> ;
+    mu:uuid "61EAC54BBA00DD4BE2501C75" .
+
+<http://data.lblod.info/id/positiesBedienaar/620B6CEE5747C883CA1D2DD1> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "620B6CEE5747C883CA1D2DD1" .
+
+<http://data.lblod.info/id/positiesBedienaar/620BBA615747C883CA1D2DF9> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/5ebb798bd59c3b48c25116032caa02b7> ;
+    mu:uuid "620BBA615747C883CA1D2DF9" .
+
+<http://data.lblod.info/id/positiesBedienaar/620E28AE5747C883CA1D2E99> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "620E28AE5747C883CA1D2E99" .
+
+<http://data.lblod.info/id/positiesBedienaar/620E5BD35747C883CA1D2ECE> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "620E5BD35747C883CA1D2ECE" .
+
+<http://data.lblod.info/id/positiesBedienaar/62173DDE5747C883CA1D33F7> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "62173DDE5747C883CA1D33F7" .
+
+<http://data.lblod.info/id/positiesBedienaar/6217410D5747C883CA1D33FD> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6217410D5747C883CA1D33FD" .
+
+<http://data.lblod.info/id/positiesBedienaar/62174F555747C883CA1D3411> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "62174F555747C883CA1D3411" .
+
+<http://data.lblod.info/id/positiesBedienaar/621755E85747C883CA1D341C> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "621755E85747C883CA1D341C" .
+
+<http://data.lblod.info/id/positiesBedienaar/62177EC55747C883CA1D347B> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "62177EC55747C883CA1D347B" .
+
+<http://data.lblod.info/id/positiesBedienaar/6217822D5747C883CA1D3496> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6217822D5747C883CA1D3496" .
+
+<http://data.lblod.info/id/positiesBedienaar/62179D345747C883CA1D34AB> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "62179D345747C883CA1D34AB" .
+
+<http://data.lblod.info/id/positiesBedienaar/6217A07A5747C883CA1D34CF> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6217A07A5747C883CA1D34CF" .
+
+<http://data.lblod.info/id/positiesBedienaar/621C93CA5747C883CA1D35D6> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "621C93CA5747C883CA1D35D6" .
+
+<http://data.lblod.info/id/positiesBedienaar/621DDAA85747C883CA1D3646> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "621DDAA85747C883CA1D3646" .
+
+<http://data.lblod.info/id/positiesBedienaar/621DDEBE5747C883CA1D3666> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "621DDEBE5747C883CA1D3666" .
+
+<http://data.lblod.info/id/positiesBedienaar/621E191A5747C883CA1D36D0> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "621E191A5747C883CA1D36D0" .
+
+<http://data.lblod.info/id/positiesBedienaar/6228A61781DC67FB9E9ADEC2> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "6228A61781DC67FB9E9ADEC2" .
+
+<http://data.lblod.info/id/positiesBedienaar/62398FFED6E5DACC64C76E9A> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
+    mu:uuid "62398FFED6E5DACC64C76E9A" .
+
+<http://data.lblod.info/id/positiesBedienaar/62399372D6E5DACC64C76EA0> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "62399372D6E5DACC64C76EA0" .
+
+<http://data.lblod.info/id/positiesBedienaar/6239A677519A6EAA5A70F465> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/67548f1fe5bf52e5a7ad33dcce47472d> ;
+    mu:uuid "6239A677519A6EAA5A70F465" .
+
+<http://data.lblod.info/id/positiesBedienaar/6246CBBFC3ACCAFF66C7E23E> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/c4a3fd586211b17b06f574885e23f355> ;
+    mu:uuid "6246CBBFC3ACCAFF66C7E23E" .
+
+<http://data.lblod.info/id/positiesBedienaar/6246DE9EC3ACCAFF66C7E259> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6246DE9EC3ACCAFF66C7E259" .
+
+<http://data.lblod.info/id/positiesBedienaar/624B0DD3E9DEF518D63C4AA9> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "624B0DD3E9DEF518D63C4AA9" .
+
+<http://data.lblod.info/id/positiesBedienaar/62567F5EB1E70F0703B70C37> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "62567F5EB1E70F0703B70C37" .
+
+<http://data.lblod.info/id/positiesBedienaar/62568E01B1E70F0703B70C3C> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "62568E01B1E70F0703B70C3C" .
+
+<http://data.lblod.info/id/positiesBedienaar/62569E52B1E70F0703B70C42> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "62569E52B1E70F0703B70C42" .
+
+<http://data.lblod.info/id/positiesBedienaar/6256A238B1E70F0703B70C47> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6256A238B1E70F0703B70C47" .
+
+<http://data.lblod.info/id/positiesBedienaar/6256BD58B1E70F0703B70C5C> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6256BD58B1E70F0703B70C5C" .
+
+<http://data.lblod.info/id/positiesBedienaar/6256C16AB1E70F0703B70C70> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6256C16AB1E70F0703B70C70" .
+
+<http://data.lblod.info/id/positiesBedienaar/62588CE9933343F9DB241BF8> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
+    mu:uuid "62588CE9933343F9DB241BF8" .
+
+<http://data.lblod.info/id/positiesBedienaar/62592B808243CA0E34AC1DC8> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
+    mu:uuid "62592B808243CA0E34AC1DC8" .
+
+<http://data.lblod.info/id/positiesBedienaar/6259399C8243CA0E34AC1DD2> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6259399C8243CA0E34AC1DD2" .
+
+<http://data.lblod.info/id/positiesBedienaar/625939EC8243CA0E34AC1DD8> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "625939EC8243CA0E34AC1DD8" .
+
+<http://data.lblod.info/id/positiesBedienaar/62593AB78243CA0E34AC1DDB> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "62593AB78243CA0E34AC1DDB" .
+
+<http://data.lblod.info/id/positiesBedienaar/626005B98243CA0E34AC1E07> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "626005B98243CA0E34AC1E07" .
+
+<http://data.lblod.info/id/positiesBedienaar/6262AA634588C1EDD5598838> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "6262AA634588C1EDD5598838" .
+
+<http://data.lblod.info/id/positiesBedienaar/6262B0374588C1EDD5598848> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "6262B0374588C1EDD5598848" .
+
+<http://data.lblod.info/id/positiesBedienaar/626A7BF2BD265AA4E63B7E22> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
+    mu:uuid "626A7BF2BD265AA4E63B7E22" .
+
+<http://data.lblod.info/id/positiesBedienaar/62726E61BD265AA4E63B7E39> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "62726E61BD265AA4E63B7E39" .
+
+<http://data.lblod.info/id/positiesBedienaar/62726EAFBD265AA4E63B7E3B> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "62726EAFBD265AA4E63B7E3B" .
+
+<http://data.lblod.info/id/positiesBedienaar/62726F71BD265AA4E63B7E3D> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "62726F71BD265AA4E63B7E3D" .
+
+<http://data.lblod.info/id/positiesBedienaar/62733DA9BD265AA4E63B7E44> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "62733DA9BD265AA4E63B7E44" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A2BFEBD265AA4E63B7E5F> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/c4a3fd586211b17b06f574885e23f355> ;
+    mu:uuid "627A2BFEBD265AA4E63B7E5F" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A3079BD265AA4E63B7E68> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A3079BD265AA4E63B7E68" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A30E3BD265AA4E63B7E6C> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/67548f1fe5bf52e5a7ad33dcce47472d> ;
+    mu:uuid "627A30E3BD265AA4E63B7E6C" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A30F9BD265AA4E63B7E6E> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/27b3d149dd2a726effe749572177682e> ;
+    mu:uuid "627A30F9BD265AA4E63B7E6E" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A3209BD265AA4E63B7E70> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A3209BD265AA4E63B7E70" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A5FC8BD265AA4E63B7E8A> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A5FC8BD265AA4E63B7E8A" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A6136BD265AA4E63B7E8D> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
+    mu:uuid "627A6136BD265AA4E63B7E8D" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A61A4BD265AA4E63B7E91> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/83d50e9184ae4a628851370079d162f6> ;
+    mu:uuid "627A61A4BD265AA4E63B7E91" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A6306BD265AA4E63B7E93> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A6306BD265AA4E63B7E93" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A684CBD265AA4E63B7EA2> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A684CBD265AA4E63B7EA2" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A7E1BBD265AA4E63B7EBB> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/67548f1fe5bf52e5a7ad33dcce47472d> ;
+    mu:uuid "627A7E1BBD265AA4E63B7EBB" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A7EF4BD265AA4E63B7EC2> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/83d50e9184ae4a628851370079d162f6> ;
+    mu:uuid "627A7EF4BD265AA4E63B7EC2" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A7F94BD265AA4E63B7EC6> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A7F94BD265AA4E63B7EC6" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A80DFBD265AA4E63B7ECB> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "627A80DFBD265AA4E63B7ECB" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A8220BD265AA4E63B7ECF> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A8220BD265AA4E63B7ECF" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A82A7BD265AA4E63B7ED3> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "627A82A7BD265AA4E63B7ED3" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A83EBBD265AA4E63B7ED8> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A83EBBD265AA4E63B7ED8" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A86CCBD265AA4E63B7EDF> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A86CCBD265AA4E63B7EDF" .
+
+<http://data.lblod.info/id/positiesBedienaar/627A89FFBD265AA4E63B7EEA> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627A89FFBD265AA4E63B7EEA" .
+
+<http://data.lblod.info/id/positiesBedienaar/627B5F3BBD265AA4E63B7EEF> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "627B5F3BBD265AA4E63B7EEF" .
+
+<http://data.lblod.info/id/positiesBedienaar/627CDA9DBD265AA4E63B7F0A> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/83d50e9184ae4a628851370079d162f6> ;
+    mu:uuid "627CDA9DBD265AA4E63B7F0A" .
+
+<http://data.lblod.info/id/positiesBedienaar/627D2120BD265AA4E63B7F39> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/83d50e9184ae4a628851370079d162f6> ;
+    mu:uuid "627D2120BD265AA4E63B7F39" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E1B55BD265AA4E63B7F63> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "627E1B55BD265AA4E63B7F63" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E1CA4BD265AA4E63B7F73> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "627E1CA4BD265AA4E63B7F73" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E1D05BD265AA4E63B7F78> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
+    mu:uuid "627E1D05BD265AA4E63B7F78" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E1E1DBD265AA4E63B7F88> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "627E1E1DBD265AA4E63B7F88" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E41F2BD265AA4E63B7F9E> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/97083de35cd36b36a72185807e941c8a> ;
+    mu:uuid "627E41F2BD265AA4E63B7F9E" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E6B85408C9CEF53BB2369> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627E6B85408C9CEF53BB2369" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E6C04408C9CEF53BB236D> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
+    mu:uuid "627E6C04408C9CEF53BB236D" .
+
+<http://data.lblod.info/id/positiesBedienaar/627E72D7408C9CEF53BB237D> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "627E72D7408C9CEF53BB237D" .
+
+<http://data.lblod.info/id/positiesBedienaar/6282087A408C9CEF53BB2383> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6282087A408C9CEF53BB2383" .
+
+<http://data.lblod.info/id/positiesBedienaar/6294A96284E574A276AA5674> a ere:PositieBedienaar,
+        org:Post ;
+    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
+    mu:uuid "6294A96284E574A276AA5674" .
+
+<http://data.lblod.info/id/contact-punten/627A69D1BD265AA4E63B7EA5> a schema1:ContactPoint ;
+    mu:uuid "627A69D1BD265AA4E63B7EA5" ;
+    schema1:contactType "Primary" ;
+    schema1:email "kconnect87@gmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627A69D1BD265AA4E63B7EA4> .
+
+<http://data.lblod.info/id/contact-punten/627A7A7BBD265AA4E63B7EB5> a schema1:ContactPoint ;
+    mu:uuid "627A7A7BBD265AA4E63B7EB5" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/627A7A7ABD265AA4E63B7EB4> .
+
+<http://data.lblod.info/id/contact-punten/627E1A86BD265AA4E63B7F5F> a schema1:ContactPoint ;
+    mu:uuid "627E1A86BD265AA4E63B7F5F" ;
+    schema1:contactType "Primary" ;
+    schema1:email "theo.aerts1@hotmail.com" ;
+    locn:address <http://data.lblod.info/id/adressen/627E1A86BD265AA4E63B7F5E> .
+
+<http://data.lblod.info/id/personen/6228A75481DC67FB9E9ADECD> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6228A75481DC67FB9E9ADECD" ;
+    foaf:familyName "Doe" ;
+    foaf:givenName "John" ;
+    ns2:gebruikteVoornaam "JD" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/6d85139f-4033-46c4-b0d4-82ec58dd> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL>,
+        <http://publications.europa.eu/resource/authority/country/FRA> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/ac41553f-e869-42ad-a687-cf66560a> .
+
+<http://data.lblod.info/id/personen/6262A07D4588C1EDD559882B> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6262A07D4588C1EDD559882B" ;
+    foaf:familyName "olas" ;
+    foaf:givenName "nik" .
+
+<http://data.lblod.info/id/personen/627D20BCBD265AA4E63B7F34> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "627D20BCBD265AA4E63B7F34" ;
+    foaf:familyName "Dupont3" ;
+    foaf:givenName "Frank" .
+
+<http://data.lblod.info/id/personen/f89287e617045efb695e26de0fc755e7> a <http://www.w3.org/ns/person#Person> ;
+    mandaat:isAangesteldAls <http://data.lblod.info/id/mandatarissen/62d2a01b90c52f38485fed0914cb77be>,
+        <http://data.lblod.info/id/mandatarissen/fc3b7d9890ce02ad8200de2b3c4c3fa9> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "f89287e617045efb695e26de0fc755e7" ;
+    foaf:familyName "bittich" ;
+    foaf:givenName "nordine" .
+
+<http://data.lblod.info/id/contact-punten/626A7BF2BD265AA4E63B7E21> a schema1:ContactPoint ;
+    mu:uuid "626A7BF2BD265AA4E63B7E21" ;
+    schema1:contactType "Primary" ;
+    locn:address <http://data.lblod.info/id/adressen/626A7BF1BD265AA4E63B7E20> .
+
+<http://data.lblod.info/id/personen/620E0EAE5747C883CA1D2E4A> a <http://www.w3.org/ns/person#Person> ;
+    persoon:gebruikteVoornaam "da39a3ee5e6b4b0d3255bfef95601890afd80709" ;
+    persoon:heeftGeboorte "1977-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    mu:uuid "620E0EAE5747C883CA1D2E4A" ;
+    foaf:familyName "Abidal" ;
+    foaf:givenName "Jan" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/MALE> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/87484f18-c71d-4d1a-8cdf-d46b5340> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BDI>,
+        <http://publications.europa.eu/resource/authority/country/BEL> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/0c7f7877-3a00-4f2e-96b2-4442b77b> .
+
+<http://data.lblod.info/id/personen/625939CC8243CA0E34AC1DD7> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "625939CC8243CA0E34AC1DD7" ;
+    foaf:familyName "testing" ;
+    foaf:givenName "testing" ;
+    ns2:gebruikteVoornaam "testing" .
+
+<http://data.lblod.info/id/personen/626A6750BD265AA4E63B7E1F> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "626A6750BD265AA4E63B7E1F" ;
+    foaf:familyName "Presley" ;
+    foaf:givenName "Elvis" ;
+    ns2:gebruikteVoornaam "Elvie" ;
+    ns2:geslacht <http://publications.europa.eu/resource/authority/human-sex/NST> ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/4aaa2c30-d045-11ec-b670-bb376f38db50> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/VNM> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/4aaa2c31-d045-11ec-b670-bb376f38db50> .
+
+<http://data.lblod.info/id/contact-punten/6259399D8243CA0E34AC1DD4> a schema1:ContactPoint ;
+    mu:uuid "6259399D8243CA0E34AC1DD4" ;
+    schema1:contactType "Primary" ;
+    schema1:email "theo.aerts1@hotmail.com" ;
+    schema1:telephone "+3211211430" ;
+    locn:address <http://data.lblod.info/id/adressen/6259399D8243CA0E34AC1DD3> .
+
+<http://data.lblod.info/id/contact-punten/6259399E8243CA0E34AC1DD5> a schema1:ContactPoint ;
+    mu:uuid "6259399E8243CA0E34AC1DD5" ;
+    schema1:contactType "Secondary" ;
+    schema1:telephone "+3211211430" .
+
+<http://lblod.data.gift/concepts/997073905f839ac6bafe92b76050ab0b> a <http://lblod.data.gift/vocabularies/organisatie/BedienaarFinanceringCode> ;
+    mu:uuid "997073905f839ac6bafe92b76050ab0b" ;
+    skos:inScheme <http://lblod.data.gift/concept-schemes/7d7b1cf62d032f69c94f1544ddf13b38> ;
+    skos:prefLabel "Zelf gefinancierd" ;
+    skos:topConceptOf <http://lblod.data.gift/concept-schemes/7d7b1cf62d032f69c94f1544ddf13b38> .
+
+<http://data.lblod.info/id/personen/6228A5B981DC67FB9E9ADEBE> a <http://www.w3.org/ns/person#Person> ;
+    mu:uuid "6228A5B981DC67FB9E9ADEBE" ;
+    foaf:familyName "Vercammen" ;
+    foaf:givenName "Kevin" ;
+    ns2:gebruikteVoornaam "Test" ;
+    ns2:heeftGeboorte <http://data.lblod.info/id/geboortes/27807421-e009-11ec-87c3-b34b2b93a961> ;
+    ns2:heeftNationaliteit <http://publications.europa.eu/resource/authority/country/BEL>,
+        <http://publications.europa.eu/resource/authority/country/DEU>,
+        <http://publications.europa.eu/resource/authority/country/FRA>,
+        <http://publications.europa.eu/resource/authority/country/NLD> ;
+    ns2:registratie <http://data.lblod.info/id/identificatoren/27809b30-e009-11ec-87c3-b34b2b93a961> .
+
+<http://lblod.data.gift/concepts/9d6f49b3d923b437ec3a91e8b5fa6885> a <http://lblod.data.gift/vocabularies/organisatie/BedienaarFinanceringCode> ;
+    mu:uuid "9d6f49b3d923b437ec3a91e8b5fa6885" ;
+    skos:inScheme <http://lblod.data.gift/concept-schemes/7d7b1cf62d032f69c94f1544ddf13b38> ;
+    skos:prefLabel "FOD Financiën" ;
+    skos:topConceptOf <http://lblod.data.gift/concept-schemes/7d7b1cf62d032f69c94f1544ddf13b38> .
+
