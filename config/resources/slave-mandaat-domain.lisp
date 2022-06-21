@@ -65,14 +65,17 @@
   :features '(include-uri)
   :on-path "lidmaatschappen")
 
-(define-resource mandaat ()
+(define-resource mandaat (posts)
   :class (s-prefix "mandaat:Mandaat")
   :properties `((:aantal-houders :number ,(s-prefix "mandaat:aantalHouders")))
   :has-one `((bestuursfunctie-code :via ,(s-prefix "org:role")
                                    :as "bestuursfunctie"))
   :has-many `((bestuursorgaan :via ,(s-prefix "org:hasPost")
                               :inverse t
-                              :as "bevat-in"))
+                              :as "bevat-in")
+              (mandataris :via ,(s-prefix "org:holds")
+                              :inverse t
+                              :as "held-by"))
   :resource-base (s-url "http://data.lblod.info/id/mandaten/")
   :features '(include-uri)
   :on-path "mandaten")
@@ -85,7 +88,7 @@
   :features '(include-uri)
   :on-path "bestuursfunctie-codes")
 
-(define-resource mandataris ()
+(define-resource mandataris (agents-in-position)
   :class (s-prefix "mandaat:Mandataris")
   :properties `((:rangorde :language-string ,(s-prefix "mandaat:rangorde"))
                 (:start :datetime ,(s-prefix "mandaat:start"))
@@ -100,6 +103,8 @@
                                        :as "rechtsgronden-beeindiging")
               (mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
                           :as "tijdelijke-vervangingen")
+              (contact-point :via ,(s-prefix "schema:contactPoint")
+                          :as "contact-points")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
                                   :as "beleidsdomein"))
   :has-one `((mandaat :via ,(s-prefix "org:holds")
@@ -148,7 +153,10 @@
                                :as "is-kandidaat-voor")
               (verkiezingsresultaat :via ,(s-prefix "mandaat:isResultaatVan")
                         :inverse t
-                        :as "verkiezingsresultaten"))
+                        :as "verkiezingsresultaten")
+              (agents-in-position :via ,(s-prefix "org:heldBy")
+                        :inverse t
+                        :as "agents-in-position"))
   :has-one `((geboorte :via ,(s-prefix "persoon:heeftGeboorte")
                        :as "geboorte")
              (identificator :via ,(s-prefix "adms:identifier")
@@ -170,6 +178,8 @@
 (define-resource identificator ()
   :class (s-prefix "adms:Identifier")
   :properties `((:identificator :string ,(s-prefix "skos:notation"))) ;; TODO: should have a specific type
+  :has-one `((structured-identifiers :via ,(s-prefix "generiek:gestructureerdeIdentificator")
+                                     :as "structured-identifier"))
   :resource-base (s-url "http://data.lblod.info/id/identificatoren/")
   :features '(include-uri)
   :on-path "identificatoren")

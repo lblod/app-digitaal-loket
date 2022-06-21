@@ -29,6 +29,7 @@
 (read-domain-file "master-subsidies-domain.lisp")
 (read-domain-file "master-job-domain.lisp")
 (read-domain-file "dcat.json")
+(read-domain-file "worship-units.json")
 
 (before (:list file) (resource)
   (let ((request-filters-on-uri

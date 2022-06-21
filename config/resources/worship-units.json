@@ -1,0 +1,478 @@
+{
+  "version": "0.1",
+  "prefixes": {
+    "org": "http://www.w3.org/ns/org#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "schema": "http://schema.org/",
+    "regorg": "http://www.w3.org/ns/regorg#",
+    "person": "http://www.w3.org/ns/person#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "organisatie": "https://data.vlaanderen.be/ns/organisatie#",
+    "adres": "https://data.vlaanderen.be/ns/adres#",
+    "generiek": "https://data.vlaanderen.be/ns/generiek#",
+    "mandaat": "http://data.vlaanderen.be/ns/mandaat#",
+    "besluit": "http://data.vlaanderen.be/ns/besluit#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "euvoc": "http://publications.europa.eu/ontology/euvoc#",
+    "ere": "http://data.lblod.info/vocabularies/erediensten/",
+    "ch": "http://data.lblod.info/vocabularies/contacthub/",    
+    "code": "http://lblod.data.gift/vocabularies/organisatie/",
+    "ext": "http://mu.semte.ch/vocabularies/ext/"
+  },
+  "resources": {
+    "agents-in-position": {
+      "class": "ch:AgentInPositie",
+      "attributes": {
+        "agent-start-date": {
+          "type": "date",
+          "predicate": "ch:startdatum"
+        },
+        "agent-end-date": {
+          "type": "date",
+          "predicate": "ch:eindedatum"
+        }
+      },
+      "relationships": {
+        "position": {
+          "predicate": "org:holds",
+          "target": "posts",
+          "cardinality": "one"
+        },
+        "person": {
+          "predicate": "org:heldBy",
+          "target": "persoon",
+          "cardinality": "one"
+        },
+        "contacts": {
+          "predicate": "schema:contactPoint",
+          "target": "contact-punt",
+          "cardinality": "many"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/agentenInPositie/"
+    },
+    "posts": {
+      "class": "org:Post",
+      "relationships": {
+        "general-role": {
+          "predicate": "org:role",
+          "target": "roles",
+          "cardinality": "one"
+        },
+        "organization": {
+          "predicate": "org:postIn",
+          "target": "organization",
+          "cardinality": "one"
+        },
+        "agents-in-position": {
+          "predicate": "org:holds",
+          "target": "agents-in-position",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/posities/"
+    },
+    "worship-mandatories": {
+      "class": "ere:EredienstMandataris",
+      "super": ["mandataris"],
+      "attributes": {
+        "expected-end-date": {
+          "type": "date",
+          "predicate": "ere:geplandeEinddatumAanstelling"
+        },
+        "reason-stopped": {
+          "type": "string",
+          "predicate": "ere:redenVanStopzetting"
+        }
+      },
+      "relationships": {
+        "type-half": {
+          "predicate": "ere:typeHelft",
+          "target": "half-elections",
+          "cardinality": "one"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/mandatarissen/"
+    },
+    "half-elections": {
+      "class": "code:HelftVerkiezing",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "roles": {
+      "class": "org:Role",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/rollen/"
+    },
+    "organizations": {
+      "class": "org:Organization",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        },
+        "alternative-name": {
+          "type":  "string",
+          "predicate": "skos:altLabel"
+        }
+      },
+      "relationships": {
+        "identifiers": {
+          "predicate": "adms:identifier",
+          "target": "identificator",
+          "cardinality": "many"
+        },
+        "organization-status": {
+          "predicate": "regorg:orgStatus",
+          "target": "organization-status-codes",
+          "cardinality": "one"
+        },
+        "primary-site": {
+          "predicate": "org:hasPrimarySite",
+          "target": "sites",
+          "cardinality": "one"
+        },
+        "sites": {
+          "predicate": "org:hasSite",
+          "target": "sites",
+          "cardinality": "many"
+        },
+        "changed-by": {
+          "predicate": "org:originalOrganization",
+          "target": "change-events",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "resulted-from": {
+          "predicate": "org:resultingOrganization",
+          "target": "change-events",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "change-event-results": {
+          "predicate": "ext:resultingOrganization",
+          "target": "change-event-results",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "positions": {
+          "predicate": "org:hasPost",
+          "target": "posts",
+          "cardinality": "many"
+        },
+        "associated-organizations": {
+          "predicate": "org:linkedTo",
+          "target": "organizations",
+          "cardinality": "many"
+        },
+        "sub-organizations": {
+          "predicate": "org:hasSubOrganization",
+          "target": "organizations",
+          "cardinality": "many"
+        },
+        "is-associated-with": {
+          "predicate": "org:linkedTo",
+          "target": "organizations",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "is-sub-organization-of": {
+          "predicate": "org:hasSubOrganization",
+          "target": "organizations",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/organisaties/"
+    },
+    "worship-administrative-units": {
+      "class": "ere:EredienstBestuurseenheid",
+      "super": ["bestuurseenheid"],
+      "relationships": {
+        "recognized-worship-type": {
+          "predicate": "ere:typeEredienst",
+          "target": "recognized-worship-types",
+          "cardinality": "one"
+        },
+        "minister-positions": {
+          "predicate": "ere:wordtBediendDoor",
+          "target": "minister-positions",
+          "cardinality": "many"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/eredienstBestuurseenheden/"
+    },
+    "worship-services": {
+      "class": "ere:BestuurVanDeEredienst",
+      "super": ["worship-administrative-units"],
+      "attributes": {
+        "denomination": {
+          "type": "string",
+          "predicate": "ere:denominatie"
+        },
+        "cross-border": {
+          "type": "boolean",
+          "predicate": "ere:grensoverschrijdend"
+        }
+      },
+      "relationships": {
+        "involvements": {
+          "predicate": "org:organization",
+          "target": "local-involvements",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/besturenVanDeEredienst/"
+    },
+    "recognized-worship-types": {
+      "class": "code:TypeEredienst",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "central-worship-services": {
+      "class": "ere:CentraalBestuurVanDeEredienst",
+      "super": ["worship-administrative-units"],
+      "new-resource-base": "http://data.lblod.info/id/centraleBesturenVanDeEredienst/"
+    },
+    "representative-bodies": {
+      "class": "ere:RepresentatiefOrgaan",
+      "super": ["organizations"],
+      "relationships": {
+        "recognized-worship-type": {
+          "predicate": "ere:typeEredienst",
+          "target": "recognized-worship-types",
+          "cardinality": "one"
+        },
+        "minister-positions": {
+          "predicate": "ere:behoort",
+          "target": "minister-positions",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/representatieveOrganen/"
+    },
+    "local-involvements": {
+      "class": "ere:BetrokkenLokaleBesturen",
+      "attributes": {
+        "percentage": {
+          "type": "number",
+          "predicate": "ere:financieringspercentage"
+        }
+      },
+      "relationships": {
+        "involvement-type": {
+          "predicate": "ere:typebetrokkenheid",
+          "target": "involvement-types",
+          "cardinality": "one"
+        },
+        "worship-service": {
+          "predicate": "org:organization",
+          "target": "worship-services",
+          "cardinality": "one"
+        },
+        "administrative-unit": {
+          "predicate": "ere:betrokkenBestuur",
+          "target": "bestuurseenheid",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/betrokkenLokaleBesturen/"
+    },
+    "structured-identifiers": {
+      "class": "generiek:GestructureerdeIdentificator",
+      "attributes": {
+        "local-id": {
+          "type": "string",
+          "predicate": "generiek:lokaleIdentificator"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/gestructureerdeIdentificatoren/"
+    },
+    "sites": {
+      "class": "org:Site",
+      "relationships": {
+        "contacts": {
+          "predicate": "org:siteAddress",
+          "target": "contact-punt",
+          "cardinality": "many"
+        },
+        "address": {
+          "predicate": "organisatie:bestaatUit",
+          "target": "adres",
+          "cardinality": "one"
+        },
+        "site-type": {
+          "predicate": "ere:vestigingstype",
+          "target": "site-types",
+          "cardinality": "one"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/vestigingen/"
+    },
+    "organization-status-codes": {
+      "class": "code:OrganisatieStatusCode",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "features": ["include-uri"],
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "involvement-types": {
+      "class": "code:TypeBetrokkenheid",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "ministers": {
+      "class": "ere:RolBedienaar",
+      "super": ["agents-in-position"],
+      "relationships": {
+        "minister-position": {
+          "predicate": "org:holds",
+          "target": "minister-positions",
+          "cardinality": "one"
+        },
+        "financing": {
+          "predicate": "ere:financiering",
+          "target": "financing-codes",
+          "cardinality": "one"
+        },
+        "conditions": {
+          "predicate": "ere:voldoetAan",
+          "target": "minister-conditions",
+          "cardinality": "many"
+        }  
+      },
+      "new-resource-base": "http://data.lblod.info/id/rollenBedienaar/"    
+    },
+    "minister-conditions": {
+      "class": "ere:VoorwaardenBedienaar",
+      "attributes": {
+        "satisfied": {
+          "type": "boolean",
+          "predicate": "ere:voldaan"
+        }
+      },
+      "relationships": {
+        "criterion": {
+          "predicate": "ere:criterium",
+          "target": "minister-condition-criterions",
+          "cardinality": "one"
+        },
+        "document-type-criterion": {
+          "predicate": "ere:criteriumbewijsstuktype",
+          "target": "document-types-criterions",
+          "cardinality": "one"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/voorwaardenBedienaar/"
+    },
+    "minister-positions": {
+      "class": "ere:PositieBedienaar",
+      "super": ["posts"],
+      "relationships": {
+        "function": {
+          "predicate": "ere:functie",
+          "target": "minister-position-functions",
+          "cardinality": "one"
+        },
+        "held-by-ministers": {
+          "predicate": "org:holds",
+          "target": "ministers",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "worship-service": {
+          "predicate": "ere:wordtBediendDoor",
+          "target": "worship-administrative-units",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "representative-body": {
+          "predicate": "ere:behoort",
+          "target": "representative-bodies",
+          "cardinality": "one"
+        }
+      },
+      "new-resource-base": "http://data.lblod.info/id/positiesBedienaar/"
+    },
+    "minister-position-functions": {
+      "class": "code:EredienstBeroepen",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "financing-codes": {
+      "class": "code:BedienaarFinanceringCode",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "minister-condition-criterions": {
+      "class": "code:VoorwaardenBedienaarCriterium",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "document-types-criterions": {
+      "class": "code:BedienaarCriteriumBewijsstuk",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    },
+    "site-types": {
+      "class": "code:TypeVestiging",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "new-resource-base": "http://lblod.data.gift/concepts/"
+    }
+  }
+}

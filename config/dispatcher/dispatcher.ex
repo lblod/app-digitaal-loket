@@ -580,6 +580,105 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/distributions/"
   end
 
+  #################################################################
+  # Bedienarenbeheer
+  #################################################################
+  match "/agents-in-position/*path" do
+    Proxy.forward conn, path, "http://cache/agents-in-position/"
+  end
+
+  match "/posts/*path" do
+    Proxy.forward conn, path, "http://cache/posts/"
+  end
+
+  match "/worship-mandatories/*path" do
+    Proxy.forward conn, path, "http://cache/worship-mandatories/"
+  end
+
+  match "/half-elections/*path" do
+    Proxy.forward conn, path, "http://cache/half-elections/"
+  end
+
+  match "/roles/*path" do
+    Proxy.forward conn, path, "http://cache/roles/"
+  end
+
+  match "/organizations/*path" do
+    Proxy.forward conn, path, "http://cache/organizations/"
+  end
+
+  match "/worship-administrative-units/*path" do
+    Proxy.forward conn, path, "http://cache/worship-administrative-units/"
+  end
+
+  match "/worship-services/*path" do
+    Proxy.forward conn, path, "http://resource/worship-services/"
+  end
+
+  match "/recognized-worship-types/*path" do
+    Proxy.forward conn, path, "http://cache/recognized-worship-types/"
+  end
+
+  match "/central-worship-services/*path" do
+    Proxy.forward conn, path, "http://cache/central-worship-services/"
+  end
+
+  match "/representative-bodies/*path" do
+    Proxy.forward conn, path, "http://cache/representative-bodies/"
+  end
+
+  match "/local-involvements/*path" do
+    Proxy.forward conn, path, "http://cache/local-involvements/"
+  end
+
+  match "/structured-identifiers/*path" do
+    Proxy.forward conn, path, "http://cache/structured-identifiers/"
+  end
+
+  match "/sites/*path" do
+    Proxy.forward conn, path, "http://cache/sites/"
+  end
+
+  match "/organization-status-codes/*path" do
+    Proxy.forward conn, path, "http://cache/organization-status-codes/"
+  end
+
+  match "/involvement-types/*path" do
+    Proxy.forward conn, path, "http://cache/involvement-types/"
+  end
+
+  match "/ministers/*path" do
+    Proxy.forward conn, path, "http://cache/ministers/"
+  end
+
+  match "/minister-conditions/*path" do
+    Proxy.forward conn, path, "http://cache/minister-conditions/"
+  end
+
+  match "/minister-positions/*path" do
+    Proxy.forward conn, path, "http://cache/minister-positions/"
+  end
+
+  match "/minister-position-functions/*path" do
+    Proxy.forward conn, path, "http://cache/minister-position-functions/"
+  end
+
+  match "/financing-codes/*path" do
+    Proxy.forward conn, path, "http://cache/financing-codes/"
+  end
+
+  match "/minister-condition-criterions/*path" do
+    Proxy.forward conn, path, "http://cache/minister-condition-criterions/"
+  end
+
+  match "/document-types-criterions/*path" do
+    Proxy.forward conn, path, "http://cache/document-types-criterions/"
+  end
+
+  match "/site-types/*path" do
+    Proxy.forward conn, path, "http://cache/site-types/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

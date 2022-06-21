@@ -72,3 +72,4 @@
 (add-prefix "lblodJob" "http://lblod.data.gift/vocabularies/lblodJob/")
 (add-prefix "oslc" "http://open-services.net/ns/core#")
 (add-prefix "cogs" "http://vocab.deri.ie/cogs#")
+(add-prefix "ere" "http://data.lblod.info/vocabularies/erediensten/")
