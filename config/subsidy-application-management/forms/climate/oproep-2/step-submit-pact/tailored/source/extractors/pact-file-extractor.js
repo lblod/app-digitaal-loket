@@ -34,194 +34,208 @@ module.exports = {
       graphs.additions
     );
 
-    const {
-      oldFileService,
-      type,
-      created,
-      modified,
-      format,
-      fileName,
-      fileSize,
-      fileExtension,
-    } = await getUploadResources(source.uri, mu, sudo);
+    const results = await getUploadResources(source.uri, mu, sudo);
 
-    if (oldFileService) {
-      const fileServiceUuid = mu.uuid();
-      const fileService = new $rdf.NamedNode(FILE_SERVICE + fileServiceUuid);
+    if (results.bindings.length) {
+      for (const binding of results.bindings) {
+        const fileServiceUuid = mu.uuid();
+        const fileService = new $rdf.NamedNode(FILE_SERVICE + fileServiceUuid);
 
-      store.add(
-        $rdf.sym(signedPact),
-        DCT("hasPart"),
-        $rdf.sym(fileService),
-        graphs.additions
-      );
+        const {
+          oldFileService,
+          type,
+          created,
+          modified,
+          format,
+          fileName,
+          fileSize,
+          fileExtension,
+        } = binding;
 
-      store.add(
-        $rdf.sym(fileService),
-        W3("type"),
-        type.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(signedPact),
+          DCT("hasPart"),
+          $rdf.sym(fileService),
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        CORE("uuid"),
-        fileServiceUuid,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          W3("type"),
+          $rdf.sym(type.value),
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        DCT("created"),
-        created.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          CORE("uuid"),
+          fileServiceUuid,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        DCT("modified"),
-        modified.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          DCT("created"),
+          created.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        DCT("format"),
-        format.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          DCT("modified"),
+          modified.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        NFO("fileName"),
-        fileName.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          DCT("format"),
+          format.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        NFO("fileSize"),
-        fileSize.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          NFO("fileName"),
+          fileName.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(fileService),
-        DBPEDIA("fileExtension"),
-        fileExtension.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(fileService),
+          NFO("fileSize"),
+          fileSize.value,
+          graphs.additions
+        );
 
-      const {
-          oldFileLocation,
-        oldFileName,
-        oldFileUuid
-      } = await getFileResources(source.uri, mu, sudo);
+        store.add(
+          $rdf.sym(fileService),
+          DBPEDIA("fileExtension"),
+          fileExtension.value,
+          graphs.additions
+        );
 
+        const { oldFileLocation, oldFileName, oldFileUuid } =
+          await getFileResources(oldFileService.value, mu, sudo);
 
+        //fs.copyFileSync(source, destination, fs.constants.COPYFILE_EXCL);
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        W3("type"),
-        type.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          W3("type"),
+          type.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        CORE("uuid"),
-        oldFileUuid,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          CORE("uuid"),
+          oldFileUuid,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        DCT("created"),
-        created.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          DCT("created"),
+          created.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        DCT("modified"),
-        modified.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          DCT("modified"),
+          modified.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        DCT("format"),
-        format.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          DCT("format"),
+          format.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        NFO("fileName"),
-        oldFileName.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          NFO("fileName"),
+          oldFileName.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        NFO("fileSize"),
-        fileSize.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          NFO("fileSize"),
+          fileSize.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        DBPEDIA("fileExtension"),
-        fileExtension.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          DBPEDIA("fileExtension"),
+          fileExtension.value,
+          graphs.additions
+        );
 
-      store.add(
-        $rdf.sym(oldFileLocation.value),
-        NIE("dataSource"),
-        fileService.value,
-        graphs.additions
-      );
+        store.add(
+          $rdf.sym(oldFileLocation.value),
+          NIE("dataSource"),
+          fileService,
+          graphs.additions
+        );
+      }
     }
   },
 };
 
 async function getUploadResources(uri, mu, sudo) {
   const { results } = await sudo.querySudo(`
-      PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
-      PREFIX schema: <http://schema.org/>
       PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
-      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-      SELECT DISTINCT ?firstName ?familyName ?email ?telephone
+      PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+      PREFIX dbpedia: <http://dbpedia.org/ontology/>
+      PREFIX dct: <http://purl.org/dc/terms/>
+      PREFIX lblod: <http://lblod.data.gift/vocabularies/subsidie/>
+
+      SELECT DISTINCT ?oldFileService ?type ?created ?modified ?format ?fileName ?fileSize ?fileExtension 
       WHERE {
         GRAPH ?g {
           ${mu.sparqlEscapeUri(uri)}
-            schema:contactPoint ?contactPoint.
+            lblod:signedPact ?oldNode.
           OPTIONAL {
-              ?contactPoint foaf:familyName ?familyName.
-          }
-          OPTIONAL {
-              ?contactPoint foaf:firstName ?firstName.
-          }
-          OPTIONAL {
-              ?contactPoint schema:email ?email.
-          }
-          OPTIONAL {
-              ?contactPoint schema:telephone ?telephone.
+              ?oldNode dct:hasPart ?oldFileService.
+              ?oldFileService a ?type;
+                    dct:created ?created;
+                    dct:modified ?modified;
+                    dct:format ?format;
+                    nfo:fileName ?fileName;
+                    nfo:fileSize ?fileSize;
+                    dbpedia:fileExtension ?fileExtension.
           }
         }
       }`);
 
+  return results;
+}
+
+async function getFileResources(uri, mu, sudo) {
+  const { results } = await sudo.querySudo(`
+    PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+    PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+    PREFIX dbpedia: <http://dbpedia.org/ontology/>
+    PREFIX dct: <http://purl.org/dc/terms/>
+    PREFIX lblod: <http://lblod.data.gift/vocabularies/subsidie/>
+    PREFIX core: <http://mu.semte.ch/vocabularies/core/>
+
+    SELECT DISTINCT ?oldFileLocation ?oldFileName ?oldFileUuid
+    WHERE {
+      GRAPH ?g {
+          ?oldFileLocation nie:dataSource ${mu.sparqlEscapeUri(uri)}.
+          ?oldFileLocation nfo:fileName ?oldFileName;
+                  core:uuid ?oldFileUuid.
+      }
+    }`);
+
   if (results.bindings.length) {
     return results.bindings[0];
   }
-  return null;
-}
-
-async function getFileResources() {
-  return null;
-}
-
-function duplicateFile() {
   return null;
 }

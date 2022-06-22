@@ -1,4 +1,5 @@
 const contactInfoExtractor = require("./extractors/contact-info-extractor");
+const pactFileExtractor = require("./extractors/pact-file-extractor");
 
 const extractor = {
   name: "climate-subsidy/pact/previous-call-as-source",
@@ -11,6 +12,16 @@ async function execute(store, graphs, lib, form) {
 
   //Note: this loop is still overkill, but at least it is 'prepared'
   for (let extractor of [contactInfoExtractor]) {
+    try {
+      await extractor.execute(store, graphs, lib, form, { uri: source });
+    } catch (e) {
+      console.warn(`Failed to execute inner extractor for ${extractor.name}`);
+      console.log(e);
+    }
+  }
+
+  //Note: this loop is still overkill, but at least it is 'prepared'
+  for (let extractor of [pactFileExtractor]) {
     try {
       await extractor.execute(store, graphs, lib, form, { uri: source });
     } catch (e) {
