@@ -8,7 +8,7 @@ module.exports = {
     if (!source) source = target;
 
     const { $rdf, mu, sudo } = lib;
-
+    var XSD = new $rdf.Namespace("http://www.w3.org/2001/XMLSchema#");
     const NFO = new $rdf.Namespace(
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#"
     );
@@ -76,14 +76,14 @@ module.exports = {
         store.add(
           $rdf.sym(fileService),
           DCT("created"),
-          created.value,
+          $rdf.lit(created.value, "", XSD("dateTime")),
           graphs.additions
         );
 
         store.add(
           $rdf.sym(fileService),
           DCT("modified"),
-          modified.value,
+          $rdf.lit(modified.value, "", XSD("dateTime")),
           graphs.additions
         );
 
@@ -104,7 +104,7 @@ module.exports = {
         store.add(
           $rdf.sym(fileService),
           NFO("fileSize"),
-          fileSize.value,
+          $rdf.lit(fileSize.value, "", XSD("integer")),
           graphs.additions
         );
 
@@ -118,68 +118,74 @@ module.exports = {
         const { oldFileLocation, oldFileName, oldFileUuid } =
           await getFileResources(oldFileService.value, mu, sudo);
 
-        //fs.copyFileSync(source, destination, fs.constants.COPYFILE_EXCL);
+        const newUuid = mu.uuid();
+        const newFileName = "share://" + newUuid + "." + fileExtension.value;
+        fs.copyFileSync(
+          sharedUriToPath(oldFileLocation.value),
+          sharedUriToPath(newFileName),
+          fs.constants.COPYFILE_EXCL
+        );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           W3("type"),
-          type.value,
+          $rdf.sym(type.value),
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           CORE("uuid"),
-          oldFileUuid,
+          newUuid,
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           DCT("created"),
-          created.value,
+          $rdf.lit(created.value, "", XSD("dateTime")),
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           DCT("modified"),
-          modified.value,
+          $rdf.lit(modified.value, "", XSD("dateTime")),
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           DCT("format"),
           format.value,
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           NFO("fileName"),
-          oldFileName.value,
+          sharedUriToFilename(newFileName),
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           NFO("fileSize"),
-          fileSize.value,
+          $rdf.lit(fileSize.value, "", XSD("integer")),
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           DBPEDIA("fileExtension"),
           fileExtension.value,
           graphs.additions
         );
 
         store.add(
-          $rdf.sym(oldFileLocation.value),
+          $rdf.sym(newFileName),
           NIE("dataSource"),
-          fileService,
+          $rdf.sym(fileService),
           graphs.additions
         );
       }
@@ -238,4 +244,12 @@ async function getFileResources(uri, mu, sudo) {
     return results.bindings[0];
   }
   return null;
+}
+
+function sharedUriToPath(uri) {
+  return uri.replace("share://", "/share/");
+}
+
+function sharedUriToFilename(uri) {
+  return uri.replace("share://", "");
 }
