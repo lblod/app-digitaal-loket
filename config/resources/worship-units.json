@@ -435,7 +435,7 @@
       "new-resource-base": "http://lblod.data.gift/concepts/"
     },
     "financing-codes": {
-      "class": "code:BedienaarFinanceringCode",
+      "class": "code:BedienaarFinancieringCode",
       "attributes": {
         "label": {
           "type": "string",

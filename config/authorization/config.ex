@@ -150,7 +150,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/CriterionRequirement",
                         "http://www.w3.org/ns/org#Organization",
                         "http://lblod.data.gift/vocabularies/organisatie/EredienstBeroepen",
-                        "http://lblod.data.gift/vocabularies/organisatie/BedienaarFinanceringCode",
+                        "http://lblod.data.gift/vocabularies/organisatie/BedienaarFinancieringCode",
                         "http://lblod.data.gift/vocabularies/organisatie/VoorwaardenBedienaarCriterium",
                         "http://lblod.data.gift/vocabularies/organisatie/BedienaarCriteriumBewijsstuk",
                         "http://lblod.data.gift/vocabularies/organisatie/TypeVestiging",
