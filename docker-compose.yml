@@ -359,6 +359,7 @@ services:
     volumes:
       - ./config/subsidy-application-management:/config
       - ./data/files/subsidies:/data
+      - ./data/files:/share
     labels:
       - "logging=true"
     restart: always
