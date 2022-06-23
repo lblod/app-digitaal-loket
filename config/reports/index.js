@@ -18,6 +18,7 @@ import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 import electedPersonsReport from './electedPersonsReport';
 import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
 import climateSubsidiePactsReport from './climateSubsidiePactsReport';
+import climateSubsidieOproep2PactsReport from './climateSubsidieOproep2PactsReport';
 import gemeentewegenReport from './gemeentewegenReport';
 import gzgSubsidieOproepOneReport from './gzgSubsidieOproep1Report';
 import gzgSubsidieOproepTwoReport from './gzgSubsidieOproep2Report';
@@ -56,6 +57,7 @@ export default [
   electedPersonsReport,
   contactTracingSubsidiesDetailedReport,
   climateSubsidiePactsReport,
+  climateSubsidieOproep2PactsReport,
   gemeentewegenReport,
   fietsSubsidieProposalsReport,
   fietsSubsidieRequestsReport,
