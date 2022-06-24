@@ -65,7 +65,7 @@ fields:bd6ee5ac-22d6-4279-bcba-3ed279021aac a form:Field ;
 fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
     mu:uuid "a8f6a6cb-dbb8-488c-878d-05603791a9eb" ;
     sh:name "Gaat het over het origineel document of over een wijziging?" ;
-    sh:order 700 ;
+    sh:order 2100 ;
     sh:path lblodBesluit:authenticityType ;
     form:validations
       [ a form:ConceptSchemeConstraint ; #TODO
@@ -75,6 +75,52 @@ fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb a form:Field ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5cecec47-ba66-4d7a-ac9d-a1e7962ca4e2"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+    
+###Origineel of wijziging voor erediensten ###
+fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6 a form:Field ;
+    mu:uuid "ea141dfa-80ff-4958-9493-c0cf6724cbf6" ;
+    sh:name "Gaat het over het origineel document of over een wijziging?" ;
+    sh:order 2101 ;
+    sh:path lblodBesluit:authenticityType ;
+    form:validations
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:authenticityType ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:authenticityType ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/91655ebf-5ab7-43c4-b587-094536baf737> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/91655ebf-5ab7-43c4-b587-094536baf737"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+    
+
+fields:e578e3ff-240b-421b-a32c-f411489c3806 a form:Field ;
+    mu:uuid "e578e3ff-240b-421b-a32c-f411489c3806" ;
+    sh:name "Rapportperiode" ;
+    sh:order 2200 ;
+    sh:path lblodBesluit:reportingPeriod ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ; #TODO
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:reportingPeriod ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -145,7 +191,7 @@ fields:78bfbd91-0778-4573-a52d-4c53b3c512eb a form:Field ;
 fields:41737f90-02d6-4036-8d60-5d5b6ccf939c a form:Field ;
     mu:uuid "41737f90-02d6-4036-8d60-5d5b6ccf939c" ;
     sh:name "Rapportjaar" ;
-    sh:order 1800 ;
+    sh:order 2201 ;
     sh:path elod:financialYear ;
     form:validations
       [ a form:RequiredConstraint ;
@@ -740,6 +786,84 @@ fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f a form:Field ;
     form:displayType displayTypes:files; # consider this v1.0
     form:help """Voeg hier jaarrekening, uittreksel werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota toe.""" ;
     sh:group fields:aDynamicPropertyGroup .
+
+#########################################################
+# File with custom helper text for "Eindrekening"
+#########################################################
+fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22 a form:Field ;
+    mu:uuid "e5aa62e8-08b7-4216-8b9c-5fea766e9a22" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier eindrekening, uittreksel werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+
+#########################################################
+# File with custom helper text for "Budget" for centrale besturen eredienst
+#########################################################
+fields:9dd53fc5-077b-439c-aad9-5530f95083e8 a form:Field ;
+    mu:uuid "9dd53fc5-077b-439c-aad9-5530f95083e8" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier een overzicht en alle  budgetten en bijhorende beleidsnota's toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+#########################################################
+# File with custom helper text for "Meerjarenplannen" voor centrale besturen eredienst 
+#########################################################
+fields:c34a860a-a82e-482d-b077-6482a4edfe3f a form:Field ;
+    mu:uuid "c34a860a-a82e-482d-b077-6482a4edfe3f" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier een overzicht en alle meerjarenplanpen, strategische nota's en afsprakennota's toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
+#########################################################
+# File with custom helper text for "Jaarrekeningen-centraal-bestuur-eredienst"
+#########################################################
+fields:48cff9eb-579b-4e6e-958f-6229903c63d8 a form:Field ;
+    mu:uuid "48cff9eb-579b-4e6e-958f-6229903c63d8" ;
+    sh:name "Bestanden" ;
+    sh:order 10001 ;
+    sh:path dct:hasPart;
+    form:validations
+     [ a  form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path dct:hasPart;
+          sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl # TODO: later custom validator
+     ];
+    form:displayType displayTypes:files; # consider this v1.0
+    form:help """Voeg hier een toelagenoverzicht en alle jaarrekeningen, uittreksels werkingsrekening en patrimoniumrekeningen en eventueel aanvullende nota's toe.""" ;
+    sh:group fields:aDynamicPropertyGroup .
+
+
 
 ##########################################################
 # End Custom files and links fields
@@ -2644,6 +2768,8 @@ fields:f038bf93-0f8b-46e4-a095-50dc10caae5a a form:ConditionalFieldGroup ;
 fieldGroups:acabf4e0-a124-4d68-b3f1-f93e86c7b1e5 a form:FieldGroup ;
     mu:uuid "acabf4e0-a124-4d68-b3f1-f93e86c7b1e5" ;
     form:hasField
+                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
+                      fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -2682,9 +2808,6 @@ fieldGroups:8e826b62-3bce-4a9c-b8c1-e84db510c6a3 a form:FieldGroup ;
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
 
-                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
-                      fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
-
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
@@ -2717,7 +2840,9 @@ fields:8640f3ff-2302-40eb-85c6-d932628250ed a form:ConditionalFieldGroup ;
 fieldGroups:5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95 a form:FieldGroup ;
     mu:uuid "5a3cbfb4-3ca5-4abb-a48d-c3e6c0efaf95" ;
     form:hasField
-                    
+                    ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
+                    fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
+
                     ###Datum-van-publicatie-op-webtoepassing###
                     fields:49dbe1be-877a-4890-8465-1510ff18ce18,
                     
@@ -2915,6 +3040,9 @@ fields:0dd4d0db-db4d-4e9a-8588-ea2082b65746 a form:ConditionalFieldGroup ;
 fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
     mu:uuid "393c7c2d-4e57-4bf7-89ae-21c05be7b5ed" ; 
     form:hasField 
+                      ###Welk-beslissingsorgaan-nam-het-besluit?###
+                      fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
+                      
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
                       
@@ -2922,7 +3050,7 @@ fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed a form:FieldGroup ;
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
                       ###Bestanden (custom)###
-                      fields:d0555b84-9d8c-4ca8-b7f2-a3bee96bd82f,
+                      fields:e5aa62e8-08b7-4216-8b9c-5fea766e9a22,
 
                       ###Type RemoteDataObject or FileDataObject###
                       fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
@@ -2942,6 +3070,113 @@ fields:16c8da54-4961-4282-b5c9-9cbd45eccba0 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/54b61cbd-349f-41c4-9c8a-7e8e67d08347>
       ] ;
     form:hasFieldGroup fieldGroups:393c7c2d-4e57-4bf7-89ae-21c05be7b5ed .
+
+###########Gecoordineerde-inzending-budgetten###########
+
+fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
+    mu:uuid "aaf4f9b2-643f-474d-b1b0-24f37784e5a6" ; 
+    form:hasField 
+
+                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
+                      fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
+
+                      ###Rapportjaar###
+                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+                      
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden (custom)###
+                      fields:9dd53fc5-077b-439c-aad9-5530f95083e8,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:7a09cedf-cfa9-4513-ae75-83c650e854b5.
+
+fields:7a09cedf-cfa9-4513-ae75-83c650e854b5 a form:ConditionalFieldGroup ;
+    mu:uuid "7a09cedf-cfa9-4513-ae75-83c650e854b5";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349>
+      ] ;
+    form:hasFieldGroup fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 .
+
+###########Gecoordineerde-inzending-meerjarenplannen###########
+
+fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
+    mu:uuid "bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2" ; 
+    form:hasField 
+
+                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
+                      fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
+
+                      ###Rapportperiode###
+                      fields:e578e3ff-240b-421b-a32c-f411489c3806,
+                      
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden (custom)###
+                      fields:c34a860a-a82e-482d-b077-6482a4edfe3f,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:41cd1378-5f16-48a5-92cb-7f4caf89ff16.
+
+fields:41cd1378-5f16-48a5-92cb-7f4caf89ff16 a form:ConditionalFieldGroup ;
+    mu:uuid "41cd1378-5f16-48a5-92cb-7f4caf89ff16";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/2c9ada23-1229-4c7e-a53e-acddc9014e4e>
+      ] ;
+    form:hasFieldGroup fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 .
+
+###########Gezamenlijke-inzending-jaarrekeningen###########
+
+fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
+    mu:uuid "40fa78b5-4e89-47c0-99cb-a8e936a09d19" ; 
+    form:hasField 
+                      ###Rapportjaar###
+                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+                      
+                      ###Links-naar-documenten###
+                      fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
+
+                      ###Bestanden (custom)###
+                      fields:48cff9eb-579b-4e6e-958f-6229903c63d8,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
+
+                      ### RemoteDataObject/url ###
+                      fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:e3b81b82-78cb-4631-884d-ef9f135ab646.
+
+fields:e3b81b82-78cb-4631-884d-ef9f135ab646 a form:ConditionalFieldGroup ;
+    mu:uuid "e3b81b82-78cb-4631-884d-ef9f135ab646";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/672bf096-dccd-40af-ab60-bd7de15cc461>
+      ] ;
+    form:hasFieldGroup fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 .
 
 
 ###########Goedkeuringstoezicht-Voeren###########
@@ -3136,6 +3371,11 @@ fields:5d0edb7c-3676-42cc-bd54-7f5712ec0b06 a form:ConditionalFieldGroup ;
 fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
     mu:uuid "5a21ed58-c0cf-4042-8b59-bd14ca595aae" ;
     form:hasField
+                      ###Rapportperiode###
+                      fields:e578e3ff-240b-421b-a32c-f411489c3806,
+                      
+                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?-erediensten###
+                      fields:ea141dfa-80ff-4958-9493-c0cf6724cbf6,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -3177,12 +3417,6 @@ fields:13a56126-4b73-4d92-a5d2-ddb2433f191b a form:ConditionalFieldGroup ;
 fieldGroups:e0925be1-bdce-4890-b6e4-4f7640700581 a form:FieldGroup ;
     mu:uuid "e0925be1-bdce-4890-b6e4-4f7640700581" ; 
     form:hasField 
-                      ###Rapportjaar###
-                      fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
-                      fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
-
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
 
@@ -3214,6 +3448,11 @@ fields:8ba3d4c6-022e-401f-a47f-847b1220f669 a form:ConditionalFieldGroup ;
 fieldGroups:978fd72b-26df-438e-8bf0-5dd661b191d5 a form:FieldGroup ;
     mu:uuid "978fd72b-26df-438e-8bf0-5dd661b191d5" ;
     form:hasField
+                    ###Rapportjaar###
+                    fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                    ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
+                    fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
                     
                     ###Datum-van-publicatie-op-webtoepassing###
                     fields:49dbe1be-877a-4890-8465-1510ff18ce18,

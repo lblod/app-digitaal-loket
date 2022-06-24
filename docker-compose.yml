@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.60.1
+    image: lblod/frontend-loket:0.62.0
     links:
       - identifier:backend
     labels:
@@ -280,9 +280,9 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:0.10.1
+    image: lblod/enrich-submission-service:0.12.0
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20220224134509-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20220428140103-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -629,7 +629,6 @@ services:
       HEALING_PATCH_GRAPH_BATCH_SIZE: 500
       UPDATE_PUBLICATION_GRAPH_SLEEP: 200
       SERVE_DELTA_FILES: "true"
-      RELATIVE_FILE_PATH: "deltas/persons-sensitive"
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
       PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
@@ -681,7 +680,6 @@ services:
       HEALING_PATCH_GRAPH_BATCH_SIZE: 500
       UPDATE_PUBLICATION_GRAPH_SLEEP: 200
       SERVE_DELTA_FILES: "true"
-      RELATIVE_FILE_PATH: "deltas/subsidies"
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
       PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"

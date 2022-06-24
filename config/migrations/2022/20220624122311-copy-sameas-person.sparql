@@ -1,0 +1,11 @@
+INSERT {
+  GRAPH ?g {
+    ?newSubject ?p ?o
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/personen/6295C912470F7A000800002D> as ?newSubject)
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/f28a4a5395ab6500ea23a61e281c7df48bc5f78252b941c17429e4469a4130fc> ?p ?o.
+  }
+}

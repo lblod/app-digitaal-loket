@@ -41,8 +41,7 @@ export default {
 
           ?smcStatus skos:prefLabel ?subsidieStatusLabel.
 
-          ?form dct:isPartOf/dct:references ?references ;
-            adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c>.
+          ?form dct:isPartOf/dct:references ?references .
           <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> skos:prefLabel ?formStatusLabel.
 
           VALUES ?references {
@@ -56,10 +55,33 @@ export default {
             <http://data.lblod.info/id/subsidy-procedural-steps/ae857ac3-50b2-4172-b3ea-2c35b3a794a7>
           }
 
+          ?form schema:contactPoint ?contactPoint .
+
+          OPTIONAL {
+            ?contactPoint foaf:firstName ?contactFirstName .
+          }
+
+          OPTIONAL {
+            ?contactPoint foaf:familyName ?contactLastName .
+          }
+
+          OPTIONAL {
+            ?contactPoint schema:email ?contactEmail .
+          }
+
+          OPTIONAL {
+            ?contactPoint schema:telephone ?contactTelephone .
+          }
+
+          OPTIONAL {
+            ?subsidie m8g:hasParticipation ?participation.
+            ?bestuur m8g:playsRole ?participation ;
+              skos:prefLabel ?bestuurseenheid .
+          }
+
           OPTIONAL {
             ?subsidie cpsv:follows ?applicationFlow ;
               dct:modified ?aanvraagdatum ;
-              m8g:hasParticipation ?participation ;
               ext:lastModifiedBy ?modifiedBy ;
               dct:creator ?createdBy .
 
@@ -69,19 +91,10 @@ export default {
               mobiliteit:periode/m8g:startTime ?reeksStart ;
               mobiliteit:periode/m8g:endTime ?reeksEnd .
 
-            ?bestuur m8g:playsRole ?participation ;
-              skos:prefLabel ?bestuurseenheid .
-
             ?form schema:bankAccount/schema:identifier ?accountNumber ;
-              schema:contactPoint ?contactPoint ;
               lblodSubsidie:uniqueChildrenNumberForWholePeriod ?aantalUniekeKinderen  ;
               lblodSubsidie:daysOfChildcareForWholePeriod ?aantalKalenderdagen ;
               lblodSubsidie:applicationFormTable ?formTable .
-
-            ?contactPoint foaf:firstName ?contactFirstName ;
-              foaf:familyName ?contactLastName ;
-              schema:email ?contactEmail ;
-              schema:telephone ?contactTelephone .
 
             ?formTable ext:applicationFormEntry ?formEntry .
 

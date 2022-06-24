@@ -24,12 +24,15 @@ import gzgSubsidieOproepTwoReport from './gzgSubsidieOproep2Report';
 import gzgSubsidieOproepThreeReport from './gzgSubsidieOproep3Report';
 import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
 import gzgSubsidieOproepFiveReport from './gzgSubsidieOproep5Report';
+import gzgSubsidieOproepSixReport from './gzgSubsidieOproep6Report';
+import gzgSubsidieOproepSevenReport from './gzgSubsidieOproep7Report';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import planSubsidieProposalsReport from './planSubsidieProposalsReport';
+import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 
 export default [
   BestuurseenhedenReport,
@@ -62,8 +65,11 @@ export default [
   gzgSubsidieOproepThreeReport,
   gzgSubsidieOproepFourReport,
   gzgSubsidieOproepFiveReport,
+  gzgSubsidieOproepSixReport,
+  gzgSubsidieOproepSevenReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
-  planSubsidieProposalsReport
+  planSubsidieProposalsReport,
+  ukraineSubsidyOproepOneReport
 ];

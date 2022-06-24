@@ -1,5 +1,4 @@
 {
-  "conceptScheme": "http://lblod.data.gift/concept-schemes/0887b850-b810-40d4-be0f-cafd01d3259b",
   "export": [
     {
       "type": "http://www.w3.org/ns/person#Person",
@@ -8,19 +7,12 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
       "properties": [
         "http://www.w3.org/ns/adms#identifier",
         "http://data.vlaanderen.be/ns/persoon#geslacht",
         "http://data.vlaanderen.be/ns/persoon#heeftGeboorte"
-      ]
+      ],
+      "additionalFilter": "?m a <http://data.vlaanderen.be/ns/mandaat#Mandataris>; <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> ?subject."
     },
     {
       "type": "http://www.w3.org/ns/adms#Identifier",
@@ -29,19 +21,11 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
-      "pathToConceptScheme": [
-        "^http://www.w3.org/ns/adms#identifier",
-        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#notation"
-      ]
+      ],
+     "additionalFilter": "?m a <http://data.vlaanderen.be/ns/mandaat#Mandataris>; <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> ?p. ?p <http://www.w3.org/ns/adms#identifier> ?subject."
     },
     {
       "type": "http://data.vlaanderen.be/ns/persoon#Geboorte",
@@ -50,37 +34,21 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
-        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://data.vlaanderen.be/ns/persoon#datum"
-      ]
+      ],
+      "additionalFilter": "?m a <http://data.vlaanderen.be/ns/mandaat#Mandataris>; <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> ?p. ?p <http://data.vlaanderen.be/ns/persoon#heeftGeboorte> ?subject."
     },
     {
-      "type": "http://www.w3.org/2004/02/skos/core#Concept",
+      "type": "http://mu.semte.ch/vocabularies/ext/GeslachtCode",
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/persoon#geslacht",
-        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://www.w3.org/2004/02/skos/core#topConceptOf",
         "http://www.w3.org/2004/02/skos/core#inScheme"
