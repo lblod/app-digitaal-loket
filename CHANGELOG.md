@@ -1,4 +1,7 @@
 # Changelog
+## 1.65.1 (2022-06-25)
+- fix data issue double person
+- deactivate plan samenleven subsidy
 ## 1.65.0 (2022-06-16)
 - Frontend updates: incremental updates/bugfixes and new components
 - Prepare subsidies Oekraine (temporarily offline)
