@@ -591,8 +591,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/posts/"
   end
 
-  match "/worship-mandatories/*path" do
-    Proxy.forward conn, path, "http://cache/worship-mandatories/"
+  match "/worship-mandatees/*path" do
+    Proxy.forward conn, path, "http://cache/worship-mandatees/"
   end
 
   match "/half-elections/*path" do

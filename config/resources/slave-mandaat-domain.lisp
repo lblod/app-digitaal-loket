@@ -65,7 +65,7 @@
   :features '(include-uri)
   :on-path "lidmaatschappen")
 
-(define-resource mandaat (posts)
+(define-resource mandaat (post)
   :class (s-prefix "mandaat:Mandaat")
   :properties `((:aantal-houders :number ,(s-prefix "mandaat:aantalHouders")))
   :has-one `((bestuursfunctie-code :via ,(s-prefix "org:role")
@@ -88,7 +88,7 @@
   :features '(include-uri)
   :on-path "bestuursfunctie-codes")
 
-(define-resource mandataris (agents-in-position)
+(define-resource mandataris (agent-in-position)
   :class (s-prefix "mandaat:Mandataris")
   :properties `((:rangorde :language-string ,(s-prefix "mandaat:rangorde"))
                 (:start :datetime ,(s-prefix "mandaat:start"))
@@ -154,7 +154,7 @@
               (verkiezingsresultaat :via ,(s-prefix "mandaat:isResultaatVan")
                         :inverse t
                         :as "verkiezingsresultaten")
-              (agents-in-position :via ,(s-prefix "org:heldBy")
+              (agent-in-position :via ,(s-prefix "org:heldBy")
                         :inverse t
                         :as "agents-in-position"))
   :has-one `((geboorte :via ,(s-prefix "persoon:heeftGeboorte")
@@ -178,8 +178,8 @@
 (define-resource identificator ()
   :class (s-prefix "adms:Identifier")
   :properties `((:identificator :string ,(s-prefix "skos:notation"))) ;; TODO: should have a specific type
-  :has-one `((structured-identifiers :via ,(s-prefix "generiek:gestructureerdeIdentificator")
-                                     :as "structured-identifier"))
+  :has-one `((structured-identifier :via ,(s-prefix "generiek:gestructureerdeIdentificator")
+                                    :as "structured-identifier"))
   :resource-base (s-url "http://data.lblod.info/id/identificatoren/")
   :features '(include-uri)
   :on-path "identificatoren")

@@ -31,7 +31,7 @@
                 (:volledig-adres :string ,(s-prefix "locn:fullAddress"))
                 (:adres-register-id :number ,(s-prefix "lblodlg:adresRegisterId"))
                 (:adres-register-uri :url ,(s-prefix "adres:verwijstNaar")))
-  :has-one `((concepts :via ,(s-prefix "dct:source")
+  :has-one `((concept :via ,(s-prefix "dct:source")
                     :as "source"))
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/adressen/")

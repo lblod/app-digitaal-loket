@@ -106,7 +106,7 @@
                               :as "vendors")
               (participation :via ,(s-prefix "m8g:playsRole")
                             :as "participations")
-              (local-involvements :via ,(s-prefix "ere:betrokkenBestuur")
+              (local-involvement :via ,(s-prefix "ere:betrokkenBestuur")
                             :as "involved-boards"))
 
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
