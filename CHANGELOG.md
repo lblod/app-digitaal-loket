@@ -1,4 +1,6 @@
 # Changelog
+## 1.65.2 (2022-06-26)
+- vandenbroele as erediensten
 ## 1.65.1 (2022-06-25)
 - fix data issue double person
 - deactivate plan samenleven subsidy
