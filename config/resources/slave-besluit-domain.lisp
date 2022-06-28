@@ -81,7 +81,7 @@
   :features '(include-uri)
   :on-path "besluiten")
 
-(define-resource bestuurseenheid (organizations) ;; Subclass of m8g:PublicOrganisation, which is a subclass of dct:Agent
+(define-resource bestuurseenheid () ;; Subclass of m8g:PublicOrganisation, which is a subclass of dct:Agent
   :class (s-prefix "besluit:Bestuurseenheid")
   :properties `((:naam :string ,(s-prefix "skos:prefLabel"))
                 (:alternatieve-naam :string-set ,(s-prefix "skos:altLabel"))
@@ -105,9 +105,7 @@
                               :inverse t
                               :as "vendors")
               (participation :via ,(s-prefix "m8g:playsRole")
-                            :as "participations")
-              (local-involvement :via ,(s-prefix "ere:betrokkenBestuur")
-                            :as "involved-boards"))
+                            :as "participations"))
 
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
   :features '(include-uri)

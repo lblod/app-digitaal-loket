@@ -145,8 +145,7 @@
 
 (define-resource concept ()
   :class (s-prefix "skos:Concept")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
-                (:alt-label :string ,(s-prefix "skos:altLabel")))
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
   :has-many `((concept-scheme :via ,(s-prefix "skos:inScheme")
                               :as "concept-schemes")
               (concept-scheme :via ,(s-prefix "skos:topConceptOf")
