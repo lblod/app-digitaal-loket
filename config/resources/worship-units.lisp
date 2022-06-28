@@ -1,4 +1,4 @@
-(define-resource agent-in-position ()
+(define-resource agent-in-position (mandataris)
   :class (s-prefix "ch:AgentInPositie")
   :properties `((:agent-start-date :date ,(s-prefix "ch:startdatum"))
                 (:agent-end-date :date ,(s-prefix "ch:eindedatum")))
@@ -27,7 +27,7 @@
   :on-path "posts"
 )
 
-(define-resource worship-mandatee (mandataris)
+(define-resource worship-mandatee ()
   :class (s-prefix "ere:EredienstMandataris")
   :properties `((:expected-end-date :date ,(s-prefix "ere:geplandeEinddatumAanstelling"))
                 (:reason-stopped :string ,(s-prefix "ere:redenVanStopzetting")))
@@ -72,15 +72,6 @@
                              :as "identifiers")
               (site :via ,(s-prefix "org:hasSite")
                     :as "sites")
-              (change-event :via ,(s-prefix "org:originalOrganization")
-                            :inverse t
-                            :as "changed-by")
-              (change-event :via ,(s-prefix "org:resultingOrganization")
-                            :inverse t
-                            :as "resulted-from")
-              (change-event-result :via ,(s-prefix "ext:resultingOrganization")
-                                   :inverse t
-                                   :as "change-event-results")
               (post :via ,(s-prefix "org:hasPost")
                     :as "positions")
               (organization :via ,(s-prefix "org:linkedTo")
@@ -104,11 +95,11 @@
   :on-path "worship-administrative-units"
 )
 
-(define-resource worship-service (worship-administrative-unit)
+(define-resource worship-service ()
   :class (s-prefix "ere:BestuurVanDeEredienst")
   :properties `((:denomination :string ,(s-prefix "ere:denominatie"))
                 (:cross-border :boolean ,(s-prefix "ere:grensoverschrijdend")))
-  :has-one `((involvement :via ,(s-prefix "org:organization")
+  :has-one `((local-involvement :via ,(s-prefix "org:organization")
                           :as "local-involvement"))
   :resource-base (s-url "http://data.lblod.info/id/besturenVanDeEredienst/")
   :features '(include-uri)
@@ -123,7 +114,7 @@
   :on-path "recognized-worship-types"
 )
 
-(define-resource central-worship-service (worship-administrative-unit)
+(define-resource central-worship-service ()
   :class (s-prefix "ere:CentraalBestuurVanDeEredienst")
   :resource-base (s-url "http://data.lblod.info/id/centraleBesturenVanDeEredienst/")
   :features '(include-uri)
@@ -194,7 +185,7 @@
   :on-path "involvement-types"
 )
 
-(define-resource minister (agent-in-position)
+(define-resource minister ()
   :class (s-prefix "ere:RolBedienaar")
   :has-one `((minister-position :via ,(s-prefix "org:holds")
                                 :as "minister-position")
@@ -219,7 +210,7 @@
   :on-path "minister-conditions"
 )
 
-(define-resource minister-position (post)
+(define-resource minister-position ()
   :class (s-prefix "ere:PositieBedienaar")
   :has-one `((minister-position-function :via ,(s-prefix "ere:functie")
                                          :as "function")
