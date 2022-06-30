@@ -372,11 +372,11 @@ defmodule Acl.UserGroups.Config do
                       ] } }
                 ] },
 
-      # // WORSHIP POSITIONS MANAGEMENT
+      # // WORSHIP MANDATEES
       %GroupSpec{
         name: "o-worship-positions-rwf",
         useage: [:read, :write, :read_for_write],
-        access: access_by_role( "LoketLB-bedienarenbeheer" ),
+        access: access_by_role( "LoketLB-eredienstMandaatGebruiker" ),
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
@@ -390,6 +390,32 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/org#Post",
                         "http://www.w3.org/ns/org#Site",
                         "http://data.lblod.info/vocabularies/erediensten/EredienstMandataris",
+                        "http://data.lblod.info/vocabularies/erediensten/EredienstBestuurseenheid",
+                        "http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst",
+                        "http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst",
+                        "http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan",
+                        "http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen",
+                        "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
+                      ] } }
+                ] },
+
+      # // WORSHIP MINISTERS
+      %GroupSpec{
+        name: "o-worship-positions-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-eredienstBedienaarGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
+                        "http://www.w3.org/ns/org#Post",
+                        "http://www.w3.org/ns/org#Site",
                         "http://data.lblod.info/vocabularies/erediensten/EredienstBestuurseenheid",
                         "http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst",
                         "http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst",
