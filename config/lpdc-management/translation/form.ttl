@@ -46,7 +46,7 @@ ext:titlePg a form:PropertyGroup;
   ext:titleF a form:Field ;
       sh:order 1 ;
       sh:path dct:title ;
-      form:displayType displayTypes:textArea ;
+      form:displayType displayTypes:richText ;
       sh:group ext:titlePg .
 
 ##########################################################
@@ -62,7 +62,7 @@ ext:descriptionPg a form:PropertyGroup;
   ext:descriptionF a form:Field ;
       sh:order 1 ;
       sh:path dct:description ;
-      form:displayType displayTypes:textArea ;
+      form:displayType displayTypes:richText ;
       sh:group ext:descriptionPg .
 
 ##########################################################
@@ -137,7 +137,7 @@ ext:requirementsPg a form:PropertyGroup;
         sh:name "Beschrijving voorwaarde" ;
         sh:order 2 ;
         sh:path dct:description ;
-        form:displayType displayTypes:textArea ;
+        form:displayType displayTypes:richText ;
         sh:group ext:requirementsPg-sub .
 
 
@@ -213,7 +213,7 @@ ext:rulesPg a form:PropertyGroup;
         sh:name "Beschrijving procedure" ;
         sh:order 2 ;
         sh:path dct:description ;
-        form:displayType displayTypes:textArea ;
+        form:displayType displayTypes:richText ;
         sh:group ext:rulesPg-sub .
 
 
@@ -289,7 +289,7 @@ ext:costPg a form:PropertyGroup;
         sh:name "Beschrijving kost" ;
         sh:order 2 ;
         sh:path dct:description ;
-        form:displayType displayTypes:textArea ;
+        form:displayType displayTypes:richText ;
         form:validations [
         a form:RequiredConstraint ;
         form:grouping form:Bag ;
@@ -312,7 +312,7 @@ ext:regulationsPg a form:PropertyGroup;
   ext:titleF a form:Field ;
       sh:order 1 ;
       sh:path lpdcExt:regulation;
-      form:displayType displayTypes:textArea ;
+      form:displayType displayTypes:richText ;
       sh:group ext:regulationsPg .
 
 ##########################################################
@@ -491,7 +491,7 @@ ext:websitesPg a form:PropertyGroup;
         sh:name "Beschrijving website" ;
         sh:order 2 ;
         sh:path dct:description ;
-        form:displayType displayTypes:textArea ;
+        form:displayType displayTypes:richText ;
         sh:group ext:websitesPg-sub .
 
     ##########################################################
