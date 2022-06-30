@@ -22,7 +22,8 @@ DELETE {
 
   FILTER (?g NOT IN (
     <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer>,
-    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>,
+    <http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive>
   ))
 }
 
@@ -45,7 +46,8 @@ DELETE {
 
   FILTER (?g NOT IN (
     <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer>,
-    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>,
+    <http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive>
   ))
 }
 
@@ -70,7 +72,8 @@ DELETE {
 
   FILTER (?g NOT IN (
     <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer>,
-    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>,
+    <http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive>
   ))
 }
 
@@ -98,6 +101,7 @@ DELETE {
 
   FILTER (?g NOT IN (
     <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer>,
-    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>,
+    <http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive>
   ))
 }
