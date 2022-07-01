@@ -25,6 +25,6 @@ WHERE {
     ?eenheid ere:wordtBediendDoor ?position ;
       <http://mu.semte.ch/vocabularies/core/uuid> ?uuid .
 
-    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?uuid)) AS ?orgGraph)
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?uuid, "/LoketLB-eredienstBedienaarGebruiker")) AS ?orgGraph)
 }
 

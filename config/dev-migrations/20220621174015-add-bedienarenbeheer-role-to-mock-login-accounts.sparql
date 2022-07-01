@@ -1,6 +1,6 @@
 INSERT {
   GRAPH ?h {
-    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole> "LoketLB-bedienarenbeheer" .
+    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole> "LoketLB-eredienstMandaatGebruiker", "LoketLB-eredienstBedienaarGebruiker" .
   }
 } WHERE {
   GRAPH ?g {
