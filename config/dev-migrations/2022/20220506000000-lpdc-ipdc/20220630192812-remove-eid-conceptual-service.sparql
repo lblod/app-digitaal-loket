@@ -1,0 +1,24 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_2>
+    <http://data.lblod.info/id/website/ac71fc7d-8c47-4b27-95b5-f95e57cb42c9>
+    <http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_1>
+    <http://data.lblod.info/id/cost/7dae44408cdd490ca75779bdb57f6c29>
+    <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_2>
+    <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_1>
+    <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_3>
+    <http://data.lblod.info/id/website/6ba76283-854f-43cb-afcc-7f80cea98f0c>
+    <http://lblod.data.gift/vocabularies/lpdc-ipdc/a139c22b4691447ca9ab3409d380c95c>
+    <http://data.lblod.info/id/rule/33b49d1600014ffebf84d03dd7f8f96b_4>
+    <http://data.lblod.info/id/requirement/3f7d6ac1e48b4308a2ef19d0a09ada33>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+  ?s ?p ?o.
+  }
+}
