@@ -31,6 +31,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:requirementsL;
     form:includes ext:rulesL;
     form:includes ext:costsL;
+    form:includes ext:regulationitleF;
     form:includes ext:websitesL.
 
 ##########################################################
@@ -91,8 +92,8 @@ ext:requirementsPg a form:PropertyGroup;
     sh:group ext:requirementsPg;
     form:addLabel "Voeg voorwaarde toe";
     form:canAdd true;
-    form:canRemove false;
-    sh:maxCount -1;
+    form:canRemove true;
+    sh:maxCount 1;
     sh:order 1 .
 
  ##########################################################
@@ -102,8 +103,10 @@ ext:requirementsPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a m8g:Requirement ;
-        dct:description " ";
-        dct:title " "
+        dct:description " "@nl;
+        dct:title " "@nl;
+        dct:description " "@en;
+        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -120,7 +123,8 @@ ext:requirementsPg a form:PropertyGroup;
   ext:requirementsSf a form:SubForm;
      form:removeLabel "Verwijder voorwaarde";
      form:includes ext:requirementTitleF;
-     form:includes ext:requirementDescriptionF.
+     form:includes ext:requirementDescriptionF;
+     form:includes ext:evidencesL.
 
     ##########################################################
     # Field: Requirement title
@@ -143,6 +147,85 @@ ext:requirementsPg a form:PropertyGroup;
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
         sh:group ext:requirementsPg-sub .
+
+        ##########################################################
+        #  property-group: evidence
+        ##########################################################
+        ext:evidencesPg a form:PropertyGroup;
+            sh:name "Bewijsstukken" ;
+            form:help "Van bovenstaande voorwaarde, kan u de gevraagde bewijsstukken opgeven";
+            sh:order 1 .
+
+        ##########################################################
+        #  listing-scope: Evidence
+        ##########################################################
+        ext:evidencesS a form:Scope;
+          sh:path m8g:hasSupportingEvidence.
+
+        ##########################################################
+        #  Listing: Evidence
+        ##########################################################
+        ext:evidencesL a form:Listing;
+          form:each ext:evidencesSf;
+          form:scope ext:evidencesS;
+          form:createGenerator ext:evidencesG;
+          sh:group ext:evidencesPg;
+          form:addLabel "Voeg bewijsstuk toe";
+          form:canAdd true;
+          form:canRemove true;
+          sh:maxCount 1;
+          sh:order 1 .
+
+       ##########################################################
+        #  Generator: Evidence
+        ##########################################################
+        ext:evidencesG a form:Generator;
+          form:prototype [
+            form:shape [
+              a m8g:Evidence ;
+              dct:description " "@nl;
+              dct:title " "@nl;
+              dct:description " "@en;
+              dct:title " "@en
+            ];
+          ];
+          form:dataGenerator form:addMuUuid.
+
+        ##########################################################
+        #  property-group: Evidence-sub
+        ##########################################################
+        ext:evidencesPg-sub a form:PropertyGroup;
+            sh:order 1 .
+
+        ##########################################################
+        #  Subform: Evidence
+        ##########################################################
+        ext:evidencesSf a form:SubForm;
+           form:removeLabel "Verwijder bewijsstuk";
+           form:includes ext:evidenceTitleF;
+           form:includes ext:evidenceDescriptionF.
+
+          ##########################################################
+          # Field: Evidence title
+          ##########################################################
+          ext:evidenceTitleF a form:Field ;
+              sh:name "Naam bewijsstuk" ;
+              sh:order 1 ;
+              form:language "en";
+              sh:path dct:title ;
+              form:displayType displayTypes:defaultInput ;
+              sh:group ext:evidencesPg-sub .
+
+          ##########################################################
+          # Field: Evidence description
+          ##########################################################
+          ext:evidenceDescriptionF a form:Field ;
+              sh:name "Beschrijving bewijsstuk" ;
+              sh:order 2 ;
+              form:language "en";
+              sh:path dct:description ;
+              form:displayType displayTypes:richText ;
+              sh:group ext:evidencesPg-sub .
 
 
 ##########################################################
@@ -169,8 +252,8 @@ ext:rulesPg a form:PropertyGroup;
     sh:group ext:rulesPg;
     form:addLabel "Voeg procedure toe";
     form:canAdd true;
-    form:canRemove false;
-    sh:maxCount -1;
+    form:canRemove true;
+    sh:maxCount 1;
     sh:order 1 .
 
  ##########################################################
@@ -180,8 +263,10 @@ ext:rulesPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a cpsv:Rule;
-        dct:description " ";
-        dct:title " "
+        dct:description " "@nl;
+        dct:title " "@nl;
+        dct:description " "@en;
+        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -198,7 +283,8 @@ ext:rulesPg a form:PropertyGroup;
   ext:rulesSf a form:SubForm;
      form:removeLabel "Verwijder procedure";
      form:includes ext:ruleTitleF;
-     form:includes ext:ruleDescriptionF.
+     form:includes ext:ruleDescriptionF;
+     form:includes ext:procedureWebsitesL.
 
     ##########################################################
     # Field: Procedure title
@@ -221,6 +307,97 @@ ext:rulesPg a form:PropertyGroup;
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
         sh:group ext:rulesPg-sub .
+
+        ##########################################################
+        #  property-group: procedureWebsite
+        ##########################################################
+        ext:procedureWebsitesPg a form:PropertyGroup;
+            sh:name "Website procedure" ;
+            form:help "Indien de procedure online kan gevolgd worden, geef het hier op";
+            sh:order 1 .
+
+        ##########################################################
+        #  listing-scope: ProcedureWebsite
+        ##########################################################
+        ext:procedureWebsitesS a form:Scope;
+          sh:path lpdcExt:hasOnlineProcedure.
+
+        ##########################################################
+        #  Listing: ProcedureWebsite
+        ##########################################################
+        ext:procedureWebsitesL a form:Listing;
+          form:each ext:procedureWebsitesSf;
+          form:scope ext:procedureWebsitesS;
+          form:createGenerator ext:procedureWebsitesG;
+          sh:group ext:procedureWebsitesPg;
+          form:addLabel "Voeg website toe";
+          form:canAdd true;
+          form:canRemove true;
+          sh:maxCount 1;
+          sh:order 1 .
+
+       ##########################################################
+        #  Generator: ProcedureWebsite
+        ##########################################################
+        ext:procedureWebsitesG a form:Generator;
+          form:prototype [
+            form:shape [
+              a schema:Website ;
+              dct:description " "@nl;
+              dct:title " "@nl;
+              schema:url "";
+              dct:description " "@en;
+              dct:title " "@en
+            ];
+          ];
+          form:dataGenerator form:addMuUuid.
+
+        ##########################################################
+        #  property-group: ProcedureWebsite-sub
+        ##########################################################
+        ext:procedureWebsitesPg-sub a form:PropertyGroup;
+            sh:order 1 .
+
+        ##########################################################
+        #  Subform: ProcedureWebsite
+        ##########################################################
+        ext:procedureWebsitesSf a form:SubForm;
+           form:removeLabel "Verwijder website";
+           form:includes ext:procedureWebsiteTitleF;
+           form:includes ext:procedureWebsiteDescriptionF;
+           form:includes ext:procedureWebsiteUrlF.
+
+          ##########################################################
+          # Field: ProcedureWebsite title
+          ##########################################################
+          ext:procedureWebsiteTitleF a form:Field ;
+              sh:name "Naam website" ;
+              sh:order 1 ;
+              form:language "en";
+              sh:path dct:title ;
+              form:displayType displayTypes:defaultInput ;
+              sh:group ext:procedureWebsitesPg-sub .
+
+          ##########################################################
+          # Field: ProcedureWebsite description
+          ##########################################################
+          ext:procedureWebsiteDescriptionF a form:Field ;
+              sh:name "Beschrijving website" ;
+              sh:order 2 ;
+              form:language "en";
+              sh:path dct:description ;
+              form:displayType displayTypes:richText ;
+              sh:group ext:procedureWebsitesPg-sub .
+
+          ##########################################################
+          # Field: ProcedureWebsite description
+          ##########################################################
+          ext:procedureWebsiteUrlF a form:Field ;
+              sh:name "Url" ;
+              sh:order 3 ;
+              sh:path schema:url ;
+              form:displayType displayTypes:defaultInput ;
+              sh:group ext:procedureWebsitesPg-sub .
 
 
 ##########################################################
@@ -258,8 +435,10 @@ ext:costPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a m8g:Cost;
-        dct:description " ";
-        dct:title " "
+        dct:description " "@nl;
+        dct:title " "@nl;
+        dct:description " "@en;
+        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -317,7 +496,7 @@ ext:regulationsPg a form:PropertyGroup;
   ##########################################################
   #  field: Regelgeving
   ##########################################################
-  ext:titleF a form:Field ;
+  ext:regulationitleF a form:Field ;
       sh:order 1 ;
       sh:path lpdcExt:regulation;
       form:displayType displayTypes:richText ;
@@ -459,8 +638,10 @@ ext:websitesPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a foaf:Document ;
-        dct:description " ";
-        dct:title " ";
+        dct:description " "@nl;
+        dct:title " "@nl;
+        dct:description " "@en;
+        dct:title " "@en;
         schema:url ""
       ];
     ];
