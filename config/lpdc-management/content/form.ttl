@@ -28,6 +28,7 @@
 ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:titleF;
     form:includes ext:descriptionF;
+    form:includes ext:exceptionF;
     form:includes ext:requirementsL;
     form:includes ext:rulesL;
     form:includes ext:costsL;
@@ -70,6 +71,24 @@ ext:descriptionPg a form:PropertyGroup;
       sh:path dct:description ;
       form:displayType displayTypes:richText ;
       sh:group ext:descriptionPg .
+
+##########################################################
+#  property-group: exception
+##########################################################
+ext:exceptionPg a form:PropertyGroup;
+    sh:name "Uitzonderingen" ;
+    form:help "Geef hier mogelijke uitzondering op.";
+    sh:order 3 .
+
+  ##########################################################
+  #  field: exception
+  ##########################################################
+  ext:exceptionF a form:Field ;
+      sh:order 1 ;
+      form:language "nl";
+      sh:path lpdcExt:exception ;
+      form:displayType displayTypes:richText ;
+      sh:group ext:exceptionPg .
 
 ##########################################################
 #  property-group: Voorwaarden
