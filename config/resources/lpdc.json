@@ -1,4 +1,4 @@
-{
+ {
   "version": "0.1",
   "prefixes": {
     "adms": "http://www.w3.org/ns/adms#",
@@ -29,7 +29,7 @@
           "predicate": "dct:identifier"
         },
         "name": {
-          "type": "string-set",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "description": {
@@ -172,7 +172,8 @@
         "instances": {
           "target": "public-services",
           "predicate": "dct:source",
-          "cardinality": "many"
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [
@@ -190,8 +191,7 @@
         "concept": {
           "target": "conceptual-public-services",
           "predicate": "dct:source",
-          "cardinality": "one",
-          "inverse": true
+          "cardinality": "one"
         }
       },
       "features": [
@@ -438,7 +438,7 @@
         },
         "website": {
           "type": "uri",
-          "predicate": "foaf:page"
+          "predicate": "schema:url"
         },
         "opening-hours": {
           "type": "string",
@@ -501,7 +501,7 @@
      "new-resource-base": "http://data.lblod.info/id/lpdc-concepts/id/"
     },
     "websites": {
-      "class": "foaf:Document",
+      "class": "schema:Website",
       "attributes": {
         "description": {
           "type": "string",
