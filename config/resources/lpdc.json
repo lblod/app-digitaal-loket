@@ -33,19 +33,19 @@
           "predicate": "dct:title"
         },
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "keyword": {
-          "type": "string-set",
+          "type": "language-string-set",
           "predicate": "dcat:keyword"
         },
         "regulations": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "lpdcExt:regulation"
         },
         "exceptions": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "lpdcExt:exception"
         },
         "start-date": {
@@ -260,12 +260,12 @@
           "predicate": "dct:identifier"
         },
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "name": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
+          "type": "language-string-set",
+          "predicate": "dct:title"
         }
       },
       "relationships": {
@@ -298,11 +298,11 @@
           "predicate": "dct:identifier"
         },
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "documentation": {
@@ -320,7 +320,7 @@
       "class": "cspv:Rule",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "identifier": {
@@ -328,7 +328,7 @@
           "predicate": "dct:identifier"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         }
       },
@@ -353,11 +353,11 @@
       "class": "m8g:Cost",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "identifier": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:identifier"
         },
         "name": {
@@ -375,7 +375,7 @@
       "class": "m8g:Output",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "identifier": {
@@ -383,7 +383,7 @@
           "predicate": "dct:identifier"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         }
       },
@@ -455,11 +455,11 @@
       "class": "foaf:Document",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "document": {
@@ -504,11 +504,11 @@
       "class": "schema:Website",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "title": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "location": {
