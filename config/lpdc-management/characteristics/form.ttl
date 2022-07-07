@@ -27,7 +27,6 @@
 # form
 ##########################################################
 ext:form a form:Form, form:TopLevelForm ;
-    form:includes ext:statusF;
     form:includes ext:sectorF;
     form:includes ext:productTypeF;
     form:includes ext:targetF;
