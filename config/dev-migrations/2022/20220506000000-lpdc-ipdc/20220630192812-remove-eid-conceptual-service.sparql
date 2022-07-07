@@ -5,6 +5,7 @@ DELETE {
 }
 WHERE {
   VALUES ?s {
+    <http://data.lblod.info/id/public-services/a139c22b4691447ca9ab3409d380c95c>
     <http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_2>
     <http://data.lblod.info/id/website/ac71fc7d-8c47-4b27-95b5-f95e57cb42c9>
     <http://data.lblod.info/id/rule/5a3fc814838f4c1183c49c37ddca65cc_1>
