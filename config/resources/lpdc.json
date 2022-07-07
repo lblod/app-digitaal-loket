@@ -1,4 +1,4 @@
-{
+ {
   "version": "0.1",
   "prefixes": {
     "adms": "http://www.w3.org/ns/adms#",
@@ -29,23 +29,23 @@
           "predicate": "dct:identifier"
         },
         "name": {
-          "type": "string-set",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "keyword": {
-          "type": "string-set",
+          "type": "language-string-set",
           "predicate": "dcat:keyword"
         },
         "regulations": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "lpdcExt:regulation"
         },
         "exceptions": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "lpdcExt:exception"
         },
         "start-date": {
@@ -172,7 +172,8 @@
         "instances": {
           "target": "public-services",
           "predicate": "dct:source",
-          "cardinality": "many"
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [
@@ -190,8 +191,7 @@
         "concept": {
           "target": "conceptual-public-services",
           "predicate": "dct:source",
-          "cardinality": "one",
-          "inverse": true
+          "cardinality": "one"
         }
       },
       "features": [
@@ -260,12 +260,12 @@
           "predicate": "dct:identifier"
         },
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "name": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
+          "type": "language-string-set",
+          "predicate": "dct:title"
         }
       },
       "relationships": {
@@ -298,11 +298,11 @@
           "predicate": "dct:identifier"
         },
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "documentation": {
@@ -320,7 +320,7 @@
       "class": "cspv:Rule",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "identifier": {
@@ -328,7 +328,7 @@
           "predicate": "dct:identifier"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         }
       },
@@ -353,11 +353,11 @@
       "class": "m8g:Cost",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "identifier": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:identifier"
         },
         "name": {
@@ -375,7 +375,7 @@
       "class": "m8g:Output",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "identifier": {
@@ -383,7 +383,7 @@
           "predicate": "dct:identifier"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         }
       },
@@ -438,7 +438,7 @@
         },
         "website": {
           "type": "uri",
-          "predicate": "foaf:page"
+          "predicate": "schema:url"
         },
         "opening-hours": {
           "type": "string",
@@ -455,11 +455,11 @@
       "class": "foaf:Document",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "name": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "document": {
@@ -501,14 +501,14 @@
      "new-resource-base": "http://data.lblod.info/id/lpdc-concepts/id/"
     },
     "websites": {
-      "class": "foaf:Document",
+      "class": "schema:Website",
       "attributes": {
         "description": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:description"
         },
         "title": {
-          "type": "string",
+          "type": "language-string-set",
           "predicate": "dct:title"
         },
         "location": {

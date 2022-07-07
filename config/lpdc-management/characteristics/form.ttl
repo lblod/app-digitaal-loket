@@ -27,7 +27,6 @@
 # form
 ##########################################################
 ext:form a form:Form, form:TopLevelForm ;
-    form:includes ext:statusF;
     form:includes ext:sectorF;
     form:includes ext:productTypeF;
     form:includes ext:targetF;
@@ -40,24 +39,6 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:tagsF;
     form:includes ext:startDateF;
     form:includes ext:endDateF.
-
-
-##########################################################
-#  property-group: status
-##########################################################
-ext:statusPg a form:PropertyGroup;
-    sh:order 10 .
-
-  ##########################################################
-  #  field: status
-  ##########################################################
-  ext:statusF a form:Field ;
-      sh:name "Status" ;
-      sh:order 1 ;
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/25e9d104-393f-4e5d-8793-06b240bad7ab"}""" ;
-      sh:path ps:lifecycleStatus ;
-      form:displayType displayTypes:conceptSchemeSelector ;
-      sh:group ext:statusPg .
 
 ##########################################################
 #  property-group: Algemene info
