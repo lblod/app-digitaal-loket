@@ -10,6 +10,7 @@
 (defparameter *max-group-sorted-properties* t)
 (defparameter sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
 
+(read-domain-file "worship-units.lisp")
 (read-domain-file "master-users-domain.lisp")
 (read-domain-file "master-validations-domain.lisp")
 (read-domain-file "master-files-domain.lisp")
@@ -29,7 +30,7 @@
 (read-domain-file "master-subsidies-domain.lisp")
 (read-domain-file "master-job-domain.lisp")
 (read-domain-file "dcat.json")
-(read-domain-file "worship-units.lisp")
+
 
 (before (:list file) (resource)
   (let ((request-filters-on-uri
