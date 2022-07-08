@@ -1,9 +1,9 @@
-(define-resource agent-in-position (mandataris)
+(define-resource agent-in-position ()
   :class (s-prefix "ch:AgentInPositie")
   :properties `((:agent-start-date :date ,(s-prefix "ch:startdatum"))
                 (:agent-end-date :date ,(s-prefix "ch:eindedatum")))
   :has-one `((post :via ,(s-prefix "org:holds")
-                   :as "position")
+                   :as "post")
              (persoon :via ,(s-prefix "org:heldBy")
                       :as "person"))
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
@@ -16,7 +16,7 @@
 (define-resource post ()
   :class (s-prefix "org:Post")
   :has-one `((role :via ,(s-prefix "org:role")
-                   :as "general-role")
+                   :as "role")
              (organization :via ,(s-prefix "org:postIn")
                             :as "organization"))
   :has-many `((agent-in-position :via ,(s-prefix "org:holds")
@@ -27,7 +27,15 @@
   :on-path "posts"
 )
 
-(define-resource worship-mandatee ()
+(define-resource half-election ()
+  :class (s-prefix "code:HelftVerkiezing")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :resource-base (s-url "http://lblod.data.gift/concepts/")
+  :features '(include-uri)
+  :on-path "half-elections"
+)
+
+(define-resource worship-mandatee (mandataris)
   :class (s-prefix "ere:EredienstMandataris")
   :properties `((:expected-end-date :date ,(s-prefix "ere:geplandeEinddatumAanstelling"))
                 (:reason-stopped :string ,(s-prefix "ere:redenVanStopzetting")))
@@ -36,14 +44,6 @@
   :resource-base (s-url "http://data.lblod.info/id/mandatarissen/")
   :features '(include-uri)
   :on-path "worship-mandatees"
-)
-
-(define-resource half-election ()
-  :class (s-prefix "code:HelftVerkiezing")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://lblod.data.gift/concepts/")
-  :features '(include-uri)
-  :on-path "half-elections"
 )
 
 (define-resource role ()
