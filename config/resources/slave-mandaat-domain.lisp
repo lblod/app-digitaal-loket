@@ -65,7 +65,7 @@
   :features '(include-uri)
   :on-path "lidmaatschappen")
 
-(define-resource mandaat ()
+(define-resource mandaat (post)
   :class (s-prefix "mandaat:Mandaat")
   :properties `((:aantal-houders :number ,(s-prefix "mandaat:aantalHouders")))
   :has-one `((bestuursfunctie-code :via ,(s-prefix "org:role")
@@ -85,7 +85,7 @@
   :features '(include-uri)
   :on-path "bestuursfunctie-codes")
 
-(define-resource mandataris ()
+(define-resource mandataris (agent-in-position)
   :class (s-prefix "mandaat:Mandataris")
   :properties `((:rangorde :language-string ,(s-prefix "mandaat:rangorde"))
                 (:start :datetime ,(s-prefix "mandaat:start"))
@@ -100,6 +100,8 @@
                                        :as "rechtsgronden-beeindiging")
               (mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
                           :as "tijdelijke-vervangingen")
+              (contact-point :via ,(s-prefix "schema:contactPoint")
+                          :as "contact-points")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
                                   :as "beleidsdomein"))
   :has-one `((mandaat :via ,(s-prefix "org:holds")
