@@ -395,7 +395,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst",
                         "http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan",
                         "http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen",
-                        "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
+                        "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
+                        "http://lblod.data.gift/vocabularies/organisatie/HelftVerkiezing",
                       ] } }
                 ] },
 
