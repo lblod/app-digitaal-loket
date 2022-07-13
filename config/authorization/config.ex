@@ -382,6 +382,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://www.w3.org/ns/adms#Identifier",
+                        "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
                         "http://schema.org/ContactPoint",
@@ -410,6 +411,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://www.w3.org/ns/adms#Identifier",
+                        "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
                         "http://schema.org/ContactPoint",
