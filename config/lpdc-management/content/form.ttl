@@ -53,6 +53,7 @@ ext:titlePg a form:PropertyGroup;
   ##########################################################
   ext:titleF a form:Field ;
       sh:order 1 ;
+      sh:name "Titel";
       form:language "nl";
       sh:path dct:title ;
       form:displayType displayTypes:richText ;
@@ -63,7 +64,7 @@ ext:titlePg a form:PropertyGroup;
   ##########################################################
   extEng:titleF a form:Field ;
       sh:order 2 ;
-      sh:name "Engelse vertaling van de titel:";
+      sh:name "Engelse vertaling van de titel";
       form:language "en";
       sh:path dct:title ;
       form:displayType displayTypes:richText ;
@@ -82,6 +83,7 @@ ext:descriptionPg a form:PropertyGroup;
   ##########################################################
   ext:descriptionF a form:Field ;
       sh:order 1 ;
+      sh:name "Beschrijving";
       form:language "nl";
       sh:path dct:description ;
       form:displayType displayTypes:richText ;
@@ -93,7 +95,7 @@ ext:descriptionPg a form:PropertyGroup;
   extEng:descriptionF a form:Field ;
       sh:order 2 ;
       form:language "en";
-      sh:name "Engelse vertaling van de beschrijving:";
+      sh:name "Engelse vertaling van de beschrijving";
       sh:path dct:description ;
       form:displayType displayTypes:richText ;
       sh:group ext:descriptionPg .
@@ -111,6 +113,7 @@ ext:exceptionPg a form:PropertyGroup;
   ##########################################################
   ext:exceptionF a form:Field ;
       sh:order 1 ;
+      sh:name "Uitzonderingen" ;
       form:language "nl";
       sh:path lpdcExt:exception ;
       form:displayType displayTypes:richText ;
@@ -121,7 +124,7 @@ ext:exceptionPg a form:PropertyGroup;
   ##########################################################
   extEng:exceptionF a form:Field ;
       sh:order 2 ;
-      sh:name "Engelse vertaling van de uitzonderingen:";
+      sh:name "Engelse vertaling van de uitzonderingen";
       form:language "en";
       sh:path lpdcExt:exception ;
       form:displayType displayTypes:richText ;
@@ -202,7 +205,7 @@ ext:requirementsPg a form:PropertyGroup;
     # Field (En.): Requirement title
     ##########################################################
     extEng:requirementTitleF a form:Field ;
-        sh:name "Engelse vertaling van de titel:" ;
+        sh:name "Engelse vertaling van de titel" ;
         sh:order 2 ;
         form:language "en";
         sh:path dct:title ;
@@ -224,7 +227,7 @@ ext:requirementsPg a form:PropertyGroup;
     # Field (En.): Requirement description
     ##########################################################
     extEng:requirementDescriptionF a form:Field ;
-        sh:name "Engelse vertaling van de beschrijving:" ;
+        sh:name "Engelse vertaling van de beschrijving" ;
         sh:order 4 ;
         form:language "en";
         sh:path dct:description ;
@@ -305,7 +308,7 @@ ext:requirementsPg a form:PropertyGroup;
           # Field (En.): Evidence title
           ##########################################################
           extEng:evidenceTitleF a form:Field ;
-              sh:name "Engelse vertaling van de naam:" ;
+              sh:name "Engelse vertaling van de naam" ;
               sh:order 2 ;
               form:language "en";
               sh:path dct:title ;
