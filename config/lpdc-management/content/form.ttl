@@ -3,7 +3,7 @@
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
-
+@prefix extEng: <http://mu.semte.ch/vocabularies/ext/form-fields/english/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
 @prefix mu:	<http://mu.semte.ch/vocabularies/core/> .
@@ -27,12 +27,16 @@
 ##########################################################
 ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:titleF;
+    form:includes extEng:titleF;
     form:includes ext:descriptionF;
+    form:includes extEng:descriptionF;
     form:includes ext:exceptionF;
+    form:includes extEng:exceptionF;
     form:includes ext:requirementsL;
     form:includes ext:rulesL;
     form:includes ext:costsL;
     form:includes ext:regulationitleF;
+    form:includes extEng:regulationitleF;
     form:includes ext:contactpointsL;
     form:includes ext:websitesL.
 
@@ -50,6 +54,17 @@ ext:titlePg a form:PropertyGroup;
   ext:titleF a form:Field ;
       sh:order 1 ;
       form:language "nl";
+      sh:path dct:title ;
+      form:displayType displayTypes:richText ;
+      sh:group ext:titlePg .
+
+  ##########################################################
+  #  field (en.): title
+  ##########################################################
+  extEng:titleF a form:Field ;
+      sh:order 2 ;
+      sh:name "Engelse vertaling van de titel:";
+      form:language "en";
       sh:path dct:title ;
       form:displayType displayTypes:richText ;
       sh:group ext:titlePg .
@@ -72,6 +87,17 @@ ext:descriptionPg a form:PropertyGroup;
       form:displayType displayTypes:richText ;
       sh:group ext:descriptionPg .
 
+  ##########################################################
+  #  field (en.): description
+  ##########################################################
+  extEng:descriptionF a form:Field ;
+      sh:order 2 ;
+      form:language "en";
+      sh:name "Engelse vertaling van de beschrijving:";
+      sh:path dct:description ;
+      form:displayType displayTypes:richText ;
+      sh:group ext:descriptionPg .
+
 ##########################################################
 #  property-group: exception
 ##########################################################
@@ -86,6 +112,17 @@ ext:exceptionPg a form:PropertyGroup;
   ext:exceptionF a form:Field ;
       sh:order 1 ;
       form:language "nl";
+      sh:path lpdcExt:exception ;
+      form:displayType displayTypes:richText ;
+      sh:group ext:exceptionPg .
+
+  ##########################################################
+  #  field (en.): exception
+  ##########################################################
+  extEng:exceptionF a form:Field ;
+      sh:order 2 ;
+      sh:name "Engelse vertaling van de uitzonderingen:";
+      form:language "en";
       sh:path lpdcExt:exception ;
       form:displayType displayTypes:richText ;
       sh:group ext:exceptionPg .
@@ -145,7 +182,9 @@ ext:requirementsPg a form:PropertyGroup;
   ext:requirementsSf a form:SubForm;
      form:removeLabel "Verwijder voorwaarde";
      form:includes ext:requirementTitleF;
+     form:includes extEng:requirementTitleF;
      form:includes ext:requirementDescriptionF;
+     form:includes extEng:requirementDescriptionF;
      form:includes ext:evidencesL.
 
     ##########################################################
@@ -160,12 +199,34 @@ ext:requirementsPg a form:PropertyGroup;
         sh:group ext:requirementsPg-sub .
 
     ##########################################################
+    # Field (En.): Requirement title
+    ##########################################################
+    extEng:requirementTitleF a form:Field ;
+        sh:name "Engelse vertaling van de titel:" ;
+        sh:order 2 ;
+        form:language "en";
+        sh:path dct:title ;
+        form:displayType displayTypes:defaultInput ;
+        sh:group ext:requirementsPg-sub .
+
+    ##########################################################
     # Field: Requirement description
     ##########################################################
     ext:requirementDescriptionF a form:Field ;
         sh:name "Beschrijving voorwaarde" ;
-        sh:order 2 ;
+        sh:order 3 ;
         form:language "nl";
+        sh:path dct:description ;
+        form:displayType displayTypes:richText ;
+        sh:group ext:requirementsPg-sub .
+
+    ##########################################################
+    # Field (En.): Requirement description
+    ##########################################################
+    extEng:requirementDescriptionF a form:Field ;
+        sh:name "Engelse vertaling van de beschrijving:" ;
+        sh:order 4 ;
+        form:language "en";
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
         sh:group ext:requirementsPg-sub .
@@ -225,7 +286,9 @@ ext:requirementsPg a form:PropertyGroup;
         ext:evidencesSf a form:SubForm;
            form:removeLabel "Verwijder bewijsstuk";
            form:includes ext:evidenceTitleF;
-           form:includes ext:evidenceDescriptionF.
+           form:includes extEng:evidenceTitleF;
+           form:includes ext:evidenceDescriptionF;
+           form:includes extEng:evidenceDescriptionF.
 
           ##########################################################
           # Field: Evidence title
@@ -239,16 +302,37 @@ ext:requirementsPg a form:PropertyGroup;
               sh:group ext:evidencesPg-sub .
 
           ##########################################################
+          # Field (En.): Evidence title
+          ##########################################################
+          extEng:evidenceTitleF a form:Field ;
+              sh:name "Engelse vertaling van de naam:" ;
+              sh:order 2 ;
+              form:language "en";
+              sh:path dct:title ;
+              form:displayType displayTypes:defaultInput ;
+              sh:group ext:evidencesPg-sub .
+
+          ##########################################################
           # Field: Evidence description
           ##########################################################
           ext:evidenceDescriptionF a form:Field ;
               sh:name "Beschrijving bewijsstuk" ;
-              sh:order 2 ;
+              sh:order 3 ;
               form:language "nl";
               sh:path dct:description ;
               form:displayType displayTypes:richText ;
               sh:group ext:evidencesPg-sub .
 
+          ##########################################################
+          # Field (En.): Evidence description
+          ##########################################################
+          extEng:evidenceDescriptionF a form:Field ;
+              sh:name "Engelse vertaling van de beschrijving" ;
+              sh:order 4 ;
+              form:language "en";
+              sh:path dct:description ;
+              form:displayType displayTypes:richText ;
+              sh:group ext:evidencesPg-sub .
 
 ##########################################################
 #  property-group: Procedure
@@ -305,7 +389,9 @@ ext:rulesPg a form:PropertyGroup;
   ext:rulesSf a form:SubForm;
      form:removeLabel "Verwijder procedure";
      form:includes ext:ruleTitleF;
+     form:includes extEng:ruleTitleF;
      form:includes ext:ruleDescriptionF;
+     form:includes extEng:ruleDescriptionF;
      form:includes ext:procedureWebsitesL.
 
     ##########################################################
@@ -320,12 +406,34 @@ ext:rulesPg a form:PropertyGroup;
         sh:group ext:rulesPg-sub .
 
     ##########################################################
+    # Field (En.): Procedure title
+    ##########################################################
+    extEng:ruleTitleF a form:Field ;
+        sh:name "Engelse vertaling titel" ;
+        sh:order 2 ;
+        form:language "en";
+        sh:path dct:title ;
+        form:displayType displayTypes:defaultInput ;
+        sh:group ext:rulesPg-sub .
+
+    ##########################################################
     # Field: Procedure description
     ##########################################################
     ext:ruleDescriptionF a form:Field ;
         sh:name "Beschrijving procedure" ;
-        sh:order 2 ;
+        sh:order 3 ;
         form:language "nl";
+        sh:path dct:description ;
+        form:displayType displayTypes:richText ;
+        sh:group ext:rulesPg-sub .
+
+    ##########################################################
+    # Field (En.): Procedure description
+    ##########################################################
+    extEng:ruleDescriptionF a form:Field ;
+        sh:name "Engelse vertaling van de beschrijving" ;
+        sh:order 4 ;
+        form:language "en";
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
         sh:group ext:rulesPg-sub .
@@ -386,7 +494,9 @@ ext:rulesPg a form:PropertyGroup;
         ext:procedureWebsitesSf a form:SubForm;
            form:removeLabel "Verwijder website";
            form:includes ext:procedureWebsiteTitleF;
+           form:includes extEng:procedureWebsiteTitleF;
            form:includes ext:procedureWebsiteDescriptionF;
+           form:includes extEng:procedureWebsiteDescriptionF;
            form:includes ext:procedureWebsiteUrlF.
 
           ##########################################################
@@ -401,12 +511,34 @@ ext:rulesPg a form:PropertyGroup;
               sh:group ext:procedureWebsitesPg-sub .
 
           ##########################################################
+          # Field (En.): ProcedureWebsite title
+          ##########################################################
+          extEng:procedureWebsiteTitleF a form:Field ;
+              sh:name "Engelse vertaling naam" ;
+              sh:order 2 ;
+              form:language "en";
+              sh:path dct:title ;
+              form:displayType displayTypes:defaultInput ;
+              sh:group ext:procedureWebsitesPg-sub .
+
+          ##########################################################
           # Field: ProcedureWebsite description
           ##########################################################
           ext:procedureWebsiteDescriptionF a form:Field ;
               sh:name "Beschrijving website" ;
               sh:order 2 ;
               form:language "nl";
+              sh:path dct:description ;
+              form:displayType displayTypes:richText ;
+              sh:group ext:procedureWebsitesPg-sub .
+
+          ##########################################################
+          # Field (En.): ProcedureWebsite description
+          ##########################################################
+          extEng:procedureWebsiteDescriptionF a form:Field ;
+              sh:name "Engelse vertaling beschrijving" ;
+              sh:order 3 ;
+              form:language "en";
               sh:path dct:description ;
               form:displayType displayTypes:richText ;
               sh:group ext:procedureWebsitesPg-sub .
@@ -475,7 +607,9 @@ ext:costPg a form:PropertyGroup;
   ext:costsSf a form:SubForm;
      form:removeLabel "Verwijder kost";
      form:includes ext:costTitleF;
-     form:includes ext:costDescriptionF.
+     form:includes extEng:costTitleF;
+     form:includes ext:costDescriptionF;
+     form:includes extEng:costDescriptionF.
 
     ##########################################################
     # Field: Kost title
@@ -489,12 +623,23 @@ ext:costPg a form:PropertyGroup;
         sh:group ext:costsPg-sub .
 
     ##########################################################
+    # Field (En.): Kost title
+    ##########################################################
+    extEng:costTitleF a form:Field ;
+        sh:name "Engelse vertaling titel" ;
+        sh:order 2 ;
+        form:language "en";
+        sh:path dct:title ;
+        form:displayType displayTypes:defaultInput ;
+        sh:group ext:costsPg-sub .
+
+    ##########################################################
     # Field: Kost description
     ##########################################################
     ext:costDescriptionF a form:Field ;
         sh:name "Beschrijving kost" ;
         form:language "nl";
-        sh:order 2 ;
+        sh:order 3 ;
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
         form:validations [
@@ -504,6 +649,21 @@ ext:costPg a form:PropertyGroup;
         sh:path dct:description ];
         sh:group ext:costsPg-sub .
 
+    ##########################################################
+    # Field (En.): Kost description
+    ##########################################################
+    extEng:costDescriptionF a form:Field ;
+        sh:name "Engelse vertaling beschrijving" ;
+        sh:order 4 ;
+        form:language "en";
+        sh:path dct:description ;
+        form:displayType displayTypes:richText ;
+        form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:description ];
+        sh:group ext:costsPg-sub .
 
 ##########################################################
 #  property-group: Regelgeving
@@ -519,6 +679,17 @@ ext:regulationsPg a form:PropertyGroup;
   ext:regulationitleF a form:Field ;
       sh:order 1 ;
       form:language "nl";
+      sh:path lpdcExt:regulation;
+      form:displayType displayTypes:richText ;
+      sh:group ext:regulationsPg .
+
+  ##########################################################
+  #  field (en.): Regelgeving
+  ##########################################################
+  extEng:regulationitleF a form:Field ;
+      sh:order 2 ;
+      form:language "en";
+      sh:name "Engelse vertaling van de regelgeving";
       sh:path lpdcExt:regulation;
       form:displayType displayTypes:richText ;
       sh:group ext:regulationsPg .
@@ -656,7 +827,7 @@ ext:websitesPg a form:PropertyGroup;
   ext:websitesG a form:Generator;
     form:prototype [
       form:shape [
-        a foaf:Document ;
+        a schema:Website ;
         dct:description " "@nl;
         dct:title " "@nl;
         schema:url "";
@@ -679,7 +850,9 @@ ext:websitesPg a form:PropertyGroup;
   ext:websitesSf a form:SubForm;
      form:removeLabel "Verwijder website";
      form:includes ext:websiteTitleF;
+     form:includes extEng:websiteTitleF;
      form:includes ext:websiteDescriptionF;
+     form:includes extEng:websiteDescriptionF;
      form:includes ext:websiteUrlF.
 
     ##########################################################
@@ -694,12 +867,34 @@ ext:websitesPg a form:PropertyGroup;
         sh:group ext:websitesPg-sub .
 
     ##########################################################
+    # Field (En.):  Meer Info title
+    ##########################################################
+    extEng:websiteTitleF a form:Field ;
+        sh:name "Engelse vertaling titel" ;
+        sh:order 2 ;
+        form:language "en";
+        sh:path dct:title ;
+        form:displayType displayTypes:defaultInput ;
+        sh:group ext:websitesPg-sub .
+
+    ##########################################################
     # Field: Meer Info description
     ##########################################################
     ext:websiteDescriptionF a form:Field ;
         sh:name "Beschrijving website" ;
-        sh:order 2 ;
+        sh:order 3 ;
         form:language "nl";
+        sh:path dct:description ;
+        form:displayType displayTypes:richText ;
+        sh:group ext:websitesPg-sub .
+
+    ##########################################################
+    # Field (En.): Meer Info description
+    ##########################################################
+    extEng:websiteDescriptionF a form:Field ;
+        sh:name "Engelse vertaling beschrijving" ;
+        sh:order 4 ;
+        form:language "en";
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
         sh:group ext:websitesPg-sub .
@@ -709,7 +904,7 @@ ext:websitesPg a form:PropertyGroup;
     ##########################################################
     ext:websiteUrlF a form:Field ;
         sh:name "Website URL" ;
-        sh:order 3 ;
+        sh:order 5 ;
         sh:path schema:url ;
         form:displayType displayTypes:defaultInput ;
         sh:group ext:websitesPg-sub .
