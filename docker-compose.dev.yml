@@ -99,6 +99,9 @@ services:
       EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   download-url-warning:
+    environment:
+      EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
+      EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   case-number-generator:
     restart: "no"
