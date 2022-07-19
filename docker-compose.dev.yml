@@ -94,6 +94,9 @@ services:
       VERSIONED_CONFIGURATION_WATCHER: null
     restart: "no"
   berichtencentrum-warning:
+    environment:
+      EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
+      EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   download-url-warning:
     restart: "no"
