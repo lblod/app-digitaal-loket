@@ -121,6 +121,10 @@ services:
   delta-producer-publication-graph-maintainer-submissions:
     restart: "no"
   error-alert:
+  error-alert:
+    environment:
+      EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
+      EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   prepare-submissions-for-export:
     restart: "no"
