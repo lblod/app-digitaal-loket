@@ -9,11 +9,16 @@
                 (:website :url ,(s-prefix "foaf:page"))
                 (:telefoon :string ,(s-prefix "schema:telephone"))
                 (:type :string ,(s-prefix "schema:contactType")))
+
   :has-one `((adres :via ,(s-prefix "locn:address")
                     :as "adres")
-             (mandataris :via ,(s-prefix "schema:contactPoint")
+             (contact-punt :via ,(s-prefix "ext:secondaryContactPoint")
+                    :as "secondary-contact-point"))
+
+  :has-many `((agent-in-position :via ,(s-prefix "schema:contactPoint")
                     :inverse t
-              :as "mandataris"))
+                    :as "agents-in-position"))
+
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/contact-punten/")
   :on-path "contact-punten")
