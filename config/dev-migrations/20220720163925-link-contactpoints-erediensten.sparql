@@ -1,0 +1,28 @@
+PREFIX schema: <http://schema.org/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT {
+  GRAPH ?g {
+    ?s a ?type.
+    ?primaryP ext:secondaryContactPoint ?secondaryP.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES ?type {
+      <http://data.lblod.info/vocabularies/contacthub/AgentInPositie>
+      <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris>
+      <http://data.vlaanderen.be/ns/mandaat#Mandataris>
+      <http://data.lblod.info/vocabularies/erediensten/RolBedienaar>
+    }
+    ?s a ?type;
+      schema:contactPoint ?primaryP;
+      schema:contactPoint ?secondaryP.
+
+   ?primaryP a schema:ContactPoint ;
+    schema:contactType "Primary" .
+
+   ?secondaryP a schema:ContactPoint ;
+    schema:contactType "Secondary" .
+  }
+}
