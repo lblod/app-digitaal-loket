@@ -12,7 +12,12 @@
   :has-one `((post :via ,(s-prefix "org:holds")
                    :as "post")
              (persoon :via ,(s-prefix "org:heldBy")
-                      :as "person"))
+                      :as "person")
+             ;;NOTE: this relation belongs to a child class
+             ;; This is a workaround to allow filtering on properties of child-class, which come through the parent-class.
+             (persoon :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
+                      :as "is-bestuurlijke-alias-van")
+             )
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contacts"))
   :resource-base (s-url "http://data.lblod.info/id/agentenInPositie/")
