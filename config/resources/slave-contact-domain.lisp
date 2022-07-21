@@ -17,10 +17,7 @@
 
   :has-many `((agent-in-position :via ,(s-prefix "schema:contactPoint")
                     :inverse t
-                    :as "agents-in-position")
-              (mandataris :via ,(s-prefix "schema:contactPoint")
-                    :inverse t
-                    :as "mandatarissen"))
+                    :as "agents-in-position"))
 
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/contact-punten/")
