@@ -365,7 +365,7 @@ services:
     logging: *default-logging
 
   ldes-consumer:
-    image: jsz4n/ldes-consumer-service
+    image: redpencil/ldes-consumer:0.1.0
     environment:
       LDES_STREAM: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes"
       LDES_ENDPOINT_VIEW: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes/0" # first page of the stream
