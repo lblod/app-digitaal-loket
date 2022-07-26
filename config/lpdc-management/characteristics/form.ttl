@@ -37,6 +37,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:executingAuthorityF;
     form:includes ext:relatedProductsF;
     form:includes ext:tagsF;
+    form:includes ext:statusF;
     form:includes ext:startDateF;
     form:includes ext:endDateF.
 
@@ -47,12 +48,23 @@ ext:generalPg a form:PropertyGroup;
     sh:name "Algemene info" ;
     sh:order 20 .
 
+  ##########################################################
+  #  field: status (ps:lifecycleStatus)
+  ##########################################################
+  ext:statusF a form:Field ;
+      sh:name "Status van de dienstverlening" ;
+      sh:order 1 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/25e9d104-393f-4e5d-8793-06b240bad7ab"}""" ;
+      sh:path ps:lifecycleStatus ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:generalPg .
+
    ##########################################################
    # Field: geldig vanaf
    ##########################################################
    ext:startDateF a form:Field ;
       sh:name "Geldig vanaf" ;
-      sh:order 1 ;
+      sh:order 2 ;
       sh:path schema:startDate ;
       form:displayType displayTypes:dateTime ;
       sh:group ext:generalPg .
@@ -62,7 +74,7 @@ ext:generalPg a form:PropertyGroup;
    ##########################################################
    ext:endDateF a form:Field ;
       sh:name "Geldig Tot" ;
-      sh:order 2 ;
+      sh:order 3 ;
       sh:path schema:endDate ;
       form:displayType displayTypes:dateTime ;
       sh:group ext:generalPg .

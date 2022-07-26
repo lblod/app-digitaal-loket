@@ -98,6 +98,11 @@
         },
         "status": {
           "target": "concepts",
+          "predicate": "adms:status",
+          "cardinality": "one"
+        },
+        "lifecycle-status": {
+          "target": "concepts",
           "predicate": "ps:lifecycleStatus",
           "cardinality": "one"
         },
