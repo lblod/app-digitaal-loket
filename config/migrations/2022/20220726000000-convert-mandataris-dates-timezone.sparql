@@ -1,0 +1,57 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# These queries convert some dates to dates without timezone information.
+
+# Detailed information:
+# Some dates entered in the frontend are saved as `2022-06-01T22:00:00Z` which is correct (note that 22pm in UTC+0 is midnight in UTC+2(summertime) Belgium).
+# Same for dates outside of summer time in Belgium like `2022-01-01T23:00:00Z`.
+# A lot of other dates exist (e.g. `2022-01-01T00:00:00Z`) which are not correct because they contain the correct time but in the wrong timezone. They should refer to midnight in Belgium's timezone to indicate the start of the day and 00:00:00 in timezone zero (Z) means 1am or 2am in Belgium.
+# We could make sure that all dates are in the form of `...T23:00:00Z` but counting with days and months to subtract a day is hard in SPARQL. Instead, we could opt for removing timezone information alltogether and leave the timezone up for interpretation of the consuming service. In that case, the timezone is obviously the one for Belgium.
+
+# Important: During this conversion, the time is set to 00:00:00. Previous time information is lost. This should be no problem because to indicate the day, the time should have been 00:00:00 from the start.
+
+DELETE {
+  GRAPH ?g {
+  	?s mandaat:start ?date .
+  }
+}
+INSERT {
+  GRAPH ?g {
+  	?s mandaat:start ?correctedDate .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s rdf:type mandaat:Mandataris .
+    ?s mandaat:start ?date .
+    bind(hours(?date) as ?hours) .
+    filter(?hours >= 0 && ?hours < 22) .
+    bind(str(xsd:date(?date)) as ?noTime) .
+    bind(substr(?noTime, 0, 10) as ?noTimeZoneTime) .
+    bind(xsd:dateTime(?noTimeZoneTime) as ?correctedDate)
+  }
+};
+DELETE {
+  GRAPH ?g {
+  	?s mandaat:einde ?date .
+  }
+}
+INSERT {
+  GRAPH ?g {
+  	?s mandaat:einde ?correctedDate .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s rdf:type mandaat:Mandataris .
+    ?s mandaat:einde ?date .
+    bind(hours(?date) as ?hours) .
+    filter(?hours >= 0 && ?hours < 22) .
+    bind(str(xsd:date(?date)) as ?noTime) .
+    bind(substr(?noTime, 0, 10) as ?noTimeZoneTime) .
+    bind(xsd:dateTime(?noTimeZoneTime) as ?correctedDate)
+  }
+}
