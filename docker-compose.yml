@@ -363,8 +363,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-
-  ldes-consumer:
+  lpdc-ldes-consumer:
     image: redpencil/ldes-consumer:0.1.0
     environment:
       LDES_STREAM: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes"
