@@ -370,7 +370,6 @@ services:
       LDES_ENDPOINT_VIEW: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes/0" # first page of the stream
       LDES_RELATION_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
       LDES_POLLING_INTERVAL: 5000
-      LOG_SPARQL_ALL: "false"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public"
   lpdc-management:
     image: lblod/lpdc-management-service:0.2.0
