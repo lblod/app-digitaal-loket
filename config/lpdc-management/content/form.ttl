@@ -56,7 +56,7 @@ ext:titlePg a form:PropertyGroup;
       sh:name "Titel";
       form:language "nl";
       sh:path dct:title ;
-      form:displayType displayTypes:richText ;
+      form:displayType displayTypes:defaultInput;
       sh:group ext:titlePg .
 
   ##########################################################
@@ -67,7 +67,7 @@ ext:titlePg a form:PropertyGroup;
       sh:name "Engelse vertaling van de titel";
       form:language "en";
       sh:path dct:title ;
-      form:displayType displayTypes:richText ;
+      form:displayType displayTypes:defaultInput ;
       sh:group ext:titlePg .
 
 ##########################################################
