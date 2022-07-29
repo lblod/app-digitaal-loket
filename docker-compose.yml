@@ -365,7 +365,7 @@ services:
     logging: *default-logging
 
   lpdc-management:
-    image: lblod/lpdc-management-service:0.3.0
+    image: lblod/lpdc-management-service:0.4.0
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
