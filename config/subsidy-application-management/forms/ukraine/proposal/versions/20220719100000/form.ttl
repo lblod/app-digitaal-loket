@@ -118,7 +118,8 @@ fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
 fields:cc968aeb-075b-4edb-8289-1e60b0c2a73a a form:Field ;
     mu:uuid "cc968aeb-075b-4edb-8289-1e60b0c2a73a";
     sh:name """Voeg het financieel overzicht toe van de facturen en, indien van toepassing, het overzicht van de prestaties van uw eigen
-    technische dienst. Gebruik hiervoor dit sjabloon.""" ;
+    technische dienst.""" ;
+    form:help """Gebruik voor het overzicht dit <a href="https://assets.vlaanderen.be/raw/upload/v1658931371/Formulier_-_Terugbetaling_opknapwerken_b5ewte.xlsx" target="_blank"> sjabloon</a>.""";
     sh:order 41 ;
     sh:path ( lblodSubsidie:accountabilitySummary dct:hasPart ) ;
     form:validations
@@ -127,7 +128,7 @@ fields:cc968aeb-075b-4edb-8289-1e60b0c2a73a a form:Field ;
       sh:resultMessage "Dit veld is verplicht."@nl;
       sh:path ( lblodSubsidie:accountabilitySummary dct:hasPart )
     ] ;
-    form:displayType displayTypes:files ;
+    form:displayType displayTypes:files ; 
     sh:group fields:d8bbe7f4-56d3-4c01-9f98-bad3d5baf261.
 
 fields:43e4668b-207e-41e7-ae95-cb6b2937a1a9 a form:Field ;
