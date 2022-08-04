@@ -145,19 +145,6 @@
   :on-path "involvement-types"
 )
 
-(define-resource minister ()
-  :class (s-prefix "ere:RolBedienaar")
-  :has-one `((minister-position :via ,(s-prefix "org:holds")
-                                :as "minister-position")
-             (financing-code :via ,(s-prefix "ere:financiering")
-                             :as "financing"))
-  :has-many `((minister-condition :via ,(s-prefix "org:siteAddress")
-                                  :as "conditions"))
-  :resource-base (s-url "http://data.lblod.info/id/rollenBedienaar/")
-  :features '(include-uri)
-  :on-path "ministers"
-)
-
 (define-resource minister-condition ()
   :class (s-prefix "ere:VoorwaardenBedienaar")
   :properties `((:satisfied :boolean ,(s-prefix "ere:voldaan")))
@@ -168,24 +155,7 @@
   :resource-base (s-url "http://data.lblod.info/id/voorwaardenBedienaar/")
   :features '(include-uri)
   :on-path "minister-conditions"
-)
-
-(define-resource minister-position ()
-  :class (s-prefix "ere:PositieBedienaar")
-  :has-one `((minister-position-function :via ,(s-prefix "ere:functie")
-                                         :as "function")
-             (worship-administrative-unit :via ,(s-prefix "ere:wordtBediendDoor")
-                                          :inverse t
-                                          :as "worship-service")
-             (representative-body :via ,(s-prefix "ere:behoort")
-                                          :as "representative-body"))
-  :has-many `((minister :via ,(s-prefix "org:holds")
-                        :inverse t
-                        :as "held-by-ministers"))
-  :resource-base (s-url "http://data.lblod.info/id/positiesBedienaar/")
-  :features '(include-uri)
-  :on-path "minister-positions"
-)
+  )
 
 (define-resource minister-position-function ()
   :class (s-prefix "code:EredienstBeroepen")

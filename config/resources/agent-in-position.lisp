@@ -1,6 +1,6 @@
 ;; re-shuffle declaration of files, because
 ;; mu-resource 1.21.0 is sensible when files
-;; are declared to load the class hierarchy
+;; are declared vs loaded the class hierarchy
 ;; hence this is a temporary workaround
 ;; ORDER REALLY MATTERS FOR NOW!
 
@@ -69,4 +69,18 @@
   :resource-base (s-url "http://data.lblod.info/id/mandatarissen/")
   :features '(include-uri)
   :on-path "worship-mandatees"
+  )
+
+;;"RESHUFFLED" from whorship-units.lisp
+(define-resource minister (agent-in-position)
+  :class (s-prefix "ere:RolBedienaar")
+  :has-one `((minister-position :via ,(s-prefix "org:holds")
+                                :as "minister-position")
+             (financing-code :via ,(s-prefix "ere:financiering")
+                             :as "financing"))
+  :has-many `((minister-condition :via ,(s-prefix "org:siteAddress")
+                                  :as "conditions"))
+  :resource-base (s-url "http://data.lblod.info/id/rollenBedienaar/")
+  :features '(include-uri)
+  :on-path "ministers"
 )
