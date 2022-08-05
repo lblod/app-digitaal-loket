@@ -61,7 +61,7 @@ ext:titlePg a form:PropertyGroup;
         form:language "nl";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path dct:title 
+        sh:path dct:title
       ];
       form:displayType displayTypes:defaultInput;
       sh:group ext:titlePg .
@@ -104,7 +104,7 @@ ext:descriptionPg a form:PropertyGroup;
         form:language "nl";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path dct:description 
+        sh:path dct:description
       ];
       sh:path dct:description ;
       form:displayType displayTypes:richText ;
@@ -121,7 +121,7 @@ ext:descriptionPg a form:PropertyGroup;
         form:language "en";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path dct:description 
+        sh:path dct:description
       ];
       sh:name "Engelse vertaling van de beschrijving";
       sh:path dct:description ;
@@ -230,7 +230,7 @@ ext:requirementsPg a form:PropertyGroup;
           form:language "nl";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -248,7 +248,7 @@ ext:requirementsPg a form:PropertyGroup;
           form:language "en";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -266,7 +266,7 @@ ext:requirementsPg a form:PropertyGroup;
           form:language "nl";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:description 
+          sh:path dct:description
         ];
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
@@ -284,7 +284,7 @@ ext:requirementsPg a form:PropertyGroup;
           form:language "en";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:description 
+          sh:path dct:description
         ];
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
@@ -361,7 +361,7 @@ ext:requirementsPg a form:PropertyGroup;
                 form:language "nl";
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path dct:title 
+                sh:path dct:title
               ];
               sh:path dct:title ;
               form:displayType displayTypes:defaultInput ;
@@ -379,7 +379,7 @@ ext:requirementsPg a form:PropertyGroup;
                 form:language "en";
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path dct:title 
+                sh:path dct:title
               ];
               sh:path dct:title ;
               form:displayType displayTypes:defaultInput ;
@@ -397,7 +397,7 @@ ext:requirementsPg a form:PropertyGroup;
                 form:language "nl";
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path dct:description 
+                sh:path dct:description
               ];
               sh:path dct:description ;
               form:displayType displayTypes:richText ;
@@ -415,7 +415,7 @@ ext:requirementsPg a form:PropertyGroup;
                 form:language "en";
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path dct:description 
+                sh:path dct:description
               ];
               sh:path dct:description ;
               form:displayType displayTypes:richText ;
@@ -493,7 +493,7 @@ ext:rulesPg a form:PropertyGroup;
           form:language "nl";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -511,7 +511,7 @@ ext:rulesPg a form:PropertyGroup;
           form:language "en";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -529,7 +529,7 @@ ext:rulesPg a form:PropertyGroup;
           form:language "nl";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:description 
+          sh:path dct:description
         ];
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
@@ -547,7 +547,7 @@ ext:rulesPg a form:PropertyGroup;
           form:language "en";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:description 
+          sh:path dct:description
         ];
         sh:path dct:description ;
         form:displayType displayTypes:richText ;
@@ -626,7 +626,7 @@ ext:rulesPg a form:PropertyGroup;
                 form:language "nl";
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path dct:title 
+                sh:path dct:title
               ];
               sh:path dct:title ;
               form:displayType displayTypes:defaultInput ;
@@ -644,7 +644,7 @@ ext:rulesPg a form:PropertyGroup;
                 form:language "en";
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path dct:title 
+                sh:path dct:title
               ];
               sh:path dct:title ;
               form:displayType displayTypes:defaultInput ;
@@ -678,17 +678,17 @@ ext:rulesPg a form:PropertyGroup;
           ext:procedureWebsiteUrlF a form:Field ;
               sh:name "Url" ;
               sh:order 3 ;
-              form:validations 
+              form:validations
               [ a form:UriConstraint ;
                 form:grouping form:MatchEvery ;
                 sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-                sh:path schema:url 
+                sh:path schema:url
               ],
               [
                 a form:RequiredConstraint ;
                 form:grouping form:Bag ;
                 sh:resultMessage "Dit veld is verplicht." ;
-                sh:path schema:url 
+                sh:path schema:url
               ];
               sh:path schema:url ;
               form:displayType displayTypes:defaultInput ;
@@ -763,7 +763,7 @@ ext:costPg a form:PropertyGroup;
           form:language "nl";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:order 1 ;
         sh:path dct:title ;
@@ -782,7 +782,7 @@ ext:costPg a form:PropertyGroup;
           form:language "en";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -918,7 +918,7 @@ ext:contactpointsPg a form:PropertyGroup;
     ext:contactPEmailF a form:Field ;
         sh:name "Email" ;
         sh:order 1 ;
-        form:validations [ 
+        form:validations [
           a form:ValidEmail ;
           form:grouping form:MatchEvery ;
           sh:path schema:email ;
@@ -935,7 +935,7 @@ ext:contactpointsPg a form:PropertyGroup;
     ext:contactPTelephoneF a form:Field ;
         sh:name "Telefoon" ;
         sh:order 2 ;
-        form:validations [ 
+        form:validations [
           a form:ValidPhoneNumber ;
           form:grouping form:MatchEvery ;
           form:defaultCountry "BE" ;
@@ -952,11 +952,11 @@ ext:contactpointsPg a form:PropertyGroup;
     ext:contactPageF a form:Field ;
         sh:name "Website" ;
         sh:order 3 ;
-        form:validations [ 
+        form:validations [
           a form:UriConstraint ;
           form:grouping form:MatchEvery ;
           sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-          sh:path foaf:page 
+          sh:path foaf:page
         ];
         sh:path foaf:page ;
         form:displayType displayTypes:defaultInput ;
@@ -1045,7 +1045,7 @@ ext:websitesPg a form:PropertyGroup;
           form:language "nl";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -1063,7 +1063,7 @@ ext:websitesPg a form:PropertyGroup;
           form:language "en";
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path dct:title 
+          sh:path dct:title
         ];
         sh:path dct:title ;
         form:displayType displayTypes:defaultInput ;
@@ -1097,17 +1097,17 @@ ext:websitesPg a form:PropertyGroup;
     ext:websiteUrlF a form:Field ;
         sh:name "Website URL" ;
         sh:order 5 ;
-        form:validations 
+        form:validations
         [ a form:UriConstraint ;
           form:grouping form:MatchEvery ;
           sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-          sh:path schema:url 
+          sh:path schema:url
         ],
         [
           a form:RequiredConstraint ;
           form:grouping form:Bag ;
           sh:resultMessage "Dit veld is verplicht." ;
-          sh:path schema:url 
+          sh:path schema:url
         ];
         sh:path schema:url ;
         form:displayType displayTypes:defaultInput ;
