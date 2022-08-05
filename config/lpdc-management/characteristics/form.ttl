@@ -160,6 +160,12 @@ ext:authorityPg a form:PropertyGroup;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
       form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
       form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:spatial
+      ];
       sh:group ext:authorityPg .
 
   ##########################################################
@@ -171,6 +177,12 @@ ext:authorityPg a form:PropertyGroup;
       sh:path m8g:hasCompetentAuthority ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09"}""" ;
       form:displayType displayTypes:conceptSchemeSelector ;
+      form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path m8g:hasCompetentAuthority
+      ];
       sh:group ext:authorityPg .
 
   ##########################################################
