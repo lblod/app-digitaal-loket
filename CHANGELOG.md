@@ -1,4 +1,12 @@
 # Changelog
+## 1.67.0 (2022-08-05)
+- update sync with kalliope: make sure timezone data is taken into account
+- subsidy climate 1.0: adaptations
+- subsidy Oekraïne: nooddorpen
+- subsidy Oekraïne: nooddorpen
+- maintenance docker-compose.dev.yml
+- mandaten module: rangorde fix
+- update automatic-submission related services: CBE should be able to send data
 ## 1.66.0 (2022-07-11)
 - climate-subsidies: call 2
   - Pre-fill data.
