@@ -52,12 +52,18 @@ ext:generalPg a form:PropertyGroup;
   #  field: status (ps:lifecycleStatus)
   ##########################################################
   ext:statusF a form:Field ;
-      sh:name "Status van de dienstverlening" ;
-      sh:order 1 ;
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/25e9d104-393f-4e5d-8793-06b240bad7ab"}""" ;
-      sh:path ps:lifecycleStatus ;
-      form:displayType displayTypes:conceptSchemeSelector ;
-      sh:group ext:generalPg .
+    sh:name "Status van de dienstverlening" ;
+    sh:order 1 ;
+    form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/25e9d104-393f-4e5d-8793-06b240bad7ab"}""" ;
+    sh:path ps:lifecycleStatus ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    form:validations [
+        a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path ps:lifecycleStatus
+    ];
+    sh:group ext:generalPg .
 
    ##########################################################
    # Field: geldig vanaf
@@ -154,6 +160,12 @@ ext:authorityPg a form:PropertyGroup;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
       form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
       form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:spatial
+      ];
       sh:group ext:authorityPg .
 
   ##########################################################
@@ -165,6 +177,12 @@ ext:authorityPg a form:PropertyGroup;
       sh:path m8g:hasCompetentAuthority ;
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09"}""" ;
       form:displayType displayTypes:conceptSchemeSelector ;
+      form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path m8g:hasCompetentAuthority
+      ];
       sh:group ext:authorityPg .
 
   ##########################################################
