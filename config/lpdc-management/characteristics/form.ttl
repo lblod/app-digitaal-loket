@@ -1,0 +1,231 @@
+@prefix form: <http://lblod.data.gift/vocabularies/forms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix displayTypes: <http://lblod.data.gift/display-types/> .
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+@prefix mu:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix cpsv:	<http://purl.org/vocab/cpsv#> .
+@prefix dct:	<http://purl.org/dc/terms/> .
+@prefix lpdcExt:	<http://lblod.data.gift/vocabularies/lpdc-ipdc/> .
+@prefix xkos:	<http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix m8g:	<http://data.europa.eu/m8g/> .
+@prefix lblodLpdc:	<http://data.lblod.info/id/public-services/> .
+@prefix lblodIpdcLpdc:	<http://lblod.data.gift/vocabularies/lpdc-ipdc/> .
+@prefix dcat:	<http://www.w3.org/ns/dcat#> .
+@prefix lang:	<http://publications.europa.eu/resource/authority/language/> .
+@prefix lblodOrg:	<http://data.lblod.info/id/concept/organisatie/> .
+@prefix lblodIpdcThema:	<http://data.lblod.info/id/concept/ipdc-thema/> .
+@prefix belgif:	<http://vocab.belgif.be/ns/publicservice#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix schema: <http://schema.org/>.
+@prefix ps: <http://vocab.belgif.be/ns/publicservice#> .
+
+##########################################################
+# form
+##########################################################
+ext:form a form:Form, form:TopLevelForm ;
+    form:includes ext:sectorF;
+    form:includes ext:productTypeF;
+    form:includes ext:targetF;
+    form:includes ext:themeF;
+    form:includes ext:languageF;
+    form:includes ext:applicationAreaF;
+    form:includes ext:competentAuthorityF;
+    form:includes ext:executingAuthorityF;
+    form:includes ext:relatedProductsF;
+    form:includes ext:tagsF;
+    form:includes ext:statusF;
+    form:includes ext:startDateF;
+    form:includes ext:endDateF.
+
+##########################################################
+#  property-group: Algemene info
+##########################################################
+ext:generalPg a form:PropertyGroup;
+    sh:name "Algemene info" ;
+    sh:order 20 .
+
+  ##########################################################
+  #  field: status (ps:lifecycleStatus)
+  ##########################################################
+  ext:statusF a form:Field ;
+    sh:name "Status van de dienstverlening" ;
+    sh:order 1 ;
+    form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/25e9d104-393f-4e5d-8793-06b240bad7ab"}""" ;
+    sh:path ps:lifecycleStatus ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    form:validations [
+        a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path ps:lifecycleStatus
+    ];
+    sh:group ext:generalPg .
+
+   ##########################################################
+   # Field: geldig vanaf
+   ##########################################################
+   ext:startDateF a form:Field ;
+      sh:name "Geldig vanaf" ;
+      sh:order 2 ;
+      sh:path schema:startDate ;
+      form:displayType displayTypes:dateTime ;
+      sh:group ext:generalPg .
+
+   ##########################################################
+   # Field: geldig tot
+   ##########################################################
+   ext:endDateF a form:Field ;
+      sh:name "Geldig Tot" ;
+      sh:order 3 ;
+      sh:path schema:endDate ;
+      form:displayType displayTypes:dateTime ;
+      sh:group ext:generalPg .
+
+  ##########################################################
+  #  field: sector
+  ##########################################################
+  ext:sectorF a form:Field ;
+      sh:name "Sector" ;
+      sh:order 10 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/TODO"}""" ;
+      sh:path m8g:sector ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:generalPg .
+
+  ##########################################################
+  #  field: product type
+  ##########################################################
+  ext:productTypeF a form:Field ;
+      sh:name "Product type" ;
+      sh:order 20 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/9357bf70-ae33-40e6-bd2a-80e842f92d9a"}""" ;
+      sh:path dct:type ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:generalPg .
+
+  ##########################################################
+  #  field: Doelgroepen
+  ##########################################################
+  ext:targetF a form:Field ;
+      sh:name "Doelgroepen" ;
+      sh:order 30 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/1c648cd2-29fc-4ee1-a4e2-a82f57ab592d"}""" ;
+      sh:path lpdcExt:targetAudience ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:help "Meerdere doelgroepen kunnen worden toegewezen";
+      sh:group ext:generalPg .
+
+  ##########################################################
+  #  field: thema's
+  ##########################################################
+  ext:themeF a form:Field ;
+      sh:name "Thema's" ;
+      sh:order 40 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842"}""" ;
+      sh:path m8g:thematicArea ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:help "Meerdere thema's kunnen worden toegewezen";
+      sh:group ext:generalPg .
+
+  ##########################################################
+  #  field: talen
+  ##########################################################
+  ext:languageF a form:Field ;
+      sh:name "Talen" ;
+      sh:order 50 ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/2bc477b5-4f18-47ae-b627-476b73aef9f6"}""" ;
+      sh:path dct:language ;
+      form:help "Meerdere talen kunnen worden toegewezen";
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      sh:group ext:generalPg .
+
+##########################################################
+#  property-group: Bevoegdheid TODO
+##########################################################
+ext:authorityPg a form:PropertyGroup;
+    sh:name "Bevoegdheid" ;
+    sh:order 30.
+
+  ##########################################################
+  #  field: geografische toepassingsgebied
+  ##########################################################
+  ext:applicationAreaF a form:Field ;
+      sh:name "Geografisch toepassingsgebied" ;
+      sh:order 10 ;
+      sh:path dct:spatial ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:spatial
+      ];
+      sh:group ext:authorityPg .
+
+  ##########################################################
+  #  field: bevoegde overheid
+  ##########################################################
+  ext:competentAuthorityF a form:Field ;
+      sh:name "Bevoegde overheid" ;
+      sh:order 20 ;
+      sh:path m8g:hasCompetentAuthority ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09"}""" ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      form:validations [
+          a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path m8g:hasCompetentAuthority
+      ];
+      sh:group ext:authorityPg .
+
+  ##########################################################
+  #  field: uitvoerende overheid
+  ##########################################################
+  ext:executingAuthorityF a form:Field ;
+      sh:name "Uitvoerend overheid" ;
+      sh:order 30 ;
+      #TODO: this should need an improvement of the forms OR come from the backend (because it seems it will always be the eenheid creating the service)
+      sh:path ext:TODO ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:displayType displayTypes:conceptSchemeSelector ;
+      sh:group ext:authorityPg .
+
+
+##########################################################
+#  property-group: gerelateerde producten TODO
+##########################################################
+ext:relatedPg a form:PropertyGroup;
+    sh:name "Gerelateerd" ;
+    sh:order 30 .
+
+  ##########################################################
+  #  field: gerelateerde producten
+  ##########################################################
+  ext:relatedProductsF a form:Field ;
+      sh:name "Gerelateerde producten" ;
+      form:help "Selecteer hier de gerelateerde produceten";
+      sh:order 10 ;
+      sh:path dct:relation ;
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      sh:group ext:relatedPg .
+
+  ##########################################################
+  #  field: tags
+  ##########################################################
+  ext:tagsF a form:Field ;
+      sh:name "Tags" ;
+      form:help "Selecteer hier uit reeds bestaande tags, of voeg er nieuwe toe";
+      sh:order 20 ;
+      sh:path dcat:keyword ;
+      #TODO: this is not going to be a multi-selectbox
+      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      sh:group ext:relatedPg .

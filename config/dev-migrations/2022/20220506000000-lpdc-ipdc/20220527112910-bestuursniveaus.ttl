@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>,
+  <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme>;
+  mu:uuid "3193c5d3-1bee-4d64-aa2d-fd2753a177a0";
+  <http://www.w3.org/2004/02/skos/core#definition> "Bestuursniveaus organisaties LPDC/IPDC";
+  <http://www.w3.org/2004/02/skos/core#prefLabel> "Bestuursniveaus organisaties LPDC/IPDC".
+
+<http://data.lblod.info/id/concept/classication/76f1e1cf-a667-4fa0-aad4-d1c18ad04742> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    mu:uuid "76f1e1cf-a667-4fa0-aad4-d1c18ad04742" ;
+    skos:prefLabel "Vlaamse overheid"@nl .
+
+<http://data.lblod.info/id/concept/classification/b714f7e9-79ca-4cb4-967d-39ed766b5070> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    mu:uuid "b714f7e9-79ca-4cb4-967d-39ed766b5070" ;
+    skos:prefLabel "Derden"@nl .
+
+<http://data.lblod.info/id/concept/classification/4e4e523a-36d8-4ed2-ba33-b2c953623845> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    mu:uuid "4e4e523a-36d8-4ed2-ba33-b2c953623845" ;
+    skos:prefLabel "Federale overheid"@nl .
+
+<http://data.lblod.info/id/concept/classification/277a2c24-aa81-458c-ae27-5cd56910d677> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    mu:uuid "277a2c24-aa81-458c-ae27-5cd56910d677" ;
+    skos:prefLabel "Europese overheid"@nl .
+
+# gemeente (already existing)
+<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>.
+
+# provincie
+<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/3193c5d3-1bee-4d64-aa2d-fd2753a177a0>.

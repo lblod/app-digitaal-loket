@@ -550,6 +550,19 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
+
+  #################################################################
+  # lpdc-management: custom API endpoints
+  #################################################################
+
+  get "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
+  put "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
   #################################################################
   # jobs
   #################################################################
@@ -677,6 +690,97 @@ defmodule Dispatcher do
 
   match "/site-types/*path" do
     Proxy.forward conn, path, "http://cache/site-types/"
+  end
+
+ #################################################################
+  # Public Services - LPDC-IPDC-PoC
+  #################################################################
+  match "/conceptual-public-services/*path" do
+    Proxy.forward conn, path, "http://cache/conceptual-public-services/"
+  end
+
+  match "/identifiers/*path" do
+    Proxy.forward conn, path, "http://cache/identifiers/"
+  end
+
+  post "/public-services/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/public-services/"
+  end
+
+  delete "/public-services/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/public-services/"
+  end
+
+  get "/public-services/*path" do
+    Proxy.forward conn, path, "http://resource/public-services/"  ## TODO: solve cache issue in frontend
+  end
+
+  match "/public-services/*path" do
+    Proxy.forward conn, path, "http://cache/public-services/"
+  end
+
+  match "/public-organizations/*path" do
+    Proxy.forward conn, path, "http://cache/public-organizations/"
+  end
+
+  match "/agents/*path" do
+    Proxy.forward conn, path, "http://cache/agents/"
+  end
+
+  match "/requirements/*path" do
+    Proxy.forward conn, path, "http://cache/requirements/"
+  end
+
+  match "/evidences/*path" do
+    Proxy.forward conn, path, "http://cache/evidences/"
+  end
+
+  match "/rules/*path" do
+    Proxy.forward conn, path, "http://cache/rules/"
+  end
+
+  match "/costs/*path" do
+    Proxy.forward conn, path, "http://cache/costs/"
+  end
+
+  match "/output/*path" do
+    Proxy.forward conn, path, "http://cache/output/"
+  end
+
+  match "/financial-advantages/*path" do
+    Proxy.forward conn, path, "http://cache/financial-advantages/"
+  end
+
+  match "/legal-resources/*path" do
+    Proxy.forward conn, path, "http://cache/legal-resources/"
+  end
+
+  match "/contact-points/*path" do
+    Proxy.forward conn, path, "http://cache/contact-points/"
+  end
+
+  match "/documents/*path" do
+    Proxy.forward conn, path, "http://cache/documents/"
+  end
+
+  match "/locations/*path" do
+    Proxy.forward conn, path, "http://cache/locations/"
+  end
+
+  match "/roles/*path" do
+    Proxy.forward conn, path, "http://cache/roles/"
+  end
+
+  match "/lpdc-concept-schemes/*path" do
+    Proxy.forward conn, path, "http://cache/lpdc-concept-schemes/"
+  end
+
+  match "/lpdc-concepts/*path" do
+    Proxy.forward conn, path, "http://cache/lpdc-concepts/"
+  end
+
+  match "/websites/*path" do
+    Proxy.forward conn, path, "http://cache/websites/"
   end
 
   match _ do
