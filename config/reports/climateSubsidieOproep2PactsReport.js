@@ -3,14 +3,14 @@ import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
   cronPattern: '0 40 23 * * *',
-  name: 'climateSubsidiePactsReport',
+  name: 'climateSubsidieOproep2PactsReport',
   execute: async () => {
     const reportData = {
-      title: 'List of pacts for climate subsidies',
-      description: 'All pacts for climate subsidies that have been sent with their related information',
-      filePrefix: 'climateSubsidiePactsReport'
+      title: 'List of pacts for climate subsidies oproep 2',
+      description: 'All pacts for climate subsidies oproep 2 that have been sent with their related information',
+      filePrefix: 'climateSubsidieOproep2PactsReport'
     };
-    console.log('Generate Climate Subsidie Pacts Report');
+    console.log('Generate Climate Subsidie Oproep 2 Pacts Report');
     const queryString = `
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
       PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
@@ -28,7 +28,7 @@ export default {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
             transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/64d40351-8128-464f-990f-41066154583e> ;
             dct:source ?form .
-          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidy-procedural-steps/d6ec1fb1-a991-47ba-95f1-afdd87e4553c> ;
+          ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidy-procedural-steps/0463452b-ada8-4c13-a014-9b02da96d57f> ;
             adms:status/skos:prefLabel ?status .
           OPTIONAL {
             ?subsidie m8g:hasParticipation ?participation ;
