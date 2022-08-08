@@ -363,7 +363,14 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-
+  lpdc-ldes-consumer:
+    image: redpencil/ldes-consumer:0.2.1
+    environment:
+      LDES_STREAM: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes"
+      LDES_ENDPOINT_VIEW: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes/0" # first page of the stream
+      LDES_RELATION_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
+      LDES_POLLING_INTERVAL: 5000
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public"
   lpdc-management:
     image: lblod/lpdc-management-service:0.4.0
     volumes:
