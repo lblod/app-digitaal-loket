@@ -44,11 +44,13 @@ export default {
 
             ?form dct:modified ?modified .
 
-            ?form schema:contactPoint ?contactPoint .
-            ?contactPoint foaf:firstName ?contactFirstName .
-            ?contactPoint foaf:familyName ?contactLastName .
-            ?contactPoint schema:email ?contactEmail .
-            ?contactPoint schema:telephone ?contactTelephone .
+            OPTIONAL {
+              ?form schema:contactPoint ?contactPoint .
+              OPTIONAL { ?contactPoint foaf:firstName ?contactFirstName . }
+              OPTIONAL { ?contactPoint foaf:familyName ?contactLastName . }
+              OPTIONAL { ?contactPoint schema:email ?contactEmail . }
+              OPTIONAL { ?contactPoint schema:telephone ?contactTelephone . }
+            }
           }
         }
         UNION

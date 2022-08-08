@@ -39,6 +39,7 @@ services:
   login:
     restart: "no"
   validation:
+    entrypoint: ["echo", "Service disabled"] # Note: this probably go in the future
     restart: "no"
   file:
     restart: "no"
@@ -97,8 +98,14 @@ services:
   lpdc-management:
     restart: "no"
   berichtencentrum-warning:
+    environment:
+      EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
+      EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   download-url-warning:
+    environment:
+      EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
+      EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   case-number-generator:
     restart: "no"
@@ -125,6 +132,9 @@ services:
   delta-producer-publication-graph-maintainer-submissions:
     restart: "no"
   error-alert:
+    environment:
+      EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
+      EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   prepare-submissions-for-export:
     restart: "no"

@@ -1,0 +1,11 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s a <http://lblod.data.gift/vocabularies/organisatie/HelftVerkiezing>.
+    ?s ?p ?o.
+  }
+}

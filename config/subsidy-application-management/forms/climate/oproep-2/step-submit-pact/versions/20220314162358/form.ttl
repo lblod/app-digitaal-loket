@@ -46,7 +46,8 @@ fields:07372422-b306-4157-9970-60fdd79ac57f a form:PropertyGroup;
     sh:description "Ondertekend pact";
     sh:order 3 ;
     sh:name "Ondertekend pact" ;
-    form:help "Het voltooien van deze stap geldt als aanvraag van het trekkingsrecht voor de subsidieerbare klimaatacties." ;
+    form:help """Het voltooien van deze stap geldt als aanvraag van het trekkingsrecht voor de subsidieerbare klimaatacties.
+    Een <a href="https://www.vvsg.be/Leden/Netwerk Klimaat/LEKP/20220713_Gemeenteraadsbeslissing_LEKP2.0.docx" target="_blank">voorbeeldsjabloon</a> is terug te vinden op de website van het <a href="https://www.vvsg.be/kennisitem/vvsg/lokaal-energie-en-klimaatpact" target="_blank">Netwerk Klimaat</a>""" ;
     sh:group fields:4dea4bc9-6d65-4642-ba34-10c668a5e72d .
 
 ##########################################################
