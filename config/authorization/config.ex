@@ -151,7 +151,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/Requirement",
                         "http://xmlns.com/foaf/0.1/Document",
                         "http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme",
-                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept"
+                        "http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept",
                         "http://www.w3.org/ns/org#Organization",
                         "http://lblod.data.gift/vocabularies/organisatie/EredienstBeroepen",
                         "http://lblod.data.gift/vocabularies/organisatie/BedienaarFinancieringCode",
