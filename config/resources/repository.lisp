@@ -72,3 +72,8 @@
 (add-prefix "lblodJob" "http://lblod.data.gift/vocabularies/lblodJob/")
 (add-prefix "oslc" "http://open-services.net/ns/core#")
 (add-prefix "cogs" "http://vocab.deri.ie/cogs#")
+(add-prefix "ere" "http://data.lblod.info/vocabularies/erediensten/")
+(add-prefix "ch" "http://data.lblod.info/vocabularies/contacthub/")
+(add-prefix "code" "http://lblod.data.gift/vocabularies/organisatie/")
+(add-prefix "euvoc" "http://publications.europa.eu/ontology/euvoc#")
+(add-prefix "organisatie" "https://data.vlaanderen.be/ns/organisatie#")
