@@ -550,19 +550,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
-
-  #################################################################
-  # lpdc-management: custom API endpoints
-  #################################################################
-
-  get "/lpdc-management/*path" do
-    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
-  end
-
-  put "/lpdc-management/*path" do
-    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
-  end
-
   #################################################################
   # jobs
   #################################################################
@@ -692,8 +679,19 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/site-types/"
   end
 
+  #################################################################
+  # Public Services - LPDC-IPDC: custom API endpoints
+  #################################################################
+  get "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
+  put "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
  #################################################################
-  # Public Services - LPDC-IPDC-PoC
+  # Public Services - LPDC-IPDC
   #################################################################
   match "/conceptual-public-services/*path" do
     Proxy.forward conn, path, "http://cache/conceptual-public-services/"
