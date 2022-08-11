@@ -690,6 +690,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
   end
 
+  post "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
  #################################################################
   # Public Services - LPDC-IPDC
   #################################################################
