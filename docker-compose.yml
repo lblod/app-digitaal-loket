@@ -373,7 +373,7 @@ services:
       LDES_POLLING_INTERVAL: 5000
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public"
   lpdc-management:
-    image: lblod/lpdc-management-service:0.4.0
+    image: lblod/lpdc-management-service:0.5.0
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
