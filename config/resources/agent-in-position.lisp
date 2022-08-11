@@ -28,7 +28,7 @@
 ;;"RESHUFFLED" from slave-mandaat-domain.lisp
 (define-resource mandataris (agent-in-position)
   :class (s-prefix "mandaat:Mandataris")
-  :properties `((:rangorde :language-string ,(s-prefix "mandaat:rangorde"))
+  :properties `((:rangorde :string ,(s-prefix "mandaat:rangorde"))
                 (:start :datetime ,(s-prefix "mandaat:start"))
                 (:einde :datetime ,(s-prefix "mandaat:einde"))
                 (:datum-eedaflegging :datetime ,(s-prefix "ext:datumEedaflegging"))
