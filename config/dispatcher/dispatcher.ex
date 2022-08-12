@@ -682,6 +682,10 @@ defmodule Dispatcher do
   #################################################################
   # Public Services - LPDC-IPDC: custom API endpoints
   #################################################################
+  post "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+  
   get "/lpdc-management/*path" do
     Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
   end
