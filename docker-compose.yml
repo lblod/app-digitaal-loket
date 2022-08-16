@@ -365,18 +365,30 @@ services:
     restart: always
     logging: *default-logging
   lpdc-ldes-consumer:
-    image: redpencil/ldes-consumer:0.2.1
+    image: redpencil/ldes-consumer:0.2.2
     environment:
       LDES_STREAM: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes"
       LDES_ENDPOINT_VIEW: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes/0" # first page of the stream
       LDES_RELATION_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
       LDES_POLLING_INTERVAL: 5000
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   lpdc-management:
-    image: lblod/lpdc-management-service:0.4.0
+    image: lblod/lpdc-management-service:0.5.0
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
+    labels:
+      - "logging=true"
+    restart: always
+  lpdc-publish:
+    image: lblod/lpdc-publish-service:0.1.1
+    environment:
+      LDES_ENDPOINT: "https://dev.lpdc.lblod.info"
+      LDES_FOLDER: "dev-lpdc-stream"
     labels:
       - "logging=true"
     restart: always

@@ -240,6 +240,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/org#Membership",
@@ -255,6 +256,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/org#Membership",
@@ -352,6 +354,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://schema.org/ContactPoint",
                         "http://www.w3.org/ns/locn#Address",
                         "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris",
@@ -415,13 +418,13 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
                         "http://schema.org/ContactPoint",
                         "http://www.w3.org/ns/locn#Address",
-                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://www.w3.org/ns/org#Post",
                         "http://www.w3.org/ns/org#Site",
                         "http://data.lblod.info/vocabularies/erediensten/EredienstMandataris",
