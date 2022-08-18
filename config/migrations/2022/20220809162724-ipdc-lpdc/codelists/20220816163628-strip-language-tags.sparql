@@ -20,13 +20,13 @@ WHERE {
     <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Thema>
     <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Type>
     <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/UitvoerendBestuursniveau>
-    <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategori>
+    <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategorie>
   }
 
   GRAPH ?g {
     ?s skos:inScheme ?scheme;
       skos:prefLabel ?dutchLabel;
-      skos:prefLabel ?label;
+      skos:prefLabel ?label.
     FILTER(LANG(?dutchLabel) = "nl")
   }
 }
