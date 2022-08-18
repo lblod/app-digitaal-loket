@@ -90,6 +90,21 @@
           "target": "concepts",
           "predicate": "adms:status",
           "cardinality": "one"
+        },
+        "concept-tags": {
+          "target": "concepts",
+          "predicate": "lpdcExt:conceptTag",
+          "cardinality": "many"
+        },
+        "competent-authority-levels": {
+          "target": "concepts",
+          "predicate": "lpdcExt:competentAuthorityLevel",
+          "cardinality": "many"
+        },
+        "executing-authority-levels": {
+          "target": "concepts",
+          "predicate": "lpdcExt:executingAuthorityLevel",
+          "cardinality": "many"
         }
       },
       "features": [
