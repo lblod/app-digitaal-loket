@@ -826,7 +826,7 @@ ext:costPg a form:PropertyGroup;
 ##########################################################
 #  property-group: Financieel Voordeel
 ##########################################################
-ext:costPg a form:PropertyGroup;
+ext:finAdvPg a form:PropertyGroup;
     sh:name "Financiële Voordelen" ;
     form:help "Hier kan u de bijbehorende financiële voordelen opgeven.";
     sh:order 6 .
@@ -844,7 +844,7 @@ ext:costPg a form:PropertyGroup;
     form:each ext:finAdvSf;
     form:scope ext:finAdvS;
     form:createGenerator ext:finAdvG;
-    sh:group ext:costPg;
+    sh:group ext:finAdvPg;
     form:addLabel "Voeg financieel voordeel toe";
     form:canAdd true;
     form:canRemove true;
@@ -876,15 +876,15 @@ ext:costPg a form:PropertyGroup;
   ##########################################################
   ext:finAdvSf a form:SubForm;
      form:removeLabel "Verwijder financieel voordeel";
-     form:includes ext:costTitleF;
-     form:includes extEng:costTitleF;
-     form:includes ext:costDescriptionF;
-     form:includes extEng:costDescriptionF.
+     form:includes ext:finAdvTitleF;
+     form:includes extEng:finAdvTitleF;
+     form:includes ext:finAdvDescriptionF;
+     form:includes extEng:finAdvDescriptionF.
 
     ##########################################################
     # Field: Financieel Voordeel title
     ##########################################################
-    ext:costTitleF a form:Field ;
+    ext:finAdvTitleF a form:Field ;
         sh:name "Titel financieel voordeel" ;
         form:language "nl";
         form:validations [
@@ -902,7 +902,7 @@ ext:costPg a form:PropertyGroup;
     ##########################################################
     # Field (En.): Financieel Voordeel title
     ##########################################################
-    extEng:costTitleF a form:Field ;
+    extEng:finAdvTitleF a form:Field ;
         sh:name "Engelse vertaling titel" ;
         sh:order 2 ;
         form:language "en";
@@ -920,7 +920,7 @@ ext:costPg a form:PropertyGroup;
     ##########################################################
     # Field: Financieel Voordeel description
     ##########################################################
-    ext:costDescriptionF a form:Field ;
+    ext:finAdvDescriptionF a form:Field ;
         sh:name "Beschrijving financieel voordeel" ;
         form:language "nl";
         form:validations [
@@ -938,7 +938,7 @@ ext:costPg a form:PropertyGroup;
     ##########################################################
     # Field (En.): Financieel Voordeel description
     ##########################################################
-    extEng:costDescriptionF a form:Field ;
+    extEng:finAdvDescriptionF a form:Field ;
         sh:name "Engelse vertaling beschrijving" ;
         sh:order 4 ;
         form:language "en";
