@@ -21,11 +21,9 @@
   rdf:type  lpdcExt:ConceptualPublicService ;
   mu:uuid   "a139c22b4691447ca9ab3409d380c95c" ;
 
-  # TODO change API
   lpdcExt:competentAuthorityLevel <https://productencatalogus.data.vlaanderen.be/id/concept/BevoegdBestuursniveau/Federaal>,
                                    <https://productencatalogus.data.vlaanderen.be/id/concept/BevoegdBestuursniveau/Vlaams>;
 
-  # TODO change API
   lpdcExt:conceptTag <https://productencatalogus.data.vlaanderen.be/id/concept/ConceptTag/YourEuropeVerplicht>,
                       <https://productencatalogus.data.vlaanderen.be/id/concept/ConceptTag/YourEuropeAanbevolen>;
 
@@ -34,7 +32,6 @@
 
   dct:description   "With a Belgian identity card (eID) you can prove that you are registered in the population register of Belgium and you can prove your nationality and identity abroad.<br>The eID contains a microchip with which you:<br> - your can confirm identity online<br> - sign documents electronically.<br><br>From the age of 15 you are obliged to always have your identity card with you."@en ;
 
-  # TODO change API
   lpdcExt:executingAuthorityLevel <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Provinciaal>,
                                    <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Lokaal>;
 
@@ -48,7 +45,6 @@
 
   m8g:hasCost   <http://data.lblod.info/id/cost/7dae44408cdd490ca75779bdb57f6c29> ;
 
-  # TODO: mention issue on website + change API
   lpdcExt:hasExecutingAuthority lblodOrg:e3b06565249fb4273d056f4e4e0c8cc7 ;
 
   belgif:hasRequirement   <http://data.lblod.info/id/requirement/3f7d6ac1e48b4308a2ef19d0a09ada33> ;
@@ -61,21 +57,16 @@
 
   dct:title   "Electronic identity card"@en ;
 
-  # TODO update API
   lpdcExt:publicationMedium <https://productencatalogus.data.vlaanderen.be/id/concept/PublicatieKanaal/VLoket>;
 
-
-  # TODO update API
   lpdcExt:regulation "De Minister van Binnenlandse Zaken, Institutionele Hervormingen en Democratische Vernieuwing, <br> Gelet op de wet van 19 juli 1991 betreffende de bevolkingsregisters, de identiteitskaarten, de vreemdelingenkaarten en de verblijfsdocumenten, laatst gewijzigd door de wet van 25 november 2018, artikel 6, § 2, derde lid, 8°, en § 7; <br> Gelet op het koninklijk besluit van 25 maart 2003 betreffende de identiteitskaarten, artikel 3, § 5, eerste lid, <br> Besluit : <br> Enig artikel. Na 10 december 2020, moet elke identiteitskaart die wordt aangevraagd door een Belg die in België zijn hoofdverblijfplaats heeft, vingerafdrukken bevatten. <br> Brussel, 15 januari 2021. <br> A. VERLINDEN"@nl;
 
-  # TODO update API
   lpdcExt:targetAudience <https://productencatalogus.data.vlaanderen.be/id/concept/Doelgroep/Burger>, <https://productencatalogus.data.vlaanderen.be/id/concept/Doelgroep/OndernemingOnroerendGoed>;
 
   m8g:thematicArea <https://productencatalogus.data.vlaanderen.be/id/concept/Thema/BurgerOverheid>;
 
   dct:type <https://productencatalogus.data.vlaanderen.be/id/concept/Type/Bewijs>;
 
-  #TODO update API
   lpdcExt:yourEuropeCategory <https://productencatalogus.data.vlaanderen.be/id/concept/YourEuropeCategorie/VoertuigenVerleningRijbewijzen>, <https://productencatalogus.data.vlaanderen.be/id/concept/YourEuropeCategorie/DienstenLicentiesVergunningen>.
 
 
@@ -86,8 +77,6 @@
 
   dct:description   "Belgians older than 12 who live abroad can obtain an eID at the Belgian consular post where they are registered. The delivery period is longer.<br><br>From 21 June 2021, Belgian municipalities can also process applications for eID for Belgians registered in a consular population register. Only the urgent procedure is possible, whereby the card and associated codes are delivered to the municipality (the codes are not sent separately to the home address). First make an appointment with:<br>- if you have been registered in a Belgian municipality: the last municipality (of registration) in Belgium<br>- if you have never been registered in a Belgian municipality, but have been registered in Belgium were born: the Belgian municipality of birth<br>- in all other cases: a Belgian municipality of your choice. <br> After 2 to 3 weeks you will receive a letter informing you that your eID is ready. In order to be able to use the electronic signature, the letter also contains a pin code and a PUK code.<br>- Take the letter with the codes to the town hall when you collect your eID.<br>- You can get your pin code when you collect it change if you wish (minimum 4, maximum 12 digits). You will need your PIN code every time you want to use your eID.<br>- You will need your PUK code to set your PIN code the first time or, if you do not remember your PIN code, to change or unblock the PIN code.<br> - From the age of 12 you will automatically receive a summons card from the municipality where you live to request your eID from the Civil Affairs department of your municipality. Even if the validity period of your eID expires, you will automatically receive a summons card to request a new eID.<br>- In a number of cases you can also request an eID from your municipality on your own initiative:<br> - if your eID has been lost, stolen or damaged<br> - if your passport photo no longer matches<br> - if you change your name or gender<br> - if you register after a stay abroad or if you have been removed from office<br> - if you apply for a card in another national language.<br>- Go to your municipality with your summons card, a recent passport photo and your current identity card to apply for the eID.<br> The fees for an eID vary from one municipality to another. In urgent cases, you can request an urgent procedure with delivery one day later. However, you will pay a higher price for this. For more information, contact your municipality."@en ;
 
-  # TODO: update api
-  lpdcExt:hasWebsite <http://data.lblod.info/id/website/ac71fc7d-8c47-4b27-95b5-f95e57cb42c9> ;
   dct:title   "Belgen in het buitenland"@nl;
   dct:title   "Belgians abroad"@en.
 
@@ -107,3 +96,12 @@
     dct:description   "The passport photo that you must be no more than 6 months old and must meet the standards of the International Civil Aviation Organization (pdf). It is important that your face is clearly visible. You should look straight into the lens with a neutral facial expression (mouth closed, no smile)."@en ;
     dct:title   "Pasfoto"@nl ;
     dct:title   "Passport photo"@en .
+
+
+#########################################
+# COST
+#########################################
+<http://data.lblod.info/id/cost/7dae44408cdd490ca75779bdb57f6c29> a m8g:Cost;
+  mu:uuid "f4b40157-4045-4550-8663-4b9e3a43a772";
+  dct:description "De kost wordt doorgerekend <br> aan de Federale overheid"@nl;
+  dct:title "Kosten van plaatsing"@nl.
