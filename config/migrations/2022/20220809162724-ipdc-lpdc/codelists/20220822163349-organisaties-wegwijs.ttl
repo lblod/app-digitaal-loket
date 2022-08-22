@@ -1,0 +1,1061 @@
+@prefix skos:      <http://www.w3.org/2004/02/skos/core#> .
+@prefix dvcs:      <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/> .
+@prefix dvc:       <https://productencatalogus.data.vlaanderen.be/id/concept/IpdcOrganisaties/> .
+@prefix mu:        <http://mu.semte.ch/vocabularies/core/> .
+@prefix dct:        <http://purl.org/dc/terms/>.
+
+dvcs:IPDCOrganisaties
+    a                  skos:ConceptScheme ;
+    skos:prefLabel     "IPDCOrganisaties"@nl ;
+    skos:prefLabel     "IPDCOrganisations"@en ;
+    skos:definition    "Lijst van organisaties gebruikt binnen het kader van IPDC. De lijst combineert data van het organisatieregister en ABB."@nl ;
+    skos:definition    "List of organisations used within the framework of IPDC. The list combines data from the register of organisations and ABB."@en .
+<https://data.vlaanderen.be/doc/organisatie/OVO000009> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000009> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000009> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000009> skos:prefLabel """Beleidsdomein Cultuur, Jeugd, Sport en Media"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000009> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000009> mu:uuid """36b572b9-f9db-41a9-bfe7-4bf778a1b045""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000013> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000013> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000013> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000013> skos:prefLabel """Beleidsdomein Mobiliteit en Openbare Werken"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000013> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000013> mu:uuid """a6b3b4e1-5a9a-4370-9c25-69bb638239c8""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000029> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000029> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000029> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000029> skos:prefLabel """Departement Financiën en Begroting"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000029> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000029> mu:uuid """9920d62e-71df-415f-9436-02cfee1a2d9e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000031> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000031> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000031> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000031> skos:prefLabel """Vlaamse Belastingdienst"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000031> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000031> mu:uuid """7cb8df9d-feac-4226-9ee8-be3fb85f24fa""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000032> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000032> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000032> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000032> skos:prefLabel """Departement Kanselarij en Buitenlandse Zaken"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000032> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000032> mu:uuid """f4e169df-5d16-497e-b8c1-dd9930628fdc""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000034> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000034> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000034> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000034> skos:prefLabel """Toerisme Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000034> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000034> mu:uuid """b055a9e4-dedc-4095-82fb-517e30c519af""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000035> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000035> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000035> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000035> skos:prefLabel """Vlaams Agentschap voor Internationaal Ondernemen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000035> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000035> mu:uuid """f2ac47ec-2112-4a1d-a05f-36ce7eabb465""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000038> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000038> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000038> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000038> skos:prefLabel """Departement Economie, Wetenschap en Innovatie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000038> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000038> mu:uuid """544d117a-943d-4020-a558-f1a9441a1527""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000039> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000039> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000039> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000039> skos:prefLabel """Agentschap Innoveren en Ondernemen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000039> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000039> mu:uuid """a92a7ca9-128a-4fe2-83ca-b45e1090548d""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000041> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000041> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000041> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000041> skos:prefLabel """VLAAMSE INSTELLING VOOR TECHNOLOGISCH ONDERZOEK"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000041> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000041> mu:uuid """11ba8ac3-761f-4a24-910c-e7c2534c8aef""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000042> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000042> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000042> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000042> skos:prefLabel """Fonds voor wetenschappelijk Onderzoek - Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000042> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000042> mu:uuid """fa171560-731d-481c-a954-2717688f866b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000043> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000043> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000043> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000043> skos:prefLabel """LIMBURGSE RECONVERSIE MAATSCHAPPIJ"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000043> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000043> mu:uuid """1de14633-799e-4360-983f-7e344d8f6f35""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000044> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000044> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000044> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000044> skos:prefLabel """Participatiemaatschappij Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000044> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000044> mu:uuid """7cfd1b94-dec9-4024-962e-67e8e3a5b4e6""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000045> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000045> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000045> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000045> skos:prefLabel """VLAAMSE PARTICIPATIEMAATSCHAPPIJ"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000045> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000045> mu:uuid """b02b167e-33f3-45c7-84c1-59601ec203e5""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000049> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000049> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000049> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000049> skos:prefLabel """Departement Onderwijs en Vorming"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000049> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000049> mu:uuid """7c0537e0-8f2f-482c-ad95-7ab405c66dd8""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000050> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000050> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000050> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000050> skos:prefLabel """Agentschap voor Onderwijsdiensten"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000050> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000050> mu:uuid """007de2e5-349b-4a32-9203-f947c599cf23""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000053> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000053> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000053> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000053> skos:prefLabel """Agentschap voor Infrastructuur in het Onderwijs"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000053> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000053> mu:uuid """1b6e0d1a-8778-4357-86f6-0ab3b64f2d6b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000054> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000054> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000054> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000054> skos:prefLabel """Vlaamse Onderwijsraad - Conseil flamand de l'Enseignement"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000054> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000054> mu:uuid """f054d6c6-121f-4313-8439-518ba54ad073""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000056> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000056> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000056> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000056> skos:prefLabel """Departement Welzijn, Volksgezondheid en Gezin"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000056> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000056> mu:uuid """5ae80a41-f64c-4ad4-97af-8c929f76fc77""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000058> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000058> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000058> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000058> skos:prefLabel """Opgroeien"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000058> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000058> mu:uuid """2a4dd90a-1c45-47a6-91d1-a248866fc8d0""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000059> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000059> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000059> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000059> skos:prefLabel """Agentschap Zorg en Gezondheid"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000059> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000059> mu:uuid """1cc4c096-0dcf-483e-a359-bbbea58856e6""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000060> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000060> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000060> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000060> skos:prefLabel """VLAAMS AGENTSCHAP VOOR PERSONEN MET EEN HANDICAP"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000060> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000060> mu:uuid """6481beca-e359-4bd2-a0eb-b511041fbaa9""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000061> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000061> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000061> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000061> skos:prefLabel """Opgroeien regie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000061> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000061> mu:uuid """8c0bff5e-a23d-4847-909b-baff988baf61""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000062> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000062> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000062> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000062> skos:prefLabel """OPENBAAR PSYCHIATRISCH ZORGCENTRUM GEEL"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000062> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000062> mu:uuid """711117d4-e4c8-4a35-9512-fb5ac5f3540b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000063> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000063> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000063> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000063> skos:prefLabel """Openbaar Psychiatrisch Zorgcentrum Rekem"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000063> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000063> mu:uuid """a41d8b05-0c6d-49fa-bb47-f1e4c60a1c19""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000067> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000067> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000067> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000067> skos:prefLabel """Departement Cultuur, Jeugd en Media"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000067> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000067> mu:uuid """fb2611bc-1a25-4120-a6a4-f41d24019f58""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000070> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000070> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000070> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000070> skos:prefLabel """SPORT VLAANDEREN"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000070> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000070> mu:uuid """b5fb3743-ddca-4d34-8ec2-d7bddb37c678""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000071> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000071> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000071> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000071> skos:prefLabel """VLAAMSE REGULATOR VOOR DE MEDIA"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000071> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000071> mu:uuid """fe066646-1469-4a68-a52f-e5a514ca9104""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000072> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000072> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000072> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000072> skos:prefLabel """Opera Ballet Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000072> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000072> mu:uuid """4228ec32-7bfa-4359-932c-48af8fe0e499""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000073> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000073> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000073> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000073> skos:prefLabel """De Vlaamse Radio- en Televisieomroeporganisatie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000073> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000073> mu:uuid """ec55b8b9-2f87-48e8-ba4b-d3b73522b39c""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000076> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000076> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000076> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000076> skos:prefLabel """Departement Werk en Sociale Economie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000076> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000076> mu:uuid """983923fe-9871-4148-8aff-235195cc728a""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000078> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000078> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000078> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000078> skos:prefLabel """Vlaamse Dienst voor Arbeidsbemiddeling en Beroepsopleiding"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000078> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000078> mu:uuid """bd1e6a35-1d5c-4406-8a28-8a65b1667ba6""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000080> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000080> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000080> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000080> skos:prefLabel """ESF - AGENTSCHAP VLAANDEREN"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000080> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000080> mu:uuid """e26947d7-ad46-4498-a627-958206e15dfc""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000082> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000082> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000082> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000082> skos:prefLabel """Departement Landbouw en Visserij"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000082> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000082> mu:uuid """9bc308e8-f4f7-407c-b241-b53eb9bf967e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000084> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000084> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000084> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000084> skos:prefLabel """Instituut voor Landbouw- en Visserijonderzoek"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000084> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000084> mu:uuid """43dace2a-4b17-4a5f-8baa-174cbe627792""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000088> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000088> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000088> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000088> skos:prefLabel """Instituut voor Natuur- en Bosonderzoek"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000088> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000088> mu:uuid """3cf9d93f-08b3-458f-8236-1cf1350529a4""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000089> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000089> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000089> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000089> skos:prefLabel """Agentschap voor Natuur en Bos"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000089> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000089> mu:uuid """ace65c35-cafb-4b08-9de3-14707022fe33""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000090> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000090> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000090> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000090> skos:prefLabel """Vlaams Energie- en Klimaatagentschap"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000090> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000090> mu:uuid """111d73db-1476-4200-af26-af06283bc6b4""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000091> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000091> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000091> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000091> skos:prefLabel """Openbare Vlaamse Afvalstoffenmaatschappij"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000091> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000091> mu:uuid """fbbb02f8-054c-4e86-ab75-098f9e478bab""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000092> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000092> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000092> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000092> skos:prefLabel """VLAAMSE MILIEUMAATSCHAPPIJ"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000092> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000092> mu:uuid """54ac2d47-ffbd-4abf-a779-77388a2ad8a1""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000094> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000094> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000094> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000094> skos:prefLabel """VLAAMSE LANDMAATSCHAPPIJ"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000094> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000094> mu:uuid """19a4a1c1-7fac-4331-92fc-77a4dc1e095c""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000095> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000095> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000095> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000095> skos:prefLabel """Milieu- en Natuurraad van Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000095> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000095> mu:uuid """9a27b0c2-0e2c-4c59-8fb7-99ca11a99e5c""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000096> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000096> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000096> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000096> skos:prefLabel """Departement Mobiliteit en Openbare Werken"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000096> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000096> mu:uuid """b2e1563e-4c9a-43c4-84eb-c47553e338af""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000097> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000097> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000097> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000097> skos:prefLabel """Agentschap voor Maritieme Dienstverlening en Kust"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000097> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000097> mu:uuid """cdcc15d7-d2be-484f-afca-875eca83e38e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000098> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000098> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000098> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000098> skos:prefLabel """Agentschap Wegen en Verkeer"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000098> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000098> mu:uuid """5b5a06da-f8eb-429d-9171-2bf2ab5173d5""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000100> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000100> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000100> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000100> skos:prefLabel """Vlaamse Vervoermaatschappij - De Lijn"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000100> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000100> mu:uuid """359731f1-fd32-46fc-b818-108e552ba5cb""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000103> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000103> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000103> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000103> skos:prefLabel """VLAAMSE MAATSCHAPPIJ VOOR SOCIAAL WONEN"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000103> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000103> mu:uuid """73aefae3-57f4-4cfe-9adc-25d529008d88""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000104> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000104> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000104> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000104> skos:prefLabel """Onroerend Erfgoed"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000104> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000104> mu:uuid """981d82dc-38fc-4a8f-9eb3-b81ed9a54f68""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000106> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000106> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000106> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000106> skos:prefLabel """Wonen-Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000106> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000106> mu:uuid """43e5544d-78b2-46d4-82a3-9de09896c859""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000107> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000107> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000107> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000107> skos:prefLabel """STRATEGISCHE ADVIESRAAD RUIMTELIJKE ORDENING - ONROEREND ERFGOED"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000107> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000107> mu:uuid """7dd435e8-c58a-447b-af37-3f1668982d1e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000110> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000110> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000110> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000110> skos:prefLabel """Universitair Ziekenhuis Gent"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000110> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000110> mu:uuid """203afda4-e99f-46b0-814a-34616492d90b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000112> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000112> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000112> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000112> skos:prefLabel """DE VLAAMSE WATERWEG"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000112> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000112> mu:uuid """3e14e5bc-6b1f-41ed-a3fd-c514aee6bf8b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000142> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000142> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000142> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000142> skos:prefLabel """VLAAMS INSTITUUT VOOR BIOTECHNOLOGIE - FLANDERS INSTITUTE FOR BIOTECHNOLOGY"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000142> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000142> mu:uuid """705ba459-3ab8-4e76-8d5e-9e273830cf84""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000146> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000146> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000146> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000146> skos:prefLabel """Eigen Vermogen van het Instituut voor Natuur- en Bosonderzoek"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000146> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000146> mu:uuid """67cabf00-d695-426c-8e4b-588fb1a0b7ee""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000157> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000157> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000157> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000157> skos:prefLabel """Vlaamse Interuniversitaire Raad"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000157> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000157> mu:uuid """49f56006-e5a6-4fdd-944b-0eecb3881ab9""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000158> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000158> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000158> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000158> skos:prefLabel """Vlaamse Hogescholenraad"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000158> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000158> mu:uuid """384db1f6-d801-4dd9-915d-b650e0183653""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000174> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000174> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000174> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000174> skos:prefLabel """Literatuur Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000174> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000174> mu:uuid """7eef273f-96f8-4f95-b68d-b90cf29a6c77""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000175> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000175> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000175> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000175> skos:prefLabel """VLAAMS AUDIOVISUEEL FONDS"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000175> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000175> mu:uuid """57379fd8-afbf-42d6-ab02-c6a9a19d796b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000176> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000176> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000176> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000176> skos:prefLabel """DeSingel"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000176> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000176> mu:uuid """7f15979c-7986-4f1a-80d6-a1cfaa294d68""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000177> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000177> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000177> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000177> skos:prefLabel """MUSEUM VAN HEDENDAAGSE KUNST ANTWERPEN"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000177> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000177> mu:uuid """3690eb56-8d9e-40be-8bad-2d28d917eacd""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000182> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000182> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000182> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000182> skos:prefLabel """KONINKLIJKE VLAAMSE ACADEMIE VAN BELGIE VOOR WETENSCHAPPEN & KUNSTEN"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000182> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000182> mu:uuid """d2003bbd-227a-4348-a6f6-7482241500a7""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000184> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000184> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000184> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000184> skos:prefLabel """Koninklijke Academie voor Nederlandse Taal en Letteren"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000184> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000184> mu:uuid """ee80f30f-fb44-4473-b75c-a4e6989e04e7""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000210> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000210> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000210> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000210> skos:prefLabel """Mobiliteitsraad van Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000210> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000210> mu:uuid """e306f09a-608e-4695-b48c-3e1bd7ac61f2""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000236> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000236> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000236> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000236> skos:prefLabel """VLAAMS INSTITUUT VOOR DE ZEE"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000236> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000236> mu:uuid """6c4f4646-b840-4bc3-a952-463c9ef9e146""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000237> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000237> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000237> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000237> skos:prefLabel """Vlaamse Havens"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000237> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000237> mu:uuid """cfc220a1-7668-4644-888d-e71482745f44""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000474> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000474> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000474> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000474> skos:prefLabel """Vlaams Centrum voor Agro- en Visserijmarketing"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000474> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000474> mu:uuid """18d7a501-af96-45fc-aa20-fda1c6175714""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000706> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000706> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000706> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000706> skos:prefLabel """Beleid en Belangenbehartiging"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000706> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000706> mu:uuid """3cd83ff1-3e5a-40a8-acc6-ddc69d823991""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000707> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000707> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000707> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000707> skos:prefLabel """Infrastructuur"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000707> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000707> mu:uuid """76726938-508c-4354-b942-91b1b97571ef""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000733> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000733> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000733> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000733> skos:prefLabel """Vlaams Energiebedrijf"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000733> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000733> mu:uuid """22f5e757-59d2-4e56-a976-08f5943ef9a1""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000795> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000795> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000795> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000795> skos:prefLabel """Het Kinderrechtencommissariaat"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000795> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000795> mu:uuid """fabbab81-9d1e-4967-8396-131f53385f18""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO000857> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO000857> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000857> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO000857> skos:prefLabel """Raad voor Betwisting studievoortgangsbeslissingen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO000857> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO000857> mu:uuid """57ca0265-2f61-4080-98a6-604dc06e2883""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001002> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001002> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001002> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001002> skos:prefLabel """Hoge Raad voor de Handhavingsuitvoering"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001002> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001002> mu:uuid """f03ad775-72f5-4b8c-b159-241cd36d7826""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001523> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001523> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001523> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001523> skos:prefLabel """Agentschap Plantentuin Meise"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001523> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001523> mu:uuid """a4d7b661-e9c2-4b3e-bb4f-374ed3c82861""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001601> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001601> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001601> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001601> skos:prefLabel """LUCHTHAVENONTWIKKELINGSMAATSCHAPPIJ VLAANDEREN"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001601> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001601> mu:uuid """f85b49b6-ce68-4b39-92f5-fa44ca3bba5a""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001680> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001680> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001680> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001680> skos:prefLabel """Raad voor Verkiezingsbetwistingen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001680> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001680> mu:uuid """3cfd6c1e-4d17-4221-a9ef-0446e747a934""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001688> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001688> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001688> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001688> skos:prefLabel """Raad voor Vergunningsbetwistingen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001688> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001688> mu:uuid """f12fb2fb-f70f-4ba2-b514-1bed5426c71e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001689> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001689> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001689> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001689> skos:prefLabel """Handhavingscollege"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001689> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001689> mu:uuid """82bd6597-4391-414f-a1bd-0046ebf43ce3""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001729> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001729> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001729> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001729> skos:prefLabel """Vlaams Woningfonds"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001729> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001729> mu:uuid """ef3930f0-df2d-4bdb-b81a-aa92c4ae220e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001831> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001831> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001831> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001831> skos:prefLabel """Dienst van de Bestuursrechtscolleges"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001831> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001831> mu:uuid """4878b2f4-e1c2-4a5d-a674-fee209f051b2""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001832> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001832> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001832> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001832> skos:prefLabel """Audit Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001832> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001832> mu:uuid """1c4cffd7-d6af-40fe-af74-d628077dea64""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001833> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001833> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001833> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001833> skos:prefLabel """Agentschap Overheidspersoneel"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001833> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001833> mu:uuid """a89bda84-eca6-45d9-ae8a-985c8505003e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001834> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001834> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001834> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001834> skos:prefLabel """Agentschap Facilitair Bedrijf"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001834> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001834> mu:uuid """f300207e-e720-4656-a165-2ae857f7cc39""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001835> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001835> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001835> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001835> skos:prefLabel """Agentschap Binnenlands Bestuur"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001835> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001835> mu:uuid """113126ae-ed67-4b60-a5ff-c57c9eb65b71""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001841> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001841> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001841> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001841> skos:prefLabel """vzw ‘de Rand’"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001841> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001841> mu:uuid """ae8556ba-d682-4314-b958-16cd51953b6d""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001842> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001842> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001842> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001842> skos:prefLabel """Muntpunt"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001842> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001842> mu:uuid """7ea4ad1a-3379-458d-bcb0-730b95b68304""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001843> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001843> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001843> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001843> skos:prefLabel """Toegankelijk Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001843> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001843> mu:uuid """5256d675-5fd5-4de2-98c9-5d96e7a95a61""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001845> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001845> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001845> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001845> skos:prefLabel """VLAAMSE VERENIGING VOOR ICT-PERSONEEL"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001845> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001845> mu:uuid """cd8e7b55-720f-42f1-8326-6f109c47cc9b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001846> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001846> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001846> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001846> skos:prefLabel """Agentschap Integratie en Inburgering"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001846> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001846> mu:uuid """dd90ed13-edac-4875-a9b3-0f020218ec84""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001847> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001847> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001847> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001847> skos:prefLabel """Sociaal Economische Raad van Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001847> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001847> mu:uuid """a4a6e12d-6938-400b-b667-3bc1f76ab19b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO001951> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO001951> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001951> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO001951> skos:prefLabel """Agentschap voor Hoger Onderwijs, Volwassenenonderwijs, Kwalificaties en Studietoelagen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO001951> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO001951> mu:uuid """f531fb65-4b45-4f1c-9af9-06b5105efece""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO002300> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO002300> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002300> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002300> skos:prefLabel """Flanders Make"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO002300> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO002300> mu:uuid """c5beaa79-3f75-4b13-bb5f-2e3c9e618200""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO002305> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO002305> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002305> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002305> skos:prefLabel """Universiteit Hasselt"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO002305> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO002305> mu:uuid """447d64be-af9f-4d2f-a7eb-2b109ab34650""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO002410> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO002410> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002410> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002410> skos:prefLabel """Onderwijsinspectie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO002410> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO002410> mu:uuid """5d3858b0-0345-4b64-a84e-aede6ddecc67""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO002411> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO002411> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002411> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002411> skos:prefLabel """Vlaams Agentschap voor Samenwerking rond Gegevensdeling tussen de Actoren in de Zorg"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO002411> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO002411> mu:uuid """8a931109-dfea-48cc-af8b-0a74e982e868""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO002949> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO002949> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002949> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO002949> skos:prefLabel """agentschap Digitaal Vlaanderen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO002949> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO002949> mu:uuid """ccd4c224-c388-412e-83b6-339326804cbb""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003117> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003117> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003117> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003117> skos:prefLabel """Netbrede ondersteuning en ontwikkeling"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003117> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003117> mu:uuid """51e4e54d-2c1d-4600-b3bf-7ce5fed4b53a""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003118> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003118> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003118> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003118> skos:prefLabel """Organisatieondersteuning"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003118> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003118> mu:uuid """37cd1a7d-eaf2-437b-8779-1aab5ddc2eb9""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003119> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003119> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003119> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003119> skos:prefLabel """Pedagogische Begeleidingsdienst"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003119> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003119> mu:uuid """7266b24a-1e96-4486-95ea-12086b7de642""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003139> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003139> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003139> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003139> skos:prefLabel """Autonome Raad van het Gemeenschapsonderwijs - Administratieve Diensten"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003139> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003139> mu:uuid """d20e7848-67ee-4ebb-a7a9-86a28dab702b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003323> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003323> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003323> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003323> skos:prefLabel """Departement Omgeving"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003323> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003323> mu:uuid """20edcfa9-493a-470c-a48c-24672ebe7eda""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003944> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003944> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003944> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003944> skos:prefLabel """Sociale Dienst voor de Personeelsleden van het GO! Onderwijs van de vlaamse Gemeenschap"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003944> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003944> mu:uuid """4f26dff7-7d27-4e39-94b2-c2d719392513""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003953> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003953> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003953> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003953> skos:prefLabel """be-DIVE"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003953> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003953> mu:uuid """1beb4f17-f518-48be-880a-d7450a5cded1""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003954> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003954> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003954> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003954> skos:prefLabel """UHasselt Plus"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003954> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003954> mu:uuid """8266655f-68bb-4cf3-9c9e-810647dcb627""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO004530> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO004530> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004530> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004530> skos:prefLabel """Universitair Ziekenhuis Leuven"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO004530> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO004530> mu:uuid """11485fac-3c04-43c5-96a3-89e606141a63""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO006465> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO006465> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO006465> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO006465> skos:prefLabel """Grindcomité - Het Sociaal comité"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO006465> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO006465> mu:uuid """cba6f642-de5b-40a3-a20e-ecfe9fcf339e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO006466> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO006466> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO006466> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO006466> skos:prefLabel """Grindcomite> '- Het Herstructureringscomité"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO006466> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO006466> mu:uuid """04aa8965-e8d4-425f-b4e7-040d9dfdc266""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO006467> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO006467> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO006467> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO006467> skos:prefLabel """ONESTO WOONPUNT"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO006467> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO006467> mu:uuid """eb39bf29-4969-4203-93ac-83042da5b215""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008202> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008202> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008202> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008202> skos:prefLabel """Commissie Juridische Bijstand"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008202> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008202> mu:uuid """b92b8ab7-3be1-498e-bcc4-31c5b35d9b11""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008643> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008643> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008643> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008643> skos:prefLabel """Vlaams Agentschap voor de Uitbetaling van Toelagen in het kader van het Gezinsbeleid"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008643> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008643> mu:uuid """210531ae-f277-42d9-9a14-30b738fa7a14""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009023> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009023> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009023> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009023> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in Nederland"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009023> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009023> mu:uuid """d4e9e769-c252-4daa-94db-64cb3b0f2748""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009024> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009024> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009024> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009024> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in het Verenigd Koninkrijk"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009024> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009024> mu:uuid """dde1d5c3-4fd9-4ef5-9077-555a86dd45dd""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009025> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009025> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009025> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009025> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in de Verenigde Staten"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009025> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009025> mu:uuid """0e3e6461-7dc8-43d5-b02e-ab73e01a7be4""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009026> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009026> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009026> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009026> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in Oostenrijk, de Tsjechische Republiek, Hongarije, Slovakije en Slovenië"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009026> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009026> mu:uuid """c70bfd27-f0c0-42b5-bb91-8809f62767e8""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009027> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009027> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009027> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009027> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in Polen en de Baltische Staten"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009027> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009027> mu:uuid """aeaaa725-49c3-4d72-96ff-2d37d6ed1ed0""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009029> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009029> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009029> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009029> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in zuidelijk Afrika"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009029> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009029> mu:uuid """2f18f6db-fb2c-4e50-8069-8f8f4feefadd""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009030> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009030> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009030> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009030> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in Duitsland"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009030> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009030> mu:uuid """29e7db23-28ba-40e7-9f7f-d6d6c759143d""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009031> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009031> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009031> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009031> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen in Frankrijk"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009031> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009031> mu:uuid """4792c5e1-8201-4974-a359-d3623a2442f6""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009045> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009045> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009045> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009045> skos:prefLabel """Diplomatiek Vertegenwoordiger van Vlaanderen bij de EU"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009045> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009045> mu:uuid """8f940f53-4586-478b-94d0-ae8d87a30615""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO014006> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO014006> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO014006> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO014006> skos:prefLabel """ONZE-LIEVE-VROUW VAN LOURDES ZIEKENHUIS WAREGEM"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO014006> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO014006> mu:uuid """dd090097-7022-4364-9d18-e25872fafb02""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO027160> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO027160> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO027160> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO027160> skos:prefLabel """VLAAMS PENSIOENFONDS"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO027160> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO027160> mu:uuid """590f134f-6204-4f08-8f49-5ee832bd5540""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO028966> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO028966> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO028966> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO028966> skos:prefLabel """Commissie Juridische Bijstand Limburg"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO028966> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO028966> mu:uuid """e79219fd-b872-4d50-8e67-f940f81138cd""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO049152> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO049152> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO049152> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO049152> skos:prefLabel """Agentschap Justitie en Handhaving"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO049152> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO049152> mu:uuid """28f8837b-4d72-47e1-aa6c-fb9768fdb16d""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003747> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003747> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003747> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003747> skos:prefLabel """SELOR"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003747> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003747> mu:uuid """c110ec6b-d9c3-45a7-9a49-1f26629006bd""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003884> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003884> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003884> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003884> skos:prefLabel """Commissie voor de Regulering van de Elektriciteit en het Gas"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003884> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003884> mu:uuid """690b2e4a-1559-49e6-a940-f9ef3f92f730""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO004018> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO004018> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004018> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004018> skos:prefLabel """Federale Overheidsdienst Werkgelegenheid, Arbeid en Sociaal Overleg"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO004018> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO004018> mu:uuid """f6d6fd09-3675-46b7-aa57-0e2d71115ee2""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO004066> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO004066> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004066> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004066> skos:prefLabel """skeyes"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO004066> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO004066> mu:uuid """60092147-c5c9-489a-a0c9-4d3d2cc65d74""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO004539> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO004539> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004539> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO004539> skos:prefLabel """Federale Overheidsdienst Economie, K.M.O., Middenstand en Energie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO004539> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO004539> mu:uuid """de69937f-d355-4448-97dc-c8e48e01e2d7""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO005190> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO005190> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO005190> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO005190> skos:prefLabel """Federale Overheidsdienst Financiën"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO005190> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO005190> mu:uuid """1574c7ba-e847-4265-9215-51e930fa2ba2""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008214> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008214> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008214> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008214> skos:prefLabel """Algemene directie van het middelenbeheer en de informatie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008214> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008214> mu:uuid """3451ac46-d8be-49ea-9f98-29fff626f06c""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008217> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008217> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008217> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008217> skos:prefLabel """Federale Overheidsdienst Sociale Zekerheid"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008217> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008217> mu:uuid """7b131ea7-69e6-459d-89a9-8b194d8387d7""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008218> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008218> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008218> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008218> skos:prefLabel """Kruispuntbank van de Sociale Zekerheid"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008218> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008218> mu:uuid """553b46d3-1019-4b55-bbe9-c760ebcf6d6a""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008225> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008225> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008225> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008225> skos:prefLabel """Gedeconcentreerde gerechtelijke directie van de federale politie Antwerpen"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008225> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008225> mu:uuid """0e8a6a56-7588-4f6d-a087-ffa8ed58c50d""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008229> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008229> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008229> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008229> skos:prefLabel """Algemene directie van de bestuurlijke politie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008229> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008229> mu:uuid """544b9043-2bb7-4a78-a9d8-491d0e1274c8""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008237> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008237> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008237> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008237> skos:prefLabel """Federale Overheidsdienst Binnenlandse Zaken"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008237> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008237> mu:uuid """5beec105-dc7d-473e-ba8f-a99adfc6426b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO008238> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO008238> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008238> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO008238> skos:prefLabel """Federale Overheidsdienst Volksgezondheid, Veiligheid van de Voedselketen en Leefmilieu"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO008238> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO008238> mu:uuid """a2ed07e8-5659-4e6e-b541-051214b6f018""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO009746> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO009746> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009746> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO009746> skos:prefLabel """Grondwettelijk Hof -  Cour constitutionnelle"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO009746> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO009746> mu:uuid """21adbce9-d1ca-4642-9583-99b88d7ef01b""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO010087> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO010087> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO010087> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO010087> skos:prefLabel """Rekenhof"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO010087> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO010087> mu:uuid """56346c56-1287-4b64-bb62-eacea88f0d85""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO010516> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO010516> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO010516> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO010516> skos:prefLabel """Directoraat-generaal Begroting en Beleidsevaluatie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO010516> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO010516> mu:uuid """0858d8f0-c020-49a9-a32a-c36c382a275f""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO019809> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO019809> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO019809> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO019809> skos:prefLabel """Belgisch Instituut voor postdiensten en telecommunicatie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO019809> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO019809> mu:uuid """97566708-106b-473e-9873-c42b57ba707a""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO019876> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO019876> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO019876> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO019876> skos:prefLabel """Belgisch Staatsblad"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO019876> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO019876> mu:uuid """84207a96-b9d8-47b2-a100-c887e160937c""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO024760> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO024760> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO024760> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO024760> skos:prefLabel """Federaal Agentschap voor de Opvang van Asielzoekers"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO024760> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO024760> mu:uuid """fa717722-3401-46f4-bc80-6178049d4a8e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO024763> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO024763> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO024763> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO024763> skos:prefLabel """Federale Overheidsdienst Kanselarij van de Eerste Minister"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO024763> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO024763> mu:uuid """285966ae-4b1b-4857-8772-514c9bfed493""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO025085> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO025085> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO025085> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO025085> skos:prefLabel """Nationaal Geografisch Instituut"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO025085> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO025085> mu:uuid """9bfeb340-461a-4e38-b0e9-60c352b9ee1c""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO025178> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO025178> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO025178> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO025178> skos:prefLabel """Federale Overheidsdienst Beleid en Ondersteuning"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO025178> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO025178> mu:uuid """f35c8dd1-ad8f-4df3-a238-82e32ab04b85""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO025860> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO025860> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO025860> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO025860> skos:prefLabel """Directoraat-generaal Rekrutering en Ontwikkeling"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO025860> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO025860> mu:uuid """4a022b81-6232-4140-9f06-8bf00c3e7aef""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO027149> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO027149> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO027149> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO027149> skos:prefLabel """Algemene Administratie van de Fiscaliteit"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO027149> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO027149> mu:uuid """de2c06b8-5c09-4856-bd0d-2516eb132545""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO027169> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO027169> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO027169> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO027169> skos:prefLabel """Nationale Bank van België"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO027169> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO027169> mu:uuid """0d156786-2d65-49ee-942a-80b1876dac0e""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO038766> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO038766> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO038766> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO038766> skos:prefLabel """Directoraat-generaal Digitale Transformatie"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO038766> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO038766> mu:uuid """7f3c667c-69f5-4a71-b2ca-c2593516ca8f""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003735> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003735> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003735> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003735> skos:prefLabel """Eurométropole Lille - Kortrijk - Tournai GECT"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003735> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003735> mu:uuid """3cc8aa62-8313-42f4-b9a4-3bbd0d7a0bea""".
+
+<https://data.vlaanderen.be/doc/organisatie/OVO003898> a skos:Concept.
+<https://data.vlaanderen.be/doc/organisatie/OVO003898> skos:inScheme dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003898> skos:topConceptOf dvcs:IPDCOrganisaties.
+<https://data.vlaanderen.be/doc/organisatie/OVO003898> skos:prefLabel """Europees Milieuagentschap"""@nl.
+<https://data.vlaanderen.be/doc/organisatie/OVO003898> dct:source <https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/het-organisatieregister>.
+<https://data.vlaanderen.be/doc/organisatie/OVO003898> mu:uuid """e2469aa4-8af8-4a54-a8f4-59482fa1544c""".
