@@ -139,7 +139,7 @@ ext:authorityPg a form:PropertyGroup;
       form:help "Meerdere overheden kunnen worden toegewezen";
       sh:order 10 ;
       sh:path m8g:hasCompetentAuthority ;
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/b790e1d2-fd96-4476-8c07-c76a017fed09"}""" ;
+      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties"}""" ;
       form:displayType displayTypes:conceptSchemeMultiSelector ;
       form:validations [
           a form:RequiredConstraint ;
@@ -170,7 +170,7 @@ ext:authorityPg a form:PropertyGroup;
       sh:order 30 ;
       #TODO: this should need an improvement of the forms OR come from the backend (because it seems it will always be the eenheid creating the service)
       sh:path lpdcExt:hasExecutingAuthority ;
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties"}""" ;
       form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:authorityPg .
 
