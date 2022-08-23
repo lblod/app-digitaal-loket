@@ -4,6 +4,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX dvcs: <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
 PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 # remove obsolete data
 DELETE WHERE {
@@ -60,7 +61,7 @@ INSERT {
   GRAPH ?g {
   ?s skos:inScheme dvcs:IPDCOrganisaties;
     skos:topConceptOf dvcs:IPDCOrganisaties;
-    dct:source <https://data.vlaanderen.be/doc/organisatie/OVO001835>.
+    rdfs:seeAlso <http://centrale-vindplaats.lblod.info>.
   }
 }
 WHERE {
