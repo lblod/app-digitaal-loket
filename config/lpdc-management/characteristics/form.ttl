@@ -181,7 +181,7 @@ ext:authorityPg a form:PropertyGroup;
       sh:name "Geografisch toepassingsgebied" ;
       sh:order 40 ;
       sh:path dct:spatial ;
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
+      form:options  """{"conceptScheme":"http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCLocaties"}""" ;
       form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
       form:displayType displayTypes:conceptSchemeMultiSelector ;
       form:validations [
