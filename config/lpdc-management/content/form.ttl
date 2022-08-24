@@ -3,24 +3,22 @@
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
-@prefix extEng: <http://mu.semte.ch/vocabularies/ext/form-fields/english/> .
+
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
 @prefix mu:	<http://mu.semte.ch/vocabularies/core/> .
 @prefix cpsv:	<http://purl.org/vocab/cpsv#> .
 @prefix dct:	<http://purl.org/dc/terms/> .
-@prefix lpdcExt:	<http://lblod.data.gift/vocabularies/lpdc-ipdc/> .
+@prefix lpdcExt:  <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#> .
 @prefix xkos:	<http://rdf-vocabulary.ddialliance.org/xkos#> .
 @prefix m8g:	<http://data.europa.eu/m8g/> .
-@prefix lblodLpdc:	<http://data.lblod.info/id/public-services/> .
-@prefix lblodIpdcLpdc:	<http://lblod.data.gift/vocabularies/lpdc-ipdc/> .
 @prefix dcat:	<http://www.w3.org/ns/dcat#> .
 @prefix lang:	<http://publications.europa.eu/resource/authority/language/> .
-@prefix lblodOrg:	<http://data.lblod.info/id/concept/organisatie/> .
-@prefix lblodIpdcThema:	<http://data.lblod.info/id/concept/ipdc-thema/> .
 @prefix belgif:	<http://vocab.belgif.be/ns/publicservice#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix schema: <http://schema.org/>.
+@prefix ps: <http://vocab.belgif.be/ns/publicservice#> .
+@prefix extEng: <http://mu.semte.ch/vocabularies/ext/form-fields/english/> .
 
 ##########################################################
 # form
@@ -35,6 +33,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:requirementsL;
     form:includes ext:rulesL;
     form:includes ext:costsL;
+    form:includes ext:finAdvL;
     form:includes ext:regulationitleF;
     form:includes extEng:regulationitleF;
     form:includes ext:contactpointsL;
@@ -565,7 +564,7 @@ ext:rulesPg a form:PropertyGroup;
         #  listing-scope: ProcedureWebsite
         ##########################################################
         ext:procedureWebsitesS a form:Scope;
-          sh:path lpdcExt:hasOnlineProcedure.
+          sh:path lpdcExt:hasWebsite.
 
         ##########################################################
         #  Listing: ProcedureWebsite
@@ -825,12 +824,143 @@ ext:costPg a form:PropertyGroup;
         sh:group ext:costsPg-sub .
 
 ##########################################################
+#  property-group: Financieel Voordeel
+##########################################################
+ext:finAdvPg a form:PropertyGroup;
+    sh:name "Financiële Voordelen" ;
+    form:help "Hier kan u de bijbehorende financiële voordelen opgeven.";
+    sh:order 6 .
+
+  ##########################################################
+  #  listing-scope: Financieel Voordeel
+  ##########################################################
+  ext:finAdvS a form:Scope;
+    sh:path cpsv:produces.
+
+  ##########################################################
+  #  Listing: Financieel Voordeel
+  ##########################################################
+  ext:finAdvL a form:Listing;
+    form:each ext:finAdvSf;
+    form:scope ext:finAdvS;
+    form:createGenerator ext:finAdvG;
+    sh:group ext:finAdvPg;
+    form:addLabel "Voeg financieel voordeel toe";
+    form:canAdd true;
+    form:canRemove true;
+    sh:order 1 .
+
+ ##########################################################
+  #  Generator: Financieel Voordeel
+  ##########################################################
+  ext:finAdvG a form:Generator;
+    form:prototype [
+      form:shape [
+        a lpdcExt:FinancialAdvantage;
+        dct:description " "@nl;
+        dct:title " "@nl;
+        dct:description " "@en;
+        dct:title " "@en
+      ];
+    ];
+    form:dataGenerator form:addMuUuid.
+
+  ##########################################################
+  #  property-group: Financieel Voordeel-sub
+  ##########################################################
+  ext:finAdvPg-sub a form:PropertyGroup;
+      sh:order 1 .
+
+  ##########################################################
+  #  Subform: Financieel Voordeel
+  ##########################################################
+  ext:finAdvSf a form:SubForm;
+     form:removeLabel "Verwijder financieel voordeel";
+     form:includes ext:finAdvTitleF;
+     form:includes extEng:finAdvTitleF;
+     form:includes ext:finAdvDescriptionF;
+     form:includes extEng:finAdvDescriptionF.
+
+    ##########################################################
+    # Field: Financieel Voordeel title
+    ##########################################################
+    ext:finAdvTitleF a form:Field ;
+        sh:name "Titel financieel voordeel" ;
+        form:language "nl";
+        form:validations [
+          a form:RequiredConstraint ;
+          form:language "nl";
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:title
+        ];
+        sh:order 1 ;
+        sh:path dct:title ;
+        form:displayType displayTypes:defaultInput ;
+        sh:group ext:finAdvPg-sub .
+
+    ##########################################################
+    # Field (En.): Financieel Voordeel title
+    ##########################################################
+    extEng:finAdvTitleF a form:Field ;
+        sh:name "Engelse vertaling titel" ;
+        sh:order 2 ;
+        form:language "en";
+        form:validations [
+          a form:RequiredConstraint ;
+          form:language "en";
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:title
+        ];
+        sh:path dct:title ;
+        form:displayType displayTypes:defaultInput ;
+        sh:group ext:finAdvPg-sub .
+
+    ##########################################################
+    # Field: Financieel Voordeel description
+    ##########################################################
+    ext:finAdvDescriptionF a form:Field ;
+        sh:name "Beschrijving financieel voordeel" ;
+        form:language "nl";
+        form:validations [
+          a form:RequiredConstraint ;
+          form:language "nl";
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:description
+        ];
+        sh:order 3 ;
+        sh:path dct:description ;
+        form:displayType displayTypes:richText ;
+        sh:group ext:finAdvPg-sub .
+
+    ##########################################################
+    # Field (En.): Financieel Voordeel description
+    ##########################################################
+    extEng:finAdvDescriptionF a form:Field ;
+        sh:name "Engelse vertaling beschrijving" ;
+        sh:order 4 ;
+        form:language "en";
+        form:validations [
+          a form:RequiredConstraint ;
+          form:language "en";
+          form:grouping form:Bag ;
+          sh:resultMessage "Dit veld is verplicht." ;
+          sh:path dct:description
+        ];
+        sh:path dct:description ;
+        form:displayType displayTypes:richText ;
+        sh:group ext:finAdvPg-sub .
+
+
+##########################################################
 #  property-group: Regelgeving
 ##########################################################
 ext:regulationsPg a form:PropertyGroup;
     sh:name "Regelgeving" ;
     form:help "Pas hier de regelgeving aan.";
-    sh:order 6 .
+    sh:order 7 .
 
   ##########################################################
   #  field: Regelgeving
@@ -859,7 +989,7 @@ ext:regulationsPg a form:PropertyGroup;
 ext:contactpointsPg a form:PropertyGroup;
     sh:name "Contactpunten" ;
     form:help "Voer hier contactpunt(en) in.";
-    sh:order 7 .
+    sh:order 8 .
 
   ##########################################################
   #  listing-scope: Contactpunten
@@ -978,7 +1108,7 @@ ext:contactpointsPg a form:PropertyGroup;
 ext:websitesPg a form:PropertyGroup;
     sh:name "Meer info" ;
     form:help "Hier kan u websites opgeven die meer informatie bevatten over de lokale dienst";
-    sh:order 8 .
+    sh:order 9 .
 
   ##########################################################
   #  listing-scope: Meer Info

@@ -8,7 +8,7 @@
     "eli": "http://data.europa.eu/eli/ontology#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "locn": "http://www.w3.org/ns/locn#",
-    "lpdcExt": "http://lblod.data.gift/vocabularies/lpdc-ipdc/",
+    "lpdcExt": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#",
     "m8g": "http://data.europa.eu/m8g/",
     "prov": "http://www.w3.org/ns/prov#",
     "ps": "http://vocab.belgif.be/ns/publicservice#",
@@ -23,10 +23,6 @@
     "abstract-public-services": {
       "class": "lpdcExt:AbstractPublicService",
       "attributes": {
-        "identifier": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        },
         "name": {
           "type": "language-string-set",
           "predicate": "dct:title"
@@ -90,24 +86,24 @@
           "predicate": "dct:spatial",
           "cardinality": "many"
         },
-        "sectors": {
-          "target": "concepts",
-          "predicate": "m8g:sector",
-          "cardinality": "many"
-        },
         "status": {
           "target": "concepts",
           "predicate": "adms:status",
           "cardinality": "one"
         },
-        "lifecycle-status": {
+        "concept-tags": {
           "target": "concepts",
-          "predicate": "ps:lifecycleStatus",
-          "cardinality": "one"
+          "predicate": "lpdcExt:conceptTag",
+          "cardinality": "many"
         },
-        "related": {
-          "target": "abstract-public-services",
-          "predicate": "dct:relation",
+        "competent-authority-levels": {
+          "target": "concepts",
+          "predicate": "lpdcExt:competentAuthorityLevel",
+          "cardinality": "many"
+        },
+        "executing-authority-levels": {
+          "target": "concepts",
+          "predicate": "lpdcExt:executingAuthorityLevel",
           "cardinality": "many"
         }
       },
@@ -152,20 +148,6 @@
         "include-uri"
       ],
       "new-resource-base": "http://data.lblod.info/id/public-service/"
-    },
-    "lpdc-concept-schemes": {
-      "class": "lpdcExt:LPDC-Concept-Scheme",
-      "super": [
-        "concept-schemes"
-      ],
-     "new-resource-base": "http://data.lblod.info/id/lpdc-concept-schemes/id/"
-    },
-    "lpdc-concepts": {
-      "class": "lpdcExt:LPDC-Concept",
-      "super": [
-        "concepts"
-      ],
-     "new-resource-base": "http://data.lblod.info/id/lpdc-concepts/id/"
     }
   }
 }
