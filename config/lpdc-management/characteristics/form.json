@@ -1,19 +1,6 @@
 {
   "meta": {
     "schemes": [
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/BevoegdBestuursniveau",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/ConceptTag",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Doelgroep",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/InstantieTag",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/PublicatieKanaal",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/SnapshotType",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Taal",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Thema",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Type",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/UitvoerendBestuursniveau",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategorie",
-      "https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
-      "http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCLocaties"
     ]
   }
 }
