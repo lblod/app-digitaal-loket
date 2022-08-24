@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>,
+    <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme>;
+  mu:uuid "bf7fcb58-7258-42f7-b7bf-628cf4701842";
+  <http://www.w3.org/2004/02/skos/core#definition> "Themas dienstverlening LPDC/IPDC";
+  <http://www.w3.org/2004/02/skos/core#prefLabel> "Themas dienstverlening LPDC/IPDC" .
+
+<http://data.lblod.info/id/concept/ipdc-thema/05505c3713360666d5d27a0aae7a8797> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+    skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "05505c3713360666d5d27a0aae7a8797" ;
+    skos:prefLabel "Mobiliteit en Openbare Werken"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/130e4416a311fe6b33a88dae29e0097f> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "130e4416a311fe6b33a88dae29e0097f" ;
+    skos:prefLabel "Sport en Vrije Tijd"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/3699633f9a60511acd8328fe454b5852> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "3699633f9a60511acd8328fe454b5852" ;
+    skos:prefLabel "Welzijn en Gezondheid"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/3eea80dd7bcdc76de5f6f1aa06dd622a> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "3eea80dd7bcdc76de5f6f1aa06dd622a" ;
+    skos:prefLabel "Cultuur"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/7bf2a776cbfbfe7b04cd47cc11ab5542> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "7bf2a776cbfbfe7b04cd47cc11ab5542" ;
+    skos:prefLabel "Onderwijs en Wetenschap"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/814a08e9c9b698f8d482b84b6c2acb23> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "814a08e9c9b698f8d482b84b6c2acb23" ;
+    skos:prefLabel "Milieu en Energie"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/973d52f17009289ed4166a22db1b1cab> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "973d52f17009289ed4166a22db1b1cab" ;
+    skos:prefLabel "Bouwen en Wonen"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/af1a1d7dbf9b12d423315706133141b8> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "af1a1d7dbf9b12d423315706133141b8" ;
+    skos:prefLabel "Burger en Overheid"@nl .
+
+<http://data.lblod.info/id/concept/ipdc-thema/b9aaa68f742290171102a35887b4d591> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept ;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>;
+    mu:uuid "b9aaa68f742290171102a35887b4d591" ;
+    skos:prefLabel "Economie en Werk"@nl .

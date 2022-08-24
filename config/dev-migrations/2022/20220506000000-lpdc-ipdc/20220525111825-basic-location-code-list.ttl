@@ -1,0 +1,45 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>,
+  <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept-Scheme>;
+  mu:uuid "db7b229d-b828-4236-ad10-fea0367b0ac9";
+  <http://www.w3.org/2004/02/skos/core#definition> "Codelijst locaties LPDC/IPDC";
+  <http://www.w3.org/2004/02/skos/core#prefLabel> "Codelijst locaties LPDC/IPDC".
+
+<http://data.lblod.info/id/concept/plaats/05205ec41c6d82162e70447b9609695e> a dcterms:Location, <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:prefLabel "Federaal"@nl ;
+    mu:uuid "05205ec41c6d82162e70447b9609695e".
+
+<http://data.lblod.info/id/concept/plaats/117f2797974ab3e271d4ac71975badf4> a dcterms:Location, <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:prefLabel "Brusselse Hoofdstedelijke Gewest"@nl ;
+    mu:uuid "117f2797974ab3e271d4ac71975badf4".
+
+<http://data.lblod.info/id/concept/plaats/b4584ef34a91bb062db17bfd809fa52b> a dcterms:Location, <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:prefLabel "Gemeente"@nl ;
+    mu:uuid "b4584ef34a91bb062db17bfd809fa52b".
+
+<http://data.lblod.info/id/concept/plaats/d825013f3d6508499483cf4f22bdb1db> a dcterms:Location, <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:prefLabel "Vlaams Gewest"@nl ;
+    mu:uuid "d825013f3d6508499483cf4f22bdb1db".
+
+<http://data.lblod.info/id/concept/plaats/e8188ca714aeb52a1fac9b477f037c53> a dcterms:Location, <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>,
+        skos:Concept;
+    skos:inScheme <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/db7b229d-b828-4236-ad10-fea0367b0ac9> ;
+    skos:prefLabel "Provincie"@nl ;
+    mu:uuid "d825013f3d6508499483cf4f22bdb1db".

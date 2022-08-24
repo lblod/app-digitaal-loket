@@ -1,0 +1,76 @@
+PREFIX person: <http://www.w3.org/ns/person#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX code: <http://lblod.data.gift/vocabularies/organisatie/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?oldp ?o .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?newp ?o .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?oldp ?o .
+
+    VALUES (?oldp ?newp) {
+      (org:classification besluit:classificatie)
+      (code:MandatarisStatusCode ext:MandatarisStatusCode)
+      (code:BestuursfunctieCode ext:BestuursfunctieCode)
+      (code:BestuurseenheidClassificatieCode ext:BestuurseenheidClassificatieCode)
+      (code:BestuursorgaanClassificatieCode ext:BestuursorgaanClassificatieCode)
+    }
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/tmp-import-from-op> {
+    ?s persoon:gebruikteVoornaam ?gebruikteVoornaam ;
+      foaf:givenName ?givenName .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/tmp-import-from-op> {
+    ?s persoon:gebruikteVoornaam ?givenName ;
+      foaf:name ?gebruikteVoornaam .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/tmp-import-from-op> {
+    ?s a person:Person ;
+      foaf:givenName ?givenName .
+
+    OPTIONAL { ?s persoon:gebruikteVoornaam ?gebruikteVoornaam . }
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?mandataris mandaat:start ?startDate ;
+      mandaat:einde ?endDate .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?mandataris mandaat:start ?startDateDT ;
+      mandaat:einde ?endDateDT .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?mandataris a mandaat:Mandataris ;
+      mandaat:start ?startDate ;
+      mandaat:einde ?endDate .
+    BIND (if(regex(str(?startDate), '\\d{4}-\\d\\d-\\d\\d'), xsd:dateTime(?startDate), ?startDate) AS ?startDateDT)
+    BIND (if(regex(str(?endDate), '\\d{4}-\\d\\d-\\d\\d'), xsd:dateTime(?endDate), ?endDate) AS ?endDateDT)
+  }
+}

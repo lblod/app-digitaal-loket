@@ -1,0 +1,34 @@
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX schema: <http://schema.org/>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+
+INSERT {
+  GRAPH ?orgGraph {
+    ?contactPoint ?pcontactPoint ?ocontactPoint .
+    ?address ?paddress ?oaddress .
+  }
+}
+WHERE {
+    ?worshipAgentInPosition a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
+      org:holds ?position ;
+      schema:contactPoint ?contactPoint .
+
+    ?contactPoint ?pcontactPoint ?ocontactPoint .
+
+    OPTIONAL {
+      ?contactPoint locn:address ?address .
+      ?address ?paddress ?oaddress .
+    }
+
+    ?orgaanInTime org:hasPost ?position ;
+      <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> ?orgaan .
+    
+    ?orgaan <http://data.vlaanderen.be/ns/besluit#bestuurt> ?eenheid .
+
+    ?eenheid <http://mu.semte.ch/vocabularies/core/uuid> ?uuid .
+
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?uuid, "/LoketLB-eredienstMandaatGebruiker")) AS ?orgGraph)
+}
+

@@ -1,0 +1,153 @@
+ {
+  "version": "0.1",
+  "prefixes": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "cspv": "http://purl.org/vocab/cpsv#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "eli": "http://data.europa.eu/eli/ontology#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "locn": "http://www.w3.org/ns/locn#",
+    "lpdcExt": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#",
+    "m8g": "http://data.europa.eu/m8g/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ps": "http://vocab.belgif.be/ns/publicservice#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xkos": "http://rdf-vocabulary.ddialliance.org/xkos#"
+  },
+  "resources": {
+    "abstract-public-services": {
+      "class": "lpdcExt:AbstractPublicService",
+      "attributes": {
+        "name": {
+          "type": "language-string-set",
+          "predicate": "dct:title"
+        },
+        "description": {
+          "type": "language-string-set",
+          "predicate": "dct:description"
+        },
+        "keyword": {
+          "type": "language-string-set",
+          "predicate": "dcat:keyword"
+        },
+        "regulations": {
+          "type": "language-string-set",
+          "predicate": "lpdcExt:regulation"
+        },
+        "exceptions": {
+          "type": "language-string-set",
+          "predicate": "lpdcExt:exception"
+        },
+        "start-date": {
+          "type": "datetime",
+          "predicate": "schema:startDate"
+        },
+        "end-date": {
+          "type": "datetime",
+          "predicate": "schema:endDate"
+        },
+        "created": {
+          "type": "datetime",
+          "predicate": "dct:created"
+        },
+        "modified": {
+          "type": "datetime",
+          "predicate": "dct:modified"
+        }
+      },
+      "relationships": {
+        "language": {
+          "target": "concepts",
+          "predicate": "dct:language",
+          "cardinality": "many"
+        },
+        "type": {
+          "target": "concepts",
+          "predicate": "dct:type",
+          "cardinality": "one"
+        },
+        "target-audiences": {
+          "target": "concepts",
+          "predicate": "lpdcExt:targetAudience",
+          "cardinality": "many"
+        },
+        "thematic-areas": {
+          "target": "concepts",
+          "predicate": "m8g:thematicArea",
+          "cardinality": "many"
+        },
+        "spatial": {
+          "target": "locations",
+          "predicate": "dct:spatial",
+          "cardinality": "many"
+        },
+        "status": {
+          "target": "concepts",
+          "predicate": "adms:status",
+          "cardinality": "one"
+        },
+        "concept-tags": {
+          "target": "concepts",
+          "predicate": "lpdcExt:conceptTag",
+          "cardinality": "many"
+        },
+        "competent-authority-levels": {
+          "target": "concepts",
+          "predicate": "lpdcExt:competentAuthorityLevel",
+          "cardinality": "many"
+        },
+        "executing-authority-levels": {
+          "target": "concepts",
+          "predicate": "lpdcExt:executingAuthorityLevel",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/conceptual-public-service/"
+    },
+    "conceptual-public-services": {
+      "class": "lpdcExt:ConceptualPublicService",
+      "super": [
+        "abstract-public-services"
+      ],
+      "attributes": {},
+      "relationships": {
+        "instances": {
+          "target": "public-services",
+          "predicate": "dct:source",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/conceptual-public-service/"
+    },
+    "public-services": {
+      "class": "cspv:PublicService",
+      "super": [
+        "abstract-public-services"
+      ],
+      "attributes": {},
+      "relationships": {
+        "concept": {
+          "target": "conceptual-public-services",
+          "predicate": "dct:source",
+          "cardinality": "one"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://data.lblod.info/id/public-service/"
+    }
+  }
+}

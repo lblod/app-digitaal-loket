@@ -147,7 +147,19 @@ defmodule Acl.UserGroups.Config do
                         "http://data.europa.eu/m8g/PeriodOfTime",
                         "http://data.europa.eu/m8g/Criterion",
                         "http://data.europa.eu/m8g/RequirementGroup",
-                        "http://data.europa.eu/m8g/CriterionRequirement"
+                        "http://data.europa.eu/m8g/CriterionRequirement",
+                        "http://data.europa.eu/m8g/Requirement",
+                        "http://xmlns.com/foaf/0.1/Document",
+                        "http://www.w3.org/ns/org#Organization",
+                        "http://lblod.data.gift/vocabularies/organisatie/EredienstBeroepen",
+                        "http://lblod.data.gift/vocabularies/organisatie/BedienaarFinancieringCode",
+                        "http://lblod.data.gift/vocabularies/organisatie/VoorwaardenBedienaarCriterium",
+                        "http://lblod.data.gift/vocabularies/organisatie/BedienaarCriteriumBewijsstuk",
+                        "http://lblod.data.gift/vocabularies/organisatie/TypeVestiging",
+                        "http://lblod.data.gift/vocabularies/organisatie/OrganisatieStatusCode",
+                        "http://lblod.data.gift/vocabularies/organisatie/TypeBetrokkenheid",
+                        "http://lblod.data.gift/vocabularies/organisatie/TypeEredienst",
+                        "http://lblod.data.gift/vocabularies/organisatie/HelftVerkiezing"
                       ]
                     } },
                   %GraphSpec{
@@ -167,6 +179,32 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder" #TODO: not sure why this is here
                       ]
                     } } ] },
+      # // LPDC-IPDC
+      %GroupSpec{
+        name: "o-ipdc-lpdc-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-LPDCGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://xmlns.com/foaf/0.1/Document",
+                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#ConceptualPublicService",
+                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#AbstractPublicService",
+                        "http://purl.org/vocab/cpsv#PublicService",
+                        "http://data.europa.eu/m8g/PublicOrganisation",
+                        "http://data.europa.eu/m8g/Requirement",
+                        "http://data.europa.eu/m8g/Evidence",
+                        "http://purl.org/vocab/cpsv#Rule",
+                        "http://data.europa.eu/m8g/Cost",
+                        "http://data.europa.eu/m8g/Output",
+                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#FinancialAdvantage",
+                        "http://data.europa.eu/eli/ontology#LegalResource",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/dcat#Distribution",
+                        "http://purl.org/dc/terms/Location",
+                        "http://schema.org/Website",
+                        ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
         name: "org",
@@ -196,6 +234,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/org#Membership",
@@ -211,6 +250,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/org#Membership",
@@ -308,6 +348,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
                         "http://schema.org/ContactPoint",
                         "http://www.w3.org/ns/locn#Address",
                         "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris",
@@ -359,6 +400,65 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/employee/EmployeeDataset",
                         "http://lblod.data.gift/vocabularies/employee/EmployeePeriodSlice",
                         "http://lblod.data.gift/vocabularies/employee/EmployeeObservation"
+                      ] } }
+                ] },
+
+      # // WORSHIP MANDATEES
+      %GroupSpec{
+        name: "o-worship-positions-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-eredienstMandaatGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://www.w3.org/ns/person#Person",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
+                        "http://www.w3.org/ns/org#Post",
+                        "http://www.w3.org/ns/org#Site",
+                        "http://data.lblod.info/vocabularies/erediensten/EredienstMandataris",
+                        "http://data.lblod.info/vocabularies/erediensten/EredienstBestuurseenheid",
+                        "http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst",
+                        "http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst",
+                        "http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan",
+                        "http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen",
+                        "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
+                        "http://lblod.data.gift/vocabularies/organisatie/HelftVerkiezing",
+                      ] } }
+                ] },
+
+      # // WORSHIP MINISTERS
+      %GroupSpec{
+        name: "o-worship-positions-rwf",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_role( "LoketLB-eredienstBedienaarGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://www.w3.org/ns/person#Person",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
+                        "http://www.w3.org/ns/org#Post",
+                        "http://www.w3.org/ns/org#Site",
+                        "http://data.lblod.info/vocabularies/erediensten/EredienstBestuurseenheid",
+                        "http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst",
+                        "http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst",
+                        "http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan",
+                        "http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen",
+                        "http://data.lblod.info/vocabularies/erediensten/RolBedienaar",
+                        "http://data.lblod.info/vocabularies/erediensten/VoorwaardenBedienaar",
+                        "http://data.lblod.info/vocabularies/erediensten/PositieBedienaar",
+                        "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
                       ] } }
                 ] },
 
