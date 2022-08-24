@@ -73,7 +73,7 @@ ext:generalPg a form:PropertyGroup;
       sh:order 20 ;
       form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Type"}""" ;
       sh:path dct:type ;
-      form:displayType displayTypes:conceptSchemeSelector ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:generalPg .
 
   ##########################################################
@@ -82,9 +82,14 @@ ext:generalPg a form:PropertyGroup;
   ext:targetF a form:Field ;
       sh:name "Doelgroepen" ;
       sh:order 30 ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Doelgroep"}""" ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Doelgroep",
+                       "multiple": true
+                     }
+                    """ ;
       sh:path lpdcExt:targetAudience ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:displayType displayTypes:conceptSelector ;
       form:help "Meerdere doelgroepen kunnen worden toegewezen";
       sh:group ext:generalPg .
 
@@ -94,9 +99,14 @@ ext:generalPg a form:PropertyGroup;
   ext:themeF a form:Field ;
       sh:name "Thema's" ;
       sh:order 40 ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Thema"}""" ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Thema",
+                       "multiple": true
+                     }
+                    """ ;
       sh:path m8g:thematicArea ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:displayType displayTypes:conceptSelector ;
       form:help "Meerdere thema's kunnen worden toegewezen";
       sh:group ext:generalPg .
 
@@ -106,10 +116,15 @@ ext:generalPg a form:PropertyGroup;
   ext:languageF a form:Field ;
       sh:name "Talen" ;
       sh:order 50 ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Taal"}""" ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/Taal",
+                       "multiple": true
+                     }
+                    """ ;
       sh:path dct:language ;
       form:help "Meerdere talen kunnen worden toegewezen";
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:generalPg .
 
 ##########################################################
@@ -127,8 +142,13 @@ ext:authorityPg a form:PropertyGroup;
       form:help "Meerdere niveaus kunnen worden toegewezen";
       sh:order 00 ;
       sh:path lpdcExt:competentAuthorityLevel ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/BevoegdBestuursniveau"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/BevoegdBestuursniveau",
+                       "multiple": true
+                     }
+                    """ ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:authorityPg .
 
   ##########################################################
@@ -139,8 +159,13 @@ ext:authorityPg a form:PropertyGroup;
       form:help "Meerdere overheden kunnen worden toegewezen";
       sh:order 10 ;
       sh:path m8g:hasCompetentAuthority ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
+                       "multiple": true
+                     }
+                     """ ;
+      form:displayType displayTypes:conceptSelector ;
       form:validations [
           a form:RequiredConstraint ;
           form:grouping form:Bag ;
@@ -157,8 +182,13 @@ ext:authorityPg a form:PropertyGroup;
       form:help "Meerdere niveaus kunnen worden toegewezen";
       sh:order 20 ;
       sh:path lpdcExt:executingAuthorityLevel ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/UitvoerendBestuursniveau"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/UitvoerendBestuursniveau",
+                       "multiple": true
+                     }
+                    """ ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:authorityPg .
 
   ##########################################################
@@ -170,8 +200,13 @@ ext:authorityPg a form:PropertyGroup;
       sh:order 30 ;
       #TODO: this should need an improvement of the forms OR come from the backend (because it seems it will always be the eenheid creating the service)
       sh:path lpdcExt:hasExecutingAuthority ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
+                       "multiple": true
+                     }
+                    """ ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:authorityPg .
 
   ##########################################################
@@ -181,9 +216,14 @@ ext:authorityPg a form:PropertyGroup;
       sh:name "Geografisch toepassingsgebied" ;
       sh:order 40 ;
       sh:path dct:spatial ;
-      form:options  """{"conceptScheme":"http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCLocaties"}""" ;
+      form:options  """
+                     {
+                       "conceptScheme":"http://lblod.data.gift/vocabularies/lpdc-ipdc/IPDCLocaties",
+                       "multiple": true
+                     }
+                    """ ;
       form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:displayType displayTypes:conceptSelector ;
       form:validations [
           a form:RequiredConstraint ;
           form:grouping form:Bag ;
@@ -210,7 +250,7 @@ ext:relatedPg a form:PropertyGroup;
       sh:path dcat:keyword ;
       #TODO: this is not going to be a multi-selectbox
       form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:relatedPg .
 
   ##########################################################
@@ -221,8 +261,13 @@ ext:relatedPg a form:PropertyGroup;
       form:help "Gelieve de meest precies categorieën te kiezen die toepassing zijn.";
       sh:order 30 ;
       sh:path lpdcExt:yourEuropeCategory ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategorie"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategorie",
+                       "multiple": true
+                     }
+                    """ ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:relatedPg .
 
   ##########################################################
@@ -233,6 +278,11 @@ ext:relatedPg a form:PropertyGroup;
       form:help "Meerdere publicatiekanalen kunnen van toepassing zijn.";
       sh:order 40 ;
       sh:path lpdcExt:publicationMedium ;
-      form:options  """{"conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/PublicatieKanaal"}""" ;
-      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/PublicatieKanaal",
+                       "multiple": true
+                     }
+                    """ ;
+      form:displayType displayTypes:conceptSelector ;
       sh:group ext:relatedPg .
