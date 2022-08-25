@@ -43,29 +43,6 @@
   :on-path "organizations"
 )
 
-(define-resource worship-administrative-unit ()
-  :class (s-prefix "org:Post")
-  :has-one `((recognized-worship-type :via ,(s-prefix "ere:typeEredienst")
-                                      :as "recognized-worship-type"))
-  :has-many `((minister-position :via ,(s-prefix "ere:wordtBediendDoor")
-                                 :inverse t
-                                 :as "minister-positions"))
-  :resource-base (s-url "http://data.lblod.info/id/eredienstBestuurseenheden/")
-  :features '(include-uri)
-  :on-path "worship-administrative-units"
-)
-
-(define-resource worship-service ()
-  :class (s-prefix "ere:BestuurVanDeEredienst")
-  :properties `((:denomination :string ,(s-prefix "ere:denominatie"))
-                (:cross-border :boolean ,(s-prefix "ere:grensoverschrijdend")))
-  :has-one `((local-involvement :via ,(s-prefix "org:organization")
-                          :as "local-involvement"))
-  :resource-base (s-url "http://data.lblod.info/id/besturenVanDeEredienst/")
-  :features '(include-uri)
-  :on-path "worship-services"
-)
-
 (define-resource recognized-worship-type ()
   :class (s-prefix "code:TypeEredienst")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
