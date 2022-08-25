@@ -9,13 +9,20 @@
       "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>"
     ],
     "properties": [
+      "lblodSubsidie:amount",
+      "lblodSubsidie:currentEInclusionActions",
+      "lblodSubsidie:actionShortDescription",
+      "lblodSubsidie:actionFullDescription",
+      "lblodSubsidie:targetedAudience",
+      "lblodSubsidie:targetedAudienceOther",
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
           "foaf:firstName",
           "foaf:familyName",
           "schema:telephone",
-          "schema:email"
+          "schema:email",
+          "schema:jobTitle"
         ]
       },
       {

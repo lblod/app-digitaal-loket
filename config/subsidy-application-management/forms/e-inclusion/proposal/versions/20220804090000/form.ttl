@@ -131,7 +131,6 @@ ext:contactPg a form:PropertyGroup;
   ext:functionF a form:Field ;
     sh:order 5 ;
     sh:name "Functie contactpersoon";
-    form:help "Bijvoorbeeld ...";
     sh:path ( schema:contactPoint schema:jobTitle ) ;
     form:validations
     [ a form:RequiredConstraint ;
@@ -245,7 +244,7 @@ ext:requestPg a form:PropertyGroup;
       sh:path lblodSubsidie:currentEInclusionActions ;
       sh:resultMessage "Dit veld is verplicht."@nl
     ];
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/e31c7d36-6e7d-47e0-a749-5011f99d1514"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/e31c7d36-6e7d-47e0-a749-5011f99d1514", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group ext:requestPg .
 
@@ -279,7 +278,7 @@ ext:requestPg a form:PropertyGroup;
   ext:actionFullDescriptionF a form:Field ;
     sh:order 4 ;
     sh:name "Geef een korte beschrijving van de actie. Probeer een antwoord te formuleren op de vragen wat, waar, hoe.";
-    form:help "Laat je inspireren door de voorbeelden op onze website. LINK?" ;
+    form:help """Laat je inspireren door de voorbeelden op onze  <a href="https://www.vlaanderen.be/samenleven/subsidies/subsidie-voor-de-uitrol-van-een-lokaal-e-inclusiebeleid" target="_blank">website</a>.""" ;
     sh:path lblodSubsidie:actionFullDescription ;
     form:validations
     [ a form:RequiredConstraint ;
@@ -310,7 +309,7 @@ ext:requestPg a form:PropertyGroup;
       sh:path lblodSubsidie:targetedAudience ;
       sh:resultMessage "Dit veld is verplicht."@nl
     ];
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b058b75-5953-40cf-b2b5-34e23168b370"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b058b75-5953-40cf-b2b5-34e23168b370", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
     form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
     sh:group ext:requestPg .
 
@@ -361,11 +360,11 @@ ext:additionalActionsPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a lblodSubsidie:additonalAction ;
-        lblodSubsidie:actionType "";
-        lblodSubsidie:actionShortDescription "";
-        lblodSubsidie:actionFullDescription "";
-        lblodSubsidie:targetedAudience "";
-        lblodSubsidie:targetedAudienceOther "";
+        lblodSubsidie:additionalActionType "";
+        lblodSubsidie:additionalActionShortDescription "";
+        lblodSubsidie:additionalActionFullDescription "";
+        lblodSubsidie:additionalActionTargetedAudience "";
+        lblodSubsidie:additionalActionTargetedAudienceOther "";
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -393,8 +392,20 @@ ext:additionalActionsPg a form:PropertyGroup;
     ext:additionalActionTypeF a form:Field ;
         sh:name "Selecteer welke soort actie jullie bestuur bijkomend wenst op te zetten met deze subsidie." ;
         sh:order 1 ;
-        sh:path lblodSubsidie:actionType ;
-        form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/e31c7d36-6e7d-47e0-a749-5011f99d1514"}""" ;
+        sh:path lblodSubsidie:additionalActionType ;
+        form:validations
+        [ a form:ConceptSchemeConstraint ;
+            form:grouping form:Bag ;
+            sh:path lblodSubsidie:additionalActionType ;
+            form:conceptScheme <http://lblod.data.gift/concept-schemes/2c7ca3db-f61b-4903-8497-245073800ceb> ;
+            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+        ],
+        [ a form:RequiredConstraint ;
+            form:grouping form:Bag ;
+            sh:resultMessage "Dit veld is verplicht."@nl;
+            sh:path lblodSubsidie:additionalActionType
+        ] ;
+        form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/2c7ca3db-f61b-4903-8497-245073800ceb", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
         form:displayType displayTypes:conceptSchemeRadioButtons ;
         sh:group ext:additionalActionsPg-sub .
 
@@ -405,12 +416,17 @@ ext:additionalActionsPg a form:PropertyGroup;
     ext:additionalActionShortDescriptionF a form:Field ;
         sh:name "Beschrijf in 1 zin de doelstelling dat het bestuur concreet met deze actie wil bereiken." ;
         sh:order 2 ;
-        sh:path lblodSubsidie:actionShortDescription ;
+        sh:path lblodSubsidie:additionalActionShortDescription ;
         form:validations
+        [ a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path lblodSubsidie:additionalActionShortDescription ;
+          sh:resultMessage "Dit veld is verplicht."@nl
+        ],
         [ a form:MaxLength ;
           form:grouping form:MatchEvery ;
           form:max "150" ;
-          sh:path lblodSubsidie:actionShortDescription ;
+          sh:path lblodSubsidie:additionalActionShortDescription ;
           sh:resultMessage "Max. karakters overschreden."@nl
         ];
         form:displayType displayTypes:textArea ;
@@ -423,12 +439,17 @@ ext:additionalActionsPg a form:PropertyGroup;
         sh:name "Geef een korte beschrijving van de actie. Probeer een antwoord te formuleren op de vragen wat, waar, hoe." ;
         form:help "Laat je inspireren door de voorbeelden op one website.";
         sh:order 3;
-        sh:path lblodSubsidie:actionFullDescription ;
+        sh:path lblodSubsidie:additionalActionFullDescription ;
         form:validations
+        [ a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path lblodSubsidie:additionalActionFullDescription ;
+          sh:resultMessage "Dit veld is verplicht."@nl
+        ],
         [ a form:MaxLength ;
           form:grouping form:MatchEvery ;
           form:max "700" ;
-          sh:path lblodSubsidie:actionFullDescription ;
+          sh:path lblodSubsidie:additionalActionFullDescription ;
           sh:resultMessage "Max. karakters overschreden."@nl
         ];
         form:displayType displayTypes:textArea ;
@@ -440,8 +461,14 @@ ext:additionalActionsPg a form:PropertyGroup;
     ext:additionalActionTargetedAudienceF a form:Field ;
         sh:order 4 ;
         sh:name "Selecteer op welke doelgroep(en) deze actie gericht is. U kan meerdere aanduiden.";
-        sh:path lblodSubsidie:targetedAudience ;
-        form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b058b75-5953-40cf-b2b5-34e23168b370"}""" ;
+        sh:path lblodSubsidie:additionalActionTargetedAudience ;
+        form:validations
+        [ a form:RequiredConstraint ;
+          form:grouping form:Bag ;
+          sh:path lblodSubsidie:additionalActionTargetedAudience ;
+          sh:resultMessage "Dit veld is verplicht."@nl
+        ];
+        form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b058b75-5953-40cf-b2b5-34e23168b370", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
         form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes ;
         sh:group ext:additionalActionsPg-sub .
 
@@ -452,7 +479,7 @@ ext:additionalActionsPg a form:PropertyGroup;
     ext:additionalActionTargetedAudienceOtherF a form:Field ;
         sh:order 5 ;
         sh:name "Vul hier eventuele bijkomende doelgroepen in.";
-        sh:path lblodSubsidie:targetedAudienceOther ;
+        sh:path lblodSubsidie:additionalActionTargetedAudienceOther ;
         form:displayType displayTypes:defaultInput ;
         sh:group ext:additionalActionsPg-sub .
   
