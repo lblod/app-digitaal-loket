@@ -4,7 +4,7 @@
 ;; hence this is a temporary workaround
 ;; ORDER REALLY MATTERS FOR NOW!
 
-;;"RESHUFFLED" from worship-units.lisp
+;;"RESHUFFLED" from whorship-units.lisp
 (define-resource agent-in-position ()
   :class (s-prefix "ch:AgentInPositie")
   :properties `((:agent-start-date :date ,(s-prefix "ch:startdatum"))
