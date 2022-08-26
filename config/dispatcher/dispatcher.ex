@@ -690,6 +690,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
   end
 
+  post "/lpdc-management/*path" do
+    Proxy.forward conn, path, "http://lpdc-management/semantic-forms/"
+  end
+
  #################################################################
   # Public Services - LPDC-IPDC
   #################################################################
@@ -715,18 +719,6 @@ defmodule Dispatcher do
 
   match "/public-services/*path" do
     Proxy.forward conn, path, "http://cache/public-services/"
-  end
-
-  match "/public-organizations/*path" do
-    Proxy.forward conn, path, "http://cache/public-organizations/"
-  end
-
-  match "/lpdc-concept-schemes/*path" do
-    Proxy.forward conn, path, "http://cache/lpdc-concept-schemes/"
-  end
-
-  match "/lpdc-concepts/*path" do
-    Proxy.forward conn, path, "http://cache/lpdc-concepts/"
   end
 
   match _ do

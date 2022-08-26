@@ -95,7 +95,11 @@ services:
     environment:
       VERSIONED_CONFIGURATION_WATCHER: null
     restart: "no"
+  lpdc-ldes-consumer:
+    restart: "no"
   lpdc-management:
+    restart: "no"
+  lpdc-publish:
     restart: "no"
   berichtencentrum-warning:
     environment:
