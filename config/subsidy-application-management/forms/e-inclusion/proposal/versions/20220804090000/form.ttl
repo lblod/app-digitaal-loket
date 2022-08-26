@@ -406,7 +406,7 @@ ext:additionalActionsPg a form:PropertyGroup;
             sh:path lblodSubsidie:additionalActionType
         ] ;
         form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/2c7ca3db-f61b-4903-8497-245073800ceb", "orderBy": "http://purl.org/linked-data/cube#order"}""" ;
-        form:displayType displayTypes:conceptSchemeRadioButtons ;
+        form:displayType displayTypes:conceptSchemeSelector ;
         sh:group ext:additionalActionsPg-sub .
 
 
