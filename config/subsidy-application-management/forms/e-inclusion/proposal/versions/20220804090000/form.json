@@ -34,6 +34,17 @@
             "properties": ["rdf:type"]
           }
         ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:hasAdditionalAction",
+        "properties": [
+          "rdf:type",
+          "lblodSubsidie:additionalActionType",
+          "lblodSubsidie:additionalActionShortDescription",
+          "lblodSubsidie:additionalActionFullDescription",
+          "lblodSubsidie:additionalActionTargetedAudience",
+          "lblodSubsidie:additionalActionTargetedAudienceOther"
+        ]
       }
     ]
   }
