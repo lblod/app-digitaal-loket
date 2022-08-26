@@ -32,7 +32,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:competentAuthorityF;
     form:includes ext:executingAuthorityLevelF;
     form:includes ext:executingAuthorityF;
-    form:includes ext:tagsF;
+    # form:includes ext:tagsF; TODO wait for proper tag selector
     form:includes ext:startDateF;
     form:includes ext:yourEuropeCatF;
     form:includes ext:pubChannelF;
