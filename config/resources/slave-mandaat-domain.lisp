@@ -110,6 +110,8 @@
                        :as "geboorte")
              (identificator :via ,(s-prefix "adms:identifier")
                             :as "identificator")
+             (nationality :via ,(s-prefix "persoon:heeftNationaliteit")
+                            :as "nationality")
              (geslacht-code :via ,(s-prefix "persoon:geslacht")
                             :as "geslacht"))
   :resource-base (s-url "http://data.lblod.info/id/personen/")
