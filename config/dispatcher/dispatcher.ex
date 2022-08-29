@@ -79,6 +79,11 @@ defmodule Dispatcher do
   match "/geslacht-codes/*path" do
     Proxy.forward conn, path, "http://cache/geslacht-codes/"
   end
+
+  match "/nationalities/*path" do
+    Proxy.forward conn, path, "http://cache/nationalities/"
+  end
+
   match "/identificatoren/*path" do
     Proxy.forward conn, path, "http://cache/identificatoren/"
   end

@@ -124,6 +124,14 @@
   :features '(include-uri)
   :on-path "geslacht-codes")
 
+(define-resource nationality ()
+  :class (s-prefix "euvoc:Country")
+  :properties `((:country-label :string ,(s-prefix "skos:prefLabel"))
+                (:nationality-label :string ,(s-prefix "rdfs:label")))
+  :resource-base (s-url "http://lblod.data.gift/concepts/")
+  :features '(include-uri)
+  :on-path "nationalities")
+
 (define-resource identificator ()
   :class (s-prefix "adms:Identifier")
   :properties `((:identificator :string ,(s-prefix "skos:notation"))) ;; TODO: should have a specific type

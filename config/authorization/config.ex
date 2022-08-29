@@ -110,6 +110,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode",
                         "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
                         "http://mu.semte.ch/vocabularies/ext/GeslachtCode",
+                        "http://publications.europa.eu/ontology/euvoc#Country",
                         "http://data.europa.eu/eli/ontology#LegalResource",
                         "http://data.vlaanderen.be/ns/mandaat#RechtsgrondAanstelling",
                         "http://data.vlaanderen.be/ns/mandaat#RechtsgrondBeeindiging",
