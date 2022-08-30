@@ -110,6 +110,8 @@
                        :as "geboorte")
              (identificator :via ,(s-prefix "adms:identifier")
                             :as "identificator")
+             (nationality :via ,(s-prefix "persoon:heeftNationaliteit")
+                            :as "nationality")
              (geslacht-code :via ,(s-prefix "persoon:geslacht")
                             :as "geslacht"))
   :resource-base (s-url "http://data.lblod.info/id/personen/")
@@ -123,6 +125,14 @@
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/GeslachtCode/")
   :features '(include-uri)
   :on-path "geslacht-codes")
+
+(define-resource nationality ()
+  :class (s-prefix "euvoc:Country")
+  :properties `((:country-label :string ,(s-prefix "skos:prefLabel"))
+                (:nationality-label :string ,(s-prefix "rdfs:label")))
+  :resource-base (s-url "http://lblod.data.gift/concepts/")
+  :features '(include-uri)
+  :on-path "nationalities")
 
 (define-resource identificator ()
   :class (s-prefix "adms:Identifier")
