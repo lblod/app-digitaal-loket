@@ -21,6 +21,7 @@
 ;; To track these resource, look for the files with comment "RESHUFFLED".
 
 (read-domain-file "agent-in-position.lisp")
+(read-domain-file "organisation.lisp")
 (read-domain-file "post.lisp")
 (read-domain-file "master-users-domain.lisp")
 (read-domain-file "master-validations-domain.lisp")
