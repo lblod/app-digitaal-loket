@@ -17,7 +17,10 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX cpsv: <http://purl.org/vocab/cpsv#>
-        SELECT  ?title ?uriPublicService ?modified ?status WHERE {
+      SELECT ?uriBestuurseenheid ?naam ?uriPublicService ?title ?modified ?status WHERE {
+            ?uriBestuurseenheid a besluit:Bestuurseenheid;
+                  skos:prefLabel ?naam.
+
             ?uriPublicService a cpsv:PublicService;
                   adms:status ?status;
                   dct:modified ?modified;
