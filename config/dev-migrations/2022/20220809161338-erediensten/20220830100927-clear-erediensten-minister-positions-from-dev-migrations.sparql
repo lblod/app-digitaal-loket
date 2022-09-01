@@ -68,24 +68,6 @@ WHERE {
 
 DELETE {
   GRAPH ?g {
-    ?person ?pperson ?operson .
-  }
-}
-WHERE {
-  GRAPH ?g {
-    ?worshipAgentInPosition a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> .
-
-    OPTIONAL {
-      ?worshipAgentInPosition org:heldBy ?person .
-      ?person ?pperson ?operson .
-    }
-  }
-}
-
-;
-
-DELETE {
-  GRAPH ?g {
     ?worshipAgentInPosition ?pworshipAgentInPosition ?oworshipAgentInPosition .
   }
 }
