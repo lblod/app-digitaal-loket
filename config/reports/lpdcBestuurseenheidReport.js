@@ -8,6 +8,7 @@ export default {
     const reportData = {
       title: 'LPDC bestuursenheid report',
       description: 'LPDC bestuursenheid report',
+      filePrefix: 'lpdcBestuursenheid'
     };
     console.log('Generating LPDC Bestuursenheid Report');
     const queryString  = `
@@ -16,6 +17,12 @@ export default {
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+        SELECT  ?title ?uriPublicService ?modified ?status WHERE {
+            ?uriPublicService a cpsv:PublicService;
+                  adms:status ?status;
+                  dct:modified ?modified;
+                  dct:title ?title.
+        }
     `;
     const queryResponse = await query(queryString);
     const bindings = queryResponse.results.bindings;
