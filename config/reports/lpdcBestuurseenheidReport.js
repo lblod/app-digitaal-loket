@@ -2,7 +2,7 @@ import {generateReportFromData} from '../helpers.js'
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
-  cronPattern: '',
+  cronPattern: '*/15 * * * *',
   name: 'lpdcBestuursenheid',
   execute: async () =>{
     const reportData = {
