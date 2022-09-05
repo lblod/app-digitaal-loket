@@ -39,7 +39,7 @@ services:
     restart: always
     logging: *default-logging
   dispatcher:
-    image: semtech/mu-dispatcher:1.1.2
+    image: semtech/mu-dispatcher:2.1.0-beta.2
     volumes:
       - ./config/dispatcher:/config
     labels:
