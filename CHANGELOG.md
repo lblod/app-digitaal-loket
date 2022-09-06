@@ -1,4 +1,19 @@
 # Changelog
+## 1.68.0 (2022-09-05)
+### subsidies
+- climate subsidies
+- e-inclusion subsidies
+### lpdc
+- API + data + backend services
+### erediensten
+- API + data
+### frontend
+- erediensten mandatees (hidden feature flag)
+- lpdc (hidden feature flag)
+- various maintenance updates
+### various
+- upgrade identifier
+- bump publication graph maintainers
 ## 1.67.0 (2022-08-05)
 - update sync with kalliope: make sure timezone data is taken into account
 - subsidy climate 1.0: adaptations

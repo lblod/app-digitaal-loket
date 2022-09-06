@@ -9,6 +9,7 @@ module.exports = {
     if (population && drawingRight) {
       store.add($rdf.sym(form.uri), DBPEDIA('populationTotal'), population, graphs.additions);
       store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('drawingRight'), drawingRight, graphs.additions);
+      store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('lekp'), '1.0', graphs.additions);
     }
   }
 };
