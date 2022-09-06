@@ -3,14 +3,15 @@ import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
   cronPattern: '*/15 * * * *',
-  name: 'lpdcBestuursenheid',
+  name: 'lpdcBestuurseenheidReport',
   execute: async () =>{
     const reportData = {
-      title: 'LPDC bestuursenheid report',
-      description: 'LPDC bestuursenheid report',
-      filePrefix: 'lpdcBestuursenheid'
+      title: 'LPDC bestuurseenheid report',
+      description: 'LPDC bestuurseenheid report',
+      filePrefix: 'lpdcBestuurseenheid'
     };
-    console.log('Generating LPDC Bestuursenheid Report');
+    // We want periodic report, of bestuurseenheid (naam, type, uri), public service instance (title, uri, modified, status)
+    console.log('Generating LPDC Bestuurseenheid Report');
     const queryString  = `
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>  
       PREFIX lpdcExt: <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#>
@@ -31,6 +32,6 @@ export default {
     `;
     const queryResponse = await query(queryString);
     const bindings = queryResponse.results.bindings;
-    await generateReportFromData(data, ['lpdcBestuursenheid'], reportData);
+    await generateReportFromData(data, ['lpdcBestuursenheidReport'], reportData);
   }
 }
