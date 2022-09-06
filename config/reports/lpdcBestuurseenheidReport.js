@@ -13,12 +13,12 @@ export default {
     // We want periodic report, of bestuurseenheid (naam, type, uri), public service instance (title, uri, modified, status)
     console.log('Generating LPDC Bestuurseenheid Report');
     const queryString  = `
-      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>  
+      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX lpdcExt: <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#>
       PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
       PREFIX cpsv: <http://purl.org/vocab/cpsv#>
-      SELECT DISTINCT ?uriBestuurseenheid ?naam ?typeUri ?type ?uriPublicService ?title ?modified ?status WHERE {
+      SELECT DISTINCT ?uriBestuurseenheid ?naam ?typeUri ?type ?uriPublicService ?title ?modified ?status ?statusLabel WHERE {
             ?uriBestuurseenheid a besluit:Bestuurseenheid;
                   skos:prefLabel ?naam;
                   besluit:classificatie ?typeUri.
@@ -28,6 +28,7 @@ export default {
                   adms:status ?status;
                   dct:modified ?modified;
                   dct:title ?title.
+            ?status skos:prefLabel ?statusLabel.
         }
     `;
     const queryResponse = await query(queryString);
