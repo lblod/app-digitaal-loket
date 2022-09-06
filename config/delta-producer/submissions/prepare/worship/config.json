@@ -1,0 +1,34 @@
+{
+  "decisionTypes": [
+    "https://data.vlaanderen.be/id/concept/BesluitDocumentType/8e791b27-7600-4577-b24e-c7c29e0eb773",
+    "https://data.vlaanderen.be/id/concept/BesluitType/b25faa84-3ab5-47ae-98c0-1b389c77b827",
+    "https://data.vlaanderen.be/id/concept/BesluitType/e44c535d-4339-4d15-bdbf-d4be6046de2c",
+    "https://data.vlaanderen.be/id/concept/BesluitDocumentType/672bf096-dccd-40af-ab60-bd7de15cc461",
+    "https://data.vlaanderen.be/id/concept/BesluitType/79414af4-4f57-4ca3-aaa4-f8f1e015e71c",
+    "https://data.vlaanderen.be/id/concept/BesluitType/54b61cbd-349f-41c4-9c8a-7e8e67d08347",
+    "https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873",
+    "https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349",
+    "https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46",
+    "https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f",
+    "https://data.vlaanderen.be/id/concept/BesluitDocumentType/2c9ada23-1229-4c7e-a53e-acddc9014e4e",
+    "https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b" 
+  ],
+  "besluitenlijstOptions": [
+    {
+      "orgaan": "https://data.vlaanderen.be/doc/concept/BestuursorgaanClassificatieCode/0d985699479162198b889f10e4f1a8ce",
+      "eenheid": "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86"
+    },
+    {
+      "orgaan": "https://data.vlaanderen.be/doc/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183",
+      "eenheid": "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86"
+    },
+    {
+      "orgaan": "https://data.vlaanderen.be/doc/concept/BestuursorgaanClassificatieCode/0d985699479162198b889f10e4f1a8ce",
+      "eenheid": "https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054"
+    },
+    {
+      "orgaan": "https://data.vlaanderen.be/doc/concept/BestuursorgaanClassificatieCode/af811edba97c6ec34874d0830cbb1183",
+      "eenheid": "https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054"
+    }
+  ]
+}
