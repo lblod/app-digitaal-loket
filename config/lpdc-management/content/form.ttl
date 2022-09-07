@@ -1019,7 +1019,7 @@ ext:contactpointsPg a form:PropertyGroup;
         a schema:ContactPoint ;
         schema:email " ";
         schema:telephone " ";
-        foaf:page " ";
+        schema:url " ";
         schema:openingHours " "
       ];
     ];
@@ -1086,9 +1086,9 @@ ext:contactpointsPg a form:PropertyGroup;
           a form:UriConstraint ;
           form:grouping form:MatchEvery ;
           sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-          sh:path foaf:page
+          sh:path schema:url
         ];
-        sh:path foaf:page ;
+        sh:path schema:url ;
         form:displayType displayTypes:defaultInput ;
         sh:group ext:contactpointsPg-sub .
 
