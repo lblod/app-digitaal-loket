@@ -630,6 +630,55 @@ services:
 # DELTA SUBMISSIONS: END
 ################################################################################
 ################################################################################
+# DELTA WORSHIP-SUBMISSIONS: START
+################################################################################
+  delta-producer-background-jobs-initiator-worship-submissions:
+    image: lblod/delta-producer-background-jobs-initiator:0.3.1
+    environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions'
+      CRON_PATTERN_DUMP_JOB: '0 0 1 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 23 * * 6' #weekly on saturday
+      START_INITIAL_SYNC: 'true' # prefer to disable it now. We want to have feeling with how the DB acts.
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-publication-graph-maintainer-worship-submissions:
+    image: lblod/delta-producer-publication-graph-maintainer:0.14.0
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/worship-submissions"
+      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions'
+      QUEUE_POLL_INTERVAL: 3000
+      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
+      SKIP_MU_AUTH_INITIAL_SYNC: 'true'
+      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
+      UPDATE_PUBLICATION_GRAPH_SLEEP: 200
+      SERVE_DELTA_FILES: "true"
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions"
+    volumes:
+      - ./config/delta-producer/worship-submissions:/config
+      - ./data/files/:/share
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA WORSHIP-SUBMISSIONS: END
+################################################################################
+################################################################################
 # DELTA PERSONS-SENSITIVE: START
 ################################################################################
   delta-producer-background-jobs-initiator-persons-sensitive:
