@@ -32,7 +32,7 @@ export default {
         }
     `;
     const queryResponse = await query(queryString);
-    const bindings = queryResponse.results.bindings;
+    const data = queryResponse.results.bindings;
     await generateReportFromData(data, ['lpdcBestuursenheidReport'], reportData);
   }
 }
