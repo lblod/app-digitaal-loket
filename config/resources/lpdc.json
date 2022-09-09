@@ -142,6 +142,11 @@
           "target": "conceptual-public-services",
           "predicate": "dct:source",
           "cardinality": "one"
+        },
+        "createdBy": {
+          "target": "bestuurseenheid",
+          "predicate": "pav:createdBy",
+          "cardinality": "one"
         }
       },
       "features": [
