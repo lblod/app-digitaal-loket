@@ -1,4 +1,4 @@
-import {generateReportFromData} from '../helpers.js'
+import {generateReportFromData} from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
@@ -41,6 +41,19 @@ export default {
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings;
-    await generateReportFromData(data, ['lpdcBestuursenheidReport'], reportData);
+
+    const postProcessedData = data.map(r => ({
+      uriBestuurseenheid: r.uriBestuurseenheid.value,
+      naam: r.naam.value,
+      typeUri: r.typeUri.value,
+      type: r.type.value,
+      uriPublicService: r.uriPublicService.value,
+      title: r.title.value,
+      modified: r.modified.value,
+      status: r.status.value,
+      statusLabel: r.statusLabel.value
+    }));
+    const csvHeaders = Object.keys(postProcessedData[0]);
+    await generateReportFromData(postProcessedData, csvHeaders, reportData);
   }
-}
+};
