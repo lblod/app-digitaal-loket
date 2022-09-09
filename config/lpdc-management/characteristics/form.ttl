@@ -161,11 +161,10 @@ ext:authorityPg a form:PropertyGroup;
       sh:path m8g:hasCompetentAuthority ;
       form:options  """
                      {
-                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
-                       "multiple": true
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties/tailored"
                      }
-                     """ ;
-      form:displayType displayTypes:conceptSelector ;
+                    """ ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       form:validations [
           a form:RequiredConstraint ;
           form:grouping form:Bag ;
@@ -198,15 +197,13 @@ ext:authorityPg a form:PropertyGroup;
       sh:name "Uitvoerend overheid" ;
       form:help "Meerdere overheden kunnen worden toegewezen";
       sh:order 30 ;
-      #TODO: this should need an improvement of the forms OR come from the backend (because it seems it will always be the eenheid creating the service)
       sh:path lpdcExt:hasExecutingAuthority ;
       form:options  """
                      {
-                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
-                       "multiple": true
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties/tailored"
                      }
                     """ ;
-      form:displayType displayTypes:conceptSelector ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:authorityPg .
 
   ##########################################################
