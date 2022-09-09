@@ -6,8 +6,8 @@ export default {
   name: 'lpdcBestuurseenheidReport',
   execute: async () =>{
     const reportData = {
-      title: 'LPDC bestuurseenheid report',
-      description: 'LPDC bestuurseenheid report',
+      title: 'Overview LPDC services created so far',
+      description: 'Overview LPDC services created so far',
       filePrefix: 'lpdcBestuurseenheid'
     };
     // We want periodic report, of bestuurseenheid (naam, type, uri), public service instance (title, uri, modified, status)
