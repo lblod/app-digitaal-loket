@@ -21,16 +21,17 @@ export default {
       PREFIX adms: <http://www.w3.org/ns/adms#>
       PREFIX dct: <http://purl.org/dc/terms/>
       SELECT DISTINCT ?uriBestuurseenheid ?naam ?typeUri ?type ?uriPublicService ?title ?modified ?status ?statusLabel WHERE {
-            ?uriBestuurseenheid a besluit:Bestuurseenheid;
-                  skos:prefLabel ?naam;
-                  besluit:classificatie ?typeUri.
-            ?typeUri skos:prefLabel ?type.
 
             ?uriPublicService a cpsv:PublicService;
                   adms:status ?status;
                   dct:modified ?modified;
                   dct:title ?title.
             ?status skos:prefLabel ?statusLabel.
+
+            ?uriBestuurseenheid a besluit:Bestuurseenheid;
+                  skos:prefLabel ?naam;
+                  besluit:classificatie ?typeUri.
+            ?typeUri skos:prefLabel ?type.
         }
     `;
     const queryResponse = await query(queryString);
