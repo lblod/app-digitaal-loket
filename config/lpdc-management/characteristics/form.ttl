@@ -32,7 +32,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:competentAuthorityF;
     form:includes ext:executingAuthorityLevelF;
     form:includes ext:executingAuthorityF;
-    # form:includes ext:tagsF; TODO wait for proper tag selector
+    form:includes ext:tagsF;
     form:includes ext:startDateF;
     form:includes ext:yourEuropeCatF;
     form:includes ext:pubChannelF;
@@ -245,12 +245,12 @@ ext:relatedPg a form:PropertyGroup;
   ##########################################################
   ext:tagsF a form:Field ;
       sh:name "Tags" ;
-      form:help "Selecteer hier uit reeds bestaande tags, of voeg er nieuwe toe";
+      # TODO: searching for tags still needs to be implemented so we hide the help text for now
+      # form:help "Selecteer hier uit reeds bestaande tags, of voeg er nieuwe toe";
       sh:order 20 ;
       sh:path dcat:keyword ;
-      #TODO: this is not going to be a multi-selectbox
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
-      form:displayType displayTypes:conceptSelector ;
+      form:language "nl";
+      form:displayType displayTypes:tagSelector ;
       sh:group ext:relatedPg .
 
   ##########################################################
