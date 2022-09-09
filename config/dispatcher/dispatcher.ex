@@ -590,10 +590,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/worship-mandatees/"
   end
 
-  match "/half-elections/*path" do
-    forward conn, path, "http://cache/half-elections/"
-  end
-
   match "/roles/*path" do
     forward conn, path, "http://cache/roles/"
   end

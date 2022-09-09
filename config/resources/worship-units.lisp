@@ -1,11 +1,3 @@
-(define-resource half-election ()
-  :class (s-prefix "code:HelftVerkiezing")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://lblod.data.gift/concepts/")
-  :features '(include-uri)
-  :on-path "half-elections"
-)
-
 (define-resource role ()
   :class (s-prefix "org:Role")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
