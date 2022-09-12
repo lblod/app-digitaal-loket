@@ -143,7 +143,7 @@
           "predicate": "dct:source",
           "cardinality": "one"
         },
-        "createdBy": {
+        "created-by": {
           "target": "bestuurseenheid",
           "predicate": "pav:createdBy",
           "cardinality": "one"
