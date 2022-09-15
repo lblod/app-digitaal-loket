@@ -1,4 +1,6 @@
 # Changelog
+## 1.68.2 (2022-09-15)
+- fix bestuursperiodeselector
 ## 1.68.1 (2022-09-13)
 - bump download url service (to fix issues basic-auth issues for automatic-submission)
 ## 1.68.0 (2022-09-05)
