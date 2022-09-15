@@ -62,22 +62,22 @@
       },
       "relationships": {
         "language": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "dct:language",
           "cardinality": "many"
         },
         "type": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "dct:type",
           "cardinality": "one"
         },
         "target-audiences": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "lpdcExt:targetAudience",
           "cardinality": "many"
         },
         "thematic-areas": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "m8g:thematicArea",
           "cardinality": "many"
         },
@@ -87,22 +87,22 @@
           "cardinality": "many"
         },
         "status": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "adms:status",
           "cardinality": "one"
         },
         "concept-tags": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "lpdcExt:conceptTag",
           "cardinality": "many"
         },
         "competent-authority-levels": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "lpdcExt:competentAuthorityLevel",
           "cardinality": "many"
         },
         "executing-authority-levels": {
-          "target": "concepts",
+          "target": "concept",
           "predicate": "lpdcExt:executingAuthorityLevel",
           "cardinality": "many"
         }
@@ -141,6 +141,11 @@
         "concept": {
           "target": "conceptual-public-services",
           "predicate": "dct:source",
+          "cardinality": "one"
+        },
+        "createdBy": {
+          "target": "bestuurseenheid",
+          "predicate": "pav:createdBy",
           "cardinality": "one"
         }
       },

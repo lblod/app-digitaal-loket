@@ -4,7 +4,7 @@
 ;; hence this is a temporary workaround
 ;; ORDER REALLY MATTERS FOR NOW!
 
-;;"RESHUFFLED" from whorship-units.lisp
+;;"RESHUFFLED" from worship-units.lisp
 (define-resource agent-in-position ()
   :class (s-prefix "ch:AgentInPositie")
   :properties `((:agent-start-date :date ,(s-prefix "ch:startdatum"))
@@ -64,8 +64,6 @@
   :class (s-prefix "ere:EredienstMandataris")
   :properties `((:expected-end-date :date ,(s-prefix "ere:geplandeEinddatumAanstelling"))
                 (:reason-stopped :string ,(s-prefix "ere:redenVanStopzetting")))
-  :has-one `((half-election :via ,(s-prefix "ere:typeHelft")
-                            :as "type-half"))
   :resource-base (s-url "http://data.lblod.info/id/mandatarissen/")
   :features '(include-uri)
   :on-path "worship-mandatees"

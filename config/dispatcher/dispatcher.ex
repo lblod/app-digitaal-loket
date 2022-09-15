@@ -69,6 +69,11 @@ defmodule Dispatcher do
   match "/geslacht-codes/*path" do
     forward conn, path, "http://cache/geslacht-codes/"
   end
+
+  match "/nationalities/*path" do
+    Proxy.forward conn, path, "http://cache/nationalities/"
+  end
+
   match "/identificatoren/*path" do
     forward conn, path, "http://cache/identificatoren/"
   end
@@ -583,10 +588,6 @@ defmodule Dispatcher do
 
   match "/worship-mandatees/*path" do
     forward conn, path, "http://cache/worship-mandatees/"
-  end
-
-  match "/half-elections/*path" do
-    forward conn, path, "http://cache/half-elections/"
   end
 
   match "/roles/*path" do
