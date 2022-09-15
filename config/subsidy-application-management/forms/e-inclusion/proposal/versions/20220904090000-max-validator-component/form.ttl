@@ -213,6 +213,11 @@ ext:requestPg a form:PropertyGroup;
     sh:name "Gevraagde subsidiebedrag";
     sh:path lblodSubsidie:amount ;
     form:displayType displayTypes:eInclusionMaxValidator ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Gelieve een correct bedrag in te voeren." ;
+      sh:path ( lblodSubsidie:validatedAmount ) ] ;
     sh:group ext:requestPg .
 
 
