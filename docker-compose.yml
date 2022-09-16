@@ -368,7 +368,7 @@ services:
     image: redpencil/ldes-consumer:0.2.3
     environment:
       LDES_STREAM: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot"
-      LDES_ENDPOINT_VIEW: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot" # first page of the stream
+      LDES_ENDPOINT_VIEW: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot?pageNumber=0" # first page of the stream
       LDES_RELATION_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
       LDES_POLLING_INTERVAL: 5000
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/lpdc/ldes-data"
