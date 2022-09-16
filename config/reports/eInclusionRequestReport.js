@@ -29,12 +29,12 @@ export default {
     PREFIX ukraine: <http://lblod.data.gift/vocabularies/subsidie/ukraine/>
     SELECT DISTINCT ?subsidie ?modified ?status ?bestuurseenheid ?contactFirstName ?contactLastName
                     ?contactTelephone ?contactEmail ?rekeningnummer ?jobTitle ?amount 
-                    group_concat(distinct ?action;separator=" & ") as ?actions 
+                    (group_concat(distinct ?action;separator=" & ") as ?actions) 
                     ?goal ?description 
-                    group_concat(distinct ?targetedAudience;separator=" & ") as ?targetedAudiences
+                    (group_concat(distinct ?targetedAudience;separator=" & ") as ?targetedAudiences)
                     ?otherAudience 
                     ?additionalType ?additionalGoal ?additionalDescription
-                    group_concat(distinct ?additionalTargetedAudience;separator=" & ") as ?additionalTargetedAudiences
+                    (group_concat(distinct ?additionalTargetedAudience;separator=" & ") as ?additionalTargetedAudiences)
                     ?additionalOtherAudience {
                         
         ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
