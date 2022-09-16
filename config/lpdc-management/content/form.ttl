@@ -19,6 +19,8 @@
 @prefix schema: <http://schema.org/>.
 @prefix ps: <http://vocab.belgif.be/ns/publicservice#> .
 @prefix extEng: <http://mu.semte.ch/vocabularies/ext/form-fields/english/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix adres: <https://data.vlaanderen.be/ns/adres#> .
 
 ##########################################################
 # form
@@ -1040,7 +1042,8 @@ ext:contactpointsPg a form:PropertyGroup;
      form:includes ext:contactPEmailF;
      form:includes ext:contactPTelephoneF;
      form:includes ext:contactPageF;
-     form:includes ext:contactPOpeningF.
+     form:includes ext:contactPOpeningF;
+     form:includes ext:contactPointAddressL.
 
     ##########################################################
     # Field: ContactPunt email
@@ -1101,6 +1104,114 @@ ext:contactpointsPg a form:PropertyGroup;
         sh:path schema:openingHours ;
         form:displayType displayTypes:defaultInput ;
         sh:group ext:contactpointsPg-sub .
+
+        ##########################################################
+        #  property-group: contactPointAddress
+        ##########################################################
+        ext:contactPointAddressPg a form:PropertyGroup;
+            sh:name "Adres" ;
+            sh:order 1 .
+        
+        ##########################################################
+        #  listing-scope: contactPointAddress
+        ##########################################################
+        ext:contactPointAddressS a form:Scope;
+          sh:path lpdcExt:address.
+        
+        ##########################################################
+        #  Listing: contactPointAddress
+        ##########################################################
+        ext:contactPointAddressL a form:Listing;
+          form:each ext:contactPointAddressSf;
+          form:scope ext:contactPointAddressS;
+          form:createGenerator ext:contactPointAddressG;
+          sh:group ext:contactPointAddressPg;
+          form:addLabel "Voeg adres toe";
+          form:canAdd true;
+          form:canRemove true;
+          sh:maxCount 1;
+          sh:order 1 .
+                 
+        ##########################################################
+        #  Generator: contactPointAddress
+        ##########################################################
+        ext:contactPointAddressG a form:Generator;
+          form:prototype [
+            form:shape [
+              a locn:Address ;
+              adres:volledigAdres " "@nl;
+              adres:postcode " ";
+              adres:gemeentenaam " "@nl
+            ];
+          ];
+          form:dataGenerator form:addMuUuid.
+        
+        ##########################################################
+        #  property-group: contactPointAddress-sub
+        ##########################################################
+        ext:contactPointAddressPg-sub a form:PropertyGroup;
+            sh:order 1 .
+        
+        ##########################################################
+        #  Subform: contactPointAddress
+        ##########################################################
+        ext:contactPointAddressSf a form:SubForm;
+          form:removeLabel "Verwijder adres";
+          form:includes ext:contactPointAddressFullAddressF;
+          form:includes ext:contactPointAddressPostcodeF;
+          form:includes ext:contactPointAddressMunicipalityF.
+
+          ##########################################################
+          # Field: full address
+          ##########################################################
+          ext:contactPointAddressFullAddressF a form:Field ;
+            sh:name "Adres" ;
+            sh:order 1 ;
+            form:language "nl";
+            form:validations [
+              a form:RequiredConstraint ;
+              form:language "nl";
+              form:grouping form:Bag ;
+              sh:resultMessage "Dit veld is verplicht." ;
+              sh:path adres:volledigAdres
+            ];
+            sh:path adres:volledigAdres ;
+            form:displayType displayTypes:defaultInput ;
+            sh:group ext:contactPointAddressPg-sub .
+          
+          ##########################################################
+          # Field: postcode
+          ##########################################################
+          ext:contactPointAddressPostcodeF a form:Field ;
+            sh:name "Postcode" ;
+            sh:order 2 ;
+            form:validations [
+              a form:RequiredConstraint ;
+              form:grouping form:Bag ;
+              sh:resultMessage "Dit veld is verplicht." ;
+              sh:path adres:gemeentenaam
+            ];
+            sh:path adres:gemeentenaam ;
+            form:displayType displayTypes:defaultInput ;
+            sh:group ext:contactPointAddressPg-sub .
+
+          ##########################################################
+          # Field: municipality
+          ##########################################################
+          ext:contactPointAddressMunicipalityF a form:Field ;
+            sh:name "Gemeente" ;
+            sh:order 3 ;
+            form:language "nl";
+            form:validations [
+              a form:RequiredConstraint ;
+              form:language "nl";
+              form:grouping form:Bag ;
+              sh:resultMessage "Dit veld is verplicht." ;
+              sh:path adres:gemeentenaam
+            ];
+            sh:path adres:gemeentenaam ;
+            form:displayType displayTypes:defaultInput ;
+            sh:group ext:contactPointAddressPg-sub .
 
 ##########################################################
 #  property-group: meer info
