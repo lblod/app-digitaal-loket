@@ -55,7 +55,7 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: cecemel/mu-authorization:0.6.0-beta.8
+    image: semtech/mu-authorization:feature-service-roam-r1
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
@@ -365,10 +365,10 @@ services:
     restart: always
     logging: *default-logging
   lpdc-ldes-consumer:
-    image: redpencil/ldes-consumer:0.2.2
+    image: redpencil/ldes-consumer:0.2.3
     environment:
-      LDES_STREAM: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes"
-      LDES_ENDPOINT_VIEW: "https://ipdc.ipdc.tni-vlaanderen.be/api/conceptsnapshots/ldes/0" # first page of the stream
+      LDES_STREAM: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot"
+      LDES_ENDPOINT_VIEW: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot?pageNumber=0" # first page of the stream
       LDES_RELATION_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
       LDES_POLLING_INTERVAL: 5000
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/lpdc/ldes-data"
@@ -377,7 +377,7 @@ services:
     restart: always
     logging: *default-logging
   lpdc-management:
-    image: lblod/lpdc-management-service:0.8.0
+    image: lblod/lpdc-management-service:0.9.0
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data

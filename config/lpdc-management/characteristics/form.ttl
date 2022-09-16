@@ -219,7 +219,7 @@ ext:authorityPg a form:PropertyGroup;
                        "multiple": true
                      }
                     """ ;
-      form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
+      form:help "Gelieve de meeste specifieke gebied(en) op te geven. Meerdere toepassingsgebieden kunnen worden toegewezen";
       form:displayType displayTypes:conceptSelector ;
       form:validations [
           a form:RequiredConstraint ;
