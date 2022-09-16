@@ -656,7 +656,7 @@ services:
       PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
       PUBLISHER_URI: 'http://data.lblod.info/services/delta-producer-publication-graph-maintainer-persons-sensitive'
-      FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/persons-sensitive/meta"
+      FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas"
       ACCOUNT: "http://data.lblod.info/foaf/account/id/12020cc2-dbc6-4273-ab18-177571fd8b06"
     volumes:
       - ./config/delta-producer/persons-sensitive:/config
