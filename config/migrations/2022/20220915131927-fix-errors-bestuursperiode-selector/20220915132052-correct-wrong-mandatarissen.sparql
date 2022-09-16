@@ -21,8 +21,7 @@ WHERE {
     SELECT DISTINCT ?m ?mandaat ?orgaan ?b ?role {
       ?m a mandaat:Mandataris;
         mandaat:start ?mStart;
-        org:holds ?mandaat;
-        mandaat:isBestuurlijkeAliasVan ?p.
+        org:holds ?mandaat.
 
       FILTER NOT EXISTS {
          GRAPH <http://debug/mandatarissen/05-09-2022/wrong> {
@@ -30,15 +29,9 @@ WHERE {
          }
        }
 
-      ?p a person:Person;
-        foaf:familyName ?pFName;
-        persoon:gebruikteVoornaam ?pName.
-
       GRAPH <http://mu.semte.ch/graphs/public> {
         ?mandaat a mandaat:Mandaat;
           org:role ?role.
-
-        ?role skos:prefLabel ?mName.
 
         ?b a besluit:Bestuursorgaan;
           org:hasPost ?mandaat;
@@ -46,12 +39,6 @@ WHERE {
           mandaat:bindingStart ?bStart.
         ?b mandaat:bindingEinde ?bEnd.
 
-        ?orgaan a besluit:Bestuursorgaan;
-          skos:prefLabel ?bName;
-          besluit:bestuurt ?eenheid.
-
-        ?eenheid a besluit:Bestuurseenheid;
-          skos:prefLabel ?eenheidNaam.
       }
       FILTER(?mStart > ?bEnd)
     }
