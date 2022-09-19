@@ -432,6 +432,13 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # loket-submissions sync
+  #################################################################
+  get "/sync/worship-submissions/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-worship-submissions/files/"
+  end
+
+  #################################################################
   # loket-persons-sensitive sync
   #################################################################
   post "/sync/persons-sensitive/login/*path" do

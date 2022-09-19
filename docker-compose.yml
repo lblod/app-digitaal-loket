@@ -620,7 +620,7 @@ services:
 ################################################################################
 # DELTA WORSHIP SUBMISSIONS: START
 ################################################################################
-  delta-producer-background-jobs-initiator-submissions:
+  delta-producer-background-jobs-initiator-worship-submissions:
     image: lblod/delta-producer-background-jobs-initiator:0.3.1
     environment:
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -634,7 +634,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-publication-graph-maintainer-submissions:
+  delta-producer-publication-graph-maintainer-worship-submissions:
     image: lblod/delta-producer-publication-graph-maintainer:0.14.0
     environment:
       MAX_BODY_SIZE: "50mb"
