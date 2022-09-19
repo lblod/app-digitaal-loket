@@ -1,0 +1,30 @@
+@prefix schema: <http://schema.org/> .
+@prefix lpdcExt: <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#> .
+@prefix mu:    <http://mu.semte.ch/vocabularies/core/> .
+@prefix adres: <https://data.vlaanderen.be/ns/adres#> .
+@prefix locn:  <http://www.w3.org/ns/locn#> .
+@prefix m8g:   <http://data.europa.eu/m8g/> .
+
+<http://data.lblod.info/id/public-services/a139c22b4691447ca9ab3409d380c95c>
+        m8g:hasContactPoint  <http://data.lblod.info/id/contact-punten/98e25f25-bd7e-499d-b434-c6e187d5c6d7> .
+
+<http://data.lblod.info/id/adressen/d59311e4-cd9a-4b37-b8f0-337696abc539>
+        a                   locn:Address ;
+        mu:uuid             "d59311e4-cd9a-4b37-b8f0-337696abc539" ;
+        adres:Adresvoorstelling.busnummer
+                "A" ;
+        adres:Adresvoorstelling.huisnummer
+                "1" ;
+        adres:Straatnaam    "Gemeentestraat"@nl ;
+        adres:gemeentenaam  "Etneemeg"@nl ;
+        adres:land          "België"@nl ;
+        adres:postcode      "1234" .
+
+<http://data.lblod.info/id/contact-punten/98e25f25-bd7e-499d-b434-c6e187d5c6d7>
+        a                    schema:ContactPoint ;
+        mu:uuid              "98e25f25-bd7e-499d-b434-c6e187d5c6d7" ;
+        schema:email         "eid@vlaanderen.be" ;
+        schema:openingHours  "Mo-Fr 09:00-17:00" ;
+        schema:telephone     "012345" ;
+        schema:url           "eid.vlaanderen.be" ;
+        lpdcExt:address      <http://data.lblod.info/id/adressen/d59311e4-cd9a-4b37-b8f0-337696abc539> .
