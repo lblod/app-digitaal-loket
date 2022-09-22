@@ -35,6 +35,7 @@ import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import planSubsidieProposalsReport from './planSubsidieProposalsReport';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
+import eInclusionRequestReport from './eInclusionRequestReport';
 
 export default [
   BestuurseenhedenReport,
@@ -75,5 +76,6 @@ export default [
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
   planSubsidieProposalsReport,
-  ukraineSubsidyOproepOneReport
+  ukraineSubsidyOproepOneReport,
+  eInclusionRequestReport
 ];
