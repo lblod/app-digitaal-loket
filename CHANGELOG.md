@@ -1,4 +1,6 @@
 # Changelog
+## 1.68.4 (2022-09-26)
+- added e-inclusion report
 ## 1.68.3 (2022-09-16)
 - fix files graph persons sensitive
 ## 1.68.2 (2022-09-15)
