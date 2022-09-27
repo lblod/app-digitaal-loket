@@ -1,4 +1,6 @@
 # Changelog
+## 1.68.6 (2022-09-27)
+- propgate persons first or last names to all the graphs it belongs to
 ## 1.68.5 (2022-09-27)
 - update bicycle subsidy deadline
 ## 1.68.4 (2022-09-26)
