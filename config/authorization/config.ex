@@ -204,7 +204,7 @@ defmodule Acl.UserGroups.Config do
                         "http://schema.org/ContactPoint",
                         "http://www.w3.org/ns/dcat#Distribution",
                         "http://purl.org/dc/terms/Location",
-                        "http://schema.org/Website",
+                        "http://schema.org/WebSite",
                         ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
