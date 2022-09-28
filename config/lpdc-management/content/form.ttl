@@ -588,7 +588,7 @@ ext:rulesPg a form:PropertyGroup;
         ext:procedureWebsitesG a form:Generator;
           form:prototype [
             form:shape [
-              a schema:Website ;
+              a schema:WebSite ;
               dct:description " "@nl;
               dct:title " "@nl;
               schema:url "";
