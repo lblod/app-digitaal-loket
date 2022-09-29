@@ -13,15 +13,9 @@ DELETE {
   GRAPH ?g {
     ?bestuurseenheid ere:wordtBediendDoor ?ministerPosition .
 
-      ?ministerPosition a ere:PositieBedienaar ;
-        mu:uuid ?ministerPositionUUID ;
-        ere:functie ?ministerFunctie .
-
-      ?ministerFunctie a lblodOrg:EredienstBeroepen ;
-        mu:uuid ?ministerFunctieUUID ;
-        skos:prefLabel ?ministerFunctieLabel ;
-        skos:topConceptOf ?rministerFunctieTopConcept ;
-        skos:inScheme ?ministerFunctieInScheme .
+    ?ministerPosition a ere:PositieBedienaar ;
+      mu:uuid ?ministerPositionUUID ;
+      ere:functie ?ministerFunctie .
   }
 } WHERE {
   GRAPH ?g {
@@ -36,11 +30,25 @@ DELETE {
     ?ministerPosition a ere:PositieBedienaar ;
       mu:uuid ?ministerPositionUUID ;
       ere:functie ?ministerFunctie .
+  }
+}
 
+;
+
+DELETE {
+  GRAPH ?g {
     ?ministerFunctie a lblodOrg:EredienstBeroepen ;
       mu:uuid ?ministerFunctieUUID ;
       skos:prefLabel ?ministerFunctieLabel ;
-      skos:topConceptOf ?rministerFunctieTopConcept ;
+      skos:topConceptOf ?ministerFunctieTopConcept ;
+      skos:inScheme ?ministerFunctieInScheme .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?ministerFunctie a lblodOrg:EredienstBeroepen ;
+      mu:uuid ?ministerFunctieUUID ;
+      skos:prefLabel ?ministerFunctieLabel ;
+      skos:topConceptOf ?ministerFunctieTopConcept ;
       skos:inScheme ?ministerFunctieInScheme .
   }
 }
