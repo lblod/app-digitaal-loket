@@ -5,11 +5,13 @@ PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 
 DELETE {
   GRAPH ?g {
-    ?bestuursorgaanInTime mandaat:bindingEinde "2026-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+    ?bestuursorgaanInTime mandaat:bindingStart "2023-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      mandaat:bindingEinde "2026-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
   }
 } INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTime mandaat:bindingEinde "2026-03-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+    ?bestuursorgaanInTime mandaat:bindingStart "2023-04-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      mandaat:bindingEinde "2026-03-31"^^<http://www.w3.org/2001/XMLSchema#date> .
   }
 } WHERE {
   GRAPH ?g {
@@ -23,6 +25,7 @@ DELETE {
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
 
     ?bestuursorgaanInTime mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+      mandaat:bindingStart "2023-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
       mandaat:bindingEinde "2026-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
   }
 }
@@ -31,11 +34,13 @@ DELETE {
 
 DELETE {
   GRAPH ?g {
-    ?bestuursorgaanInTime mandaat:bindingEinde "2029-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+    ?bestuursorgaanInTime mandaat:bindingStart "2026-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      mandaat:bindingEinde "2029-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
   }
 } INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTime mandaat:bindingEinde "2029-03-31"^^<http://www.w3.org/2001/XMLSchema#date> .
+    ?bestuursorgaanInTime mandaat:bindingStart "2026-04-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      mandaat:bindingEinde "2029-03-31"^^<http://www.w3.org/2001/XMLSchema#date> .
   }
 } WHERE {
   GRAPH ?g {
@@ -49,6 +54,7 @@ DELETE {
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
 
     ?bestuursorgaanInTime mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+      mandaat:bindingStart "2026-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
       mandaat:bindingEinde "2029-04-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
   }
 }
