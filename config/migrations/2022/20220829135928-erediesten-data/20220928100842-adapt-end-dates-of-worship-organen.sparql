@@ -9,7 +9,7 @@ DELETE {
   }
 } INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTime mandaat:bindingEinde "2026-03-31T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+    ?bestuursorgaanInTime mandaat:bindingEinde "2026-03-31"^^<http://www.w3.org/2001/XMLSchema#date> .
   }
 } WHERE {
   GRAPH ?g {
@@ -35,7 +35,7 @@ DELETE {
   }
 } INSERT {
   GRAPH ?g {
-    ?bestuursorgaanInTime mandaat:bindingEinde "2029-03-31T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+    ?bestuursorgaanInTime mandaat:bindingEinde "2029-03-31"^^<http://www.w3.org/2001/XMLSchema#date> .
   }
 } WHERE {
   GRAPH ?g {
