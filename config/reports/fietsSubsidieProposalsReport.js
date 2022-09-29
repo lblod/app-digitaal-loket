@@ -16,11 +16,14 @@ export default {
       PREFIX prov: <http://www.w3.org/ns/prov#>
       PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
       PREFIX transactie: <http://data.vlaanderen.be/ns/transactie#>
+      PREFIX lblodSubsidieBicycle: <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#>
+      PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
       PREFIX m8g: <http://data.europa.eu/m8g/>
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX adms: <http://www.w3.org/ns/adms#>
 
-      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?dossierNummer
+      SELECT DISTINCT ?submissionDate ?bestuurseenheid ?subsidie ?subsidieStatus ?formStatus ?dossierNummer 
+                      ?ramingKostprijs ?ramingOnteigeningsvergoeding
       WHERE {
         {
           ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
@@ -37,6 +40,12 @@ export default {
 
             ?form adms:status/skos:prefLabel ?formStatus .
             OPTIONAL { ?form <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#identifier> ?dossierNummer. }
+
+            ?form lblodSubsidieBicycle:estimatedCostTable/lblodSubsidieBicycle:estimatedCostEntry ?firstEntry, ?secondEntry.
+            ?firstEntry ext:index 0;
+              lblodSubsidieBicycle:cost ?ramingKostprijs.
+            ?secondEntry ext:index 1;
+              lblodSubsidieBicycle:cost ?ramingOnteigeningsvergoeding.
           }
         }
         UNION
@@ -59,7 +68,9 @@ export default {
         subsidie: getSafeValue(subsidie, 'subsidie'),
         subsidieStatus: getSafeValue(subsidie, 'subsidieStatus'),
         formStatus: getSafeValue(subsidie, 'formStatus'),
-        dossierNummer: getSafeValue(subsidie, 'dossierNummer')
+        dossierNummer: getSafeValue(subsidie, 'dossierNummer'),
+        ramingKostprijs: getSafeValue(subsidie, 'ramingKostprijs'),
+        ramingOnteigeningsvergoeding: getSafeValue(subsidie, 'ramingOnteigeningsvergoeding')
       };
     });
 
@@ -69,7 +80,9 @@ export default {
       'bestuurseenheid',
       'subsidieStatus',
       'formStatus',
-      'dossierNummer'
+      'dossierNummer',
+      'ramingKostprijs',
+      'ramingOnteigeningsvergoeding'
     ], reportData);
   }
 };
