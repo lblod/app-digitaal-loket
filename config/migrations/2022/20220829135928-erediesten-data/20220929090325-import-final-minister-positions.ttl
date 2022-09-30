@@ -114,8 +114,7 @@
         <http://data.lblod.info/id/positiesBedienaar/418dd0d70cd2a932942f336a5eaa8624>,
         <http://data.lblod.info/id/positiesBedienaar/f75d46a60a91c4ca1b51037a4984eda9> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/02874c5681ecd10615c3fa52559e9cf8> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/62173DDE5747C883CA1D33F7>,
-        <http://data.lblod.info/id/positiesBedienaar/76ec508157426a92d152c94ef5535418>,
+<http://data.lblod.info/id/besturenVanDeEredienst/02874c5681ecd10615c3fa52559e9cf8> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/76ec508157426a92d152c94ef5535418>,
         <http://data.lblod.info/id/positiesBedienaar/9990057e3c7426ce049a48274c9997eb>,
         <http://data.lblod.info/id/positiesBedienaar/a05baa5a6064b45fed03eedd32301457>,
         <http://data.lblod.info/id/positiesBedienaar/e6d6b508149365532110e8f18c01b753> .
@@ -739,7 +738,6 @@
         <http://data.lblod.info/id/positiesBedienaar/cb83b96378ed957ec91a4d3584dd0360> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/12bacaa7835a4b7b3a8647cfedca2731> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/2c4588861c4e3071c759df8cd24c4c36>,
-        <http://data.lblod.info/id/positiesBedienaar/62179D345747C883CA1D34AB>,
         <http://data.lblod.info/id/positiesBedienaar/9ecbea6b8a80af7c76f54349d6dc05b5>,
         <http://data.lblod.info/id/positiesBedienaar/c8fce7b4cf5979be18377dfa213d525a>,
         <http://data.lblod.info/id/positiesBedienaar/e8eeadc2de29b2958cc9225bc44bee6b> .
@@ -988,8 +986,7 @@
         <http://data.lblod.info/id/positiesBedienaar/e56e8545195ecdeb3914413a1fbe3411>,
         <http://data.lblod.info/id/positiesBedienaar/f24e77598e6dc5cb6b356972355b79de> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/18e59d37305b58fedfee79a45e66574f> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/615C3870375CFC000A00065A>,
-        <http://data.lblod.info/id/positiesBedienaar/82f6dac16917e8dabf8570d999fde252> .
+<http://data.lblod.info/id/besturenVanDeEredienst/18e59d37305b58fedfee79a45e66574f> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/82f6dac16917e8dabf8570d999fde252> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/18f2bbd8182cbf3eb145ae33d134d7a5> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/18c92fb785003b083a5cd55d977d24f2>,
         <http://data.lblod.info/id/positiesBedienaar/3297a07b3a8ae7e58e5e7d235166997b>,
@@ -1048,7 +1045,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/1a45d17afc8a2daa605567be482601ce> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/0c97bcbc2a8dee8171b0a86bd40de16e>,
         <http://data.lblod.info/id/positiesBedienaar/4876a2c1417637ea8ad4ad95af86cfa1>,
-        <http://data.lblod.info/id/positiesBedienaar/6231B914B72F9F4B33507F89>,
         <http://data.lblod.info/id/positiesBedienaar/7a3929a62cd73eb6b9af37663ea3089c>,
         <http://data.lblod.info/id/positiesBedienaar/7eda1463edb41b41f2f95eb9ea2f24af> .
 
@@ -1112,8 +1108,7 @@
         <http://data.lblod.info/id/positiesBedienaar/7978739bbe1e0b28f637e6cca9cd86a2>,
         <http://data.lblod.info/id/positiesBedienaar/8c1a21bdb6d0d6d14cabdc01b83678a4> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/1b8737e8a8870c5edaee0f9edf72a881> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/615C1BB5375CFC000A000634>,
-        <http://data.lblod.info/id/positiesBedienaar/c4e12af927a1fd5f12906dc0d55ab88d> .
+<http://data.lblod.info/id/besturenVanDeEredienst/1b8737e8a8870c5edaee0f9edf72a881> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/c4e12af927a1fd5f12906dc0d55ab88d> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/1bae8f6ff42422bb3671721d210c4ee8> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/14c3dfa5ecba2d2ca0bebcfb83e785db>,
         <http://data.lblod.info/id/positiesBedienaar/ab401cda73e946302e4d96b758842608>,
@@ -1430,8 +1425,7 @@
         <http://data.lblod.info/id/positiesBedienaar/61addae574d04f7eae8421caf292b930>,
         <http://data.lblod.info/id/positiesBedienaar/b13a2fbdfeae3b5191d2c1faad83ba9f> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/25364ce478850ac57891a6ea8b4125d6> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/0cfd67469b012dcdbe20cbfbe11be96d>,
-        <http://data.lblod.info/id/positiesBedienaar/615C2047375CFC000A000646> .
+<http://data.lblod.info/id/besturenVanDeEredienst/25364ce478850ac57891a6ea8b4125d6> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/0cfd67469b012dcdbe20cbfbe11be96d> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/2544d91b3b9fdb71da92d0ba0f38f4b1> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/76d741f924c306f8fee74faee51c0ed1>,
         <http://data.lblod.info/id/positiesBedienaar/ba255c81c0e8b6c5470275eec70e7767>,
@@ -1634,7 +1628,6 @@
         <http://data.lblod.info/id/positiesBedienaar/d7bcdafdc0280e1497d59277700f0630> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/2b871d9f7cf6bec8c2732a8901f23788> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/2147a358ae422ace6756d58997d9f38b>,
-        <http://data.lblod.info/id/positiesBedienaar/6217410D5747C883CA1D33FD>,
         <http://data.lblod.info/id/positiesBedienaar/647b43487d24c6476980c0f28250b511>,
         <http://data.lblod.info/id/positiesBedienaar/992f2d1300d591632ee732ae42c6fb60>,
         <http://data.lblod.info/id/positiesBedienaar/d66979331b97130af3bbb0c806c4fd3b> .
@@ -1984,8 +1977,7 @@
         <http://data.lblod.info/id/positiesBedienaar/d1aacd06d9a12d979cf036bb8fe405a7>,
         <http://data.lblod.info/id/positiesBedienaar/f06c674aed16934f58c1bd69a36abd43> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/3643b7a1d05216546748777ee07b7d6e> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/621E191A5747C883CA1D36D0>,
-        <http://data.lblod.info/id/positiesBedienaar/9a73134d026eed332d2a230f3cce5efb>,
+<http://data.lblod.info/id/besturenVanDeEredienst/3643b7a1d05216546748777ee07b7d6e> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/9a73134d026eed332d2a230f3cce5efb>,
         <http://data.lblod.info/id/positiesBedienaar/ae8778bdf06de35a631ba0204fc2e02e>,
         <http://data.lblod.info/id/positiesBedienaar/c3a9f8ae75996bd559345a22c0fc4c0e>,
         <http://data.lblod.info/id/positiesBedienaar/ee173bc88aa4627b6fc96c36f693139e> .
@@ -2885,8 +2877,7 @@
         <http://data.lblod.info/id/positiesBedienaar/a51c5fedd95dff99feffd3d6be7f4949>,
         <http://data.lblod.info/id/positiesBedienaar/f0a3dd51d6c1900f7125d34ed0e48acd> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/4d3852bdf16c45addd0043bd506ecf41> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/5b7425e7a4e4ab8de28ad05a91a52735>,
-        <http://data.lblod.info/id/positiesBedienaar/615C1369375CFC000A0005FF> .
+<http://data.lblod.info/id/besturenVanDeEredienst/4d3852bdf16c45addd0043bd506ecf41> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/5b7425e7a4e4ab8de28ad05a91a52735> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/4d4350b6c939b10b9c23574b1ba6b1b9> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/7b844e60de3c3937a1709836f21262cb> .
 
@@ -2914,7 +2905,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/4e02eb4ca525e59456c53cc6fb67841c> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/52846a6f68d9055221f7c713c65edbf0>,
         <http://data.lblod.info/id/positiesBedienaar/532984c29e6310c277a40f93f96a9ce4>,
-        <http://data.lblod.info/id/positiesBedienaar/621755E85747C883CA1D341C>,
         <http://data.lblod.info/id/positiesBedienaar/7cd5320aaa556a614959decfc6fade02>,
         <http://data.lblod.info/id/positiesBedienaar/901d9fb0262cebd8332c281dd587ab11> .
 
@@ -3400,7 +3390,6 @@
 <http://data.lblod.info/id/besturenVanDeEredienst/5ae4245e6a2557dd34489ccae18e6914> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/2ce7a7ac11f3dc1a13d6729009ab8c32>,
         <http://data.lblod.info/id/positiesBedienaar/2ec219948ebe2036d9781040b17a8d11>,
         <http://data.lblod.info/id/positiesBedienaar/615d6b46137b6f47423cf1e020c86f94>,
-        <http://data.lblod.info/id/positiesBedienaar/620E5BD35747C883CA1D2ECE>,
         <http://data.lblod.info/id/positiesBedienaar/c544528387c96b8cb283cf0884c5ac2b> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/5b21627e63d1ae66ac14a9a26995afeb> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/1d724458823bba89e40be6f6667a16eb>,
@@ -3643,7 +3632,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/62B968EDD7779543F777954A> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/296f8f27dc55871c4bf16cbc7b950245>,
         <http://data.lblod.info/id/positiesBedienaar/36ca9fb1dadc1f16cdcce98eacce525b>,
-        <http://data.lblod.info/id/positiesBedienaar/62EE1A0DD7779543F77796C8>,
         <http://data.lblod.info/id/positiesBedienaar/6ee8b6a010b74411acd5e6d6432f9255> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/62B9BBA5D7779543F7779555> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/6332F3D3036B579F0A26FF24>,
@@ -4602,7 +4590,6 @@
 <http://data.lblod.info/id/besturenVanDeEredienst/7cda7075b19abd47ea524231732a8004> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/1a104a29e8f8951aeda1dcd262b98158>,
         <http://data.lblod.info/id/positiesBedienaar/40154efe595585b05ef427c964b9e521>,
         <http://data.lblod.info/id/positiesBedienaar/57aa7531626e51cf0791f57512a4f625>,
-        <http://data.lblod.info/id/positiesBedienaar/621C93CA5747C883CA1D35D6>,
         <http://data.lblod.info/id/positiesBedienaar/f5f4b7f876b173c06a8ef535a89de543> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/7ce4cd18582a88f143d462d2bbb822be> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/91b1a7cf059d97e57d52b850bc71957b>,
@@ -4811,7 +4798,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/8204ba739b5eb6e50b4d3586c5e978bb> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/1314e4d2fb42028d1b4550c1289b0c37>,
         <http://data.lblod.info/id/positiesBedienaar/1aec18e52689e831bd3d9340a326e43c>,
-        <http://data.lblod.info/id/positiesBedienaar/621DDEBE5747C883CA1D3666>,
         <http://data.lblod.info/id/positiesBedienaar/9608ce1f9db0bbb66c62b1b50e55ab51>,
         <http://data.lblod.info/id/positiesBedienaar/c9f7e5f42cd31b8549bde3b4ec1270cf> .
 
@@ -4956,7 +4942,6 @@
         <http://data.lblod.info/id/positiesBedienaar/e0b81c5ccff9f468f3b577c476bed3ba> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/8665dff940b90959d3747f29f9923227> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/089735aa05419331243d93422e12dddc>,
-        <http://data.lblod.info/id/positiesBedienaar/62177EC55747C883CA1D347B>,
         <http://data.lblod.info/id/positiesBedienaar/791bb90db27ea43660e06919f5d36b8d>,
         <http://data.lblod.info/id/positiesBedienaar/d8a6fe23595aec109a19c534fae05a2a>,
         <http://data.lblod.info/id/positiesBedienaar/e06d4a6e7c75edc3c877d7c92f774dd1> .
@@ -5000,7 +4985,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/87763811081ef6c783a98717e651ce01> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/10d5a7c1e69b0d6fc5edd01df65dcdd6>,
         <http://data.lblod.info/id/positiesBedienaar/1232d394a30bfa0cf5043b504a147709>,
-        <http://data.lblod.info/id/positiesBedienaar/621DDAA85747C883CA1D3646>,
         <http://data.lblod.info/id/positiesBedienaar/a664a79e5db8a68a399c75a0a963ccab>,
         <http://data.lblod.info/id/positiesBedienaar/ccad61ec59b191b269dc04d10054ff84> .
 
@@ -5211,7 +5195,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/8f0ad348639c197a232b986b1771da44> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/17cc6fccbe4c9e017444987450f630e7>,
         <http://data.lblod.info/id/positiesBedienaar/2ab1cf9e3e73be65abe265ce5715cc32>,
-        <http://data.lblod.info/id/positiesBedienaar/6217A07A5747C883CA1D34CF>,
         <http://data.lblod.info/id/positiesBedienaar/81d9d8f38d1fdd401abc4453acbf0992>,
         <http://data.lblod.info/id/positiesBedienaar/de56f88fa43389fa1fefb4b14b46270e> .
 
@@ -5462,8 +5445,7 @@
         <http://data.lblod.info/id/positiesBedienaar/305452488f4633320bcfc80a1e9c3bba>,
         <http://data.lblod.info/id/positiesBedienaar/9bdc6f7b31e5caf6de8a305687970262> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/9596e12b9cf9cde17f81473293254c45> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/615C1194375CFC000A0005ED>,
-        <http://data.lblod.info/id/positiesBedienaar/f317566877e9651321c08d3ff12d1f23> .
+<http://data.lblod.info/id/besturenVanDeEredienst/9596e12b9cf9cde17f81473293254c45> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/f317566877e9651321c08d3ff12d1f23> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/9604b1cbee79bb8da623db08411f906a> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/650bad512764e2de2173c2e9f7a7ac97>,
         <http://data.lblod.info/id/positiesBedienaar/69065ff23a953c228e3bc9eb94138282>,
@@ -6018,8 +6000,7 @@
         <http://data.lblod.info/id/positiesBedienaar/84488b5e7d6f5c6395cbc5b3f4da8c4b>,
         <http://data.lblod.info/id/positiesBedienaar/c459aa88a18226399325895c0543f64b> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/a57ce399c9020f6f1a3f976c2510976e> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/308b99b6953eedc7d3dad05273c3673f>,
-        <http://data.lblod.info/id/positiesBedienaar/615C1029375CFC000A0005E4> .
+<http://data.lblod.info/id/besturenVanDeEredienst/a57ce399c9020f6f1a3f976c2510976e> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/308b99b6953eedc7d3dad05273c3673f> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/a58d4b985bb4c7a6fcb68c8c61411b65> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/17bb237c58d7008750b95567501ca4ae>,
         <http://data.lblod.info/id/positiesBedienaar/2212a4e46206ac4a73b84ce64344d859>,
@@ -6940,8 +6921,7 @@
         <http://data.lblod.info/id/positiesBedienaar/4dd32f58146f736df15b0df783ded93d>,
         <http://data.lblod.info/id/positiesBedienaar/a9c8a40a7900aff5f9ee8826cda0b6c2> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/bce3c2cfdfaf9add1c7fc3d01bffba94> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/02331328e04ac4ddcccc5858e3584c8e>,
-        <http://data.lblod.info/id/positiesBedienaar/615C3F29375CFC000A00066D> .
+<http://data.lblod.info/id/besturenVanDeEredienst/bce3c2cfdfaf9add1c7fc3d01bffba94> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/02331328e04ac4ddcccc5858e3584c8e> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/bce65193b8538c33c159cc64bd8a53cb> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/10b89219044f74a3d57a9d8063829ae0>,
         <http://data.lblod.info/id/positiesBedienaar/2b8f7b18f9259be80f836c6c4f845a17>,
@@ -6949,7 +6929,6 @@
         <http://data.lblod.info/id/positiesBedienaar/ae2aee3ed2c065333abb9b0ec98f1d20> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/bd119b637d57cf50b7aa96a263521a1d> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/2526c3ec1cfce3d159cb0e5014efb63f>,
-        <http://data.lblod.info/id/positiesBedienaar/620E28AE5747C883CA1D2E99>,
         <http://data.lblod.info/id/positiesBedienaar/7bb6b41009f1685a26b49e89cbb66674>,
         <http://data.lblod.info/id/positiesBedienaar/d9b8564f4d726e66755c57e2a16c6a49>,
         <http://data.lblod.info/id/positiesBedienaar/dfea417bd67d2b75798a17697d8182e9> .
@@ -7030,7 +7009,6 @@
 <http://data.lblod.info/id/besturenVanDeEredienst/be8664e360eb11fab90beebb642a4d9d> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/1bfa5219601e85c8f8bc973fe45f7b5a>,
         <http://data.lblod.info/id/positiesBedienaar/3f58e92abd0389525b7f99abb57469f5>,
         <http://data.lblod.info/id/positiesBedienaar/5421f6f4ccbf3b28450294c1dc3c3440>,
-        <http://data.lblod.info/id/positiesBedienaar/62B17981D7779543F7779528>,
         <http://data.lblod.info/id/positiesBedienaar/e8909dd047ebcad96fc21639fa871cb5> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/be87d5a9a250eee7232772dc99401b86> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/523dd8ea7e37d219bfa52afea7ece26d> .
@@ -7173,8 +7151,7 @@
         <http://data.lblod.info/id/positiesBedienaar/ac049d8477e18e65b81e612628ed1ddd>,
         <http://data.lblod.info/id/positiesBedienaar/e5be6edd12988044534d014f18d54240> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/c2d9fcdf3648fc8ff75bb70cb02a30f8> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/615C1DB3375CFC000A00063D>,
-        <http://data.lblod.info/id/positiesBedienaar/a8f8c7254437b7d32f20149208848527> .
+<http://data.lblod.info/id/besturenVanDeEredienst/c2d9fcdf3648fc8ff75bb70cb02a30f8> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/a8f8c7254437b7d32f20149208848527> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/c305b24e8b43f9335632379293f0d865> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/0b27aa58927918c5cd356ced453081b2>,
         <http://data.lblod.info/id/positiesBedienaar/21f73bad41486195ed8e12ef32f71e32>,
@@ -7216,8 +7193,7 @@
         <http://data.lblod.info/id/positiesBedienaar/efd8ee4779bd329e4e6305f08472610f>,
         <http://data.lblod.info/id/positiesBedienaar/f275aa2f623f0eae2b9f924488acdeb5> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/c3a239c094efcca9904d70dcbca17cc5> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/615C14D4375CFC000A000608>,
-        <http://data.lblod.info/id/positiesBedienaar/bcbbcc6cde5f6654f53cb13956584e97> .
+<http://data.lblod.info/id/besturenVanDeEredienst/c3a239c094efcca9904d70dcbca17cc5> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/bcbbcc6cde5f6654f53cb13956584e97> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/c3ce1195edb96ad73c109d4ecf95e9d0> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/66d8b34b609c11a11d0df50a0c642539>,
         <http://data.lblod.info/id/positiesBedienaar/7f975b823ba6e001570c4ac4a0f28239>,
@@ -7430,8 +7406,7 @@
         <http://data.lblod.info/id/positiesBedienaar/83407c95b4a0e48eb193e97b161af39b>,
         <http://data.lblod.info/id/positiesBedienaar/a9f045b2679265db490a96155b507b71> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/c821b81409bd4c56b8eb9e32ce09a841> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/62F21194D7779543F77796CD>,
-        <http://data.lblod.info/id/positiesBedienaar/879f5d7c6f5672775e480efc0434b4c3>,
+<http://data.lblod.info/id/besturenVanDeEredienst/c821b81409bd4c56b8eb9e32ce09a841> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/879f5d7c6f5672775e480efc0434b4c3>,
         <http://data.lblod.info/id/positiesBedienaar/b7a4b14423ede4cef0cdee044f13cf55>,
         <http://data.lblod.info/id/positiesBedienaar/ea353ca79b9badda4cc32691182ce5b4> .
 
@@ -7787,7 +7762,6 @@
         <http://data.lblod.info/id/positiesBedienaar/fb0edf497dd303543599bb743eb5d6ed> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/d00446765cb419c06c29b07d6ec5ef9d> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/019b3d9a05c935f12b601dfbc82330aa>,
-        <http://data.lblod.info/id/positiesBedienaar/6217822D5747C883CA1D3496>,
         <http://data.lblod.info/id/positiesBedienaar/715e1e3e8e39964c91bd774d2a41b95d>,
         <http://data.lblod.info/id/positiesBedienaar/a246814113da662d477a29e63061b63c>,
         <http://data.lblod.info/id/positiesBedienaar/e51224789e6795f132d807f43453bd7c> .
@@ -7969,7 +7943,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/d6033485699112406ca2a034d5fd9c55> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/20784a039ecad3f1e8e7e85ce2441a78>,
         <http://data.lblod.info/id/positiesBedienaar/4bf04597ba9534f8d91b931109941714>,
-        <http://data.lblod.info/id/positiesBedienaar/62174F555747C883CA1D3411>,
         <http://data.lblod.info/id/positiesBedienaar/c782b5becedc10c6e9dd50b3be47363f>,
         <http://data.lblod.info/id/positiesBedienaar/eaa59fcbae8952bd21381c42f0a75221> .
 
@@ -8309,7 +8282,6 @@
         <http://data.lblod.info/id/positiesBedienaar/9bca31600e9e7620d8c1a91390371529> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/dec6f4bfddae8e28890181c24c0a81bc> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/38eee7ff9ef48453701be30ca22124a5>,
-        <http://data.lblod.info/id/positiesBedienaar/620B6CEE5747C883CA1D2DD1>,
         <http://data.lblod.info/id/positiesBedienaar/8421280fe43b5ae6254c327195d0c632>,
         <http://data.lblod.info/id/positiesBedienaar/897f22dfbdc0ff635ed2bf3b2f6c0c1d>,
         <http://data.lblod.info/id/positiesBedienaar/ae66d97ec825f292738be2e7987d75d7> .
@@ -8485,8 +8457,7 @@
         <http://data.lblod.info/id/positiesBedienaar/af7373aeb3d6b5adbd9847b65e77e3b3>,
         <http://data.lblod.info/id/positiesBedienaar/bac3b71cc3a3984fedbfc427fa8982b7> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/e2eea8a352821c9c1f1827f1cfde9f24> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/23562d11837cc91659e1f28add8ea933>,
-        <http://data.lblod.info/id/positiesBedienaar/62A98293D7779543F777951B> .
+<http://data.lblod.info/id/besturenVanDeEredienst/e2eea8a352821c9c1f1827f1cfde9f24> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/23562d11837cc91659e1f28add8ea933> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/e2f5b8e0224b1af556165508195ccb76> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/47add891344f18a19f72c76fcca22ce1> .
 
@@ -8868,8 +8839,7 @@
         <http://data.lblod.info/id/positiesBedienaar/8febf0d1c77deb596f3d5ad2260a8ffe>,
         <http://data.lblod.info/id/positiesBedienaar/cc434d2da93a6b70ab27ee969f083d2b> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/ef308de4b68617ddb58fa66cd100161e> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/615C365E375CFC000A00064F>,
-        <http://data.lblod.info/id/positiesBedienaar/781bf84332b6fc4b3a6a96f8b2176559> .
+<http://data.lblod.info/id/besturenVanDeEredienst/ef308de4b68617ddb58fa66cd100161e> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/781bf84332b6fc4b3a6a96f8b2176559> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/ef4b91da78567af589df0f33ecc154e6> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/2ba03b3014dc87f059c9b720ed78511e>,
         <http://data.lblod.info/id/positiesBedienaar/340e7c460350fc6a37d97aeebe3b6b21>,
@@ -8885,7 +8855,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/ef77bb3094fdc4a7ed7e09551500acfe> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/39baa3b9b40360d2e65d876358de62e6>,
         <http://data.lblod.info/id/positiesBedienaar/3fa8c5a7cb08fdc6c1d8447f070b3010>,
-        <http://data.lblod.info/id/positiesBedienaar/616436FD375CFC000A00077B>,
         <http://data.lblod.info/id/positiesBedienaar/a2a026315f08703296aae2ee7f7135b2> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/ef8290e07b647bf7600129256b651eb5> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/4697e7c57cf273b08431ba7ddf7a70ee>,
@@ -8894,7 +8863,6 @@
         <http://data.lblod.info/id/positiesBedienaar/ab832336479715e53c34b0572301c07c> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/efab5de3a06236d592c805fb9c6e6d87> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/1cb5b4dd55dbebedb9f9c793ed47819c>,
-        <http://data.lblod.info/id/positiesBedienaar/62596CC78A3D153ADACC046A>,
         <http://data.lblod.info/id/positiesBedienaar/b3ed4f81b4d92d391bd497f002b5c215>,
         <http://data.lblod.info/id/positiesBedienaar/ccee89a648ed0742914d3583df384a72>,
         <http://data.lblod.info/id/positiesBedienaar/e87d7aa9fd21b2d6e45c117a43eac7b1> .
@@ -8950,7 +8918,6 @@
 
 <http://data.lblod.info/id/besturenVanDeEredienst/f14f53e391054cc5964e3a9e674f6042> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/001e8093cc3aa54b04766c6efe99dedc>,
         <http://data.lblod.info/id/positiesBedienaar/0274d7e7bf3fa0d623902a7e57ac836a>,
-        <http://data.lblod.info/id/positiesBedienaar/61B747D63C1A230C43B451E5>,
         <http://data.lblod.info/id/positiesBedienaar/90e63a319233927d7cfc8f6246c90e43>,
         <http://data.lblod.info/id/positiesBedienaar/a4723d658ae2c414dd93fdcff2a3da28> .
 
@@ -9225,8 +9192,7 @@
         <http://data.lblod.info/id/positiesBedienaar/afbb1de443422fb164b4c7d4be2f1607>,
         <http://data.lblod.info/id/positiesBedienaar/e6554e05f66a135ec031ea565d92091d> .
 
-<http://data.lblod.info/id/besturenVanDeEredienst/f99035f2eca9a50996e719c445d2cfd2> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/096a0b083e7a6cc9e80a722725224d9e>,
-        <http://data.lblod.info/id/positiesBedienaar/62596B418A3D153ADACC0458> .
+<http://data.lblod.info/id/besturenVanDeEredienst/f99035f2eca9a50996e719c445d2cfd2> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/096a0b083e7a6cc9e80a722725224d9e> .
 
 <http://data.lblod.info/id/besturenVanDeEredienst/f9aae71bf255f6b735209478faca4d46> ere:wordtBediendDoor <http://data.lblod.info/id/positiesBedienaar/1bc72f6c364f793c477d43d7d9059ef0>,
         <http://data.lblod.info/id/positiesBedienaar/3030a9f5eb8277aecae592333dd62a5d>,
@@ -21155,49 +21121,9 @@
     ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
     mu:uuid "615C0FB9375CFC000A0005DB" .
 
-<http://data.lblod.info/id/positiesBedienaar/615C1029375CFC000A0005E4> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C1029375CFC000A0005E4" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C1194375CFC000A0005ED> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C1194375CFC000A0005ED" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C1369375CFC000A0005FF> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C1369375CFC000A0005FF" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C14D4375CFC000A000608> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C14D4375CFC000A000608" .
-
 <http://data.lblod.info/id/positiesBedienaar/615C16EE375CFC000A00061A> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/e357bc8f4cc3a694fde2239748768a22> ;
     mu:uuid "615C16EE375CFC000A00061A" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C1BB5375CFC000A000634> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C1BB5375CFC000A000634" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C1DB3375CFC000A00063D> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C1DB3375CFC000A00063D" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C2047375CFC000A000646> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C2047375CFC000A000646" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C365E375CFC000A00064F> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C365E375CFC000A00064F" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C3870375CFC000A00065A> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C3870375CFC000A00065A" .
-
-<http://data.lblod.info/id/positiesBedienaar/615C3F29375CFC000A00066D> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "615C3F29375CFC000A00066D" .
 
 <http://data.lblod.info/id/positiesBedienaar/615EED53375CFC000A0006FC> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/e357bc8f4cc3a694fde2239748768a22> ;
@@ -21215,10 +21141,6 @@
     ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
     mu:uuid "61609982749bae744b82139bd94e176a" .
 
-<http://data.lblod.info/id/positiesBedienaar/616436FD375CFC000A00077B> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "616436FD375CFC000A00077B" .
-
 <http://data.lblod.info/id/positiesBedienaar/617c8ce5876dfbb7291c9abbb353a7e9> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/ea58c73d9b4fc8a24a4b3eaa73a33995> ;
     mu:uuid "617c8ce5876dfbb7291c9abbb353a7e9" .
@@ -21230,10 +21152,6 @@
 <http://data.lblod.info/id/positiesBedienaar/61845ff2befb8f85dd5f31554dbd4945> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/ea58c73d9b4fc8a24a4b3eaa73a33995> ;
     mu:uuid "61845ff2befb8f85dd5f31554dbd4945" .
-
-<http://data.lblod.info/id/positiesBedienaar/61B747D63C1A230C43B451E5> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "61B747D63C1A230C43B451E5" .
 
 <http://data.lblod.info/id/positiesBedienaar/61C1A7043C1A230C43B452EC> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> ;
@@ -21283,77 +21201,17 @@
     ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
     mu:uuid "62050e15e34a7223a991c2d359beff3b" .
 
-<http://data.lblod.info/id/positiesBedienaar/620B6CEE5747C883CA1D2DD1> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "620B6CEE5747C883CA1D2DD1" .
-
 <http://data.lblod.info/id/positiesBedienaar/620BBA615747C883CA1D2DF9> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/5ebb798bd59c3b48c25116032caa02b7> ;
     mu:uuid "620BBA615747C883CA1D2DF9" .
-
-<http://data.lblod.info/id/positiesBedienaar/620E28AE5747C883CA1D2E99> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "620E28AE5747C883CA1D2E99" .
-
-<http://data.lblod.info/id/positiesBedienaar/620E5BD35747C883CA1D2ECE> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "620E5BD35747C883CA1D2ECE" .
 
 <http://data.lblod.info/id/positiesBedienaar/62142d21969350d44c8d4dabb9a46407> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
     mu:uuid "62142d21969350d44c8d4dabb9a46407" .
 
-<http://data.lblod.info/id/positiesBedienaar/62173DDE5747C883CA1D33F7> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62173DDE5747C883CA1D33F7" .
-
-<http://data.lblod.info/id/positiesBedienaar/6217410D5747C883CA1D33FD> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "6217410D5747C883CA1D33FD" .
-
-<http://data.lblod.info/id/positiesBedienaar/62174F555747C883CA1D3411> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62174F555747C883CA1D3411" .
-
-<http://data.lblod.info/id/positiesBedienaar/621755E85747C883CA1D341C> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "621755E85747C883CA1D341C" .
-
-<http://data.lblod.info/id/positiesBedienaar/62177EC55747C883CA1D347B> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62177EC55747C883CA1D347B" .
-
-<http://data.lblod.info/id/positiesBedienaar/6217822D5747C883CA1D3496> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "6217822D5747C883CA1D3496" .
-
-<http://data.lblod.info/id/positiesBedienaar/62179D345747C883CA1D34AB> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62179D345747C883CA1D34AB" .
-
-<http://data.lblod.info/id/positiesBedienaar/6217A07A5747C883CA1D34CF> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "6217A07A5747C883CA1D34CF" .
-
 <http://data.lblod.info/id/positiesBedienaar/621933def1555f982f94578b9aeb13e1> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/ea58c73d9b4fc8a24a4b3eaa73a33995> ;
     mu:uuid "621933def1555f982f94578b9aeb13e1" .
-
-<http://data.lblod.info/id/positiesBedienaar/621C93CA5747C883CA1D35D6> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "621C93CA5747C883CA1D35D6" .
-
-<http://data.lblod.info/id/positiesBedienaar/621DDAA85747C883CA1D3646> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "621DDAA85747C883CA1D3646" .
-
-<http://data.lblod.info/id/positiesBedienaar/621DDEBE5747C883CA1D3666> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "621DDEBE5747C883CA1D3666" .
-
-<http://data.lblod.info/id/positiesBedienaar/621E191A5747C883CA1D36D0> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "621E191A5747C883CA1D36D0" .
 
 <http://data.lblod.info/id/positiesBedienaar/6224a89b8d99ad16b24a61b159ff9f1d> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> ;
@@ -21362,10 +21220,6 @@
 <http://data.lblod.info/id/positiesBedienaar/6227c93d515511a22814bdbc80701b2f> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
     mu:uuid "6227c93d515511a22814bdbc80701b2f" .
-
-<http://data.lblod.info/id/positiesBedienaar/6231B914B72F9F4B33507F89> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "6231B914B72F9F4B33507F89" .
 
 <http://data.lblod.info/id/positiesBedienaar/6234606d6b0efa54a7ccf2aa738eb836> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/ea58c73d9b4fc8a24a4b3eaa73a33995> ;
@@ -21395,14 +21249,6 @@
     ere:functie <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> ;
     mu:uuid "6250398e9ccd119d03c1157906b23450" .
 
-<http://data.lblod.info/id/positiesBedienaar/62596B418A3D153ADACC0458> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62596B418A3D153ADACC0458" .
-
-<http://data.lblod.info/id/positiesBedienaar/62596CC78A3D153ADACC046A> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62596CC78A3D153ADACC046A" .
-
 <http://data.lblod.info/id/positiesBedienaar/6269c2e2bd73f92e74f26e683fdf8643> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> ;
     mu:uuid "6269c2e2bd73f92e74f26e683fdf8643" .
@@ -21426,22 +21272,6 @@
 <http://data.lblod.info/id/positiesBedienaar/6297f7f87187844d69a99e532feff591> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/ea58c73d9b4fc8a24a4b3eaa73a33995> ;
     mu:uuid "6297f7f87187844d69a99e532feff591" .
-
-<http://data.lblod.info/id/positiesBedienaar/62A98293D7779543F777951B> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62A98293D7779543F777951B" .
-
-<http://data.lblod.info/id/positiesBedienaar/62B17981D7779543F7779528> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62B17981D7779543F7779528" .
-
-<http://data.lblod.info/id/positiesBedienaar/62EE1A0DD7779543F77796C8> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> ;
-    mu:uuid "62EE1A0DD7779543F77796C8" .
-
-<http://data.lblod.info/id/positiesBedienaar/62F21194D7779543F77796CD> a ere:PositieBedienaar ;
-    ere:functie <http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> ;
-    mu:uuid "62F21194D7779543F77796CD" .
 
 <http://data.lblod.info/id/positiesBedienaar/62bb3a07052da672a7f56d9641451057> a ere:PositieBedienaar ;
     ere:functie <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> ;
@@ -39673,6 +39503,12 @@
     skos:prefLabel "Diaken" ;
     skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
 
+<http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> a lblodOrg:EredienstBeroepen ;
+    mu:uuid "efbf2ff50b5c4f693f129ac03319c4f2" ;
+    skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
+    skos:prefLabel "Priester" ;
+    skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
+
 <http://lblod.data.gift/concepts/5ebb798bd59c3b48c25116032caa02b7> a lblodOrg:EredienstBeroepen ;
     mu:uuid "5ebb798bd59c3b48c25116032caa02b7" ;
     skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
@@ -39697,16 +39533,16 @@
     skos:prefLabel "Predikant" ;
     skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
 
-<http://lblod.data.gift/concepts/efbf2ff50b5c4f693f129ac03319c4f2> a lblodOrg:EredienstBeroepen ;
-    mu:uuid "efbf2ff50b5c4f693f129ac03319c4f2" ;
-    skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
-    skos:prefLabel "Priester" ;
-    skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
-
 <http://lblod.data.gift/concepts/59837b12c14f215a4efadae950be0072> a lblodOrg:EredienstBeroepen ;
     mu:uuid "59837b12c14f215a4efadae950be0072" ;
     skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
     skos:prefLabel "Medepastoor" ;
+    skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
+
+<http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> a lblodOrg:EredienstBeroepen ;
+    mu:uuid "5c7fefe1b921dfd4c550924bb7a9331d" ;
+    skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
+    skos:prefLabel "Pastoor" ;
     skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
 
 <http://lblod.data.gift/concepts/84b3a2321d1b69b6de782bb04e1a6862> a lblodOrg:EredienstBeroepen ;
@@ -39719,10 +39555,4 @@
     mu:uuid "ea58c73d9b4fc8a24a4b3eaa73a33995" ;
     skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
     skos:prefLabel "Coördinator" ;
-    skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
-
-<http://lblod.data.gift/concepts/5c7fefe1b921dfd4c550924bb7a9331d> a lblodOrg:EredienstBeroepen ;
-    mu:uuid "5c7fefe1b921dfd4c550924bb7a9331d" ;
-    skos:inScheme <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> ;
-    skos:prefLabel "Pastoor" ;
     skos:topConceptOf <http://lblod.data.gift/concept-schemes/0637cccd657df25049af6c4580c6b2be> .
