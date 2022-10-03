@@ -1,4 +1,12 @@
 # Changelog
+## 1.69.0 (2022-10-03)
+- Release LPDC-module (both fronted and backend)
+- Backend maintenance:
+   - bump mu-auth
+   - bump publication graph maintainer
+- Update data erediensten
+  - codelists OP
+  - link person and nationality
 ## 1.68.6 (2022-09-27)
 - propgate persons first or last names to all the graphs it belongs to
 ## 1.68.5 (2022-09-27)
