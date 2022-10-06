@@ -1,4 +1,7 @@
 # Changelog
+## 1.69.1 (2022-10-06)
+- lpdc-management ingests new organisations via IPDC
+- typo in forms
 ## 1.69.0 (2022-10-03)
 - Release LPDC-module (both fronted and backend)
 - Backend maintenance:
