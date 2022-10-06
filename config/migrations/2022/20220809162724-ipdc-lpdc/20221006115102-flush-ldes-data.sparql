@@ -1,0 +1,5 @@
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/lpdc/ldes-data> {
+    ?s ?p ?o
+  }
+}
