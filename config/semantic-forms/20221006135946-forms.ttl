@@ -893,15 +893,15 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
      en <a href="/subsidy/applications" target="_blank">het Loket voor Lokale Besturen (module subsidie)</a> kunnen rechtstreeks in de authentieke bron.
     """;
     sh:order 20 ;
-    sh:path lblodBesluit:authenticSource ;
+    sh:path lblodBesluit:LEKPAuthenticSource ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:authenticSource ;
+        sh:path lblodBesluit:LEKPAuthenticSource ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/c2e7699a-b543-443c-b8b2-b60bef8767dc"}""" ;
-    form:displayType displayTypes:conceptSelector ;
+    form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
   #### Type Correctie ####
@@ -910,15 +910,15 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
     sh:name "Type Correctie" ;
     form:help """1 type correctie per melding - binnen eenzelfde type correctie kunnen meerdere datacorrecties doorgegeven worden.""";
     sh:order 21 ;
-    sh:path lblodBesluit:correctionType ;
+    sh:path lblodBesluit:LEKPCorrectionType ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:correctionType ;
+        sh:path lblodBesluit:LEKPCorrectionType ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14"}""" ;
-    form:displayType displayTypes:conceptSelector ;
+    form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
 
@@ -930,15 +930,15 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
      <b>Lees <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a> meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b>
     """;
     sh:order 20 ;
-    sh:path lblodBesluit:lekpGoal ;
+    sh:path lblodBesluit:LEKPGoal ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:lekpGoal ;
+        sh:path lblodBesluit:LEKPGoal ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a"}""" ;
-    form:displayType displayTypes:conceptSelector ;
+    form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
   #### Type Toelichting ####
@@ -946,15 +946,15 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
     mu:uuid "746e3820-c8db-478b-85d0-d238c6a531ea" ;
     sh:name "Type Toelichting" ;
     sh:order 21 ;
-    sh:path lblodBesluit:explanationType ;
+    sh:path lblodBesluit:LEKPExplanationType ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path lblodBesluit:explanationType ;
+        sh:path lblodBesluit:LEKPExplanationType ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ];
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85"}""" ;
-    form:displayType displayTypes:conceptSelector ;
+    form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
   #### Omschrijving ####
@@ -963,7 +963,7 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
     sh:name "Omschrijving" ;
     form:help """Voeg hier uw beschrijving van de gevraagde correctie in. ABB volgt deze correctie verder op.""";
     sh:order 22 ;
-    sh:path lblodBesluit:description ;
+    sh:path lblodBesluit:LEKPDescription ;
     form:options """{}""" ;
     form:displayType displayTypes:textArea ;
     form:validations
@@ -971,11 +971,11 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
       form:grouping form:MatchEvery ;
       form:max "500" ;
       sh:resultMessage "Max. karakters overschreden." ;
-      sh:path lblodBesluit:description ],
+      sh:path lblodBesluit:LEKPDescription ],
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodBesluit:description ] ;
+      sh:path lblodBesluit:LEKPDescription ] ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
   #### Toelichting ####
@@ -984,7 +984,7 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
     sh:name "Toelichting" ;
     form:help """Voeg hierboven uw toelichting in. Enkel de laatst doorgestuurde versie verschijnt in het LEKP-rapport bij de volgende maandelijkse update.""";
     sh:order 22 ;
-    sh:path lblodBesluit:description ;
+    sh:path lblodBesluit:LEKPClarification ;
     form:options """{}""" ;
     form:displayType displayTypes:textArea ;
     form:validations
@@ -992,11 +992,11 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
       form:grouping form:MatchEvery ;
       form:max "500" ;
       sh:resultMessage "Max. karakters overschreden." ;
-      sh:path lblodBesluit:description ],
+      sh:path lblodBesluit:LEKPClarification ],
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodBesluit:description ] ;
+      sh:path lblodBesluit:LEKPClarification ] ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
  #### Meer info ####
@@ -1011,7 +1011,7 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
        sh:path rdfs:seeAlso
       ];
     sh:order 23 ;
-    sh:path lblodBesluit:moreInfo ;
+    sh:path rdfs:seeAlso ;
     form:options """{}""" ;
     form:displayType displayTypes:defaultInput ;
     sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
