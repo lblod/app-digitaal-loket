@@ -194,7 +194,7 @@ ext:authorityPg a form:PropertyGroup;
   #  field: uitvoerende overheid
   ##########################################################
   ext:executingAuthorityF a form:Field ;
-      sh:name "Uitvoerend overheid" ;
+      sh:name "Uitvoerende overheid" ;
       form:help "Meerdere overheden kunnen worden toegewezen";
       sh:order 30 ;
       sh:path lpdcExt:hasExecutingAuthority ;
