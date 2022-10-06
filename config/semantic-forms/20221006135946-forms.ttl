@@ -886,8 +886,11 @@ fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
     mu:uuid "7ebdf368-fe63-45d7-9d44-030ec0cd9ab9" ;
     sh:name "Authentieke bron" ;
     form:help """
-    <b>Lees <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a> meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b> <br>
-    Correcties voor <a href="https://groenblauwpeil.be/" target="_blank">groenblauwpeil</a>  en het Loket voor Lokale Besturen (module subsidie) kunnen rechtstreeks in de authentieke bron.
+    <b>Lees
+    <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a>
+       meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b> <br>
+    Correcties voor <a href="https://groenblauwpeil.be/" target="_blank">groenblauwpeil</a>
+     en <a href="/subsidy/applications" target="_blank">het Loket voor Lokale Besturen (module subsidie)</a> kunnen rechtstreeks in de authentieke bron.
     """;
     sh:order 20 ;
     sh:path lblodBesluit:authenticSource ;
