@@ -5,7 +5,7 @@ INSERT DATA {
     <http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "Correction type"@en,
         "Type correctie"@nl .
-    
+
     <http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14> <http://mu.semte.ch/vocabularies/core/uuid> "1dfc51af-99fd-4be9-a681-41360c195f14".
 
 
@@ -30,7 +30,7 @@ INSERT DATA {
 
     <http://lblod.data.gift/concepts/8576ab0c-461f-4f26-b3ba-cf1be4c7efb3> <http://mu.semte.ch/vocabularies/core/uuid> "8576ab0c-461f-4f26-b3ba-cf1be4c7efb3".
 
-   
+
 
 
 

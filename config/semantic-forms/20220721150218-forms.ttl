@@ -43,7 +43,7 @@ fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a a form:Field ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5"}""" ;
-    form:displayType displayTypes:conceptSchemeSelector ;
+    form:displayType displayTypes:conceptSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
 fields:0cdfe85f-ec65-498f-bd26-0ec611967de0 a form:Field ;

@@ -3,8 +3,8 @@ INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
 
       <http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "Explanation type"@en,
-         "Type Toelichting"@nl .
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "Explanation type LEKP"@en,
+         "Type Toelichting LEKP"@nl .
 <http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85> <http://mu.semte.ch/vocabularies/core/uuid> "0b93ef1c-4435-4922-8611-31b4f3ca3c85".
 
 
