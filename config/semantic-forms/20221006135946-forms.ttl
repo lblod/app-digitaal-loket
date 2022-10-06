@@ -1004,6 +1004,12 @@ fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
     mu:uuid "fa96567b-6677-4502-add5-f41e24dfee15";
     sh:name "Meer info" ;
     form:help """Voeg hier eventueel een URL toe met een meer uitgebreide toelichting.""";
+    form:validations
+     [ a form:UriConstraint ;
+       form:grouping form:MatchEvery ;
+       sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat.";
+       sh:path rdfs:seeAlso
+      ];
     sh:order 23 ;
     sh:path lblodBesluit:moreInfo ;
     form:options """{}""" ;
