@@ -43,7 +43,7 @@ fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a a form:Field ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
     form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5"}""" ;
-    form:displayType displayTypes:conceptSelector ;
+    form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
 fields:0cdfe85f-ec65-498f-bd26-0ec611967de0 a form:Field ;
@@ -868,6 +868,164 @@ fields:48cff9eb-579b-4e6e-958f-6229903c63d8 a form:Field ;
 ##########################################################
 # End Custom files and links fields
 ##########################################################
+
+##########################################################
+# Custom Fields for LEKP
+##########################################################
+
+#### Property group ####
+fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 a form:PropertyGroup;
+    mu:uuid "55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41";
+    sh:description "parent property-group, used to group fields and property-groups together";
+    sh:name " " ;
+    form:help """Lees <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a> meer over het Lokaal Energie- en Klimaatpact en dit formulier.""";
+    sh:order 3 .
+
+#### Authentieke bron ####
+fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9 a form:Field ;
+    mu:uuid "7ebdf368-fe63-45d7-9d44-030ec0cd9ab9" ;
+    sh:name "Authentieke bron" ;
+    form:help """
+    <b>Lees
+    <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a>
+       meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b> <br>
+    Correcties voor <a href="https://groenblauwpeil.be/" target="_blank">groenblauwpeil</a>
+     en <a href="/subsidy/applications" target="_blank">het Loket voor Lokale Besturen (module subsidie)</a> kunnen rechtstreeks in de authentieke bron.
+    """;
+    sh:order 20 ;
+    sh:path lblodBesluit:LEKPAuthenticSource ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:LEKPAuthenticSource ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/c2e7699a-b543-443c-b8b2-b60bef8767dc"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+  #### Type Correctie ####
+  fields:40c91f8e-be26-4e7d-8920-ae547f143744 a form:Field ;
+    mu:uuid "40c91f8e-be26-4e7d-8920-ae547f143744" ;
+    sh:name "Type Correctie" ;
+    form:help """1 type correctie per melding - binnen eenzelfde type correctie kunnen meerdere datacorrecties doorgegeven worden.""";
+    sh:order 21 ;
+    sh:path lblodBesluit:LEKPCorrectionType ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:LEKPCorrectionType ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/1dfc51af-99fd-4be9-a681-41360c195f14"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+
+#### Doelstelling ####
+fields:b2813526-d400-4cba-bdc4-bf64b2e21a80 a form:Field ;
+    mu:uuid "b2813526-d400-4cba-bdc4-bf64b2e21a80" ;
+    sh:name "LEKP-doelstelling" ;
+    form:help """
+     <b>Lees <a href="https://lokaalklimaatpact.be/formulieren.html" target="_blank">hier</a> meer over het Lokaal Energie- en Klimaatpact en dit formulier. <b>
+    """;
+    sh:order 20 ;
+    sh:path lblodBesluit:LEKPGoal ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:LEKPGoal ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+  #### Type Toelichting ####
+  fields:746e3820-c8db-478b-85d0-d238c6a531ea a form:Field ;
+    mu:uuid "746e3820-c8db-478b-85d0-d238c6a531ea" ;
+    sh:name "Type Toelichting" ;
+    sh:order 21 ;
+    sh:path lblodBesluit:LEKPExplanationType ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path lblodBesluit:LEKPExplanationType ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ];
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+  #### Omschrijving ####
+  fields:5a52adff-2558-437e-8a30-132648f4870c a form:Field ;
+    mu:uuid "5a52adff-2558-437e-8a30-132648f4870c";
+    sh:name "Omschrijving" ;
+    form:help """Voeg hier uw beschrijving van de gevraagde correctie in. ABB volgt deze correctie verder op.""";
+    sh:order 22 ;
+    sh:path lblodBesluit:LEKPDescription ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "500" ;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPDescription ],
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPDescription ] ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+  #### Toelichting ####
+  fields:8b8c8dc0-a728-42c6-837a-3b625d219140 a form:Field ;
+    mu:uuid "8b8c8dc0-a728-42c6-837a-3b625d219140";
+    sh:name "Toelichting" ;
+    form:help """Voeg hierboven uw toelichting in. Enkel de laatst doorgestuurde versie verschijnt in het LEKP-rapport bij de volgende maandelijkse update.""";
+    sh:order 22 ;
+    sh:path lblodBesluit:LEKPClarification ;
+    form:options """{}""" ;
+    form:displayType displayTypes:textArea ;
+    form:validations
+    [ a form:MaxLength ;
+      form:grouping form:MatchEvery ;
+      form:max "500" ;
+      sh:resultMessage "Max. karakters overschreden." ;
+      sh:path lblodBesluit:LEKPClarification ],
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht." ;
+      sh:path lblodBesluit:LEKPClarification ] ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+ #### Meer info ####
+  fields:fa96567b-6677-4502-add5-f41e24dfee15 a form:Field ;
+    mu:uuid "fa96567b-6677-4502-add5-f41e24dfee15";
+    sh:name "Meer info" ;
+    form:help """Voeg hier eventueel een URL toe met een meer uitgebreide toelichting.""";
+    form:validations
+     [ a form:UriConstraint ;
+       form:grouping form:MatchEvery ;
+       sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat.";
+       sh:path rdfs:seeAlso
+      ];
+    sh:order 23 ;
+    sh:path rdfs:seeAlso ;
+    form:options """{}""" ;
+    form:displayType displayTypes:defaultInput ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
+
+
+#### Bestanden ####
+fields:f7e4b0a8-e970-4d49-a6d0-16c99a761f17 a form:Field ;
+    mu:uuid "f7e4b0a8-e970-4d49-a6d0-16c99a761f17" ;
+    sh:name "Bestanden" ;
+    form:help """Hier kan je bijkomende informatie toevoegen (uitgebreide omschrijving, screenshots, data...)""";
+    sh:order 23 ;
+    sh:path dct:hasPart;
+    form:displayType <http://lblod.data.gift/display-types/files/variation/1> ;
+    sh:group fields:55b4d27e-afbd-4fbb-875e-6ecb1bd3dd41 .
 
 ##########################################################
 #  Files and links  [First version]
@@ -3381,7 +3539,66 @@ fields:5d0edb7c-3676-42cc-bd54-7f5712ec0b06 a form:ConditionalFieldGroup ;
       ] ;
     form:hasFieldGroup fieldGroups:f56fa353-5ad9-423f-8804-c32d104873e5 .
 
+###########LEKP-Rapport melding correctie authentieke bron###########
 
+fieldGroups:da491d56-4f98-4f9d-8c34-71ba617cfa64 a form:FieldGroup ;
+    mu:uuid "da491d56-4f98-4f9d-8c34-71ba617cfa64" ; 
+    form:hasField 
+                      ### Authentieke bron
+                      fields:7ebdf368-fe63-45d7-9d44-030ec0cd9ab9,
+
+                      ### Type Correctie
+                      fields:40c91f8e-be26-4e7d-8920-ae547f143744,
+
+                      ### Omschrijving
+                      fields:5a52adff-2558-437e-8a30-132648f4870c,
+
+                      ###Bestanden
+                      fields:f7e4b0a8-e970-4d49-a6d0-16c99a761f17,
+
+                      ###Type RemoteDataObject or FileDataObject###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874.
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:6e4101e4-3eae-4e56-ad3e-d9897248d17c.
+
+fields:6e4101e4-3eae-4e56-ad3e-d9897248d17c a form:ConditionalFieldGroup ;
+    mu:uuid "6e4101e4-3eae-4e56-ad3e-d9897248d17c";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/bea3944f-4f6d-4d2c-9a6e-23264859e1e5>
+      ] ;
+    form:hasFieldGroup fieldGroups:da491d56-4f98-4f9d-8c34-71ba617cfa64 .###########LEKP-Rapport Toelichting lokaal bestuur###########
+
+fieldGroups:ed8260d7-6150-490f-a3df-afba07ae7014 a form:FieldGroup ;
+    mu:uuid "ed8260d7-6150-490f-a3df-afba07ae7014" ; 
+    form:hasField 
+                      ### doelstelling
+                      fields:b2813526-d400-4cba-bdc4-bf64b2e21a80,
+
+                      ### Type toelichting
+                      fields:746e3820-c8db-478b-85d0-d238c6a531ea,
+
+                      ### Toelichting
+                      fields:8b8c8dc0-a728-42c6-837a-3b625d219140,
+
+                      ###Meer info
+                      fields:fa96567b-6677-4502-add5-f41e24dfee15 .
+
+fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:13d3b910-f486-4c8d-b76d-3d32e3fa6458.
+
+fields:13d3b910-f486-4c8d-b76d-3d32e3fa6458 a form:ConditionalFieldGroup ;
+    mu:uuid "13d3b910-f486-4c8d-b76d-3d32e3fa6458";
+    form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path rdf:type ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/91b8b15f-7631-4a21-9a90-489f5c91e73c>
+      ] ;
+    form:hasFieldGroup fieldGroups:ed8260d7-6150-490f-a3df-afba07ae7014 .
 ###########Meerjarenplan(aanpassing)-Eredienst###########
 
 fieldGroups:5a21ed58-c0cf-4042-8b59-bd14ca595aae a form:FieldGroup ;
