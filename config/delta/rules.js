@@ -18,11 +18,11 @@ export default [
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+        value: 'http://www.w3.org/ns/adms#status'
       },
       object: {
         type: 'uri',
-        value: 'http://purl.org/vocab/cpsv#PublicService'
+        value: 'http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c'
       }
     },
     callback: {
