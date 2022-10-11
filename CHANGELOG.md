@@ -1,4 +1,10 @@
 # Changelog
+## 1.70.0 (2022-10-11)
+- LEPK forms added
+- Eredienst positions corrections
+- Eredienst bestuursorganen corrections
+- update fietssubsidie-reports
+- less reports IPDC per day
 ## 1.69.1 (2022-10-06)
 - lpdc-management ingests new organisations via IPDC
 - typo in forms
