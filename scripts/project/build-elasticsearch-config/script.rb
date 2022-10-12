@@ -2,7 +2,6 @@ require 'bundler/inline'
 $stdout.sync = true
 gemfile do
   source 'https://rubygems.org'
-  gem 'stringio'
   gem 'linkeddata'
 end
 
