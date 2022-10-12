@@ -1,4 +1,7 @@
 # Changelog
+## 1.70.1 (2022-10-12)
+- hotfix climate subsidies: make sure old forms still render.
+- hotfix status fietssubsidies: make sure status is set correctly
 ## 1.70.0 (2022-10-11)
 - LEPK forms added
 - Eredienst positions corrections
