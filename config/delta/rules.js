@@ -222,7 +222,8 @@ export default [
       object: {
         type: 'uri',
         value: 'http://lblod.data.gift/file-download-statuses/success' // cached
-      }    },
+      }
+    },
     callback: {
       url: 'http://prepare-submissions-for-export/delta',
       method: 'POST'
