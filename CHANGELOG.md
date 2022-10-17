@@ -1,4 +1,54 @@
 # Changelog
+## 1.71.0 (2022-10-17)
+- adjust deadlines fietssubsidies
+- update reports
+## 1.70.1 (2022-10-12)
+- hotfix climate subsidies: make sure old forms still render.
+- hotfix status fietssubsidies: make sure status is set correctly
+## 1.70.0 (2022-10-11)
+- LEPK forms added
+- Eredienst positions corrections
+- Eredienst bestuursorganen corrections
+- update fietssubsidie-reports
+- less reports IPDC per day
+## 1.69.1 (2022-10-06)
+- lpdc-management ingests new organisations via IPDC
+- typo in forms
+## 1.69.0 (2022-10-03)
+- Release LPDC-module (both fronted and backend)
+- Backend maintenance:
+   - bump mu-auth
+   - bump publication graph maintainer
+- Update data erediensten
+  - codelists OP
+  - link person and nationality
+## 1.68.6 (2022-09-27)
+- propgate persons first or last names to all the graphs it belongs to
+## 1.68.5 (2022-09-27)
+- update bicycle subsidy deadline
+## 1.68.4 (2022-09-26)
+- added e-inclusion report
+## 1.68.3 (2022-09-16)
+- fix files graph persons sensitive
+## 1.68.2 (2022-09-15)
+- fix bestuursperiodeselector
+## 1.68.1 (2022-09-13)
+- bump download url service (to fix issues basic-auth issues for automatic-submission)
+## 1.68.0 (2022-09-05)
+### subsidies
+- climate subsidies
+- e-inclusion subsidies
+### lpdc
+- API + data + backend services
+### erediensten
+- API + data
+### frontend
+- erediensten mandatees (hidden feature flag)
+- lpdc (hidden feature flag)
+- various maintenance updates
+### various
+- upgrade identifier
+- bump publication graph maintainers
 ## 1.67.0 (2022-08-05)
 - update sync with kalliope: make sure timezone data is taken into account
 - subsidy climate 1.0: adaptations

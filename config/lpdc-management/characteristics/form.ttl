@@ -32,7 +32,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:competentAuthorityF;
     form:includes ext:executingAuthorityLevelF;
     form:includes ext:executingAuthorityF;
-    # form:includes ext:tagsF; TODO wait for proper tag selector
+    form:includes ext:tagsF;
     form:includes ext:startDateF;
     form:includes ext:yourEuropeCatF;
     form:includes ext:pubChannelF;
@@ -161,11 +161,10 @@ ext:authorityPg a form:PropertyGroup;
       sh:path m8g:hasCompetentAuthority ;
       form:options  """
                      {
-                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
-                       "multiple": true
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties/tailored"
                      }
-                     """ ;
-      form:displayType displayTypes:conceptSelector ;
+                    """ ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       form:validations [
           a form:RequiredConstraint ;
           form:grouping form:Bag ;
@@ -195,18 +194,16 @@ ext:authorityPg a form:PropertyGroup;
   #  field: uitvoerende overheid
   ##########################################################
   ext:executingAuthorityF a form:Field ;
-      sh:name "Uitvoerend overheid" ;
+      sh:name "Uitvoerende overheid" ;
       form:help "Meerdere overheden kunnen worden toegewezen";
       sh:order 30 ;
-      #TODO: this should need an improvement of the forms OR come from the backend (because it seems it will always be the eenheid creating the service)
       sh:path lpdcExt:hasExecutingAuthority ;
       form:options  """
                      {
-                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties",
-                       "multiple": true
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties/tailored"
                      }
                     """ ;
-      form:displayType displayTypes:conceptSelector ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:authorityPg .
 
   ##########################################################
@@ -222,7 +219,7 @@ ext:authorityPg a form:PropertyGroup;
                        "multiple": true
                      }
                     """ ;
-      form:help "Meerdere toepassingsgebieden kunnen worden toegewezen";
+      form:help "Gelieve de meeste specifieke gebied(en) op te geven. Meerdere toepassingsgebieden kunnen worden toegewezen";
       form:displayType displayTypes:conceptSelector ;
       form:validations [
           a form:RequiredConstraint ;
@@ -245,12 +242,12 @@ ext:relatedPg a form:PropertyGroup;
   ##########################################################
   ext:tagsF a form:Field ;
       sh:name "Tags" ;
-      form:help "Selecteer hier uit reeds bestaande tags, of voeg er nieuwe toe";
+      # TODO: searching for tags still needs to be implemented so we hide the help text for now
+      # form:help "Selecteer hier uit reeds bestaande tags, of voeg er nieuwe toe";
       sh:order 20 ;
       sh:path dcat:keyword ;
-      #TODO: this is not going to be a multi-selectbox
-      form:options  """{"conceptScheme":"http://data.lblod.info/concept-schemes/id/todo"}""" ;
-      form:displayType displayTypes:conceptSelector ;
+      form:language "nl";
+      form:displayType displayTypes:tagSelector ;
       sh:group ext:relatedPg .
 
   ##########################################################

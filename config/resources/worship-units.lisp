@@ -1,11 +1,3 @@
-(define-resource half-election ()
-  :class (s-prefix "code:HelftVerkiezing")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://lblod.data.gift/concepts/")
-  :features '(include-uri)
-  :on-path "half-elections"
-)
-
 (define-resource role ()
   :class (s-prefix "org:Role")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
@@ -41,29 +33,6 @@
   :resource-base (s-url "http://data.lblod.info/id/organisaties/")
   :features '(include-uri)
   :on-path "organizations"
-)
-
-(define-resource worship-administrative-unit ()
-  :class (s-prefix "org:Post")
-  :has-one `((recognized-worship-type :via ,(s-prefix "ere:typeEredienst")
-                                      :as "recognized-worship-type"))
-  :has-many `((minister-position :via ,(s-prefix "ere:wordtBediendDoor")
-                                 :inverse t
-                                 :as "minister-positions"))
-  :resource-base (s-url "http://data.lblod.info/id/eredienstBestuurseenheden/")
-  :features '(include-uri)
-  :on-path "worship-administrative-units"
-)
-
-(define-resource worship-service ()
-  :class (s-prefix "ere:BestuurVanDeEredienst")
-  :properties `((:denomination :string ,(s-prefix "ere:denominatie"))
-                (:cross-border :boolean ,(s-prefix "ere:grensoverschrijdend")))
-  :has-one `((local-involvement :via ,(s-prefix "org:organization")
-                          :as "local-involvement"))
-  :resource-base (s-url "http://data.lblod.info/id/besturenVanDeEredienst/")
-  :features '(include-uri)
-  :on-path "worship-services"
 )
 
 (define-resource recognized-worship-type ()

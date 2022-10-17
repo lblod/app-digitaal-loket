@@ -1,0 +1,5 @@
+DELETE WHERE {
+  GRAPH <http://debug/mandatarissen/05-09-2022/wrong> {
+    ?s ?p ?o
+  }
+}
