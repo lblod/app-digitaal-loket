@@ -37,6 +37,7 @@ import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-sub
 import planSubsidieProposalsReport from './planSubsidieProposalsReport';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 import eInclusionRequestReport from './eInclusionRequestReport';
+import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidieProposalsDeadlineGemeentenReports';
 
 export default [
   BestuurseenhedenReport,
@@ -79,5 +80,6 @@ export default [
   toezichtTaxRegulationSubmissionReport,
   planSubsidieProposalsReport,
   ukraineSubsidyOproepOneReport,
-  eInclusionRequestReport
+  eInclusionRequestReport,
+  fietsSubsidieProposalsDeadlineGemeentenReports
 ];
