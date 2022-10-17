@@ -1,4 +1,7 @@
 # Changelog
+## 1.71.0 (2022-10-17)
+- adjust deadlines fietssubsidies
+- update reports
 ## 1.70.1 (2022-10-12)
 - hotfix climate subsidies: make sure old forms still render.
 - hotfix status fietssubsidies: make sure status is set correctly
