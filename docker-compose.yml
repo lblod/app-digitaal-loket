@@ -625,8 +625,8 @@ services:
       DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions'
       INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions'
       HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions'
-      CRON_PATTERN_DUMP_JOB: '0 0 1 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 23 * * 6' #weekly on saturday
+      CRON_PATTERN_DUMP_JOB: '0 0 5 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 3 * * *' # daily a three
       START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
     labels:
       - "logging=true"
