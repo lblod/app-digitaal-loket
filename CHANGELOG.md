@@ -1,4 +1,6 @@
 # Changelog
+## 1.71.1 (2022-10-18)
+- fix an issue in the vendor-management app which prevented users from giving access rights to certain administrative units
 ## 1.71.0 (2022-10-17)
 - adjust deadlines fietssubsidies
 - update reports
