@@ -22,6 +22,20 @@ export default {
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX pav: <http://purl.org/pav/>
 
+      SELECT DISTINCT ?uriPublicService ?uriBestuurseenheid ?naam ?concept ?status ?statusLabel  WHERE {
+
+            ?uriPublicService a cpsv:PublicService;
+                  adms:status ?status;
+                  dct:title ?title;
+                  pav:createdBy ?uriBestuurseenheid.
+
+            ?uriBestuurseenheid a besluit:Bestuurseenheid;
+                  skos:prefLabel ?naam;
+                  besluit:classificatie ?typeUri.
+
+            ?status skos:prefLabel ?statusLabel.
+
+            OPTIONAL { ?uriPublicService dct:source ?source.}
 
       }`;
 
@@ -29,6 +43,12 @@ export default {
     const data = queryResponse.results.bindings;
 
     const postProcessedData = data.map(r => ({
+      uriPublicService: r.uriPublicService.value,
+      uriBestuurseenheid: r.uriBestuurseenheid.value,
+      naam: r.naam.value,
+      statusLabel: r.statusLabel.value,
+      status: r.status.value,
+      concept: (r.concept)?r.concept.value:"", //use empty string for non-existing concepts
     }));
     const csvHeaders = Object.keys(postProcessedData[0]);
     await generateReportFromData(postProcessedData, csvHeaders, reportData);
