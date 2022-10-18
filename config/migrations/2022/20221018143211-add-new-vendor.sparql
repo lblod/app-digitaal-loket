@@ -1,0 +1,7 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+   <http://data.lblod.info/vendors/2b7ee2e7-9162-4e91-9f9a-ecb3c89b1cdd> a foaf:Agent, ext:Vendor ;
+    foaf:name "Inetum Realdolmen" ;
+    mu:uuid "2b7ee2e7-9162-4e91-9f9a-ecb3c89b1cdd".
+  }
+}
