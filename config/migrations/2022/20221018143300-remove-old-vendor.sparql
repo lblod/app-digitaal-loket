@@ -1,0 +1,15 @@
+PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    <http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e> ?b ?c.
+  }
+} 
+WHERE{
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    <http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e> ?b ?c.
+  }
+}
