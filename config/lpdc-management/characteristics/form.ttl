@@ -198,6 +198,13 @@ ext:authorityPg a form:PropertyGroup;
       form:help "Meerdere overheden kunnen worden toegewezen";
       sh:order 30 ;
       sh:path lpdcExt:hasExecutingAuthority ;
+      form:validations [
+        a form:RequiredConstraint ;
+        form:language "en";
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path dct:description
+      ];
       form:options  """
                      {
                        "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties/tailored"
