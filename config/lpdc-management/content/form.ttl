@@ -579,7 +579,6 @@ ext:rulesPg a form:PropertyGroup;
           form:addLabel "Voeg website toe";
           form:canAdd true;
           form:canRemove true;
-          sh:maxCount 1;
           sh:order 1 .
 
        ##########################################################
