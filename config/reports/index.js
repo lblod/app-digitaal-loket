@@ -13,28 +13,16 @@ import mandatarissenWithoutStartDateReport from './mandatarissenWithoutStartDate
 import personsMissingDataReport from './personsMissingDataReport';
 import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
-import noodopvangSubsidiesReport from './noodopvangSubsidiesReport';
-import contactTracingSubsidiesReport from './contactTracingSubsidiesReport';
 import electedPersonsReport from './electedPersonsReport';
-import contactTracingSubsidiesDetailedReport from './contactTracingSubsidiesDetailedReport';
-import climateSubsidiePactsReport from './climateSubsidiePactsReport';
 import climateSubsidieOproep2PactsReport from './climateSubsidieOproep2PactsReport';
 import climateSubsidie2PactsReport from './climateSubsidie2PactsReport';
 import gemeentewegenReport from './gemeentewegenReport';
-import gzgSubsidieOproepOneReport from './gzgSubsidieOproep1Report';
-import gzgSubsidieOproepTwoReport from './gzgSubsidieOproep2Report';
-import gzgSubsidieOproepThreeReport from './gzgSubsidieOproep3Report';
-import gzgSubsidieOproepFourReport from './gzgSubsidieOproep4Report';
-import gzgSubsidieOproepFiveReport from './gzgSubsidieOproep5Report';
-import gzgSubsidieOproepSixReport from './gzgSubsidieOproep6Report';
-import gzgSubsidieOproepSevenReport from './gzgSubsidieOproep7Report';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
 import lpdcBestuurseenheidReport from './lpdcBestuurseenheidReport';
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
-import planSubsidieProposalsReport from './planSubsidieProposalsReport';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 import eInclusionRequestReport from './eInclusionRequestReport';
 import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidieProposalsDeadlineGemeentenReports';
@@ -56,29 +44,17 @@ export default [
   personsMissingDataReport,
   mandatarissenWithoutPersonReport,
   mandatarissenWithEmptyPersonReport,
-  noodopvangSubsidiesReport,
-  contactTracingSubsidiesReport,
   electedPersonsReport,
-  contactTracingSubsidiesDetailedReport,
-  climateSubsidiePactsReport,
   climateSubsidieOproep2PactsReport,
   climateSubsidie2PactsReport,
   gemeentewegenReport,
   fietsSubsidieProposalsReport,
   fietsSubsidieRequestsReport,
   fietsSubsidieBalanceRequestsReport,
-  gzgSubsidieOproepOneReport,
-  gzgSubsidieOproepTwoReport,
-  gzgSubsidieOproepThreeReport,
-  gzgSubsidieOproepFourReport,
-  gzgSubsidieOproepFiveReport,
-  gzgSubsidieOproepSixReport,
-  gzgSubsidieOproepSevenReport,
   lpdcBestuurseenheidReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
-  planSubsidieProposalsReport,
   ukraineSubsidyOproepOneReport,
   eInclusionRequestReport,
   fietsSubsidieProposalsDeadlineGemeentenReports
