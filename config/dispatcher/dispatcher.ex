@@ -422,7 +422,14 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # loket-submissions sync
+  # worship-submissions sync
+  #################################################################
+  post "/sync/worship-submissions/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer-worship-submissions/login/"
+  end
+
+  #################################################################
+  # worship-submissions sync
   #################################################################
   get "/sync/worship-submissions/files/*path" do
     Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-worship-submissions/files/"
