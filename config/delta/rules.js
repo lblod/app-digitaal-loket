@@ -163,24 +163,6 @@ export default [
   },
   {
     match: {
-      // anything
-    },
-    callback: {
-      url: 'http://prepare-submissions-for-export/delta',
-      method: 'POST'
-    },
-    options: {
-      resourceFormat: 'v0.0.1',
-      gracePeriod: 1000,
-      ignoreFromSelf: true,
-      optOutMuScopeIds: [
-                          "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
-                          "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
-                        ]
-    }
-  },
-  {
-    match: {
       predicate: {
         type: 'uri',
         value: 'http://www.w3.org/ns/adms#status'
@@ -218,6 +200,55 @@ export default [
     callback: {
       method: 'POST',
       url: 'http://toezicht-flattened-form-data-generator/delta'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
+                        ]
+    }
+  },
+  {
+    match: {
+      predicate: {
+        type: 'uri',
+        value: 'http://mu.semte.ch/vocabularies/ext/formSubmissionStatus' // Status of flattened form data
+      },
+      object: {
+        type: 'uri',
+        value: 'http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c' // Sent
+      }    },
+    callback: {
+      url: 'http://prepare-submissions-for-export/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
+                        ]
+    }
+  },
+  {
+    match: {
+      predicate: {
+        type: 'uri',
+        value: 'http://www.w3.org/ns/adms#status' // Status of remote-data object coming later
+      },
+      object: {
+        type: 'uri',
+        value: 'http://lblod.data.gift/file-download-statuses/success' // cached
+      }
+    },
+    callback: {
+      url: 'http://prepare-submissions-for-export/delta',
+      method: 'POST'
     },
     options: {
       resourceFormat: 'v0.0.1',
@@ -379,6 +410,24 @@ export default [
     },
     callback: {
       url: 'http://delta-producer-publication-graph-maintainer-submissions/delta',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 1000,
+      ignoreFromSelf: true,
+      optOutMuScopeIds: [
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
+                        ]
+    }
+  },
+  {
+    match: {
+      // anything
+    },
+    callback: {
+      url: 'http://delta-producer-publication-graph-maintainer-worship-submissions/delta',
       method: 'POST'
     },
     options: {
