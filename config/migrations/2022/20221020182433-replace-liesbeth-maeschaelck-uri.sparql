@@ -1,0 +1,25 @@
+PREFIX kandidatenlijsten: <http://data.lblod.info/id/kandidatenlijsten/>
+PREFIX personen:          <http://data.lblod.info/id/personen/>
+PREFIX mandaat:           <http://data.vlaanderen.be/ns/mandaat#>
+
+DELETE {
+  GRAPH ?h {
+    personen:a224dd4e872e45c62599b606a20fe586858fb31cbf3e2a85a58f793a4bb1ccd2 ?p1 ?o1.
+  }
+  GRAPH ?g {
+   ?s ?p personen:a224dd4e872e45c62599b606a20fe586858fb31cbf3e2a85a58f793a4bb1ccd2.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s ?p <http://data.lblod.info/id/personen/5C583FA3D5BECA000D00011B>.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s ?p personen:a224dd4e872e45c62599b606a20fe586858fb31cbf3e2a85a58f793a4bb1ccd2.
+  }
+  GRAPH ?h {
+    personen:a224dd4e872e45c62599b606a20fe586858fb31cbf3e2a85a58f793a4bb1ccd2 ?p1 ?o1.
+  }
+}
