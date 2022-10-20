@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.68.2
+    image: lblod/frontend-loket:0.68.3
     links:
       - identifier:backend
     labels:
@@ -25,7 +25,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-management:
-    image: lblod/frontend-vendor-access-management:0.4.1
+    image: lblod/frontend-vendor-access-management:0.5.0
     links:
       - identifier:backend
     labels:
@@ -302,7 +302,7 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:0.7.0
+    image: lblod/toezicht-flattened-form-data-generator:0.8.0
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
@@ -365,7 +365,7 @@ services:
     restart: always
     logging: *default-logging
   lpdc-ldes-consumer:
-    image: redpencil/ldes-consumer:0.3.0
+    image: redpencil/ldes-consumer:0.5.1
     environment:
       LDES_STREAM: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot"
       LDES_ENDPOINT_VIEW: "https://ipdc.tni-vlaanderen.be/doc/conceptsnapshot?pageNumber=0" # first page of the stream
@@ -387,7 +387,7 @@ services:
       - "logging=true"
     restart: always
   lpdc-publish:
-    image: lblod/lpdc-publish-service:0.2.0
+    image: lblod/lpdc-publish-service:0.3.0
     environment:
       LDES_ENDPOINT: "https://dev.lpdc.lblod.info"
       LDES_FOLDER: "dev-lpdc-stream"
@@ -433,9 +433,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.3.4
-    volumes:
-      - ./config/delta-producer/submissions/prepare/:/config
+    image: lblod/prepare-submissions-for-export-service:0.4.0
     labels:
       - "logging=true"
     restart: always
@@ -452,6 +450,8 @@ services:
       - ./data/publication-triplestore:/data
       - ./config/publication-triple-store/virtuoso.ini:/data/virtuoso.ini
       - ./config/publication-triple-store/:/opt/virtuoso-scripts
+    restart: always
+    logging: *default-logging
   delta-producer-report-generator:
     image: lblod/delta-producer-report-generator:0.4.0
     volumes:
@@ -481,6 +481,8 @@ services:
       - ./data/files:/share
     environment:
       ALLOW_SUPER_CONSUMER: "true"
+    restart: always
+    logging: *default-logging
 ################################################################################
 # DELTA LEIDINGGEVENDEN: START
 ################################################################################
@@ -619,6 +621,55 @@ services:
     logging: *default-logging
 ################################################################################
 # DELTA SUBMISSIONS: END
+################################################################################
+################################################################################
+# DELTA WORSHIP SUBMISSIONS: START
+################################################################################
+  delta-producer-background-jobs-initiator-worship-submissions:
+    image: lblod/delta-producer-background-jobs-initiator:0.3.1
+    environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions'
+      CRON_PATTERN_DUMP_JOB: '0 0 5 * * 6' # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: '0 0 3 * * *' # daily a three
+      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-publication-graph-maintainer-worship-submissions:
+    image: lblod/delta-producer-publication-graph-maintainer:0.14.0
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/worship-submissions"
+      PUBLICATION_GRAPH: 'http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions'
+      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions'
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions'
+      QUEUE_POLL_INTERVAL: 3000
+      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
+      SKIP_MU_AUTH_INITIAL_SYNC: 'true'
+      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
+      UPDATE_PUBLICATION_GRAPH_SLEEP: 200
+      SERVE_DELTA_FILES: "true"
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions"
+    volumes:
+      - ./config/delta-producer/worship-submissions:/config
+      - ./data/files/:/share
+# Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+#    labels:
+#      - "logging=true"
+    restart: always
+    logging: *default-logging
+################################################################################
+# DELTA WORSHIP SUBMISSIONS: END
 ################################################################################
 ################################################################################
 # DELTA PERSONS-SENSITIVE: START
