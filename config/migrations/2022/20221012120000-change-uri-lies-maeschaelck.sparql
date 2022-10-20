@@ -8,7 +8,6 @@ DELETE {
 INSERT {
   GRAPH ?g {
     ?sa owl:sameAs ?sb .
-    ?sb ?pout ?oout .
   }
 }
 WHERE {
