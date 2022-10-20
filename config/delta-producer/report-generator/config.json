@@ -5,6 +5,10 @@
     "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden",
     "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen",
     "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen",
-    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen"
+    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen",
+    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions",
+    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions",
+    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive",
+    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies"
   ]
 }

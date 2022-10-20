@@ -1,4 +1,6 @@
 # Changelog
+## 1.71.3 (2022-10-20)
+- fix report fietssubsidies
 ## 1.71.2 (2022-10-19)
 - fix an issue with the website field (LPDC)
 ## 1.71.1 (2022-10-18)
