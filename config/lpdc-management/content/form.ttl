@@ -1264,7 +1264,7 @@ ext:websitesPg a form:PropertyGroup;
   ext:websitesG a form:Generator;
     form:prototype [
       form:shape [
-        a schema:Website ;
+        a schema:WebSite ;
         dct:description " "@nl;
         dct:title " "@nl;
         schema:url "";
