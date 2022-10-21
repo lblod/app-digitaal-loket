@@ -35,12 +35,14 @@ export default {
 
             ?status skos:prefLabel ?statusLabel.
 
-            OPTIONAL { ?uriPublicService dct:source ?source.}
+            OPTIONAL { ?uriPublicService dct:source ?concept.}
 
       }`;
 
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings;
+
+    if(!data.length) return;
 
     const postProcessedData = data.map(r => ({
       uriPublicService: r.uriPublicService.value,
@@ -48,7 +50,7 @@ export default {
       naam: r.naam.value,
       statusLabel: r.statusLabel.value,
       status: r.status.value,
-      concept: (r.concept)?r.concept.value:"", //use empty string for non-existing concepts
+      concept: (r.concept)?r.concept.value: "", //use empty string for non-existing concepts
     }));
     const csvHeaders = Object.keys(postProcessedData[0]);
     await generateReportFromData(postProcessedData, csvHeaders, reportData);

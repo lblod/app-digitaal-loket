@@ -25,7 +25,6 @@ import lpdcConceptsReport from './lpdcConceptsReport';
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
-import eInclusionRequestReport from './eInclusionRequestReport';
 import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidieProposalsDeadlineGemeentenReports';
 
 export default [
@@ -58,6 +57,5 @@ export default [
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
   ukraineSubsidyOproepOneReport,
-  eInclusionRequestReport,
   fietsSubsidieProposalsDeadlineGemeentenReports
 ];
