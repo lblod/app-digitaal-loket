@@ -21,10 +21,10 @@ import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
 import lpdcBestuurseenheidReport from './lpdcBestuurseenheidReport';
+import lpdcConceptsReport from './lpdcConceptsReport';
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
-import eInclusionRequestReport from './eInclusionRequestReport';
 import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidieProposalsDeadlineGemeentenReports';
 
 export default [
@@ -52,10 +52,10 @@ export default [
   fietsSubsidieRequestsReport,
   fietsSubsidieBalanceRequestsReport,
   lpdcBestuurseenheidReport,
+  lpdcConceptsReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
   ukraineSubsidyOproepOneReport,
-  eInclusionRequestReport,
   fietsSubsidieProposalsDeadlineGemeentenReports
 ];
