@@ -31,6 +31,18 @@
     "fileBaseName": "dump-submissions-public",
     "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql"
   },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions" : {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/WorshipSubmissionsCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions",
+    "fileBaseName": "dump-worship-submissions",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql"
+  },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions" : {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/WorshipSubmissionsCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions",
+    "fileBaseName": "dump-worship-submissions",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql"
+  },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive" : {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/PersonsSensitiveCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive",

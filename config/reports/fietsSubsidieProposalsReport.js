@@ -30,22 +30,27 @@ export default {
             transactie:isInstantieVan <http://lblod.data.gift/concepts/70cc4947-33a3-4d26-82e0-2e1eacd2fea2> ;
             dct:source ?form .
           ?form dct:isPartOf/dct:references <http://data.lblod.info/id/subsidieprocedurestappen/002f93ed-bdb0-4e3a-af13-ef6c00e89651> .
+          ?subsidie adms:status/skos:prefLabel ?subsidieStatus ;
+            dct:modified ?submissionDate ;
+            m8g:hasParticipation ?participation ;
+            dct:source ?form .
+          ?bestuur m8g:playsRole ?participation ;
+            skos:prefLabel ?bestuurseenheid .
+          ?form adms:status/skos:prefLabel ?formStatus .
           OPTIONAL {
-            ?subsidie adms:status/skos:prefLabel ?subsidieStatus ;
-              dct:modified ?submissionDate ;
-              m8g:hasParticipation ?participation ;
-              dct:source ?form .
-            ?bestuur m8g:playsRole ?participation ;
-              skos:prefLabel ?bestuurseenheid .
 
-            ?form adms:status/skos:prefLabel ?formStatus .
             OPTIONAL { ?form <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#identifier> ?dossierNummer. }
 
             ?form lblodSubsidieBicycle:estimatedCostTable/lblodSubsidieBicycle:estimatedCostEntry ?firstEntry, ?secondEntry.
-            ?firstEntry ext:index 0;
-              lblodSubsidieBicycle:cost ?ramingKostprijs.
-            ?secondEntry ext:index 1;
-              lblodSubsidieBicycle:cost ?ramingOnteigeningsvergoeding.
+            ?firstEntry ext:index 0 .
+            ?secondEntry ext:index 1 .
+            
+            OPTIONAL {
+              ?firstEntry lblodSubsidieBicycle:cost ?ramingKostprijs.
+            }
+            OPTIONAL {
+              ?secondEntry lblodSubsidieBicycle:cost ?ramingOnteigeningsvergoeding.
+            }
           }
         }
         UNION
