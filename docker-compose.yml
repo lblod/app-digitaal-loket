@@ -640,7 +640,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer-worship-submissions:
-    image: lblod/delta-producer-publication-graph-maintainer:0.14.0
+    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
       MAX_BODY_SIZE: "50mb"
       JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
@@ -660,6 +660,8 @@ services:
       PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions"
+      FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas"
+      ACCOUNT: "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
     volumes:
       - ./config/delta-producer/worship-submissions:/config
       - ./data/files/:/share
