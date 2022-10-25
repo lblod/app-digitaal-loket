@@ -205,6 +205,7 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/dcat#Distribution",
                         "http://purl.org/dc/terms/Location",
                         "http://schema.org/WebSite",
+                        "http://www.w3.org/ns/locn#Address"
                         ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
