@@ -203,7 +203,7 @@ ext:authorityPg a form:PropertyGroup;
         form:language "en";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path dct:description
+        sh:path lpdcExt:hasExecutingAuthority
       ];
       form:options  """
                      {
