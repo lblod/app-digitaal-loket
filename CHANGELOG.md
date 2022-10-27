@@ -9,7 +9,8 @@
 - new vendor
 - update vendor with 100+ bestuurseenheden
 - various data fixes
-- updated lpdc report
+- updated lpdc repor
+- updated bestuursorganen erediensten
 ## 1.71.3 (2022-10-20)
 - fix report fietssubsidies
 ## 1.71.2 (2022-10-19)
