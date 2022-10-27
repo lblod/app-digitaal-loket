@@ -6,9 +6,10 @@
 - upgrade prepare-submission-for-export: more fine grained rules
 - lpdc evolutions: various bugfixes, re-publish flow and fixing publication issues
 - fix unsaved address publications
-- new vendors
+- new vendor
 - update vendor with 100+ bestuurseenheden
 - various data fixes
+- updated lpdc report
 ## 1.71.3 (2022-10-20)
 - fix report fietssubsidies
 ## 1.71.2 (2022-10-19)
