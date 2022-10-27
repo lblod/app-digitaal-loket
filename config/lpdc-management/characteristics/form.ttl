@@ -200,7 +200,6 @@ ext:authorityPg a form:PropertyGroup;
       sh:path lpdcExt:hasExecutingAuthority ;
       form:validations [
         a form:RequiredConstraint ;
-        form:language "en";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
         sh:path lpdcExt:hasExecutingAuthority
