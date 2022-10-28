@@ -7,11 +7,11 @@ WITH <http://mu.semte.ch/graphs/public>
 DELETE {
   <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
                                                                        foaf:firstName """Bestuur van de eredienst""".
-} 
+}
 INSERT {
     <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek Vredegem""";
                                                                         foaf:firstName """Kerkfabriek Vredegem""".
-} 
+}
 WHERE {
   <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
                                                                        foaf:firstName """Bestuur van de eredienst""".
@@ -22,11 +22,11 @@ WITH <http://mu.semte.ch/graphs/organizations/578bf96f86056e2260dc21cee91aa519>
 DELETE {
   <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
                                                                        foaf:firstName """Bestuur van de eredienst""".
-} 
+}
 INSERT {
     <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek Vredegem""";
                                                                         foaf:firstName """Kerkfabriek Vredegem""".
-} 
+}
 WHERE {
   <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
                                                                        foaf:firstName """Bestuur van de eredienst""".
@@ -50,10 +50,10 @@ DELETE DATA {
 WITH <http://mu.semte.ch/graphs/public>
 DELETE {
   <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
-} 
+}
 INSERT {
   <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek Vredegem""" .
-} 
+}
 WHERE {
   <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
 }
@@ -62,10 +62,10 @@ WHERE {
 WITH <http://mu.semte.ch/graphs/organizations/578bf96f86056e2260dc21cee91aa519>
 DELETE {
   <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
-} 
+}
 INSERT {
   <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek Vredegem""" .
-} 
+}
 WHERE {
   <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
 }
