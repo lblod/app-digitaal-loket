@@ -2,70 +2,60 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
-# RENAME PERSON "Kerkfabriek St.-Baafs van Gent" -> "Kerkfabriek Vredegem" (PUBLIC GRAPH)
-WITH <http://mu.semte.ch/graphs/public>
 DELETE {
-  <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
-                                                                       foaf:firstName """Bestuur van de eredienst""".
+  GRAPH ?g {
+    ?subject foaf:familyName ?familyname;
+       foaf:firstName ?firstName.
+  }
 }
 INSERT {
-    <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek Vredegem""";
-                                                                        foaf:firstName """Kerkfabriek Vredegem""".
+  GRAPH ?g {
+  ?subject foaf:familyName """Kerkfabriek Vredegem""";
+    foaf:firstName """Kerkfabriek Vredegem""".
+  }
 }
 WHERE {
-  <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
-                                                                       foaf:firstName """Bestuur van de eredienst""".
-};
+  BIND(<http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> as ?subject)
+  GRAPH ?g {
+    ?subject foaf:familyName ?familyname;
+       foaf:firstName ?firstName.
+  }
+}
 
-# RENAME PERSON "Kerkfabriek St.-Baafs van Gent" -> "Kerkfabriek Vredegem" (ORGANIZATION GRAPH)
-WITH <http://mu.semte.ch/graphs/organizations/578bf96f86056e2260dc21cee91aa519>
+;
+
 DELETE {
-  <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
-                                                                       foaf:firstName """Bestuur van de eredienst""".
+  GRAPH ?g {
+    ?subject ext:sessionRole """LoketLB-LPDCGebruiker""".
+  }
 }
 INSERT {
-    <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek Vredegem""";
-                                                                        foaf:firstName """Kerkfabriek Vredegem""".
+  GRAPH ?g {
+  ?subject ext:sessionRole """LoketLB-berichtenGebruiker""".
+  }
 }
 WHERE {
-  <http://data.lblod.info/id/persoon/20e72ad886aa41d5fac6507a5f593d0b> foaf:familyName """Kerkfabriek St.-Baafs van Gent""";
-                                                                       foaf:firstName """Bestuur van de eredienst""".
-};
+  BIND(<http://data.lblod.info/id/account/7c8f3283dc7d70834983f0bfd5676628> as ?subject)
+  GRAPH ?g {
+    ?subject a ?what.
+  }
+}
 
+;
 
-# DELETE LoketLB-LPDCGebruiker FROM MOCK LOGIN ACCOUNT (PUBLIC GRAPH)
-WITH <http://mu.semte.ch/graphs/public>
-DELETE DATA {
-  <http://data.lblod.info/id/account/7c8f3283dc7d70834983f0bfd5676628>	ext:sessionRole """LoketLB-LPDCGebruiker"""
-};
-
-# DELETE LoketLB-LPDCGebruiker FROM MOCK LOGIN ACCOUNT (ORGANIZATION GRAPH)
-WITH <http://mu.semte.ch/graphs/organizations/578bf96f86056e2260dc21cee91aa519>
-DELETE DATA {
-  <http://data.lblod.info/id/account/7c8f3283dc7d70834983f0bfd5676628>	ext:sessionRole """LoketLB-LPDCGebruiker"""
-};
-
-
-# RENAME BESTUUR "Kerkfabriek St.-Baafs van Gent" -> "Kerkfabriek Vredegem" (PUBLIC GRAPH)
-WITH <http://mu.semte.ch/graphs/public>
 DELETE {
-  <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
+  GRAPH ?g {
+    ?subject skos:prefLabel ?label.
+  }
 }
 INSERT {
-  <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek Vredegem""" .
+  GRAPH ?g {
+  ?subject skos:prefLabel """Kerkfabriek Vredegem""".
+  }
 }
 WHERE {
-  <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
-}
-
-# RENAME BESTUUR "Kerkfabriek St.-Baafs van Gent" -> "Kerkfabriek Vredegem" (ORGANIZATION GRAPH)
-WITH <http://mu.semte.ch/graphs/organizations/578bf96f86056e2260dc21cee91aa519>
-DELETE {
-  <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
-}
-INSERT {
-  <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek Vredegem""" .
-}
-WHERE {
-  <http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> skos:prefLabel """Kerkfabriek St.-Baafs van Gent""" .
+  BIND(<http://data.lblod.info/id/besturenVanDeEredienst/578bf96f86056e2260dc21cee91aa519> as ?subject)
+  GRAPH ?g {
+    ?subject skos:prefLabel ?label.
+  }
 }
