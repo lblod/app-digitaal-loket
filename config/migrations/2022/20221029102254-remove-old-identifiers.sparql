@@ -1,0 +1,12 @@
+DELETE { GRAPH ?g {
+  ?numberUri ?numberP ?numberO.
+  ?identifierUri ?identifierP ?identifierO. 
+}}
+INSERT {
+}
+WHERE { GRAPH ?g {
+  ?numberUri <https://data.vlaanderen.be/ns/generiek#lokaleIdentificator> ?number.
+  ?numberUri ?numberP ?numberO.
+  ?identifierUri ?identifierRelation ?numberUri.
+  ?identifierUri ?identifierP ?identifierO. 
+}}
