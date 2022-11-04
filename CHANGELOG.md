@@ -1,4 +1,8 @@
 # Changelog
+## 1.73.0 (2022-10-27)
+- bump file share service
+- alignment identifiers for eredienstbesturen to enable ACM/IDM login
+- Kerfabriek Vredegem
 ## 1.72.0 (2022-10-27)
 - evolutions frontend loket eredienst-mandatarissen
 - evolutions frontend loket eredienst-bedienaren
