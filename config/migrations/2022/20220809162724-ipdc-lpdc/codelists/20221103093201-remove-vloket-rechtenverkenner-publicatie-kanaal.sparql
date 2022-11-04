@@ -13,6 +13,9 @@ WHERE {
   GRAPH ?g {
 
     # for Rechtenverkenner
+    VALUES ?s1 {
+      dvc:Rechtenverkenner
+    }
     ?s1
       a skos:Concept ;
       skos:topConceptOf dvcs:PublicatieKanaal ;
@@ -20,6 +23,9 @@ WHERE {
       ?p1 ?o1.
 
     # for VLoket
+    VALUES ?s2 {
+      dvc:VLoket
+    }
     ?s2
       a skos:Concept ;
       skos:topConceptOf dvcs:PublicatieKanaal ;
