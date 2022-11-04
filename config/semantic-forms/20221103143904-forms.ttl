@@ -1052,11 +1052,11 @@ fields:2bc38df5-dc28-4d4d-a6e1-b6d95644c8d7 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodBesluit:climateTableDate ],
+      sh:path lblodBesluit:LEKPClimateTableDate ],
     [ a form:ValidDate ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Geef een geldige datum op." ;
-      sh:path lblodBesluit:climateTableDate ] ;
+      sh:path lblodBesluit:LEKPClimateTableDate ] ;
     sh:group fields:aDynamicPropertyGroup .
 
 #### Households ####
@@ -3632,6 +3632,7 @@ fieldGroups:b1143874-884d-4ffd-8d69-97383870a42e a form:FieldGroup ;
                       fields:df63b483-f2ee-4274-a7d0-0cfc916d22ce,
 
                       ### RemoteDataObject/url ###
+                      fields:355fe001-cdca-48cc-8a6e-88b3aab09874,
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:a8ab356d-9d3b-46f1-8de6-9f2f1b9ec424 .
