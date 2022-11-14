@@ -387,7 +387,7 @@ services:
       - "logging=true"
     restart: always
   lpdc-publish:
-    image: lblod/lpdc-publish-service:0.5s.0
+    image: lblod/lpdc-publish-service:0.5.0
     environment:
       LDES_ENDPOINT: "https://dev.lpdc.lblod.info"
       LDES_FOLDER: "dev-lpdc-stream"
