@@ -175,7 +175,7 @@
         "dct:format",
         "nfo:fileSize",
         "dbpedia:fileExtension",
-        "nfo:fileCreated",
+        "dct:created",
         "nie:dataSource"
       ],
       "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; nie:hasPart ?resource ."
@@ -190,7 +190,7 @@
         "dct:format",
         "nfo:fileSize",
         "dbpedia:fileExtension",
-        "nfo:fileCreated",
+        "dct:created",
         "nie:dataSource"
       ],
       "additionalFilter": "?s a toezicht:InzendingVoorToezicht ; nie:hasPart ?uploadFile . ?uploadFile ^nie:dataSource ?resource"
@@ -205,7 +205,7 @@
         "dct:format",
         "nfo:fileSize",
         "dbpedia:fileExtension",
-        "nfo:fileCreated",
+        "dct:created",
         "nie:dataSource"
       ],
       "additionalFilter": "?s a ext:FileAddress. ?s ^nie:dataSource ?resource"
@@ -220,7 +220,7 @@
         "dct:format",
         "nfo:fileSize",
         "dbpedia:fileExtension",
-        "nfo:fileCreated",
+        "dct:created",
         "nie:dataSource"
       ],
       "additionalFilter": "?s a ext:FileAddress. ?s ^nie:dataSource ?linkedFile. ?linkedFile ^nie:dataSource ?resource"
