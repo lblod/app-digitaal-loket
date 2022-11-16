@@ -18,6 +18,8 @@ services:
     logging: *default-logging
   dashboard:
     image: lblod/frontend-dashboard:1.5.2
+    environment:
+      EMBER_LOGIN_ROUTE: 'mock-login'
     links:
       - identifier:backend
     labels:
