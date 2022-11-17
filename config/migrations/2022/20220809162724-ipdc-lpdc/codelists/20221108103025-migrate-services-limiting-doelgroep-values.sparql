@@ -2,6 +2,7 @@ PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
 PREFIX dvcs:  <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
 PREFIX dvc:   <https://productencatalogus.data.vlaanderen.be/id/concept/PublicatieKanaal/>
 PREFIX lpdcExt: <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
 
 DELETE {
   GRAPH ?g {
@@ -18,10 +19,14 @@ WHERE {
     dvc:Onderneming
   }
   GRAPH ?g {
-    ?service lpdcExt:targetAudience ?audience.
+    ?service
+      a cpsv:PublicService;
+      lpdcExt:targetAudience ?audience.
   }
 
   # audience is not necessarily in the same graph than service.
-  ?audience skos:broader ?targetAudience.
+  ?audience
+    a skos:Concept;
+    skos:broader ?targetAudience.
 }
 
