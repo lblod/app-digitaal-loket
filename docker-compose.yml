@@ -426,6 +426,10 @@ services:
     image: lblod/job-controller-service:0.7.0
     volumes:
       - ./config/jobs-controller/:/config/
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   error-alert:
     image: lblod/loket-error-alert-service:1.0.0
     volumes:
