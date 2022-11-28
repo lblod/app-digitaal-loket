@@ -493,20 +493,6 @@ services:
 ################################################################################
 # DELTA LEIDINGGEVENDEN: START
 ################################################################################
-  delta-producer-background-jobs-initiator-leidinggevenden:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden'
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden'
-      CRON_PATTERN_DUMP_JOB: '0 0 0 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
-      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   delta-producer-publication-graph-maintainer-leidinggevenden:
     image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
@@ -538,20 +524,6 @@ services:
 ################################################################################
 # DELTA MANDATARISSEN: START
 ################################################################################
-  delta-producer-background-jobs-initiator-mandatarissen:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen'
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen'
-      CRON_PATTERN_DUMP_JOB: '0 0 1 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 2 * * *' # everyday at 2 AM
-      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   delta-producer-publication-graph-maintainer-mandatarissen:
     image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
@@ -583,20 +555,6 @@ services:
 ################################################################################
 # DELTA SUBMISSIONS: START
 ################################################################################
-  delta-producer-background-jobs-initiator-submissions:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions'
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/submissions'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions'
-      CRON_PATTERN_DUMP_JOB: '0 0 1 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 23 * * 6' #weekly on saturday
-      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   delta-producer-publication-graph-maintainer-submissions:
     image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
@@ -632,20 +590,6 @@ services:
 ################################################################################
 # DELTA WORSHIP SUBMISSIONS: START
 ################################################################################
-  delta-producer-background-jobs-initiator-worship-submissions:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions'
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions'
-      CRON_PATTERN_DUMP_JOB: '0 0 5 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 3 * * *' # daily a three
-      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   delta-producer-publication-graph-maintainer-worship-submissions:
     image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
@@ -683,20 +627,6 @@ services:
 ################################################################################
 # DELTA PERSONS-SENSITIVE: START
 ################################################################################
-  delta-producer-background-jobs-initiator-persons-sensitive:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive'
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive'
-      CRON_PATTERN_DUMP_JOB: '0 0 6 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
-      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   delta-producer-publication-graph-maintainer-persons-sensitive:
     image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
@@ -734,16 +664,10 @@ services:
 ################################################################################
 # DELTA SUBSIDIES: START
 ################################################################################
-  delta-producer-background-jobs-initiator-subsidies:
+  delta-producer-background-jobs-initiator-generic:
     image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies'
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies'
-      HEALING_JOB_OPERATION: 'http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies'
-      CRON_PATTERN_DUMP_JOB: '0 0 5 * * 6' # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: '0 0 4 * * *' # everyday at 4 AM
-      START_INITIAL_SYNC: 'false' # prefer to disable it now. We want to have feeling with how the DB acts.
+    volumes:
+      - ./config/delta-producer/background-jobs-initiator:/config
     labels:
       - "logging=true"
     restart: always
