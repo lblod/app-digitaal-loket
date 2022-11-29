@@ -1,4 +1,25 @@
 # Changelog
+## 1.74.0 (2022-11-29)
+### lpdc
+- allow multiple websites for procedure
+- mandatory executing authority
+- update code list:
+  - remove rechtenverkenner vloket
+  - limit doelgroep values + migrate existing
+- fixes publish service: push back ipdc
+### submissions
+- updated LEKP forms: klimaattafels
+### worship services
+- several UI improvements eredienstmandaten & bedienaren
+### data
+- remove duplicate person Nijlen
+- added betrokken lokale besturen
+### chore
+- fix file data model: `dct:created`
+- update file service
+- update dashboard
+- deltanotifier files organisation
+- update dumpfile producer: clean up old dumpes
 ## 1.73.0 (2022-10-27)
 - bump file share service
 - alignment identifiers for eredienstbesturen to enable ACM/IDM login
