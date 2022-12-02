@@ -5,7 +5,7 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 
 DELETE { GRAPH ?g {
 
-    ?subsidie <http://www.w3.org/2007/uwa/context/common.owl#active> ?o .
+    ?subsidie <http://www.w3.org/2007/uwa/context/common.owl#active> <http://lblod.data.info/id/subsidie-application-flow-steps/c50d7726-4880-43e2-b098-c356722a3096> .
     ?form adms:status ?status .
   }
 }
@@ -21,7 +21,7 @@ WHERE  {
     ?subsidie a subsidie:SubsidiemaatregelConsumptie ;
       transactie:isInstantieVan <http://lblod.data.info/id/subsidy-measure-offers/64d40351-8128-464f-990f-41066154583e> ;
       dct:source ?form ;
-      <http://www.w3.org/2007/uwa/context/common.owl#active> ?o .
+      <http://www.w3.org/2007/uwa/context/common.owl#active> <http://lblod.data.info/id/subsidie-application-flow-steps/c50d7726-4880-43e2-b098-c356722a3096> .
 
     ?form dct:isPartOf ?foo ;
       adms:status ?status.
