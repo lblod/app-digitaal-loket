@@ -29,8 +29,6 @@ services:
   deltanotifier:
     restart: "no"
   migrations:
-    volumes:
-      - ./config/dev-migrations:/data/migrations/dev/
     restart: "no"
   cache:
     restart: "no"
