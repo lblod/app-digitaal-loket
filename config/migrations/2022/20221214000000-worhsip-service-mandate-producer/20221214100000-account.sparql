@@ -1,0 +1,16 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/accounts/deltas> {
+    <http://data.lblod.info/foaf/account/id/7ae3e377-34f2-48d1-a213-f2f094e1298a>
+      a foaf:OnlineAccount.
+
+    <http://data.lblod.info/foaf/agent/id/acac91b8-9f53-41a7-9614-6d2e08446b0a>
+      a foaf:Agent;
+      foaf:account <http://data.lblod.info/foaf/account/id/7ae3e377-34f2-48d1-a213-f2f094e1298a>.
+
+    <http://data.lblod.info/foaf/group/id/81809cfa-eccd-46bf-b253-1b07c2dc5edb>
+      a foaf:Group;
+      foaf:member <http://data.lblod.info/foaf/agent/id/acac91b8-9f53-41a7-9614-6d2e08446b0a>;
+      foaf:name "worship-service-sensitive-deltas".
+  }
+}
