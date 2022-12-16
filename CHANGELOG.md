@@ -1,4 +1,8 @@
 # Changelog
+## 1.75.0 (2022-12-16)
+### Subsidies
+ - fix buggy table Fietssubsidies
+ - migration to skip optional step of climate subsidy 1 callup 2021
 ## 1.74.3 (2022-12-12)
 ### hofix
 #### IPDC
