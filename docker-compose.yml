@@ -9,7 +9,7 @@ x-logging:
 
 services:
   loket:
-    image: lblod/frontend-loket:0.69.1
+    image: lblod/frontend-loket:0.70.0
     links:
       - identifier:backend
     labels:
@@ -381,7 +381,7 @@ services:
     restart: always
     logging: *default-logging
   lpdc-management:
-    image: lblod/lpdc-management-service:0.12.0
+    image: lblod/lpdc-management-service:0.13.0
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
@@ -389,7 +389,7 @@ services:
       - "logging=true"
     restart: always
   lpdc-publish:
-    image: lblod/lpdc-publish-service:0.5.0
+    image: lblod/lpdc-publish-service:0.7.0
     environment:
       LDES_ENDPOINT: "https://dev.lpdc.lblod.info"
       LDES_FOLDER: "dev-lpdc-stream"
@@ -426,6 +426,10 @@ services:
     image: lblod/job-controller-service:0.7.0
     volumes:
       - ./config/jobs-controller/:/config/
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   error-alert:
     image: lblod/loket-error-alert-service:1.0.0
     volumes:
@@ -435,7 +439,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.4.0
+    image: lblod/prepare-submissions-for-export-service:0.4.1
     labels:
       - "logging=true"
     restart: always
@@ -468,7 +472,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher:
-    image: lblod/delta-producer-dump-file-publisher:0.7.1
+    image: lblod/delta-producer-dump-file-publisher:0.9.0
     volumes:
       - ./config/delta-producer/dump-file-publisher:/config
       - ./data/files:/share

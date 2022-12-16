@@ -1,4 +1,37 @@
 # Changelog
+## 1.74.3 (2022-12-12)
+### hofix
+#### IPDC
+  - Fixing required fields missing for PublicServices
+  - Update publication, to compensation validation issues for nested required fields
+## 1.74.2 (2022-12-06)
+### hofix
+#### IPDC
+  - To prepare the export to ipdc, we remove the publication flag.
+## 1.74.1 (2022-11-29)
+### hofix
+- attempt to fix load issues
+## 1.74.0 (2022-11-29)
+### lpdc
+- allow multiple websites for procedure
+- mandatory executing authority
+- update code list:
+  - remove rechtenverkenner vloket
+  - limit doelgroep values + migrate existing
+- fixes publish service: push back ipdc
+### submissions
+- updated LEKP forms: klimaattafels
+### worship services
+- several UI improvements eredienstmandaten & bedienaren
+### data
+- remove duplicate person Nijlen
+- added betrokken lokale besturen
+### chore
+- fix file data model: `dct:created`
+- update file service
+- update dashboard
+- deltanotifier files organisation
+- update dumpfile producer: clean up old dumpes
 ## 1.73.0 (2022-10-27)
 - bump file share service
 - alignment identifiers for eredienstbesturen to enable ACM/IDM login

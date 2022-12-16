@@ -193,6 +193,7 @@ defmodule Acl.UserGroups.Config do
                         "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#ConceptualPublicService",
                         "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#AbstractPublicService",
                         "http://purl.org/vocab/cpsv#PublicService",
+                        "https://www.w3.org/ns/activitystreams#Tombstone",
                         "http://data.europa.eu/m8g/PublicOrganisation",
                         "http://data.europa.eu/m8g/Requirement",
                         "http://data.europa.eu/m8g/Evidence",
