@@ -436,6 +436,17 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # worship-services-sensitive sync
+  #################################################################
+  post "/sync/worship-services-sensitive/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer-ws-sensitive/login/"
+  end
+
+  get "/sync/worship-services-sensitive/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-ws-sensitive/files/"
+  end
+
+  #################################################################
   # loket-persons-sensitive sync
   #################################################################
   post "/sync/persons-sensitive/login/*path" do

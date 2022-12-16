@@ -747,7 +747,7 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  delta-producer-publication-graph-maintainer-worship-services-sensitive:
+  delta-producer-publication-graph-maintainer-ws-sensitive:
     image: lblod/delta-producer-publication-graph-maintainer:0.15.1
     environment:
       MAX_BODY_SIZE: "50mb"
@@ -767,7 +767,7 @@ services:
       PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
       PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
-      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-services-sensitive"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-ws-sensitive"
       FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/worship-services-sensitive-deltas"
       ACCOUNT: "http://data.lblod.info/foaf/account/id/7ae3e377-34f2-48d1-a213-f2f094e1298a"
     volumes:
