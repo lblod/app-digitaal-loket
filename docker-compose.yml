@@ -284,7 +284,11 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:0.14.0
     environment:
+<<<<<<< HEAD
       ACTIVE_FORM_FILE: "share://semantic-forms/20221215131050-forms.ttl"
+=======
+      ACTIVE_FORM_FILE: "share://semantic-forms/20221216101531-forms.ttl"
+>>>>>>> feature/new-RO-forms-with-MVP-erediensten-selector
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
