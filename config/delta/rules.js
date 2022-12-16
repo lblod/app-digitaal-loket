@@ -1,3 +1,4 @@
+import automaticSubmission from './automatic-submission';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
 import deltaProducerPublicationGraphMaintainerLeidinggevenden from './delta-producer-publication-graph-maintainer-leidinggevenden';
 import deltaProducerPublicationGraphMaintainerMandatarissen from './delta-producer-publication-graph-maintainer-mandatarissen';
@@ -20,6 +21,7 @@ import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-g
 import validateSubmission from './validate-submission';
 
 export default [
+  ...automaticSubmission,
   ...deltaProducerDumpFilePublisher,
   ...deltaProducerPublicationGraphMaintainerLeidinggevenden,
   ...deltaProducerPublicationGraphMaintainerMandatarissen,

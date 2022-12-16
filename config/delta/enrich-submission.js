@@ -1,13 +1,13 @@
 export default [
-  {
+ {
     match: {
       predicate: {
         type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
+        value: 'http://redpencil.data.gift/vocabularies/tasks/operation'
       },
       object: {
         type: 'uri',
-        value: 'http://lblod.data.gift/automatische-melding-statuses/ready-for-enrichment'
+        value: 'http://lblod.data.gift/id/jobs/concept/TaskOperation/enrich'
       }
     },
     callback: {
@@ -21,7 +21,7 @@ export default [
       optOutMuScopeIds: [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
                           "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
-                        ]
+      ]
     }
   },
 ];

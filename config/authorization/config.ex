@@ -284,6 +284,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://vocab.deri.ie/cogs#Job",
                         "http://mu.semte.ch/vocabularies/ext/supervision/InzendingVoorToezicht",
                         "http://mu.semte.ch/vocabularies/ext/supervision/TaxRate",
                         "http://mu.semte.ch/vocabularies/ext/supervision/SimplifiedTaxRate",
