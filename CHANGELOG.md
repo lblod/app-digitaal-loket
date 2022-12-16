@@ -1,4 +1,13 @@
 # Changelog
+## 1.74.3 (2022-12-12)
+### hofix
+#### IPDC
+  - Fixing required fields missing for PublicServices
+  - Update publication, to compensation validation issues for nested required fields
+## 1.74.2 (2022-12-06)
+### hofix
+#### IPDC
+  - To prepare the export to ipdc, we remove the publication flag.
 ## 1.74.1 (2022-11-29)
 ### hofix
 - attempt to fix load issues
