@@ -1,8 +1,0 @@
-PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
-DELETE DATA {
-  GRAPH <http://mu.semte.ch/graphs/public> {
-  <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd> a <http://lblod.data.gift/vocabularies/lpdc-ipdc/LPDC-Concept>;
-    skos:inScheme <http://data.lblod.info/concept-schemes/id/25e9d104-393f-4e5d-8793-06b240bad7ab>;
-    skos:topConceptOf <http://data.lblod.info/concept-schemes/id/bf7fcb58-7258-42f7-b7bf-628cf4701842>.
-  }
-}
