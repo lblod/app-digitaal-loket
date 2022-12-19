@@ -182,6 +182,12 @@ ext:applicationPg a form:PropertyGroup;
     sh:order 3 ;
     sh:name "Laad hier alle relevante bijlagen op." ;
     sh:path ( lblodSubsidie:urbanRenewalAttachments dct:hasPart ) ;
+    form:validations
+    [ a form:RequiredConstraint ;
+      form:grouping form:Bag ;
+      sh:resultMessage "Dit veld is verplicht."@nl;
+      sh:path ( lblodSubsidie:urbanRenewalAttachments dct:hasPart )
+    ] ;
     form:displayType displayTypes:files ;
     sh:group ext:applicationPg .
     
