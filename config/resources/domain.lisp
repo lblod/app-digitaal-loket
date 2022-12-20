@@ -46,14 +46,24 @@
 (read-domain-file "dcat.json")
 (read-domain-file "lpdc.json")
 
-
+;; Extra security layer to return 403 on GET /files
+;; It should be ok for mu-auth; but devs can make bugs and add files to the wrong graph (i.e. public)
 (before (:list file) (resource)
   (let ((request-filters-on-uri
           (some (lambda (args)
                   (let ((components (getf args :components)))
-                    (and (= 1 (length components))
-                         (string= (elt components 0)
-                                  ":uri:"))))
+
+                    ;;matches /files?filter[data-container][input-from-tasks][:id:]=''
+                    (or
+                      (and (= 3 (length components))
+                           (string= (elt components 2)
+                                    ":id:"))
+
+                     ;;matches /files?filter[:uri:]=''
+                       (and (= 1 (length components))
+                           (string= (elt components 0)
+                                    ":uri:")))
+                    ))
                 (extract-filters-from-request))))
     (if request-filters-on-uri
         resource

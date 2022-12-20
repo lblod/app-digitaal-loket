@@ -1,5 +1,5 @@
 export default [
-  {
+    {
     match: {
       predicate: {
         type: 'uri',
@@ -23,5 +23,5 @@ export default [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
                         ]
     }
-  }
+  },
 ];

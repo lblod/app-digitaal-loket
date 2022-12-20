@@ -220,5 +220,29 @@
         "nextIndex": "0"
       }
     ]
+  },
+  "http://lblod.data.gift/id/jobs/concept/JobOperation/automaticSubmissionFlow": {
+    "tasksConfiguration": [
+      {
+        "currentOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/download",
+        "nextOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/import",
+        "nextIndex": "2"
+      },
+      {
+        "currentOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/import",
+        "nextOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/enrich",
+        "nextIndex": "3"
+      },
+      {
+        "currentOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/enrich",
+        "nextOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/validate",
+        "nextIndex": "4"
+      },
+      {
+        "currentOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/validate",
+        "nextOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/form-data-generate",
+        "nextIndex": "5"
+      }
+    ]
   }
 }
