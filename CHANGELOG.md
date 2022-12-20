@@ -1,4 +1,7 @@
 # Changelog
+## 1.75.1 (2022-12-20)
+### submissions
+ - Due to various issues after a batch sent in prod of automatic submission, we removed them to try again
 ## 1.75.0 (2022-12-16)
 ### Subsidies
  - fix buggy table Fietssubsidies
