@@ -1127,34 +1127,59 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
     mu:uuid "9724f76e-6b1d-480d-a868-f24b74f236a0" ;
     sh:name "Dit dossierstype heeft betrekking tot erkenning lokale geloofsgemeenschappen.";
     form:help """
-    <a href="https://lokaalbestuur.vlaanderen.be/erediensten/erkenning" target="_blank">Meer informatie daarover, alsook het aanvraagformulier, kun je hier terugvinden. </a>
+    <a href="https://abb-vlaanderen.gitbook.io/handleiding-loket/erediensten/faq/eredienstendossiers-voor-representatieve-organen" target="_blank">Meer informatie daarover, alsook het aanvraagformulier, kun je hier terugvinden. </a>
     """ ;
     sh:order 101;
     form:options """{ "level": "6", "skin": "6"}""";
     form:displayType displayTypes:heading ;
     sh:group fields:aDynamicPropertyGroup .
 
+
 ##########################################################
-# Custom Fields for Erediensten selector
+# Custom Fields for Erediensten selector (FILTERED)
 ##########################################################
-fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd a form:Field ;
-    mu:uuid "a56a2ebf-8cd1-4adb-a863-0ea7929139bd" ;
+fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
+    mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
     sh:name "Betreffend (centraal) bestuur van de eredienst" ;
     sh:order 101 ;
-    sh:path besluit:Bestuurseenheid ;
+    sh:path eli:is_about ;
     form:validations
       [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path besluit:Bestuurseenheid ;
+        sh:path eli:is_about ;
         sh:resultMessage "Dit veld is verplicht."@nl
       ],
       [ a form:ConceptSchemeConstraint ;
         form:grouping form:Bag ;
-        sh:path besluit:Bestuurseenheid;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/fa83ff76-2f1d-496c-8f93-b498a02d550f> ;
+        sh:path eli:is_about ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130> ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/fa83ff76-2f1d-496c-8f93-b498a02d550f"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Custom Fields for Erediensten selector RO (FILTERED)
+##########################################################
+fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
+    mu:uuid "eb089ca1-2c5b-42a4-a781-f009c46ac583" ;
+    sh:name "Betreffend (centraal) bestuur van de eredienst" ;
+    sh:order 101 ;
+    sh:path eli:is_about ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:is_about ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:is_about ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/936272b5-020a-43f9-8115-503e83bb0631> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/936272b5-020a-43f9-8115-503e83bb0631"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -1344,7 +1369,7 @@ fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
     form:hasField 
                       
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
               
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
@@ -1838,7 +1863,7 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
@@ -1951,7 +1976,7 @@ fieldGroups:ae168679-82cf-4df6-8803-cbcbc6610f47 a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
@@ -4419,7 +4444,7 @@ fieldGroups:abb02ef6-581d-4876-aa45-acd1fbc4f49b a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:eb089ca1-2c5b-42a4-a781-f009c46ac583,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -4459,7 +4484,7 @@ fieldGroups:253be7ce-f723-4e82-8b24-3e55e0602aaa a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:eb089ca1-2c5b-42a4-a781-f009c46ac583,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -5674,7 +5699,7 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
     mu:uuid "6745c3c5-ed83-45e2-a9e7-ca77c18f0d05" ; 
     form:hasField 
                       ###Eredienst selector###
-                      fields:a56a2ebf-8cd1-4adb-a863-0ea7929139bd,
+                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
