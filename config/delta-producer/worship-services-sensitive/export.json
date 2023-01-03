@@ -9,8 +9,7 @@
       ],
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "^http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -23,7 +22,8 @@
         "http://data.vlaanderen.be/ns/mandaat#start",
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
-        "http://www.w3.org/ns/org#heldBy"
+        "http://www.w3.org/ns/org#heldBy",
+        "http://www.w3.org/ns/org#holds"
       ]
     },
     {
@@ -45,7 +45,9 @@
         "http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
         "http://data.vlaanderen.be/ns/mandaat#start",
         "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://schema.org/contactPoint"
+        "http://schema.org/contactPoint",
+        "http://www.w3.org/ns/org#heldBy",
+        "http://www.w3.org/ns/org#holds"
       ]
     },
     {
@@ -56,8 +58,7 @@
       ],
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "^http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -66,7 +67,8 @@
         "http://data.lblod.info/vocabularies/contacthub/startdatum",
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
-        "http://www.w3.org/ns/org#heldBy"
+        "http://www.w3.org/ns/org#heldBy",
+        "http://www.w3.org/ns/org#holds"
       ]
     },
     {
@@ -88,7 +90,9 @@
         "http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
         "http://data.vlaanderen.be/ns/mandaat#start",
         "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://schema.org/contactPoint"
+        "http://schema.org/contactPoint",
+        "http://www.w3.org/ns/org#heldBy",
+        "http://www.w3.org/ns/org#holds"
       ]
     },
     {
@@ -179,8 +183,7 @@
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#heldBy",
         "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "^http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -196,7 +199,8 @@
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandaat",
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
-        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker",
+        "http://mu.semte.ch/graphs/public"
       ],
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#hasPost",
@@ -207,6 +211,39 @@
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/ns/org#role"
+      ]
+    },
+    {
+      "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
+      ],
+      "pathToConceptScheme": [
+        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/org#hasPost"
+      ]
+    },
+    {
+      "type": "http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst",
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
+      ],
+      "pathToConceptScheme": [
+        "http://data.vlaanderen.be/ns/besluit#classificatie",
+        "http://www.w3.org/2004/02/skos/core#inScheme"
+      ],
+      "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor"
       ]
     }
   ]
