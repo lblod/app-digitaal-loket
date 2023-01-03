@@ -1,4 +1,7 @@
 # Changelog
+## 1.75.2 (2022-01-03)
+### vendors
+- vandenbroele was missing some centrale besturen.
 ## 1.75.1 (2022-12-20)
 ### submissions
  - Due to various issues after a batch sent in prod of automatic submission, we removed them to try again
