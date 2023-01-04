@@ -167,11 +167,15 @@
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
       "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://xmlns.com/foaf/0.1/familyName",
-        "http://xmlns.com/foaf/0.1/name",
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
-        "http://www.w3.org/2002/07/owl#sameAs"
+        "http://data.vlaanderen.be/ns/persoon#geslacht",
+        "http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
+        "http://data.vlaanderen.be/ns/persoon#heeftNationaliteit",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2002/07/owl#sameAs",
+        "http://www.w3.org/ns/adms#identifier",
+        "http://xmlns.com/foaf/0.1/familyName",
+        "http://xmlns.com/foaf/0.1/name"
       ]
     },
     {
@@ -188,11 +192,15 @@
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
       "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://xmlns.com/foaf/0.1/familyName",
-        "http://xmlns.com/foaf/0.1/name",
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
-        "http://www.w3.org/2002/07/owl#sameAs"
+        "http://data.vlaanderen.be/ns/persoon#geslacht",
+        "http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
+        "http://data.vlaanderen.be/ns/persoon#heeftNationaliteit",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/2002/07/owl#sameAs",
+        "http://www.w3.org/ns/adms#identifier",
+        "http://xmlns.com/foaf/0.1/familyName",
+        "http://xmlns.com/foaf/0.1/name"
       ]
     },
     {
