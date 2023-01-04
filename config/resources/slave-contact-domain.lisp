@@ -26,7 +26,7 @@
 (define-resource adres ()
   :class (s-prefix "locn:Address")
   :properties `((:busnummer :string ,(s-prefix "adres:Adresvoorstelling.busnummer"))
-                (:huisnummer :string ,(s-prefix "adres:AdresVoorstelling.huisnummer"))
+                (:huisnummer :string ,(s-prefix "adres:Adresvoorstelling.huisnummer"))
                 (:straatnaam :string ,(s-prefix "locn:thoroughfare"))
                 (:postcode :string ,(s-prefix "locn:postCode"))
                 (:gemeentenaam :string ,(s-prefix "adres:gemeentenaam"))
