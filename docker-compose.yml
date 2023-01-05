@@ -443,6 +443,40 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  eredienst-mandatarissen-consumer:
+    image: lblod/delta-consumer:0.0.14
+    volumes:
+      - ./config/delta-consumer/eredienst-mandatarissen:/config/triples-dispatching/custom-dispatching
+      - ./data/files/eredienst-mandatarissen-consumer:/share
+    environment:
+      DCR_SERVICE_NAME: "eredienst-mandatarissen-consumer"
+      DCR_SYNC_BASE_URL: "https://dev.harvesting-self-service.lblod.info/"
+      DCR_JOB_CREATOR_URI: "http://jobs-controller/"
+      DCR_DELTA_SYNC_JOB_OPERATION: "http://eredienst-mandatarissen-consumer/delta-sync"
+      DCR_SYNC_DATASET_SUBJECT: "" # TODO
+      DCR_INITIAL_SYNC_JOB_OPERATION: "http://eredienst-mandatarissen-consumer/initial-sync"
+      DCR_SYNC_FILES_PATH: "/sync/worship/files/"
+      DCR_DOWNLOAD_FILES_PATH: "/files/:id/download"
+      DCR_CRON_PATTERN_DELTA_SYNC: "15 * * * *" # Every hour at 15 minutes past the hour
+      DCR_START_FROM_DELTA_TIMESTAMP: "2023-01-01T00:00:00Z"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_WAIT_FOR_INITIAL_SYNC: "true"
+      DCR_KEEP_DELTA_FILES: "false"
+      DCR_SYNC_FILESHARE_PATH: "/share" # TODO What even is this?
+      DCR_DELTA_FILE_FOLDER: "/share" # Undocumented, but present in code
+      INGEST_GRAPH: "http://eredienst-mandatarissen-consumer/temp"
+      BATCH_SIZE: "500"
+      BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "false"
+      DIRECT_DATABASE_ENDPOINT: "http://virtuoso:8890/sparql"
+      MU_CALL_SCOPE_ID_INITIAL_SYNC: "" # TODO
+      MAX_DB_RETRY_ATTEMPTS: "5"
+      SLEEP_BETWEEN_BATCHES: "1000"
+      SLEEP_TIME_AFTER_FAILED_DB_OPERATION: "60000"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   ################################################################################
   # DELTA GENERAL
   ################################################################################
