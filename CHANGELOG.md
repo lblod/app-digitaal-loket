@@ -1,4 +1,7 @@
 # Changelog
+## 1.75.3 (2022-01-05)
+### data migrations
+- Remove: Bestuurslid van het bestuur van de eredienst
 ## 1.75.2 (2022-01-03)
 ### vendors
 - vandenbroele was missing some centrale besturen.
