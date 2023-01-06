@@ -1,14 +1,17 @@
-const { BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES,
-        DIRECT_DATABASE_ENDPOINT,
-        MU_CALL_SCOPE_ID_INITIAL_SYNC,
-        BATCH_SIZE,
-        MAX_DB_RETRY_ATTEMPTS,
-        SLEEP_BETWEEN_BATCHES,
-        SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-        INGEST_GRAPH
-      } = require('./config');
+const {
+  BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES,
+  DIRECT_DATABASE_ENDPOINT,
+  MU_CALL_SCOPE_ID_INITIAL_SYNC,
+  BATCH_SIZE,
+  MAX_DB_RETRY_ATTEMPTS,
+  SLEEP_BETWEEN_BATCHES,
+  SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+  INGEST_GRAPH,
+} = require('./config');
 const { batchedDbUpdate } = require('./utils');
-const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES ? DIRECT_DATABASE_ENDPOINT : process.env.MU_SPARQL_ENDPOINT;
+const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES
+  ? DIRECT_DATABASE_ENDPOINT
+  : process.env.MU_SPARQL_ENDPOINT;
 
 /**
  * Dispatch the fetched information to a target graph.
@@ -23,15 +26,17 @@ const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES ? DIRECT_DATABASE_ENDPOINT
  *         ]
  * @return {void} Nothing
  */
-async function dispatch(lib, data){
+async function dispatch(lib, data) {
   const { mu, muAuthSudo } = lib;
 
-  const triples = data.termObjects.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+  const triples = data.termObjects.map(
+    (o) => `${o.subject} ${o.predicate} ${o.object}.`
+  );
 
-  if(BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES){
-    console.warn(`Service configured to skip MU_AUTH!`);
+  if (BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES) {
+    console.warn('Service configured to skip MU_AUTH!');
   }
-  console.log(`Using ${endpoint} to insert triples`);
+  console.info(`Using ${endpoint} to insert triples`);
 
   await batchedDbUpdate(
     muAuthSudo.updateSudo,
@@ -47,5 +52,5 @@ async function dispatch(lib, data){
 }
 
 module.exports = {
-  dispatch
+  dispatch,
 };
