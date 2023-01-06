@@ -49,7 +49,7 @@ ext:generalPg a form:PropertyGroup;
    # Field: geldig vanaf
    ##########################################################
    ext:startDateF a form:Field ;
-      sh:name "Geldig vanaf" ;
+      sh:name "Product of dienst geldig vanaf" ;
       sh:order 2 ;
       sh:path schema:startDate ;
       form:displayType displayTypes:dateTime ;
@@ -59,7 +59,7 @@ ext:generalPg a form:PropertyGroup;
    # Field: geldig tot
    ##########################################################
    ext:endDateF a form:Field ;
-      sh:name "Geldig Tot" ;
+      sh:name "Product of dienst geldig tot" ;
       sh:order 3 ;
       sh:path schema:endDate ;
       form:displayType displayTypes:dateTime ;
@@ -261,7 +261,7 @@ ext:relatedPg a form:PropertyGroup;
   ##########################################################
   ext:yourEuropeCatF a form:Field ;
       sh:name "Categorieën Your Europe" ;
-      form:help "Gelieve de meest precies categorieën te kiezen die toepassing zijn.";
+      form:help "Gelieve de categorieën die het meest van toepassing zijn te kiezen. Meerdere categorieën kunnen worden toegewezen.";
       sh:order 30 ;
       sh:path lpdcExt:yourEuropeCategory ;
       form:options  """
@@ -278,7 +278,7 @@ ext:relatedPg a form:PropertyGroup;
   ##########################################################
   ext:pubChannelF a form:Field ;
       sh:name "Publicatiekanalen" ;
-      form:help "Meerdere publicatiekanalen kunnen van toepassing zijn.";
+      form:help "Gelieve de publicatiekanalen die van toepassing zijn te kiezen. Meerdere publicatiekanalen kunnen worden toegewezen.";
       sh:order 40 ;
       sh:path lpdcExt:publicationMedium ;
       form:options  """
