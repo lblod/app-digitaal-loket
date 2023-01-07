@@ -450,7 +450,7 @@ services:
       - ./data/files/eredienst-mandatarissen-consumer:/share
     environment:
       DCR_SERVICE_NAME: "eredienst-mandatarissen-consumer"
-      DCR_SYNC_BASE_URL: "https://dev.harvesting-self-service.lblod.info/"
+      DCR_SYNC_BASE_URL: "https://dev.harvesting-self-service.lblod.info"
       DCR_JOB_CREATOR_URI: "http://jobs-controller/"
       DCR_DELTA_SYNC_JOB_OPERATION: "http://eredienst-mandatarissen-consumer/delta-sync"
       DCR_SYNC_DATASET_SUBJECT: "" # TODO
