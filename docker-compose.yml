@@ -473,6 +473,8 @@ services:
       MAX_DB_RETRY_ATTEMPTS: "5"
       SLEEP_BETWEEN_BATCHES: "1000"
       SLEEP_TIME_AFTER_FAILED_DB_OPERATION: "60000"
+      DCR_SYNC_LOGIN_ENDPOINT: "https://dev.harvesting-self-service.lblod.info/sync/worship/login"
+      DCR_SECRET_KEY: "66d0fda1-e987-4cf3-bf8c-80ee16271214"
     labels:
       - "logging=true"
     restart: always
