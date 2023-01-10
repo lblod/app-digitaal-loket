@@ -461,7 +461,6 @@ services:
       DCR_KEEP_DELTA_FILES: "true"
       DCR_DELTA_FILE_FOLDER: "/consumer-files/eredienst-mandatarissen"
       INGEST_GRAPH: "http://eredienst-mandatarissen-consumer/temp"
-      BATCH_SIZE: "500"
       DCR_SYNC_LOGIN_ENDPOINT: "https://dev.harvesting-self-service.lblod.info/sync/worship/login"
       DCR_SECRET_KEY: "66d0fda1-e987-4cf3-bf8c-80ee16271214"
     labels:
