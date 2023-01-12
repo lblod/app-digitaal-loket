@@ -46,7 +46,7 @@ ext:form a form:Form, form:TopLevelForm ;
 ##########################################################
 ext:titlePg a form:PropertyGroup;
     sh:name "Titel" ;
-    form:help "Hier kan u de titel van de dienstverlening aanbrengen/wijzigen.";
+    form:help "Hier kan u de titel aanbrengen/wijzigen.";
     sh:order 1 .
 
   ##########################################################
@@ -90,7 +90,7 @@ ext:titlePg a form:PropertyGroup;
 ##########################################################
 ext:descriptionPg a form:PropertyGroup;
     sh:name "Beschrijving" ;
-    form:help "Hier kan u de beschrijving van de dienstverlening aanbrengen/wijzigen.";
+    form:help "Hier kan u de beschrijving aanbrengen/wijzigen.";
     sh:order 2 .
 
   ##########################################################
@@ -134,7 +134,7 @@ ext:descriptionPg a form:PropertyGroup;
 ##########################################################
 ext:exceptionPg a form:PropertyGroup;
     sh:name "Uitzonderingen" ;
-    form:help "Geef hier mogelijke uitzondering op.";
+    form:help "Hier kan u de mogelijke uitzonderingen aanbrengen/wijzigen.";
     sh:order 3 .
 
   ##########################################################
@@ -164,7 +164,7 @@ ext:exceptionPg a form:PropertyGroup;
 ##########################################################
 ext:requirementsPg a form:PropertyGroup;
     sh:name "Voorwaarden" ;
-    form:help "Hier kan u de voorwaarden van de dienstverlening aanpassen/toevoegen.";
+    form:help "Hier kan u de voorwaarden aanbrengen/wijzigen.";
     sh:order 3 .
 
   ##########################################################
@@ -296,7 +296,7 @@ ext:requirementsPg a form:PropertyGroup;
         ##########################################################
         ext:evidencesPg a form:PropertyGroup;
             sh:name "Bewijsstukken" ;
-            form:help "Van bovenstaande voorwaarde, kan u de gevraagde bewijsstukken opgeven";
+            form:help "Hier kan u de gevraagde bewijsstukken aanbrengen/wijzigen.";
             sh:order 1 .
 
         ##########################################################
@@ -354,7 +354,7 @@ ext:requirementsPg a form:PropertyGroup;
           # Field: Evidence title
           ##########################################################
           ext:evidenceTitleF a form:Field ;
-              sh:name "Naam bewijsstuk" ;
+              sh:name "Titel bewijsstuk" ;
               sh:order 1 ;
               form:language "nl";
               form:validations [
@@ -372,7 +372,7 @@ ext:requirementsPg a form:PropertyGroup;
           # Field (En.): Evidence title
           ##########################################################
           extEng:evidenceTitleF a form:Field ;
-              sh:name "Engelse vertaling van de naam" ;
+              sh:name "Engelse vertaling van de titel" ;
               sh:order 2 ;
               form:language "en";
               form:validations [
@@ -427,7 +427,7 @@ ext:requirementsPg a form:PropertyGroup;
 ##########################################################
 ext:rulesPg a form:PropertyGroup;
     sh:name "Procedure" ;
-    form:help "Hier kan u de procedure van de dienstverlening aanpassen/toevoegen.";
+    form:help "Hier kan u de procedure aanbrengen/wijzigen.";
     sh:order 4 .
 
   ##########################################################
@@ -504,7 +504,7 @@ ext:rulesPg a form:PropertyGroup;
     # Field (En.): Procedure title
     ##########################################################
     extEng:ruleTitleF a form:Field ;
-        sh:name "Engelse vertaling titel" ;
+        sh:name "Engelse vertaling van de titel" ;
         sh:order 2 ;
         form:language "en";
         form:validations [
@@ -559,7 +559,7 @@ ext:rulesPg a form:PropertyGroup;
         ##########################################################
         ext:procedureWebsitesPg a form:PropertyGroup;
             sh:name "Website procedure" ;
-            form:help "Indien de procedure online kan gevolgd worden, geef het hier op";
+            form:help "Hier kan u de relevante websites om een of meerdere procedurestappen online uit te voeren, aanbrengen/wijzigen.";
             sh:order 1 .
 
         ##########################################################
@@ -618,7 +618,7 @@ ext:rulesPg a form:PropertyGroup;
           # Field: ProcedureWebsite title
           ##########################################################
           ext:procedureWebsiteTitleF a form:Field ;
-              sh:name "Naam website" ;
+              sh:name "Titel website" ;
               sh:order 1 ;
               form:language "nl";
               form:validations [
@@ -636,7 +636,7 @@ ext:rulesPg a form:PropertyGroup;
           # Field (En.): ProcedureWebsite title
           ##########################################################
           extEng:procedureWebsiteTitleF a form:Field ;
-              sh:name "Engelse vertaling naam" ;
+              sh:name "Engelse vertaling van de titel" ;
               sh:order 2 ;
               form:language "en";
               form:validations [
@@ -665,7 +665,7 @@ ext:rulesPg a form:PropertyGroup;
           # Field (En.): ProcedureWebsite description
           ##########################################################
           extEng:procedureWebsiteDescriptionF a form:Field ;
-              sh:name "Engelse vertaling beschrijving" ;
+              sh:name "Engelse vertaling van de beschrijving" ;
               sh:order 3 ;
               form:language "en";
               sh:path dct:description ;
@@ -676,7 +676,7 @@ ext:rulesPg a form:PropertyGroup;
           # Field: ProcedureWebsite url
           ##########################################################
           ext:procedureWebsiteUrlF a form:Field ;
-              sh:name "Url" ;
+              sh:name "Website URL" ;
               sh:order 3 ;
               form:validations
               [ a form:UriConstraint ;
@@ -699,7 +699,7 @@ ext:rulesPg a form:PropertyGroup;
 ##########################################################
 ext:costPg a form:PropertyGroup;
     sh:name "Kosten" ;
-    form:help "Hier kan u de bijbehorende kosten opgeven.";
+    form:help "Hier kan u de bijbehorende kosten aanbrengen/wijzigen.";
     sh:order 5 .
 
   ##########################################################
@@ -774,7 +774,7 @@ ext:costPg a form:PropertyGroup;
     # Field (En.): Kost title
     ##########################################################
     extEng:costTitleF a form:Field ;
-        sh:name "Engelse vertaling titel" ;
+        sh:name "Engelse vertaling van de titel" ;
         sh:order 2 ;
         form:language "en";
         form:validations [
@@ -810,7 +810,7 @@ ext:costPg a form:PropertyGroup;
     # Field (En.): Kost description
     ##########################################################
     extEng:costDescriptionF a form:Field ;
-        sh:name "Engelse vertaling beschrijving" ;
+        sh:name "Engelse vertaling van de beschrijving" ;
         sh:order 4 ;
         form:language "en";
         form:validations [
@@ -829,7 +829,7 @@ ext:costPg a form:PropertyGroup;
 ##########################################################
 ext:finAdvPg a form:PropertyGroup;
     sh:name "Financiële Voordelen" ;
-    form:help "Hier kan u de bijbehorende financiële voordelen opgeven.";
+    form:help "Hier kan u de bijbehorende financiële voordelen aanbrengen/wijzigen.";
     sh:order 6 .
 
   ##########################################################
@@ -904,7 +904,7 @@ ext:finAdvPg a form:PropertyGroup;
     # Field (En.): Financieel Voordeel title
     ##########################################################
     extEng:finAdvTitleF a form:Field ;
-        sh:name "Engelse vertaling titel" ;
+        sh:name "Engelse vertaling van de titel" ;
         sh:order 2 ;
         form:language "en";
         form:validations [
@@ -940,7 +940,7 @@ ext:finAdvPg a form:PropertyGroup;
     # Field (En.): Financieel Voordeel description
     ##########################################################
     extEng:finAdvDescriptionF a form:Field ;
-        sh:name "Engelse vertaling beschrijving" ;
+        sh:name "Engelse vertaling van de beschrijving" ;
         sh:order 4 ;
         form:language "en";
         form:validations [
@@ -960,7 +960,7 @@ ext:finAdvPg a form:PropertyGroup;
 ##########################################################
 ext:regulationsPg a form:PropertyGroup;
     sh:name "Regelgeving" ;
-    form:help "Pas hier de regelgeving aan.";
+    form:help "Hier kan u de verwijzing naar relevante regelgeving aanbrengen/wijzigen.";
     sh:order 7 .
 
   ##########################################################
@@ -989,7 +989,7 @@ ext:regulationsPg a form:PropertyGroup;
 ##########################################################
 ext:contactpointsPg a form:PropertyGroup;
     sh:name "Contactpunten" ;
-    form:help "Voer hier contactpunt(en) in.";
+    form:help "Hier kan u contactpunten aanbrengen/wijzigen.";
     sh:order 8 .
 
   ##########################################################
@@ -1057,7 +1057,6 @@ ext:contactpointsPg a form:PropertyGroup;
           sh:resultMessage "Geef een geldig e-mailadres op."@nl
         ] ;
         sh:path schema:email ;
-        form:help "Geef een geldig email-adres op";
         form:displayType displayTypes:defaultInput ;
         sh:group ext:contactpointsPg-sub .
 
@@ -1082,7 +1081,7 @@ ext:contactpointsPg a form:PropertyGroup;
     # Field: ContactPunt website
     ##########################################################
     ext:contactPageF a form:Field ;
-        sh:name "Website" ;
+        sh:name "Website URL" ;
         sh:order 3 ;
         form:validations [
           a form:UriConstraint ;
@@ -1235,7 +1234,7 @@ ext:contactpointsPg a form:PropertyGroup;
 ##########################################################
 ext:websitesPg a form:PropertyGroup;
     sh:name "Meer info" ;
-    form:help "Hier kan u websites opgeven die meer informatie bevatten over de lokale dienst";
+    form:help "Hier kan u websites die meer informatie bevatten over de lokale dienst aanbrengen/wijzigen.";
     sh:order 9 .
 
   ##########################################################
@@ -1313,7 +1312,7 @@ ext:websitesPg a form:PropertyGroup;
     # Field (En.):  Meer Info title
     ##########################################################
     extEng:websiteTitleF a form:Field ;
-        sh:name "Engelse vertaling titel" ;
+        sh:name "Engelse vertaling van de titel" ;
         sh:order 2 ;
         form:language "en";
         form:validations [
@@ -1342,7 +1341,7 @@ ext:websitesPg a form:PropertyGroup;
     # Field (En.): Meer Info description
     ##########################################################
     extEng:websiteDescriptionF a form:Field ;
-        sh:name "Engelse vertaling beschrijving" ;
+        sh:name "Engelse vertaling van de beschrijving" ;
         sh:order 4 ;
         form:language "en";
         sh:path dct:description ;
