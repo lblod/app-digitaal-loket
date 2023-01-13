@@ -1,0 +1,26 @@
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX pera: <http://publications.europa.eu/resource/authority/>
+PREFIX schema: <http://schema.org/>
+PREFIX dct: <http://purl.org/dc/terms/>
+DELETE{
+  GRAPH ?graph{
+    ?publicService schema:publication <http://lblod.data.gift/concepts/3369bb10-1962-11ed-b07c-132292303e92>.
+    ?publicService adms:status ?status.
+  }
+}
+INSERT{
+  GRAPH ?graph{
+    ?publicService adms:status <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>.
+  }
+}
+WHERE{
+  GRAPH ?graph{
+    ?publicService a cpsv:PublicService;
+      schema:publication <http://lblod.data.gift/concepts/3369bb10-1962-11ed-b07c-132292303e92>.
+    ?publicService adms:status ?status.
+    FILTER EXISTS{
+      ?publicService pera:language ?language.
+    }
+  }
+}
