@@ -1,0 +1,15 @@
+
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX pera: <http://publications.europa.eu/resource/authority/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+INSERT {
+  GRAPH ?g {
+    ?s ext:status <http://lblod.data.gift/concepts/176ec8a9-ffd6-4f0b-a302-84ef59b31c42>.
+  }
+}
+WHERE {
+  GRAPH ?g {
+   ?s a cpsv:PublicService.
+  }
+}
