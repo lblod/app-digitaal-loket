@@ -68,6 +68,11 @@
           "predicate": "pera:language",
           "cardinality": "many"
         },
+        "review-status":{
+          "target": "concept",
+          "predicate": "ext:status",
+          "cardinality": "one"
+        },
         "type": {
           "target": "concept",
           "predicate": "dct:type",
