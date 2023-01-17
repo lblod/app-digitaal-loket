@@ -68,9 +68,9 @@
           "predicate": "pera:language",
           "cardinality": "many"
         },
-        "concept-change-status":{
+        "review-status":{
           "target": "concept",
-          "predicate": "ext:conceptChangeStatus",
+          "predicate": "ext:reviewStatus",
           "cardinality": "one"
         },
         "type": {
