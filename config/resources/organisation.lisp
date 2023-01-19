@@ -12,7 +12,8 @@
                 (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
                 (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties"))
                 (:is-trial-user :boolean ,(s-prefix "ext:isTrailUser"))
-                (:has-edit-right :boolean ,(s-prefix "ext:hasEditRight")))
+                (:has-edit-right :boolean ,(s-prefix "ext:hasEditRight"))
+                (:has-view-only-module :string-set ,(s-prefix "ext:hasViewOnlyModule")))
 
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
