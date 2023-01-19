@@ -1,4 +1,7 @@
 # Changelog
+## 1.75.4 (2022-01-19)
+### data migrations
+- Some attachements were broken due to Kalliope, fixing these.
 ## 1.75.3 (2022-01-05)
 ### data migrations
 - Remove: Bestuurslid van het bestuur van de eredienst
