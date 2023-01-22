@@ -1140,7 +1140,7 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
 ##########################################################
 fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
     mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
-    sh:name "Betreffend (centraal) bestuur van de eredienst" ;
+    sh:name "Betreffend bestuur van de eredienst eredienst" ;
     sh:order 101 ;
     sh:path eli:is_about ;
     form:validations
@@ -1152,10 +1152,10 @@ fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
       [ a form:ConceptSchemeConstraint ;
         form:grouping form:Bag ;
         sh:path eli:is_about ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130> ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/2e136902-f709-4bf7-a54a-9fc820cf9f07> ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/2e136902-f709-4bf7-a54a-9fc820cf9f07"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -1164,7 +1164,7 @@ fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
 ##########################################################
 fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
     mu:uuid "eb089ca1-2c5b-42a4-a781-f009c46ac583" ;
-    sh:name "Betreffend (centraal) bestuur van de eredienst" ;
+    sh:name "Betreffend bestuur van de eredienst eredienst" ;
     sh:order 101 ;
     sh:path eli:is_about ;
     form:validations
@@ -1176,10 +1176,10 @@ fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
       [ a form:ConceptSchemeConstraint ;
         form:grouping form:Bag ;
         sh:path eli:is_about ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/936272b5-020a-43f9-8115-503e83bb0631> ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/164a27d5-cf7e-43ea-996b-21645c02a920> ;
         sh:resultMessage "Selecteer een waarde uit de lijst."@nl
       ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/936272b5-020a-43f9-8115-503e83bb0631"}""" ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/164a27d5-cf7e-43ea-996b-21645c02a920"}""" ;
     form:displayType displayTypes:conceptSchemeSelector ;
     sh:group fields:aDynamicPropertyGroup .
 
