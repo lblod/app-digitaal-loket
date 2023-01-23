@@ -969,6 +969,7 @@ ext:regulationsPg a form:PropertyGroup;
   ext:regulationitleF a form:Field ;
       sh:order 1 ;
       form:language "nl";
+      sh:name "Regelgeving";
       sh:path lpdcExt:regulation;
       form:displayType displayTypes:richText ;
       sh:group ext:regulationsPg .
