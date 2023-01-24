@@ -239,12 +239,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  person-reconciliation:
-    image: lblod/person-reconciliation-service:0.3.0
-    labels:
-      - "logging=true"
-    restart: "no"
-    logging: *default-logging
   report-generation:
     image: lblod/loket-report-generation-service:0.5.0
     links:
