@@ -65,8 +65,6 @@ services:
     restart: "no"
   adressenregister:
     restart: "no"
-  person-reconciliation:
-    restart: "no"
   report-generation:
     restart: "no"
   automatic-submission:
