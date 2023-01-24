@@ -1137,10 +1137,36 @@ fields:9724f76e-6b1d-480d-a868-f24b74f236a0 a form:Field;
 
 ##########################################################
 # Custom Fields for Erediensten selector (FILTERED)
+# Centrale besturen and besturen van eredienst
 ##########################################################
 fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
     mu:uuid "7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b" ;
-    sh:name "Betreffend bestuur van de eredienst eredienst" ;
+    sh:name "Betreffend (centraal) bestuur van de eredienst" ;
+    sh:order 101 ;
+    sh:path eli:is_about ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:is_about ;
+        sh:resultMessage "Dit veld is verplicht."@nl
+      ],
+      [ a form:ConceptSchemeConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:is_about ;
+        form:conceptScheme <http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130> ;
+        sh:resultMessage "Selecteer een waarde uit de lijst."@nl
+      ] ;
+    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/362a6a78-6431-4d0a-b20d-22f1faca4130"}""" ;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Custom Fields for Erediensten selector (FILTERED)
+# only besturen van eredienst
+##########################################################
+fields:00a7bce6-2925-4794-93cb-ebd571b28831 a form:Field ;
+    mu:uuid "00a7bce6-2925-4794-93cb-ebd571b28831" ;
+    sh:name "Betreffend bestuur van de eredienst" ;
     sh:order 101 ;
     sh:path eli:is_about ;
     form:validations
@@ -1164,7 +1190,7 @@ fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b a form:Field ;
 ##########################################################
 fields:eb089ca1-2c5b-42a4-a781-f009c46ac583 a form:Field ;
     mu:uuid "eb089ca1-2c5b-42a4-a781-f009c46ac583" ;
-    sh:name "Betreffend bestuur van de eredienst eredienst" ;
+    sh:name "Betreffend bestuur van de eredienst" ;
     sh:order 101 ;
     sh:path eli:is_about ;
     form:validations
@@ -1369,7 +1395,7 @@ fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
     form:hasField 
                       
                       ###Eredienst selector###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
               
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
@@ -1863,7 +1889,7 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
@@ -1976,7 +2002,7 @@ fieldGroups:ae168679-82cf-4df6-8803-cbcbc6610f47 a form:FieldGroup ;
     form:hasField 
 
                       ###Eredienst selector###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
