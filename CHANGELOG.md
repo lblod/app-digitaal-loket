@@ -1,4 +1,42 @@
 # Changelog
+## 1.76.0 (2022-01-26)
+### General
+#### frontend
+  - modules to connect to external applications
+  - bug birth date-picker
+  - various improvements in semantic forms shared components
+  - helpdesk link in person module
+#### backend
+  - Various maintenance operations, both data and code
+  - Automatic submissions: migration to cogs:Jobs model, trackable submissions in the dashboard (if logged as bestuurseenheid through mock-login)
+  - Various mock-login updates
+  - Removal of the person reconcilation service
+### Erediensten
+#### inzendingen voor toezicht
+  - Added besluit handhaven
+  - Added Representatieve organen
+  - Added forms Representatieve organen
+  - Updated forms: meerjarenplanwijziging, advies budgetwijzing, advies jaarrekenig for Eredienstbestuur.
+    - Extra selectbox component to link URI bestuureenheid of the advies.
+  - Update publication logic for forms eredienst forms
+  - Updates sync with kalliope
+#### eredienst mandatarissen
+  - perparation of read-only mode
+  - permanent alert
+  - address outside of flanders
+#### eredienst bedienaren
+  - perparation of read-only mode
+  - address outside of flanders
+#### data and data sharing
+  - Added delta producer stream for eredienst-mandatarissen and bedienaren
+  - Added Vandenbroele as vendor of RO's
+### LPDC
+ - textual updates
+ - Prefill the "Authority" fields for blank service instances
+ - Add support for fetching form data for conceptual public services (preparation for basic change notification feature)
+ - Ensure language is correctly set in the database. (Will re-publish this information)
+### Subsidies
+ - open up nooddorpen and opknapwerk again
 ## 1.75.4 (2022-01-19)
 ### data migrations
 - Some attachements were broken due to Kalliope, fixing these.
