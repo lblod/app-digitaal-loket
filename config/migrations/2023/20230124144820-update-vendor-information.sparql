@@ -12,10 +12,7 @@ INSERT {
   }
 }
 WHERE {
-  VALUES ?vendor {
-    <http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e> # Vanden Broele
-  }
-
+  BIND(<http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e> as ?vendor)
   GRAPH ?g {
     ?vendor a ext:Vendor
   }
