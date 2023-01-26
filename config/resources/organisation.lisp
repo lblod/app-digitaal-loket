@@ -11,7 +11,8 @@
                 (:alternatieve-naam :string-set ,(s-prefix "skos:altLabel"))
                 (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
                 (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties"))
-                (:is-trial-user :boolean ,(s-prefix "ext:isTrailUser")))
+                (:is-trial-user :boolean ,(s-prefix "ext:isTrailUser"))
+                (:view-only-modules :string-set ,(s-prefix "ext:viewOnlyModules")))
 
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
