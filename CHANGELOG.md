@@ -1,4 +1,8 @@
 # Changelog
+## 1.76.1 (2022-01-26)
+### Toezicht
+#### frontend
+  - Fix the problem where the app freezes when selecting the "Belastingsreglement" option in the "Type reglement/verordening" field
 ## 1.76.0 (2022-01-26)
 ### General
 #### frontend
