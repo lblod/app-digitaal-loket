@@ -1,25 +1,8 @@
-## Adding Bestuurseenheid viewOnlyModules flag
-
-```
-# Adding viewOnlyModules flag to the bestuurseenheid who has access to the eredienst modules
-
-PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
-PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-
-INSERT {
-  GRAPH <http://mu.semte.ch/graphs/public> {
-     ?bestuurseenheid ext:viewOnlyModules "LoketLB-eredienstBedienaarGebruiker";
-     		              ext:viewOnlyModules "LoketLB-eredienstMandaatGebruiker" .
-  }
-}
-WHERE {
-  GRAPH <http://mu.semte.ch/graphs/public> {
-     VALUES ?bestuurseenheid {
-      <http://data.lblod.info/id/besturenVanDeEredienst/b09aa33ec9809bb0ea9099e6fa569d2a>
-     }
-     ?bestuurseenheid a besluit:Bestuurseenheid .
-  }
-}
-```
-
-**This will not run by default, if needed you will need to run it locally.**
+# Motivation
+Sometimes we need data to develop on, that should not be production.
+This folder will contain this migrations.
+## how?
+It is not configured to run by default, even in the `docker-compose.dev.yml`.
+You'll have to run them manually, or pick a subset as you please.
+### why not running by default in development-mode?
+In the past, dev migrations and normal migrations ran sometimes out of sync, confusing development tremendously.
