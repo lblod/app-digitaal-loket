@@ -327,6 +327,8 @@ defmodule Acl.UserGroups.Config do
                         constraint: %ResourceConstraint{
                           resource_types: [
                             "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                            # Sometimes a very specific list of organisations should be able submit for a subsidy.
+                            # This is unfortunatly the most elegant way.
                             "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
                             "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks"
                           ],
