@@ -320,12 +320,18 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
                         "http://mu.semte.ch/vocabularies/ext/EngagementEntry",
                         "http://schema.org/ContactPoint",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                       ] } },
                       %GraphSpec{
                         graph: "http://mu.semte.ch/graphs/organizations/",
                         constraint: %ResourceConstraint{
-                          resource_types: [ "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid" ],
+                          resource_types: [
+                            "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                            # Sometimes a very specific list of organisations should be able submit for a subsidy.
+                            # This is unfortunatly the most elegant way.
+                            "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
+                            "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks"
+                          ],
                           predicates: %NoPredicates{
                             except: [
                               "http://data.europa.eu/m8g/playsRole"
