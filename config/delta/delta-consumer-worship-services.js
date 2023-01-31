@@ -1,0 +1,36 @@
+export default [
+  {
+    match: {
+      graph: {
+        type: 'uri',
+        value: 'http://eredienst-mandatarissen-consumer/temp-inserts'
+      }
+    },
+    callback: {
+      url: 'http://dispatcher-worship-mandates/delta-inserts',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 0,
+      ignoreFromSelf: true,
+    }
+  },
+  {
+    match: {
+      graph: {
+        type: 'uri',
+        value: 'http://eredienst-mandatarissen-consumer/temp-deletes'
+      }
+    },
+    callback: {
+      url: 'http://dispatcher-worship-mandates/delta-deletes',
+      method: 'POST'
+    },
+    options: {
+      resourceFormat: 'v0.0.1',
+      gracePeriod: 0,
+      ignoreFromSelf: true,
+    }
+  },
+];
