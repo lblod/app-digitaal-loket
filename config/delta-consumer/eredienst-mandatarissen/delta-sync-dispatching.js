@@ -27,46 +27,55 @@ const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES
  * @return {void} Nothing
  */
 async function dispatch(lib, data) {
-  const { mu, muAuthSudo } = lib;
-  const { termObjectChangeSets } = data;
-
-  for (let { deletes, inserts } of termObjectChangeSets) {
+  for (const { deletes, inserts } of data.termObjectChangeSets) {
     if (BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES) {
       console.warn('Service configured to skip MU_AUTH!');
     }
     console.info(`Using ${endpoint} to insert triples`);
 
-    const deleteStatements = deletes.map(
-      (o) => `${o.subject} ${o.predicate} ${o.object}.`
-    );
-    await batchedDbUpdate(
-      muAuthSudo.updateSudo,
-      INGEST_GRAPH,
-      deleteStatements,
-      {},
-      endpoint,
-      BATCH_SIZE,
-      MAX_DB_RETRY_ATTEMPTS,
-      SLEEP_BETWEEN_BATCHES,
-      SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-      'DELETE'
-    );
-    const insertStatements = inserts.map(
-      (o) => `${o.subject} ${o.predicate} ${o.object}.`
-    );
-    await batchedDbUpdate(
-      muAuthSudo.updateSudo,
-      INGEST_GRAPH,
-      insertStatements,
-      {},
-      endpoint,
-      BATCH_SIZE,
-      MAX_DB_RETRY_ATTEMPTS,
-      SLEEP_BETWEEN_BATCHES,
-      SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-      'INSERT'
-    );
+    await processDeletes(lib, deletes);
+    await processInserts(lib, inserts);
   }
+}
+
+async function processInserts(lib, data) {
+  const { muAuthSudo } = lib;
+
+  const insertStatements = data.map(
+    (o) => `${o.subject} ${o.predicate} ${o.object}.`
+  );
+  await batchedDbUpdate(
+    muAuthSudo.updateSudo,
+    `${INGEST_GRAPH}-inserts`,
+    insertStatements,
+    {},
+    endpoint,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'INSERT'
+  );
+}
+
+async function processDeletes(lib, data) {
+  const { muAuthSudo } = lib;
+
+  const deleteStatements = data.map(
+    (o) => `${o.subject} ${o.predicate} ${o.object}.`
+  );
+  await batchedDbUpdate(
+    muAuthSudo.updateSudo,
+    `${INGEST_GRAPH}-deletes`,
+    deleteStatements,
+    {},
+    endpoint,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'INSERT' //Yes, INSERT
+  );
 }
 
 module.exports = {
