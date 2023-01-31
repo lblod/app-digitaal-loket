@@ -115,6 +115,8 @@ services:
     restart: "no"
   eredienst-mandatarissen-consumer:
     restart: "no"
+  dispatcher-worship-mandates:
+    restart: "no"
   publication-triplestore:
     restart: "no"
     ports:
