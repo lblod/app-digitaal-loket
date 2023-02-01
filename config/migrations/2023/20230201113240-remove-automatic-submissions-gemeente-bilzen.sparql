@@ -1,0 +1,27 @@
+# There is 53 automatic submissions concepts to delete from gemeente Bilzen in toezicht module.
+
+PREFIX meb: <http://rdf.myexperiment.org/ontologies/base/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+
+DELETE {
+  GRAPH ?g {
+    ?submission ?submissionP ?submissionO.
+    ?submissionDocument ?submissionDocumentP ?submissionDocumentO.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?submission a meb:Submission;
+      pav:createdBy <http://data.lblod.info/id/bestuurseenheden/99da98a7a0087d3429b084ebfc4eb5d488c593790d4d5af7253982a2e21a6a5f>; #Gemeente Bilzen
+      dct:subject ?submissionDocument;
+      ^prov:generated ?submissionTask;
+      adms:status <http://lblod.data.gift/concepts/79a52da4-f491-4e2f-9374-89a13cde8ecd>; #Concept
+      ?submissionP ?submissionO.
+
+      ?submissionDocument ?submissionDocumentP ?submissionDocumentO.
+  }
+}
