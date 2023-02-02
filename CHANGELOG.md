@@ -1,5 +1,16 @@
 # Changelog
-# 1.76.2 (2023-02-02)
+
+## Unreleased
+### General
+  - Show a message about the self-registration option in ACM/IDM
+  - Set up Plausible analytics
+### LPDC
+  - Implement the basic "review status notification" system
+### Worship services
+  - read only modules if the data is managed by an external vendor
+  - add info messages so users know which positions they need to add
+
+## 1.76.2 (2023-02-02)
 ### Toezicht
 #### backend
   - hotfix cronPattern for toezicht, submission reports are now daily at 22:30
