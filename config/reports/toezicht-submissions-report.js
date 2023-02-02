@@ -6,7 +6,7 @@ const metadata = {
 };
 
 export default {
-  cronPattern: '0 0 22 * * 6',
+  cronPattern: '30 22 * * *',
   name: 'toezicht-submissions',
   execute: async () => {
     const startTime = new Date();
