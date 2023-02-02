@@ -68,11 +68,6 @@
           "predicate": "pera:language",
           "cardinality": "many"
         },
-        "review-status":{
-          "target": "concept",
-          "predicate": "ext:reviewStatus",
-          "cardinality": "one"
-        },
         "type": {
           "target": "concept",
           "predicate": "dct:type",
@@ -145,6 +140,11 @@
       ],
       "attributes": {},
       "relationships": {
+        "review-status":{
+          "target": "concept",
+          "predicate": "ext:reviewStatus",
+          "cardinality": "one"
+        },
         "concept": {
           "target": "conceptual-public-services",
           "predicate": "dct:source",
