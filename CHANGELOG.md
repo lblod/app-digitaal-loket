@@ -1,4 +1,8 @@
 # Changelog
+# 1.76.2 (2023-02-02)
+### Toezicht
+#### backend
+  - hotfix cronPattern for toezicht, submission reports are now daily at 22:30
 ## 1.76.1 (2022-01-26)
 ### Toezicht
 #### frontend
