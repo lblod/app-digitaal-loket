@@ -15,17 +15,24 @@ const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES
 const map = require('./mappings.js');
 
 /**
- * Dispatch the fetched information to a target graph.
- * @param { mu, muAuthSudo } lib - The provided libraries from the host service.
- * @param { termObjectChangeSets: { deletes, inserts } } data - The fetched changes sets, which objects of serialized Terms
- *          [ {
- *              graph: "<http://foo>",
- *              subject: "<http://bar>",
- *              predicate: "<http://baz>",
- *              object: "<http://boom>^^<http://datatype>"
- *            }
- *         ]
- * @return {void} Nothing
+ * Dispatch the fetched triples to a target graph.
+ *
+ * @public
+ * @async
+ * @function
+ * @param { { mu, muAuthSudo } } lib - The provided libraries from the host
+ * service.
+ * @param { Array({ deletes, inserts }) } data - The fetched changesets, with
+ * objects of serialized Quads. E.g.
+ * [
+ *   {
+ *     graph: "<http://foo>",
+ *     subject: "<http://bar>",
+ *     predicate: "<http://baz>",
+ *     object: "<http://boom>^^<http://datatype>"
+ *   }, ...
+ * ]
+ * @return {undefined} Nothing
  */
 async function dispatch(lib, data) {
   for (const { deletes, inserts } of data.termObjectChangeSets) {
@@ -79,6 +86,17 @@ async function processDeletes(lib, data) {
   );
 }
 
+/*
+ * Maps the predicate or object of a triple onto a different value. This can be
+ * used to make corrections (or deliberate mistakes to adhere to a different
+ * version of a model ;) ) to triples before inserting them into a temporary
+ * graph.
+ *
+ * @function
+ * @param {Object} triple - A triple as given by the consumer. @see dispatch
+ * @returns {Object} Same triple structure, but the predicate or object might
+ * have changed.
+ */
 function mapTriple(triple) {
   //See if the class definition needs to be transformed
   if (
