@@ -12,6 +12,7 @@ const { batchedDbUpdate } = require('./utils');
 const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES
   ? DIRECT_DATABASE_ENDPOINT
   : process.env.MU_SPARQL_ENDPOINT; //Defaults to mu-auth
+const map = require('./mappings.js');
 
 /**
  * Dispatch the fetched information to a target graph.
@@ -41,9 +42,9 @@ async function dispatch(lib, data) {
 async function processInserts(lib, data) {
   const { muAuthSudo } = lib;
 
-  const insertStatements = data.map(
-    (o) => `${o.subject} ${o.predicate} ${o.object}.`
-  );
+  const insertStatements = data
+    .map(mapTriple)
+    .map((o) => `${o.subject} ${o.predicate} ${o.object}.`);
   await batchedDbUpdate(
     muAuthSudo.updateSudo,
     `${INGEST_GRAPH}-inserts`,
@@ -61,9 +62,9 @@ async function processInserts(lib, data) {
 async function processDeletes(lib, data) {
   const { muAuthSudo } = lib;
 
-  const deleteStatements = data.map(
-    (o) => `${o.subject} ${o.predicate} ${o.object}.`
-  );
+  const deleteStatements = data
+    .map(mapTriple)
+    .map((o) => `${o.subject} ${o.predicate} ${o.object}.`);
   await batchedDbUpdate(
     muAuthSudo.updateSudo,
     `${INGEST_GRAPH}-deletes`,
@@ -76,6 +77,27 @@ async function processDeletes(lib, data) {
     SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
     'INSERT' //Yes, INSERT
   );
+}
+
+function mapTriple(triple) {
+  //See if the class definition needs to be transformed
+  if (
+    triple.predicate === '<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>' ||
+    triple.predicate === 'a'
+  ) {
+    //Transform the class (object)
+    const replacement = map.mappingsClasses.find(
+      (elem) => elem.original === triple.object
+    );
+    if (replacement) triple.object = replacement.loket;
+  } else {
+    //Transform the predicate
+    const replacement = map.mappingsPredicates.find(
+      (elem) => elem.original === triple.predicate
+    );
+    if (replacement) triple.predicate = replacement.loket;
+  }
+  return triple;
 }
 
 module.exports = {
