@@ -1,5 +1,8 @@
 # Changelog
-# 1.76.2 (2023-02-02)
+## 1.76.3 (2023-06-02)
+### LPDC
+  - re-publish public services with wrong language predicate
+## 1.76.2 (2023-02-02)
 ### Toezicht
 #### backend
   - hotfix cronPattern for toezicht, submission reports are now daily at 22:30
