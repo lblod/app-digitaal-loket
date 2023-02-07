@@ -6,15 +6,6 @@ DELETE {
     ?burgemeester foaf:familyName ?familyName
   }
 }
-WHERE {
-  BIND(<http://data.lblod.info/id/personen/0df4f9a3a1b13c6bc5d8e25c5d73a42f2eed1f4f0a246b9d309b0bf1ef04e7a8> as ?burgemeester)
-
-  GRAPH ?g {
-    ?burgemeester a person:Person ;
-      foaf:familyName ?familyName .
-  }
-}
-
 INSERT {
   GRAPH ?g {
     ?burgemeester foaf:familyName "Deschepper"
@@ -24,6 +15,7 @@ WHERE {
   BIND(<http://data.lblod.info/id/personen/0df4f9a3a1b13c6bc5d8e25c5d73a42f2eed1f4f0a246b9d309b0bf1ef04e7a8> as ?burgemeester)
 
   GRAPH ?g {
-    ?burgemeester a person:Person
+    ?burgemeester a person:Person ;
+      foaf:familyName ?familyName .
   }
 }
