@@ -1,4 +1,7 @@
 # Changelog
+## 1.76.4 (2023-07-02)
+### Berichtencentrum
+  - fix config issue
 ## 1.76.3 (2023-06-02)
 ### LPDC
   - re-publish public services with wrong language predicate
