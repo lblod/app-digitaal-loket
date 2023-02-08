@@ -1,5 +1,4 @@
 # Changelog
-
 ## Unreleased
 ### General
   - Show a message about the self-registration option in ACM/IDM
@@ -9,7 +8,12 @@
 ### Worship services
   - read only modules if the data is managed by an external vendor
   - add info messages so users know which positions they need to add
-
+## 1.76.4 (2023-07-02)
+### Berichtencentrum
+  - fix config issue
+## 1.76.3 (2023-06-02)
+### LPDC
+  - re-publish public services with wrong language predicate
 ## 1.76.2 (2023-02-02)
 ### Toezicht
 #### backend
