@@ -9,10 +9,10 @@
   - read only modules if the data is managed by an external vendor
   - add info messages so users know which positions they need to add
   - Remove Mandaat 'Bestuurslid van Eredienst'
-#### Inzendinge voor toezich
+### Inzendingen voor toezicht
   - Fixing issues 'Rechtspositieregeling' APB
-#### Subsidies
-  - Stadsverniewing
+### Subsidies
+  - Stadsvernieuwing
 ## 1.76.4 (2023-07-02)
 ### Berichtencentrum
   - fix config issue
