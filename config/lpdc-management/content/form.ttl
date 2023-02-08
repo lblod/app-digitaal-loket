@@ -128,6 +128,50 @@ ext:descriptionPg a form:PropertyGroup;
       sh:path dct:description ;
       form:displayType displayTypes:richText ;
       sh:group ext:descriptionPg .
+  
+##########################################################
+#  property-group: Aanvullende Beschrijving
+##########################################################
+ext:additionalDescriptionPg a form:PropertyGroup;
+    sh:name "Aanvullende Beschrijving" ;
+    form:help "Hier kan u de korte beschrijving aanbrengen/wijzigen.";
+    sh:order 2 .
+
+  ##########################################################
+  #  field: description
+  ##########################################################
+  ext:additionalDescriptionF a form:Field ;
+      sh:order 1 ;
+      sh:name "Aanvullende Beschrijving";
+      form:language "nl";
+      form:validations [
+        a form:RequiredConstraint ;
+        form:language "nl";
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path dct:description
+      ];
+      sh:path dct:description ;
+      form:displayType displayTypes:richText ;
+      sh:group ext:additionalDescriptionPg .
+
+  ##########################################################
+  #  field (en.): description
+  ##########################################################
+  extEng:additionalDescriptionF a form:Field ;
+      sh:order 2 ;
+      form:language "en";
+      form:validations [
+        a form:RequiredConstraint ;
+        form:language "en";
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path dct:description
+      ];
+      sh:name "Engelse vertaling van de beschrijving";
+      sh:path dct:description ;
+      form:displayType displayTypes:richText ;
+      sh:group ext:additionalDescriptionPg .  
 
 ##########################################################
 #  property-group: exception
