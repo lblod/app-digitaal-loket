@@ -35,7 +35,7 @@
         },
         "additional-description": {
           "type":"language-string-set",
-          "predicate": "dct:description"
+          "predicate": "ext:additionalDescription"
         },
         "keyword": {
           "type": "language-string-set",

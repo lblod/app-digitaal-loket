@@ -30,6 +30,8 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes extEng:titleF;
     form:includes ext:descriptionF;
     form:includes extEng:descriptionF;
+    form:includes ext:additionalDescriptionF;
+    form:includes extEng:additionalDescriptionF;
     form:includes ext:exceptionF;
     form:includes extEng:exceptionF;
     form:includes ext:requirementsL;
@@ -135,7 +137,7 @@ ext:descriptionPg a form:PropertyGroup;
 ext:additionalDescriptionPg a form:PropertyGroup;
     sh:name "Aanvullende Beschrijving" ;
     form:help "Hier kan u de korte beschrijving aanbrengen/wijzigen.";
-    sh:order 2 .
+    sh:order 3 .
 
   ##########################################################
   #  field: additional description
@@ -149,9 +151,9 @@ ext:additionalDescriptionPg a form:PropertyGroup;
         form:language "nl";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path dct:description
+        sh:path ext:additionalDescription
       ];
-      sh:path dct:description ;
+      sh:path ext:additionalDescription ;
       form:displayType displayTypes:richText ;
       sh:group ext:additionalDescriptionPg .
 
@@ -166,10 +168,10 @@ ext:additionalDescriptionPg a form:PropertyGroup;
         form:language "en";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path dct:description
+        sh:path ext:additionalDescription
       ];
       sh:name "Engelse vertaling van de beschrijving";
-      sh:path dct:description ;
+      sh:path ext:additionalDescription ;
       form:displayType displayTypes:richText ;
       sh:group ext:additionalDescriptionPg .  
 
@@ -179,7 +181,7 @@ ext:additionalDescriptionPg a form:PropertyGroup;
 ext:exceptionPg a form:PropertyGroup;
     sh:name "Uitzonderingen" ;
     form:help "Hier kan u de mogelijke uitzonderingen aanbrengen/wijzigen.";
-    sh:order 3 .
+    sh:order 4 .
 
   ##########################################################
   #  field: exception
@@ -209,7 +211,7 @@ ext:exceptionPg a form:PropertyGroup;
 ext:requirementsPg a form:PropertyGroup;
     sh:name "Voorwaarden" ;
     form:help "Hier kan u de voorwaarden aanbrengen/wijzigen.";
-    sh:order 3 .
+    sh:order 5 .
 
   ##########################################################
   #  listing-scope: Voorwaarden
@@ -472,7 +474,7 @@ ext:requirementsPg a form:PropertyGroup;
 ext:rulesPg a form:PropertyGroup;
     sh:name "Procedure" ;
     form:help "Hier kan u de procedure aanbrengen/wijzigen.";
-    sh:order 4 .
+    sh:order 6 .
 
   ##########################################################
   #  listing-scope: Proceduren
@@ -744,7 +746,7 @@ ext:rulesPg a form:PropertyGroup;
 ext:costPg a form:PropertyGroup;
     sh:name "Kosten" ;
     form:help "Hier kan u de bijbehorende kosten aanbrengen/wijzigen.";
-    sh:order 5 .
+    sh:order 6 .
 
   ##########################################################
   #  listing-scope: Kostn
@@ -874,7 +876,7 @@ ext:costPg a form:PropertyGroup;
 ext:finAdvPg a form:PropertyGroup;
     sh:name "Financiële Voordelen" ;
     form:help "Hier kan u de bijbehorende financiële voordelen aanbrengen/wijzigen.";
-    sh:order 6 .
+    sh:order 7 .
 
   ##########################################################
   #  listing-scope: Financieel Voordeel
@@ -1005,7 +1007,7 @@ ext:finAdvPg a form:PropertyGroup;
 ext:regulationsPg a form:PropertyGroup;
     sh:name "Regelgeving" ;
     form:help "Hier kan u de verwijzing naar relevante regelgeving aanbrengen/wijzigen.";
-    sh:order 7 .
+    sh:order 8 .
 
   ##########################################################
   #  field: Regelgeving
@@ -1035,7 +1037,7 @@ ext:regulationsPg a form:PropertyGroup;
 ext:contactpointsPg a form:PropertyGroup;
     sh:name "Contactpunten" ;
     form:help "Hier kan u contactpunten aanbrengen/wijzigen.";
-    sh:order 8 .
+    sh:order 9 .
 
   ##########################################################
   #  listing-scope: Contactpunten
@@ -1280,7 +1282,7 @@ ext:contactpointsPg a form:PropertyGroup;
 ext:websitesPg a form:PropertyGroup;
     sh:name "Meer info" ;
     form:help "Hier kan u websites die meer informatie bevatten over de lokale dienst aanbrengen/wijzigen.";
-    sh:order 9 .
+    sh:order 10 .
 
   ##########################################################
   #  listing-scope: Meer Info
