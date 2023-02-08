@@ -138,7 +138,7 @@ ext:additionalDescriptionPg a form:PropertyGroup;
     sh:order 2 .
 
   ##########################################################
-  #  field: description
+  #  field: additional description
   ##########################################################
   ext:additionalDescriptionF a form:Field ;
       sh:order 1 ;
@@ -156,7 +156,7 @@ ext:additionalDescriptionPg a form:PropertyGroup;
       sh:group ext:additionalDescriptionPg .
 
   ##########################################################
-  #  field (en.): description
+  #  field (en.): additional description
   ##########################################################
   extEng:additionalDescriptionF a form:Field ;
       sh:order 2 ;
