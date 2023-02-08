@@ -151,9 +151,9 @@ ext:additionalDescriptionPg a form:PropertyGroup;
         form:language "nl";
         form:grouping form:Bag ;
         sh:resultMessage "Dit veld is verplicht." ;
-        sh:path ext:additionalDescription
+        sh:path lpdcExt:additionalDescription
       ];
-      sh:path ext:additionalDescription ;
+      sh:path lpdcExt:additionalDescription ;
       form:displayType displayTypes:richText ;
       sh:group ext:additionalDescriptionPg .
 

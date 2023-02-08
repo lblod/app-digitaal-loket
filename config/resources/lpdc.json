@@ -35,7 +35,7 @@
         },
         "additional-description": {
           "type":"language-string-set",
-          "predicate": "ext:additionalDescription"
+          "predicate": "lpdcExt:additionalDescription"
         },
         "keyword": {
           "type": "language-string-set",
