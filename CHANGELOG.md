@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.77.0 (2023-02-08)
 ### General
   - Show a message about the self-registration option in ACM/IDM
   - Set up Plausible analytics
@@ -8,6 +8,11 @@
 ### Worship services
   - read only modules if the data is managed by an external vendor
   - add info messages so users know which positions they need to add
+  - Remove Mandaat 'Bestuurslid van Eredienst'
+#### Inzendinge voor toezich
+  - Fixing issues 'Rechtspositieregeling' APB
+#### Subsidies
+  - Stadsverniewing
 ## 1.76.4 (2023-07-02)
 ### Berichtencentrum
   - fix config issue
