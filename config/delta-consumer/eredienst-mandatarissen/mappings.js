@@ -6,14 +6,6 @@
 
 const mappingsPredicates = [
   {
-    original: '<http://xmlns.com/foaf/0.1/givenName>',
-    loket: '<http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam>',
-  },
-  {
-    original: '<http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam>',
-    loket: '<http://xmlns.com/foaf/0.1/name>',
-  },
-  {
     original: '<http://www.w3.org/ns/org#classification>',
     loket: '<http://data.vlaanderen.be/ns/besluit#classificatie>',
   },
