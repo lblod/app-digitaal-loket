@@ -40,7 +40,7 @@ async function dispatch(lib, data) {
 
   await batchedDbUpdate(
     muAuthSudo.updateSudo,
-    INGEST_GRAPH,
+   `${INGEST_GRAPH}-inserts`,
     triples,
     { 'mu-call-scope-id': MU_CALL_SCOPE_ID_INITIAL_SYNC },
     endpoint,
