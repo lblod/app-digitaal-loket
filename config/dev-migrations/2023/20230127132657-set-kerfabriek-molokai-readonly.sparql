@@ -1,6 +1,3 @@
-## Adding Bestuurseenheid viewOnlyModules flag
-
-```
 # Adding viewOnlyModules flag to the bestuurseenheid who has access to the eredienst modules
 
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
@@ -9,7 +6,7 @@ PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
      ?bestuurseenheid ext:viewOnlyModules "LoketLB-eredienstBedienaarGebruiker";
-     		              ext:viewOnlyModules "LoketLB-eredienstMandaatGebruiker" .
+                          ext:viewOnlyModules "LoketLB-eredienstMandaatGebruiker" .
   }
 }
 WHERE {
@@ -20,6 +17,3 @@ WHERE {
      ?bestuurseenheid a besluit:Bestuurseenheid .
   }
 }
-```
-
-**This will not run by default, if needed you will need to run it locally.**
