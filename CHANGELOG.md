@@ -1,4 +1,9 @@
 # Changelog
+## Unreleased 
+### General
+ - Improved date entry UX by using a date input field instead of a date picker
+### LPDC
+ - Update to the new v2 editor
 ## 1.77.0 (2023-02-08)
 ### General
   - Show a message about the self-registration option in ACM/IDM
