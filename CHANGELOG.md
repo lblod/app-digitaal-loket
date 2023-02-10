@@ -1,4 +1,7 @@
 # Changelog
+## 1.77.1 (2023-02-10)
+### Worship services
+  - Fix automatic submissions for religiopoint
 ## 1.77.0 (2023-02-08)
 ### General
   - Show a message about the self-registration option in ACM/IDM
