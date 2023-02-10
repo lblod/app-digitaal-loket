@@ -146,13 +146,6 @@ ext:additionalDescriptionPg a form:PropertyGroup;
       sh:order 1 ;
       sh:name "Aanvullende Beschrijving";
       form:language "nl";
-      form:validations [
-        a form:RequiredConstraint ;
-        form:language "nl";
-        form:grouping form:Bag ;
-        sh:resultMessage "Dit veld is verplicht." ;
-        sh:path lpdcExt:additionalDescription
-      ];
       sh:path lpdcExt:additionalDescription ;
       form:displayType displayTypes:richText ;
       sh:group ext:additionalDescriptionPg .
@@ -163,13 +156,6 @@ ext:additionalDescriptionPg a form:PropertyGroup;
   extEng:additionalDescriptionF a form:Field ;
       sh:order 2 ;
       form:language "en";
-      form:validations [
-        a form:RequiredConstraint ;
-        form:language "en";
-        form:grouping form:Bag ;
-        sh:resultMessage "Dit veld is verplicht." ;
-        sh:path lpdcExt:additionalDescription
-      ];
       sh:name "Engelse vertaling van de beschrijving";
       sh:path lpdcExt:additionalDescription ;
       form:displayType displayTypes:richText ;
