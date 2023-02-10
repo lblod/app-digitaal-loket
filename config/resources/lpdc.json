@@ -33,6 +33,10 @@
           "type": "language-string-set",
           "predicate": "dct:description"
         },
+        "additional-description": {
+          "type":"language-string-set",
+          "predicate": "lpdcExt:additionalDescription"
+        },
         "keyword": {
           "type": "language-string-set",
           "predicate": "dcat:keyword"
