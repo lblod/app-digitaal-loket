@@ -15,6 +15,7 @@ INSERT DATA {
     <http://data.lblod.info/id/subsidy-procedural-steps/c763f582-3c1b-429d-a65f-4da3bba41f36> a subsidie:Subsidieprocedurestap;
       mu:uuid "c763f582-3c1b-429d-a65f-4da3bba41f36";
       dct:description """Aanvraag""";
+      subsidie:Subsidieprocedurestap.type <http://lblod.data.gift/concepts/ee855aae-eb10-44aa-ae01-38c4f6cca0f6>;
       mobiliteit:periode  <http://data.lblod.info/id/periodes/e4415b64-f215-4e07-8d2a-12cfdbf7f1a7>.
 
     <http://data.lblod.info/id/subsidie-application-flows/91739b91-d834-46ea-9b98-2da07af0c1e5> a lblodSubsidie:ApplicationFlow;
