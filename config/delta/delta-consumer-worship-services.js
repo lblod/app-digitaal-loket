@@ -14,6 +14,7 @@ export default [
       resourceFormat: 'v0.0.1',
       gracePeriod: 0,
       ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://worship-positions-graph-dispatcher/update" ]
     }
   },
   {
@@ -31,6 +32,7 @@ export default [
       resourceFormat: 'v0.0.1',
       gracePeriod: 0,
       ignoreFromSelf: true,
+      optOutMuScopeIds: [ "http://worship-positions-graph-dispatcher/update" ]
     }
   },
 ];
