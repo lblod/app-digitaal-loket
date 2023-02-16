@@ -1,9 +1,7 @@
 # Changelog
-## Unreleased
-### General
- - Improved date entry UX by using a date input field instead of a date picker
-### LPDC
- - Update to the new v2 editor
+## 1.77.2 (2023-02-16)
+### migrations
+  - Add representatieve organen to Vanden Broele
 ## 1.77.1 (2023-02-10)
 ### Worship services
   - Fix automatic submissions for religiopoint
