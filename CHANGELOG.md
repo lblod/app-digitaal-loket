@@ -2,6 +2,9 @@
 ## 1.77.2 (2023-02-16)
 ### migrations
   - Add representatieve organen to Vanden Broele
+## 1.77.2 (2023-02-16)
+### migrations
+  - Add representatieve organen to Vanden Broele
 ## Unreleased
 ### General
  - Improved date entry UX by using a date input field instead of a date picker
