@@ -1,4 +1,9 @@
 # Changelog
+## 1.77.3 (2023-02-20)
+### Submissions
+  - Bump automatic-submission services to fix a problem where the services
+    wouldn't start due to an incompatibility between an old JavaScript template
+    version and a newly introduced package.
 ## 1.77.2 (2023-02-16)
 ### migrations
   - Add representatieve organen to Vanden Broele
