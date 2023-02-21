@@ -1,0 +1,19 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX lpdcExt: <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+
+INSERT {
+  GRAPH ?publicServiceGraph {
+    ?publicService schema:productID ?productId .
+  }
+} WHERE {
+  ?conceptualPublicServiceSnapshot a lpdcExt:ConceptualPublicService ;
+    schema:productID ?productId .
+  
+  GRAPH ?publicServiceGraph {
+    ?publicService a cpsv:PublicService ;
+      dct:source ?conceptualPublicServiceSnapshot .
+    FILTER NOT EXISTS { ?publicService schema:productID ?productId . }
+  }
+}
