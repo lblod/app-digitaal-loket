@@ -1,4 +1,8 @@
 # Changelog
+## 1.77.3 (2023-02-16)
+### migrations
+  - Add a new subsidy-measure: Stadsvernieuwing - conceptsubsidie
+  - Add dditional description field to lpdc forms
 ## 1.77.2 (2023-02-16)
 ### migrations
   - Add representatieve organen to Vanden Broele
