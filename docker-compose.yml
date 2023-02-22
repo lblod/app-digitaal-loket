@@ -261,7 +261,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:1.1.0
+    image: lblod/automatic-submission-service:1.2.0
     labels:
       - "logging=true"
     restart: always
