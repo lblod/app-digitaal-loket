@@ -4,14 +4,14 @@ PREFIX lpdcExt: <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#>
 
 INSERT {
   GRAPH ?conceptualPublicServiceGraph {
-    ?concept schema:productID ?productId .
+    ?conceptualPublicService schema:productID ?productId .
   }
 } WHERE {
   ?conceptualPublicServiceSnapshot a lpdcExt:ConceptualPublicService ;
     dct:isVersionOf ?conceptualPublicService ;
     schema:productID ?productId .
 
-  GRAPH ?g {
+  GRAPH ?conceptualPublicServiceGraph {
     ?conceptualPublicService a lpdcExt:ConceptualPublicService .
     FILTER NOT EXISTS { ?conceptualPublicService schema:productID ?productId . }
   }
