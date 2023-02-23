@@ -12,7 +12,10 @@ PREFIX m8g:	          <http://data.europa.eu/m8g/>
 
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
-     # Period of the Series
+    # Period of the Series
+    #
+    # End time is 22:59 UTC time (23:59 Belgium time) due to winter-time
+    # during December where Belgium time is one hour ahead of UTC time.
     <http://data.lblod.info/id/periodes/46e05ff6-08f4-4ff9-a831-8897de75f25c>
         a             m8g:PeriodOfTime ;
         mu:uuid       "46e05ff6-08f4-4ff9-a831-8897de75f25c" ;
@@ -20,18 +23,24 @@ INSERT DATA {
         m8g:endTime   "2024-12-31T22:59:00Z"^^xsd:dateTime .
 
     # Period of step Indienen pact
+    #
+    # End time is 21:59 UTC time (23:59 Belgium time) due to summer-time
+    # during April where Belgium becomes two hours ahead of UTC instead of one.
     <http://data.lblod.info/id/periodes/33f16980-1d9b-49b9-b26c-d595ecb8689f>
         a             m8g:PeriodOfTime ;
         mu:uuid       "33f16980-1d9b-49b9-b26c-d595ecb8689f" ;
-        m8g:startTime "2023-02-15T03:00:00Z"^^xsd:dateTime ;
-        m8g:endTime   "2023-06-05T21:59:00Z"^^xsd:dateTime .
+        m8g:startTime "2023-02-23T03:00:00Z"^^xsd:dateTime ;
+        m8g:endTime   "2023-07-05T21:59:00Z"^^xsd:dateTime .
 
     # Period of step Opvolgmoment
+    #
+    # End time is 21:59 UTC time (23:59 Belgium time) due to summer-time
+    # during April where Belgium becomes two hours ahead of UTC instead of one.
     <http://data.lblod.info/id/periodes/f8e73b21-7231-494c-93b6-8f58bf69b0bd>
         a             m8g:PeriodOfTime ;
         mu:uuid       "f8e73b21-7231-494c-93b6-8f58bf69b0bd" ;
-        m8g:startTime "2023-02-15T03:00:00Z"^^xsd:dateTime ;
-        m8g:endTime   "2025-04-01T22:59:00Z"^^xsd:dateTime .
+        m8g:startTime "2023-02-23T03:00:00Z"^^xsd:dateTime ;
+        m8g:endTime   "2025-04-01T21:59:00Z"^^xsd:dateTime .
 
     # Subsidy Procedural Step (Indienen pact)
     <http://data.lblod.info/id/subsidy-procedural-steps/a9a20ff7-a727-4b92-8d16-dac36b0c27cd>
