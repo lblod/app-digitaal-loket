@@ -2,7 +2,7 @@ PREFIX m8g: <http://data.europa.eu/m8g/>
 
 #
 # Update opvolgmoment deadline for the LEKP 1.0 subsidy from 01 March, 2023 to
-# 01 April, 2023.
+# 01 May, 2023.
 #
 
 DELETE {
@@ -13,7 +13,7 @@ DELETE {
 INSERT {
   GRAPH ?g {
     # Time is set to 21:59:00 because Belgium time is UTC+2 instead of 
-    # UTC+1 in April.
+    # UTC+1 in May.
     ?period m8g:endTime "2023-05-01T21:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
   }
 }
