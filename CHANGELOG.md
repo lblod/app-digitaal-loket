@@ -1,4 +1,7 @@
 # Changelog
+## 1.77.4 (2023-02-24)
+  - Update deadline opvolgmoment LEKP 1.0 subsidy
+### migrations
 ## 1.77.3 (2023-02-16)
 ### migrations
   - Add a new subsidy-measure: Stadsvernieuwing - conceptsubsidie
