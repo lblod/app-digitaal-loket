@@ -6,8 +6,8 @@ export default {
   name: 'climateSubsidieOpvolgmomentReport',
   execute: async () => {
     const reportData = {
-      title: 'List of pacts for climate subsidies 1',
-      description: 'All pacts for climate subsidies (LEKP 1.0) that have been sent with their related information',
+      title: 'List of local governments for LEKP 1.0 Opvolgmoment',
+      description: 'All local governments for LEKP 1.0 Opvolgmoment climate subsidy with their related information',
       filePrefix: 'climateSubsidieOpvolgmomentReport'
     };
     console.log('Generate Climate Subsidie 1 Opvolgmoment Report');
