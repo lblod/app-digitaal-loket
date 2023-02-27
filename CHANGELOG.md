@@ -1,4 +1,6 @@
 # Changelog
+## 1.77.5 (2023-02-27)
+  - Add LEKP 1.0 Opvolgmoment report
 ## 1.77.4 (2023-02-24)
   - Update deadline opvolgmoment LEKP 1.0 subsidy
 ## 1.77.3 (2023-02-16)
