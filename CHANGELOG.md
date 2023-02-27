@@ -1,6 +1,8 @@
 # Changelog
-## 1.77.3 (2023-02-21)
-### Subsidies
+## 1.77.4 (2023-02-24)
+  - Update deadline opvolgmoment LEKP 1.0 subsidy
+## 1.77.3 (2023-02-16)
+### migrations
   - Add a new subsidy-measure: Stadsvernieuwing - conceptsubsidie
 ### LPDC
   - Add dditional description field to lpdc forms
