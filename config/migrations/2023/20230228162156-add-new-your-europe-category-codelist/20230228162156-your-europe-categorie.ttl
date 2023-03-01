@@ -27,6 +27,13 @@ dvcs:YourEuropeCategorie
     skos:hasTopConcept  dvc:Bedrijfsfinanciering ;
     skos:hasTopConcept  dvc:Overheidsopdrachten ;
     skos:hasTopConcept  dvc:GezondheidVeiligheidWerk .
+    skos:hasTopConcept  dvc:ProcedureGeboorte ;
+    skos:hasTopConcept  dvc:ProcedureVerblijf ;
+    skos:hasTopConcept  dvc:ProcedureStudie ;
+    skos:hasTopConcept  dvc:ProcedureWerk ;
+    skos:hasTopConcept  dvc:ProcedureVerhuizing ;
+    skos:hasTopConcept  dvc:ProcedurePensionering ;
+    skos:hasTopConcept  dvc:ProcedureStartenExploiterenSluitenBedrijf .
 
 
 ##############
