@@ -1382,7 +1382,7 @@ dvc:ProcedureGeboorte
 
 dvc:ProcedureGeboorteBewijs
     a               skos:Concept ;
-    mu:uuid         "01e71aaf-507d-41d2-a4e4-452a5165c12f"
+    mu:uuid         "01e71aaf-507d-41d2-a4e4-452a5165c12f" ;
     skos:prefLabel  "Aanvraag geboortebewijs"@nl ;
     skos:prefLabel  "Requesting a birth certificate"@en ;
     skos:notation   "R1" ;
@@ -1398,7 +1398,7 @@ dvc:ProcedureGeboorteBewijs
 
 dvc:ProcedureVerblijf
     a                 skos:Concept ;
-    mu:uuid           "38cfa16a-237d-47ad-9a8f-6818345ea3e4"
+    mu:uuid           "38cfa16a-237d-47ad-9a8f-6818345ea3e4" ;
     skos:prefLabel    "Verblijf"@nl ;
     skos:prefLabel    "Residence"@en ;
     skos:notation     "S" ;
@@ -1410,7 +1410,7 @@ dvc:ProcedureVerblijf
 
 dvc:ProcedureVerblijfBewijs
     a               skos:Concept ;
-    mu:uuid         "66de6e23-be16-4e58-9112-7411308a67d5"
+    mu:uuid         "66de6e23-be16-4e58-9112-7411308a67d5" ;
     skos:prefLabel  "Aanvraag verblijfsbewijs"@nl ;
     skos:prefLabel  "Requesting proof of residence"@en ;
     skos:notation   "S1" ;
@@ -1425,7 +1425,7 @@ dvc:ProcedureVerblijfBewijs
 
 dvc:ProcedureStudie
     a                 skos:Concept ;
-    mu:uuid           "785e828a-5443-47d9-8d54-b76149a5980c"
+    mu:uuid           "785e828a-5443-47d9-8d54-b76149a5980c" ;
     skos:prefLabel    "Studie"@nl ;
     skos:prefLabel    "Studying"@en ;
     skos:notation     "T" ;
@@ -1439,7 +1439,7 @@ dvc:ProcedureStudie
 
 dvc:ProcedureStudieAanvraagTertiairOnderwijs
     a               skos:Concept ;
-    mu:uuid         "9af933a4-e51e-4c14-94f2-d953e909b391"      
+    mu:uuid         "9af933a4-e51e-4c14-94f2-d953e909b391" ;
     skos:prefLabel  "Aanvraag financiering tertiar onderwijs"@nl ;
     skos:prefLabel  "Applying for financing for tertiary education"@en ;
     skos:notation   "T1" ;
@@ -1450,7 +1450,7 @@ dvc:ProcedureStudieAanvraagTertiairOnderwijs
 
 dvc:ProcedureStudieVerzoekToelatingTertiairOnderwijs
     a               skos:Concept ;
-    mu:uuid         "1753aeb1-7ab5-40cc-80c4-54654ab69bc5"
+    mu:uuid         "1753aeb1-7ab5-40cc-80c4-54654ab69bc5" ;
     skos:prefLabel  "Verzoek toelating tot openbaar tertiair onderwijs"@nl ;
     skos:prefLabel  "Requesting admission to public tertiary eduction"@en ;
     skos:notation   "T2" ;
@@ -1461,7 +1461,7 @@ dvc:ProcedureStudieVerzoekToelatingTertiairOnderwijs
 
 dvc:ProcedureStudieVerzoekErkenningDiploma
     a               skos:Concept ;
-    mu:uuid         "521523ea-ddf4-44b0-be05-635d399ffecd"
+    mu:uuid         "521523ea-ddf4-44b0-be05-635d399ffecd" ;
     skos:prefLabel  "Verzoek om academische erkenning van diploma’s"@nl ;
     skos:prefLabel  "Requesting academic recognition of diplomas"@en ;
     skos:notation   "T3" ;
@@ -1476,7 +1476,7 @@ dvc:ProcedureStudieVerzoekErkenningDiploma
 
 dvc:ProcedureWerk
     a                 skos:Concept ;
-    mu:uuid           "782bb397-dad9-41d7-acc8-22705b7a3d4e"
+    mu:uuid           "782bb397-dad9-41d7-acc8-22705b7a3d4e" ;
     skos:prefLabel    "Werk"@nl ;
     skos:prefLabel    "Working"@en ;
     skos:notation     "U" ;
@@ -1491,7 +1491,7 @@ dvc:ProcedureWerk
 
 dvc:ProcedureWerkVerzoek
     a               skos:Concept ;
-    mu:uuid         "7d781e16-cd95-4aa0-b0e9-7b5c02761848"
+    mu:uuid         "7d781e16-cd95-4aa0-b0e9-7b5c02761848" ;
     skos:prefLabel  "Verzoek tot bepaling van de toepasselijke wetgeving (883/2004 - titel 2)"@nl ;
     skos:prefLabel  "Request for determination of applicable legislation (883/2004 - title 2)"@en ;
     skos:notation   "U1" ;
@@ -1502,7 +1502,7 @@ dvc:ProcedureWerkVerzoek
 
 dvc:ProcedureWerkWijzigingBeroepssituatie
     a               skos:Concept ;
-    mu:uuid         "64623ae2-8819-4cb3-b8cf-33224b82b33b"
+    mu:uuid         "64623ae2-8819-4cb3-b8cf-33224b82b33b" ;
     skos:prefLabel  "Kennisgeving wijziging situatie i.k.v. socialezekerheidsuitkeringen"@nl ;
     skos:prefLabel  "Notifying changes in circumstances w.r.t. social security benefits"@en ;
     skos:notation   "U2" ;
@@ -1513,7 +1513,7 @@ dvc:ProcedureWerkWijzigingBeroepssituatie
 
 dvc:ProcedureWerkAanvraagZiekteverzekeringskaart
     a               skos:Concept ;
-    mu:uuid         "ad613e22-8fa2-489e-aaaf-95305faa15e9"
+    mu:uuid         "ad613e22-8fa2-489e-aaaf-95305faa15e9" ;
     skos:prefLabel  "Aanvraag van een Europese ziekteverzekeringskaart"@nl ;
     skos:prefLabel  "Application for a European Health Insurance Card"@en ;
     skos:notation   "U3" ;
@@ -1524,7 +1524,7 @@ dvc:ProcedureWerkAanvraagZiekteverzekeringskaart
 
 dvc:ProcedureWerkAangifteInkomstenbelasting
     a               skos:Concept ;
-    mu:uuid         "f89acc1e-d849-4e1f-ab26-18c918d8560e"
+    mu:uuid         "f89acc1e-d849-4e1f-ab26-18c918d8560e" ;
     skos:prefLabel  "Indiening van een aangifte voor de inkomstenbelasting"@nl ;
     skos:prefLabel  "Submitting an income tax declaration"@en ;
     skos:notation   "U4" ;
@@ -1539,7 +1539,7 @@ dvc:ProcedureWerkAangifteInkomstenbelasting
 
 dvc:ProcedureVerhuizing
     a                 skos:Concept ;
-    mu:uuid           "7dd6e013-c105-4f41-bc62-f6d42d9ae67b"
+    mu:uuid           "7dd6e013-c105-4f41-bc62-f6d42d9ae67b" ;
     skos:prefLabel    "Verhuizing"@nl ;
     skos:prefLabel    "Moving"@en ;
     skos:notation     "V" ;
@@ -1554,7 +1554,7 @@ dvc:ProcedureVerhuizing
 
 dvc:ProcedureVerhuizingAdreswijziging
     a               skos:Concept ;
-    mu:uuid         "b9e8ce4d-886c-457a-916e-4d39deb18af2"
+    mu:uuid         "b9e8ce4d-886c-457a-916e-4d39deb18af2" ;
     skos:prefLabel  "Registratie van adreswijziging"@nl ;
     skos:prefLabel  "Registering a change of address"@en ;
     skos:notation   "V1" ;
@@ -1565,7 +1565,7 @@ dvc:ProcedureVerhuizingAdreswijziging
 
 dvc:ProcedureVerhuizingInschrijvingMotorvoertuig
     a               skos:Concept ;
-    mu:uuid         "d8122163-43e9-4fa7-8d10-397a9782bf90"
+    mu:uuid         "d8122163-43e9-4fa7-8d10-397a9782bf90" ;
     skos:prefLabel  "Inschrijving van een motorvoertuig"@nl ;
     skos:prefLabel  "Registering a motor vehicle"@en ;
     skos:notation   "V2" ;
@@ -1576,7 +1576,7 @@ dvc:ProcedureVerhuizingInschrijvingMotorvoertuig
 
 dvc:ProcedureVerhuizingStickersWegeninfrastructuur
     a               skos:Concept ;
-    mu:uuid         "d6cc7467-7def-4810-b4ea-1df3748ff540"
+    mu:uuid         "d6cc7467-7def-4810-b4ea-1df3748ff540" ;
     skos:prefLabel  "Verkrijging van stickers voor de wegeninfrastructuur"@nl ;
     skos:prefLabel  "Obtaining stickers for the road infrastructure"@en ;
     skos:notation   "V3" ;
@@ -1587,7 +1587,7 @@ dvc:ProcedureVerhuizingStickersWegeninfrastructuur
 
 dvc:ProcedureVerhuizingEmissiestickers
     a               skos:Concept ;
-    mu:uuid         "b434b143-cb9b-4d62-b7db-9787709eefad"
+    mu:uuid         "b434b143-cb9b-4d62-b7db-9787709eefad" ;
     skos:prefLabel  "Verkrijging emissiestickers"@nl ;
     skos:prefLabel  "Obtaining emission stickers"@en ;
     skos:notation   "V4" ;
@@ -1602,7 +1602,7 @@ dvc:ProcedureVerhuizingEmissiestickers
 
 dvc:ProcedurePensionering
     a                 skos:Concept ;
-    mu:uuid           "1674bb44-b514-456e-9b3d-913115e68765"
+    mu:uuid           "1674bb44-b514-456e-9b3d-913115e68765" ;
     skos:prefLabel    "Pensionering"@nl ;
     skos:prefLabel    "Retiring"@en ;
     skos:notation     "W" ;
@@ -1615,7 +1615,7 @@ dvc:ProcedurePensionering
 
 dvc:ProcedurePensioneringAanvraagUitkering
     a               skos:Concept ;
-    mu:uuid         "16043731-d4c9-4bb7-8ff6-c8c5d4b73df8"
+    mu:uuid         "16043731-d4c9-4bb7-8ff6-c8c5d4b73df8" ;
     skos:prefLabel  "Aanvraag (pre)pensioenuitkering"@nl ;
     skos:prefLabel  "Claiming pension and pre-retirement benefits"@en ;
     skos:notation   "W1" ;
@@ -1626,7 +1626,7 @@ dvc:ProcedurePensioneringAanvraagUitkering
 
 dvc:ProcedurePensioneringVerzoekOmInformatie
     a               skos:Concept ;
-    mu:uuid         "2f67c11c-f789-4626-96ca-bba8ab1a09ff"
+    mu:uuid         "2f67c11c-f789-4626-96ca-bba8ab1a09ff" ;
     skos:prefLabel  "Verzoek om informatie over pensioengegevens"@nl ;
     skos:prefLabel  "Requesting information on the data related to pension"@en ;
     skos:notation   "W2" ;
@@ -1642,7 +1642,7 @@ dvc:ProcedurePensioneringVerzoekOmInformatie
 
 dvc:ProcedureStartenExploiterenSluitenBedrijf
     a                 skos:Concept ;
-    mu:uuid           "b2333f55-5acd-4b51-9ee3-265687b445b4"
+    mu:uuid           "b2333f55-5acd-4b51-9ee3-265687b445b4" ;
     skos:prefLabel    "Starten, exploiteren en sluiten van een bedrijf"@nl ;
     skos:prefLabel    "Starting, running and closing a business"@en ;
     skos:notation     "X" ;
@@ -1659,7 +1659,7 @@ dvc:ProcedureStartenExploiterenSluitenBedrijf
 
 dvc:ProcedureStartenExploiterenSluitenBedrijfKennisgeving
     a               skos:Concept ;
-    mu:uuid         "dbca4af9-1413-4c1e-a153-b93835037df7"
+    mu:uuid         "dbca4af9-1413-4c1e-a153-b93835037df7" ;
     skos:prefLabel  "Kennisgeving van bedrijfsactiviteit"@nl ;
     skos:prefLabel  "Notification of business activity"@en ;
     skos:notation   "X1" ;
@@ -1670,7 +1670,7 @@ dvc:ProcedureStartenExploiterenSluitenBedrijfKennisgeving
 
 dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerkgever
     a               skos:Concept ;
-    mu:uuid         "9d9e8cad-7a5d-48fc-bb08-d85ff8112bb4"
+    mu:uuid         "9d9e8cad-7a5d-48fc-bb08-d85ff8112bb4" ;
     skos:prefLabel  "Aanmelding van een werkgever bij pensioen- en verzekeringsregelingen"@nl ;
     skos:prefLabel  "Registration of an employer with pension and insurance schemes"@en ;
     skos:notation   "X2" ;
@@ -1681,7 +1681,7 @@ dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWer
 
 dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerknemer
     a               skos:Concept ;
-    mu:uuid         "806d0d67-32a7-4164-8ce6-0542ac78f26b"
+    mu:uuid         "806d0d67-32a7-4164-8ce6-0542ac78f26b" ;
     skos:prefLabel  "Aanmelding van werknemers bij pensioen- en verzekeringsregelingen"@nl ;
     skos:prefLabel  "Registration of employees with pension and insurance schemes"@en ;
     skos:notation   "X3" ;
@@ -1692,7 +1692,7 @@ dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWer
 
 dvc:ProcedureStartenExploiterenSluitenBedrijfAangifteVennootschapsbelasting
     a               skos:Concept ;
-    mu:uuid         "bc084881-5d50-4ede-b826-21c4aa52c210"
+    mu:uuid         "bc084881-5d50-4ede-b826-21c4aa52c210" ;
     skos:prefLabel  "Indiening van een aangifte voor de vennootschapsbelasting"@nl ;
     skos:prefLabel  "Submitting a corporate tax declaration"@en ;
     skos:notation   "X4" ;
@@ -1703,7 +1703,7 @@ dvc:ProcedureStartenExploiterenSluitenBedrijfAangifteVennootschapsbelasting
 
 dvc:ProcedureStartenExploiterenSluitenBedrijfBeeindigingArbeidsovereenkomst
     a               skos:Concept ;
-    mu:uuid         "ab31af23-ea22-4b34-8b5c-505f79ddb43c"
+    mu:uuid         "ab31af23-ea22-4b34-8b5c-505f79ddb43c" ;
     skos:prefLabel  "Kennisgeving van beëindiging van een arbeidsovereenkomst aan socialezekerheidsregelingen"@nl ;
     skos:prefLabel  "Notification to the social security schemes of the end of contract with an employee"@en ;
     skos:notation   "X5" ;
@@ -1714,7 +1714,7 @@ dvc:ProcedureStartenExploiterenSluitenBedrijfBeeindigingArbeidsovereenkomst
 
 dvc:ProcedureStartenExploiterenSluitenBedrijfBetalingSocialeBijdragen
     a               skos:Concept ;
-    mu:uuid         "7d1c216a-6d91-47c4-ab09-b796ed1b614f"
+    mu:uuid         "7d1c216a-6d91-47c4-ab09-b796ed1b614f" ;
     skos:prefLabel  "Betaling van sociale bijdragen voor werknemers"@nl ;
     skos:prefLabel  "Payment of social contributions for employees"@en ;
     skos:notation   "X6" ;
