@@ -1,4 +1,9 @@
 # Changelog
+## 1.77.6 (2023-03-02)
+### General
+  - extra report for non-sent submission
+### LPDC
+  - bump lpdc-ldes-consumer
 ## 1.77.5 (2023-02-27)
   - Add LEKP 1.0 Opvolgmoment report
 ## 1.77.4 (2023-02-24)
