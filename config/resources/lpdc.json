@@ -64,6 +64,10 @@
         "modified": {
           "type": "datetime",
           "predicate": "dct:modified"
+        },
+        "product-id": {
+          "type": "string",
+          "predicate": "schema:productID"
         }
       },
       "relationships": {

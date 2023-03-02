@@ -1,4 +1,8 @@
 # Changelog
+## Unreleased
+  - Frontend [v0.76.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0760-2023-02-28)
+### LPDC
+  - maintain the creation order of listings in the semantic forms
 ## 1.77.6 (2023-03-02)
 ### General
   - extra report for non-sent submission
@@ -16,6 +20,11 @@
 ## 1.77.2 (2023-02-16)
 ### Worship services
   - Add representatieve organen to Vanden Broele
+## Unreleased
+### General
+ - Improved date entry UX by using a date input field instead of a date picker
+### LPDC
+ - Update to the new v2 editor
 ## 1.77.1 (2023-02-10)
 ### Worship services
   - Fix automatic submissions for religiopoint

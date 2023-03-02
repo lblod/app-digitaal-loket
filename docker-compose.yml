@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.75.0
+    image: lblod/frontend-loket:0.76.0
     links:
       - identifier:backend
     labels:
@@ -261,13 +261,13 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:1.1.0
+    image: lblod/automatic-submission-service:1.2.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   import-submission:
-    image: lblod/import-submission-service:1.1.0
+    image: lblod/import-submission-service:1.2.1
     volumes:
       - ./data/files:/share
     labels:
@@ -275,7 +275,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.4.0
+    image: lblod/enrich-submission-service:1.5.1
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20230126155111-forms.ttl"
     volumes:
@@ -286,7 +286,7 @@ services:
     restart: always
     logging: *default-logging
   validate-submission:
-    image: lblod/validate-submission-service:1.1.0
+    image: lblod/validate-submission-service:1.2.1
     environment:
       MAX_BODY_SIZE: "10000kb"
     volumes:
@@ -297,7 +297,7 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:1.1.0
+    image: lblod/toezicht-flattened-form-data-generator:1.3.0
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
@@ -374,7 +374,7 @@ services:
     restart: always
     logging: *default-logging
   lpdc-management:
-    image: lblod/lpdc-management-service:0.17.0
+    image: lblod/lpdc-management-service:0.19.1
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
