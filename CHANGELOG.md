@@ -3,6 +3,11 @@
   - Frontend [v0.76.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0760-2023-02-28)
 ### LPDC
   - maintain the creation order of listings in the semantic forms
+## 1.77.6 (2023-03-02)
+### General
+  - extra report for non-sent submission
+### LPDC
+  - bump lpdc-ldes-consumer
 ## 1.77.5 (2023-02-27)
   - Add LEKP 1.0 Opvolgmoment report
 ## 1.77.4 (2023-02-24)
