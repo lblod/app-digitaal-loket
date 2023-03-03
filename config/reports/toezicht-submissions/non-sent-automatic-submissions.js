@@ -4,13 +4,14 @@ import {generateReportFromQueryResult} from '../util/report-helpers';
 
 export default async function(date = new Date()) {
   const metadata = {
-    title: `Niet verstuurde automatische meldingen`,
+    title: `Niet verstuurde automatische meldingen (a.k.a hangende meldingen)`,
     description: `
       Overzicht van automatische meldingen die niet op status [verzonden] staan van het jaar ${date.getFullYear()} tot nu.
       We hebben pas informatie in de databank van zodra een melding succesvol gergistreerd werd.
       M.a.w: o.a meldingen waarbij de authenticatie gefaald is, gaan hier niet verschijnen.
       De informatie is beperkt. Het doel van dit rapport is inschatten of er iets structureels misloopt.
       Voor meer gedetailleerde informatie kan u steeds aanloggen als het bestuur in kwestie op het jobs-dashboard of de controle-omgeving.
+      De URL naar het dashboard job en controle zijn meegenomen. Steeds aanloggen als het bestuur! Werkt enkel op productie.
     `.replace(/[\n\r]+/g, ' '), //Note: we can't access sparqlUtils here.
     filePrefix: `niet-verstuurde-automatische-meldingen`
   };
@@ -45,29 +46,37 @@ PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
 PREFIX eli: <http://data.europa.eu/eli/ontology#>
 PREFIX ma: <http://www.w3.org/ns/ma-ont#>
 PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
 SELECT DISTINCT
+?bestuurseenheidLabel
+?bestuurseenheidClassLabel
+?submissionStatusLabel
+?jobCreatedShort
+?jobStatusShort
+?dashboardUrl
+?controleUrl
 ?job
-?jobStatus
 ?jobCreated
+?jobStatus
 ?submission
 ?subject
 ?url
 ?vendor
 ?vendorLabel
 ?submissionStatus
-?submissionStatusLabel
 ?bestuurseenheid
-?bestuurseenheidLabel
-?bestuurseenheidClassLabel
 ?classificatie
 WHERE {
   ?job a <http://vocab.deri.ie/cogs#Job>;
       <http://www.w3.org/ns/prov#generated> ?submission;
+      mu:uuid ?jobUuid;
       adms:status ?jobStatus;
       <http://redpencil.data.gift/vocabularies/tasks/operation> <http://lblod.data.gift/id/jobs/concept/JobOperation/automaticSubmissionFlow>;
       <http://purl.org/dc/terms/created> ?jobCreated.
 
   ?submission a <http://rdf.myexperiment.org/ontologies/base/Submission>;
+    mu:uuid ?uuid;
     <http://purl.org/dc/terms/subject> ?subject;
     <http://www.w3.org/ns/prov#atLocation> ?url;
     <http://purl.org/pav/providedBy> ?vendor;
@@ -86,6 +95,11 @@ WHERE {
 
    ?vendor foaf:name ?vendorLabel.
    ?submissionStatus skos:prefLabel ?submissionStatusLabel.
+
+  BIND(CONCAT("https://controle.loket.lblod.info/supervision/submissions/", ?uuid) as ?controleUrl)
+  BIND(CONCAT("https://dashboard.prod.lblod.info/jobs/", ?jobUuid, "/index") as ?dashboardUrl)
+  BIND(CONCAT(STR(YEAR(?jobCreated)), '-', STR(MONTH(?jobCreated)), '-', STR(DAY(?jobCreated))) as ?jobCreatedShort)
+  BIND(STRAFTER(STR(?jobStatus), "http://redpencil.data.gift/id/concept/JobStatus/") as ?jobStatusShort)
 
   FILTER ( ?jobCreated >= "${date.getFullYear()}-01-01T00:00:00.000Z"^^xsd:dateTime )
 }
