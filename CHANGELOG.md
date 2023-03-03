@@ -3,6 +3,10 @@
   - Frontend [v0.76.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0760-2023-02-28)
 ### LPDC
   - maintain the creation order of listings in the semantic forms
+## 1.77.8 (2023-03-03)
+### General
+  - migration to avoid obsolete failed urls will trigger a warning
+
 ## 1.77.7 (2023-03-03)
 ### General
   - update report a little 'hanging submissions'
