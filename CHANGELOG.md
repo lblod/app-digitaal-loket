@@ -1,4 +1,7 @@
 # Changelog
+## 1.77.8 (2023-03-03)
+### General
+  - migration to avoid obsolete failed urls will trigger a warning
 ## 1.77.7 (2023-03-03)
 ### General
   - update report a little 'hanging submissions'
