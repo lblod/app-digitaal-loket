@@ -30,6 +30,12 @@ DELETE {
 ;
 
 # Delete tasks older than a month, with containers, based on dct:modified
+#########################################################################
+# Notes for next year;
+#  <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
+#  <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
+# Are very limited in value. Perhaps ditch em.
+#########################################################################
 
 DELETE {
   GRAPH ?g {
