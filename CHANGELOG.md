@@ -1,4 +1,10 @@
 # Changelog
+## 1.77.7 (2023-03-03)
+### General
+  - update report a little 'hanging submissions'
+### Inzendingen voor toezicht
+  - Download url service robustness
+  - Download url warning service
 ## 1.77.6 (2023-03-02)
 ### General
   - extra report for non-sent submission
