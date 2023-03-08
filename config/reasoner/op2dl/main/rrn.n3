@@ -34,12 +34,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #    ?identifier skos:notation ?notation.
 
 # identifier property in the export is only used for RRN.
-{
-  {
-    ?s adms:identifier ?o
-  } e:becomes {
-    ?s persoon:registratie ?o
-  }
-} => {
-  ?s persoon:registratie ?o
-}.
+
+# DISABLED: adms:identifier is also used for other identifiers.
+
+# {
+#   {
+#     ?s adms:identifier ?o
+#   } e:becomes {
+#     ?s persoon:registratie ?o
+#   }
+# } => {
+#   ?s persoon:registratie ?o
+# }.
