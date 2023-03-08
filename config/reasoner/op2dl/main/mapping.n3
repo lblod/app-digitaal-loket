@@ -3,7 +3,9 @@ PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX crypto: <http://www.w3.org/2000/10/swap/crypto#>
+PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
 PREFIX ex: <http://example.org/test#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
@@ -17,6 +19,26 @@ PREFIX persoon_loket: <http://data.vlaanderen.be/ns/persoon#>
 PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
 PREFIX string: <http://www.w3.org/2000/10/swap/string#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Add missing datatypes
+{
+  ?s a ere:BestuurVanDeEredienst
+} => {
+  ?s a besluit:Bestuurseenheid
+}.
+
+{
+  ?s a ere:CentraalBestuurVanDeEredienst
+} => {
+  ?s a besluit:Bestuurseenheid
+}.
+
+{
+  ?s a ere:RepresentatiefOrgaan
+}=> {
+  ?s a besluit:Bestuurseenheid
+}.
+
 
 
 # DL and OP both use persoon:gebruikteVoornaam but with different semantics (!)
@@ -158,4 +180,27 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   }
 } => {
   ?s mandaat:isTijdspecialisatieVan ?o.
+}.
+
+
+############################################################################################################
+# !!! Warning !!! Context needed for the following rules
+############################################################################################################
+
+# Label for bestuursorganen NOT in time
+{
+  ?s
+    besluit:bestuurt ?bestuurseenheid;
+    besluit:classificatie ?classificatie;
+    a besluit:Bestuursorgaan.
+
+  ?classificatie
+    skos:prefLabel ?classificatieLabel.
+  ?bestuurseenheid
+    skos:prefLabel ?bestuurseenheidLabel.
+
+  (?classificatieLabel " " ?bestuurseenheidLabel)
+    string:concatenation ?label.
+} => {
+  ?s skos:prefLabel ?label.
 }.
