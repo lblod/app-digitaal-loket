@@ -81,15 +81,52 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 }.
 
 
+{
+  ?s mandaat:bindingStart ?bindingStartDateTime.
+  # use backward arrow rule defined below
+  ?bindingStartDateTime :dateFromDateTime ?bindingStartDate.
+  {
+    ?s mandaat:bindingStart ?bindingStartDateTime
+  } e:becomes {
+    ?s mandaat:bindingStart ?bindingStartDate
+  }.
+} => {
+  ?s mandaat:bindingStart ?bindingStartDate.
+}.
+
+{
+  ?s mandaat:bindingEinde ?bindingEindeDateTime.
+  # use backward arrow rule defined below
+  ?bindingEindeDateTime :dateFromDateTime ?bindingEindeDate.
+  {
+    ?s mandaat:bindingEinde ?bindingEindeDateTime
+  } e:becomes {
+    ?s mandaat:bindingEinde ?bindingEindeDate
+  }.
+} => {
+  ?s mandaat:bindingEinde ?bindingEindeDate.
+}.
+
 # Backward arrow rule is like a function call.
 # Removes time info in the returned date
 # The user in DL selects a date via the UI.
-# These dates are persisted as in DL midnight dateTimes in UTC.
+# These dates are persisted as midnight dateTimes in UTC.
 # Meaning that 1st of July is stored as
 # "2022-06-30T22:00:00Z"^^xsd:dateTime
 # and 1 December
 # "2022-11-30T23:00:00Z"^^xsd:dateTime
-# The following rule just adds "T00:00:00Z" to the date, which maps to the same CE(S)T day and is easier to read.
+# So, the following rule adds 2 hours to the datetime, and then takes the date part of the UTC date time
+# to come to the date that the DL user selected (in CE(S)T)
+{
+   ?dateTime :dateFromDateTime ?date
+} <= {
+  (?dateTimeLiteral xsd:dateTime) log:dtlit ?dateTime.
+  (?dateTime "PT2H"^^xsd:dayTimeDuration) func:add-dayTimeDuration-to-dateTime ?localDateTime.
+  (?localDateTimeLiteral xsd:dateTime) log:dtlit ?localDateTime.
+  (?localDateTimeLiteral 0 11) func:substring ?dateLiteral.
+  (?dateLiteral xsd:date) log:dtlit ?date.
+}.
+
 {
    ?dateTime :dateTimeFromDate ?date
 } <= {
@@ -97,6 +134,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   (?dateLiteral "T00:00:00Z") string:concatenation ?dateTimeLiteral.
   (?dateTimeLiteral xsd:dateTime) log:dtlit ?dateTime.
 }.
+
 
 
 # ex:orgA besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>.
