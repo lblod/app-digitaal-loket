@@ -1,6 +1,10 @@
 # Changelog
 ## Unreleased
   - Frontend [v0.77.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0770-2023-03-07)
+  - Vendor management frontend v0.6.0:
+    - Hopefully fix a data issue by changing the way we persist changes
+    - UX/UI improvements
+    - General maintenance
 ### LPDC
   - maintain the creation order of listings in the semantic forms
 ## 1.77.8 (2023-03-03)
