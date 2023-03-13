@@ -1,0 +1,67 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+##
+# Remove redundant person URIs 
+##
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    # Keep a reference from the redundant URIs to the corrent one since those URIs could be referenced somewhere else instead 
+    # of just inside our database.
+    ?s owl:sameAs <http://data.lblod.info/id/personen/233a36a6-0435-4b73-88a2-93cbc95359bf> .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/personen/63B7E5BDDF5E04E2FA93C5E0>
+    <http://data.lblod.info/id/personen/63B7E952DF5E04E2FA93C5ED>
+  }
+
+  FILTER (?g NOT IN (
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-submissions> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-subsidies>
+  ))
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+##
+# Each of the person URIs above (<http://data.lblod.info/id/personen/63B7E5BDDF5E04E2FA93C5E0> and 
+# <http://data.lblod.info/id/personen/63B7E5BDDF5E04E2FA93C5ED>) was pointing to Mandataris URIs that also need to be removed.
+##
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/mandatarissen/63B7E803DF5E04E2FA93C5EC>
+    <http://data.lblod.info/id/mandatarissen/63B7E983DF5E04E2FA93C5EF>
+  }
+
+  FILTER (?g NOT IN (
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-submissions> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive> ,
+    <http://redpencil.data.gift/id/deltas/producer/loket-subsidies>
+  ))
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
