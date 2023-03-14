@@ -267,7 +267,7 @@ services:
     restart: always
     logging: *default-logging
   import-submission:
-    image: lblod/import-submission-service:1.2.1
+    image: lblod/import-submission-service:1.2.2
     volumes:
       - ./data/files:/share
     labels:
