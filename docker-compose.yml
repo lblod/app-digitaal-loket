@@ -437,6 +437,14 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  update-bestuurseenheid-mock-login:
+    image: lblod/update-bestuurseenheid-mock-login-service:0.1.0
+    volumes:
+      - ./config/mock-login:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   ################################################################################
   # DELTA GENERAL
   ################################################################################

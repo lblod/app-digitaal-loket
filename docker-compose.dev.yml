@@ -134,3 +134,5 @@ services:
     restart: "no"
   prepare-submissions-for-export:
     restart: "no"
+  update-bestuurseenheid-mock-login:
+    restart: "no"
