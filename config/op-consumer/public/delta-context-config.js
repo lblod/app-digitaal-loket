@@ -1,4 +1,4 @@
-export const PREFIXES = `
+const PREFIXES = `
 PREFIX adms: <http://www.w3.org/ns/adms#>
 PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
@@ -29,7 +29,7 @@ PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>`
 
 
-export const contextConfig = {
+const contextConfig = {
   addTypes: {
     scope: 'all', // 'inserts, 'deletes', 'all' or none. To add rdf:type to subjects of inserts, deletes or both
     exhausitive: false, // true or false: find all types for a subject, even if one is already present in delta
@@ -58,4 +58,9 @@ export const contextConfig = {
         }`
     }
   ]
+};
+
+module.exports = {
+  contextConfig,
+  PREFIXES
 };
