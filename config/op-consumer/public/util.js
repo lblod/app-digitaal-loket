@@ -1,6 +1,9 @@
 const {
+
   MAX_REASONING_RETRY_ATTEMPTS,
-  SLEEP_TIME_AFTER_FAILED_REASONING_OPERATION
+  SLEEP_TIME_AFTER_FAILED_REASONING_OPERATION,
+  INGEST_GRAPH,
+  INGEST_DATABASE_ENDPOINT
 } = require('./config');
 
 async function batchedDbUpdate(muUpdate,
@@ -48,9 +51,23 @@ async function deleteFromAllGraphs(muUpdate,
 
   for (const triple of triples) {
 
-    console.log(`Deleting a triple from all graphs in triplestore`);
+    console.log(`Deleting a triples`);
 
     const deleteCall = async () => {
+      await muUpdate(`
+      DELETE {
+        GRAPH ?g {
+          ${triple}
+        }
+      } WHERE {
+        GRAPH ?g {
+          ${triple}
+        }
+      }
+      `, extraHeaders, endpoint);
+    };
+
+    const log_deletes = async () => {
       await muUpdate(`
       DELETE {
         GRAPH ?g {
@@ -145,9 +162,32 @@ function transformStatements(fetch, triples) {
   )
 }
 
+async function transformIngestGraph(fetch) {
+  console.log(`Transforming ingest graph: ${INGEST_GRAPH}`)
+  return fetch(`http://reasoner/reason/op2dl/main?data=${encodeURIComponent(`${INGEST_DATABASE_ENDPOINT}?default-graph-uri=&query=CONSTRUCT+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D+WHERE+%7B%0D%0A+GRAPH+<${INGEST_GRAPH}>+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D%0D%0A%7D&should-sponge=&format=text%2Fplain&timeout=0&run=+Run+Query`)}`).then(
+    response => {
+      statements = response.text() // .replace(/\n{2,}/g, '').split('\n')
+
+      console.log(`Transformed ${INGEST_GRAPH} to ${statements.length}`)
+      return statements.split('\n')
+    }
+  ).catch(err => {
+    console.log(`Something went wrong while fetching the transformed ingest graph from the reasoner: ${err}`)
+    throw err
+  })
+  // return transformTriples(fetch, triples.join('\n')).then(
+  //   graph => {
+  //     statements = graph.replace(/\n{2,}/g, '').split('\n')
+  //     console.log(`CONVERSION: FROM ${triples.length} triples to ${statements.length}`)
+  //     return statements
+  //   }
+  // )
+}
+
 module.exports = {
   batchedDbUpdate,
   deleteFromAllGraphs,
   partition,
-  transformStatements
+  transformStatements,
+  transformIngestGraph
 };

@@ -7,7 +7,16 @@ const MAX_REASONING_RETRY_ATTEMPTS = parseInt(process.env.MAX_REASONING_RETRY_AT
 const SLEEP_BETWEEN_BATCHES = parseInt(process.env.SLEEP_BETWEEN_BATCHES || 1000);
 const SLEEP_TIME_AFTER_FAILED_REASONING_OPERATION = parseInt(process.env.SLEEP_TIME_AFTER_FAILED_REASONING_OPERATION || 10000);
 const SLEEP_TIME_AFTER_FAILED_DB_OPERATION = parseInt(process.env.SLEEP_TIME_AFTER_FAILED_DB_OPERATION || 60000);
-const INGEST_GRAPH = process.env.INGEST_GRAPH || `http://mu.semte.ch/graphs/ingest-op-public`;
+const DELETE_GRAPH = process.env.DELETE_GRAPH || `http://mu.semte.ch/graphs/delete-op-public`;
+const TARGET_GRAPH = process.env.TARGET_GRAPH || `http://mu.semte.ch/graphs/public`;
+
+// TODO: get from main app?
+// GRAPHS
+const INGEST_GRAPH = process.env.INGEST_GRAPH || `http://mu.semte.ch/graphs/public`;
+
+// ENDPOINTS
+const INGEST_DATABASE = process.env.DCR_INGEST_DATABASE || 'database';
+const INGEST_DATABASE_ENDPOINT = process.env.DCR_INGEST_DATABASE_ENDPOINT || `http://${INGEST_DATABASE}:8890/sparql`;
 
 
 if (!process.env.FILE_SYNC_GRAPH)
@@ -25,5 +34,7 @@ module.exports = {
   SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
   SLEEP_TIME_AFTER_FAILED_REASONING_OPERATION,
   INGEST_GRAPH,
-  FILE_SYNC_GRAPH
+  INGEST_DATABASE_ENDPOINT,
+  DELETE_GRAPH,
+  TARGET_GRAPH
 };

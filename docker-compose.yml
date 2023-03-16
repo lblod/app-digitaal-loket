@@ -823,22 +823,22 @@ services:
     #      - "logging=true"
     restart: always
     logging: *default-logging
-################################################################################
-# DELTA SUBSIDIES: END
-################################################################################
+  ################################################################################
+  # DELTA SUBSIDIES: END
+  ################################################################################
 
-################################################################################
-# DELTA CONSUMERS
-################################################################################
-################################################################################
-# OP PUBLIC CONSUMER
-################################################################################
+  ################################################################################
+  # DELTA CONSUMERS
+  ################################################################################
+  ################################################################################
+  # OP PUBLIC CONSUMER
+  ################################################################################
   reasoner:
-    image: eyereasoner/reasoning-service:1.0.1
+    image: eyereasoner/reasoning-service:1.0.2
     volumes:
       - ./config/reasoner:/config
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.14
+    image: lblod/delta-consumer:0.0.16
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
@@ -848,9 +848,11 @@ services:
       DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
       DCR_DISABLE_INITIAL_SYNC: "true"
       BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
-      DCR_SYNC_FILES_PATH: "/sync/op-public/files"
+      DCR_SYNC_FILES_PATH: "/sync/public/files"
       FILE_SYNC_GRAPH: "http://mu.semte.ch/graphs/temp/original-physical-files-data"
       KEEP_DELTA_FILES: "true"
+      DCR_INGEST_DATABASE: "publication-triplestore"
+      INGEST_GRAPH: "http://mu.semte.ch/graphs/ingest/op-public"
     volumes:
       - ./config/op-consumer/public:/config/triples-dispatching/custom-dispatching
       - ./data/files/consumer-files/op-public:/consumer-files/
