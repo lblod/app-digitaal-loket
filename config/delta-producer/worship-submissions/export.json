@@ -11,6 +11,7 @@
         "http://purl.org/dc/terms/modified",
         "http://purl.org/pav/createdBy",
         "http://purl.org/pav/providedBy",
+        "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#sentDate",
         "http://purl.org/dc/terms/subject",
         "http://purl.org/dc/terms/source",
         "http://www.w3.org/ns/adms#status",
