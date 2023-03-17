@@ -156,32 +156,28 @@ function transformStatements(fetch, triples) {
   return transformTriples(fetch, triples.join('\n')).then(
     graph => {
       statements = graph.replace(/\n{2,}/g, '').split('\n')
-      console.log(`CONVERSION: FROM ${triples.length} triples to ${statements.length}`)
-      return statements
+      console.log(`CONVERSION: FROM ${triples.length} triples to ${statements.length}`);
+      return statements;
     }
   )
 }
 
 async function transformIngestGraph(fetch) {
-  console.log(`Transforming ingest graph: ${INGEST_GRAPH}`)
-  return fetch(`http://reasoner/reason/op2dl/main?data=${encodeURIComponent(`${INGEST_DATABASE_ENDPOINT}?default-graph-uri=&query=CONSTRUCT+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D+WHERE+%7B%0D%0A+GRAPH+<${INGEST_GRAPH}>+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D%0D%0A%7D&should-sponge=&format=text%2Fplain&timeout=0&run=+Run+Query`)}`).then(
-    response => {
-      statements = response.text() // .replace(/\n{2,}/g, '').split('\n')
+  console.log(`Transforming ingest graph: ${INGEST_GRAPH}`);
 
-      console.log(`Transformed ${INGEST_GRAPH} to ${statements.length}`)
-      return statements.split('\n')
+/*   Query:
+  CONSTRUCT {
+    ?s ?p ?o
+  } WHERE {
+    GRAPH <${INGEST_GRAPH}> {
+      ?s ?p ?o
     }
-  ).catch(err => {
-    console.log(`Something went wrong while fetching the transformed ingest graph from the reasoner: ${err}`)
-    throw err
-  })
-  // return transformTriples(fetch, triples.join('\n')).then(
-  //   graph => {
-  //     statements = graph.replace(/\n{2,}/g, '').split('\n')
-  //     console.log(`CONVERSION: FROM ${triples.length} triples to ${statements.length}`)
-  //     return statements
-  //   }
-  // )
+  } */
+  const response = await fetch(`http://reasoner/reason/op2dl/main?data=${encodeURIComponent(`${INGEST_DATABASE_ENDPOINT}?default-graph-uri=&query=CONSTRUCT+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D+WHERE+%7B%0D%0A+GRAPH+<${INGEST_GRAPH}>+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D%0D%0A%7D&should-sponge=&format=text%2Fplain&timeout=0&run=+Run+Query`)}`);
+  const text = await response.text();
+  const statements = text.replace(/\n{2,}/g, '').split('\n');
+
+  return statements;
 }
 
 module.exports = {

@@ -39,9 +39,9 @@ async function dispatch(lib, data) {
   console.log(`Using ${endpoint} to insert triples`);
 
   if (termObjects.length) {
-    const originalInsertTriples = termObjects.map(o => `${o.subject} ${o.predicate} ${o.object}.`)
+    const originalInsertTriples = termObjects.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
 
-    batchedDbUpdate(
+    await batchedDbUpdate(
       muAuthSudo.updateSudo,
       INGEST_GRAPH,
       originalInsertTriples,
@@ -51,12 +51,12 @@ async function dispatch(lib, data) {
       MAX_DB_RETRY_ATTEMPTS,
       SLEEP_BETWEEN_BATCHES,
       SLEEP_TIME_AFTER_FAILED_DB_OPERATION
-    )
+    );
   }
 }
 
 async function onFinishInitialIngest(lib) {
-  const { mu, muAuthSudo, fetch } = lib;
+  const { muAuthSudo, fetch } = lib;
 
   console.log(`!! On-finish triggered !!`);
 
@@ -64,7 +64,7 @@ async function onFinishInitialIngest(lib) {
 
   console.log(`Transformed ${transformedInsertTriples.length} triples`);
 
-  batchedDbUpdate(
+  await batchedDbUpdate(
     muAuthSudo.updateSudo,
     TARGET_GRAPH,
     transformedInsertTriples,
@@ -74,8 +74,7 @@ async function onFinishInitialIngest(lib) {
     MAX_DB_RETRY_ATTEMPTS,
     SLEEP_BETWEEN_BATCHES,
     SLEEP_TIME_AFTER_FAILED_DB_OPERATION
-  )
-
+  );
 }
 
 module.exports = {
