@@ -1,4 +1,11 @@
-const { transformStatements, batchedDbUpdate, partition, deleteFromAllGraphs } = require('./util');
+const {
+  transformStatements,
+  deleteFromIngetsGraph,
+  insertIntoIngestGraph,
+  deleteFromTargetGraph,
+  insertIntoTargetGraph,
+  insertIntoDebugGraph
+} = require('./util');
 const { BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES,
   DIRECT_DATABASE_ENDPOINT,
   MU_CALL_SCOPE_ID_INITIAL_SYNC,
@@ -9,6 +16,7 @@ const { BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES,
   INGEST_GRAPH,
   FILE_SYNC_GRAPH
 } = require('./config');
+const { contextConfig } = require('./delta-context-config');
 
 
 /**
@@ -45,28 +53,37 @@ async function dispatch(lib, data) {
   const { mu, muAuthSudo, fetch } = lib;
   let { termObjectChangeSets, termObjectChangeSetsWithContext } = data;
 
+  // Both arrays are the same length, so we can zip them together for easier processing
+  zippedChangeSets = termObjectChangeSets.map((o, i) => ({
+    original: o,
+    withContext: termObjectChangeSetsWithContext[i]
+  }));
 
-  console.log(`data:\n\n${JSON.stringify(data)}`)
-  console.log(`termObjectChangeSets:\n\n${JSON.stringify(termObjectChangeSets)}`)
+  for (let { original, withContext } of zippedChangeSets) {
+    const originalInserts = original.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    const originalDeletes = original.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
 
+    // Extra context needed for mapping from OP to DL model and filtering based on type.
+    const deletesWithContext = withContext.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    const insertsWithContext = withContext.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
 
-  console.log(`termObjectChangeSetsWithContext:\n\n${JSON.stringify(termObjectChangeSetsWithContext)}`)
-  for (let { deletes, inserts } of termObjectChangeSets) {
-    const originalInserts = inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
-    const originalDeletes = deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    if (originalDeletes.length > 0) {
+      // Map deletes from OP to DL model
+      const transformedDeletes = await transformStatements(fetch, deletesWithContext);
 
-    console.log(`originalInserts:\n\n${JSON.stringify(originalInserts)}`)
-    console.log(`originalDeletes:\n\n${JSON.stringify(originalDeletes)}`)
+      await deleteFromTargetGraph(lib, transformedDeletes);
+      await insertIntoDebugGraph(lib, transformedDeletes);
+      await deleteFromIngetsGraph(lib, originalDeletes);
+    }
+
+    if (originalInserts.length > 0) {
+      // Map inserts from OP to DL model
+      const transformedInserts = await transformStatements(fetch, insertsWithContext);
+
+      await insertIntoTargetGraph(lib, transformedInserts);
+      await insertIntoIngestGraph(lib, originalInserts);
+    }
   }
-
-  for (let { deletes, inserts } of termObjectChangeSetsWithContext) {
-    const extendinserts = inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
-    const extenddeletes = deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
-
-    console.log(`extendinserts:\n\n${JSON.stringify(extendinserts)}`)
-    console.log(`extenddeletes:\n\n${JSON.stringify(extenddeletes)}`)
-  }
-
 }
 
 module.exports = {

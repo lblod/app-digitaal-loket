@@ -848,6 +848,7 @@ services:
       DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
       DCR_DISABLE_INITIAL_SYNC: "true"
       BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+      BATCH_SIZE: 1000
       DCR_SYNC_FILES_PATH: "/sync/public/files"
       FILE_SYNC_GRAPH: "http://mu.semte.ch/graphs/temp/original-physical-files-data"
       KEEP_DELTA_FILES: "true"

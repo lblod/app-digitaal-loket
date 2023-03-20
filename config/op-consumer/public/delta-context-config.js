@@ -56,6 +56,34 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identificator.
         }`
+    },
+    {
+      trigger: { // subjectType or predicateValue
+        predicateValue: "generiek:gestructureerdeIdentificator"
+      },
+      queryTemplate: (subject) => `
+        ${PREFIXES}
+        CONSTRUCT {
+          ${subject}
+            a ?type;
+            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+            skos:notation ?identificatorType.
+          ?gestructureerdeIdentificator
+            a ?identificatorType;
+            generiek:lokaleIdentificator ?lokaleIdentificator.
+          ?bestuurseenheid
+            adms:identifier ?identificator.
+        } WHERE {
+          ${subject}
+            a ?type;
+            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+            skos:notation ?identificatorType.
+          ?gestructureerdeIdentificator
+            a ?identificatorType;
+            generiek:lokaleIdentificator ?lokaleIdentificator.
+          ?bestuurseenheid
+            adms:identifier ?identificator.
+        }`
     }
   ]
 };

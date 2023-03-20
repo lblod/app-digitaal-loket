@@ -21,23 +21,23 @@ PREFIX string: <http://www.w3.org/2000/10/swap/string#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 # Add missing datatypes
-{
-  ?s a ere:BestuurVanDeEredienst
-} => {
-  ?s a besluit:Bestuurseenheid
-}.
+# {
+#   ?s a ere:BestuurVanDeEredienst
+# } => {
+#   ?s a besluit:Bestuurseenheid
+# }.
 
-{
-  ?s a ere:CentraalBestuurVanDeEredienst
-} => {
-  ?s a besluit:Bestuurseenheid
-}.
+# {
+#   ?s a ere:CentraalBestuurVanDeEredienst
+# } => {
+#   ?s a besluit:Bestuurseenheid
+# }.
 
-{
-  ?s a ere:RepresentatiefOrgaan
-}=> {
-  ?s a besluit:Bestuurseenheid
-}.
+# {
+#   ?s a ere:RepresentatiefOrgaan
+# }=> {
+#   ?s a besluit:Bestuurseenheid
+# }.
 
 
 

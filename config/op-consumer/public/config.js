@@ -14,6 +14,8 @@ const TARGET_GRAPH = process.env.TARGET_GRAPH || `http://mu.semte.ch/graphs/publ
 // GRAPHS
 const INGEST_GRAPH = process.env.INGEST_GRAPH || `http://mu.semte.ch/graphs/public`;
 
+const TARGET_DATABASE_ENDPOINT = process.env.TARGET_DATABASE_ENDPOINT || 'http://database:8890/sparql';
+
 // ENDPOINTS
 const INGEST_DATABASE = process.env.DCR_INGEST_DATABASE || 'database';
 const INGEST_DATABASE_ENDPOINT = process.env.DCR_INGEST_DATABASE_ENDPOINT || `http://${INGEST_DATABASE}:8890/sparql`;
@@ -36,5 +38,6 @@ module.exports = {
   INGEST_GRAPH,
   INGEST_DATABASE_ENDPOINT,
   DELETE_GRAPH,
-  TARGET_GRAPH
+  TARGET_GRAPH,
+  TARGET_DATABASE_ENDPOINT
 };

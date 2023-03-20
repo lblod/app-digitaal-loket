@@ -1,9 +1,15 @@
 const {
-
   MAX_REASONING_RETRY_ATTEMPTS,
   SLEEP_TIME_AFTER_FAILED_REASONING_OPERATION,
+  MAX_DB_RETRY_ATTEMPTS,
+  SLEEP_BETWEEN_BATCHES,
+  SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+  TARGET_GRAPH,
   INGEST_GRAPH,
-  INGEST_DATABASE_ENDPOINT
+  DELETE_GRAPH,
+  BATCH_SIZE,
+  INGEST_DATABASE_ENDPOINT,
+  TARGET_DATABASE_ENDPOINT
 } = require('./config');
 
 async function batchedDbUpdate(muUpdate,
@@ -35,53 +41,6 @@ ${batch}
 
     await operationWithRetry(insertCall, 0, maxAttempts, sleepTimeOnFail);
 
-    console.log(`Sleeping before next query execution: ${sleepBetweenBatches}`);
-    await new Promise(r => setTimeout(r, sleepBetweenBatches));
-  }
-}
-
-async function deleteFromAllGraphs(muUpdate,
-  triples,
-  extraHeaders,
-  endpoint,
-  maxAttempts,
-  sleepBetweenBatches = 1000,
-  sleepTimeOnFail = 1000,
-) {
-
-  for (const triple of triples) {
-
-    console.log(`Deleting a triples`);
-
-    const deleteCall = async () => {
-      await muUpdate(`
-      DELETE {
-        GRAPH ?g {
-          ${triple}
-        }
-      } WHERE {
-        GRAPH ?g {
-          ${triple}
-        }
-      }
-      `, extraHeaders, endpoint);
-    };
-
-    const log_deletes = async () => {
-      await muUpdate(`
-      DELETE {
-        GRAPH ?g {
-          ${triple}
-        }
-      } WHERE {
-        GRAPH ?g {
-          ${triple}
-        }
-      }
-      `, extraHeaders, endpoint);
-    };
-
-    await operationWithRetry(deleteCall, 0, maxAttempts, sleepTimeOnFail);
     console.log(`Sleeping before next query execution: ${sleepBetweenBatches}`);
     await new Promise(r => setTimeout(r, sleepBetweenBatches));
   }
@@ -162,17 +121,93 @@ function transformStatements(fetch, triples) {
   )
 }
 
+async function deleteFromIngetsGraph(lib, statements) {
+  console.log(`Deleting ${statements.length} statements from ingest graph`);
+  console.log(`Statements: ${JSON.stringify(statements)}`)
+
+  await batchedDbUpdate(
+    lib.muAuthSudo.updateSudo,
+    INGEST_GRAPH,
+    statements,
+    {},
+    INGEST_DATABASE_ENDPOINT,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'DELETE');
+}
+
+async function insertIntoIngestGraph(lib, statements) {
+  console.log(`Inserting ${statements.length} statements into ingest graph`);
+  console.log(`Statements:  ${JSON.stringify(statements)}`)
+
+  await batchedDbUpdate(
+    lib.muAuthSudo.updateSudo,
+    INGEST_GRAPH,
+    statements,
+    {},
+    INGEST_DATABASE_ENDPOINT,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'INSERT');
+}
+
+async function deleteFromTargetGraph(lib, statements) {
+  console.log(`Deleting ${statements.length} statements from target graph`);
+  console.log(`Statements:  ${JSON.stringify(statements)}`)
+  await batchedDbUpdate(
+    lib.muAuthSudo.updateSudo,
+    TARGET_GRAPH,
+    statements,
+    {},
+    TARGET_DATABASE_ENDPOINT,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'DELETE');
+}
+
+async function insertIntoTargetGraph(lib, statements) {
+  console.log(`Inserting ${statements.length} statements into target graph`);
+  console.log(`Statements:  ${JSON.stringify(statements)}`)
+
+  await batchedDbUpdate(
+    lib.muAuthSudo.updateSudo,
+    TARGET_GRAPH,
+    statements,
+    {},
+    TARGET_DATABASE_ENDPOINT,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'INSERT');
+}
+
+async function insertIntoDebugGraph(lib, statements) {
+  console.log(`Inserting ${statements.length} statements into debug graph`);
+  console.log(`Statements:  ${JSON.stringify(statements)}`)
+
+  await batchedDbUpdate(
+    lib.muAuthSudo.updateSudo,
+    DELETE_GRAPH,
+    statements,
+    {},
+    INGEST_DATABASE_ENDPOINT,
+    BATCH_SIZE,
+    MAX_DB_RETRY_ATTEMPTS,
+    SLEEP_BETWEEN_BATCHES,
+    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
+    'INSERT');
+}
+
 async function transformIngestGraph(fetch) {
   console.log(`Transforming ingest graph: ${INGEST_GRAPH}`);
 
-/*   Query:
-  CONSTRUCT {
-    ?s ?p ?o
-  } WHERE {
-    GRAPH <${INGEST_GRAPH}> {
-      ?s ?p ?o
-    }
-  } */
   const response = await fetch(`http://reasoner/reason/op2dl/main?data=${encodeURIComponent(`${INGEST_DATABASE_ENDPOINT}?default-graph-uri=&query=CONSTRUCT+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D+WHERE+%7B%0D%0A+GRAPH+<${INGEST_GRAPH}>+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D%0D%0A%7D&should-sponge=&format=text%2Fplain&timeout=0&run=+Run+Query`)}`);
   const text = await response.text();
   const statements = text.replace(/\n{2,}/g, '').split('\n');
@@ -182,8 +217,12 @@ async function transformIngestGraph(fetch) {
 
 module.exports = {
   batchedDbUpdate,
-  deleteFromAllGraphs,
   partition,
   transformStatements,
-  transformIngestGraph
+  transformIngestGraph,
+  deleteFromIngetsGraph,
+  insertIntoIngestGraph,
+  deleteFromTargetGraph,
+  insertIntoTargetGraph,
+  insertIntoDebugGraph
 };
