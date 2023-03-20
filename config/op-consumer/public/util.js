@@ -112,9 +112,10 @@ function mainConversion(fetch, triples) {
 }
 
 function transformStatements(fetch, triples) {
+  console.log(`Received ${JSON.stringify(triples)} to transform`);
   return transformTriples(fetch, triples.join('\n')).then(
     graph => {
-      statements = graph.replace(/\n{2,}/g, '').split('\n')
+      statements = graph ? graph.replace(/\n{2,}/g, '').split('\n') : [];
       console.log(`CONVERSION: FROM ${triples.length} triples to ${statements.length}`);
       return statements;
     }

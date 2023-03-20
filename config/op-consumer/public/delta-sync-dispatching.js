@@ -59,28 +59,52 @@ async function dispatch(lib, data) {
     withContext: termObjectChangeSetsWithContext[i]
   }));
 
+  // console.log(`Received ${zippedChangeSets.length} change sets`)
+  // console.log(`Change sets:  ${JSON.stringify(zippedChangeSets)}`)
+
   for (let { original, withContext } of zippedChangeSets) {
     const originalInserts = original.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
     const originalDeletes = original.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
 
     // Extra context needed for mapping from OP to DL model and filtering based on type.
-    const deletesWithContext = withContext.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
-    const insertsWithContext = withContext.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    const insertsWithContext = withContext.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    const deletesWithContext = withContext.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
 
-    if (originalDeletes.length > 0) {
+    // console.log(`Original inserts: ${originalInserts}`)
+    // console.log(`Original deletes: ${originalDeletes}`)
+    // console.log(`Inserts with context: ${insertsWithContext}`)
+    // console.log(`Deletes with context: ${deletesWithContext}`)
+
+    if (originalDeletes.length) {
       // Map deletes from OP to DL model
+
+      // console.log(`Transforming ${deletesWithContext.length} deletes`)
+      // console.log(`Deletes with context:  ${JSON.stringify(deletesWithContext)}`)
+
       const transformedDeletes = await transformStatements(fetch, deletesWithContext);
 
-      await deleteFromTargetGraph(lib, transformedDeletes);
-      await insertIntoDebugGraph(lib, transformedDeletes);
+      if (!transformedDeletes.length) {
+        console.log(`Warn: Delete statements mapped to empty result.`);
+        console.log(`Input: ${deletesWithContext}`);
+        console.log(`Output: ${transformedDeletes}`);
+      } else {
+        await deleteFromTargetGraph(lib, transformedDeletes);
+        await insertIntoDebugGraph(lib, transformedDeletes);
+      }
       await deleteFromIngetsGraph(lib, originalDeletes);
     }
 
-    if (originalInserts.length > 0) {
+    if (originalInserts.length) {
       // Map inserts from OP to DL model
       const transformedInserts = await transformStatements(fetch, insertsWithContext);
 
-      await insertIntoTargetGraph(lib, transformedInserts);
+      if (!transformedInserts.length) {
+        console.log(`Warn: Insert statements mapped to empty result.`);
+        console.log(`Input: ${insertsWithContext}`);
+        console.log(`Output: ${transformedInserts}`);
+      } else {
+        await insertIntoTargetGraph(lib, transformedInserts);
+      }
       await insertIntoIngestGraph(lib, originalInserts);
     }
   }
