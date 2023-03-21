@@ -43,6 +43,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     ere:wordtBediendDoor ?o.
 }.
 
+{
+  ?s
+    ere:betrokkenBestuur ?o.
+} => {
+  ?s
+    ere:betrokkenBestuur ?o.
+}.
+
 #################################################################
 #    Bestuur van de eredienst
 #################################################################
@@ -357,6 +365,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ?s ere:functie ?o.
 }.
 
+{
+  ?s
+    org:role ?o;
+    a ere:PositieBedienaar.
+} => {
+  ?s
+    org:role ?o.
+}
+
 #################################################################
 #  Bestuursorgaan NOT IN TIME
 #################################################################
@@ -496,3 +513,4 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 } => {
   ?s mu:uuid ?uuid.
 }.
+
