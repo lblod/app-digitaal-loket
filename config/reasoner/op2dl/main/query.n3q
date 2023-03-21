@@ -98,8 +98,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 {
   ?s
-    ext:kbonummer ?o;
-    a ere:BestuurVanDeEredienst.
+    ext:kbonummer ?o
 } => {
   ?s
     ext:kbonummer ?o.
@@ -107,8 +106,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 {
   ?s
-    dcterms:identifier ?o;
-    a ere:BestuurVanDeEredienst.
+    dcterms:identifier ?o
 } => {
   ?s
     dcterms:identifier ?o.
