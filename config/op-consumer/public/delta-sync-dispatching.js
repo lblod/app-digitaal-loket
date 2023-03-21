@@ -6,18 +6,6 @@ const {
   insertIntoTargetGraph,
   insertIntoDebugGraph
 } = require('./util');
-const { BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES,
-  DIRECT_DATABASE_ENDPOINT,
-  MU_CALL_SCOPE_ID_INITIAL_SYNC,
-  BATCH_SIZE,
-  MAX_DB_RETRY_ATTEMPTS,
-  SLEEP_BETWEEN_BATCHES,
-  SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-  INGEST_GRAPH,
-  FILE_SYNC_GRAPH
-} = require('./config');
-const { contextConfig } = require('./delta-context-config');
-
 
 /**
 * Dispatch the fetched information to a target graph.
@@ -37,8 +25,8 @@ const { contextConfig } = require('./delta-context-config');
 *  - execute mapped insert into target graph
 *  - execute plain insert into ingest
 *
-* @param { mu, muAuthSudo } lib - The provided libraries from the host service.
-* @param { termObjectChangeSets: { deletes, inserts } } data - The fetched changes sets, which objects of serialized Terms
+* @param { mu, muAuthSudo, fetch } lib - The provided libraries from the host service.
+* @param { termObjectChangeSets: { deletes, inserts }, termObjectChangeSetsWithContext: { deletes, inserts } } data - The fetched changes sets, which objects of serialized Terms
 *          [ {
 *              graph: "<http://foo>",
 *              subject: "<http://bar>",
@@ -59,16 +47,29 @@ async function dispatch(lib, data) {
     withContext: termObjectChangeSetsWithContext[i]
   }));
 
-  // console.log(`Received ${zippedChangeSets.length} change sets`)
+  console.log(`Received ${zippedChangeSets.length} change sets`)
   // console.log(`Change sets:  ${JSON.stringify(zippedChangeSets)}`)
 
   for (let { original, withContext } of zippedChangeSets) {
-    const originalInserts = original.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
-    const originalDeletes = original.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    let originalDeletes, originalInserts, insertsWithContext, deletesWithContext;
+    try {
+      originalInserts = original.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+      originalDeletes = original.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    } catch (e) {
+      console.log(`Error while processing change set: ${e}`);
+      console.log(`Original change set: ${JSON.stringify(original)}`);
+      throw e;
+    }
 
     // Extra context needed for mapping from OP to DL model and filtering based on type.
-    const insertsWithContext = withContext.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
-    const deletesWithContext = withContext.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    try {
+      insertsWithContext = withContext.inserts.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+      deletesWithContext = withContext.deletes.map(o => `${o.subject} ${o.predicate} ${o.object}.`);
+    } catch (e) {
+      console.log(`Error while processing change set with context: ${e}`);
+      console.log(`Change set with context: ${JSON.stringify(withContext)}`);
+      throw e;
+    }
 
     // console.log(`Original inserts: ${originalInserts}`)
     // console.log(`Original deletes: ${originalDeletes}`)
