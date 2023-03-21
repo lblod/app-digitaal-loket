@@ -48,9 +48,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a ere:BestuurVanDeEredienst, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:BestuurVanDeEredienst,
+      besluit:Bestuurseenheid.
 } => {
-  ?s a ere:BestuurVanDeEredienst, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:BestuurVanDeEredienst,
+      besluit:Bestuurseenheid.
 }.
 
 {
@@ -115,9 +121,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a ere:RepresentatiefOrgaan, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:RepresentatiefOrgaan,
+      besluit:Bestuurseenheid.
 } => {
-  ?s a ere:RepresentatiefOrgaan, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:RepresentatiefOrgaan,
+      besluit:Bestuurseenheid.
 }.
 
 {
@@ -191,9 +203,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a ere:CentraalBestuurVanDeEredienst, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:CentraalBestuurVanDeEredienst,
+      besluit:Bestuurseenheid.
 } => {
-  ?s a ere:CentraalBestuurVanDeEredienst, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:CentraalBestuurVanDeEredienst,
+      besluit:Bestuurseenheid.
 }.
 
 {
@@ -267,9 +285,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a ere:BetrokkenLokaleBesturen, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:BetrokkenLokaleBesturen,
+      besluit:Bestuurseenheid.
 } => {
-  ?s a ere:BetrokkenLokaleBesturen, besluit:Bestuurseenheid.
+  ?s
+    a
+      ere:BetrokkenLokaleBesturen,
+      besluit:Bestuurseenheid.
 }.
 
 {
@@ -311,9 +335,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a ere:PositieBedienaar.
+  ?s
+    a ere:PositieBedienaar.
 } => {
-  ?s a ere:PositieBedienaar.
+  ?s
+    a ere:PositieBedienaar.
 }.
 
 {
@@ -336,13 +362,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a besluit:Bestuursorgaan.
+  ?s
+    a besluit:Bestuursorgaan.
 } => {
-  ?s a besluit:Bestuursorgaan.
+  ?s
+    a besluit:Bestuursorgaan.
 }.
 
 {
-  ?s a besluit:Bestuursorgaan;
+  ?s
+    a besluit:Bestuursorgaan;
     mu:uuid ?uuid.
 } => {
   ?s mu:uuid ?uuid.
@@ -355,14 +384,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 }.
 
 {
-  ?s a besluit:Bestuursorgaan;
+  ?s
+    a besluit:Bestuursorgaan;
     besluit:classificatie ?o.
 } => {
   ?s besluit:classificatie ?o.
 }.
 
 {
-  ?s a besluit:Bestuursorgaan;
+  ?s
+    a besluit:Bestuursorgaan;
     skos:prefLabel ?label.
 } => {
   ?s skos:prefLabel ?label.
@@ -374,14 +405,17 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 #  already queried in the bestuursorgaan not in time
 # {
-#   ?s a besluit:Bestuursorgaan.
+#   ?s
+    # besluit:Bestuursorgaan.
 # } => {
-#   ?s a besluit:Bestuursorgaan.
+#   ?s
+    # besluit:Bestuursorgaan.
 # }.
 
 # {
-#   ?s a besluit:Bestuursorgaan;
-#     mu:uuid ?uuid.
+#   ?s
+    # besluit:Bestuursorgaan;
+#    mu:uuid ?uuid.
 # } => {
 #   ?s mu:uuid ?uuid.
 # }.
@@ -419,13 +453,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #################################################################
 
 {
-  ?s a mandaat:Mandaat.
+  ?s
+    a mandaat:Mandaat.
 } => {
-  ?s a mandaat:Mandaat.
+  ?s
+    a mandaat:Mandaat.
 }.
 
 {
-  ?s a mandaat:Mandaat;
+  ?s
+    a mandaat:Mandaat;
     mu:uuid ?uuid.
 } => {
   ?s mu:uuid ?uuid.
@@ -449,4 +486,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 } => {
   ?s ere:betrokkenBestuur ?o.
+}.
+
+
+{
+  ?s
+    a besluit:Bestuurseenheid;
+    mu:uuid ?uuid.
+} => {
+  ?s mu:uuid ?uuid.
 }.
