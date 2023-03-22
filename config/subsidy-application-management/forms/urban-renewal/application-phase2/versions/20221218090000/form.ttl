@@ -1,43 +1,598 @@
-@prefix form: <http://lblod.data.gift/vocabularies/forms/> .
-@prefix sh: <http://www.w3.org/ns/shacl#>.
-@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
-@prefix fieldGroups: <http://data.lblod.info/field-groups/> .
-@prefix fields: <http://data.lblod.info/fields/> .
-@prefix displayTypes: <http://lblod.data.gift/display-types/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix form:           <http://lblod.data.gift/vocabularies/forms/> .
+@prefix sh:             <http://www.w3.org/ns/shacl#> .
+@prefix mu:             <http://mu.semte.ch/vocabularies/core/> .
+@prefix fieldGroups:    <http://data.lblod.info/field-groups/> .
+@prefix fields:         <http://data.lblod.info/fields/> .
+@prefix displayTypes:   <http://lblod.data.gift/display-types/> .
+@prefix skos:           <http://www.w3.org/2004/02/skos/core#>.
+@prefix ext:            <http://mu.semte.ch/vocabularies/ext/> .
+@prefix lblodSubsidie:  <http://lblod.data.gift/vocabularies/subsidie/> .
+@prefix schema:         <http://schema.org/> .
+@prefix foaf:           <http://xmlns.com/foaf/0.1/> .
+@prefix dct:            <http://purl.org/dc/terms/> .
+@prefix rdf:            <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 ##########################################################
-# form
+# Form and field group definitions
 ##########################################################
-fieldGroups:main a form:FieldGroup ;
-    mu:uuid "70eebdf0-14dc-47f7-85df-e1cfd41c3855" .
-
-form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
-    mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
-    form:hasFieldGroup fieldGroups:main .
+ext:form a form:Form, form:TopLevelForm ;
+  ### Contactgegevens contactpersoon
+  form:includes ext:firstNameContactPerson ;
+  form:includes ext:lastNameContactPerson ;
+  form:includes ext:telephoneNumberContactPerson ;
+  form:includes ext:emailAddressContactPerson ;
+  form:includes ext:jobTitleContactPerson ;
+  ### Politieke verantwoordelijke bij de stad
+  form:includes ext:firstNamePoliticalReference ;
+  form:includes ext:lastNamePoliticalReference ;
+  form:includes ext:telephoneNumberPoliticalReference ;
+  form:includes ext:emailAddressPoliticalReference ;
+  form:includes ext:jobTitlePoliticalReference ;
+  ### Projectnaam
+  form:includes ext:projectNameField ;
+  ### Samenvatting eventuele aapassingen na de jurybeoordeling in de 1e fase
+  form:includes ext:summaryField ;
+  ### Kwaliteit & Uitvoering
+  form:includes ext:emptyField ;
+  ### Schets de kwaliteit van het ruimtelijk ontwerp
+  form:includes ext:schetsDeKwaliteitField ;
+  ### Projectorganisatie en regiefunctie
+  form:includes ext:ProjectorganisatieEnRegiefunctieField ;
+  ### Beschrijf hoe de participatie, communicatie en interactie
+  form:includes ext:BeschrijfParticipatieCommunicatieInteractieField ;
+  ### Projectfasering met projectverloop, timing & risicobeheer
+  form:includes ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerField ;
+  ### Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
+  form:includes ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField ;
+  ### Bestanden toevoegen
+  form:includes ext:bestandenToevoegenField ;
+  form:includes ext:hiddenBestandenToevoegenFormField ;
+  ### Attachments
+  form:includes ext:attachmentsField ;
+  form:includes ext:hiddenAttachmentsFormField .
 
 ##########################################################
-#  property-group
+# Property Group: Contact Person
 ##########################################################
-fields:8e24d707-0e29-45b5-9bbf-a39e4fdb2c11 a form:PropertyGroup;
-    mu:uuid "8e24d707-0e29-45b5-9bbf-a39e4fdb2c11";
-    sh:description "parent property-group, used to group fields and property-groups together";
-    sh:name "Deze stap is nog in opbouw." ;
-    form:help """Deze stap zal pas ingevuld kunnen/moeten worden, nadat er goedkeuring is gegeven bij de eerste aanvraag.""";
-    sh:order 1 .
+ext:contactPersonPropertyGroup
+    a               form:PropertyGroup ;
+    sh:description  "Contact person information" ;
+    sh:name         "Contactgegevens contactpersoon" ;
+    form:help       "Dit is de persoon die gecontacteerd wordt bij de opvolging van dit dossier." ;
+    sh:order        1 .
+
+  ##########################################################
+  # Field: First Name
+  ##########################################################
+  ext:firstNameContactPerson
+      a                 form:Field ;
+      sh:name           "Voornaam contactpersoon" ;
+      sh:order          1 ;
+      sh:path           ( schema:contactPoint foaf:firstName ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint foaf:firstName ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:contactPersonPropertyGroup .
+
+  ##########################################################
+  # Field: Last (Family) Name
+  ##########################################################
+  ext:lastNameContactPerson
+      a                 form:Field ;
+      sh:name           "Familienaam contactpersoon" ;
+      sh:order          2 ;
+      sh:path           ( schema:contactPoint foaf:familyName ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint foaf:familyName ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:contactPersonPropertyGroup .
+
+  ##########################################################
+  # Field: Telephone Number
+  ##########################################################
+  ext:telephoneNumberContactPerson
+      a                 form:Field ;
+      sh:name           "Telefoonnummer" ;
+      sh:order          3 ;
+      sh:path           ( schema:contactPoint schema:telephone ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint schema:telephone ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ,
+                        [ a                   form:ValidPhoneNumber ;
+                          form:grouping       form:MatchEvery ;
+                          form:defaultCountry "BE" ;
+                          sh:path             ( schema:contactPoint schema:telephone ) ;
+                          sh:resultMessage    "Geef een geldig telefoonnummer in."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:contactPersonPropertyGroup .
+
+  ##########################################################
+  # Field: Email Address
+  ##########################################################
+  ext:emailAddressContactPerson
+      a                 form:Field ;
+      sh:name           "Mailadres" ;
+      sh:order          4 ;
+      sh:path           ( schema:contactPoint schema:email ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint schema:email ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ,
+                        [ a                 form:ValidEmail ;
+                          form:grouping     form:MatchEvery ;
+                          sh:path           ( schema:contactPoint schema:email ) ;
+                          sh:resultMessage  "Geef een geldig e-mailadres op."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:contactPersonPropertyGroup .
+
+  ##########################################################
+  # Field: Job Title
+  ##########################################################
+  ext:jobTitleContactPerson
+      a                 form:Field ;
+      sh:name           "Functie contactpersoon" ;
+      sh:order          5 ;
+      sh:path           ( schema:contactPoint schema:jobTitle ) ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:contactPersonPropertyGroup .
+
 
 ##########################################################
-# Input
+# Property Group: Political Reference
 ##########################################################
-fields:4dbaa7df-c612-44c9-bfce-8889d561a266 a form:Field ;
-    mu:uuid "4dbaa7df-c612-44c9-bfce-8889d561a266";
-    sh:name "Naamloze vraag" ;
-    sh:order 10 ;
-    sh:path ext:a7b8e11d-f361-4d8a-842d-40ccf2d8361a ;
-    form:options """{}""" ;
+ext:politicalReferencePropertyGroup
+    a               form:PropertyGroup ;
+    sh:description  "Politieke verantwoordelijke information" ;
+    sh:name         "Politieke verantwoordelijke bij de stad" ;
+    form:help       "Dit is de persoon die gecontacteerd wordt bij de opvolging van dit dossier." ;
+    sh:order        2 .
 
-    
-    sh:group fields:8e24d707-0e29-45b5-9bbf-a39e4fdb2c11 .
+  ##########################################################
+  # Field: First Name
+  ##########################################################
+  ext:firstNamePoliticalReference
+      a                 form:Field ;
+      sh:name           "Voornaam contactpersoon" ;
+      sh:order          1 ;
+      sh:path           ( schema:contactPoint foaf:firstName ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint foaf:firstName ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:politicalReferencePropertyGroup .
 
-fieldGroups:main form:hasField fields:4dbaa7df-c612-44c9-bfce-8889d561a266 .
+  ##########################################################
+  # Field: Last (Family) Name
+  ##########################################################
+  ext:lastNamePoliticalReference 
+      a                 form:Field ;
+      sh:name           "Familienaam contactpersoon" ;
+      sh:order          2 ;
+      sh:path           ( schema:contactPoint foaf:familyName ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint foaf:familyName ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:politicalReferencePropertyGroup .
+
+  ##########################################################
+  # Field: Telephone Number
+  ##########################################################
+  ext:telephoneNumberPoliticalReference
+      a                 form:Field ;
+      sh:name           "Telefoonnummer" ;
+      sh:order          3 ;
+      sh:path           ( schema:contactPoint schema:telephone ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint schema:telephone ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ,
+                        [ a                   form:ValidPhoneNumber ;
+                          form:grouping       form:MatchEvery ;
+                          form:defaultCountry "BE" ;
+                          sh:path             ( schema:contactPoint schema:telephone ) ;
+                          sh:resultMessage    "Geef een geldig telefoonnummer in."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:politicalReferencePropertyGroup .
+
+  ##########################################################
+  # Field: Email Address
+  ##########################################################
+  ext:emailAddressPoliticalReference
+      a                 form:Field ;
+      sh:name           "Mailadres" ;
+      sh:order          4 ;
+      sh:path           ( schema:contactPoint schema:email ) ;
+      form:validations
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:path           ( schema:contactPoint schema:email ) ;
+                          sh:resultMessage  "Dit veld is verplicht."@nl
+                        ] ,
+                        [ a                 form:ValidEmail ;
+                          form:grouping     form:MatchEvery ;
+                          sh:path           ( schema:contactPoint schema:email ) ;
+                          sh:resultMessage  "Geef een geldig e-mailadres op."@nl
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:politicalReferencePropertyGroup .
+
+  ##########################################################
+  # Field: Job Title
+  ##########################################################
+  ext:jobTitlePoliticalReference
+      a                 form:Field ;
+      sh:name           "Functie contactpersoon" ;
+      sh:order          5 ;
+      sh:path           ( schema:contactPoint schema:jobTitle ) ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:politicalReferencePropertyGroup .
+
+
+##########################################################
+# Property Group: Project Name
+##########################################################
+ext:projectNamePropertyGroup
+    a               form:PropertyGroup ;
+    sh:description  "Project name" ;
+    sh:name         "Projectnaam" ;
+    sh:order        3 .
+
+  ##########################################################
+  # Field: Project Name
+  ##########################################################
+  ext:projectNameField
+      a                 form:Field ;
+      sh:name           "Projectnaam" ;
+      sh:order          1 ;
+      sh:path           lblodSubsidie:projectName ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "150" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            lblodSubsidie:projectName
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           lblodSubsidie:projectName            
+                        ] ;
+      form:displayType  displayTypes:defaultInput ;
+      sh:group          ext:projectNamePropertyGroup .
+
+
+##########################################################
+# Property Group: Samenvatting eventuele aanpassingen
+##########################################################
+ext:samenvattingPropertyGroup
+    a               form:PropertyGroup ;
+    sh:description  "Summary of possible adjustments after the jury assessment in the 1st phase" ;
+    sh:name         "Samenvatting eventuele aapassingen na de jurybeoordeling in de 1e fase" ;
+    form:help       """Beschrijf kernachtig eventuele aanpassingen aan het ingediende project na de beoordeling en feedback van de jury in de 1e fase van de jurering. Dit kan zowel gaan om een betere onderbouwing van de diagnose, de visie en beleidscontext, de ambities, de coalities en het partnerschap, het momentum als het globale budget.<br><br><strong>Opgelet:</strong> het is niet mogelijk om fundamentele inhoudelijke wijzigingen aan het voorstel van stadsvernieuwingsproject te formuleren.""" ;
+    sh:order        4 .
+
+  ##########################################################
+  # Field: Summary
+  ##########################################################
+  ext:summaryField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           dct:description ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "150" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            dct:description
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           dct:description            
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:samenvattingPropertyGroup .
+
+
+##########################################################
+# Property Group: Kwaliteit & Uitvoering
+##########################################################
+ext:kwaliteitAndUitvoeringPropertyGroup
+    a               form:PropertyGroup ;
+    sh:name         "Kwaliteit & uitvoering" ;
+    sh:order        5 .
+
+  ##########################################################
+  # Field: Empty Space
+  ##########################################################
+  ext:emptyField
+      a         form:Field ;
+      sh:order  1 ;
+      sh:group  ext:kwaliteitAndUitvoeringPropertyGroup .
+
+
+##########################################################
+# Property Group: Schets de kwaliteit van het ruimtelijk ontwerp
+##########################################################
+ext:schetsDeKwaliteitPropertyGroup
+    a               form:PropertyGroup ;
+    sh:description  "Sketch the quality of the spatial design" ;
+    sh:name         "Schets de kwaliteit van het ruimtelijk ontwerp." ;
+    form:help       """
+                    <ul style="list-style-type:disc; margin-left: 30px;">
+                      <li>Hoe heb je naar een kwaliteitsvol ruimtelijk ontwerp gestreefd en hoe heb je dit bewaakt?</li>
+                      <li>Wat maakt dit ruimtelijk ontwerp bijzonder? Wat zijn de krachtlijnen?</li>
+                    </ul>
+                    """ ;
+    sh:order        6 .
+
+  ##########################################################
+  # Field: Schets de kwaliteit van het ruimtelijk ontwerp Input
+  ##########################################################
+  ext:schetsDeKwaliteitField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           dct:description;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "500" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            dct:description
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           dct:description           
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:schetsDeKwaliteitPropertyGroup .
+
+
+##########################################################
+# Property Group: Projectorganisatie en regiefunctie
+##########################################################
+ext:ProjectorganisatieEnRegiefunctieProjectGroup
+    a               form:PropertyGroup ;
+    sh:description  "Project organization and management function" ;
+    sh:name         "Projectorganisatie en regiefunctie" ;
+    form:help       """Beschijf hoe de projectorganisatie vormgeven wordt en hoe de stad haar regiefunctie zal opnemen en concreet zal warr maken. Schets eventuele risico's rond de projectorganisatie en de regie en hoe je de kwaliteit wil bewaken.""" ;
+    sh:order        7 .
+
+  ##########################################################
+  # Field: Projectorganisatie en regiefunctie Input
+  ##########################################################
+  ext:ProjectorganisatieEnRegiefunctieField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           dct:description ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "500" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            dct:description
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           dct:description            
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:ProjectorganisatieEnRegiefunctieProjectGroup .
+
+
+##########################################################
+# Property Group: Beschrijf hoe de participatie, communicatie en interactie
+##########################################################
+ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup
+    a               form:PropertyGroup ;
+    sh:description  "Describe how participation, communication and interaction with all stakeholders will take place" ;
+    sh:name         "Beschrijf hoe de participatie, communicatie en interactie met alle betrokkenen zal verlopen" ;
+    form:help       """
+                    <ul style="list-style-type:disc; margin-left: 30px;">
+                      <li>Bespreek hoe de participatie, communicatie en interactie doorheen heel het projectproces met alle betrokkenen verloopt, verder zal worden gerealiseerd en welke de beoogde impact is op de besluitvorming.</li>
+                      <li>Toon aan hoe het project oog heeft voor de aanwezigheid van alle maatschappelijke groepen</li>
+                      <li>Beschrijf hoe dit leidt tot een echte samenwerking met bewoners, gebruikers, maatschappelijke groepen en andere externe partners (vb. projectontwikkelaars, kennisinstellingen, ...). Geef aan welke de verwachte en/of gerealiseerde impact is van de samenwerking & samenspraak op de besluitvorming.</li>
+                    </ul>
+                    """ ;
+    sh:order        8 .
+
+  ##########################################################
+  # Field: Projectorganisatie en regiefunctie Input
+  ##########################################################
+  ext:BeschrijfParticipatieCommunicatieInteractieField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           dct:description ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "500" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            dct:description
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           dct:description            
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup .
+
+
+##########################################################
+# Property Group: Projectfasering met projectverloop, timing & risicobeheer
+##########################################################
+ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup
+    a               form:PropertyGroup ;
+    sh:description  "Project phasing with project progression, timing & risk management" ;
+    sh:name         "Projectfasering met projectverloop, timing & risicobeheer" ;
+    form:help       """Maak een globaal chronologisch overzicht van het verloop van het project met daaraan gekoppeld een realistische inschatting van belangrijke procedures, risico's en risicobeheer en schets of en hoe bepaalde projectonderdelen een hefboom kunnen zijn voor andere projectonderdelen.""" ;
+    sh:order        9 .
+
+  ##########################################################
+  # Field: Projectorganisatie en regiefunctie Input
+  ##########################################################
+  ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           dct:description ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "500" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            dct:description
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           dct:description            
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup .
+
+
+##########################################################
+# TODO: Financiering
+##########################################################
+
+
+##########################################################
+# TODO: Projectonderdelen
+##########################################################
+
+
+##########################################################
+# Property Group: Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
+##########################################################
+ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
+    a               form:PropertyGroup ;
+    sh:description  "Subsidy application and significance for urban renewal project" ;
+    sh:name         "Aanvraag subsidie en betekenis voor stadsvernieuwingsproject" ;
+    form:help       "Duid waarvoor je de subsidie stadsvernieuwing aanvraagt en hoe deze een verschil kan maken voor het stadsvernieuwingsproject. Het maximaal mogelijke subsidiebedrag is 5 miljoen euro." ;
+    sh:order        10 .
+
+  ##########################################################
+  # Field: Projectorganisatie en regiefunctie Input
+  ##########################################################
+  ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           dct:description ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "500" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path            dct:description
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           dct:description            
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup .
+
+
+##########################################################
+# TODO: Bedrag aangevraagde subsidie
+##########################################################
+
+
+##########################################################
+# Project Group: Aanvraag
+##########################################################
+ext:aanvraagPropertyGroup 
+    a         form:PropertyGroup ;
+    sh:name   "Aanvraag" ;
+    sh:order  11 .
+
+  ##########################################################
+  # Field: Bestanden toevoegen
+  ##########################################################
+  ext:bestandenToevoegenField 
+    a                 form:Field ;
+    sh:order          1 ;
+    sh:name           "Laad hier het akkoord voor de indiening van de aanvraag voor projectsubsidie fase 2 bij de Vlaamse overheid in het kader van de oproep naar stadsvernieuwingsprojecten binnen het Vlaams Fonds voor (groot)stedelijke en plattelandsinvesteringen." ;
+    sh:path           ( lblodSubsidie:urbanRenewalApplicationForm dct:hasPart ) ;
+    form:validations
+                      [ a                 form:RequiredConstraint ;
+                        form:grouping     form:Bag ;
+                        sh:resultMessage  "Dit veld is verplicht."@nl ;
+                        sh:path           ( lblodSubsidie:urbanRenewalApplicationForm dct:hasPart )
+                      ] ;
+    form:displayType  displayTypes:files ;
+    sh:group          ext:aanvraagPropertyGroup .
+  
+  ##########################################################
+  # Hidden field: Application form
+  # Hidden field required for all variations of URL or FILE
+  # input field which require validation.
+  # It checks whether there is a type attached to hasPart object;
+  # this enables correct validation in both front and backend.
+  ##########################################################
+  ext:hiddenBestandenToevoegenFormField 
+    a           form:Field ;
+    sh:order    2 ;
+    sh:name     "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:path     ( lblodSubsidie:urbanRenewalApplicationForm dct:hasPart rdf:type ) ;
+    sh:group    ext:aanvraagPropertyGroup .
+
+  ##########################################################
+  #  Field: Attachments
+  ##########################################################
+  ext:attachmentsField 
+    a                 form:Field ;
+    sh:order          3 ;
+    sh:name           "Laad hier alle relevante bijlagen op." ;
+    sh:path           ( lblodSubsidie:urbanRenewalAttachments dct:hasPart ) ;
+    form:validations
+                      [ a                 form:RequiredConstraint ;
+                        form:grouping     form:Bag ;
+                        sh:resultMessage  "Dit veld is verplicht."@nl ;
+                        sh:path           ( lblodSubsidie:urbanRenewalAttachments dct:hasPart )
+                      ] ;
+    form:displayType  displayTypes:files ;
+    sh:group          ext:aanvraagPropertyGroup .
+  
+  ##########################################################
+  # Hidden field: Attachments
+  # Hidden field required for all variations of URL or FILE
+  # input field which require validation.
+  # It makes sure there is a type attached to hasPart object.
+  # This enables correct validation in both front and backend.
+  ##########################################################
+  ext:hiddenAttachmentsFormField 
+    a         form:Field ;
+    sh:order  4 ;
+    sh:name   "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:path   ( lblodSubsidie:urbanRenewalAttachments dct:hasPart rdf:type ) ;
+    sh:group  ext:aanvraagPropertyGroup .
