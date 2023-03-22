@@ -37,56 +37,65 @@ const contextConfig = {
   contextQueries: [
     {
       trigger: { // subjectType or predicateValue
+        predicateValue: "generiek:gestructureerdeIdentificator",
+        subjectType: "adms:Identifier"
+      },
+      queryTemplate: (subject) => `
+        ${PREFIXES}
+        CONSTRUCT {
+          ?identifier
+            a adms:Identifier;
+            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+            skos:notation ?identificatorType.
+          ?gestructureerdeIdentificator
+            a generiek:GestructureerdeIdentificator;
+            generiek:lokaleIdentificator ?lokaleIdentificator.
+          ?bestuurseenheid
+            adms:identifier ?identifier.
+        } WHERE {
+          VALUES ?identifier { ${subject} }
+          ?identifier
+            a adms:Identifier;
+            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+            skos:notation ?identificatorType.
+          ?gestructureerdeIdentificator
+            a generiek:GestructureerdeIdentificator;
+            generiek:lokaleIdentificator ?lokaleIdentificator.
+          ?bestuurseenheid
+            adms:identifier ?identifier.
+        }`
+    },
+    {
+      trigger: { // subjectType or predicateValue
         predicateValue: "generiek:lokaleIdentificator"
       },
       queryTemplate: (subject) => `
         ${PREFIXES}
         CONSTRUCT {
-          ?identificator
-            a ?type;
-            generiek:gestructureerdeIdentificator ${subject};
-            skos:notation ?identificatorType.
-          ?bestuurseenheid
-            adms:identifier ?identificator.
-        } WHERE {
-          ?identificator
-            a ?type;
-            generiek:gestructureerdeIdentificator ${subject};
-            skos:notation ?identificatorType.
-          ?bestuurseenheid
-            adms:identifier ?identificator.
-        }`
-    },
-    {
-      trigger: { // subjectType or predicateValue
-        predicateValue: "generiek:gestructureerdeIdentificator"
-      },
-      queryTemplate: (subject) => `
-        ${PREFIXES}
-        CONSTRUCT {
-          ${subject}
-            a ?type;
+          ?identifier
+            a adms:Identifier;
             generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
             skos:notation ?identificatorType.
           ?gestructureerdeIdentificator
-            a ?identificatorType;
+            a generiek:GestructureerdeIdentificator;
             generiek:lokaleIdentificator ?lokaleIdentificator.
           ?bestuurseenheid
-            adms:identifier ?identificator.
+            adms:identifier ?identifier.
         } WHERE {
-          ${subject}
-            a ?type;
+          VALUES ?gestructureerdeIdentificator { ${subject} }
+          ?identifier
+            a adms:Identifier;
             generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
             skos:notation ?identificatorType.
           ?gestructureerdeIdentificator
-            a ?identificatorType;
+            a generiek:GestructureerdeIdentificator;
             generiek:lokaleIdentificator ?lokaleIdentificator.
           ?bestuurseenheid
-            adms:identifier ?identificator.
+            adms:identifier ?identifier.
         }`
     }
   ]
-};
+}
 
 module.exports = {
   contextConfig,

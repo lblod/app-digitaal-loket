@@ -92,7 +92,7 @@ async function dispatch(lib, data) {
         await deleteFromTargetGraph(lib, transformedDeletes);
         await insertIntoDebugGraph(lib, transformedDeletes);
       }
-      await deleteFromIngetsGraph(lib, originalDeletes);
+      // await deleteFromIngetsGraph(lib, originalDeletes);
     }
 
     if (originalInserts.length) {
@@ -106,7 +106,7 @@ async function dispatch(lib, data) {
       } else {
         await insertIntoTargetGraph(lib, transformedInserts);
       }
-      await insertIntoIngestGraph(lib, originalInserts);
+      // await insertIntoIngestGraph(lib, originalInserts);
     }
   }
 }

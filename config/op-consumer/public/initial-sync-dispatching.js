@@ -69,7 +69,7 @@ async function onFinishInitialIngest(lib) {
     TARGET_GRAPH,
     transformedInsertTriples,
     { 'mu-call-scope-id': MU_CALL_SCOPE_ID_INITIAL_SYNC },
-    INGEST_DATABASE_ENDPOINT,
+    endpoint,
     BATCH_SIZE,
     MAX_DB_RETRY_ATTEMPTS,
     SLEEP_BETWEEN_BATCHES,
