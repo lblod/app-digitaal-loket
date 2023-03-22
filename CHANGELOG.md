@@ -1,6 +1,6 @@
 # Changelog
 ## Unreleased
-  - Frontend [v0.77.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0770-2023-03-07)
+  - Frontend [v0.77.0 & v0.77.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0771-2023-03-22)
   - Vendor management frontend v0.6.0:
     - Hopefully fix a data issue by changing the way we persist changes
     - UX/UI improvements
@@ -36,7 +36,6 @@
 ## 1.77.2 (2023-02-16)
 ### Worship services
   - Add representatieve organen to Vanden Broele
-## Unreleased
 ### General
  - Improved date entry UX by using a date input field instead of a date picker
 ### LPDC
