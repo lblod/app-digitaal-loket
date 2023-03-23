@@ -642,7 +642,7 @@ defmodule Dispatcher do
   end
 
   match "/worship-services/*path" do
-    forward conn, path, "http://resource/worship-services/"
+    forward conn, path, "http://cache/worship-services/"
   end
 
   match "/recognized-worship-types/*path" do
