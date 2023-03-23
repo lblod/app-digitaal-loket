@@ -438,7 +438,7 @@ services:
     restart: always
     logging: *default-logging
   update-bestuurseenheid-mock-login:
-    image: lblod/update-bestuurseenheid-mock-login-service:0.1.0
+    image: lblod/update-bestuurseenheid-mock-login-service:0.1.1
     volumes:
       - ./config/mock-login:/config
     labels:
