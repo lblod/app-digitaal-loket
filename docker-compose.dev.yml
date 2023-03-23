@@ -65,8 +65,6 @@ services:
     restart: "no"
   adressenregister:
     restart: "no"
-  person-reconciliation:
-    restart: "no"
   report-generation:
     restart: "no"
   automatic-submission:
@@ -139,4 +137,6 @@ services:
       EMAIL_TO: "loket-development@redpencil.io"
     restart: "no"
   prepare-submissions-for-export:
+    restart: "no"
+  update-bestuurseenheid-mock-login:
     restart: "no"

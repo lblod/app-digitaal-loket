@@ -16,6 +16,7 @@ import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonRe
 import electedPersonsReport from './electedPersonsReport';
 import climateSubsidieOproep2PactsReport from './climateSubsidieOproep2PactsReport';
 import climateSubsidie2PactsReport from './climateSubsidie2PactsReport';
+import climateSubsidieOpvolgmomentReport from './climateSubsidieOpvolgmomentReport';
 import gemeentewegenReport from './gemeentewegenReport';
 import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
@@ -47,6 +48,7 @@ export default [
   electedPersonsReport,
   climateSubsidieOproep2PactsReport,
   climateSubsidie2PactsReport,
+  climateSubsidieOpvolgmomentReport,
   gemeentewegenReport,
   fietsSubsidieProposalsReport,
   fietsSubsidieRequestsReport,

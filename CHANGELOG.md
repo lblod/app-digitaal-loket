@@ -1,4 +1,120 @@
 # Changelog
+## Unreleased
+  - Frontend [v0.77.0 & v0.77.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0771-2023-03-22)
+  - Vendor management frontend v0.6.0:
+    - Hopefully fix a data issue by changing the way we persist changes
+    - UX/UI improvements
+    - General maintenance
+### LPDC
+  - maintain the creation order of listings in the semantic forms
+### Migrations
+  - updated kbo number for st andries in antwerp
+## 1.77.8 (2023-03-03)
+### General
+  - migration to avoid obsolete failed urls will trigger a warning
+
+## 1.77.7 (2023-03-03)
+### General
+  - update report a little 'hanging submissions'
+### Inzendingen voor toezicht
+  - Download url service robustness
+  - Download url warning service
+## 1.77.6 (2023-03-02)
+### General
+  - extra report for non-sent submission
+### LPDC
+  - bump lpdc-ldes-consumer
+## 1.77.5 (2023-02-27)
+  - Add LEKP 1.0 Opvolgmoment report
+## 1.77.4 (2023-02-24)
+  - Update deadline opvolgmoment LEKP 1.0 subsidy
+## 1.77.3 (2023-02-16)
+### migrations
+  - Add a new subsidy-measure: Stadsvernieuwing - conceptsubsidie
+### LPDC
+  - Add dditional description field to lpdc forms
+## 1.77.2 (2023-02-16)
+### Worship services
+  - Add representatieve organen to Vanden Broele
+### General
+ - Improved date entry UX by using a date input field instead of a date picker
+### LPDC
+ - Update to the new v2 editor
+## 1.77.1 (2023-02-10)
+### Worship services
+  - Fix automatic submissions for religiopoint
+## 1.77.0 (2023-02-08)
+### General
+  - Show a message about the self-registration option in ACM/IDM
+  - Set up Plausible analytics
+### LPDC
+  - Implement the basic "review status notification" system
+### Worship services
+  - read only modules if the data is managed by an external vendor
+  - add info messages so users know which positions they need to add
+  - Remove Mandaat 'Bestuurslid van Eredienst'
+### Inzendingen voor toezicht
+  - Fixing issues 'Rechtspositieregeling' APB
+### Subsidies
+  - Stadsvernieuwing
+## 1.76.4 (2023-07-02)
+### Berichtencentrum
+  - fix config issue
+## 1.76.3 (2023-06-02)
+### LPDC
+  - re-publish public services with wrong language predicate
+## 1.76.2 (2023-02-02)
+### Toezicht
+#### backend
+  - hotfix cronPattern for toezicht, submission reports are now daily at 22:30
+## 1.76.1 (2022-01-26)
+### Toezicht
+#### frontend
+  - Fix the problem where the app freezes when selecting the "Belastingsreglement" option in the "Type reglement/verordening" field
+## 1.76.0 (2022-01-26)
+### General
+#### frontend
+  - modules to connect to external applications
+  - bug birth date-picker
+  - various improvements in semantic forms shared components
+  - helpdesk link in person module
+#### backend
+  - Various maintenance operations, both data and code
+  - Automatic submissions: migration to cogs:Jobs model, trackable submissions in the dashboard (if logged as bestuurseenheid through mock-login)
+  - Various mock-login updates
+  - Removal of the person reconcilation service
+### Erediensten
+#### inzendingen voor toezicht
+  - Added besluit handhaven
+  - Added Representatieve organen
+  - Added forms Representatieve organen
+  - Updated forms: meerjarenplanwijziging, advies budgetwijzing, advies jaarrekenig for Eredienstbestuur.
+    - Extra selectbox component to link URI bestuureenheid of the advies.
+  - Update publication logic for forms eredienst forms
+  - Updates sync with kalliope
+#### eredienst mandatarissen
+  - perparation of read-only mode
+  - permanent alert
+  - address outside of flanders
+#### eredienst bedienaren
+  - perparation of read-only mode
+  - address outside of flanders
+#### data and data sharing
+  - Added delta producer stream for eredienst-mandatarissen and bedienaren
+  - Added Vandenbroele as vendor of RO's
+### LPDC
+ - textual updates
+ - Prefill the "Authority" fields for blank service instances
+ - Add support for fetching form data for conceptual public services (preparation for basic change notification feature)
+ - Ensure language is correctly set in the database. (Will re-publish this information)
+### Subsidies
+ - open up nooddorpen and opknapwerk again
+## 1.75.4 (2022-01-19)
+### data migrations
+- Some attachements were broken due to Kalliope, fixing these.
+## 1.75.3 (2022-01-05)
+### data migrations
+- Remove: Bestuurslid van het bestuur van de eredienst
 ## 1.75.2 (2022-01-03)
 ### vendors
 - vandenbroele was missing some centrale besturen.

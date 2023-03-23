@@ -42,6 +42,8 @@
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions",
     "fileBaseName": "dump-worship-submissions",
     "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
+    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
+    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
     "cleanupOldDumps": true
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions": {
@@ -49,6 +51,8 @@
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions",
     "fileBaseName": "dump-worship-submissions",
     "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
+    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
+    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
     "cleanupOldDumps": true
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive": {
