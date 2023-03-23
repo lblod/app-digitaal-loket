@@ -37,7 +37,6 @@ const contextConfig = {
   contextQueries: [
     {
       trigger: { // subjectType or predicateValue
-        predicateValue: "generiek:gestructureerdeIdentificator",
         subjectType: "adms:Identifier"
       },
       queryTemplate: (subject) => `
@@ -55,11 +54,9 @@ const contextConfig = {
         } WHERE {
           VALUES ?identifier { ${subject} }
           ?identifier
-            a adms:Identifier;
             generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
             skos:notation ?identificatorType.
           ?gestructureerdeIdentificator
-            a generiek:GestructureerdeIdentificator;
             generiek:lokaleIdentificator ?lokaleIdentificator.
           ?bestuurseenheid
             adms:identifier ?identifier.
@@ -84,11 +81,36 @@ const contextConfig = {
         } WHERE {
           VALUES ?gestructureerdeIdentificator { ${subject} }
           ?identifier
+            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+            skos:notation ?identificatorType.
+          ?gestructureerdeIdentificator
+            generiek:lokaleIdentificator ?lokaleIdentificator.
+          ?bestuurseenheid
+            adms:identifier ?identifier.
+        }`
+    },
+    {
+      trigger: { // subjectType or predicateValue
+        predicateValue: "adms:identifier"
+      },
+      queryTemplate: (subject) => `
+        ${PREFIXES}
+        CONSTRUCT {
+          ?identifier
             a adms:Identifier;
             generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
             skos:notation ?identificatorType.
           ?gestructureerdeIdentificator
             a generiek:GestructureerdeIdentificator;
+            generiek:lokaleIdentificator ?lokaleIdentificator.
+          ?bestuurseenheid
+            adms:identifier ?identifier.
+        } WHERE {
+          VALUES ?bestuurseenheid { ${subject} }
+          ?identifier
+            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+            skos:notation ?identificatorType.
+          ?gestructureerdeIdentificator
             generiek:lokaleIdentificator ?lokaleIdentificator.
           ?bestuurseenheid
             adms:identifier ?identifier.
