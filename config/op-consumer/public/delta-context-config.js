@@ -52,14 +52,16 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         } WHERE {
-          VALUES ?identifier { ${subject} }
-          ?identifier
-            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
-            skos:notation ?identificatorType.
-          ?gestructureerdeIdentificator
-            generiek:lokaleIdentificator ?lokaleIdentificator.
-          ?bestuurseenheid
-            adms:identifier ?identifier.
+          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+            VALUES ?identifier { ${subject} }
+            ?identifier
+              generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+              skos:notation ?identificatorType.
+            ?gestructureerdeIdentificator
+              generiek:lokaleIdentificator ?lokaleIdentificator.
+            ?bestuurseenheid
+              adms:identifier ?identifier.
+          }
         }`
     },
     {
@@ -79,14 +81,16 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         } WHERE {
-          VALUES ?gestructureerdeIdentificator { ${subject} }
-          ?identifier
-            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
-            skos:notation ?identificatorType.
-          ?gestructureerdeIdentificator
-            generiek:lokaleIdentificator ?lokaleIdentificator.
-          ?bestuurseenheid
-            adms:identifier ?identifier.
+          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+            VALUES ?gestructureerdeIdentificator { ${subject} }
+            ?identifier
+              generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+              skos:notation ?identificatorType.
+            ?gestructureerdeIdentificator
+              generiek:lokaleIdentificator ?lokaleIdentificator.
+            ?bestuurseenheid
+              adms:identifier ?identifier.
+          }
         }`
     },
     {
@@ -106,14 +110,16 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         } WHERE {
-          VALUES ?bestuurseenheid { ${subject} }
-          ?identifier
-            generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
-            skos:notation ?identificatorType.
-          ?gestructureerdeIdentificator
-            generiek:lokaleIdentificator ?lokaleIdentificator.
-          ?bestuurseenheid
-            adms:identifier ?identifier.
+          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+            VALUES ?bestuurseenheid { ${subject} }
+            ?identifier
+              generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
+              skos:notation ?identificatorType.
+            ?gestructureerdeIdentificator
+              generiek:lokaleIdentificator ?lokaleIdentificator.
+            ?bestuurseenheid
+              adms:identifier ?identifier.
+          }
         }`
     },
     {
@@ -134,15 +140,17 @@ const contextConfig = {
             a besluit:Bestuurseenheid;
             skos:prefLabel ?bestuurseenheidLabel.
         } WHERE {
+          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
           VALUES ?bestuursorgaan { ${subject} }
-          ?bestuursorgaan
-            besluit:bestuurt ?bestuurseenheid;
-            org:classification ?classificatie.
+            ?bestuursorgaan
+              besluit:bestuurt ?bestuurseenheid;
+              org:classification ?classificatie.
 
-          ?classificatie
-            skos:prefLabel ?classificatieLabel.
-          ?bestuurseenheid
-            skos:prefLabel ?bestuurseenheidLabel.
+            ?classificatie
+              skos:prefLabel ?classificatieLabel.
+            ?bestuurseenheid
+              skos:prefLabel ?bestuurseenheidLabel.
+            }
         }`
     },
     {
@@ -163,15 +171,17 @@ const contextConfig = {
             a besluit:Bestuurseenheid;
             skos:prefLabel ?bestuurseenheidLabel.
         } WHERE {
-          VALUES ?bestuurseenheid { ${subject} }
-          ?bestuursorgaan
-            besluit:bestuurt ?bestuurseenheid;
-            org:classification ?classificatie.
+          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+            VALUES ?bestuurseenheid { ${subject} }
+            ?bestuursorgaan
+              besluit:bestuurt ?bestuurseenheid;
+              org:classification ?classificatie.
 
-          ?classificatie
-            skos:prefLabel ?classificatieLabel.
-          ?bestuurseenheid
-            skos:prefLabel ?bestuurseenheidLabel.
+            ?classificatie
+              skos:prefLabel ?classificatieLabel.
+            ?bestuurseenheid
+              skos:prefLabel ?bestuurseenheidLabel.
+          }
         }`
     }
   ]
