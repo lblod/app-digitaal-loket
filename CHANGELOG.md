@@ -9,6 +9,9 @@
   - maintain the creation order of listings in the semantic forms
 ### Migrations
   - updated kbo number for st andries in antwerp
+## 1.77.9 (2023-03-15)
+### Worship
+  - fix relationship provincies and Kathedralen
 ## 1.77.8 (2023-03-03)
 ### General
   - migration to avoid obsolete failed urls will trigger a warning
