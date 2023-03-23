@@ -115,6 +115,64 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         }`
+    },
+    {
+      trigger: {
+        subjectType: "besluit:Bestuursorgaan"
+      },
+      queryTemplate: (subject) => `
+        ${PREFIXES}
+        CONSTRUCT {
+          ?bestuursorgaan
+            besluit:bestuurt ?bestuurseenheid;
+            org:classification ?classificatie;
+            a besluit:Bestuursorgaan.
+
+          ?classificatie
+            skos:prefLabel ?classificatieLabel.
+          ?bestuurseenheid
+            a besluit:Bestuurseenheid;
+            skos:prefLabel ?bestuurseenheidLabel.
+        } WHERE {
+          VALUES ?bestuursorgaan { ${subject} }
+          ?bestuursorgaan
+            besluit:bestuurt ?bestuurseenheid;
+            org:classification ?classificatie.
+
+          ?classificatie
+            skos:prefLabel ?classificatieLabel.
+          ?bestuurseenheid
+            skos:prefLabel ?bestuurseenheidLabel.
+        }`
+    },
+    {
+      trigger: {
+        predicateValue: "skos:prefLabel" // Because subjectType could be Bestuurseenheid or any worship service specific variant
+      },
+      queryTemplate: (subject) => `
+        ${PREFIXES}
+        CONSTRUCT {
+          ?bestuursorgaan
+            besluit:bestuurt ?bestuurseenheid;
+            org:classification ?classificatie;
+            a besluit:Bestuursorgaan.
+
+          ?classificatie
+            skos:prefLabel ?classificatieLabel.
+          ?bestuurseenheid
+            a besluit:Bestuurseenheid;
+            skos:prefLabel ?bestuurseenheidLabel.
+        } WHERE {
+          VALUES ?bestuurseenheid { ${subject} }
+          ?bestuursorgaan
+            besluit:bestuurt ?bestuurseenheid;
+            org:classification ?classificatie.
+
+          ?classificatie
+            skos:prefLabel ?classificatieLabel.
+          ?bestuurseenheid
+            skos:prefLabel ?bestuurseenheidLabel.
+        }`
     }
   ]
 }
