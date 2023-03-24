@@ -13,7 +13,7 @@ defmodule Dispatcher do
   # end
 
   match "/bestuurseenheden/*path" do
-    forward conn, path, "http://cache/bestuurseenheden/"
+    forward conn, path, "http://resource/bestuurseenheden/"
   end
   match "/werkingsgebieden/*path" do
     forward conn, path, "http://cache/werkingsgebieden/"
