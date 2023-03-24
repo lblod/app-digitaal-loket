@@ -1,0 +1,54 @@
+# About the creation of the mandates, they follow business rules :
+# - LidVanRechtswege : shared mandate for all the organen in time
+# - Bestuursleden big half : shared with 2023-2026 because 2020 was the start of a big half
+# - Bestuursleden small half : new mandate (should have been shared with 2017-2020, but we don't have this time period)
+# - Voorzitter : new mandate
+# - Secretaris : new mandate
+# - Penningmeester : new mandate
+
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/d640003a744edbe1a0597ab57243ab5e>
+      <http://www.w3.org/ns/regorg#orgStatus> <http://lblod.data.gift/concepts/d02c4e12bf88d2fdf5123b07f29c9311> .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/d640003a744edbe1a0597ab57243ab5e>
+      <http://www.w3.org/ns/regorg#orgStatus> <http://lblod.data.gift/concepts/63cc561de9188d64ba5840a42ae8f0d6> .
+
+    <http://data.lblod.info/id/eredienstbestuursorganen/18d843d47e223409b9bb6e7af8a4d8a8>
+      a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "18d843d47e223409b9bb6e7af8a4d8a8" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/eredienstbestuursorganen/520e20dd93d0eb546ee2402f124b499e> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2020-04-01"^^xsd:date ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingEinde> "2023-03-31"^^xsd:date ;
+      <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/c6d754b17be9634e629f7d751753bb27> ;
+      <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/37fc68e584d93a8c165a2b9b5b0f183a> ;
+      <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/daac7f53-b020-443d-92a7-9d47be6cb186> ;
+      <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/3618fc2a-83f7-45dd-969f-06afd0c3277b> ;
+      <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/e4b05858-c66d-4098-9c43-59af0359e603> ;
+      <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/5147f880-b0a5-4145-ac01-db8323a5410d> .
+
+    <http://data.lblod.info/id/mandaten/daac7f53-b020-443d-92a7-9d47be6cb186>
+      a <http://data.vlaanderen.be/ns/mandaat#Mandaat> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "daac7f53-b020-443d-92a7-9d47be6cb186" ;
+      <http://www.w3.org/ns/org#role> <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/2962f0bd-2836-4758-9866-8ce8ea2c536f> .
+
+    <http://data.lblod.info/id/mandaten/3618fc2a-83f7-45dd-969f-06afd0c3277b>
+      a <http://data.vlaanderen.be/ns/mandaat#Mandaat> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "3618fc2a-83f7-45dd-969f-06afd0c3277b" ;
+      <http://www.w3.org/ns/org#role> <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/67e6e585166cd97575b3e17ffc430a43> .
+
+    <http://data.lblod.info/id/mandaten/e4b05858-c66d-4098-9c43-59af0359e603>
+      a <http://data.vlaanderen.be/ns/mandaat#Mandaat> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "e4b05858-c66d-4098-9c43-59af0359e603" ;
+      <http://www.w3.org/ns/org#role> <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ac134b9800b81da3c450d6b9605cef2> .
+
+    <http://data.lblod.info/id/mandaten/5147f880-b0a5-4145-ac01-db8323a5410d>
+      a <http://data.vlaanderen.be/ns/mandaat#Mandaat> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "5147f880-b0a5-4145-ac01-db8323a5410d" ;
+      <http://www.w3.org/ns/org#role> <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/180d13930d6f1a3938e0aa7fa9990002> .
+  }
+}
