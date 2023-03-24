@@ -1,4 +1,8 @@
 # Changelog
+## 1.78.1 (2023-03-24)
+### Worship
+  - worship submissions: share publication date
+     - deploy notes: `drc restart delta-producer-publication-graph-maintainer-worship-submissions`
 ## 1.78.0 (2023-03-23)
   - Frontend [v0.77.0 & v0.77.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0771-2023-03-22)
   - Vendor management frontend v0.6.0:
