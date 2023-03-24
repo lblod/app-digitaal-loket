@@ -1,12 +1,17 @@
 # Changelog
-## Unreleased
-  - Frontend [v0.77.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0770-2023-03-07)
+## 1.78.0 (2023-03-23)
+  - Frontend [v0.77.0 & v0.77.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0771-2023-03-22)
   - Vendor management frontend v0.6.0:
     - Hopefully fix a data issue by changing the way we persist changes
     - UX/UI improvements
     - General maintenance
 ### LPDC
   - maintain the creation order of listings in the semantic forms
+### Migrations
+  - updated kbo number for st andries in antwerp
+## 1.77.9 (2023-03-15)
+### Worship
+  - fix relationship provincies and Kathedralen
 ## 1.77.8 (2023-03-03)
 ### General
   - migration to avoid obsolete failed urls will trigger a warning
@@ -34,7 +39,6 @@
 ## 1.77.2 (2023-02-16)
 ### Worship services
   - Add representatieve organen to Vanden Broele
-## Unreleased
 ### General
  - Improved date entry UX by using a date input field instead of a date picker
 ### LPDC
