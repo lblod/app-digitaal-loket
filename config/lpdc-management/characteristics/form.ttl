@@ -1,4 +1,5 @@
 @prefix form: <http://lblod.data.gift/vocabularies/forms/> .
+@prefix fieldGroups: <http://data.lblod.info/field-groups/> .
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
@@ -32,12 +33,13 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:competentAuthorityLevelF;
     form:includes ext:competentAuthorityF;
     form:includes ext:executingAuthorityLevelF;
-    form:includes ext:executingAuthorityF;
     form:includes ext:tagsF;
     form:includes ext:startDateF;
     form:includes ext:yourEuropeCatF;
     form:includes ext:pubChannelF;
-    form:includes ext:endDateF.
+    form:includes ext:endDateF;
+    form:hasFieldGroup ext:temp-fg-a;
+    form:hasFieldGroup ext:temp-fg-b.
 
 ##########################################################
 #  property-group: Algemene info
@@ -191,8 +193,52 @@ ext:authorityPg a form:PropertyGroup;
       form:displayType displayTypes:conceptSelector ;
       sh:group ext:authorityPg .
 
+
   ##########################################################
-  #  field: uitvoerende overheid
+  # Conditionally show the required or not-required variant of the uitvoerende overheid field 
+  ##########################################################
+  ext:temp-fg-a a form:FieldGroup .
+  ext:temp-fg-a form:hasField ext:executingAuthorityLevelF .
+
+  ext:temp-fg-b a form:FieldGroup .
+  ext:temp-fg-b form:hasField ext:executingAuthorityLevelF .
+
+  ext:executingAuthorityLevelF form:hasConditionalFieldGroup ext:temp-a.
+  ext:executingAuthorityLevelF form:hasConditionalFieldGroup ext:temp-b.
+
+
+  ext:temp-a a form:ConditionalFieldGroup ;
+      form:conditions
+        [ a form:MatchValues ;
+          form:grouping form:Bag ;
+          sh:path lpdcExt:executingAuthorityLevel ;
+          # Tip: you can use form:valuesNotIn to exclude from a list (if triples are found matching the path)
+          form:valuesNotIn (
+            <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Derden>
+          );
+        ] ;
+      form:hasFieldGroup ext:temp-fg-a-result .
+  
+  ext:temp-b a form:ConditionalFieldGroup ;
+      form:conditions
+      [ a form:SingleCodelistValue ;
+        form:grouping form:Bag ;
+        sh:path lpdcExt:executingAuthorityLevel ;
+        form:conceptScheme <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/UitvoerendBestuursniveau> ;
+        form:customValue <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Derden>
+      ] ;
+      #[ a form:MatchValues ;
+      #  form:grouping form:Bag ;
+      #  sh:path lpdcExt:executingAuthorityLevel ;
+      #  # Tip: you can use form:valuesNotIn to exclude from a list (if triples are found matching the path)
+      #  form:valuesIn (
+      #    <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Derden>
+      #  );
+      #] ;
+      form:hasFieldGroup ext:temp-fg-b-result .
+
+  ##########################################################
+  #  field: uitvoerende overheid (required)
   ##########################################################
   ext:executingAuthorityF a form:Field ;
       sh:name "Uitvoerende overheid" ;
@@ -212,6 +258,28 @@ ext:authorityPg a form:PropertyGroup;
                     """ ;
       form:displayType displayTypes:conceptSchemeMultiSelector ;
       sh:group ext:authorityPg .
+  
+  ext:temp-fg-a-result form:hasField ext:executingAuthorityF .
+
+
+  ##########################################################
+  #  field: uitvoerende overheid (optional)
+  ##########################################################
+  ext:executingAuthorityOptionalF a form:Field ;
+      sh:name "Uitvoerende overheid" ;
+      form:help "Meerdere overheden kunnen worden toegewezen";
+      sh:order 30 ;
+      sh:path lpdcExt:hasExecutingAuthority ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties/tailored"
+                     }
+                    """ ;
+      form:displayType displayTypes:conceptSchemeMultiSelector ;
+      sh:group ext:authorityPg .
+
+  ext:temp-fg-b-result form:hasField ext:executingAuthorityOptionalF .
+
 
   ##########################################################
   #  field: geografische toepassingsgebied
