@@ -838,7 +838,7 @@ services:
     volumes:
       - ./config/reasoner:/config
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.17-rc.1
+    image: lblod/delta-consumer:0.0.17-rc.2
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
@@ -852,8 +852,8 @@ services:
       DCR_SYNC_FILES_PATH: "/sync/public/files"
       FILE_SYNC_GRAPH: "http://mu.semte.ch/graphs/temp/original-physical-files-data"
       KEEP_DELTA_FILES: "true"
-      DCR_INGEST_DATABASE: "publication-triplestore"
-      INGEST_GRAPH: "http://mu.semte.ch/graphs/ingest/op-public"
+      DCR_LANDING_ZONE_DATABASE: "publication-triplestore"
+      DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
     volumes:
       - ./config/op-consumer/public:/config/triples-dispatching/custom-dispatching
       - ./data/files/consumer-files/op-public:/consumer-files/
