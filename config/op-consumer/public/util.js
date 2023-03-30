@@ -5,10 +5,10 @@ const {
   SLEEP_BETWEEN_BATCHES,
   SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
   TARGET_GRAPH,
-  INGEST_GRAPH,
+  DCR_LANDING_ZONE_GRAPH,
   DELETE_GRAPH,
   BATCH_SIZE,
-  INGEST_DATABASE_ENDPOINT,
+  DCR_LANDING_ZONE_DATABASE_ENDPOINT,
   TARGET_DATABASE_ENDPOINT
 } = require('./config');
 
@@ -122,40 +122,6 @@ function transformStatements(fetch, triples) {
   )
 }
 
-async function deleteFromIngetsGraph(lib, statements) {
-  console.log(`Deleting ${statements.length} statements from ingest graph`);
-  console.log(`Statements: ${JSON.stringify(statements)}`)
-
-  await batchedDbUpdate(
-    lib.muAuthSudo.updateSudo,
-    INGEST_GRAPH,
-    statements,
-    {},
-    INGEST_DATABASE_ENDPOINT,
-    BATCH_SIZE,
-    MAX_DB_RETRY_ATTEMPTS,
-    SLEEP_BETWEEN_BATCHES,
-    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-    'DELETE');
-}
-
-async function insertIntoIngestGraph(lib, statements) {
-  console.log(`Inserting ${statements.length} statements into ingest graph`);
-  console.log(`Statements:  ${JSON.stringify(statements)}`)
-
-  await batchedDbUpdate(
-    lib.muAuthSudo.updateSudo,
-    INGEST_GRAPH,
-    statements,
-    {},
-    INGEST_DATABASE_ENDPOINT,
-    BATCH_SIZE,
-    MAX_DB_RETRY_ATTEMPTS,
-    SLEEP_BETWEEN_BATCHES,
-    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-    'INSERT');
-}
-
 async function deleteFromTargetGraph(lib, statements) {
   console.log(`Deleting ${statements.length} statements from target graph`);
   console.log(`Statements:  ${JSON.stringify(statements)}`)
@@ -189,27 +155,10 @@ async function insertIntoTargetGraph(lib, statements) {
     'INSERT');
 }
 
-async function insertIntoDebugGraph(lib, statements) {
-  console.log(`Inserting ${statements.length} statements into debug graph`);
-  console.log(`Statements:  ${JSON.stringify(statements)}`)
+async function transformLandingZoneGraph(fetch) {
+  console.log(`Transforming landing zone graph: ${DCR_LANDING_ZONE_GRAPH}`);
 
-  await batchedDbUpdate(
-    lib.muAuthSudo.updateSudo,
-    DELETE_GRAPH,
-    statements,
-    {},
-    INGEST_DATABASE_ENDPOINT,
-    BATCH_SIZE,
-    MAX_DB_RETRY_ATTEMPTS,
-    SLEEP_BETWEEN_BATCHES,
-    SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
-    'INSERT');
-}
-
-async function transformIngestGraph(fetch) {
-  console.log(`Transforming ingest graph: ${INGEST_GRAPH}`);
-
-  const response = await fetch(`http://reasoner/reason/op2dl/main?data=${encodeURIComponent(`${INGEST_DATABASE_ENDPOINT}?default-graph-uri=&query=CONSTRUCT+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D+WHERE+%7B%0D%0A+GRAPH+<${INGEST_GRAPH}>+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D%0D%0A%7D&should-sponge=&format=text%2Fplain&timeout=0&run=+Run+Query`)}`);
+  const response = await fetch(`http://reasoner/reason/op2dl/main?data=${encodeURIComponent(`${DCR_LANDING_ZONE_DATABASE_ENDPOINT}?default-graph-uri=&query=CONSTRUCT+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D+WHERE+%7B%0D%0A+GRAPH+<${DCR_LANDING_ZONE_GRAPH}>+%7B%0D%0A%3Fs+%3Fp+%3Fo%0D%0A%7D%0D%0A%7D&should-sponge=&format=text%2Fplain&timeout=0&run=+Run+Query`)}`);
   const text = await response.text();
   const statements = text.replace(/\n{2,}/g, '').split('\n');
 
@@ -220,10 +169,7 @@ module.exports = {
   batchedDbUpdate,
   partition,
   transformStatements,
-  transformIngestGraph,
-  deleteFromIngetsGraph,
-  insertIntoIngestGraph,
+  transformLandingZoneGraph,
   deleteFromTargetGraph,
   insertIntoTargetGraph,
-  insertIntoDebugGraph
 };

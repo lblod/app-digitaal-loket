@@ -1,29 +1,18 @@
 const {
   transformStatements,
-  deleteFromIngetsGraph,
-  insertIntoIngestGraph,
   deleteFromTargetGraph,
   insertIntoTargetGraph,
-  insertIntoDebugGraph
 } = require('./util');
 
 /**
 * Dispatch the fetched information to a target graph.
 * Note: <share://file/data> will be ADDED to it's own graph.
 *   We take only care of adding them, not updating triples, this is a TODO
-*  Deletes get types from ingest graph if not in delta
-*  Inserts get types fron ingest graph if not in delta
 *
 *  Process deletes
 *  - get changes with and without additional context
-*  - execute mapped delete on target graph
-*  - execute plain (without addtitional context)delete on ingest graph
-*  - write (mapped) delete statements as inserts in debug-graph
-*
-*  Process inserts
-*  - get context from ingest graph
-*  - execute mapped insert into target graph
-*  - execute plain insert into ingest
+*  - send the changes with context to the reasoner for mapping from OP to DL model
+*  - execute mapped changes on target graph
 *
 * @param { mu, muAuthSudo, fetch } lib - The provided libraries from the host service.
 * @param { termObjectChangeSets: { deletes, inserts }, termObjectChangeSetsWithContext: { deletes, inserts } } data - The fetched changes sets, which objects of serialized Terms
@@ -71,17 +60,9 @@ async function dispatch(lib, data) {
       throw e;
     }
 
-    // console.log(`Original inserts: ${originalInserts}`)
-    // console.log(`Original deletes: ${originalDeletes}`)
-    // console.log(`Inserts with context: ${insertsWithContext}`)
-    // console.log(`Deletes with context: ${deletesWithContext}`)
 
     if (originalDeletes.length) {
       // Map deletes from OP to DL model
-
-      // console.log(`Transforming ${deletesWithContext.length} deletes`)
-      // console.log(`Deletes with context:  ${JSON.stringify(deletesWithContext)}`)
-
       const transformedDeletes = await transformStatements(fetch, deletesWithContext);
 
       if (!transformedDeletes.length) {
@@ -90,9 +71,7 @@ async function dispatch(lib, data) {
         console.log(`Output: ${transformedDeletes}`);
       } else {
         await deleteFromTargetGraph(lib, transformedDeletes);
-        await insertIntoDebugGraph(lib, transformedDeletes);
       }
-      // await deleteFromIngetsGraph(lib, originalDeletes);
     }
 
     if (originalInserts.length) {
@@ -106,7 +85,6 @@ async function dispatch(lib, data) {
       } else {
         await insertIntoTargetGraph(lib, transformedInserts);
       }
-      // await insertIntoIngestGraph(lib, originalInserts);
     }
   }
 }

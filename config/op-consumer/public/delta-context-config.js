@@ -52,7 +52,7 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         } WHERE {
-          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+          GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
             VALUES ?identifier { ${subject} }
             ?identifier
               generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
@@ -81,7 +81,7 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         } WHERE {
-          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+          GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
             VALUES ?gestructureerdeIdentificator { ${subject} }
             ?identifier
               generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
@@ -110,7 +110,7 @@ const contextConfig = {
           ?bestuurseenheid
             adms:identifier ?identifier.
         } WHERE {
-          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+          GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
             VALUES ?bestuurseenheid { ${subject} }
             ?identifier
               generiek:gestructureerdeIdentificator ?gestructureerdeIdentificator;
@@ -140,7 +140,7 @@ const contextConfig = {
             a besluit:Bestuurseenheid;
             skos:prefLabel ?bestuurseenheidLabel.
         } WHERE {
-          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+          GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
           VALUES ?bestuursorgaan { ${subject} }
             ?bestuursorgaan
               besluit:bestuurt ?bestuurseenheid;
@@ -171,7 +171,7 @@ const contextConfig = {
             a besluit:Bestuurseenheid;
             skos:prefLabel ?bestuurseenheidLabel.
         } WHERE {
-          GRAPH <http://mu.semte.ch/graphs/ingest/op-public> {
+          GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
             VALUES ?bestuurseenheid { ${subject} }
             ?bestuursorgaan
               besluit:bestuurt ?bestuurseenheid;
