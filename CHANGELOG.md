@@ -1,4 +1,13 @@
 # Changelog
+## 1.78.3 (2023-03-30)
+### General
+  - added report links accross organisations
+### Inzendingen voor toezicht
+  - Remove list of submission to be sent to Kalliope
+### deploy instructions
+```
+drc restart berichtencentrum-sync-with-kalliope report-generation
+```
 ## 1.78.2 (2023-03-29)
 ### Sync with kalliope
   - hotfix: removed unused uri to reduce warnings
