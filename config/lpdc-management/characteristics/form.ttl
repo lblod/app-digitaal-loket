@@ -4,6 +4,7 @@
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix dvc: <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/> .
 
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
@@ -212,29 +213,23 @@ ext:authorityPg a form:PropertyGroup;
         [ a form:MatchValues ;
           form:grouping form:Bag ;
           sh:path lpdcExt:executingAuthorityLevel ;
-          # Tip: you can use form:valuesNotIn to exclude from a list (if triples are found matching the path)
-          form:valuesNotIn (
-            <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Derden>
+          form:valuesIn (
+            dvc:Europees
+            dvc:Federaal
+            dvc:Vlaams
+            dvc:Provinciaal
+            dvc:Lokaal
           );
         ] ;
       form:hasFieldGroup ext:temp-fg-a-result .
   
   ext:temp-b a form:ConditionalFieldGroup ;
       form:conditions
-      [ a form:SingleCodelistValue ;
+      [ a form:ExactValueConstraint ;
         form:grouping form:Bag ;
         sh:path lpdcExt:executingAuthorityLevel ;
-        form:conceptScheme <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/UitvoerendBestuursniveau> ;
         form:customValue <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Derden>
       ] ;
-      #[ a form:MatchValues ;
-      #  form:grouping form:Bag ;
-      #  sh:path lpdcExt:executingAuthorityLevel ;
-      #  # Tip: you can use form:valuesNotIn to exclude from a list (if triples are found matching the path)
-      #  form:valuesIn (
-      #    <https://productencatalogus.data.vlaanderen.be/id/concept/UitvoerendBestuursniveau/Derden>
-      #  );
-      #] ;
       form:hasFieldGroup ext:temp-fg-b-result .
 
   ##########################################################
