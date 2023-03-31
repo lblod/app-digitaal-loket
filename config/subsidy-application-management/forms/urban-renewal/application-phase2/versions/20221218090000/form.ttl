@@ -249,7 +249,7 @@ ext:politicalReferencePropertyGroup
       sh:name           "Functie contactpersoon" ;
       sh:order          5 ;
       sh:path           ( schema:contactPoint schema:jobTitle ) ;
-      form:displayType  displayTypes:textArea ;
+      form:displayType  displayTypes:defaultInput ;
       sh:group          ext:politicalReferencePropertyGroup .
 
 
@@ -306,7 +306,7 @@ ext:samenvattingPropertyGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "150" ;
+                          form:max          "700" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path            dct:description
                         ],
