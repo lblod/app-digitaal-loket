@@ -14,11 +14,21 @@
         {
           "s-prefix": "schema:contactPoint",
           "properties": [
+            "rdf:type",
             "foaf:firstName",
             "foaf:familyName",
             "schema:telephone",
             "schema:email",
             "schema:jobTitle"
+          ]
+        },
+        {
+          "s-prefix": "ext:financingPartner",
+          "properties": [
+            "rdf:type",
+            "ext:partnerTitle",
+            "ext:partnerType",
+            "ext:financingAmount"
           ]
         },
         {
@@ -44,6 +54,10 @@
           ]
         }
       ]
+    },
+    "meta": {
+      "schemes": [
+        "http://lblod.data.gift/vocabularies/subsidie/FinancieringPartnerType"
+      ]
     }
   }
-  
