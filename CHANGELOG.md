@@ -1,4 +1,9 @@
 # Changelog
+
+## 1.78.4 (2023-04-04)
+### Toezicht
+#### backend
+  - hotfix: submission filters have been changed to reduce load on system
 ## 1.78.3 (2023-03-30)
 ### General
   - added report links accross organisations
