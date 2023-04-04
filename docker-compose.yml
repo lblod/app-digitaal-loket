@@ -845,6 +845,10 @@ services:
     image: eyereasoner/reasoning-service:1.0.2
     volumes:
       - ./config/reasoner:/config
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
   op-public-consumer:
     image: lblod/delta-consumer:0.0.17-rc.2
     environment:
