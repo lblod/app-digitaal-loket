@@ -44,6 +44,8 @@ ext:form a form:Form, form:TopLevelForm ;
   form:includes ext:BeschrijfParticipatieCommunicatieInteractieField ;
   ### Projectfasering met projectverloop, timing & risicobeheer
   form:includes ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerField ;
+  ### Financiering
+  form:includes ext:partnerListing ;
   ### ProjectOnderdelen
   form:includes ext:projectOnderdeelL ;
   ### Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
@@ -485,8 +487,105 @@ ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup
 
 
 ##########################################################
-# TODO: Financiering
+#  Financiering
 ##########################################################
+ext:financingPropertyGroup
+    a               form:PropertyGroup ;
+    sh:name         "Financiering" ;
+    form:help       """Geef een opsomming van de financiering voor de verschillende partners (publieke, semi-publieke, private, coöperatieve, ...)
+                       met hun respectievelijk aandeel. Geef aan welk financieel engagement reeds vastligt en welk nog moet afgesproken worden.
+                       Het totale investeringsbudget van het project moet minstens 3 miljoen euro bedragen. Max. 10% van de projectmiddelen kan
+                       ingezet worden voor overhead (personeel/werking).""" ;
+    sh:order        10 .
+
+##########################################################
+#  listing-scope: financiering partners
+##########################################################
+ext:partnerListingS a form:Scope;
+  sh:path ext:financingPartner.
+
+##########################################################
+#  Generator: partner
+##########################################################
+ext:partnerGenerator a form:Generator;
+  form:prototype [
+    form:shape [
+      a ext:FinancingPartner ;
+      ext:financingAmount 0;
+    ]
+  ];
+  form:dataGenerator form:addMuUuid.
+
+##########################################################
+#  Listing: Partners
+##########################################################
+ext:partnerListing a form:Listing;
+  a form:ListingTable;
+  form:each ext:partnerFormItem;
+  form:scope ext:partnerListingS;
+  form:createGenerator ext:partnerGenerator;
+  form:canAdd true;
+  form:addLabel "Voeg een nieuwe partner toe";
+  form:canRemove true;
+  form:removeLabel "Verwijder";
+  form:noDataMessage "Er werden nog geen partners toegevoegd";
+  sh:group ext:financingPropertyGroup;
+  sh:order 1 .
+
+##########################################################
+#  Subform: Partner
+##########################################################
+ext:partnerFormItem a form:SubForm;
+   form:includes ext:partnerTitleF;
+   form:includes ext:partnerTypeF;
+   form:includes ext:financingAmountF;
+   form:hasFieldGroup ext:financingPropertyGroup.
+
+##########################################################
+# Field: Titel
+##########################################################
+ext:partnerTitleF a form:Field ;
+    sh:name "Titel" ;
+    sh:order 1;
+    sh:path ext:partnerTitle;
+    form:displayType displayTypes:defaultInput ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path ext:partnerTitle] ;
+    sh:group ext:financingPropertyGroup .
+
+##########################################################
+# Field: Partnertype
+##########################################################
+ext:partnerTypeF a form:Field ;
+    sh:name "Type partner" ;
+    sh:order 2;
+    sh:path ext:partnerType;
+    form:displayType displayTypes:conceptSchemeSelector ;
+    form:options """{"conceptScheme":"http://lblod.data.gift/vocabularies/subsidie/FinancieringPartnerType","searchEnabled":false}""" ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht."@nl;
+        sh:path ext:partnerType] ;
+    sh:group ext:financingPropertyGroup .
+
+##########################################################
+# Field: Bedrag
+##########################################################
+ext:financingAmountF a form:Field ;
+    sh:name "Bedrag" ;
+    sh:order 3;
+    sh:path ext:financingAmount;
+    form:displayType displayTypes:numericalInput ;
+    form:validations
+      [ a form:PositiveNumber ;
+        form:grouping form:MatchEvery ;
+        sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
+        sh:path ext:financingAmount] ;
+    sh:group ext:financingPropertyGroup .
 
 
 ##########################################################

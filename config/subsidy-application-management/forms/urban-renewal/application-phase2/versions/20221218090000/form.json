@@ -24,6 +24,16 @@
           ]
         },
         {
+          "s-prefix": "ext:financingPartner",
+          "properties": [
+            "rdf:type",
+            "sh:order",
+            "ext:partnerTitle",
+            "ext:partnerType",
+            "ext:financingAmount"
+          ]
+        },
+        {
           "s-prefix": "lblodSubsidie:urbanRenewalApplicationForm",
           "properties": [
             {
@@ -92,6 +102,10 @@
           ]
         }
       ]
+    },
+    "meta": {
+      "schemes": [
+        "http://lblod.data.gift/vocabularies/subsidie/FinancieringPartnerType"
+      ]
     }
   }
-  
