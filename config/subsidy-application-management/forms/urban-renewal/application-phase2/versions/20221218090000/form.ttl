@@ -873,6 +873,13 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             sh:name           "Bedrag" ;
             sh:order          2 ;
             sh:path           lblodSubsidie:projectOnderdeelStadListingUnitBedrag ;
+            form:validations
+                              [ 
+                                a form:PositiveNumber ;
+                                form:grouping form:MatchEvery ;
+                                sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
+                                sh:path lblodSubsidie:projectOnderdeelStadListingUnitBedrag
+                              ] ;
             form:displayType  displayTypes:numericalInput ;
             sh:group          ext:projectOnderdeelAnalysePg .
 
@@ -951,6 +958,12 @@ ext:projectOnderdeelPg a form:PropertyGroup;
                                 form:grouping     form:Bag ;
                                 sh:resultMessage  "Dit veld is verplicht." ;
                                 sh:path           lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag            
+                              ] ,
+                              [ 
+                                a form:PositiveNumber ;
+                                form:grouping form:MatchEvery ;
+                                sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
+                                sh:path lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag
                               ] ;
             form:displayType  displayTypes:numericalInput ;
             sh:group          ext:projectOnderdeelAnalysePg .
@@ -963,7 +976,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:shape [
               a lblodSubsidie:projectOnderdeelPubliekePartnerListingUnit ;
               lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam "" ;
-              lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag "" ;
+              lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag 0 ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -1030,6 +1043,12 @@ ext:projectOnderdeelPg a form:PropertyGroup;
                                 form:grouping     form:Bag ;
                                 sh:resultMessage  "Dit veld is verplicht." ;
                                 sh:path           lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag            
+                              ],
+                              [ 
+                                a form:PositiveNumber ;
+                                form:grouping form:MatchEvery ;
+                                sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
+                                sh:path lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag
                               ] ;
             form:displayType  displayTypes:numericalInput ;
             sh:group          ext:projectOnderdeelAnalysePg .
@@ -1042,7 +1061,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:shape [
               a lblodSubsidie:projectOnderdeelPrivatePartnerListingUnit ;
               lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam "" ;
-              lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag "" ;
+              lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag 0 ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
