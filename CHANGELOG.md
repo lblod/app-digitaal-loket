@@ -1,5 +1,15 @@
 # Changelog
-
+## 1.79.0 (2023-04-06)
+### General
+ - Added mock-login creator on new bestuurseenheid
+### Worship
+ - Consume data from Organisations portal: Erediensten
+### deploy instructions
+ - Make backup of virutoso
+ - Run migrations first
+ - `drc up -d`
+ - Wait until the stack starts properly
+ - Start the intial sync
 ## 1.78.4 (2023-04-04)
 ### Toezicht
 #### backend
