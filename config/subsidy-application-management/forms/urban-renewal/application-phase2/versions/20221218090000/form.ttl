@@ -733,7 +733,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:createGenerator ext:projectOnderdeelStadListingGenerator;
           sh:group ext:projectOnderdeelAnalysePg;
           form:canAdd true;
-          form:addLabel "Voeg stap toe";
+          form:addLabel "Voeg toe";
           form:canRemove true;
           form:removeLabel "Verwijder";
           sh:maxCount 1;
