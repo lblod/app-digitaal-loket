@@ -46,6 +46,7 @@ ext:form a form:Form, form:TopLevelForm ;
   form:includes ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerField ;
   ### Financiering
   form:includes ext:partnerListing ;
+  form:includes ext:financingTotalsF ;
   ### ProjectOnderdelen
   form:includes ext:projectOnderdeelL ;
   ### Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
@@ -586,6 +587,15 @@ ext:financingAmountF a form:Field ;
         sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
         sh:path ext:financingAmount] ;
     sh:group ext:financingPropertyGroup .
+
+##########################################################
+# Field: Financiering totals overview
+##########################################################
+ext:financingTotalsF
+    a                 form:Field ;
+    sh:order          2 ;
+    form:displayType  displayTypes:financingTotals ;
+    sh:group          ext:financingPropertyGroup .
 
 
 ##########################################################
