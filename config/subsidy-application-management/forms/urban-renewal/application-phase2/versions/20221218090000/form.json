@@ -42,6 +42,42 @@
               ]
             }
           ]
+        },
+        {
+          "s-prefix": "lblodSubsidie:projectOnderdeelUnit",
+          "properties": [
+            "lblodSubsidie:projectOnderdeelNaam",
+            "lblodSubsidie:projectOnderdeelBeschrijving",
+            {
+              "s-prefix": "lblodSubsidie:projectOnderdeelTimingUnit",
+              "properties": [
+                "lblodSubsidie:projectOnderdeelTimingListingUnitBeschrijving",
+                "lblodSubsidie:projectOnderdeelTimingListingUnitStartDatum",
+                "lblodSubsidie:projectOnderdeelTimingListingUnitEindDatum"
+              ]
+            },
+            {
+              "s-prefix": "lblodSubsidie:projectOnderdeelStadUnit",
+              "properties": [
+                "lblodSubsidie:projectOnderdeelStadListingUnitAandeel",
+                "lblodSubsidie:projectOnderdeelStadListingUnitBedrag"
+              ]
+            },
+            {
+              "s-prefix": "lblodSubsidie:projectOnderdeelPubliekePartnerListingUnit",
+              "properties": [
+                "lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam",
+                "lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag"
+              ]
+            },
+            {
+              "s-prefix": "lblodSubsidie:projectOnderdeelPrivatePartnerListingUnit",
+              "properties": [
+                "lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam",
+                "lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag"
+              ]
+            }
+          ]
         }
       ]
     }
