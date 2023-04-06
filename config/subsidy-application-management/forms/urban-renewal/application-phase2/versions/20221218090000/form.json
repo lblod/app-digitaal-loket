@@ -6,7 +6,8 @@
         "PREFIX lblodSubsidie:  <http://lblod.data.gift/vocabularies/subsidie/>",
         "PREFIX schema:         <http://schema.org/>",
         "PREFIX foaf:           <http://xmlns.com/foaf/0.1/>",
-        "PREFIX ext:            <http://mu.semte.ch/vocabularies/ext/>"
+        "PREFIX ext:            <http://mu.semte.ch/vocabularies/ext/>",
+        "PREFIX sh:             <http://www.w3.org/ns/shacl#>"
       ],
       "properties": [
         "lblodSubsidie:projectName",
@@ -48,12 +49,14 @@
           "s-prefix": "lblodSubsidie:projectOnderdeelUnit",
           "properties": [
             "rdf:type",
+            "sh:order",
             "lblodSubsidie:projectOnderdeelNaam",
             "lblodSubsidie:projectOnderdeelBeschrijving",
             {
               "s-prefix": "lblodSubsidie:projectOnderdeelTimingUnit",
               "properties": [
                 "rdf:type",
+                "sh:order",
                 "lblodSubsidie:projectOnderdeelTimingListingUnitBeschrijving",
                 "lblodSubsidie:projectOnderdeelTimingListingUnitStartDatum",
                 "lblodSubsidie:projectOnderdeelTimingListingUnitEindDatum"
@@ -63,6 +66,7 @@
               "s-prefix": "lblodSubsidie:projectOnderdeelStadUnit",
               "properties": [
                 "rdf:type",
+                "sh:order",
                 "lblodSubsidie:projectOnderdeelStadListingUnitAandeel",
                 "lblodSubsidie:projectOnderdeelStadListingUnitBedrag"
               ]
@@ -71,6 +75,7 @@
               "s-prefix": "lblodSubsidie:projectOnderdeelPubliekePartnerListingUnit",
               "properties": [
                 "rdf:type",
+                "sh:order",
                 "lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam",
                 "lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag"
               ]
@@ -79,6 +84,7 @@
               "s-prefix": "lblodSubsidie:projectOnderdeelPrivatePartnerListingUnit",
               "properties": [
                 "rdf:type",
+                "sh:order",
                 "lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam",
                 "lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag"
               ]
