@@ -632,7 +632,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:addLabel "Voeg stap toe";
           form:canRemove true;
           form:removeLabel "Verwijder";
-          form:tableIndexLabel "#";
+          form:tableIndexLabel "Stap";
           form:showTableRowIndex true;
           sh:group ext:projectOnderdeelTimingListingPg;
           sh:maxCount 20;
