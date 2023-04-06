@@ -785,7 +785,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:shape [
               a lblodSubsidie:projectOnderdeelStadUnit ;
               lblodSubsidie:projectOnderdeelStadListingUnitAandeel "" ;
-              lblodSubsidie:projectOnderdeelStadListingUnitBedrag "" ;
+              lblodSubsidie:projectOnderdeelStadListingUnitBedrag 0 ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
