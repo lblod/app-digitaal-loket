@@ -611,7 +611,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
         ##########################################################
         ext:projectOnderdeelTimingListingPg a form:PropertyGroup;
             sh:name "Timing" ;
-            form:help """Geef de verschillende stappen aan, zoveel mogelijk in chronologische volgorde, en duidt in de laatste twee kolommen de start- en einddatum aan.""";
+            form:help """Geef de verschillende stappen aan, zoveel mogelijk in chronologische volgorde, en duid in de laatste twee kolommen de start- en einddatum aan.""";
             sh:order 1 .
 
         ##########################################################
