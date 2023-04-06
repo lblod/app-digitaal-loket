@@ -6,7 +6,8 @@
         "PREFIX lblodSubsidie:  <http://lblod.data.gift/vocabularies/subsidie/>",
         "PREFIX schema:         <http://schema.org/>",
         "PREFIX foaf:           <http://xmlns.com/foaf/0.1/>",
-        "PREFIX ext:            <http://mu.semte.ch/vocabularies/ext/>"
+        "PREFIX ext:            <http://mu.semte.ch/vocabularies/ext/>",
+        "PREFIX sh:             <http://www.w3.org/ns/shacl#>"
       ],
       "properties": [
         "lblodSubsidie:projectName",
@@ -14,11 +15,22 @@
         {
           "s-prefix": "schema:contactPoint",
           "properties": [
+            "rdf:type",
             "foaf:firstName",
             "foaf:familyName",
             "schema:telephone",
             "schema:email",
             "schema:jobTitle"
+          ]
+        },
+        {
+          "s-prefix": "ext:financingPartner",
+          "properties": [
+            "rdf:type",
+            "sh:order",
+            "ext:partnerTitle",
+            "ext:partnerType",
+            "ext:financingAmount"
           ]
         },
         {
@@ -44,6 +56,10 @@
           ]
         }
       ]
+    },
+    "meta": {
+      "schemes": [
+        "http://lblod.data.gift/vocabularies/subsidie/FinancieringPartnerType"
+      ]
     }
   }
-  
