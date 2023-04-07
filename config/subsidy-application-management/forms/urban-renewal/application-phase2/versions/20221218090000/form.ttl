@@ -597,7 +597,7 @@ ext:financingAmountF a form:Field ;
 ext:financingTotalsF
     a                 form:Field ;
     sh:order          2 ;
-    form:displayType  displayTypes:financingTotals ;
+    form:displayType  displayTypes:urbanRenewalFinancingTotals ;
     sh:group          ext:financingPropertyGroup .
 
 
