@@ -1196,7 +1196,7 @@ ext:subsidieBedragAanvraagPg
                             sh:resultMessage  "Max. karakters overschreden." ;
                             sh:path           lblodSubsidie:subsidieBedragListingUnitMotivering
                           ] ;
-        form:displayType  displayTypes:defaultInput ;
+        form:displayType  displayTypes:textArea ;
         sh:group          ext:subsidieBedragAanvraagPg .
 
     ##########################################################
