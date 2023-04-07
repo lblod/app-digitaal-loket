@@ -625,8 +625,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a lblodSubsidie:projectOnderdeelUnit ;
-        lblodSubsidie:projectOnderdeelNaam "";
-        lblodSubsidie:projectOnderdeelBeschrijving "";
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -799,9 +797,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a lblodSubsidie:projectOnderdeelTimingUnit ;
-              lblodSubsidie:projectOnderdeelTimingListingUnitBeschrijving "" ;
-              lblodSubsidie:projectOnderdeelTimingListingUnitStartDatum "" ;
-              lblodSubsidie:projectOnderdeelTimingListingUnitEindDatum "" ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -833,8 +828,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           sh:group ext:projectOnderdeelAnalysePg;
           form:canAdd true;
           form:addLabel "Voeg eigen aandeel toe";
-          form:canRemove true;
-          form:removeLabel "Verwijder";
           sh:maxCount 1;
           sh:order 2 .
 
@@ -890,8 +883,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a lblodSubsidie:projectOnderdeelStadUnit ;
-              lblodSubsidie:projectOnderdeelStadListingUnitAandeel "" ;
-              lblodSubsidie:projectOnderdeelStadListingUnitBedrag 0 ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -975,8 +966,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a lblodSubsidie:projectOnderdeelPubliekePartnerListingUnit ;
-              lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam "" ;
-              lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitBedrag 0 ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -1060,8 +1049,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a lblodSubsidie:projectOnderdeelPrivatePartnerListingUnit ;
-              lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam "" ;
-              lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag 0 ;
             ];
           ];
           form:dataGenerator form:addMuUuid.
