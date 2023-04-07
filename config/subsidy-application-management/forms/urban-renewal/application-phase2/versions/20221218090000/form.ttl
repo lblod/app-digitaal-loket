@@ -51,6 +51,9 @@ ext:form a form:Form, form:TopLevelForm ;
   form:includes ext:projectOnderdeelL ;
   ### Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
   form:includes ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField ;
+  ### Subsidie bedrag
+  form:includes ext:subsidieBedragAanvraagF ;
+  form:includes ext:subsidieBedragL ;
   ### Bestanden toevoegen
   form:includes ext:bestandenToevoegenField ;
   form:includes ext:hiddenBestandenToevoegenFormField ;
@@ -1098,9 +1101,132 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
 
 
 ##########################################################
-# TODO: Bedrag aangevraagde subsidie
+# Property Group: Bedrag aangevraagde subsidie
 ##########################################################
+ext:subsidieBedragAanvraagPg 
+    a         form:PropertyGroup ;
+    sh:name   "Bedrag van aangevraagde subsidie" ;
+    sh:order  11 .
 
+  ##########################################################
+  # Field: Bestanden toevoegen
+  ##########################################################
+  ext:subsidieBedragAanvraagF
+    a                 form:Field ;
+    sh:order          1 ;
+    sh:path           lblodSubsidie:subsidieBedragAanvraag ;
+    form:validations
+                        [ a                 
+                          form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           lblodSubsidie:subsidieBedragAanvraag            
+                        ],
+                        [ 
+                          a form:PositiveNumber ;
+                          form:grouping form:MatchEvery ;
+                          sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
+                          sh:path lblodSubsidie:subsidieBedragAanvraag
+                        ] ;
+    form:displayType  displayTypes:numericalInput ;
+    sh:group          ext:subsidieBedragAanvraagPg .
+
+
+    ##########################################################
+    #  listing-scope: projectonderdelen bedrag
+    ##########################################################
+    ext:subsidieBedragListingS a form:Scope;
+      sh:path lblodSubsidie:subsidieBedragListingUnit.
+
+    ##########################################################
+    # Listing: Projectonderdeel timing listing
+    ##########################################################
+    ext:subsidieBedragL a form:Listing;
+      a form:ListingTable;
+      form:each ext:subsidieBedragListingSf;
+      form:scope ext:subsidieBedragListingS;
+      form:createGenerator ext:subsidieBedragListingGenerator;
+      form:canAdd true;
+      form:addLabel "Voeg toe";
+      form:canRemove true;
+      form:removeLabel "Verwijder";
+      sh:group ext:subsidieBedragAanvraagPg;
+      sh:maxCount 15;
+      sh:order 2 .
+
+    ##########################################################
+    #  Subform: subsidieBedragListingUnit
+    ##########################################################
+    ext:subsidieBedragListingSf a form:SubForm;
+      form:includes ext:subsidieBedragListingUnitNaamF;
+      form:includes ext:subsidieBedragListingUnitMotiveringF;
+      form:includes ext:subsidieBedragListingUnitBedragF;
+      form:hasFieldGroup ext:subsidieBedragAanvraagPg.
+
+
+    ##########################################################
+    # Field: Projectonderdeel bedrag aspecten
+    ##########################################################
+    ext:subsidieBedragListingUnitNaamF
+        a                 form:Field ;
+        sh:name           "Projectonderdelen / -aspecten waaraan de projectsubsidie besteed zal worden" ;
+        sh:order          1 ;
+        sh:path           lblodSubsidie:subsidieBedragListingUnitNaam ;
+        form:validations
+                          [ a                 form:RequiredConstraint ;
+                            form:grouping     form:Bag ;
+                            sh:resultMessage  "Dit veld is verplicht." ;
+                            sh:path           lblodSubsidie:subsidieBedragListingUnitNaam            
+                          ] ;
+        form:displayType  displayTypes:defaultInput ;
+        sh:group          ext:subsidieBedragAanvraagPg .
+
+    ##########################################################
+    # Field: Projectonderdeel Bedrag Motivering
+    ##########################################################
+    ext:subsidieBedragListingUnitMotiveringF
+        a                 form:Field ;
+        sh:name           "Motivering" ;
+        sh:order          2 ;
+        sh:path           lblodSubsidie:subsidieBedragListingUnitMotivering ;
+        form:validations
+                          [ a                 form:MaxLength ;
+                            form:grouping     form:MatchEvery ;
+                            form:max          "500" ;
+                            sh:resultMessage  "Max. karakters overschreden." ;
+                            sh:path           lblodSubsidie:subsidieBedragListingUnitMotivering
+                          ] ;
+        form:displayType  displayTypes:textArea ;
+        sh:group          ext:subsidieBedragAanvraagPg .
+
+    ##########################################################
+    # Field: Projectonderdeel Bedrag subsidie bedrag
+    ##########################################################
+    ext:subsidieBedragListingUnitBedragF
+        a                 form:Field ;
+        sh:name           "Bedrag Subsidie" ;
+        sh:order          2 ;
+        sh:path           lblodSubsidie:subsidieBedragListingUnitBedrag ;
+        form:validations
+                          [ 
+                            a form:PositiveNumber ;
+                            form:grouping form:MatchEvery ;
+                            sh:resultMessage "Het bedrag moet groter zijn dan 0."@nl;
+                            sh:path lblodSubsidie:subsidieBedragListingUnitBedrag
+                          ] ;
+        form:displayType  displayTypes:numericalInput ;
+        sh:group          ext:subsidieBedragAanvraagPg .
+
+    ##########################################################
+    #  Generator: projectOnderdeel bedrag
+    ##########################################################
+    ext:subsidieBedragListingGenerator a form:Generator;
+      form:prototype [
+        form:shape [
+          a lblodSubsidie:subsidieBedragListingUnit ;
+        ];
+      ];
+      form:dataGenerator form:addMuUuid.
 
 ##########################################################
 # Project Group: Aanvraag
@@ -1108,7 +1234,7 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
 ext:aanvraagPropertyGroup 
     a         form:PropertyGroup ;
     sh:name   "Aanvraag" ;
-    sh:order  11 .
+    sh:order  12 .
 
   ##########################################################
   # Field: Bestanden toevoegen
