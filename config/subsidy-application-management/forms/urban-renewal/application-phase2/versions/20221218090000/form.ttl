@@ -177,11 +177,11 @@ ext:politicalReferencePropertyGroup
       a                 form:Field ;
       sh:name           "Voornaam contactpersoon" ;
       sh:order          1 ;
-      sh:path           ( schema:contactPoint foaf:firstName ) ;
+      sh:path           ( ext:politicalReferenceContactPoint foaf:firstName ) ;
       form:validations
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
-                          sh:path           ( schema:contactPoint foaf:firstName ) ;
+                          sh:path           ( ext:politicalReferenceContactPoint foaf:firstName ) ;
                           sh:resultMessage  "Dit veld is verplicht."@nl
                         ] ;
       form:displayType  displayTypes:defaultInput ;
@@ -194,11 +194,11 @@ ext:politicalReferencePropertyGroup
       a                 form:Field ;
       sh:name           "Familienaam contactpersoon" ;
       sh:order          2 ;
-      sh:path           ( schema:contactPoint foaf:familyName ) ;
+      sh:path           ( ext:politicalReferenceContactPoint foaf:familyName ) ;
       form:validations
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
-                          sh:path           ( schema:contactPoint foaf:familyName ) ;
+                          sh:path           ( ext:politicalReferenceContactPoint foaf:familyName ) ;
                           sh:resultMessage  "Dit veld is verplicht."@nl
                         ] ;
       form:displayType  displayTypes:defaultInput ;
@@ -211,17 +211,17 @@ ext:politicalReferencePropertyGroup
       a                 form:Field ;
       sh:name           "Telefoonnummer" ;
       sh:order          3 ;
-      sh:path           ( schema:contactPoint schema:telephone ) ;
+      sh:path           ( ext:politicalReferenceContactPoint schema:telephone ) ;
       form:validations
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
-                          sh:path           ( schema:contactPoint schema:telephone ) ;
+                          sh:path           ( ext:politicalReferenceContactPoint schema:telephone ) ;
                           sh:resultMessage  "Dit veld is verplicht."@nl
                         ] ,
                         [ a                   form:ValidPhoneNumber ;
                           form:grouping       form:MatchEvery ;
                           form:defaultCountry "BE" ;
-                          sh:path             ( schema:contactPoint schema:telephone ) ;
+                          sh:path             ( ext:politicalReferenceContactPoint schema:telephone ) ;
                           sh:resultMessage    "Geef een geldig telefoonnummer in."@nl
                         ] ;
       form:displayType  displayTypes:defaultInput ;
@@ -234,16 +234,16 @@ ext:politicalReferencePropertyGroup
       a                 form:Field ;
       sh:name           "Mailadres" ;
       sh:order          4 ;
-      sh:path           ( schema:contactPoint schema:email ) ;
+      sh:path           ( ext:politicalReferenceContactPoint schema:email ) ;
       form:validations
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
-                          sh:path           ( schema:contactPoint schema:email ) ;
+                          sh:path           ( ext:politicalReferenceContactPoint schema:email ) ;
                           sh:resultMessage  "Dit veld is verplicht."@nl
                         ] ,
                         [ a                 form:ValidEmail ;
                           form:grouping     form:MatchEvery ;
-                          sh:path           ( schema:contactPoint schema:email ) ;
+                          sh:path           ( ext:politicalReferenceContactPoint schema:email ) ;
                           sh:resultMessage  "Geef een geldig e-mailadres op."@nl
                         ] ;
       form:displayType  displayTypes:defaultInput ;
@@ -256,7 +256,7 @@ ext:politicalReferencePropertyGroup
       a                 form:Field ;
       sh:name           "Functie contactpersoon" ;
       sh:order          5 ;
-      sh:path           ( schema:contactPoint schema:jobTitle ) ;
+      sh:path           ( ext:politicalReferenceContactPoint schema:jobTitle ) ;
       form:displayType  displayTypes:defaultInput ;
       sh:group          ext:politicalReferencePropertyGroup .
 

@@ -24,6 +24,16 @@
           ]
         },
         {
+          "s-prefix": "ext:politicalReferenceContactPoint",
+          "properties": [
+            "foaf:firstName",
+            "foaf:familyName",
+            "schema:telephone",
+            "schema:email",
+            "schema:jobTitle"
+          ]
+        },
+        {
           "s-prefix": "ext:financingPartner",
           "properties": [
             "rdf:type",
