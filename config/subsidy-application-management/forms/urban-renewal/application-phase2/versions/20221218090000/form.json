@@ -12,6 +12,7 @@
       "properties": [
         "lblodSubsidie:projectName",
         "dct:description",
+        "lblodSubsidie:subsidieBedragAanvraag",
         {
           "s-prefix": "schema:contactPoint",
           "properties": [
@@ -109,6 +110,16 @@
                 "lblodSubsidie:projectOnderdeelPrivatePartnerListingBedrag"
               ]
             }
+          ]
+        },
+        {
+          "s-prefix": "lblodSubsidie:subsidieBedragListingUnit",
+          "properties": [
+            "rdf:type",
+            "sh:order",
+            "lblodSubsidie:subsidieBedragListingUnitNaam",
+            "lblodSubsidie:subsidieBedragListingUnitMotivering",
+            "lblodSubsidie:subsidieBedragListingUnitBedrag"
           ]
         }
       ]
