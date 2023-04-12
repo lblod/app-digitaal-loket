@@ -29,6 +29,9 @@ This repository harvest two setups.  The base of these setups resides in the sta
 
 ### Running your setup
 
+#### system requirments
+You'll need a beefy machine, with at least 16 GB of ram.
+
 #### Running the dev setup
 First install `git-lfs` (see <https://github.com/git-lfs/git-lfs/wiki/Installation>)
 ```
@@ -78,7 +81,7 @@ This will take a while. You may choose to monitor the migrations service in a se
 [2023-04-07 20:13:15] INFO  WEBrick::HTTPServer#start: pid=13 port=80
 ```
 
-##### normal start
+##### Normal start
 This should be your go-to way of starting the stack.
 ```
 docker-compose up # or 'docker-compose up -d' if you want to run it in the background
