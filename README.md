@@ -52,7 +52,7 @@ COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml:docker-compose.override.y
 ```
 ##### If you start for the first time
 The loket app is huge, and a lot of data is being intialized. We want to make sure you don't overload your machine too much doing this the first time.
-It's an optional step, if you trust your machine is powerful enough, you can move on. 
+It's an optional step, if you trust your machine is powerful enough, you can move on.
 This step should only be done once.
 First start virtuoso and let it setup itself
 ```
@@ -69,19 +69,22 @@ Then run the migrations
 ```
 drc up migrations
 ```
-This will take a while.
+This will take a while. You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`. When finished it should look similar to this:
 
 ```
-migrations_1                                                           | /data/migrations/2023/20230310062435-sync-op/20230402162437-flush-erediensten-before-sync-with-op.sparql [DONE]
-migrations_1                                                           | 
-migrations_1                                                           | [2023-04-07 20:13:15] INFO  WEBrick 1.4.2
-migrations_1                                                           | [2023-04-07 20:13:15] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
-migrations_1                                                           | == Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
-migrations_1                                                           | [2023-04-07 20:13:15] INFO  WEBrick::HTTPServer#start: pid=13 port=80
-
+[2023-04-07 20:13:15] INFO  WEBrick 1.4.2
+[2023-04-07 20:13:15] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
+== Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
+[2023-04-07 20:13:15] INFO  WEBrick::HTTPServer#start: pid=13 port=80
 ```
 
-Wait for everything to boot to ensure clean caches.  You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`.
+##### normal start
+This should be your go-to way of starting the stack.
+```
+docker-compose up # or 'docker-compose up -d' if you want to run it in the background
+```
+Always double check the status of the migrations `docker-compose logs -f --tail=100 migrations`
+Wait for everything to boot to ensure clean caches.
 
 Probably the first thing you'll want to do, is see wether the app is running correctly. The fastest way forward is creating a `docker-compose.override.yml` file next to the other `docker-compose.yml` files, and add
 ```
@@ -161,7 +164,7 @@ This architectural change is currently under evaluation. The criteria for evalua
 
 If deemed succesful, we might consider moving the remaining publication graphs to this triplestore too (mandatarissen and leidinggevenden).
 
-As a consequence, producers using the separate triplestore, will also publish and host the json-diff files. 
+As a consequence, producers using the separate triplestore, will also publish and host the json-diff files.
 Mainly to simplify the transition to a separate publication triple store (else we would need a separate mu-auth and deltanotifier).
 In essence, it takes over https://github.com/lblod/delta-producer-json-diff-file-publisher, although both can still be combined.
 
