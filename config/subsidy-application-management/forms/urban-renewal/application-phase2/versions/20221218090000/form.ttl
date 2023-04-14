@@ -32,7 +32,7 @@ ext:form a form:Form, form:TopLevelForm ;
   form:includes ext:jobTitlePoliticalReference ;
   ### Projectnaam
   form:includes ext:projectNameField ;
-  ### Samenvatting eventuele aapassingen na de jurybeoordeling in de 1e fase
+  ### Samenvatting eventuele aanpassingen na de jurybeoordeling in de 1e fase
   form:includes ext:summaryField ;
   ### Kwaliteit & Uitvoering
   form:includes ext:emptyField ;
@@ -278,7 +278,6 @@ ext:projectNamePropertyGroup
   ##########################################################
   ext:projectNameField
       a                 form:Field ;
-      sh:name           "Projectnaam" ;
       sh:order          1 ;
       sh:path           lblodSubsidie:projectName ;
       form:validations
@@ -303,7 +302,7 @@ ext:projectNamePropertyGroup
 ext:samenvattingPropertyGroup
     a               form:PropertyGroup ;
     sh:description  "Summary of possible adjustments after the jury assessment in the 1st phase" ;
-    sh:name         "Samenvatting eventuele aapassingen na de jurybeoordeling in de 1e fase" ;
+    sh:name         "Samenvatting eventuele aanpassingen na de jurybeoordeling in de 1e fase" ;
     form:help       """Beschrijf kernachtig eventuele aanpassingen aan het ingediende project na de beoordeling en feedback van de jury in de 1e fase van de jurering. Dit kan zowel gaan om een betere onderbouwing van de diagnose, de visie en beleidscontext, de ambities, de coalities en het partnerschap, het momentum als het globale budget.<br><br><strong>Opgelet:</strong> het is niet mogelijk om fundamentele inhoudelijke wijzigingen aan het voorstel van stadsvernieuwingsproject te formuleren.""" ;
     sh:order        4 .
 
@@ -336,6 +335,9 @@ ext:samenvattingPropertyGroup
 ext:kwaliteitAndUitvoeringPropertyGroup
     a               form:PropertyGroup ;
     sh:name         "Kwaliteit & uitvoering" ;
+    # The title appears a bit larger in the Miro, so in theory all property groups below this one should be nested but that adds a border and requires some refactoring which we don't really have time for anymore.
+    # We use the skin option as a workaround to make the title look larger.
+    form:options    """{ "skin": 2 }""";
     sh:order        5 .
 
   ##########################################################
@@ -607,7 +609,7 @@ ext:financingTotalsF
 
 ext:projectOnderdeelPg a form:PropertyGroup;
     sh:name "Projectonderdelen" ;
-    sh:order 10 .
+    sh:order 11 .
 
 
   ##########################################################
@@ -669,7 +671,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
 
     ext:projectOnderdeelNaamF
         a                 form:Field ;
-        sh:name           "Projectnaam" ;
+        sh:name           "Naam projectonderdeel" ;
         sh:order          1 ;
         sh:path           lblodSubsidie:projectOnderdeelNaam ;
         form:validations
@@ -1068,48 +1070,15 @@ ext:projectOnderdeelPg a form:PropertyGroup;
 
 
 ##########################################################
-# Property Group: Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
-##########################################################
-ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
-    a               form:PropertyGroup ;
-    sh:description  "Subsidy application and significance for urban renewal project" ;
-    sh:name         "Aanvraag subsidie en betekenis voor stadsvernieuwingsproject" ;
-    form:help       "Duid waarvoor je de subsidie stadsvernieuwing aanvraagt en hoe deze een verschil kan maken voor het stadsvernieuwingsproject. Het maximaal mogelijke subsidiebedrag is 5 miljoen euro." ;
-    sh:order        10 .
-
-  ##########################################################
-  # Field: Projectorganisatie en regiefunctie Input
-  ##########################################################
-  ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField
-      a                 form:Field ;
-      sh:order          1 ;
-      sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription ;
-      form:validations
-                        [ a                 form:MaxLength ;
-                          form:grouping     form:MatchEvery ;
-                          form:max          "500" ;
-                          sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
-                        ],
-                        [ a                 form:RequiredConstraint ;
-                          form:grouping     form:Bag ;
-                          sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
-                        ] ;
-      form:displayType  displayTypes:textArea ;
-      sh:group          ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup .
-
-
-##########################################################
 # Property Group: Bedrag aangevraagde subsidie
 ##########################################################
 ext:subsidieBedragAanvraagPg 
     a         form:PropertyGroup ;
     sh:name   "Bedrag van aangevraagde subsidie" ;
-    sh:order  11 .
+    sh:order  12 .
 
   ##########################################################
-  # Field: Bestanden toevoegen
+  # Field: Bedrag van aangevraagde subsidie
   ##########################################################
   ext:subsidieBedragAanvraagF
     a                 form:Field ;
@@ -1228,13 +1197,46 @@ ext:subsidieBedragAanvraagPg
       ];
       form:dataGenerator form:addMuUuid.
 
+
+##########################################################
+# Property Group: Aanvraag subsidie en betekenis voor stadsvernieuwingsproject
+##########################################################
+ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
+    a               form:PropertyGroup ;
+    sh:description  "Subsidy application and significance for urban renewal project" ;
+    sh:name         "Aanvraag subsidie en betekenis voor stadsvernieuwingsproject" ;
+    form:help       "Duid waarvoor je de subsidie stadsvernieuwing aanvraagt en hoe deze een verschil kan maken voor het stadsvernieuwingsproject. Het maximaal mogelijke subsidiebedrag is 5 miljoen euro." ;
+    sh:order        13 .
+
+  ##########################################################
+  # Field: Projectorganisatie en regiefunctie Input
+  ##########################################################
+  ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField
+      a                 form:Field ;
+      sh:order          1 ;
+      sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription ;
+      form:validations
+                        [ a                 form:MaxLength ;
+                          form:grouping     form:MatchEvery ;
+                          form:max          "500" ;
+                          sh:resultMessage  "Max. karakters overschreden." ;
+                          sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
+                        ],
+                        [ a                 form:RequiredConstraint ;
+                          form:grouping     form:Bag ;
+                          sh:resultMessage  "Dit veld is verplicht." ;
+                          sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
+                        ] ;
+      form:displayType  displayTypes:textArea ;
+      sh:group          ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup .
+
 ##########################################################
 # Project Group: Aanvraag
 ##########################################################
 ext:aanvraagPropertyGroup 
     a         form:PropertyGroup ;
     sh:name   "Aanvraag" ;
-    sh:order  12 .
+    sh:order  14 .
 
   ##########################################################
   # Field: Bestanden toevoegen
