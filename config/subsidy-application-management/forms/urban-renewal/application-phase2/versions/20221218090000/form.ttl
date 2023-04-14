@@ -638,6 +638,9 @@ ext:projectOnderdeelPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a lblodSubsidie:projectOnderdeelUnit ;
+        lblodSubsidie:projectOnderdeelStadUnit [
+          a lblodSubsidie:projectOnderdeelStadUnit
+        ]
       ];
     ];
     form:dataGenerator form:addMuUuid.
