@@ -1,9 +1,13 @@
 # Changelog
 ## Unreleased
+  - Frontend [v0.78.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0780-2023-04-14)
 ### LPDC
   - make the "uitvoerende overheid" an optional field
   - fix the creation of empty public service instances for some users
   - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
+### deploy instructions
+  - update the `controle` image to `lblod/frontend-loket:0.78.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
+
 ## 1.79.0 (2023-04-06)
 ### General
  - Added mock-login creator on new bestuurseenheid
