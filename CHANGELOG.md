@@ -2,6 +2,8 @@
 ## Unreleased
 ### LPDC
   - make the "uitvoerende overheid" an optional field
+  - fix the creation of empty public service instances for some users
+  - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
 ## 1.79.0 (2023-04-06)
 ### General
  - Added mock-login creator on new bestuurseenheid
