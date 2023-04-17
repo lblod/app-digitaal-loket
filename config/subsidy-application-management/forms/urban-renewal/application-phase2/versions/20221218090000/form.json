@@ -35,6 +35,42 @@
           ]
         },
         {
+          "s-prefix": "ext:samenvattingSummaryDescription",
+          "properties": [
+            "dct:description"
+          ]
+        },
+        {
+          "s-prefix": "ext:schetsDeKwaliteitDescription",
+          "properties": [
+            "dct:description"
+          ]
+        },
+        {
+          "s-prefix": "ext:ProjectorganisatieEnRegiefunctieDescription",
+          "properties": [
+            "dct:description"
+          ]
+        },
+        {
+          "s-prefix": "ext:BeschrijfParticipatieCommunicatieInteractieDescription",
+          "properties": [
+            "dct:description"
+          ]
+        },
+        {
+          "s-prefix": "ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription",
+          "properties": [
+            "dct:description"
+          ]
+        },
+        {
+          "s-prefix": "ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription",
+          "properties": [
+            "dct:description"
+          ]
+        },
+        {
           "s-prefix": "ext:financingPartner",
           "properties": [
             "rdf:type",

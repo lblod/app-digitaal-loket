@@ -313,18 +313,18 @@ ext:samenvattingPropertyGroup
   ext:summaryField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ( ext:samenvattingSummaryDescription dct:description ) ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "700" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ( ext:samenvattingSummaryDescription dct:description )
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ( ext:samenvattingSummaryDescription dct:description )
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:samenvattingPropertyGroup .
@@ -368,18 +368,18 @@ ext:schetsDeKwaliteitPropertyGroup
   ext:schetsDeKwaliteitField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description;
+      sh:path           ( ext:schetsDeKwaliteitDescription dct:description ) ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ( ext:schetsDeKwaliteitDescription dct:description )
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description           
+                          sh:path           ( ext:schetsDeKwaliteitDescription dct:description )
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:schetsDeKwaliteitPropertyGroup .
@@ -401,18 +401,18 @@ ext:ProjectorganisatieEnRegiefunctieProjectGroup
   ext:ProjectorganisatieEnRegiefunctieField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ( ext:ProjectorganisatieEnRegiefunctieDescription dct:description ) ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ( ext:ProjectorganisatieEnRegiefunctieDescription dct:description )
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ( ext:ProjectorganisatieEnRegiefunctieDescription dct:description )
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:ProjectorganisatieEnRegiefunctieProjectGroup .
@@ -440,18 +440,18 @@ ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup
   ext:BeschrijfParticipatieCommunicatieInteractieField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ( ext:BeschrijfParticipatieCommunicatieInteractieDescription dct:description ) ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ( ext:BeschrijfParticipatieCommunicatieInteractieDescription dct:description )
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ( ext:BeschrijfParticipatieCommunicatieInteractieDescription dct:description )         
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup .
@@ -473,18 +473,18 @@ ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup
   ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ( ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription dct:description ) ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ( ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription dct:description )
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ( ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription dct:description )
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup .
@@ -1083,18 +1083,18 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
   ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ( ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription dct:description ) ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ( ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription dct:description )
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ( ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription dct:description )
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup .
