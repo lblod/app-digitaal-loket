@@ -5,8 +5,14 @@
   - make the "uitvoerende overheid" an optional field
   - fix the creation of empty public service instances for some users
   - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
+### Subsidies
+  -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine 
 ### deploy instructions
   - update the `controle` image to `lblod/frontend-loket:0.78.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
+
+```
+  drc restart migrations cache resource
+```
 
 ## 1.79.0 (2023-04-06)
 ### General
