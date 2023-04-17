@@ -11,7 +11,12 @@
       ],
       "properties": [
         "lblodSubsidie:projectName",
-        "dct:description",
+        "ext:samenvattingSummaryDescription",
+        "ext:schetsDeKwaliteitDescription",
+        "ext:ProjectorganisatieEnRegiefunctieDescription",
+        "ext:BeschrijfParticipatieCommunicatieInteractieDescription",
+        "ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription",
+        "ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription",
         "lblodSubsidie:subsidieBedragAanvraag",
         {
           "s-prefix": "schema:contactPoint",
@@ -32,42 +37,6 @@
             "schema:telephone",
             "schema:email",
             "schema:jobTitle"
-          ]
-        },
-        {
-          "s-prefix": "ext:samenvattingSummaryDescription",
-          "properties": [
-            "dct:description"
-          ]
-        },
-        {
-          "s-prefix": "ext:schetsDeKwaliteitDescription",
-          "properties": [
-            "dct:description"
-          ]
-        },
-        {
-          "s-prefix": "ext:ProjectorganisatieEnRegiefunctieDescription",
-          "properties": [
-            "dct:description"
-          ]
-        },
-        {
-          "s-prefix": "ext:BeschrijfParticipatieCommunicatieInteractieDescription",
-          "properties": [
-            "dct:description"
-          ]
-        },
-        {
-          "s-prefix": "ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription",
-          "properties": [
-            "dct:description"
-          ]
-        },
-        {
-          "s-prefix": "ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription",
-          "properties": [
-            "dct:description"
           ]
         },
         {
