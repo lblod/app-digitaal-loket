@@ -11,7 +11,12 @@
       ],
       "properties": [
         "lblodSubsidie:projectName",
-        "dct:description",
+        "ext:samenvattingSummaryDescription",
+        "ext:schetsDeKwaliteitDescription",
+        "ext:ProjectorganisatieEnRegiefunctieDescription",
+        "ext:BeschrijfParticipatieCommunicatieInteractieDescription",
+        "ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription",
+        "ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription",
         "lblodSubsidie:subsidieBedragAanvraag",
         {
           "s-prefix": "schema:contactPoint",

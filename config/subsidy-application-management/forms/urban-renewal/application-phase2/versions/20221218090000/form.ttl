@@ -313,18 +313,18 @@ ext:samenvattingPropertyGroup
   ext:summaryField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ext:samenvattingSummaryDescription ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "700" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ext:samenvattingSummaryDescription
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ext:samenvattingSummaryDescription
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:samenvattingPropertyGroup .
@@ -368,18 +368,18 @@ ext:schetsDeKwaliteitPropertyGroup
   ext:schetsDeKwaliteitField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description;
+      sh:path           ext:schetsDeKwaliteitDescription ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ext:schetsDeKwaliteitDescription
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description           
+                          sh:path           ext:schetsDeKwaliteitDescription
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:schetsDeKwaliteitPropertyGroup .
@@ -401,18 +401,18 @@ ext:ProjectorganisatieEnRegiefunctieProjectGroup
   ext:ProjectorganisatieEnRegiefunctieField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ext:ProjectorganisatieEnRegiefunctieDescription ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ext:ProjectorganisatieEnRegiefunctieDescription
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ext:ProjectorganisatieEnRegiefunctieDescription
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:ProjectorganisatieEnRegiefunctieProjectGroup .
@@ -440,18 +440,18 @@ ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup
   ext:BeschrijfParticipatieCommunicatieInteractieField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ext:BeschrijfParticipatieCommunicatieInteractieDescription ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ext:BeschrijfParticipatieCommunicatieInteractieDescription
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ext:BeschrijfParticipatieCommunicatieInteractieDescription         
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup .
@@ -473,18 +473,18 @@ ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup
   ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup .
@@ -1083,18 +1083,18 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
   ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectField
       a                 form:Field ;
       sh:order          1 ;
-      sh:path           dct:description ;
+      sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription ;
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
                           form:max          "500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
-                          sh:path            dct:description
+                          sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
                         ],
                         [ a                 form:RequiredConstraint ;
                           form:grouping     form:Bag ;
                           sh:resultMessage  "Dit veld is verplicht." ;
-                          sh:path           dct:description            
+                          sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
                         ] ;
       form:displayType  displayTypes:textArea ;
       sh:group          ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup .
