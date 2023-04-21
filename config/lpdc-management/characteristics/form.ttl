@@ -19,6 +19,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix schema: <http://schema.org/>.
 @prefix ps: <http://vocab.belgif.be/ns/publicservice#> .
+@prefix dvc: <https://productencatalogus.data.vlaanderen.be/id/concept/PublicatieKanaal/> .
 
 ##########################################################
 # form
@@ -35,8 +36,7 @@ ext:form a form:Form, form:TopLevelForm ;
     form:includes ext:executingAuthorityF;
     form:includes ext:tagsF;
     form:includes ext:startDateF;
-    form:includes ext:yourEuropeCatF;
-    form:includes ext:pubChannelF;
+    form:hasFieldGroup ext:pubChannelFG ;
     form:includes ext:endDateF.
 
 ##########################################################
@@ -252,29 +252,12 @@ ext:relatedPg a form:PropertyGroup;
       sh:group ext:relatedPg .
 
   ##########################################################
-  #  field: your Europe
-  ##########################################################
-  ext:yourEuropeCatF a form:Field ;
-      sh:name "Categorieën Your Europe" ;
-      form:help "Gelieve de categorieën die het meest van toepassing zijn te kiezen. Meerdere categorieën kunnen worden toegewezen.";
-      sh:order 30 ;
-      sh:path lpdcExt:yourEuropeCategory ;
-      form:options  """
-                     {
-                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategorie",
-                       "multiple": true
-                     }
-                    """ ;
-      form:displayType displayTypes:conceptSelector ;
-      sh:group ext:relatedPg .
-
-  ##########################################################
   #  field: publication channel
   ##########################################################
   ext:pubChannelF a form:Field ;
       sh:name "Publicatiekanalen" ;
       form:help "Gelieve de publicatiekanalen die van toepassing zijn te kiezen. Meerdere publicatiekanalen kunnen worden toegewezen.";
-      sh:order 40 ;
+      sh:order 30 ;
       sh:path lpdcExt:publicationMedium ;
       form:options  """
                      {
@@ -282,5 +265,48 @@ ext:relatedPg a form:PropertyGroup;
                        "multiple": true
                      }
                     """ ;
+      form:displayType displayTypes:conceptSelector ;
+      sh:group ext:relatedPg ;
+      form:hasConditionalFieldGroup ext:pubChannelCFG .
+  
+  ##########################################################
+  # Conditionally show the YourEurope category field if the publication channel is selected
+  ##########################################################
+  ext:pubChannelFG a form:FieldGroup ;
+      form:hasField ext:pubChannelF .
+
+  ext:pubChannelCFG a form:ConditionalFieldGroup ;
+      form:conditions
+        [ a form:MatchValues ;
+          form:grouping form:Bag ;
+          sh:path lpdcExt:publicationMedium ;
+          form:valuesIn (
+            dvc:YourEurope
+          ) ;
+        ] ;
+      form:hasFieldGroup ext:yourEuropeCatFG .
+  
+  ext:yourEuropeCatFG form:hasField ext:yourEuropeCatF .
+
+  ##########################################################
+  #  field: your Europe
+  ##########################################################
+  ext:yourEuropeCatF a form:Field ;
+      sh:name "Categorieën Your Europe" ;
+      form:help "Gelieve de categorieën die het meest van toepassing zijn te kiezen. Meerdere categorieën kunnen worden toegewezen.";
+      sh:order 40 ;
+      sh:path lpdcExt:yourEuropeCategory ;
+      form:options  """
+                     {
+                       "conceptScheme":"https://productencatalogus.data.vlaanderen.be/id/conceptscheme/YourEuropeCategorie",
+                       "multiple": true
+                     }
+                    """ ;
+      form:validations [
+        a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path lpdcExt:yourEuropeCategory
+      ] ;
       form:displayType displayTypes:conceptSelector ;
       sh:group ext:relatedPg .
