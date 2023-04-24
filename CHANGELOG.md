@@ -1,5 +1,7 @@
 # Changelog
-
+## 1.78.5 (2023-04-24)
+### Toezicht
+  - Added document 'afwijking principes regiovorming'.
 ## 1.78.4 (2023-04-04)
 ### Toezicht
 #### backend
