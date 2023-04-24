@@ -629,6 +629,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
     form:addLabel "Voeg project onderdeel toe";
     form:canAdd true;
     form:canRemove true;
+    sh:minCount 1;
     sh:maxCount 15;
     sh:order 1 .
 
@@ -750,6 +751,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:tableIndexLabel "Stap";
           form:showTableRowIndex true;
           sh:group ext:projectOnderdeelTimingListingPg;
+          sh:minCount 1;
           sh:maxCount 20;
           sh:order 2 .
 
@@ -1157,6 +1159,12 @@ ext:subsidieBedragAanvraagPg
         sh:order          1 ;
         sh:path           lblodSubsidie:subsidieBedragListingUnitNaam ;
         form:validations
+                          [ a                 form:MaxLength ;
+                            form:grouping     form:MatchEvery ;
+                            form:max          "500" ;
+                            sh:resultMessage  "Max. karakters overschreden." ;
+                            sh:path            lblodSubsidie:subsidieBedragListingUnitNaam
+                          ],
                           [ a                 form:RequiredConstraint ;
                             form:grouping     form:Bag ;
                             sh:resultMessage  "Dit veld is verplicht." ;
