@@ -11,11 +11,9 @@
   - new "Stadsvernieuwing fase 2" subsidy
 ### deploy instructions
   - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
-
 ```
   drc restart migrations cache resource dispatcher subsidy-applications-management
 ```
-
 ## 1.79.0 (2023-04-06)
 ### General
  - Added mock-login creator on new bestuurseenheid
@@ -27,6 +25,14 @@
  - `drc up -d`
  - Wait until the stack starts properly
  - Start the intial sync
+
+## 1.78.5 (2023-04-24)
+### Toezicht
+  - Added document 'afwijking principes regiovorming'.
+### deploy instructions
+```
+  drc restart migrations; drc up -d
+```
 ## 1.78.4 (2023-04-04)
 ### Toezicht
 #### backend
