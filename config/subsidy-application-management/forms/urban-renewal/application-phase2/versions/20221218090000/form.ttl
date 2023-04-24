@@ -946,6 +946,12 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             sh:order          1 ;
             sh:path           lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam ;
             form:validations
+                              [ a                 form:MaxLength ;
+                                form:grouping     form:MatchEvery ;
+                                form:max          "500" ;
+                                sh:resultMessage  "Max. karakters overschreden." ;
+                                sh:path            lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam
+                              ],
                               [ a                 form:RequiredConstraint ;
                                 form:grouping     form:Bag ;
                                 sh:resultMessage  "Dit veld is verplicht." ;
@@ -1029,6 +1035,12 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             sh:order          1 ;
             sh:path           lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam ;
             form:validations
+                              [ a                 form:MaxLength ;
+                                form:grouping     form:MatchEvery ;
+                                form:max          "500" ;
+                                sh:resultMessage  "Max. karakters overschreden." ;
+                                sh:path            lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam
+                              ],
                               [ a                 form:RequiredConstraint ;
                                 form:grouping     form:Bag ;
                                 sh:resultMessage  "Dit veld is verplicht." ;
