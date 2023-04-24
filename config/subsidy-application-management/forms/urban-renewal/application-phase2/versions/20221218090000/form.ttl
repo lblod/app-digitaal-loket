@@ -783,7 +783,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
                                 sh:resultMessage  "Dit veld is verplicht." ;
                                 sh:path           lblodSubsidie:projectOnderdeelTimingListingUnitBeschrijving            
                               ] ;
-            form:displayType  displayTypes:defaultInput ;
+            form:displayType  displayTypes:textArea ;
             sh:group          ext:projectOnderdeelTimingListingPg .
 
         ##########################################################
