@@ -13,7 +13,7 @@
   - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
 
 ```
-  drc restart migrations cache resource subsidy-applications-management
+  drc restart migrations cache resource dispatcher subsidy-applications-management
 ```
 
 ## 1.79.0 (2023-04-06)
