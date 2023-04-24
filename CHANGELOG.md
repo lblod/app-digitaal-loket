@@ -1,6 +1,6 @@
 # Changelog
 ## Unreleased
-  - Frontend [v0.78.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0780-2023-04-14)
+  - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
 ### LPDC
   - make the "uitvoerende overheid" an optional field
   - fix the creation of empty public service instances for some users
@@ -8,7 +8,7 @@
 ### Subsidies
   -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine 
 ### deploy instructions
-  - update the `controle` image to `lblod/frontend-loket:0.78.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
+  - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
 
 ```
   drc restart migrations cache resource
