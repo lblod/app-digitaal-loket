@@ -20,7 +20,7 @@ module.exports = {
         $rdf.sym(contactPoint),
         graphs.additions);
 
-    const {firstName, familyName, email, telephone} =
+    const {firstName, familyName, email, telephone, jobTitle} =
         await getGenericInfo(source.uri, mu, sudo);
 
     if (familyName)
@@ -47,6 +47,12 @@ module.exports = {
           SCHEMA('telephone'),
           telephone.value,
           graphs.additions);
+    if (jobTitle)
+      store.add(
+          $rdf.sym(contactPoint),
+          SCHEMA('jobTitle'),
+          jobTitle.value,
+          graphs.additions);
   }
 };
 
@@ -56,7 +62,7 @@ async function getGenericInfo(uri, mu, sudo) {
     PREFIX schema: <http://schema.org/>
     PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    SELECT DISTINCT ?firstName ?familyName ?email ?telephone
+    SELECT DISTINCT ?firstName ?familyName ?email ?telephone ?jobTitle
     WHERE {
       GRAPH ?g {
         ${mu.sparqlEscapeUri(uri)}
@@ -72,6 +78,9 @@ async function getGenericInfo(uri, mu, sudo) {
         }
         OPTIONAL {
             ?contactPoint schema:telephone ?telephone.
+        }
+        OPTIONAL {
+          ?contactPoint schema:jobTitle ?jobTitle.
         }
       }
     }`
