@@ -20,7 +20,6 @@ async function execute( store, graphs, lib, form ){
 }
 
 async function findFormFromStep1( { mu, sudo }, form ) {
-  console.log(`[DEBUG-123] ${mu.sparqlEscapeUri(form.uri)}`)
   const queryStr = `
     PREFIX dct: <http://purl.org/dc/terms/>
     PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
