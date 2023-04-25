@@ -19,11 +19,10 @@
   - Added document 'afwijking principes regiovorming'.
 ### deploy instructions
 ```
-  drc restart migrations; drc up -d
+  drc restart migrtions; drc up -d
 ```
 ### ⚠️notes
 This is a replay from hotfix `1.78.5` which has accidently started and released from the wrong tag.
->>>>>>> hotfix/afwijkende-principes
 ## 1.79.0 (2023-04-06)
 ### General
  - Added mock-login creator on new bestuurseenheid
