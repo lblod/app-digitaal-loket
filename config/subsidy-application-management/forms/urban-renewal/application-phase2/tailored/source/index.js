@@ -26,13 +26,16 @@ async function findFormFromStep1( { mu, sudo }, form ) {
     PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
 
     SELECT DISTINCT ?firstForm where {
-     GRAPH ?g {
-       ${mu.sparqlEscapeUri(form.uri)} dct:isPartOf ?currentStep .
-       ?smc dct:source ${mu.sparqlEscapeUri(form.uri)} .
-       ?firstForm dct:isPartOf ?step1 .
-       ?smc dct:source ?firstForm .
-     }
-   }`;
+    GRAPH ?g {
+      ${mu.sparqlEscapeUri(form.uri)} dct:isPartOf ?currentStep .
+      ?smc dct:source ${mu.sparqlEscapeUri(form.uri)} .
+      ?firstForm dct:isPartOf ?step1 .
+      ?smc dct:source ?firstForm .
+    }
+    GRAPH ?h {
+      ?currentStep xkos:previous ?step1 .
+    }
+  }`;
 
   const { results } = await sudo.querySudo(queryStr);
 
