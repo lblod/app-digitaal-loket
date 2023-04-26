@@ -641,9 +641,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a lblodSubsidie:projectOnderdeelUnit ;
-        lblodSubsidie:projectOnderdeelStadUnit [
-          a lblodSubsidie:projectOnderdeelStadUnit
-        ]
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -848,6 +845,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           sh:group ext:projectOnderdeelAnalysePg;
           form:canAdd true;
           form:addLabel "Voeg eigen aandeel toe";
+          sh:minCount 1;
           sh:maxCount 1;
           sh:order 2 .
 
