@@ -394,7 +394,7 @@ ext:ProjectorganisatieEnRegiefunctieProjectGroup
     a               form:PropertyGroup ;
     sh:description  "Project organization and management function" ;
     sh:name         "Projectorganisatie en regiefunctie" ;
-    form:help       """Beschijf hoe de projectorganisatie vormgeven wordt en hoe de stad haar regiefunctie zal opnemen en concreet zal warr maken. Schets eventuele risico's rond de projectorganisatie en de regie en hoe je de kwaliteit wil bewaken.""" ;
+    form:help       """Beschijf hoe de projectorganisatie vormgeven wordt en hoe de stad haar regiefunctie zal opnemen en concreet zal waar maken. Schets eventuele risico's rond de projectorganisatie en de regie en hoe je de kwaliteit wil bewaken.""" ;
     sh:order        7 .
 
   ##########################################################
