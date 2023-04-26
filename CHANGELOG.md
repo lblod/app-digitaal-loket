@@ -1,20 +1,29 @@
 # Changelog
 ## Unreleased
-  - Frontend [v0.78.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0780-2023-04-14)
+  - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
 ### LPDC
   - make the "uitvoerende overheid" an optional field
   - fix the creation of empty public service instances for some users
   - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
+  - "YourEurope categorien" is now required if "YourEurope" is selected for "Publicatiekanalen"
 ### Subsidies
   -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine 
+  - new "Stadsvernieuwing fase 2" subsidy
 ### deploy instructions
-  - update the `controle` image to `lblod/frontend-loket:0.78.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
-
+  - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
 ```
-  drc restart migrations cache resource
+  drc restart migrations cache resource dispatcher subsidy-applications-management
 ```
-
+## 1.79.1 (2023-04-25)
+### Toezicht
+  - Added document 'afwijking principes regiovorming'.
+### deploy instructions
+```
+  drc restart migrtions; drc up -d
+```
+### ⚠️notes
+This is a replay from hotfix `1.78.5` which has accidently started and released from the wrong tag.
 ## 1.79.0 (2023-04-06)
 ### General
  - Added mock-login creator on new bestuurseenheid
@@ -26,6 +35,14 @@
  - `drc up -d`
  - Wait until the stack starts properly
  - Start the intial sync
+
+## 1.78.5 (2023-04-24)
+### Toezicht
+  - Added document 'afwijking principes regiovorming'.
+### deploy instructions
+```
+  drc restart migrations; drc up -d
+```
 ## 1.78.4 (2023-04-04)
 ### Toezicht
 #### backend
