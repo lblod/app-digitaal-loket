@@ -1,4 +1,11 @@
 # Changelog
+## 1.79.2 (2023-04-27)
+### Subsidy
+  - Hotfix: "relevante bijlages" field in the Stadsvernieuwing - Projectsubsidie (Fase 1) and Stadsvernieuwing - Conceptsubsidie subsidies should be optional
+### deploy instructions
+```
+  drc restart subsidy-applications-management
+```
 ## 1.79.1 (2023-04-25)
 ### Toezicht
   - Added document 'afwijking principes regiovorming'.
