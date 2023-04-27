@@ -346,7 +346,8 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/automatic-submission",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/Vendor"
+                        "http://mu.semte.ch/vocabularies/ext/Vendor",
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
                       ] } } ] },
 
       # // LEIDINGGEVENDEN
