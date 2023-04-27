@@ -44,7 +44,7 @@ INSERT DATA {
       qb:order 0;
       dct:references <http://data.lblod.info/id/subsidy-procedural-steps/903a4cf5-1b57-44ed-8c00-a0c71a0d3970>;
       dct:isPartOf  <http://lblod.data.info/id/subsidie-application-flows/0c7e217b-fec9-4a56-9024-35c6db006fa3>;
-      dct:source <config://forms/urban-renewal-thematic/form.ttl>.
+      dct:source <config://forms/urban-renewal-thematic/request/versions/20230427140454/form.ttl>.
 
     <http://data.lblod.info/id/periodes/ecb5b813-16c9-44aa-9b49-262a84ff4301> a <http://data.europa.eu/m8g/PeriodOfTime>;
       mu:uuid "ecb5b813-16c9-44aa-9b49-262a84ff4301";
