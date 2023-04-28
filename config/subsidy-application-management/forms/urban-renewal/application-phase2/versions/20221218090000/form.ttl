@@ -394,7 +394,7 @@ ext:ProjectorganisatieEnRegiefunctieProjectGroup
     a               form:PropertyGroup ;
     sh:description  "Project organization and management function" ;
     sh:name         "Projectorganisatie en regiefunctie" ;
-    form:help       """Beschijf hoe de projectorganisatie vormgeven wordt en hoe de stad haar regiefunctie zal opnemen en concreet zal waar maken. Schets eventuele risico's rond de projectorganisatie en de regie en hoe je de kwaliteit wil bewaken.""" ;
+    form:help       """Beschijf hoe de projectorganisatie vormgeven wordt en hoe de stad haar regiefunctie zal opnemen en concreet zal warr maken. Schets eventuele risico's rond de projectorganisatie en de regie en hoe je de kwaliteit wil bewaken.""" ;
     sh:order        7 .
 
   ##########################################################
@@ -629,7 +629,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
     form:addLabel "Voeg project onderdeel toe";
     form:canAdd true;
     form:canRemove true;
-    sh:minCount 1;
     sh:maxCount 15;
     sh:order 1 .
 
@@ -641,6 +640,9 @@ ext:projectOnderdeelPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a lblodSubsidie:projectOnderdeelUnit ;
+        lblodSubsidie:projectOnderdeelStadUnit [
+          a lblodSubsidie:projectOnderdeelStadUnit
+        ]
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -748,7 +750,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           form:tableIndexLabel "Stap";
           form:showTableRowIndex true;
           sh:group ext:projectOnderdeelTimingListingPg;
-          sh:minCount 1;
           sh:maxCount 20;
           sh:order 2 .
 
@@ -782,7 +783,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
                                 sh:resultMessage  "Dit veld is verplicht." ;
                                 sh:path           lblodSubsidie:projectOnderdeelTimingListingUnitBeschrijving            
                               ] ;
-            form:displayType  displayTypes:textArea ;
+            form:displayType  displayTypes:defaultInput ;
             sh:group          ext:projectOnderdeelTimingListingPg .
 
         ##########################################################
@@ -845,7 +846,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
           sh:group ext:projectOnderdeelAnalysePg;
           form:canAdd true;
           form:addLabel "Voeg eigen aandeel toe";
-          sh:minCount 1;
           sh:maxCount 1;
           sh:order 2 .
 
@@ -946,12 +946,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             sh:order          1 ;
             sh:path           lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam ;
             form:validations
-                              [ a                 form:MaxLength ;
-                                form:grouping     form:MatchEvery ;
-                                form:max          "500" ;
-                                sh:resultMessage  "Max. karakters overschreden." ;
-                                sh:path            lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam
-                              ],
                               [ a                 form:RequiredConstraint ;
                                 form:grouping     form:Bag ;
                                 sh:resultMessage  "Dit veld is verplicht." ;
@@ -1035,12 +1029,6 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             sh:order          1 ;
             sh:path           lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam ;
             form:validations
-                              [ a                 form:MaxLength ;
-                                form:grouping     form:MatchEvery ;
-                                form:max          "500" ;
-                                sh:resultMessage  "Max. karakters overschreden." ;
-                                sh:path            lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam
-                              ],
                               [ a                 form:RequiredConstraint ;
                                 form:grouping     form:Bag ;
                                 sh:resultMessage  "Dit veld is verplicht." ;
@@ -1157,12 +1145,6 @@ ext:subsidieBedragAanvraagPg
         sh:order          1 ;
         sh:path           lblodSubsidie:subsidieBedragListingUnitNaam ;
         form:validations
-                          [ a                 form:MaxLength ;
-                            form:grouping     form:MatchEvery ;
-                            form:max          "500" ;
-                            sh:resultMessage  "Max. karakters overschreden." ;
-                            sh:path            lblodSubsidie:subsidieBedragListingUnitNaam
-                          ],
                           [ a                 form:RequiredConstraint ;
                             form:grouping     form:Bag ;
                             sh:resultMessage  "Dit veld is verplicht." ;
