@@ -26,7 +26,7 @@
   - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
   - Remove the image from ` image: lblod/frontend-vendor-access-management:0.7.0` from `docker-compose.override.yml`
 ```
-  drc restart migrations cache resource dispatcher subsidy-applications-management enrich-submission export-submission
+  drc restart migrations cache resource dispatcher subsidy-applications-management enrich-submission export-submissions; drc up -d
 ```
 ## 1.79.2 (2023-04-27)
 ### Subsidy
