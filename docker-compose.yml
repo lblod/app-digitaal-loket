@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.79.0
+    image: lblod/frontend-loket:0.79.2
     links:
       - identifier:backend
     labels:
@@ -351,6 +351,7 @@ services:
     environment:
       # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
       META_DATA_CRON: "0 */15 8-18 * * 1-5"
+      MAX_BODY_SIZE: "10000kb"
     volumes:
       - ./config/subsidy-application-management:/config
       - ./data/files/subsidies:/data
@@ -382,7 +383,7 @@ services:
       - "logging=true"
     restart: always
   lpdc-publish:
-    image: lblod/lpdc-publish-service:0.7.0
+    image: lblod/lpdc-publish-service:0.8.0
     environment:
       LDES_ENDPOINT: "https://dev.lpdc.lblod.info"
       LDES_FOLDER: "dev-lpdc-stream"

@@ -1,6 +1,22 @@
 # Changelog
 ## Unreleased
+### General
+  - Frontend [v0.79.2](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0792-2023-05-03)
+### deploy instructions
+  - update the `-prod` and `-controle` frontend images to the correct version
+
+## 1.80.0 (2023-04-30)
+### general
   - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
+  - data: remove redundant person URIs for rotselaar councillor
+  - Frontend-vendor access management (note: this is bundled in a release, it was already 'hot'-deployed)
+  - Improve Readme
+  - Increased virtuoso memory for default deploys
+### Inzending voor toezicht
+ - remove Advies samenvoeging for Gemeente
+ - remove Verslag lokale betrokkenheid for Gemeente and Provincie
+ - A bit of a performance tweak to diminish the load import/export submissins from loket to toezicht abb
+ - Fix bug automatic-submission (i.e. jobs not consistently failed weh download failed)
 ### LPDC
   - make the "uitvoerende overheid" an optional field
   - fix the creation of empty public service instances for some users
@@ -10,10 +26,21 @@
 ### Subsidies
   -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine 
   - new "Stadsvernieuwing fase 2" subsidy
+  - Update deadlines Opknapwerken slaapplekken Oekraïne subsidy
+  - Increase max body size `subsidy-applications-management`
 ### deploy instructions
+
   - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
+  - Remove the image from ` image: lblod/frontend-vendor-access-management:0.7.0` from `docker-compose.override.yml`
 ```
-  drc restart migrations cache resource dispatcher subsidy-applications-management
+  drc restart migrations cache resource dispatcher subsidy-applications-management enrich-submission export-submissions; drc up -d
+```
+## 1.79.2 (2023-04-27)
+### Subsidy
+  - Hotfix: "relevante bijlages" field in the Stadsvernieuwing - Projectsubsidie (Fase 1) and Stadsvernieuwing - Conceptsubsidie subsidies should be optional
+### deploy instructions
+```
+  drc restart subsidy-applications-management
 ```
 ## 1.79.1 (2023-04-25)
 ### Toezicht
