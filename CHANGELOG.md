@@ -1,4 +1,10 @@
 # Changelog
+## Unreleased
+### General
+  - Frontend [v0.79.2](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0792-2023-05-03)
+### deploy instructions
+  - update the `-prod` and `-controle` frontend images to the correct version
+
 ## 1.80.0 (2023-04-30)
 ### general
   - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
