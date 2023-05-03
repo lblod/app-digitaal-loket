@@ -376,7 +376,18 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/Vendor",
                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
-                      ] } } ] },
+                      ] } },
+                   %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/authenticated/public",
+                    constraint: %ResourceConstraint{
+                       resource_types: [
+                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                       ],
+                       predicates: %NoPredicates{
+                         except: [
+                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
+                         ] } } }
+                  ] },
 
       # // LEIDINGGEVENDEN
       %GroupSpec{
