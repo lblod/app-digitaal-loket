@@ -44,6 +44,20 @@ defmodule Acl.UserGroups.Config do
       }
   end
 
+  defp is_authenticated() do
+    %AccessByQuery{
+      # Let's be restrictive,
+      # we want the session to be attached to a role and uuid of bestuurseeneheid ( == ?session_group )
+      vars: [],
+      query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+        PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+        SELECT DISTINCT ?session_group ?session_role WHERE {
+          <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                       ext:sessionRole ?session_role.
+        }"
+      }
+  end
+
   defp access_sensitive_delta_producer_data() do
     %AccessByQuery{
       vars: [ "group_name" ],
@@ -169,6 +183,20 @@ defmodule Acl.UserGroups.Config do
                       resource_prefix: "http://mu.semte.ch/sessions/"
                     } } ] },
       %GroupSpec{
+        name: "public-r",
+        useage: [:read],
+        access: is_authenticated(),
+        graphs: [%GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/authenticated/public",
+                    constraint: %ResourceConstraint{
+                       resource_types: [
+                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                       ],
+                       predicates: %NoPredicates{
+                         except: [
+                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
+                         ] } } } ] },
+    %GroupSpec{
         name: "public-wf",
         useage: [:write, :read_for_write],
         access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
@@ -346,8 +374,20 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/automatic-submission",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/Vendor"
-                      ] } } ] },
+                        "http://mu.semte.ch/vocabularies/ext/Vendor",
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+                      ] } },
+                   %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/authenticated/public",
+                    constraint: %ResourceConstraint{
+                       resource_types: [
+                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                       ],
+                       predicates: %NoPredicates{
+                         except: [
+                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
+                         ] } } }
+                  ] },
 
       # // LEIDINGGEVENDEN
       %GroupSpec{
