@@ -1,0 +1,25 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.vlaanderen.be/id/concept/MandatarisStatusCode/21063a5b-912c-4241-841c-cc7fb3c73e75>
+    rdf:type ns5:MandatarisStatusCode ;
+    skos:prefLabel "Effectief" ;
+    skos:topConceptOf ns4:MandatarisStatusCode ;
+    skos:inScheme ns4:MandatarisStatusCode .
+  }
+};
+
+# Add status "EFFECTIEF" to erediest mandatarissen & ministers if they dont already have a status assigned
+INSERT {
+  GRAPH {
+    ?mandaat <http://data.vlaanderen.be/ns/mandaat#status> <http://data.vlaanderen.be/id/concept/MandatarisStatusCode/21063a5b-912c-4241-841c-cc7fb3c73e75> #Effectief
+  }
+} WHERE {
+  {
+    ?mandataris a ere:EredienstMandataris;
+  } UNION {
+    ?mandataris a ere:RolBedienaar
+  }
+  FILTER NOT EXISTS {
+    ?mandataris <http://data.vlaanderen.be/ns/mandaat#status> ?statusCode
+  }
+}
