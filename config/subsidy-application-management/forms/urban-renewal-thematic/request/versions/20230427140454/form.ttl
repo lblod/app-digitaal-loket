@@ -150,7 +150,7 @@ ext:applicationPg a form:PropertyGroup;
   ext:applicationFormF a form:Field ;
     sh:order 1 ;
     sh:name "Laad hier het ingevuld aanvraagformulier op." ;
-    form:help """Het aanvraagformulier vindt u terug op deze <a href="https://www.vlaanderen.be/stedenbeleid/stadsvernieuwing-in-vlaanderen" target="_blank">webpagina</a>.""" ;
+    form:help """Het aanvraagformulier vindt u terug op deze <a href="https://www.vlaanderen.be/stedenbeleid/stadsvernieuwing-in-vlaanderen" class="au-c-link" target="_blank">webpagina</a>.""" ;
     sh:path ( lblodSubsidie:urbanRenewalApplicationForm dct:hasPart ) ;
     form:validations
     [ a form:RequiredConstraint ;
