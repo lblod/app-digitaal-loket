@@ -3,6 +3,8 @@
 ### General
   - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
   - Bump mu-auth, resources & adressenregister services
+### Subsidies
+  - Add new thematische stadsvernieuwing subsidie
 ### LPDC
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
 ### deploy instructions
