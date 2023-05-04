@@ -3,6 +3,7 @@
 ### General
   - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
   - Bump mu-auth, resources & adressenregister services
+  - Frontend vendor access management: allows setting read-only
 ### Subsidies
   - Add new thematische stadsvernieuwing subsidie
 ### LPDC
