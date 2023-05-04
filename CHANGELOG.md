@@ -6,6 +6,9 @@
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
 ### deploy instructions
   - update the `-prod` and `-controle` frontend images to the correct version
+  ```
+  drc restart cache resource database; drc up -d
+  ```
 
 ## 1.80.0 (2023-04-30)
 ### general
