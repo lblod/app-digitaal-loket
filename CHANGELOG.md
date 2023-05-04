@@ -2,6 +2,8 @@
 ## Unreleased
 ### General
   - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
+### LPDC
+  - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
 ### deploy instructions
   - update the `-prod` and `-controle` frontend images to the correct version
 
@@ -21,7 +23,6 @@
   - make the "uitvoerende overheid" an optional field
   - fix the creation of empty public service instances for some users
   - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
-  - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
   - "YourEurope categorien" is now required if "YourEurope" is selected for "Publicatiekanalen"
 ### Subsidies
   -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine 
