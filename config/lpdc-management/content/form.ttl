@@ -212,10 +212,6 @@ ext:requirementsPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a m8g:Requirement ;
-        dct:description " "@nl;
-        dct:title " "@nl;
-        dct:description " "@en;
-        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -330,10 +326,6 @@ ext:requirementsPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a m8g:Evidence ;
-              dct:description " "@nl;
-              dct:title " "@nl;
-              dct:description " "@en;
-              dct:title " "@en
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -447,10 +439,6 @@ ext:rulesPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a cpsv:Rule;
-        dct:description " "@nl;
-        dct:title " "@nl;
-        dct:description " "@en;
-        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -564,11 +552,6 @@ ext:rulesPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a schema:WebSite ;
-              dct:description " "@nl;
-              dct:title " "@nl;
-              schema:url "";
-              dct:description " "@en;
-              dct:title " "@en
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -697,10 +680,6 @@ ext:costPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a m8g:Cost;
-        dct:description " "@nl;
-        dct:title " "@nl;
-        dct:description " "@en;
-        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -813,10 +792,6 @@ ext:finAdvPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a lpdcExt:FinancialAdvantage;
-        dct:description " "@nl;
-        dct:title " "@nl;
-        dct:description " "@en;
-        dct:title " "@en
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -960,10 +935,6 @@ ext:contactpointsPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a schema:ContactPoint ;
-        schema:email " ";
-        schema:telephone " ";
-        schema:url " ";
-        schema:openingHours " "
       ];
     ];
     form:dataGenerator form:addMuUuid.
@@ -1079,13 +1050,6 @@ ext:contactpointsPg a form:PropertyGroup;
           form:prototype [
             form:shape [
               a locn:Address ;
-              adres:Straatnaam " "@nl;
-              # Note: rdflib doesn't like the weird '.' at the end of a prefixed URI
-              <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer> " ";
-              <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>  " ";
-              adres:postcode " ";
-              adres:gemeentenaam " "@nl;
-              adres:land " "@nl
             ];
           ];
           form:dataGenerator form:addMuUuid.
@@ -1205,11 +1169,6 @@ ext:websitesPg a form:PropertyGroup;
     form:prototype [
       form:shape [
         a schema:WebSite ;
-        dct:description " "@nl;
-        dct:title " "@nl;
-        schema:url "";
-        dct:description " "@en;
-        dct:title " "@en;
       ];
     ];
     form:dataGenerator form:addMuUuid.
