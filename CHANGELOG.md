@@ -6,6 +6,7 @@
   - Frontend vendor access management: allows setting read-only
 ### Subsidies
   - Add new thematische stadsvernieuwing subsidie
+  - Add LEKP 2.1 Indienen Pact report
 ### LPDC
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
 ### deploy instructions
