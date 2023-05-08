@@ -26,7 +26,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-management:
-    image: lblod/frontend-vendor-access-management:0.7.0
+    image: lblod/frontend-vendor-access-management:0.8.0
     links:
       - identifier:backend
     labels:
@@ -56,7 +56,7 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:feature-service-roam-r1
+    image: semtech/mu-authorization:feature-service-roam-r1.1
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
@@ -104,7 +104,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:1.21.1
+    image: semtech/mu-cl-resources:1.22.0
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -234,7 +234,7 @@ services:
     restart: always
     logging: *default-logging
   adressenregister:
-    image: lblod/adressenregister-fuzzy-search-service:0.6.2
+    image: lblod/adressenregister-fuzzy-search-service:0.6.3
     labels:
       - "logging=true"
     restart: always
