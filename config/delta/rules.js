@@ -20,6 +20,7 @@ import resource from './resource';
 import syncWithKalliopeErrorNotification from './sync-with-kalliope-error-notification';
 import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-generator';
 import validateSubmission from './validate-submission';
+import vendorDataDistribution from './vendor-data-distribution';
 
 export default [
   ...automaticSubmission,
@@ -44,4 +45,5 @@ export default [
   ...syncWithKalliopeErrorNotification,
   ...toezichtFlattenedFormDataGenerator,
   ...validateSubmission,
+  ...vendorDataDistribution
 ];
