@@ -64,6 +64,22 @@ defmodule Acl.UserGroups.Config do
       }
   end
 
+  defp access_for_vendor_api() do
+    %AccessByQuery{
+      vars: ["vendor_id", "session_group"],
+      query: sparql_query_for_access_vendor_api()
+    }
+  end
+
+  defp sparql_query_for_access_vendor_api() do
+    " PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+      SELECT DISTINCT ?vendor_id ?session_group WHERE {
+        <SESSION_ID> muAccount:canActOnBehalfOf/mu:uuid ?session_group;
+                     muAccount:account/mu:uuid ?vendor_id.
+      } "
+  end
+
   def user_groups do
     # These elements are walked from top to bottom.  Each of them may
     # alter the quads to which the current query applies.  Quads are
@@ -471,6 +487,20 @@ defmodule Acl.UserGroups.Config do
                         "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
                       ] } }
                 ] },
+
+     # // TOEZICHT VENDOR API
+      %GroupSpec{
+        name: "o-vendor-api-r",
+        useage: [:read],
+        access: access_for_vendor_api(),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/vendors/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://rdf.myexperiment.org/ontologies/base/Submission",
+                        "http://mu.semte.ch/vocabularies/ext/SubmissionDocument",
+                        "http://lblod.data.gift/vocabularies/automatische-melding/FormData",
+                      ] } } ] },
 
       # // LOKETADMIN
         %GroupSpec{
