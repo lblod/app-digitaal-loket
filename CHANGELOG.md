@@ -14,7 +14,6 @@
   ```
   drc restart cache resource database; drc up -d
   ```
-
 ## 1.80.1 (2023-05-10)
 ### general
   - Added vendor API
