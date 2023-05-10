@@ -1,4 +1,7 @@
 # Changelog
+## 1.80.1 (2023-05-10)
+### general
+  - Added vendor API
 ## 1.80.0 (2023-04-30)
 ### general
   - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
