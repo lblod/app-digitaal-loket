@@ -28,6 +28,7 @@ import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-sub
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidieProposalsDeadlineGemeentenReports';
 import linksBetweenWorshipServicesAndAdminUnitsReport from './links-between-worship-services-and-admin-units-report';
+import lekp21OproepIndienenPactReport from './lekp21OproepIndienenPactReport';
 
 export default [
   BestuurseenhedenReport,
@@ -61,5 +62,6 @@ export default [
   toezichtTaxRegulationSubmissionReport,
   ukraineSubsidyOproepOneReport,
   fietsSubsidieProposalsDeadlineGemeentenReports,
-  linksBetweenWorshipServicesAndAdminUnitsReport
+  linksBetweenWorshipServicesAndAdminUnitsReport,
+  lekp21OproepIndienenPactReport
 ];
