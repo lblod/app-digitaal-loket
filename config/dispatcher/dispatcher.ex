@@ -724,7 +724,7 @@ defmodule Dispatcher do
     forward conn, path, "http://lpdc-management/semantic-forms/"
   end
 
- #################################################################
+  #################################################################
   # Public Services - LPDC-IPDC
   #################################################################
   match "/conceptual-public-services/*path" do
@@ -749,6 +749,10 @@ defmodule Dispatcher do
 
   match "/public-services/*path" do
     forward conn, path, "http://cache/public-services/"
+  end
+  
+  match "/concept-display-configurations/*path" do
+    forward conn, path, "http://cache/concept-display-configurations/"
   end
 
   #################################################################
