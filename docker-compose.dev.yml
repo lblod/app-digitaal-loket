@@ -146,3 +146,9 @@ services:
     restart: "no"
   op-public-consumer:
     restart: "no"
+  vendor-login:
+    restart: "no"
+  sparql-authorization-wrapper:
+    restart: "no"
+  vendor-data-distribution:
+    restart: "no"

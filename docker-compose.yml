@@ -56,7 +56,7 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:feature-service-roam-r1.1
+    image: semtech/mu-authorization:feature-service-roam-r1
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
@@ -104,7 +104,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:1.22.0
+    image: semtech/mu-cl-resources:1.21.1
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -444,6 +444,23 @@ services:
       - ./config/mock-login:/config
     labels:
       - "logging=true"
+    restart: always
+    logging: *default-logging
+  ##############################################################################
+  # Vendor endpoint
+  ##############################################################################
+  vendor-login:
+    image: lblod/vendor-login-service:1.0.0
+    restart: always
+    logging: *default-logging
+  sparql-authorization-wrapper:
+    image: lblod/sparql-authorization-wrapper-service:1.0.0
+    volumes:
+      - ./config/sparql-authorization-wrapper:/config
+    restart: always
+    logging: *default-logging
+  vendor-data-distribution:
+    image: lblod/vendor-data-distribution-service:1.0.0
     restart: always
     logging: *default-logging
   ################################################################################
