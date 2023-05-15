@@ -9,8 +9,11 @@
   - Add LEKP 2.1 Indienen Pact report
 ### LPDC
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
+### Erediensten
+  - flush, rerun op sync migrations to fix typeBetrokkenheid
 ### deploy instructions
   - update the `-prod` and `-controle` frontend images to the correct version
+  - re-sync erediensten from OP
   ```
   drc restart cache resource database; drc up -d
   ```
