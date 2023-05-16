@@ -7,11 +7,7 @@ INSERT {
   }
 } WHERE {
   GRAPH ?g {
-    {
-      ?mandataris a ere:EredienstMandataris
-    } UNION {
-      ?mandataris a ere:RolBedienaar
-    }
+    ?mandataris a ere:EredienstMandataris
     FILTER NOT EXISTS {
       ?mandataris <http://data.vlaanderen.be/ns/mandaat#status> ?statusCode
     }
