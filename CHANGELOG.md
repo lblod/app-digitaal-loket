@@ -1,4 +1,19 @@
 # Changelog
+## Unreleased
+### General
+  - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
+  - Bump mu-auth, resources & adressenregister services
+  - Frontend vendor access management: allows setting read-only
+### Subsidies
+  - Add new thematische stadsvernieuwing subsidie
+  - Add LEKP 2.1 Indienen Pact report
+### LPDC
+  - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
+### deploy instructions
+  - update the `-prod` and `-controle` frontend images to the correct version
+  ```
+  drc restart cache resource database; drc up -d
+  ```
 ## 1.80.3 (2023-05-17)
 ### Inzending voor toezicht
   - hotfix: vendor-data-distrbution-service breaking data.
@@ -12,6 +27,10 @@ drc up -d; drc restart migrations
 ## 1.80.1 (2023-05-10)
 ### general
   - Added vendor API
+### deploy instructions
+```
+drc restart database dispatcher deltanotifier; drc up -d
+```
 ## 1.80.0 (2023-04-30)
 ### general
   - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
@@ -39,7 +58,7 @@ drc up -d; drc restart migrations
   - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
   - Remove the image from ` image: lblod/frontend-vendor-access-management:0.7.0` from `docker-compose.override.yml`
 ```
-  drc restart migrations cache resource dispatcher subsidy-applications-management enrich-submission export-submission
+  drc restart migrations cache resource dispatcher subsidy-applications-management enrich-submission export-submissions; drc up -d
 ```
 ## 1.79.2 (2023-04-27)
 ### Subsidy

@@ -11,6 +11,7 @@
 
 (add-prefix "eli" "http://data.europa.eu/eli/ontology#")
 (add-prefix "m8g" "http://data.europa.eu/m8g/")
+(add-prefix "dcat" "http://www.w3.org/ns/dcat#")
 (add-prefix "dct" "http://purl.org/dc/terms/")
 (add-prefix "cpsv" "http://purl.org/vocab/cpsv#")
 (add-prefix "dul" "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#")
@@ -54,7 +55,7 @@
 (add-prefix "melding" "http://lblod.data.gift/vocabularies/automatische-melding/")
 (add-prefix "muAccount" "http://mu.semte.ch/vocabularies/account/")
 (add-prefix "elod" "http://linkedeconomy.org/ontology#")
-(add-prefix "rdfs" "https://www.w3.org/2000/01/rdf-schema#")
+(add-prefix "rdfs" "http://www.w3.org/2000/01/rdf-schema#")
 (add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
 (add-prefix "lblodBesluit" "http://lblod.data.gift/vocabularies/besluit/")
 (add-prefix "lblodSubsidie" "http://lblod.data.gift/vocabularies/subsidie/")
@@ -77,3 +78,6 @@
 (add-prefix "code" "http://lblod.data.gift/vocabularies/organisatie/")
 (add-prefix "euvoc" "http://publications.europa.eu/ontology/euvoc#")
 (add-prefix "organisatie" "https://data.vlaanderen.be/ns/organisatie#")
+
+(add-prefix "lpdcExt" "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#")
+(add-prefix "pera" "http://publications.europa.eu/resource/authority/")
