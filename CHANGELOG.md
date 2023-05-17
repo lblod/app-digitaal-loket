@@ -17,6 +17,13 @@
   ```
   drc restart cache resource database; drc up -d
   ```
+## 1.80.3 (2023-05-17)
+### Inzending voor toezicht
+  - hotfix: vendor-data-distrbution-service breaking data.
+### deploy instructions
+```
+drc up -d; drc restart migrations
+```
 ## 1.80.2 (2023-05-16)
 ### General
   - add new bestuurseenheid (`Politiezone Rivierenland`)
