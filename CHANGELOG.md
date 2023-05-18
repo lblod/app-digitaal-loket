@@ -1,8 +1,8 @@
 # Changelog
-## Unreleased
+## 1.81.0 (2023-05-18)
 ### General
   - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
-  - Bump mu-auth, resources & adressenregister services
+  - Bump adressenregister services
   - Frontend vendor access management: allows setting read-only
 ### Subsidies
   - Add new thematische stadsvernieuwing subsidie
@@ -15,11 +15,14 @@
   - update the `-prod` and `-controle` frontend images to the correct version
   - re-sync erediensten from OP
   ```
-  drc restart cache resource database; drc up -d
+  drc restart cache resource database subsidy-applications-management report-generation; drc up -d
   ```
+### Extra notes
+ - The bump of mu-resource and mu-auth (i.e. the performance improvement) has been postponed dueu to new bugs.
 ## 1.80.3 (2023-05-17)
 ### Inzending voor toezicht
   - hotfix: vendor-data-distrbution-service breaking data.
+  - Historical data for vendor-api is availible now.
 ### deploy instructions
 ```
 drc up -d; drc restart migrations
