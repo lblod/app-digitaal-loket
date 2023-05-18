@@ -1,4 +1,11 @@
 # Changelog
+## 1.81.1 (2023-05-18)
+### Inzending voor toezicht
+  - bump import submission: centrale besturen should also be able to provide normal attachements.
+### deploy instructions
+```
+drc up -d
+```
 ## 1.81.0 (2023-05-18)
 ### General
   - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
