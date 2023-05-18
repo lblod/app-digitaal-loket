@@ -11,9 +11,14 @@
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
 ### deploy instructions
   - update the `-prod` and `-controle` frontend images to the correct version
-  ```
-  drc restart cache resource database subsidy-applications-management report-generation; drc up -d
-  ```
+  -
+    ```
+    drc restart migrations
+    ```
+    Check the migrations were ok.
+    ```
+    drc restart cache resource database subsidy-applications-management report-generation; drc up -d
+    ```
 ### Extra notes
  - The bump of mu-resource and mu-auth (i.e. the performance improvement) has been postponed dueu to new bugs.
 ## 1.80.3 (2023-05-17)
@@ -52,7 +57,7 @@ drc restart database dispatcher deltanotifier; drc up -d
   - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
   - "YourEurope categorien" is now required if "YourEurope" is selected for "Publicatiekanalen"
 ### Subsidies
-  -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine 
+  -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine
   - new "Stadsvernieuwing fase 2" subsidy
   - Update deadlines Opknapwerken slaapplekken Oekraïne subsidy
   - Increase max body size `subsidy-applications-management`
