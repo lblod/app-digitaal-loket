@@ -75,7 +75,8 @@ export default {
 
           # Graphs have a consistent structure.
           # Ex: http://mu.semte.ch/graphs/organizations/8620c62b9e51d2275c98cb724ce4b6784b432db8e1e0376ac70cbda098ea0d0a/LoketLB-LPDCGebruiker
-          BIND(SUBSTR(STR(?graph), 41, STRLEN(?graph) - 62) AS ?bestuurseenheidUUID) .
+          BIND(STRBEFORE(STRAFTER(STR(?graph), "http://mu.semte.ch/graphs/organizations/"), "/LoketLB-LPDCGebruiker") as ?bestuurseenheidUUID)
+
         }
 
         GRAPH ?g {
