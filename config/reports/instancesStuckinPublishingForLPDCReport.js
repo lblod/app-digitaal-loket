@@ -10,7 +10,7 @@ export default {
       description: 'All instances (public services and tombstones) that are sent but stuck in publishing',
       filePrefix: 'instancesStuckinPublishingForLPDCReport'
     };
-    
+
     console.log('Generate list of stuck LPDC instances');
 
     const queryString = `
@@ -93,12 +93,20 @@ export default {
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((publicService) => {
       return {
-        publicService: getSafeValue(publicService, 'publicService')
+        publicService: getSafeValue(publicService, 'publicService'),
+        type: getSafeValue(publicService, 'type'),
+        title: getSafeValue(publicService, 'title'),
+        bestuurseenheidLabel: getSafeValue(publicService, 'bestuurseenheidLabel'),
+        classificatieLabel: getSafeValue(publicService, 'classificatieLabel'),
       };
     });
 
     await generateReportFromData(data, [
-      'publicService'
+      'publicService',
+      'type',
+      'title',
+      'bestuurseenheidLabel',
+      'classificatieLabel',
     ], reportData);
   }
 };
