@@ -1,4 +1,9 @@
 # Changelog
+## Unreleased
+### Erediensten
+  - flush, rerun op sync migrations to fix typeBetrokkenheid
+### deploy instructions
+- Follow the steps to re-sync data from OP
 ## 1.81.1 (2023-05-18)
 ### Inzending voor toezicht
   - bump import submission: centrale besturen should also be able to provide normal attachements.
@@ -16,8 +21,6 @@ drc up -d
   - Add LEKP 2.1 Indienen Pact report
 ### LPDC
   - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
-### Erediensten
-  - flush, rerun op sync migrations to fix typeBetrokkenheid
 ### deploy instructions
   - update the `-prod` and `-controle` frontend images to the correct version
   -
