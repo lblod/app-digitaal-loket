@@ -1,5 +1,141 @@
 # Changelog
 ## Unreleased
+### Erediensten
+  - flush, rerun op sync migrations to fix typeBetrokkenheid
+### deploy instructions
+- Follow the steps to re-sync data from OP
+## 1.81.1 (2023-05-18)
+### Inzending voor toezicht
+  - bump import submission: centrale besturen should also be able to provide normal attachements.
+### deploy instructions
+```
+drc up -d
+```
+## 1.81.0 (2023-05-18)
+### General
+  - Frontend [v0.79.3](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0793-2023-05-04)
+  - Bump adressenregister services
+  - Frontend vendor access management: allows setting read-only
+### Subsidies
+  - Add new thematische stadsvernieuwing subsidie
+  - Add LEKP 2.1 Indienen Pact report
+### LPDC
+  - Remove the English requirement for text fields when publication channel "YourEurope" is not chosen
+### deploy instructions
+  - update the `-prod` and `-controle` frontend images to the correct version
+  -
+    ```
+    drc restart migrations
+    ```
+    Check the migrations were ok.
+    ```
+    drc restart cache resource database subsidy-applications-management report-generation; drc up -d
+    ```
+### Extra notes
+ - The bump of mu-resource and mu-auth (i.e. the performance improvement) has been postponed dueu to new bugs.
+## 1.80.3 (2023-05-17)
+### Inzending voor toezicht
+  - hotfix: vendor-data-distrbution-service breaking data.
+  - Historical data for vendor-api is availible now.
+### deploy instructions
+```
+drc up -d; drc restart migrations
+```
+## 1.80.2 (2023-05-16)
+### General
+  - add new bestuurseenheid (`Politiezone Rivierenland`)
+## 1.80.1 (2023-05-10)
+### general
+  - Added vendor API
+### deploy instructions
+```
+drc restart database dispatcher deltanotifier; drc up -d
+```
+## 1.80.0 (2023-04-30)
+### general
+  - Frontend [v0.78.0 & v0.79.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0790-2023-04-24)
+  - data: remove redundant person URIs for rotselaar councillor
+  - Frontend-vendor access management (note: this is bundled in a release, it was already 'hot'-deployed)
+  - Improve Readme
+  - Increased virtuoso memory for default deploys
+### Inzending voor toezicht
+ - remove Advies samenvoeging for Gemeente
+ - remove Verslag lokale betrokkenheid for Gemeente and Provincie
+ - A bit of a performance tweak to diminish the load import/export submissins from loket to toezicht abb
+ - Fix bug automatic-submission (i.e. jobs not consistently failed weh download failed)
+### LPDC
+  - make the "uitvoerende overheid" an optional field
+  - fix the creation of empty public service instances for some users
+  - Add more organization types (Gemeenten, OCMW, Autonoom Provinciebedrijf, Autonoom Gemeentebedrijf, etc.) to the "Uitvoerende overheid" and "Bevoegde Overheid" fields
+  - "YourEurope categorien" is now required if "YourEurope" is selected for "Publicatiekanalen"
+### Subsidies
+  -  [#389](https://github.com/lblod/app-digitaal-loket/pull/389) Change date and title for subsidie opknapwerken slaapplekken oekraine
+  - new "Stadsvernieuwing fase 2" subsidy
+  - Update deadlines Opknapwerken slaapplekken Oekraïne subsidy
+  - Increase max body size `subsidy-applications-management`
+### deploy instructions
+
+  - update the `controle` image to `lblod/frontend-loket:0.79.0-controle` (renamed from lblod/frontend-loket:x.x.x-batch-edit)
+  - Remove the image from ` image: lblod/frontend-vendor-access-management:0.7.0` from `docker-compose.override.yml`
+```
+  drc restart migrations cache resource dispatcher subsidy-applications-management enrich-submission export-submissions; drc up -d
+```
+## 1.79.2 (2023-04-27)
+### Subsidy
+  - Hotfix: "relevante bijlages" field in the Stadsvernieuwing - Projectsubsidie (Fase 1) and Stadsvernieuwing - Conceptsubsidie subsidies should be optional
+### deploy instructions
+```
+  drc restart subsidy-applications-management
+```
+## 1.79.1 (2023-04-25)
+### Toezicht
+  - Added document 'afwijking principes regiovorming'.
+### deploy instructions
+```
+  drc restart migrtions; drc up -d
+```
+### ⚠️notes
+This is a replay from hotfix `1.78.5` which has accidently started and released from the wrong tag.
+## 1.79.0 (2023-04-06)
+### General
+ - Added mock-login creator on new bestuurseenheid
+### Worship
+ - Consume data from Organisations portal: Erediensten
+### deploy instructions
+ - Make backup of virutoso
+ - Run migrations first
+ - `drc up -d`
+ - Wait until the stack starts properly
+ - Start the intial sync
+
+## 1.78.5 (2023-04-24)
+### Toezicht
+  - Added document 'afwijking principes regiovorming'.
+### deploy instructions
+```
+  drc restart migrations; drc up -d
+```
+## 1.78.4 (2023-04-04)
+### Toezicht
+#### backend
+  - hotfix: submission filters have been changed to reduce load on system
+## 1.78.3 (2023-03-30)
+### General
+  - added report links accross organisations
+### Inzendingen voor toezicht
+  - Remove list of submission to be sent to Kalliope
+### deploy instructions
+```
+drc restart berichtencentrum-sync-with-kalliope report-generation
+```
+## 1.78.2 (2023-03-29)
+### Sync with kalliope
+  - hotfix: removed unused uri to reduce warnings
+## 1.78.1 (2023-03-24)
+### Worship
+  - worship submissions: share publication date
+     - deploy notes: `drc restart delta-producer-publication-graph-maintainer-worship-submissions`
+## 1.78.0 (2023-03-23)
   - Frontend [v0.77.0 & v0.77.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0771-2023-03-22)
   - Vendor management frontend v0.6.0:
     - Hopefully fix a data issue by changing the way we persist changes
@@ -9,6 +145,9 @@
   - maintain the creation order of listings in the semantic forms
 ### Migrations
   - updated kbo number for st andries in antwerp
+## 1.77.9 (2023-03-15)
+### Worship
+  - fix relationship provincies and Kathedralen
 ## 1.77.8 (2023-03-03)
 ### General
   - migration to avoid obsolete failed urls will trigger a warning

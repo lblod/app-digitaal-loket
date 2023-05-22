@@ -21,6 +21,7 @@ import syncWithKalliopeErrorNotification from './sync-with-kalliope-error-notifi
 import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-generator';
 import validateSubmission from './validate-submission';
 import deltaConsumerWorshipMandates from './delta-consumer-worship-services';
+import vendorDataDistribution from './vendor-data-distribution';
 
 export default [
   ...automaticSubmission,
@@ -46,4 +47,5 @@ export default [
   ...toezichtFlattenedFormDataGenerator,
   ...validateSubmission,
   ...deltaConsumerWorshipMandates,
+  ...vendorDataDistribution
 ];

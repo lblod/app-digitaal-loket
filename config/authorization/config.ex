@@ -44,6 +44,20 @@ defmodule Acl.UserGroups.Config do
       }
   end
 
+  defp is_authenticated() do
+    %AccessByQuery{
+      # Let's be restrictive,
+      # we want the session to be attached to a role and uuid of bestuurseeneheid ( == ?session_group )
+      vars: [],
+      query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+        PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+        SELECT DISTINCT ?session_group ?session_role WHERE {
+          <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                       ext:sessionRole ?session_role.
+        }"
+      }
+  end
+
   defp access_sensitive_delta_producer_data() do
     %AccessByQuery{
       vars: [ "group_name" ],
@@ -62,6 +76,22 @@ defmodule Acl.UserGroups.Config do
             foaf:name ?group_name.
         }"
       }
+  end
+
+  defp access_for_vendor_api() do
+    %AccessByQuery{
+      vars: ["vendor_id", "session_group"],
+      query: sparql_query_for_access_vendor_api()
+    }
+  end
+
+  defp sparql_query_for_access_vendor_api() do
+    " PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+      SELECT DISTINCT ?vendor_id ?session_group WHERE {
+        <SESSION_ID> muAccount:canActOnBehalfOf/mu:uuid ?session_group;
+                     muAccount:account/mu:uuid ?vendor_id.
+      } "
   end
 
   def user_groups do
@@ -169,6 +199,20 @@ defmodule Acl.UserGroups.Config do
                       resource_prefix: "http://mu.semte.ch/sessions/"
                     } } ] },
       %GroupSpec{
+        name: "public-r",
+        useage: [:read],
+        access: is_authenticated(),
+        graphs: [%GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/authenticated/public",
+                    constraint: %ResourceConstraint{
+                       resource_types: [
+                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                       ],
+                       predicates: %NoPredicates{
+                         except: [
+                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
+                         ] } } } ] },
+    %GroupSpec{
         name: "public-wf",
         useage: [:write, :read_for_write],
         access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
@@ -346,8 +390,20 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/automatic-submission",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/Vendor"
-                      ] } } ] },
+                        "http://mu.semte.ch/vocabularies/ext/Vendor",
+                        "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"
+                      ] } },
+                   %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/authenticated/public",
+                    constraint: %ResourceConstraint{
+                       resource_types: [
+                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                       ],
+                       predicates: %NoPredicates{
+                         except: [
+                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
+                         ] } } }
+                  ] },
 
       # // LEIDINGGEVENDEN
       %GroupSpec{
@@ -471,6 +527,20 @@ defmodule Acl.UserGroups.Config do
                         "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
                       ] } }
                 ] },
+
+     # // TOEZICHT VENDOR API
+      %GroupSpec{
+        name: "o-vendor-api-r",
+        useage: [:read],
+        access: access_for_vendor_api(),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/vendors/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://rdf.myexperiment.org/ontologies/base/Submission",
+                        "http://mu.semte.ch/vocabularies/ext/SubmissionDocument",
+                        "http://lblod.data.gift/vocabularies/automatische-melding/FormData",
+                      ] } } ] },
 
       # // LOKETADMIN
         %GroupSpec{
