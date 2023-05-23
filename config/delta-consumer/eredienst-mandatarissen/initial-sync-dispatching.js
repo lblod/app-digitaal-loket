@@ -8,7 +8,7 @@ const {
   SLEEP_TIME_AFTER_FAILED_DB_OPERATION,
   INGEST_GRAPH,
 } = require('./config');
-const { batchedDbUpdate } = require('./utils');
+const { batchedDbUpdate, mapTriple } = require('./utils');
 const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES
   ? DIRECT_DATABASE_ENDPOINT
   : process.env.MU_SPARQL_ENDPOINT;
@@ -29,9 +29,9 @@ const endpoint = BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES
 async function dispatch(lib, data) {
   const { mu, muAuthSudo } = lib;
 
-  const triples = data.termObjects.map(
-    (o) => `${o.subject} ${o.predicate} ${o.object}.`
-  );
+  const triples = data.termObjects
+    .map(mapTriple)
+    .map((o) => `${o.subject} ${o.predicate} ${o.object}.`);
 
   if (BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES) {
     console.warn('Service configured to skip MU_AUTH!');
