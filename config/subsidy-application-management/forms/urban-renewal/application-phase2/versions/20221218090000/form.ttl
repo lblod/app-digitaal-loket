@@ -1240,7 +1240,7 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "500" ;
+                          form:max          "1000" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path           ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription
                         ],
