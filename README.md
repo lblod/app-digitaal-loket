@@ -136,7 +136,7 @@ If you need to ingest the data for worship administrative units, you will need t
   - Extra step in case of a resync, run:
     ```
     docker-compose exec op-public-consumer curl -X POST http://localhost/flush
-    docker-compose logs -f --tail=200 op-public-consumer`
+    docker-compose logs -f --tail=200 op-public-consumer
     ```
       - This should end with `Flush successful`.
   - Update `docker-compose.override.yml` with
