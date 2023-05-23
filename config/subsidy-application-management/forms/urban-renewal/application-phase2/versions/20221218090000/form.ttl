@@ -316,7 +316,7 @@ ext:samenvattingPropertyGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "700" ;
+                          form:max          "5000" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path           ext:samenvattingSummaryDescription
                         ],
@@ -374,7 +374,7 @@ ext:schetsDeKwaliteitPropertyGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "500" ;
+                          form:max          "3500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path           ext:schetsDeKwaliteitDescription
                         ],
@@ -407,7 +407,7 @@ ext:ProjectorganisatieEnRegiefunctieProjectGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "500" ;
+                          form:max          "3500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path           ext:ProjectorganisatieEnRegiefunctieDescription
                         ],
@@ -446,7 +446,7 @@ ext:BeschrijfParticipatieCommunicatieInteractieProjectGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "500" ;
+                          form:max          "3500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path           ext:BeschrijfParticipatieCommunicatieInteractieDescription
                         ],
@@ -479,7 +479,7 @@ ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerProjectGroup
       form:validations
                         [ a                 form:MaxLength ;
                           form:grouping     form:MatchEvery ;
-                          form:max          "500" ;
+                          form:max          "3500" ;
                           sh:resultMessage  "Max. karakters overschreden." ;
                           sh:path           ext:ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription
                         ],
@@ -773,7 +773,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:validations
                               [ a                 form:MaxLength ;
                                 form:grouping     form:MatchEvery ;
-                                form:max          "500" ;
+                                form:max          "1000" ;
                                 sh:resultMessage  "Max. karakters overschreden." ;
                                 sh:path            lblodSubsidie:projectOnderdeelTimingListingUnitBeschrijving
                               ],
@@ -869,7 +869,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:validations
                               [ a                 form:MaxLength ;
                                 form:grouping     form:MatchEvery ;
-                                form:max          "500" ;
+                                form:max          "1000" ;
                                 sh:resultMessage  "Max. karakters overschreden." ;
                                 sh:path            lblodSubsidie:projectOnderdeelStadListingUnitAandeel
                               ];
@@ -948,7 +948,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:validations
                               [ a                 form:MaxLength ;
                                 form:grouping     form:MatchEvery ;
-                                form:max          "500" ;
+                                form:max          "1000" ;
                                 sh:resultMessage  "Max. karakters overschreden." ;
                                 sh:path            lblodSubsidie:projectOnderdeelPubliekePartnerListingUnitNaam
                               ],
@@ -1037,7 +1037,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
             form:validations
                               [ a                 form:MaxLength ;
                                 form:grouping     form:MatchEvery ;
-                                form:max          "500" ;
+                                form:max          "1000" ;
                                 sh:resultMessage  "Max. karakters overschreden." ;
                                 sh:path            lblodSubsidie:projectOnderdeelPrivatePartnerListingNaam
                               ],
@@ -1090,6 +1090,7 @@ ext:projectOnderdeelPg a form:PropertyGroup;
 ext:subsidieBedragAanvraagPg 
     a         form:PropertyGroup ;
     sh:name   "Bedrag van aangevraagde subsidie" ;
+    form:help       "Het maximaal mogelijke subsidiebedrag is 5 miljoen euro." ;
     sh:order  12 .
 
   ##########################################################
@@ -1226,7 +1227,7 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
     a               form:PropertyGroup ;
     sh:description  "Subsidy application and significance for urban renewal project" ;
     sh:name         "Aanvraag subsidie en betekenis voor stadsvernieuwingsproject" ;
-    form:help       "Duid waarvoor je de subsidie stadsvernieuwing aanvraagt en hoe deze een verschil kan maken voor het stadsvernieuwingsproject. Het maximaal mogelijke subsidiebedrag is 5 miljoen euro." ;
+    form:help       "Duid hoe de subsidies Stadsvernieuwing een verschil kan voor het stadsvernieuwingsproject." ;
     sh:order        13 .
 
   ##########################################################
@@ -1265,7 +1266,7 @@ ext:aanvraagPropertyGroup
   ext:bestandenToevoegenField 
     a                 form:Field ;
     sh:order          1 ;
-    sh:name           "Laad hier het akkoord voor de indiening van de aanvraag voor projectsubsidie fase 2 bij de Vlaamse overheid in het kader van de oproep naar stadsvernieuwingsprojecten binnen het Vlaams Fonds voor (groot)stedelijke en plattelandsinvesteringen." ;
+    sh:name           "Laad hier het akkoord voor de indiening van de aanvraag voor projectsubsidie fase 2 bij de Vlaamse overheid in het kader van de oproep naar stadsvernieuwingsprojecten binnen het Vlaams Fonds voor (groot)stedelijke en plattelandsinvesteringen. (Max 50 MB per bestand)" ;
     sh:path           ( lblodSubsidie:urbanRenewalApplicationForm dct:hasPart ) ;
     form:validations
                       [ a                 form:RequiredConstraint ;
@@ -1298,12 +1299,6 @@ ext:aanvraagPropertyGroup
     sh:order          3 ;
     sh:name           "Laad hier alle relevante bijlagen op." ;
     sh:path           ( lblodSubsidie:urbanRenewalAttachments dct:hasPart ) ;
-    form:validations
-                      [ a                 form:RequiredConstraint ;
-                        form:grouping     form:Bag ;
-                        sh:resultMessage  "Dit veld is verplicht."@nl ;
-                        sh:path           ( lblodSubsidie:urbanRenewalAttachments dct:hasPart )
-                      ] ;
     form:displayType  displayTypes:files ;
     sh:group          ext:aanvraagPropertyGroup .
   
