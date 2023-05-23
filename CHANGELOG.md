@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+### Inzending voor toezicht
+  - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
 ### Erediensten
   - flush, rerun op sync migrations to fix typeBetrokkenheid
 ### deploy instructions
