@@ -101,7 +101,7 @@
 (define-resource subsidy-application-flow-step ()
   :class (s-prefix "lblodSubsidie:ApplicationStep")
   :properties `((:order :integer ,(s-prefix "qb:order"))
-                (:is-replaced-by :uri, (s-prefix "dct:isReplacedBy")))
+                (:external-process-link :uri, (s-prefix "dct:isReplacedBy")))
   :has-one `((file :via ,(s-prefix "dct:source")
                    :as "form-specification")
              (subsidy-procedural-step :via ,(s-prefix "dct:references")
