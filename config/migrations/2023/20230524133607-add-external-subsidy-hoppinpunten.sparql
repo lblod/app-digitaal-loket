@@ -8,7 +8,7 @@ PREFIX cpsv:          <http://purl.org/vocab/cpsv#>
 PREFIX xkos:          <http://rdf-vocabulary.ddialliance.org/xkos#>
 PREFIX qb:            <http://purl.org/linked-data/cube#>
 PREFIX xsd:           <http://www.w3.org/2001/XMLSchema#>
-PREFIX mg8:           <http://data.europa.eu/m8g/>
+PREFIX m8g:           <http://data.europa.eu/m8g/>
 PREFIX common:        <http://www.w3.org/2007/uwa/context/common.owl#>
 
 #
@@ -30,9 +30,9 @@ INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     # Period of the series
     <http://data.lblod.info/id/periodes/f3357ba2-abd4-44b3-a66b-70e8f3f9671f>
-      a             mg8:PeriodOfTime ;
+      a             m8g:PeriodOfTime ;
       mu:uuid       "f3357ba2-abd4-44b3-a66b-70e8f3f9671f" ;
-      mg8:startTime "2023-05-29T21:59:59Z"^^xsd:dateTime .
+      m8g:startTime "2023-05-29T21:59:59Z"^^xsd:dateTime .
 
     # Step(s) of the series
     <http://data.lblod.info/id/subsidy-procedural-steps/570fb5da-4874-46f5-8adb-3467cf88f3f2>
@@ -74,6 +74,7 @@ INSERT DATA {
       dct:title                 """Subsidie voor Hoppinpunten""" ;
       skos:prefLabel            """Subsidie voor Hoppinpunten""" ;
       skos:related              <https://www.vlaanderen.be/subsidies-voor-de-aanleg-of-herinrichting-van-een-hoppinpunt> ;
+      m8g:hasCriterion          <http://data.lblod.info/id/criterions/f5ea0615-0b0a-47db-a38c-6097ff80815d> ; # Available only for "gemeenten"
       cpsv:follows              <http://data.lblod.info/id/subsidy-procedural-steps/570fb5da-4874-46f5-8adb-3467cf88f3f2> ;
       lblodSubsidie:heeftReeks  <http://lblod.data.info/id/subsidy-measure-offer-series/3bfba485-f211-445c-80b7-e340c410ce1d> .
   }
