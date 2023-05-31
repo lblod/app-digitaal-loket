@@ -439,7 +439,7 @@ services:
     restart: always
     logging: *default-logging
   eredienst-mandatarissen-consumer:
-    image: lblod/delta-consumer:0.0.14
+    image: lblod/delta-consumer:0.0.18
     volumes:
       - ./config/delta-consumer/eredienst-mandatarissen:/config/triples-dispatching/custom-dispatching
       - ./data/files/consumer-files:/consumer-files
@@ -458,12 +458,17 @@ services:
       INGEST_GRAPH: "http://eredienst-mandatarissen-consumer/temp"
       DCR_SYNC_LOGIN_ENDPOINT: "https://dev.harvesting-self-service.lblod.info/sync/worship/login"
       DCR_SECRET_KEY: "66d0fda1-e987-4cf3-bf8c-80ee16271214"
+      BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+      SLEEP_BETWEEN_BATCHES: "100"
+      BATCH_SIZE: "500"
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   dispatcher-worship-mandates:
-    image: lblod/worship-positions-graph-dispatcher-service-loket:1.1.0
+    image: lblod/worship-positions-graph-dispatcher-service-loket:1.2.0-rc.5
+    environment:
+      LOGLEVEL: "info"
     labels:
       - "logging=true"
     restart: always
