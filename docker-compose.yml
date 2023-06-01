@@ -860,7 +860,7 @@ services:
   # OP PUBLIC CONSUMER
   ################################################################################
   reasoner:
-    image: eyereasoner/reasoning-service:1.0.2
+    image: eyereasoner/reasoning-service:increased-stack-limit
     volumes:
       - ./config/reasoner:/config
     restart: always
