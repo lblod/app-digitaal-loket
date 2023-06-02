@@ -32,7 +32,8 @@ INSERT DATA {
     <http://data.lblod.info/id/periodes/f3357ba2-abd4-44b3-a66b-70e8f3f9671f>
       a             m8g:PeriodOfTime ;
       mu:uuid       "f3357ba2-abd4-44b3-a66b-70e8f3f9671f" ;
-      m8g:startTime "2023-05-29T21:59:59Z"^^xsd:dateTime .
+      m8g:startTime "2023-05-29T21:59:59Z"^^xsd:dateTime ;
+      m8g:endTime   "3000-05-29T21:59:59Z"^^xsd:dateTime .
 
     # Step(s) of the series
     <http://data.lblod.info/id/subsidy-procedural-steps/570fb5da-4874-46f5-8adb-3467cf88f3f2>
