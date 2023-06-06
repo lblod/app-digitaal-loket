@@ -4,6 +4,8 @@
   - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
 ### Erediensten
   - flush, rerun op sync migrations to fix typeBetrokkenheid
+### Subsidies
+  - Add two new external subsidies (Hoppinpunten and Haltes)
 ### deploy instructions
 - Follow the steps to re-sync data from OP
 ## 1.81.1 (2023-05-18)
