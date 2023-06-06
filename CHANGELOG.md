@@ -6,6 +6,8 @@
   - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
 ### Erediensten
   - flush, rerun op sync migrations to fix typeBetrokkenheid
+### Subsidies
+  - Add two new external subsidies (Hoppinpunten and Haltes)
 ### LPDC
   - add "nieuw" and "toegevoegd" labels and filters to concepts
 ### deploy instructions
