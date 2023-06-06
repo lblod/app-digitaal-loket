@@ -1227,7 +1227,7 @@ ext:AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectProjectGroup
     a               form:PropertyGroup ;
     sh:description  "Subsidy application and significance for urban renewal project" ;
     sh:name         "Aanvraag subsidie en betekenis voor stadsvernieuwingsproject" ;
-    form:help       "Duid hoe de subsidies Stadsvernieuwing een verschil kan voor het stadsvernieuwingsproject." ;
+    form:help       "Leg uit hoe de subsidie een verschil kan maken voor het stadsverniewingsproject." ;
     sh:order        13 .
 
   ##########################################################
