@@ -1,13 +1,19 @@
 # Changelog
 ## Unreleased
+### General
+  - Frontend [v0.80.0, v0.81.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0810-2023-05-31)
 ### Inzending voor toezicht
   - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
 ### Erediensten
   - flush, rerun op sync migrations to fix typeBetrokkenheid
 ### Subsidies
   - Add two new external subsidies (Hoppinpunten and Haltes)
+### LPDC
+  - add "nieuw" and "toegevoegd" labels and filters to concepts
 ### deploy instructions
 - Follow the steps to re-sync data from OP
+- `drc restart migrations` and check if they ran successfully
+- `drc restart cache resource database dispatcher subsidy-applications-management report-generation; drc up -d`
 ## 1.81.1 (2023-05-18)
 ### Inzending voor toezicht
   - bump import submission: centrale besturen should also be able to provide normal attachements.
