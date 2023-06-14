@@ -1,7 +1,7 @@
 # Changelog
 ## Unreleased
 ### General
-  - Frontend [v0.80.0 - v0.82.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0820-2023-06-08)
+  - Frontend [v0.80.0 - v0.83.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0830-2023-06-14)
 ### Inzending voor toezicht
   - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
 ### Erediensten
@@ -9,7 +9,8 @@
 ### Subsidies
   - Add two new external subsidies (Hoppinpunten and Haltes)
 ### LPDC
-  - add "nieuw" and "toegevoegd" labels and filters to concepts
+  - Add "nieuw" and "toegevoegd" labels and filters to concepts
+  - Add support for concept archiving
 ### deploy instructions
 - Follow the steps to re-sync data from OP
 - `drc restart migrations` and check if they ran successfully
