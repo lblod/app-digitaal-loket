@@ -64,6 +64,7 @@ services:
       # heavy queries
       QUERY_MAX_PROCESSING_TIME: 605000
       QUERY_MAX_EXECUTION_TIME: 605000
+      DATABASE_COMPATIBILITY: "Virtuoso"
     volumes:
       - ./config/authorization:/config
     labels:
