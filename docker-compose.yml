@@ -466,7 +466,7 @@ services:
     restart: always
     logging: *default-logging
   dispatcher-worship-mandates:
-    image: lblod/worship-positions-graph-dispatcher-service-loket:1.2.0
+    image: lblod/worship-positions-graph-dispatcher-service-loket:1.3.0-rc.1
     environment:
       LOGLEVEL: "info"
     labels:
