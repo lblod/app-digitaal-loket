@@ -2,6 +2,7 @@
 ## Unreleased
 ### General
   - Frontend [v0.80.0 - v0.83.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0831-2023-06-14)
+  - bump `berichtencentrum-email-notification-service`
 ### Inzending voor toezicht
   - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
 ### Erediensten
