@@ -1,10 +1,12 @@
 # Changelog
 ## Unreleased
 ### General
-  - Frontend [v0.80.0 - v0.83.1](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0831-2023-06-14)
+  - Frontend [v0.80.0 - v0.84.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0840-2023-06-22)
   - bump `berichtencentrum-email-notification-service`
 ### Inzending voor toezicht
   - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
+  - Update besluit handhaven form label to Besluit handhaven na ontvangst schorsingsbesluit
+  - Update semantic form to include a new custom alert component in the Besluit handhaven na ontvangst schorsingsbesluit form
 ### Erediensten
   - flush, rerun op sync migrations to fix typeBetrokkenheid
 ### Subsidies

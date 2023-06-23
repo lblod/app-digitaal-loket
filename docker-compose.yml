@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.83.1
+    image: lblod/frontend-loket:0.84.0
     links:
       - identifier:backend
     labels:
@@ -277,7 +277,7 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:1.6.0
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20230413154257-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20230621124520-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
