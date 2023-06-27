@@ -240,12 +240,10 @@ services:
     restart: always
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.5.0
-    links:
-      - database:database
+    image: lblod/loket-report-generation-service:0.6.2
     volumes:
       - ./data/files:/share
-      - ./config/reports:/app/reports
+      - ./config/reports/:/config/
     labels:
       - "logging=true"
     restart: always
