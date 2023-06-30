@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.82.0 (2023-06-30)
 ### General
   - Frontend [v0.80.0 - v0.84.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0840-2023-06-22)
   - bump `berichtencentrum-email-notification-service`
