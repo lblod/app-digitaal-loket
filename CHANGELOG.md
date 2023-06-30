@@ -17,7 +17,7 @@
 ### deploy instructions
 - Follow the steps to re-sync data from OP
 - `drc restart migrations` and check if they ran successfully
-- `drc restart cache resource database dispatcher subsidy-applications-management report-generation; drc up -d`
+- `drc restart cache resource database dispatcher subsidy-applications-management report-generation enrich-submission; drc up -d`
 ## 1.81.1 (2023-05-18)
 ### Inzending voor toezicht
   - bump import submission: centrale besturen should also be able to provide normal attachements.
