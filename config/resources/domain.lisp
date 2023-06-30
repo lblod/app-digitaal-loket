@@ -9,6 +9,7 @@
    of responses in the result object's meta.")
 (defparameter *max-group-sorted-properties* t)
 (defparameter sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
+(setf *fetch-all-types-in-construct-queries* t)
 
 ;; Note: the organisation of the files is currently a bit of a mess.
 ;; Previously we ordered files by Application Profile/Model.
