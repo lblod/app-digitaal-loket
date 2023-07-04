@@ -456,7 +456,6 @@ services:
       INGEST_GRAPH: "http://eredienst-mandatarissen-consumer/temp"
       DCR_SYNC_LOGIN_ENDPOINT: "https://dev.harvesting-self-service.lblod.info/sync/worship/login"
       DCR_SECRET_KEY: "66d0fda1-e987-4cf3-bf8c-80ee16271214"
-      BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
       SLEEP_BETWEEN_BATCHES: "100"
       BATCH_SIZE: "500"
     labels:
