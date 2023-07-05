@@ -18,7 +18,10 @@ SELECT DISTINCT ?bedienaar WHERE {
   FILTER (?g NOT IN (
     <http://eredienst-mandatarissen-consumer/temp-inserts>,
     <http://eredienst-mandatarissen-consumer/temp-deletes>))
-  ?bedienaar a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> .
+  ?bedienaar
+    a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> ;
+    <http://www.w3.org/ns/prov#wasGeneratedBy>
+      <http://lblod.data.gift/id/app/lblod-harvesting> .
 }
   `;
 }
@@ -29,7 +32,10 @@ SELECT DISTINCT ?mandataris WHERE {
   FILTER (?g NOT IN (
     <http://eredienst-mandatarissen-consumer/temp-inserts>,
     <http://eredienst-mandatarissen-consumer/temp-deletes>))
-  ?mandataris a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> .
+  ?mandataris
+    a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
+    <http://www.w3.org/ns/prov#wasGeneratedBy>
+      <http://lblod.data.gift/id/app/lblod-harvesting> .
 }
   `;
 }
