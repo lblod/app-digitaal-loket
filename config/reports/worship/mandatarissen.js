@@ -6,13 +6,11 @@ import { generateReportFromData } from '../../helpers';
 const BATCH_SIZE = 100;
 
 async function generate() {
-  let collectedSubjects = [];
+  const mandatarissenURIs = (
+    await mas.querySudo(queries.allMandatarissen())
+  ).results.bindings.map((b) => b.mandataris.value);
+  let collectedSubjects = mandatarissenURIs;
   let collectedData = [];
-
-  const bindings = (await mas.querySudo(queries.allMandatarissen())).results
-    .bindings;
-  const mandatarissenURIs = bindings.map((b) => b.mandataris.value);
-  collectedSubjects = collectedSubjects.concat(mandatarissenURIs);
 
   for (
     let batchCurrent = 0;
@@ -114,9 +112,9 @@ async function generate() {
   if (collectedData.length > 0) {
     collectedData = collectedData.map((res) => {
       return {
-        graph: `<${res.g.value}>`,
-        subject: `<${res.s.value}>`,
-        predicate: `<${res.p.value}>`,
+        graph: utils.formatObjectTerm(res.g),
+        subject: utils.formatObjectTerm(res.s),
+        predicate: utils.formatObjectTerm(res.p),
         object: utils.formatObjectTerm(res.o),
       };
     });
