@@ -12,9 +12,9 @@ async function generate() {
       ?.bindings || [];
   collectedData = collectedData.map((res) => {
     return {
-      subject: `<${res.s.value}>`,
-      predicate: `<${res.p.value}>`,
-      object: utils.formatObjectTerm(res.o),
+      subject: utils.formatTerm(res.s),
+      predicate: utils.formatTerm(res.p),
+      object: utils.formatTerm(res.o),
     };
   });
   await generateReportFromData(
