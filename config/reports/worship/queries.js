@@ -8,19 +8,19 @@
  * is one of the subjects in the array.
  * @returns {String} The query to execute.
  */
-export function dataForSubjects(subjectURIs) {
-  const subjectValues = subjectURIs.map((uri) => `<${uri}>`).join(' ');
-  return `
-SELECT ?g ?s ?p ?o WHERE {
-  VALUES ?s {
-    ${subjectValues}
-  }
-  GRAPH ?g {
-    ?s ?p ?o .
-  }
-}
-  `;
-}
+//export function dataForSubjects(subjectURIs) {
+//  const subjectValues = subjectURIs.map((uri) => `<${uri}>`).join(' ');
+//  return `
+//SELECT ?g ?s ?p ?o WHERE {
+//  VALUES ?s {
+//    ${subjectValues}
+//  }
+//  GRAPH ?g {
+//    ?s ?p ?o .
+//  }
+//}
+//  `;
+//}
 
 /**
  * Produces a query that returns all RolBedienaren that where harvested. The
@@ -60,19 +60,19 @@ SELECT DISTINCT ?bedienaar WHERE {
  * @function
  * @returns {String} The SPARQL query to execute.
  */
-export function allMandatarissen() {
-  return `
-SELECT DISTINCT ?mandataris WHERE {
-  FILTER (?g NOT IN (
-    <http://eredienst-mandatarissen-consumer/temp-inserts>,
-    <http://eredienst-mandatarissen-consumer/temp-deletes>))
-  ?mandataris
-    a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
-    <http://www.w3.org/ns/prov#wasGeneratedBy>
-      <http://lblod.data.gift/id/app/lblod-harvesting> .
-}
-  `;
-}
+//export function allMandatarissen() {
+//  return `
+//SELECT DISTINCT ?mandataris WHERE {
+//  FILTER (?g NOT IN (
+//    <http://eredienst-mandatarissen-consumer/temp-inserts>,
+//    <http://eredienst-mandatarissen-consumer/temp-deletes>))
+//  ?mandataris
+//    a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
+//    <http://www.w3.org/ns/prov#wasGeneratedBy>
+//      <http://lblod.data.gift/id/app/lblod-harvesting> .
+//}
+//  `;
+//}
 
 /**
  * Produces a query that collects subjects related to a collection of given
@@ -90,18 +90,18 @@ SELECT DISTINCT ?mandataris WHERE {
  * @param {String} type - Represents the `rdf:type` of the related subject.
  * @returns {String} The SPARQL query to execute.
  */
-export function subjectToRange(domainURIs, predicate, type) {
-  const subjectValues = domainURIs.map((uri) => `<${uri}>`).join(' ');
-  return `
-SELECT DISTINCT ?range {
-  VALUES ?s {
-    ${subjectValues}
-  }
-  ?s <${predicate}> ?range .
-  ?range a <${type}> .
-}
-  `;
-}
+//export function subjectToRange(domainURIs, predicate, type) {
+//  const subjectValues = domainURIs.map((uri) => `<${uri}>`).join(' ');
+//  return `
+//SELECT DISTINCT ?range {
+//  VALUES ?s {
+//    ${subjectValues}
+//  }
+//  ?s <${predicate}> ?range .
+//  ?range a <${type}> .
+//}
+//  `;
+//}
 
 /**
  * Produces a query to get all the triples from a graph. No pagination, just
@@ -148,79 +148,169 @@ SELECT DISTINCT ?s ?p ?o WHERE {
 //  `;
 //}
 
-//This query gets all information at once, but too heavy for Virtuoso and hard
-//to maintain.
-//function getquery(limit, offset) {
-//  return `
-//PREFIX schema:     <http://schema.org/>
-//PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-//PREFIX org:        <http://www.w3.org/ns/org#>
-//PREFIX contactHub: <http://data.lblod.info/vocabularies/contacthub/>
-//PREFIX person:     <http://www.w3.org/ns/person#>
-//PREFIX persoon:    <http://data.vlaanderen.be/ns/persoon#>
-//PREFIX adms:       <http://www.w3.org/ns/adms#>
-//PREFIX foaf:       <http://xmlns.com/foaf/0.1/>
-//PREFIX locn:       <http://www.w3.org/ns/locn#>
-//PREFIX adres:      <https://data.vlaanderen.be/ns/adres#>
-//PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
-//
-//SELECT * WHERE {
-//  {
-//    SELECT DISTINCT ?bedienaar WHERE {
-//      FILTER (?g NOT IN (
-//        <http://eredienst-mandatarissen-consumer/temp-inserts>,
-//        <http://eredienst-mandatarissen-consumer/temp-deletes>))
-//      ?bedienaar a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> .
-//    }
-//    LIMIT ${limit}
-//    OFFSET ${offset}
-//  }
-//  GRAPH ?g {
-//  	?bedienaar
-//      rdf:type ?bedienaarType ;
-//      org:holds ?mandataris ;
-//      org:heldBy ?persoon ;
-//      schema:contactPoint ?contact .
-//    OPTIONAL { ?bedienaar contactHub:startdatum ?startDate . }
-//    OPTIONAL { ?bedienaar contactHub:eindedatum ?endDate . }
-//
-//    ?persoon
-//      rdf:type person:Person ;
-//      rdf:type ?persoonType ;
-//      adms:identifier ?identifier .
-//    OPTIONAL { ?persoon foaf:familyName ?familyName . }
-//    OPTIONAL { ?persoon persoon:gebruikteVoornaam ?firstName . }
-//    OPTIONAL { ?persoon persoon:heeftNationaliteit ?nationaliteit . }
-//    OPTIONAL { ?persoon persoon:geslacht ?geslacht . }
-//    OPTIONAL { ?persoon persoon:heeftGeboorte ?geboorte . }
-//    ?contact
-//      rdf:type schema:ContactPoint ;
-//      rdf:type ?contactType ;
-//      locn:address ?adres .
-//    OPTIONAL { ?contact schema:contactType ?contactSort . }
-//    OPTIONAL { ?contact schema:email ?email . }
-//    OPTIONAL { ?contact schema:telephone ?phone . }
-//
-//    ?adres
-//      rdf:type locn:Address ;
-//      rdf:type ?adresType .
-//    OPTIONAL { ?adres adres:Adresvoorstelling.busnummer ?busnummer . }
-//    OPTIONAL { ?adres adres:Adresvoorstelling.huisnummer ?huisnummer . }
-//    OPTIONAL { ?adres locn:thoroughfare ?straat . }
-//    OPTIONAL { ?adres locn:postCode ?postcode . }
-//    OPTIONAL { ?adres adres:gemeentenaam ?stad . }
-//    OPTIONAL { ?adres adres:land ?land . }
-//    OPTIONAL { ?adres locn:fullAddress ?volAdress . }
-//    OPTIONAL { ?adres adres:verwijstNaar ?adresVerwijzing . }
-//
-//    ?geboorte
-//      rdf:type persoon:Geboorte .
-//    OPTIONAL { ?geboorte persoon:datum ?geboorteDatum . }
-//
-//    ?identifier
-//      rdf:type adms:Identifier .
-//    OPTIONAL { ?identifier skos:notation ?rrnummer . }
-//  }
-//}
-//  `;
-//}
+/**
+ * Produces a query that returns all the Eredienst Bedienaren and the data
+ * of their related properties.
+ *
+ * @public
+ * @function
+ * @returns {String} The SPARQL query to execute.
+ */
+export function getQueryBedienaren() {
+  return `
+PREFIX schema:     <http://schema.org/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org:        <http://www.w3.org/ns/org#>
+PREFIX contactHub: <http://data.lblod.info/vocabularies/contacthub/>
+PREFIX person:     <http://www.w3.org/ns/person#>
+PREFIX persoon:    <http://data.vlaanderen.be/ns/persoon#>
+PREFIX adms:       <http://www.w3.org/ns/adms#>
+PREFIX foaf:       <http://xmlns.com/foaf/0.1/>
+PREFIX locn:       <http://www.w3.org/ns/locn#>
+PREFIX adres:      <https://data.vlaanderen.be/ns/adres#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+
+SELECT DISTINCT ?graph ?bedienaar ?mandaat ?startDatum ?eindeDatum ?persoon ?familienaam ?voornaam ?geboorteDatum ?rrnummer ?nationaliteit ?geslacht ?contact ?contactSoort ?email ?telefoon ?adres ?busnummer ?huisnummer ?straat ?postcode ?stad ?land ?volAdress ?adresVerwijzing WHERE {
+  {
+    SELECT DISTINCT ?bedienaar WHERE {
+      FILTER (?g NOT IN (
+        <http://eredienst-mandatarissen-consumer/temp-inserts>,
+        <http://eredienst-mandatarissen-consumer/temp-deletes>))
+      GRAPH ?g {
+        ?bedienaar
+          a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> ;
+          <http://www.w3.org/ns/prov#wasGeneratedBy>
+            <http://lblod.data.gift/id/app/lblod-harvesting> .
+      }
+    }
+  }
+  GRAPH ?graph {
+  	?bedienaar
+      org:holds ?mandaat ;
+      org:heldBy ?persoon ;
+      schema:contactPoint ?contact .
+    OPTIONAL { ?bedienaar contactHub:startdatum ?startDatum . }
+    OPTIONAL { ?bedienaar contactHub:eindedatum ?eindeDatum . }
+
+    ?persoon
+      rdf:type person:Person ;
+      adms:identifier ?identifier .
+    OPTIONAL { ?persoon persoon:heeftGeboorte ?geboorte . }
+    OPTIONAL { ?persoon foaf:familyName ?familienaam . }
+    OPTIONAL { ?persoon persoon:gebruikteVoornaam ?voornaam . }
+    OPTIONAL { ?persoon persoon:heeftNationaliteit ?nationaliteit . }
+    OPTIONAL { ?persoon persoon:geslacht ?geslacht . }
+    
+    ?contact
+      rdf:type schema:ContactPoint ;
+      locn:address ?adres .
+    OPTIONAL { ?contact schema:contactType ?contactSoort . }
+    OPTIONAL { ?contact schema:email ?email . }
+    OPTIONAL { ?contact schema:telephone ?telefoon . }
+
+    ?adres
+      rdf:type locn:Address .
+    OPTIONAL { ?adres adres:Adresvoorstelling.busnummer ?busnummer . }
+    OPTIONAL { ?adres adres:Adresvoorstelling.huisnummer ?huisnummer . }
+    OPTIONAL { ?adres locn:thoroughfare ?straat . }
+    OPTIONAL { ?adres locn:postCode ?postcode . }
+    OPTIONAL { ?adres adres:gemeentenaam ?stad . }
+    OPTIONAL { ?adres adres:land ?land . }
+    OPTIONAL { ?adres locn:fullAddress ?volAdress . }
+    OPTIONAL { ?adres adres:verwijstNaar ?adresVerwijzing . }
+
+    ?geboorte
+      rdf:type persoon:Geboorte .
+    OPTIONAL { ?geboorte persoon:datum ?geboorteDatum . }
+
+    ?identifier
+      rdf:type adms:Identifier .
+    OPTIONAL { ?identifier skos:notation ?rrnummer . }
+  } 
+}
+  `;
+}
+
+/**
+ * Produces a query that returns all the Eredienst Mandatarissen and the data
+ * of their related properties.
+ *
+ * @public
+ * @function
+ * @returns {String} The SPARQL query to execute.
+ */
+export function getQueryMandatarissen() {
+  return `
+PREFIX schema:     <http://schema.org/>
+PREFIX rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX org:        <http://www.w3.org/ns/org#>
+PREFIX contactHub: <http://data.lblod.info/vocabularies/contacthub/>
+PREFIX person:     <http://www.w3.org/ns/person#>
+PREFIX persoon:    <http://data.vlaanderen.be/ns/persoon#>
+PREFIX adms:       <http://www.w3.org/ns/adms#>
+PREFIX foaf:       <http://xmlns.com/foaf/0.1/>
+PREFIX locn:       <http://www.w3.org/ns/locn#>
+PREFIX adres:      <https://data.vlaanderen.be/ns/adres#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX mandaat:    <http://data.vlaanderen.be/ns/mandaat#>
+
+SELECT DISTINCT ?graph ?mandataris ?mandaat ?startDatum ?eindeDatum ?persoon ?familienaam ?voornaam ?geboorteDatum ?rrnummer ?nationaliteit ?geslacht ?contact ?contactSoort ?email ?telefoon ?adres ?busnummer ?huisnummer ?straat ?postcode ?stad ?land ?volAdress ?adresVerwijzing WHERE {
+  {
+    SELECT DISTINCT ?mandataris WHERE {
+      FILTER (?g NOT IN (
+        <http://eredienst-mandatarissen-consumer/temp-inserts>,
+        <http://eredienst-mandatarissen-consumer/temp-deletes>))
+      GRAPH ?g {
+        ?mandataris
+          a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
+          <http://www.w3.org/ns/prov#wasGeneratedBy>
+            <http://lblod.data.gift/id/app/lblod-harvesting> .
+      }
+    }
+  }
+  GRAPH ?graph {
+  	?mandataris
+      org:holds ?mandaat ;
+      mandaat:isBestuurlijkeAliasVan ?persoon ;
+      schema:contactPoint ?contact .
+    OPTIONAL { ?bedienaar contactHub:startdatum ?startDatum . }
+    OPTIONAL { ?bedienaar contactHub:eindedatum ?eindeDatum . }
+
+    ?persoon
+      rdf:type person:Person ;
+      adms:identifier ?identifier .
+    OPTIONAL { ?persoon persoon:heeftGeboorte ?geboorte . }
+    OPTIONAL { ?persoon foaf:familyName ?familienaam . }
+    OPTIONAL { ?persoon persoon:gebruikteVoornaam ?voornaam . }
+    OPTIONAL { ?persoon persoon:heeftNationaliteit ?nationaliteit . }
+    OPTIONAL { ?persoon persoon:geslacht ?geslacht . }
+    
+    ?contact
+      rdf:type schema:ContactPoint ;
+      locn:address ?adres .
+    OPTIONAL { ?contact schema:contactType ?contactSoort . }
+    OPTIONAL { ?contact schema:email ?email . }
+    OPTIONAL { ?contact schema:telephone ?telefoon . }
+
+    ?adres
+      rdf:type locn:Address .
+    OPTIONAL { ?adres adres:Adresvoorstelling.busnummer ?busnummer . }
+    OPTIONAL { ?adres adres:Adresvoorstelling.huisnummer ?huisnummer . }
+    OPTIONAL { ?adres locn:thoroughfare ?straat . }
+    OPTIONAL { ?adres locn:postCode ?postcode . }
+    OPTIONAL { ?adres adres:gemeentenaam ?stad . }
+    OPTIONAL { ?adres adres:land ?land . }
+    OPTIONAL { ?adres locn:fullAddress ?volAdress . }
+    OPTIONAL { ?adres adres:verwijstNaar ?adresVerwijzing . }
+
+    ?geboorte
+      rdf:type persoon:Geboorte .
+    OPTIONAL { ?geboorte persoon:datum ?geboorteDatum . }
+
+    ?identifier
+      rdf:type adms:Identifier .
+    OPTIONAL { ?identifier skos:notation ?rrnummer . }
+  } 
+}
+  `;
+}

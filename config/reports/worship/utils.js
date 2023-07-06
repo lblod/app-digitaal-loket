@@ -20,5 +20,3 @@ export function formatTerm(term) {
       return term.value;
   }
 }
-
-export function quadsToColumnarCSV(rdfData) {}
