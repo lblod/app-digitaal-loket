@@ -14,9 +14,9 @@ async function generate() {
   await generateReportFromData(
     stringified,
     [
-      'graph',
+      'bestuurnaam',
       'bedienaar',
-      'mandaat',
+      'functienaam',
       'startDatum',
       'eindeDatum',
       'persoon',

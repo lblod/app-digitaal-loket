@@ -169,8 +169,11 @@ PREFIX foaf:       <http://xmlns.com/foaf/0.1/>
 PREFIX locn:       <http://www.w3.org/ns/locn#>
 PREFIX adres:      <https://data.vlaanderen.be/ns/adres#>
 PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX ere:        <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX organis:    <http://lblod.data.gift/vocabularies/organisatie/>
 
-SELECT DISTINCT ?graph ?bedienaar ?mandaat ?startDatum ?eindeDatum ?persoon ?familienaam ?voornaam ?geboorteDatum ?rrnummer ?nationaliteit ?geslacht ?contact ?contactSoort ?email ?telefoon ?adres ?busnummer ?huisnummer ?straat ?postcode ?stad ?land ?volAdress ?adresVerwijzing WHERE {
+SELECT DISTINCT ?bestuurnaam ?bedienaar ?functienaam ?startDatum ?eindeDatum ?persoon ?familienaam ?voornaam ?geboorteDatum ?rrnummer ?nationaliteit ?geslacht ?contact ?contactSoort ?email ?telefoon ?adres ?busnummer ?huisnummer ?straat ?postcode ?stad ?land ?volAdress ?adresVerwijzing WHERE {
   {
     SELECT DISTINCT ?bedienaar WHERE {
       FILTER (?g NOT IN (
@@ -178,15 +181,15 @@ SELECT DISTINCT ?graph ?bedienaar ?mandaat ?startDatum ?eindeDatum ?persoon ?fam
         <http://eredienst-mandatarissen-consumer/temp-deletes>))
       GRAPH ?g {
         ?bedienaar
-          a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> ;
-          <http://www.w3.org/ns/prov#wasGeneratedBy>
+          rdf:type ere:RolBedienaar ;
+          prov:wasGeneratedBy
             <http://lblod.data.gift/id/app/lblod-harvesting> .
       }
     }
   }
   GRAPH ?graph {
   	?bedienaar
-      org:holds ?mandaat ;
+      org:holds ?positie ;
       org:heldBy ?persoon ;
       schema:contactPoint ?contact .
     OPTIONAL { ?bedienaar contactHub:startdatum ?startDatum . }
@@ -226,7 +229,21 @@ SELECT DISTINCT ?graph ?bedienaar ?mandaat ?startDatum ?eindeDatum ?persoon ?fam
     ?identifier
       rdf:type adms:Identifier .
     OPTIONAL { ?identifier skos:notation ?rrnummer . }
-  } 
+  }
+  OPTIONAL {
+    ?positie
+      rdf:type ere:PositieBedienaar ;
+      ere:functie ?functie .
+    ?functie
+      rdf:type organis:EredienstBeroepen ;
+      skos:prefLabel ?functienaam .
+  }
+  OPTIONAL {
+    ?bestuur
+      ere:wordtBediendDoor ?positie ;
+      rdf:type ere:BestuurVanDeEredienst ;
+      skos:prefLabel ?bestuurnaam .
+  }
 }
   `;
 }
@@ -253,8 +270,11 @@ PREFIX locn:       <http://www.w3.org/ns/locn#>
 PREFIX adres:      <https://data.vlaanderen.be/ns/adres#>
 PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
 PREFIX mandaat:    <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX prov:       <http://www.w3.org/ns/prov#>
+PREFIX ere:        <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX besluit:    <http://data.vlaanderen.be/ns/besluit#>
 
-SELECT DISTINCT ?graph ?mandataris ?mandaat ?startDatum ?eindeDatum ?persoon ?familienaam ?voornaam ?geboorteDatum ?rrnummer ?nationaliteit ?geslacht ?contact ?contactSoort ?email ?telefoon ?adres ?busnummer ?huisnummer ?straat ?postcode ?stad ?land ?volAdress ?adresVerwijzing WHERE {
+SELECT DISTINCT ?bestuurnaam ?mandataris ?rolnaam ?startDatum ?eindeDatum ?persoon ?familienaam ?voornaam ?geboorteDatum ?rrnummer ?nationaliteit ?geslacht ?contact ?contactSoort ?email ?telefoon ?adres ?busnummer ?huisnummer ?straat ?postcode ?stad ?land ?volAdress ?adresVerwijzing WHERE {
   {
     SELECT DISTINCT ?mandataris WHERE {
       FILTER (?g NOT IN (
@@ -262,8 +282,8 @@ SELECT DISTINCT ?graph ?mandataris ?mandaat ?startDatum ?eindeDatum ?persoon ?fa
         <http://eredienst-mandatarissen-consumer/temp-deletes>))
       GRAPH ?g {
         ?mandataris
-          a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
-          <http://www.w3.org/ns/prov#wasGeneratedBy>
+          rdf:type ere:EredienstMandataris ;
+          prov:wasGeneratedBy
             <http://lblod.data.gift/id/app/lblod-harvesting> .
       }
     }
@@ -310,7 +330,23 @@ SELECT DISTINCT ?graph ?mandataris ?mandaat ?startDatum ?eindeDatum ?persoon ?fa
     ?identifier
       rdf:type adms:Identifier .
     OPTIONAL { ?identifier skos:notation ?rrnummer . }
-  } 
+  }
+  OPTIONAL {
+    ?bestuurintijd
+      rdf:type besluit:Bestuursorgaan ;
+      org:hasPost ?mandaat ;
+      mandaat:isTijdspecialisatieVan ?bestuur .
+    ?bestuur
+      rdf:type besluit:Bestuursorgaan ;
+      skos:prefLabel ?bestuurnaam .
+  }
+  OPTIONAL {
+    ?mandaat
+      org:role ?role .
+    ?role
+      rdf:type <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode> ;
+      skos:prefLabel ?rolnaam .
+  }
 }
   `;
 }
