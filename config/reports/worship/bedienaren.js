@@ -45,7 +45,7 @@ async function generate() {
       description: 'All eredienst bedienaren and their information.',
       filePrefix: 'eredienst-bedienaren',
     }
-  )
+  );
 }
 
 export default {

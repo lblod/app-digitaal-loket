@@ -45,7 +45,7 @@ async function generate() {
       description: 'All eredienst Mandatarissen and their information.',
       filePrefix: 'eredienst-mandatarissen',
     }
-  )
+  );
 }
 
 export default {
