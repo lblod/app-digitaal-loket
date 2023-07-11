@@ -49,7 +49,7 @@ async function generate() {
 }
 
 export default {
-  cronPattern: '0 1 * * *',
+  cronPattern: '5 1 * * *',
   name: 'eredienst-mandatarissen',
   execute: generate,
 };
