@@ -1,9 +1,24 @@
 # Changelog
-## Unreleased
+## 1.82.0 (2023-06-30)
+### General
+  - Frontend [v0.80.0 - v0.84.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0840-2023-06-22)
+  - bump `berichtencentrum-email-notification-service`
+  - bump `mu-resource and mu-auth`
+### Inzending voor toezicht
+  - Only toezichthoudende betrokkenheid should be shown (hence bump enrich-submission)
+  - Update besluit handhaven form label to Besluit handhaven na ontvangst schorsingsbesluit
+  - Update semantic form to include a new custom alert component in the Besluit handhaven na ontvangst schorsingsbesluit form
 ### Erediensten
   - flush, rerun op sync migrations to fix typeBetrokkenheid
+### Subsidies
+  - Add two new external subsidies (Hoppinpunten and Haltes)
+### LPDC
+  - Add "nieuw" and "toegevoegd" labels and filters to concepts
+  - Add support for concept archiving
 ### deploy instructions
 - Follow the steps to re-sync data from OP
+- `drc restart migrations` and check if they ran successfully
+- `drc restart cache resource database dispatcher subsidy-applications-management report-generation enrich-submission; drc up -d`
 ## 1.81.1 (2023-05-18)
 ### Inzending voor toezicht
   - bump import submission: centrale besturen should also be able to provide normal attachements.

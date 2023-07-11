@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.79.3
+    image: lblod/frontend-loket:0.84.0
     links:
       - identifier:backend
     labels:
@@ -56,10 +56,11 @@ services:
     restart: always
     logging: *default-logging
   database:
-    image: semtech/mu-authorization:feature-service-roam-r1
+    image: semtech/mu-authorization:feature-service-roam-r1.1
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
+      DATABASE_COMPATIBILITY: "Virtuoso"
       # Note: not sure wether it gets picked up properly, it is meant for healing-process which may make
       # heavy queries
       QUERY_MAX_PROCESSING_TIME: 605000
@@ -104,7 +105,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:1.21.1
+    image: semtech/mu-cl-resources:feature-optionally-accept-strange-resource-types
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -174,7 +175,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-email-notification:
-    image: lblod/berichtencentrum-email-notification-service:0.2.2
+    image: lblod/berichtencentrum-email-notification-service:0.3.0
     labels:
       - "logging=true"
     restart: always
@@ -273,9 +274,9 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.5.1
+    image: lblod/enrich-submission-service:1.6.0
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20230413154257-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20230621124520-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -373,7 +374,7 @@ services:
     restart: always
     logging: *default-logging
   lpdc-management:
-    image: lblod/lpdc-management-service:0.22.0
+    image: lblod/lpdc-management-service:0.24.1
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
@@ -891,7 +892,7 @@ services:
   # OP PUBLIC CONSUMER
   ################################################################################
   reasoner:
-    image: eyereasoner/reasoning-service:1.0.2
+    image: eyereasoner/reasoning-service:increased-stack-limit
     volumes:
       - ./config/reasoner:/config
     restart: always

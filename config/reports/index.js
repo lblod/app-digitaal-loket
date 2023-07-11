@@ -30,6 +30,7 @@ import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidiePropo
 import linksBetweenWorshipServicesAndAdminUnitsReport from './links-between-worship-services-and-admin-units-report';
 import lekp21OproepIndienenPactReport from './lekp21OproepIndienenPactReport';
 import instancesStuckinPublishingForLPDCReport from './instancesStuckinPublishingForLPDCReport';
+import subsidieStadsvernieuwingProjectSubsidieAanvraagFase2 from './subsidieStadsvernieuwingProjectSubsidieAanvraagFase2';
 
 //Worship reports
 import bedienaren from './worship/bedienaren';
@@ -72,6 +73,7 @@ export default [
   linksBetweenWorshipServicesAndAdminUnitsReport,
   lekp21OproepIndienenPactReport,
   instancesStuckinPublishingForLPDCReport,
+  subsidieStadsvernieuwingProjectSubsidieAanvraagFase2,
 
   //Worship reports
   bedienaren,
