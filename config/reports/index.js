@@ -32,6 +32,12 @@ import lekp21OproepIndienenPactReport from './lekp21OproepIndienenPactReport';
 import instancesStuckinPublishingForLPDCReport from './instancesStuckinPublishingForLPDCReport';
 import subsidieStadsvernieuwingProjectSubsidieAanvraagFase2 from './subsidieStadsvernieuwingProjectSubsidieAanvraagFase2';
 
+//Worship reports
+import bedienaren from './worship/bedienaren';
+import mandatarissen from './worship/mandatarissen';
+import tempDeletes from './worship/temp-deletes';
+import tempInserts from './worship/temp-inserts';
+
 export default [
   BestuurseenhedenReport,
   BerichtencentrumMessagesReport,
@@ -67,5 +73,11 @@ export default [
   linksBetweenWorshipServicesAndAdminUnitsReport,
   lekp21OproepIndienenPactReport,
   instancesStuckinPublishingForLPDCReport,
-  subsidieStadsvernieuwingProjectSubsidieAanvraagFase2
+  subsidieStadsvernieuwingProjectSubsidieAanvraagFase2,
+
+  //Worship reports
+  bedienaren,
+  mandatarissen,
+  tempDeletes,
+  tempInserts,
 ];
