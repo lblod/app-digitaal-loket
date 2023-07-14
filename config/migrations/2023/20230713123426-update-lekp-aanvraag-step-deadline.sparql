@@ -8,8 +8,8 @@ DELETE {
 }
 INSERT {
   GRAPH ?g {
-    ?s m8g:startTime "2023-09-01T23:59:59Z"^^xsd:dateTime .
-    ?s m8g:endTime "2023-12-06T23:59:59Z"^^xsd:dateTime .
+    ?s m8g:startTime "2023-09-01T21:59:59Z"^^xsd:dateTime .
+    ?s m8g:endTime "2023-12-06T21:59:59Z"^^xsd:dateTime .
   }
 }
 WHERE {
