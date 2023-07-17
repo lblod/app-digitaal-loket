@@ -4,7 +4,7 @@ export default [
       // anything
     },
     callback: {
-      url: 'http://delta-producer-publication-graph-maintainer-subsidies/delta',
+      url: 'http://delta-producer-publication-graph-maintainer/subsidies/delta',
       method: 'POST'
     },
     options: {

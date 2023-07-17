@@ -397,95 +397,95 @@ defmodule Dispatcher do
   # loket-mandatarissen sync
   #################################################################
   get "/sync/mandatarissen/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-mandatarissen/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/mandatarissen/files/"
   end
 
   #################################################################
   # loket-leidinggevenden sync
   #################################################################
   get "/sync/leidinggevenden/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-leidinggevenden/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/leidinggevenden/files/"
   end
 
   #################################################################
   # loket-submissions sync
   #################################################################
   post "/sync/submissions/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-submissions/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/submissions/login/"
   end
 
   #################################################################
   # loket-submissions sync
   #################################################################
   get "/sync/submissions/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-submissions/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/submissions/files/"
   end
 
   #################################################################
   # worship-submissions sync
   #################################################################
   post "/sync/worship-submissions/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-worship-submissions/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/worship-submissions/login/"
   end
 
   #################################################################
   # worship-submissions sync
   #################################################################
   get "/sync/worship-submissions/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-worship-submissions/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer/worship-submissions/files/"
   end
 
   #################################################################
   # worship-services-sensitive sync
   #################################################################
   post "/sync/worship-services-sensitive/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-ws-sensitive/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/ws-sensitive/login/"
   end
 
   get "/sync/worship-services-sensitive/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer-ws-sensitive/files/"
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer/ws-sensitive/files/"
   end
 
   #################################################################
   # loket-persons-sensitive sync
   #################################################################
   post "/sync/persons-sensitive/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/persons-sensitive/login/"
   end
 
   #################################################################
   # loket-persons-sensitive sync
   #################################################################
   get "/sync/persons-sensitive/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/persons-sensitive/files/"
   end
 
   #################################################################
   # loket-worship-services-sensitive sync
   #################################################################
   post "/sync/worship-services-sensitive-deltas/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-ws-sensitive/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/ws-sensitive/login/"
   end
 
   #################################################################
   # loket-worship-services-sensitive sync
   #################################################################
   get "/sync/worship-services-sensitive-deltas/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-ws-sensitive/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/ws-sensitive/files/"
   end
 
   #################################################################
   # loket-subsidies sync
   #################################################################
   post "/sync/subsidies/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/subsidies/login/"
   end
 
   #################################################################
   # loket-subsidies sync
   #################################################################
   get "/sync/subsidies/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/subsidies/files/"
   end
 
   #################################################################

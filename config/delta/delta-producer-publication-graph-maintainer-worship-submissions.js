@@ -4,7 +4,7 @@ export default [
       // anything
     },
     callback: {
-      url: 'http://delta-producer-publication-graph-maintainer-worship-submissions/delta',
+      url: 'http://delta-producer-publication-graph-maintainer/worship-submissions/delta',
       method: 'POST'
     },
     options: {

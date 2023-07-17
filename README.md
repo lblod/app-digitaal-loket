@@ -165,18 +165,18 @@ If you need to ingest the data for worship administrative units, you will need t
 
 To make sure the app can share data, producers need to be set up. There is an intial sync, that is potentially very expensive, and must be started manually
 
-#### producers mandatarissen/leidinggevenden/submissions
+#### producer for mandatarissen, leidinggevenden, submissions...
 
 (Note: similar for other producers)
 
 1. make sure the app is up and running, the migrations have run
-2. in docker-compose.override.yml, make sure the following configuration is provided:
+2. in config/delta-producer/background-job-initiator/config.json, make sure the following configuration is provided for the relevant subjects:
 ```
-  delta-producer-background-jobs-initiator-mandatarissen: # or
-    environment:
-      START_INITIAL_SYNC: 'true'
+{
+    "name": "leidinggevenden",
+    "startInitialSync": "false"
 ```
-3. `drc up -d delta-producer-background-jobs-initiator-mandatarissen`
+3. `drc up -d delta-producer-background-jobs-initiator`
 4. You can follow the status of the job, through the dashboard
 
 ##### Deltas producer: extra considerations

@@ -129,13 +129,7 @@ services:
     restart: "no"
   delta-producer-dump-file-publisher:
     restart: "no"
-  delta-producer-publication-graph-maintainer-leidinggevenden:
-    restart: "no"
-  delta-producer-publication-graph-maintainer-mandatarissen:
-    restart: "no"
-  delta-producer-publication-graph-maintainer-submissions:
-    restart: "no"
-  delta-producer-publication-graph-maintainer-ws-sensitive:
+  delta-producer-publication-graph-maintainer:
     restart: "no"
   error-alert:
     environment:

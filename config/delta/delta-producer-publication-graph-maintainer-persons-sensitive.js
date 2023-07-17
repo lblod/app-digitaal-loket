@@ -4,7 +4,7 @@ export default [
       // anything
     },
     callback: {
-      url: 'http://delta-producer-publication-graph-maintainer-persons-sensitive/delta',
+      url: 'http://delta-producer-publication-graph-maintainer/persons-sensitive/delta',
       method: 'POST'
     },
     options: {
