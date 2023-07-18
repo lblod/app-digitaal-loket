@@ -156,3 +156,5 @@ services:
     restart: "no"
   vendor-data-distribution:
     restart: "no"
+  delta-producer-background-jobs-initiator-generic:
+    restart: "no"
