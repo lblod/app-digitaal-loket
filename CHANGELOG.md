@@ -1,4 +1,9 @@
 # Changelog
+## 1.82.1 (2023-07-18)
+### LPDC
+  - bump `lpdc-management-service` to v0.24.2
+### Deploy instructions
+  - `drc up -d lpdc-management` to fetch the new version
 ## 1.82.0 (2023-06-30)
 ### General
   - Frontend [v0.80.0 - v0.84.0](https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0840-2023-06-22)
