@@ -374,7 +374,7 @@ services:
     restart: always
     logging: *default-logging
   lpdc-management:
-    image: lblod/lpdc-management-service:0.24.2
+    image: lblod/lpdc-management-service:0.24.3
     volumes:
       - ./config/lpdc-management:/config
       - ./data/files/lpdc:/data
