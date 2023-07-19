@@ -1,4 +1,11 @@
 # Changelog
+## 1.82.2 (2023-07-19)
+### Leidinggevenden
+  - Update config so correct predicate for postal code is exported
+### Deploy instructions
+```
+drc restart delta-producer-publication-graph-maintainer-leidinggevenden
+```
 ## 1.82.1 (2023-07-18)
 ### LPDC
   - bump `lpdc-management-service` to v0.24.2
