@@ -155,7 +155,7 @@
         "http://www.w3.org/ns/locn#thoroughfare",
         "https://data.vlaanderen.be/ns/adres#verwijstNaar",
         "https://data.vlaanderen.be/ns/adres#gemeentenaam",
-        "https://data.vlaanderen.be/ns/adres#postcode"
+        "http://www.w3.org/ns/locn#postCode"
       ]
     },
     {
