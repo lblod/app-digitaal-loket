@@ -1,4 +1,9 @@
 # Changelog
+## 1.82.5 (2023-07-19)
+### LPDC
+  - bump frontend (fixing issue archived vs revision in the UI)
+### Deploy instructions
+  - `drc up -d loket` to fetch the new version
 ## 1.82.4 (2023-07-19)
 ### LPDC
   - bump `lpdc-management-service` to v0.24.4
