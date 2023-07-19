@@ -1,4 +1,9 @@
 # Changelog
+## 1.82.4 (2023-07-19)
+### LPDC
+  - bump `lpdc-management-service` to v0.24.4
+### Deploy instructions
+  - `drc up -d lpdc-management` to fetch the new version
 ## 1.82.3 (2023-07-19)
 ### LPDC
   - bump `lpdc-management-service` to v0.24.3
