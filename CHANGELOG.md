@@ -1,4 +1,18 @@
 # Changelog
+## 1.83.0 (2023-07-25)
+### General
+  - added AGB berlaar bestuurseenheid
+### Worship services
+  - setup worship consumer to harvest from vendor
+  - added reports to report on harvested information
+### personeelsbeheer
+  - added IFIC personeel
+###  subsidies
+  - moved deadlines LEKP subsidies
+### Deploy instructions
+```
+drc restart migrations resource cache deltanotifier; drc up -d
+```
 ## 1.82.5 (2023-07-19)
 ### LPDC
   - bump frontend (fixing issue archived vs revision in the UI)
