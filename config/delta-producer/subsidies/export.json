@@ -3,6 +3,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/created",
         "http://purl.org/dc/terms/modified",
         "http://www.w3.org/2007/uwa/context/common.owl#active",
@@ -22,6 +23,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/description",
         "http://data.europa.eu/m8g/role"
       ],
@@ -42,6 +44,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/description",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/currentRange",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/plannedRange",
@@ -56,6 +59,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/totalContribution",
         "http://lblod.data.gift/vocabularies/subsidie/validPlanLivingTogetherTable",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/planLivingTogetherEntry"
@@ -68,6 +72,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://purl.org/dc/terms/description",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/contribution/multiplier",
@@ -81,6 +86,7 @@
       "properties": [
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#inScheme",
         "http://www.w3.org/2004/02/skos/core#topConceptOf",
         "http://schema.org/publication"
@@ -89,6 +95,7 @@
     },
     {
       "properties": [
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/mentorshipActionDetails",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/socialImpactBoundProgress",
@@ -117,6 +124,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -128,6 +136,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://lblod.data.gift/vocabularies/subsidie/heeftReeks",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://data.vlaanderen.be/ns/subsidie#biedtAan",
@@ -144,6 +153,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://lblod.data.gift/vocabularies/subsidie/heeftSubsidieprocedurestap",
         "http://www.w3.org/2007/uwa/context/common.owl#active",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
@@ -161,6 +171,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://rdf-vocabulary.ddialliance.org/xkos#belongsTo",
         "http://rdf-vocabulary.ddialliance.org/xkos#next"
       ],
@@ -172,6 +183,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/references",
         "http://rdf-vocabulary.ddialliance.org/xkos#next",
         "http://rdf-vocabulary.ddialliance.org/xkos#previous",
@@ -187,6 +199,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/description",
         "https://data.vlaanderen.be/ns/mobiliteit#periode",
         "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap.type"
@@ -211,6 +224,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/title",
         "http://data.europa.eu/m8g/fulfilledByRequirementGroup",
         "http://purl.org/dc/terms/isPartOf",
@@ -224,6 +238,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/description",
         "http://data.europa.eu/m8g/hasCriterionRequirement"
       ],
@@ -235,6 +250,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://dbpedia.org/ontology/populationTotal",
         "http://purl.org/dc/terms/description",
         "http://lblod.data.gift/vocabularies/subsidie/isSatisfiableBy"
@@ -247,6 +263,7 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://www.w3.org/2004/02/skos/core#topConceptOf",
         "http://www.w3.org/2004/02/skos/core#inScheme",
