@@ -492,7 +492,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-data-distribution:
-    image: lblod/vendor-data-distribution-service:1.0.1-rc1
+    image: lblod/vendor-data-distribution-service:1.1.0
     restart: always
     logging: *default-logging
   ################################################################################
