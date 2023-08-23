@@ -295,7 +295,7 @@ defmodule Dispatcher do
   #################################################################
   # Automatic submission
   #################################################################
-  match "/melding/*path" do
+  post "/melding/*path" do
     forward conn, path, "http://automatic-submission/melding"
   end
 
