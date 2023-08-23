@@ -299,6 +299,10 @@ defmodule Dispatcher do
     forward conn, path, "http://automatic-submission/melding"
   end
 
+  post "/delete-melding" do
+    Proxy.forward conn, [], "http://clean-up-submission/delete-melding"
+  end
+
   #################################################################
   # Toezicht / supervision
   #################################################################
