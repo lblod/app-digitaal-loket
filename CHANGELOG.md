@@ -1,4 +1,7 @@
 # Changelog
+## 1.83.2 (2023-08-23)
+### LPDC
+  - cleanup `&nbsp` from `dct:description`
 ## 1.83.1 (2023-08-08)
   - add uuids to subsidy producer export config
 ## 1.83.0 (2023-07-25){
