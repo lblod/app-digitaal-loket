@@ -260,7 +260,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:1.2.1
+    image: lblod/automatic-submission-service:1.3.0
     labels:
       - "logging=true"
     restart: always
@@ -317,7 +317,7 @@ services:
     restart: always
     logging: *default-logging
   clean-up-submission:
-    image: lblod/clean-up-submission-service:0.3.3
+    image: lblod/clean-up-submission-service:1.1.0
     volumes:
       - ./data/files:/share
     labels:
@@ -416,7 +416,7 @@ services:
     restart: always
     logging: *default-logging
   jobs-controller:
-    image: lblod/job-controller-service:0.7.0
+    image: lblod/job-controller-service:1.0.0
     volumes:
       - ./config/jobs-controller/:/config/
     labels:
@@ -492,7 +492,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-data-distribution:
-    image: lblod/vendor-data-distribution-service:1.0.1-rc1
+    image: lblod/vendor-data-distribution-service:1.1.0
     restart: always
     logging: *default-logging
   ################################################################################

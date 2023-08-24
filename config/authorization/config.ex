@@ -341,7 +341,14 @@ defmodule Acl.UserGroups.Config do
                         "http://lblod.data.gift/vocabularies/besluit/TaxRate",
                         "http://lblod.data.gift/vocabularies/automatische-melding/FormData",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#LocalFileDataObject",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
+                        "http://lblod.data.gift/services/Service",
+                        "http://lblod.data.gift/vocabularies/harvesting/HarvestingCollection",
+                        "http://redpencil.data.gift/vocabularies/tasks/Operation",
+                        "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://vocab.deri.ie/cogs#ExecutionStatus",
                       ] } } ] },
 
       # // SUBSIDIES
