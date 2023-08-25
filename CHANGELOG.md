@@ -1,4 +1,12 @@
 # Changelog
+## 1.83.3 (2023-08-25)
+### General
+  - Add autonoom gemeentebedrijf mercator APB Kappelen
+### Deploy instructions
+```
+drc up -d migrations
+```
+and trigger the `update-bestuurseenheid-mock-login` service.
 ## 1.83.2 (2023-08-23)
 ### LPDC
   - cleanup `&nbsp` from `dct:description`
