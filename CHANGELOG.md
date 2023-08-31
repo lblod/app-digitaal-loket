@@ -1,4 +1,12 @@
 # Changelog
+## 1.84.0 (2023-08-31)
+### general
+- various improvements automatic-submissoin
+  - bugfixes, cleanup
+  - feature: delete submission
+### subsidies
+- VGC added for Stadsvernieuwing - thematische subsidie
+
 ## 1.83.4 (2023-08-29)
 ### LPDC
   - bump ldes-consumer
