@@ -8,7 +8,7 @@
 - VGC added for Stadsvernieuwing - thematische subsidie
 ### Deploy instructions
 ```
-drc up -d; drc restart migrations resource cache subsidy-applications-management
+drc up -d; drc restart migrations resource cache subsidy-applications-management database dispatcher
 ```
 ## 1.83.4 (2023-08-29)
 ### LPDC
