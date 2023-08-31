@@ -1,4 +1,11 @@
 # Changelog
+## 1.83.4 (2023-08-29)
+### LPDC
+  - bump ldes-consumer
+### Deploy instructions
+```
+drc up -d lpdc-ldes-consumer
+```
 ## 1.83.3 (2023-08-25)
 ### General
   - Add autonoom gemeentebedrijf mercator APB Kappelen
