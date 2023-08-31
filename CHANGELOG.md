@@ -6,7 +6,10 @@
   - feature: delete submission
 ### subsidies
 - VGC added for Stadsvernieuwing - thematische subsidie
-
+### Deploy instructions
+```
+drc up -d; drc restart migrations resource cache subsidy-applications-management
+```
 ## 1.83.4 (2023-08-29)
 ### LPDC
   - bump ldes-consumer
