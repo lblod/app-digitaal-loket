@@ -1,4 +1,6 @@
 # Changelog
+## 1.84.1 (2023-09-01)
+  - Startdate lekp 1 & 2 set to august 31 (past)
 ## 1.84.0 (2023-08-31)
 ### general
 - various improvements automatic-submissoin
