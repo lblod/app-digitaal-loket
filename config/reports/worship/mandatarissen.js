@@ -229,6 +229,7 @@ async function generate() {
     [
       'bestuurnaam',
       'mandataris',
+      'afkomstGegevens',
       'rolnaam',
       'startDatum',
       'eindeDatum',
@@ -275,6 +276,11 @@ function combineMandatarissenData(
   const data = [];
 
   for (const mandataris of mandatarissen) {
+    const afkomstGegevens = tripleData.find(
+      (d) =>
+        d.s.value === mandataris &&
+        d.p.value === 'http://www.w3.org/ns/prov#wasGeneratedBy'
+    )?.o?.value;
     const startDatum = tripleData.find(
       (d) =>
         d.s.value === mandataris &&
@@ -286,7 +292,7 @@ function combineMandatarissenData(
         d.p.value === 'http://data.vlaanderen.be/ns/mandaat#einde'
     )?.o?.value;
 
-    const collect = { mandataris, startDatum, eindeDatum };
+    const collect = { mandataris, afkomstGegevens, startDatum, eindeDatum };
 
     const positionLink = positionLinks.find((p) => p.mandataris === mandataris);
 

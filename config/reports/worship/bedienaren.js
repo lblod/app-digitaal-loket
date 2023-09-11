@@ -205,6 +205,7 @@ async function generate() {
     [
       'bestuurnaam',
       'bedienaar',
+      'afkomstGegevens',
       'functienaam',
       'startDatum',
       'eindeDatum',
@@ -250,6 +251,11 @@ function combineBedienarenData(
   const data = [];
 
   for (const bedienaar of bedienaren) {
+    const afkomstGegevens = tripleData.find(
+      (d) =>
+        d.s.value === bedienaar &&
+        d.p.value === 'http://www.w3.org/ns/prov#wasGeneratedBy'
+    )?.o?.value;
     const startDatum = tripleData.find(
       (d) =>
         d.s.value === bedienaar &&
@@ -263,7 +269,7 @@ function combineBedienarenData(
           'http://data.lblod.info/vocabularies/contacthub/eindedatum'
     )?.o?.value;
 
-    const collect = { bedienaar, startDatum, eindeDatum };
+    const collect = { bedienaar, afkomstGegevens, startDatum, eindeDatum };
 
     const positionLink = positionLinks.find((p) => p.bedienaar === bedienaar);
 

@@ -42,9 +42,7 @@ SELECT DISTINCT ?bedienaar WHERE {
     <http://eredienst-mandatarissen-consumer/temp-deletes>))
   GRAPH ?g {
     ?bedienaar
-      a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> ;
-      <http://www.w3.org/ns/prov#wasGeneratedBy>
-        <http://lblod.data.gift/id/app/lblod-harvesting> .
+      a <http://data.lblod.info/vocabularies/erediensten/RolBedienaar> .
   }
 }
   `;
@@ -70,9 +68,7 @@ SELECT DISTINCT ?mandataris WHERE {
     <http://eredienst-mandatarissen-consumer/temp-deletes>))
   GRAPH ?g {
     ?mandataris
-      a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> ;
-      <http://www.w3.org/ns/prov#wasGeneratedBy>
-        <http://lblod.data.gift/id/app/lblod-harvesting> .
+      a <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris> .
   }
 }
   `;
