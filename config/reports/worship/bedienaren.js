@@ -325,85 +325,93 @@ function combineBedienarenData(
 
       const geboorteLink =
         geboorteLinks.find((g) => g.persoon === persoonLink.persoon) || [];
-      const geboorteDatum = tripleData.find(
-        (d) =>
-          d.s.value === geboorteLink.geboorte &&
-          d.p.value === 'http://data.vlaanderen.be/ns/persoon#datum'
-      )?.o?.value;
-      collect.geboorteDatum = geboorteDatum;
+      if (geboorteLink) {
+        const geboorteDatum = tripleData.find(
+          (d) =>
+            d.s.value === geboorteLink.geboorte &&
+            d.p.value === 'http://data.vlaanderen.be/ns/persoon#datum'
+        )?.o?.value;
+        collect.geboorteDatum = geboorteDatum;
+      }
 
       const identifierLink =
         identifierLinks.find((g) => g.persoon === persoonLink.persoon) || [];
-      const identifier = tripleData.find(
-        (d) =>
-          d.s.value === identifierLink.identifier &&
-          d.p.value === 'http://www.w3.org/2004/02/skos/core#notation'
-      )?.o?.value;
-      collect.rrnummer = identifier;
+      if (identifierLink) {
+        const identifier = tripleData.find(
+          (d) =>
+            d.s.value === identifierLink.identifier &&
+            d.p.value === 'http://www.w3.org/2004/02/skos/core#notation'
+        )?.o?.value;
+        collect.rrnummer = identifier;
+      }
 
       const contactLink = contactLinks.find((c) => c.bedienaar === bedienaar);
-      const contactSoort = tripleData.find(
-        (d) =>
-          d.s.value === contactLink.contact &&
-          d.p.value === 'http://schema.org/contactType'
-      )?.o?.value;
-      const email = tripleData.find(
-        (d) =>
-          d.s.value === contactLink.contact &&
-          d.p.value === 'http://schema.org/email'
-      )?.o?.value;
-      const telefoon = tripleData.find(
-        (d) =>
-          d.s.value === contactLink.contact &&
-          d.p.value === 'http://schema.org/telephone'
-      )?.o?.value;
-      collect.contact = contactLink.contact;
-      collect.contactSoort = contactSoort;
-      collect.email = email;
-      collect.telefoon = telefoon;
+      if (contactLink) {
+        const contactSoort = tripleData.find(
+          (d) =>
+            d.s.value === contactLink.contact &&
+            d.p.value === 'http://schema.org/contactType'
+        )?.o?.value;
+        const email = tripleData.find(
+          (d) =>
+            d.s.value === contactLink.contact &&
+            d.p.value === 'http://schema.org/email'
+        )?.o?.value;
+        const telefoon = tripleData.find(
+          (d) =>
+            d.s.value === contactLink.contact &&
+            d.p.value === 'http://schema.org/telephone'
+        )?.o?.value;
+        collect.contact = contactLink.contact;
+        collect.contactSoort = contactSoort;
+        collect.email = email;
+        collect.telefoon = telefoon;
 
-      const adresLink = addressLinks.find(
-        (c) => c.contact === contactLink.contact
-      );
-      const straat = tripleData.find(
-        (d) =>
-          d.s.value === adresLink.address &&
-          d.p.value === 'http://www.w3.org/ns/locn#thoroughfare'
-      )?.o?.value;
-      const huisnummer = tripleData.find(
-        (d) =>
-          d.s.value === adresLink.address &&
-          d.p.value ===
-            'https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer'
-      )?.o?.value;
-      const busnummer = tripleData.find(
-        (d) =>
-          d.s.value === adresLink.address &&
-          d.p.value ===
-            'https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer'
-      )?.o?.value;
-      const postcode = tripleData.find(
-        (d) =>
-          d.s.value === adresLink.address &&
-          d.p.value === 'http://www.w3.org/ns/locn#postCode'
-      )?.o?.value;
-      const stad = tripleData.find(
-        (d) =>
-          d.s.value === adresLink.address &&
-          d.p.value === 'https://data.vlaanderen.be/ns/adres#gemeentenaam'
-      )?.o?.value;
-      const land = tripleData.find(
-        (d) =>
-          d.s.value === adresLink.address &&
-          d.p.value === 'https://data.vlaanderen.be/ns/adres#land'
-      )?.o?.value;
-      collect.adres = adresLink.address;
-      collect.straat = straat;
-      collect.huisnummer = huisnummer;
-      collect.busnummer = busnummer;
-      collect.postcode = postcode;
-      collect.stad = stad;
-      collect.land = land;
+        const adresLink = addressLinks.find(
+          (c) => c.contact === contactLink.contact
+        );
+        if (adresLink) {
+          const straat = tripleData.find(
+            (d) =>
+              d.s.value === adresLink.address &&
+              d.p.value === 'http://www.w3.org/ns/locn#thoroughfare'
+          )?.o?.value;
+          const huisnummer = tripleData.find(
+            (d) =>
+              d.s.value === adresLink.address &&
+              d.p.value ===
+                'https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer'
+          )?.o?.value;
+          const busnummer = tripleData.find(
+            (d) =>
+              d.s.value === adresLink.address &&
+              d.p.value ===
+                'https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer'
+          )?.o?.value;
+          const postcode = tripleData.find(
+            (d) =>
+              d.s.value === adresLink.address &&
+              d.p.value === 'http://www.w3.org/ns/locn#postCode'
+          )?.o?.value;
+          const stad = tripleData.find(
+            (d) =>
+              d.s.value === adresLink.address &&
+              d.p.value === 'https://data.vlaanderen.be/ns/adres#gemeentenaam'
+          )?.o?.value;
+          const land = tripleData.find(
+            (d) =>
+              d.s.value === adresLink.address &&
+              d.p.value === 'https://data.vlaanderen.be/ns/adres#land'
+          )?.o?.value;
+          collect.adres = adresLink.address;
+          collect.straat = straat;
+          collect.huisnummer = huisnummer;
+          collect.busnummer = busnummer;
+          collect.postcode = postcode;
+          collect.stad = stad;
+          collect.land = land;
+        }
+      }
 
       data.push(collect);
     }
