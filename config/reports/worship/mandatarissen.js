@@ -296,28 +296,36 @@ function combineMandatarissenData(
 
     const positionLink = positionLinks.find((p) => p.mandataris === mandataris);
 
-    const functionLink = functionLinks.find(
-      (f) => f.position === positionLink.position
-    );
-    const functienaam = tripleData.find(
-      (d) =>
-        d.s.value === functionLink.functie &&
-        d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
-    )?.o?.value;
-    collect.rolnaam = functienaam;
+    if (positionLink) {
+      const functionLink = functionLinks.find(
+        (f) => f.position === positionLink.position
+      );
+      if (functionLink) {
+        const functienaam = tripleData.find(
+          (d) =>
+            d.s.value === functionLink.functie &&
+            d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
+        )?.o?.value;
+        collect.rolnaam = functienaam;
+      }
 
-    const bestuurInTijdLink = besturenInTijdLinks.find(
-      (b) => positionLink.position === b.positie
-    );
-    const bestuurLink = besturenLinks.find(
-      (b) => bestuurInTijdLink.bestuur === b.bestuurInTijd
-    );
-    const bestuurnaam = tripleData.find(
-      (d) =>
-        d.s.value === bestuurLink.bestuur &&
-        d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
-    )?.o?.value;
-    collect.bestuurnaam = bestuurnaam;
+      const bestuurInTijdLink = besturenInTijdLinks.find(
+        (b) => positionLink.position === b.positie
+      );
+      if (bestuurInTijdLink) {
+        const bestuurLink = besturenLinks.find(
+          (b) => bestuurInTijdLink.bestuur === b.bestuurInTijd
+        );
+        if (bestuurLink) {
+          const bestuurnaam = tripleData.find(
+            (d) =>
+              d.s.value === bestuurLink.bestuur &&
+              d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
+          )?.o?.value;
+          collect.bestuurnaam = bestuurnaam;
+        }
+      }
+    }
 
     const personen = personenLinks.filter((p) => p.mandataris === mandataris);
 

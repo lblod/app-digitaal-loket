@@ -273,25 +273,31 @@ function combineBedienarenData(
 
     const positionLink = positionLinks.find((p) => p.bedienaar === bedienaar);
 
-    const functionLink = functionLinks.find(
-      (f) => f.position === positionLink.position
-    );
-    const functienaam = tripleData.find(
-      (d) =>
-        d.s.value === functionLink.functie &&
-        d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
-    )?.o?.value;
-    collect.functienaam = functienaam;
+    if (positionLink) {
+      const functionLink = functionLinks.find(
+        (f) => f.position === positionLink.position
+      );
+      if (functionLink) {
+        const functienaam = tripleData.find(
+          (d) =>
+            d.s.value === functionLink.functie &&
+            d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
+        )?.o?.value;
+        collect.functienaam = functienaam;
+      }
 
-    const bestuurLink = besturenLinks.find(
-      (b) => positionLink.position === b.positie
-    );
-    const bestuurnaam = tripleData.find(
-      (d) =>
-        d.s.value === bestuurLink.bestuur &&
-        d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
-    )?.o?.value;
-    collect.bestuurnaam = bestuurnaam;
+      const bestuurLink = besturenLinks.find(
+        (b) => positionLink.position === b.positie
+      );
+      if (bestuurLink) {
+        const bestuurnaam = tripleData.find(
+          (d) =>
+            d.s.value === bestuurLink.bestuur &&
+            d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
+        )?.o?.value;
+        collect.bestuurnaam = bestuurnaam;
+      }
+    }
 
     const personen = personenLinks.filter((p) => p.bedienaar === bedienaar);
 
