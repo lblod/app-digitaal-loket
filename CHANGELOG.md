@@ -4,10 +4,10 @@
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
 
 ### Deploy instructions
-
+Automatic submission as very hot fix in docker-compose.override.yml. Remove this.
 If a maintenance message needs to be displayed, uncomment the environment variable in the docker-compose.override.yml file and edit the message.
 ```
-drc up -d 
+drc up -d loket controle automatic-submission
 ```
 ## 1.84.1 (2023-09-01)
   - Startdate lekp 1 & 2 set to august 31 (past)
