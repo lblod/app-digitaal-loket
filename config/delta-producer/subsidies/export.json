@@ -274,8 +274,7 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url"
-      ],
-      "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325>."
+      ]
     }
   ]
 }
