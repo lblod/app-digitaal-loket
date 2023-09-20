@@ -4,7 +4,7 @@ import deltaProducerPublicationGraphMaintainerLeidinggevenden from './delta-prod
 import deltaProducerPublicationGraphMaintainerMandatarissen from './delta-producer-publication-graph-maintainer-mandatarissen';
 import deltaProducerPublicationGraphMaintainerPersonsSensitive from './delta-producer-publication-graph-maintainer-persons-sensitive';
 import deltaProducerPublicationGraphMaintainerWSSensitive from './delta-producer-publication-graph-maintainer-ws-sensitive';
-import deltaProducerPublicationGraphMaintainerSubmissions from './delta-producer-publication-graph-maintainer-submissions';
+import deltaProducerPublicationGraphMaintainer from './delta-producer-publication-graph-maintainer';
 import deltaProducerPublicationGraphMaintainerSubsidies from './delta-producer-publication-graph-maintainer-subsidies';
 import deltaProducerPublicationGraphMaintainerWorshipSubmissions from './delta-producer-publication-graph-maintainer-worship-submissions';
 import deltaProducerReportGenerator from './delta-producer-report-generator';
@@ -30,7 +30,7 @@ export default [
   ...deltaProducerPublicationGraphMaintainerMandatarissen,
   ...deltaProducerPublicationGraphMaintainerPersonsSensitive,
   ...deltaProducerPublicationGraphMaintainerWSSensitive,
-  ...deltaProducerPublicationGraphMaintainerSubmissions,
+  ...deltaProducerPublicationGraphMaintainer,
   ...deltaProducerPublicationGraphMaintainerSubsidies,
   ...deltaProducerPublicationGraphMaintainerWorshipSubmissions,
   ...deltaProducerReportGenerator,
