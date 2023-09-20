@@ -114,7 +114,15 @@
         "http://www.w3.org/ns/adms#status",
         "http://schema.org/bankAccount",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/unresolvedSocialProblems",
-        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound"
+        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound",
+        "http://lblod.data.gift/vocabularies/subsidie/projectName",
+        "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#identifier",
+        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#estimatedCostTable",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#objectiveTable",
+        "http://lblod.data.gift/vocabularies/subsidie/timeBlock",
+        "http://lblod.data.gift/vocabularies/subsidie/subsidyMeasure",
+        "http://lblod.data.gift/vocabularies/subsidie/decisionUpload"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
