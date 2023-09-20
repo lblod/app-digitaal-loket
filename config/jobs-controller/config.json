@@ -281,5 +281,14 @@
         "nextIndex": "5"
       }
     ]
+  },
+  "http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht": {
+    "tasksConfiguration": [
+      {
+        "currentOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/register-bericht",
+        "nextOperation": "http://lblod.data.gift/id/jobs/concept/TaskOperation/import-bericht",
+        "nextIndex": "1"
+      }
+    ]
   }
 }

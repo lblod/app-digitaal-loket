@@ -754,7 +754,7 @@ defmodule Dispatcher do
   match "/public-services/*path" do
     forward conn, path, "http://cache/public-services/"
   end
-  
+
   match "/concept-display-configurations/*path" do
     forward conn, path, "http://cache/concept-display-configurations/"
   end
@@ -778,6 +778,13 @@ defmodule Dispatcher do
   # Not only POST. SPARQL via GET is also allowed.
   match "/vendor/sparql" do
     Proxy.forward conn, [], "http://sparql-authorization-wrapper/sparql"
+  end
+
+  #################################################################
+  # Berichtencentrum: melding
+  #################################################################
+  post "/vendor/berichtencentrum/melding/*path" do
+    forward conn, path, "http://berichtencentrum-melding/melding"
   end
 
   match "/*_" do
