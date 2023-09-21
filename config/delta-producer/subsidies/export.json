@@ -386,6 +386,15 @@
     },
     {
       "properties": [
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/invoice-upload/FormData"
+    },
+    {
+      "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/identifier",
