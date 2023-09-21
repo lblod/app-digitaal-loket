@@ -5,7 +5,7 @@ INSERT {
 }
 WHERE {
   GRAPH ?g {
-    ?applicationForm <http://lblod.data.gift/vocabularies/subsidie/decisionUpload> ?formData .
+    ?applicationForm <http://lblod.data.gift/vocabularies/subsidie/justificationCostsUpload> ?formData .
     ?formData ?p_f ?o_f .
   }
 
