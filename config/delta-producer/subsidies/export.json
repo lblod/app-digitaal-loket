@@ -130,7 +130,8 @@
         "http://lblod.data.gift/vocabularies/subsidie/justificationCostsUpload",
         "http://lblod.data.gift/vocabularies/subsidie/invoiceUpload",
         "http://lblod.data.gift/vocabularies/subsidie/awardReportUpload",
-        "http://lblod.data.gift/vocabularies/subsidie/attachment"
+        "http://lblod.data.gift/vocabularies/subsidie/attachment",
+        "http://lblod.data.gift/vocabularies/subsidie/signedPact"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -473,6 +474,15 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/climate/attachment/FormData"
+    },
+    {
+      "properties": [
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/climate/signed-pact/FormData"
     }
   ]
 }
