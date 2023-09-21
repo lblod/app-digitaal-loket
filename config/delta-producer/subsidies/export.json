@@ -122,7 +122,15 @@
         "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#objectiveTable",
         "http://lblod.data.gift/vocabularies/subsidie/timeBlock",
         "http://lblod.data.gift/vocabularies/subsidie/subsidyMeasure",
-        "http://lblod.data.gift/vocabularies/subsidie/decisionUpload"
+        "http://lblod.data.gift/vocabularies/subsidie/decisionUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/accountabilityNoteUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/reportUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/justificationExpropriationsUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/justificationCostsUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/invoiceUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/awardReportUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/attachment"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -456,6 +464,15 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#ObjectiveEntry"
+    },
+    {
+      "properties": [
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/climate/attachment/FormData"
     }
   ]
 }
