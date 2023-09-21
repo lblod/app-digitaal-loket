@@ -328,7 +328,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/decision-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/decision-upload/FormData"
     },
     {
       "properties": [
@@ -337,7 +337,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/pictures-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/pictures-upload/FormData"
     },
     {
       "properties": [
@@ -346,7 +346,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/report-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/report-upload/FormData"
     },
     {
       "properties": [
@@ -355,7 +355,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/award-report-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/award-report-upload/FormData"
     },
     {
       "properties": [
@@ -364,7 +364,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/accountability-note-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/accountability-note-upload/FormData"
     },
     {
       "properties": [
@@ -373,7 +373,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/justification-costs-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/justification-costs-upload/FormData"
     },
     {
       "properties": [
@@ -382,7 +382,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/justification-expropriations-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/justification-expropriations-upload/FormData"
     },
     {
       "properties": [
@@ -391,7 +391,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/invoice-upload/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/invoice-upload/FormData"
     },
     {
       "properties": [
