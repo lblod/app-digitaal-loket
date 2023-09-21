@@ -1,6 +1,6 @@
 INSERT {
   GRAPH ?g {
-    ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/award-report-upload/FormData> .
+    ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/award-report-upload/FormData> .
   }
 }
 WHERE {
