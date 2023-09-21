@@ -17,7 +17,6 @@ INSERT {
     ?submissionDocumentStatus schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
     ?formData schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
     ?props schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
-    ?submissionFile schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
     ?submissionDocumentFile schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
   }
 
@@ -53,7 +52,6 @@ WHERE {
      }
 
     # Get file refs
-    ?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?submissionFile. 
     ?submissionDocument <http://purl.org/dc/terms/source> ?submissionDocumentFile .
 
     # Give me formData props limited to following list of types
