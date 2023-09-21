@@ -415,7 +415,7 @@ defmodule Dispatcher do
   # loket-submissions sync
   #################################################################
   post "/sync/submissions/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/submissions/login/"
   end
 
   #################################################################
