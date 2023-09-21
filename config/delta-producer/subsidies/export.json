@@ -352,6 +352,18 @@
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://schema.org/identifier",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://schema.org/BankAccount"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#validEstimatedCostTable",
         "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#estimatedCostEntry"
       ],
