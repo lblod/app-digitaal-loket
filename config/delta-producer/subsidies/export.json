@@ -328,7 +328,7 @@
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
-      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/FormData"
+      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/decision-upload/FormData"
     }
   ]
 }
