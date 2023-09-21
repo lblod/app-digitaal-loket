@@ -305,6 +305,21 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://schema.org/email",
+        "http://schema.org/telephone",
+        "http://www.w3.org/ns/locn#address",
+        "http://xmlns.com/foaf/0.1/firstName",
+        "http://xmlns.com/foaf/0.1/familyName"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://schema.org/ContactPoint"
     }
   ]
 }
