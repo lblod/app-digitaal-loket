@@ -241,7 +241,7 @@ services:
     restart: always
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.6.3
+    image: lblod/loket-report-generation-service:0.6.4
     volumes:
       - ./data/files:/share
       - ./config/reports/:/config/
