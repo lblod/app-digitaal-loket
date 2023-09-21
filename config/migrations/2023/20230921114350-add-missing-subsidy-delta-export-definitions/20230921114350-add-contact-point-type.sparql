@@ -1,0 +1,15 @@
+INSERT {
+  GRAPH ?g {
+    ?contactPoint <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/ContactPoint> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s <http://schema.org/contactPoint> ?contactPoint .
+    ?contactPoint ?p_c ?o_c .
+  }
+
+  FILTER NOT EXISTS {
+    ?contactPoint <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
+  }
+}
