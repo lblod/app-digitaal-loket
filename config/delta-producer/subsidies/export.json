@@ -320,6 +320,15 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://schema.org/ContactPoint"
+    },
+    {
+      "properties": [
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidies/bicycle-infrastructure/FormData"
     }
   ]
 }
