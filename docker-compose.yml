@@ -34,7 +34,7 @@ services:
     restart: always
     logging: *default-logging
   identifier:
-    image: semtech/mu-identifier:1.9.1
+    image: semtech/mu-identifier:1.10.1
     labels:
       - "logging=true"
     restart: always
