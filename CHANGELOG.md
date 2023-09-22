@@ -9,6 +9,8 @@ If a maintenance message needs to be displayed, uncomment the environment variab
 ```
 drc up -d loket controle automatic-submission
 ```
+## 1.84.3 (2023-09-22)
+- added ag2b
 ## 1.84.2 (2023-09-21)
 - besluitenlijst politiezone
 - new producers, because much data
