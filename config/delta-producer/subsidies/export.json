@@ -497,6 +497,21 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/ClimateTable"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://data.lblod.info/vocabularies/subsidie/climate/actionDescription",
+        "http://data.lblod.info/vocabularies/subsidie/climate/toRealiseUnits",
+        "http://data.lblod.info/vocabularies/subsidie/climate/costPerUnit",
+        "http://data.lblod.info/vocabularies/subsidie/climate/restitution",
+        "http://data.lblod.info/vocabularies/subsidie/climate/amountPerAction"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://data.lblod.info/vocabularies/subsidie/climate/ClimateEntry"
     }
   ]
 }
