@@ -132,7 +132,8 @@
         "http://lblod.data.gift/vocabularies/subsidie/awardReportUpload",
         "http://lblod.data.gift/vocabularies/subsidie/attachment",
         "http://lblod.data.gift/vocabularies/subsidie/signedPact",
-        "http://lblod.data.gift/vocabularies/subsidie/climateTable"
+        "http://lblod.data.gift/vocabularies/subsidie/climateTable",
+        "http://purl.org/pav/createdBy"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
