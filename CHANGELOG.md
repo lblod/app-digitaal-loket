@@ -1,8 +1,36 @@
 # Changelog
+## Unreleased
+### General
+- Add an environment variable to the frontend that can be used to display a "global system notification" to the users
+
+### Deploy instructions
+Automatic submission as very hot fix in docker-compose.override.yml. Remove this.
+If a maintenance message needs to be displayed, uncomment the environment variable in the docker-compose.override.yml file and edit the message.
+```
+drc up -d loket controle automatic-submission
+```
 ## 1.84.3 (2023-09-22)
 - added ag2b
 ## 1.84.2 (2023-09-21)
-- besluitenlijst politiezone (one shot migration)
+- besluitenlijst politiezone
+- new producers, because much data
+- 
+### Deploy instructions
+In your docker-compose.override.yml
+- Ensure delta-producer-background-jobs-initiator-submissions is renamed to delta-producer-background-jobs-initiator
+- Ensure delta-producer-publication-graph-maintainer-submissions is renamed to delta-producer-publication-graph-maintainer
+
+In file config/delta-producer/background-jobs-initiator/config.json ensure `"startInitialSync": false` is set to `"startInitialSync": true,`
+In file config/delta-producer/publication-graph-maintainer/config.json ensure
+```
+# ...
+"key": "the key in the docker-compose override previously"
+```
+Then
+```
+drc up -d --remove-orphans; drc -r restart dispatcher deltanotifier migrations
+```
+
 ## 1.84.1 (2023-09-01)
   - Startdate lekp 1 & 2 set to august 31 (past)
 ## 1.84.0 (2023-08-31)
@@ -14,7 +42,7 @@
 - VGC added for Stadsvernieuwing - thematische subsidie
 ### Deploy instructions
 ```
-drc up -d; drc restart migrations resource cache subsidy-applications-management
+drc up -d; drc restart migrations resource cache subsidy-applications-management database dispatcher
 ```
 ## 1.83.4 (2023-08-29)
 ### LPDC
