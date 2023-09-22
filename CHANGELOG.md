@@ -1,20 +1,25 @@
 # Changelog
-## Unreleased
+## 1.85.0 (2023-09-22)
 ### General
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
+- Bump identifier
+### Erediensten
+- Bumped version berichtencentrum with kalliope, to have less data coming through
+- Bump report generation; better character escape
+- Improved mandatarissen-report
 
 ### Deploy instructions
 Automatic submission as very hot fix in docker-compose.override.yml. Remove this.
 If a maintenance message needs to be displayed, uncomment the environment variable in the docker-compose.override.yml file and edit the message.
 ```
-drc up -d loket controle automatic-submission
+drc up -d loket controle automatic-submission berichtencentrum-sync-with-kalliope report-generation identifier
 ```
 ## 1.84.3 (2023-09-22)
 - added ag2b
 ## 1.84.2 (2023-09-21)
 - besluitenlijst politiezone
 - new producers, because much data
-- 
+-
 ### Deploy instructions
 In your docker-compose.override.yml
 - Ensure delta-producer-background-jobs-initiator-submissions is renamed to delta-producer-background-jobs-initiator
