@@ -9,6 +9,10 @@ If a maintenance message needs to be displayed, uncomment the environment variab
 ```
 drc up -d loket controle automatic-submission
 ```
+## 1.84.2 (2023-09-21)
+- besluitenlijst politiezone
+- new producers, because much data
+- 
 ### Deploy instructions
 In your docker-compose.override.yml
 - Ensure delta-producer-background-jobs-initiator-submissions is renamed to delta-producer-background-jobs-initiator
@@ -24,8 +28,6 @@ Then
 ```
 drc up -d --remove-orphans; drc -r restart dispatcher deltanotifier migrations
 ```
-## 1.84.2 (2023-09-21)
-- besluitenlijst politiezone (one shot migration)
 
 ## 1.84.1 (2023-09-01)
   - Startdate lekp 1 & 2 set to august 31 (past)
