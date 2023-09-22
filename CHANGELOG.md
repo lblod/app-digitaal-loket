@@ -1,4 +1,6 @@
 # Changelog
+## 1.84.3 (2023-09-22)
+- added ag2b
 ## 1.84.2 (2023-09-21)
 - besluitenlijst politiezone (one shot migration)
 ## 1.84.1 (2023-09-01)
