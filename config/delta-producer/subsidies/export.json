@@ -507,7 +507,10 @@
         "http://data.lblod.info/vocabularies/subsidie/climate/toRealiseUnits",
         "http://data.lblod.info/vocabularies/subsidie/climate/costPerUnit",
         "http://data.lblod.info/vocabularies/subsidie/climate/restitution",
-        "http://data.lblod.info/vocabularies/subsidie/climate/amountPerAction"
+        "http://data.lblod.info/vocabularies/subsidie/climate/amountPerAction",
+        "http://data.lblod.info/vocabularies/subsidie/climate/customAction",
+        "http://data.lblod.info/vocabularies/subsidie/climate/customDescription",
+        "http://purl.org/linked-data/cube#order"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
