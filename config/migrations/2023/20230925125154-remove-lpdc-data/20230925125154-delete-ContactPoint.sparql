@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://schema.org/ContactPoint>
+  }
+
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+  }
+}

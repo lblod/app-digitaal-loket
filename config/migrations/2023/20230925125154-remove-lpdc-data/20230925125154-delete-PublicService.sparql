@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://purl.org/vocab/cpsv#PublicService>
+  }
+
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+  }
+}

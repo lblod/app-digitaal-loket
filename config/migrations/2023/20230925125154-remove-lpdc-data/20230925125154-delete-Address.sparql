@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://www.w3.org/ns/locn#Address>
+  }
+
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+  }
+}
