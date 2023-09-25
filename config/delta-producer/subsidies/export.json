@@ -133,7 +133,27 @@
         "http://lblod.data.gift/vocabularies/subsidie/attachment",
         "http://lblod.data.gift/vocabularies/subsidie/signedPact",
         "http://lblod.data.gift/vocabularies/subsidie/climateTable",
-        "http://purl.org/pav/createdBy"
+        "http://purl.org/pav/createdBy",
+        "http://lblod.data.gift/vocabularies/subsidie/isCollaboration",
+        "http://lblod.data.gift/vocabularies/subsidie/collaborator",
+        "http://lblod.data.gift/vocabularies/subsidie/extraContactTracingMeasuresNovember",
+        "http://lblod.data.gift/vocabularies/subsidie/extraContactTracingMeasuresDecember",
+        "http://lblod.data.gift/vocabularies/subsidie/extraContactTracingMeasuresJanuary",
+        "http://lblod.data.gift/vocabularies/subsidie/extraContactTracingMeasuresFebruary",
+        "http://lblod.data.gift/vocabularies/subsidie/extraContactTracingMeasuresMarch",
+        "http://lblod.data.gift/vocabularies/subsidie/estimatedExtraCosts",
+        "http://lblod.data.gift/vocabularies/subsidie/focusedPopulation",
+        "http://lblod.data.gift/vocabularies/subsidie/focusedPopulationAndereOption",
+        "http://lblod.data.gift/vocabularies/subsidie/typesOfContacts",
+        "http://lblod.data.gift/vocabularies/subsidie/typesOfContactsAndereOption",
+        "http://lblod.data.gift/vocabularies/subsidie/preventionMethods",
+        "http://lblod.data.gift/vocabularies/subsidie/preventionMethodsAndereOption",
+        "http://lblod.data.gift/vocabularies/subsidie/sourceDetectionActions",
+        "http://lblod.data.gift/vocabularies/subsidie/sourceDetectionActionsAndereOption",
+        "http://lblod.data.gift/vocabularies/subsidie/quarantaineCoachingMethods",
+        "http://lblod.data.gift/vocabularies/subsidie/quarantaineCoachingMethodsAndereOption",
+        "http://lblod.data.gift/vocabularies/subsidie/vulnerableGroupsHelp",
+        "http://lblod.data.gift/vocabularies/subsidie/vulnerableGroupsHelpAndereOption"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
