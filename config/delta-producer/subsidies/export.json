@@ -153,7 +153,8 @@
         "http://lblod.data.gift/vocabularies/subsidie/quarantaineCoachingMethods",
         "http://lblod.data.gift/vocabularies/subsidie/quarantaineCoachingMethodsAndereOption",
         "http://lblod.data.gift/vocabularies/subsidie/vulnerableGroupsHelp",
-        "http://lblod.data.gift/vocabularies/subsidie/vulnerableGroupsHelpAndereOption"
+        "http://lblod.data.gift/vocabularies/subsidie/vulnerableGroupsHelpAndereOption",
+        "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveOne"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -536,6 +537,17 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://data.lblod.info/vocabularies/subsidie/climate/ClimateEntry"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://lblod.data.gift/vocabularies/subsidie/priority",
+        "http://purl.org/dc/terms/description"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/contact-tracing/contact-and-source-tracking-objective-one/FormData"
     }
   ]
 }
