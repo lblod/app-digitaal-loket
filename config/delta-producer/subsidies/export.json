@@ -357,7 +357,10 @@
         "http://schema.org/telephone",
         "http://www.w3.org/ns/locn#address",
         "http://xmlns.com/foaf/0.1/firstName",
-        "http://xmlns.com/foaf/0.1/familyName"
+        "http://xmlns.com/foaf/0.1/familyName",
+        "http://schema.org/url",
+        "http://schema.org/openingHours",
+        "http://www.w3.org/ns/shacl#order"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
