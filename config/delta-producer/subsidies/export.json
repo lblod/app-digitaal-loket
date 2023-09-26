@@ -157,7 +157,8 @@
         "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveOne",
         "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveTwo",
         "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveThree",
-        "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveFour"
+        "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveFour",
+        "http://lblod.data.gift/vocabularies/subsidie/EngagementTable"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -594,6 +595,30 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/contact-tracing/contact-and-source-tracking-objective-four/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://mu.semte.ch/vocabularies/ext/engagementEntry"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/EngagementTable"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://mu.semte.ch/vocabularies/ext/existingStaff",
+        "http://mu.semte.ch/vocabularies/ext/additionalStaff",
+        "http://mu.semte.ch/vocabularies/ext/volunteers"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://mu.semte.ch/vocabularies/ext/EngagementEntry"
     }
   ]
 }
