@@ -355,6 +355,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -364,6 +365,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -373,6 +375,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -382,6 +385,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -391,6 +395,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -400,6 +405,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -409,6 +415,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -418,6 +425,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -491,6 +499,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
@@ -500,6 +509,7 @@
     },
     {
       "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://purl.org/dc/terms/hasPart"
       ],
       "graphsFilter": [
