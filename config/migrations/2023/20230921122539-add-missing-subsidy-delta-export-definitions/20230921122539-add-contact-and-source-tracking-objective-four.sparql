@@ -1,0 +1,15 @@
+INSERT {
+  GRAPH ?g {
+    ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidie/contact-tracing/contact-and-source-tracking-objective-four/FormData> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?applicationForm <http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveFour> ?formData .
+    ?formData ?p_f ?o_f .
+  }
+
+  FILTER NOT EXISTS {
+    ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
+  }
+}
