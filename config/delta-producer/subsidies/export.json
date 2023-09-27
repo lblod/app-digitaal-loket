@@ -355,12 +355,13 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/email",
         "http://schema.org/telephone",
-        "http://www.w3.org/ns/locn#address",
-        "http://xmlns.com/foaf/0.1/firstName",
-        "http://xmlns.com/foaf/0.1/familyName",
         "http://schema.org/url",
         "http://schema.org/openingHours",
-        "http://www.w3.org/ns/shacl#order"
+        "http://schema.org/jobTitle",
+        "http://www.w3.org/ns/locn#address",
+        "http://www.w3.org/ns/shacl#order",
+        "http://xmlns.com/foaf/0.1/firstName",
+        "http://xmlns.com/foaf/0.1/familyName"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
