@@ -172,7 +172,14 @@
         "http://lblod.data.gift/vocabularies/subsidie/actionFullDescription",
         "http://lblod.data.gift/vocabularies/subsidie/targetedAudience",
         "http://lblod.data.gift/vocabularies/subsidie/targetedAudienceOther",
-        "http://lblod.data.gift/vocabularies/subsidie/hasAdditionalAction"
+        "http://lblod.data.gift/vocabularies/subsidie/hasAdditionalAction",
+        "http://lblod.data.gift/vocabularies/subsidie/usedParentalContribution",
+        "http://lblod.data.gift/vocabularies/subsidie/uniqueChildrenNumberForWholePeriod",
+        "http://lblod.data.gift/vocabularies/subsidie/daysOfChildcareForWholePeriod",
+        "http://lblod.data.gift/vocabularies/subsidie/userDeclaresDataIsExact",
+        "http://lblod.data.gift/vocabularies/subsidie/userCompliesWithEmergencyChildcareConditions",
+        "http://lblod.data.gift/vocabularies/subsidie/usedParentalContribution",
+        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -652,6 +659,32 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/additonalAction"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://mu.semte.ch/vocabularies/ext/applicationFormEntry"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://mu.semte.ch/vocabularies/ext/actorName",
+        "http://mu.semte.ch/vocabularies/ext/numberChildrenPerInfrastructure",
+        "http://mu.semte.ch/vocabularies/ext/numberChildrenForFullDay",
+        "http://mu.semte.ch/vocabularies/ext/numberChildrenForHalfDay",
+        "http://purl.org/dc/terms/created"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry"
     }
   ]
 }
