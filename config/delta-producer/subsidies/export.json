@@ -186,7 +186,9 @@
         "http://lblod.data.gift/vocabularies/subsidie/projectStartDate",
         "http://lblod.data.gift/vocabularies/subsidie/projectEndDate",
         "http://lblod.data.gift/vocabularies/subsidie/totalAmount",
-        "http://lblod.data.gift/vocabularies/subsidie/projectType"
+        "http://lblod.data.gift/vocabularies/subsidie/projectType",
+        "http://lblod.data.gift/vocabularies/subsidie/accountabilitySummary",
+        "http://lblod.data.gift/vocabularies/subsidie/accountabilityProof"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -692,6 +694,26 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/ukraine-nooddorpen/accountability-summary/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/ukraine-nooddorpen/accountability-proof/FormData"
     }
   ]
 }
