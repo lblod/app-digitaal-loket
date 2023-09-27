@@ -1,0 +1,25 @@
+PREFIX dvcs: <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
+PREFIX dvc:  <https://productencatalogus.data.vlaanderen.be/id/concept/Thema/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    dvcs:Thema
+    dvc:BurgerOverheid
+    dvc:CultuurSportVrijeTijd
+    dvc:EconomieWerk
+    dvc:MilieuEnergie
+    dvc:MobiliteitOpenbareWerken
+    dvc:OnderwijsWetenschap
+    dvc:WelzijnGezondheid
+    dvc:BouwenWonen
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
