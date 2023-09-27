@@ -179,7 +179,14 @@
         "http://lblod.data.gift/vocabularies/subsidie/userDeclaresDataIsExact",
         "http://lblod.data.gift/vocabularies/subsidie/userCompliesWithEmergencyChildcareConditions",
         "http://lblod.data.gift/vocabularies/subsidie/usedParentalContribution",
-        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable"
+        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
+        "http://lblod.data.gift/vocabularies/subsidie/isCollaboration",
+        "http://lblod.data.gift/vocabularies/subsidie/collaborator",
+        "http://lblod.data.gift/vocabularies/subsidie/projectName",
+        "http://lblod.data.gift/vocabularies/subsidie/projectStartDate",
+        "http://lblod.data.gift/vocabularies/subsidie/projectEndDate",
+        "http://lblod.data.gift/vocabularies/subsidie/totalAmount",
+        "http://lblod.data.gift/vocabularies/subsidie/projectType"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
