@@ -188,7 +188,9 @@
         "http://lblod.data.gift/vocabularies/subsidie/totalAmount",
         "http://lblod.data.gift/vocabularies/subsidie/projectType",
         "http://lblod.data.gift/vocabularies/subsidie/accountabilitySummary",
-        "http://lblod.data.gift/vocabularies/subsidie/accountabilityProof"
+        "http://lblod.data.gift/vocabularies/subsidie/accountabilityProof",
+        "http://lblod.data.gift/vocabularies/subsidie/urbanRenewalApplicationForm",
+        "http://lblod.data.gift/vocabularies/subsidie/urbanRenewalAttachments"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -714,6 +716,26 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/ukraine-nooddorpen/accountability-proof/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/urban-renewal/urban-renewal-application-form/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/urban-renewal/urban-renewal-attachments/FormData"
     }
   ]
 }
