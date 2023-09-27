@@ -128,7 +128,9 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelConsumptieStatus"
     },
     {
@@ -143,7 +145,9 @@
         "http://purl.org/vocab/cpsv#follows",
         "http://www.w3.org/2004/02/skos/core#related"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod"
     },
     {
@@ -159,7 +163,9 @@
         "https://data.vlaanderen.be/ns/mobiliteit#periode",
         "http://purl.org/vocab/cpsv#follows"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks"
     },
     {
@@ -169,7 +175,9 @@
         "http://rdf-vocabulary.ddialliance.org/xkos#belongsTo",
         "http://rdf-vocabulary.ddialliance.org/xkos#next"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/ApplicationFlow"
     },
     {
@@ -183,7 +191,9 @@
         "http://purl.org/dc/terms/source",
         "http://purl.org/linked-data/cube#order"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/ApplicationStep"
     },
     {
@@ -194,7 +204,9 @@
         "https://data.vlaanderen.be/ns/mobiliteit#periode",
         "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap.type"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap"
     },
     {
@@ -205,7 +217,9 @@
         "http://data.europa.eu/m8g/endTime",
         "http://data.europa.eu/m8g/startTime"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://data.europa.eu/m8g/PeriodOfTime"
     },
     {
@@ -217,7 +231,9 @@
         "http://purl.org/dc/terms/isPartOf",
         "http://data.europa.eu/m8g/criterionType"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://data.europa.eu/m8g/Criterion"
     },
     {
@@ -227,7 +243,9 @@
         "http://purl.org/dc/terms/description",
         "http://data.europa.eu/m8g/hasCriterionRequirement"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://data.europa.eu/m8g/RequirementGroup"
     },
     {
@@ -238,7 +256,9 @@
         "http://purl.org/dc/terms/description",
         "http://lblod.data.gift/vocabularies/subsidie/isSatisfiableBy"
       ],
-      "graphsFilter": ["http://mu.semte.ch/graphs/public"],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/public"
+      ],
       "type": "http://data.europa.eu/m8g/CriterionRequirement"
     },
     {
