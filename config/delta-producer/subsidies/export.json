@@ -33,7 +33,9 @@
       "type": "http://data.europa.eu/m8g/Participation"
     },
     {
-      "properties": ["http://data.europa.eu/m8g/playsRole"],
+      "properties": [
+        "http://data.europa.eu/m8g/playsRole"
+      ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
@@ -261,7 +263,6 @@
       "type": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -274,10 +275,13 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url"
-      ]
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
     },
     {
-      "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -291,7 +295,8 @@
         "http://purl.org/dc/terms/type",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource",
         "http://www.w3.org/ns/adms#status"
-      ]
+      ],
+      "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
     }
   ]
 }
