@@ -165,7 +165,14 @@
         "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveTwo",
         "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveThree",
         "http://lblod.data.gift/vocabularies/subsidie/contactAndSourceTrackingObjectiveFour",
-        "http://lblod.data.gift/vocabularies/subsidie/EngagementTable"
+        "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
+        "http://lblod.data.gift/vocabularies/subsidie/amount",
+        "http://lblod.data.gift/vocabularies/subsidie/currentEInclusionActions",
+        "http://lblod.data.gift/vocabularies/subsidie/actionShortDescription",
+        "http://lblod.data.gift/vocabularies/subsidie/actionFullDescription",
+        "http://lblod.data.gift/vocabularies/subsidie/targetedAudience",
+        "http://lblod.data.gift/vocabularies/subsidie/targetedAudienceOther",
+        "http://lblod.data.gift/vocabularies/subsidie/hasAdditionalAction"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -630,6 +637,21 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://mu.semte.ch/vocabularies/ext/EngagementEntry"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://lblod.data.gift/vocabularies/subsidie/additionalActionType",
+        "http://lblod.data.gift/vocabularies/subsidie/additionalActionShortDescription",
+        "http://lblod.data.gift/vocabularies/subsidie/additionalActionFullDescription",
+        "http://lblod.data.gift/vocabularies/subsidie/additionalActionTargetedAudience",
+        "http://lblod.data.gift/vocabularies/subsidie/additionalActionTargetedAudienceOther"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/additonalAction"
     }
   ]
 }
