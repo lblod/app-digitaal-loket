@@ -371,22 +371,6 @@
     {
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://purl.org/dc/terms/created",
-        "http://purl.org/dc/terms/modified",
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://purl.org/dc/terms/format",
-        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName",
-        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileSize",
-        "http://dbpedia.org/ontology/fileExtension"
-      ],
-      "graphsFilter": [
-        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
-      ],
-      "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
-    },
-    {
-      "properties": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/email",
         "http://schema.org/telephone",
