@@ -1,0 +1,15 @@
+INSERT {
+  GRAPH ?g {
+    ?politicalReferenceContactPoint <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://mu.semte.ch/vocabularies/ext/PoliticalReferenceContactPoint> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?applicationForm <http://mu.semte.ch/vocabularies/ext/politicalReferenceContactPoint> ?politicalReferenceContactPoint .
+    ?politicalReferenceContactPoint ?p_p ?o_p .
+  }
+
+  FILTER NOT EXISTS {
+    ?politicalReferenceContactPoint <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
+  }
+}

@@ -189,7 +189,18 @@
         "http://lblod.data.gift/vocabularies/subsidie/accountabilitySummary",
         "http://lblod.data.gift/vocabularies/subsidie/accountabilityProof",
         "http://lblod.data.gift/vocabularies/subsidie/urbanRenewalApplicationForm",
-        "http://lblod.data.gift/vocabularies/subsidie/urbanRenewalAttachments"
+        "http://lblod.data.gift/vocabularies/subsidie/urbanRenewalAttachments",
+        "http://mu.semte.ch/vocabularies/ext/samenvattingSummaryDescription",
+        "http://mu.semte.ch/vocabularies/ext/schetsDeKwaliteitDescription",
+        "http://mu.semte.ch/vocabularies/ext/ProjectorganisatieEnRegiefunctieDescription",
+        "http://mu.semte.ch/vocabularies/ext/BeschrijfParticipatieCommunicatieInteractieDescription",
+        "http://mu.semte.ch/vocabularies/ext/ProjectfaseringMetProjectverloopTimingEnRisicobeheerDescription",
+        "http://mu.semte.ch/vocabularies/ext/AanvraagSubsidieEnBetekenisVoorStadsvernieuwingsprojectDescription",
+        "http://lblod.data.gift/vocabularies/subsidie/subsidieBedragAanvraag",
+        "http://mu.semte.ch/vocabularies/ext/politicalReferenceContactPoint",
+        "http://mu.semte.ch/vocabularies/ext/FinancingPartner",
+        "http://lblod.data.gift/vocabularies/projectOnderdeelUnit",
+        "http://lblod.data.gift/vocabularies/subsidie/subsidieBedragListingUnit"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -735,6 +746,118 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/urban-renewal/urban-renewal-attachments/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://xmlns.com/foaf/0.1/firstName",
+        "http://xmlns.com/foaf/0.1/familyName",
+        "http://schema.org/telephone",
+        "http://schema.org/email",
+        "http://schema.org/jobTitle"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://mu.semte.ch/vocabularies/ext/PoliticalReferenceContactPoint"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://mu.semte.ch/vocabularies/ext/partnerTitle",
+        "http://mu.semte.ch/vocabularies/ext/partnerType",
+        "http://mu.semte.ch/vocabularies/ext/financingAmount"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://mu.semte.ch/vocabularies/ext/FinancingPartner"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelNaam",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelBeschrijving",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelTimingUnit",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelStadUnit",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPubliekePartnerListingUnit",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPrivatePartnerListingUnit"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelUnit"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelTimingListingUnitBeschrijving",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelTimingListingUnitStartDatum",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelTimingListingUnitEindDatum"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelTimingUnit"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelStadListingUnitAandeel",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelStadListingUnitBedrag"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelStadUnit"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPubliekePartnerListingUnitNaam",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPubliekePartnerListingUnitBedrag"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPubliekePartnerListingUnit"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPrivatePartnerListingNaam",
+        "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPrivatePartnerListingBedrag"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/projectOnderdeelPrivatePartnerListingUnit"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://www.w3.org/ns/shacl#order",
+        "http://lblod.data.gift/vocabularies/subsidie/subsidieBedragListingUnitNaam",
+        "http://lblod.data.gift/vocabularies/subsidie/subsidieBedragListingUnitMotivering",
+        "http://lblod.data.gift/vocabularies/subsidie/subsidieBedragListingUnitBedrag"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/subsidieBedragListingUnit"
     }
   ]
 }
