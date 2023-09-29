@@ -271,7 +271,8 @@
         "http://rdf-vocabulary.ddialliance.org/xkos#previous",
         "http://purl.org/dc/terms/isPartOf",
         "http://purl.org/dc/terms/source",
-        "http://purl.org/linked-data/cube#order"
+        "http://purl.org/linked-data/cube#order",
+        "http://purl.org/dc/terms/isReplacedBy"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/public"
