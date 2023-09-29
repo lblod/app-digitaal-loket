@@ -238,7 +238,6 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://lblod.data.gift/vocabularies/subsidie/heeftSubsidieprocedurestap",
         "http://www.w3.org/2007/uwa/context/common.owl#active",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://purl.org/dc/terms/description",
         "http://purl.org/dc/terms/title",
         "http://data.europa.eu/m8g/startTime",
