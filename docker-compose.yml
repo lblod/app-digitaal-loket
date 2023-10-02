@@ -495,6 +495,10 @@ services:
     image: lblod/vendor-data-distribution-service:1.1.0
     restart: always
     logging: *default-logging
+  berichtencentrum-melding:
+    image: lblod/berichten-melding-service:0.1.0-rc.1
+    restart: always
+    logging: *default-logging
   ################################################################################
   # DELTA GENERAL
   ################################################################################
