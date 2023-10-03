@@ -146,7 +146,8 @@
         "http://www.w3.org/2004/02/skos/core#related"
       ],
       "graphsFilter": [
-        "http://mu.semte.ch/graphs/public"
+        "http://mu.semte.ch/graphs/public",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod"
     },
