@@ -496,7 +496,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-melding:
-    image: lblod/berichten-melding-service:0.1.0-rc.3
+    image: lblod/berichten-melding-service:0.1.0-rc.4
     volumes:
       - ./data/files:/share
     restart: always
