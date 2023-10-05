@@ -1,10 +1,7 @@
 export default [
   {
     match: {
-      predicate: {
-        type: 'uri',
-        value: 'http://www.w3.org/ns/adms#status'
-      }
+      //Send everything
     },
     callback: {
       url: 'http://vendor-data-distribution/delta',
