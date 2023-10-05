@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.85.0
+    image: lblod/frontend-loket:0.86.0
     links:
       - identifier:backend
     labels:
@@ -416,7 +416,7 @@ services:
     restart: always
     logging: *default-logging
   jobs-controller:
-    image: lblod/job-controller-service:1.0.0
+    image: lblod/job-controller-service:1.0.1
     volumes:
       - ./config/jobs-controller/:/config/
     labels:
@@ -498,7 +498,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-melding:
-    image: lblod/berichten-melding-service:0.1.0-rc.1
+    image: lblod/berichten-melding-service:0.1.0-rc.4
     volumes:
       - ./data/files:/share
     restart: always
