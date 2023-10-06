@@ -10,12 +10,7 @@ export const subjects = [
   {
     type: 'http://vocab.deri.ie/cogs#Job',
     path: `
-      ?task
-        <http://purl.org/dc/terms/isPartOf> ?subject ;
-        a <http://redpencil.data.gift/vocabularies/tasks/Task> ;
-        <http://redpencil.data.gift/vocabularies/tasks/operation> <http://lblod.data.gift/id/jobs/concept/TaskOperation/register-bericht> ;
-        <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?ic .
-      ?ic
+      ?subject
         <http://purl.org/pav/providedBy> ?vendor ;
         <http://schema.org/sender> ?organisation .
     `,
