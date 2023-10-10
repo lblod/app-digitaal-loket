@@ -551,7 +551,6 @@ defmodule Acl.UserGroups.Config do
                         "http://schema.org/Conversation",
                         "http://schema.org/Message",
                         "http://vocab.deri.ie/cogs#Job"
-                        '
                       ] } } ] },
 
       # // LOKETADMIN
