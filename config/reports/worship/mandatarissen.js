@@ -163,11 +163,15 @@ async function generate() {
     allData,
     [
       'bestuurnaam',
+      'bestuurInTijd',
+      'bestuurInTijdStart',
+      'bestuurInTijdEinde',
       'mandataris',
       'afkomstGegevens',
       'rolnaam',
       'startDatum',
       'eindeDatum',
+      'geplandEinde',
       'persoon',
       'familienaam',
       'voornaam',
@@ -210,12 +214,14 @@ function combineMandatarissenData(store) {
       .value?.object?.value;
     const eindeDatum = store.readQuads(mandataris, ns.mandaat`einde`).next()
       .value?.object?.value;
+    const geplandEinde = store.readQuads(mandataris, ns.ere`geplandeEinddatumAanstelling`).next().value?.object?.value;
 
     const collect = {
       mandataris: mandataris.value,
       afkomstGegevens,
       startDatum,
       eindeDatum,
+      geplandEinde,
     };
 
     const position = store
@@ -239,6 +245,12 @@ function combineMandatarissenData(store) {
         )[0];
 
       if (bestuurInTijd) {
+        const bestuurInTijdStart = store
+          .readQuads(bestuurInTijd, ns.mandaat`bindingStart`)
+          .next().value?.object?.value;
+        const bestuurInTijdEinde = store
+          .readQuads(bestuurInTijd, ns.mandaat`bindingEinde`)
+          .next().value?.object?.value;
         const bestuurnaam = store
           .getObjects(bestuurInTijd, ns.mandaat`isTijdspecialisatieVan`)
           .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`))
@@ -246,6 +258,9 @@ function combineMandatarissenData(store) {
             (b) =>
               store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
           )[0];
+        collect.bestuurInTijd = bestuurInTijd.value;
+        collect.bestuurInTijdStart = bestuurInTijdStart;
+        collect.bestuurInTijdEinde = bestuurInTijdEinde;
         collect.bestuurnaam = bestuurnaam;
       }
     }
