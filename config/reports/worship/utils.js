@@ -20,3 +20,9 @@ export function formatTerm(term) {
       return term.value;
   }
 }
+
+export function dedup(data, property) {
+  return data.filter(function (i) {
+    return !this.has(i[property]) && this.add(i[property]);
+  }, new Set());
+}
