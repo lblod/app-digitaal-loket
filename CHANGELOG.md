@@ -1,4 +1,9 @@
 # Changelog
+## 1.85.1 (2023-10-13)
+### General
+- bump report-generation
+### Erediensten
+- fix reports: improved code and removed bugs
 ## 1.85.0 (2023-09-22)
 ### General
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
