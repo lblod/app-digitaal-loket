@@ -7,7 +7,11 @@ import { NAMESPACES as ns } from './namespaces';
 import { SparqlJsonParser } from 'sparqljson-parse';
 const sparqlJsonParser = new SparqlJsonParser();
 
-const BATCH_SIZE = 100;
+const BATCH_SIZE = 20;
+const connectionOptions = {
+  sparqlEndpoint: 'http://virtuoso:8890/sparql',
+  mayRetry: true,
+};
 
 async function generate() {
   const bedienarenResponse = await hel.batchedQuery(
@@ -37,7 +41,11 @@ async function generate() {
       ns.org`heldBy`,
       ns.person`Person`
     );
-    const personenResponse = await mas.querySudo(persoonQuery);
+    const personenResponse = await mas.querySudo(
+      persoonQuery,
+      undefined,
+      connectionOptions
+    );
     const personen = sparqlJsonParser
       .parseJsonResults(personenResponse)
       .map((i) => i.range);
@@ -48,7 +56,11 @@ async function generate() {
       ns.adms`identifier`,
       ns.adms`Identifier`
     );
-    const identifierResponse = await mas.querySudo(identifierQuery);
+    const identifierResponse = await mas.querySudo(
+      identifierQuery,
+      undefined,
+      connectionOptions
+    );
     const identifiers = sparqlJsonParser
       .parseJsonResults(identifierResponse)
       .map((i) => i.range);
@@ -59,7 +71,11 @@ async function generate() {
       ns.persoon`heeftGeboorte`,
       ns.persoon`Geboorte`
     );
-    const geboortesResponse = await mas.querySudo(geboorteQuery);
+    const geboortesResponse = await mas.querySudo(
+      geboorteQuery,
+      undefined,
+      connectionOptions
+    );
     const geboortes = sparqlJsonParser
       .parseJsonResults(geboortesResponse)
       .map((i) => i.range);
@@ -70,7 +86,11 @@ async function generate() {
       ns.sch`contactPoint`,
       ns.sch`ContactPoint`
     );
-    const contactsResponse = await mas.querySudo(contactQuery);
+    const contactsResponse = await mas.querySudo(
+      contactQuery,
+      undefined,
+      connectionOptions
+    );
     const contacts = sparqlJsonParser
       .parseJsonResults(contactsResponse)
       .map((i) => i.range);
@@ -81,7 +101,11 @@ async function generate() {
       ns.locn`address`,
       ns.locn`Address`
     );
-    const addressResponse = await mas.querySudo(adresQuery);
+    const addressResponse = await mas.querySudo(
+      adresQuery,
+      undefined,
+      connectionOptions
+    );
     const addresses = sparqlJsonParser
       .parseJsonResults(addressResponse)
       .map((i) => i.range);
@@ -92,7 +116,11 @@ async function generate() {
       ns.org`holds`,
       ns.ere`PositieBedienaar`
     );
-    const positionsResponse = await mas.querySudo(positionQuery);
+    const positionsResponse = await mas.querySudo(
+      positionQuery,
+      undefined,
+      connectionOptions
+    );
     const positions = sparqlJsonParser
       .parseJsonResults(positionsResponse)
       .map((i) => i.range);
@@ -103,7 +131,11 @@ async function generate() {
       ns.ere`functie`,
       ns.organ`EredienstBeroepen`
     );
-    const functionResponse = await mas.querySudo(functionQuery);
+    const functionResponse = await mas.querySudo(
+      functionQuery,
+      undefined,
+      connectionOptions
+    );
     const functions = sparqlJsonParser
       .parseJsonResults(functionResponse)
       .map((i) => i.range);
@@ -114,7 +146,11 @@ async function generate() {
       ns.ere`wordtBediendDoor`,
       ns.ere`BestuurVanDeEredienst`
     );
-    const besturenResponse = await mas.querySudo(besturenQuery);
+    const besturenResponse = await mas.querySudo(
+      besturenQuery,
+      undefined,
+      connectionOptions
+    );
     const besturen = sparqlJsonParser
       .parseJsonResults(besturenResponse)
       .map((i) => i.range);
@@ -139,7 +175,11 @@ async function generate() {
     for (let counter = 0; counter < allSubjects.length; counter += BATCH_SIZE) {
       const subjectSlice = allSubjects.slice(counter, counter + BATCH_SIZE);
       const dataQuery = queries.dataForSubjects(subjectSlice);
-      const dataResponse = await mas.querySudo(dataQuery);
+      const dataResponse = await mas.querySudo(
+        dataQuery,
+        undefined,
+        connectionOptions
+      );
       const dataParsed = sparqlJsonParser.parseJsonResults(dataResponse);
       dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o, e.g));
     }
