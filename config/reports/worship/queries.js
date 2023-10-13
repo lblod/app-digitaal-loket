@@ -13,7 +13,7 @@ import * as rst from 'rdf-string-ttl';
 export function dataForSubjects(subjects) {
   const subjectsSparql = subjects.map(rst.termToString).join(' ');
   return `
-SELECT ?g ?s ?p ?o WHERE {
+SELECT DISTINCT ?s ?p ?o WHERE {
   VALUES ?s {
     ${subjectsSparql}
   }

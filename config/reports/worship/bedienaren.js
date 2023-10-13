@@ -181,7 +181,7 @@ async function generate() {
         connectionOptions
       );
       const dataParsed = sparqlJsonParser.parseJsonResults(dataResponse);
-      dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o, e.g));
+      dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o));
     }
 
     const combinedData = combineBedienarenData(tripleData);

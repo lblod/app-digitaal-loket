@@ -7,6 +7,8 @@ import { NAMESPACES as ns } from './namespaces';
 import { SparqlJsonParser } from 'sparqljson-parse';
 const sparqlJsonParser = new SparqlJsonParser();
 
+// Note: it seems for this flow the batch-size is optimal in speed here,
+// We suspect query parsing being the bottlneck in this scenario.
 const BATCH_SIZE = 20;
 const connectionOptions = {
   sparqlEndpoint: 'http://virtuoso:8890/sparql',
@@ -212,7 +214,7 @@ async function generate() {
         connectionOptions
       );
       const dataParsed = sparqlJsonParser.parseJsonResults(dataResponse);
-      dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o, e.g));
+      dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o));
     }
 
     const combinedData = combineMandatarissenData(tripleData);
@@ -417,7 +419,7 @@ function combineMandatarissenData(store) {
           bestuurInTijdStart,
           bestuurInTijdEinde,
           bestuurnaam,
-          eenheid: eenheid.value,
+          eenheid: eenheid?.value,
           eenheidnaam,
         };
 
