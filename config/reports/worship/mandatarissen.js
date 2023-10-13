@@ -7,7 +7,11 @@ import { NAMESPACES as ns } from './namespaces';
 import { SparqlJsonParser } from 'sparqljson-parse';
 const sparqlJsonParser = new SparqlJsonParser();
 
-const BATCH_SIZE = 100;
+const BATCH_SIZE = 20;
+const connectionOptions = {
+  sparqlEndpoint: 'http://virtuoso:8890/sparql',
+  mayRetry: true,
+};
 
 async function generate() {
   const mandatarissenResponse = await hel.batchedQuery(
@@ -37,7 +41,11 @@ async function generate() {
       ns.mandaat`isBestuurlijkeAliasVan`,
       ns.person`Person`
     );
-    const personenResponse = await mas.querySudo(persoonQuery);
+    const personenResponse = await mas.querySudo(
+      persoonQuery,
+      undefined,
+      connectionOptions
+    );
     const personen = sparqlJsonParser
       .parseJsonResults(personenResponse)
       .map((i) => i.range);
@@ -48,7 +56,11 @@ async function generate() {
       ns.adms`identifier`,
       ns.adms`Identifier`
     );
-    const identifierResponse = await mas.querySudo(identifierQuery);
+    const identifierResponse = await mas.querySudo(
+      identifierQuery,
+      undefined,
+      connectionOptions
+    );
     const identifiers = sparqlJsonParser
       .parseJsonResults(identifierResponse)
       .map((i) => i.range);
@@ -59,7 +71,11 @@ async function generate() {
       ns.persoon`heeftGeboorte`,
       ns.persoon`Geboorte`
     );
-    const geboortesResponse = await mas.querySudo(geboorteQuery);
+    const geboortesResponse = await mas.querySudo(
+      geboorteQuery,
+      undefined,
+      connectionOptions
+    );
     const geboortes = sparqlJsonParser
       .parseJsonResults(geboortesResponse)
       .map((i) => i.range);
@@ -70,7 +86,11 @@ async function generate() {
       ns.sch`contactPoint`,
       ns.sch`ContactPoint`
     );
-    const contactsResponse = await mas.querySudo(contactQuery);
+    const contactsResponse = await mas.querySudo(
+      contactQuery,
+      undefined,
+      connectionOptions
+    );
     const contacts = sparqlJsonParser
       .parseJsonResults(contactsResponse)
       .map((i) => i.range);
@@ -81,7 +101,11 @@ async function generate() {
       ns.locn`address`,
       ns.locn`Address`
     );
-    const addressResponse = await mas.querySudo(adresQuery);
+    const addressResponse = await mas.querySudo(
+      adresQuery,
+      undefined,
+      connectionOptions
+    );
     const addresses = sparqlJsonParser
       .parseJsonResults(addressResponse)
       .map((i) => i.range);
@@ -92,7 +116,11 @@ async function generate() {
       ns.org`holds`,
       ns.mandaat`Mandaat`
     );
-    const positionsResponse = await mas.querySudo(positionQuery);
+    const positionsResponse = await mas.querySudo(
+      positionQuery,
+      undefined,
+      connectionOptions
+    );
     const positions = sparqlJsonParser
       .parseJsonResults(positionsResponse)
       .map((i) => i.range);
@@ -103,7 +131,11 @@ async function generate() {
       ns.org`role`,
       ns.ext`BestuursfunctieCode`
     );
-    const functionResponse = await mas.querySudo(functionQuery);
+    const functionResponse = await mas.querySudo(
+      functionQuery,
+      undefined,
+      connectionOptions
+    );
     const functions = sparqlJsonParser
       .parseJsonResults(functionResponse)
       .map((i) => i.range);
@@ -114,7 +146,11 @@ async function generate() {
       ns.org`hasPost`,
       ns.besluit`Bestuursorgaan`
     );
-    const besturenInTijdResponse = await mas.querySudo(besturenInTijdQuery);
+    const besturenInTijdResponse = await mas.querySudo(
+      besturenInTijdQuery,
+      undefined,
+      connectionOptions
+    );
     const besturenInTijd = sparqlJsonParser
       .parseJsonResults(besturenInTijdResponse)
       .map((i) => i.range);
@@ -124,7 +160,11 @@ async function generate() {
       ns.mandaat`isTijdspecialisatieVan`,
       ns.besluit`Bestuursorgaan`
     );
-    const besturenResponse = await mas.querySudo(besturenQuery);
+    const besturenResponse = await mas.querySudo(
+      besturenQuery,
+      undefined,
+      connectionOptions
+    );
     const besturen = sparqlJsonParser
       .parseJsonResults(besturenResponse)
       .map((i) => i.range);
@@ -150,7 +190,11 @@ async function generate() {
     for (let counter = 0; counter < allSubjects.length; counter += BATCH_SIZE) {
       const subjectSlice = allSubjects.slice(counter, counter + BATCH_SIZE);
       const dataQuery = queries.dataForSubjects(subjectSlice);
-      const dataResponse = await mas.querySudo(dataQuery);
+      const dataResponse = await mas.querySudo(
+        dataQuery,
+        undefined,
+        connectionOptions
+      );
       const dataParsed = sparqlJsonParser.parseJsonResults(dataResponse);
       dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o, e.g));
     }
@@ -163,11 +207,15 @@ async function generate() {
     allData,
     [
       'bestuurnaam',
+      'bestuurInTijd',
+      'bestuurInTijdStart',
+      'bestuurInTijdEinde',
       'mandataris',
       'afkomstGegevens',
       'rolnaam',
       'startDatum',
       'eindeDatum',
+      'geplandEinde',
       'persoon',
       'familienaam',
       'voornaam',
@@ -210,45 +258,17 @@ function combineMandatarissenData(store) {
       .value?.object?.value;
     const eindeDatum = store.readQuads(mandataris, ns.mandaat`einde`).next()
       .value?.object?.value;
+    const geplandEinde = store
+      .readQuads(mandataris, ns.ere`geplandeEinddatumAanstelling`)
+      .next().value?.object?.value;
 
     const collect = {
       mandataris: mandataris.value,
       afkomstGegevens,
       startDatum,
       eindeDatum,
+      geplandEinde,
     };
-
-    const position = store
-      .getObjects(mandataris, ns.org`holds`)
-      .filter((p) => store.has(p, ns.rdf`type`, ns.mandaat`Mandaat`))[0];
-
-    if (position) {
-      const functienaam = store
-        .getObjects(position, ns.org`role`)
-        .filter((p) => store.has(p, ns.rdf`type`, ns.ext`BestuursfunctieCode`))
-        .map(
-          (f) =>
-            store.readQuads(f, ns.skos`prefLabel`).next().value?.object?.value
-        )[0];
-      collect.rolnaam = functienaam;
-
-      const bestuurInTijd = store
-        .getSubjects(ns.org`hasPost`, position)
-        .filter((p) =>
-          store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`)
-        )[0];
-
-      if (bestuurInTijd) {
-        const bestuurnaam = store
-          .getObjects(bestuurInTijd, ns.mandaat`isTijdspecialisatieVan`)
-          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`))
-          .map(
-            (b) =>
-              store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
-          )[0];
-        collect.bestuurnaam = bestuurnaam;
-      }
-    }
 
     const persoon = store
       .getObjects(mandataris, ns.mandaat`isBestuurlijkeAliasVan`)
@@ -333,7 +353,50 @@ function combineMandatarissenData(store) {
         collect.stad = stad;
         collect.land = land;
       }
+    }
 
+    const position = store
+      .getObjects(mandataris, ns.org`holds`)
+      .filter((p) => store.has(p, ns.rdf`type`, ns.mandaat`Mandaat`))[0];
+
+    if (position) {
+      const functienaam = store
+        .getObjects(position, ns.org`role`)
+        .filter((p) => store.has(p, ns.rdf`type`, ns.ext`BestuursfunctieCode`))
+        .map(
+          (f) =>
+            store.readQuads(f, ns.skos`prefLabel`).next().value?.object?.value
+        )[0];
+      collect.rolnaam = functienaam;
+
+      const besturenInTijd = store
+        .getSubjects(ns.org`hasPost`, position)
+        .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`));
+
+      for (const bestuurInTijd of besturenInTijd) {
+        const bestuurInTijdStart = store
+          .readQuads(bestuurInTijd, ns.mandaat`bindingStart`)
+          .next().value?.object?.value;
+        const bestuurInTijdEinde = store
+          .readQuads(bestuurInTijd, ns.mandaat`bindingEinde`)
+          .next().value?.object?.value;
+        const bestuurnaam = store
+          .getObjects(bestuurInTijd, ns.mandaat`isTijdspecialisatieVan`)
+          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`))
+          .map(
+            (b) =>
+              store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
+          )[0];
+        const collectBestuurInTijd = {
+          bestuurInTijd: bestuurInTijd.value,
+          bestuurInTijdStart,
+          bestuurInTijdEinde,
+          bestuurnaam,
+        };
+
+        data.push({ ...collect, ...collectBestuurInTijd });
+      }
+    } else {
       data.push(collect);
     }
   }
