@@ -161,7 +161,7 @@ async function generate() {
       ns.besluit`bestuurt`,
       ns.besluit`Bestuurseenheid`
     );
-     const eenhedenResponse = await mas.querySudo(
+    const eenhedenResponse = await mas.querySudo(
       eenhedenQuery,
       undefined,
       connectionOptions
@@ -366,15 +366,17 @@ function combineBedienarenData(store) {
         .filter((p) =>
           store.has(p, ns.rdf`type`, ns.ere`BestuurVanDeEredienst`)
         );
-      const bestuurnaam = store
-        .readQuads(bestuur, ns.skos`prefLabel`)
-        .next().value?.object?.value;
+      const bestuurnaam = store.readQuads(bestuur, ns.skos`prefLabel`).next()
+        .value?.object?.value;
       collect.bestuurnaam = bestuurnaam;
 
       const eenheid = store
         .getObjects(bestuur, ns.besluit`bestuurt`)
-        .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuurseenheid`))[0];
-      const eenheidnaam = store.readQuads(eenheid, ns.skos`prefLabel`).next().value?.object?.value;
+        .filter((p) =>
+          store.has(p, ns.rdf`type`, ns.besluit`Bestuurseenheid`)
+        )[0];
+      const eenheidnaam = store.readQuads(eenheid, ns.skos`prefLabel`).next()
+        .value?.object?.value;
       collect.eenheid = eenheid?.value;
       collect.eenheidnaam = eenheidnaam;
     }

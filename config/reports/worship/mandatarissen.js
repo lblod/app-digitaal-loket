@@ -18,7 +18,7 @@ const connectionOptions = {
 async function generate() {
   const mandatarissenResponse = await hel.batchedQuery(
     queries.allMandatarissen(),
-    BATCH_SIZE,
+    BATCH_SIZE
   );
   const mandatarissen = sparqlJsonParser
     .parseJsonResults(mandatarissenResponse)
@@ -169,7 +169,7 @@ async function generate() {
     );
     const besturen = sparqlJsonParser
       .parseJsonResults(besturenResponse)
-          .map((i) => i.range);
+      .map((i) => i.range);
 
     //Eenheden
     const eenhedenQuery = queries.domainToRange(
@@ -177,7 +177,7 @@ async function generate() {
       ns.besluit`bestuurt`,
       ns.besluit`Bestuurseenheid`
     );
-     const eenhedenResponse = await mas.querySudo(
+    const eenhedenResponse = await mas.querySudo(
       eenhedenQuery,
       undefined,
       connectionOptions
@@ -275,9 +275,8 @@ function combineMandatarissenData(store) {
     const afkomstGegevens = store
       .readQuads(mandataris, ns.prov`wasGeneratedBy`)
       .next().value?.object?.value;
-    const vendorUri = store
-      .readQuads(mandataris, ns.owl`sameAs`)
-      .next().value?.object?.value;
+    const vendorUri = store.readQuads(mandataris, ns.owl`sameAs`).next().value
+      ?.object?.value;
     const startDatum = store.readQuads(mandataris, ns.mandaat`start`).next()
       .value?.object?.value;
     const eindeDatum = store.readQuads(mandataris, ns.mandaat`einde`).next()
@@ -407,15 +406,21 @@ function combineMandatarissenData(store) {
           .next().value?.object?.value;
         const bestuur = store
           .getObjects(bestuurInTijd, ns.mandaat`isTijdspecialisatieVan`)
-          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`))[0];
-        const bestuurnaam = store.readQuads(bestuur, ns.skos`prefLabel`).next().value?.object?.value;
+          .filter((p) =>
+            store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`)
+          )[0];
+        const bestuurnaam = store.readQuads(bestuur, ns.skos`prefLabel`).next()
+          .value?.object?.value;
         const eenheid = store
           .getObjects(bestuur, ns.besluit`bestuurt`)
-          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuurseenheid`))[0];
-        const eenheidnaam = store.readQuads(eenheid, ns.skos`prefLabel`).next().value?.object?.value;
+          .filter((p) =>
+            store.has(p, ns.rdf`type`, ns.besluit`Bestuurseenheid`)
+          )[0];
+        const eenheidnaam = store.readQuads(eenheid, ns.skos`prefLabel`).next()
+          .value?.object?.value;
 
         const collectBestuurInTijd = {
-          bestuurInTijd: bestuurInTijd.value,
+          bestuurInTijd: bestuurInTijd?.value,
           bestuurInTijdStart,
           bestuurInTijdEinde,
           bestuurnaam,
