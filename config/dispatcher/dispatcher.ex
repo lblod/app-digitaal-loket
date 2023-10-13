@@ -482,7 +482,7 @@ defmodule Dispatcher do
   # loket-subsidies sync
   #################################################################
   post "/sync/subsidies/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/submissions/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/login/"
   end
 
   #################################################################
@@ -754,7 +754,7 @@ defmodule Dispatcher do
   match "/public-services/*path" do
     forward conn, path, "http://cache/public-services/"
   end
-  
+
   match "/concept-display-configurations/*path" do
     forward conn, path, "http://cache/concept-display-configurations/"
   end

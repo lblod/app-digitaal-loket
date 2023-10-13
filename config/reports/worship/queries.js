@@ -1,3 +1,5 @@
+import * as rst from 'rdf-string-ttl';
+
 /**
  * Produces a query to get all the data for the given collection of subjects.
  *
@@ -8,12 +10,12 @@
  * is one of the subjects in the array.
  * @returns {String} The query to execute.
  */
-export function dataForSubjects(subjectURIs) {
-  const subjectValues = subjectURIs.map((uri) => `<${uri}>`).join(' ');
+export function dataForSubjects(subjects) {
+  const subjectsSparql = subjects.map(rst.termToString).join(' ');
   return `
 SELECT ?g ?s ?p ?o WHERE {
   VALUES ?s {
-    ${subjectValues}
+    ${subjectsSparql}
   }
   GRAPH ?g {
     ?s ?p ?o .
@@ -90,15 +92,15 @@ SELECT DISTINCT ?mandataris WHERE {
  * @param {String} type - Represents the `rdf:type` of the related subject.
  * @returns {String} The SPARQL query to execute.
  */
-export function domainToRange(domainURIs, predicate, type) {
-  const domainValues = domainURIs.map((uri) => `<${uri}>`).join(' ');
+export function domainToRange(domains, predicate, type) {
+  const domainValues = domains.map(rst.termToString).join(' ');
   return `
 SELECT DISTINCT ?domain ?range {
   VALUES ?domain {
     ${domainValues}
   }
-  ?domain <${predicate}> ?range .
-  ?range a <${type}> .
+  ?domain ${rst.termToString(predicate)} ?range .
+  ?range a ${rst.termToString(type)} .
 }
   `;
 }
@@ -114,15 +116,15 @@ SELECT DISTINCT ?domain ?range {
  * @param {String} type - Represents the `rdf:type` of the related subject.
  * @returns {String} The SPARQL query to execute.
  */
-export function rangeToDomain(domainURIs, predicate, type) {
-  const domainValues = domainURIs.map((uri) => `<${uri}>`).join(' ');
+export function rangeToDomain(domains, predicate, type) {
+  const domainValues = domains.map(rst.termToString).join(' ');
   return `
 SELECT DISTINCT ?domain ?range {
   VALUES ?domain {
     ${domainValues}
   }
-  ?range <${predicate}> ?domain .
-  ?range a <${type}> .
+  ?range ${rst.termToString(predicate)} ?domain .
+  ?range a ${rst.termToString(type)} .
 }
   `;
 }
@@ -137,10 +139,10 @@ SELECT DISTINCT ?domain ?range {
  * contents of.
  * @returns {String} The SPARQL query to execute.
  */
-export function allFromGraph(graphURI) {
+export function allFromGraph(graph) {
   return `
 SELECT DISTINCT ?s ?p ?o WHERE {
-  GRAPH <${graphURI}> {
+  GRAPH ${rst.termToString(graph)} {
     ?s ?p ?o .
   }
 }

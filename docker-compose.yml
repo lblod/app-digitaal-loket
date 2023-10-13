@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.85.0
+    image: lblod/frontend-loket:0.86.0
     links:
       - identifier:backend
     labels:
@@ -195,7 +195,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.15.0-rc.1
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.15.0
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -241,7 +241,7 @@ services:
     restart: always
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.6.4
+    image: lblod/loket-report-generation-service:0.6.5
     volumes:
       - ./data/files:/share
       - ./config/reports/:/config/
@@ -538,7 +538,7 @@ services:
       - ./data/files:/share
     environment:
       ALLOW_SUPER_CONSUMER: "true"
-      ALLOWED_ACCOUNTS: "http://services.lblod.info/diff-consumer/account,http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
+      ALLOWED_ACCOUNTS: "http://services.lblod.info/diff-consumer/account,http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7,http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
     restart: always
     logging: *default-logging
   ################################################################################

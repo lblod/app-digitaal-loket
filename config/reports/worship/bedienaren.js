@@ -1,17 +1,27 @@
 import * as mas from '@lblod/mu-auth-sudo';
 import * as queries from './queries';
 import * as hel from '../../helpers';
+import * as n3 from 'n3';
+import * as uti from './utils';
+import { NAMESPACES as ns } from './namespaces';
+import { SparqlJsonParser } from 'sparqljson-parse';
+const sparqlJsonParser = new SparqlJsonParser();
 
-const BATCH_SIZE = 100;
+const BATCH_SIZE = 20;
+const connectionOptions = {
+  sparqlEndpoint: 'http://virtuoso:8890/sparql',
+  mayRetry: true,
+};
 
 async function generate() {
   const bedienarenResponse = await hel.batchedQuery(
     queries.allBedienaren(),
     BATCH_SIZE
   );
-  const bedienaren = bedienarenResponse.results.bindings.sort(
-    (a, b) => a.bedienaar.value < b.bedienaar.value
-  );
+  const bedienaren = sparqlJsonParser
+    .parseJsonResults(bedienarenResponse)
+    .map((b) => b.bedienaar)
+    .sort((a, b) => a.value < b.value);
 
   let allData = [];
 
@@ -24,179 +34,157 @@ async function generate() {
       bedienaarCounter,
       bedienaarCounter + BATCH_SIZE
     );
-    const bedienarenURIsSlice = bedienarenSlice.map((b) => b.bedienaar.value);
 
     //Personen
     const persoonQuery = queries.domainToRange(
-      bedienarenURIsSlice,
-      'http://www.w3.org/ns/org#heldBy',
-      'http://www.w3.org/ns/person#Person'
+      bedienarenSlice,
+      ns.org`heldBy`,
+      ns.person`Person`
     );
-    const personenResponse = await mas.querySudo(persoonQuery);
-    const personen = [
-      ...new Set(personenResponse.results.bindings.map((p) => p.range.value)),
-    ];
-    const personenLinks = personenResponse.results.bindings.map((r) => {
-      return {
-        bedienaar: r.domain.value,
-        persoon: r.range.value,
-      };
-    });
+    const personenResponse = await mas.querySudo(
+      persoonQuery,
+      undefined,
+      connectionOptions
+    );
+    const personen = sparqlJsonParser
+      .parseJsonResults(personenResponse)
+      .map((i) => i.range);
 
     //Identifiers
     const identifierQuery = queries.domainToRange(
       personen,
-      'http://www.w3.org/ns/adms#identifier',
-      'http://www.w3.org/ns/adms#Identifier'
+      ns.adms`identifier`,
+      ns.adms`Identifier`
     );
-    const identifierResponse = await mas.querySudo(identifierQuery);
-    const identifiers = [
-      ...new Set(identifierResponse.results.bindings.map((i) => i.range.value)),
-    ];
-    const identifierLinks = identifierResponse.results.bindings.map((r) => {
-      return {
-        persoon: r.domain.value,
-        identifier: r.range.value,
-      };
-    });
+    const identifierResponse = await mas.querySudo(
+      identifierQuery,
+      undefined,
+      connectionOptions
+    );
+    const identifiers = sparqlJsonParser
+      .parseJsonResults(identifierResponse)
+      .map((i) => i.range);
 
     //Geboortes
     const geboorteQuery = queries.domainToRange(
       personen,
-      'http://data.vlaanderen.be/ns/persoon#heeftGeboorte',
-      'http://data.vlaanderen.be/ns/persoon#Geboorte'
+      ns.persoon`heeftGeboorte`,
+      ns.persoon`Geboorte`
     );
-    const geboortesResponse = await mas.querySudo(geboorteQuery);
-    const geboortes = [
-      ...new Set(geboortesResponse.results.bindings.map((g) => g.range.value)),
-    ];
-    const geboorteLinks = geboortesResponse.results.bindings.map((r) => {
-      return {
-        persoon: r.domain.value,
-        geboorte: r.range.value,
-      };
-    });
+    const geboortesResponse = await mas.querySudo(
+      geboorteQuery,
+      undefined,
+      connectionOptions
+    );
+    const geboortes = sparqlJsonParser
+      .parseJsonResults(geboortesResponse)
+      .map((i) => i.range);
 
     //Contacts
     const contactQuery = queries.domainToRange(
-      bedienarenURIsSlice,
-      'http://schema.org/contactPoint',
-      'http://schema.org/ContactPoint'
+      bedienarenSlice,
+      ns.sch`contactPoint`,
+      ns.sch`ContactPoint`
     );
-    const contactsResponse = await mas.querySudo(contactQuery);
-    const contacts = [
-      ...new Set(contactsResponse.results.bindings.map((c) => c.range.value)),
-    ];
-    const contactLinks = contactsResponse.results.bindings.map((r) => {
-      return {
-        bedienaar: r.domain.value,
-        contact: r.range.value,
-      };
-    });
+    const contactsResponse = await mas.querySudo(
+      contactQuery,
+      undefined,
+      connectionOptions
+    );
+    const contacts = sparqlJsonParser
+      .parseJsonResults(contactsResponse)
+      .map((i) => i.range);
 
     //Adresses
     const adresQuery = queries.domainToRange(
       contacts,
-      'http://www.w3.org/ns/locn#address',
-      'http://www.w3.org/ns/locn#Address'
+      ns.locn`address`,
+      ns.locn`Address`
     );
-    const addressResponse = await mas.querySudo(adresQuery);
-    const addresses = [
-      ...new Set(addressResponse.results.bindings.map((a) => a.range.value)),
-    ];
-    const addressLinks = addressResponse.results.bindings.map((r) => {
-      return {
-        contact: r.domain.value,
-        address: r.range.value,
-      };
-    });
+    const addressResponse = await mas.querySudo(
+      adresQuery,
+      undefined,
+      connectionOptions
+    );
+    const addresses = sparqlJsonParser
+      .parseJsonResults(addressResponse)
+      .map((i) => i.range);
 
     //Positions
     const positionQuery = queries.domainToRange(
-      bedienarenURIsSlice,
-      'http://www.w3.org/ns/org#holds',
-      'http://data.lblod.info/vocabularies/erediensten/PositieBedienaar'
+      bedienarenSlice,
+      ns.org`holds`,
+      ns.ere`PositieBedienaar`
     );
-    const positionsResponse = await mas.querySudo(positionQuery);
-    const positions = [
-      ...new Set(positionsResponse.results.bindings.map((p) => p.range.value)),
-    ];
-    const positionLinks = positionsResponse.results.bindings.map((p) => {
-      return {
-        bedienaar: p.domain.value,
-        position: p.range.value,
-      };
-    });
+    const positionsResponse = await mas.querySudo(
+      positionQuery,
+      undefined,
+      connectionOptions
+    );
+    const positions = sparqlJsonParser
+      .parseJsonResults(positionsResponse)
+      .map((i) => i.range);
 
     //Functions
     const functionQuery = queries.domainToRange(
       positions,
-      'http://data.lblod.info/vocabularies/erediensten/functie',
-      'http://lblod.data.gift/vocabularies/organisatie/EredienstBeroepen'
+      ns.ere`functie`,
+      ns.organ`EredienstBeroepen`
     );
-    const functionResponse = await mas.querySudo(functionQuery);
-    const functions = [
-      ...new Set(functionResponse.results.bindings.map((p) => p.range.value)),
-    ];
-    const functionLinks = functionResponse.results.bindings.map((p) => {
-      return {
-        position: p.domain.value,
-        functie: p.range.value,
-      };
-    });
+    const functionResponse = await mas.querySudo(
+      functionQuery,
+      undefined,
+      connectionOptions
+    );
+    const functions = sparqlJsonParser
+      .parseJsonResults(functionResponse)
+      .map((i) => i.range);
 
     //Besturen
     const besturenQuery = queries.rangeToDomain(
       positions,
-      'http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor',
-      'http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst'
+      ns.ere`wordtBediendDoor`,
+      ns.ere`BestuurVanDeEredienst`
     );
-    const besturenResponse = await mas.querySudo(besturenQuery);
-    const besturen = [
-      ...new Set(besturenResponse.results.bindings.map((p) => p.range.value)),
-    ];
-    const besturenLinks = besturenResponse.results.bindings.map((p) => {
-      return {
-        positie: p.domain.value,
-        bestuur: p.range.value,
-      };
-    });
+    const besturenResponse = await mas.querySudo(
+      besturenQuery,
+      undefined,
+      connectionOptions
+    );
+    const besturen = sparqlJsonParser
+      .parseJsonResults(besturenResponse)
+      .map((i) => i.range);
 
-    let allURIs = new Set();
-    [
-      ...bedienarenURIsSlice,
-      ...personen,
-      ...identifiers,
-      ...geboortes,
-      ...contacts,
-      ...addresses,
-      ...positions,
-      ...functions,
-      ...besturen,
-    ].forEach((e) => allURIs.add(e));
-    allURIs = [...allURIs];
+    const allSubjects = uti.dedup(
+      [
+        ...bedienarenSlice,
+        ...personen,
+        ...identifiers,
+        ...geboortes,
+        ...contacts,
+        ...addresses,
+        ...positions,
+        ...functions,
+        ...besturen,
+      ],
+      'value'
+    );
 
-    const tripleData = [];
+    const tripleData = new n3.Store();
 
-    for (let counter = 0; counter < allURIs.length; counter += BATCH_SIZE) {
-      const URIslice = allURIs.slice(counter, counter + BATCH_SIZE);
-      const dataQuery = queries.dataForSubjects(URIslice);
-      const dataResponse = await mas.querySudo(dataQuery);
-      dataResponse.results.bindings.forEach((e) => tripleData.push(e));
+    for (let counter = 0; counter < allSubjects.length; counter += BATCH_SIZE) {
+      const subjectSlice = allSubjects.slice(counter, counter + BATCH_SIZE);
+      const dataQuery = queries.dataForSubjects(subjectSlice);
+      const dataResponse = await mas.querySudo(
+        dataQuery,
+        undefined,
+        connectionOptions
+      );
+      const dataParsed = sparqlJsonParser.parseJsonResults(dataResponse);
+      dataParsed.forEach((e) => tripleData.addQuad(e.s, e.p, e.o, e.g));
     }
 
-    const combinedData = combineBedienarenData(
-      tripleData,
-      bedienarenURIsSlice,
-      personenLinks,
-      identifierLinks,
-      geboorteLinks,
-      contactLinks,
-      addressLinks,
-      positionLinks,
-      functionLinks,
-      besturenLinks
-    );
+    const combinedData = combineBedienarenData(tripleData);
     allData = allData.concat(combinedData);
   }
 
@@ -236,191 +224,137 @@ async function generate() {
   );
 }
 
-function combineBedienarenData(
-  tripleData,
-  bedienaren,
-  personenLinks,
-  identifierLinks,
-  geboorteLinks,
-  contactLinks,
-  addressLinks,
-  positionLinks,
-  functionLinks,
-  besturenLinks
-) {
+function combineBedienarenData(store) {
   const data = [];
+  const bedienaren = store.getSubjects(ns.rdf`type`, ns.ere`RolBedienaar`);
 
   for (const bedienaar of bedienaren) {
-    const afkomstGegevens = tripleData.find(
-      (d) =>
-        d.s.value === bedienaar &&
-        d.p.value === 'http://www.w3.org/ns/prov#wasGeneratedBy'
-    )?.o?.value;
-    const startDatum = tripleData.find(
-      (d) =>
-        d.s.value === bedienaar &&
-        d.p.value ===
-          'http://data.lblod.info/vocabularies/contacthub/startdatum'
-    )?.o?.value;
-    const eindeDatum = tripleData.find(
-      (d) =>
-        d.s.value === bedienaar &&
-        d.p.value ===
-          'http://data.lblod.info/vocabularies/contacthub/eindedatum'
-    )?.o?.value;
+    const afkomstGegevens = store
+      .readQuads(bedienaar, ns.prov`wasGeneratedBy`)
+      .next().value?.object?.value;
+    const startDatum = store.readQuads(bedienaar, ns.contact`startdatum`).next()
+      .value?.object?.value;
+    const eindeDatum = store.readQuads(bedienaar, ns.contact`eindedatum`).next()
+      .value?.object?.value;
 
-    const collect = { bedienaar, afkomstGegevens, startDatum, eindeDatum };
+    const collect = {
+      bedienaar: bedienaar.value,
+      afkomstGegevens,
+      startDatum,
+      eindeDatum,
+    };
 
-    const positionLink = positionLinks.find((p) => p.bedienaar === bedienaar);
+    const persoon = store
+      .getObjects(bedienaar, ns.org`heldBy`)
+      .filter((p) => store.has(p, ns.rdf`type`, ns.person`Person`))[0];
 
-    if (positionLink) {
-      const functionLink = functionLinks.find(
-        (f) => f.position === positionLink.position
-      );
-      if (functionLink) {
-        const functienaam = tripleData.find(
-          (d) =>
-            d.s.value === functionLink.functie &&
-            d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
-        )?.o?.value;
-        collect.functienaam = functienaam;
-      }
-
-      const bestuurLink = besturenLinks.find(
-        (b) => positionLink.position === b.positie
-      );
-      if (bestuurLink) {
-        const bestuurnaam = tripleData.find(
-          (d) =>
-            d.s.value === bestuurLink.bestuur &&
-            d.p.value === 'http://www.w3.org/2004/02/skos/core#prefLabel'
-        )?.o?.value;
-        collect.bestuurnaam = bestuurnaam;
-      }
-    }
-
-    const personen = personenLinks.filter((p) => p.bedienaar === bedienaar);
-
-    for (const persoonLink of personen) {
-      const familienaam = tripleData.find(
-        (d) =>
-          d.s.value === persoonLink.persoon &&
-          d.p.value === 'http://xmlns.com/foaf/0.1/familyName'
-      )?.o?.value;
-      const voornaam = tripleData.find(
-        (d) =>
-          d.s.value === persoonLink.persoon &&
-          d.p.value === 'http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam'
-      )?.o?.value;
-      const nationaliteit = tripleData.find(
-        (d) =>
-          d.s.value === persoonLink.persoon &&
-          d.p.value ===
-            'http://data.vlaanderen.be/ns/persoon#heeftNationaliteit'
-      )?.o?.value;
-      const geslacht = tripleData.find(
-        (d) =>
-          d.s.value === persoonLink.persoon &&
-          d.p.value === 'http://data.vlaanderen.be/ns/persoon#geslacht'
-      )?.o?.value;
-      collect.persoon = persoonLink.persoon;
+    if (persoon) {
+      const familienaam = store.readQuads(persoon, ns.foaf`familyName`).next()
+        .value?.object?.value;
+      const voornaam = store
+        .readQuads(persoon, ns.persoon`gebruikteVoornaam`)
+        .next().value?.object?.value;
+      const nationaliteit = store
+        .readQuads(persoon, ns.persoon`heeftNationaliteit`)
+        .next().value?.object?.value;
+      const geslacht = store.readQuads(persoon, ns.persoon`geslacht`).next()
+        .value?.object?.value;
+      collect.persoon = persoon.value;
       collect.familienaam = familienaam;
       collect.voornaam = voornaam;
       collect.nationaliteit = nationaliteit;
       collect.geslacht = geslacht;
 
-      const geboorteLink =
-        geboorteLinks.find((g) => g.persoon === persoonLink.persoon) || [];
-      if (geboorteLink) {
-        const geboorteDatum = tripleData.find(
-          (d) =>
-            d.s.value === geboorteLink.geboorte &&
-            d.p.value === 'http://data.vlaanderen.be/ns/persoon#datum'
-        )?.o?.value;
-        collect.geboorteDatum = geboorteDatum;
-      }
+      const geboorteDatum = store
+        .getObjects(persoon, ns.persoon`heeftGeboorte`)
+        .filter((p) => store.has(p, ns.rdf`type`, ns.persoon`Geboorte`))
+        .map(
+          (f) =>
+            store.readQuads(f, ns.persoon`datum`).next().value?.object?.value
+        )[0];
+      collect.geboorteDatum = geboorteDatum;
 
-      const identifierLink =
-        identifierLinks.find((g) => g.persoon === persoonLink.persoon) || [];
-      if (identifierLink) {
-        const identifier = tripleData.find(
-          (d) =>
-            d.s.value === identifierLink.identifier &&
-            d.p.value === 'http://www.w3.org/2004/02/skos/core#notation'
-        )?.o?.value;
-        collect.rrnummer = identifier;
-      }
-
-      const contactLink = contactLinks.find((c) => c.bedienaar === bedienaar);
-      if (contactLink) {
-        const contactSoort = tripleData.find(
-          (d) =>
-            d.s.value === contactLink.contact &&
-            d.p.value === 'http://schema.org/contactType'
-        )?.o?.value;
-        const email = tripleData.find(
-          (d) =>
-            d.s.value === contactLink.contact &&
-            d.p.value === 'http://schema.org/email'
-        )?.o?.value;
-        const telefoon = tripleData.find(
-          (d) =>
-            d.s.value === contactLink.contact &&
-            d.p.value === 'http://schema.org/telephone'
-        )?.o?.value;
-        collect.contact = contactLink.contact;
-        collect.contactSoort = contactSoort;
-        collect.email = email;
-        collect.telefoon = telefoon;
-
-        const adresLink = addressLinks.find(
-          (c) => c.contact === contactLink.contact
-        );
-        if (adresLink) {
-          const straat = tripleData.find(
-            (d) =>
-              d.s.value === adresLink.address &&
-              d.p.value === 'http://www.w3.org/ns/locn#thoroughfare'
-          )?.o?.value;
-          const huisnummer = tripleData.find(
-            (d) =>
-              d.s.value === adresLink.address &&
-              d.p.value ===
-                'https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer'
-          )?.o?.value;
-          const busnummer = tripleData.find(
-            (d) =>
-              d.s.value === adresLink.address &&
-              d.p.value ===
-                'https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer'
-          )?.o?.value;
-          const postcode = tripleData.find(
-            (d) =>
-              d.s.value === adresLink.address &&
-              d.p.value === 'http://www.w3.org/ns/locn#postCode'
-          )?.o?.value;
-          const stad = tripleData.find(
-            (d) =>
-              d.s.value === adresLink.address &&
-              d.p.value === 'https://data.vlaanderen.be/ns/adres#gemeentenaam'
-          )?.o?.value;
-          const land = tripleData.find(
-            (d) =>
-              d.s.value === adresLink.address &&
-              d.p.value === 'https://data.vlaanderen.be/ns/adres#land'
-          )?.o?.value;
-          collect.adres = adresLink.address;
-          collect.straat = straat;
-          collect.huisnummer = huisnummer;
-          collect.busnummer = busnummer;
-          collect.postcode = postcode;
-          collect.stad = stad;
-          collect.land = land;
-        }
-      }
-
-      data.push(collect);
+      const identifier = store
+        .getObjects(persoon, ns.adms`identifier`)
+        .filter((p) => store.has(p, ns.rdf`type`, ns.adms`Identifier`))
+        .map(
+          (f) =>
+            store.readQuads(f, ns.skos`notation`).next().value?.object?.value
+        )[0];
+      collect.rrnummer = identifier;
     }
+
+    const contact = store
+      .getObjects(bedienaar, ns.sch`contactPoint`)
+      .filter((p) => store.has(p, ns.rdf`type`, ns.sch`ContactPoint`))[0];
+
+    if (contact) {
+      const contactSoort = store.readQuads(contact, ns.sch`contactType`).next()
+        .value?.object?.value;
+      const email = store.readQuads(contact, ns.sch`email`).next().value
+        ?.object?.value;
+      const telefoon = store.readQuads(contact, ns.sch`telephone`).next().value
+        ?.object?.value;
+      collect.contact = contact.value;
+      collect.contactSoort = contactSoort;
+      collect.email = email;
+      collect.telefoon = telefoon;
+
+      const adres = store
+        .getObjects(contact, ns.locn`address`)
+        .filter((a) => store.has(a, ns.rdf`type`, ns.locn`Address`))[0];
+
+      if (adres) {
+        const straat = store.readQuads(adres, ns.locn`thoroughfare`).next()
+          .value?.object?.value;
+        const huisnummer = store
+          .readQuads(adres, ns.adres`Adresvoorstelling.huisnummer`)
+          .next().value?.object?.value;
+        const busnummer = store
+          .readQuads(adres, ns.adres`Adresvoorstelling.busnummer`)
+          .next().value?.object?.value;
+        const postcode = store.readQuads(adres, ns.locn`postCode`).next().value
+          ?.object?.value;
+        const stad = store.readQuads(adres, ns.adres`gemeentenaam`).next().value
+          ?.object?.value;
+        const land = store.readQuads(adres, ns.adres`land`).next().value
+          ?.object?.value;
+        collect.adres = adres.value;
+        collect.straat = straat;
+        collect.huisnummer = huisnummer;
+        collect.busnummer = busnummer;
+        collect.postcode = postcode;
+        collect.stad = stad;
+        collect.land = land;
+      }
+    }
+
+    const position = store
+      .getObjects(bedienaar, ns.org`holds`)
+      .filter((p) => store.has(p, ns.rdf`type`, ns.ere`PositieBedienaar`))[0];
+
+    if (position) {
+      const functienaam = store
+        .getObjects(position, ns.ere`functie`)
+        .filter((p) => store.has(p, ns.rdf`type`, ns.organ`EredienstBeroepen`))
+        .map(
+          (f) =>
+            store.readQuads(f, ns.skos`prefLabel`).next().value?.object?.value
+        )[0];
+      collect.functienaam = functienaam;
+
+      const bestuurnaam = store
+        .getSubjects(ns.ere`wordtBediendDoor`, position)
+        .filter((p) =>
+          store.has(p, ns.rdf`type`, ns.ere`BestuurVanDeEredienst`)
+        )
+        .map(
+          (b) =>
+            store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
+        )[0];
+      collect.bestuurnaam = bestuurnaam;
+    }
+    data.push(collect);
   }
   return data;
 }
