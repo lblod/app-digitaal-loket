@@ -167,6 +167,21 @@ async function generate() {
     );
     const besturen = sparqlJsonParser
       .parseJsonResults(besturenResponse)
+          .map((i) => i.range);
+
+    //Eenheden
+    const eenhedenQuery = queries.domainToRange(
+      besturen,
+      ns.besluit`bestuurt`,
+      ns.besluit`Bestuurseenheid`
+    );
+     const eenhedenResponse = await mas.querySudo(
+      eenhedenQuery,
+      undefined,
+      connectionOptions
+    );
+    const eenheden = sparqlJsonParser
+      .parseJsonResults(eenhedenResponse)
       .map((i) => i.range);
 
     const allSubjects = uti.dedup(
@@ -181,6 +196,7 @@ async function generate() {
         ...functions,
         ...besturenInTijd,
         ...besturen,
+        ...eenheden,
       ],
       'value'
     );
@@ -206,6 +222,8 @@ async function generate() {
   await hel.generateReportFromData(
     allData,
     [
+      'eenheid',
+      'eenheidnaam',
       'bestuurnaam',
       'bestuurInTijd',
       'bestuurInTijdStart',
@@ -380,18 +398,26 @@ function combineMandatarissenData(store) {
         const bestuurInTijdEinde = store
           .readQuads(bestuurInTijd, ns.mandaat`bindingEinde`)
           .next().value?.object?.value;
-        const bestuurnaam = store
+
+        const bestuur = store
           .getObjects(bestuurInTijd, ns.mandaat`isTijdspecialisatieVan`)
-          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`))
-          .map(
-            (b) =>
-              store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
-          )[0];
+          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuursorgaan`))[0];
+
+        const bestuurnaam = store.readQuads(bestuur, ns.skos`prefLabel`).next().value?.object?.value;
+
+        const eenheid = store
+          .getObjects(bestuur, ns.besluit`bestuurt`)
+          .filter((p) => store.has(p, ns.rdf`type`, ns.besluit`Bestuurseenheid`))[0];
+
+        const eenheidnaam = store.readQuads(eenheid, ns.skos`prefLabel`).next().value?.object?.value;
+
         const collectBestuurInTijd = {
           bestuurInTijd: bestuurInTijd.value,
           bestuurInTijdStart,
           bestuurInTijdEinde,
           bestuurnaam,
+          eenheid: eenheid.value,
+          eenheidnaam,
         };
 
         data.push({ ...collect, ...collectBestuurInTijd });
