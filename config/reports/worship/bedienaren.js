@@ -212,6 +212,7 @@ async function generate() {
       'bestuurnaam',
       'bedienaar',
       'afkomstGegevens',
+      'vendorUri',
       'functienaam',
       'startDatum',
       'eindeDatum',
@@ -250,6 +251,8 @@ function combineBedienarenData(store) {
     const afkomstGegevens = store
       .readQuads(bedienaar, ns.prov`wasGeneratedBy`)
       .next().value?.object?.value;
+    const vendorUri = store.readQuads(bedienaar, ns.owl`sameAs`).next().value
+      ?.object?.value;
     const startDatum = store.readQuads(bedienaar, ns.contact`startdatum`).next()
       .value?.object?.value;
     const eindeDatum = store.readQuads(bedienaar, ns.contact`eindedatum`).next()
@@ -258,6 +261,7 @@ function combineBedienarenData(store) {
     const collect = {
       bedienaar: bedienaar.value,
       afkomstGegevens,
+      vendorUri,
       startDatum,
       eindeDatum,
     };
