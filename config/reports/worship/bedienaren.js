@@ -204,32 +204,6 @@ function combineBedienarenData(store) {
       eindeDatum,
     };
 
-    const position = store
-      .getObjects(bedienaar, ns.org`holds`)
-      .filter((p) => store.has(p, ns.rdf`type`, ns.ere`PositieBedienaar`))[0];
-
-    if (position) {
-      const functienaam = store
-        .getObjects(position, ns.ere`functie`)
-        .filter((p) => store.has(p, ns.rdf`type`, ns.organ`EredienstBeroepen`))
-        .map(
-          (f) =>
-            store.readQuads(f, ns.skos`prefLabel`).next().value?.object?.value
-        )[0];
-      collect.functienaam = functienaam;
-
-      const bestuurnaam = store
-        .getSubjects(ns.ere`wordtBediendDoor`, position)
-        .filter((p) =>
-          store.has(p, ns.rdf`type`, ns.ere`BestuurVanDeEredienst`)
-        )
-        .map(
-          (b) =>
-            store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
-        )[0];
-      collect.bestuurnaam = bestuurnaam;
-    }
-
     const persoon = store
       .getObjects(bedienaar, ns.org`heldBy`)
       .filter((p) => store.has(p, ns.rdf`type`, ns.person`Person`))[0];
@@ -315,6 +289,31 @@ function combineBedienarenData(store) {
       }
     }
 
+    const position = store
+      .getObjects(bedienaar, ns.org`holds`)
+      .filter((p) => store.has(p, ns.rdf`type`, ns.ere`PositieBedienaar`))[0];
+
+    if (position) {
+      const functienaam = store
+        .getObjects(position, ns.ere`functie`)
+        .filter((p) => store.has(p, ns.rdf`type`, ns.organ`EredienstBeroepen`))
+        .map(
+          (f) =>
+            store.readQuads(f, ns.skos`prefLabel`).next().value?.object?.value
+        )[0];
+      collect.functienaam = functienaam;
+
+      const bestuurnaam = store
+        .getSubjects(ns.ere`wordtBediendDoor`, position)
+        .filter((p) =>
+          store.has(p, ns.rdf`type`, ns.ere`BestuurVanDeEredienst`)
+        )
+        .map(
+          (b) =>
+            store.readQuads(b, ns.skos`prefLabel`).next().value?.object?.value
+        )[0];
+      collect.bestuurnaam = bestuurnaam;
+    }
     data.push(collect);
   }
   return data;
