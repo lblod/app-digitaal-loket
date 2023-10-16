@@ -1,4 +1,7 @@
 # Changelog
+## 1.85.2 (2023-10-16)
+### Erediensten
+- fix reports: extra fixes, plus added extra info for bedienaren.
 ## 1.85.1 (2023-10-13)
 ### General
 - bump report-generation
