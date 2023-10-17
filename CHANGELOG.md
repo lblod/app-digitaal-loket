@@ -1,4 +1,9 @@
 # Changelog
+## 1.86.0 (2023-10-17)
+- update forms
+- add status to worship mandates producer
+### Deploy notes 
+- drc restart migrations berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-ws-sensitive ; drc up -d prepare-submissions-for-export-service
 ## 1.85.2 (2023-10-16)
 ### Erediensten
 - fix reports: extra fixes, plus added extra info for bedienaren.
