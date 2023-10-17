@@ -1,14 +1,49 @@
 # Changelog
-## Unreleased
+## 1.85.2 (2023-10-16)
+### Erediensten
+- fix reports: extra fixes, plus added extra info for bedienaren.
+## 1.85.1 (2023-10-13)
+### General
+- bump report-generation
+### Erediensten
+- fix reports: improved code and removed bugs
+## 1.85.0 (2023-09-22)
 ### General
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
+- Bump identifier
+### Erediensten
+- Bumped version berichtencentrum with kalliope, to have less data coming through
+- Bump report generation; better character escape
+- Improved mandatarissen-report
 
 ### Deploy instructions
-
+Automatic submission as very hot fix in docker-compose.override.yml. Remove this.
 If a maintenance message needs to be displayed, uncomment the environment variable in the docker-compose.override.yml file and edit the message.
 ```
-drc up -d 
+drc up -d loket controle automatic-submission berichtencentrum-sync-with-kalliope report-generation identifier
 ```
+## 1.84.3 (2023-09-22)
+- added ag2b
+## 1.84.2 (2023-09-21)
+- besluitenlijst politiezone
+- new producers, because much data
+-
+### Deploy instructions
+In your docker-compose.override.yml
+- Ensure delta-producer-background-jobs-initiator-submissions is renamed to delta-producer-background-jobs-initiator
+- Ensure delta-producer-publication-graph-maintainer-submissions is renamed to delta-producer-publication-graph-maintainer
+
+In file config/delta-producer/background-jobs-initiator/config.json ensure `"startInitialSync": false` is set to `"startInitialSync": true,`
+In file config/delta-producer/publication-graph-maintainer/config.json ensure
+```
+# ...
+"key": "the key in the docker-compose override previously"
+```
+Then
+```
+drc up -d --remove-orphans; drc -r restart dispatcher deltanotifier migrations
+```
+
 ## 1.84.1 (2023-09-01)
   - Startdate lekp 1 & 2 set to august 31 (past)
 ## 1.84.0 (2023-08-31)
