@@ -12,4 +12,6 @@ WHERE {
     ?s a ?type ;
       ?p ?o .
   }
+
+  FILTER(REGEX(STR(?g), "http://mu.semte.ch/graphs/organizations/.*/LoketLB-LPDCGebruiker"))
 }
