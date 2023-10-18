@@ -79,5 +79,4 @@
 (add-prefix "euvoc" "http://publications.europa.eu/ontology/euvoc#")
 (add-prefix "organisatie" "https://data.vlaanderen.be/ns/organisatie#")
 
-(add-prefix "lpdcExt" "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#")
 (add-prefix "pera" "http://publications.europa.eu/resource/authority/")
