@@ -1,7 +1,12 @@
 export default [
   {
     match: {
-      //Send everything
+      predicate: {
+        value: 'http://mu.semte.ch/vocabularies/ext/creator',
+      },
+      object: {
+        value: 'https://github.com/lblod/frontend-loket/',
+      },
     },
     callback: {
       url: 'http://vendor-data-distribution/delta',
