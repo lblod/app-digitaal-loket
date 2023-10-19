@@ -416,7 +416,7 @@ services:
     restart: always
     logging: *default-logging
   jobs-controller:
-    image: lblod/job-controller-service:1.0.0
+    image: lblod/job-controller-service:1.0.1
     volumes:
       - ./config/jobs-controller/:/config/
     labels:
