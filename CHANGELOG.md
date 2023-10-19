@@ -4,6 +4,17 @@
 - add status to worship mandates producer
 ### Deploy notes 
 - drc restart migrations berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-ws-sensitive ; drc up -d prepare-submissions-for-export-service
+## 1.85.3 (2023-10-19)
+### General
+ - Bump multiple delta-related services
+ - Tweak virtuoso and publication datastore to account for bigger datasets
+### Submissions
+ - prepare migration to export besluitenlijsten politiezones
+ - bump prepare-submission-for-export to have live streaming politiezones
+### Deploy instructions
+```
+drc restart virtuoso publication-triplestore migrations; drc up -d
+```
 ## 1.85.2 (2023-10-16)
 ### Erediensten
 - fix reports: extra fixes, plus added extra info for bedienaren.

@@ -416,7 +416,7 @@ services:
     restart: always
     logging: *default-logging
   jobs-controller:
-    image: lblod/job-controller-service:1.0.0
+    image: lblod/job-controller-service:1.0.1
     volumes:
       - ./config/jobs-controller/:/config/
     labels:
@@ -432,7 +432,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.6.0
+    image: lblod/prepare-submissions-for-export-service:0.7.0
     labels:
       - "logging=true"
     restart: always
@@ -523,7 +523,10 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher:
-    image: lblod/delta-producer-dump-file-publisher:0.9.0
+    image: lblod/delta-producer-dump-file-publisher:0.10.1
+    environment:
+      EXPORT_TTL_BATCH_SIZE: 20
+      MAX_SUBJECT_COUNT: 1000000
     volumes:
       - ./config/delta-producer/dump-file-publisher:/config
       - ./data/files:/share
@@ -643,7 +646,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.0.1
+    image: lblod/delta-producer-publication-graph-maintainer:1.0.2
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
