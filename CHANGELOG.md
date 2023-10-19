@@ -1,4 +1,11 @@
 # Changelog
+## 1.85.3 (2023-10-19)
+## General
+ - Bump multiple delta-related services
+ - Tweak virtuoso and publication datastore to account for bigger datasets
+## Submissions
+ - prepare migration to export besluitenlijsten politiezones
+ - bump prepare-submission-for-export to have live streaming politiezones
 ## 1.85.0 (2023-09-22)
 ### General
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
