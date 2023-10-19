@@ -23,7 +23,8 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
-        "http://www.w3.org/ns/org#holds"
+        "http://www.w3.org/ns/org#holds",
+        "http://data.vlaanderen.be/ns/mandaat#status"
       ]
     },
     {
@@ -47,7 +48,8 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
-        "http://www.w3.org/ns/org#holds"
+        "http://www.w3.org/ns/org#holds",
+        "http://data.vlaanderen.be/ns/mandaat#status"
       ]
     },
     {
@@ -92,7 +94,8 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
-        "http://www.w3.org/ns/org#holds"
+        "http://www.w3.org/ns/org#holds",
+        "http://data.vlaanderen.be/ns/mandaat#status"
       ]
     },
     {

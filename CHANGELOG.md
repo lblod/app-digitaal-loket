@@ -1,11 +1,28 @@
 # Changelog
+## 1.86.0 (2023-10-17)
+- update forms
+- add status to worship mandates producer
+### Deploy notes 
+- drc restart migrations berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-ws-sensitive ; drc up -d prepare-submissions-for-export-service
 ## 1.85.3 (2023-10-19)
-## General
+### General
  - Bump multiple delta-related services
  - Tweak virtuoso and publication datastore to account for bigger datasets
-## Submissions
+### Submissions
  - prepare migration to export besluitenlijsten politiezones
  - bump prepare-submission-for-export to have live streaming politiezones
+### Deploy instructions
+```
+drc restart virtuoso publication-triplestore migrations; drc up -d
+```
+## 1.85.2 (2023-10-16)
+### Erediensten
+- fix reports: extra fixes, plus added extra info for bedienaren.
+## 1.85.1 (2023-10-13)
+### General
+- bump report-generation
+### Erediensten
+- fix reports: improved code and removed bugs
 ## 1.85.0 (2023-09-22)
 ### General
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
