@@ -152,26 +152,31 @@ export const subjects = [
         ?physicalBijlage ?pp ?op .
       `,
       where: `
-        ?conversatie
-          <http://schema.org/hasPart> ?subject ;
-          a <http://schema.org/Conversation> ;
-          <http://schema.org/hasPart> ?alleberichten .
-        ?alleberichten
-          a <http://schema.org/Message> ;
-          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
-            ?bijlage .
-        ?bijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
-        ?physicalBijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
-          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
-            ?bijlage .
+        GRAPH ?g {
+          ?conversatie
+            <http://schema.org/hasPart> ?subject ;
+            a <http://schema.org/Conversation> .
+        }
+        GRAPH ?h {
+          ?conversatie
+            <http://schema.org/hasPart> ?alleberichten .
+          ?alleberichten
+            a <http://schema.org/Message> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
+              ?bijlage .
+          ?bijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
+          ?physicalBijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
+              ?bijlage .
 
-        ?subject ?p ?o .
+          ?subject ?p ?o .
+          ?alleberichten ?pa ?ca .
+          ?physicalBijlage ?pp ?op .
+        }
         ?conversatie ?pc ?co .
-        ?alleberichten ?pa ?ca .
         ?bijlage ?pb ?ob .
-        ?physicalBijlage ?pp ?op .
       `,
     },
     copy: {
@@ -196,7 +201,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
             ?bijlage .
         ?bijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
+          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+          <http://mu.semte.ch/vocabularies/core/uuid> ?bijlageUUID .
         ?physicalBijlage
           a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
@@ -217,7 +223,9 @@ export const subjects = [
   {
     type: 'http://schema.org/Message',
     trigger: `
-      ?subject <???> <???> .
+      ?subject
+        <http://mu.semte.ch/vocabularies/ext/creator>
+          "https://github.com/lblod/frontend-loket/" .
     `,
     path: `
       GRAPH ?h {
@@ -240,26 +248,31 @@ export const subjects = [
         ?physicalBijlage ?pp ?op .
       `,
       where: `
-        ?conversatie
-          <http://schema.org/hasPart> ?subject ;
-          a <http://schema.org/Conversation> ;
-          <http://schema.org/hasPart> ?alleberichten .
-        ?alleberichten
-          a <http://schema.org/Message> ;
-          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
-            ?bijlage .
-        ?bijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
-        ?physicalBijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
-          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
-            ?bijlage .
+        GRAPH ?g {
+          ?conversatie
+            <http://schema.org/hasPart> ?subject ;
+            a <http://schema.org/Conversation> .
+        }
+        GRAPH ?h {
+          ?conversatie
+            <http://schema.org/hasPart> ?alleberichten .
+          ?alleberichten
+            a <http://schema.org/Message> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
+              ?bijlage .
+          ?bijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
+          ?physicalBijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
+              ?bijlage .
 
-        ?subject ?p ?o .
+          ?subject ?p ?o .
+          ?alleberichten ?pa ?ca .
+          ?physicalBijlage ?pp ?op .
+        }
         ?conversatie ?pc ?co .
-        ?alleberichten ?pa ?ca .
         ?bijlage ?pb ?ob .
-        ?physicalBijlage ?pp ?op .
       `,
     },
     copy: {
@@ -275,28 +288,34 @@ export const subjects = [
             ?bijlageDownloadLink .
       `,
       where: `
-        ?conversatie
-          <http://schema.org/hasPart> ?subject ;
-          a <http://schema.org/Conversation> ;
-          <http://schema.org/hasPart> ?alleberichten .
-        ?alleberichten
-          a <http://schema.org/Message> ;
-          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
-            ?bijlage .
-        ?bijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
-        ?physicalBijlage
-          a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
-          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
-            ?bijlage .
+        GRAPH ?g {
+          ?conversatie
+            <http://schema.org/hasPart> ?subject ;
+            a <http://schema.org/Conversation> .
+        }
+        GRAPH ?h {
+          ?conversatie
+            <http://schema.org/hasPart> ?alleberichten .
+          ?alleberichten
+            a <http://schema.org/Message> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
+              ?bijlage .
+          ?bijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+            <http://mu.semte.ch/vocabularies/core/uuid> ?bijlageUUID .
+          ?physicalBijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
+              ?bijlage .
 
-        BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-        ?subject ?p ?o .
-        ?conversatie ?pc ?co .
-        ?alleberichten ?pa ?ca .
-        ?bijlage ?pb ?ob .
-        ?physicalBijlage ?pp ?op .
+          ?subject ?p ?o .
+          ?conversatie ?pc ?co .
+          ?alleberichten ?pa ?ca .
+          ?bijlage ?pb ?ob .
+          ?physicalBijlage ?pp ?op .
+        }
       `,
     }
   },
