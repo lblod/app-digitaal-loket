@@ -14,7 +14,7 @@ Note: the deploy instructions assume we come from 1.85.0. So you might restart a
 drc restart virtuoso publication-triplestore
 ```
 ```
-drc restart export-submissions berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-subsidies delta-producer-publication-graph-maintainer-worship-submissions dispatcher migrations report-generation resource enrich-submission validate-submission; drc up -d
+drc restart export-submissions berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-subsidies delta-producer-publication-graph-maintainer-worship-submissions dispatcher migrations report-generation resource enrich-submission validate-submission cache; drc up -d
 ```
 ## 1.86.0 (2023-10-17)
 - update forms
