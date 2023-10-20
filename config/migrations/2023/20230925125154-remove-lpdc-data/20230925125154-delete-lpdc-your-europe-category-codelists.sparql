@@ -1,5 +1,33 @@
 PREFIX dvcs:  <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
 PREFIX dvc:   <https://productencatalogus.data.vlaanderen.be/id/concept/YourEuropeCategorie/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    dvcs:YourEuropeCategorie ?p_yourEuropeCategorie ?o_yourEuropeCategorie .
+    ?topConcept ?p_topConcept ?o_topConcept .
+    ?narrowConcept ?p_narrowConcept ?o_narrowConcept .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    dvcs:YourEuropeCategorie a skos:ConceptScheme ;
+      skos:hasTopConcept ?topConcept ;
+      ?p_yourEuropeCategorie ?o_yourEuropeCategorie .
+
+    ?topConcept a skos:Concept ;
+      skos:narrower ?narrowConcept ;
+      ?p_topConcept ?o_topConcept .
+
+    ?narrowConcept ?p_narrowConcept ?o_narrowConcept .
+  }
+}
+
+;
+
+# Remove remaining YourEuropeCategorie values.
+# These values were not inserted correctly under dvcs:YourEuropeCategorie inside the database,
+# and they need to be manually removed.
 
 DELETE {
   GRAPH <http://mu.semte.ch/graphs/public> {
@@ -8,140 +36,34 @@ DELETE {
 }
 WHERE {
   VALUES ?s {
-    dvcs:YourEuropeCategorie
-    dvc:Reizen
-    dvc:ReizenDocumenten
-    dvc:ReizenRechtenVerplichtingen
-    dvc:ReizenOndersteuningBeperkteMobiliteit
-    dvc:ReizenGoederen
-    dvc:ReizenElektronischeGegevens
-    dvc:WerkEnPensionering
-    dvc:WerkEnPensioneringWerkZoeken
-    dvc:WerkEnPensioneringGaanWerken
-    dvc:WerkEnPensioneringErkenningKwalificaties
-    dvc:WerkEnPensioneringBelastingheffing
-    dvc:WerkEnPensioneringAansprakelijkheidEnVerzekeringen
-    dvc:WerkEnPensioneringArbeidsvoorwaarden
-    dvc:WerkEnPensioneringGelijkeBehandeling
-    dvc:WerkEnPensioneringGezondheidEnVeiligheid
-    dvc:WerkEnPensioneringSocialezekerheidsrechten
-    dvc:Voertuigen
-    dvc:VoertuigenVerplaatsing
-    dvc:VoertuigenVerleningRijbewijzen
-    dvc:VoertuigenVerplichteVerzekering
-    dvc:VoertuigenKoopVerkoop
-    dvc:VoertuigenVerkeersregels
-    dvc:Verblijf
-    dvc:VerblijfVerhuizing
-    dvc:VerblijfKoopVerkoop
-    dvc:VerblijfVerkiezingen
-    dvc:VerblijfVerblijfskaarten
-    dvc:VerblijfNaturalisatie
-    dvc:VerblijfOverlijden
-    dvc:OnderwijsOfStage
-    dvc:OnderwijsOfStageOnderwijsstelsel
-    dvc:OnderwijsOfStageVrijwilligerswerk
-    dvc:OnderwijsOfStageStage
-    dvc:OnderwijsOfStageOnderzoek
-    dvc:Gezondheidszorg
-    dvc:GezondheidszorgMedischeBehandeling
-    dvc:GezondheidszorgGeneesmiddelenKopen
-    dvc:GezondheidszorgZiekteverzekering
-    dvc:GezondheidszorgPreventieveOpenbareGezondheidsmaatregelen
-    dvc:GezondheidszorgNoodnummers
-    dvc:GezondheidszorgWoonzorgcentrum
-    dvc:BurgerEnFamilieRechten
-    dvc:BurgerEnFamilieRechtenKinderen
-    dvc:BurgerEnFamilieRechtenPartners
-    dvc:BurgerEnFamilieRechtenGenderIdentiteit
-    dvc:BurgerEnFamilieRechtenErfrechtenEnPlichten
-    dvc:BurgerEnFamilieRechtenOntvoeringKinderen
-    dvc:Consumentenrechten
-    dvc:ConsumentenrechtenAankoop
-    dvc:ConsumentenrechtenBankrekening
-    dvc:ConsumentenrechtenNutsvoorzieningen
-    dvc:ConsumentenrechtenBetalingen
-    dvc:ConsumentenrechtenConsumentenrechten
-    dvc:ConsumentenrechtenVeiligheid
-    dvc:ConsumentenrechtenHuurMotorvoertuigen
-    dvc:BeschermingPersoonsgegevens
-    dvc:BeschermingPersoonsgegevensUitoefeningRechten
-    dvc:Bedrijf
-    dvc:BedrijfRegistratieproceduresRechtsvormen
-    dvc:BedrijfVerplaatsing
-    dvc:BedrijfIntellectueleEigendomsrechten
-    dvc:BedrijfTransparantie
-    dvc:BedrijfOnlineBetaalFuncties
-    dvc:BedrijfOvereenkomstenrecht
-    dvc:BedrijfInsolventieLiquidatie
-    dvc:BedrijfKredietVerzekering
-    dvc:BedrijfFusieVerkoop
-    dvc:BedrijfAansprakelijkheidBestuurders
-    dvc:BedrijfPersoonsgegevens
-    dvc:Werknemers
-    dvc:WerknemersArbeidsvoorwaarden
-    dvc:WerknemersSocialezekerheid
-    dvc:WerknemersTewerkstelling
-    dvc:WerknemersGelijkeBehandeling
-    dvc:WerknemersPersoneelsvertegenwoordiging
-    dvc:Belastingen
-    dvc:BelastingenBTW
-    dvc:BelastingenAccijnzen
-    dvc:BelastingenDouanerechten
-    dvc:BelastingenDouaneprocedures
-    dvc:BelastingenOverigeBelastingen
-    dvc:Goederen
-    dvc:GoederenCEMarkering
-    dvc:GoederenVoorschriftenVereisten
-    dvc:GoederenNormenSpecificatiesCertificering
-    dvc:GoederenErkenningZonderSpecificaties
-    dvc:GoederenGevaarlijkeStoffen
-    dvc:GoederenVerkoopOpAfstand
-    dvc:GoederenProductenMetGebreken
-    dvc:GoederenKeurmerken
-    dvc:GoederenRecyclage
-    dvc:Diensten
-    dvc:DienstenLicentiesVergunningen
-    dvc:DienstenKennisgevingGrensoverschrijdendeActiviteiten
-    dvc:DienstenErkenningBeroepskwalificaties
-    dvc:Bedrijfsfinanciering
-    dvc:BedrijfsfinancieringFinancieringUnie
-    dvc:BedrijfsfinancieringFinancieringNationaal
-    dvc:BedrijfsfinancieringOndernemersInitiatieven
-    dvc:Overheidsopdrachten
-    dvc:OverheidsopdrachtenDeelname
-    dvc:OverheidsopdrachtenOnlineInschrijving
-    dvc:OverheidsopdrachtenMeldingOnregelmatigheden
-    dvc:GezondheidVeiligheidWerk
-    dvc:GezondheidVeiligheidWerkVerplichtingen
     dvc:ProcedureGeboorte
     dvc:ProcedureGeboorteBewijs
-    dvc:ProcedureVerblijf
-    dvc:ProcedureVerblijfBewijs
-    dvc:ProcedureStudie
-    dvc:ProcedureStudieAanvraagTertiairOnderwijs
-    dvc:ProcedureStudieVerzoekToelatingTertiairOnderwijs
-    dvc:ProcedureStudieVerzoekErkenningDiploma
-    dvc:ProcedureWerk
-    dvc:ProcedureWerkVerzoek
-    dvc:ProcedureWerkWijzigingBeroepssituatie
-    dvc:ProcedureWerkAanvraagZiekteverzekeringskaart
-    dvc:ProcedureWerkAangifteInkomstenbelasting
-    dvc:ProcedureVerhuizing
-    dvc:ProcedureVerhuizingAdreswijziging
-    dvc:ProcedureVerhuizingInschrijvingMotorvoertuig
-    dvc:ProcedureVerhuizingStickersWegeninfrastructuur
-    dvc:ProcedureVerhuizingEmissiestickers
     dvc:ProcedurePensionering
     dvc:ProcedurePensioneringAanvraagUitkering
     dvc:ProcedurePensioneringVerzoekOmInformatie
     dvc:ProcedureStartenExploiterenSluitenBedrijf
-    dvc:ProcedureStartenExploiterenSluitenBedrijfKennisgeving
-    dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerkgever
-    dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerknemer
     dvc:ProcedureStartenExploiterenSluitenBedrijfAangifteVennootschapsbelasting
     dvc:ProcedureStartenExploiterenSluitenBedrijfBeeindigingArbeidsovereenkomst
     dvc:ProcedureStartenExploiterenSluitenBedrijfBeeindigingArbeidsovereenkomst
+    dvc:ProcedureStartenExploiterenSluitenBedrijfKennisgeving
+    dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerkgever
+    dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerknemer
+    dvc:ProcedureStudie
+    dvc:ProcedureStudieAanvraagTertiairOnderwijs
+    dvc:ProcedureStudieVerzoekErkenningDiploma
+    dvc:ProcedureStudieVerzoekToelatingTertiairOnderwijs
+    dvc:ProcedureVerblijf
+    dvc:ProcedureVerblijfBewijs
+    dvc:ProcedureVerhuizing
+    dvc:ProcedureVerhuizingAdreswijziging
+    dvc:ProcedureVerhuizingEmissiestickers
+    dvc:ProcedureVerhuizingInschrijvingMotorvoertuig
+    dvc:ProcedureVerhuizingStickersWegeninfrastructuur
+    dvc:ProcedureWerk
+    dvc:ProcedureWerkAangifteInkomstenbelasting
+    dvc:ProcedureWerkAanvraagZiekteverzekeringskaart
+    dvc:ProcedureWerkVerzoek
+    dvc:ProcedureWerkWijzigingBeroepssituatie
   }
 
   GRAPH <http://mu.semte.ch/graphs/public> {
