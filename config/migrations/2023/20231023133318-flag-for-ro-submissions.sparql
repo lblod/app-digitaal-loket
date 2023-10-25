@@ -1,0 +1,79 @@
+PREFIX meb:     <http://rdf.myexperiment.org/ontologies/base/>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX eli:     <http://data.europa.eu/eli/ontology#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX pav:     <http://purl.org/pav/>
+prefix mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX schema:  <http://schema.org/>
+PREFIX dct:     <http://purl.org/dc/terms/>
+
+INSERT {
+  GRAPH ?h {
+    # Flag for export
+    ?submission schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> . 
+    ?submissionDocument schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+    ?submissionDocumentStatus schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+    ?formData schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+    ?props schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+    ?submissionFile schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+    ?submissionDocumentFile schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+  }
+
+  GRAPH ?j {
+    ?concept schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Get bestuurseenheden by bestuursorgaan & -eenheid classificatie code
+    # Representatief Orgaan
+    VALUES (?bestuursorgaanClassificatieCode ?bestuurseenheidClassificatieCode) {
+        ( <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> )
+    }
+
+    ?bestuursorgaan mandaat:isTijdspecialisatieVan/besluit:classificatie ?bestuursorgaanClassificatieCode .
+    ?bestuurseenheid besluit:classificatie ?bestuurseenheidClassificatieCode .
+  }
+  
+  GRAPH ?g {
+    # Get all submissions in the decisionTypeSet & status SENT
+    ?submission a meb:Submission ;
+      adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ; # SENT
+      prov:generated/ext:decisionType ?decisionType ; 
+      prov:generated ?formData ;
+      dct:subject ?submissionDocument;
+      pav:createdBy ?bestuurseenheid .
+
+     FILTER (?decisionType IN (<https://data.vlaanderen.be/id/concept/BesluitDocumentType/14793940-5b9c-4172-b108-c73665ad9d6a>, # Samenvoeging (RO)
+      <https://data.vlaanderen.be/id/concept/BesluitDocumentType/651525f8-8650-4ce8-8eea-f19b94d50b73>, # Erkenning - reguliere procedure (RO)
+      <https://data.vlaanderen.be/id/concept/BesluitDocumentType/d611364b-007b-49a7-b2bf-b8f4e5568777>, # Naamswijziging (RO)
+      <https://data.vlaanderen.be/id/concept/BesluitDocumentType/95a6c5a1-05af-4d48-b2ef-5ebb1e58783b>, # Wijziging gebiedsomschrijving (RO)
+      <https://data.vlaanderen.be/id/concept/BesluitDocumentType/6d1a3aea-6773-4e10-924d-38be596c5e2e> # Opheffing van annexe kerken en kapelanijen (RO)
+      ))
+
+     # Ignore already flagged submissions
+     FILTER NOT EXISTS {
+       ?submission schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+     }
+
+    # Get file refs
+    ?submission <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?submissionFile. 
+    ?submissionDocument <http://purl.org/dc/terms/source> ?submissionDocumentFile .
+
+    # Give me formData props limited to following list of types
+    ?formData ?formDataPred ?props.
+
+    FILTER (?formDataPred IN (
+      <http://lblod.data.gift/vocabularies/besluit/authenticityType>, 
+      <http://mu.semte.ch/vocabularies/ext/regulationType>,
+      <http://mu.semte.ch/vocabularies/ext/decisionType>,
+      <http://mu.semte.ch/vocabularies/ext/taxType>,
+      <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
+    ))    
+
+    BIND(?g as ?h)
+    BIND(?i as ?j)
+  }
+}
