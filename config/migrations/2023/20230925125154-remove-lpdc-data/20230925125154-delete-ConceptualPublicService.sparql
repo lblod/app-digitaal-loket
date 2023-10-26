@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?type {
+    <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#ConceptualPublicService>
+  }
+  
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+  }
+}

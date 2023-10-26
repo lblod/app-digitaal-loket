@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://data.europa.eu/m8g/Requirement>
+  }
+  
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+  }
+}

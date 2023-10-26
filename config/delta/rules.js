@@ -13,8 +13,6 @@ import enrichSubmission from './enrich-submission';
 import errorAlert from './error-alert';
 import importSubmission from './import-submission';
 import jobsController from './jobs-controller';
-import lpdcManagement from './lpdc-management';
-import lpdcPublish from './lpdc-publish';
 import prepareSubmissionForExport from './prepare-submission-for-export';
 import resource from './resource';
 import syncWithKalliopeErrorNotification from './sync-with-kalliope-error-notification';
@@ -39,8 +37,6 @@ export default [
   ...errorAlert,
   ...importSubmission,
   ...jobsController,
-  ...lpdcManagement,
-  ...lpdcPublish,
   ...prepareSubmissionForExport,
   ...resource,
   ...syncWithKalliopeErrorNotification,

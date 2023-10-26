@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+### LPDC
+- Remove all LPDC code, data, reports and old migration files
+### Deploy Instructions
+A lot of data has to be removed, so it has to be backed up first and docker images have to be cleaned:
+- Back up the database before any service(s) is(are) restarted
+- Remove cronjobs for LPDC related services from the server
+- `drc restart migrations` to run the new migrations and remove LPDC data
+- `drc up --remove-orphans` to remove orphaned docker images
 ## 1.87.0 (2023-10-20)
 ### general
 - bump cache graph maintainer
