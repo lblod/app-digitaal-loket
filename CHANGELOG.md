@@ -1,4 +1,37 @@
 # Changelog
+## 1.87.0 (2023-10-20)
+### general
+- bump cache graph maintainer
+- final version berichtencentrum-sync-with-kalliope
+### inzendingen
+- update time window of export: start from 01-09-2023 now
+### subsidies
+- make attachments availible over deltas
+- fix login endpoint for delta-consumer
+### Deploy instructions
+Note: the deploy instructions assume we come from 1.85.0. So you might restart a bit too much. But that's okay.
+```
+drc restart virtuoso publication-triplestore
+```
+```
+drc restart export-submissions berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-subsidies delta-producer-publication-graph-maintainer-worship-submissions dispatcher migrations report-generation resource enrich-submission validate-submission cache; drc up -d
+```
+## 1.86.0 (2023-10-17)
+- update forms
+- add status to worship mandates producer
+### Deploy notes
+- drc restart migrations berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-ws-sensitive ; drc up -d prepare-submissions-for-export-service
+## 1.85.3 (2023-10-19)
+### General
+ - Bump multiple delta-related services
+ - Tweak virtuoso and publication datastore to account for bigger datasets
+### Submissions
+ - prepare migration to export besluitenlijsten politiezones
+ - bump prepare-submission-for-export to have live streaming politiezones
+### Deploy instructions
+```
+drc restart virtuoso publication-triplestore migrations; drc up -d
+```
 ## 1.85.2 (2023-10-16)
 ### Erediensten
 - fix reports: extra fixes, plus added extra info for bedienaren.
