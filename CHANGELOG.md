@@ -3,7 +3,7 @@
 ### LPDC
 - Remove all LPDC code, data, reports and old migration files
 ### Deploy Instructions
-A lot of data has to be removed, so data has to be backed up first and docker images have to be cleaned:
+A lot of data has to be removed, so it has to be backed up first and docker images have to be cleaned:
 - Back up the database before any service(s) is(are) restarted
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
