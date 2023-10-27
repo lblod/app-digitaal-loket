@@ -31,6 +31,47 @@ export const subjects = [
     },
   },
   //For the Berichten Melding via berichten-melding-service
+  //Failed jobs
+  {
+    type: 'http://vocab.deri.ie/cogs#Job',
+    trigger: `
+      ?subject
+        <http://www.w3.org/ns/adms#status>
+          <http://redpencil.data.gift/id/concept/JobStatus/failed> ;
+        <http://redpencil.data.gift/vocabularies/tasks/operation>
+          <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> .
+    `,
+    path: `
+      ?subject
+        <http://purl.org/pav/providedBy> ?vendor ;
+        <http://schema.org/sender> ?organisation .
+    `,
+      copy: {
+         insert: `
+           ?subject ?p ?o.
+           ?error ?errorP ?errorO.`,
+         where: `
+             ?subject ?p ?o .
+             OPTIONAL {
+                ?subject <http://redpencil.data.gift/vocabularies/tasks/error> ?error.
+                ?error ?errorP ?errorO.
+             }
+          `
+      },
+      remove: {
+         delete: `
+           ?subject ?p ?o.
+           ?error ?errorP ?errorO.`,
+         where: `
+             ?subject ?p ?o .
+             OPTIONAL {
+                ?subject <http://redpencil.data.gift/vocabularies/tasks/error> ?error.
+                ?error ?errorP ?errorO.
+             }
+          `
+      }
+  },
+  //Success jobs
   {
     type: 'http://vocab.deri.ie/cogs#Job',
     trigger: `
