@@ -165,9 +165,13 @@ export const subjects = [
         ?organisation ?p ?o .
       }
     `,
+    //TODO: not sure when these conditions would be triggered;
+    // Better to allow void delete statements
+    // Note: if something weird would happen, it's gonna be a mess anyway and manual
+    //   intervention will be needed.
     remove: {
       delete: `
-        ?conversatie ?pc ?oc .
+          ?conversatie <http://schema.org/hasPart> ?subject.
       `,
       where: `
         GRAPH ?g {
@@ -175,7 +179,6 @@ export const subjects = [
             <http://schema.org/hasPart> ?subject ;
             a <http://schema.org/Conversation> .
         }
-        ?conversatie ?pc ?oc .
       `,
     },
     copy: {
