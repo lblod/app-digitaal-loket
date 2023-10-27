@@ -18,7 +18,7 @@
                 (:aangekomen :datetime ,(s-prefix "schema:dateReceived"))
                 (:inhoud :string ,(s-prefix "schema:text"))
                 (:type-communicatie :string ,(s-prefix "dct:type"))
-                (:creator :string ,(s-prefix "ext:creator")))
+                (:creator :url ,(s-prefix "ext:creator")))
   :has-one `((bestuurseenheid :via ,(s-prefix "schema:sender")
                     :as "van")
             (gebruiker :via ,(s-prefix "schema:author")

@@ -226,7 +226,7 @@ export const subjects = [
     trigger: `
       ?subject
         <http://mu.semte.ch/vocabularies/ext/creator>
-          "https://github.com/lblod/frontend-loket/" .
+          <https://github.com/lblod/frontend-loket> .
     `,
     path: `
       GRAPH ?h {
