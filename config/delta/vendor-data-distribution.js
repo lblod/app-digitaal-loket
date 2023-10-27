@@ -26,7 +26,7 @@ export default [
         value: 'http://mu.semte.ch/vocabularies/ext/creator',
       },
       object: {
-        value: 'https://github.com/lblod/frontend-loket/',
+        value: 'https://github.com/lblod/frontend-loket',
       },
     },
     callback: {
