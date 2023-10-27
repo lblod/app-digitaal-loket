@@ -154,16 +154,11 @@ export const subjects = [
           <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> .
     `,
     path: `
-      GRAPH ?h {
-        ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-      }
-      GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-        ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation .
-      }
-      GRAPH ?g {
-        ?subject ?a ?b .
-        ?organisation ?p ?o .
-      }
+      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+
+      ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
+        a <http://xmlns.com/foaf/0.1/Agent>.
     `,
     //TODO: not sure when these conditions would be triggered;
     // Better to allow void delete statements
@@ -229,16 +224,11 @@ export const subjects = [
           <https://github.com/lblod/frontend-loket> .
     `,
     path: `
-      GRAPH ?h {
-        ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-      }
-      GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-        ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation .
-      }
-      GRAPH ?g {
-        ?subject ?a ?b .
-        ?organisation ?p ?o .
-      }
+      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+
+      ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
+        a <http://xmlns.com/foaf/0.1/Agent>.
     `,
     remove: {
       delete: `
