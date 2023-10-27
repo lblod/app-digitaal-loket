@@ -500,7 +500,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-melding:
-    image: lblod/berichten-melding-service:1.0.0
+    image: lblod/berichten-melding-service:1.0.1
     volumes:
       - ./data/files:/share
     restart: always
