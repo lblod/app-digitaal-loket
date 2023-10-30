@@ -33,14 +33,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
   ?s a besluit:Bestuurseenheid
 }.
 
-# this rule should no longer be needed as OP has a classification for RO now
-# {
-#  ?s a ere:RepresentatiefOrgaan
-# }=> {
-#  ?s
-#    a besluit:Bestuurseenheid;
+
+{
+  ?s a ere:RepresentatiefOrgaan
+}=> {
+  ?s
+    a besluit:Bestuurseenheid.
+#    this rule should no longer be needed as OP has a classification for RO now
 #    besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213>.
-# }.
+}.
 
 
 
