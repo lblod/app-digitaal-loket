@@ -3,6 +3,7 @@
     "http://lblod.data.gift/services/automatic-submission-service",
     "http://lblod.data.gift/services/loket-report-generation-service",
     "http://lblod.data.gift/services/prepare-submissions-for-export-service",
-    "http://lblod.data.gift/services/berichten-melding-service"
+    "http://lblod.data.gift/services/berichten-melding-service",
+    "http://lblod.data.gift/services/vendor-data-distribution-service"
   ]
 }
