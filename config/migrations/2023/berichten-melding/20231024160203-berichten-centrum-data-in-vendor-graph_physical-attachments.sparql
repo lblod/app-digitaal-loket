@@ -18,39 +18,15 @@ INSERT {
   }
 }
 WHERE {
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    ?organisation
-      a besluit:Bestuurseenheid ;
-      core:uuid ?organisationUUID .
-  }
-  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-    ?vendor
-      account:canActOnBehalfOf ?organisation ;
-      core:uuid ?vendorUUID .
-  }
-  BIND (IRI(CONCAT("http://mu.semte.ch/graphs/vendors/", STR(?vendorUUID), "/", STR(?organisationUUID))) AS ?vendorGraph)
-  BIND (IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", STR(?organisationUUID), "/LoketLB-berichtenGebruiker")) AS ?organisationGraph)
-  GRAPH ?organisationGraph {
-    ?conversation
-      a sch:Conversation ;
-      sch:hasPart ?message .
-    ?message
-      a sch:Message ;
-      nie:hasPart ?attachment .
-    ?attachment
-      a nfo:FileDataObject .
-    ?physicalAttachment
-      a nfo:FileDataObject ;
-      nie:dataSource ?attachment .
 
-    FILTER NOT EXISTS {
-      ?message adms:status deli:unconfirmed .
-    }
-    FILTER NOT EXISTS {
-      ?message adms:status deli:failedConfirmation .
-    }
-
-    ?physicalAttachment ?pp ?op .
+  GRAPH ?vendorGraph {
+    ?attachment a nfo:FileDataObject .
   }
+  FILTER(regex(STR(?vendorGraph), "http://mu.semte.ch/graphs/vendors/*", "i"))
+
+  ?physicalAttachment
+    a nfo:FileDataObject ;
+    nie:dataSource ?attachment .
+
+  ?physicalAttachment ?pp ?op .
 }
-

@@ -31,6 +31,47 @@ export const subjects = [
     },
   },
   //For the Berichten Melding via berichten-melding-service
+  //Failed jobs
+  {
+    type: 'http://vocab.deri.ie/cogs#Job',
+    trigger: `
+      ?subject
+        <http://www.w3.org/ns/adms#status>
+          <http://redpencil.data.gift/id/concept/JobStatus/failed> ;
+        <http://redpencil.data.gift/vocabularies/tasks/operation>
+          <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> .
+    `,
+    path: `
+      ?subject
+        <http://purl.org/pav/providedBy> ?vendor ;
+        <http://schema.org/sender> ?organisation .
+    `,
+      copy: {
+         insert: `
+           ?subject ?p ?o.
+           ?error ?errorP ?errorO.`,
+         where: `
+             ?subject ?p ?o .
+             OPTIONAL {
+                ?subject <http://redpencil.data.gift/vocabularies/tasks/error> ?error.
+                ?error ?errorP ?errorO.
+             }
+          `
+      },
+      remove: {
+         delete: `
+           ?subject ?p ?o.
+           ?error ?errorP ?errorO.`,
+         where: `
+             ?subject ?p ?o .
+             OPTIONAL {
+                ?subject <http://redpencil.data.gift/vocabularies/tasks/error> ?error.
+                ?error ?errorP ?errorO.
+             }
+          `
+      }
+  },
+  //Success jobs
   {
     type: 'http://vocab.deri.ie/cogs#Job',
     trigger: `
@@ -113,20 +154,19 @@ export const subjects = [
           <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> .
     `,
     path: `
-      GRAPH ?h {
-        ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-      }
-      GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-        ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation .
-      }
-      GRAPH ?g {
-        ?subject ?a ?b .
-        ?organisation ?p ?o .
-      }
+      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+
+      ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
+        a <http://xmlns.com/foaf/0.1/Agent>.
     `,
+    //TODO: not sure when these conditions would be triggered;
+    // Better to allow void delete statements
+    // Note: if something weird would happen, it's gonna be a mess anyway and manual
+    //   intervention will be needed.
     remove: {
       delete: `
-        ?conversatie ?pc ?oc .
+          ?conversatie <http://schema.org/hasPart> ?subject.
       `,
       where: `
         GRAPH ?g {
@@ -134,7 +174,6 @@ export const subjects = [
             <http://schema.org/hasPart> ?subject ;
             a <http://schema.org/Conversation> .
         }
-        ?conversatie ?pc ?oc .
       `,
     },
     copy: {
@@ -182,19 +221,14 @@ export const subjects = [
     trigger: `
       ?subject
         <http://mu.semte.ch/vocabularies/ext/creator>
-          "https://github.com/lblod/frontend-loket/" .
+          <https://github.com/lblod/frontend-loket> .
     `,
     path: `
-      GRAPH ?h {
-        ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-      }
-      GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-        ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation .
-      }
-      GRAPH ?g {
-        ?subject ?a ?b .
-        ?organisation ?p ?o .
-      }
+      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+
+      ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
+        a <http://xmlns.com/foaf/0.1/Agent>.
     `,
     remove: {
       delete: `
