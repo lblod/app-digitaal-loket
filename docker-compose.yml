@@ -406,7 +406,7 @@ services:
     restart: always
     logging: *default-logging
   eredienst-mandatarissen-consumer:
-    image: lblod/delta-consumer:0.0.18
+    image: lblod/delta-consumer:0.0.23
     volumes:
       - ./config/delta-consumer/eredienst-mandatarissen:/config/triples-dispatching/custom-dispatching
       - ./data/files/consumer-files:/consumer-files
@@ -853,7 +853,7 @@ services:
       - "logging=true"
     logging: *default-logging
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.18
+    image: lblod/delta-consumer:0.0.23
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
