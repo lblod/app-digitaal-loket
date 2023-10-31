@@ -1,4 +1,9 @@
 # Changelog
+## 1.88.0 (2023-10-31)
+### general
+- update virtuoso
+### Deploy instructions
+- see: https://github.com/lblod/app-digitaal-loket/pull/426
 ## 1.87.0 (2023-10-20)
 ### general
 - bump cache graph maintainer
