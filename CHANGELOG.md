@@ -168,6 +168,20 @@ drc restart delta-producer-publication-graph-maintainer-leidinggevenden
   - Add "nieuw" and "toegevoegd" labels and filters to concepts
   - Add support for concept archiving
 ### deploy instructions
+#### Virtuoso update
+  - stop the stack: `drc stop`
+  - start the "maintenance" frontend?
+  - start the virtuoso container: `drc start virtuoso`
+  - create a new checkpoint so the transaction log is cleared:
+      - enter the isql-v environment: `drc exec virtuoso isql-v`
+      - create a checkpoint: `exec('checkpoint');`
+      - exit the isql-v environment: `exit;`
+  - stop the virtuoso service
+  - make a backup of the data/db folder in case something goes wrong and we need to downgrade again `cp -r data/db some-backup-folder`
+  - remove the transaction log file: `rm data/db/virtuoso.trx`
+  - `drc up -d virtuoso` to update to the new image
+  - check the logs to see if nothing strange happened
+#### Other
 - Follow the steps to re-sync data from OP
 - `drc restart migrations` and check if they ran successfully
 - `drc restart cache resource database dispatcher subsidy-applications-management report-generation enrich-submission; drc up -d`
