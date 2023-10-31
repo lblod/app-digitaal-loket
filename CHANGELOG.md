@@ -8,6 +8,12 @@ A lot of data has to be removed, so it has to be backed up first and docker imag
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
 - `drc up --remove-orphans` to remove orphaned docker images
+## 1.88.0 (2023-10-31)
+### general
+- update virtuoso
+### Deploy instructions
+- see: https://github.com/lblod/app-digitaal-loket/pull/426
+
 ## 1.87.0 (2023-10-20)
 ### general
 - bump cache graph maintainer
