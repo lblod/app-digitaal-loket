@@ -2,19 +2,19 @@ PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#> 
 
 DELETE {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/public> {
     ?bestuursorgaan1 besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a9e30e31-0cd2-4f4a-9352-545c5d43be83> .
     ?bestuursorgaan2 mandaat:bindingStart ?oldStartDate .
   }
 }
 INSERT {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/public> {
     ?bestuursorgaan1 besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/1afce932-53c1-46d8-8aab-90dcc331e67d> .
     ?bestuursorgaan2 mandaat:bindingStart "1971-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
   }
 }
 WHERE {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/public> {
     BIND (<http://data.lblod.info/id/bestuursorganen/17d1ecc1-e882-4dd1-9c72-419cb9dbce4a> AS ?bestuursorgaan1)
       ?bestuursorgaan1 besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/a9e30e31-0cd2-4f4a-9352-545c5d43be83> ;
       ^mandaat:isTijdspecialisatieVan ?bestuursorgaan2 .
