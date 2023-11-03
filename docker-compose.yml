@@ -523,7 +523,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-dump-file-publisher:
-    image: lblod/delta-producer-dump-file-publisher:0.10.1
+    image: lblod/delta-producer-dump-file-publisher:0.10.2
     environment:
       EXPORT_TTL_BATCH_SIZE: 20
       MAX_SUBJECT_COUNT: 1000000
