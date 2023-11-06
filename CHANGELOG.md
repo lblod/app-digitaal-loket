@@ -1,14 +1,87 @@
 # Changelog
-## Unreleased
+## 1.88.0 (2023-10-31)
+### general
+- update virtuoso
+### Deploy instructions
+- see: https://github.com/lblod/app-digitaal-loket/pull/426
+## 1.87.0 (2023-10-20)
+### general
+- bump cache graph maintainer
+- final version berichtencentrum-sync-with-kalliope
+### inzendingen
+- update time window of export: start from 01-09-2023 now
+### subsidies
+- make attachments availible over deltas
+- fix login endpoint for delta-consumer
+### Deploy instructions
+Note: the deploy instructions assume we come from 1.85.0. So you might restart a bit too much. But that's okay.
+```
+drc restart virtuoso publication-triplestore
+```
+```
+drc restart export-submissions berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-subsidies delta-producer-publication-graph-maintainer-worship-submissions dispatcher migrations report-generation resource enrich-submission validate-submission; drc up -d
+```
+## 1.86.0 (2023-10-17)
+- update forms
+- add status to worship mandates producer
+### Deploy notes
+- drc restart migrations berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer-ws-sensitive ; drc up -d prepare-submissions-for-export-service
+## 1.85.3 (2023-10-19)
+### General
+ - Bump multiple delta-related services
+ - Tweak virtuoso and publication datastore to account for bigger datasets
+### Submissions
+ - prepare migration to export besluitenlijsten politiezones
+ - bump prepare-submission-for-export to have live streaming politiezones
+### Deploy instructions
+```
+drc restart virtuoso publication-triplestore migrations; drc up -d
+```
+## 1.85.2 (2023-10-16)
+### Erediensten
+- fix reports: extra fixes, plus added extra info for bedienaren.
+## 1.85.1 (2023-10-13)
+### General
+- bump report-generation
+### Erediensten
+- fix reports: improved code and removed bugs
+## 1.85.0 (2023-09-22)
 ### General
 - Add an environment variable to the frontend that can be used to display a "global system notification" to the users
+- Bump identifier
+### Erediensten
+- Bumped version berichtencentrum with kalliope, to have less data coming through
+- Bump report generation; better character escape
+- Improved mandatarissen-report
 
 ### Deploy instructions
-
+Automatic submission as very hot fix in docker-compose.override.yml. Remove this.
 If a maintenance message needs to be displayed, uncomment the environment variable in the docker-compose.override.yml file and edit the message.
 ```
-drc up -d 
+drc up -d loket controle automatic-submission berichtencentrum-sync-with-kalliope report-generation identifier
 ```
+## 1.84.3 (2023-09-22)
+- added ag2b
+## 1.84.2 (2023-09-21)
+- besluitenlijst politiezone
+- new producers, because much data
+-
+### Deploy instructions
+In your docker-compose.override.yml
+- Ensure delta-producer-background-jobs-initiator-submissions is renamed to delta-producer-background-jobs-initiator
+- Ensure delta-producer-publication-graph-maintainer-submissions is renamed to delta-producer-publication-graph-maintainer
+
+In file config/delta-producer/background-jobs-initiator/config.json ensure `"startInitialSync": false` is set to `"startInitialSync": true,`
+In file config/delta-producer/publication-graph-maintainer/config.json ensure
+```
+# ...
+"key": "the key in the docker-compose override previously"
+```
+Then
+```
+drc up -d --remove-orphans; drc -r restart dispatcher deltanotifier migrations
+```
+
 ## 1.84.1 (2023-09-01)
   - Startdate lekp 1 & 2 set to august 31 (past)
 ## 1.84.0 (2023-08-31)
@@ -100,6 +173,20 @@ drc restart delta-producer-publication-graph-maintainer-leidinggevenden
   - Add "nieuw" and "toegevoegd" labels and filters to concepts
   - Add support for concept archiving
 ### deploy instructions
+#### Virtuoso update
+  - stop the stack: `drc stop`
+  - start the "maintenance" frontend?
+  - start the virtuoso container: `drc start virtuoso`
+  - create a new checkpoint so the transaction log is cleared:
+      - enter the isql-v environment: `drc exec virtuoso isql-v`
+      - create a checkpoint: `exec('checkpoint');`
+      - exit the isql-v environment: `exit;`
+  - stop the virtuoso service
+  - make a backup of the data/db folder in case something goes wrong and we need to downgrade again `cp -r data/db some-backup-folder`
+  - remove the transaction log file: `rm data/db/virtuoso.trx`
+  - `drc up -d virtuoso` to update to the new image
+  - check the logs to see if nothing strange happened
+#### Other
 - Follow the steps to re-sync data from OP
 - `drc restart migrations` and check if they ran successfully
 - `drc restart cache resource database dispatcher subsidy-applications-management report-generation enrich-submission; drc up -d`
