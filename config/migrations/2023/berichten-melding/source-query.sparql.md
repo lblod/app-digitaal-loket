@@ -30,6 +30,7 @@ PREFIX nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
 PREFIX adms:    <http://www.w3.org/ns/adms#>
 PREFIX deli:    <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/>
 PREFIX js:      <http://redpencil.data.gift/id/concept/JobStatus/>
+PREFIX jo:      <http://lblod.data.gift/id/jobs/concept/JobOperation/>
 PREFIX task:    <http://redpencil.data.gift/vocabularies/tasks/>
 PREFIX dct:     <http://purl.org/dc/terms/>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
@@ -84,7 +85,7 @@ WHERE {
       ?job
         dct:subject ?message ;
         adms:status js:success ;
-        task:operation js:harvestBericht ;
+        task:operation jo:harvestBericht ;
         ?pj ?oj .
     }
 
