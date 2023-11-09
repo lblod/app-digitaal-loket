@@ -38,6 +38,9 @@ import mandatarissen from './worship/mandatarissen';
 import tempDeletes from './worship/temp-deletes';
 import tempInserts from './worship/temp-inserts';
 
+//Berichten reports
+import berichten from './berichten/messages-with-provenance';
+
 export default [
   BestuurseenhedenReport,
   BerichtencentrumMessagesReport,
@@ -80,4 +83,7 @@ export default [
   mandatarissen,
   tempDeletes,
   tempInserts,
+
+  //Berichten reports
+  berichten,
 ];
