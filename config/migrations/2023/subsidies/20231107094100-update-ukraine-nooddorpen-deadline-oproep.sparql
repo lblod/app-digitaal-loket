@@ -1,0 +1,25 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX m8g: <http://data.europa.eu/m8g/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Change deadline from 2023-09-30 to 2024-05-31
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Deadline of Nooddorpen Oekraïne
+    <http://data.lblod.info/id/periodes/8265739f-2f05-4ada-8a30-c813b4bd783c> m8g:endTime ?endTime .
+
+    # SubsidiemaatregelAanbodReeks for the Nooddorpen Oekraïne
+    # Title to be deleted is "Oproep 1"
+    <http://lblod.data.info/id/subsidy-measure-offer-series/4a40d903-d77f-49e0-8cf4-daa3ce623439> dct:title ?title .
+  }
+}
+;
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Time is set to 21:59:00 because Belgium time is UTC+2 instead of UTC+1 in May.
+   <http://data.lblod.info/id/periodes/8265739f-2f05-4ada-8a30-c813b4bd783c> mg8:endTime "2024-05-31T21:59:00Z"^^xsd:dateTime.
+
+   # Title to be added is "Oproep"
+   <http://lblod.data.info/id/subsidy-measure-offer-series/4a40d903-d77f-49e0-8cf4-daa3ce623439> dct:title "Oproep"@nl .
+  }
+}
