@@ -1,0 +1,29 @@
+PREFIX m8g: <http://data.europa.eu/m8g/>
+
+# Update opvolgmoment startTime for the LEKP 1.0 subsidy to 08 december, 2023.
+# Update opvolgmoment deadline for the LEKP 1.0 subsidy from 01 May, 2023 to 01 March, 2024.
+DELETE {
+  GRAPH ?g {
+    ?period m8g:startTime ?startTime .
+
+    ?period m8g:endTime ?endTime .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    # Time is set to 07 december 23:00 because UTC+1 this becomes 08 december 00:00 local time
+    ?period m8g:startTime "2023-12-07T23:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+
+    # Time is set to 01 march 21:59:00 because Belgium time is UTC+2 instead of UTC+1 in March and it becomes 23:59.
+    ?period m8g:endTime "2024-03-01T21:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+  }
+}
+WHERE {
+  # URI for LEKP 1.0 subsidy start and end date
+  BIND(<http://data.lblod.info/id/periodes/c251381e-300f-43e0-a83c-b1ffdfd06b48> as ?period)
+
+  GRAPH ?g {
+    ?period m8g:startTime ?startTime .
+    ?period m8g:endTime ?endTime .
+  }
+}
