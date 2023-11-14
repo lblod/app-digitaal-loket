@@ -114,7 +114,9 @@
         "http://www.w3.org/ns/adms#status",
         "http://schema.org/bankAccount",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/unresolvedSocialProblems",
-        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound"
+        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#estimatedCostTable",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#objectiveTable"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -321,6 +323,150 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/decision-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/pictures-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/report-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/award-report-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/accountability-note-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/justification-costs-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/justification-expropriations-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/invoice-upload/FormData"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://schema.org/identifier",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://schema.org/BankAccount"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#validEstimatedCostTable",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#estimatedCostEntry"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#EstimatedCostTable"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://mu.semte.ch/vocabularies/ext/index",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#costEstimationType",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#cost",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#share"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#EstimatedCostEntry"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#validObjectiveTable",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#objectiveEntry"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#ObjectiveTable"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#approachType",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#directionType",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#bikeLaneType",
+        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#kilometers"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#ObjectiveEntry"
     }
   ]
 }
