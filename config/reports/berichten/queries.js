@@ -26,8 +26,9 @@ PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX account: <http://mu.semte.ch/vocabularies/account/>
 PREFIX core:    <http://mu.semte.ch/vocabularies/core/>
 PREFIX cogs:    <http://vocab.deri.ie/cogs#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?conversation ?message ?sender ?recipient ?type ?dateSent ?dateReceived ?content ?attachment ?creator ?confirmedStatus
+SELECT DISTINCT ?conversation ?message ?sender ?sendername ?recipient ?recipientname ?type ?dateSent ?dateReceived ?content ?attachment ?creator ?confirmedStatus
 WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
     ?organisation
@@ -61,7 +62,7 @@ WHERE {
     ?message nie:hasPart ?attachment .
     
     ?attachment a nfo:FileDataObject .
-    
+
     OPTIONAL {
       ?job
         dct:subject ?message ;
@@ -71,6 +72,8 @@ WHERE {
     }
     OPTIONAL { ?message adms:status ?confirmedStatus . }
   }
+  OPTIONAL { ?sender skos:prefLabel ?sendername . }
+  OPTIONAL { ?recipient skos:prefLabel ?recipientname . }
 }
 ORDER BY ?conversation ?message`;
 }

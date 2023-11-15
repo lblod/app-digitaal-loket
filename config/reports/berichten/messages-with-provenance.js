@@ -27,7 +27,9 @@ async function generate() {
     entry.conversation = entry?.conversation?.value;
     entry.message = entry?.message?.value;
     entry.sender = entry?.sender?.value;
+    entry.sendername = entry?.sendername?.value;
     entry.recipient = entry?.recipient?.value;
+    entry.recipientname = entry?.recipientname?.value;
     entry.type = entry?.type?.value;
     entry.dateSent = entry?.dateSent?.value;
     entry.dateReceived = entry?.dateReceived?.value;
@@ -42,7 +44,9 @@ async function generate() {
       'conversation',
       'message',
       'sender',
+      'sendername',
       'recipient',
+      'recipientname',
       'type',
       'dateSent',
       'dateReceived',
