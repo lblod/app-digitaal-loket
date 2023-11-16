@@ -46,7 +46,7 @@ async function dispatch(lib, data) {
       DCR_LANDING_ZONE_GRAPH,
       originalInsertTriples,
       { 'mu-call-scope-id': MU_CALL_SCOPE_ID_INITIAL_SYNC },
-      DCR_LANDING_ZONE_DATABASE_ENDPOINT,
+      endpoint,
       BATCH_SIZE,
       MAX_DB_RETRY_ATTEMPTS,
       SLEEP_BETWEEN_BATCHES,

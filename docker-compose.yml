@@ -195,7 +195,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.15.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.16.0
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -829,7 +829,7 @@ services:
     volumes:
       - ./config/delta-producer/subsidies:/config
       - ./data/files/:/share
-    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)<
     #    labels:
     #      - "logging=true"
     restart: always
@@ -853,7 +853,7 @@ services:
       - "logging=true"
     logging: *default-logging
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.23
+    image: lblod/delta-consumer:0.0.24
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
