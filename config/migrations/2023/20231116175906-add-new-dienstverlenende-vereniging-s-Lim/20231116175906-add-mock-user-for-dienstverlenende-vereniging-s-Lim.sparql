@@ -10,7 +10,6 @@ PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> ;
   <http://mu.semte.ch/vocabularies/ext/kbonummer> "0679631191" ;
   <http://purl.org/dc/terms/identifier> "0679631191" ;
-  <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/4bd8337aa40880e343b7f0ca8495ef4460e4e79d9e697495b179a93f41aba153> ;
   <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/b6868be9ca6881b1020e6cff8d431531a1cff64b39dc92646a5173b3ee144516> . # Provincie Limburg
 
 
