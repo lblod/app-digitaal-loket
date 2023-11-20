@@ -26,7 +26,7 @@ INSERT DATA {
 			rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
 			<http://mu.semte.ch/vocabularies/core/uuid>	"48e265168eb7d4eacf5140eb6b641468" ;
 			<https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/11cbdde244c6111e9937db92319339e3> ;
-			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:dateTime .
+			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:date .
 
 
 		<http://data.lblod.info/id/bestuursorganen/1a789bc327d0fc6808bfba0b042f1357>
@@ -40,7 +40,7 @@ INSERT DATA {
 			rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
 			<http://mu.semte.ch/vocabularies/core/uuid>	"f566ac19ca376efbfcf3824b4e2aa716" ;
 			<https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/1a789bc327d0fc6808bfba0b042f1357> ;
-			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:dateTime .
+			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:date .
 
 
 		<http://data.lblod.info/id/bestuursorganen/54afa5e531318552ea5a87a25c5fb5cb>
@@ -54,7 +54,7 @@ INSERT DATA {
 			rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
 			<http://mu.semte.ch/vocabularies/core/uuid>	"9091f6c1780aa4a7e43fec00e4005710" ;
 			<https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/54afa5e531318552ea5a87a25c5fb5cb> ;
-			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:dateTime .
+			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:date .
 
 
 		<http://data.lblod.info/id/bestuursorganen/950f958680854e3f2e915805a560b19d>
@@ -68,7 +68,7 @@ INSERT DATA {
 			rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
 			<http://mu.semte.ch/vocabularies/core/uuid>	"508e1d2df0a15ed7520667db670e9fa9" ;
 			<https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/950f958680854e3f2e915805a560b19d> ;
-			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:dateTime .
+			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:date .
 
 
 		<http://data.lblod.info/id/bestuursorganen/01ad7a04be03ddfe1e364955bd18504c>
@@ -82,7 +82,7 @@ INSERT DATA {
 			rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
 			<http://mu.semte.ch/vocabularies/core/uuid>	"a2a251b1001b0ed8672dc864d8584548" ;
 			<https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/01ad7a04be03ddfe1e364955bd18504c> ;
-			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:dateTime ;
+			<http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01T00:00:00"^^xsd:date ;
 			<http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>	<http://data.lblod.info/id/bestuursfuncties/42375efbdf19aaee9c360f09d2f60b23> .
 	}
 }
