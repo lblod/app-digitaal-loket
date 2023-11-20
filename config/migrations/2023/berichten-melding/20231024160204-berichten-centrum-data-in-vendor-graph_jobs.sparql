@@ -12,6 +12,7 @@ PREFIX dct:     <http://purl.org/dc/terms/>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX account: <http://mu.semte.ch/vocabularies/account/>
 PREFIX core:    <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
 
 INSERT {
   GRAPH ?vendorGraph {
@@ -27,6 +28,7 @@ WHERE {
   GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
     ?vendor
       account:canActOnBehalfOf ?organisation ;
+      a ext:Vendor ;
       core:uuid ?vendorUUID .
   }
   BIND (IRI(CONCAT("http://mu.semte.ch/graphs/vendors/", STR(?vendorUUID), "/", STR(?organisationUUID))) AS ?vendorGraph)
