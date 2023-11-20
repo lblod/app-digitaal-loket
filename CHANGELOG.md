@@ -1,10 +1,17 @@
 # Changelog
+
 ## Unreleased
+
 ### General
- - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
+
+- Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
+
 ### LPDC
+
 - Remove all LPDC code, data, reports and old migration files
+
 ### Berichtencentrum
+
 - Added `berichten-melding-service`. This service allows vendors to reports
   messages, and imports them into the Berichtencentrum module.
 - Added config for `vendor-data-distribution-service`: in its newer version,
@@ -16,25 +23,35 @@
 - Added error emails for `berichten-melding-service` and
   `vendor-data-distribution-service`.
 - Added `delta-notifier`, `mu-authorization` config.
+
 ### Resources
+
 - A Message now also has a `creator`. This is used to trigger the
   `vendor-data-distribution-serivce`.
+
 ### Reports
+
 - Added a reports on Messages and Conversations of the past 6 months. This is
   almost a dump of the entities and can be used to compare between
   vendors/consumers and Loket.
+
 ### Migrations
+
 - Added migrations to copy Messages and Conversations to Vendor Graphs for
   Vendor API such that vendors can access that data through their authorised
   SPARQL client. **NOTE: these migrations can take a long time to run!**
+
 ### Frontend
+
 - New Loket frontend: adding creator to messages and other various improvements
   to conversations and messages in Berichtencentrum.
+
 ### Deploy Instructions
 
 **LPDC**
 
-A lot of data has to be removed, so it has to be backed up first and docker images have to be cleaned:
+A lot of data has to be removed, so it has to be backed up first and docker
+images have to be cleaned:
 - Back up the database before any service(s) is(are) restarted
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
