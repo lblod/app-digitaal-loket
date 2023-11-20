@@ -714,52 +714,6 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # Public Services - LPDC-IPDC: custom API endpoints
-  #################################################################
-  get "/lpdc-management/*path" do
-    forward conn, path, "http://lpdc-management/semantic-forms/"
-  end
-
-  put "/lpdc-management/*path" do
-    forward conn, path, "http://lpdc-management/semantic-forms/"
-  end
-
-  post "/lpdc-management/*path" do
-    forward conn, path, "http://lpdc-management/semantic-forms/"
-  end
-
-  #################################################################
-  # Public Services - LPDC-IPDC
-  #################################################################
-  match "/conceptual-public-services/*path" do
-    forward conn, path, "http://cache/conceptual-public-services/"
-  end
-
-  match "/identifiers/*path" do
-    forward conn, path, "http://cache/identifiers/"
-  end
-
-  post "/public-services/*path" do
-    forward conn, path, "http://lpdc-management/public-services/"
-  end
-
-  delete "/public-services/*path" do
-    forward conn, path, "http://lpdc-management/public-services/"
-  end
-
-  get "/public-services/*path" do
-    forward conn, path, "http://resource/public-services/"  ## TODO: solve cache issue in frontend
-  end
-
-  match "/public-services/*path" do
-    forward conn, path, "http://cache/public-services/"
-  end
-
-  match "/concept-display-configurations/*path" do
-    forward conn, path, "http://cache/concept-display-configurations/"
-  end
-
-  #################################################################
   # Vendor Login for SPARQL endpoint
   #################################################################
 

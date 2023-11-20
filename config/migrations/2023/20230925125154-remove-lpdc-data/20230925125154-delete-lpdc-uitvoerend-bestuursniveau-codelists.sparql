@@ -1,0 +1,23 @@
+PREFIX dvcs:  <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
+PREFIX dvc:   <https://productencatalogus.data.vlaanderen.be/id/concept/BevoegdBestuursniveau/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    dvcs:UitvoerendBestuursniveau
+    dvc:Europees
+    dvc:Federaal
+    dvc:Vlaams
+    dvc:Provinciaal
+    dvc:Lokaal
+    dvc:Derden
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}

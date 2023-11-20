@@ -1,0 +1,23 @@
+PREFIX dvcs:  <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
+PREFIX dvc:   <https://productencatalogus.data.vlaanderen.be/id/concept/Doelgroep/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    dvcs:Doelgroep
+    dvc:Burger
+    dvc:Onderneming
+    dvc:Organisatie
+    dvc:Vereniging
+    dvc:LokaalBestuur
+    dvc:VlaamseOverheid
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}

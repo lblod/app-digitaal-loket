@@ -1,0 +1,19 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+
+    ?target ?targetP ?s .
+  }  
+}
+WHERE {
+  VALUES ?type {
+    <https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#ConceptDisplayConfiguration>
+  }
+  
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+    
+    ?target ?targetP ?s .
+  }
+}

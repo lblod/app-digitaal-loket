@@ -1,0 +1,16 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://lblod.data.gift/concept-schemes/effb1058-d469-4064-a7a6-9d98ba081962>
+    <http://lblod.data.gift/concepts/5a3168e2-f39b-4b5d-8638-29f935023c83>
+    <http://lblod.data.gift/concepts/cf22e8d1-23c3-45da-89bc-00826eaf23c3>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}

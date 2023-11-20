@@ -1,0 +1,16 @@
+PREFIX dvcs:  <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    dvcs:InstantieTag
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}

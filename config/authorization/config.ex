@@ -224,35 +224,6 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder" #TODO: not sure why this is here
                       ]
                     } } ] },
-      # // LPDC-IPDC
-      %GroupSpec{
-        name: "o-ipdc-lpdc-rwf",
-        useage: [:read, :write, :read_for_write],
-        access: access_by_role( "LoketLB-LPDCGebruiker" ),
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/organizations/",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://xmlns.com/foaf/0.1/Document",
-                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#ConceptualPublicService",
-                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#AbstractPublicService",
-                        "http://purl.org/vocab/cpsv#PublicService",
-                        "https://www.w3.org/ns/activitystreams#Tombstone",
-                        "http://data.europa.eu/m8g/PublicOrganisation",
-                        "http://data.europa.eu/m8g/Requirement",
-                        "http://data.europa.eu/m8g/Evidence",
-                        "http://purl.org/vocab/cpsv#Rule",
-                        "http://data.europa.eu/m8g/Cost",
-                        "http://data.europa.eu/m8g/Output",
-                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#FinancialAdvantage",
-                        "http://data.europa.eu/eli/ontology#LegalResource",
-                        "http://schema.org/ContactPoint",
-                        "http://www.w3.org/ns/dcat#Distribution",
-                        "http://purl.org/dc/terms/Location",
-                        "http://schema.org/WebSite",
-                        "http://www.w3.org/ns/locn#Address",
-                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#ConceptDisplayConfiguration"
-                        ] } } ] },
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
         name: "org",

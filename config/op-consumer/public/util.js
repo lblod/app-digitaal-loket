@@ -36,7 +36,7 @@ GRAPH <${graph}> {
 ${batch}
 }
 }
-`, extraHeaders, endpoint);
+`, extraHeaders, { sparqlEndpoint: endpoint, mayRetry: true });
     };
 
     await operationWithRetry(insertCall, 0, maxAttempts, sleepTimeOnFail);

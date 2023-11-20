@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://data.europa.eu/eli/ontology#LegalResource>
+  }
+  
+  GRAPH ?g {
+    ?s a ?type ;
+      ?p ?o .
+  }
+}

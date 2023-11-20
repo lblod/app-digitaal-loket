@@ -1,0 +1,72 @@
+PREFIX dvcs:  <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/>
+PREFIX dvc:   <https://productencatalogus.data.vlaanderen.be/id/concept/YourEuropeCategorie/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    dvcs:YourEuropeCategorie ?p_yourEuropeCategorie ?o_yourEuropeCategorie .
+    ?topConcept ?p_topConcept ?o_topConcept .
+    ?narrowConcept ?p_narrowConcept ?o_narrowConcept .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    dvcs:YourEuropeCategorie a skos:ConceptScheme ;
+      skos:hasTopConcept ?topConcept ;
+      ?p_yourEuropeCategorie ?o_yourEuropeCategorie .
+
+    ?topConcept a skos:Concept ;
+      skos:narrower ?narrowConcept ;
+      ?p_topConcept ?o_topConcept .
+
+    ?narrowConcept ?p_narrowConcept ?o_narrowConcept .
+  }
+}
+
+;
+
+# Remove remaining YourEuropeCategorie values.
+# These values were not inserted correctly under dvcs:YourEuropeCategorie inside the database,
+# and they need to be manually removed.
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    dvc:ProcedureGeboorte
+    dvc:ProcedureGeboorteBewijs
+    dvc:ProcedurePensionering
+    dvc:ProcedurePensioneringAanvraagUitkering
+    dvc:ProcedurePensioneringVerzoekOmInformatie
+    dvc:ProcedureStartenExploiterenSluitenBedrijf
+    dvc:ProcedureStartenExploiterenSluitenBedrijfAangifteVennootschapsbelasting
+    dvc:ProcedureStartenExploiterenSluitenBedrijfBeeindigingArbeidsovereenkomst
+    dvc:ProcedureStartenExploiterenSluitenBedrijfBeeindigingArbeidsovereenkomst
+    dvc:ProcedureStartenExploiterenSluitenBedrijfKennisgeving
+    dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerkgever
+    dvc:ProcedureStartenExploiterenSluitenBedrijfPensioenEnVerzekeringsregelingenWerknemer
+    dvc:ProcedureStudie
+    dvc:ProcedureStudieAanvraagTertiairOnderwijs
+    dvc:ProcedureStudieVerzoekErkenningDiploma
+    dvc:ProcedureStudieVerzoekToelatingTertiairOnderwijs
+    dvc:ProcedureVerblijf
+    dvc:ProcedureVerblijfBewijs
+    dvc:ProcedureVerhuizing
+    dvc:ProcedureVerhuizingAdreswijziging
+    dvc:ProcedureVerhuizingEmissiestickers
+    dvc:ProcedureVerhuizingInschrijvingMotorvoertuig
+    dvc:ProcedureVerhuizingStickersWegeninfrastructuur
+    dvc:ProcedureWerk
+    dvc:ProcedureWerkAangifteInkomstenbelasting
+    dvc:ProcedureWerkAanvraagZiekteverzekeringskaart
+    dvc:ProcedureWerkVerzoek
+    dvc:ProcedureWerkWijzigingBeroepssituatie
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
