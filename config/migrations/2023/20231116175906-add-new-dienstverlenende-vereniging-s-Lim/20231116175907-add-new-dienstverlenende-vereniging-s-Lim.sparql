@@ -8,7 +8,6 @@ INSERT DATA {
 			rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
 			<http://mu.semte.ch/vocabularies/core/uuid>   "682c21df-fe6a-4266-8f97-109e5b5b4ae4" ;
 			skos:prefLabel "s-Lim" ;
-			skos:altLabel "" ;
 			<http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> ;
 			<http://mu.semte.ch/vocabularies/ext/kbonummer> "0679631191" ;
 			<http://purl.org/dc/terms/identifier> "0679631191" ;
