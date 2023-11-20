@@ -4,12 +4,77 @@
  - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
 ### LPDC
 - Remove all LPDC code, data, reports and old migration files
+### Berichtencentrum
+- Added `berichten-melding-service`. This service allows vendors to reports
+  messages, and imports them into the Berichtencentrum module.
+- Added config for `vendor-data-distribution-service`: in its newer version,
+  the config now uses type, trigger, path, remove and copy properties to select
+  and copy data to the vendor graphs. These changes where needed to integrate
+  with the `berichten-melding-service`.
+- Added a new job for the `job-controller-service` for the Berichten Melding.
+- Added dispatcher path for the `berichten-melding-service`.
+- Added error emails for `berichten-melding-service` and
+  `vendor-data-distribution-service`.
+- Added `delta-notifier`, `mu-authorization` config.
+### Resources
+- A Message now also has a `creator`. This is used to trigger the
+  `vendor-data-distribution-serivce`.
+### Reports
+- Added a reports on Messages and Conversations of the past 6 months. This is
+  almost a dump of the entities and can be used to compare between
+  vendors/consumers and Loket.
+### Migrations
+- Added migrations to copy Messages and Conversations to Vendor Graphs for
+  Vendor API such that vendors can access that data through their authorised
+  SPARQL client. **NOTE: these migrations can take a long time to run!**
+### Frontend
+- New Loket frontend: adding creator to messages and other various improvements
+  to conversations and messages in Berichtencentrum.
 ### Deploy Instructions
+
+**LPDC**
+
 A lot of data has to be removed, so it has to be backed up first and docker images have to be cleaned:
 - Back up the database before any service(s) is(are) restarted
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
 - `drc up --remove-orphans` to remove orphaned docker images
+
+**Berichtencentrum**
+
+Run the following query on the stack with sufficient privileges **after all
+migrations have run**. This does not have to go through mu-auth. **Make sure to
+set the real hostname of the running stack in place of `<lokethostname>`
+below.**
+
+```sparql
+PREFIX sch:     <http://schema.org/>
+PREFIX nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX account: <http://mu.semte.ch/vocabularies/account/>
+PREFIX core:    <http://mu.semte.ch/vocabularies/core/>
+
+INSERT {
+  GRAPH ?vendorGraph {
+    ?attachment nie:url ?attachmentDownloadLink .
+  }
+}
+WHERE {
+  GRAPH ?vendorGraph {
+    ?message
+      a sch:Message ;
+      nie:hasPart ?attachment .
+    ?attachment
+      a nfo:FileDataObject ;
+      core:uuid ?attachmentUUID .
+
+    BIND (CONCAT("https://<lokethostname>.be/files/", ?attachmentUUID, "/download") AS ?attachmentDownloadLink)
+  }
+  FILTER(regex(STR(?vendorGraph), "http://mu.semte.ch/graphs/vendors/*", "i"))
+}
+```
+
 ## 1.88.0 (2023-10-31)
 ### general
 - update virtuoso
