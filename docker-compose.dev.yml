@@ -150,3 +150,5 @@ services:
     restart: "no"
   vendor-data-distribution:
     restart: "no"
+  berichtencentrum-melding:
+    restart: "no"

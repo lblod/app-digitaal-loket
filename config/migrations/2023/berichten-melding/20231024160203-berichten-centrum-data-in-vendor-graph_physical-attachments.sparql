@@ -1,0 +1,32 @@
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sch:     <http://schema.org/>
+PREFIX nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX deli:    <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/>
+PREFIX js:      <http://redpencil.data.gift/id/concept/JobStatus/>
+PREFIX task:    <http://redpencil.data.gift/vocabularies/tasks/>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX account: <http://mu.semte.ch/vocabularies/account/>
+PREFIX core:    <http://mu.semte.ch/vocabularies/core/>
+
+INSERT {
+  GRAPH ?vendorGraph {
+    ?physicalAttachment ?pp ?op .
+  }
+}
+WHERE {
+
+  GRAPH ?vendorGraph {
+    ?attachment a nfo:FileDataObject .
+  }
+  FILTER(regex(STR(?vendorGraph), "http://mu.semte.ch/graphs/vendors/*", "i"))
+
+  ?physicalAttachment
+    a nfo:FileDataObject ;
+    nie:dataSource ?attachment .
+
+  ?physicalAttachment ?pp ?op .
+}

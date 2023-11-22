@@ -734,6 +734,13 @@ defmodule Dispatcher do
     Proxy.forward conn, [], "http://sparql-authorization-wrapper/sparql"
   end
 
+  #################################################################
+  # Berichtencentrum: melding
+  #################################################################
+  post "/vendor/berichtencentrum/melding/*path" do
+    forward conn, path, "http://berichtencentrum-melding/melding"
+  end
+
   match "/*_" do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
