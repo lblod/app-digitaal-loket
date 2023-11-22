@@ -1,0 +1,17 @@
+INSERT {
+  GRAPH ?g {
+    ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/report-upload/FormData> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?applicationForm <http://lblod.data.gift/vocabularies/subsidie/reportUpload> ?formData .
+    ?formData ?p_f ?o_f .
+  }
+
+  FILTER(REGEX(STR(?g)), "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies")
+
+  FILTER NOT EXISTS {
+    ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
+  }
+}
