@@ -92,6 +92,14 @@ WHERE {
 }
 ```
 
+## 1.88.1 (2023-11-22)
+### Subsidies
+- extend ukraine deadlines and update oproep
+### Deploy Instructions
+```
+drc restart migrations
+drc restart resource cache
+```
 ## 1.88.0 (2023-10-31)
 ### general
 - update virtuoso
