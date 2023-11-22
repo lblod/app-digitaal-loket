@@ -32,7 +32,8 @@ async function findFormFromStep1( { mu, sudo }, form ) {
        ?smc dct:source ?firstForm .
      }
      GRAPH ?h {
-       ?currentStep xkos:previous ?step2 .
+       ?currentStep xkos:previous ?step3 .
+       ?step3 xkos:previous ?step2 .
        ?step2 xkos:previous ?step1.
      }
    }`;
