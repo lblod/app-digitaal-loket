@@ -114,7 +114,8 @@
         "http://www.w3.org/ns/adms#status",
         "http://schema.org/bankAccount",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/unresolvedSocialProblems",
-        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound"
+        "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound",
+        "http://schema.org/ContactPoint"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
@@ -321,6 +322,35 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://schema.org/email",
+        "http://schema.org/telephone",
+        "http://schema.org/url",
+        "http://schema.org/openingHours",
+        "http://schema.org/jobTitle",
+        "http://www.w3.org/ns/locn#address",
+        "http://www.w3.org/ns/shacl#order",
+        "http://xmlns.com/foaf/0.1/firstName",
+        "http://xmlns.com/foaf/0.1/familyName"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://schema.org/ContactPoint"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://purl.org/dc/terms/hasPart"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/subsidie/lekp1/signed-pact/FormData"
     }
   ]
 }
