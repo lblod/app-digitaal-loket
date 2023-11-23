@@ -454,14 +454,14 @@ defmodule Dispatcher do
   # loket-persons-sensitive sync
   #################################################################
   post "/sync/persons-sensitive/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/login/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/persons-sensitive/login/"
   end
 
   #################################################################
   # loket-persons-sensitive sync
   #################################################################
   get "/sync/persons-sensitive/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-persons-sensitive/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/persons-sensitive/files/"
   end
 
   #################################################################

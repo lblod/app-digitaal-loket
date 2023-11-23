@@ -19,5 +19,29 @@
     "healingInitialBatchSizeInsert": 1000,
     "useVirtuosoForExpensiveSelects": true,
     "loginPath": "/submissions/login"
+  },
+  "persons-sensitive": {
+    "deltaInterval": 10000,
+    "deltaPath": "/persons-sensitive/delta",
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-persons-sensitive",
+    "exportConfigPath": "/config/persons-sensitive/export.json",
+    "filesPath": "/persons-sensitive/files",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-persons-sensitive",
+    "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-persons-sensitive",
+    "queuePollInterval": 3000,
+    "relativeFilePath": "deltas/persons-sensitive",
+    "serveDeltaFiles": true,
+    "skipMuAuthInitialSync": true,
+    "skipMuAuthHealing": true,
+    "useFileDiff": true,
+    "healingInitialBatchSizeInsert": 1000,
+    "useVirtuosoForExpensiveSelects": true,
+    "updatePublicationGraphSleep": 200,
+    "loginPath": "/persons-sensitive/login",
+    "filesGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas",
+    "account": "http://data.lblod.info/foaf/account/id/12020cc2-dbc6-4273-ab18-177571fd8b06"
   }
 }
