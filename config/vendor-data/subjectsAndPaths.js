@@ -1,4 +1,10 @@
-const HOSTNAME = 'http://localhost';
+import envvar from 'env-var';
+
+const HOSTNAME = envvar
+  .get('HOSTNAME')
+  .required()
+  .example('http://localhost')
+  .asUrlString();
 
 export const subjects = [
   //For Submissions via Automatic Submission Flow
