@@ -112,7 +112,7 @@ export const subjects = [
         ?physicalBijlage ?pp ?op .
 
         ?bijlage
-          <http://mu.semte.ch/vocabularies/ext/downloadLink>
+          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
       where: `
@@ -184,7 +184,7 @@ export const subjects = [
         ?physicalBijlage ?pp ?op .
 
         ?bijlage
-          <http://mu.semte.ch/vocabularies/ext/downloadLink>
+          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
       where: `
@@ -251,7 +251,7 @@ export const subjects = [
         ?physicalBijlage ?pp ?op .
 
         ?bijlage
-          <http://mu.semte.ch/vocabularies/ext/downloadLink>
+          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
       where: `
