@@ -1,4 +1,8 @@
-const HOSTNAME = 'http://localhost';
+const HOSTNAME = envvar
+  .get('HOSTNAME')
+  .required()
+  .example('http://localhost')
+  .asUrlString();
 
 export const subjects = [
   //For Submissions via Automatic Submission Flow
