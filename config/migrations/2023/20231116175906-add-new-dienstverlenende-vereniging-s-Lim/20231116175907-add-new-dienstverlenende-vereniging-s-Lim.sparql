@@ -18,7 +18,7 @@ INSERT DATA {
       rdf:type  <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
       <http://mu.semte.ch/vocabularies/core/uuid> "11cbdde244c6111e9937db92319339e3" ;
       skos:prefLabel "Directiecomité s-Lim" ;
-      <http://www.w3.org/ns/org#classification> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> ;
       <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/682c21df-fe6a-4266-8f97-109e5b5b4ae4> .
 
     <http://data.lblod.info/id/bestuursorganen/48e265168eb7d4eacf5140eb6b641468>
@@ -32,7 +32,7 @@ INSERT DATA {
       rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
       <http://mu.semte.ch/vocabularies/core/uuid> "1a789bc327d0fc6808bfba0b042f1357" ;
       skos:prefLabel "Raad van bestuur s-Lim" ;
-      <http://www.w3.org/ns/org#classification> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
       <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/682c21df-fe6a-4266-8f97-109e5b5b4ae4> .
 
     <http://data.lblod.info/id/bestuursorganen/f566ac19ca376efbfcf3824b4e2aa716>
@@ -46,7 +46,7 @@ INSERT DATA {
       rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
       <http://mu.semte.ch/vocabularies/core/uuid> "54afa5e531318552ea5a87a25c5fb5cb" ;
       skos:prefLabel "Bevoegd beslissingsorgaan s-Lim" ;
-      <http://www.w3.org/ns/org#classification> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> ;
       <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/682c21df-fe6a-4266-8f97-109e5b5b4ae4> .
 
     <http://data.lblod.info/id/bestuursorganen/9091f6c1780aa4a7e43fec00e4005710>
@@ -60,7 +60,7 @@ INSERT DATA {
       rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
       <http://mu.semte.ch/vocabularies/core/uuid> "950f958680854e3f2e915805a560b19d" ;
       skos:prefLabel "Algemene vergadering s-Lim" ;
-      <http://www.w3.org/ns/org#classification> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
       <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/682c21df-fe6a-4266-8f97-109e5b5b4ae4> .
 
     <http://data.lblod.info/id/bestuursorganen/508e1d2df0a15ed7520667db670e9fa9>
@@ -74,7 +74,7 @@ INSERT DATA {
       rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
       <http://mu.semte.ch/vocabularies/core/uuid> "01ad7a04be03ddfe1e364955bd18504c" ;
       skos:prefLabel "Leidend Ambtenaar s-Lim" ;
-      <http://www.w3.org/ns/org#classification> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
       <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/682c21df-fe6a-4266-8f97-109e5b5b4ae4> .
 
     <http://data.lblod.info/id/bestuursorganen/a2a251b1001b0ed8672dc864d8584548>
