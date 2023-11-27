@@ -1,3 +1,5 @@
+import envvar from 'env-var';
+
 const HOSTNAME = envvar
   .get('HOSTNAME')
   .required()
@@ -140,12 +142,17 @@ export const subjects = [
 
           BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-          ?subject ?p ?o .
-          ?conversatie ?pc ?co .
-          ?bericht ?pa ?ca .
-          ?bijlage ?pb ?ob .
-          ?physicalBijlage ?pp ?op .
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     },
   },
@@ -210,11 +217,17 @@ export const subjects = [
 
           BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-          ?subject ?p ?o .
-          ?conversatie ?pc ?co .
-          ?bijlage ?pb ?ob .
-          ?physicalBijlage ?pp ?op .
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     }
   },
@@ -277,11 +290,17 @@ export const subjects = [
 
           BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-          ?subject ?p ?o .
-          ?conversatie ?pc ?co .
-          ?bijlage ?pb ?ob .
-          ?physicalBijlage ?pp ?op .
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     }
   },
