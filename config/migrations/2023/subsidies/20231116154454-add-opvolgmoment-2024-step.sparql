@@ -38,7 +38,7 @@ INSERT DATA {
       mu:uuid "cea1f5f8-a659-4f59-886a-fe8f75cb2305";
       # Time is set to 07 december 23:00 because UTC+1 this becomes 08 december 00:00 local time
       <http://data.europa.eu/m8g/startTime> "2023-12-07T23:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-      # Time is set to 01 march 21:59:00 because Belgium time is UTC+2 instead of UTC+1 in March and it becomes 23:59.
-      <http://data.europa.eu/m8g/endTime> "2024-03-01T21:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
+      # Time is set to 01 march 22:59:00 because Belgium time is UTC+1 in March and it becomes 23:59.
+      <http://data.europa.eu/m8g/endTime> "2024-03-01T22:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
   }
 }
