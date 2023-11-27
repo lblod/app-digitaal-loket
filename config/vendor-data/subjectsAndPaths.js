@@ -148,6 +148,7 @@ export const subjects = [
           ?bijlage ?pb ?ob .
           ?physicalBijlage ?pp ?op .
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     },
   },
@@ -217,6 +218,7 @@ export const subjects = [
           ?bijlage ?pb ?ob .
           ?physicalBijlage ?pp ?op .
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     }
   },
@@ -284,6 +286,7 @@ export const subjects = [
           ?bijlage ?pb ?ob .
           ?physicalBijlage ?pp ?op .
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     }
   },
