@@ -165,7 +165,8 @@
         "http://purl.org/vocab/cpsv#follows"
       ],
       "graphsFilter": [
-        "http://mu.semte.ch/graphs/public"
+        "http://mu.semte.ch/graphs/public",
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks"
     },
