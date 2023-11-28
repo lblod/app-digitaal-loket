@@ -121,6 +121,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
       where: `
         GRAPH ?g {
           ?subject
@@ -198,6 +200,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
       where: `
         GRAPH ?g {
           ?conversatie
@@ -271,6 +275,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
       where: `
         GRAPH ?g {
           ?conversatie
