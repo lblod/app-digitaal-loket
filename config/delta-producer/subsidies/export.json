@@ -116,7 +116,8 @@
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/unresolvedSocialProblems",
         "http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/usesSocialImpactBound",
         "http://schema.org/ContactPoint",
-        "http://lblod.data.gift/vocabularies/subsidie/signedPact"
+        "http://lblod.data.gift/vocabularies/subsidie/signedPact",
+        "http://lblod.data.gift/vocabularies/subsidie/attachment"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
