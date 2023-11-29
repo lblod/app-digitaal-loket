@@ -140,7 +140,7 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
            {
              ?subject ?p ?o .
@@ -215,7 +215,7 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
            {
              ?subject ?p ?o .
@@ -288,7 +288,7 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
            {
              ?subject ?p ?o .
