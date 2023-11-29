@@ -125,7 +125,8 @@
         "http://lblod.data.gift/vocabularies/subsidie/justificationExpropriationsUpload",
         "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
         "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
-        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload"
+        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/projectName"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
