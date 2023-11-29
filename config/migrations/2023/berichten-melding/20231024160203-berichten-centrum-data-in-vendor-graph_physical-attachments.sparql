@@ -24,7 +24,7 @@ WHERE {
       core:uuid ?organisationUUID .
   }
   GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-    ?vendor
+    <http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e>
       account:canActOnBehalfOf ?organisation ;
       core:uuid ?vendorUUID .
   }
