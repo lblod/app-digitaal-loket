@@ -118,14 +118,14 @@
         "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#estimatedCostTable",
         "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure#objectiveTable",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#identifier",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/decision-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/pictures-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/report-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/award-report-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/accountability-note-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/justification-costs-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/justification-expropriations-upload/FormData",
-        "http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/invoice-upload/FormData"
+        "http://lblod.data.gift/vocabularies/subsidie/accountabilityNoteUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/awardReportUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/decisionUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/invoiceUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/justificationExpropriationsUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload",
+        "http://lblod.data.gift/vocabularies/subsidie/picturesUpload"
       ],
       "graphsFilter": [
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
