@@ -140,7 +140,7 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
            {
              ?subject ?p ?o .
@@ -165,7 +165,7 @@ export const subjects = [
           <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> .
     `,
     path: `
-      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?subject <http://schema.org/recipient> ?organisation.
       ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
 
       ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
@@ -215,7 +215,7 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
            {
              ?subject ?p ?o .
@@ -241,7 +241,7 @@ export const subjects = [
           <https://github.com/lblod/frontend-loket> .
     `,
     path: `
-      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?subject <http://schema.org/sender> ?organisation.
       ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
 
       ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
@@ -288,7 +288,7 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
            {
              ?subject ?p ?o .
