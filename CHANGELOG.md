@@ -2,6 +2,7 @@
 ## Unreleased
 ### General
  - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
+ - Maintenance of persons-sensitive deltas
 ### LPDC
 - Remove all LPDC code, data, reports and old migration files
 ### Deploy Instructions
@@ -10,6 +11,8 @@ A lot of data has to be removed, so it has to be backed up first and docker imag
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
 - `drc up --remove-orphans` to remove orphaned docker images
+
+For persons-sensitive maintenance **don't forget to add `"key": "<producer_key>"` in `config/delta-producer/publication-graph-maintainer/config.json `of persons-sensitive** then `drc up -d --remove-orphans`
 ## 1.88.0 (2023-10-31)
 ### general
 - update virtuoso
