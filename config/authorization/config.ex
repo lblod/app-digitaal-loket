@@ -519,6 +519,10 @@ defmodule Acl.UserGroups.Config do
                         "http://rdf.myexperiment.org/ontologies/base/Submission",
                         "http://mu.semte.ch/vocabularies/ext/SubmissionDocument",
                         "http://lblod.data.gift/vocabularies/automatische-melding/FormData",
+                        "http://schema.org/Conversation",
+                        "http://schema.org/Message",
+                        "http://vocab.deri.ie/cogs#Job",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } } ] },
 
       # // LOKETADMIN

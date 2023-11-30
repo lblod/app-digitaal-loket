@@ -1,4 +1,5 @@
 import automaticSubmission from './automatic-submission';
+import berichtencentrumMelding from './berichtencentrum-melding';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
 import deltaProducerPublicationGraphMaintainerLeidinggevenden from './delta-producer-publication-graph-maintainer-leidinggevenden';
 import deltaProducerPublicationGraphMaintainerMandatarissen from './delta-producer-publication-graph-maintainer-mandatarissen';
@@ -22,6 +23,7 @@ import vendorDataDistribution from './vendor-data-distribution';
 
 export default [
   ...automaticSubmission,
+  ...berichtencentrumMelding,
   ...deltaProducerDumpFilePublisher,
   ...deltaProducerPublicationGraphMaintainerLeidinggevenden,
   ...deltaProducerPublicationGraphMaintainerMandatarissen,
