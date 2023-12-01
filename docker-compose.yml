@@ -515,9 +515,10 @@ services:
     restart: always
     logging: *default-logging
   delta-files-share:
-    image: redpencil/file-share-sync:0.0.5
+    image: redpencil/file-share-sync:0.0.6
     volumes:
       - ./data/files:/share
+      - ./data/files/subsidies:/data # used to access meta ttl files
     environment:
       ALLOW_SUPER_CONSUMER: "true"
       ALLOWED_ACCOUNTS: "http://services.lblod.info/diff-consumer/account,http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7,http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
