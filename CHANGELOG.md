@@ -4,7 +4,8 @@
 
 ### General
 
-- Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
+ - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
+ - Maintenance of persons-sensitive deltas
 
 ### LPDC
 
@@ -57,6 +58,8 @@ images have to be cleaned:
 - `drc restart migrations` to run the new migrations and remove LPDC data
 - `drc up --remove-orphans` to remove orphaned docker images
 
+For persons-sensitive maintenance **don't forget to add `"key": "<producer_key>"` in `config/delta-producer/publication-graph-maintainer/config.json `of persons-sensitive** then `drc up -d --remove-orphans`
+
 **Berichtencentrum**
 
 Run the following query on the stack with sufficient privileges **after all
@@ -100,6 +103,7 @@ WHERE {
 drc restart migrations
 drc restart resource cache
 ```
+
 ## 1.88.0 (2023-10-31)
 ### general
 - update virtuoso
