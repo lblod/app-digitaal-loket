@@ -149,6 +149,8 @@ export const subjects = [
            } UNION {
              ?conversatie ?pc ?co .
            } UNION {
+             ?bericht ?pa ?ca .
+           } UNION {
              ?bijlage ?pb ?ob .
            } UNION {
              ?physicalBijlage ?pp ?op .
@@ -236,7 +238,6 @@ export const subjects = [
     }
   },
   //For Berichten saved in Loket
-  //TODO: Trigger is not yet working like this
   {
     type: 'http://schema.org/Message',
     trigger: `
