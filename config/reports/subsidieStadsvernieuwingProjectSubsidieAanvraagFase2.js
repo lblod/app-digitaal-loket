@@ -2,7 +2,7 @@ import { generateReportFromData } from '../helpers.js';
 import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
-  cronPattern: '0 40 23 * * *',
+  cronPattern: '0 0 20 1 1 2023',
   name: 'subsidieStadsvernieuwingProjectSubsidieAanvraagFase2',
   execute: async () => {
     const reportData = {

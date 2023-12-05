@@ -3,7 +3,7 @@ import { querySudo as query } from '@lblod/mu-auth-sudo';
 import { getSafeValue } from './util/report-helpers';
 
 export default {
-  cronPattern: '0 0 1 * * *',
+  cronPattern: '0 0 20 1 1 2023',
   name: 'fietsSubsidieProposalsDeadlineGemeentenReport',
   execute: async () => {
     const reportData = {
