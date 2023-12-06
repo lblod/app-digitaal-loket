@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.87.6
+    image: lblod/frontend-loket:0.88.0
     links:
       - identifier:backend
     labels:
@@ -469,7 +469,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-melding:
-    image: lblod/berichten-melding-service:1.0.1
+    image: lblod/berichten-melding-service:1.0.2
     volumes:
       - ./data/files:/share
     restart: always
