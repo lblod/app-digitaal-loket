@@ -5,6 +5,11 @@
  - Maintenance of persons-sensitive deltas
  - Reports: vendors/consumers and Loket.
  - Added mockuser: Zorgband Leie en Schelde
+### Submissions
+ - Added RO submissions for export: [471](https://github.com/lblod/app-digitaal-loket/pull/471)
+ - Adjust form 'Goedkeuringsbesluit budget(wijziging)' (Gemeente and Provincie)
+### Subsidies
+ - Producer config update
 ### LPDC
 - Remove all LPDC code, data, reports and old migration files
 ### Berichtencentrum
@@ -30,20 +35,16 @@
   - New Loket frontend: adding creator to messages and other various improvements
     to conversations and messages in Berichtencentrum.
 ### Deploy Instructions
-
 #### LPDC
-
 A lot of data has to be removed, so it has to be backed up first and docker
 images have to be cleaned:
 - Back up the database before any service(s) is(are) restarted
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
 - `drc up --remove-orphans` to remove orphaned docker images
-
+#### Persons-sensitive-consumer
 For persons-sensitive maintenance **don't forget to add `"key": "<producer_key>"` in `config/delta-producer/publication-graph-maintainer/config.json `of persons-sensitive** then `drc up -d --remove-orphans`
-
 #### Berichtencentrum
-
 Run the following query on the stack with sufficient privileges **after all
 migrations have run**. This does not have to go through mu-auth. **Make sure to
 set the real hostname of the running stack in place of `<lokethostname>`
