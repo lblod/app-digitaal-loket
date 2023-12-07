@@ -139,6 +139,15 @@ fields:f6f972c0-e796-42e8-87c1-c689dab0a690 a form:Field ;
     form:displayType displayTypes:files ;
     sh:group fields:70f45080-8a18-473f-bb3f-abf6ce9c678e .
 
+
+fields:5c573f2a-581a-4a32-8a7c-0e9ecd7cf34b a form:Field ;
+    mu:uuid "5c573f2a-581a-4a32-8a7c-0e9ecd7cf34b" ;
+    sh:name "Laad hier vrijblijvend uw LEKP rapport op" ;
+    sh:order 50 ;
+    sh:path ( lblodSubsidie:attachmentLEKPReport dct:hasPart ) ;
+    form:displayType displayTypes:files ;
+    sh:group fields:70f45080-8a18-473f-bb3f-abf6ce9c678e .
+
 ##########################################################
 # Hidden field required for all variations of URL or FILE
 # input field which require validation.
@@ -175,6 +184,9 @@ fieldGroups:main a form:FieldGroup ;
 
         ### Attachment
         fields:f6f972c0-e796-42e8-87c1-c689dab0a690 ,
+
+        ### Attachment LEKP (optional)
+        fields:5c573f2a-581a-4a32-8a7c-0e9ecd7cf34b ,
 
         ### Attachment [hidden]
         fields:08ebe38b-9b5f-43be-9b61-e1ee58da1168 .

@@ -35,6 +35,17 @@
             ]
           }
         ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:attachmentLEKPReport",
+        "properties": [
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
       }
     ]
   },
