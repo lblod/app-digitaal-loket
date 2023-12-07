@@ -1,4 +1,7 @@
 # Changelog
+## 1.89.1 (2023-12-07)
+### General
+  - hotfix: improve migration speed
 ## 1.89.0 (2023-12-06)
 ### General
  - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
