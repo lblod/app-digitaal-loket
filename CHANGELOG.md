@@ -1,55 +1,37 @@
 # Changelog
-
-## Unreleased
-
+## 1.89.0 (2023-12-06)
 ### General
-
  - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
  - Maintenance of persons-sensitive deltas
-
+ - Reports: vendors/consumers and Loket.
+ - Added mockuser: Zorgband Leie en Schelde
 ### LPDC
-
 - Remove all LPDC code, data, reports and old migration files
-
 ### Berichtencentrum
-
-- Added `berichten-melding-service`. This service allows vendors to reports
-  messages, and imports them into the Berichtencentrum module.
-- Added config for `vendor-data-distribution-service`: in its newer version,
-  the config now uses type, trigger, path, remove and copy properties to select
-  and copy data to the vendor graphs. These changes where needed to integrate
-  with the `berichten-melding-service`.
-- Added a new job for the `job-controller-service` for the Berichten Melding.
-- Added dispatcher path for the `berichten-melding-service`.
-- Added error emails for `berichten-melding-service` and
-  `vendor-data-distribution-service`.
-- Added `delta-notifier`, `mu-authorization` config.
-
-### Resources
-
-- A Message now also has a `creator`. This is used to trigger the
-  `vendor-data-distribution-serivce`.
-
-### Reports
-
-- Added a reports on Messages and Conversations of the past 6 months. This is
-  almost a dump of the entities and can be used to compare between
-  vendors/consumers and Loket.
-
-### Migrations
-
-- Added migrations to copy Messages and Conversations to Vendor Graphs for
-  Vendor API such that vendors can access that data through their authorised
-  SPARQL client. **NOTE: these migrations can take a long time to run!**
-
-### Frontend
-
-- New Loket frontend: adding creator to messages and other various improvements
-  to conversations and messages in Berichtencentrum.
-
+- Added berichten-centrum integration, which entails:
+  - Added `berichten-melding-service`. This service allows vendors to reports
+    messages, and imports them into the Berichtencentrum module.
+  - Added config for `vendor-data-distribution-service`: in its newer version,
+    the config now uses type, trigger, path, remove and copy properties to select
+    and copy data to the vendor graphs. These changes where needed to integrate
+    with the `berichten-melding-service`.
+  - Added a new job for the `job-controller-service` for the Berichten Melding.
+  - Added dispatcher path for the `berichten-melding-service`.
+  - Added error emails for `berichten-melding-service` and
+    `vendor-data-distribution-service`.
+  - Added `delta-notifier`, `mu-authorization` config.
+  - A Message now also has a `creator`. This is used to trigger the
+    `vendor-data-distribution-serivce`.
+  - Added a reports on Messages and Conversations of the past 6 months. This is
+    almost a dump of the entities and can be used to compare between
+  - Added migrations to copy Messages and Conversations to Vendor Graphs for
+    Vendor API such that vendors can access that data through their authorised
+    SPARQL client. **NOTE: these migrations can take a long time to run!**
+  - New Loket frontend: adding creator to messages and other various improvements
+    to conversations and messages in Berichtencentrum.
 ### Deploy Instructions
 
-**LPDC**
+#### LPDC
 
 A lot of data has to be removed, so it has to be backed up first and docker
 images have to be cleaned:
@@ -60,7 +42,7 @@ images have to be cleaned:
 
 For persons-sensitive maintenance **don't forget to add `"key": "<producer_key>"` in `config/delta-producer/publication-graph-maintainer/config.json `of persons-sensitive** then `drc up -d --remove-orphans`
 
-**Berichtencentrum**
+#### Berichtencentrum
 
 Run the following query on the stack with sufficient privileges **after all
 migrations have run**. This does not have to go through mu-auth. **Make sure to
@@ -109,7 +91,8 @@ drc restart resource cache
 - update virtuoso
 ### Deploy instructions
 - see: https://github.com/lblod/app-digitaal-loket/pull/426
-## 1.87.0 (2023-10-20)
+## 1.87.0 (2023-10-20
+)
 ### general
 - bump cache graph maintainer
 - final version berichtencentrum-sync-with-kalliope
