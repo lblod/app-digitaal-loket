@@ -37,7 +37,7 @@
         ]
       },
       {
-        "s-prefix": "lblodSubsidie:attachmentLEKP",
+        "s-prefix": "lblodSubsidie:attachmentLEKPReport",
         "properties": [
           {
             "s-prefix": "dct:hasPart",
