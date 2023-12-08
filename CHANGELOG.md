@@ -1,4 +1,9 @@
 # Changelog
+## Unreleased
+### General
+ - fix berichtencentrum-sync-with-kalliope service to work better VDDS
+### Deploy instructions
+    - Don't forget to remove `lblod/berichtencentrum-sync-with-kalliope-service:0.17.1-rc.2` from `docker-compose.override.yml`
 ## 1.89.1 (2023-12-07)
 ### General
   - hotfix: improve migration speed
