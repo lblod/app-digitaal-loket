@@ -1,9 +1,9 @@
 # Changelog
 ## Unreleased
+## 1.90.0 (2023-12-08)
 ### General
+ - add LEKP 1.0 - 2022 || opvolgmoment 2024 step
  - fix berichtencentrum-sync-with-kalliope service to work better VDDS
-### Deploy instructions
-    - Don't forget to remove `lblod/berichtencentrum-sync-with-kalliope-service:0.17.1-rc.2` from `docker-compose.override.yml`
 ## 1.89.1 (2023-12-07)
 ### General
   - hotfix: improve migration speed
