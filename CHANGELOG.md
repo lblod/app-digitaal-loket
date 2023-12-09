@@ -1,5 +1,8 @@
 # Changelog
 ## Unreleased
+## 1.91.0 (2023-12-09)
+### Subsidies
+ - update active step for LEKP 1.0 to new opvolgmoment 2024 step for all consumptions
 ## 1.90.0 (2023-12-08)
 ### General
  - add LEKP 1.0 - 2022 || opvolgmoment 2024 step
