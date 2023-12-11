@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+## 1.91.1 (2023-12-11)
+ - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
 ### Subsidies
  - update active step for LEKP 1.0 to new opvolgmoment 2024 step for all consumptions
