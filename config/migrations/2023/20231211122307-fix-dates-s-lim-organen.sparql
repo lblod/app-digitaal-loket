@@ -1,0 +1,28 @@
+DELETE {
+  GRAPH ?g {
+    ?s <http://data.vlaanderen.be/ns/mandaat#bindingStart> ?start.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^xsd:date.
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/bestuursorganen/a2a251b1001b0ed8672dc864d8584548>
+    <http://data.lblod.info/id/bestuursorganen/508e1d2df0a15ed7520667db670e9fa9>
+    <http://data.lblod.info/id/bestuursorganen/950f958680854e3f2e915805a560b19d>
+    <http://data.lblod.info/id/bestuursorganen/9091f6c1780aa4a7e43fec00e4005710>
+    <http://data.lblod.info/id/bestuursorganen/f566ac19ca376efbfcf3824b4e2aa716>
+    <http://data.lblod.info/id/bestuursorganen/48e265168eb7d4eacf5140eb6b641468>
+    <http://data.lblod.info/id/bestuursorganen/8b1b2a6c8554af739cbf5a67740ceb2a>
+    <http://data.lblod.info/id/bestuursorganen/a2a251b1001b0ed8672dc864d8584548>
+  }
+  VALUES ?g {
+    <http://mu.semte.ch/graphs/public>
+  }
+  GRAPH ?g {
+    ?s <http://data.vlaanderen.be/ns/mandaat#bindingStart> ?start.
+  }
+}
