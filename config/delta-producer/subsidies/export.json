@@ -24,6 +24,25 @@
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://schema.org/email",
+        "http://schema.org/telephone",
+        "http://schema.org/url",
+        "http://schema.org/openingHours",
+        "http://schema.org/jobTitle",
+        "http://www.w3.org/ns/locn#address",
+        "http://www.w3.org/ns/shacl#order",
+        "http://xmlns.com/foaf/0.1/firstName",
+        "http://xmlns.com/foaf/0.1/familyName"
+      ],
+      "graphsFilter": [
+        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
+      ],
+      "type": "http://lblod.data.gift/vocabularies/forms/FormDataNode"
+    },
+    {
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
         "http://purl.org/dc/terms/description",
         "http://data.europa.eu/m8g/role"
       ],
@@ -324,45 +343,6 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
       ],
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject"
-    },
-    {
-      "properties": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://schema.org/email",
-        "http://schema.org/telephone",
-        "http://schema.org/url",
-        "http://schema.org/openingHours",
-        "http://schema.org/jobTitle",
-        "http://www.w3.org/ns/locn#address",
-        "http://www.w3.org/ns/shacl#order",
-        "http://xmlns.com/foaf/0.1/firstName",
-        "http://xmlns.com/foaf/0.1/familyName"
-      ],
-      "graphsFilter": [
-        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
-      ],
-      "type": "http://schema.org/ContactPoint"
-    },
-    {
-      "properties": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://purl.org/dc/terms/hasPart"
-      ],
-      "graphsFilter": [
-        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
-      ],
-      "type": "http://lblod.data.gift/vocabularies/subsidie/lekp1/signed-pact/FormData"
-    },
-    {
-      "properties": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://purl.org/dc/terms/hasPart"
-      ],
-      "graphsFilter": [
-        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"
-      ],
-      "type": "http://lblod.data.gift/vocabularies/subsidie/lekp1/opvolgmoment-report-attachment/FormData"
     }
   ]
 }
