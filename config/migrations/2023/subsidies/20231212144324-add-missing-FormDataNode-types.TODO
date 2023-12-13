@@ -1,0 +1,20 @@
+PREFIX form: <http://lblod.data.gift/vocabularies/forms/>
+
+INSERT {
+  GRAPH ?g {
+    ?formDataNode a form:FormDataNode .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?formDataNode ?predicate ?object .
+
+    FILTER(REGEX(STR(?g), "http://mu.semte.ch/graphs/organizations/.*/LoketLB-subsidies"))
+
+    FILTER NOT EXISTS {
+      ?formDataNode a ?type .
+    }
+
+    FILTER(STRSTARTS(STR(?formDataNode), "http://data.lblod.info/form-data/nodes/"))
+  }
+}
