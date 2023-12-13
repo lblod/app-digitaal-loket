@@ -1,0 +1,63 @@
+#
+# Insert LEKP-rapport-sloopbeleidsplan BesluitDocumentType
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/fbe65218-836d-4e7a-a988-bb0b2cf26c7b>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "fbe65218-836d-4e7a-a988-bb0b2cf26c7b" ;
+
+      # Only visible for "Gemeenten"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>      <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>  <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>      <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>  <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>    "LEKP-rapport - Sloopbeleidsplan" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>     "LEKP-rapport - Sloopbeleidsplan"@nl .
+  }
+}
+
+;
+
+#
+# Insert LEKP-rapport-collectieve-renovatie BesluitDocumentType
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/275b452e-8e9e-40c5-a1e1-4a34a9f04e62>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "275b452e-8e9e-40c5-a1e1-4a34a9f04e62" ;
+
+      # Only visible for "Gemeenten"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>          "LEKP-rapport - Collectieve renovatie" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>           "LEKP-rapport - Collectieve renovatie"@nl .
+  }
+}
+
+;
+
+#
+# Insert LEKP-rapport-Fietspaden BesluitDocumentType
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/62031aa8-2b35-48fd-9533-e76dc2cb040f>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "62031aa8-2b35-48fd-9533-e76dc2cb040f" ;
+
+      # Only visible for "Gemeenten"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>          "LEKP-rapport - Fietspaden" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>           "LEKP-rapport - Fietspaden"@nl .
+  }
+}
