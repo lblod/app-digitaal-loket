@@ -1,0 +1,112 @@
+version: "3.7"
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+services:
+  loket:
+    image: lblod/frontend-loket:0.88.1
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    ports:
+      - 80:80
+    restart: always
+    logging: *default-logging
+  identifier:
+    image: semtech/mu-identifier:1.10.1
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  dispatcher:
+    image: semtech/mu-dispatcher:2.1.0-beta.2
+    volumes:
+      - ./config/dispatcher:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  deltanotifier:
+    image: cecemel/delta-notifier:0.2.0-beta.2
+    volumes:
+      - ./config/delta:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  mocklogin:
+    image: lblod/mock-login-service:0.3.1
+  database:
+    image: semtech/mu-authorization:feature-service-roam-r1.1
+    environment:
+      LOG_OUTGOING_SPARQL_QUERIES : "true"
+      DATABASE_COMPATIBILITY: "Virtuoso"
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_OVERLOAD_RECOVERY: "true"
+      DATABASE_COMPATIBILITY: "Virtuoso"
+      # Note: not sure wether it gets picked up properly, it is meant for healing-process which may make
+      # heavy queries
+      QUERY_MAX_PROCESSING_TIME: 605000
+      QUERY_MAX_EXECUTION_TIME: 605000
+    volumes:
+      - ./config/authorization:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  virtuoso:
+    image: redpencil/virtuoso:1.2.0-rc.1
+    environment:
+      SPARQL_UPDATE: "true"
+      DEFAULT_GRAPH: "http://mu.semte.ch/application"
+    volumes:
+      - ./data/db:/data
+      - ./config/virtuoso/:/opt/virtuoso-scripts
+      - ./config/virtuoso/virtuoso-production.ini:/data/virtuoso.ini # Note: on production override this setting
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+    ports:
+      - "8890:8890"
+  cache:
+    image: semtech/mu-cache:2.0.1
+    links:
+      - resource:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  resource:
+    image: semtech/mu-cl-resources:feature-optionally-accept-strange-resource-types
+    environment:
+      CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+    volumes:
+      - ./config/resources:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  file:
+    image: cecemel/file-service:3.3.0
+    volumes:
+      - ./data/files:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  enrich-submission:
+    image: lblod/enrich-submission-service:1.7.0
+    environment:
+      ACTIVE_FORM_FILE: "share://semantic-forms/20231109110155-forms.ttl"
+    volumes:
+      - ./config/semantic-forms:/share/semantic-forms
+      - ./data/files/submissions:/share/submissions
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
