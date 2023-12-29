@@ -22,5 +22,17 @@
     "startInitialSync": false,
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-persons-sensitive",
     "disableDumpFileCreation": true
+  },
+  {
+    "name": "worship-submissions",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "dumpFileCreationJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions",
+    "cronPatternDumpJob": "0 0 5 * * 6",
+    "cronPatternHealingJob": "0 0 3 * * *",
+    "startInitialSync": false,
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-worship-submissions",
+    "disableDumpFileCreation": true
   }
 ]
