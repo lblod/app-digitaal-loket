@@ -66,9 +66,6 @@
     "loginPath": "/worship-submissions/login",
     "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions",
     "filesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
-    "account": "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7",
-
-    "key": "worship-submissions-key",
-    "waitForInitialSync": false
+    "account": "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
   }
 }
