@@ -7,6 +7,14 @@
 ### deploy notes
  - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
  - Remove line `image: lblod/berichtencentrum-sync-with-kalliope-service:0.17.2-rc.1` from `docker-compose.override.yml` on production.
+ - We improved on the queries a lot, they should be light enough to work
+   through mu-auth, but if not, add the following config in
+   `docker-compose.override.yml` to connect to Virtuoso directly:
+```
+vendor-data-distribution:
+  environment:
+    SPARQL_ENDPOINT_COPY_OPERATIONS: "http://virtuoso:8890/sparql"
+```
 ## 1.91.1 (2023-12-11)
  - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
