@@ -3,8 +3,10 @@
 ### general
  - bump resource to `semtech/mu-cl-resources:feature-differently-stable-luckless`
    - Fixes: Error 500 in some rare cases when fetching submissions
+ - bump `berichtencentrum-sync-with-kalliope` to fix last message regression
 ### deploy notes
  - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
+ - Remove line `image: lblod/berichtencentrum-sync-with-kalliope-service:0.17.2-rc.1` from `docker-compose.override.yml` on production.
 ## 1.91.1 (2023-12-11)
  - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
