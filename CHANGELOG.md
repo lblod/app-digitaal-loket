@@ -1,5 +1,10 @@
 # Changelog
 ## Unreleased
+### general
+ - bump resource to `semtech/mu-cl-resources:feature-differently-stable-luckless`
+   - Fixes: Error 500 in some rare cases when fetching submissions
+### deploy notes
+ - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
 ## 1.91.1 (2023-12-11)
  - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
