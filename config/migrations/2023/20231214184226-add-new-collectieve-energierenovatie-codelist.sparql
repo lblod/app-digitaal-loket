@@ -1,0 +1,23 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c>
+        a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "56ef78a0-5ab4-4548-b995-fd995703183c" ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Collective energy renovation case"@en ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Collectieve energierenovatie"@nl .
+
+    <http://lblod.data.gift/concepts/cd8af30e-cc53-44a1-83bd-102ee9b92b87>
+        a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "cd8af30e-cc53-44a1-83bd-102ee9b92b87" ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c> ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Energiebesparende collectieve renovatie"@nl .
+
+    <http://lblod.data.gift/concepts/3749ccdf-daf6-4be9-b966-e0705acc881c>
+        a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "3749ccdf-daf6-4be9-b966-e0705acc881c" ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/56ef78a0-5ab4-4548-b995-fd995703183c> ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Fossielvrije energiebesparende collectieve renovatie"@nl .
+  }
+}
