@@ -1,0 +1,43 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitType/a2836d2f-1fee-4549-bd85-b9c13698b757>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "a2836d2f-1fee-4549-bd85-b9c13698b757" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+            <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Niet-bindend advies op oprichting." ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Niet-bindend advies op oprichting"@nl.
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitType/afdb7387-da47-4dc4-bbbe-e86ea5c3df28>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "afdb7387-da47-4dc4-bbbe-e86ea5c3df28" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d>,
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+            <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Niet-bindend advies op statuten." ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Niet-bindend advies op statuten"@nl.
+  }
+}
