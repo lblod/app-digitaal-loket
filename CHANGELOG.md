@@ -8,6 +8,9 @@
  - Remove `delta-producer-background-jobs-initiator-worship-submissions` from `docker-compose.yml`
  - Remove `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.yml`
  - Consolidate the above into `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer`
+### Frontend
+ - Bump frontend to `v0.88.2`
+  - Fixes: Text clipping on `Nationaliteit` placeholder in `Mandatenbeheer` for worship services
 ### deploy notes
  - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
  - Remove line `image: lblod/berichtencentrum-sync-with-kalliope-service:0.17.2-rc.1` from `docker-compose.override.yml` on production.
