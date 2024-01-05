@@ -43,5 +43,29 @@
     "loginPath": "/persons-sensitive/login",
     "filesGraph": "http://redpencil.data.gift/id/deltas/producer/persons-sensitive-deltas",
     "account": "http://data.lblod.info/foaf/account/id/12020cc2-dbc6-4273-ab18-177571fd8b06"
+  },
+  "worship-submissions": {
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-worship-submissions",
+    "exportConfigPath": "/config/worship-submissions/export.json",
+    "filesPath": "/worship-submissions/files",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "relativeFilePath": "deltas/worship-submissions",
+    "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-worship-submissions",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions",
+    "queuePollInterval": 3000,
+    "useVirtuosoForExpensiveSelects": true,
+    "skipMuAuthInitialSync": true,
+    "skipMuAuthHealing": true,
+    "useFileDiff": true,
+    "healingInitialBatchSizeInsert": 1000,
+    "updatePublicationGraphSleep": 200,
+    "serveDeltaFiles": true,
+    "deltaInterval": 10000,
+    "deltaPath": "/worship-submissions/delta",
+    "loginPath": "/worship-submissions/login",
+    "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions",
+    "filesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
+    "account": "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
   }
 }
