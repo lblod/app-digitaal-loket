@@ -4,6 +4,10 @@
  - bump resource to `semtech/mu-cl-resources:feature-differently-stable-luckless`
    - Fixes: Error 500 in some rare cases when fetching submissions
  - bump `berichtencentrum-sync-with-kalliope` to fix last message regression
+### Delta Worship Submissions
+ - Remove `delta-producer-background-jobs-initiator-worship-submissions` from `docker-compose.yml`
+ - Remove `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.yml`
+ - Consolidate the above into `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer`
 ### deploy notes
  - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
  - Remove line `image: lblod/berichtencentrum-sync-with-kalliope-service:0.17.2-rc.1` from `docker-compose.override.yml` on production.
@@ -15,6 +19,17 @@ vendor-data-distribution:
   environment:
     SPARQL_ENDPOINT_COPY_OPERATIONS: "http://virtuoso:8890/sparql"
 ```
+#### Delta Worship Submissions
+##### Edit `config/delta-producer/background-jobs-initiator/config.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
+ - Add `"key": "<producer_key>"` at the end of the object; check `docker-compose.override.yml` for the value of that key.
+##### Edit `docker-compose.override.yml`
+ - Remove the specific entries for `delta-producer-background-jobs-initiator-worship-submissions` and `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.override.yml`.
+##### Restart Relevant Containers
+ - `drc restart delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
+##### Remove Orphaned Containers
+ - `drc up -d --remove-orphans`
 ## 1.91.1 (2023-12-11)
  - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
