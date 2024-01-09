@@ -22,15 +22,17 @@ vendor-data-distribution:
   environment:
     SPARQL_ENDPOINT_COPY_OPERATIONS: "http://virtuoso:8890/sparql"
 ```
+#### Frontend
+ - `drc up -d --remove-orphans loket`
 #### Delta Worship Submissions
 ##### Edit `config/delta-producer/background-jobs-initiator/config.json`
  - Change `"startInitialSync"` from `false` to `true`.
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
- - Add `"key": "<producer_key>"` at the end of the object; check `docker-compose.override.yml` for the value of that key.
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
 ##### Edit `docker-compose.override.yml`
  - Remove the specific entries for `delta-producer-background-jobs-initiator-worship-submissions` and `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.override.yml`.
 ##### Restart Relevant Containers
- - `drc restart delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
+ - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
 ##### Remove Orphaned Containers
  - `drc up -d --remove-orphans`
 ## 1.91.1 (2023-12-11)
