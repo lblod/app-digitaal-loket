@@ -1,0 +1,20 @@
+PREFIX m8g: <http://data.europa.eu/m8g/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Update LEKP 1.0 Opvolgmoment 2024 deadline
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/periodes/d177ffb3-5934-4005-b481-5a424f136ec6> m8g:endTime ?endTimeSubsidy .
+    <http://data.lblod.info/id/periodes/cea1f5f8-a659-4f59-886a-fe8f75cb2305> m8g:endTime ?endTimeStep .
+  }
+};
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Time is set to 21:59:00 because Belgium time is UTC+2 instead of UTC+1 in May.
+    # Update endtime of subsidy
+    <http://data.lblod.info/id/periodes/d177ffb3-5934-4005-b481-5a424f136ec6> m8g:endTime "2024-05-01T21:59:00Z"^^xsd:dateTime.
+    #Update endtime of the only step
+    <http://data.lblod.info/id/periodes/cea1f5f8-a659-4f59-886a-fe8f75cb2305> m8g:endTime "2024-05-01T21:59:00Z"^^xsd:dateTime.
+  }
+}
