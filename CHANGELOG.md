@@ -36,6 +36,14 @@ vendor-data-distribution:
  - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
 ##### Remove Orphaned Containers
  - `drc up -d --remove-orphans`
+### Toezicht forms
+- Update forms
+    - New forms LEKP Collectieve Energiebesparende Renovatie, Fietspaden, Sloopbeleidsplan
+    - New forms Niet-bindend advies op statuten and Niet-bindend advies op oprichting
+    - Change form LEKP Melding correctie authentieke bron, removed field "type correctie"
+    - Bump enrich-submission v1.8.0
+- Deploy notes
+  - drc up -d enrich-submission; drc restart migrations resource cache
 ## 1.91.1 (2023-12-11)
  - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
