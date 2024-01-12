@@ -15,3 +15,7 @@
 docker-compose.override.yml
 .htpasswd
 .env
+
+# delta-producer-publication-graph-maintainer and delta-producer-background-jobs-initiator config overrides
+config/delta-producer/background-jobs-initiator/config.override.json
+config/delta-producer/publication-graph-maintainer/config.override.json
