@@ -1,5 +1,5 @@
 # Changelog
-## 1.92.0 (2024-07-17)
+## 1.92.0 (2024-01-17)
 ### General
 #### Backend
  - bump resource to `semtech/mu-cl-resources:feature-differently-stable-luckless`
