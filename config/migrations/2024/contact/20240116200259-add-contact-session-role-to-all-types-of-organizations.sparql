@@ -1,0 +1,25 @@
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+
+#
+# Insert contact app session role for all types of
+# organizations. 
+#
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?account ext:sessionRole "abb_organisatieportaal_rol_3d" .
+  }
+}
+WHERE {
+  ?bestuurseenheid a besluit:Bestuurseenheid .
+
+  ?persoon a foaf:Person ;
+    foaf:member ?bestuurseenheid ;
+    foaf:account ?account .
+
+  ?account a foaf:OnlineAccount ;
+    ext:sessionRole ?sessionRole .
+}
