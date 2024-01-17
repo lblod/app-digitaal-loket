@@ -12,12 +12,17 @@
  - Bump frontend to `v0.88.3`
   - Fixes: Text clipping on `Nationaliteit` placeholder in `Mandatenbeheer` for worship services
   - Fixes: preview links in the "Toezicht" module
-### Toezicht forms
+### toezicht
 - Update forms
     - New forms LEKP Collectieve Energiebesparende Renovatie, Fietspaden, Sloopbeleidsplan
     - New forms Niet-bindend advies op statuten and Niet-bindend advies op oprichting
     - Change form LEKP Melding correctie authentieke bron, removed field "type correctie"
     - Bump enrich-submission v1.8.0
+### subsidies
+- Extend deadline nooddorpen
+- Extend deadline oekraine slaapplekken
+- Update lekp 2.1 and 2.0 opvolgmoment titles
+
 ### Deploy notes
 #### Config: docker-compose.override.yml
  - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
