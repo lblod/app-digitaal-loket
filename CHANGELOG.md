@@ -1,49 +1,49 @@
 # Changelog
-## Unreleased
-### general
+## 1.92.0 (2024-07-17)
+### General
+#### Backend
  - bump resource to `semtech/mu-cl-resources:feature-differently-stable-luckless`
    - Fixes: Error 500 in some rare cases when fetching submissions
  - bump `berichtencentrum-sync-with-kalliope` to fix last message regression
-### Delta Worship Submissions
  - Remove `delta-producer-background-jobs-initiator-worship-submissions` from `docker-compose.yml`
  - Remove `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.yml`
  - Consolidate the above into `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer`
-### Frontend
+#### Frontend
  - Bump frontend to `v0.88.3`
   - Fixes: Text clipping on `Nationaliteit` placeholder in `Mandatenbeheer` for worship services
   - Fixes: preview links in the "Toezicht" module
-### deploy notes
+### toezicht
+- Update forms
+    - New forms LEKP Collectieve Energiebesparende Renovatie, Fietspaden, Sloopbeleidsplan
+    - New forms Niet-bindend advies op statuten and Niet-bindend advies op oprichting
+    - Change form LEKP Melding correctie authentieke bron, removed field "type correctie"
+    - Bump enrich-submission v1.8.0
+### subsidies
+- Extend deadline nooddorpen
+- Extend deadline oekraine slaapplekken
+- Update lekp 2.1 and 2.0 opvolgmoment titles
+
+### Deploy notes
+#### Config: docker-compose.override.yml
  - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
  - Remove line `image: lblod/berichtencentrum-sync-with-kalliope-service:0.17.2-rc.1` from `docker-compose.override.yml` on production.
  - We improved on the queries a lot, they should be light enough to work
    through mu-auth, but if not, add the following config in
    `docker-compose.override.yml` to connect to Virtuoso directly:
-```
-vendor-data-distribution:
-  environment:
-    SPARQL_ENDPOINT_COPY_OPERATIONS: "http://virtuoso:8890/sparql"
-```
-#### Frontend
- - `drc up -d --remove-orphans loket`
-#### Delta Worship Submissions
+  ```
+  vendor-data-distribution:
+    environment:
+      SPARQL_ENDPOINT_COPY_OPERATIONS: "http://virtuoso:8890/sparql"
+  ```
+#### Config Delta Worship Submissions
 ##### Edit `config/delta-producer/background-jobs-initiator/config.json`
  - Change `"startInitialSync"` from `false` to `true`.
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
  - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
 ##### Edit `docker-compose.override.yml`
  - Remove the specific entries for `delta-producer-background-jobs-initiator-worship-submissions` and `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.override.yml`.
-##### Restart Relevant Containers
- - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
-##### Remove Orphaned Containers
- - `drc up -d --remove-orphans`
-### Toezicht forms
-- Update forms
-    - New forms LEKP Collectieve Energiebesparende Renovatie, Fietspaden, Sloopbeleidsplan
-    - New forms Niet-bindend advies op statuten and Niet-bindend advies op oprichting
-    - Change form LEKP Melding correctie authentieke bron, removed field "type correctie"
-    - Bump enrich-submission v1.8.0
-- Deploy notes
-  - drc up -d enrich-submission; drc restart migrations resource cache
+#### docker commando
+ - `drc up -d --remove-orphans; drc restart migrations resource cache dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
 ## 1.91.1 (2023-12-11)
  - Fix s-limburg and a2gb start dates
 ## 1.91.0 (2023-12-09)
