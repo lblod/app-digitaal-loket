@@ -7,6 +7,10 @@
  - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
  - Move subsidy warning to bottom of the page
 ### Deploy Notes
+#### Frontend
+ - Add the relevant external URLs (QA or PROD) to `docker-compose.override.yml` under the `environment` section of `loket`; the URLs can be found in DL-5537 and DL-5538:
+   - `EMBER_CONTACT_URL: "{{URL}}"`
+   - `EMBER_VERENIGINGEN_URL: "{{URL}}"`
 #### Docker Commands
  - `drc up -d loket`
  - `drc restart migrations`
