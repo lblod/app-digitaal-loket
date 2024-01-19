@@ -4,6 +4,7 @@
     {
       "type": "http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#status",
         "http://www.w3.org/ns/org#holds",
@@ -22,6 +23,7 @@
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#beleidsdomein",
         "http://www.w3.org/ns/org#holds",
@@ -40,6 +42,7 @@
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
       "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
@@ -66,6 +69,7 @@
                         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
                         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
                         ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
         "http://www.w3.org/ns/org#holds",
@@ -85,6 +89,7 @@
     {
       "type": "http://www.w3.org/ns/org#Membership",
       "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#hasMembership",
         "http://www.w3.org/ns/org#holds",
@@ -101,6 +106,7 @@
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Fractie",
       "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#organisation",
         "^http://www.w3.org/ns/org#hasMembership",
@@ -120,6 +126,7 @@
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandaat",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#hasPost",
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
@@ -135,6 +142,7 @@
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#role",
         "^http://www.w3.org/ns/org#hasPost",
@@ -152,6 +160,7 @@
     {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
@@ -168,6 +177,7 @@
     {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://data.vlaanderen.be/ns/besluit#classificatie",
         "http://www.w3.org/2004/02/skos/core#inScheme"
@@ -182,6 +192,7 @@
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
@@ -195,6 +206,7 @@
     {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#bestuurt",
         "http://data.vlaanderen.be/ns/besluit#classificatie",
@@ -211,6 +223,7 @@
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#classificatie",
         "^http://data.vlaanderen.be/ns/besluit#bestuurt",
@@ -227,6 +240,7 @@
     {
       "type": "http://www.w3.org/ns/prov#Location",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/besluit#werkingsgebied",
         "^http://data.vlaanderen.be/ns/besluit#bestuurt",

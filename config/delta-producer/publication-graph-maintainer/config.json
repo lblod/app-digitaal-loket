@@ -67,5 +67,29 @@
     "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions",
     "filesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
     "account": "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
+  },
+  "mandatarissen": {
+    "deltaPath": "/mandatarissen/delta",
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-mandatarissen",
+    "exportConfigPath": "/config/mandatarissen/export.json",
+    "filesPath": "/mandatarissen/files",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "relativeFilePath": "deltas/mandatarissen",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen",
+    "queuePollInterval": 3000,
+    "skipMuAuthInitialSync": true,
+    "serveDeltaFiles": true,
+    "publisherUri": "http://data.lblod.info/services/delta-production-json-diff-file-manager-mandatarissen",
+    "deltaInterval": 10000,
+    "errorGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "useVirtuosoForExpensiveSelects": true,
+    "skipMuAuthHealing": true,
+    "useFileDiff": true,
+    "healingInitialBatchSizeInsert": 1000,
+    "updatePublicationGraphSleep": 200,
+    "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer",
+    "filesGraph": "http://redpencil.data.gift/id/deltas/producer/mandatarissen-deltas",
+    "loginPath": "/mandatarissen/login"
   }
 }
