@@ -6,6 +6,11 @@
 ### Frontend
  - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
  - Move subsidy warning to bottom of the page
+### Deploy Notes
+#### Docker Commands
+ - `drc up -d loket`
+ - `drc restart migrations`
+ - `drc restart resource cache`
 ## 1.92.0 (2024-01-17)
 ### General
 #### Backend
