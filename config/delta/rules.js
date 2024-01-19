@@ -19,6 +19,7 @@ import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-g
 import validateSubmission from './validate-submission';
 import deltaConsumerWorshipMandates from './delta-consumer-worship-services';
 import vendorDataDistribution from './vendor-data-distribution';
+import virusScanner from './virus-scanner';
 
 export default [
   ...automaticSubmission,
@@ -41,5 +42,6 @@ export default [
   ...toezichtFlattenedFormDataGenerator,
   ...validateSubmission,
   ...deltaConsumerWorshipMandates,
-  ...vendorDataDistribution
+  ...vendorDataDistribution,
+  ...virusScanner
 ];
