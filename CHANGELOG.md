@@ -1,4 +1,11 @@
 # Changelog
+## Unreleased
+### General
+### Backend
+ - Add mock-login session roles for `contact` and `verenigingen` apps (DL-5599)
+### Frontend
+ - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
+ - Move subsidy warning to bottom of the page
 ## 1.92.0 (2024-01-17)
 ### General
 #### Backend
