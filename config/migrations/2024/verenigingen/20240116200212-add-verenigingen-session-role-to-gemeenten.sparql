@@ -22,5 +22,5 @@ WHERE {
     foaf:account ?account .
 
   ?account a foaf:OnlineAccount ;
-    ext:sessionRole ?sessionRole .
+    foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service> .
 }
