@@ -1,0 +1,20 @@
+DELETE {
+  GRAPH ?g {
+    ?bestuurseenheid <http://purl.org/dc/terms/identifier> ?identifier ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer> ?kboNumber .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?bestuurseenheid <http://purl.org/dc/terms/identifier> "0805138503" ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer> "0805138503" .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuurseenheden/682c21df-fe6a-4266-8f97-109e5b5b4ae4> AS ?bestuurseenheid)
+
+  GRAPH ?g {
+    ?bestuurseenheid <http://purl.org/dc/terms/identifier> ?identifier ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer> ?kboNumber .
+  }
+}

@@ -3,10 +3,12 @@
 ### General
 ### Backend
  - Add mock-login session roles for `contact` and `verenigingen` apps (DL-5599)
- - Bump `berichtencentrum-sync-with-kalliope` to v0.18.0 (DL-5560)
+ - Bump `berichtencentrum-sync-with-kalliope` to `v0.18.0` (DL-5560)
+ - Replace wrong kbo-number with the correct one for s-Lim (DL-5609)
 ### Frontend
- - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
- - Move subsidy warning to bottom of the page
+ - Bump frontend to `v0.89.0`
+   - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
+   - Move subsidy warning to bottom of the page (DGS-111)
 ### Deploy Notes
 #### Frontend
  - Add the relevant external URLs (QA or PROD) to `docker-compose.override.yml` under the `environment` section of `loket`; the URLs can be found in DL-5537 and DL-5538:
