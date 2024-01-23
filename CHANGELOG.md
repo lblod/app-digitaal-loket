@@ -3,6 +3,7 @@
 ### General
 ### Backend
  - Add mock-login session roles for `contact` and `verenigingen` apps (DL-5599)
+ - Bump `berichtencentrum-sync-with-kalliope` to v0.18.0 (DL-5560)
 ### Frontend
  - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
  - Move subsidy warning to bottom of the page
@@ -12,7 +13,7 @@
    - `EMBER_CONTACT_URL: "{{URL}}"`
    - `EMBER_VERENIGINGEN_URL: "{{URL}}"`
 #### Docker Commands
- - `drc up -d loket`
+ - `drc up -d loket berichtencentrum-sync-with-kalliope`
  - `drc restart migrations`
  - `drc restart resource cache`
 ## 1.92.0 (2024-01-17)
