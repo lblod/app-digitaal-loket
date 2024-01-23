@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.93.0 (2024-01-23)
 ### General
 ### Backend
  - Add mock-login session roles for `contact` and `verenigingen` apps (DL-5599)
