@@ -58,7 +58,7 @@ export default [
       // anything
     },
     callback: {
-      url: 'http://delta-producer-publication-graph-maintainer-mandatarissen/delta',
+      url: 'http://delta-producer-publication-graph-maintainer/mandatarissen/delta',
       method: 'POST'
     },
     options: {
