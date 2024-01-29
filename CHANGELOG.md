@@ -10,6 +10,8 @@
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
  - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584)
  - Added virus-scanner service (DL-5553)
+### Toezicht
+ - Add a future date warning validation to the "Datum zitting" fields (DL-5624)
 ### Deploy Notes
 #### Config Delta Mandatarissen & Leidinggevenden
 ##### Edit `config/delta-producer/background-jobs-initiator/config.json`

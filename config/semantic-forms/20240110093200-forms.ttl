@@ -314,7 +314,12 @@ fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath prov:generated ] dct:subject [ sh:inversePath besluit:behandelt ]  prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -331,7 +336,12 @@ fields:ba965704-5a74-4a77-b283-4f97f3b7ddbc a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath besluit:heeftBesluitenlijst ] prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath besluit:heeftBesluitenlijst ] prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -348,7 +358,12 @@ fields:857d670f-9a25-4555-bfe5-ecc48c2ffde3 a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath besluit:heeftNotulen ] prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath besluit:heeftNotulen ] prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
@@ -365,7 +380,12 @@ fields:720c86f8-4537-44b0-850b-fb3452d8bb2d a form:Field ;
       [ a form:ValidDateTime ;
         form:grouping form:MatchEvery ;
         sh:path ( [ sh:inversePath besluit:heeftAgenda ] prov:startedAtTime ) ;
-        sh:resultMessage "Geef een geldige datum en tijd op."] ;
+        sh:resultMessage "Geef een geldige datum en tijd op."],
+      [ a form:DateInPast ;
+        form:grouping form:MatchEvery ;
+        sh:path ( [ sh:inversePath besluit:heeftAgenda ] prov:startedAtTime ) ;
+        sh:resultMessage "Let op: datum ligt in de toekomst. Controleer uw keuze." ;
+        sh:severity sh:Warning ] ;
     form:displayType displayTypes:dateTime ;
     sh:group fields:aDynamicPropertyGroup .
 
