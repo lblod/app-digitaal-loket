@@ -89,7 +89,6 @@
     "healingInitialBatchSizeInsert": 1000,
     "updatePublicationGraphSleep": 200,
     "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer",
-    "filesGraph": "http://redpencil.data.gift/id/deltas/producer/mandatarissen-deltas",
     "loginPath": "/mandatarissen/login"
   }
 }
