@@ -1,5 +1,5 @@
 # Changelog
-## 1.94.0
+## Unreleased
 ### Backend
  - Bump `dispatcher-worship-mandates` service to v1.4.0 to use vendor provance for dispatching harvested data. This hopefully resolves some of the issues where organisations could see data that they did not publish themselves.
  - Add migration to remove all previously harvested data. Harvesting needs to be completely restarted.
