@@ -1,4 +1,8 @@
 # Changelog
+## unreleased
+### General
+ - Consolidating mandatarissen delta flow (DL-5585, DL-5586)
+ - Consolidating leidinggevenden delta flow (DL-5582, DL-5583)
 ## 1.93.0 (2024-01-23)
 ### General
 ### Backend
