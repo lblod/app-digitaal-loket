@@ -411,8 +411,12 @@ defmodule Dispatcher do
   #################################################################
   # loket-leidinggevenden sync
   #################################################################
+  post "/sync/leidinggevenden/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/leidinggevenden/login/"
+  end
+
   get "/sync/leidinggevenden/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-leidinggevenden/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/leidinggevenden/files/"
   end
 
   #################################################################

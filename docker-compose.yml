@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.88.3
+    image: lblod/frontend-loket:0.89.0
     links:
       - identifier:backend
     labels:
@@ -523,51 +523,6 @@ services:
       ALLOWED_ACCOUNTS: "http://services.lblod.info/diff-consumer/account,http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7,http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
     restart: always
     logging: *default-logging
-  ################################################################################
-  # DELTA LEIDINGGEVENDEN: START
-  ################################################################################
-  delta-producer-background-jobs-initiator-leidinggevenden:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden"
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden"
-      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden"
-      CRON_PATTERN_DUMP_JOB: "0 0 0 * * 6" # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: "0 0 2 * * *" # everyday at 2 AM
-      START_INITIAL_SYNC: "false" # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  delta-producer-publication-graph-maintainer-leidinggevenden:
-    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
-    environment:
-      MAX_BODY_SIZE: "50mb"
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      RELATIVE_FILE_PATH: "deltas/leidinggevenden"
-      PUBLICATION_GRAPH: "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer"
-      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden"
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden"
-      QUEUE_POLL_INTERVAL: 3000
-      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true"
-      SKIP_MU_AUTH_INITIAL_SYNC: "true"
-      SERVE_DELTA_FILES: "true"
-      PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager-leidinggevenden"
-      DELTA_INTERVAL_MS: 10000
-      PRETTY_PRINT_DIFF_JSON: "true"
-      ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-    volumes:
-      - ./config/delta-producer/leidinggevenden:/config
-      - ./data/files/:/share
-    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
-    #    labels:
-    #      - "logging=true"
-    restart: always
-    logging: *default-logging
-  ################################################################################
-  # DELTA LEIDINGGEVENDEN: END
-  ################################################################################
   ################################################################################
   # DELTA SUBMISSIONS: START
   ################################################################################
