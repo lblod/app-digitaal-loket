@@ -89,7 +89,6 @@
     "healingInitialBatchSizeInsert": 1000,
     "updatePublicationGraphSleep": 200,
     "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer",
-    "filesGraph": "http://redpencil.data.gift/id/deltas/producer/leidinggevenden-deltas",
     "loginPath": "/leidinggevenden/login"
   }
 }
