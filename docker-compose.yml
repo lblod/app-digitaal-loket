@@ -524,51 +524,6 @@ services:
     restart: always
     logging: *default-logging
   ################################################################################
-  # DELTA MANDATARISSEN: START
-  ################################################################################
-  delta-producer-background-jobs-initiator-mandatarissen:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen"
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen"
-      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen"
-      CRON_PATTERN_DUMP_JOB: "0 0 1 * * 6" # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: "0 0 2 * * *" # everyday at 2 AM
-      START_INITIAL_SYNC: "false" # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  delta-producer-publication-graph-maintainer-mandatarissen:
-    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
-    environment:
-      MAX_BODY_SIZE: "50mb"
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      RELATIVE_FILE_PATH: "deltas/mandatarissen"
-      PUBLICATION_GRAPH: "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer"
-      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen"
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen"
-      QUEUE_POLL_INTERVAL: 3000
-      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
-      SKIP_MU_AUTH_INITIAL_SYNC: "true"
-      SERVE_DELTA_FILES: "true"
-      PUBLISHER_URI: "http://data.lblod.info/services/delta-production-json-diff-file-manager-mandatarissen"
-      DELTA_INTERVAL_MS: 10000
-      PRETTY_PRINT_DIFF_JSON: "true"
-      ERROR_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-    volumes:
-      - ./config/delta-producer/mandatarissen:/config
-      - ./data/files/:/share
-    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
-    #    labels:
-    #      - "logging=true"
-    restart: always
-    logging: *default-logging
-  ################################################################################
-  # DELTA MANDATARISSEN: END
-  ################################################################################
-  ################################################################################
   # DELTA SUBMISSIONS: START
   ################################################################################
   delta-producer-background-jobs-initiator:

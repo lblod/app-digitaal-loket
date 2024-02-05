@@ -123,8 +123,6 @@ services:
     restart: "no"
   delta-producer-dump-file-publisher:
     restart: "no"
-  delta-producer-publication-graph-maintainer-mandatarissen:
-    restart: "no"
   delta-producer-publication-graph-maintainer:
     restart: "no"
   delta-producer-publication-graph-maintainer-ws-sensitive:
