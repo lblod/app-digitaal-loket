@@ -149,6 +149,7 @@
         "http://lblod.data.gift/vocabularies/subsidie/invoiceUpload",
         "http://lblod.data.gift/vocabularies/subsidie/awardReportUpload",
         "http://lblod.data.gift/vocabularies/subsidie/attachment",
+        "http://lblod.data.gift/vocabularies/subsidie/attachmentLEKPReport",
         "http://lblod.data.gift/vocabularies/subsidie/signedPact",
         "http://lblod.data.gift/vocabularies/subsidie/climateTable",
         "http://purl.org/pav/createdBy",
