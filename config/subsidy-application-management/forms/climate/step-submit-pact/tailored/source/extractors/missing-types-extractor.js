@@ -8,7 +8,7 @@ module.exports = {
     const RDF_TYPE = new $rdf.NamedNode('http://www.w3.org/1999/02/22-rdf-syntax-ns#type');
     const SCHEMA = new $rdf.Namespace('http://schema.org/');
     const SUBSIDIE = new $rdf.Namespace('http://lblod.data.gift/vocabularies/subsidie/');
-    const PACT = new $rdf.Namespace('http://lblod.data.gift/vocabularies/subsidie/climate/signed-pact/');
+    const SIGNED_PACT = new $rdf.Namespace('http://lblod.data.gift/vocabularies/subsidie/climate/signed-pact/');
 
 
     const contactPoint = new $rdf.NamedNode(URI_BASE + mu.uuid());
@@ -19,6 +19,6 @@ module.exports = {
     store.add($rdf.sym(contactPoint), RDF_TYPE, SCHEMA('ContactPoint'), graphs.additions);
 
     store.add($rdf.sym(source.uri), SUBSIDIE('signedPact'), $rdf.sym(signedPact), graphs.additions);
-    store.add($rdf.sym(signedPact), RDF_TYPE, PACT('FormData'), graphs.additions);
+    store.add($rdf.sym(signedPact), RDF_TYPE, SIGNED_PACT('FormData'), graphs.additions);
   }
 }
