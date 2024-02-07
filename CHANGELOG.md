@@ -1,8 +1,25 @@
 # Changelog
-## unreleased
+## Unreleased
 ### General
- - Consolidating mandatarissen delta flow (DL-5585, DL-5586)
- - Consolidating leidinggevenden delta flow (DL-5582, DL-5583)
+#### Backend
+ - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
+ - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
+ - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584) 
+### Deploy Notes
+#### Config Delta Mandatarissen & Leidinggevenden
+##### Edit `config/delta-producer/background-jobs-initiator/config.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Edit `docker-compose.override.yml`
+ - Remove the specific entries from `docker-compose.override.yml` for: 
+   - `delta-producer-background-jobs-initiator-mandatarissen`
+   - `delta-producer-background-jobs-initiator-leidinggevenden`
+   - `delta-producer-publication-graph-maintainer-mandatarissen`
+   - `delta-producer-publication-graph-maintainer-leidinggevenden`
+#### Docker commands
+ - `drc up -d --remove-orphans`
+ - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
 ## 1.93.0 (2024-01-23)
 ### General
 ### Backend
