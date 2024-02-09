@@ -10,12 +10,12 @@
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
  - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584)
  - Added virus-scanner service (DL-5553)
+ - Bump `dispatcher-worship-mandates` service to v1.4.0 to use vendor provance for dispatching harvested data. This hopefully resolves some of the issues where organisations could see data that they did not publish themselves.
+ - Add migration to remove all previously harvested data. Harvesting needs to be completely restarted.
 ### Toezicht
  - Add a future date warning validation to the "Datum zitting" fields (DL-5624)
  - Bump `delta-producer-publication-graph-maintainer` (DL-5584)
  - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584) 
- - Bump `dispatcher-worship-mandates` service to v1.4.0 to use vendor provance for dispatching harvested data. This hopefully resolves some of the issues where organisations could see data that they did not publish themselves.
- - Add migration to remove all previously harvested data. Harvesting needs to be completely restarted.
 ### Deploy Notes
 #### Config Delta Mandatarissen & Leidinggevenden
 ##### Edit `config/delta-producer/background-jobs-initiator/config.json`
