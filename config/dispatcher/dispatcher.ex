@@ -400,15 +400,23 @@ defmodule Dispatcher do
   #################################################################
   # loket-mandatarissen sync
   #################################################################
+  post "/sync/mandatarissen/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/mandatarissen/login/"
+  end
+
   get "/sync/mandatarissen/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-mandatarissen/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/mandatarissen/files/"
   end
 
   #################################################################
   # loket-leidinggevenden sync
   #################################################################
+  post "/sync/leidinggevenden/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/leidinggevenden/login/"
+  end
+
   get "/sync/leidinggevenden/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-leidinggevenden/files/"
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/leidinggevenden/files/"
   end
 
   #################################################################
