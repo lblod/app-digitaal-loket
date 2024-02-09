@@ -1,9 +1,12 @@
 # Changelog
 ## Unreleased
+### Subsidies
+ - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
+ - Bump `delta-producer-publication-graph-maintainer` (DL-5584)
  - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584) 
  - Bump `dispatcher-worship-mandates` service to v1.4.0 to use vendor provance for dispatching harvested data. This hopefully resolves some of the issues where organisations could see data that they did not publish themselves.
  - Add migration to remove all previously harvested data. Harvesting needs to be completely restarted.
@@ -21,7 +24,7 @@
    - `delta-producer-publication-graph-maintainer-leidinggevenden`
 #### Docker commands
  - `drc up -d --remove-orphans`
- - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
+ - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
 ## 1.93.0 (2024-01-23)
 ### General
 ### Backend
