@@ -6,6 +6,7 @@
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
+ - Bump `delta-producer-publication-graph-maintainer` (DL-5584)
  - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584) 
 ### Deploy Notes
 #### Config Delta Mandatarissen & Leidinggevenden
