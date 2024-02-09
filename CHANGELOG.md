@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+### Subsidies
+ - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
@@ -19,7 +21,7 @@
    - `delta-producer-publication-graph-maintainer-leidinggevenden`
 #### Docker commands
  - `drc up -d --remove-orphans`
- - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
+ - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
 ## 1.93.0 (2024-01-23)
 ### General
 ### Backend
