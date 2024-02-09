@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.89.0
+    image: lblod/frontend-loket:0.90.0
     links:
       - identifier:backend
     labels:
@@ -142,6 +142,16 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  virus-scanner:
+    image: redpencil/virus-scanner-service:0.1.0
+    environment:
+      VIRUS_SCANNER_CLAMD_USER: "root"
+    links:
+      - database:database
+    volumes:
+      - ./data/files:/share
+      # TODO: is this required? We'd like to avoid docker-volumes
+      # - ./data/files/virus-scanner-signatures:/var/lib/clamav
   create-bbcdr:
     image: lblod/create-bbcdr-rapporten-service:0.5.0
     labels:

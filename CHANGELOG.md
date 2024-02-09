@@ -3,9 +3,15 @@
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
+#### Frontend
+ - Bump frontend to `v0.90.0`: https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0900-2024-02-09
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
+ - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584)
+ - Added virus-scanner service (DL-5553)
+### Toezicht
+ - Add a future date warning validation to the "Datum zitting" fields (DL-5624)
  - Bump `delta-producer-publication-graph-maintainer` (DL-5584)
  - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584) 
  - Bump `dispatcher-worship-mandates` service to v1.4.0 to use vendor provance for dispatching harvested data. This hopefully resolves some of the issues where organisations could see data that they did not publish themselves.
@@ -22,6 +28,8 @@
    - `delta-producer-background-jobs-initiator-leidinggevenden`
    - `delta-producer-publication-graph-maintainer-mandatarissen`
    - `delta-producer-publication-graph-maintainer-leidinggevenden`
+#### Controle
+ - Update the version of the controle image in the docker-compose.override.yml file
 #### Docker commands
  - `drc up -d --remove-orphans`
  - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
