@@ -9,6 +9,7 @@ module.exports = {
 
     const {$rdf, mu, sudo} = lib;
 
+    const RDF_TYPE = new $rdf.NamedNode('http://www.w3.org/1999/02/22-rdf-syntax-ns#type');
     const SCHEMA =
         new $rdf.Namespace('http://schema.org/');
     const DCT =
@@ -22,6 +23,12 @@ module.exports = {
         $rdf.sym(target.uri),
         SCHEMA('bankAccount'),
         $rdf.sym(bankAccount),
+        graphs.additions);
+
+    store.add(
+        $rdf.sym(bankAccount),
+        RDF_TYPE,
+        SCHEMA('BankAccount'),
         graphs.additions);
 
     const {iban} = await getGenericInfo(source.uri, mu, sudo);

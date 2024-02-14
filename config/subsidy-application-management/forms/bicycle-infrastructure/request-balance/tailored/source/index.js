@@ -4,6 +4,7 @@ const contactInfo = require(
     './extractors/contact-info-extractor');
 const bankInfo = require(
     './extractors/bank-info-extractor');
+const missingTypesExtractor = require('./extractors/missing-types-extractor');
 
 precedingFormExtractor = (extractors) =>
     Object.assign(
@@ -50,5 +51,5 @@ SELECT DISTINCT ?previousForm where {
  * NOTE: order of execution bound to position in the array
  */
 module.exports = [
-  precedingFormExtractor([genericInfo, contactInfo, bankInfo]),
+  precedingFormExtractor([genericInfo, contactInfo, bankInfo]), missingTypesExtractor,
 ];
