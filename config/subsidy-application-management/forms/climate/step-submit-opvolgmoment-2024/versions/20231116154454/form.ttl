@@ -134,7 +134,7 @@ fields:f6f972c0-e796-42e8-87c1-c689dab0a690 a form:Field ;
         [ a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht."@nl ;
-            sh:path lblodSubsidie:attachment
+            sh:path ( lblodSubsidie:attachment dct:hasPart )
         ] ;
     form:displayType displayTypes:files ;
     sh:group fields:70f45080-8a18-473f-bb3f-abf6ce9c678e .

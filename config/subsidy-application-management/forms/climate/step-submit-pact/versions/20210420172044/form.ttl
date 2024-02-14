@@ -135,7 +135,8 @@ fields:fbd15091-9155-4c73-a12a-0df4e4eda7b9 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
-      sh:path lblodSubsidie:signedPact ] ;
+      sh:path ( lblodSubsidie:signedPact dct:hasPart ) 
+    ] ;
     sh:group fields:07372422-b306-4157-9970-60fdd79ac57f .
 
 ##########################################################
