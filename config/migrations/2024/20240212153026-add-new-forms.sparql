@@ -1,0 +1,86 @@
+#
+# Insert BesluitDocumentType - Aanduiding en eedaflegging van de aangewezen burgemeester
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/a48f2ded-78a5-45e5-a5d8-077814cec39f>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "a48f2ded-78a5-45e5-a5d8-077814cec39f" ;
+
+      # Only visible for "Gemeenten" and "District"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>      <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>  <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>      <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>  <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>    "Aanduiding en eedaflegging van de aangewezen burgemeester." ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>     "Aanduiding en eedaflegging van de aangewezen burgemeester"@nl .
+  }
+}
+
+;
+
+#
+# Insert BesluitDocumentType - Strandconcessies - reddingsdiensten kustgemeenten
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ae6168d2-8119-46b1-b810-9f529be95a62>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "ae6168d2-8119-46b1-b810-9f529be95a62" ;
+
+      # Only visible for "Gemeenten"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>          "Strandconcessies - reddingsdiensten kustgemeenten." ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>           "Strandconcessies - reddingsdiensten kustgemeenten"@nl .
+  }
+}
+
+;
+
+#
+# Insert BesluitDocumentType - Melding onvolledigheid inzending eredienstbestuur
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "863caf68-97c9-4ee0-adb5-620577ea8146" ;
+
+      # Only visible for "Gemeenten" and "Provincies"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>          "Melding onvolledigheid inzending eredienstbestuur." ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>           "Melding onvolledigheid inzending eredienstbestuur"@nl .
+  }
+}
+
+;
+
+#
+# Insert BesluitDocumentType - Opstart beroepsprocedure naar aanleiding van een beslissing
+#
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/802a7e56-54f8-488d-b489-4816321fb9ae>
+      a <http://www.w3.org/2004/02/skos/core#Concept>, <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "802a7e56-54f8-488d-b489-4816321fb9ae" ;
+
+      # Only visible for "Gemeenten", "Provincies", "Bestuur van de eredienst", "Centraal bestuur van de eredienst" and "Representatief Orgaan"
+      <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>            <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>        <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      <http://www.w3.org/2004/02/skos/core#definition>          "Opstart beroepsprocedure naar aanleiding van een beslissing." ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel>           "Opstart beroepsprocedure naar aanleiding van een beslissing"@nl .
+  }
+}
+
