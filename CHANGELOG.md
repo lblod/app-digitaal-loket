@@ -23,6 +23,20 @@
 #### Docker commands
  - `drc up -d --remove-orphans`
  - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
+## 1.93.1 (2024-02-16)
+### General
+#### Frontend
+ - Bump frontend to `v0.89.2` (DL-5537)
+   - Fixes issue with `contact` and `verenigingen` module cards not showing when logging through ACM.
+#### Backend
+ - Fix `contact` and `verenigingen` session roles for `mock-login` users (which includes controle) (DL-5537).
+### Deploy Notes
+#### Controle
+ - Update the version of the controle image in `docker-compose.override.yml`
+#### Docker Commands
+ - `drc up -d loket controle`
+ - `drc restart migrations`
+ - `drc restart resource cache`
 ## 1.93.0 (2024-01-23)
 ### General
 ### Backend
