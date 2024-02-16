@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.93.1 (2024-02-16)
 ### General
 #### Frontend
  - Bump frontend to `v0.89.2` (DL-5537)
