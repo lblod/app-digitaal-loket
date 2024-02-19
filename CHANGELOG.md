@@ -32,11 +32,11 @@
    - Make sure the latest migrations are finished, more specifically: `20240131174900-flush-harvested-data.sparql`
    - Make sure the graphs `http://eredienst-mandatarissen-consumer/temp-inserts`, `http://eredienst-mandatarissen-consumer/temp-deletes` and `http://eredienst-mandatarissen-consumer/temp-discards` are empty. If not, please execute a simple query to do so.
    - Flush sync jobs from the consumer with its API:
-
-       drc exec eredienst-mandatarissen-consumer bash
-       # curl -X POST http://localhost/flush
-         {...warning output, continue...}
-
+```
+ drc exec eredienst-mandatarissen-consumer bash
+ # curl -X POST http://localhost/flush
+   {...warning output, continue...}
+```
    - OPTIONAL: You can remove (all) historical consumer files from disc on the path `data/files/consumer-files/eredienst-mandatarissen/`. Files are structured in folders based on the date.
    - Inspect the logs of the `eredienst-mandatarissen-consumer` to see that the flush job was successful and that the periodic consumer job is running (every minute(?)).
 #### Controle
