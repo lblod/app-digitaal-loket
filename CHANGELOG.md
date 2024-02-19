@@ -27,6 +27,18 @@
    - `delta-producer-background-jobs-initiator-leidinggevenden`
    - `delta-producer-publication-graph-maintainer-mandatarissen`
    - `delta-producer-publication-graph-maintainer-leidinggevenden`
+#### Worship services consumer and dispatcher
+ - The harvesting for the worship services needs to be completely restarted. It could be helpful to disable the `app-lblod-harvester-worship` stack (or its `identifier` service) while performing these steps, so that new jobs are not started while trying to remove data from old jobs.
+   - Make sure the latest migrations are finished, more specifically: `20240131174900-flush-harvested-data.sparql`
+   - Make sure the graphs `http://eredienst-mandatarissen-consumer/temp-inserts`, `http://eredienst-mandatarissen-consumer/temp-deletes` and `http://eredienst-mandatarissen-consumer/temp-discards` are empty. If not, please execute a simple query to do so.
+   - Flush sync jobs from the consumer with its API:
+
+       drc exec eredienst-mandatarissen-consumer bash
+       # curl -X POST http://localhost/flush
+         {...warning output, continue...}
+
+   - OPTIONAL: You can remove (all) historical consumer files from disc on the path `data/files/consumer-files/eredienst-mandatarissen/`. Files are structured in folders based on the date.
+   - Inspect the logs of the `eredienst-mandatarissen-consumer` to see that the flush job was successful and that the periodic consumer job is running (every minute(?)).
 #### Controle
  - Update the version of the controle image in the docker-compose.override.yml file
 #### Docker commands
