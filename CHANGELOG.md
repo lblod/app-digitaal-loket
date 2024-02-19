@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
