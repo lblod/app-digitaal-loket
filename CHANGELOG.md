@@ -3,6 +3,8 @@
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
+#### Frontend
+ - Bump frontend to `v0.90.2` (DL-5537, DL-5686)
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
@@ -20,9 +22,12 @@
    - `delta-producer-background-jobs-initiator-leidinggevenden`
    - `delta-producer-publication-graph-maintainer-mandatarissen`
    - `delta-producer-publication-graph-maintainer-leidinggevenden`
+#### Move `dump-file-publisher` data to `publication-triplestore`
+ - Follow the steps in [this guide](https://github.com/Riadabd/dump-and-import-publication-graphs)
 #### Docker commands
  - `drc up -d --remove-orphans`
  - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
+ - `drc restart resource cache`
 ## 1.93.1 (2024-02-16)
 ### General
 #### Frontend
