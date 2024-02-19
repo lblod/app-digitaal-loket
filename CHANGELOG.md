@@ -4,7 +4,7 @@
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
 #### Frontend
- - Bump frontend to `v0.90.0`: https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0900-2024-02-09
+ - Bump frontend to `v0.90.2` (DL-5537, DL-5686): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0902-2024-02-19
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
@@ -27,6 +27,8 @@
    - `delta-producer-background-jobs-initiator-leidinggevenden`
    - `delta-producer-publication-graph-maintainer-mandatarissen`
    - `delta-producer-publication-graph-maintainer-leidinggevenden`
+#### Move `dump-file-publisher` data to `publication-triplestore`
+ - Follow the steps in [this guide](https://github.com/Riadabd/dump-and-import-publication-graphs)
 #### Worship services consumer and dispatcher
  - The harvesting for the worship services needs to be completely restarted. It could be helpful to disable the `app-lblod-harvester-worship` stack (or its `identifier` service) while performing these steps, so that new jobs are not started while trying to remove data from old jobs.
    - Make sure the latest migrations are finished, more specifically: `20240131174900-flush-harvested-data.sparql`
@@ -44,6 +46,21 @@
 #### Docker commands
  - `drc up -d --remove-orphans`
  - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
+ - `drc restart resource cache`
+## 1.93.1 (2024-02-16)
+### General
+#### Frontend
+ - Bump frontend to `v0.89.2` (DL-5537)
+   - Fixes issue with `contact` and `verenigingen` module cards not showing when logging through ACM.
+#### Backend
+ - Fix `contact` and `verenigingen` session roles for `mock-login` users (which includes controle) (DL-5537).
+### Deploy Notes
+#### Controle
+ - Update the version of the controle image in `docker-compose.override.yml`
+#### Docker Commands
+ - `drc up -d loket controle`
+ - `drc restart migrations`
+ - `drc restart resource cache`
 ## 1.93.0 (2024-01-23)
 ### General
 ### Backend
