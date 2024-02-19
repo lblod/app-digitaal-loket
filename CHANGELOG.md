@@ -4,7 +4,7 @@
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
 #### Frontend
- - Bump frontend to `v0.90.2` (DL-5537, DL-5686)
+ - Bump frontend to `v0.90.2` (DL-5537, DL-5686): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0902-2024-02-19
 #### Backend
  - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
  - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
