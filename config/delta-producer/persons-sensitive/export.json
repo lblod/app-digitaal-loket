@@ -7,6 +7,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://www.w3.org/ns/adms#identifier",
         "http://data.vlaanderen.be/ns/persoon#geslacht",
@@ -21,6 +22,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2004/02/skos/core#notation"
@@ -34,6 +36,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://data.vlaanderen.be/ns/persoon#datum"
@@ -47,6 +50,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
         "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://www.w3.org/2004/02/skos/core#prefLabel",

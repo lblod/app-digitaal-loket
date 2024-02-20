@@ -1,64 +1,188 @@
 # Changelog
-
-## Unreleased
-
+## 1.94.0 (2024-02-19)
+### Subsidies
+ - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
 ### General
-
-- Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
-
-### LPDC
-
-- Remove all LPDC code, data, reports and old migration files
-
-### Berichtencentrum
-
-- Added `berichten-melding-service`. This service allows vendors to reports
-  messages, and imports them into the Berichtencentrum module.
-- Added config for `vendor-data-distribution-service`: in its newer version,
-  the config now uses type, trigger, path, remove and copy properties to select
-  and copy data to the vendor graphs. These changes where needed to integrate
-  with the `berichten-melding-service`.
-- Added a new job for the `job-controller-service` for the Berichten Melding.
-- Added dispatcher path for the `berichten-melding-service`.
-- Added error emails for `berichten-melding-service` and
-  `vendor-data-distribution-service`.
-- Added `delta-notifier`, `mu-authorization` config.
-
-### Resources
-
-- A Message now also has a `creator`. This is used to trigger the
-  `vendor-data-distribution-serivce`.
-
-### Reports
-
-- Added a reports on Messages and Conversations of the past 6 months. This is
-  almost a dump of the entities and can be used to compare between
-  vendors/consumers and Loket.
-
-### Migrations
-
-- Added migrations to copy Messages and Conversations to Vendor Graphs for
-  Vendor API such that vendors can access that data through their authorised
-  SPARQL client. **NOTE: these migrations can take a long time to run!**
-
+#### Frontend
+ - Bump frontend to `v0.90.2` (DL-5537, DL-5686): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0902-2024-02-19
+#### Backend
+ - Consolidate `mandatarissen` delta flow (DL-5585, DL-5586)
+ - Consolidate `leidinggevenden` delta flow (DL-5582, DL-5583)
+ - Move `delta-producer-dump-file-publisher` publication graph endpoint from `virtuoso` to `publication-triplestore` (DL-5584)
+ - Bump `delta-producer-publication-graph-maintainer` (DL-5584)
+ - Added virus-scanner service (DL-5553)
+ - Bump `dispatcher-worship-mandates` service to v1.4.0 to use vendor provance for dispatching harvested data. This hopefully resolves some of the issues where organisations could see data that they did not publish themselves. (DL-5567, DL-5568, DL-5569)
+ - Add migration to remove all previously harvested data. Harvesting needs to be completely restarted.
+### Toezicht
+ - Add a future date warning validation to the "Datum zitting" fields (DL-5624)
+### Deploy Notes
+#### Config Delta Mandatarissen & Leidinggevenden
+##### Edit `config/delta-producer/background-jobs-initiator/config.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Edit `docker-compose.override.yml`
+ - Remove the specific entries from `docker-compose.override.yml` for:
+   - `delta-producer-background-jobs-initiator-mandatarissen`
+   - `delta-producer-background-jobs-initiator-leidinggevenden`
+   - `delta-producer-publication-graph-maintainer-mandatarissen`
+   - `delta-producer-publication-graph-maintainer-leidinggevenden`
+#### Move `dump-file-publisher` data to `publication-triplestore`
+ - Follow the steps in [this guide](https://github.com/Riadabd/dump-and-import-publication-graphs)
+#### Worship services consumer and dispatcher
+ - The harvesting for the worship services needs to be completely restarted. It could be helpful to disable the `app-lblod-harvester-worship` stack (or its `identifier` service) while performing these steps, so that new jobs are not started while trying to remove data from old jobs.
+   - Make sure the latest migrations are finished, more specifically: `20240131174900-flush-harvested-data.sparql`
+   - Make sure the graphs `http://eredienst-mandatarissen-consumer/temp-inserts`, `http://eredienst-mandatarissen-consumer/temp-deletes` and `http://eredienst-mandatarissen-consumer/temp-discards` are empty. If not, please execute a simple query to do so.
+   - Flush sync jobs from the consumer with its API:
+```
+ drc exec eredienst-mandatarissen-consumer bash
+ # curl -X POST http://localhost/flush
+   {...warning output, continue...}
+```
+   - OPTIONAL: You can remove (all) historical consumer files from disc on the path `data/files/consumer-files/eredienst-mandatarissen/`. Files are structured in folders based on the date.
+   - Inspect the logs of the `eredienst-mandatarissen-consumer` to see that the flush job was successful and that the periodic consumer job is running (every minute(?)).
+#### Controle
+ - Update the version of the controle image in the docker-compose.override.yml file
+#### Docker commands
+ - `drc up -d --remove-orphans`
+ - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher`
+ - `drc restart resource cache`
+## 1.93.1 (2024-02-16)
+### General
+#### Frontend
+ - Bump frontend to `v0.89.2` (DL-5537)
+   - Fixes issue with `contact` and `verenigingen` module cards not showing when logging through ACM.
+#### Backend
+ - Fix `contact` and `verenigingen` session roles for `mock-login` users (which includes controle) (DL-5537).
+### Deploy Notes
+#### Controle
+ - Update the version of the controle image in `docker-compose.override.yml`
+#### Docker Commands
+ - `drc up -d loket controle`
+ - `drc restart migrations`
+ - `drc restart resource cache`
+## 1.93.0 (2024-01-23)
+### General
+### Backend
+ - Add mock-login session roles for `contact` and `verenigingen` apps (DL-5599)
+ - Bump `berichtencentrum-sync-with-kalliope` to `v0.18.0` (DL-5560)
+ - Replace wrong kbo-number with the correct one for s-Lim (DL-5609)
 ### Frontend
+ - Bump frontend to `v0.89.0`
+   - Add `contact` and `verenigingen` module cards with external links (DL-5537, DL-5538)
+   - Move subsidy warning to bottom of the page (DGS-111)
+### Deploy Notes
+#### Frontend
+ - Add the relevant external URLs (QA or PROD) to `docker-compose.override.yml` under the `environment` section of `loket`; the URLs can be found in DL-5537 and DL-5538:
+   - `EMBER_CONTACT_URL: "{{URL}}"`
+   - `EMBER_VERENIGINGEN_URL: "{{URL}}"`
+#### Docker Commands
+ - `drc up -d loket berichtencentrum-sync-with-kalliope`
+ - `drc restart migrations`
+ - `drc restart resource cache`
+## 1.92.0 (2024-01-17)
+### General
+#### Backend
+ - bump resource to `semtech/mu-cl-resources:feature-differently-stable-luckless`
+   - Fixes: Error 500 in some rare cases when fetching submissions
+ - bump `berichtencentrum-sync-with-kalliope` to fix last message regression
+ - Remove `delta-producer-background-jobs-initiator-worship-submissions` from `docker-compose.yml`
+ - Remove `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.yml`
+ - Consolidate the above into `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer`
+#### Frontend
+ - Bump frontend to `v0.88.3`
+  - Fixes: Text clipping on `Nationaliteit` placeholder in `Mandatenbeheer` for worship services
+  - Fixes: preview links in the "Toezicht" module
+### toezicht
+- Update forms
+    - New forms LEKP Collectieve Energiebesparende Renovatie, Fietspaden, Sloopbeleidsplan
+    - New forms Niet-bindend advies op statuten and Niet-bindend advies op oprichting
+    - Change form LEKP Melding correctie authentieke bron, removed field "type correctie"
+    - Bump enrich-submission v1.8.0
+### subsidies
+- Extend deadline nooddorpen
+- Extend deadline oekraine slaapplekken
+- Update lekp 2.1 and 2.0 opvolgmoment titles
 
-- New Loket frontend: adding creator to messages and other various improvements
-  to conversations and messages in Berichtencentrum.
-
+### Deploy notes
+#### Config: docker-compose.override.yml
+ - Remove line `image: semtech/mu-cl-resources:feature-differently-stable-luckless` from `docker-compose.override.yml` on production.
+ - Remove line `image: lblod/berichtencentrum-sync-with-kalliope-service:0.17.2-rc.1` from `docker-compose.override.yml` on production.
+ - We improved on the queries a lot, they should be light enough to work
+   through mu-auth, but if not, add the following config in
+   `docker-compose.override.yml` to connect to Virtuoso directly:
+  ```
+  vendor-data-distribution:
+    environment:
+      SPARQL_ENDPOINT_COPY_OPERATIONS: "http://virtuoso:8890/sparql"
+  ```
+#### Config Delta Worship Submissions
+##### Edit `config/delta-producer/background-jobs-initiator/config.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Edit `docker-compose.override.yml`
+ - Remove the specific entries for `delta-producer-background-jobs-initiator-worship-submissions` and `delta-producer-publication-graph-maintainer-worship-submissions` from `docker-compose.override.yml`.
+#### docker commando
+ - `drc up -d --remove-orphans; drc restart migrations resource cache dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer`
+## 1.91.1 (2023-12-11)
+ - Fix s-limburg and a2gb start dates
+## 1.91.0 (2023-12-09)
+### Subsidies
+ - update active step for LEKP 1.0 to new opvolgmoment 2024 step for all consumptions
+## 1.90.0 (2023-12-08)
+### General
+ - add LEKP 1.0 - 2022 || opvolgmoment 2024 step
+ - fix berichtencentrum-sync-with-kalliope service to work better VDDS
+## 1.89.1 (2023-12-07)
+### General
+  - hotfix: improve migration speed
+## 1.89.0 (2023-12-06)
+### General
+ - Delta-dump-file producer tweaks for mandatarissen/leidinggevenden
+ - Maintenance of persons-sensitive deltas
+ - Reports: vendors/consumers and Loket.
+ - Added mockuser: Zorgband Leie en Schelde
+### Submissions
+ - Added RO submissions for export: [471](https://github.com/lblod/app-digitaal-loket/pull/471)
+ - Adjust form 'Goedkeuringsbesluit budget(wijziging)' (Gemeente and Provincie)
+### Subsidies
+ - Producer config update
+### LPDC
+- Remove all LPDC code, data, reports and old migration files
+### Berichtencentrum
+- Added berichten-centrum integration, which entails:
+  - Added `berichten-melding-service`. This service allows vendors to reports
+    messages, and imports them into the Berichtencentrum module.
+  - Added config for `vendor-data-distribution-service`: in its newer version,
+    the config now uses type, trigger, path, remove and copy properties to select
+    and copy data to the vendor graphs. These changes where needed to integrate
+    with the `berichten-melding-service`.
+  - Added a new job for the `job-controller-service` for the Berichten Melding.
+  - Added dispatcher path for the `berichten-melding-service`.
+  - Added error emails for `berichten-melding-service` and
+    `vendor-data-distribution-service`.
+  - Added `delta-notifier`, `mu-authorization` config.
+  - A Message now also has a `creator`. This is used to trigger the
+    `vendor-data-distribution-serivce`.
+  - Added a reports on Messages and Conversations of the past 6 months. This is
+    almost a dump of the entities and can be used to compare between
+  - Added migrations to copy Messages and Conversations to Vendor Graphs for
+    Vendor API such that vendors can access that data through their authorised
+    SPARQL client. **NOTE: these migrations can take a long time to run!**
+  - New Loket frontend: adding creator to messages and other various improvements
+    to conversations and messages in Berichtencentrum.
 ### Deploy Instructions
-
-**LPDC**
-
+#### LPDC
 A lot of data has to be removed, so it has to be backed up first and docker
 images have to be cleaned:
 - Back up the database before any service(s) is(are) restarted
 - Remove cronjobs for LPDC related services from the server
 - `drc restart migrations` to run the new migrations and remove LPDC data
 - `drc up --remove-orphans` to remove orphaned docker images
-
-**Berichtencentrum**
-
+#### Persons-sensitive-consumer
+For persons-sensitive maintenance **don't forget to add `"key": "<producer_key>"` in `config/delta-producer/publication-graph-maintainer/config.json `of persons-sensitive** then `drc up -d --remove-orphans`
+#### Berichtencentrum
 Run the following query on the stack with sufficient privileges **after all
 migrations have run**. This does not have to go through mu-auth. **Make sure to
 set the real hostname of the running stack in place of `<lokethostname>`
@@ -100,12 +224,14 @@ WHERE {
 drc restart migrations
 drc restart resource cache
 ```
+
 ## 1.88.0 (2023-10-31)
 ### general
 - update virtuoso
 ### Deploy instructions
 - see: https://github.com/lblod/app-digitaal-loket/pull/426
-## 1.87.0 (2023-10-20)
+## 1.87.0 (2023-10-20
+)
 ### general
 - bump cache graph maintainer
 - final version berichtencentrum-sync-with-kalliope

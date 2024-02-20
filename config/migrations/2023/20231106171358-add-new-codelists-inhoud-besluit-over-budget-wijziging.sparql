@@ -1,0 +1,37 @@
+INSERT DATA {
+
+GRAPH <http://mu.semte.ch/graphs/public> {
+
+<http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "7856206c-dfda-4163-8bd3-f465c794eced" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Type inhoud van het besluit (erediensten)"@nl, "Type of content of decision"@en ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Inhoud bij inzendingen van het besluit over-budget(wijziging)" .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/2ee9e3fa-88f0-40f8-a545-bb4cfef2b06d> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "2ee9e3fa-88f0-40f8-a545-bb4cfef2b06d" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Akteneming"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/d3cfbe2c-0777-40b6-9e12-781239a68b0a> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "d3cfbe2c-0777-40b6-9e12-781239a68b0a" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Aanpassingsbesluit"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/027ac432-d2e0-4421-a22d-7431980b38d8> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "027ac432-d2e0-4421-a22d-7431980b38d8" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Goedkeuringsbesluit"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/7856206c-dfda-4163-8bd3-f465c794eced> .
+  }
+}

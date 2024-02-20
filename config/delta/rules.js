@@ -1,13 +1,9 @@
 import automaticSubmission from './automatic-submission';
 import berichtencentrumMelding from './berichtencentrum-melding';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
-import deltaProducerPublicationGraphMaintainerLeidinggevenden from './delta-producer-publication-graph-maintainer-leidinggevenden';
-import deltaProducerPublicationGraphMaintainerMandatarissen from './delta-producer-publication-graph-maintainer-mandatarissen';
-import deltaProducerPublicationGraphMaintainerPersonsSensitive from './delta-producer-publication-graph-maintainer-persons-sensitive';
 import deltaProducerPublicationGraphMaintainerWSSensitive from './delta-producer-publication-graph-maintainer-ws-sensitive';
 import deltaProducerPublicationGraphMaintainer from './delta-producer-publication-graph-maintainer';
 import deltaProducerPublicationGraphMaintainerSubsidies from './delta-producer-publication-graph-maintainer-subsidies';
-import deltaProducerPublicationGraphMaintainerWorshipSubmissions from './delta-producer-publication-graph-maintainer-worship-submissions';
 import deltaProducerReportGenerator from './delta-producer-report-generator';
 import downloadUrl from './download-url';
 import enrichSubmission from './enrich-submission';
@@ -19,20 +15,17 @@ import resource from './resource';
 import syncWithKalliopeErrorNotification from './sync-with-kalliope-error-notification';
 import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-generator';
 import validateSubmission from './validate-submission';
-import deltaConsumerWorshipMandates from './delta-consumer-worship-services';
+import dispatcherWorshipMandates from './dispatcher-worship-mandates';
 import vendorDataDistribution from './vendor-data-distribution';
+import virusScanner from './virus-scanner';
 
 export default [
   ...automaticSubmission,
   ...berichtencentrumMelding,
   ...deltaProducerDumpFilePublisher,
-  ...deltaProducerPublicationGraphMaintainerLeidinggevenden,
-  ...deltaProducerPublicationGraphMaintainerMandatarissen,
-  ...deltaProducerPublicationGraphMaintainerPersonsSensitive,
   ...deltaProducerPublicationGraphMaintainerWSSensitive,
   ...deltaProducerPublicationGraphMaintainer,
   ...deltaProducerPublicationGraphMaintainerSubsidies,
-  ...deltaProducerPublicationGraphMaintainerWorshipSubmissions,
   ...deltaProducerReportGenerator,
   ...downloadUrl,
   ...enrichSubmission,
@@ -44,6 +37,7 @@ export default [
   ...syncWithKalliopeErrorNotification,
   ...toezichtFlattenedFormDataGenerator,
   ...validateSubmission,
-  ...deltaConsumerWorshipMandates,
-  ...vendorDataDistribution
+  ...dispatcherWorshipMandates,
+  ...vendorDataDistribution,
+  ...virusScanner
 ];

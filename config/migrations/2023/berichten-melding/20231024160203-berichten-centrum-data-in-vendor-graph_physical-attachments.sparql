@@ -11,6 +11,7 @@ PREFIX dct:     <http://purl.org/dc/terms/>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX account: <http://mu.semte.ch/vocabularies/account/>
 PREFIX core:    <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
 
 INSERT {
   GRAPH ?vendorGraph {
@@ -18,39 +19,24 @@ INSERT {
   }
 }
 WHERE {
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    <http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e>
+      account:canActOnBehalfOf ?organisation ;
+      a ext:Vendor ;
+      core:uuid ?vendorUUID .
+  }
   GRAPH <http://mu.semte.ch/graphs/public> {
     ?organisation
       a besluit:Bestuurseenheid ;
       core:uuid ?organisationUUID .
   }
-  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
-    ?vendor
-      account:canActOnBehalfOf ?organisation ;
-      core:uuid ?vendorUUID .
-  }
   BIND (IRI(CONCAT("http://mu.semte.ch/graphs/vendors/", STR(?vendorUUID), "/", STR(?organisationUUID))) AS ?vendorGraph)
   BIND (IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", STR(?organisationUUID), "/LoketLB-berichtenGebruiker")) AS ?organisationGraph)
+
   GRAPH ?organisationGraph {
-    ?conversation
-      a sch:Conversation ;
-      sch:hasPart ?message .
-    ?message
-      a sch:Message ;
-      nie:hasPart ?attachment .
-    ?attachment
-      a nfo:FileDataObject .
     ?physicalAttachment
       a nfo:FileDataObject ;
       nie:dataSource ?attachment .
-
-    FILTER NOT EXISTS {
-      ?message adms:status deli:unconfirmed .
-    }
-    FILTER NOT EXISTS {
-      ?message adms:status deli:failedConfirmation .
-    }
-
     ?physicalAttachment ?pp ?op .
   }
 }
-

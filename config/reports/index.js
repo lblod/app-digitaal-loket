@@ -18,16 +18,12 @@ import climateSubsidieOproep2PactsReport from './climateSubsidieOproep2PactsRepo
 import climateSubsidie2PactsReport from './climateSubsidie2PactsReport';
 import climateSubsidieOpvolgmomentReport from './climateSubsidieOpvolgmomentReport';
 import gemeentewegenReport from './gemeentewegenReport';
-import fietsSubsidieProposalsReport from './fietsSubsidieProposalsReport';
 import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
 import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
-import fietsSubsidieProposalsDeadlineGemeentenReports from './fietsSubsidieProposalsDeadlineGemeentenReports';
 import linksBetweenWorshipServicesAndAdminUnitsReport from './links-between-worship-services-and-admin-units-report';
-import lekp21OproepIndienenPactReport from './lekp21OproepIndienenPactReport';
-import subsidieStadsvernieuwingProjectSubsidieAanvraagFase2 from './subsidieStadsvernieuwingProjectSubsidieAanvraagFase2';
 
 //Worship reports
 import bedienaren from './worship/bedienaren';
@@ -60,17 +56,13 @@ export default [
   climateSubsidie2PactsReport,
   climateSubsidieOpvolgmomentReport,
   gemeentewegenReport,
-  fietsSubsidieProposalsReport,
   fietsSubsidieRequestsReport,
   fietsSubsidieBalanceRequestsReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
   ukraineSubsidyOproepOneReport,
-  fietsSubsidieProposalsDeadlineGemeentenReports,
   linksBetweenWorshipServicesAndAdminUnitsReport,
-  lekp21OproepIndienenPactReport,
-  subsidieStadsvernieuwingProjectSubsidieAanvraagFase2,
 
   //Worship reports
   bedienaren,

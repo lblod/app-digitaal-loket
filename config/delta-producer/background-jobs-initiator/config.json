@@ -10,5 +10,53 @@
     "startInitialSync": false,
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-submissions",
     "disableDumpFileCreation": true
+  },
+  {
+    "name": "persons-sensitive",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "dumpFileCreationJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/persons-sensitive",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive",
+    "cronPatternDumpJob": "0 0 6 * * 6",
+    "cronPatternHealingJob": "0 0 4 * * *",
+    "startInitialSync": false,
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-persons-sensitive",
+    "disableDumpFileCreation": true
+  },
+  {
+    "name": "worship-submissions",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "dumpFileCreationJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/worship-submissions",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions",
+    "cronPatternDumpJob": "0 0 5 * * 6",
+    "cronPatternHealingJob": "0 0 3 * * *",
+    "startInitialSync": false,
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-worship-submissions",
+    "disableDumpFileCreation": true
+  },
+  {
+    "name": "leidinggevenden",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "dumpFileCreationJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden",
+    "cronPatternDumpJob": "0 0 0 * * 6",
+    "cronPatternHealingJob": "0 0 2 * * *",
+    "startInitialSync": false,
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-leidinggevenden",
+    "disableDumpFileCreation": true
+  },
+  {
+    "name": "mandatarissen",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "dumpFileCreationJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen",
+    "cronPatternDumpJob": "0 0 1 * * 6",
+    "cronPatternHealingJob": "0 0 2 * * *",
+    "startInitialSync": false,
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-mandatarissen",
+    "disableDumpFileCreation": true
   }
 ]

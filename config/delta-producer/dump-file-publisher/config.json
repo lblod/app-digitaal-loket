@@ -3,28 +3,28 @@
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer",
     "fileBaseName": "dump-leidinggevenden",
-    "publicationGraphEndpoint": "http://virtuoso:8890/sparql",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
     "cleanupOldDumps": true
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/leidinggevenden": {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/LeidinggevendenCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer",
     "fileBaseName": "dump-leidinggevenden",
-    "publicationGraphEndpoint": "http://virtuoso:8890/sparql",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
     "cleanupOldDumps": true
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen": {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/MandatarissenCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer",
     "fileBaseName": "dump-mandatarissen",
-    "publicationGraphEndpoint": "http://virtuoso:8890/sparql",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
     "cleanupOldDumps": true
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/mandatarissen": {
     "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/MandatarissenCacheGraphDump",
     "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer",
     "fileBaseName": "dump-mandatarissen",
-    "publicationGraphEndpoint": "http://virtuoso:8890/sparql",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
     "cleanupOldDumps": true
   },
   "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions": {

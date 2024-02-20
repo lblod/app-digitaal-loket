@@ -1,3 +1,5 @@
+import envvar from 'env-var';
+
 const HOSTNAME = envvar
   .get('HOSTNAME')
   .required()
@@ -119,6 +121,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
       where: `
         GRAPH ?g {
           ?subject
@@ -138,14 +142,21 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-          ?subject ?p ?o .
-          ?conversatie ?pc ?co .
-          ?bericht ?pa ?ca .
-          ?bijlage ?pb ?ob .
-          ?physicalBijlage ?pp ?op .
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bericht ?pa ?ca .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     },
   },
@@ -158,7 +169,7 @@ export const subjects = [
           <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> .
     `,
     path: `
-      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?subject <http://schema.org/recipient> ?organisation.
       ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
 
       ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
@@ -191,6 +202,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
       where: `
         GRAPH ?g {
           ?conversatie
@@ -208,18 +221,23 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-          ?subject ?p ?o .
-          ?conversatie ?pc ?co .
-          ?bijlage ?pb ?ob .
-          ?physicalBijlage ?pp ?op .
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     }
   },
   //For Berichten saved in Loket
-  //TODO: Trigger is not yet working like this
   {
     type: 'http://schema.org/Message',
     trigger: `
@@ -228,7 +246,7 @@ export const subjects = [
           <https://github.com/lblod/frontend-loket> .
     `,
     path: `
-      ?subject <http://schema.org/sender> | <http://schema.org/recipient> ?organisation.
+      ?subject <http://schema.org/sender> ?organisation.
       ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
 
       ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
@@ -258,6 +276,8 @@ export const subjects = [
           <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
             ?bijlageDownloadLink .
       `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
       where: `
         GRAPH ?g {
           ?conversatie
@@ -275,13 +295,95 @@ export const subjects = [
             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
               ?bijlage .
 
-          BIND (CONCAT("${HOSTNAME}/files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
 
-          ?subject ?p ?o .
-          ?conversatie ?pc ?co .
-          ?bijlage ?pb ?ob .
-          ?physicalBijlage ?pp ?op .
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
         }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
+      `,
+    }
+  },
+  //For Berichten saved in Loket, but via Controle as if you were ABB
+  {
+    type: 'http://schema.org/Message',
+    trigger: `
+      ?subject
+        <http://mu.semte.ch/vocabularies/ext/creator>
+          <https://github.com/lblod/frontend-loket> ;
+        <http://schema.org/sender>
+          <http://data.lblod.info/id/bestuurseenheden/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> .
+    `,
+    path: `
+      ?subject <http://schema.org/recipient> ?organisation.
+      ?organisation a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+
+      ?vendor <http://mu.semte.ch/vocabularies/account/canActOnBehalfOf> ?organisation;
+        a <http://xmlns.com/foaf/0.1/Agent>.
+    `,
+    remove: {
+      delete: `
+        ?conversatie ?pc ?oc .
+      `,
+      where: `
+        GRAPH ?g {
+          ?conversatie
+            <http://schema.org/hasPart> ?subject ;
+            a <http://schema.org/Conversation> .
+        }
+        ?conversatie ?pc ?oc .
+      `,
+    },
+    copy: {
+      insert: `
+        ?subject ?p ?o .
+        ?conversatie ?pc ?co .
+        ?bijlage ?pb ?ob .
+        ?physicalBijlage ?pp ?op .
+
+        ?bijlage
+          <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url>
+            ?bijlageDownloadLink .
+      `,
+      //NOTE: the UNION/FILTER are deliberate query optimisations, with complicated explanation.
+      // So please be careful with them.
+      where: `
+        GRAPH ?g {
+          ?conversatie
+            <http://schema.org/hasPart> ?subject ;
+            a <http://schema.org/Conversation> .
+          ?subject
+            a <http://schema.org/Message> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart>
+              ?bijlage .
+          ?bijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+            <http://mu.semte.ch/vocabularies/core/uuid> ?bijlageUUID .
+          ?physicalBijlage
+            a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> ;
+            <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>
+              ?bijlage .
+
+          BIND (CONCAT("${HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+
+           {
+             ?subject ?p ?o .
+           } UNION {
+             ?conversatie ?pc ?co .
+           } UNION {
+             ?bijlage ?pb ?ob .
+           } UNION {
+             ?physicalBijlage ?pp ?op .
+           }
+        }
+        FILTER( REGEX(STR(?g), "LoketLB-berichtenGebruiker"))
       `,
     }
   },
