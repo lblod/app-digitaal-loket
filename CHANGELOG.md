@@ -1,4 +1,11 @@
 # Changelog
+## Unreleased
+### General
+#### Backend
+ - Bump `migrations` to `v0.9.0`
+### Deploy Notes
+#### Docker commands
+ - `drc up -d migrations`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
