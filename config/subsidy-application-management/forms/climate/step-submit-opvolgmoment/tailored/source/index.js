@@ -1,4 +1,5 @@
 const contactInfoExtractor = require('./extractors/contact-info-extractor');
+const missingTypesExtractor = require('./extractors/missing-types-extractor');
 
 const extractor = {
   name: 'climate-subsidy/opvolgmoment/first-step-as-source',
@@ -45,4 +46,4 @@ async function findFormFromStep1( { mu, sudo }, form ) {
   return results.bindings[0].firstForm.value;
 }
 
-module.exports = [ extractor ];
+module.exports = [ extractor, missingTypesExtractor  ];

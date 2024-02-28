@@ -16,9 +16,15 @@
       "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
     ],
     "properties": [
+      "dct:created",
+      "dct:modified",
+      "ext:lastModifiedBy",
+      "dct:isPartOf",
+      "dct:creator",
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
+          "rdf:type",
           "foaf:firstName",
           "foaf:familyName",
           "schema:telephone",
@@ -28,6 +34,7 @@
       {
         "s-prefix": "lblodSubsidie:signedPact",
         "properties": [
+          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
