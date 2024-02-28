@@ -40,18 +40,7 @@
         {
           "s-prefix": "lblodSubsidie:accountabilityProof",
           "properties": [
-            {
-              "s-prefix": "dct:hasPart",
-              "properties": [
-                "rdf:type"
-              ]
-            }
-          ]
-        },
-        {
-          "s-prefix": "schema:bankAccount",
-          "properties": [
-            "schema:identifier",
+            "rdf:type",
             {
               "s-prefix": "dct:hasPart",
               "properties": [
