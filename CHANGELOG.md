@@ -1,5 +1,10 @@
 # Changelog
 ## Unreleased
+### Subsidies
+ - Add Fietssubsidie types via extractor (DGS-94)
+ - Add LEKP 1.0 (2021) types via extractor (DGS-107)
+ - Add slaapplekken subsidy types via extractor (DGS-165)
+ - Add Nooddorpen subsidy types via extractor (DGS-166)
 ### General
 #### Frontend
  - Bump frontend to `v0.90.3` (DL-5709): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0903-2024-02-28
@@ -9,6 +14,7 @@
  - remove the loket v0.90.3 image override from the docker-compose.override.yml
 #### Docker commands
  - `drc up -d migrations`
+ - `drc restart subsidy-applications-management`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
