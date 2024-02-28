@@ -1,9 +1,12 @@
 # Changelog
 ## Unreleased
 ### General
+#### Frontend
+ - Bump frontend to `v0.90.3` (DL-5709): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0903-2024-02-28
 #### Backend
  - Bump `migrations` to `v0.9.0`
 ### Deploy Notes
+ - remove the loket v0.90.3 image override from the docker-compose.override.yml
 #### Docker commands
  - `drc up -d migrations`
 ## 1.94.0 (2024-02-19)
