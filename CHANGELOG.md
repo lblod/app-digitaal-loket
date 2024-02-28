@@ -14,9 +14,8 @@
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
 #### Docker Commands
- - `drc up -d migrations`
+ - `drc up -d migrations mocklogin`
  - `drc restart subsidy-applications-management`
- - `drc up -d mocklogin`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
