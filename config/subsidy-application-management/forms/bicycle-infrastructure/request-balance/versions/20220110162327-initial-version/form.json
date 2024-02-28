@@ -17,6 +17,7 @@
       {
         "s-prefix": "lblodSubsidie:picturesUpload",
         "properties": [
+          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
@@ -28,6 +29,7 @@
       {
         "s-prefix": "lblodSubsidie:invoiceUpload",
         "properties": [
+          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
@@ -39,6 +41,7 @@
       {
         "s-prefix": "lblodSubsidie:reportUpload",
         "properties": [
+          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
@@ -50,6 +53,7 @@
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
+          "rdf:type",
           "foaf:firstName",
           "foaf:familyName",
           "schema:telephone",
@@ -59,6 +63,7 @@
       {
         "s-prefix": "schema:bankAccount",
         "properties": [
+          "rdf:type",
           "schema:identifier",
           {
             "s-prefix": "dct:hasPart",
@@ -71,10 +76,12 @@
       {
         "s-prefix": "bicycleInfrastructure:estimatedCostTable",
         "properties": [
+          "rdf:type",
           "bicycleInfrastructure:validEstimatedCostTable",
           {
             "s-prefix": "bicycleInfrastructure:estimatedCostEntry",
             "properties": [
+              "rdf:type",
               "bicycleInfrastructure:costEstimationType",
               "bicycleInfrastructure:cost",
               "bicycleInfrastructure:share",
@@ -86,6 +93,7 @@
       {
         "s-prefix": "bicycleInfrastructure:objectiveTable",
         "properties": [
+          "rdf:type",
           "bicycleInfrastructure:validObjectiveTable",
           {
             "s-prefix": "bicycleInfrastructure:objectiveEntry",

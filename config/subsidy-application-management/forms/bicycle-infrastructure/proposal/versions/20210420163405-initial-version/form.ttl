@@ -188,7 +188,7 @@ fields:eea274cf-b422-4b8e-bb83-b066edbff8b1 a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:decisionUpload
+      sh:path ( lblodSubsidie:decisionUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
@@ -206,7 +206,7 @@ fields:d7c19de5-1012-4d9d-a611-af26038c788a a form:Field ;
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path lblodSubsidie:picturesUpload
+      sh:path ( lblodSubsidie:picturesUpload dct:hasPart )
     ] ;
     form:displayType displayTypes:files ;
     sh:group fields:c1ba7dcf-2e7c-4f70-b61d-88f6b339771e .
