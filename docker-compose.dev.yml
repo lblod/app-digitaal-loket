@@ -11,9 +11,6 @@ services:
   loket:
     restart: "no"
     environment:
-      EMBER_FEATURE_PUBLIC_SERVICES_ENABLED: "true"
-      EMBER_FEATURE_EREDIENSTEN_MANDATENBEHEER_ENABLED: "true"
-      EMBER_FEATURE_WORSHIP_MINISTER_MANAGEMENT_ENABLED: "true"
       EMBER_WORSHIP_DECISIONS_DATABASE_URL: "https://dev.databankerediensten.lokaalbestuur.lblod.info"
       EMBER_WORSHIP_ORGANISATIONS_DATABASE_URL: "https://dev.organisaties.lokaalbestuur.lblod.info"
   dashboard:
