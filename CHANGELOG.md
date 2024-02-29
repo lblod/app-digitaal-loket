@@ -13,6 +13,7 @@
  - Bump `mock-login` to `v0.4.0` (DL-5709)
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
+ - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Docker Commands
  - `drc up -d migrations mocklogin`
  - `drc restart subsidy-applications-management`
