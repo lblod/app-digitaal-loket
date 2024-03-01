@@ -10,13 +10,13 @@
  - Bump frontend to `v0.90.3` (DL-5708): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0903-2024-02-28
 #### Backend
  - Bump `migrations` to `v0.9.0`
- - Bump `mock-login` to `v0.4.0` (DL-5709)
- - Bump `vendor-data-distribution-service` to `v1.3.3`
+ - Bump `mocklogin` to `v0.4.0` (DL-5709)
+ - Bump `vendor-data-distribution-service` to `v1.3.3` (DL-5683)
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Docker Commands
- - `drc up -d migrations mocklogin`
+ - `drc up -d migrations mocklogin vendor-data-distribution-service`
  - `drc restart subsidy-applications-management`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
