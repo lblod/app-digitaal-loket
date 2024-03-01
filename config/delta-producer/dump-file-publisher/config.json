@@ -112,5 +112,23 @@
     "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas",
     "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas",
     "cleanupOldDumps": true
+  },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/vendors": {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/VendorsCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-vendors",
+    "fileBaseName": "dump-vendors",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
+    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/vendors-deltas",
+    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/vendors-deltas",
+    "cleanupOldDumps": true
+  },
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/vendors": {
+    "dcatDataSetSubject": "http://data.lblod.info/datasets/delta-producer/dumps/VendorsCacheGraphDump",
+    "targetGraph": "http://redpencil.data.gift/id/deltas/producer/loket-vendors",
+    "fileBaseName": "dump-vendors",
+    "publicationGraphEndpoint": "http://publication-triplestore:8890/sparql",
+    "targetDcatGraph": "http://redpencil.data.gift/id/deltas/producer/vendors-deltas",
+    "targetFilesGraph": "http://redpencil.data.gift/id/deltas/producer/vendors-deltas",
+    "cleanupOldDumps": true
   }
 }

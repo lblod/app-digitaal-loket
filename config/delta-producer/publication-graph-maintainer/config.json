@@ -113,5 +113,29 @@
     "updatePublicationGraphSleep": 200,
     "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer",
     "loginPath": "/leidinggevenden/login"
+  },
+  "vendors": {
+    "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-vendors",
+    "exportConfigPath": "/config/vendors/export.json",
+    "filesPath": "/vendors/files",
+    "jobsGraph": "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin",
+    "relativeFilePath": "deltas/vendors",
+    "publicationGraph": "http://redpencil.data.gift/id/deltas/producer/loket-vendors",
+    "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/vendors",
+    "initialPublicationGraphSyncJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/vendors",
+    "queuePollInterval": 3000,
+    "useVirtuosoForExpensiveSelects": true,
+    "skipMuAuthInitialSync": true,
+    "skipMuAuthHealing": true,
+    "useFileDiff": true,
+    "healingInitialBatchSizeInsert": 1000,
+    "updatePublicationGraphSleep": 200,
+    "serveDeltaFiles": true,
+    "deltaInterval": 10000,
+    "deltaPath": "/vendors/delta",
+    "loginPath": "/vendors/login",
+    "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-vendors",
+    "filesGraph": "http://redpencil.data.gift/id/deltas/producer/vendors-deltas",
+    "account": "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
   }
 }

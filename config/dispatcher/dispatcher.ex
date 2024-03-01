@@ -501,6 +501,17 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # Vendors sync
+  #################################################################
+  post "/sync/vendors/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/vendors/login/"
+  end
+
+  get "/sync/vendors/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer/vendors/files/"
+  end
+
+  #################################################################
   # subsidy-applications: resources
   #################################################################
 
