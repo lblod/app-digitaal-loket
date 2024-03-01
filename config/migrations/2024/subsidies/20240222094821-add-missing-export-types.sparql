@@ -1,4 +1,3 @@
-# ACCOUNTABILITY NOTE UPLOAD
 INSERT {
   GRAPH ?g {
     ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidie/bicycle-infrastructure/accountability-note-upload/FormData> .
@@ -13,9 +12,8 @@ WHERE {
   FILTER NOT EXISTS {
     ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
   }
-}Z
+}
 ;
-# ACCOUNTABILITY PROOF
 INSERT {
   GRAPH ?g {
     ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidie/ukraine-nooddorpen/accountability-proof/FormData> .
@@ -272,7 +270,7 @@ WHERE {
   }
 }
 ;
-INSERT 
+INSERT {
   GRAPH ?g {
     ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://lblod.data.gift/vocabularies/subsidie/urban-renewal/urban-renewal-application-form/FormData> .
   }
@@ -303,7 +301,6 @@ WHERE {
     ?formData <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
   }
 }
-# ------------------
 ;
 INSERT {
   GRAPH ?g {
