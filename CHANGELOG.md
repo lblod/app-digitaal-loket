@@ -16,7 +16,7 @@
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Docker Commands
- - `drc up -d migrations mocklogin vendor-data-distribution-service`
+ - `drc up -d migrations mocklogin vendor-data-distribution`
  - `drc restart subsidy-applications-management`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
