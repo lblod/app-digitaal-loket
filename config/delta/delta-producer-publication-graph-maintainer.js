@@ -94,7 +94,7 @@ export default [
       // anything
     },
     callback: {
-      url: 'http://delta-producer-publication-graph-maintainer/vendors/delta',
+      url: 'http://delta-producer-publication-graph-maintainer/vendor-management/delta',
       method: 'POST'
     },
     options: {
