@@ -67,7 +67,7 @@
     "healingJobOperation": "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/vendor-management",
     "cronPatternDumpJob": "0 0 5 * * 6",
     "cronPatternHealingJob": "0 0 3 * * *",
-    "startInitialSync": true,
+    "startInitialSync": false,
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-background-jobs-initiator-vendor-management",
     "disableDumpFileCreation": true
   }
