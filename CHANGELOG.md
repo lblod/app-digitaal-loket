@@ -11,6 +11,7 @@
 #### Backend
  - Bump `migrations` to `v0.9.0`
  - Bump `mock-login` to `v0.4.0` (DL-5709)
+ - Bump `vendor-data-distribution-service` to `v1.3.3`
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
