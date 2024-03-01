@@ -1,13 +1,14 @@
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/accounts/deltas> {
-     <http://data.lblod.info/foaf/account/id/0a3d5be8-6f6b-4c4e-9069-9b7c57a35df3> a foaf:OnlineAccount.
+    <http://data.lblod.info/foaf/account/id/0a3d5be8-6f6b-4c4e-9069-9b7c57a35df3> a foaf:OnlineAccount .
 
-     <http://data.lblod.info/foaf/agent/id/d87dcf0d-4a8b-43d7-8625-42082957aaf1> a foaf:Agent;
-         foaf:account <http://data.lblod.info/foaf/account/id/0a3d5be8-6f6b-4c4e-9069-9b7c57a35df3>.
+    <http://data.lblod.info/foaf/agent/id/d87dcf0d-4a8b-43d7-8625-42082957aaf1> a foaf:Agent ;
+      foaf:account <http://data.lblod.info/foaf/account/id/0a3d5be8-6f6b-4c4e-9069-9b7c57a35df3> .
 
-     <http://data.lblod.info/foaf/group/id/767f4d80-f0fc-4fb2-af15-7f9f7d477aa3> a foaf:Group;
-       foaf:member <http://data.lblod.info/foaf/agent/id/d87dcf0d-4a8b-43d7-8625-42082957aaf1>;
-       foaf:name "vendor-management-deltas".
+    <http://data.lblod.info/foaf/group/id/767f4d80-f0fc-4fb2-af15-7f9f7d477aa3> a foaf:Group ;
+      foaf:member <http://data.lblod.info/foaf/agent/id/d87dcf0d-4a8b-43d7-8625-42082957aaf1> ;
+      foaf:name "vendor-management-deltas" .
   }
 }

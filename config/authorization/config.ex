@@ -412,7 +412,7 @@ defmodule Acl.UserGroups.Config do
       # // MESSAGING CENTRE
       %GroupSpec{
         name: "o-messaging-rwf",
-         useage: [:read, :write, :read_for_write],
+        useage: [:read, :write, :read_for_write],
         access: access_by_role( "LoketLB-berichtenGebruiker" ),
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
@@ -577,6 +577,7 @@ defmodule Acl.UserGroups.Config do
       # this was moved to org instead.
       # perhaps move some elements to public when needed for demo
       # purposes.
+
 
       # // CLEANUP
       #
