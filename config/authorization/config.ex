@@ -573,37 +573,6 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/dcat#Distribution",
                       ] } } ] },
 
-            # // Vendor management for DatabankErediensten
-            %GroupSpec{
-              name: "o-databank-erediensten-vendor-management-r",
-              useage: [:read],
-              # access: access_for_vendor_api(),
-              access: %AlwaysAccessible{}, # Temporarily set since I do not know if it is needed for general testing
-              graphs: [ %GraphSpec{
-                          graph: "http://mu.semte.ch/graphs/ssn-access-control",
-                          constraint: %ResourceConstraint{
-                            resource_types: [ "http://mu.semte.ch/vocabularies/ext/Vendor" ],
-                            predicates: %NoPredicates{
-                              except: [
-                                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                "http://mu.semte.ch/vocabularies/core/uuid",
-                                "http://mu.semte.ch/vocabularies/account/key",
-                                "http://mu.semte.ch/vocabularies/account/canActOnBehalfOf"
-                              ] }
-                          } },
-                        %GraphSpec{
-                          graph: "http://mu.semte.ch/graphs/automatic-submission",
-                          constraint: %ResourceConstraint{
-                            resource_types: [ "http://mu.semte.ch/vocabularies/ext/Vendor" ],
-                            predicates: %NoPredicates{
-                              except: [
-                                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                "http://mu.semte.ch/vocabularies/core/uuid",
-                                "http://mu.semte.ch/vocabularies/account/key",
-                                "http://mu.semte.ch/vocabularies/account/canActOnBehalfOf"
-                              ] }
-                          } } ] },
-
       # // USER HAS NO DATA
       # this was moved to org instead.
       # perhaps move some elements to public when needed for demo

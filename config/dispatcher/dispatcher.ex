@@ -501,14 +501,14 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # Vendors sync
+  # Vendor-Management sync
   #################################################################
-  post "/sync/vendors/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer/vendors/login/"
+  post "/sync/vendor-management/login/*path" do
+    forward conn, path, "http://delta-producer-publication-graph-maintainer/vendor-management/login/"
   end
 
-  get "/sync/vendors/files/*path" do
-    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer/vendors/files/"
+  get "/sync/vendor-management/files/*path" do
+    Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer/vendor-management/files/"
   end
 
   #################################################################

@@ -258,7 +258,7 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/vendors": {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/vendor-management": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
@@ -272,7 +272,7 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/vendors": {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/vendor-management": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
@@ -286,7 +286,7 @@
       }
     ]
   },
-  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/vendors": {
+  "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/vendor-management": {
     "tasksConfiguration": [
       {
         "currentOperation": null,
