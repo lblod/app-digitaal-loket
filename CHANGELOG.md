@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+### Toezicht
+ - Adjust/Add new forms and new codelists (DL-5669 - DL-5625 - DL-5643 - DL-5646 - DL-5665 - DL-5670) : See full changes on https://github.com/lblod/app-digitaal-loket/pull/528
 ### Subsidies
  - Add Fietssubsidie types via extractor (DGS-94)
  - Add LEKP 1.0 (2021) types via extractor (DGS-107)
@@ -12,12 +14,14 @@
  - Bump `migrations` to `v0.9.0`
  - Bump `mocklogin` to `v0.4.0` (DL-5709)
  - Bump `vendor-data-distribution-service` to `v1.3.3` (DL-5683)
+ - Bump `enrich-submission` to `v1.11.0` (DL-5646 & DL-5670)
+ - Bump `prepare-submissions-for-export` to `v0.9.0` (DL-5643 - DL-5646 - DL-5670)
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Docker Commands
- - `drc up -d migrations mocklogin vendor-data-distribution`
- - `drc restart subsidy-applications-management`
+ - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
+ - `drc restart subsidy-applications-management migrations resource cache`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
