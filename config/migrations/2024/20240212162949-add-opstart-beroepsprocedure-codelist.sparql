@@ -1,0 +1,37 @@
+INSERT DATA {
+
+GRAPH <http://mu.semte.ch/graphs/public> {
+
+<http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Type beroepsprocedure"@nl, "Type of appeal procedure"@en ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Besluit van beroepsprocedure" .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/dae6820c-71a6-4c08-a4a5-f62b9cd14d33> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "dae6820c-71a6-4c08-a4a5-f62b9cd14d33" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Meerjarenplan(wijziging)"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/331ad980-15c1-4b1a-a57c-eefa908ed9f4> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "331ad980-15c1-4b1a-a57c-eefa908ed9f4" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Afsprakennota"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/722c5a86-f3a2-4c0f-9b6e-f11fabd2bf37> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "722c5a86-f3a2-4c0f-9b6e-f11fabd2bf37" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Budget(wijziging)"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/ba36f197-1a96-4ea2-a7f7-3b5c7ffcd6ee> .
+  }
+}
