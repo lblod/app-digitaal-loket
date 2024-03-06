@@ -16,6 +16,8 @@
  - Bump `vendor-data-distribution-service` to `v1.3.3` (DL-5683)
  - Bump `enrich-submission` to `v1.11.0` (DL-5646 & DL-5670)
  - Bump `prepare-submissions-for-export` to `v0.9.0` (DL-5643 - DL-5646 - DL-5670)
+ - Add deltas support for vendor management data (DL-5667)
+   - Adds `vendor-management` as a new delta-stream
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
