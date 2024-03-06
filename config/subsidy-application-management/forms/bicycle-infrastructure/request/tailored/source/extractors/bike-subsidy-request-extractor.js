@@ -3,6 +3,8 @@ module.exports = {
   execute: async (store, graphs, lib, form) => {
     try {
       const { $rdf, mu, sudo } = lib;
+
+      const RDF_TYPE = new $rdf.NamedNode('http://www.w3.org/1999/02/22-rdf-syntax-ns#type');
       const SCHEMA = new $rdf.Namespace('http://schema.org/');
       const FOAF = new $rdf.Namespace('http://xmlns.com/foaf/0.1/');
       const LBLOD_SUBSIDIE = new $rdf.Namespace('http://lblod.data.gift/vocabularies/subsidie/');
@@ -19,6 +21,7 @@ module.exports = {
         store.add($rdf.sym(form.uri), LBLOD_SUBSIDIE('projectName'), info.projectName, graphs.additions);
         store.add($rdf.sym(form.uri), NIE('identifier'), info.dossiernummer, graphs.additions);
         store.add($rdf.sym(form.uri), SCHEMA('contactPoint'), $rdf.sym(contactPointUri), graphs.additions);
+        store.add($rdf.sym(contactPointUri), RDF_TYPE, SCHEMA('ContactPoint'), graphs.additions);
         store.add($rdf.sym(contactPointUri), FOAF('firstName'), info.firstName, graphs.additions);
         store.add($rdf.sym(contactPointUri), FOAF('familyName'), info.familyName, graphs.additions);
         store.add($rdf.sym(contactPointUri), SCHEMA('email'), info.email, graphs.additions);

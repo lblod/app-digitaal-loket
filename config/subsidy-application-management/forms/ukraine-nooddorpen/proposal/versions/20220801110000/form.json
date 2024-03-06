@@ -20,6 +20,7 @@
         {
           "s-prefix": "schema:contactPoint",
           "properties": [
+            "rdf:type",
             "foaf:firstName",
             "foaf:familyName",
             "schema:telephone",
@@ -29,6 +30,7 @@
         {
           "s-prefix": "lblodSubsidie:accountabilitySummary",
           "properties": [
+            "rdf:type",
             {
               "s-prefix": "dct:hasPart",
               "properties": [
@@ -40,18 +42,7 @@
         {
           "s-prefix": "lblodSubsidie:accountabilityProof",
           "properties": [
-            {
-              "s-prefix": "dct:hasPart",
-              "properties": [
-                "rdf:type"
-              ]
-            }
-          ]
-        },
-        {
-          "s-prefix": "schema:bankAccount",
-          "properties": [
-            "schema:identifier",
+            "rdf:type",
             {
               "s-prefix": "dct:hasPart",
               "properties": [

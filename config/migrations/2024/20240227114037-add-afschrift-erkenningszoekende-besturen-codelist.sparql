@@ -1,0 +1,55 @@
+INSERT DATA {
+
+GRAPH <http://mu.semte.ch/graphs/public> {
+
+<http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "27f40c36-141d-42e9-bed8-fea1a47c4869" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Type afschrift"@nl, "Type of statement"@en ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Type afschrift" .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/0d3f28ad-2b7d-4310-9276-426a41737de6> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "0d3f28ad-2b7d-4310-9276-426a41737de6" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Begroting en jaarrekening van de lokale geloofsgemeenschap"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/33c94ee5-315f-43cb-8627-1f5518f78961> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "33c94ee5-315f-43cb-8627-1f5518f78961" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Budget"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/f4bce7a3-6df6-41be-a93f-8ae631276469> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "f4bce7a3-6df6-41be-a93f-8ae631276469" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Jaarrekening bestuur in wachtperiode"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/7c043390-20ae-4b1f-9e80-3565c455d7aa> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "7c043390-20ae-4b1f-9e80-3565c455d7aa" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Verslag van de vergaderingen van het voorlopig bestuursorgaan"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+<https://data.vlaanderen.be/id/concept/BesluitType/fed72e6c-ad9b-4f0e-b283-26b65d970e3f> a <http://www.w3.org/2004/02/skos/core#Concept>,
+    <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://mu.semte.ch/vocabularies/core/uuid> "fed72e6c-ad9b-4f0e-b283-26b65d970e3f" ;
+    <http://www.w3.org/2004/02/skos/core#prefLabel> "Ontwerp van het meerjarenplan"@nl ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+    <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+  }
+}
