@@ -19,9 +19,17 @@
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
+#### Delta Producer Config Changes for `publication-graph-maintainer` and `background-jobs-initiator`
+##### Add Custom `publication-graph-maintainer` and `background-jobs-initiator` Config Volume Mounts for DEV, QA and PROD
+ - Use [this wiki page](https://github.com/lblod/app-digitaal-loket/wiki/Use-Custom-Configuration-for-delta%E2%80%90producer%E2%80%90publication%E2%80%90graph%E2%80%90maintainer-and-delta%E2%80%90producer%E2%80%90background%E2%80%90jobs%E2%80%90initiator) as reference on how to perform this operation.
+##### Edit `config/delta-producer/background-jobs-initiator/config.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+ - Change `""disableDumpFileCreation"` from `true` to `false`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
+ - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
  - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
- - `drc restart subsidy-applications-management migrations resource cache`
+ - `drc restart subsidy-applications-management dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher migrations resource cache`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
