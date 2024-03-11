@@ -30,12 +30,12 @@ async function generate() {
     const detailsStore = new n3.Store();
     detailsParsedResults.forEach((t) => detailsStore.addQuad(t.s, t.p, t.o));
     
-    const recipient = detailsStore.getQuads(message, ns.sch`recipient`)[0]?.object;
-    const sender = detailsStore.getQuads(message, ns.sch`sender`)[0]?.object;
-    const confirmedStatus = detailsStore.getQuads(message, ns.adms`status`)[0]?.object;
-    let job = detailsStore.getQuads(undefined, ns.dct`subject`, message)[0]?.subject;
+    const recipient = detailsStore.getObjects(message, ns.sch`recipient`)[0];
+    const sender = detailsStore.getObjects(message, ns.sch`sender`)[0];
+    const confirmedStatus = detailsStore.getObjects(message, ns.adms`status`)[0];
+    let job = detailsStore.getSubjects(ns.dct`subject`, message)[0];
     job = detailsStore.has(job, ns.rdf`type`, ns.cogs`Job`) ? job : undefined;
-    let provenance = detailsStore.getQuads(job, ns.dct`creator`)[0]?.object;
+    let provenance = detailsStore.getObjects(job, ns.dct`creator`)[0];
     provenance = provenance || (confirmedStatus ? namedNode(SERVICE_KALLIOPE) : undefined);
     provenance = provenance || namedNode(SERVICE_LOKET);
     const attachments = detailsStore.getObjects(message, ns.nie`hasPart`);
@@ -45,17 +45,17 @@ async function generate() {
 
     resultMessages.push({
       conversation: conversation?.value,
-      identifier: detailsStore.getQuads(conversation, ns.sch`identifier`)[0]?.object?.value,
-      about: detailsStore.getQuads(conversation, ns.sch`about`)[0]?.object?.value,
+      identifier: detailsStore.getObjects(conversation, ns.sch`identifier`)[0]?.value,
+      about: detailsStore.getObjects(conversation, ns.sch`about`)[0]?.value,
       message: message.value,
-      dateSent: store.getQuads(message, ns.sch`dateSent`)[0]?.object?.value,
-      type: detailsStore.getQuads(message, ns.dct`type`)[0]?.object?.value,
-      dateReceived: detailsStore.getQuads(message, ns.sch`dateReceived`)[0]?.object?.value,
-      content: detailsStore.getQuads(message, ns.sch`text`)[0]?.object?.value,
+      dateSent: store.getObjects(message, ns.sch`dateSent`)[0]?.value,
+      type: detailsStore.getObjects(message, ns.dct`type`)[0]?.value,
+      dateReceived: detailsStore.getObjects(message, ns.sch`dateReceived`)[0]?.value,
+      content: detailsStore.getObjects(message, ns.sch`text`)[0]?.value,
       sender: sender?.value,
       recipient: recipient?.value,
-      sendername: detailsStore.getQuads(sender, ns.skos`prefLabel`)[0]?.object?.value,
-      recipientname: detailsStore.getQuads(recipient, ns.skos`prefLabel`)[0]?.object?.value,
+      sendername: detailsStore.getObjects(sender, ns.skos`prefLabel`)[0]?.value,
+      recipientname: detailsStore.getObjects(recipient, ns.skos`prefLabel`)[0]?.value,
       attachments: filenamesFormatted,
       provenance: provenance?.value,
     });
