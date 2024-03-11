@@ -2,6 +2,8 @@ import * as queries from './queries';
 import * as hel from '../../helpers';
 import * as rst from 'rdf-string-ttl';
 import * as uti from './utils';
+import * as mas from '@lblod/mu-auth-sudo';
+import { NAMESPACES as ns } from './namespaces';
 import * as n3 from 'n3';
 import { SparqlJsonParser } from 'sparqljson-parse';
 const { namedNode } = n3.DataFactory;
@@ -13,33 +15,51 @@ const SERVICE_LOKET = 'https://github.com/lblod/frontend-loket';
 
 async function generate() {
   const startDate = uti.addDays(new Date(), -6 * 31); //6 months ago
-  const messageQuery = queries.recentMessages(startDate);
-  const messageResults = await hel.batchedQuery(messageQuery, 1000);
-  const messages = sparqlJsonParser.parseJsonResults(messageResults);
+  const messagesSubjectsQuery = queries.recentMessageSubjectsAndDate(startDate);
+  const response = await mas.querySudo(messagesSubjectsQuery);
+  const parsedResults = sparqlJsonParser.parseJsonResults(response);
+  const store = new n3.Store();
+  parsedResults.forEach((t) => store.addQuad(t.s, t.p, t.o));
+  const resultMessages = [];
+  
+  for (const message of store.getSubjects()) {
+    const organisationGraph = store.getObjects(message, namedNode('ingraph'))[0];
+    const detailsQuery = queries.getMessageProperties(organisationGraph, message);
+    const detailsResponse = await mas.querySudo(detailsQuery);
+    const detailsParsedResults = sparqlJsonParser.parseJsonResults(detailsResponse);
+    const detailsStore = new n3.Store();
+    detailsParsedResults.forEach((t) => detailsStore.addQuad(t.s, t.p, t.o));
+    
+    const recipient = detailsStore.getQuads(message, ns.sch`recipient`)[0]?.object;
+    const sender = detailsStore.getQuads(message, ns.sch`sender`)[0]?.object;
+    const confirmedStatus = detailsStore.getQuads(message, ns.adms`status`)[0]?.object;
+    let job = detailsStore.getQuads(undefined, ns.dct`subject`, message)[0]?.subject;
+    job = detailsStore.has(job, ns.rdf`type`, ns.cogs`Job`) ? job : undefined;
+    let provenance = detailsStore.getQuads(job, ns.dct`creator`)[0]?.object;
+    provenance = provenance || (confirmedStatus ? namedNode(SERVICE_KALLIOPE) : undefined);
+    provenance = provenance || namedNode(SERVICE_LOKET);
+    const attachments = detailsStore.getObjects(message, ns.nie`hasPart`);
+    const filenames = attachments.map((att) => detailsStore.getObjects(att, ns.nfo`fileName`)[0]);
+    const filenamesFormatted = `[${filenames.length}]:${filenames.map((f) => f.value).join(',')}`;
 
-  for (const entry of messages) {
-    entry.provenance = entry?.creator;
-    entry.provenance =
-      entry?.provenance ||
-      (entry?.confirmedStatus ? namedNode(SERVICE_KALLIOPE) : undefined);
-    entry.provenance = entry?.provenance || namedNode(SERVICE_LOKET);
-
-    entry.conversation = entry?.conversation?.value;
-    entry.message = entry?.message?.value;
-    entry.sender = entry?.sender?.value;
-    entry.sendername = entry?.sendername?.value;
-    entry.recipient = entry?.recipient?.value;
-    entry.recipientname = entry?.recipientname?.value;
-    entry.type = entry?.type?.value;
-    entry.dateSent = entry?.dateSent?.value;
-    entry.dateReceived = entry?.dateReceived?.value;
-    entry.content = rst.termToString(entry.content);
-    entry.attachment = entry?.attachment?.value;
-    entry.provenance = entry?.provenance?.value;
+    resultMessages.push({
+      conversation: detailsStore.getQuads(undefined, ns.sch`hasPart`, message)[0]?.subject?.value,
+      message: message.value,
+      dateSent: store.getQuads(message, ns.sch`dateSent`)[0]?.object?.value,
+      type: detailsStore.getQuads(message, ns.dct`type`)[0]?.object?.value,
+      dateReceived: detailsStore.getQuads(message, ns.sch`dateReceived`)[0]?.object?.value,
+      content: detailsStore.getQuads(message, ns.sch`text`)[0]?.object?.value,
+      sender: sender?.value,
+      recipient: recipient?.value,
+      sendername: detailsStore.getQuads(sender, ns.skos`prefLabel`)[0]?.object?.value,
+      recipientname: detailsStore.getQuads(recipient, ns.skos`prefLabel`)[0]?.object?.value,
+      attachments: filenamesFormatted,
+      provenance: provenance?.value,
+    });
   }
 
   await hel.generateReportFromData(
-    messages,
+    resultMessages,
     [
       'conversation',
       'message',
@@ -51,7 +71,7 @@ async function generate() {
       'dateSent',
       'dateReceived',
       'content',
-      'attachment',
+      'attachments',
       'provenance',
     ],
     {
