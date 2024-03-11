@@ -71,7 +71,9 @@ PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 CONSTRUCT {
   ?conversation
     a sch:Conversation ;
-    sch:hasPart ?message .
+    sch:hasPart ?message ;
+    sch:about ?about ;
+    sch:identifier ?identifier .
   ?message
     dct:type ?type ;
     sch:dateReceived ?dateReceived ;
@@ -96,6 +98,8 @@ WHERE {
       ?conversation
         a sch:Conversation ;
         sch:hasPart ?message .
+      OPTIONAL { ?conversation sch:about ?about . }
+      OPTIONAL { ?conversation sch:identifier ?identifier . }
     } UNION {
       ?message dct:type ?type .
     } UNION {

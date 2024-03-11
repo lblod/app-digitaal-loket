@@ -41,9 +41,12 @@ async function generate() {
     const attachments = detailsStore.getObjects(message, ns.nie`hasPart`);
     const filenames = attachments.map((att) => detailsStore.getObjects(att, ns.nfo`fileName`)[0]);
     const filenamesFormatted = `[${filenames.length}]:${filenames.map((f) => f.value).join(',')}`;
+    const conversation = detailsStore.getSubjects(ns.sch`hasPart`, message)[0];
 
     resultMessages.push({
-      conversation: detailsStore.getQuads(undefined, ns.sch`hasPart`, message)[0]?.subject?.value,
+      conversation: conversation?.value,
+      identifier: detailsStore.getQuads(conversation, ns.sch`identifier`)[0]?.object?.value,
+      about: detailsStore.getQuads(conversation, ns.sch`about`)[0]?.object?.value,
       message: message.value,
       dateSent: store.getQuads(message, ns.sch`dateSent`)[0]?.object?.value,
       type: detailsStore.getQuads(message, ns.dct`type`)[0]?.object?.value,
@@ -62,6 +65,8 @@ async function generate() {
     resultMessages,
     [
       'conversation',
+      'identifier',
+      'about',
       'message',
       'sender',
       'sendername',
