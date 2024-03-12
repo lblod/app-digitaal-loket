@@ -51,13 +51,13 @@ async function generate() {
       dateSent: store.getObjects(message, ns.sch`dateSent`)[0]?.value,
       type: detailsStore.getObjects(message, ns.dct`type`)[0]?.value,
       dateReceived: detailsStore.getObjects(message, ns.sch`dateReceived`)[0]?.value,
-      content: detailsStore.getObjects(message, ns.sch`text`)[0]?.value,
       sender: sender?.value,
       recipient: recipient?.value,
       sendername: detailsStore.getObjects(sender, ns.skos`prefLabel`)[0]?.value,
       recipientname: detailsStore.getObjects(recipient, ns.skos`prefLabel`)[0]?.value,
       attachments: filenamesFormatted,
       provenance: provenance?.value,
+      content: detailsStore.getObjects(message, ns.sch`text`)[0]?.value,
     });
   }
 
@@ -75,9 +75,9 @@ async function generate() {
       'type',
       'dateSent',
       'dateReceived',
-      'content',
       'attachments',
       'provenance',
+      'content',
     ],
     {
       title: 'Message report with provenance',
