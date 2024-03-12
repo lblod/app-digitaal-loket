@@ -9,7 +9,7 @@
  - Add Nooddorpen subsidy types via extractor (DGS-166)
 ### General
 #### Frontend
- - Bump frontend to `v0.90.3` (DL-5708): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0903-2024-02-28
+ - Bump frontend to `v0.91.0` (DL-5735): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0910-2024-03-12
 #### Backend
  - Bump `migrations` to `v0.9.0`
  - Bump `mocklogin` to `v0.4.0` (DL-5709)
@@ -21,6 +21,7 @@
    - Adds `vendor-management` as a new delta-stream
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
+ - update the controle image to `v0.91.0-controle` in the `docker-compose.override.yml` file
  - Remove berichtencentrum-sync-with-kalliope `v0.19.0` image from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Delta Producer Config Changes for `publication-graph-maintainer` and `background-jobs-initiator`
