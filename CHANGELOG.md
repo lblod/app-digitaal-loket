@@ -9,7 +9,7 @@
  - Add Nooddorpen subsidy types via extractor (DGS-166)
 ### General
 #### Frontend
- - Bump frontend to `v0.90.3` (DL-5708): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0903-2024-02-28
+ - Bump frontend to `v0.91.0` (DL-5735): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0910-2024-03-12
 #### Backend
  - Bump `migrations` to `v0.9.0`
  - Bump `mocklogin` to `v0.4.0` (DL-5709)
@@ -18,6 +18,7 @@
  - Bump `prepare-submissions-for-export` to `v0.9.0` (DL-5643 - DL-5646 - DL-5670)
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
+ - update the controle image to `v0.91.0-controle` in the `docker-compose.override.yml` file
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Docker Commands
  - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
