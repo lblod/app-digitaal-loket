@@ -14,7 +14,7 @@ const SERVICE_KALLIOPE =
 const SERVICE_LOKET = 'https://github.com/lblod/frontend-loket';
 
 async function generate() {
-  const startDate = uti.addDays(new Date(), -6 * 31); //6 months ago
+  const startDate = uti.addDays(new Date(), -12 * 31); //12 month ago
   const messagesSubjectsQuery = queries.recentMessageSubjectsAndDate(startDate);
   const response = await mas.querySudo(messagesSubjectsQuery);
   const parsedResults = sparqlJsonParser.parseJsonResults(response);
