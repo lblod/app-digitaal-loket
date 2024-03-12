@@ -1,0 +1,26 @@
+PREFIX m8g: <http://data.europa.eu/m8g/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Update LEKP 1.0 - 2021, Indienen Pact deadline
+DELETE {
+  GRAPH ?g {
+    ?s m8g:endTime ?endTimeSubsidy .
+    ?s m8g:endTime ?endTimeStep .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    # Time is set to 22:59:00 because Belgium time is UTC+1
+    ?s m8g:endTime "2024-12-05T22:59:00Z"^^xsd:dateTime .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES ?s {
+      <http://data.lblod.info/id/periodes/d7b3851d-70f7-4929-b226-73d3343c954d> # LEKP 1.0 subsidy deadline
+      <http://data.lblod.info/id/periodes/6123b1b9-b75b-4235-9cc6-58b1d7fa6872> # LEKP 1.0 Indienen Pact step deadline
+    }
+    ?s m8g:endTime ?endTimeSubsidy.
+    ?s m8g:endTime ?endTimeStep .
+  }
+}
