@@ -19,6 +19,7 @@
  - Bump `berichtencentrum-sync-with-kalliope` to `v0.19.0` (DL-5629)
  - Add deltas support for vendor management data (DL-5667)
    - Adds `vendor-management` as a new delta-stream
+ - Add `restart: always` for the `virus-scanner` service
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - update the controle image to `v0.91.0-controle` in the `docker-compose.override.yml` file
@@ -33,7 +34,7 @@
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
  - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
- - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
+ - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export virus-scanner`
  - `drc restart subsidy-applications-management dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher migrations resource cache`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
