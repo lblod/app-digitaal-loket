@@ -20,6 +20,8 @@
  - Bump `berichtencentrum-sync-with-kalliope` to `v0.19.0` (DL-5629)
  - Add deltas support for vendor management data (DL-5667)
    - Adds `vendor-management` as a new delta-stream
+ - Add server-specific configurations for `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer` (DL-5752)
+   - Resolves merge conflict issues when adding a new delta stream or editing an existing one
  - Add `restart: always` for the `virus-scanner` service
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
@@ -31,7 +33,7 @@
  - Use [this wiki page](https://github.com/lblod/app-digitaal-loket/wiki/Use-Custom-Configuration-for-delta%E2%80%90producer%E2%80%90publication%E2%80%90graph%E2%80%90maintainer-and-delta%E2%80%90producer%E2%80%90background%E2%80%90jobs%E2%80%90initiator) as reference on how to perform this operation.
 ##### Edit `config/delta-producer/background-jobs-initiator/config.json`
  - Change `"startInitialSync"` from `false` to `true`.
- - Change `""disableDumpFileCreation"` from `true` to `false`.
+ - Change `"disableDumpFileCreation"` from `true` to `false`.
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
  - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
