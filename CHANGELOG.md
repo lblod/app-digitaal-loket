@@ -35,7 +35,7 @@
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
  - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
- - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export virus-scanner`
+ - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export virus-scanner berichtencentrum-sync-with-kalliope`
  - `drc restart subsidy-applications-management dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher delta-producer-publication-graph-maintainer-subsidies migrations resource cache`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
