@@ -17,6 +17,7 @@
  - Bump `enrich-submission` to `v1.11.0` (DL-5646 & DL-5670)
  - Bump `prepare-submissions-for-export` to `v0.9.0` (DL-5643 - DL-5646 - DL-5670)
  - Bump `berichtencentrum-sync-with-kalliope` to `v0.19.0` (DL-5629)
+ - Bump `loket-report-generation-service` to `v0.8.1` (DL-5696)
  - Add deltas support for vendor management data (DL-5667)
    - Adds `vendor-management` as a new delta-stream
 ### Deploy Notes
