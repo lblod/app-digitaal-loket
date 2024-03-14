@@ -22,7 +22,7 @@
    - Adds `vendor-management` as a new delta-stream
  - Add server-specific configurations for `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer` (DL-5752)
    - Resolves merge conflict issues when adding a new delta stream or editing an existing one
- - Add `restart: always` for the `virus-scanner` service
+ - Add a new "Virus scan" report (DL-5618)
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
  - Update the controle image to `v0.91.1-controle` in the `docker-compose.override.yml` file
@@ -38,7 +38,7 @@
  - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
  - `drc up -d loket controle migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export virus-scanner berichtencentrum-sync-with-kalliope`
- - `drc restart subsidy-applications-management dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller delta-producer-publication-graph-maintainer-subsidies migrations resource cache`
+ - `drc restart subsidy-applications-management dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller delta-producer-publication-graph-maintainer-subsidies migrations resource cache report-generation`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
