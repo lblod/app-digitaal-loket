@@ -1,10 +1,48 @@
 PREFIX m8g: <http://data.europa.eu/m8g/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+# Update LEKP 1.0 - 2021 deadline: remove subsidy period -> 'N.V.T'
+DELETE {
+  GRAPH ?g {
+    ?s m8g:startTime ?startTimeSubsidy .
+    ?s m8g:endTime ?endTimeSubsidy .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES ?s {
+      <http://data.lblod.info/id/periodes/d7b3851d-70f7-4929-b226-73d3343c954d> # LEKP 1.0 subsidy deadline
+    }
+    ?s m8g:startTime ?startTimeSubsidy .
+    ?s m8g:endTime ?endTimeSubsidy .
+  }
+};
+
+# Update LEKP 1.0 series to show '2021 – 2024' and 'N.V.T'
+DELETE {
+  GRAPH ?g {
+    ?s dct:title ?title .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s dct:title "2021 – 2024" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES ?s {
+      <http://lblod.data.info/id/subsidy-measure-offer-series/87b87f00-6f87-4412-be26-ea531220457c> # LEKP 1.0 series
+    }
+    ?s dct:title ?title .
+  }
+};
+
 
 # Update LEKP 1.0 - 2021, Indienen Pact deadline
 DELETE {
   GRAPH ?g {
-    ?s m8g:endTime ?endTimeSubsidy .
     ?s m8g:endTime ?endTimeStep .
   }
 }
@@ -17,10 +55,8 @@ INSERT {
 WHERE {
   GRAPH ?g {
     VALUES ?s {
-      <http://data.lblod.info/id/periodes/d7b3851d-70f7-4929-b226-73d3343c954d> # LEKP 1.0 subsidy deadline
       <http://data.lblod.info/id/periodes/6123b1b9-b75b-4235-9cc6-58b1d7fa6872> # LEKP 1.0 Indienen Pact step deadline
     }
-    ?s m8g:endTime ?endTimeSubsidy.
     ?s m8g:endTime ?endTimeStep .
   }
 }
