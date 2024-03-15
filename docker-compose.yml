@@ -126,6 +126,8 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  impersonation:
+    image: lblod/impersonation-service:0.2.0-rc.3
   validation:
     image: semtech/mu-validation-service:0.3.0
     volumes:
