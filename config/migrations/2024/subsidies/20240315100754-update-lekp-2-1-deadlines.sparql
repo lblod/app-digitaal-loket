@@ -407,8 +407,9 @@ WHERE {
     ?s m8g:startTime ?startTimeSubsidy .
     ?s m8g:endTime ?endTimeSubsidy .
   }
-};
+}
 
+;
 
 # Update LEKP 2.1, Indienen Pact deadline
 DELETE {
