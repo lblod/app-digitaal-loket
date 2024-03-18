@@ -56,8 +56,8 @@ INSERT DATA {
       mu:uuid "f575ece7-2e2d-42bd-b307-30b2f90aed9f";
       dct:title "Oproep"@nl;
       dct:description ""@nl ;
-      mobiliteit:periode  <http://data.lblod.info/id/periodes/08a297a6-cb71-462e-94cc-2a9d462f520c>.
       common:active <http://data.lblod.info/id/subsidie-application-flows/ff2dc49d-b4d6-4684-86da-04544ece1742> ;
+      mobiliteit:periode <http://data.lblod.info/id/periodes/08a297a6-cb71-462e-94cc-2a9d462f520c> ;
       lblodSubsidie:heeftSubsidieprocedurestap <http://data.lblod.info/id/subsidy-procedural-steps/f647d85b-9876-42b3-aab8-33d3bda0aade>.
 
     # New subsidy periode from unknown (end of March or beginning of April) to 31 mei 2024
