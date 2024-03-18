@@ -28,7 +28,9 @@ WHERE {
     }
     ?s dct:title ?title .
   }
-};
+}
+
+;
 
 # Remove from specific graphs
 INSERT DATA {
