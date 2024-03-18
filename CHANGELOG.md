@@ -22,8 +22,9 @@
  - update the controle image to `v0.91.1-controle` in the `docker-compose.override.yml` file
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
 #### Docker Commands
- - `drc up -d migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
- - `drc restart subsidy-applications-management migrations resource cache`
+ - `drc up -d loket controle migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
+ - `drc restart migrations`
+ - `drc restart subsidy-applications-management delta-producer-publication-graph-maintainer-subsidies resource cache`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
