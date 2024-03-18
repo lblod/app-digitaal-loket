@@ -430,8 +430,9 @@ WHERE {
     }
     ?s m8g:endTime ?endTimeStep .
   }
-};
+}
 
+;
 
 # Update LEKP 2.1, opvolgmoment deadline
 DELETE {
