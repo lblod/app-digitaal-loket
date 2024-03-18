@@ -1,0 +1,69 @@
+
+PREFIX mobiliteit: <https://data.vlaanderen.be/ns/mobiliteit#>
+PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>
+PREFIX gleif: <https://www.gleif.org/ontology/Base/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX common: <http://www.w3.org/2007/uwa/context/common.owl#>
+PREFIX xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/subsidy-procedural-steps/f647d85b-9876-42b3-aab8-33d3bda0aade> a subsidie:Subsidieprocedurestap;
+      mu:uuid "f647d85b-9876-42b3-aab8-33d3bda0aade";
+      dct:description """Subsidieaanvraag""";
+      subsidie:Subsidieprocedurestap.type <http://lblod.data.gift/concepts/ee855aae-eb10-44aa-ae01-38c4f6cca0f6>;
+      mobiliteit:periode  <http://data.lblod.info/id/periodes/bec549e5-1f59-42d1-9325-3c8c8a10c5bb>.
+
+    # New application flow
+    <http://data.lblod.info/id/subsidie-application-flows/ff2dc49d-b4d6-4684-86da-04544ece1742> a lblodSubsidie:ApplicationFlow;
+      mu:uuid "ff2dc49d-b4d6-4684-86da-04544ece1742";
+      xkos:belongsTo  <http://data.lblod.info/id/subsidy-measure-offer-series/f575ece7-2e2d-42bd-b307-30b2f90aed9f> ;
+      xkos:next <http://data.lblod.info/id/subsidie-application-flow-steps/6e5cca42-3fe6-4491-bf42-cbd1faeac9b8> .
+
+    <http://data.lblod.info/id/subsidie-application-flow-steps/6e5cca42-3fe6-4491-bf42-cbd1faeac9b8> a lblodSubsidie:ApplicationStep;
+      mu:uuid "6e5cca42-3fe6-4491-bf42-cbd1faeac9b8";
+      qb:order 0;
+      dct:references <http://data.lblod.info/id/subsidy-procedural-steps/f647d85b-9876-42b3-aab8-33d3bda0aade>;
+      dct:isPartOf  <http://data.lblod.info/id/subsidie-application-flows/ff2dc49d-b4d6-4684-86da-04544ece1742>;
+      dct:source <config://forms/lokaal-bestuurlijk-talent/proposal/versions/20240318151410/form.ttl>.
+
+    # New subsidy step periode from unknown (end of March or beginning of April) to 31 mei 2024
+    <http://data.lblod.info/id/periodes/bec549e5-1f59-42d1-9325-3c8c8a10c5bb> a <http://data.europa.eu/m8g/PeriodOfTime>;
+      mu:uuid "bec549e5-1f59-42d1-9325-3c8c8a10c5bb";
+      <http://data.europa.eu/m8g/startTime> "2024-02-08T23:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+      <http://data.europa.eu/m8g/endTime> "2024-05-31T21:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
+
+
+    # Create new subsidy and link to reeks
+    <http://data.lblod.info/id/subsidy-measure-offers/5c4b2890-067e-451e-b4b5-5c616951b65c>
+      a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod>;
+      mu:uuid "5c4b2890-067e-451e-b4b5-5c616951b65c";
+      dct:title """Beurs Lokaal Bestuurlijk Talent""";
+      skos:prefLabel """Beurs Lokaal Bestuurlijk Talent""";
+      skos:related <https://www.vlaanderen.be/lokaal-bestuur/beurs-lokaal-bestuurlijk-talent>;
+      <http://data.europa.eu/m8g/hasCriterion> <http://data.lblod.info/id/criterions/f5ea0615-0b0a-47db-a38c-6097ff80815d> ; # Add Gemeentes criterion
+      <http://data.europa.eu/m8g/hasCriterion> <http://data.lblod.info/id/criterions/8c32faa4-1167-4fee-932f-3d453e59b09a> ; # Add OCMW criterion
+      <http://data.europa.eu/m8g/hasCriterion> <http://data.lblod.info/id/criterions/be6b5c33-f4f0-45bc-b7ae-d8aa9c214843> ; # Add Welzijnsvereniging criterion
+      cpsv:follows <http://data.lblod.info/id/subsidy-procedural-steps/f647d85b-9876-42b3-aab8-33d3bda0aade> ;
+      lblodSubsidie:heeftReeks <http://data.lblod.info/id/subsidy-measure-offer-series/f575ece7-2e2d-42bd-b307-30b2f90aed9f> .
+
+    # New subsidiemaatergelaanbodreeks Oproep
+    <http://data.lblod.info/id/subsidy-measure-offer-series/f575ece7-2e2d-42bd-b307-30b2f90aed9f> a lblodSubsidie:SubsidiemaatregelAanbodReeks;
+      mu:uuid "f575ece7-2e2d-42bd-b307-30b2f90aed9f";
+      dct:title "Oproep"@nl;
+      dct:description ""@nl ;
+      mobiliteit:periode  <http://data.lblod.info/id/periodes/08a297a6-cb71-462e-94cc-2a9d462f520c>.
+      common:active <http://data.lblod.info/id/subsidie-application-flows/ff2dc49d-b4d6-4684-86da-04544ece1742> ;
+      lblodSubsidie:heeftSubsidieprocedurestap <http://data.lblod.info/id/subsidy-procedural-steps/f647d85b-9876-42b3-aab8-33d3bda0aade>.
+
+    # New subsidy periode from unknown (end of March or beginning of April) to 31 mei 2024
+    <http://data.lblod.info/id/periodes/08a297a6-cb71-462e-94cc-2a9d462f520c> a <http://data.europa.eu/m8g/PeriodOfTime>;
+      mu:uuid "08a297a6-cb71-462e-94cc-2a9d462f520c";
+      <http://data.europa.eu/m8g/startTime> "2024-02-08T23:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+      <http://data.europa.eu/m8g/endTime> "2024-05-31T21:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
+  }
+}
