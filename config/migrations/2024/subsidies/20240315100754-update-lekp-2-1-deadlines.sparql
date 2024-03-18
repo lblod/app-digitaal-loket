@@ -453,4 +453,4 @@ WHERE {
     }
     ?s m8g:endTime ?endTimeStep .
   }
-};
+}
