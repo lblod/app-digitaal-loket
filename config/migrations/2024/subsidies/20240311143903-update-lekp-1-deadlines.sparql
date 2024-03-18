@@ -17,7 +17,9 @@ WHERE {
     ?s m8g:startTime ?startTimeSubsidy .
     ?s m8g:endTime ?endTimeSubsidy .
   }
-};
+}
+
+;
 
 # Update LEKP 1.0 series to show '2021 – 2024' and 'N.V.T'
 DELETE {
