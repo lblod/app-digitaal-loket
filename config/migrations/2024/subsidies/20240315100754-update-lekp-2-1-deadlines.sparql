@@ -32,7 +32,6 @@ WHERE {
 
 ;
 
-# Remove from specific graphs
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     # Period of the Series
@@ -111,6 +110,7 @@ INSERT DATA {
 
 ;
 
+# Remove from specific graphs
 DELETE {
   # Remove SubsidiemaatregelAanbod and SubsidiemaatregelAanbodReeks from the graphs
   # of the local governments listed below, so that they can be visible to everyone.
