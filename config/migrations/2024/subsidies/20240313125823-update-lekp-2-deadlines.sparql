@@ -39,8 +39,9 @@ WHERE {
     }
     ?s dct:title ?title .
   }
-};
+}
 
+;
 
 # Update LEKP 2.0 - 2022, Indienen Pact deadline
 DELETE {
