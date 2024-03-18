@@ -388,7 +388,9 @@ INSERT DATA {
       cpsv:follows              <http://data.lblod.info/id/subsidy-procedural-steps/be1168a8-5131-4adb-a913-a4147bd8c6f5> ;
       lblodSubsidie:heeftReeks  <http://data.lblod.info/id/subsidy-measure-offer-series/a04b604a-86c6-49c0-8b70-1910e3fdfa4c> .
  }
-};
+}
+
+;
 
 # Update LEKP 2.1 deadline: remove subsidy period -> 'N.V.T'
 DELETE {
