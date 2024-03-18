@@ -362,6 +362,8 @@ WHERE {
  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", STR(?uuid), "/LoketLB-subsidies")) as ?newGraph)
 }
 
+;
+
 # Add to public, to be accesible from all graphs
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
