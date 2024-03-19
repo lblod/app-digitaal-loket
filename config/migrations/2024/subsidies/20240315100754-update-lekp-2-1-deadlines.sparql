@@ -266,7 +266,7 @@ WHERE {
 
 ;
 
-# Add to public, to be accesible from all graphs
+# Add to public, to be accessible from all graphs
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     # Create Series for subsidy call named "2023 - 2024"
