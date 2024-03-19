@@ -152,6 +152,8 @@ services:
       - ./data/files:/share
       # TODO: is this required? We'd like to avoid docker-volumes
       # - ./data/files/virus-scanner-signatures:/var/lib/clamav
+    restart: always
+    logging: *default-logging
   create-bbcdr:
     image: lblod/create-bbcdr-rapporten-service:0.5.0
     labels:

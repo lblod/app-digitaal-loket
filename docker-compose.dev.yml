@@ -44,6 +44,8 @@ services:
     restart: "no"
   file:
     restart: "no"
+  virus-scanner:
+    restart: "no"
   create-bbcdr:
     restart: "no"
   package-bbcdr:

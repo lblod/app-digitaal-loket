@@ -1,0 +1,15 @@
+{
+  "export": [
+    {
+      "type": "http://mu.semte.ch/vocabularies/ext/Vendor",
+      "graphsFilter": [ "http://mu.semte.ch/graphs/automatic-submission" ],
+      "hasRegexGraphsFilter": false,
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://mu.semte.ch/vocabularies/account/key",
+        "http://mu.semte.ch/vocabularies/account/canActOnBehalfOf"
+      ]
+    }
+  ]
+}
