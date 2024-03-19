@@ -10,28 +10,6 @@ PREFIX xkos:          <http://rdf-vocabulary.ddialliance.org/xkos#>
 PREFIX cpsv:          <http://purl.org/vocab/cpsv#>
 PREFIX common:        <http://www.w3.org/2007/uwa/context/common.owl#>
 
-# Update LEKP 2.1 series to show '2023 – 2024' and 'N.V.T'
-DELETE {
-  GRAPH ?g {
-    ?s dct:title ?title .
-  }
-}
-INSERT {
-  GRAPH ?g {
-    ?s dct:title "2023 – 2024" .
-  }
-}
-WHERE {
-  GRAPH ?g {
-    VALUES ?s {
-      <http://data.lblod.info/id/subsidy-measure-offer-series/a04b604a-86c6-49c0-8b70-1910e3fdfa4c> # LEKP 2.1 series
-    }
-    ?s dct:title ?title .
-  }
-}
-
-;
-
 # Remove from specific graphs
 DELETE {
   # Remove SubsidiemaatregelAanbod and SubsidiemaatregelAanbodReeks from the graphs
