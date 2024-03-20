@@ -30,35 +30,73 @@ async function generate() {
     const detailsStore = new n3.Store();
     detailsParsedResults.forEach((t) => detailsStore.addQuad(t.s, t.p, t.o));
     
-    const recipient = detailsStore.getObjects(message, ns.sch`recipient`)[0];
+    const conversation = detailsStore.getSubjects(ns.sch`hasPart`, message)[0];
+    const conversationV = conversation?.value;
+    const identifierV = detailsStore.getObjects(conversation, ns.sch`identifier`)[0]?.value;
+    const aboutV = detailsStore.getObjects(conversation, ns.sch`about`)[0]?.value;
+    const messageV = message.value;
+    const dateSentV = store.getObjects(message, ns.sch`dateSent`)[0]?.value;
+    const typeV = detailsStore.getObjects(message, ns.dct`type`)[0]?.value;
+    const dateReceivedV = detailsStore.getObjects(message, ns.sch`dateReceived`)[0]?.value;
     const sender = detailsStore.getObjects(message, ns.sch`sender`)[0];
+    const senderV = sender?.value;
+    const sendernameV = detailsStore.getObjects(sender, ns.skos`prefLabel`)[0]?.value;
+    const recipient = detailsStore.getObjects(message, ns.sch`recipient`)[0];
+    const recipientV = recipient?.value;
+    const recipientnameV = detailsStore.getObjects(recipient, ns.skos`prefLabel`)[0]?.value;
     const confirmedStatus = detailsStore.getObjects(message, ns.adms`status`)[0];
     let job = detailsStore.getSubjects(ns.dct`subject`, message)[0];
     job = detailsStore.has(job, ns.rdf`type`, ns.cogs`Job`) ? job : undefined;
     let provenance = detailsStore.getObjects(job, ns.dct`creator`)[0];
     provenance = provenance || (confirmedStatus ? namedNode(SERVICE_KALLIOPE) : undefined);
     provenance = provenance || namedNode(SERVICE_LOKET);
-    const attachments = detailsStore.getObjects(message, ns.nie`hasPart`);
-    const filenames = attachments.map((att) => detailsStore.getObjects(att, ns.nfo`fileName`)[0]);
-    const filenamesFormatted = `[${filenames.length}]:${filenames.map((f) => f.value).join(',')}`;
-    const conversation = detailsStore.getSubjects(ns.sch`hasPart`, message)[0];
+    const provenanceV = provenance?.value;
+    const contentV = detailsStore.getObjects(message, ns.sch`text`)[0]?.value;
 
-    resultMessages.push({
-      conversation: conversation?.value,
-      identifier: detailsStore.getObjects(conversation, ns.sch`identifier`)[0]?.value,
-      about: detailsStore.getObjects(conversation, ns.sch`about`)[0]?.value,
-      message: message.value,
-      dateSent: store.getObjects(message, ns.sch`dateSent`)[0]?.value,
-      type: detailsStore.getObjects(message, ns.dct`type`)[0]?.value,
-      dateReceived: detailsStore.getObjects(message, ns.sch`dateReceived`)[0]?.value,
-      sender: sender?.value,
-      recipient: recipient?.value,
-      sendername: detailsStore.getObjects(sender, ns.skos`prefLabel`)[0]?.value,
-      recipientname: detailsStore.getObjects(recipient, ns.skos`prefLabel`)[0]?.value,
-      attachments: filenamesFormatted,
-      provenance: provenance?.value,
-      content: detailsStore.getObjects(message, ns.sch`text`)[0]?.value,
-    });
+    const attachments = detailsStore.getObjects(message, ns.nie`hasPart`);
+
+    if (attachments.length === 0) {
+      resultMessages.push({
+        conversation: conversationV,
+        identifier: identifierV,
+        about: aboutV,
+        message: messageV,
+        dateSent: dateSentV,
+        type: typeV,
+        dateReceived: dateReceivedV,
+        sender: senderV,
+        recipient: recipientV,
+        sendername: sendernameV,
+        recipientname: recipientnameV,
+        provenance: provenanceV,
+        attachmentSequence: '0/0',
+        filename: '',
+        content: contentV,
+      });
+    }
+
+    for (let i = 0; i < attachments.length; i++) {
+      const attachmentSeqV = `${i + 1}/${attachments.length}`;
+      const filenameV = detailsStore.getObjects(attachments[i], ns.nfo`fileName`)[0]?.value;
+
+      resultMessages.push({
+        conversation: conversationV,
+        identifier: identifierV,
+        about: aboutV,
+        message: messageV,
+        dateSent: dateSentV,
+        type: typeV,
+        dateReceived: dateReceivedV,
+        sender: senderV,
+        recipient: recipientV,
+        sendername: sendernameV,
+        recipientname: recipientnameV,
+        provenance: provenanceV,
+        attachmentSequence: attachmentSeqV,
+        filename: filenameV,
+        content: contentV,
+      });
+    }
   }
 
   await hel.generateReportFromData(
@@ -75,8 +113,9 @@ async function generate() {
       'type',
       'dateSent',
       'dateReceived',
-      'attachments',
       'provenance',
+      'attachmentSequence',
+      'filename',
       'content',
     ],
     {
