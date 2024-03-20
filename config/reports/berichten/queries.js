@@ -8,7 +8,7 @@ export function recentMessageSubjectsAndDate(startDate) {
   const startDateLiteral = literal(startDate.toISOString(), ns.xsd`dateTime`);
   const alwaysFutureDateLiteral = literal(
     uti.addDays(new Date(), 1).toISOString(),
-    ns.xsd`dateTime`
+    ns.xsd`dateTime`,
   );
 
   return `

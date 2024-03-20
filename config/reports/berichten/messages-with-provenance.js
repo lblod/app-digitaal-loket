@@ -1,6 +1,5 @@
 import * as queries from './queries';
 import * as hel from '../../helpers';
-import * as rst from 'rdf-string-ttl';
 import * as uti from './utils';
 import * as mas from '@lblod/mu-auth-sudo';
 import { NAMESPACES as ns } from './namespaces';
@@ -9,8 +8,7 @@ import { SparqlJsonParser } from 'sparqljson-parse';
 const { namedNode } = n3.DataFactory;
 const sparqlJsonParser = new SparqlJsonParser();
 
-const SERVICE_KALLIOPE =
-  'https://github.com/lblod/berichtencentrum-sync-with-kalliope-service';
+const SERVICE_KALLIOPE = 'https://github.com/lblod/berichtencentrum-sync-with-kalliope-service';
 const SERVICE_LOKET = 'https://github.com/lblod/frontend-loket';
 
 async function generate() {
@@ -21,7 +19,7 @@ async function generate() {
   const store = new n3.Store();
   parsedResults.forEach((t) => store.addQuad(t.s, t.p, t.o));
   const resultMessages = [];
-  
+
   for (const message of store.getSubjects()) {
     const organisationGraph = store.getObjects(message, namedNode('ingraph'))[0];
     const detailsQuery = queries.getMessageProperties(organisationGraph, message);
@@ -29,7 +27,7 @@ async function generate() {
     const detailsParsedResults = sparqlJsonParser.parseJsonResults(detailsResponse);
     const detailsStore = new n3.Store();
     detailsParsedResults.forEach((t) => detailsStore.addQuad(t.s, t.p, t.o));
-    
+
     const conversation = detailsStore.getSubjects(ns.sch`hasPart`, message)[0];
     const conversationV = conversation?.value;
     const identifierV = detailsStore.getObjects(conversation, ns.sch`identifier`)[0]?.value;
@@ -120,10 +118,9 @@ async function generate() {
     ],
     {
       title: 'Message report with provenance',
-      description:
-        'Report about the Conversations and Messages with where they came from in the past 6 months.',
+      description: 'Report about the Conversations and Messages with where they came from in the past 6 months.',
       filePrefix: 'messages-with-provenance-6-months',
-    }
+    },
   );
 }
 
