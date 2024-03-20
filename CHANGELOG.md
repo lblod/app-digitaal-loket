@@ -7,6 +7,8 @@
  - Add LEKP 1.0 (2021) types via extractor (DGS-107)
  - Add slaapplekken subsidy types via extractor (DGS-165)
  - Add Nooddorpen subsidy types via extractor (DGS-166)
+### Reports
+ - Changed Report on Berichten: increased history to 12 months, changed column order and attachments are formatted with their filename. (DL-5696)
 ### General
 #### Frontend
  - Bump frontend to `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
@@ -18,7 +20,7 @@
  - Bump `enrich-submission` to `v1.11.0` (DL-5646 & DL-5670)
  - Bump `prepare-submissions-for-export` to `v0.9.0` (DL-5643 - DL-5646 - DL-5670)
  - Bump `berichtencentrum-sync-with-kalliope` to `v0.19.0` (DL-5629)
- - Bump `loket-report-generation-service` to `v0.8.1` (DL-5696)
+ - Bump `loket-report-generation-service` to `v0.8.2` (DL-5696)
  - Add deltas support for vendor management data (DL-5667)
    - Adds `vendor-management` as a new delta-stream
  - Add server-specific configurations for `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer` (DL-5752)
@@ -29,6 +31,7 @@
  - Update the controle image to `v0.91.1-controle` in the `docker-compose.override.yml` file
  - Remove berichtencentrum-sync-with-kalliope `v0.19.0` image from `docker-compose.override.yml`
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
+ - Restart the `report-generation` service to pick up the new report config
 #### Delta Producer Config Changes for `publication-graph-maintainer` and `background-jobs-initiator`
 ##### Add Custom `publication-graph-maintainer` and `background-jobs-initiator` Config Volume Mounts for DEV, QA and PROD
  - Use [this wiki page](https://github.com/lblod/app-digitaal-loket/wiki/Use-Custom-Configuration-for-delta%E2%80%90producer%E2%80%90publication%E2%80%90graph%E2%80%90maintainer-and-delta%E2%80%90producer%E2%80%90background%E2%80%90jobs%E2%80%90initiator) as reference on how to perform this operation.
