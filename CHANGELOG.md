@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.95.0 (2024-03-21)
 ### Toezicht
  - Adjust/Add new forms and new codelists (DL-5669 - DL-5625 - DL-5643 - DL-5646 - DL-5665 - DL-5670) : See full changes on https://github.com/lblod/app-digitaal-loket/pull/528
 ### Subsidies
