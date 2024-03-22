@@ -20,7 +20,7 @@
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
  - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
- - `drc up -d virus-scanner berichtencentrum-sync-with-kalliope berichtencentrum-email-notification-service report-generation`
+ - `drc up -d virus-scanner berichtencentrum-sync-with-kalliope berichtencentrum-email-notification report-generation`
  - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller report-generation`
 ## 1.95.0 (2024-03-21)
 ### Toezicht
