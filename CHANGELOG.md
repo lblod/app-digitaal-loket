@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.96.0 (2024-03-25)
 ### Reports
  - Changed Report on Berichten: increased history to 12 months, changed column order and attachments are formatted with their filename. (DL-5696)
 ### General
