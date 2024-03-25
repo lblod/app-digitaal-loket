@@ -21,7 +21,7 @@
  - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
  - `drc up -d virus-scanner berichtencentrum-sync-with-kalliope berichtencentrum-email-notification report-generation`
- - `drc restart dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller report-generation`
+ - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller report-generation`
 ## 1.95.0 (2024-03-21)
 ### Toezicht
  - Adjust/Add new forms and new codelists (DL-5669 - DL-5625 - DL-5643 - DL-5646 - DL-5665 - DL-5670) : See full changes on https://github.com/lblod/app-digitaal-loket/pull/528
