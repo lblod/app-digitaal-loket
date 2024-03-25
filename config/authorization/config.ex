@@ -130,6 +130,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/supervision/RegulationType",
                         "http://www.w3.org/ns/prov#Location",
                         "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
+                        "http://mu.semte.ch/vocabularies/ext/RepresentatieveOrgaanClassificatieCode",
                         "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
                         "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
                         "http://mu.semte.ch/vocabularies/ext/Fractietype",

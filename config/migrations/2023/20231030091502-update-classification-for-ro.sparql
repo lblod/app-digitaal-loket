@@ -1,0 +1,66 @@
+PREFIX rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:	<http://www.w3.org/2004/02/skos/core#> 
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#> 
+
+insert data {
+  graph <http://mu.semte.ch/graphs/public> {
+
+<http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5>
+	rdf:type	<http://mu.semte.ch/vocabularies/ext/RepresentatieveOrgaanClassificatieCode> , skos:Concept ;
+	<http://mu.semte.ch/vocabularies/core/uuid>	"89a00b5a-024f-4630-a722-65a5e68967e5" ;
+	skos:topConceptOf	<https://data.vlaanderen.be/id/conceptscheme/RepresentatiefOrgaanClassificatieCode> ;
+	skos:prefLabel	"Representatief orgaan" ;
+	skos:inScheme	<https://data.vlaanderen.be/id/conceptscheme/RepresentatiefOrgaanClassificatieCode>  .
+  }
+}
+
+;
+
+delete {
+    graph ?g {
+
+         ?s <http://lblod.data.gift/vocabularies/besluit/decidableBy> ?o.
+    }
+}
+insert {
+    graph ?g {
+
+         ?s <http://lblod.data.gift/vocabularies/besluit/decidableBy> <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5>.
+    } 
+}
+  where {
+    graph ?g {
+      
+        ?s <http://lblod.data.gift/vocabularies/besluit/decidableBy> ?o.
+        filter(?o = <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213>).
+    }
+}
+;
+delete {
+    graph ?g {
+
+        ?s besluit:classificatie ?o.
+    }
+}
+insert {
+    graph ?g {
+
+         ?s  besluit:classificatie <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5>.
+    } 
+}
+  where {
+    graph ?g {
+      
+        ?s besluit:classificatie ?o.
+        filter(?o = <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213>).
+    }
+}
+;
+
+delete where {
+  graph ?g {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> ?p ?o.
+   }
+}
