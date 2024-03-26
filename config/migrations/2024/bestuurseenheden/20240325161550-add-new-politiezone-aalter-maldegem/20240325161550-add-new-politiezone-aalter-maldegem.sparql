@@ -1,0 +1,32 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/65EB0324E77A4F2289F6B63D>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "65EB0324E77A4F2289F6B63D" ;
+      skos:prefLabel "PZ Aalter/Maldegem: Aalter en Maldegem" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/a3922c6d-425b-474f-9a02-ffb71a436bfc> ; # Politiezone
+      <http://mu.semte.ch/vocabularies/ext/kbonummer> "1005141813" ;
+      <http://purl.org/dc/terms/identifier> "1005141813" ;
+      <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/a9a0cabd376a2b3a8eb838f15f6aeb1b63ffe49d527598994962e0d15ad2081c> . # Provincie Oost-Vlaanderen
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/9b6327c0-dd46-11ee-a3f3-238f80ef635b>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"9b6327c0-dd46-11ee-a3f3-238f80ef635b" ;
+      skos:prefLabel	"Politieraad PZ Aalter/Maldegem: Aalter en Maldegem" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/1afce932-53c1-46d8-8aab-90dcc331e67d> ; # "Politieraad"
+      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/65EB0324E77A4F2289F6B63D> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/9b7688b0-dd46-11ee-a3f3-238f80ef635b>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"9b7688b0-dd46-11ee-a3f3-238f80ef635b" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/9b6327c0-dd46-11ee-a3f3-238f80ef635b> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"1971-01-01"^^xsd:date .
+  }
+}
