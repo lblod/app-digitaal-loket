@@ -1,0 +1,59 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/384b48dc-6860-49b4-a9ef-efa557299950>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "384b48dc-6860-49b4-a9ef-efa557299950" ;
+      skos:prefLabel "Ter Lembeek" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9> ; # Welzijnsvereniging
+      <http://mu.semte.ch/vocabularies/ext/kbonummer> "1006350155" ;
+      <http://purl.org/dc/terms/identifier> "1006350155" ;
+      <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/9c503a712d448bc8b89c1f8802c207e30bd192bc8da3bf22509a547949a45301> . # Provincie West-Vlaanderen
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/6070c62b843302dd6d45661232860be4>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"6070c62b843302dd6d45661232860be4" ;
+      skos:prefLabel "Leidend Ambtenaar Ter Lembeek" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie>	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/384b48dc-6860-49b4-a9ef-efa557299950> .
+
+    <http://data.lblod.info/id/bestuursorganen/9f48f03824b81063f6aa9fe5a4b31140>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"9f48f03824b81063f6aa9fe5a4b31140" ;
+      skos:prefLabel "Raad van bestuur Ter Lembeek" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/384b48dc-6860-49b4-a9ef-efa557299950> .
+
+    <http://data.lblod.info/id/bestuursorganen/b426db035d24b684f97320d0fb62aad8>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"b426db035d24b684f97320d0fb62aad8" ;
+      skos:prefLabel "Algemene vergadering Ter Lembeek" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/384b48dc-6860-49b4-a9ef-efa557299950> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/11099a9ee7c16a68f46e98d0154f6d40>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"11099a9ee7c16a68f46e98d0154f6d40" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/6070c62b843302dd6d45661232860be4> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date ;
+      <http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>	<http://data.lblod.info/id/bestuursfuncties/bcde99d213162bf04a987668eb0bb14a> .
+
+    <http://data.lblod.info/id/bestuursorganen/a18555a33d99de41b0f61e8af68aa8d7>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "a18555a33d99de41b0f61e8af68aa8d7" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/9f48f03824b81063f6aa9fe5a4b31140> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/5913ce5dae1482c0cde67dc4ac60ac11>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"5913ce5dae1482c0cde67dc4ac60ac11" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/b426db035d24b684f97320d0fb62aad8> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+  }
+}
