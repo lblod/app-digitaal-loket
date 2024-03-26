@@ -9,7 +9,7 @@ INSERT DATA {
       rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
       <http://mu.semte.ch/vocabularies/core/uuid> "384b48dc-6860-49b4-a9ef-efa557299950" ;
       skos:prefLabel "Ter Lembeek" ;
-      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9> ; # Welzijnsvereniging
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089> ; # Welzijnsvereniging
       <http://mu.semte.ch/vocabularies/ext/kbonummer> "1006350155" ;
       <http://purl.org/dc/terms/identifier> "1006350155" ;
       <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/9c503a712d448bc8b89c1f8802c207e30bd192bc8da3bf22509a547949a45301> . # Provincie West-Vlaanderen
