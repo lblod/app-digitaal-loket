@@ -39,6 +39,8 @@ services:
     restart: "no"
   login:
     restart: "no"
+  impersonation:
+    restart: "no"
   validation:
     entrypoint: ["echo", "Service disabled"] # Note: this probably go in the future
     restart: "no"
