@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+### General
+#### New Organizations
+ - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
+ - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations`
+ - `drc restart resource cache`
 ## 1.96.0 (2024-03-25)
 ### Reports
  - Changed Report on Berichten: increased history to 12 months, changed column order and attachments are formatted with their filename. (DL-5696)
