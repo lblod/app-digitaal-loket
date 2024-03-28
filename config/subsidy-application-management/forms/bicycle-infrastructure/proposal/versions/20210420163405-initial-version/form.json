@@ -17,7 +17,6 @@
       {
         "s-prefix": "lblodSubsidie:decisionUpload",
         "properties": [
-          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
@@ -29,7 +28,6 @@
       {
         "s-prefix": "lblodSubsidie:picturesUpload",
         "properties": [
-          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
@@ -41,7 +39,6 @@
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
-          "rdf:type",
           "foaf:firstName",
           "foaf:familyName",
           "schema:telephone",
@@ -51,12 +48,10 @@
       {
         "s-prefix": "bicycleInfrastructure:estimatedCostTable",
         "properties": [
-          "rdf:type",
           "bicycleInfrastructure:validEstimatedCostTable",
           {
             "s-prefix": "bicycleInfrastructure:estimatedCostEntry",
             "properties": [
-              "rdf:type",
               "bicycleInfrastructure:costEstimationType",
               "bicycleInfrastructure:cost",
               "bicycleInfrastructure:share",
@@ -68,12 +63,10 @@
       {
         "s-prefix": "bicycleInfrastructure:objectiveTable",
         "properties": [
-          "rdf:type",
           "bicycleInfrastructure:validObjectiveTable",
           {
             "s-prefix": "bicycleInfrastructure:objectiveEntry",
             "properties": [
-              "rdf:type",
               "bicycleInfrastructure:approachType",
               "bicycleInfrastructure:directionType",
               "bicycleInfrastructure:bikeLaneType",
