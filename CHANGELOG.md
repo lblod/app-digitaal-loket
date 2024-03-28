@@ -1,10 +1,14 @@
 # Changelog
 ## Unreleased
 ### General
+#### Fixes
+ - Bump berichtencentrum-email-notification-service, which fixes the general problem where no emails about messages get sent. (DL-5775)
+   Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
 ### Deploy Notes
+  - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
 #### Docker Commands
  - `drc restart migrations`
  - `drc restart resource cache`
