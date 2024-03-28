@@ -1,0 +1,30 @@
+DELETE {
+  GRAPH ?g {
+    ?mock <http://mu.semte.ch/vocabularies/ext/sessionRole> ?role.
+  }
+  GRAPH ?j {
+    ?person <http://xmlns.com/foaf/0.1/familyName> ?name.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?mock <http://mu.semte.ch/vocabularies/ext/sessionRole> "LoketAdmin", "LoketLB-vendorManagementGebruiker".
+  }
+  GRAPH ?j {
+    ?person <http://xmlns.com/foaf/0.1/familyName> "Agentschap Binnenlands Bestuur (admin)".
+  }
+}
+WHERE {
+  VALUES ?mock {
+    <http://data.lblod.info/id/account/3a91ff60-07c1-4136-ac5e-55cf401e0956>
+  }
+
+  GRAPH ?g {
+    ?mock <http://mu.semte.ch/vocabularies/ext/sessionRole> ?role.
+  }
+
+  GRAPH ?j {
+    ?person <http://xmlns.com/foaf/0.1/account> ?mock;
+      <http://xmlns.com/foaf/0.1/familyName> ?name.
+  }
+}
