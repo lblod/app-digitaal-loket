@@ -7,6 +7,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
         "^http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor",
@@ -33,6 +34,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
@@ -58,6 +60,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
         "^http://data.lblod.info/vocabularies/erediensten/wordtBediendDoor",
@@ -79,6 +82,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "http://www.w3.org/ns/org#holds",
         "^http://www.w3.org/ns/org#hasPost",
@@ -104,6 +108,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://data.vlaanderen.be/ns/persoon#datum",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -116,6 +121,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://mu.semte.ch/vocabularies/ext/secondaryContactPoint",
@@ -131,6 +137,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2002/07/owl#sameAs",
@@ -143,6 +150,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "properties": [
         "http://data.lblod.info/vocabularies/leidinggevenden/adresRegisterId",
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -162,6 +170,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
         "http://www.w3.org/ns/org#holds",
@@ -188,6 +197,7 @@
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstMandaatGebruiker",
         "http://mu.semte.ch/graphs/organizations/.*/LoketLB-eredienstBedienaarGebruiker"
       ],
+      "hasRegexGraphsFilter": true,
       "pathToConceptScheme": [
         "^http://www.w3.org/ns/org#heldBy",
         "http://www.w3.org/ns/org#holds",

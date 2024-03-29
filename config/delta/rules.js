@@ -1,7 +1,6 @@
 import automaticSubmission from './automatic-submission';
 import berichtencentrumMelding from './berichtencentrum-melding';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
-import deltaProducerPublicationGraphMaintainerWSSensitive from './delta-producer-publication-graph-maintainer-ws-sensitive';
 import deltaProducerPublicationGraphMaintainer from './delta-producer-publication-graph-maintainer';
 import deltaProducerPublicationGraphMaintainerSubsidies from './delta-producer-publication-graph-maintainer-subsidies';
 import deltaProducerReportGenerator from './delta-producer-report-generator';
@@ -23,7 +22,6 @@ export default [
   ...automaticSubmission,
   ...berichtencentrumMelding,
   ...deltaProducerDumpFilePublisher,
-  ...deltaProducerPublicationGraphMaintainerWSSensitive,
   ...deltaProducerPublicationGraphMaintainer,
   ...deltaProducerPublicationGraphMaintainerSubsidies,
   ...deltaProducerReportGenerator,
