@@ -48,7 +48,7 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    image: cecemel/delta-notifier:0.2.0-beta.2
+    image: cecemel/delta-notifier:0.2.0-beta.6
     volumes:
       - ./config/delta:/config
     labels:
