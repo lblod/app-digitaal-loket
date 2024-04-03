@@ -42,8 +42,8 @@ export default {
 
     const queryResponsePart1 = await batchedQuery(queryStringPart1);
     const dataToEnrich = queryResponsePart1.results.bindings.map((row) => ({
-        s: getSafeValue(row, 's'),
-        file: getSafeValue(row, 'file')
+        s: row?.s?.value,
+        file: row?.file?.value
     }));
 
     // Group the files in a field
@@ -172,22 +172,22 @@ export default {
     const queryResponsePart2 = await batchedQuery(queryStringPart2);
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        verstuurd: getSafeValue(row, 'verstuurd'),
-        typeDossier: getSafeValue(row, 'typeDossier'),
-        typeReglementOfVerordening: getSafeValue(row, 'typeReglementOfVerordening'),
-        soortBelasting: getSafeValue(row, 'soortBelasting'),
-        bestuurseenheidLabel: getSafeValue(row, 'bestuurseenheidLabel'),
-        bestuursorgaanInTijd: getSafeValue(row, 'bot'),
-        bestuursorgaan: getSafeValue(row, 'bestuursorgaan'),
-        bestuursorgaanLabel: getSafeValue(row, 'bestuursorgaanLabel'),
-        bestuursorgaanClassificatie: getSafeValue(row, 'bestuursorgaanClassificatieLabel'),
-        typeBestuur: getSafeValue(row, 'typeBestuur'),
-        angemaaktDoor: getSafeValue(row, 'angemaaktDoor'),
-        gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor'),
-        statusLabel: getSafeValue(row, 'statusLabel'),
-        datumZitting: getSafeValue(row, 'datumZitting'),
-        link: getSafeValue(row, 'link')      };
-      acc[getSafeValue(row, 's')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 's')]);
+        verstuurd: row?.verstuurd?.value,
+        typeDossier: row?.typeDossier?.value,
+        typeReglementOfVerordening: row?.typeReglementOfVerordening?.value,
+        soortBelasting: row?.soortBelasting?.value,
+        bestuurseenheidLabel: row?.bestuurseenheidLabel?.value,
+        bestuursorgaanInTijd: row?.bot?.value,
+        bestuursorgaan: row?.bestuursorgaan?.value,
+        bestuursorgaanLabel: row?.bestuursorgaanLabel?.value,
+        bestuursorgaanClassificatie: row?.bestuursorgaanClassificatieLabel?.value,
+        typeBestuur: row?.typeBestuur?.value,
+        angemaaktDoor: row?.angemaaktDoor?.value,
+        gewijzigdDoor: row?.gewijzigdDoor?.value,
+        statusLabel: row?.statusLabel?.value,
+        datumZitting: row?.datumZitting?.value,
+        link: row?.link?.value      };
+      acc[row?.s?.value] = Object.assign(dataPart, dataPart1[row?.s?.value]);
       return acc;
     }, {});
 
@@ -219,9 +219,9 @@ export default {
     const queryResponsePart3 = await batchedQuery(queryStringPart3);
     const dataPart3 = queryResponsePart3.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        datumPublicatie: getSafeValue(row, 'datumPublicatie')
+        datumPublicatie: row?.datumPublicatie?.value
       };
-      acc[getSafeValue(row, 's')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 's')]);
+      acc[row?.s?.value] = Object.assign(dataPart, dataPart2[row?.s?.value]);
       return acc;
     }, {});
 
@@ -254,13 +254,4 @@ function groupFilesBySubmission(data) {
       o.files = filesFromSameSubmission.map(f => f.file).join(",");
     }
   })
-}
-
-function getSafeValue(entry, property){
-  return entry[property] ? wrapInQuote(entry[property].value) : null;
-}
-
-// Some values might contain comas, wrapping them in escapes quotes doesn't disturb the colomns
-function wrapInQuote(value) {
-  return `\"${value}\"`;
 }
