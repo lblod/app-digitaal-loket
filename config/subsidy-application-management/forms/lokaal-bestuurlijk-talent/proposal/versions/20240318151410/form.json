@@ -7,23 +7,16 @@
       "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
       "PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>",
       "PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>",
-      "PREFIX pav: <http://purl.org/pav/>",
       "PREFIX schema: <http://schema.org/>",
-      "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
-      "PREFIX gleif: <https://www.gleif.org/ontology/Base/>",
-      "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>",
-      "PREFIX adms: <http://www.w3.org/ns/adms#>",
-      "PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>",
-      "PREFIX planSamenleven: <http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/>"
+      "PREFIX foaf: <http://xmlns.com/foaf/0.1/>"
     ],
     "properties": [
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
-          "foaf:firstName",
-          "foaf:familyName",
           "schema:telephone",
-          "schema:email"
+          "schema:email",
+          "schema:fullName"
         ]
       },
       {
@@ -39,32 +32,33 @@
         ]
       },
       {
-        "s-prefix": "lblodSubsidie:planLivingTogetherTable",
+        "s-prefix": "lblodSubsidie:decisionUpload",
         "properties": [
+          "rdf:type",
           {
-            "s-prefix": "planSamenleven:planLivingTogetherEntry",
+            "s-prefix": "dct:hasPart",
             "properties": [
-              "planSamenleven:description",
-              "planSamenleven:currentRange",
-              "planSamenleven:plannedRange",
-              "planSamenleven:contribution",
-              "planSamenleven:priority"
+              "rdf:type"
             ]
           }
         ]
       },
-      "planSamenleven:hasCollaborationWithOtherLBNonEu",
-      "planSamenleven:usesSocialImpactBound",
-      "planSamenleven:socialImpactBoundProgress",
-      "planSamenleven:unresolvedSocialProblems",
-      "planSamenleven:learningNetworkWillingness",
-      "planSamenleven:proposesMentorship",
-      "planSamenleven:mentorshipAction",
-      "planSamenleven:mentorshipActionDetails"
+      "lblodSubsidie:courseUrl",
+      "lblodSubsidie:yearsOfWorkExperience",
+      "lblodSubsidie:KBONumber",
+      "lblodSubsidie:positionNominatedStaffMember",
+      "lblodSubsidie:motivationOfStaffMemberPotential",
+      "lblodSubsidie:otherCourseMotivation",
+      "lblodSubsidie:credits",
+      "lblodSubsidie:courseName",
+      "lblodSubsidie:isProgramNeeded",
+      "lblodSubsidie:amountOfAcademicYearsRequired",
+      "lblodSubsidie:nameStaffMember"
     ],
     "meta": {
       "schemes": [
-        "http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2"
+        "http://lblod.data.gift/concept-schemes/e311b861-d8aa-47a1-80e9-7f4a1fb3de09",
+        "http://lblod.data.gift/concept-schemes/3f514a6a-094c-4a33-b1d1-c97e59e2844a"
       ]
     }
   }
