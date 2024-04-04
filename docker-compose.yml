@@ -48,7 +48,7 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    image: cecemel/delta-notifier:0.2.0-beta.2
+    image: cecemel/delta-notifier:0.2.0-beta.6
     volumes:
       - ./config/delta:/config
     labels:
@@ -191,7 +191,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-email-notification:
-    image: lblod/berichtencentrum-email-notification-service:0.3.0
+    image: lblod/berichtencentrum-email-notification-service:0.4.0
     labels:
       - "logging=true"
     restart: always
@@ -211,7 +211,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.19.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.20.0
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -257,7 +257,7 @@ services:
     restart: always
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.6.5
+    image: lblod/loket-report-generation-service:0.8.2
     volumes:
       - ./data/files:/share
       - ./config/reports/:/config/

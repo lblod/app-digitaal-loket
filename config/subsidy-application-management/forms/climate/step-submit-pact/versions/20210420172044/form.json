@@ -24,7 +24,6 @@
       {
         "s-prefix": "schema:contactPoint",
         "properties": [
-          "rdf:type",
           "foaf:firstName",
           "foaf:familyName",
           "schema:telephone",
@@ -34,7 +33,6 @@
       {
         "s-prefix": "lblodSubsidie:signedPact",
         "properties": [
-          "rdf:type",
           {
             "s-prefix": "dct:hasPart",
             "properties": [
