@@ -9,6 +9,7 @@
  - Add Nooddorpen subsidy types via extractor (DGS-166)
 ### General
 #### Frontend
+ - Bump frontend to `v0.92.0` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0920-2024-04-04
  - Bump frontend to `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
  - Bump frontend to `v0.91.0` (DL-5735): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0910-2024-03-12
 #### Backend
