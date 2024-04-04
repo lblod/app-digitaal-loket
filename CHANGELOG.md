@@ -4,6 +4,7 @@
 #### Fixes
  - Bump berichtencentrum-email-notification-service, which fixes the general problem where no emails about messages get sent. (DL-5775)
    Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed
+ - Bump deltanotifier (DL-5684)
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
