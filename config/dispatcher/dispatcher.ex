@@ -473,20 +473,6 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # loket-worship-services-sensitive sync
-  #################################################################
-  post "/sync/worship-services-sensitive-deltas/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer/worship-services-sensitive/login/"
-  end
-
-  #################################################################
-  # loket-worship-services-sensitive sync
-  #################################################################
-  get "/sync/worship-services-sensitive-deltas/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer/worship-services-sensitive/files/"
-  end
-
-  #################################################################
   # loket-subsidies sync
   #################################################################
   post "/sync/subsidies/login/*path" do
