@@ -160,6 +160,6 @@
       "loginPath": "/worship-services-sensitive/login",
       "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-ws-sensitive",
       "filesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-services-sensitive-deltas",
-      "account": "http://data.lblod.info/foaf/account/id/0a3d5be8-6f6b-4c4e-9069-9b7c57a35df3"
+      "account": "http://data.lblod.info/foaf/account/id/f185b63e-5bd9-40a5-8906-4ac1fb5a8db7"
     }
 }
