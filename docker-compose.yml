@@ -247,7 +247,7 @@ services:
     restart: always
     logging: *default-logging
   adressenregister:
-    image: lblod/adressenregister-fuzzy-search-service:0.6.3
+    image: lblod/adressenregister-fuzzy-search-service:0.8.0
     labels:
       - "logging=true"
     restart: always
