@@ -4,6 +4,7 @@
 #### Fixes
  - Bump berichtencentrum-email-notification-service, which fixes the general problem where no emails about messages get sent. (DL-5775)
    Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed
+ - Bump `adressenregister-fuzzy-search-service` to `v0.8.0`(DL-5822)
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
@@ -12,6 +13,7 @@
 #### Docker Commands
  - `drc restart migrations`
  - `drc restart resource cache`
+ - `drc up -d adressenregister`
 ## 1.96.0 (2024-03-25)
 ### Reports
  - Changed Report on Berichten: increased history to 12 months, changed column order and attachments are formatted with their filename. (DL-5696)
