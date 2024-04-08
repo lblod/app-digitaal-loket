@@ -55,7 +55,6 @@ INSERT DATA {
       <http://data.europa.eu/m8g/startTime> "2024-04-14T22:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
       <http://data.europa.eu/m8g/endTime> "2024-05-31T21:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
 
-
     # Create new subsidy and link to reeks
     <http://data.lblod.info/id/subsidy-measure-offers/5c4b2890-067e-451e-b4b5-5c616951b65c>
       a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod>;
