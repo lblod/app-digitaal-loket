@@ -558,7 +558,7 @@ defmodule Acl.UserGroups.Config do
        %GroupSpec{
          name: "o-admin-sessions-rwf",
          useage: [:read, :write, :read_for_write],
-         access: access_by_role_for_single_graph( "LoketAdmin" ),
+         access: access_by_role_for_single_graph( "LoketLB-admin" ),
          graphs: [
            %GraphSpec{
              graph: "http://mu.semte.ch/graphs/sessions",
@@ -572,6 +572,7 @@ defmodule Acl.UserGroups.Config do
        %GroupSpec{
           name: "o-admin-rwf",
           useage: [:read, :write, :read_for_write],
+          # we're currently transitioning from a local admin role to an acm provided admin role. This will be fixed soon.
           access: access_by_role( "LoketAdmin" ),
           graphs: [ %GraphSpec{
                       graph: "http://mu.semte.ch/graphs/organizations/",
@@ -589,7 +590,8 @@ defmodule Acl.UserGroups.Config do
        %GroupSpec{
           name: "o-admin-rwf",
           useage: [:read, :write, :read_for_write],
-          access: access_by_role_for_single_graph( "LoketAdmin" ), #access_by_role_for_single_graph( "LoketAdmin" ),
+          # we're currently transitioning from a local admin role to an ACM/IDM provided admin role. This will be fixed soon.
+          access: access_by_role_for_single_graph( "LoketAdmin" ),
           graphs: [ %GraphSpec{
                       graph: "http://mu.semte.ch/graphs/harvesting",
                       constraint: %ResourceConstraint{
