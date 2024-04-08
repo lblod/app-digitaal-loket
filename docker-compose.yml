@@ -450,6 +450,7 @@ services:
     labels:
       - "logging=true"
     restart: always
+    logging: *default-logging
   update-bestuurseenheid-mock-login:
     image: lblod/update-bestuurseenheid-mock-login-service:0.1.2
     volumes:
