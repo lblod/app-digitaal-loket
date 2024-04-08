@@ -2,18 +2,19 @@
 ## Unreleased
 ### General
 #### Fixes
- - Bump berichtencentrum-email-notification-service, which fixes the general problem where no emails about messages get sent. (DL-5775)
-   Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed
+ - Bump `berichtencentrum-email-notification` service, which fixes the general problem where no emails about messages get sent. (DL-5775)
+    - > Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed.
  - Bump `adressenregister-fuzzy-search-service` to `v0.8.0`(DL-5822)
+ - Add logging config for the `dispatcher-worship-mandates` service (DL-5818)
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
 ### Deploy Notes
   - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
 #### Docker Commands
+ - `drc up -d adressenregister dispatcher-worship-mandates`
  - `drc restart migrations`
  - `drc restart resource cache`
- - `drc up -d adressenregister`
 ## 1.96.0 (2024-03-25)
 ### Reports
  - Changed Report on Berichten: increased history to 12 months, changed column order and attachments are formatted with their filename. (DL-5696)
