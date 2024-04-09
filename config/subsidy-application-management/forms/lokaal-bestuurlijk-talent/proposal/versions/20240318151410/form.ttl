@@ -8,6 +8,7 @@
 @prefix schema: <http://schema.org/>.
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
 nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45
 	 a form:Section;
@@ -39,7 +40,6 @@ nodes:218843ad-d4dd-4c06-831f-a3e5833a8820
 	sh:name "Op te laden bestanden";
 	sh:order 4 .
 
-
 nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b
 	 a form:Field;
 	form:displayType display:remoteUrls;
@@ -49,14 +49,20 @@ nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b
     [ a form:UriConstraint ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-        sh:path ( lblodSubsidie:courseUrl dct:hasPart nie:url ) ],
+        sh:path ( dct:hasPart nie:url ) ],
     [ a form:RequiredConstraint ;
         form:grouping form:Bag ;
-        sh:path (lblodSubsidie:courseUrl dct:hasPart) ;
+        sh:path ( dct:hasPart nie:url ) ;
         sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
     ];
 	sh:order 7;
-	sh:path (lblodSubsidie:courseUrl dct:hasPart) .
+	sh:path dct:hasPart .
+
+nodes:30737253-a84a-4cd0-9542-934a58ef6564 a form:Field ;
+    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:order 8 ;
+    sh:path ( dct:hasPart rdf:type );
+    form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8.
 
 nodes:42b0902b-bada-4bd7-b7ae-6222257d408c
 	 a form:Field;
@@ -288,6 +294,6 @@ emb:source-node
 	form:TopLevelForm;
 	form:includes nodes:166b413a-a4ce-439a-92f2-3b7cc0415889,
 	nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b, nodes:42b0902b-bada-4bd7-b7ae-6222257d408c, nodes:518043bd-5858-443a-bd85-db1b89bacf36, nodes:5ec8000a-8b12-4692-866f-d7beb3abd68a, nodes:617dceef-9548-4307-8f0c-149229e4a738, nodes:6555dda0-8047-47c7-81a4-71066dc5d1dc, nodes:70d92068-e724-44a6-b76b-1996a5f6163b, nodes:9028142c-5ac9-4755-aaa5-a3f08aaf9f25, nodes:a175fd51-f495-4344-8060-2cdce1ab86ec, nodes:be8f01a9-cbc7-4ef3-9987-198306ce590c, nodes:c71ffebb-8887-47df-9074-fe14ce1f9d86,
-nodes:d0e820dc-a548-44d1-a077-ff9c52595006, nodes:d6515d91-030a-45fa-b224-4cd6f0487d89, nodes:f0d8c413-e464-4fe8-a47a-6aa7e7128444, nodes:f8151853-b0d0-4135-b079-84e17e97de10;
+nodes:d0e820dc-a548-44d1-a077-ff9c52595006, nodes:d6515d91-030a-45fa-b224-4cd6f0487d89, nodes:f0d8c413-e464-4fe8-a47a-6aa7e7128444, nodes:f8151853-b0d0-4135-b079-84e17e97de10, nodes:30737253-a84a-4cd0-9542-934a58ef6564;
 	form:partOf nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45,
 	nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd, nodes:218843ad-d4dd-4c06-831f-a3e5833a8820, nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8 .

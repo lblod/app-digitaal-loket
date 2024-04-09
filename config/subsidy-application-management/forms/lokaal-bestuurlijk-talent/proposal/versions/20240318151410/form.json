@@ -33,16 +33,10 @@
         ]
       },
       {
-        "s-prefix": "lblodSubsidie:courseUrl",
+        "s-prefix": "dct:hasPart",
         "properties": [
           "rdf:type",
-          {
-            "s-prefix": "dct:hasPart",
-            "properties": [
-              "rdf:type",
-              "nie:url"
-            ]
-          }
+          "nie:url"
         ]
       },
       {
