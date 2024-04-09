@@ -8,7 +8,8 @@
       "PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>",
       "PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>",
       "PREFIX schema: <http://schema.org/>",
-      "PREFIX foaf: <http://xmlns.com/foaf/0.1/>"
+      "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
+      "PREFIX nie:  <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
     ],
     "properties": [
       {
@@ -27,6 +28,19 @@
             "s-prefix": "dct:hasPart",
             "properties": [
               "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:courseUrl",
+        "properties": [
+          "rdf:type",
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type",
+              "nie:url"
             ]
           }
         ]

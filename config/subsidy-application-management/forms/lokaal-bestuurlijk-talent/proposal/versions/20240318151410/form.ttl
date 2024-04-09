@@ -7,6 +7,7 @@
 @prefix lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>.
 @prefix schema: <http://schema.org/>.
 @prefix dct: <http://purl.org/dc/terms/>.
+@prefix nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
 
 nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45
 	 a form:Section;
@@ -44,8 +45,18 @@ nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b
 	form:displayType display:remoteUrls;
 	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
 	sh:name "URL naar de webpagina over de opleiding.";
+  form:validations
+    [ a form:UriConstraint ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+        sh:path ( lblodSubsidie:courseUrl dct:hasPart nie:url ) ],
+    [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path (lblodSubsidie:courseUrl dct:hasPart) ;
+        sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
+    ];
 	sh:order 7;
-	sh:path lblodSubsidie:courseUrl .
+	sh:path (lblodSubsidie:courseUrl dct:hasPart) .
 
 nodes:42b0902b-bada-4bd7-b7ae-6222257d408c
 	 a form:Field;
