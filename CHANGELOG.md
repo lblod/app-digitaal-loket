@@ -49,6 +49,9 @@
  - Add LEKP 1.0 (2021) types via extractor (DGS-107)
  - Add slaapplekken subsidy types via extractor (DGS-165)
  - Add Nooddorpen subsidy types via extractor (DGS-166)
+ - Update LEKP 1.0 (2021) deadlines (DGS-167)
+ - Update LEKP 2.0 deadlines (DGS-168)
+ - Update LEKP 2.1 deadlines (DGS-169)
 ### General
 #### Frontend
  - `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
