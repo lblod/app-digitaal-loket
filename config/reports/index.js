@@ -24,6 +24,7 @@ import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
 import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 import linksBetweenWorshipServicesAndAdminUnitsReport from './links-between-worship-services-and-admin-units-report';
+import virusScanReport from './virusScanReport';
 
 //Worship reports
 import bedienaren from './worship/bedienaren';
@@ -63,6 +64,7 @@ export default [
   toezichtTaxRegulationSubmissionReport,
   ukraineSubsidyOproepOneReport,
   linksBetweenWorshipServicesAndAdminUnitsReport,
+  virusScanReport,
 
   //Worship reports
   bedienaren,

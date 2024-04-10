@@ -187,7 +187,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-email-notification:
-    image: lblod/berichtencentrum-email-notification-service:0.3.0
+    image: lblod/berichtencentrum-email-notification-service:0.4.0
     labels:
       - "logging=true"
     restart: always
@@ -207,7 +207,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.19.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.20.0
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -247,13 +247,13 @@ services:
     restart: always
     logging: *default-logging
   adressenregister:
-    image: lblod/adressenregister-fuzzy-search-service:0.6.3
+    image: lblod/adressenregister-fuzzy-search-service:0.8.0
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
   report-generation:
-    image: lblod/loket-report-generation-service:0.6.5
+    image: lblod/loket-report-generation-service:0.8.2
     volumes:
       - ./data/files:/share
       - ./config/reports/:/config/
@@ -450,6 +450,7 @@ services:
     labels:
       - "logging=true"
     restart: always
+    logging: *default-logging
   update-bestuurseenheid-mock-login:
     image: lblod/update-bestuurseenheid-mock-login-service:0.1.2
     volumes:

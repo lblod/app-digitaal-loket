@@ -1,5 +1,45 @@
 # Changelog
 ## Unreleased
+### General
+#### Fixes
+ - Bump `berichtencentrum-email-notification` service, which fixes the general problem where no emails about messages get sent. (DL-5775)
+    - > Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed.
+ - Bump `adressenregister-fuzzy-search-service` to `v0.8.0`(DL-5822)
+ - Add logging config for the `dispatcher-worship-mandates` service (DL-5818)
+#### New Organizations
+ - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
+ - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
+### Deploy Notes
+  - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
+#### Docker Commands
+ - `drc up -d adressenregister dispatcher-worship-mandates`
+ - `drc restart migrations`
+ - `drc restart subsidy-applications-management`
+ - `drc restart resource cache`
+## 1.96.0 (2024-03-25)
+### Reports
+ - Changed Report on Berichten: increased history to 12 months, changed column order and attachments are formatted with their filename. (DL-5696)
+### General
+#### Backend
+ - Bump `berichtencentrum-sync-with-kalliope` to `v0.20.0` (DL-5629, DL-5748)
+ - Bump `berichtencentrum-email-notification-service` to `v0.4.0` (DL-5629, DL-5748)
+ - Bump `loket-report-generation-service` to `v0.8.2` (DL-5696)
+ - Add deltas support for vendor management data (DL-5667)
+   - Adds `vendor-management` as a new delta-stream
+ - Add a new "Virus scan" report (DL-5618)
+### Deploy Notes
+ - Remove **berichtencentrum-sync-with-kalliope** `v0.20.0-rc.1` image from `docker-compose.override.yml` on QA
+ - Restart the `report-generation` service to pick up the new report config
+#### Delta Producer Config Changes for `publication-graph-maintainer` and `background-jobs-initiator`
+##### Edit `config/delta-producer/background-jobs-initiator/config.json`
+ - Change `"startInitialSync"` from `false` to `true` for `vendor-management`.
+ - Change `"disableDumpFileCreation"` from `true` to `false` for `vendor-management`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
+ - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
+#### Docker Commands
+ - `drc up -d virus-scanner berichtencentrum-sync-with-kalliope berichtencentrum-email-notification report-generation`
+ - `drc restart migrations dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller report-generation`
+## 1.95.0 (2024-03-21)
 ### Toezicht
  - Adjust/Add new forms and new codelists (DL-5669 - DL-5625 - DL-5643 - DL-5646 - DL-5665 - DL-5670) : See full changes on https://github.com/lblod/app-digitaal-loket/pull/528
 ### Subsidies
@@ -10,36 +50,22 @@
  - Add new 'Lokaal Bestuurlijk Talent' subsidy (DGS-184)
 ### General
 #### Frontend
- - Bump frontend to `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
- - Bump frontend to `v0.91.0` (DL-5735): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0910-2024-03-12
+ - `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
+ - `v0.91.0` (DL-5735): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0910-2024-03-12
 #### Backend
  - Bump `migrations` to `v0.9.0`
  - Bump `mocklogin` to `v0.4.0` (DL-5709)
  - Bump `vendor-data-distribution-service` to `v1.3.3` (DL-5683)
  - Bump `enrich-submission` to `v1.11.0` (DL-5646 & DL-5670)
  - Bump `prepare-submissions-for-export` to `v0.9.0` (DL-5643 - DL-5646 - DL-5670)
- - Bump `berichtencentrum-sync-with-kalliope` to `v0.19.0` (DL-5629)
- - Add deltas support for vendor management data (DL-5667)
-   - Adds `vendor-management` as a new delta-stream
- - Add server-specific configurations for `delta-producer-background-jobs-initiator` and `delta-producer-publication-graph-maintainer` (DL-5752)
-   - Resolves merge conflict issues when adding a new delta stream or editing an existing one
- - Add `restart: always` for the `virus-scanner` service
 ### Deploy Notes
  - Remove the frontend `v0.90.3` image override from `docker-compose.override.yml`
- - Update the controle image to `v0.91.1-controle` in the `docker-compose.override.yml` file
- - Remove berichtencentrum-sync-with-kalliope `v0.19.0` image from `docker-compose.override.yml`
+ - update the controle image to `v0.91.1-controle` in the `docker-compose.override.yml` file
  - Bump the `mocklogin` image in `docker-compose.override.yml` to `lblod/mock-login-service:0.4.0`
-#### Delta Producer Config Changes for `publication-graph-maintainer` and `background-jobs-initiator`
-##### Add Custom `publication-graph-maintainer` and `background-jobs-initiator` Config Volume Mounts for DEV, QA and PROD
- - Use [this wiki page](https://github.com/lblod/app-digitaal-loket/wiki/Use-Custom-Configuration-for-delta%E2%80%90producer%E2%80%90publication%E2%80%90graph%E2%80%90maintainer-and-delta%E2%80%90producer%E2%80%90background%E2%80%90jobs%E2%80%90initiator) as reference on how to perform this operation.
-##### Edit `config/delta-producer/background-jobs-initiator/config.json`
- - Change `"startInitialSync"` from `false` to `true`.
- - Change `"disableDumpFileCreation"` from `true` to `false`.
-##### Edit `config/delta-producer/publication-graph-maintainer/config.json`
- - Add `"key": "<producer_key>"` for the new `vendor-management` delta stream.
 #### Docker Commands
- - `drc up -d loket controle migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export virus-scanner berichtencentrum-sync-with-kalliope`
- - `drc restart subsidy-applications-management dispatcher deltanotifier delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer delta-producer-dump-file-publisher jobs-controller delta-producer-publication-graph-maintainer-subsidies migrations resource cache`
+ - `drc up -d loket controle migrations mocklogin vendor-data-distribution enrich-submission prepare-submissions-for-export`
+ - `drc restart migrations`
+ - `drc restart subsidy-applications-management delta-producer-publication-graph-maintainer-subsidies resource cache`
 ## 1.94.0 (2024-02-19)
 ### Subsidies
  - Add new stadsvernieuwing - conceptsubsidie || Oproep 2024 reeks (DGS-154)
@@ -280,7 +306,7 @@ drc restart resource cache
 - update time window of export: start from 01-09-2023 now
 ### subsidies
 - make attachments availible over deltas
-- fix login endpoint for delta-consumer
+- fix login endpoint for delta-consumerlogin
 ### Deploy instructions
 Note: the deploy instructions assume we come from 1.85.0. So you might restart a bit too much. But that's okay.
 ```
