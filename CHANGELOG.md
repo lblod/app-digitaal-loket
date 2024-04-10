@@ -14,7 +14,7 @@
 ### Deploy Notes
   - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
 #### Docker Commands
- - `drc up -d adressenregister dispatcher-worship-mandates`
+ - `drc up -d adressenregister dispatcher-worship-mandates frontend`
  - `drc restart migrations`
  - `drc restart subsidy-applications-management`
  - `drc restart resource cache`
