@@ -9,6 +9,8 @@
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
+### Subsidies
+ - Add new 'Lokaal Bestuurlijk Talent' subsidy (DGS-184)
 ### Deploy Notes
   - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
 #### Docker Commands
@@ -47,7 +49,6 @@
  - Add LEKP 1.0 (2021) types via extractor (DGS-107)
  - Add slaapplekken subsidy types via extractor (DGS-165)
  - Add Nooddorpen subsidy types via extractor (DGS-166)
- - Add new 'Lokaal Bestuurlijk Talent' subsidy (DGS-184)
 ### General
 #### Frontend
  - `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
@@ -306,7 +307,7 @@ drc restart resource cache
 - update time window of export: start from 01-09-2023 now
 ### subsidies
 - make attachments availible over deltas
-- fix login endpoint for delta-consumerlogin
+- fix login endpoint for delta-consumer
 ### Deploy instructions
 Note: the deploy instructions assume we come from 1.85.0. So you might restart a bit too much. But that's okay.
 ```
