@@ -10,16 +10,31 @@
 @prefix nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
-nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45
+nodes:bestuurInfoSection
+	 a form:Section;
+	sh:name "Informatie over het bestuur";
+	sh:order 1 .
+
+nodes:personeelsLidInfoSection
 	 a form:Section;
 	sh:name "Informatie over het voorgedragen personeelslid";
 	sh:order 2 .
 
-nodes:166b413a-a4ce-439a-92f2-3b7cc0415889
+nodes:infoVormingstrajectSection
+	 a form:Section;
+	sh:name "Informatie over het vormingstraject";
+	sh:order 3 .
+
+nodes:bestandenSection
+	 a form:Section;
+	sh:name "Op te laden bestanden";
+	sh:order 4 .
+
+nodes:naamOpleidingF
 	 a form:Field;
 	form:displayType display:conceptSchemeRadioButtons;
 form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/3f514a6a-094c-4a33-b1d1-c97e59e2844a", "orderBy": "http://purl.org/linked-data/cube#order"}""";
-	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
+	form:partOf nodes:infoVormingstrajectSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -30,20 +45,10 @@ form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/3f514
 	sh:order 5;
 	sh:path lblodSubsidie:courseName .
 
-nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd
-	 a form:Section;
-	sh:name "Informatie over het bestuur";
-	sh:order 1 .
-
-nodes:218843ad-d4dd-4c06-831f-a3e5833a8820
-	 a form:Section;
-	sh:name "Op te laden bestanden";
-	sh:order 4 .
-
-nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b
+nodes:webpaginaUrlF
 	 a form:Field;
 	form:displayType display:remoteUrls;
-	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
+	form:partOf nodes:infoVormingstrajectSection;
 	sh:name "URL naar de webpagina over de opleiding.";
   form:validations
     [ a form:UriConstraint ;
@@ -58,16 +63,16 @@ nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b
 	sh:order 7;
 	sh:path dct:hasPart .
 
-nodes:30737253-a84a-4cd0-9542-934a58ef6564 a form:Field ;
+nodes:hiddenRemoteF a form:Field ;
     sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
     sh:order 8 ;
     sh:path ( dct:hasPart rdf:type );
-    form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8.
+    form:partOf nodes:infoVormingstrajectSection.
 
-nodes:42b0902b-bada-4bd7-b7ae-6222257d408c
+nodes:naamContactpersoonF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd;
+	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -78,15 +83,10 @@ nodes:42b0902b-bada-4bd7-b7ae-6222257d408c
 	sh:order 15;
 	sh:path ( schema:contactPoint schema:fullName ) .
 
-nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8
-	 a form:Section;
-	sh:name "Informatie over het vormingstraject";
-	sh:order 3 .
-
-nodes:518043bd-5858-443a-bd85-db1b89bacf36
+nodes:telefoonnummerF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd;
+	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
 		a form:ValidPhoneNumber;
 		form:defaultCountry "BE";
@@ -105,11 +105,11 @@ nodes:518043bd-5858-443a-bd85-db1b89bacf36
 	sh:order 16;
 	sh:path ( schema:contactPoint schema:telephone ) .
 
-nodes:5ec8000a-8b12-4692-866f-d7beb3abd68a
+nodes:werkErvaringF
 	 a form:Field;
 	form:displayType display:numericalInput;
 	form:help "Het aantal jaren werkervaring moet minimum 3 jaar zijn.";
-	form:partOf nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45;
+	form:partOf nodes:personeelsLidInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -126,10 +126,10 @@ nodes:5ec8000a-8b12-4692-866f-d7beb3abd68a
 	sh:order 3;
 	sh:path lblodSubsidie:yearsOfWorkExperience.
 
-nodes:617dceef-9548-4307-8f0c-149229e4a738
+nodes:kboNummerF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd;
+	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -140,10 +140,10 @@ nodes:617dceef-9548-4307-8f0c-149229e4a738
 	sh:order 12;
 	sh:path lblodSubsidie:KBONumber .
 
-nodes:6555dda0-8047-47c7-81a4-71066dc5d1dc
+nodes:bankAccountF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd;
+	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -160,10 +160,10 @@ nodes:6555dda0-8047-47c7-81a4-71066dc5d1dc
 	sh:order 13;
 	sh:path ( schema:bankAccount schema:identifier ).
 
-nodes:70d92068-e724-44a6-b76b-1996a5f6163b
+nodes:personeelsLidFunctieF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45;
+	form:partOf nodes:personeelsLidInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -174,10 +174,10 @@ nodes:70d92068-e724-44a6-b76b-1996a5f6163b
 	sh:order 2;
 	sh:path lblodSubsidie:positionNominatedStaffMember.
 
-nodes:9028142c-5ac9-4755-aaa5-a3f08aaf9f25
+nodes:kandidaatSchetsF
 	 a form:Field;
 	form:displayType display:textArea;
-	form:partOf nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45;
+	form:partOf nodes:personeelsLidInfoSection;
 form:validatedBy [
     a form:RequiredConstraint;
     form:grouping form:Bag;
@@ -196,10 +196,10 @@ form:validatedBy [
 	sh:order 18;
 	sh:path lblodSubsidie:motivationOfStaffMemberPotential .
 
-nodes:a175fd51-f495-4344-8060-2cdce1ab86ec
+nodes:emailadresF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd;
+	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -215,27 +215,27 @@ a form:ValidEmail;
 	sh:path ( schema:contactPoint schema:email ) .
 
 
-nodes:be8f01a9-cbc7-4ef3-9987-198306ce590c
+nodes:beslissingUploadF
 	 a form:Field;
 	form:displayType display:files;
-	form:partOf nodes:218843ad-d4dd-4c06-831f-a3e5833a8820;
+	form:partOf nodes:bestandenSection;
 	sh:name "Beslissing van de algemeen directeur of leidend ambtenaar van het bestuur om het personeelslid voor te dragen.";
 	sh:order 11;
 	sh:path ( lblodSubsidie:decisionUpload dct:hasPart ) .
 
-nodes:c71ffebb-8887-47df-9074-fe14ce1f9d86
+nodes:studiepuntenF
 	 a form:Field;
 	form:displayType display:numericalInput;
-	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
+	form:partOf nodes:infoVormingstrajectSection;
 	sh:name "Indien ja: hoeveel studiepunten voor het voortraject of schakelprogramma?";
 	sh:order 9;
 	sh:path lblodSubsidie:credits .
 
-nodes:d0e820dc-a548-44d1-a077-ff9c52595006
+nodes:trajectProgrammaF
 	 a form:Field;
 	form:displayType display:conceptSchemeRadioButtons;
 form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/e311b861-d8aa-47a1-80e9-7f4a1fb3de09", "orderBy": "http://purl.org/linked-data/cube#order"}""";
-	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
+	form:partOf nodes:infoVormingstrajectSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -246,10 +246,10 @@ form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/e311b
 	sh:path lblodSubsidie:isProgramNeeded .
 
 
-nodes:d6515d91-030a-45fa-b224-4cd6f0487d89
+nodes:academiejarenF
 	 a form:Field;
 	form:displayType display:numericalInput;
-	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
+	form:partOf nodes:infoVormingstrajectSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -260,11 +260,11 @@ nodes:d6515d91-030a-45fa-b224-4cd6f0487d89
 	sh:order 10;
 	sh:path lblodSubsidie:amountOfAcademicYearsRequired.
 
-nodes:f0d8c413-e464-4fe8-a47a-6aa7e7128444
+nodes:anderMotivatieF
 	 a form:Field;
 	form:displayType display:textArea;
 	form:help "Opgelet, enkel een masteropleiding uit het BVR van 23 februari 2024.";
-	form:partOf nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8;
+	form:partOf nodes:infoVormingstrajectSection;
 	form:validatedBy [
 		a form:MaxLength;
 		form:grouping form:MatchEvery;
@@ -275,10 +275,10 @@ nodes:f0d8c413-e464-4fe8-a47a-6aa7e7128444
 	sh:order 6;
 	sh:path lblodSubsidie:otherCourseMotivation.
 
-nodes:f8151853-b0d0-4135-b079-84e17e97de10
+nodes:naamPersoneelsLidF
 	 a form:Field;
 	form:displayType display:defaultInput;
-	form:partOf nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45;
+	form:partOf nodes:personeelsLidInfoSection;
 	form:validatedBy [
 		a form:RequiredConstraint;
 		form:grouping form:Bag;
@@ -292,8 +292,8 @@ nodes:f8151853-b0d0-4135-b079-84e17e97de10
 emb:source-node
 	 a form:Form,
 	form:TopLevelForm;
-	form:includes nodes:166b413a-a4ce-439a-92f2-3b7cc0415889,
-	nodes:2ba690ed-e60f-449e-a673-3ea9c8249a1b, nodes:42b0902b-bada-4bd7-b7ae-6222257d408c, nodes:518043bd-5858-443a-bd85-db1b89bacf36, nodes:5ec8000a-8b12-4692-866f-d7beb3abd68a, nodes:617dceef-9548-4307-8f0c-149229e4a738, nodes:6555dda0-8047-47c7-81a4-71066dc5d1dc, nodes:70d92068-e724-44a6-b76b-1996a5f6163b, nodes:9028142c-5ac9-4755-aaa5-a3f08aaf9f25, nodes:a175fd51-f495-4344-8060-2cdce1ab86ec, nodes:be8f01a9-cbc7-4ef3-9987-198306ce590c, nodes:c71ffebb-8887-47df-9074-fe14ce1f9d86,
-nodes:d0e820dc-a548-44d1-a077-ff9c52595006, nodes:d6515d91-030a-45fa-b224-4cd6f0487d89, nodes:f0d8c413-e464-4fe8-a47a-6aa7e7128444, nodes:f8151853-b0d0-4135-b079-84e17e97de10, nodes:30737253-a84a-4cd0-9542-934a58ef6564;
-	form:partOf nodes:04ec39db-90fa-4a2b-a8f4-425b9ade7e45,
-	nodes:1b3b7a27-8164-40ad-ab3d-a82d7334afbd, nodes:218843ad-d4dd-4c06-831f-a3e5833a8820, nodes:4d943bf7-d35c-428b-b5ce-b28220aa91d8 .
+	form:includes nodes:naamOpleidingF,
+	nodes:webpaginaUrlF, nodes:naamContactpersoonF, nodes:telefoonnummerF, nodes:werkErvaringF, nodes:kboNummerF, nodes:bankAccountF, nodes:personeelsLidFunctieF, nodes:kandidaatSchetsF, nodes:emailadresF, nodes:beslissingUploadF, nodes:studiepuntenF,
+nodes:trajectProgrammaF, nodes:academiejarenF, nodes:anderMotivatieF, nodes:naamPersoneelsLidF, nodes:hiddenRemoteF;
+	form:partOf nodes:personeelsLidInfoSection,
+	nodes:bestuurInfoSection, nodes:bestandenSection, nodes:infoVormingstrajectSection .
