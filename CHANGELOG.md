@@ -7,6 +7,7 @@
  - Add LEKP 1.0 (2021) types via extractor (DGS-107)
  - Add slaapplekken subsidy types via extractor (DGS-165)
  - Add Nooddorpen subsidy types via extractor (DGS-166)
+ - Add new 'Lokaal Bestuurlijk Talent' subsidy (DGS-184)
 ### General
 #### Frontend
  - Bump frontend to `v0.91.1` (DL-5751): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0911-2024-03-13
