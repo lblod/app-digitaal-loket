@@ -54,12 +54,7 @@ nodes:webpaginaUrlF
     [ a form:UriConstraint ;
       form:grouping form:MatchEvery ;
       sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
-        sh:path ( dct:hasPart nie:url ) ],
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path ( dct:hasPart nie:url ) ;
-        sh:resultMessage "Gelieve minstens één URL of bestand op te geven."@nl
-    ];
+        sh:path ( dct:hasPart nie:url ) ];
 	sh:order 7;
 	sh:path dct:hasPart .
 
@@ -196,23 +191,26 @@ form:validatedBy [
 	sh:order 18;
 	sh:path lblodSubsidie:motivationOfStaffMemberPotential .
 
-nodes:emailadresF
-	 a form:Field;
+nodes:emailadresF a form:Field;
 	form:displayType display:defaultInput;
+  sh:name "E-mailadres contactpersoon";
 	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
-		a form:RequiredConstraint;
-		form:grouping form:Bag;
-		sh:order 1;
-		sh:path ( schema:contactPoint schema:email ) ;
-		sh:resultMessage "Dit veld is verplicht."@nl ], [
-a form:ValidEmail;
-	form:grouping form:MatchEvery;
-	sh:order 2;
-	sh:resultMessage "Geef een geldig e-mailadres op."@nl ];
-	sh:name "E-mailadres contactpersoon";
-	sh:order 17;
-	sh:path ( schema:contactPoint schema:email ) .
+      a form:RequiredConstraint;
+      form:grouping form:Bag;
+      sh:order 1;
+      sh:path ( schema:contactPoint schema:email ) ;
+      sh:resultMessage "Dit veld is verplicht."@nl 
+    ], 
+    [
+      a form:ValidEmail;
+      form:grouping form:MatchEvery;
+      sh:order 2;
+      sh:path ( schema:contactPoint schema:email ) ;
+      sh:resultMessage "Geef een geldig e-mailadres op."@nl 
+    ];
+    sh:order 17;
+    sh:path ( schema:contactPoint schema:email ) .
 
 
 nodes:beslissingUploadF
@@ -227,6 +225,12 @@ nodes:studiepuntenF
 	 a form:Field;
 	form:displayType display:numericalInput;
 	form:partOf nodes:infoVormingstrajectSection;
+  form:validatedBy [
+		a form:PositiveNumber;
+		form:grouping form:MatchEvery;
+		sh:order 1;
+	  sh:path lblodSubsidie:credits;
+	  sh:resultMessage "Geen negatieve waarden" ];
 	sh:name "Indien ja: hoeveel studiepunten voor het voortraject of schakelprogramma?";
 	sh:order 9;
 	sh:path lblodSubsidie:credits .
@@ -255,7 +259,13 @@ nodes:academiejarenF
 		form:grouping form:Bag;
 		sh:order 1;
 		sh:path lblodSubsidie:amountOfAcademicYearsRequired;
-		sh:resultMessage "Dit veld is verplicht."@nl ];
+		sh:resultMessage "Dit veld is verplicht."@nl ],
+  [
+		a form:PositiveNumber;
+		form:grouping form:MatchEvery;
+		sh:order 2;
+	  sh:path lblodSubsidie:amountOfAcademicYearsRequired;
+	  sh:resultMessage "Geen negatieve waarden" ];
 	sh:name "Totaal aantal academiejaren nodig om de master te halen (minstens 25 studiepunten per jaar, uitgezonderd het laatste jaar)";
 	sh:order 10;
 	sh:path lblodSubsidie:amountOfAcademicYearsRequired.
