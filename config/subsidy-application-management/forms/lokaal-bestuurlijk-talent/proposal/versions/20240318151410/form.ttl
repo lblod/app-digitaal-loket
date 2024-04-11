@@ -191,23 +191,26 @@ form:validatedBy [
 	sh:order 18;
 	sh:path lblodSubsidie:motivationOfStaffMemberPotential .
 
-nodes:emailadresF
-	 a form:Field;
+nodes:emailadresF a form:Field;
 	form:displayType display:defaultInput;
+  sh:name "E-mailadres contactpersoon";
 	form:partOf nodes:bestuurInfoSection;
 	form:validatedBy [
-		a form:RequiredConstraint;
-		form:grouping form:Bag;
-		sh:order 1;
-		sh:path ( schema:contactPoint schema:email ) ;
-		sh:resultMessage "Dit veld is verplicht."@nl ], [
-a form:ValidEmail;
-	form:grouping form:MatchEvery;
-	sh:order 2;
-	sh:resultMessage "Geef een geldig e-mailadres op."@nl ];
-	sh:name "E-mailadres contactpersoon";
-	sh:order 17;
-	sh:path ( schema:contactPoint schema:email ) .
+      a form:RequiredConstraint;
+      form:grouping form:Bag;
+      sh:order 1;
+      sh:path ( schema:contactPoint schema:email ) ;
+      sh:resultMessage "Dit veld is verplicht."@nl 
+    ], 
+    [
+      a form:ValidEmail;
+      form:grouping form:MatchEvery;
+      sh:order 2;
+      sh:path ( schema:contactPoint schema:email ) ;
+      sh:resultMessage "Geef een geldig e-mailadres op."@nl 
+    ];
+    sh:order 17;
+    sh:path ( schema:contactPoint schema:email ) .
 
 
 nodes:beslissingUploadF
