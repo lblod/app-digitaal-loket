@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.97.0 (2024-04-12)
 ### General
 #### Fixes
  - Bump `berichtencentrum-email-notification` service, which fixes the general problem where no emails about messages get sent. (DL-5775)
