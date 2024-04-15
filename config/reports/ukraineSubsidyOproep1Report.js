@@ -1,5 +1,4 @@
 import { generateReportFromData, batchedQuery } from "../helpers.js";
-import { getSafeValue } from "./util/report-helpers";
 
 export default {
   cronPattern: "0 30 23 * * *",
@@ -87,26 +86,23 @@ export default {
     const queryResponse = await batchedQuery(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
-        subsidieURI: getSafeValue(subsidie, "subsidie"),
-        modified: getSafeValue(subsidie, "modified"),
-        status: getSafeValue(subsidie, "status"),
-        bestuurseenheid: getSafeValue(subsidie, "bestuurseenheid"),
-        kbo: getSafeValue(subsidie, "kbo"),
-        classificatie: getSafeValue(subsidie, "classificatie"),
-        contactFirstName: getSafeValue(subsidie, "contactFirstName"),
-        contactLastName: getSafeValue(subsidie, "contactLastName"),
-        contactTelephone: getSafeValue(subsidie, "contactTelephone"),
-        contactEmail: getSafeValue(subsidie, "contactEmail"),
-        rekeningnummer: getSafeValue(subsidie, "rekeningnummer"),
-        reeks: getSafeValue(subsidie, "reeks"),
-        reeksStart: getSafeValue(subsidie, "reeksStart"),
-        reeksEnd: getSafeValue(subsidie, "reeksEnd"),
-        address: getSafeValue(subsidie, "address"),
-        aantalSlaapkamers: getSafeValue(subsidie, "aantalSlaapkamers"),
-        facturenGemeenschDelen: getSafeValue(
-          subsidie,
-          "facturenGemeenschDelen"
-        ),
+        subsidieURI: subsidie?.subsidie?.value,
+        modified: subsidie?.modified?.value,
+        status: subsidie?.status?.value,
+        bestuurseenheid: subsidie?.bestuurseenheid?.value,
+        kbo: subsidie?.kbo?.value,
+        classificatie: subsidie?.classificatie?.value,
+        contactFirstName: subsidie?.contactFirstName?.value,
+        contactLastName: subsidie?.contactLastName?.value,
+        contactTelephone: subsidie?.contactTelephone?.value,
+        contactEmail: subsidie?.contactEmail?.value,
+        rekeningnummer: subsidie?.rekeningnummer?.value,
+        reeks: subsidie?.reeks?.value,
+        reeksStart: subsidie?.reeksStart?.value,
+        reeksEnd: subsidie?.reeksEnd?.value,
+        address: subsidie?.address?.value,
+        aantalSlaapkamers: subsidie?.aantalSlaapkamers?.value,
+        facturenGemeenschDelen: subsidie?.facturenGemeenschDelen?.value,
       };
     });
 

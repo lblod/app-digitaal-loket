@@ -42,8 +42,8 @@ export default {
 
     const queryResponsePart1 = await batchedQuery(queryStringPart1);
     const dataToEnrich = queryResponsePart1.results.bindings.map((row) => ({
-        s: getSafeValue(row, 's'),
-        file: getSafeValue(row, 'file')
+        s: row?.s?.value,
+        file: row?.file?.value
     }));
 
     // Group the files in a field
@@ -71,6 +71,7 @@ export default {
       PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
       PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
       PREFIX lblodBesluit: <http://lblod.data.gift/vocabularies/besluit/> 
+      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
       SELECT ?s ?verstuurd ?bestuurseenheidLabel ?typeBestuur ?datumZitting ?statusLabel
             ?angemaaktDoor ?gewijzigdDoor ?link ?typeVaststelling ?typeGemeenteweg
@@ -137,17 +138,18 @@ export default {
     const queryResponsePart2 = await batchedQuery(queryStringPart2);
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        verstuurd: getSafeValue(row, 'verstuurd'),
-        bestuurseenheidLabel: getSafeValue(row, 'bestuurseenheidLabel'),
-        typeBestuur: getSafeValue(row, 'typeBestuur'),
-        angemaaktDoor: getSafeValue(row, 'angemaaktDoor'),
-        gewijzigdDoor: getSafeValue(row, 'gewijzigdDoor'),
-        statusLabel: getSafeValue(row, 'statusLabel'),
-        datumZitting: getSafeValue(row, 'datumZitting'),
-        typeVaststelling: getSafeValue(row, 'typeVaststelling'),
-        typeGemeenteweg: getSafeValue(row, 'typeGemeenteweg'),
-        link: getSafeValue(row, 'link')      };
-      acc[getSafeValue(row, 's')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 's')]);
+        verstuurd: row?.verstuurd?.value,
+        bestuurseenheidLabel: row?.bestuurseenheidLabel?.value,
+        typeBestuur: row?.typeBestuur?.value,
+        angemaaktDoor: row?.angemaaktDoor?.value,
+        gewijzigdDoor: row?.gewijzigdDoor?.value,
+        statusLabel: row?.statusLabel?.value,
+        datumZitting: row?.datumZitting?.value,
+        typeVaststelling: row?.typeVaststelling?.value,
+        typeGemeenteweg: row?.typeGemeenteweg?.value,
+        link: row?.link?.value,
+      };
+      acc[row?.s?.value] = Object.assign(dataPart, dataPart1[row?.s?.value]);
       return acc;
     }, {});
 
@@ -174,13 +176,4 @@ function groupFilesBySubmission(data) {
       o.files = filesFromSameSubmission.map(f => f.file).join(",");
     }
   })
-}
-
-function getSafeValue(entry, property){
-  return entry[property] ? wrapInQuote(entry[property].value) : null;
-}
-
-// Some values might contain comas, wrapping them in escapes quotes doesn't disturb the colomns
-function wrapInQuote(value) {
-  return `\"${value}\"`;
 }
