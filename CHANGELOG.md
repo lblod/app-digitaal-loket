@@ -2,16 +2,22 @@
 ## Unreleased
 ### General
 #### Fixes
- - Bump berichtencentrum-email-notification-service, which fixes the general problem where no emails about messages get sent. (DL-5775)
-   Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed
+ - Bump `berichtencentrum-email-notification` service, which fixes the general problem where no emails about messages get sent. (DL-5775)
+    - > Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed.
+ - Bump `adressenregister-fuzzy-search-service` to `v0.8.0`(DL-5822)
+ - Add logging config for the `dispatcher-worship-mandates` service (DL-5818)
  - Fix reports with too many quotes around fields in the data. (DL-5811)
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
+### Subsidies
+ - Add new 'Lokaal Bestuurlijk Talent' subsidy (DGS-184)
 ### Deploy Notes
   - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
 #### Docker Commands
+ - `drc up -d adressenregister dispatcher-worship-mandates loket`
  - `drc restart migrations`
+ - `drc restart subsidy-applications-management`
  - `drc restart resource cache`
 ## 1.96.0 (2024-03-25)
 ### Reports
