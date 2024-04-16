@@ -1,4 +1,11 @@
 # Changelog
+## Unreleased
+### General
+#### Fixes
+ - Fix reports with too many quotes around fields in the data. (DL-5811)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart report-generation`
 ## 1.97.0 (2024-04-12)
 ### General
 #### Fixes
