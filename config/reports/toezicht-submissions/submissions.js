@@ -53,7 +53,8 @@ PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 SELECT DISTINCT 
 (?submission AS ?melding) 
 (?labelBestuurseenheidClassification AS ?typeBestuur) 
-(?labelBestuurseenheid AS ?bestuurseenheid)
+?labelBestuurseenheid
+?bestuurseenheid
 (?labelBestuursorgaanClassificatie AS ?typeBestuursorgaan)
 ?bestuursorgaanInTijd
 ?aangemaaktDoor
