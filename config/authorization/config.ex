@@ -22,43 +22,14 @@ defmodule Acl.UserGroups.Config do
   end
 
   defp sparql_query_for_access_role(group_string) do
-    """
-      PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-      PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/impersonation/>
-
-      SELECT DISTINCT ?session_group ?session_role WHERE {
-
-        VALUES ?session_role {
-           \"#{group_string}\"
-        }
-
-        VALUES ?session_id {
-           <SESSION_ID>
-        }
-
-       {
-          ?session_id ext:sessionGroup/mu:uuid ?own_group;
-                        ext:sessionRole ?session_role.
-       } UNION {
-
-         ?session_id muAccount:impersonates ?maybe_impersonated.
-
-         ?maybe_impersonated a foaf:OnlineAccount;
-           ext:sessionRole ?session_role;
-           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
-
-         ?person a foaf:Person;
-           foaf:account ?maybe_impersonated;
-           foaf:member/mu:uuid ?maybe_impersonated_group.
-       }
-       BIND(COALESCE(?maybe_impersonated_group, ?own_group) AS ?session_group)
-      }
-      LIMIT 1
-    """
+    "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+     SELECT DISTINCT ?session_group ?session_role WHERE {
+      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                   ext:sessionRole ?session_role.
+      FILTER( ?session_role = \"#{group_string}\" )
+    }"
   end
-
 
   defp can_access_automatic_submission() do
     %AccessByQuery{
@@ -121,6 +92,30 @@ defmodule Acl.UserGroups.Config do
         <SESSION_ID> muAccount:canActOnBehalfOf/mu:uuid ?session_group;
                      muAccount:account/mu:uuid ?vendor_id.
       } "
+  end
+
+  defp is_admin() do
+    %AccessByQuery{
+      vars: [],
+      query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+        SELECT DISTINCT ?session_role WHERE {
+          VALUES ?session_role {
+            \"LoketLB-admin\"
+          }
+
+          VALUES ?session_id {
+            <SESSION_ID>
+          }
+
+          {
+            ?session_id ext:sessionRole ?session_role .
+          } UNION {
+            ?session_id ext:originalSessionRole ?session_role .
+          }
+        }
+        LIMIT 1"
+      }
   end
 
   def user_groups do
@@ -261,9 +256,13 @@ defmodule Acl.UserGroups.Config do
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT ?session_group ?session_role WHERE {
-                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
-                    }" },
+                  SELECT DISTINCT ?session_group WHERE {
+                    {
+                      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
+                    } UNION {
+                      <SESSION_ID> ext:originalSessionGroup/mu:uuid ?session_group.
+                    }
+                  }" },
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
@@ -558,7 +557,7 @@ defmodule Acl.UserGroups.Config do
        %GroupSpec{
          name: "o-admin-sessions-rwf",
          useage: [:read, :write, :read_for_write],
-         access: access_by_role_for_single_graph( "LoketLB-admin" ),
+         access: is_admin(),
          graphs: [
            %GraphSpec{
              graph: "http://mu.semte.ch/graphs/sessions",
