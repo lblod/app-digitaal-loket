@@ -119,7 +119,7 @@ async function generate() {
     {
       title: 'Message report with provenance',
       description: 'Report about the Conversations and Messages with where they came from in the past 12 months.',
-      filePrefix: 'messages-with-provenance-6-months',
+      filePrefix: 'messages-with-provenance-12-months',
     },
   );
 }
