@@ -250,3 +250,30 @@ docker-compose up
 Notes:
   - virtuoso can take a while to execute its first run, meanwhile the database is inaccessible. Make also sure to wait for the migrations to run.
   - data from external sources need to be synced again.
+
+## Vendor API
+
+Some vendors need access to specific data inside Loket; as such, we expose an API that allows them to query data from their own designated graphs.
+
+There are three services involved:
+* [vendor-login-service](https://github.com/lblod/vendor-login-service)
+* [sparql-authorization-wrapper-service](https://github.com/lblod/sparql-authorization-wrapper-service)
+* [vendor-data-distribution-service](https://github.com/lblod/vendor-data-distribution-service/)
+
+In brief, the API flows as follows:
+* The `vendor-login` service allows a vendor with an API key to log into `app-digitaal-loket` and provides said vendor with an active session.
+* The `sparql-authorization-wrapper` service proxies SPARQL requests from the vendor to `app-digitaal-loket` by intercepting the request and adding specific authorization rules to allow/disallow this request; these rules are defined in `config/sparql-authorization-wrapper/filter.js`.
+  * `sparql-authorization-wrapper` checks whether a vendor has an active session by asking `vendor-login`.
+* The `vendor-data-distribution` service distributes data inside `app-digitaal-loket` to designated spaces, which is made accessible through the SPARQL endpoint.
+
+### vendor-login-service
+
+TODO
+
+### sparql-authorization-wrapper-service
+
+TODO
+
+### vendor-data-distribution-service
+
+TODO
