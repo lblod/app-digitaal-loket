@@ -1,4 +1,10 @@
 # Changelog
+## Unreleased
+### General
+#### Fixes
+  - Update predicates to export for `melding:FormData` (in context of DL-5738)
+### Deploy notes
+- `drc restart delta-producer-publication-graph-maintainer`
 ## 1.97.0 (2024-04-12)
 ### General
 #### Fixes
