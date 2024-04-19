@@ -2,12 +2,14 @@
 ## Unreleased
 ### General
 #### Fixes
+ - Update predicates to export for `melding:FormData` (in context of DL-5738)
  - Fix reports with too many quotes around fields in the data. (DL-5811)
  - Bump deltanotifier (DL-5684)
 ### Deploy Notes
 #### Docker Commands
  - `drc up deltanotifier`
  - `drc restart report-generation`
+- `drc restart delta-producer-publication-graph-maintainer`
 ## 1.97.0 (2024-04-12)
 ### General
 #### Fixes
