@@ -1,5 +1,7 @@
 # Changelog
 ## Unreleased
+### General
+ - Consolidation worship-senstive delta-producer (DL-5588)
 ### Toezicht
  - Adjust/Add new forms and new codelists (DL-5669 - DL-5625 - DL-5643 - DL-5646 - DL-5665 - DL-5670) : See full changes on https://github.com/lblod/app-digitaal-loket/pull/528
 ### Subsidies
@@ -7,6 +9,28 @@
  - Add LEKP 1.0 (2021) types via extractor (DGS-107)
  - Add slaapplekken subsidy types via extractor (DGS-165)
  - Add Nooddorpen subsidy types via extractor (DGS-166)
+
+### Deploy Notes
+#### Consolidation Worship-Sensitive Delta-Producer
+##### Edit `config/delta-producer/background-jobs-initiator/config.override.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Fire it up!
+```
+drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
+```
+##### Don't Forget!
+The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
+Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
+###### app-worship-organizations, app-organization-portal
+On PROD, QA, and DEV, in `docker-compose.override.yml` change
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive-deltas/login'`
+  to
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
+
+The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
+
 ### General
 #### Frontend
  - Bump frontend to `v0.91.0` (DL-5735): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0910-2024-03-12
