@@ -1,6 +1,7 @@
 # Changelog
 ## Unreleased
 #### Frontend
+ - `v0.93.0` (DL-5849): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0930-2024-05-02
  - `v0.92.1` (DL-5790): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0921-2024-04-08
  - `v0.92.0` (DL-5790): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0920-2024-04-04
 ### General
