@@ -90,6 +90,8 @@ CONSTRUCT {
     a cogs:Job .
   ?sender skos:prefLabel ?sendername .
   ?recipient skos:prefLabel ?recipientname .
+  ?senderClassificatieCode skos:prefLabel ?senderTypeBestuur .
+  ?recipientClassificatieCode skos:prefLabel ?recipientTypeBestuur .
 }
 WHERE {
   VALUES ?message { ${rst.termToString(message)} }
@@ -128,10 +130,18 @@ WHERE {
   OPTIONAL {
     ?message sch:sender ?sender .
     ?sender skos:prefLabel ?sendername .
+    OPTIONAL {
+      ?sender besluit:classificatie ?senderClassificatieCode .
+      ?senderClassificatieCode skos:prefLabel ?senderTypeBestuur .
+    }
   }
   OPTIONAL {
     ?message sch:recipient ?recipient .
     ?recipient skos:prefLabel ?recipientname .
+    OPTIONAL {
+      ?recipient besluit:classificatie ?recipientClassificatieCode .
+      ?recipientClassificatieCode skos:prefLabel ?recipientTypeBestuur .
+    }
   }
 }`;
 }

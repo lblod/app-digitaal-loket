@@ -42,6 +42,8 @@ async function generate() {
     const recipient = detailsStore.getObjects(message, ns.sch`recipient`)[0];
     const recipientV = recipient?.value;
     const recipientnameV = detailsStore.getObjects(recipient, ns.skos`prefLabel`)[0]?.value;
+    const recipientClassificatieCode = detailsStore.getObjects(recipientV, ns.besluit`classificatie`)[0]?.value;
+    const recipientTypeBestuur = detailsStore.getObjects(recipientClassificatieCode, ns.skos`prefLabel`)[0]?.value;
     const confirmedStatus = detailsStore.getObjects(message, ns.adms`status`)[0];
     let job = detailsStore.getSubjects(ns.dct`subject`, message)[0];
     job = detailsStore.has(job, ns.rdf`type`, ns.cogs`Job`) ? job : undefined;
@@ -66,6 +68,7 @@ async function generate() {
         recipient: recipientV,
         sendername: sendernameV,
         recipientname: recipientnameV,
+        recipientTypeBestuur,
         provenance: provenanceV,
         attachmentSequence: '0/0',
         filename: '',
@@ -89,6 +92,7 @@ async function generate() {
         recipient: recipientV,
         sendername: sendernameV,
         recipientname: recipientnameV,
+        recipientTypeBestuur,
         provenance: provenanceV,
         attachmentSequence: attachmentSeqV,
         filename: filenameV,
@@ -108,6 +112,7 @@ async function generate() {
       'sendername',
       'recipient',
       'recipientname',
+      'recipientTypeBestuur',
       'type',
       'dateSent',
       'dateReceived',
