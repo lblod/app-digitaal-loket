@@ -127,7 +127,7 @@ services:
     restart: always
     logging: *default-logging
   impersonation:
-    image: lblod/impersonation-service:0.2.0-rc.5
+    image: lblod/impersonation-service:0.2.0
     restart: always
     logging: *default-logging
   validation:
