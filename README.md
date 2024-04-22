@@ -266,14 +266,16 @@ In brief, the API flows as follows:
   * `sparql-authorization-wrapper` checks whether a vendor has an active session by asking `vendor-login`.
 * The `vendor-data-distribution` service distributes data inside `app-digitaal-loket` to designated spaces, which is made accessible through the SPARQL endpoint.
 
-### vendor-login-service
+### Setup
 
-TODO
+#### vendor-login-service
 
-### sparql-authorization-wrapper-service
+#### sparql-authorization-wrapper-service
 
-TODO
+##### Service Configuration (filter.js)
 
-### vendor-data-distribution-service
+#### vendor-data-distribution-service
 
-TODO
+##### Healing Process
+
+##### Service Configuration (subjectsAndPaths.js)
