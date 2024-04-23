@@ -88,8 +88,12 @@ CONSTRUCT {
     task:operation jo:harvestBericht ;
     dct:creator ?creator ;
     a cogs:Job .
-  ?sender skos:prefLabel ?sendername .
-  ?recipient skos:prefLabel ?recipientname .
+  ?sender 
+    skos:prefLabel ?sendername ;
+    besluit:classificatie ?senderClassificatieCode .
+  ?recipient
+    skos:prefLabel ?recipientname ;
+    besluit:classificatie ?recipientClassificatieCode .
   ?senderClassificatieCode skos:prefLabel ?senderTypeBestuur .
   ?recipientClassificatieCode skos:prefLabel ?recipientTypeBestuur .
 }
