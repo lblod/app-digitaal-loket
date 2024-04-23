@@ -270,6 +270,44 @@ In brief, the API flows as follows:
 
 #### vendor-login-service
 
+To log in as a vendor, run the following command:
+
+```sh
+curl -v -X POST \
+      -H "Content-Type: application/json" \
+      -b CookieJar.tsv -c CookieJar.tsv \
+      -d '{
+    "organization": "ORG_URI",
+    "publisher": {
+        "uri": "VENDOR_URI",
+        "key": "VENDOR_API_KEY"
+    }
+}' http://localhost:90/vendor/login
+```
+
+where:
+* `ORG_URI` is the URI of the organization the vendor can act on behalf of.
+* `VENDOR_URI` is the URI of the relevant vendor.
+* `VENDOR_API_KEY` is the API key the vendor uses to log in.
+
+`publisher.uri`, `publisher.key` and `ORG_URI` can be found by querying the database as follows:
+
+```sparql
+PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+PREFIX mu:        <http://mu.semte.ch/vocabularies/core/>
+PREFIX foaf:      <http://xmlns.com/foaf/0.1/>
+PREFIX ext:       <http://mu.semte.ch/vocabularies/ext/>
+
+SELECT DISTINCT ?vendorURI ?vendorName ?vendorAPIKey ?organizationURI WHERE {
+  ?s a foaf:Agent, ext:Vendor ;
+    muAccount:key ?key ;
+    muAccount:canActOnBehalfOf ?organizationURI ;
+    foaf:name ?vendorName .
+}
+```
+
+This query will return the **vendorURI**, **vendorName**, **vendorAPIKey** and **organizationURI**; **vendorName** is not used in the cURL request, but is useful information to have.
+
 #### sparql-authorization-wrapper-service
 
 ##### Service Configuration (filter.js)
