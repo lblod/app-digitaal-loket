@@ -352,6 +352,8 @@ The following is an example output you may after executing the request:
 
 The custom authorization rules are defined in a customer [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can specify the specific query you want to be executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
 
+More info can found in the [revelant section](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) of the service's GitHub page.
+
 #### vendor-data-distribution-service
 
 ##### Healing Process
