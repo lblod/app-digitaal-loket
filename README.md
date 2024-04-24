@@ -345,11 +345,12 @@ The following is an example output you may after executing the request:
         "type": "uri"
       }
     }
-...
 }
 ```
 
 ##### Service Configuration (filter.js)
+
+The custom authorization rules are defined in a customer [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can specify the specific query you want to be executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
 
 #### vendor-data-distribution-service
 
