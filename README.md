@@ -345,6 +345,7 @@ The following is an example output you may after executing the request:
         "type": "uri"
       }
     }
+  ]
 }
 ```
 
