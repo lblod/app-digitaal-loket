@@ -1,11 +1,32 @@
 # Changelog
 ## Unreleased
 ### General
+ - Consolidation worship-senstive delta-producer (DL-5588)
 #### Fixes
  - Update predicates to export for `melding:FormData` (in context of DL-5738)
  - Fix reports with too many quotes around fields in the data. (DL-5811)
  - Bump deltanotifier (DL-5684)
 ### Deploy Notes
+#### Consolidation Worship-Sensitive Delta-Producer
+##### Edit `config/delta-producer/background-jobs-initiator/config.override.json`
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Fire it up!
+```
+drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
+```
+##### Don't Forget!
+The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
+Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
+###### app-worship-organizations, app-organization-portal
+On PROD, QA, and DEV, in `docker-compose.override.yml` change
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive-deltas/login'`
+  to
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
+
+The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
+
 #### Docker Commands
  - `drc up deltanotifier`
  - `drc restart report-generation`
