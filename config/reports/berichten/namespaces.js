@@ -22,6 +22,10 @@ const PREFIXES = {
   ext: 'http://mu.semte.ch/vocabularies/ext/',
   besluit: 'http://data.vlaanderen.be/ns/besluit#',
   owl: 'http://www.w3.org/2002/07/owl#',
+  dct: 'http://purl.org/dc/terms/',
+  nie: 'http://www.semanticdesktop.org/ontologies/2007/01/19/nie#',
+  nfo: 'http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#',
+  cogs: 'http://vocab.deri.ie/cogs#',
 };
 
 export const NAMESPACES = (() => {

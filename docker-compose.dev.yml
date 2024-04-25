@@ -8,6 +8,7 @@ services:
       - "443:443"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
+    restart: "no"
   loket:
     restart: "no"
     environment:
@@ -43,6 +44,8 @@ services:
     entrypoint: ["echo", "Service disabled"] # Note: this probably go in the future
     restart: "no"
   file:
+    restart: "no"
+  virus-scanner:
     restart: "no"
   create-bbcdr:
     restart: "no"

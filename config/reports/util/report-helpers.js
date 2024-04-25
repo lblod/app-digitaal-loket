@@ -16,23 +16,10 @@ export async function generateReportFromQueryResult({results, head}, metadata) {
     const data = bindings.map(row => {
       const obj = {};
       vars.forEach((variable) => {
-        obj[variable] = getSafeValue(row, variable);
+        obj[variable] = row[variable]?.value;
       });
       return obj;
     });
     await generateReportFromData(data, vars, metadata);
   }
-}
-
-/**
- * Translate a query-result row variable to a CSV safe value
- *
- * Some values might contain comas, wrapping them in escapes quotes doesn't disturb the columns
- *
- * @param row
- * @param variable
- * @returns {string|null}
- */
-export function getSafeValue(row, variable) {
-  return row[variable] ? `\"${row[variable].value}\"` : null;
 }

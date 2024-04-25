@@ -1,0 +1,72 @@
+{
+  "source": {
+    "prefixes": [
+      "PREFIX mu: <http://mu.semte.ch/vocabularies/core/>",
+      "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+      "PREFIX dct: <http://purl.org/dc/terms/>",
+      "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+      "PREFIX subsidie: <http://data.vlaanderen.be/ns/subsidie#>",
+      "PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>",
+      "PREFIX schema: <http://schema.org/>",
+      "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
+      "PREFIX nie:  <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>"
+    ],
+    "properties": [
+      {
+        "s-prefix": "schema:contactPoint",
+        "properties": [
+          "schema:telephone",
+          "schema:email",
+          "schema:fullName"
+        ]
+      },
+      {
+        "s-prefix": "schema:bankAccount",
+        "properties": [
+          "schema:identifier",
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      {
+        "s-prefix": "dct:hasPart",
+        "properties": [
+          "rdf:type",
+          "nie:url"
+        ]
+      },
+      {
+        "s-prefix": "lblodSubsidie:decisionUpload",
+        "properties": [
+          "rdf:type",
+          {
+            "s-prefix": "dct:hasPart",
+            "properties": [
+              "rdf:type"
+            ]
+          }
+        ]
+      },
+      "lblodSubsidie:yearsOfWorkExperience",
+      "lblodSubsidie:KBONumber",
+      "lblodSubsidie:positionNominatedStaffMember",
+      "lblodSubsidie:motivationOfStaffMemberPotential",
+      "lblodSubsidie:otherCourseMotivation",
+      "lblodSubsidie:credits",
+      "lblodSubsidie:courseName",
+      "lblodSubsidie:isProgramNeeded",
+      "lblodSubsidie:amountOfAcademicYearsRequired",
+      "lblodSubsidie:nameStaffMember"
+    ],
+    "meta": {
+      "schemes": [
+        "http://lblod.data.gift/concept-schemes/e311b861-d8aa-47a1-80e9-7f4a1fb3de09",
+        "http://lblod.data.gift/concept-schemes/3f514a6a-094c-4a33-b1d1-c97e59e2844a"
+      ]
+    }
+  }
+}
