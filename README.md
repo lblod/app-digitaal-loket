@@ -264,7 +264,7 @@ In brief, the API flows as follows:
 * The `vendor-login` service allows a vendor with an API key to log into `app-digitaal-loket` and provides said vendor with an active session.
 * The `sparql-authorization-wrapper` service proxies SPARQL requests from the vendor to `app-digitaal-loket` by intercepting the request and adding specific authorization rules to allow/disallow this request; these rules are defined in `config/sparql-authorization-wrapper/filter.js`.
   * `sparql-authorization-wrapper` checks whether a vendor has an active session by asking `vendor-login`.
-* The `vendor-data-distribution` service distributes data inside `app-digitaal-loket` to designated spaces, which is made accessible through the SPARQL endpoint.
+* The `vendor-data-distribution` service distributes data inside `app-digitaal-loket` to designated spaces, which is made accessible through the SPARQL endpoint; the rules defining what gets copied is defined `config/vendor-data/subjectsAndPaths.js`.
 
 ### Setup
 
@@ -351,7 +351,7 @@ The following is an example output you may see after executing the request:
 
 ##### Service Configuration (filter.js)
 
-The custom authorization rules are defined in a custom [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can specify the specific query you want to be executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
+The custom authorization rules are defined in a custom [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can write out the specific query you want executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
 
 More info can found in the [writing rules](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) section of the service's GitHub page.
 
