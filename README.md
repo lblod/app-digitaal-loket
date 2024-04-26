@@ -306,13 +306,13 @@ SELECT DISTINCT ?vendorURI ?vendorName ?vendorAPIKey ?organizationURI WHERE {
 }
 ```
 
-This query will return the **vendorURI**, **vendorName**, **vendorAPIKey** and **organizationURI**; **vendorName** is not used in the cURL request, but is useful information to have.
+This query will return the **vendorURI**, **vendorName**, **vendorAPIKey** and **organizationURI**; **vendorName** is not used in the cURL request but is useful information to have.
 
 #### sparql-authorization-wrapper-service
 
 As mentioned in the summary above, this service acts as a proxy between the vendor and `app-digitaal-loket` and is used to append extra authorization rules in addition to making sure the request is allowed to access the requested data.
 
-After a loggin in as a vendor, run the following command to execute a query (note the use of the same `CookieJar.tsv` from the previous section):
+After logging in as a vendor, run the following command to execute a query (note the use of the same `CookieJar.tsv` from the previous section):
 
 ```sh
 curl -s -X POST \
@@ -324,7 +324,7 @@ curl -s -X POST \
 
 **NOTE**: The `--write-out '%{json}' | jq '.results'` snippet at the end allows for a nicer output, but it can be removed. You need to install `jq` first if you choose to write out the JSON output to `jq`.
 
-The following is an example output you may after executing the request:
+The following is an example output you may see after executing the request:
 
 ```json
 {
@@ -353,7 +353,7 @@ The following is an example output you may after executing the request:
 
 The custom authorization rules are defined in a customer [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can specify the specific query you want to be executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
 
-More info can found in the [revelant section](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) of the service's GitHub page.
+More info can found in the [writing rules](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) section of the service's GitHub page.
 
 #### vendor-data-distribution-service
 
