@@ -351,12 +351,18 @@ The following is an example output you may see after executing the request:
 
 ##### Service Configuration (filter.js)
 
-The custom authorization rules are defined in a customer [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can specify the specific query you want to be executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
+The custom authorization rules are defined in a custom [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can specify the specific query you want to be executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
 
 More info can found in the [writing rules](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) section of the service's GitHub page.
 
 #### vendor-data-distribution-service
 
-##### Healing Process
+This service works by reacting to deltas and is responsible for moving vendor-relevant data into specific graphs, where they can then be accessed through the vendor API.
 
 ##### Service Configuration (subjectsAndPaths.js)
+
+This service is configured through a custom [subjectsAndPaths.js](https://github.com/lblod/app-digitaal-loket/blob/master/config/vendor-data/subjectsAndPaths.js) file, similar to `sparql-authorization-wrapper-service`. More info can be found [here](https://github.com/lblod/vendor-data-distribution-service/?tab=readme-ov-file#configuration).
+
+##### Healing Process
+
+The healing process allows the service to "manually" move data to vendor graphs by the following the same rules defined in `subjectsAndPaths.js`, by trigger a `POST` request to the `/healing` endpoint of the service.
