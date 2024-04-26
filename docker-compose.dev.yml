@@ -152,20 +152,24 @@ services:
     environment:
       LDES_STREAM: "http://ldes-backend/fractie"
       LDES_ENDPOINT_VIEW: "http://ldes-backend/fractie/1"
-      CRON_PATTERN: "*/15 * * * * *" # run the job every 15 seconds
-      # CRON_PATTERN: "*/1 * * * *" # run the job every 1 minute
+      CRON_PATTERN: "*/1 * * * *" # run the job every 1 minute
       REPLACE_VERSIONS: true 
-      MU_SPARQL_ENDPOINT: 'http://virtuoso:8890/sparql'
+      MU_SPARQL_ENDPOINT: 'http://database:8890/sparql'
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
-      LDES_LOGGING_LEVEL: "debug"
-      # LOG_SPARQL_ALL: true
-      # PERSIST_STATE: false
     links:
-      - virtuoso:database #link to virtuoso directly for testing purposes 
+      - database:database
     networks:
       - default
       - debug
+  create-mandatenbeheer-entity:
+    image: local-ldes-make-object:latest
+    depends_on:
+      - ldes-consumer-mandatenbeheer-fractie
+    environment:
+      LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten"
+    links:
+      - database:database
 networks:
   debug:
     external: true
-

@@ -58,7 +58,7 @@ services:
   database:
     image: semtech/mu-authorization:feature-service-roam-r1.1
     environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8880/sparql"
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
       DATABASE_COMPATIBILITY: "Virtuoso"
       # Note: not sure wether it gets picked up properly, it is meant for healing-process which may make
@@ -711,6 +711,12 @@ services:
     logging: *default-logging
   ldes-consumer-mandatenbeheer-fractie:
     image: redpencil/ldes-consumer:0.8.0-rc1
+    labels:
+        - "logging=true"
+    restart: always
+    logging: *default-logging
+  create-mandatenbeheer-entity:
+    image: lblod/ldes-make-object-service
     labels:
         - "logging=true"
     restart: always
