@@ -250,3 +250,7 @@ docker-compose up
 Notes:
   - virtuoso can take a while to execute its first run, meanwhile the database is inaccessible. Make also sure to wait for the migrations to run.
   - data from external sources need to be synced again.
+
+### POC LMB sync with Loket
+
+We want to sync the data of mandatenbheer application with the information in the loket database. Therefor we are using some services to make this happen. All the information on how this is done and how it works can be found [here](./docs/poc-sync-mandatenbeheer-entities.md).
