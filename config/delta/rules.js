@@ -18,7 +18,7 @@ import validateSubmission from './validate-submission';
 import dispatcherWorshipMandates from './dispatcher-worship-mandates';
 import vendorDataDistribution from './vendor-data-distribution';
 import virusScanner from './virus-scanner';
-import makeMandatenbheerEntity from './make-mandatenbeheer-entity';
+import upsertMandatenbheerEntity from './upsert-mandatenbeheer-entity';
 
 export default [
   ...automaticSubmission,
@@ -41,5 +41,5 @@ export default [
   ...dispatcherWorshipMandates,
   ...vendorDataDistribution,
   ...virusScanner,
-  ...makeMandatenbheerEntity
+  ...upsertMandatenbheerEntity
 ];
