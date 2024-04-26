@@ -709,7 +709,7 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
-  ldes-consumer-mandatenbeheer-fractie:
+  lmb-fractie-consumer:
     image: redpencil/ldes-consumer:0.8.0-rc1
     environment:
       # LDES_STREAM: "http://ldes-backend/fractie" TODO: service of mandatenbeheer
@@ -722,7 +722,7 @@ services:
         - "logging=true"
     restart: always
     logging: *default-logging
-  create-mandatenbeheer-entity:
+  lmb-upsert-ldes-entity:
     image: lblod/ldes-make-object-service
     depends_on:
       - ldes-consumer-mandatenbeheer-fractie

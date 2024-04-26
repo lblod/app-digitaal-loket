@@ -148,7 +148,7 @@ services:
     restart: "no"
   berichtencentrum-melding:
     restart: "no"
-  ldes-consumer-mandatenbeheer-fractie:
+  lmb-fractie-consumer:
     environment:
       LDES_STREAM: "http://ldes-backend/fractie"
       LDES_ENDPOINT_VIEW: "http://ldes-backend/fractie/1"
@@ -156,7 +156,7 @@ services:
     networks:
       - default
       - debug
-  create-mandatenbeheer-entity:
+  lmb-upsert-ldes-entity:
     restart: "no"
 networks:
   debug:
