@@ -718,6 +718,7 @@ services:
       REPLACE_VERSIONS: true 
       MU_SPARQL_ENDPOINT: 'http://database:8890/sparql'
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
+      PERSIST_STATE: "true"
     labels:
         - "logging=true"
     restart: always
