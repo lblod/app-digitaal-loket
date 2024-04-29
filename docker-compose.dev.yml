@@ -20,7 +20,7 @@ services:
     restart: "no"
   identifier:
     ports:
-      - "91:80"
+      - "90:80"
     restart: "no"
   dispatcher:
     restart: "no"
@@ -28,7 +28,7 @@ services:
     restart: "no"
   virtuoso:
     ports:
-      - "8880:8890"
+      - "8890:8890"
     restart: "no"
   deltanotifier:
     restart: "no"

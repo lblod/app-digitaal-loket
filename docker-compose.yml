@@ -209,8 +209,8 @@ services:
   berichtencentrum-sync-with-kalliope:
     image: lblod/berichtencentrum-sync-with-kalliope-service:0.20.0
     environment:
-      MU_SPARQL_ENDPOINT: "http://database:8880/sparql"
-      MU_SPARQL_UPDATEPOINT: "http://database:8880/sparql"
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
       KALLIOPE_PS_UIT_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit"
       KALLIOPE_PS_IN_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-in"
       KALLIOPE_PS_UIT_CONFIRMATION_ENDPOINT: "https://kalliope-svc-test.abb.vlaanderen.be/api/poststuk-uit/ontvangstbevestiging"
@@ -552,8 +552,8 @@ services:
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
-      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8880/sparql"
-      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8880/sparql"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
       CONFIG_SERVICES_JSON_PATH: '/config/publication-graph-maintainer/config.json'
     volumes:
@@ -601,8 +601,8 @@ services:
       SERVE_DELTA_FILES: "true"
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
-      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8880/sparql"
-      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8880/sparql"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-ws-sensitive"
       FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/worship-services-sensitive-deltas"
@@ -652,8 +652,8 @@ services:
       SERVE_DELTA_FILES: "true"
       DELTA_INTERVAL_MS: 10000
       PRETTY_PRINT_DIFF_JSON: "true"
-      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8880/sparql"
-      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8880/sparql"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
       PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-subsidies"
       FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas"
