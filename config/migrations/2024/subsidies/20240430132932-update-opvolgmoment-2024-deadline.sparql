@@ -20,7 +20,7 @@ WHERE {
       <http://data.lblod.info/id/periodes/d177ffb3-5934-4005-b481-5a424f136ec6> # LEKP 1.0 subsidy deadline
       <http://data.lblod.info/id/periodes/cea1f5f8-a659-4f59-886a-fe8f75cb2305> # LEKP 1.0 Opvolgmoment 2024 step deadline
     }
-    ?s m8g:endTime ?endTimeSubsidy.
+    ?s m8g:endTime ?endTimeSubsidy .
     ?s m8g:endTime ?endTimeStep .
   }
 }
