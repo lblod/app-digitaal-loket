@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.97.1 (2024-04-30)
 ### Subsidies
  - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
 ### General
