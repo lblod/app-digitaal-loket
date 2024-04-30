@@ -746,6 +746,18 @@ defmodule Dispatcher do
     forward conn, path, "http://berichtencentrum-melding/melding"
   end
 
+  #################################################################
+  # Dashboard
+  #################################################################
+
+  match "/remote-data-objects/*path" do
+    forward conn, path, "http://resource/remote-data-objects/"
+  end
+
+  #################################################################
+  # Other
+  #################################################################
+
   match "/*_" do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
