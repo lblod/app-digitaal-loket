@@ -1,10 +1,14 @@
 # Changelog
 ## Unreleased
+### Subsidies
+ - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
 ### General
 #### Fixes
   - Update predicates to export for `melding:FormData` (in context of DL-5738)
 ### Deploy notes
 - `drc restart delta-producer-publication-graph-maintainer`
+- `drc restart migrations && drc logs -ft --tail=200 migrations`
+- `drc restart resource cache`
 ## 1.97.0 (2024-04-12)
 ### General
 #### Fixes
