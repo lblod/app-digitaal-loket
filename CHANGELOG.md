@@ -1,21 +1,18 @@
 # Changelog
 ## Unreleased
 ### General
- - Consolidation worship-senstive delta-producer (DL-5588)
+ - Consolidation worship-sensitive delta-producer (DL-5588)
 #### Fixes
- - Update predicates to export for `melding:FormData` (in context of DL-5738)
  - Fix reports with too many quotes around fields in the data. (DL-5811)
- - Bump deltanotifier (DL-5684)
+ - Bump `deltanotifier` (DL-5684)
 ### Deploy Notes
 #### Consolidation Worship-Sensitive Delta-Producer
 ##### Edit `config/delta-producer/background-jobs-initiator/config.override.json`
+ - Copy `worship-services-sensitive` config from `config/delta-producer/background-jobs-initiator/config.json` to the override file.
  - Change `"startInitialSync"` from `false` to `true`.
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
+ - Copy `worship-services-sensitive` config from `config/delta-producer/publication-graph-maintainer/config.json` to the override file.
  - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
-##### Fire it up!
-```
-drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
-```
 ##### Don't Forget!
 The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
 Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
@@ -26,11 +23,20 @@ On PROD, QA, and DEV, in `docker-compose.override.yml` change
   `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
 
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
-
 #### Docker Commands
- - `drc up deltanotifier`
+ - `drc up -d --remove-orphans deltanotifier`
  - `drc restart report-generation`
-- `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart delta-producer-publication-graph-maintainer`
+## 1.97.1 (2024-04-30)
+### Subsidies
+ - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
+### General
+#### Fixes
+  - Update predicates to export for `melding:FormData` (in context of DL-5738)
+### Deploy notes
+ - `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
 ## 1.97.0 (2024-04-12)
 ### General
 #### Fixes
