@@ -1,4 +1,9 @@
 # Changelog
+## 1.97.2 (2024-05-02)
+### General
+ - bump-berichtencentrum (DL-5775)
+### Deploy notes
+`drc up -d berichtencentrum-email-notification`
 ## 1.97.1 (2024-04-30)
 ### Subsidies
  - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
