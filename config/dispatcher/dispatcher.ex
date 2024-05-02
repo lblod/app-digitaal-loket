@@ -85,9 +85,15 @@ defmodule Dispatcher do
   match "/mock/sessions/*path" do
     forward conn, path, "http://mocklogin/sessions/"
   end
+
+  match "/impersonations/*path" do
+    forward conn, path, "http://impersonation/impersonations/"
+  end
+
   match "/sessions/*path" do
     forward conn, path, "http://login/sessions/"
   end
+
   match "/gebruikers/*path" do
     forward conn, path, "http://cache/gebruikers/"
   end
