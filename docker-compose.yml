@@ -187,7 +187,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-email-notification:
-    image: lblod/berichtencentrum-email-notification-service:0.4.0
+    image: lblod/berichtencentrum-email-notification-service:0.4.1
     labels:
       - "logging=true"
     restart: always
