@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.92.1
+    image: lblod/frontend-loket:0.93.0
     links:
       - identifier:backend
     labels:
@@ -127,7 +127,7 @@ services:
     restart: always
     logging: *default-logging
   impersonation:
-    image: lblod/impersonation-service:0.2.0-rc.5
+    image: lblod/impersonation-service:0.2.0
     restart: always
     logging: *default-logging
   validation:
