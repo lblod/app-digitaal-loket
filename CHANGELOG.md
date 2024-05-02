@@ -39,6 +39,12 @@ The standard `docker-compose.yml` config seems in accordance with what is provid
  - `drc up -d --remove-orphans deltanotifier`
  - `drc restart report-generation`
  - `drc restart delta-producer-publication-graph-maintainer`
+## 1.97.2 (2024-05-02)
+### General
+ - bump-berichtencentrum (DL-5775)
+### Deploy notes
+`drc up -d berichtencentrum-email-notification`
+
 ## 1.97.1 (2024-04-30)
 ### Subsidies
  - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
