@@ -1,0 +1,309 @@
+@prefix : <#>.
+@prefix display: <http://lblod.data.gift/display-types/>.
+@prefix form: <http://lblod.data.gift/vocabularies/forms/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix nodes: <http://data.lblod.info/form-data/nodes/>.
+@prefix emb: <http://ember-submission-form-fields/>.
+@prefix lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>.
+@prefix schema: <http://schema.org/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+nodes:bestuurInfoSection
+	 a form:Section;
+	sh:name "Informatie over het bestuur";
+	sh:order 1 .
+
+nodes:personeelsLidInfoSection
+	 a form:Section;
+	sh:name "Informatie over het voorgedragen personeelslid";
+	sh:order 2 .
+
+nodes:infoVormingstrajectSection
+	 a form:Section;
+	sh:name "Informatie over het vormingstraject";
+	sh:order 3 .
+
+nodes:bestandenSection
+	 a form:Section;
+	sh:name "Op te laden bestanden";
+	sh:order 4 .
+
+nodes:naamOpleidingF
+	 a form:Field;
+	form:displayType display:conceptSchemeRadioButtons;
+form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/3f514a6a-094c-4a33-b1d1-c97e59e2844a", "orderBy": "http://purl.org/linked-data/cube#order"}""";
+	form:partOf nodes:infoVormingstrajectSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:courseName;
+		sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "Naam opleiding";
+	sh:order 5;
+	sh:path lblodSubsidie:courseName .
+
+nodes:webpaginaUrlF
+	 a form:Field;
+	form:displayType display:remoteUrls;
+	form:partOf nodes:infoVormingstrajectSection;
+	sh:name "URL naar de webpagina over de opleiding.";
+  form:validations
+    [ a form:UriConstraint ;
+      form:grouping form:MatchEvery ;
+      sh:resultMessage "Gelieve een geldige URL op te geven. Zorg dat vooraan in de link altijd http://, https://, ftp:// of sftp:// staat."; # TODO: later custom validator
+        sh:path ( dct:hasPart nie:url ) ];
+	sh:order 7;
+	sh:path dct:hasPart .
+
+nodes:hiddenRemoteF a form:Field ;
+    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
+    sh:order 8 ;
+    sh:path ( dct:hasPart rdf:type );
+    form:partOf nodes:infoVormingstrajectSection.
+
+nodes:naamContactpersoonF
+	 a form:Field;
+	form:displayType display:defaultInput;
+	form:partOf nodes:bestuurInfoSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path ( schema:contactPoint schema:fullName );
+		sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "Naam contactpersoon";
+	sh:order 15;
+	sh:path ( schema:contactPoint schema:fullName ) .
+
+nodes:telefoonnummerF
+	 a form:Field;
+	form:displayType display:defaultInput;
+	form:partOf nodes:bestuurInfoSection;
+	form:validatedBy [
+		a form:ValidPhoneNumber;
+		form:defaultCountry "BE";
+		sh:path ( schema:contactPoint schema:telephone );
+    form:grouping form:MatchEvery;
+    sh:order 2;
+    sh:resultMessage "Geef een geldig telefoonnummer in."@nl
+  ],
+	[
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path ( schema:contactPoint schema:telephone );
+		sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "Telefoonnummer contactpersoon";
+	sh:order 16;
+	sh:path ( schema:contactPoint schema:telephone ) .
+
+nodes:werkErvaringF
+	 a form:Field;
+	form:displayType display:numericalInput;
+	form:help "Het aantal jaren werkervaring moet minimum 3 jaar zijn.";
+	form:partOf nodes:personeelsLidInfoSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:yearsOfWorkExperience;
+		sh:resultMessage "Dit veld is verplicht."@nl ],
+		[
+		a form:PositiveNumber;
+		form:grouping form:MatchEvery;
+		sh:order 2;
+	sh:path lblodSubsidie:yearsOfWorkExperience;
+	sh:resultMessage "Het aantal jaren werkervaring moet minimum 3 jaar zijn." ];
+	sh:name "Aantal jaren werkervaring personeelslid (in aantal jaren).";
+	sh:order 3;
+	sh:path lblodSubsidie:yearsOfWorkExperience.
+
+nodes:kboNummerF
+	 a form:Field;
+	form:displayType display:defaultInput;
+	form:partOf nodes:bestuurInfoSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:KBONumber;
+		sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "KBO nummer bestuur";
+	sh:order 12;
+	sh:path lblodSubsidie:KBONumber .
+
+nodes:bankAccountF
+	 a form:Field;
+	form:displayType display:defaultInput;
+	form:partOf nodes:bestuurInfoSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 2;
+		sh:path ( schema:bankAccount schema:identifier );
+	sh:resultMessage "Dit veld is verplicht."@nl ],
+	[
+		a form:ValidIBAN;
+		form:grouping form:MatchEvery;
+		sh:order 1;
+		sh:path ( schema:bankAccount schema:identifier );
+		sh:resultMessage "Geef een geldig IBAN op."@nl ];
+	sh:name "IBAN nummer";
+	sh:order 13;
+	sh:path ( schema:bankAccount schema:identifier ).
+
+nodes:personeelsLidFunctieF
+	 a form:Field;
+	form:displayType display:defaultInput;
+	form:partOf nodes:personeelsLidInfoSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:positionNominatedStaffMember;
+		sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "Functie voorgedragen personeelslid";
+	sh:order 2;
+	sh:path lblodSubsidie:positionNominatedStaffMember.
+
+nodes:kandidaatSchetsF
+	 a form:Field;
+	form:displayType display:textArea;
+	form:partOf nodes:personeelsLidInfoSection;
+form:validatedBy [
+    a form:RequiredConstraint;
+    form:grouping form:Bag;
+    sh:order 1;
+    sh:path lblodSubsidie:motivationOfStaffMemberPotential;
+    sh:resultMessage "Dit veld is verplicht."@nl
+  ],
+	[
+		a form:MaxLength;
+		form:grouping form:MatchEvery;
+		form:max "1500";
+		sh:order 2;
+		sh:path lblodSubsidie:motivationOfStaffMemberPotential;
+		sh:resultMessage "Max. karakters overschreden."@nl ];
+	sh:name "Motiveer en geef een korte schets van het potentieel van de kandidaat";
+	sh:order 18;
+	sh:path lblodSubsidie:motivationOfStaffMemberPotential .
+
+nodes:emailadresF a form:Field;
+	form:displayType display:defaultInput;
+  sh:name "E-mailadres contactpersoon";
+	form:partOf nodes:bestuurInfoSection;
+	form:validatedBy [
+      a form:RequiredConstraint;
+      form:grouping form:Bag;
+      sh:order 1;
+      sh:path ( schema:contactPoint schema:email ) ;
+      sh:resultMessage "Dit veld is verplicht."@nl 
+    ], 
+    [
+      a form:ValidEmail;
+      form:grouping form:MatchEvery;
+      sh:order 2;
+      sh:path ( schema:contactPoint schema:email ) ;
+      sh:resultMessage "Geef een geldig e-mailadres op."@nl 
+    ];
+    sh:order 17;
+    sh:path ( schema:contactPoint schema:email ) .
+
+
+nodes:beslissingUploadF
+	 a form:Field;
+	form:displayType display:files;
+	form:partOf nodes:bestandenSection;
+	sh:name "Beslissing van de algemeen directeur of leidend ambtenaar van het bestuur om het personeelslid voor te dragen.";
+	sh:order 11;
+	sh:path ( lblodSubsidie:decisionUpload dct:hasPart ) .
+
+nodes:studiepuntenF
+	 a form:Field;
+	form:displayType display:numericalInput;
+	form:partOf nodes:infoVormingstrajectSection;
+  form:validatedBy [
+		a form:PositiveNumber;
+		form:grouping form:MatchEvery;
+		sh:order 1;
+	  sh:path lblodSubsidie:credits;
+	  sh:resultMessage "Geen negatieve waarden" ];
+	sh:name "Indien ja: hoeveel studiepunten voor het voortraject of schakelprogramma?";
+	sh:order 9;
+	sh:path lblodSubsidie:credits .
+
+nodes:trajectProgrammaF
+	 a form:Field;
+	form:displayType display:conceptSchemeRadioButtons;
+form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/e311b861-d8aa-47a1-80e9-7f4a1fb3de09", "orderBy": "http://purl.org/linked-data/cube#order"}""";
+	form:partOf nodes:infoVormingstrajectSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:isProgramNeeded ];
+	sh:name "Voortraject of schakelprogramma nodig?";
+	sh:order 8;
+	sh:path lblodSubsidie:isProgramNeeded .
+
+
+nodes:academiejarenF
+	 a form:Field;
+	form:displayType display:numericalInput;
+	form:partOf nodes:infoVormingstrajectSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:amountOfAcademicYearsRequired;
+		sh:resultMessage "Dit veld is verplicht."@nl ],
+  [
+		a form:PositiveNumber;
+		form:grouping form:MatchEvery;
+		sh:order 2;
+	  sh:path lblodSubsidie:amountOfAcademicYearsRequired;
+	  sh:resultMessage "Geen negatieve waarden" ];
+	sh:name "Totaal aantal academiejaren nodig om de master te halen (minstens 25 studiepunten per jaar, uitgezonderd het laatste jaar)";
+	sh:order 10;
+	sh:path lblodSubsidie:amountOfAcademicYearsRequired.
+
+nodes:anderMotivatieF
+	 a form:Field;
+	form:displayType display:textArea;
+	form:help "Opgelet, enkel een masteropleiding uit het BVR van 23 februari 2024.";
+	form:partOf nodes:infoVormingstrajectSection;
+	form:validatedBy [
+		a form:MaxLength;
+		form:grouping form:MatchEvery;
+		form:max "1500";
+		sh:order 1;
+		sh:path lblodSubsidie:otherCourseMotivation ];
+	sh:name "Indien 'andere': motiveer uw keuze.";
+	sh:order 6;
+	sh:path lblodSubsidie:otherCourseMotivation.
+
+nodes:naamPersoneelsLidF
+	 a form:Field;
+	form:displayType display:defaultInput;
+	form:partOf nodes:personeelsLidInfoSection;
+	form:validatedBy [
+		a form:RequiredConstraint;
+		form:grouping form:Bag;
+		sh:order 1;
+		sh:path lblodSubsidie:nameStaffMember;
+		sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "Naam voorgedragen personeelslid";
+	sh:order 1;
+	sh:path lblodSubsidie:nameStaffMember.
+
+emb:source-node
+	 a form:Form,
+	form:TopLevelForm;
+	form:includes nodes:naamOpleidingF,
+	nodes:webpaginaUrlF, nodes:naamContactpersoonF, nodes:telefoonnummerF, nodes:werkErvaringF, nodes:kboNummerF, nodes:bankAccountF, nodes:personeelsLidFunctieF, nodes:kandidaatSchetsF, nodes:emailadresF, nodes:beslissingUploadF, nodes:studiepuntenF,
+nodes:trajectProgrammaF, nodes:academiejarenF, nodes:anderMotivatieF, nodes:naamPersoneelsLidF, nodes:hiddenRemoteF;
+	form:partOf nodes:personeelsLidInfoSection,
+	nodes:bestuurInfoSection, nodes:bestandenSection, nodes:infoVormingstrajectSection .

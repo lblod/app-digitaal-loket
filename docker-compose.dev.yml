@@ -127,8 +127,6 @@ services:
     restart: "no"
   delta-producer-publication-graph-maintainer:
     restart: "no"
-  delta-producer-publication-graph-maintainer-ws-sensitive:
-    restart: "no"
   error-alert:
     environment:
       EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"

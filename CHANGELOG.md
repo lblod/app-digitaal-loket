@@ -5,17 +5,78 @@
  - `v0.92.1` (DL-5790): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0921-2024-04-08
  - `v0.92.0` (DL-5790): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0920-2024-04-04
 ### General
+ - Consolidation worship-senstive delta-producer (DL-5588)
+ - Bump automatic submission service (no jira reference)
+   - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
+ - Consolidation worship-sensitive delta-producer (DL-5588)
+ - Adjust reports `Toezicht module: Meldingen` and `Eredienst mandatarissen` (DL-5815)
 #### Fixes
- - Bump berichtencentrum-email-notification-service, which fixes the general problem where no emails about messages get sent. (DL-5775)
-   Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed
- - Bump deltanotifier (DL-5684)
+ - Fix reports with too many quotes around fields in the data. (DL-5811)
+ - Bump `deltanotifier` (DL-5684)
+### Deploy Notes
+#### Consolidation Worship-Sensitive Delta-Producer
+##### Edit `config/delta-producer/background-jobs-initiator/config.override.json`
+ - Copy `worship-services-sensitive` config from `config/delta-producer/background-jobs-initiator/config.json` to the override file.
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
+ - Copy `worship-services-sensitive` config from `config/delta-producer/publication-graph-maintainer/config.json` to the override file.
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Fire it up!
+```
+drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
+```
+#### Automatic submission service
+```
+drc up -d automatic-submission
+```
+##### Don't Forget!
+The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
+Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
+###### app-worship-organizations, app-organization-portal
+On PROD, QA, and DEV, in `docker-compose.override.yml` change
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive-deltas/login'`
+  to
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
+
+The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
+#### Docker Commands
+ - `drc up -d --remove-orphans deltanotifier`
+ - `drc restart report-generation`
+ - `drc restart delta-producer-publication-graph-maintainer`
+## 1.97.2 (2024-05-02)
+### General
+ - bump-berichtencentrum (DL-5775)
+### Deploy notes
+`drc up -d berichtencentrum-email-notification`
+
+## 1.97.1 (2024-04-30)
+### Subsidies
+ - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
+### General
+#### Fixes
+  - Update predicates to export for `melding:FormData` (in context of DL-5738)
+### Deploy notes
+ - `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+## 1.97.0 (2024-04-12)
+### General
+#### Fixes
+ - Bump `berichtencentrum-email-notification` service, which fixes the general problem where no emails about messages get sent. (DL-5775)
+    - > Note: It will already be deployed on production (`docker-compose.override.yml`) before this release gets deployed.
+ - Bump `adressenregister-fuzzy-search-service` to `v0.8.0` (DL-5822)
+ - Add logging config for the `dispatcher-worship-mandates` service (DL-5818)
 #### New Organizations
  - Add a new politiezone: `PZ Aalter/Maldegem: Aalter en Maldegem` (DL-5730)
  - Add a new OCMW vereniging: `Ter Lembeek` (DL-5739)
+### Subsidies
+ - Add new 'Lokaal Bestuurlijk Talent' subsidy (DGS-184)
 ### Deploy Notes
   - Remove the pinned image of `lblod/berichtencentrum-email-notification-service:0.4.1` in `docker-compose.override.yml`
 #### Docker Commands
- - `drc restart migrations`
+ - `drc up -d adressenregister dispatcher-worship-mandates loket`
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart subsidy-applications-management`
  - `drc restart resource cache`
 ## 1.96.0 (2024-03-25)
 ### Reports
