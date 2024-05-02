@@ -2,14 +2,13 @@
 ## Unreleased
 #### Frontend
  - `v0.93.0` (DL-5849): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0930-2024-05-02
- - `v0.92.1` (DL-5790): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0921-2024-04-08
- - `v0.92.0` (DL-5790): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0920-2024-04-04
 ### General
  - Consolidation worship-senstive delta-producer (DL-5588)
  - Bump automatic submission service (no jira reference)
    - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
  - Consolidation worship-sensitive delta-producer (DL-5588)
  - Adjust reports `Toezicht module: Meldingen` and `Eredienst mandatarissen` (DL-5815)
+ - User impersonation for admin users (DL-5757)
 #### Fixes
  - Fix reports with too many quotes around fields in the data. (DL-5811)
  - Bump `deltanotifier` (DL-5684)
@@ -43,6 +42,7 @@ The standard `docker-compose.yml` config seems in accordance with what is provid
  - `drc up -d --remove-orphans deltanotifier`
  - `drc restart report-generation`
  - `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart migrations database dispatcher resource identifier`
 ## 1.97.2 (2024-05-02)
 ### General
  - bump-berichtencentrum (DL-5775)
