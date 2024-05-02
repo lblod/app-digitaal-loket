@@ -1,6 +1,9 @@
 # Changelog
 ## Unreleased
 ### General
+ - Consolidation worship-senstive delta-producer (DL-5588)
+ - Bump automatic submission service (no jira reference)
+   - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
  - Consolidation worship-sensitive delta-producer (DL-5588)
 #### Fixes
  - Fix reports with too many quotes around fields in the data. (DL-5811)
@@ -13,6 +16,14 @@
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
  - Copy `worship-services-sensitive` config from `config/delta-producer/publication-graph-maintainer/config.json` to the override file.
  - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Fire it up!
+```
+drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
+```
+#### Automatic submission service
+```
+drc up -d automatic-submission
+```
 ##### Don't Forget!
 The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
 Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
