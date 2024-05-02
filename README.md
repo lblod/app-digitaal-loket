@@ -263,10 +263,10 @@ There are three services involved:
 In brief, the API flows as follows:
 * The `vendor-login` service allows a vendor with an API key to log into `app-digitaal-loket` and provides said vendor with an active session.
 * The `sparql-authorization-wrapper` service proxies SPARQL requests from the vendor to `app-digitaal-loket` by intercepting the request and adding specific authorization rules to allow/disallow this request; these rules are defined in `config/sparql-authorization-wrapper/filter.js`.
-  * `sparql-authorization-wrapper` checks whether a vendor has an active session by asking `vendor-login`.
-* The `vendor-data-distribution` service distributes data inside `app-digitaal-loket` to designated spaces, which is made accessible through the SPARQL endpoint; the rules defining what gets copied is defined `config/vendor-data/subjectsAndPaths.js`.
+  * `sparql-authorization-wrapper` checks whether a vendor has an active session by querying the sessions created by `vendor-login`.
+* The `vendor-data-distribution` service copies data inside `app-digitaal-loket` to designated graphs, which are made accessible through the SPARQL endpoint; the rules defining what gets copied are defined in `config/vendor-data/subjectsAndPaths.js`.
 
-### Setup
+### Usage
 
 #### vendor-login-service
 
@@ -290,7 +290,7 @@ where:
 * `VENDOR_URI` is the URI of the relevant vendor.
 * `VENDOR_API_KEY` is the API key the vendor uses to log in.
 
-`publisher.uri`, `publisher.key` and `ORG_URI` can be found by querying the database as follows:
+`VENDOR_URI`, `VENDOR_API_KEY` and `ORG_URI` can be found by querying the database as follows:
 
 ```sparql
 PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
@@ -310,7 +310,7 @@ This query will return the **vendorURI**, **vendorName**, **vendorAPIKey** and *
 
 #### sparql-authorization-wrapper-service
 
-As mentioned in the summary above, this service acts as a proxy between the vendor and `app-digitaal-loket` and is used to append extra authorization rules in addition to making sure the request is allowed to access the requested data.
+As mentioned in the summary above, this service acts as a proxy between the vendor and `app-digitaal-loket` and is used to append extra authorization rules in addition to making sure the client is allowed to access the requested data.
 
 After logging in as a vendor, run the following command to execute a query (note the use of the same `CookieJar.tsv` from the previous section):
 
@@ -353,7 +353,7 @@ The following is an example output you may see after executing the request:
 
 The custom authorization rules are defined in a custom [filter.js](https://github.com/lblod/sparql-authorization-wrapper-service/blob/master/config/filter.js) file. You can write out the specific query you want executed inside the `isAuthorized()` function, and `sparql-authorization-wrapper-service` will use it when proxying requests from the vendor.
 
-More info can found in the [writing rules](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) section of the service's GitHub page.
+More info can found in the [writing rules](https://github.com/lblod/sparql-authorization-wrapper-service?tab=readme-ov-file#writing-rules) section of the service's README page.
 
 #### vendor-data-distribution-service
 
@@ -365,4 +365,4 @@ This service is configured through a custom [subjectsAndPaths.js](https://github
 
 ##### Healing Process
 
-The healing process allows the service to "manually" move data to vendor graphs by the following the same rules defined in `subjectsAndPaths.js`, by trigger a `POST` request to the `/healing` endpoint of the service.
+The healing process allows the service to "manually" copy data to vendor graphs by the following the same rules defined in `subjectsAndPaths.js`. Trigger a `POST` request to the `/healing` endpoint of the service to start the healing.
