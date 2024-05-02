@@ -2,6 +2,8 @@
 ## Unreleased
 ### General
  - Consolidation worship-senstive delta-producer (DL-5588)
+ - Bump automatic submission service (no jira reference)
+   - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
 #### Fixes
  - Update predicates to export for `melding:FormData` (in context of DL-5738)
  - Fix reports with too many quotes around fields in the data. (DL-5811)
@@ -15,6 +17,10 @@
 ##### Fire it up!
 ```
 drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
+```
+#### Automatic submission service
+```
+drc up -d automatic-submission
 ```
 ##### Don't Forget!
 The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
