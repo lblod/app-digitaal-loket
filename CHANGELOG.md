@@ -6,7 +6,7 @@
  - Consolidation worship-sensitive delta-producer (DL-5588)
  - Bump automatic submission service (no jira reference)
    - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
- - Adjust reports `Toezicht module: Meldingen` and `Eredienst mandatarissen` (DL-5815)
+ - Adjust reports `Toezicht module: Meldingen`, `Eredienst mandatarissen` and `Message report with provenance` (DL-5836) (DL-5815)
  - User impersonation for admin users (DL-5757)
 #### Fixes
  - Fix reports with too many quotes around fields in the data. (DL-5811)
