@@ -19,14 +19,6 @@
 ##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
  - Copy `worship-services-sensitive` config from `config/delta-producer/publication-graph-maintainer/config.json` to the override file.
  - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
-##### Fire it up!
-```
-drc up -d --remove-orphans; drc restart delta-producer-publication-graph-maintainer
-```
-#### Automatic submission service
-```
-drc up -d automatic-submission
-```
 ##### Don't Forget!
 The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
 Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
@@ -38,10 +30,11 @@ On PROD, QA, and DEV, in `docker-compose.override.yml` change
 
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
 #### Docker Commands
- - `drc up -d --remove-orphans deltanotifier`
+ - `drc up -d --remove-orphans deltanotifier automatic-submission loket`
  - `drc restart report-generation`
  - `drc restart delta-producer-publication-graph-maintainer`
- - `drc restart migrations database dispatcher resource identifier`
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache database dispatcher identifier`
 ## 1.97.2 (2024-05-02)
 ### General
  - bump-berichtencentrum (DL-5775)
