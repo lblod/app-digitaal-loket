@@ -1,6 +1,7 @@
 # Changelog
 ## Unreleased
 #### Frontend
+ - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
  - `v0.93.0` (DL-5849): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0930-2024-05-02
 ### General
  - Consolidation worship-sensitive delta-producer (DL-5588)
@@ -27,6 +28,9 @@ On PROD, QA, and DEV, in `docker-compose.override.yml` change
   `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive-deltas/login'`
   to
   `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
+
+##### Frontend
+ - Remove the image override. v0.91.3 is currently deployed but the same fix is part of v0.93.1 so we can safely remove it.
 
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
 #### Docker Commands
