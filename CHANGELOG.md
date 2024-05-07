@@ -35,6 +35,9 @@ On PROD, QA, and DEV, in `docker-compose.override.yml` change
 ##### Controle environment
 We no longer need this environment since we now have the admin role and impersonation feature. We can remove the controle environments from both QA and PROD.
 - Remove the "controle" service from the docker-compose.override.yml
+- The DNS configuration for the following domains is no longer needed so ask Aad to remove it once the change is deployed to production:
+  - controle.lblod.info
+  - qa.controle.lblod.info
 
 > The PROD environment has more controle-* prefixed services, but we can't remove those yet since they are used by the vendor-management and dashboard services as well.
 
