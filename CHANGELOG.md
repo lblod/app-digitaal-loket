@@ -32,6 +32,12 @@ On PROD, QA, and DEV, in `docker-compose.override.yml` change
 ##### Frontend
  - Remove the image override. v0.91.3 is currently deployed but the same fix is part of v0.93.1 so we can safely remove it.
 
+##### Controle environment
+We no longer need this environment since we now have the admin role and impersonation feature. We can remove the controle environments from both QA and PROD.
+- Remove the "controle" service from the docker-compose.override.yml
+
+> The PROD environment has more controle-* prefixed services, but we can't remove those yet since they are used by the vendor-management and dashboard services as well.
+
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
 #### Docker Commands
  - `drc up -d --remove-orphans deltanotifier automatic-submission loket`
