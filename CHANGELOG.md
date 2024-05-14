@@ -28,18 +28,16 @@ On PROD, QA, and DEV, in `docker-compose.override.yml` change
   `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive-deltas/login'`
   to
   `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
-
 ##### Frontend
  - Remove the image override. v0.91.3 is currently deployed but the same fix is part of v0.93.1 so we can safely remove it.
-
 ##### Controle environment
 We no longer need this environment since we now have the admin role and impersonation feature. We can remove the controle environments from both QA and PROD.
-- Remove the "controle" service from the docker-compose.override.yml
+- Remove the "controle" service from `docker-compose.override.yml`
 - The DNS configuration for the following domains is no longer needed so ask Aad to remove it once the change is deployed to production:
-  - controle.lblod.info
-  - qa.controle.lblod.info
+  - **controle.lblod.info**
+  - **qa.controle.lblod.info**
 
-> The PROD environment has more controle-* prefixed services, but we can't remove those yet since they are used by the vendor-management and dashboard services as well.
+> The PROD environment has more controle-* prefixed services, but we can't remove those yet since they are used by the `vendor-management` and `dashboard` services as well.
 
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
 #### Docker Commands
@@ -53,7 +51,6 @@ The standard `docker-compose.yml` config seems in accordance with what is provid
  - bump-berichtencentrum (DL-5775)
 ### Deploy notes
 `drc up -d berichtencentrum-email-notification`
-
 ## 1.97.1 (2024-04-30)
 ### Subsidies
  - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
