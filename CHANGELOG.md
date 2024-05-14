@@ -43,7 +43,7 @@ The standard `docker-compose.yml` config seems in accordance with what is provid
 #### Docker Commands
  - `drc up -d --remove-orphans deltanotifier automatic-submission loket`
  - `drc restart report-generation`
- - `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart delta-producer-publication-graph-maintainer enrich-submission`
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache database dispatcher identifier`
 ## 1.97.2 (2024-05-02)
