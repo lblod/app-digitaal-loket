@@ -9,6 +9,9 @@
    - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
  - Adjust reports `Toezicht module: Meldingen`, `Eredienst mandatarissen` and `Message report with provenance` (DL-5836) (DL-5815)
  - User impersonation for admin users (DL-5757)
+ - Update forms
+  - Adjust LEKP rapport Klimaattafels (DL-5832)
+  - Add new LEKP rapport Wijkverbeteringscontract (DL-5829)
 #### Fixes
  - Fix reports with too many quotes around fields in the data. (DL-5811)
  - Bump `deltanotifier` (DL-5684)
@@ -41,9 +44,9 @@ We no longer need this environment since we now have the admin role and imperson
 
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
 #### Docker Commands
- - `drc up -d --remove-orphans deltanotifier automatic-submission loket`
+ - `drc up -d --remove-orphans deltanotifier automatic-submission loket enrich-submission`
  - `drc restart report-generation`
- - `drc restart delta-producer-publication-graph-maintainer enrich-submission`
+ - `drc restart delta-producer-publication-graph-maintainer`
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache database dispatcher identifier`
 ## 1.97.2 (2024-05-02)
