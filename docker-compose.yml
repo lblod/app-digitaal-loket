@@ -448,9 +448,11 @@ services:
     restart: always
     logging: *default-logging
   dispatcher-worship-mandates:
-    image: lblod/worship-positions-graph-dispatcher-service-loket:1.4.0
+    image: lblod/worship-positions-graph-dispatcher-service-loket:1.5.0
     environment:
       LOGLEVEL: "info"
+      SUDO_QUERY_RETRY: "true"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "500"
     labels:
       - "logging=true"
     restart: always
