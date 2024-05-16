@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.98.0 (2024-05-16)
 #### Frontend
  - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
  - `v0.93.0` (DL-5849): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0930-2024-05-02
