@@ -1,0 +1,35 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX artikelTypes: <http://data.lblod.info/concepts/ArtikelTypes/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/concept-schemes/aeb364c6-768a-4a6b-8cbf-a681d1a6b8b6> a skos:ConceptScheme;
+        skos:definition "Lijst van type Artikels die binnen een Besluit kunnen getroffen worden.";
+        skos:prefLabel "Type Artikels";
+        skos:hasTopConcept
+        artikelTypes:c47c6ac9-1628-4378-9689-8caa7c6d7968,
+        artikelTypes:9a54a930-7dd6-4ff2-a4b1-ee403f7cda5c,
+        artikelTypes:773343c9-55a4-4aaa-942c-e3a048b35c1f,
+        artikelTypes:080def57-72ce-4f32-b3f9-369009644fd2 .
+
+    artikelTypes:c47c6ac9-1628-4378-9689-8caa7c6d7968 a skos:Concept;
+        skos:prefLabel "Verwerping gerefereerde documenten.";
+        skos:definition "Verwerping van de documenten waarnaar gerefereerd wordt.";
+        skos:inScheme <http://data.lblod.info/concept-schemes/aeb364c6-768a-4a6b-8cbf-a681d1a6b8b6> .
+
+    artikelTypes:9a54a930-7dd6-4ff2-a4b1-ee403f7cda5c a skos:Concept;
+        skos:prefLabel "Goedkeuring gerefereerde documenten.";
+        skos:definition "Goedkeuring van de documenten waarnaar gerefereerd wordt.";
+        skos:inScheme <http://data.lblod.info/concept-schemes/aeb364c6-768a-4a6b-8cbf-a681d1a6b8b6> .
+
+    artikelTypes:773343c9-55a4-4aaa-942c-e3a048b35c1f a skos:Concept;
+        skos:prefLabel "Aktename gerefereerde documenten.";
+        skos:definition "Aktename van de documenten waarnaar gerefereerd wordt.";
+        skos:inScheme <http://data.lblod.info/concept-schemes/aeb364c6-768a-4a6b-8cbf-a681d1a6b8b6> .
+
+    artikelTypes:080def57-72ce-4f32-b3f9-369009644fd2 a skos:Concept;
+        skos:prefLabel "Aanpassingsverzoek gerefereerde documenten.";
+        skos:definition "Vraag om aanpassing van de documenten waarnaar gerefereerd wordt.";
+        skos:inScheme <http://data.lblod.info/concept-schemes/aeb364c6-768a-4a6b-8cbf-a681d1a6b8b6> .
+    }
+}
