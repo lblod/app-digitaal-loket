@@ -319,6 +319,10 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  worship-decisions-cross-reference:
+    image: lblod/worship-decisions-cross-reference-service:0.1.0
+    environment:
+      NODE_ENV: "development" # !!! TODO: clean this once we move to master branch !!!
   export-submissions:
     image: lblod/mandaten-download-generator-service:0.3.6
     links:
