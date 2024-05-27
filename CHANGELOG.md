@@ -1,4 +1,10 @@
 # Changelog
+## 1.98.1 (2024-05-27)
+### Fixes
+ - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823). This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
+### Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations` (wait for these to complete)
+ - `drc up -d dispatcher-worship-mandates`
 ## 1.98.0 (2024-05-16)
 #### Frontend
  - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
@@ -15,7 +21,6 @@
 #### Fixes
  - Fix reports with too many quotes around fields in the data. (DL-5811)
  - Bump `deltanotifier` (DL-5684)
- - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823)
 ### Deploy Notes
 #### Consolidation Worship-Sensitive Delta-Producer
 ##### Edit `config/delta-producer/background-jobs-initiator/config.override.json`
@@ -44,15 +49,12 @@ We no longer need this environment since we now have the admin role and imperson
 > The PROD environment has more controle-* prefixed services, but we can't remove those yet since they are used by the `vendor-management` and `dashboard` services as well.
 
 The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
-#### Worship position dispatcher
-There is a new version of the `dispatcher-worship-mandates` service. This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
 #### Docker Commands
  - `drc up -d --remove-orphans deltanotifier automatic-submission loket enrich-submission`
  - `drc restart report-generation`
  - `drc restart delta-producer-publication-graph-maintainer`
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache database dispatcher identifier`
- - `drc up -d dispatcher-worship-mandates`
 ## 1.97.2 (2024-05-02)
 ### General
  - bump-berichtencentrum (DL-5775)
