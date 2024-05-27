@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.98.0 (2024-05-16)
 #### Frontend
  - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
  - `v0.93.0` (DL-5849): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0930-2024-05-02
@@ -9,6 +9,9 @@
    - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
  - Adjust reports `Toezicht module: Meldingen`, `Eredienst mandatarissen` and `Message report with provenance` (DL-5836) (DL-5815)
  - User impersonation for admin users (DL-5757)
+ - Update forms
+  - Adjust LEKP rapport Klimaattafels (DL-5832)
+  - Add new LEKP rapport Wijkverbeteringscontract (DL-5829)
 #### Fixes
  - Fix reports with too many quotes around fields in the data. (DL-5811)
  - Bump `deltanotifier` (DL-5684)
@@ -44,9 +47,9 @@ The standard `docker-compose.yml` config seems in accordance with what is provid
 #### Worship position dispatcher
 There is a new version of the `dispatcher-worship-mandates` service. This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
 #### Docker Commands
- - `drc up -d --remove-orphans deltanotifier automatic-submission loket`
+ - `drc up -d --remove-orphans deltanotifier automatic-submission loket enrich-submission`
  - `drc restart report-generation`
- - `drc restart delta-producer-publication-graph-maintainer enrich-submission`
+ - `drc restart delta-producer-publication-graph-maintainer`
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache database dispatcher identifier`
  - `drc up -d dispatcher-worship-mandates`
