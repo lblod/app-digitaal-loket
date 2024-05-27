@@ -1,4 +1,10 @@
 # Changelog
+## 1.98.1 (2024-05-27)
+### Fixes
+ - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823). This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
+### Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations` (wait for these to complete)
+ - `drc up -d dispatcher-worship-mandates`
 ## 1.98.0 (2024-05-16)
 #### Frontend
  - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06

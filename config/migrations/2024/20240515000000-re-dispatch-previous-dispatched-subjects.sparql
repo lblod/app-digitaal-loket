@@ -1,0 +1,16 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT {
+  GRAPH <http://eredienst-mandatarissen-consumer/temp-inserts> {
+    ?s rdf:type ?type .
+  }
+} WHERE {
+  VALUES ?type {
+    <http://data.lblod.info/vocabularies/erediensten/EredienstMandataris>
+    <http://data.lblod.info/vocabularies/erediensten/RolBedienaar>
+    <http://www.w3.org/ns/person#Person>
+    <http://schema.org/ContactPoint>
+  }
+  ?s rdf:type ?type .
+  ?s <http://www.w3.org/ns/prov#wasGeneratedBy> <http://lblod.data.gift/id/app/lblod-harvesting> .
+}
