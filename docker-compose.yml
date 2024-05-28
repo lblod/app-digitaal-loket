@@ -312,7 +312,7 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:1.3.0
+    image: lblod/toezicht-flattened-form-data-generator:1.4.0-rc.1
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
