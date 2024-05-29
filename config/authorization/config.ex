@@ -21,10 +21,10 @@ defmodule Acl.UserGroups.Config do
       query: sparql_query_for_access_role( group_string ) }
   end
 
-  defp sparql_query_for_access_role( group_string ) do
+  defp sparql_query_for_access_role(group_string) do
     "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-    SELECT DISTINCT ?session_group ?session_role WHERE {
+     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+     SELECT DISTINCT ?session_group ?session_role WHERE {
       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                    ext:sessionRole ?session_role.
       FILTER( ?session_role = \"#{group_string}\" )
@@ -92,6 +92,30 @@ defmodule Acl.UserGroups.Config do
         <SESSION_ID> muAccount:canActOnBehalfOf/mu:uuid ?session_group;
                      muAccount:account/mu:uuid ?vendor_id.
       } "
+  end
+
+  defp is_admin() do
+    %AccessByQuery{
+      vars: [],
+      query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+        SELECT DISTINCT ?session_role WHERE {
+          VALUES ?session_role {
+            \"LoketLB-admin\"
+          }
+
+          VALUES ?session_id {
+            <SESSION_ID>
+          }
+
+          {
+            ?session_id ext:sessionRole ?session_role .
+          } UNION {
+            ?session_id ext:originalSessionRole ?session_role .
+          }
+        }
+        LIMIT 1"
+      }
   end
 
   def user_groups do
@@ -232,9 +256,13 @@ defmodule Acl.UserGroups.Config do
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT ?session_group ?session_role WHERE {
-                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
-                    }" },
+                  SELECT DISTINCT ?session_group WHERE {
+                    {
+                      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
+                    } UNION {
+                      <SESSION_ID> ext:originalSessionGroup/mu:uuid ?session_group.
+                    }
+                  }" },
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
@@ -525,10 +553,25 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ] } } ] },
 
-      # // LOKETADMIN
-        %GroupSpec{
+        # // LOKETADMIN
+       %GroupSpec{
+         name: "o-admin-sessions-rwf",
+         useage: [:read, :write, :read_for_write],
+         access: is_admin(),
+         graphs: [
+           %GraphSpec{
+             graph: "http://mu.semte.ch/graphs/sessions",
+             constraint: %ResourceFormatConstraint{
+               resource_prefix: "http://mu.semte.ch/sessions/"
+             }
+           },
+         ]
+       },
+
+       %GroupSpec{
           name: "o-admin-rwf",
           useage: [:read, :write, :read_for_write],
+          # we're currently transitioning from a local admin role to an acm provided admin role. This will be fixed soon.
           access: access_by_role( "LoketAdmin" ),
           graphs: [ %GraphSpec{
                       graph: "http://mu.semte.ch/graphs/organizations/",
@@ -543,10 +586,11 @@ defmodule Acl.UserGroups.Config do
                         ] } } ] },
 
         # //LOKETADMIN -> TODO: duplicate. We need to move the data in this graph to "http://mu.semte.ch/graphs/organizations/"
-        %GroupSpec{
+       %GroupSpec{
           name: "o-admin-rwf",
           useage: [:read, :write, :read_for_write],
-          access: access_by_role_for_single_graph( "LoketAdmin" ), #access_by_role_for_single_graph( "LoketAdmin" ),
+          # we're currently transitioning from a local admin role to an ACM/IDM provided admin role. This will be fixed soon.
+          access: access_by_role_for_single_graph( "LoketAdmin" ),
           graphs: [ %GraphSpec{
                       graph: "http://mu.semte.ch/graphs/harvesting",
                       constraint: %ResourceConstraint{

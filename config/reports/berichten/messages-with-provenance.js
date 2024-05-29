@@ -39,9 +39,21 @@ async function generate() {
     const sender = detailsStore.getObjects(message, ns.sch`sender`)[0];
     const senderV = sender?.value;
     const sendernameV = detailsStore.getObjects(sender, ns.skos`prefLabel`)[0]?.value;
+    const senderClassificatieCode = detailsStore.getObjects(sender, ns.besluit`classificatie`)[0];
+    let senderTypeBestuurV;
+    if (senderClassificatieCode) {
+      const senderTypeBestuur = detailsStore.getObjects(senderClassificatieCode, ns.skos`prefLabel`)[0];
+      senderTypeBestuurV = senderTypeBestuur?.value;
+    }
     const recipient = detailsStore.getObjects(message, ns.sch`recipient`)[0];
     const recipientV = recipient?.value;
     const recipientnameV = detailsStore.getObjects(recipient, ns.skos`prefLabel`)[0]?.value;
+    const recipientClassificatieCode = detailsStore.getObjects(recipient, ns.besluit`classificatie`)[0];
+    let recipientTypeBestuurV;
+    if (recipientClassificatieCode) {
+      const recipientTypeBestuur = detailsStore.getObjects(recipientClassificatieCode, ns.skos`prefLabel`)[0];
+      recipientTypeBestuurV = recipientTypeBestuur?.value;
+    }
     const confirmedStatus = detailsStore.getObjects(message, ns.adms`status`)[0];
     let job = detailsStore.getSubjects(ns.dct`subject`, message)[0];
     job = detailsStore.has(job, ns.rdf`type`, ns.cogs`Job`) ? job : undefined;
@@ -65,7 +77,9 @@ async function generate() {
         sender: senderV,
         recipient: recipientV,
         sendername: sendernameV,
+        senderTypeBestuur: senderTypeBestuurV,
         recipientname: recipientnameV,
+        recipientTypeBestuur: recipientTypeBestuurV,
         provenance: provenanceV,
         attachmentSequence: '0/0',
         filename: '',
@@ -88,7 +102,9 @@ async function generate() {
         sender: senderV,
         recipient: recipientV,
         sendername: sendernameV,
+        senderTypeBestuur: senderTypeBestuurV,
         recipientname: recipientnameV,
+        recipientTypeBestuur: recipientTypeBestuurV,
         provenance: provenanceV,
         attachmentSequence: attachmentSeqV,
         filename: filenameV,
@@ -106,8 +122,10 @@ async function generate() {
       'message',
       'sender',
       'sendername',
+      'senderTypeBestuur',
       'recipient',
       'recipientname',
+      'recipientTypeBestuur',
       'type',
       'dateSent',
       'dateReceived',
@@ -119,7 +137,7 @@ async function generate() {
     {
       title: 'Message report with provenance',
       description: 'Report about the Conversations and Messages with where they came from in the past 12 months.',
-      filePrefix: 'messages-with-provenance-6-months',
+      filePrefix: 'messages-with-provenance-12-months',
     },
   );
 }
