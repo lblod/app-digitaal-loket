@@ -420,7 +420,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.9.0
+    image: lblod/prepare-submissions-for-export-service:0.10.0-rc.1
     labels:
       - "logging=true"
     restart: always
