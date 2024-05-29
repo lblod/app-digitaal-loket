@@ -1,4 +1,8 @@
 # Changelog
+## Unreleased
+  - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
+### Deploy Notes
+  - `drc up -d enrich-submission; drc restart migrations resource cache`
 ## 1.98.0 (2024-05-16)
 #### Frontend
  - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
