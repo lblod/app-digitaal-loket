@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.98.2 (2024-05-29)
   - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
 ### Deploy Notes
   - `drc up -d enrich-submission; drc restart migrations resource cache`
