@@ -1,4 +1,9 @@
 # Changelog
+## Unreleased
+### Fixes
+- Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
+### Deploy Notes
+- `drc up -d delta-producer-publication-graph-maintainer; drc restart deltanotifier`
 ## 1.98.1 (2024-05-27)
 ### Fixes
  - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823). This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.

@@ -1,7 +1,6 @@
 {
   "submissions": {
     "deltaInterval": 10000,
-    "deltaPath": "/submissions/delta",
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-submissions",
     "exportConfigPath": "/config/submissions/export.json",
     "filesPath": "/submissions/files",
@@ -22,7 +21,6 @@
   },
   "persons-sensitive": {
     "deltaInterval": 10000,
-    "deltaPath": "/persons-sensitive/delta",
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-persons-sensitive",
     "exportConfigPath": "/config/persons-sensitive/export.json",
     "filesPath": "/persons-sensitive/files",
@@ -62,14 +60,12 @@
     "updatePublicationGraphSleep": 200,
     "serveDeltaFiles": true,
     "deltaInterval": 10000,
-    "deltaPath": "/worship-submissions/delta",
     "loginPath": "/worship-submissions/login",
     "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-worship-submissions",
     "filesGraph": "http://redpencil.data.gift/id/deltas/producer/worship-submissions-deltas",
     "account": "http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7"
   },
   "mandatarissen": {
-    "deltaPath": "/mandatarissen/delta",
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-mandatarissen",
     "exportConfigPath": "/config/mandatarissen/export.json",
     "filesPath": "/mandatarissen/files",
@@ -92,7 +88,6 @@
     "loginPath": "/mandatarissen/login"
   },
   "leidinggevenden": {
-    "deltaPath": "/leidinggevenden/delta",
     "errorCreatorUri": "http://lblod.data.gift/services/delta-producer-publication-graph-maintainer-leidinggevenden",
     "exportConfigPath": "/config/leidinggevenden/export.json",
     "filesPath": "/leidinggevenden/files",
@@ -132,7 +127,6 @@
     "updatePublicationGraphSleep": 200,
     "serveDeltaFiles": true,
     "deltaInterval": 10000,
-    "deltaPath": "/vendor-management/delta",
     "loginPath": "/vendor-management/login",
     "publisherUri": "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-vendor-management",
     "filesGraph": "http://redpencil.data.gift/id/deltas/producer/vendor-management-deltas",
