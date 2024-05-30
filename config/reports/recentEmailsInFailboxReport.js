@@ -3,12 +3,12 @@ import { querySudo as query } from '@lblod/mu-auth-sudo';
 
 export default {
   cronPattern: '0 0 0 * * *',
-  name: 'emailsInFailboxWithin24Hours',
+  name: 'recentEmailsInFailbox',
   execute: async () => {
     const reportData = {
       title: 'Lijst alle e-mails in failbox in de afgelopen 24 uur',
       description: 'Lists all emails in failbox within previous 24 hours',
-      filePrefix: 'emails-in-failbox-within-24-hours'
+      filePrefix: 'recent-emails-in-failbox'
     };
     console.log('Generate list of unsent e-mails within previous 24 hours report');
     const queryString = `
