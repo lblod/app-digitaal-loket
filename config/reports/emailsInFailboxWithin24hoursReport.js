@@ -26,7 +26,7 @@ export default {
           BIND(xsd:dateTime(?sentDateString) AS ?sentDate)
         
           FILTER(?sentDate >= ?yesterday && ?sentDate <= ?now)
-        }
+        } ORDER BY DESC(?sentDate)
     `;
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((row) => {
