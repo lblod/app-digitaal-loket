@@ -1,7 +1,7 @@
 # Changelog
 ## Unreleased
   - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
-  - Add new report `emailsInFailboxWithin24Hours` which tracks failed emails (DL-5943)
+  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
 ### Deploy Notes
   - `drc up -d enrich-submission; drc restart migrations resource cache report-generation`
 ## 1.98.1 (2024-05-27)
