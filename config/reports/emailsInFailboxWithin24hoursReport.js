@@ -15,10 +15,11 @@ export default {
         PREFIX nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
         PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     
-        SELECT ?emailUri ?sentDate ?currentDate
+        SELECT ?emailUri ?messageSubject ?sentDate 
         WHERE {
           ?emailUri nmo:isPartOf <http://data.lblod.info/id/mail-folders/6> ;
-                 nmo:sentDate ?sentDateString .
+                    nmo:messageSubject ?messageSubject ;
+                    nmo:sentDate ?sentDateString .
         
           BIND(NOW() AS ?now)
           BIND(?now - "P1D"^^xsd:duration AS ?yesterday)
@@ -31,11 +32,11 @@ export default {
     const data = queryResponse.results.bindings.map((row) => {
       return {
         emailUri: row.emailUri.value,
-        sentDate: row.sentDate.value,
-        currentDate: row.currentDate.value
+        messageSubject: row.messageSubject.value,
+        sentDate: row.sentDate.value
       };
     });
 
-    await generateReportFromData(data, ['emailUri', 'sentDate', 'currentDate'], reportData);
+    await generateReportFromData(data, ['emailUri', 'messageSubject', 'sentDate'], reportData);
   }
 };
