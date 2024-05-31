@@ -4,6 +4,11 @@
 - Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
 ### Deploy Notes
 - `drc up -d delta-producer-publication-graph-maintainer; drc restart deltanotifier`
+## 1.99.0 (2024-05-31)
+### Reports
+  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
+### Deploy Notes
+  - `drc restart migrations report-generation`
 ## 1.98.2 (2024-05-29)
   - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
 ### Deploy Notes
