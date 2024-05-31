@@ -1,7 +1,12 @@
 # Changelog
-## 1.99.0 (2024-05-31)
+## Unreleased
+### Toezicht
+- DL-5856: ensure some type of submissions are not exported to `app-toezicht-abb`
+  - See also: DL-5922
+## 1.99.1 (2024-05-31)
 ### General
   - Hotfix: update lokaal bestuurlijk talen deadline 
+## 1.99.0 (2024-05-31)
 ### Reports
   - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
 ### Deploy Notes
