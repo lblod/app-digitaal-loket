@@ -321,7 +321,7 @@ services:
     restart: always
     logging: *default-logging
   export-submissions:
-    image: lblod/mandaten-download-generator-service:0.3.6-hotfix_3
+    image: lblod/mandaten-download-generator-service:0.3.6-hotfix_4
     links:
       - virtuoso:database
     environment:
