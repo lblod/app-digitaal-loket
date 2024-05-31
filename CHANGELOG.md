@@ -1,7 +1,12 @@
 # Changelog
+## 1.99.0 (2024-05-31)
+### Reports
+  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
+### Deploy Notes
+  - `drc restart migrations report-generation`
 ## 1.98.2 (2024-05-29)
   - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
-  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
+
 ### Deploy Notes
   - `drc up -d enrich-submission; drc restart migrations resource cache report-generation`
 ## 1.98.1 (2024-05-27)
