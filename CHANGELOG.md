@@ -1,8 +1,9 @@
 # Changelog
 ## 1.98.2 (2024-05-29)
   - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
+  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
 ### Deploy Notes
-  - `drc up -d enrich-submission; drc restart migrations resource cache`
+  - `drc up -d enrich-submission; drc restart migrations resource cache report-generation`
 ## 1.98.1 (2024-05-27)
 ### Fixes
  - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823). This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
