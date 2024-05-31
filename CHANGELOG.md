@@ -2,11 +2,15 @@
 ## Unreleased
 ### Fixes
 - Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
+### Toezicht
+- DL-5856: ensure some type of submissions are not exported to `app-toezicht-abb`
+  - See also: DL-5922
 ### Deploy Notes
-- `drc up -d delta-producer-publication-graph-maintainer; drc restart deltanotifier`
-## 1.99.0 (2024-05-31)
+- `drc up -d delta-producer-publication-graph-maintainer export-submissions; drc restart deltanotifier`
+## 1.99.1 (2024-05-31)
 ### General
-  - Hotfix: update lokaal bestuurlijk talen deadline 
+  - Hotfix: update lokaal bestuurlijk talen deadline
+## 1.99.0 (2024-05-31)
 ### Reports
   - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
 ### Deploy Notes
