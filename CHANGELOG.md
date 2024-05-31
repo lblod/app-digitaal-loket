@@ -5,6 +5,8 @@
 ### Deploy Notes
 - `drc up -d delta-producer-publication-graph-maintainer; drc restart deltanotifier`
 ## 1.99.0 (2024-05-31)
+### General
+  - Hotfix: update lokaal bestuurlijk talen deadline 
 ### Reports
   - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
 ### Deploy Notes
