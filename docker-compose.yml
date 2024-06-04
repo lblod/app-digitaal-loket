@@ -480,7 +480,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-data-distribution:
-    image: lblod/vendor-data-distribution-service:1.3.3
+    image: lblod/vendor-data-distribution-service:1.6.1
     environment:
       LOGLEVEL: "error"
       WRITE_ERRORS: "true"
