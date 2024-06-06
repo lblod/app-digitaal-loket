@@ -2,16 +2,13 @@
 ## Unreleased
 ### Fixes
 - Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
-- Bump `vendor-data-distribution` for healing, needed for [DL-5925]. After deploy, see instructions below on how to start healing.
+- Bump `vendor-data-distribution` for healing, needed for [DL-5925]. Already been deployed via overrides in `docker-compose.override.yml`. Please remove the image override there.
 ### Toezicht
 - DL-5856: ensure some type of submissions are not exported to `app-toezicht-abb`
   - See also: DL-5922
 ### Deploy Notes
 - `drc up -d delta-producer-publication-graph-maintainer export-submissions; drc restart deltanotifier`
-- `drc up -d vendor-data-distribution`  
-  `drc exec vendor-data-distribution bash`  
-  `curl -X POST -H "Content-Type: application/json" -d '{ "skipDeletes": true, "onlyTheseTypes": [ "http://schema.org/Message" ] }'`  
-  Inspect the logs of this service to see that healing is being done.
+- Remove the image override for service `vendor-data-distribution` in `docker-compose.override.yml`
 ## 1.99.1 (2024-05-31)
 ### General
   - Hotfix: update lokaal bestuurlijk talen deadline
