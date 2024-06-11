@@ -3,6 +3,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix fieldOption: <http://lblod.data.gift/vocabularies/form-field-options/> .
 @prefix fieldGroups: <http://data.lblod.info/field-groups/> .
 @prefix fields: <http://data.lblod.info/fields/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
@@ -910,7 +911,7 @@ fields:e2006e32-b2fc-400b-92a1-231ff0689925 a form:Field ;
     sh:name "Hoeveel wooneenheden telde deze collectieve renovatie?" ;
     sh:order 107 ;
     sh:path lblodBesluit:LEKPTotalHousingUnits ;
-    form:validations 
+    form:validations
     [ a form:RequiredConstraint ;
       form:grouping form:Bag ;
       sh:resultMessage "Dit veld is verplicht." ;
@@ -1013,12 +1014,12 @@ fields:6a4f780a-de31-476c-bd7e-f24080339b31 a form:Field ;
         sh:order 103 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2021
         ],
         [
             a form:PositiveNumber;
@@ -1036,12 +1037,12 @@ fields:8b6bc220-a980-4d1e-b7b3-5a6324d1ad4f a form:Field ;
     sh:order 105 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2021 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2021 
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2021
         ],
         [
             a form:PositiveNumber;
@@ -1059,12 +1060,12 @@ fields:f79d9036-5734-463d-826b-d093a6f4e0c5 a form:Field ;
     sh:order 107 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2021
         ],
         [
             a form:PositiveNumber;
@@ -1083,12 +1084,12 @@ fields:9ec715da-fb12-4fda-bec4-188e4ea6783c a form:Field ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021 
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2021
         ],
         [
             a form:PositiveNumber;
@@ -1106,12 +1107,12 @@ fields:bfa729b9-2a4e-4fe6-b8cb-e6de01ffacf6 a form:Field ;
     sh:order 111 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2022
         ],
         [
             a form:PositiveNumber;
@@ -1129,12 +1130,12 @@ fields:10bfc794-041a-485f-bfe2-2aa82acee56f a form:Field ;
     sh:order 113 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022 
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2022
         ],
         [
             a form:PositiveNumber;
@@ -1152,12 +1153,12 @@ fields:5592b583-d9b4-45df-8b2c-d153a6d712db a form:Field ;
     sh:order 115 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2022
         ],
         [
             a form:PositiveNumber;
@@ -1176,12 +1177,12 @@ fields:9d195161-d9c2-46a9-ad50-f83095aca568 a form:Field ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022 
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2022
         ],
         [
             a form:PositiveNumber;
@@ -1199,12 +1200,12 @@ fields:857f1d9e-ecbb-4461-819a-7e15aee2e82d a form:Field ;
     sh:order 119 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2023
         ],
         [
             a form:PositiveNumber;
@@ -1222,12 +1223,12 @@ fields:2a47484a-3e09-4c75-9c9f-04956145ae02 a form:Field ;
     sh:order 121 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023 
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2023
         ],
         [
             a form:PositiveNumber;
@@ -1245,12 +1246,12 @@ fields:7d8f0e21-7e3d-4f39-88e4-195175a63d65 a form:Field ;
     sh:order 123 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2023
         ],
         [
             a form:PositiveNumber;
@@ -1269,12 +1270,12 @@ fields:00ccc3c2-7e4c-43b5-bf3b-f62542856745 a form:Field ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023 
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2023
         ],
         [
             a form:PositiveNumber;
@@ -1292,12 +1293,12 @@ fields:788a6000-097d-4ea7-9a3b-e64ce78e266c a form:Field ;
     sh:order 127 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024 
+            sh:path lblodBesluit:LEKPTotalKmForRenovatedOneWayBicycleInfrastructureFor2024
         ],
         [
             a form:PositiveNumber;
@@ -1315,12 +1316,12 @@ fields:5a554529-0c7e-43f2-b29e-ddfa39df9b88 a form:Field ;
     sh:order 129 ;
     sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024 
+            sh:path lblodBesluit:LEKPTotalKmForNewOneWayBicycleInfrastructureFor2024
         ],
         [
             a form:PositiveNumber;
@@ -1338,7 +1339,7 @@ fields:c1bce5db-aeee-4246-acd5-764ed4be3d1b a form:Field ;
     sh:order 131 ;
     sh:path lblodBesluit:LEKPTotalKmForRenovatedBiDirectionalWayBicycleInfrastructureFor2024 ;
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
@@ -1362,12 +1363,12 @@ fields:9e86bf79-170d-4136-9aa9-9db6df27883c a form:Field ;
     sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 ;
     form:help """<hr class="au-c-hr au-u-padding-small">""" ; # This is a bit hacky but the form needs some spacing to make it more readable
     form:displayType displayTypes:numericalInput ;
-    form:validations 
+    form:validations
         [
             a form:RequiredConstraint ;
             form:grouping form:Bag ;
             sh:resultMessage "Dit veld is verplicht." ;
-            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024 
+            sh:path lblodBesluit:LEKPTotalKmForNewBiDirectionalWayBicycleInfrastructureFor2024
         ],
         [
             a form:PositiveNumber;
@@ -1815,18 +1816,40 @@ fields:c0f621fc-4c2c-456b-83f9-f087e64af03a a form:Field ;
 ##########################################################
 # Worship Decisions cross reference selector
 ##########################################################
+# define the constraint separatly so we can re-use it.
+
+<http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        sh:resultMessage "Dit veld is verplicht."@nl.
+
 fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
     mu:uuid "788b9a98-684e-4d20-ae22-0ae610e6b494" ;
     sh:name "Artikels" ;
     sh:order 102 ;
     sh:path eli:has_part ;
-    form:validations
-      [ a form:RequiredConstraint ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> ,
+      [ a form:DecisionArticlesValidator ;
         form:grouping form:Bag ;
         sh:path eli:has_part ;
-        sh:resultMessage "Dit veld is verplicht."@nl
       ] ;
-    form:displayType displayTypes:worshipDecisionsCrossReferenceSelector ;
+    form:displayType displayTypes:decisionArticles ;
+    sh:group fields:aDynamicPropertyGroup .
+
+# Flavour with custom configuration to deal with articles where we don't need eli:type_document
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document a form:Field ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> ,
+      [ a form:DecisionArticlesValidator ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        fieldOption:exclude-type_document "true"^^xsd:boolean ;
+      ] ;
+    fieldOption:exclude-type_document "true"^^xsd:boolean;
+    form:displayType displayTypes:decisionArticles ;
     sh:group fields:aDynamicPropertyGroup .
 
 fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type a form:Field ;
@@ -1845,7 +1868,8 @@ fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to a form:Field ;
     sh:name "Hidden field refers to" ;
     sh:order 1001 ;
     sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#refers_to>);
-    sh:group fields:aDynamicPropertyGroup .########### Aanduiding en eedaflegging van de aangewezen burgemeester ###########
+    sh:group fields:aDynamicPropertyGroup .
+########### Aanduiding en eedaflegging van de aangewezen burgemeester ###########
 fieldGroups:215b36a1-5a37-4de0-b1b3-b2ee735d2fed a form:FieldGroup ;
     mu:uuid "215b36a1-5a37-4de0-b1b3-b2ee735d2fed" ; 
     form:hasField 
@@ -6198,11 +6222,9 @@ fieldGroups:d7fb55d4-1ba1-4c71-9ada-2ebd1969e360 a form:FieldGroup ;
                       ########################################################################
                       # START: Worship Decisions cross reference selector (and related fields)
                       ########################################################################
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
-
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
 
@@ -7751,11 +7773,9 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
                       ########################################################################
                       # START: Worship Decisions cross reference selector (and related fields)
                       ########################################################################
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
-
-                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
 
                       fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
 
@@ -7777,7 +7797,7 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
-                      
+
                       ### Bestuursorgaan classificatie code [hidden input] ###
                       fields:303545a6-705b-43b3-86b7-b96436524be9,
 
@@ -7796,7 +7816,6 @@ fields:40f6d026-11f0-44b3-8594-58210f2860c5 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/b25faa84-3ab5-47ae-98c0-1b389c77b827> # Schorsing beslissing eredienstbesturen
       ] ;
     form:hasFieldGroup fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 .
-
 fieldGroups:bd599584-a03b-4930-9a1c-f9d58fb49737 a form:FieldGroup ;
     mu:uuid "bd599584-a03b-4930-9a1c-f9d58fb49737" ;
     form:hasField
