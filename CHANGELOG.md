@@ -1,4 +1,11 @@
 # Changelog
+## Unreleased
+### General
+ - Add open proces huis session role for all organizations [DL-5816]
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
 ## 1.100.0 (2024-06-14)
 ### Fixes
 - Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
