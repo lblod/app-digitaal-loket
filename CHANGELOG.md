@@ -1,4 +1,44 @@
 # Changelog
+## Unreleased
+### General
+ - Add open proces huis session role for all organizations [DL-5816]
+#### Frontend
+ - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+ - `drc up -d loket`
+## 1.100.0 (2024-06-14)
+### Fixes
+- Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
+- Bump `vendor-data-distribution` for healing, needed for [DL-5925]. Already been deployed via overrides in `docker-compose.override.yml`. Please remove the image override there.
+### Toezicht
+- DL-5856: ensure some type of submissions are not exported to `app-toezicht-abb`
+  - See also: DL-5922
+### Subsidy
+- DGS-298: update lokaal bestuurlijk talent subsidy enddate
+### Deploy Notes
+- `drc up -d delta-producer-publication-graph-maintainer export-submissions; drc restart deltanotifier migrations cache resource; drc up -d`
+- Remove the image override for service `vendor-data-distribution` in `docker-compose.override.yml`
+## 1.99.1 (2024-05-31)
+### General
+  - Hotfix: update lokaal bestuurlijk talen deadline
+## 1.99.0 (2024-05-31)
+### Reports
+  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
+### Deploy Notes
+  - `drc restart migrations report-generation`
+## 1.98.2 (2024-05-29)
+  - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
+### Deploy Notes
+  - `drc up -d enrich-submission; drc restart migrations resource cache`
+## 1.98.1 (2024-05-27)
+### Fixes
+ - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823). This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
+### Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations` (wait for these to complete)
+ - `drc up -d dispatcher-worship-mandates`
 ## 1.98.0 (2024-05-16)
 #### Frontend
  - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
