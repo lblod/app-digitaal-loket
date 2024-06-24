@@ -389,6 +389,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/concepts/"
   end
 
+  get "/related-document-information/*path" do
+    forward conn, path, "http://worship-decisions-cross-reference/related-document-information/"
+  end
+
   #################################################################
   # RRN SERVICE: person-uri-for-social-security-number-service
   #################################################################
