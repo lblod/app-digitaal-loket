@@ -1,0 +1,34 @@
+@prefix cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/d4318463-4cd0-40c2-b67a-5e29d06db2d8> a cleanup:Job ;
+    mu:uuid "d4318463-4cd0-40c2-b67a-5e29d06db2d8" ;
+    dcterms:title "clean up more than a month old Kalliope errors" ;
+    cleanup:selectPattern """
+              GRAPH <http://mu.semte.ch/graphs/public> {
+              ?resource a <http://mu.semte.ch/vocabularies/ext/KalliopeSyncError> ;
+                <http://purl.org/pav/createdOn> ?createdOn .
+              FILTER (?createdOn < (NOW() - "P1M"^^xsd:duration))
+              ?resource ?p ?o . }
+              """ ;
+    cleanup:deletePattern """
+              GRAPH <http://mu.semte.ch/graphs/public> {
+              ?resource ?p ?o . }
+              """ ;
+    cleanup:cronPattern "*/10 * * * *" .
+<http://data.lblod.info/id/cleanup-job/729099ad-6d23-4891-82fa-2938c45339dd> a cleanup:Job ;
+    mu:uuid "729099ad-6d23-4891-82fa-2938c45339dd" ;
+    dcterms:title "clean up more than a month old resources type rlog" ;
+    cleanup:selectPattern """
+              GRAPH <http://mu.semte.ch/graphs/public> {
+              ?resource a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry> ;
+                 <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#date> ?date .
+              FILTER (?date < (NOW() - "P1M"^^xsd:duration))
+              ?resource ?p ?o . }
+              """ ;
+    cleanup:deletePattern """
+              GRAPH <http://mu.semte.ch/graphs/public> {
+              ?resource ?p ?o . }
+              """ ;
+    cleanup:cronPattern "*/20 * * * *" .
