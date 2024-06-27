@@ -78,5 +78,8 @@
 (add-prefix "code" "http://lblod.data.gift/vocabularies/organisatie/")
 (add-prefix "euvoc" "http://publications.europa.eu/ontology/euvoc#")
 (add-prefix "organisatie" "https://data.vlaanderen.be/ns/organisatie#")
+(add-prefix "dgftSec" "http://lblod.data.gift/vocabularies/security/")
+(add-prefix "wotSec" "https://www.w3.org/2019/wot/security#")
+(add-prefix "dgftOauth" "http://kanselarij.vo.data.gift/vocabularies/oauth-2.0-session/")
 
 (add-prefix "pera" "http://publications.europa.eu/resource/authority/")
