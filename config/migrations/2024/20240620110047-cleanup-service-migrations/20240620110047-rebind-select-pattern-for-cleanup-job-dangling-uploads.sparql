@@ -1,0 +1,33 @@
+PREFIX cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/ext/cleanup/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+    ?cleanupJob cleanup:selectPattern ?oldSelectPattern .
+    }
+}
+
+INSERT {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+    ?cleanupJob cleanup:selectPattern """
+                   GRAPH <http://mu.semte.ch/graphs/public> {
+                     ?resource a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject>;
+                             ?p ?o;
+                             <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?source;
+                             <http://purl.org/dc/terms/modified> ?modified.
+                             ?source ?sourcep ?sourceo.
+                   }
+                   BIND((NOW() - xsd:dayTimeDuration("P1D")) AS ?oneDayAgo)
+                   FILTER(?modified <= ?oneDayAgo)
+                   FILTER(NOT EXISTS { ?foo <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#hasPart> ?resource})
+                 """.
+    }
+}
+
+WHERE {
+    BIND(<http://data.lblod.info/id/cleanup-job/10724bc2-c9d0-4a35-a499-91a8b7cb023b> AS ?cleanupJob)
+    GRAPH <http://mu.semte.ch/graphs/public> {
+    ?cleanupJob cleanup:selectPattern ?oldSelectPattern .
+    }
+}
