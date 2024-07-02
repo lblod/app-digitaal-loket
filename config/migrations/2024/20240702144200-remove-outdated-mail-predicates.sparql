@@ -1,0 +1,16 @@
+# mu-auth inserted these predicates in other graphs in the past, but after some config changes those graphs are no longer writable.
+# Because of this, the values got out of sync, and mu-cl-resources sometimes returns the outdated value.
+# By purging everything but the berichtenGebruiker graph, this issue should be resolved
+DELETE {
+  GRAPH ?graph {
+    ?s <http://mu.semte.ch/vocabularies/ext/wilMailOntvangen> ?wilMailOntvangen ;
+       <http://mu.semte.ch/vocabularies/ext/mailAdresVoorNotificaties> ?email .
+  }
+}
+WHERE {
+  GRAPH ?graph {
+    ?s <http://mu.semte.ch/vocabularies/ext/wilMailOntvangen> ?wilMailOntvangen ;
+       <http://mu.semte.ch/vocabularies/ext/mailAdresVoorNotificaties> ?email .
+  }
+  FILTER(!STRENDS(STR(?graph), "/LoketLB-berichtenGebruiker"))
+}
