@@ -12,6 +12,11 @@ On production, remove the delta-producer-publication-graph-maintainer image in t
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache`
  - `drc up -d loket`
+## 1.100.1 (2024-07-03)
+### Berichtencentrum
+  - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
+### Deploy Notes
+  - `drc restart migrations resource cache`
 ## 1.100.0 (2024-06-14)
 ### Fixes
 - Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
