@@ -7,8 +7,6 @@
 #### Frontend
  - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25 
  - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
-### Berichtencentrum
-  - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
 ### Deploy Notes
 On production, remove the delta-producer-publication-graph-maintainer image in the docker-compose.override.yml.
 #### Docker Commands
