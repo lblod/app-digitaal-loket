@@ -3,6 +3,7 @@
 ### General
  - Add open proces huis session role for all organizations [DL-5816]
  - Bumped delta-producer-publication-graph-maintainer.
+ - Fixed failed emails report. [DL-6044]
 #### Frontend
  - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25 
  - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
@@ -12,7 +13,7 @@
 On production, remove the delta-producer-publication-graph-maintainer image in the docker-compose.override.yml.
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
- - `drc restart resource cache`
+ - `drc restart report-generation resource cache`
  - `drc up -d loket`
 ## 1.100.1 (2024-07-03)
 ### Berichtencentrum
