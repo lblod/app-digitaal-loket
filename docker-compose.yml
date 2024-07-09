@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:feature-worship-decisions-cross-reference-field
+    image: lblod/frontend-loket:feature-decision-articles-add-decision-type-param
     links:
       - identifier:backend
     labels:
@@ -321,9 +321,7 @@ services:
     restart: always
     logging: *default-logging
   worship-decisions-cross-reference:
-    image: lblod/worship-decisions-cross-reference-service:0.2.0
-    environment:
-      NODE_ENV: "development" # !!! TODO: clean this once we move to master branch !!!
+    image: lblod/worship-decisions-cross-reference-service:0.3.0
   export-submissions:
     image: lblod/mandaten-download-generator-service:0.3.6-hotfix_4
     links:
