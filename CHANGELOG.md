@@ -28,7 +28,7 @@ The following links;
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart report-generation resource cache delta-producer-publication-graph-maintainer dispatcher`
- - `drc up -d loket`
+ - `drc up -d`
 ## 1.100.1 (2024-07-03)
 ### Berichtencentrum
   - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
