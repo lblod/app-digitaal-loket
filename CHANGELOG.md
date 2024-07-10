@@ -4,7 +4,13 @@
  - Add open proces huis session role for all organizations [DL-5816]
 #### Frontend
  - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
+#### Inzendingen voor toezicht
+ - Enable manual cross referencing [DL-5903] [DL-5865] [DL-5868] [DL-5869] [DL-5870] [DL-5867] [DL-5874].
 ### Deploy Notes
+#### Docker commands cross referencing
+```
+drc restart migrations delta-producer-publication-graph-maintainer dispatcher; drc up -d
+```
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache`
