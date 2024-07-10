@@ -291,7 +291,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.12.0-rc.2
+    image: lblod/enrich-submission-service:1.12.0
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20240610100800-forms.ttl"
     volumes:
@@ -313,7 +313,7 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:1.4.0-rc.2
+    image: lblod/toezicht-flattened-form-data-generator:1.4.0
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
@@ -419,7 +419,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.10.0-rc.1
+    image: lblod/prepare-submissions-for-export-service:0.10.0
     labels:
       - "logging=true"
     restart: always
