@@ -14,17 +14,16 @@ export default {
     const queryString = `
         PREFIX nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
         PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-    
-        SELECT ?emailUri ?messageSubject ?sentDate 
+
+        SELECT ?emailUri ?messageSubject ?sentDate
         WHERE {
           ?emailUri nmo:isPartOf <http://data.lblod.info/id/mail-folders/6> ;
-                    nmo:messageSubject ?messageSubject ;
-                    nmo:sentDate ?sentDateString .
-        
-          BIND(NOW() AS ?now)
-          BIND(?now - "P1D"^^xsd:duration AS ?yesterday)
-          BIND(xsd:dateTime(?sentDateString) AS ?sentDate)
-        
+            nmo:messageSubject ?messageSubject ;
+            nmo:sentDate ?sentDate .
+
+          BIND(xsd:dateTime(NOW()) AS ?now)
+          BIND(xsd:dateTime(?now - "P1D"^^xsd:duration) AS ?yesterday)
+
           FILTER(?sentDate >= ?yesterday && ?sentDate <= ?now)
         } ORDER BY DESC(?sentDate)
     `;
