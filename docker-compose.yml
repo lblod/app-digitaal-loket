@@ -322,6 +322,10 @@ services:
     logging: *default-logging
   worship-decisions-cross-reference:
     image: lblod/worship-decisions-cross-reference-service:0.3.0
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   export-submissions:
     image: lblod/mandaten-download-generator-service:0.3.6-hotfix_4
     links:
