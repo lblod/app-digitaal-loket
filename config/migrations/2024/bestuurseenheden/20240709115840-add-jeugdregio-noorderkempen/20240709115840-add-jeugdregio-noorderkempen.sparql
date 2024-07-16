@@ -1,0 +1,84 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:   <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/85594b7a-4637-417e-a8ae-6b77c1988dcd>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "85594b7a-4637-417e-a8ae-6b77c1988dcd" ;
+      skos:prefLabel "Jeugdregio Noorderkempen" ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer>	"0751764549" ;
+      dcterms:identifier "OVO039192", "0751764549" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc> . # Projectvereniging
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/78c29a0251ed331103c9f20a24fadef2>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"78c29a0251ed331103c9f20a24fadef2" ;
+      skos:prefLabel "Directiecomité Jeugdregio Noorderkempen" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/85594b7a-4637-417e-a8ae-6b77c1988dcd> .
+
+    <http://data.lblod.info/id/bestuursorganen/296f4e3b0b4669f89dcfc1f19993e873>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"296f4e3b0b4669f89dcfc1f19993e873" ;
+      skos:prefLabel "Raad van bestuur Jeugdregio Noorderkempen" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/85594b7a-4637-417e-a8ae-6b77c1988dcd> .
+
+    <http://data.lblod.info/id/bestuursorganen/56656ba4c7410a98c49ef654a9e83b6b>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"56656ba4c7410a98c49ef654a9e83b6b" ;
+      skos:prefLabel "Bevoegd beslissingsorgaan Jeugdregio Noorderkempen" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/85594b7a-4637-417e-a8ae-6b77c1988dcd> .
+
+    <http://data.lblod.info/id/bestuursorganen/1b805220128861177abfc3f71c5d5408>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"1b805220128861177abfc3f71c5d5408" ;
+      skos:prefLabel "Algemene vergadering Jeugdregio Noorderkempen" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/85594b7a-4637-417e-a8ae-6b77c1988dcd> .
+
+    <http://data.lblod.info/id/bestuursorganen/980e74c8ef621524adee1b20a583206f>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"980e74c8ef621524adee1b20a583206f" ;
+      skos:prefLabel "Leidend Ambtenaar Jeugdregio Noorderkempen" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/85594b7a-4637-417e-a8ae-6b77c1988dcd> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/2bc06719ebb3591332fde1ba48996b44>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"2bc06719ebb3591332fde1ba48996b44" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/78c29a0251ed331103c9f20a24fadef2> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/ba32ab69d34cae0eaa87a657f70d2ced>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "ba32ab69d34cae0eaa87a657f70d2ced" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/296f4e3b0b4669f89dcfc1f19993e873> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/2b6f237a8927c4d0bbac2d9db899e1df>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"2b6f237a8927c4d0bbac2d9db899e1df" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/56656ba4c7410a98c49ef654a9e83b6b> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/f7ad4dfb00b97c43ae16ab691c7cd14d>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"f7ad4dfb00b97c43ae16ab691c7cd14d" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/1b805220128861177abfc3f71c5d5408> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/d3d8e0c7d896fe78090d675a8bfcc8bd>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"d3d8e0c7d896fe78090d675a8bfcc8bd" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/980e74c8ef621524adee1b20a583206f> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+  }
+}

@@ -1,0 +1,84 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:   <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/dc0bae7b-c4b3-4318-a6d5-63da2026a19f>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "dc0bae7b-c4b3-4318-a6d5-63da2026a19f" ;
+      skos:prefLabel "Erfgoed Groene Vallei" ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer>	"0741452756" ;
+      dcterms:identifier "OVO048437", "0741452756" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc> . # Projectvereniging
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/3d891d283224557b7b6925c195bd7ee1>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"3d891d283224557b7b6925c195bd7ee1" ;
+      skos:prefLabel "Directiecomité Erfgoed Groene Vallei" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/dc0bae7b-c4b3-4318-a6d5-63da2026a19f> .
+
+    <http://data.lblod.info/id/bestuursorganen/901865e439579d4343f1f74da9e9f1d7>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"901865e439579d4343f1f74da9e9f1d7" ;
+      skos:prefLabel "Raad van bestuur Erfgoed Groene Vallei" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/dc0bae7b-c4b3-4318-a6d5-63da2026a19f> .
+
+    <http://data.lblod.info/id/bestuursorganen/89a5eff5bc083ed210ce977ff64bb56d>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"89a5eff5bc083ed210ce977ff64bb56d" ;
+      skos:prefLabel "Bevoegd beslissingsorgaan Erfgoed Groene Vallei" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/dc0bae7b-c4b3-4318-a6d5-63da2026a19f> .
+
+    <http://data.lblod.info/id/bestuursorganen/df44df97275670ba900d5e6bb8795749>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"df44df97275670ba900d5e6bb8795749" ;
+      skos:prefLabel "Algemene vergadering Erfgoed Groene Vallei" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/dc0bae7b-c4b3-4318-a6d5-63da2026a19f> .
+
+    <http://data.lblod.info/id/bestuursorganen/e4392896c393f1b6a8d4ac4c57c6a95b>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"e4392896c393f1b6a8d4ac4c57c6a95b" ;
+      skos:prefLabel "Leidend Ambtenaar Erfgoed Groene Vallei" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/dc0bae7b-c4b3-4318-a6d5-63da2026a19f> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/3dbc9dd02a8af5e466c9a1deafb5f525>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"3dbc9dd02a8af5e466c9a1deafb5f525" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/3d891d283224557b7b6925c195bd7ee1> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/add155c188cdc373ab278622e1990eb8>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "add155c188cdc373ab278622e1990eb8" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/901865e439579d4343f1f74da9e9f1d7> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/fedd6da43bcd3017bc6657e3e09de3bd>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"fedd6da43bcd3017bc6657e3e09de3bd" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/89a5eff5bc083ed210ce977ff64bb56d> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/ef11ea487849ea52673217eee4742056>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"ef11ea487849ea52673217eee4742056" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/df44df97275670ba900d5e6bb8795749> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/6ad10e949b0ecdf60a891aabc44f9889>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"6ad10e949b0ecdf60a891aabc44f9889" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/e4392896c393f1b6a8d4ac4c57c6a95b> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+  }
+}
