@@ -1,4 +1,16 @@
 # Changelog
+## 1.100.2 (2024-07-16)
+### General
+  - [DL-6049] Add missing organizations that are present in OP and Kalliope but not in Loket.
+### Deploy Notes
+  - `drc restart migrations && drc logs -ft --tail=200 migrations`
+  - `drc restart resource cache`
+
+Make sure to change `MAX_MESSAGE_AGE` from `2` to `30` for `berichtencentrum-sync-with-kalliope` in `docker-compose.override.yml`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
+
+Once the logs have indicated a successful resync, restore the value of `MAX_MESSAGE_AGE` from `30` back to `2`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
 ## 1.100.1 (2024-07-03)
 ### Berichtencentrum
   - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
