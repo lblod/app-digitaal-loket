@@ -4,6 +4,7 @@
  - Add open proces huis session role for all organizations [DL-5816]
  - Bumped delta-producer-publication-graph-maintainer.
  - Fixed failed emails report. [DL-6044]
+ - Link Toezichthoudende Provincie Antwerpen to "Orthodoxe Parochie Heilige Sophrony de Athoniet" [DL-6014]
 #### Frontend
  - `v0.95.0` (DL-6042, DL-6050): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0950-2024-07-11 
  - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25 
