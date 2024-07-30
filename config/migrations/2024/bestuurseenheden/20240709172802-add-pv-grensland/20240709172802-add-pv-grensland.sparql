@@ -1,0 +1,84 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:   <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/b8228e3a-13ab-40ff-9299-a547b408b296>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "b8228e3a-13ab-40ff-9299-a547b408b296" ;
+      skos:prefLabel "PV Grensland" ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer>	"0744894969" ;
+      dcterms:identifier "0744894969" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc> . # Projectvereniging
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/9a3221a8a547be3ac6f128606a5600a9>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"9a3221a8a547be3ac6f128606a5600a9" ;
+      skos:prefLabel "Directiecomité PV Grensland" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5733254e-73ff-4844-8d43-7afb7ec726e8> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/b8228e3a-13ab-40ff-9299-a547b408b296> .
+
+    <http://data.lblod.info/id/bestuursorganen/7bc009ba73e067b57b1a9213a2ab8a59>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"7bc009ba73e067b57b1a9213a2ab8a59" ;
+      skos:prefLabel "Raad van bestuur PV Grensland" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/b8228e3a-13ab-40ff-9299-a547b408b296> .
+
+    <http://data.lblod.info/id/bestuursorganen/275afa4b0fea6aac6a6a5ad509ade7ce>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"275afa4b0fea6aac6a6a5ad509ade7ce" ;
+      skos:prefLabel "Bevoegd beslissingsorgaan PV Grensland" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/b8228e3a-13ab-40ff-9299-a547b408b296> .
+
+    <http://data.lblod.info/id/bestuursorganen/5b38d0831492e5d91ef659dadea4e52e>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"5b38d0831492e5d91ef659dadea4e52e" ;
+      skos:prefLabel "Algemene vergadering PV Grensland" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/b8228e3a-13ab-40ff-9299-a547b408b296> .
+
+    <http://data.lblod.info/id/bestuursorganen/bc6feddfca6cc0acfda3791779fd7ab4>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"bc6feddfca6cc0acfda3791779fd7ab4" ;
+      skos:prefLabel "Leidend Ambtenaar PV Grensland" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/b8228e3a-13ab-40ff-9299-a547b408b296> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/5a5b1130c58ac69f0101e1626ed8882a>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"5a5b1130c58ac69f0101e1626ed8882a" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/9a3221a8a547be3ac6f128606a5600a9> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/27c0045526499f0c3301a524cad05a08>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "27c0045526499f0c3301a524cad05a08" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/7bc009ba73e067b57b1a9213a2ab8a59> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/af36fd60483503d05c1e8a67a55096dc>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"af36fd60483503d05c1e8a67a55096dc" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/275afa4b0fea6aac6a6a5ad509ade7ce> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/3d82aa3f37087ec72088d723c5d71dcb>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"3d82aa3f37087ec72088d723c5d71dcb" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/5b38d0831492e5d91ef659dadea4e52e> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/c4d2202a071dbb2cc23ba200e0f37995>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"c4d2202a071dbb2cc23ba200e0f37995" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/bc6feddfca6cc0acfda3791779fd7ab4> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+  }
+}

@@ -186,6 +186,21 @@ async function generate() {
       .parseJsonResults(eenhedenResponse)
       .map((i) => i.range);
 
+    // //TypeEredienst
+    const typeEredienstQuery = queries.domainToRange(
+      eenheden,
+      ns.ere`typeEredienst`,
+      ns.organ`TypeEredienst`
+    );
+    const typeEredienstResponse = await mas.querySudo(
+      typeEredienstQuery,
+      undefined,
+      connectionOptions
+    );
+    const typeEredienst = sparqlJsonParser
+      .parseJsonResults(typeEredienstResponse)
+      .map((i) => i.range);
+
     const allSubjects = uti.dedup(
       [
         ...mandatarissenSlice,
@@ -199,6 +214,7 @@ async function generate() {
         ...besturenInTijd,
         ...besturen,
         ...eenheden,
+        ...typeEredienst,
       ],
       'value'
     );
@@ -226,6 +242,7 @@ async function generate() {
     [
       'eenheid',
       'eenheidnaam',
+      'typeEredienstLabel',
       'bestuurnaam',
       'bestuurInTijd',
       'bestuurInTijdStart',
@@ -418,6 +435,15 @@ function combineMandatarissenData(store) {
           )[0];
         const eenheidnaam = store.readQuads(eenheid, ns.skos`prefLabel`).next()
           .value?.object?.value;
+        const typeEredienstLabel = store
+          .getObjects(eenheid, ns.ere`typeEredienst`)
+          .filter((p) =>
+            store.has(p, ns.rdf`type`, ns.organ`TypeEredienst`)
+          )
+          .map(
+            (f) =>
+              store.readQuads(f, ns.skos`prefLabel`).next().value?.object?.value
+          )[0];
 
         const collectBestuurInTijd = {
           bestuurInTijd: bestuurInTijd?.value,
@@ -426,6 +452,7 @@ function combineMandatarissenData(store) {
           bestuurnaam,
           eenheid: eenheid?.value,
           eenheidnaam,
+          typeEredienstLabel,
         };
 
         data.push({ ...collect, ...collectBestuurInTijd });

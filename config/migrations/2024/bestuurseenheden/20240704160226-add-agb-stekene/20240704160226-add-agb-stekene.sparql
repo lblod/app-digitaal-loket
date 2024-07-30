@@ -1,0 +1,68 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "8d6609b4-1a20-46b8-97ed-150c6d53acd6" ;
+      skos:prefLabel "AGB STEKENE" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721> . # Autonoom gemeentebedrijf
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/2f27a688e1728c1906a4bbd8670d7810>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"2f27a688e1728c1906a4bbd8670d7810" ;
+      skos:prefLabel "Raad van bestuur AGB STEKENE" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6> .
+
+    <http://data.lblod.info/id/bestuursorganen/b90d16f2c8043bc20b88da232c0389fc>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"b90d16f2c8043bc20b88da232c0389fc" ;
+      skos:prefLabel "Bevoegd beslissingsorgaan AGB STEKENE" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/0dbc70ec-6be9-4997-b8e1-11b6c0542382> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6> .
+
+    <http://data.lblod.info/id/bestuursorganen/dad1789d9b9f8f6cb3c81cc2ca88154f>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"dad1789d9b9f8f6cb3c81cc2ca88154f" ;
+      skos:prefLabel "Algemene vergadering AGB STEKENE" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6> .
+
+    <http://data.lblod.info/id/bestuursorganen/24d8e602a8ddbe0adf3dea8c40277706>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"24d8e602a8ddbe0adf3dea8c40277706" ;
+      skos:prefLabel "Leidend Ambtenaar AGB STEKENE" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/c9a7d9130e1dd8f26ddb8c96fdd94c64>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"c9a7d9130e1dd8f26ddb8c96fdd94c64" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/2f27a688e1728c1906a4bbd8670d7810> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/f54979f47464bae1cc001788aedb8b86>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "f54979f47464bae1cc001788aedb8b86" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/b90d16f2c8043bc20b88da232c0389fc> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/8d43a29c6ed4a8af0cd43d4aba2c7014>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"8d43a29c6ed4a8af0cd43d4aba2c7014" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/dad1789d9b9f8f6cb3c81cc2ca88154f> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/c5bb7bca7363109b94b58b1aef6ed59c>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"c5bb7bca7363109b94b58b1aef6ed59c" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/24d8e602a8ddbe0adf3dea8c40277706> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+  }
+}

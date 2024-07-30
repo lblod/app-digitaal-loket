@@ -37,12 +37,12 @@ export default {
 
     const queryResponsePart1 = await batchedQuery(queryStringPart1);
     const dataPart1 = queryResponsePart1.results.bindings.reduce( (acc, row) => {
-      acc[getSafeValue(row, 'mandataris')] = {
-        mandataris: getSafeValue(row, 'mandataris'),
-        start: getSafeValue(row, 'start'),
-        eind: getSafeValue(row, 'eind'),
-        rangorde: getSafeValue(row, 'rangorde'),
-        status: getSafeValue(row, 'status')
+      acc[row?.mandataris?.value] = {
+        mandataris: row?.mandataris?.value,
+        start: row?.start?.value,
+        eind: row?.eind?.value,
+        rangorde: row?.rangorde?.value,
+        status: row?.status?.value
       };
       return acc;
     }, {});
@@ -77,15 +77,15 @@ export default {
     const queryResponsePart2 = await batchedQuery(queryStringPart2);
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        mandataris: getSafeValue(row, 'mandataris'),
-        persoon: getSafeValue(row, 'persoon'),
-        voornaam: getSafeValue(row, 'voornaam'),
-        achternaam: getSafeValue(row, 'achternaam'),
-        roepnaam: getSafeValue(row, 'roepnaam'),
-        geslacht: getSafeValue(row, 'geslacht'),
-        geboortedatum: getSafeValue(row, 'geboortedatum')
+        mandataris: row?.mandataris?.value,
+        persoon: row?.persoon?.value,
+        voornaam: row?.voornaam?.value,
+        achternaam: row?.achternaam?.value,
+        roepnaam: row?.roepnaam?.value,
+        geslacht: row?.geslacht?.value,
+        geboortedatum: row?.geboortedatum?.value
       };
-      acc[getSafeValue(row, 'mandataris')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 'mandataris')]);
+      acc[row?.mandataris?.value] = Object.assign(dataPart, dataPart1[row?.mandataris?.value]);
       return acc;
     }, {});
 
@@ -133,17 +133,17 @@ export default {
 
     const dataPart3 = queryResponsePart3.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        bestuursfunctieLabel: getSafeValue(row, 'bestuursfunctieLabel'),
-        bestuursorgaanLabel: getSafeValue(row, 'bestuursorgaanLabel'),
-        bestuursorgaanClassificatieLabel: getSafeValue( row, 'bestuursorgaanClassificatieLabel'),
-        bestuurseenheidLabel: getSafeValue(row, 'bestuurseenheidLabel'),
-        bestuurseenheidClassificatieLabel: getSafeValue(row, 'bestuurseenheidClassificatieLabel'),
-        werkingsgebiedLabel: getSafeValue(row, 'werkingsgebiedLabel'),
-        werkingsgebiedNiveau: getSafeValue(row, 'werkingsgebiedNiveau'),
-        bestuursPeriodeStart: getSafeValue(row, 'bestuursPeriodeStart'),
-        bestuursPeriodeEinde: getSafeValue(row, 'bestuursPeriodeEinde')
+        bestuursfunctieLabel: row?.bestuursfunctieLabel?.value,
+        bestuursorgaanLabel: row?.bestuursorgaanLabel?.value,
+        bestuursorgaanClassificatieLabel: row?.bestuursorgaanClassificatieLabel?.value,
+        bestuurseenheidLabel: row?.bestuurseenheidLabel?.value,
+        bestuurseenheidClassificatieLabel: row?.bestuurseenheidClassificatieLabel?.value,
+        werkingsgebiedLabel: row?.werkingsgebiedLabel?.value,
+        werkingsgebiedNiveau: row?.werkingsgebiedNiveau?.value,
+        bestuursPeriodeStart: row?.bestuursPeriodeStart?.value,
+        bestuursPeriodeEinde: row?.bestuursPeriodeEinde?.value
       };
-      acc[getSafeValue(row, 'mandataris')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 'mandataris')]);
+      acc[row?.mandataris?.value] = Object.assign(dataPart, dataPart2[row?.mandataris?.value]);
       return acc;
     }, {});
 
@@ -177,9 +177,9 @@ export default {
   const queryResponsePart4 = await batchedQuery(queryStringPart4);
     const dataPart4 = queryResponsePart4.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        fractieNaam: getSafeValue(row, 'fractieNaam')
+        fractieNaam: row?.fractieNaam?.value
       };
-      acc[getSafeValue(row, 'mandataris')] = Object.assign(dataPart, dataPart3[getSafeValue(row, 'mandataris')]);
+      acc[row?.mandataris?.value] = Object.assign(dataPart, dataPart3[row?.mandataris?.value]);
       return acc;
     }, {});
 
@@ -191,7 +191,3 @@ export default {
     ], reportData);
   }
 };
-
-function getSafeValue(entry, property){
-  return entry[property] ? entry[property].value: null;
-}

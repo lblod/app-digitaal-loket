@@ -29,10 +29,10 @@ export default {
     const queryResponsePart1 = await batchedQuery(queryStringPart1);
 
     const dataPart1 = queryResponsePart1.results.bindings.reduce( (acc, row) => {
-      acc[getSafeValue(row, 'person')] = {
-        person: getSafeValue(row, 'person'),
-        firstName: getSafeValue(row, 'firstName'),
-        lastName: getSafeValue(row, 'lastName')
+      acc[row?.person?.value] = {
+        person: row?.person?.value,
+        firstName: row?.firstName?.value,
+        lastName: row?.lastName?.value
       };
       return acc;
     }, {});
@@ -52,15 +52,15 @@ export default {
     const queryResponsePart2 = await batchedQuery(queryStringPart2);
     const dataPart2 = queryResponsePart2.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        person: getSafeValue(row, 'person'),
-        mandataris: getSafeValue(row, 'mandataris')
+        person: row?.person?.value,
+        mandataris: row?.mandataris?.value
       };
 
-      if(acc[getSafeValue(row, 'person')] && acc[getSafeValue(row, 'person')].mandataris) {
-        dataPart.mandataris = `${acc[getSafeValue(row, 'person')].mandataris} ---and--- ${dataPart.mandataris}`;
+      if(acc[row?.person?.value] && acc[row?.person?.value].mandataris) {
+        dataPart.mandataris = `${acc[row?.person?.value].mandataris} ---and--- ${dataPart.mandataris}`;
       }
 
-      acc[getSafeValue(row, 'person')] = Object.assign(dataPart, dataPart1[getSafeValue(row, 'person')]);
+      acc[row?.person?.value] = Object.assign(dataPart, dataPart1[row?.person?.value]);
       return acc;
     }, {});
 
@@ -90,11 +90,11 @@ export default {
     const queryResponsePart3 = await batchedQuery(queryStringPart3);
     const dataPart3 = queryResponsePart3.results.bindings.reduce( (acc, row) => {
       let dataPart = {
-        person: getSafeValue(row, 'person'),
-        gender: getSafeValue(row, 'gender'),
-        birthDate: getSafeValue(row, 'birthDate')
+        person: row?.person?.value,
+        gender: row?.gender?.value,
+        birthDate: row?.birthDate?.value
       };
-      acc[getSafeValue(row, 'person')] = Object.assign(dataPart, dataPart2[getSafeValue(row, 'person')] || dataPart1[getSafeValue(row, 'person')]); // dataPart2 can be empty if no mandataris found
+      acc[row?.person?.value] = Object.assign(dataPart, dataPart2[row?.person?.value] || dataPart1[row?.person?.value]); // dataPart2 can be empty if no mandataris found
       return acc;
     }, {});
 
@@ -103,7 +103,3 @@ export default {
     ], reportData);
   }
 };
-
-function getSafeValue(entry, property){
-  return entry[property] ? entry[property].value: null;
-}

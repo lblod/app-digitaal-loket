@@ -1,10 +1,131 @@
 # Changelog
 ## Unreleased
 ### General
+ - Add open proces huis session role for all organizations [DL-5816]
+ - Bumped delta-producer-publication-graph-maintainer.
+#### Frontend
+ - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25 
+ - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
+### Berichtencentrum
+  - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
+### Deploy Notes
+On production, remove the delta-producer-publication-graph-maintainer image in the docker-compose.override.yml.
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+ - `drc up -d loket`
+## 1.100.2 (2024-07-16)
+### General
+  - [DL-6049] Add missing organizations that are present in OP and Kalliope but not in Loket.
+### Deploy Notes
+  - `drc restart migrations && drc logs -ft --tail=200 migrations`
+  - `drc restart resource cache`
+
+Make sure to change `MAX_MESSAGE_AGE` from `2` to `30` for `berichtencentrum-sync-with-kalliope` in `docker-compose.override.yml`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
+
+Once the logs have indicated a successful resync, restore the value of `MAX_MESSAGE_AGE` from `30` back to `2`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
+## 1.100.1 (2024-07-03)
+### Berichtencentrum
+  - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
+### Deploy Notes
+  - `drc restart migrations resource cache`
+## 1.100.0 (2024-06-14)
+### Fixes
+- Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]
+- Bump `vendor-data-distribution` for healing, needed for [DL-5925]. Already been deployed via overrides in `docker-compose.override.yml`. Please remove the image override there.
+### Toezicht
+- DL-5856: ensure some type of submissions are not exported to `app-toezicht-abb`
+  - See also: DL-5922
+### Subsidy
+- DGS-298: update lokaal bestuurlijk talent subsidy enddate
+### Deploy Notes
+- `drc up -d delta-producer-publication-graph-maintainer export-submissions; drc restart deltanotifier migrations cache resource; drc up -d`
+- Remove the image override for service `vendor-data-distribution` in `docker-compose.override.yml`
+## 1.99.1 (2024-05-31)
+### General
+  - Hotfix: update lokaal bestuurlijk talen deadline
+## 1.99.0 (2024-05-31)
+### Reports
+  - Add new report `recentEmailsInFailbox` which tracks failed emails (DL-5943)
+### Deploy Notes
+  - `drc restart migrations report-generation`
+## 1.98.2 (2024-05-29)
+  - Fix custom info label field in forms LEKP-rapport - Melding correctie authentieke bron and LEKP-rapport - Toelichting Lokaal Bestuur (DL-5934)
+### Deploy Notes
+  - `drc up -d enrich-submission; drc restart migrations resource cache`
+## 1.98.1 (2024-05-27)
+### Fixes
+ - Bump `worship-positions-graph-dispatcher-service-loket` to fix missing data in some organisations (DL-5823). This new version is better at dispatching data with its entire hierarchical model. For this, a migration needs to run to completion and this service then needs to be restarted. You can `drc up -d` it at the end of the deploy. This is included in the commands below.
+### Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations` (wait for these to complete)
+ - `drc up -d dispatcher-worship-mandates`
+## 1.98.0 (2024-05-16)
+#### Frontend
+ - `v0.93.1` (DL-5888): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0931-2024-05-06
+ - `v0.93.0` (DL-5849): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0930-2024-05-02
+### General
+ - Consolidation worship-sensitive delta-producer (DL-5588)
+ - Bump automatic submission service (no jira reference)
+   - See: https://github.com/lblod/automatic-submission-service/commit/7e938c07cd9434986dbd0010843b704a5ae7302f
+ - Adjust reports `Toezicht module: Meldingen`, `Eredienst mandatarissen` and `Message report with provenance` (DL-5836) (DL-5815)
+ - User impersonation for admin users (DL-5757)
+ - Update forms
+  - Adjust LEKP rapport Klimaattafels (DL-5832)
+  - Add new LEKP rapport Wijkverbeteringscontract (DL-5829)
+#### Fixes
+ - Fix reports with too many quotes around fields in the data. (DL-5811)
+ - Bump `deltanotifier` (DL-5684)
+### Deploy Notes
+#### Consolidation Worship-Sensitive Delta-Producer
+##### Edit `config/delta-producer/background-jobs-initiator/config.override.json`
+ - Copy `worship-services-sensitive` config from `config/delta-producer/background-jobs-initiator/config.json` to the override file.
+ - Change `"startInitialSync"` from `false` to `true`.
+##### Edit `config/delta-producer/publication-graph-maintainer/config.override.json`
+ - Copy `worship-services-sensitive` config from `config/delta-producer/publication-graph-maintainer/config.json` to the override file.
+ - Add `"key": "<producer_key>"` at the end of each stream's config; check `docker-compose.override.yml` for the value of that key.
+##### Don't Forget!
+The API broke in the dispatcher, which makes sense because there was an error. But of course, we have to be careful; the consumers might depend on it.
+Luckily, it's very likely we can access the consumers, so we'll have to go on tour and update the paths where they connect to.
+###### app-worship-organizations, app-organization-portal
+On PROD, QA, and DEV, in `docker-compose.override.yml` change
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive-deltas/login'`
+  to
+  `DCR_SYNC_LOGIN_ENDPOINT: 'https://loket.lokaalbestuur.vlaanderen.be/sync/worship-services-sensitive/login'`.
+##### Frontend
+ - Remove the image override. v0.91.3 is currently deployed but the same fix is part of v0.93.1 so we can safely remove it.
+##### Controle environment
+We no longer need this environment since we now have the admin role and impersonation feature. We can remove the controle environments from both QA and PROD.
+- Remove the "controle" service from `docker-compose.override.yml`
+- The DNS configuration for the following domains is no longer needed so ask Aad to remove it once the change is deployed to production:
+  - **controle.lblod.info**
+  - **qa.controle.lblod.info**
+
+> The PROD environment has more controle-* prefixed services, but we can't remove those yet since they are used by the `vendor-management` and `dashboard` services as well.
+
+The standard `docker-compose.yml` config seems in accordance with what is provided by the dispatcher. Remember Loket exposed two flavors of paths, one for the files and one for the login.
+#### Docker Commands
+ - `drc up -d --remove-orphans deltanotifier automatic-submission loket enrich-submission`
+ - `drc restart report-generation`
+ - `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache database dispatcher identifier`
+## 1.97.2 (2024-05-02)
+### General
+ - bump-berichtencentrum (DL-5775)
+### Deploy notes
+`drc up -d berichtencentrum-email-notification`
+## 1.97.1 (2024-04-30)
+### Subsidies
+ - Update Lekp 1.0 (2021 - 2024) opvolgmoment 2024 deadline (DGS-238)
+### General
 #### Fixes
   - Update predicates to export for `melding:FormData` (in context of DL-5738)
 ### Deploy notes
-- `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart delta-producer-publication-graph-maintainer`
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
 ## 1.97.0 (2024-04-12)
 ### General
 #### Fixes

@@ -7,7 +7,7 @@ services:
     ports:
       - "443:443"
   mocklogin:
-    image: lblod/mock-login-service:0.4.0
+    image: lblod/mock-login-service:0.5.0
     restart: "no"
   loket:
     restart: "no"
@@ -39,6 +39,8 @@ services:
   resource:
     restart: "no"
   login:
+    restart: "no"
+  impersonation:
     restart: "no"
   validation:
     entrypoint: ["echo", "Service disabled"] # Note: this probably go in the future
@@ -125,8 +127,6 @@ services:
     restart: "no"
   delta-producer-publication-graph-maintainer:
     restart: "no"
-  delta-producer-publication-graph-maintainer-ws-sensitive:
-    restart: "no"
   error-alert:
     environment:
       EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
@@ -145,6 +145,8 @@ services:
   sparql-authorization-wrapper:
     restart: "no"
   vendor-data-distribution:
+    environment:
+      HOSTNAME: "http://localhost"
     restart: "no"
   berichtencentrum-melding:
     restart: "no"

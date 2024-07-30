@@ -68,15 +68,15 @@ export default {
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((subsidie) => {
       return {
-        subsidie: getSafeValue(subsidie, 'subsidie'),
-        modified: getSafeValue(subsidie, 'modified'),
-        status: getSafeValue(subsidie, 'status'),
-        contactFirstName: getSafeValue(subsidie, 'contactFirstName'),
-        contactLastName: getSafeValue(subsidie, 'contactLastName'),
-        contactEmail: getSafeValue(subsidie, 'contactEmail'),
-        contactTelephone: getSafeValue(subsidie, 'contactTelephone'),
-        bestuurseenheid: getSafeValue(subsidie, 'bestuurseenheid'),
-        classificatie: getSafeValue(subsidie, 'classificatie')
+        subsidie: subsidie?.subsidie?.value,
+        modified: subsidie?.modified?.value,
+        status: subsidie?.status?.value,
+        contactFirstName: subsidie?.contactFirstName?.value,
+        contactLastName: subsidie?.contactLastName?.value,
+        contactEmail: subsidie?.contactEmail?.value,
+        contactTelephone: subsidie?.contactTelephone?.value,
+        bestuurseenheid: subsidie?.bestuurseenheid?.value,
+        classificatie: subsidie?.classificatie?.value
       };
     });
 
@@ -93,12 +93,3 @@ export default {
     ], reportData);
   }
 };
-
-function getSafeValue(entry, property){
-  return entry[property] ? wrapInQuote(entry[property].value) : null;
-}
-
-// Some values might contain comas, wrapping them in escapes quotes doesn't disturb the colomns
-function wrapInQuote(value) {
-  return `\"${value}\"`;
-}
