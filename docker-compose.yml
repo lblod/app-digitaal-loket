@@ -711,6 +711,8 @@ services:
     logging: *default-logging
   lmb-ldes-consumer:
     image: redpencil/ldes-consumer:0.8.0-rc1
+    depends_on:
+      - database
     environment:
       LDES_STREAM: "https://mandatenbeheer.lblod.info/streams/ldes/public"
       LDES_ENDPOINT_VIEW: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
