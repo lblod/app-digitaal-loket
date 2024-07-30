@@ -1,103 +1,115 @@
-@prefix cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/> .
-@prefix mu: <http://mu.semte.ch/vocabularies/ext/cleanup/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
 
 <http://data.lblod.info/id/cleanup-job/bdf05a94-f58b-44d7-b092-3525c33eb588> a cleanup:Job ;
-    mu:uuid "bdf05a94-f58b-44d7-b092-3525c33eb588" ;
-    dcterms:title "clean up more than a month old jobs and tasks from LoketAdmin graph" ;
-    cleanup:selectPattern """
-              GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin> {
-                VALUES ?operation {
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies>
-                  <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies>
-                }
-                ?resource a <http://vocab.deri.ie/cogs#Job> ;
-                  <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation;
-                  <http://purl.org/dc/terms/modified> ?modified .
-                FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
-                ?task <http://purl.org/dc/terms/isPartOf> ?resource.
-                ?resource ?p ?o.
-                ?task ?taskP ?taskO.
-                OPTIONAL {
-                  ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?resultsContainer .
-                  ?resultsContainer ?presultsContainer ?oresultsContainer .
-                }
-                OPTIONAL {
-                  ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
-                  ?inputContainer ?pinputContainer ?oinputContainer .
-                }
-              }
-              """ ;
-    cleanup:deletePattern """
-             GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin> {
-               ?resource ?p ?o.
-               ?task ?taskP ?taskO.
-               ?resultsContainer ?presultsContainer ?oresultsContainer .
-               ?inputContainer ?pinputContainer ?oinputContainer .
-             }
-              """ ;
-    cleanup:cronPattern "*/30 * * * *" .
+  mu:uuid "bdf05a94-f58b-44d7-b092-3525c33eb588" ;
+  dcterms:title "Clean up more than a month old jobs and tasks from the LoketAdmin graph" ;
+  cleanup:selectPattern """
+    GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin> {
+      VALUES ?operation {
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies>
+      }
+
+      ?resource a <http://vocab.deri.ie/cogs#Job> ;
+        <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation ;
+        <http://purl.org/dc/terms/modified> ?modified .
+
+      FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
+
+      ?task <http://purl.org/dc/terms/isPartOf> ?resource ;
+        ?taskP ?taskO .
+      ?resource ?p ?o .
+
+      OPTIONAL {
+        ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?resultsContainer .
+        ?resultsContainer ?presultsContainer ?oresultsContainer .
+      }
+
+      OPTIONAL {
+        ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
+        ?inputContainer ?pinputContainer ?oinputContainer .
+      }
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin> {
+      ?resource ?p ?o .
+      ?task ?taskP ?taskO .
+      ?resultsContainer ?presultsContainer ?oresultsContainer .
+      ?inputContainer ?pinputContainer ?oinputContainer .
+    }
+    """ ;
+  cleanup:cronPattern "*/30 * * * *" .
 
 <http://data.lblod.info/id/cleanup-job/3f623084-416f-44ef-90fa-7c7fa3d4efad> a cleanup:Job ;
-    mu:uuid "3f623084-416f-44ef-90fa-7c7fa3d4efad" ;
-    dcterms:title "clean up more than a month old jobs and tasks from harvesting graph" ;
-    cleanup:selectPattern """
-              GRAPH <http://mu.semte.ch/graphs/harvesting> {
-                VALUES ?operation {
-                  <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
-                  <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
-                }
-                ?resource a <http://vocab.deri.ie/cogs#Job> ;
-                  <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation;
-                  <http://purl.org/dc/terms/modified> ?modified .
-                FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
-                ?task <http://purl.org/dc/terms/isPartOf> ?resource.
-                ?resource ?p ?o.
-                ?task ?taskP ?taskO.
-                OPTIONAL {
-                  ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?resultsContainer .
-                  ?resultsContainer ?presultsContainer ?oresultsContainer .
-                }
-                OPTIONAL {
-                  ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
-                  ?inputContainer ?pinputContainer ?oinputContainer .
-                }
-              }
-              """ ;
-    cleanup:deletePattern """
-             GRAPH <http://mu.semte.ch/graphs/harvesting> {
-               ?resource ?p ?o.
-               ?task ?taskP ?taskO.
-               ?resultsContainer ?presultsContainer ?oresultsContainer .
-               ?inputContainer ?pinputContainer ?oinputContainer .
-             }
-              """ ;
-    cleanup:cronPattern "*/45 * * * *" .
+  mu:uuid "3f623084-416f-44ef-90fa-7c7fa3d4efad" ;
+  dcterms:title "Clean up more than a month old jobs and tasks from harvesting graph" ;
+  cleanup:selectPattern """
+    GRAPH <http://mu.semte.ch/graphs/harvesting> {
+      VALUES ?operation {
+        <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
+        <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
+      }
+
+      ?resource a <http://vocab.deri.ie/cogs#Job> ;
+        <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation ;
+        <http://purl.org/dc/terms/modified> ?modified .
+
+      FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
+
+      ?task <http://purl.org/dc/terms/isPartOf> ?resource ;
+        ?taskP ?taskO .
+      ?resource ?p ?o .
+
+      OPTIONAL {
+        ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?resultsContainer .
+        ?resultsContainer ?presultsContainer ?oresultsContainer .
+      }
+
+      OPTIONAL {
+        ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
+        ?inputContainer ?pinputContainer ?oinputContainer .
+      }
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH <http://mu.semte.ch/graphs/harvesting> {
+      ?resource ?p ?o .
+      ?task ?taskP ?taskO .
+      ?resultsContainer ?presultsContainer ?oresultsContainer .
+      ?inputContainer ?pinputContainer ?oinputContainer .
+    }
+    """ ;
+  cleanup:cronPattern "*/45 * * * *" .
 
 <http://data.lblod.info/id/cleanup-job/f14e8930-762b-4c2f-bb2f-9387de0d43ab> a cleanup:Job ;
-    mu:uuid "f14e8930-762b-4c2f-bb2f-9387de0d43ab" ;
-    dcterms:title "clean up more than a month old downloadEvents" ;
-    cleanup:selectPattern """
-              GRAPH <http://mu.semte.ch/graphs/public> {
-                ?resource a <http://oscaf.sourceforge.net/ndo.html#DownloadEvent> ;
-                <http://purl.org/dc/terms/modified> ?modified .
-                FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
-                ?resource ?p ?o .
-              }
-              """ ;
-    cleanup:deletePattern """
-             GRAPH <http://mu.semte.ch/graphs/public> {
-               ?resource ?p ?o .
-             }
-              """ ;
-    cleanup:cronPattern "*/50 * * * *" .
+  mu:uuid "f14e8930-762b-4c2f-bb2f-9387de0d43ab" ;
+  dcterms:title "Clean up more than a month old download events" ;
+  cleanup:selectPattern """
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?resource a <http://oscaf.sourceforge.net/ndo.html#DownloadEvent> ;
+        <http://purl.org/dc/terms/modified> ?modified .
+
+      FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
+
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:cronPattern "*/50 * * * *" .
