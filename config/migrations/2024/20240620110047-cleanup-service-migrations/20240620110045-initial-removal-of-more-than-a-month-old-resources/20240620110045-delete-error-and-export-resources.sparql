@@ -1,0 +1,22 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH ?g {
+    ?resource ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?resource a ?type ;
+      <http://purl.org/dc/terms/created> ?created .
+
+    FILTER (?type IN (
+      <http://open-services.net/ns/core#Error>,
+      <http://mu.semte.ch/vocabularies/ext/export/Export>
+    ))
+
+    FILTER (?created < (NOW() - "P1M"^^xsd:duration))
+
+    ?resource ?p ?o .
+  }
+}
