@@ -1,6 +1,4 @@
 PREFIX cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/>
-PREFIX mu:      <http://mu.semte.ch/vocabularies/ext/cleanup/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
 
 DELETE {
   GRAPH <http://mu.semte.ch/graphs/public> {
