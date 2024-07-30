@@ -18,8 +18,10 @@
         <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions>
         <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive>
         <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive>
-        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies>
-        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/vendor-management>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/vendor-management>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-services-sensitive>
+        <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-services-sensitive>
       }
 
       ?resource a <http://vocab.deri.ie/cogs#Job> ;
