@@ -1,5 +1,5 @@
 @prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
-@prefix mu:       <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
 
 <http://data.lblod.info/id/cleanup-job/bdf05a94-f58b-44d7-b092-3525c33eb588> a cleanup:Job ;
