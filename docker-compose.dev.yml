@@ -148,10 +148,8 @@ services:
     restart: "no"
   berichtencentrum-melding:
     restart: "no"
-  lmb-fractie-consumer:
+  lmb-ldes-consumer:
     environment:
-      LDES_STREAM: "http://ldes-backend/fractie"
-      LDES_ENDPOINT_VIEW: "http://ldes-backend/fractie/1"
       CRON_PATTERN: "*/15 * * * * *" # run the job every 15 seconds
     networks:
       - default

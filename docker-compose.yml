@@ -709,11 +709,11 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
-  lmb-fractie-consumer:
+  lmb-ldes-consumer:
     image: redpencil/ldes-consumer:0.8.0-rc1
     environment:
-      # LDES_STREAM: "http://ldes-backend/fractie" TODO: LDES of mandatenbeheer
-      # LDES_ENDPOINT_VIEW: "http://ldes-backend/fractie/1" TODO: LDES of of mandatenbeheer
+      LDES_STREAM: "https://mandatenbeheer.lblod.info/streams/ldes/public"
+      LDES_ENDPOINT_VIEW: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
       CRON_PATTERN: "*/1 * * * *" # run the job every 1 minute
       REPLACE_VERSIONS: true 
       MU_SPARQL_ENDPOINT: 'http://database:8890/sparql'
@@ -726,7 +726,7 @@ services:
   lmb-upsert-ldes-entity:
     image: lblod/ldes-make-object-service:latest
     depends_on:
-      - lmb-fractie-consumer
+      - lmb-ldes-consumer
     environment:
       LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten"
