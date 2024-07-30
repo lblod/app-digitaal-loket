@@ -43,26 +43,26 @@
   cleanup:cronPattern "*/20 * * * *" .
 
 <http://data.lblod.info/id/cleanup-job/6f4daffd-4893-40ba-9781-6dd1b31e9dfc> a cleanup:Job ;
-    mu:uuid "6f4daffd-4893-40ba-9781-6dd1b31e9dfc" ;
-    dcterms:title "Clean up more than a month old resources of type Error or Export" ;
-    cleanup:selectPattern """
-      GRAPH ?g {
-        ?resource a ?type ;
-          <http://purl.org/dc/terms/created> ?created .
+  mu:uuid "6f4daffd-4893-40ba-9781-6dd1b31e9dfc" ;
+  dcterms:title "Clean up more than a month old resources of type Error or Export" ;
+  cleanup:selectPattern """
+    GRAPH ?g {
+      ?resource a ?type ;
+        <http://purl.org/dc/terms/created> ?created .
 
-        FILTER (?type IN (
-          <http://open-services.net/ns/core#Error>,
-          <http://mu.semte.ch/vocabularies/ext/export/Export>
-        ))
+      FILTER (?type IN (
+        <http://open-services.net/ns/core#Error>,
+        <http://mu.semte.ch/vocabularies/ext/export/Export>
+      ))
 
-        FILTER (?created < (NOW() - "P1M"^^xsd:duration))
+      FILTER (?created < (NOW() - "P1M"^^xsd:duration))
 
-        ?resource ?p ?o .
-      }
-      """ ;
-    cleanup:deletePattern """
-      GRAPH ?g {
-        ?resource ?p ?o .
-      }
-      """ ;
-    cleanup:cronPattern "*/25 * * * *" .
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH ?g {
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:cronPattern "*/25 * * * *" .
