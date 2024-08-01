@@ -41,7 +41,7 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/mandaten" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
       "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -58,7 +58,7 @@
     },
     {
       "type": "http://www.w3.org/ns/person#Person",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/mandaten" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
       "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -70,7 +70,7 @@
     },
     {
       "type": "http://www.w3.org/ns/org#Membership",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/mandaten" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
       "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -79,7 +79,7 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Fractie",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/mandaten" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
       "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
@@ -90,7 +90,7 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandaat",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/mandaten" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
       "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
