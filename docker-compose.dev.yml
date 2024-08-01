@@ -151,8 +151,6 @@ services:
   berichtencentrum-melding:
     restart: "no"
   lmb-ldes-consumer:
-    environment:
-      CRON_PATTERN: "*/15 * * * * *" # run the job every 15 seconds
     networks:
       - default
       - debug
