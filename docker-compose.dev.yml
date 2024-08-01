@@ -155,6 +155,7 @@ services:
       - default
       - debug
   lmb-upsert-ldes-entity:
+    image: lblod/ldes-make-object-service:latest
     restart: "no"
 networks:
   debug:

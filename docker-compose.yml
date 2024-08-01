@@ -682,7 +682,7 @@ services:
     restart: always
     logging: *default-logging
   lmb-upsert-ldes-entity:
-    image: lblod/ldes-make-object-service:latest
+    image: lblod/ldes-make-object-service:0.1.1
     depends_on:
       - lmb-ldes-consumer
     environment:
