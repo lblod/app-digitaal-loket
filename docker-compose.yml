@@ -689,6 +689,7 @@ services:
     environment:
       LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten-staging"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten"
+      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
     labels:
         - "logging=true"
     restart: always
