@@ -1,0 +1,38 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/harvesting> {
+    ?resource ?p ?o .
+    ?task ?taskP ?taskO .
+    ?resultsContainer ?presultsContainer ?oresultsContainer .
+    ?inputContainer ?pinputContainer ?oinputContainer .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/harvesting> {
+    VALUES ?operation {
+      <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
+      <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
+    }
+
+    ?resource a <http://vocab.deri.ie/cogs#Job> ;
+      <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation ;
+      <http://purl.org/dc/terms/modified> ?modified .
+
+    FILTER (?modified < (NOW() - "P16M"^^xsd:duration))
+
+    ?task <http://purl.org/dc/terms/isPartOf> ?resource ;
+      ?taskP ?taskO .
+    ?resource ?p ?o .
+
+    OPTIONAL {
+      ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?resultsContainer .
+      ?resultsContainer ?presultsContainer ?oresultsContainer .
+    }
+
+    OPTIONAL {
+      ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
+      ?inputContainer ?pinputContainer ?oinputContainer .
+    }
+  }
+}
