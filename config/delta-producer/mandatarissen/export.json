@@ -41,15 +41,8 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
-      "hasRegexGraphsFilter": true,
-      "pathToConceptScheme": [
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
+      "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://data.vlaanderen.be/ns/mandaat#start",
@@ -65,19 +58,8 @@
     },
     {
       "type": "http://www.w3.org/ns/person#Person",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker",
-                        "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker",
-                        "^http://mu.semte.ch/graphs/organizations\\/[^\\/]+$"
-                        ],
-      "hasRegexGraphsFilter": true,
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
+      "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://xmlns.com/foaf/0.1/familyName",
@@ -88,16 +70,8 @@
     },
     {
       "type": "http://www.w3.org/ns/org#Membership",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
-      "hasRegexGraphsFilter": true,
-      "pathToConceptScheme": [
-        "^http://www.w3.org/ns/org#hasMembership",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
+      "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/ns/org#organisation"
@@ -105,17 +79,8 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Fractie",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-mandaatGebruiker" ],
-      "hasRegexGraphsFilter": true,
-      "pathToConceptScheme": [
-        "^http://www.w3.org/ns/org#organisation",
-        "^http://www.w3.org/ns/org#hasMembership",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
+      "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "https://www.w3.org/ns/regorg#legalName",
@@ -125,14 +90,8 @@
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandaat",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten" ],
       "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://data.vlaanderen.be/ns/mandaat#aantalHouders",
