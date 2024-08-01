@@ -686,8 +686,8 @@ services:
     depends_on:
       - lmb-ldes-consumer
     environment:
-      LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
-      TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten"
+      LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten-staging"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten"
     labels:
         - "logging=true"
     restart: always
