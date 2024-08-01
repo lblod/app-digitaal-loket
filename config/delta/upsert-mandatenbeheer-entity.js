@@ -3,7 +3,7 @@ export default [
     match: {
       graph: {
         type: 'uri',
-        value: 'http://mu.semte.ch/graphs/mandaten-staging',
+        value: 'http://mu.semte.ch/graphs/lmb/mandaten-staging',
       },
     },
     callback: {

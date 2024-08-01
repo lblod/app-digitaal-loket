@@ -675,7 +675,7 @@ services:
       CRON_PATTERN: "*/1 * * * *" # run the job every 1 minute
       REPLACE_VERSIONS: true 
       MU_SPARQL_ENDPOINT: 'http://database:8890/sparql'
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten-staging"
       PERSIST_STATE: "true"
     labels:
         - "logging=true"
