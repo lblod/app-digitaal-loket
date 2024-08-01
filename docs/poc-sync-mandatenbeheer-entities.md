@@ -1,13 +1,12 @@
 # Sync mandatenbeheer entities (POC)
 
-Lokaal Mandatenbeheer ([LMB](https://github.com/lblod/app-lokaal-mandatenbeheer)) will manage all madatarissen. These mandatarissen are build up from different entities than can be edited. (Fractie,..) To keep Loket in sync with all these changes we want to consume the LDES dat from the LMB LDES feed.
+Lokaal Mandatenbeheer ([LMB](https://github.com/lblod/app-lokaal-mandatenbeheer)) will manage all madatarissen. These mandatarissen are build up from different entities than can be edited. (Fractie,..) To keep Loket in sync with all these changes we want to consume the LDES data from the LMB LDES feed.
 
 ## Services
 
 - LDES consumer (redpencil/ldes-consumer:0.8.0-rc1)
-- Upsert entities (lblod/ldes-make-object-service)
+- Upsert entities (lblod/ldes-make-object-service:0.1.1)
 - Deltanotifier (cecemel/delta-notifier:0.2.0-beta.2)
-- LMB application
 
 ### LDES consumer
 
@@ -24,7 +23,3 @@ When the triple is passed on the `/post` method that versioned triple will be tr
 ### Deltanotifier
 
 No extra confiruation for this service was done only writing the rule to make sure that only the triples from our staging graph (`LANDING_ZONE_GRAPH`) are being processed.
-
-### LMB application
-
-Not sure how we are going to include it in this application. TODO:
