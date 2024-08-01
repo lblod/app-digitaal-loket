@@ -53,7 +53,7 @@
       ?inputContainer ?pinputContainer ?oinputContainer .
     }
     """ ;
-  cleanup:cronPattern "*/30 * * * *" .
+  cleanup:cronPattern "0 20 * * 5" .
 
 <http://data.lblod.info/id/cleanup-job/3f623084-416f-44ef-90fa-7c7fa3d4efad> a cleanup:Job ;
   mu:uuid "3f623084-416f-44ef-90fa-7c7fa3d4efad" ;
@@ -94,7 +94,7 @@
       ?inputContainer ?pinputContainer ?oinputContainer .
     }
     """ ;
-  cleanup:cronPattern "*/45 * * * *" .
+  cleanup:cronPattern "15 20 * * 5" .
 
 <http://data.lblod.info/id/cleanup-job/f14e8930-762b-4c2f-bb2f-9387de0d43ab> a cleanup:Job ;
   mu:uuid "f14e8930-762b-4c2f-bb2f-9387de0d43ab" ;
@@ -114,4 +114,4 @@
       ?resource ?p ?o .
     }
     """ ;
-  cleanup:cronPattern "*/50 * * * *" .
+  cleanup:cronPattern "30 20 * * 5" .

@@ -20,7 +20,7 @@
       ?resource ?p ?o .
     }
     """ ;
-  cleanup:cronPattern "*/10 * * * *" .
+  cleanup:cronPattern "45 20 * * 5" .
 
 <http://data.lblod.info/id/cleanup-job/729099ad-6d23-4891-82fa-2938c45339dd> a cleanup:Job ;
   mu:uuid "729099ad-6d23-4891-82fa-2938c45339dd" ;
@@ -40,7 +40,7 @@
       ?resource ?p ?o .
     }
     """ ;
-  cleanup:cronPattern "*/20 * * * *" .
+  cleanup:cronPattern "0 21 * * 5" .
 
 <http://data.lblod.info/id/cleanup-job/6f4daffd-4893-40ba-9781-6dd1b31e9dfc> a cleanup:Job ;
   mu:uuid "6f4daffd-4893-40ba-9781-6dd1b31e9dfc" ;
@@ -65,4 +65,4 @@
       ?resource ?p ?o .
     }
     """ ;
-  cleanup:cronPattern "*/25 * * * *" .
+  cleanup:cronPattern "15 21 * * 5" .
