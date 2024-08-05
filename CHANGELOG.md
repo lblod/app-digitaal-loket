@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.101.0 (2024-08-05)
 ### General
  - Add open proces huis session role for all organizations [DL-5816]
  - Bumped delta-producer-publication-graph-maintainer.
