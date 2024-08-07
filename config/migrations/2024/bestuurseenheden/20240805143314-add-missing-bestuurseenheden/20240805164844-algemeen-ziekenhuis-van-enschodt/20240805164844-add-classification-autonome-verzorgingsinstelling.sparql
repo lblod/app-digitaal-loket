@@ -1,12 +1,12 @@
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/34b5af85-dc9f-468f-9e03-ef89b174c267>
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	  <http://www.w3.org/2004/02/skos/core#Concept> ;
-      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	  <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode> ;
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>   <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode> ;
       <http://mu.semte.ch/vocabularies/core/uuid>         "34b5af85-dc9f-468f-9e03-ef89b174c267" ;
       <http://www.w3.org/2004/02/skos/core#prefLabel>     "Autonome verzorgingsinstelling" ;
-      <http://www.w3.org/2004/02/skos/core#inScheme>	    <http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0> ;
-      <http://www.w3.org/2004/02/skos/core#inScheme>	    <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
-      <http://www.w3.org/2004/02/skos/core#topConceptOf>	<http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> .
+      <http://www.w3.org/2004/02/skos/core#inScheme>      <http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme>      <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf>  <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> .
   }
 }
