@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.101.1 (2024-08-07)
 ### General
  - Add missing bestuurseenheden [DL-5722]
 ### Deploy Notes
