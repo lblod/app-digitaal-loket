@@ -185,7 +185,7 @@ services:
     restart: always
     logging: *default-logging
   dbcleanup:
-    image: lblod/db-cleanup-service:0.4.0
+    image: lblod/db-cleanup-service:0.5.0
     labels:
       - "logging=true"
     restart: always
