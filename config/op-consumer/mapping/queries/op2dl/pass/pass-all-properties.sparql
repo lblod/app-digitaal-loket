@@ -1,0 +1,31 @@
+CONSTRUCT {
+  ?s ?p ?o .
+}  
+WHERE {
+  ?s ?p ?o .
+  FILTER EXISTS {
+    ?s a ?type .
+    VALUES ?type {
+      <http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen>
+      <http://data.lblod.info/vocabularies/erediensten/PositieBedienaar>
+      <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie>
+      <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>
+      <http://data.vlaanderen.be/ns/mandaat#Mandaat>
+      <http://lblod.data.gift/vocabularies/organisatie/BestuurseenheidClassificatieCode>
+      <http://lblod.data.gift/vocabularies/organisatie/BestuursorgaanClassificatieCode>
+      <http://lblod.data.gift/vocabularies/organisatie/OrganisatieStatusCode>
+      <http://lblod.data.gift/vocabularies/organisatie/TypeEredienst>
+      <http://lblod.data.gift/vocabularies/organisatie/TypeVestiging>
+      <http://lblod.data.gift/vocabularies/organisatie/Veranderingsgebeurtenis>
+      <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>
+      <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>
+      <http://mu.semte.ch/vocabularies/ext/OrganizationClassificationCode>
+      <http://schema.org/ContactPoint>
+      <http://www.w3.org/2004/02/skos/core#Concept>
+      <http://www.w3.org/ns/locn#Address>
+      <http://www.w3.org/ns/org#ChangeEvent>
+      <http://www.w3.org/ns/org#Post>
+      <http://www.w3.org/ns/org#Site>
+    }
+  }
+}

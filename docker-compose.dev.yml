@@ -136,8 +136,6 @@ services:
     restart: "no"
   update-bestuurseenheid-mock-login:
     restart: "no"
-  reasoner:
-    restart: "no"
   op-public-consumer:
     restart: "no"
   vendor-login:

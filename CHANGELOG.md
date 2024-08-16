@@ -1,4 +1,42 @@
 # Changelog
+## Unreleased
+ - updated consumer [DL-5911]
+### deploy notes
+#### For the new consumer into account
+- Note: the application will be down for a while.
+- Ensure application goes down: `drc down`
+- Ensure in `docker-compose.override.yml` (on prod)
+  ```
+  loket:
+    image: lblod/frontend-maintenance:0.1.0
+    # (...)
+   update-bestuurseenheid-mock-login:
+     entrypoint: ["echo", "Service disabled to ensure re-sync OP works propery"]
+   op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+  ```
+- `drc up -d migrations loket`
+  - That might take a while.
+- `drc up -d --remove-orphans `
+- Wait until the consumer is finished.
+- Enable the frontend, submissions-consumer and update-bestuurseenheid-mock-login
+- Ensure op-public-consumer in `docker-compose.override.yml` is syncing with database again
+- So the final `docker-compose.override.yml` will look like
+  ```
+  loket:
+    # image: lblod/frontend-maintenance:0.1.0 #comment out the maintenance page
+    # (...)
+   op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_DISABLE_DELTA_INGEST: "false"
+  ```
 ## 1.101.1 (2024-08-07)
 ### General
  - Add missing bestuurseenheden [DL-5722]
