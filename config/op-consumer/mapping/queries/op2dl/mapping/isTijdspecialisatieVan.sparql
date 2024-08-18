@@ -1,5 +1,5 @@
 PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
-PREFIX generiek: <http://data.vlaanderen.be/ns/generiek#>
+\PREFIX generiek: <https://data.vlaanderen.be/ns/generiek#>
 
 CONSTRUCT {
   ?s mandaat:isTijdspecialisatieVan ?o.
