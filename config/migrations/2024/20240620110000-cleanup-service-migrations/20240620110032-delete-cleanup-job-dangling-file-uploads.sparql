@@ -1,0 +1,14 @@
+PREFIX cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?cleanupJob ?p ?o .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/cleanup-job/10724bc2-c9d0-4a35-a499-91a8b7cb023b> AS ?cleanupJob)
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?cleanupJob ?p ?o .
+  }
+}

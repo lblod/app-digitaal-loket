@@ -1,0 +1,17 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?resource ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?resource a <http://mu.semte.ch/vocabularies/ext/KalliopeSyncError> ;
+      <http://purl.org/pav/createdOn> ?createdOn .
+
+    FILTER (?createdOn < (NOW() - "P1M"^^xsd:duration))
+
+    ?resource ?p ?o .
+  }
+}
