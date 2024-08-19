@@ -1,14 +1,45 @@
 # Changelog
-## Unreleased
+## 1.101.1 (2024-08-07)
 ### General
- - Add open proces huis session role for all organizations [DL-5816]
-#### Frontend
- - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
+ - Add missing bestuurseenheden [DL-5722]
 ### Deploy Notes
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache`
+## 1.101.0 (2024-08-05)
+### General
+ - Add open proces huis session role for all organizations [DL-5816]
+ - Bumped delta-producer-publication-graph-maintainer.
+ - Fixed failed emails report. [DL-6044]
+ - Link Toezichthoudende Provincie Antwerpen to "Orthodoxe Parochie Heilige Sophrony de Athoniet" [DL-6014]
+#### Frontend
+ - `v0.96.0` (DL-4540, DL-4069, DL-6053): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0960-2024-08-05
+ - `v0.95.0` (DL-6042, DL-6050): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0950-2024-07-11
+ - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25
+ - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
+### Deploy Notes
+On production, remove the delta-producer-publication-graph-maintainer image in the docker-compose.override.yml.
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart report-generation resource cache`
  - `drc up -d loket`
+## 1.100.2 (2024-07-16)
+### General
+  - [DL-6049] Add missing organizations that are present in OP and Kalliope but not in Loket.
+### Deploy Notes
+  - `drc restart migrations && drc logs -ft --tail=200 migrations`
+  - `drc restart resource cache`
+
+Make sure to change `MAX_MESSAGE_AGE` from `2` to `30` for `berichtencentrum-sync-with-kalliope` in `docker-compose.override.yml`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
+
+Once the logs have indicated a successful resync, restore the value of `MAX_MESSAGE_AGE` from `30` back to `2`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
+## 1.100.1 (2024-07-03)
+### Berichtencentrum
+  - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it
+### Deploy Notes
+  - `drc restart migrations resource cache`
 ## 1.100.0 (2024-06-14)
 ### Fixes
 - Bump delta-producer-publication-graph-maintainer [DL-4527] and related [OP-3151]

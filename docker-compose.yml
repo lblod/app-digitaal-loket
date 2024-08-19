@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.94.0
+    image: lblod/frontend-loket:0.96.0
     links:
       - identifier:backend
     labels:
@@ -555,7 +555,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.1.1
+    image: lblod/delta-producer-publication-graph-maintainer:1.2.1
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
