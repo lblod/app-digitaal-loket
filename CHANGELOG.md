@@ -8,7 +8,7 @@
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache`
  - `drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup`
-   - At service startup, cleanup jobs will be automatically scheduled. You should see output similar to this: `Job with ID x and title y has been scheduled.`
+   - At service startup, cleanup jobs will be automatically scheduled. You should see an output similar to this: `Job with ID x and title y has been scheduled.`
 ## 1.101.1 (2024-08-07)
 ### General
  - Add missing bestuurseenheden [DL-5722]
