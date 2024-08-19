@@ -1,4 +1,12 @@
 # Changelog
+## Unreleased
+### General
+ - Bump `db-cleanup-service` to `v0.5.0`. (DL-5601)
+ - Add old error/job cleanup jobs. (DL-5612) (DL-5613)
+### Deploy Notes
+#### Docker Commands
+ - `drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup`
+   - At service startup, cleanup jobs will be automatically scheduled. You should see output similar to this: `Job with ID x and title y has been scheduled.`
 ## 1.101.1 (2024-08-07)
 ### General
  - Add missing bestuurseenheden [DL-5722]
