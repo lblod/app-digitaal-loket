@@ -5,6 +5,8 @@
  - Add old error/job cleanup jobs. (DL-5612) (DL-5613)
 ### Deploy Notes
 #### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
  - `drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup`
    - At service startup, cleanup jobs will be automatically scheduled. You should see output similar to this: `Job with ID x and title y has been scheduled.`
 ## 1.101.1 (2024-08-07)
