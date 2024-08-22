@@ -1,4 +1,13 @@
 # Changelog
+## 1.102.1 (2024-08-22)
+### General
+ - Adjust download/berichtencentrum url warning cleanup job. (DL-6140)
+ - Add cleanup job to remove authentication data. (DL-6077)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+ - `drc restart dbcleanup && drc logs -ft --tail=200 dbcleanup`
 ## 1.102.0 (2024-08-19)
 ### General
  - Bump `db-cleanup-service` to `v0.5.0`. (DL-5601)
