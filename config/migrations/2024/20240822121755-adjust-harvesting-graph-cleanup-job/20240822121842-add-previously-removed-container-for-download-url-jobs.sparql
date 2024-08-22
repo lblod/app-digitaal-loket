@@ -1,0 +1,28 @@
+PREFIX task:    <http://redpencil.data.gift/vocabularies/tasks/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/cd4ea77a-f3aa-4fe3-af4c-892bd1ce1ffb> a nfo:DataContainer ;
+      task:hasRemoteUrl ?remoteUrl ;
+      skos:note "Placeholder container resulting from corrective action related to release v1.102.0, where background jobs eagerly cleaned up removed containers" .
+    }
+  }
+WHERE {
+  GRAPH ?g {
+    ?remoteUrl a nfo:RemoteDataObject ;
+      adms:status <http://lblod.data.gift/file-download-statuses/failure> ;
+      nie:url ?url ;
+      dcterms:modified ?modified .
+
+      OPTIONAL { ?remoteUrl ext:cacheError ?errorLabel . }
+      OPTIONAL { ?remoteUrl ext:httpStatusCode ?errorCode . }
+  }
+
+  FILTER NOT EXISTS { ?container task:hasRemoteUrl ?remoteUrl . }
+}
