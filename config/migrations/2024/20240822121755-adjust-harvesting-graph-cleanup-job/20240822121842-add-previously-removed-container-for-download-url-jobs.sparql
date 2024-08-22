@@ -11,8 +11,8 @@ INSERT {
     <http://data.lblod.info/cd4ea77a-f3aa-4fe3-af4c-892bd1ce1ffb> a nfo:DataContainer ;
       task:hasRemoteUrl ?remoteUrl ;
       skos:note "Placeholder container resulting from corrective action related to release v1.102.0, where background jobs eagerly cleaned up removed containers" .
-    }
   }
+}
 WHERE {
   GRAPH ?g {
     ?remoteUrl a nfo:RemoteDataObject ;
