@@ -59,12 +59,12 @@
         }
       }
 
-
-      GRAPH ?h {
-        ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
-        ?targetAuthenticationConfigurationO ?p_t ?o_t .
+      OPTIONAL {
+        GRAPH ?h {
+          ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+          ?targetAuthenticationConfigurationO ?p_t ?o_t .
+        }
       }
-
     }
     """ ;
   cleanup:cronPattern "30 21 * * 5" .
