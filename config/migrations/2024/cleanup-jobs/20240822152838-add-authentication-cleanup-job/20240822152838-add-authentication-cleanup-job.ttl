@@ -1,0 +1,53 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/4d3b2cec-68a7-4703-9cbc-0a8ca6c29539> a cleanup:Job ;
+  mu:uuid "4d3b2cec-68a7-4703-9cbc-0a8ca6c29539" ;
+  dcterms:title "Clean up authentication data for submissions, remote data objects and jobs" ;
+  cleanup:randomQuery """
+    DELETE {
+      GRAPH ?g {
+        ?resource <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+      }
+
+      GRAPH ?h {
+        ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+        ?targetAuthenticationConfigurationO ?p_t ?o_t .
+      }
+    }
+    WHERE {
+      GRAPH ?g {
+        {
+          ?resource a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject> ;
+            <http://www.w3.org/ns/adms#status> ?status ;
+            <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+
+          FILTER(?status IN (<http://lblod.data.gift/file-download-statuses/success>, <http://lblod.data.gift/file-download-statuses/failure>))
+        }
+        UNION
+        {
+          ?resource a <http://vocab.deri.ie/cogs#Job> ;
+            <http://www.w3.org/ns/adms#status> ?status ;
+            <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+
+          FILTER(?status IN (<http://redpencil.data.gift/id/concept/JobStatus/success>, <http://redpencil.data.gift/id/concept/JobStatus/failure>))
+        }
+        UNION
+        {
+          ?resource a <http://rdf.myexperiment.org/ontologies/base/Submission> ;
+            <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+        }
+      }
+
+      OPTIONAL {
+        GRAPH ?h {
+          ?targetAuthenticationConfiguration
+            ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+
+          ?targetAuthenticationConfigurationO ?p_t ?o_t .
+        }
+      }
+    }
+    """ ;
+  cleanup:cronPattern "30 21 * * 5" .
