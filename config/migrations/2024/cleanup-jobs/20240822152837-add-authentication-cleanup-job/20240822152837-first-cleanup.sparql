@@ -15,7 +15,6 @@ DELETE {
 WHERE {
   GRAPH ?g {
     {
-
       VALUES ?status {
         <http://lblod.data.gift/file-download-statuses/success>
         <http://lblod.data.gift/file-download-statuses/failure>
@@ -27,7 +26,6 @@ WHERE {
     }
     UNION
     {
-
       VALUES ?status {
         <http://redpencil.data.gift/id/concept/JobStatus/success>
         <http://redpencil.data.gift/id/concept/JobStatus/failure>
@@ -36,19 +34,17 @@ WHERE {
       ?resource a <http://vocab.deri.ie/cogs#Job> ;
         <http://www.w3.org/ns/adms#status> ?status ;
         <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
-
     }
     UNION
     {
-
       VALUES ?status {
         <http://redpencil.data.gift/id/concept/JobStatus/success>
         <http://redpencil.data.gift/id/concept/JobStatus/failure>
-     }
+      }
 
       ?job a <http://vocab.deri.ie/cogs#Job> ;
-        <http://www.w3.org/ns/prov#generated> ?resource;
-        <http://www.w3.org/ns/adms#status> ?status.
+        <http://www.w3.org/ns/prov#generated> ?resource ;
+        <http://www.w3.org/ns/adms#status> ?status .
 
       GRAPH ?h {
         ?resource a <http://rdf.myexperiment.org/ontologies/base/Submission> ;
@@ -63,5 +59,4 @@ WHERE {
      ?targetAuthenticationConfigurationO ?p_t ?o_t .
     }
   }
-
 }
