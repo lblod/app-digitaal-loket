@@ -4,6 +4,10 @@ DELETE {
   }
 
   GRAPH ?h {
+    ?resource <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+  }
+
+  GRAPH ?i {
     ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
     ?targetAuthenticationConfigurationO ?p_t ?o_t .
   }
@@ -46,15 +50,18 @@ WHERE {
         <http://www.w3.org/ns/prov#generated> ?resource;
         <http://www.w3.org/ns/adms#status> ?status.
 
-      ?resource a <http://rdf.myexperiment.org/ontologies/base/Submission> ;
-        <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+      GRAPH ?h {
+        ?resource a <http://rdf.myexperiment.org/ontologies/base/Submission> ;
+          <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+      }
     }
   }
 
-
-  GRAPH ?h {
-    ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
-    ?targetAuthenticationConfigurationO ?p_t ?o_t .
+  OPTIONAL {
+    GRAPH ?i {
+     ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+     ?targetAuthenticationConfigurationO ?p_t ?o_t .
+    }
   }
 
 }
