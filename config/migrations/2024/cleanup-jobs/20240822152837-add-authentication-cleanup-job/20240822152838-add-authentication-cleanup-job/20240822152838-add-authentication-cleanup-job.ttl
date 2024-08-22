@@ -63,8 +63,8 @@
 
       OPTIONAL {
         GRAPH ?i {
-        ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
-        ?targetAuthenticationConfigurationO ?p_t ?o_t .
+          ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+          ?targetAuthenticationConfigurationO ?p_t ?o_t .
         }
       }
     }
