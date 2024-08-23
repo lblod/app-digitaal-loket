@@ -1,0 +1,18 @@
+CONSTRUCT {
+  ?s ?p ?o .
+}  
+WHERE {
+  ?s ?p ?o .
+  FILTER EXISTS {
+    ?s a ?type .
+    VALUES ?type {
+      <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+      <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+      <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+      <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+      <http://purl.org/dc/terms/Agent>
+      <http://www.w3.org/ns/org#Organization>
+    }
+  }
+  FILTER (?p NOT IN (<http://www.w3.org/ns/adms#identifier>, <http://www.w3.org/ns/org#classification>))
+}

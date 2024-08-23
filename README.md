@@ -127,6 +127,8 @@ If you need to ingest the data for worship administrative units, you will need t
           DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
           DCR_DISABLE_INITIAL_SYNC: "true"
           DCR_DISABLE_DELTA_INGEST: "true"
+          DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+          DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
     update-bestuurseenheid-mock-login:
         entrypoint: ["echo", "Service-disabled to not confuse the service"]
     ```
@@ -145,6 +147,8 @@ If you need to ingest the data for worship administrative units, you will need t
           DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
           DCR_DISABLE_INITIAL_SYNC: "false" # -> this changed
           DCR_DISABLE_DELTA_INGEST: "false" # -> this changed
+          #DCR_LANDING_ZONE_DATABASE: "virtuoso" # -> this changed
+          #DCR_REMAPPING_DATABASE: "virtuoso" # -> this changed
       update-bestuurseenheid-mock-login:
         entrypoint: ["echo", "Service-disabled to not confuse the service"]
     ```

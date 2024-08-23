@@ -555,7 +555,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.2.1
+    image: lblod/delta-producer-publication-graph-maintainer:1.2.2
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
@@ -632,34 +632,26 @@ services:
   ################################################################################
   # OP PUBLIC CONSUMER
   ################################################################################
-  reasoner:
-    image: eyereasoner/reasoning-service:increased-stack-limit
-    volumes:
-      - ./config/reasoner:/config
-    restart: always
-    labels:
-      - "logging=true"
-    logging: *default-logging
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.24
+    image: lblod/delta-consumer:0.0.25-rc.3
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
+      DCR_SYNC_FILES_PATH: "/sync/public/files"
       DCR_SYNC_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/PublicCacheGraphDump"
       DCR_INITIAL_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/op-public"
       DCR_DELTA_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/deltaSync/op-public"
       DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
       DCR_DISABLE_INITIAL_SYNC: "true"
-      BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
-      BATCH_SIZE: 1000
-      DCR_SYNC_FILES_PATH: "/sync/public/files"
-      FILE_SYNC_GRAPH: "http://mu.semte.ch/graphs/temp/original-physical-files-data"
-      KEEP_DELTA_FILES: "true"
-      DCR_ENABLE_DELTA_CONTEXT: "true"
-      DCR_LANDING_ZONE_DATABASE: "publication-triplestore"
+      DCR_KEEP_DELTA_FILES: "true"
+      DCR_ENABLE_TRIPLE_REMAPPING: "true"
       DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
+      DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"
+      DCR_BATCH_SIZE: 1000
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      SUDO_QUERY_RETRY: "true"
     volumes:
-      - ./config/op-consumer/public:/config/triples-dispatching/custom-dispatching
+      - ./config/op-consumer/mapping:/config/mapping
       - ./data/files/consumer-files/op-public:/consumer-files/
     restart: always
     labels:

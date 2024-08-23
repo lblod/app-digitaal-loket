@@ -1,0 +1,8 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX persoon: <https://data.vlaanderen.be/ns/persoon#>
+
+CONSTRUCT {
+  ?s foaf:name ?o
+} WHERE {
+  ?s persoon:gebruikteVoornaam ?o
+}
