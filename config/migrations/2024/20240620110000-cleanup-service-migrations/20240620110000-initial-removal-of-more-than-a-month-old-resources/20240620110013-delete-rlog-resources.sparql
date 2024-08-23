@@ -1,0 +1,17 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?resource ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?resource a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry> ;
+      <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#date> ?date .
+
+    FILTER (?date < (NOW() - "P1M"^^xsd:duration))
+
+    ?resource ?p ?o .
+  }
+}

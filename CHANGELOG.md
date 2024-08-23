@@ -1,6 +1,7 @@
 # Changelog
-## Unreleased
+## 1.103.0 (2024-08-23)
  - updated consumer [DL-5911]
+ - update producer [OP-3372]
 ### deploy notes
 #### For the new consumer into account
 - Note: the application will be down for a while.
@@ -37,6 +38,30 @@
       DCR_DISABLE_INITIAL_SYNC: "false"
       DCR_DISABLE_DELTA_INGEST: "false"
   ```
+## 1.102.1 (2024-08-22)
+### General
+ - Adjust download/berichtencentrum url warning cleanup job. (DL-6140)
+ - Add cleanup job to remove authentication data. (DL-6077)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+ - `drc restart dbcleanup && drc logs -ft --tail=200 dbcleanup`
+## 1.102.0 (2024-08-19)
+### General
+ - Bump `db-cleanup-service` to `v0.5.0`. (DL-5601)
+ - Add old error/job cleanup jobs. (DL-5612) (DL-5613)
+ - Fix an issue with the job deletion flow in `frontend-dashboard`. (DL-5905)
+### Deploy Notes
+#### Docker Commands
+ - `drc down`
+ - `drc up -d virtuoso && drc logs -ft --tail=200 virtuoso`
+   - Make sure `virtuoso` is online.
+ - `drc up -d migrations && drc logs -ft --tail=200 migrations`
+   - Inspect `migrations` logs for any abnormal exit codes, which may indicate an unexpected timeout due to the heavy queries.
+ - `drc up -d && drc logs -ft --tail=200 dbcleanup`
+   - At service startup, cleanup jobs will be automatically scheduled. You should see an output similar to this: `Job with ID x and title y has been scheduled.`
+
 ## 1.101.1 (2024-08-07)
 ### General
  - Add missing bestuurseenheden [DL-5722]

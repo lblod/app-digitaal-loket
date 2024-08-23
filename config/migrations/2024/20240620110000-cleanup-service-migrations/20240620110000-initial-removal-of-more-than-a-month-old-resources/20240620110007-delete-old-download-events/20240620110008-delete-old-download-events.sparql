@@ -1,0 +1,17 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?resource ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?resource a <http://oscaf.sourceforge.net/ndo.html#DownloadEvent> ;
+      <http://purl.org/dc/terms/modified> ?modified .
+
+    FILTER (?modified < (NOW() - "P6M"^^xsd:duration))
+
+    ?resource ?p ?o .
+  }
+}

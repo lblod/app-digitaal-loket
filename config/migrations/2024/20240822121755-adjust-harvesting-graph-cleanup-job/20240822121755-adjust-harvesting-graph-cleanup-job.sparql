@@ -1,0 +1,51 @@
+PREFIX cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/>
+
+DELETE {
+  GRAPH ?g {
+    ?cleanupJob cleanup:selectPattern ?selectPattern ;
+      cleanup:deletePattern ?deletePattern .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?cleanupJob cleanup:selectPattern """
+      GRAPH <http://mu.semte.ch/graphs/harvesting> {
+        VALUES ?operation {
+          <http://lblod.data.gift/id/jobs/concept/JobOperation/berichtencentrumWarning>
+          <http://lblod.data.gift/id/jobs/concept/JobOperation/downloadUrlWarning>
+        }
+
+        ?resource a <http://vocab.deri.ie/cogs#Job> ;
+          <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation ;
+          <http://purl.org/dc/terms/modified> ?modified .
+
+        FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
+
+        ?task <http://purl.org/dc/terms/isPartOf> ?resource ;
+          ?taskP ?taskO .
+        ?resource ?p ?o .
+
+        OPTIONAL {
+          ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
+          ?inputContainer ?pinputContainer ?oinputContainer .
+        }
+      }
+      """ .
+
+    ?cleanupJob cleanup:deletePattern """
+      GRAPH <http://mu.semte.ch/graphs/harvesting> {
+        ?resource ?p ?o .
+        ?task ?taskP ?taskO .
+        ?inputContainer ?pinputContainer ?oinputContainer .
+      }
+      """ .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/cleanup-job/3f623084-416f-44ef-90fa-7c7fa3d4efad> AS ?cleanupJob)
+
+  GRAPH ?g {
+    ?cleanupJob cleanup:selectPattern ?selectPattern ;
+      cleanup:deletePattern ?deletePattern .
+  }
+}
