@@ -38,6 +38,8 @@
       DCR_DISABLE_INITIAL_SYNC: "false"
       DCR_DISABLE_DELTA_INGEST: "false"
   ```
+#### remaining bits of deploy
+  - ``drc up -d`
 ## 1.102.1 (2024-08-22)
 ### General
  - Adjust download/berichtencentrum url warning cleanup job. (DL-6140)
