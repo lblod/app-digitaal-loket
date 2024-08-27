@@ -1,4 +1,6 @@
 # Changelog
+## 1.103.1 (2024-08-27)
+  - Fix consumer mapping issue [DL-6152]
 ## 1.103.0 (2024-08-23)
  - updated consumer [DL-5911]
  - update producer [OP-3372]
