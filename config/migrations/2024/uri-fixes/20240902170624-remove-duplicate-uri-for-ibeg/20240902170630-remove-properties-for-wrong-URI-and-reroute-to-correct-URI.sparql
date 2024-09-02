@@ -1,0 +1,182 @@
+# Remove sessions attached to the wrong URI
+
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+    ?s <http://mu.semte.ch/vocabularies/ext/sessionGroup> <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> .
+  }
+}
+
+;
+
+# Remove person and account attached to the wrong URI
+
+DELETE WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/d7ab3f6ceef06a8095e38db10aaec419> ?p_person ?o_person .
+  }
+
+  GRAPH ?h {
+    <http://data.lblod.info/id/account/c1dfc1259769babd01d9b7b2fbd45b72> ?p_account ?o_account .
+  }
+}
+
+;
+
+# Re-route reverse properties to correct URI
+
+DELETE {
+  GRAPH ?g {
+    ?s0 <http://schema.org/recipient> ?wrongURI .
+  }
+
+  GRAPH ?h {
+    ?s1 <http://purl.org/pav/createdBy> ?wrongURI .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s0 <http://schema.org/recipient> ?correctURI .
+  }
+
+  GRAPH ?h {
+    ?s1 <http://purl.org/pav/createdBy> ?correctURI .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> AS ?wrongURI)
+  BIND(<http://data.lblod.info/id/bestuurseenheden/cec30867-e378-4e86-9568-1efebb6ccd7d> AS ?correctURI)
+
+  GRAPH ?g {
+    ?s0 <http://schema.org/recipient> ?wrongURI .
+  }
+
+  GRAPH ?h {
+    ?s1 <http://purl.org/pav/createdBy> ?wrongURI .
+  }
+}
+
+;
+
+# Remove wrong URI + reverse properties
+
+DELETE WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> ?p0 ?o0 .
+  }
+
+  GRAPH ?h {
+    ?s1 ?p1 <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> .
+  }
+}
+
+;
+
+# Remove properties pointing to old bestuursorgaan in tijd and route them to the new URI
+
+DELETE {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?newBestuursorgaanInTijd .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuursorganen/7264b6d0-f123-493a-8fe2-4802b5be1aec> AS ?oldBestuursorgaanInTijd)
+  BIND(<http://data.lblod.info/id/bestuursorganen/288c0d58-079c-46e2-82ab-4ce4f987d0ab> AS ?newBestuursorgaanInTijd)
+
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+
+;
+
+# Remove properties pointing to old bestuursorgaan in tijd and route them to the new URI
+
+DELETE {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?newBestuursorgaanInTijd .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuursorganen/7ac7d2cb-5fc6-4f36-a6dd-8813cd3e6f3a> AS ?oldBestuursorgaanInTijd)
+  BIND(<http://data.lblod.info/id/bestuursorganen/ecf12998-e29d-4c8c-98b6-f5f7d92f3e4a> AS ?newBestuursorgaanInTijd)
+
+  GRAPH ?g {
+    ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
+  }
+}
+
+;
+
+# Delete old bestuursorganen
+
+DELETE {
+  GRAPH ?g {
+    ?bestuursorganen ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?bestuursorganen {
+    <http://data.lblod.info/id/bestuursorganen/65a0c535-a6e0-4229-b565-5e93df72acf2>
+    <http://data.lblod.info/id/bestuursorganen/21f0b18a-7a9f-4777-84c2-7f53313e3ad9>
+    <http://data.lblod.info/id/bestuursorganen/9285a0c5-ec17-4d89-83b1-5b8a96a05096>
+    <http://data.lblod.info/id/bestuursorganen/d909e52a8215a7423082a7a800da7f171a713022e0c4475e12dcd44906982f12>
+    <http://data.lblod.info/id/bestuursorganen/2e6b537b-b486-4456-aab6-c421a85cf55d>
+  }
+
+  GRAPH ?g {
+    ?bestuursorganen ?p ?o .
+  }
+}
+
+;
+
+# Delete old bestuursorganen in tijd
+
+DELETE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?bestuursorgaanInTijd {
+    <http://data.lblod.info/id/bestuursorganen/7264b6d0-f123-493a-8fe2-4802b5be1aec>
+    <http://data.lblod.info/id/bestuursorganen/8bcdcde8-edeb-4cb5-aae3-0c147d631abc>
+    <http://data.lblod.info/id/bestuursorganen/7ac7d2cb-5fc6-4f36-a6dd-8813cd3e6f3a>
+    <http://data.lblod.info/id/bestuursorganen/b2bea1a43457ea68652f2f7d9b3fa396e952b7fb80d782fcc8660fea42d0c5d5>
+    <http://data.lblod.info/id/bestuursorganen/2a96151e-cbf1-42f6-ac5d-3f9780b3667d>
+  }
+
+  GRAPH ?g {
+    ?bestuursorgaanInTijd ?p ?o .
+  }
+}
+
+;
+
+# Delete properties for wrong URI
+
+DELETE WHERE {
+  GRAPH ?g {
+    ?s ?p <http://data.lblod.info/id/bestuurseenheden/cec30867-e378-4e86-9568-1efebb6ccd7d> .
+  }
+}
+
+;
+
+# Delete reverse properties for wrong URI
+
+DELETE WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuurseenheden/cec30867-e378-4e86-9568-1efebb6ccd7d> ?p ?o .
+  }
+}
