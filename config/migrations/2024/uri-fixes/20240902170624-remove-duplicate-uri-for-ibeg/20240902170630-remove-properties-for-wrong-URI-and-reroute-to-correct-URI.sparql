@@ -25,47 +25,21 @@ DELETE WHERE {
 # Re-route reverse properties to correct URI
 
 DELETE {
-  GRAPH ?g {
-    ?s0 <http://schema.org/recipient> ?wrongURI .
-  }
-
-  GRAPH ?h {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
     ?s1 <http://purl.org/pav/createdBy> ?wrongURI .
   }
 }
 INSERT {
-  GRAPH ?g {
-    ?s0 <http://schema.org/recipient> ?correctURI .
-  }
-
-  GRAPH ?h {
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-toezichtGebruiker> {
     ?s1 <http://purl.org/pav/createdBy> ?correctURI .
   }
 }
 WHERE {
   BIND(<http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> AS ?wrongURI)
-  BIND(<http://data.lblod.info/id/bestuurseenheden/cec30867-e378-4e86-9568-1efebb6ccd7d> AS ?correctURI)
+  BIND(<http://data.lblod.info/id/bestuurseenheden/da9f38da-eb84-4578-a206-72baee1865fe> AS ?correctURI)
 
-  GRAPH ?g {
-    ?s0 <http://schema.org/recipient> ?wrongURI .
-  }
-
-  GRAPH ?h {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
     ?s1 <http://purl.org/pav/createdBy> ?wrongURI .
-  }
-}
-
-;
-
-# Remove wrong URI + reverse properties
-
-DELETE WHERE {
-  GRAPH ?g {
-    <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> ?p0 ?o0 .
-  }
-
-  GRAPH ?h {
-    ?s1 ?p1 <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> .
   }
 }
 
@@ -74,12 +48,12 @@ DELETE WHERE {
 # Remove properties pointing to old bestuursorgaan in tijd and route them to the new URI
 
 DELETE {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
     ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
   }
 }
 INSERT {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-toezichtGebruiker> {
     ?s <http://data.europa.eu/eli/ontology#passed_by> ?newBestuursorgaanInTijd .
   }
 }
@@ -87,7 +61,7 @@ WHERE {
   BIND(<http://data.lblod.info/id/bestuursorganen/7264b6d0-f123-493a-8fe2-4802b5be1aec> AS ?oldBestuursorgaanInTijd)
   BIND(<http://data.lblod.info/id/bestuursorganen/288c0d58-079c-46e2-82ab-4ce4f987d0ab> AS ?newBestuursorgaanInTijd)
 
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
     ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
   }
 }
@@ -97,12 +71,12 @@ WHERE {
 # Remove properties pointing to old bestuursorgaan in tijd and route them to the new URI
 
 DELETE {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
     ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
   }
 }
 INSERT {
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-toezichtGebruiker> {
     ?s <http://data.europa.eu/eli/ontology#passed_by> ?newBestuursorgaanInTijd .
   }
 }
@@ -110,7 +84,7 @@ WHERE {
   BIND(<http://data.lblod.info/id/bestuursorganen/7ac7d2cb-5fc6-4f36-a6dd-8813cd3e6f3a> AS ?oldBestuursorgaanInTijd)
   BIND(<http://data.lblod.info/id/bestuursorganen/ecf12998-e29d-4c8c-98b6-f5f7d92f3e4a> AS ?newBestuursorgaanInTijd)
 
-  GRAPH ?g {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
     ?s <http://data.europa.eu/eli/ontology#passed_by> ?oldBestuursorgaanInTijd .
   }
 }
@@ -163,20 +137,14 @@ WHERE {
 
 ;
 
-# Delete properties for wrong URI
+# Remove wrong URI + reverse properties
 
 DELETE WHERE {
   GRAPH ?g {
-    ?s ?p <http://data.lblod.info/id/bestuurseenheden/cec30867-e378-4e86-9568-1efebb6ccd7d> .
+    <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> ?p0 ?o0 .
   }
-}
 
-;
-
-# Delete reverse properties for wrong URI
-
-DELETE WHERE {
-  GRAPH ?g {
-    <http://data.lblod.info/id/bestuurseenheden/cec30867-e378-4e86-9568-1efebb6ccd7d> ?p ?o .
+  GRAPH ?h {
+    ?s1 ?p1 <http://data.lblod.info/id/bestuurseenheden/2559a855-a1c9-489d-964b-1d3c9bada85b> .
   }
 }

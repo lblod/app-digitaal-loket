@@ -1,5 +1,5 @@
 INSERT {
-  # Insert Triples into the correct toezichtGebruiker graph
+  # Insert triples into the correct toezichtGebruiker graph
   GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-toezichtGebruiker> {
     ?s ?p ?o .
   }
@@ -14,7 +14,7 @@ WHERE {
 ;
 
 INSERT {
-  # Insert Triples into the correct toezichtGebruiker graph
+  # Insert triples into the correct toezichtGebruiker graph
   GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-subsidies> {
     ?s ?p ?o .
   }
@@ -29,7 +29,7 @@ WHERE {
 ;
 
 INSERT {
-  # Insert Triples into the correct toezichtGebruiker graph
+  # Insert triples into the correct toezichtGebruiker graph
   GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-bbcdrGebruiker> {
     ?s ?p ?o .
   }
@@ -44,7 +44,7 @@ WHERE {
 ;
 
 INSERT {
-  # Insert Triples into the correct graph
+  # Insert triples into the correct graph
   GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe> {
     ?s ?p ?o .
   }
