@@ -321,7 +321,7 @@ services:
     restart: always
     logging: *default-logging
   export-submissions:
-    image: lblod/mandaten-download-generator-service:0.3.6-hotfix_4
+    image: lblod/mandaten-download-generator-service:1.0.0-beta.4
     links:
       - virtuoso:database
     environment:
@@ -329,7 +329,7 @@ services:
       EXPORT_FILE_BASE: "submissions"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-submissions"
     volumes:
-      - ./data/exports/submissions:/data/exports
+      - ./data/exports/submissions:/share/exports
       - ./config/export/submissions:/config
     restart: always
     logging: *default-logging
