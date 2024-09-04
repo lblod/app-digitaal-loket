@@ -1,4 +1,59 @@
 # Changelog
+## unreleased
+### LMB
+ - cut-over to LMB
+### deploy notes
+#### LMB public
+In `docker-compose.override.yml`
+```
+  lmb-public-ldes-client:
+    environment:
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      BYPASS_MU_AUTH: "true"
+```
+
+```
+drc down;
+# flushing data first
+# Please make sure the correct config file is used for the virtuoso, or it might just get stuk
+cd scripts/purge-lmb-data/;
+drc -f docker-compose.script.yml up -d # check logs until finishes
+drc -f docker-compose.script.yml exec virtuoso bash;
+isql-v;
+exec('checkpoint');
+exit;
+exit;
+drc -f docker-compose.script.yml down
+cd -
+drc up -d database virtuoso # wait for proper startup of virtuoso
+drc up -d lmb-public-ldes-client # Wait until success
+# Here comment out all deltarules except the one going to delta-producer-publication-graph-maintainer
+# If you think 'too complicated' you can skip the step and just start the full stack `drc up -d`.
+# So the next command is valid IF you adjusted the deltanotifier rules.
+drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs
+drc exec publication-triplestore bash
+isql-v;
+exec('checkpoint');
+exit;
+exit;
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs
+
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+```
+After that, ensure `docker-compose.override.yml`
+```
+  lmb-public-ldes-client:
+    environment:
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      BYPASS_MU_AUTH: "false"
+```
+
 ## 1.103.1 (2024-08-27)
   - Fix consumer mapping issue [DL-6152]
 ## 1.103.0 (2024-08-23)
