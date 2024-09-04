@@ -53,6 +53,20 @@ After that, ensure `docker-compose.override.yml`
       FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
       BYPASS_MU_AUTH: "false"
 ```
+#### LMB private
+In `docker-compose.override.yml`
+```
+  lmb-private-ldes-client:
+    environment:
+      LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      BATCH_SIZE: "500"
+      EXTRA_HEADERS: '{"Authorization": "Basic encodedString'
+```
+```
+drc up -d lmb-private-ldes-client
+```
+
 
 ## 1.103.1 (2024-08-27)
   - Fix consumer mapping issue [DL-6152]

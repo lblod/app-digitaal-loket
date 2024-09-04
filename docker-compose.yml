@@ -672,3 +672,18 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
+  ################################################################################
+  # LMB PRIVATE CONSUMER
+  ################################################################################
+  lmb-private-ldes-client:
+    image: lblod/ldes-client:0.0.3
+    environment:
+      CRON_PATTERN: "*/1 * * * *"
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/"
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private"
+      BATCH_SIZE: "500"
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
