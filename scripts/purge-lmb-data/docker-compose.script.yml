@@ -15,9 +15,15 @@ services:
       - '9221:9229'
     volumes:
       - ./:/app
-    networks:
-      - script
-
-networks:
-  script:
-    external: true
+  virtuoso:
+    image: redpencil/virtuoso:1.2.0-rc.1
+    environment:
+      SPARQL_UPDATE: "true"
+      DEFAULT_GRAPH: "http://mu.semte.ch/application"
+    ports:
+      - "8890:8890"
+    volumes:
+      - ./../../data/db:/data
+      #- ./../../config/virtuoso/virtuoso.ini:/data/virtuoso.ini # Note: on production override this setting
+      - ./../../config/virtuoso/virtuoso-production.ini:/data/virtuoso.ini # Note: on production override this setting
+      - ./../../config/virtuoso/:/opt/virtuoso-scripts

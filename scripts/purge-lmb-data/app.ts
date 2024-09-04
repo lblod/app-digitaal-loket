@@ -76,9 +76,9 @@ async function dropBatchOfLMBGraphs() {
 
 async function transform() {
   console.log(
-    "\n\nWARNING: this script will DELETE all LMB data. Ctrl-C to cancel in the next 10 seconds\n\n"
+    "\n\nWARNING: this script will DELETE all LMB data. Ctrl-C to cancel in the next 30 seconds\n\n"
   );
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  await new Promise((resolve) => setTimeout(resolve, 30000));
 
   console.log("transforming!");
   await dropLMBGraphs();
