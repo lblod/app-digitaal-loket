@@ -657,3 +657,18 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
+  ################################################################################
+  # LMB PUBLIC CONSUMER
+  ################################################################################
+  lmb-public-ldes-client:
+    image: lblod/ldes-client:0.0.3
+    environment:
+      CRON_PATTERN: "*/1 * * * *"
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/"
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public"
+      BATCH_SIZE: "500"
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
