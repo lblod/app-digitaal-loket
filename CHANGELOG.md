@@ -1,4 +1,11 @@
 # Changelog
+## 1.104.0 (2024-09-05)
+### General
+#### Frontend
+ - `v0.97.0` (DL-6046, DL-6088): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0970-2024-09-05
+### Deploy Notes
+#### Docker Commands
+ - Note: see https://github.com/lblod/frontend-loket/pull/408 for the necessary feature flags
 ## 1.103.3 (2024-09-02)
 ### General
  - Fix migrations that removes duplicate URI for IBEG. (DL-5770)
