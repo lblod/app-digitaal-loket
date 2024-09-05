@@ -70,7 +70,6 @@ drc up -d lmb-private-ldes-client
 #### frontend
 Ensure the environment variables are correctly set. See https://github.com/lblod/app-digitaal-loket/pull/596
 
-=======
 ## 1.104.0 (2024-09-05)
 ### General
 #### Frontend
@@ -78,7 +77,7 @@ Ensure the environment variables are correctly set. See https://github.com/lblod
 ### Deploy Notes
 #### Docker Commands
  - Note: see https://github.com/lblod/frontend-loket/pull/408 for the necessary feature flags
->>>>>>> development
+
 ## 1.103.3 (2024-09-02)
 ### General
  - Fix migrations that removes duplicate URI for IBEG. (DL-5770)
