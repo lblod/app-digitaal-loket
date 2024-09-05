@@ -67,6 +67,8 @@ In `docker-compose.override.yml`
 drc up -d lmb-private-ldes-client
 ```
 
+#### frontend
+Ensure the environment variables are correctly set. See https://github.com/lblod/app-digitaal-loket/pull/596
 
 ## 1.103.1 (2024-08-27)
   - Fix consumer mapping issue [DL-6152]
