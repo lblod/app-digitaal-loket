@@ -44,6 +44,9 @@ drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/
 
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+
+# Now, if you previously played with the (internal) delta-notifier rules, undo these
+drc restart deltanotifier
 ```
 After that, ensure `docker-compose.override.yml`
 ```
@@ -53,6 +56,8 @@ After that, ensure `docker-compose.override.yml`
       FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
       BYPASS_MU_AUTH: "false"
 ```
+
+And now go to `drc up -d`
 #### LMB private
 In `docker-compose.override.yml`
 ```
