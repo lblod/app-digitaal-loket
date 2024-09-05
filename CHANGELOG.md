@@ -1,8 +1,8 @@
 # Changelog
 ## unreleased
 ### LMB
- - cut-over to LMB
-### deploy notes
+ - cut-over to LMB: see DL-6144.
+### Deploy notes
 #### LMB public
 In `docker-compose.override.yml`
 ```
@@ -70,6 +70,21 @@ drc up -d lmb-private-ldes-client
 #### frontend
 Ensure the environment variables are correctly set. See https://github.com/lblod/app-digitaal-loket/pull/596
 
+## 1.103.3 (2024-09-02)
+### General
+ - Fix migrations that removes duplicate URI for IBEG. (DL-5770)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+## 1.103.2 (2024-09-02)
+### General
+ - Remove duplicate URI for IBEG. (DL-5770)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+ 
 ## 1.103.1 (2024-08-27)
   - Fix consumer mapping issue [DL-6152]
 ## 1.103.0 (2024-08-23)
