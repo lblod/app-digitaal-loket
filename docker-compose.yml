@@ -667,6 +667,9 @@ services:
       LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/"
       FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public"
+      STATUS_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public/status"
+      WORKING_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public/working"
+      BATCH_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public/batch"
       BATCH_SIZE: "500"
     restart: always
     labels:
@@ -682,6 +685,9 @@ services:
       LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/"
       FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/1"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private"
+      STATUS_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private/status"
+      WORKING_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private/working"
+      BATCH_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private/batch"
       BATCH_SIZE: "500"
     restart: always
     labels:
