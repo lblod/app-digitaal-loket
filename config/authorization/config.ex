@@ -272,40 +272,6 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/adms#Identifier",
                       ] } } ] },
 
-      # // ORG-MANDATENBEHEER
-      %GroupSpec{
-        name: "o-mdb-r",
-        useage: [:read],
-        access: access_by_role( "LoketLB-mandaatGebruiker" ),
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/organizations/",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
-                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
-                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
-                        "http://www.w3.org/ns/org#Membership",
-                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
-                        "http://www.w3.org/ns/person#Person",
-                        "http://www.w3.org/ns/adms#Identifier",
-                        "http://purl.org/dc/terms/PeriodOfTime" ] } } ] },
-      %GroupSpec{
-        name: "o-mdb-wf",
-        useage: [:write, :read_for_write],
-        access: access_by_role( "LoketLB-mandaatGebruiker" ),
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/organizations/",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie",
-                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
-                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
-                        "http://www.w3.org/ns/org#Membership",
-                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
-                        "http://www.w3.org/ns/person#Person",
-                        "http://www.w3.org/ns/adms#Identifier",
-                        "http://purl.org/dc/terms/PeriodOfTime" ] } } ] },
-
       # // BBCDR
       %GroupSpec{
         name: "o-bbcdr-rwf",
