@@ -1,0 +1,40 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/4639f18d-2141-4def-b2c4-6be1f6bb3ce7> a cleanup:Job ;
+  mu:uuid "4639f18d-2141-4def-b2c4-6be1f6bb3ce7" ;
+  dcterms:title "Move failed emails from the failbox to the outbox" ;
+  cleanup:randomQuery """
+    DELETE {
+      GRAPH <http://mu.semte.ch/graphs/system/email> {
+        ?mail
+          <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isPartOf> ?failbox ;
+          <http://redpencil.data.gift/vocabularies/tasks/numberOfRetries> ?numberOfRetries .
+      }
+    }
+    INSERT {
+      GRAPH <http://mu.semte.ch/graphs/system/email> {
+        ?mail
+          <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isPartOf> ?outbox ;
+          <http://redpencil.data.gift/vocabularies/tasks/numberOfRetries> 0 .
+      }
+    }
+    WHERE {
+      BIND(<http://data.lblod.info/id/mail-folders/2> AS ?outbox)
+      BIND(<http://data.lblod.info/id/mail-folders/6> AS ?failbox)
+
+      GRAPH <http://mu.semte.ch/graphs/system/email> {
+        ?mail
+          <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#isPartOf> ?failbox ;
+          <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#sentDate> ?sentDate ;
+          <http://redpencil.data.gift/vocabularies/tasks/numberOfRetries> ?numberOfRetries .
+
+        BIND(xsd:dateTime(REPLACE(STR(?sentDate), "Z", "")) AS ?date)
+        BIND(xsd:date(NOW() - "P7D"^^xsd:duration) AS ?lastWeek)
+
+        FILTER(xsd:date(?date) >= ?lastWeek)
+      }
+    }
+  """ ;
+  cleanup:cronPattern "2 */1 * * *" .
