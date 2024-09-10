@@ -1,4 +1,14 @@
 # Changelog
+## 1.104.1 (2024-09-10)
+### General
+ - Fix failed emails report. (DL-6091)
+ - Add cleanup job to routinely move failed emails from the failbox to the outbox. (DL-6091)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart report-generation resource cache`
+ - `drc exec dbcleanup curl -X POST "http://localhost/disableCronJobs" && drc logs -ft --tail=200 dbcleanup`
+ - `drc exec dbcleanup curl -X POST "http://localhost/cleanup" && drc logs -ft --tail=200 dbcleanup`
 ## 1.104.0 (2024-09-05)
 ### General
 #### Frontend
