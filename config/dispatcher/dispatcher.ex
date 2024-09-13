@@ -479,20 +479,6 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # loket-subsidies sync
-  #################################################################
-  post "/sync/subsidies/login/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/login/"
-  end
-
-  #################################################################
-  # loket-subsidies sync
-  #################################################################
-  get "/sync/subsidies/files/*path" do
-    forward conn, path, "http://delta-producer-publication-graph-maintainer-subsidies/files/"
-  end
-
-  #################################################################
   # Vendor-Management sync
   #################################################################
   post "/sync/vendor-management/login/*path" do
@@ -501,102 +487,6 @@ defmodule Dispatcher do
 
   get "/sync/vendor-management/files/*path" do
     Proxy.forward conn, path, "http://delta-producer-publication-graph-maintainer/vendor-management/files/"
-  end
-
-  #################################################################
-  # subsidy-applications: resources
-  #################################################################
-
-  match "/subsidy-measure-consumptions/*path" do
-    forward conn, path, "http://cache/subsidy-measure-consumptions/"
-  end
-
-  match "/subsidy-measure-consumption-statuses/*path" do
-    forward conn, path, "http://cache/subsidy-measure-consumption-statuses/"
-  end
-
-  match "/subsidy-requests/*path" do
-    forward conn, path, "http://cache/subsidy-requests/"
-  end
-
-  match "/monetary-amounts/*path" do
-    forward conn, path, "http://cache/monetary-amounts/"
-  end
-
-  match "/subsidy-measure-offers/*path" do
-    forward conn, path, "http://cache/subsidy-measure-offers/"
-  end
-
-  match "/subsidy-measure-offer-series/*path" do
-    forward conn, path, "http://cache/subsidy-measure-offer-series/"
-  end
-
-  match "/subsidy-application-flows/*path" do
-    forward conn, path, "http://cache/subsidy-application-flows/"
-  end
-
-  match "/subsidy-application-flow-steps/*path" do
-    forward conn, path, "http://cache/subsidy-application-flow-steps/"
-  end
-
-  match "/subsidy-procedural-steps/*path" do
-    forward conn, path, "http://cache/subsidy-procedural-steps/"
-  end
-
-  match "/periods-of-time/*path" do
-    forward conn, path, "http://cache/periods-of-time/"
-  end
-
-  match "/criteria/*path" do
-    forward conn, path, "http://cache/criteria/"
-  end
-
-  match "/requirement-groups/*path" do
-    forward conn, path, "http://cache/requirement-groups/"
-  end
-
-  match "/criterion-requirements/*path" do
-    forward conn, path, "http://cache/criterion-requirements/"
-  end
-
-  match "/participations/*path" do
-    forward conn, path, "http://cache/participations/"
-  end
-
-  match "/subsidy-application-forms/*path" do
-    forward conn, path, "http://cache/subsidy-application-forms/"
-  end
-
-  #################################################################
-  # subsidy-applications: custom API endpoints
-  #################################################################
-
-  match "/case-number-generator/*path" do
-    forward conn, path, "http://case-number-generator/"
-  end
-
-  get "/management-active-form-file/*path" do
-    forward conn, path, "http://subsidy-applications-management/active-form-file/"
-  end
-
-  get "/management-application-forms/*path" do
-    forward conn, path, "http://subsidy-applications-management/semantic-forms/"
-  end
-
-  put "/management-application-forms/*path" do
-    forward conn, path, "http://subsidy-applications-management/semantic-forms/"
-  end
-
-  delete "/management-application-forms/*path" do
-    forward conn, path, "http://subsidy-applications-management/semantic-forms/"
-  end
-
-  post "/management-application-forms/:id/submit" do
-    forward conn, [], "http://subsidy-applications-management/semantic-forms/" <> id <> "/submit"
-  end
-
-  match "/flow-management/*path" do
-    forward conn, path, "http://subsidy-application-flow-management/flow/"
   end
 
   #################################################################
