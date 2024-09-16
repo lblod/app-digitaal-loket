@@ -1,4 +1,6 @@
 # Changelog
+## Unreleased
+ - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to ``SELECT` queries)
 ## 1.104.1 (2024-09-10)
 ### General
  - Fix failed emails report. (DL-6091)
