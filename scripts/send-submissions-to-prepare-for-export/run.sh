@@ -12,8 +12,8 @@ do
           "subject": { "type": "uri", "value": "'"$l"'" },
           "predicate": { "type": "uri", "value": "http://mu.semte.ch/vocabularies/ext/formSubmissionStatus" },
           "object": { "type": "uri", "value": "http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c" }
-        } 
-      ]  
+        }
+      ]
     }
   ]'
 done < form-data-uris.txt
