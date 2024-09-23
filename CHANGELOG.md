@@ -1,4 +1,7 @@
 # Changelog
+## Unreleased
+### Subsidies
+- Remove all Subsidies services, configuration and old migration files
 ## 1.104.2 (2024-09-20)
 ### General
  - Fix submissions not flagged for export (DL-6182)
