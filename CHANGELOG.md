@@ -1,4 +1,12 @@
 # Changelog
+## 1.104.2 (2024-09-20)
+### General
+ - Fix submissions not flagged for export (DL-6182)
+### Deploy Notes
+#### Docker Commands
+ - `drc up -d prepare-submissions-for-export`
+#### Manual commands
+ - see script Readme in https://github.com/lblod/app-digitaal-loket/pull/599
 ## 1.104.1 (2024-09-10)
 ### General
  - Fix failed emails report. (DL-6091)
