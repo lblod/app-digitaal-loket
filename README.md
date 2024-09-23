@@ -3,7 +3,6 @@
 Digitaal Loket application on top of multiple application profiles as defined on:
 * http://data.vlaanderen.be/ns/mandaat
 * http://data.vlaanderen.be/doc/applicatieprofiel/mandatendatabank
-* https://data.vlaanderen.be/doc/applicatieprofiel/besluit-subsidie/
 * https://lblod.github.io/pages-vendors/#/docs/leidinggevenden
 * [Needs ref.] eredienst mandatendatabank
 * [Needs ref.] eredienst bedienaren
