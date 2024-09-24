@@ -6,11 +6,11 @@ PREFIX dct:   <http://purl.org/dc/terms/>
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     # Insert bestuurseenheid
-    <https://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED>
+    <http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED>
       rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>, <http://www.w3.org/ns/org#Organization>  ;
       <http://mu.semte.ch/vocabularies/core/uuid> "66DB132B6ABCA6E6BF2DBBED" ;
       skos:prefLabel "Sint-Anna" ;
-      <http://mu.semte.ch/vocabularies/ext/kbonummer>	"1011.411.080" ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer>	"1011411080" ;
       <http://mu.semte.ch/vocabularies/ext/inProvincie> <http://data.lblod.info/id/werkingsgebieden/f2bda6eb42c1ab85c4ef36588a043ac2bfeffa31bfb88bb7abc597f01efe270b> ; # Provincie Antwerpen
       <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/e8294b73-87c9-4fa2-9441-1937350763c9> . # Welzijnsvereniging
   }
