@@ -1,5 +1,8 @@
 # Changelog
 ## Unreleased
+### General
+#### Frontend
+ - `v0.97.3` (DGS-383): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0973-2024-09-24
 ### Subsidies
 - Remove all Subsidies services, configuration and old migration files
 ## 1.104.2 (2024-09-20)
