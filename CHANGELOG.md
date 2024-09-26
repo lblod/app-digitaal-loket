@@ -65,7 +65,7 @@ In `docker-compose.override.yml`
       LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
       FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
       BATCH_SIZE: "500"
-      EXTRA_HEADERS: '{"Authorization": "Basic encodedString'
+      EXTRA_HEADERS: '{"Authorization": "Basic encodedString}'
 ```
 ```
 drc up -d lmb-private-ldes-client
