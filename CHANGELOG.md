@@ -2,6 +2,7 @@
 ## unreleased
 ### LMB
  - cut-over to LMB: see DL-6144.
+ - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to `SELECT` queries)
 ### Deploy notes
 #### LMB public
 In `docker-compose.override.yml`
@@ -71,11 +72,27 @@ In `docker-compose.override.yml`
 ```
 drc up -d lmb-private-ldes-client
 ```
-
 #### frontend
 Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
 Ensure controle is bumped too
-
+## 1.104.2 (2024-09-20)
+### General
+ - Fix submissions not flagged for export (DL-6182)
+### Deploy Notes
+#### Docker Commands
+ - `drc up -d prepare-submissions-for-export`
+#### Manual commands
+ - see script Readme in https://github.com/lblod/app-digitaal-loket/pull/599
+## 1.104.1 (2024-09-10)
+### General
+ - Fix failed emails report. (DL-6091)
+ - Add cleanup job to routinely move failed emails from the failbox to the outbox. (DL-6091)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart report-generation resource cache`
+ - `drc exec dbcleanup curl -X POST "http://localhost/disableCronJobs" && drc logs -ft --tail=200 dbcleanup`
+ - `drc exec dbcleanup curl -X POST "http://localhost/cleanup" && drc logs -ft --tail=200 dbcleanup`
 ## 1.104.0 (2024-09-05)
 ### General
 #### Frontend
@@ -83,7 +100,6 @@ Ensure controle is bumped too
 ### Deploy Notes
 #### Docker Commands
  - Note: see https://github.com/lblod/frontend-loket/pull/408 for the necessary feature flags
-
 ## 1.103.3 (2024-09-02)
 ### General
  - Fix migrations that removes duplicate URI for IBEG. (DL-5770)
@@ -98,7 +114,7 @@ Ensure controle is bumped too
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache`
- 
+
 ## 1.103.1 (2024-08-27)
   - Fix consumer mapping issue [DL-6152]
 ## 1.103.0 (2024-08-23)

@@ -165,7 +165,7 @@ services:
     restart: always
     logging: *default-logging
   package-bbcdr:
-    image: lblod/package-bbcdr-rapporten-service:0.4.0
+    image: lblod/package-bbcdr-rapporten-service:0.4.3
     volumes:
       - ./data/files:/data/files
     environment:
@@ -417,7 +417,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.9.0
+    image: lblod/prepare-submissions-for-export-service:0.11.0
     labels:
       - "logging=true"
     restart: always
