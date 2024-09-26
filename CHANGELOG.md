@@ -29,7 +29,7 @@ drc -f docker-compose.script.yml down
 cd -
 drc up -d database virtuoso # wait for proper startup of virtuoso
 drc up -d lmb-public-ldes-client # Wait until success
-# Here comment out all delta-rules except the one going to:
+# Here comment out all delta-rules in (config/delta/rules.js) except the ones going to:
 #  - delta-producer-publication-graph-maintainer
 #  - delta-producer-dump-file-publisher
 drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
@@ -44,6 +44,7 @@ exit;
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs # wait until success of the TASK (not the job)
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+git checkout config/delta/rules.js
 drc restart deltanotifier
 ```
 After that, ensure `docker-compose.override.yml`
