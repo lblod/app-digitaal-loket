@@ -165,7 +165,7 @@ services:
     restart: always
     logging: *default-logging
   package-bbcdr:
-    image: lblod/package-bbcdr-rapporten-service:0.4.0
+    image: lblod/package-bbcdr-rapporten-service:0.4.3
     volumes:
       - ./data/files:/data/files
     environment:

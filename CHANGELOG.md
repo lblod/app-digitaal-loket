@@ -5,6 +5,8 @@
  - `v0.97.3` (DGS-383): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0973-2024-09-24
 ### Subsidies
 - Remove all Subsidies services, configuration and old migration files
+### BBC
+ - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to ``SELECT` queries)
 ## 1.104.2 (2024-09-20)
 ### General
  - Fix submissions not flagged for export (DL-6182)
