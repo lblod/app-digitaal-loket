@@ -17,7 +17,7 @@ In `docker-compose.override.yml`
 ```
 drc down;
 # flushing data first
-# Please make sure the correct config file is used for the virtuoso, or it might just get stuk
+# Please make sure the correct config file is used for the virtuoso, or it might just get stuck
 cd scripts/purge-lmb-data/;
 drc -f docker-compose.script.yml up -d # check logs until finishes
 drc -f docker-compose.script.yml exec virtuoso bash;
@@ -29,24 +29,21 @@ drc -f docker-compose.script.yml down
 cd -
 drc up -d database virtuoso # wait for proper startup of virtuoso
 drc up -d lmb-public-ldes-client # Wait until success
-# Here comment out all deltarules except the one going to delta-producer-publication-graph-maintainer
-# If you think 'too complicated' you can skip the step and just start the full stack `drc up -d`.
-# So the next command is valid IF you adjusted the deltanotifier rules.
+# Here comment out all delta-rules except the one going to:
+#  - delta-producer-publication-graph-maintainer
+#  - delta-producer-dump-file-publisher
 drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
-drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs # wait until success of the TASK (not the job)
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
 drc exec publication-triplestore bash
 isql-v;
 exec('checkpoint');
 exit;
 exit;
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
-drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs
-
-drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs # wait until success of the TASK (not the job)
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
-
-# Now, if you previously played with the (internal) delta-notifier rules, undo these
 drc restart deltanotifier
 ```
 After that, ensure `docker-compose.override.yml`
