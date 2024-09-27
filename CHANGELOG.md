@@ -72,7 +72,6 @@ drc up -d lmb-private-ldes-client
 ```
 #### frontend
 Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
-Ensure controle is bumped too
 ## 1.104.2 (2024-09-20)
 ### General
  - Fix submissions not flagged for export (DL-6182)
