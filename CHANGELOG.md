@@ -1,6 +1,77 @@
 # Changelog
-## Unreleased
- - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to ``SELECT` queries)
+## unreleased
+### LMB
+ - cut-over to LMB: see DL-6144.
+ - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to `SELECT` queries)
+### Deploy notes
+#### LMB public
+In `docker-compose.override.yml`
+```
+  lmb-public-ldes-client:
+    environment:
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      BYPASS_MU_AUTH: "true"
+```
+
+```
+drc down;
+# flushing data first
+# Please make sure the correct config file is used for the virtuoso, or it might just get stuck
+cd scripts/purge-lmb-data/;
+drc -f docker-compose.script.yml up -d # check logs until finishes
+drc -f docker-compose.script.yml exec virtuoso bash;
+isql-v;
+exec('checkpoint');
+exit;
+exit;
+drc -f docker-compose.script.yml down
+cd -
+drc up -d database virtuoso # wait for proper startup of virtuoso
+drc up -d lmb-public-ldes-client # Wait until success
+# Here comment out all delta-rules in (config/delta/rules.js) except the ones going to:
+#  - delta-producer-publication-graph-maintainer
+#  - delta-producer-dump-file-publisher
+drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs # wait until success of the TASK (not the job)
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec publication-triplestore bash
+isql-v;
+exec('checkpoint');
+exit;
+exit;
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs # wait until success of the TASK (not the job)
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+git checkout config/delta/rules.js
+drc restart deltanotifier
+```
+After that, ensure `docker-compose.override.yml`
+```
+  lmb-public-ldes-client:
+    environment:
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      BYPASS_MU_AUTH: "false"
+```
+
+And now go to `drc up -d`
+#### LMB private
+In `docker-compose.override.yml`
+```
+  lmb-private-ldes-client:
+    environment:
+      LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      BATCH_SIZE: "500"
+      EXTRA_HEADERS: '{"Authorization": "Basic encodedString}'
+```
+```
+drc up -d lmb-private-ldes-client
+```
+#### frontend
+Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
 ## 1.104.2 (2024-09-20)
 ### General
  - Fix submissions not flagged for export (DL-6182)
@@ -40,6 +111,7 @@
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart resource cache`
+
 ## 1.103.1 (2024-08-27)
   - Fix consumer mapping issue [DL-6152]
 ## 1.103.0 (2024-08-23)
