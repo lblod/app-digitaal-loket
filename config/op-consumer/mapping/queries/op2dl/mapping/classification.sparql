@@ -1,0 +1,8 @@
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+CONSTRUCT {
+  ?s besluit:classificatie ?o .
+} WHERE {
+  ?s org:classification ?o .
+}

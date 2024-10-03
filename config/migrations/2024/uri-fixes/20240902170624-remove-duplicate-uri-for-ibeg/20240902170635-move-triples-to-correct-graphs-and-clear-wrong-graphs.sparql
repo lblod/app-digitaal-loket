@@ -1,0 +1,87 @@
+INSERT {
+  # Insert triples into the correct toezichtGebruiker graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-toezichtGebruiker> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  # Match triples from the wrong toezichtGebruiker graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker> {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+INSERT {
+  # Insert triples into the correct toezichtGebruiker graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-subsidies> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  # Match triples from the wrong toezichtGebruiker graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-subsidies> {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+INSERT {
+  # Insert triples into the correct toezichtGebruiker graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe/LoketLB-bbcdrGebruiker> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  # Match triples from the wrong toezichtGebruiker graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-bbcdrGebruiker> {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+INSERT {
+  # Insert triples into the correct graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/da9f38da-eb84-4578-a206-72baee1865fe> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  # Match triples from the wrong graph
+  GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b> {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# Clear wrong toezichtGebruiker graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-toezichtGebruiker>
+
+;
+
+# Clear wrong berichtenGebruiker graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-berichtenGebruiker>
+
+;
+
+# Clear wrong personeelsbeheer graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-personeelsbeheer>
+
+;
+
+# Clear wrong subsidies graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-subsidies>
+
+;
+
+# Clear wrong bbcdrGebruiker graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b/LoketLB-bbcdrGebruiker>
+
+;
+
+# Clear wrong graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/2559a855-a1c9-489d-964b-1d3c9bada85b>

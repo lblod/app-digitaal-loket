@@ -1,0 +1,11 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?s a besluit:Bestuurseenheid, ere:CentraalBestuurVanDeEredienst;
+    skos:topConceptOf <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083> ;
+    skos:inScheme <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083> .
+} WHERE {
+  ?s a ere:CentraalBestuurVanDeEredienst
+}

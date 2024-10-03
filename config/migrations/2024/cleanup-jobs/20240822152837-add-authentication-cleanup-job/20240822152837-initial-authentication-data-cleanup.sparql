@@ -1,0 +1,62 @@
+DELETE {
+  GRAPH ?g {
+    ?resource <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+  }
+
+  GRAPH ?h {
+    ?resource <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+  }
+
+  GRAPH ?i {
+    ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+    ?targetAuthenticationConfigurationO ?p_t ?o_t .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    {
+      VALUES ?status {
+        <http://lblod.data.gift/file-download-statuses/success>
+        <http://lblod.data.gift/file-download-statuses/failure>
+      }
+
+      ?resource a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject> ;
+        <http://www.w3.org/ns/adms#status> ?status ;
+        <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+    }
+    UNION
+    {
+      VALUES ?status {
+        <http://redpencil.data.gift/id/concept/JobStatus/success>
+        <http://redpencil.data.gift/id/concept/JobStatus/failure>
+      }
+
+      ?resource a <http://vocab.deri.ie/cogs#Job> ;
+        <http://www.w3.org/ns/adms#status> ?status ;
+        <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+    }
+    UNION
+    {
+      VALUES ?status {
+        <http://redpencil.data.gift/id/concept/JobStatus/success>
+        <http://redpencil.data.gift/id/concept/JobStatus/failure>
+      }
+
+      ?job a <http://vocab.deri.ie/cogs#Job> ;
+        <http://www.w3.org/ns/prov#generated> ?resource ;
+        <http://www.w3.org/ns/adms#status> ?status .
+
+      GRAPH ?h {
+        ?resource a <http://rdf.myexperiment.org/ontologies/base/Submission> ;
+          <http://lblod.data.gift/vocabularies/security/targetAuthenticationConfiguration> ?targetAuthenticationConfiguration .
+      }
+    }
+  }
+
+  OPTIONAL {
+    GRAPH ?i {
+      ?targetAuthenticationConfiguration ?targetAuthenticationConfigurationP ?targetAuthenticationConfigurationO .
+      ?targetAuthenticationConfigurationO ?p_t ?o_t .
+    }
+  }
+}

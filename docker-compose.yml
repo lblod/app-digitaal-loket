@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.95.0
+    image: lblod/frontend-loket:0.97.2
     links:
       - identifier:backend
     labels:
@@ -165,7 +165,7 @@ services:
     restart: always
     logging: *default-logging
   package-bbcdr:
-    image: lblod/package-bbcdr-rapporten-service:0.4.0
+    image: lblod/package-bbcdr-rapporten-service:0.4.3
     volumes:
       - ./data/files:/data/files
     environment:
@@ -185,7 +185,7 @@ services:
     restart: always
     logging: *default-logging
   dbcleanup:
-    image: lblod/db-cleanup-service:0.3.0
+    image: lblod/db-cleanup-service:0.5.0
     labels:
       - "logging=true"
     restart: always
@@ -348,7 +348,7 @@ services:
     restart: always
     logging: *default-logging
   person-uri-for-social-security-number:
-    image: lblod/person-uri-for-social-security-number-service:0.4.0
+    image: lblod/person-uri-for-social-security-number-service:0.5.0
     labels:
       - "logging=true"
     restart: always
@@ -423,7 +423,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.10.0
+    image: lblod/prepare-submissions-for-export-service:0.11.0
     labels:
       - "logging=true"
     restart: always
@@ -561,7 +561,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.2.1
+    image: lblod/delta-producer-publication-graph-maintainer:1.2.2
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
@@ -638,35 +638,63 @@ services:
   ################################################################################
   # OP PUBLIC CONSUMER
   ################################################################################
-  reasoner:
-    image: eyereasoner/reasoning-service:increased-stack-limit
-    volumes:
-      - ./config/reasoner:/config
-    restart: always
-    labels:
-      - "logging=true"
-    logging: *default-logging
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.24
+    image: lblod/delta-consumer:0.0.25-rc.3
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
+      DCR_SYNC_FILES_PATH: "/sync/public/files"
       DCR_SYNC_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/PublicCacheGraphDump"
       DCR_INITIAL_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/op-public"
       DCR_DELTA_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/deltaSync/op-public"
       DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
       DCR_DISABLE_INITIAL_SYNC: "true"
-      BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
-      BATCH_SIZE: 1000
-      DCR_SYNC_FILES_PATH: "/sync/public/files"
-      FILE_SYNC_GRAPH: "http://mu.semte.ch/graphs/temp/original-physical-files-data"
-      KEEP_DELTA_FILES: "true"
-      DCR_ENABLE_DELTA_CONTEXT: "true"
-      DCR_LANDING_ZONE_DATABASE: "publication-triplestore"
+      DCR_KEEP_DELTA_FILES: "true"
+      DCR_ENABLE_TRIPLE_REMAPPING: "true"
       DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
+      DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"
+      DCR_BATCH_SIZE: 1000
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      SUDO_QUERY_RETRY: "true"
     volumes:
-      - ./config/op-consumer/public:/config/triples-dispatching/custom-dispatching
+      - ./config/op-consumer/mapping:/config/mapping
       - ./data/files/consumer-files/op-public:/consumer-files/
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
+  ################################################################################
+  # LMB PUBLIC CONSUMER
+  ################################################################################
+  lmb-public-ldes-client:
+    image: lblod/ldes-client:0.0.3
+    environment:
+      CRON_PATTERN: "*/1 * * * *"
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/"
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public"
+      STATUS_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public/status"
+      WORKING_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public/working"
+      BATCH_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/public/batch"
+      BATCH_SIZE: "500"
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
+  ################################################################################
+  # LMB PRIVATE CONSUMER
+  ################################################################################
+  lmb-private-ldes-client:
+    image: lblod/ldes-client:0.0.3
+    environment:
+      CRON_PATTERN: "*/1 * * * *"
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/"
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private"
+      STATUS_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private/status"
+      WORKING_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private/working"
+      BATCH_GRAPH: "http://mu.semte.ch/graphs/lmb/mandaten/private/batch"
+      BATCH_SIZE: "500"
     restart: always
     labels:
       - "logging=true"

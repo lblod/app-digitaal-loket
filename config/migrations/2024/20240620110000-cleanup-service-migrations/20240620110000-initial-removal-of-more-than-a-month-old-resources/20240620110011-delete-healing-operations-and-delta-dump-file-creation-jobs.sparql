@@ -1,0 +1,50 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin> {
+    ?resource ?p ?o .
+    ?task ?taskP ?taskO .
+    ?resultsContainer ?presultsContainer ?oresultsContainer .
+    ?inputContainer ?pinputContainer ?oinputContainer .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin> {
+    VALUES ?operation {
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/mandatarissen>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/mandatarissen>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/leidinggevenden>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/leidinggevenden>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/submissions>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/submissions>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-submissions>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-submissions>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/persons-sensitive>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/persons-sensitive>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/vendor-management>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/vendor-management>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/worship-services-sensitive>
+      <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/worship-services-sensitive>
+    }
+
+    ?resource a <http://vocab.deri.ie/cogs#Job> ;
+      <http://redpencil.data.gift/vocabularies/tasks/operation> ?operation ;
+      <http://purl.org/dc/terms/modified> ?modified .
+
+    FILTER (?modified < (NOW() - "P1M"^^xsd:duration))
+
+    ?task <http://purl.org/dc/terms/isPartOf> ?resource ;
+      ?taskP ?taskO .
+    ?resource ?p ?o .
+
+    OPTIONAL {
+      ?task <http://redpencil.data.gift/vocabularies/tasks/resultsContainer> ?resultsContainer .
+      ?resultsContainer ?presultsContainer ?oresultsContainer .
+    }
+
+    OPTIONAL {
+      ?task <http://redpencil.data.gift/vocabularies/tasks/inputContainer> ?inputContainer .
+      ?inputContainer ?pinputContainer ?oinputContainer .
+    }
+  }
+}

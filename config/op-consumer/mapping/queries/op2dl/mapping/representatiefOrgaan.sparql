@@ -1,0 +1,12 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?s a besluit:Bestuurseenheid;
+    besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213>;
+    skos:topConceptOf <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083> ;
+    skos:inScheme <http://lblod.data.gift/concept-schemes/7e2b965e-c824-474f-b5d5-b1c115740083> .
+
+} WHERE {
+  ?s <http://www.w3.org/ns/org#classification> <http://data.vlaanderen.be/id/concept/RepresentatiefOrgaanClassificatieCode/89a00b5a-024f-4630-a722-65a5e68967e5>.
+}

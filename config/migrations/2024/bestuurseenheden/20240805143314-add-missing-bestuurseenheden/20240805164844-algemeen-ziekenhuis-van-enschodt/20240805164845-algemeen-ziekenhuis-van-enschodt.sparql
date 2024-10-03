@@ -1,0 +1,58 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX dct:   <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Insert bestuurseenheid
+    <http://data.lblod.info/id/bestuurseenheden/fc648151-f691-4d75-a954-b3249a4deb76>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "fc648151-f691-4d75-a954-b3249a4deb76" ;
+      skos:prefLabel "Algemeen Ziekenhuis Van Enschodt" ;
+      <http://mu.semte.ch/vocabularies/ext/kbonummer>	"0459993992" ;
+      dcterms:identifier "0459993992" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/34b5af85-dc9f-468f-9e03-ef89b174c267> . # Autonome verzorgingsinstelling
+
+    # Insert bestuursorganen
+    <http://data.lblod.info/id/bestuursorganen/a27884a1cc3fd3320a4a2fbf73b8eb1e>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"a27884a1cc3fd3320a4a2fbf73b8eb1e" ;
+      skos:prefLabel "Raad van bestuur Algemeen Ziekenhuis Van Enschodt" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/fc648151-f691-4d75-a954-b3249a4deb76> .
+
+    <http://data.lblod.info/id/bestuursorganen/2dce59638fc7bcb94b10d06abf893a45>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"2dce59638fc7bcb94b10d06abf893a45" ;
+      skos:prefLabel "Algemene vergadering Algemeen Ziekenhuis Van Enschodt" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/fc648151-f691-4d75-a954-b3249a4deb76> .
+
+    <http://data.lblod.info/id/bestuursorganen/303354072631eaaaf7ecf0da4a177844>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"303354072631eaaaf7ecf0da4a177844" ;
+      skos:prefLabel "Leidend Ambtenaar Algemeen Ziekenhuis Van Enschodt" ;
+      <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/fc648151-f691-4d75-a954-b3249a4deb76> .
+
+    # Insert bestuursorganen in tijd
+    <http://data.lblod.info/id/bestuursorganen/ddd04bd3649511c9b341c3fd03141dde>
+      rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"ddd04bd3649511c9b341c3fd03141dde" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/303354072631eaaaf7ecf0da4a177844> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/20dfaa63c4e118af097d102312375974>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "20dfaa63c4e118af097d102312375974" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/2dce59638fc7bcb94b10d06abf893a45> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+
+    <http://data.lblod.info/id/bestuursorganen/8a58d4d746f5893c88ef3489ca49fd92>
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://mu.semte.ch/vocabularies/core/uuid>	"8a58d4d746f5893c88ef3489ca49fd92" ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>	<http://data.lblod.info/id/bestuursorganen/a27884a1cc3fd3320a4a2fbf73b8eb1e> ;
+      <http://data.vlaanderen.be/ns/mandaat#bindingStart>	"2019-01-01"^^xsd:date .
+  }
+}

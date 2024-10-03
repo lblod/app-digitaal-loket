@@ -1,10 +1,199 @@
 # Changelog
-## Unreleased
+## unreleased
+### LMB
+ - cut-over to LMB: see DL-6144.
+ - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to `SELECT` queries)
+### Deploy notes
+#### LMB public
+In `docker-compose.override.yml`
+```
+  lmb-public-ldes-client:
+    environment:
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      BYPASS_MU_AUTH: "true"
+```
+
+```
+drc down;
+# flushing data first
+# Please make sure the correct config file is used for the virtuoso, or it might just get stuck
+cd scripts/purge-lmb-data/;
+drc -f docker-compose.script.yml up -d # check logs until finishes
+drc -f docker-compose.script.yml exec virtuoso bash;
+isql-v;
+exec('checkpoint');
+exit;
+exit;
+drc -f docker-compose.script.yml down
+cd -
+drc up -d database virtuoso # wait for proper startup of virtuoso
+drc up -d lmb-public-ldes-client # Wait until success
+# Here comment out all delta-rules in (config/delta/rules.js) except the ones going to:
+#  - delta-producer-publication-graph-maintainer
+#  - delta-producer-dump-file-publisher
+drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs # wait until success of the TASK (not the job)
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
+drc exec publication-triplestore bash
+isql-v;
+exec('checkpoint');
+exit;
+exit;
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs # wait until success of the TASK (not the job)
+drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
+git checkout config/delta/rules.js
+drc restart deltanotifier
+```
+After that, ensure `docker-compose.override.yml`
+```
+  lmb-public-ldes-client:
+    environment:
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      BYPASS_MU_AUTH: "false"
+```
+
+And now go to `drc up -d`
+#### LMB private
+In `docker-compose.override.yml`
+```
+  lmb-private-ldes-client:
+    environment:
+      LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      BATCH_SIZE: "500"
+      EXTRA_HEADERS: '{"Authorization": "Basic encodedString}'
+```
+```
+drc up -d lmb-private-ldes-client
+```
+#### frontend
+Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
+## 1.104.2 (2024-09-20)
+### General
+ - Fix submissions not flagged for export (DL-6182)
+### Deploy Notes
+#### Docker Commands
+ - `drc up -d prepare-submissions-for-export`
+#### Manual commands
+ - see script Readme in https://github.com/lblod/app-digitaal-loket/pull/599
+## 1.104.1 (2024-09-10)
+### General
+ - Fix failed emails report. (DL-6091)
+ - Add cleanup job to routinely move failed emails from the failbox to the outbox. (DL-6091)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart report-generation resource cache`
+ - `drc exec dbcleanup curl -X POST "http://localhost/disableCronJobs" && drc logs -ft --tail=200 dbcleanup`
+ - `drc exec dbcleanup curl -X POST "http://localhost/cleanup" && drc logs -ft --tail=200 dbcleanup`
+## 1.104.0 (2024-09-05)
+### General
+#### Frontend
+ - `v0.97.0` (DL-6046, DL-6088): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0970-2024-09-05
+### Deploy Notes
+#### Docker Commands
+ - Note: see https://github.com/lblod/frontend-loket/pull/408 for the necessary feature flags
+## 1.103.3 (2024-09-02)
+### General
+ - Fix migrations that removes duplicate URI for IBEG. (DL-5770)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+## 1.103.2 (2024-09-02)
+### General
+ - Remove duplicate URI for IBEG. (DL-5770)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+
+## 1.103.1 (2024-08-27)
+  - Fix consumer mapping issue [DL-6152]
+## 1.103.0 (2024-08-23)
+ - updated consumer [DL-5911]
+ - update producer [OP-3372]
+### deploy notes
+#### For the new consumer into account
+- Note: the application will be down for a while.
+- Ensure application goes down: `drc down`
+- Ensure in `docker-compose.override.yml` (on prod)
+  ```
+  loket:
+    image: lblod/frontend-maintenance:0.1.0
+    # (...)
+   update-bestuurseenheid-mock-login:
+     entrypoint: ["echo", "Service disabled to ensure re-sync OP works propery"]
+   op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+  ```
+- `drc up -d migrations loket`
+  - That might take a while.
+- `drc up -d --remove-orphans `
+- Wait until the consumer is finished.
+- Enable the frontend, submissions-consumer and update-bestuurseenheid-mock-login
+- Ensure op-public-consumer in `docker-compose.override.yml` is syncing with database again
+- So the final `docker-compose.override.yml` will look like
+  ```
+  loket:
+    # image: lblod/frontend-maintenance:0.1.0 #comment out the maintenance page
+    # (...)
+   op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_DISABLE_DELTA_INGEST: "false"
+  ```
+#### remaining bits of deploy
+  - ``drc up -d`
+## 1.102.1 (2024-08-22)
+### General
+ - Adjust download/berichtencentrum url warning cleanup job. (DL-6140)
+ - Add cleanup job to remove authentication data. (DL-6077)
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+ - `drc restart dbcleanup && drc logs -ft --tail=200 dbcleanup`
+## 1.102.0 (2024-08-19)
+### General
+ - Bump `db-cleanup-service` to `v0.5.0`. (DL-5601)
+ - Add old error/job cleanup jobs. (DL-5612) (DL-5613)
+ - Fix an issue with the job deletion flow in `frontend-dashboard`. (DL-5905)
+### Deploy Notes
+#### Docker Commands
+ - `drc down`
+ - `drc up -d virtuoso && drc logs -ft --tail=200 virtuoso`
+   - Make sure `virtuoso` is online.
+ - `drc up -d migrations && drc logs -ft --tail=200 migrations`
+   - Inspect `migrations` logs for any abnormal exit codes, which may indicate an unexpected timeout due to the heavy queries.
+ - `drc up -d && drc logs -ft --tail=200 dbcleanup`
+   - At service startup, cleanup jobs will be automatically scheduled. You should see an output similar to this: `Job with ID x and title y has been scheduled.`
+
+## 1.101.1 (2024-08-07)
+### General
+ - Add missing bestuurseenheden [DL-5722]
+### Deploy Notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+## 1.101.0 (2024-08-05)
 ### General
  - Add open proces huis session role for all organizations [DL-5816]
  - Bumped delta-producer-publication-graph-maintainer.
  - Fixed failed emails report. [DL-6044]
+ - Link Toezichthoudende Provincie Antwerpen to "Orthodoxe Parochie Heilige Sophrony de Athoniet" [DL-6014]
 #### Frontend
+ - `v0.96.0` (DL-4540, DL-4069, DL-6053): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0960-2024-08-05
  - `v0.95.0` (DL-6042, DL-6050): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0950-2024-07-11
  - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25
  - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
@@ -28,8 +217,20 @@ The following links;
 
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
- - `drc restart report-generation resource cache delta-producer-publication-graph-maintainer dispatcher`
- - `drc up -d`
+ - `drc restart report-generation resource cache`
+ - `drc up -d loket`
+## 1.100.2 (2024-07-16)
+### General
+  - [DL-6049] Add missing organizations that are present in OP and Kalliope but not in Loket.
+### Deploy Notes
+  - `drc restart migrations && drc logs -ft --tail=200 migrations`
+  - `drc restart resource cache`
+
+Make sure to change `MAX_MESSAGE_AGE` from `2` to `30` for `berichtencentrum-sync-with-kalliope` in `docker-compose.override.yml`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
+
+Once the logs have indicated a successful resync, restore the value of `MAX_MESSAGE_AGE` from `30` back to `2`:
+  - `drc up -d berichtencentrum-sync-with-kalliope`
 ## 1.100.1 (2024-07-03)
 ### Berichtencentrum
   - [DL-6020] Fix an issue where the configured email would revert to the old value after updating it

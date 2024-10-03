@@ -1,0 +1,68 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/d4318463-4cd0-40c2-b67a-5e29d06db2d8> a cleanup:Job ;
+  mu:uuid "d4318463-4cd0-40c2-b67a-5e29d06db2d8" ;
+  dcterms:title "Clean up more than a month old Kalliope errors" ;
+  cleanup:selectPattern """
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?resource a <http://mu.semte.ch/vocabularies/ext/KalliopeSyncError> ;
+        <http://purl.org/pav/createdOn> ?createdOn .
+
+      FILTER (?createdOn < (NOW() - "P1M"^^xsd:duration))
+
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:cronPattern "45 20 * * 5" .
+
+<http://data.lblod.info/id/cleanup-job/729099ad-6d23-4891-82fa-2938c45339dd> a cleanup:Job ;
+  mu:uuid "729099ad-6d23-4891-82fa-2938c45339dd" ;
+  dcterms:title "Clean up more than a month old resources of type rlog" ;
+  cleanup:selectPattern """
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?resource a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry> ;
+        <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#date> ?date .
+
+      FILTER (?date < (NOW() - "P1M"^^xsd:duration))
+
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:cronPattern "0 21 * * 5" .
+
+<http://data.lblod.info/id/cleanup-job/6f4daffd-4893-40ba-9781-6dd1b31e9dfc> a cleanup:Job ;
+  mu:uuid "6f4daffd-4893-40ba-9781-6dd1b31e9dfc" ;
+  dcterms:title "Clean up more than a month old resources of type Error or Export" ;
+  cleanup:selectPattern """
+    GRAPH ?g {
+      ?resource a ?type ;
+        <http://purl.org/dc/terms/created> ?created .
+
+      FILTER (?type IN (
+        <http://open-services.net/ns/core#Error>,
+        <http://mu.semte.ch/vocabularies/ext/export/Export>
+      ))
+
+      FILTER (?created < (NOW() - "P1M"^^xsd:duration))
+
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:deletePattern """
+    GRAPH ?g {
+      ?resource ?p ?o .
+    }
+    """ ;
+  cleanup:cronPattern "15 21 * * 5" .
