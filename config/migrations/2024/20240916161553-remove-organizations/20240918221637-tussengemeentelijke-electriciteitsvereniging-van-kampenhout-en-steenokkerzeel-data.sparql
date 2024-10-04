@@ -1,0 +1,305 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://mu.semte.ch/services/file-service/files/de6f7834-706f-46a5-a06a-a1aaf982533f>
+    <http://mu.semte.ch/services/file-service/files/0f5c491b-2b79-4343-a87f-1a78cd7de486>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/employee-period-slices/f3b23df7-9501-4fb2-a379-50982c141f55>
+    <http://data.lblod.info/employee-period-slices/1165506c-9a05-4014-8061-ec764ff1ea73>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/employee-observations/5dffc13042e8aacc0782b449beb07fa40fe7d3cc42eb4258e0323fdfff35266f>
+    <http://data.lblod.info/employee-observations/0d0e01ba60a5446cc0b57eb299d4097b36ffbe164843f595aefc352ff96624d6>
+    <http://data.lblod.info/employee-observations/433ba1f3-f58a-46c8-87a5-cc7c70c318a4>
+    <http://data.lblod.info/employee-observations/86b996ef-2049-48e6-a2ac-cbbaf42ac4db>
+    <http://data.lblod.info/employee-observations/3649d00b-60e8-4503-bdaf-df56c0657781>
+    <http://data.lblod.info/employee-observations/6fe832c0-0ffe-45eb-9df1-4d5f03b35677>
+    <http://data.lblod.info/employee-observations/ba4ae856-c328-4b76-8d6e-e4e6af4cab36>
+    <http://data.lblod.info/employee-observations/c111a2d8-6e19-49bc-9c04-b415c8e894d8>
+    <http://data.lblod.info/employee-observations/6b235c1f-9c97-4430-8ce2-a6d413431c77>
+    <http://data.lblod.info/employee-observations/6ea96311-1976-4b28-923b-33c73e5fb777>
+    <http://data.lblod.info/employee-observations/e2a97e3a-3066-4271-aee5-ea3755da09b2>
+    <http://data.lblod.info/employee-observations/2ad9ebd8-2d55-4510-9231-39a12cee5363>
+    <http://data.lblod.info/employee-observations/454efed3-eb35-4d73-adc6-a2764d111baa>
+    <http://data.lblod.info/employee-observations/01ae333d-c652-4698-bae4-e698bf757657>
+    <http://data.lblod.info/employee-observations/52f149bf-f6ce-48fe-911f-56fbe35b1902>
+    <http://data.lblod.info/employee-observations/99b4d73e2b6310159a294c04b854128c01e3cf0792bcda7cc352c58fb602e319>
+    <http://data.lblod.info/employee-observations/41f902d2-0e4c-4908-8579-deac7fb0d56f>
+    <http://data.lblod.info/employee-observations/0cbce465-a022-4f8f-bda1-4669e59d6d50>
+    <http://data.lblod.info/employee-observations/0ff6c192-1482-41c0-a5bf-ef13eccd9206>
+    <http://data.lblod.info/employee-observations/d5808aca-7487-4202-9a0c-5746ccb23d4e>
+    <http://data.lblod.info/employee-observations/8a99dc6a-8dcb-4245-932d-9e9d949cb99c>
+    <http://data.lblod.info/employee-observations/b7de4d47-7bca-451e-a72f-e08d1ebd630e>
+    <http://data.lblod.info/employee-observations/23d80caf-4ea8-47f3-afe9-5d0fe146af4c>
+    <http://data.lblod.info/employee-observations/d92d8b78-5159-47d4-b505-47c0c4954f18>
+    <http://data.lblod.info/employee-observations/5f738d6f-1fd8-40c6-99fa-358a1d7888fc>
+    <http://data.lblod.info/employee-observations/8125aa99-b0ac-4740-aed1-4e21e4cc790a>
+    <http://data.lblod.info/employee-observations/bc531d09-df25-4c62-b045-cb45f76400eb>
+    <http://data.lblod.info/employee-observations/dc1536c1-b3b3-4e66-a289-066faf420124>
+    <http://data.lblod.info/employee-observations/42f14599-c88a-4aa2-a016-c28a1736e201>
+    <http://data.lblod.info/employee-observations/9836c418-bd85-4612-80c0-bc51f07698f8>
+    <http://data.lblod.info/employee-observations/62bf7765-0339-4439-8561-def043e4445e>
+    <http://data.lblod.info/employee-observations/ce599f87-6f47-4f42-99f8-4ccd9d7d8f74>
+    <http://data.lblod.info/employee-observations/a1807e4e-9d47-483f-81d1-9d5c00453bdc>
+    <http://data.lblod.info/employee-observations/1875a9d5-49a4-4af3-af00-1c534b8af957>
+    <http://data.lblod.info/employee-observations/4e06b107-6bc4-43ae-bbb6-5eb06efb532d>
+    <http://data.lblod.info/employee-observations/c4c1abd3-e685-4fbe-8e4c-775bdfce8334>
+    <http://data.lblod.info/employee-observations/5331205e-4f92-4e52-9c95-26c0de79b448>
+    <http://data.lblod.info/employee-observations/dee33578-7d0f-48c1-adeb-7a8264f1129a>
+    <http://data.lblod.info/employee-observations/2a2a0d91-520c-444a-8b08-08ecb88d359e>
+    <http://data.lblod.info/employee-observations/f016d59d-211b-4dcd-bd3a-9b05be14f324>
+    <http://data.lblod.info/employee-observations/1e317df1e8008dd2ea445690a9c47d89aaa99702bae9529af4e4eddaa5b613d7>
+    <http://data.lblod.info/employee-observations/aa06c355-79c9-45a7-a07f-07e5d9412b70>
+    <http://data.lblod.info/employee-observations/61693845-6a23-4de5-ad15-7c5c986e4091>
+    <http://data.lblod.info/employee-observations/92e2636f-da85-497f-9dae-f831db0484a3>
+    <http://data.lblod.info/employee-observations/8a10ed94-bc0a-40b2-8426-af23981daa7a>
+    <http://data.lblod.info/employee-observations/739b93ecdebf8f06ec7fc85a34f72c9536915fcf376a01210c1898224606a613>
+    <http://data.lblod.info/employee-observations/b83bd49713ecc7a12d209ea0f772429cefd9fb8ebdfb2b3fffec60aaf65e3576>
+    <http://data.lblod.info/employee-observations/f7428fb0-a5ac-4ac6-be74-599cdc017229>
+    <http://data.lblod.info/employee-observations/fbda3390-427d-4a7e-b613-6b01b81e8e26>
+    <http://data.lblod.info/employee-observations/ef455415d22eb4db32db24b80eb6277d2543f669898464dfaeca74d61c88e3c0>
+    <http://data.lblod.info/employee-observations/286ac08f-9061-4ac1-9795-07f21535a92b>
+    <http://data.lblod.info/employee-observations/7a53c85f-e0a1-4eec-a83a-a9b29f53777e>
+    <http://data.lblod.info/employee-observations/51aca33e-3c85-401b-934f-a409f65953ab>
+    <http://data.lblod.info/employee-observations/2ef7a795bdf4e6ba56fc7f572ba140d9e5618a4776bb113e443101fd947e44d4>
+    <http://data.lblod.info/employee-observations/f43d7f65-36ee-412b-b1b4-eab1fb41e587>
+    <http://data.lblod.info/employee-observations/3c8df77b-43b5-4d93-8f08-06f031da2d59>
+    <http://data.lblod.info/employee-observations/efebc28e-c601-4ad1-97cb-9cf539267b50>
+    <http://data.lblod.info/employee-observations/4823ba42-a427-4513-8a8b-d9c321dee04f>
+    <http://data.lblod.info/employee-observations/16e418b0-103f-4584-85b6-d8c1d0e542dd>
+    <http://data.lblod.info/employee-observations/42dbdacd-1b9f-4499-aacb-0c22806849f0>
+    <http://data.lblod.info/employee-observations/d0a6d943-ffa6-41a7-8939-d282e733a4fe>
+    <http://data.lblod.info/employee-observations/91182dee-d57c-4455-a758-92d33028c764>
+    <http://data.lblod.info/employee-observations/a8da3bcd-5a21-4969-92f4-f230b6b8b9be>
+    <http://data.lblod.info/employee-observations/e5ec222d-bd32-473f-baa1-e4c6b08877fc>
+    <http://data.lblod.info/employee-observations/348fe5a4-2f4e-424b-b8b9-1d67dc4e523e>
+    <http://data.lblod.info/employee-observations/8bb31bcc-b73c-464d-82e5-06ba1c9fabd3>
+    <http://data.lblod.info/employee-observations/692cc18a-4f7d-45ad-94ed-88e43678167a>
+    <http://data.lblod.info/employee-observations/91701546-be3f-41ba-86ac-f77c4d785ae8>
+    <http://data.lblod.info/employee-observations/c3f7c005-ed74-49be-a7ba-bc126141ffcd>
+    <http://data.lblod.info/employee-observations/e7a361ad-4b8d-443b-9a4d-1f0d4288e67d>
+    <http://data.lblod.info/employee-observations/ee54db3f-6d9b-4957-9531-52457bafa6cf>
+    <http://data.lblod.info/employee-observations/2204e6081b98417b287d8f3e4ea617ab979db10ff18428f23b066ffc1ec0a61d>
+    <http://data.lblod.info/employee-observations/a0e4bdbe-9a8e-43a1-bec6-9edbe6153b83>
+    <http://data.lblod.info/employee-observations/d914aeff3f432fba4663a604b1fb5b874df5bd7e6d8ae3392d8072c353077445>
+    <http://data.lblod.info/employee-observations/89a8fdf2-2cce-41c6-b625-8cfa26ed1a78>
+    <http://data.lblod.info/employee-observations/dd4a88afa5b8a27009bc27b2d57217cc48948ce82bbb2af1737bb8a3400a10c3>
+    <http://data.lblod.info/employee-observations/edf6621d89cfc643c848a03fb8d46204230bddfae12c64775a74c40889d93a47>
+    <http://data.lblod.info/employee-observations/049631b1-9308-4785-93c5-42b503282526>
+    <http://data.lblod.info/employee-observations/70765dd9-cbd3-4d7c-9cab-27bab881bb02>
+    <http://data.lblod.info/employee-observations/3eedc2c0105dfa399359bd58a1c9256598bcfa14571e85734afad4535c72befc>
+    <http://data.lblod.info/employee-observations/e37f56d8-73c2-4da5-a174-68c58f41bcef>
+    <http://data.lblod.info/employee-observations/75fd59a09130d4b6f0ffda5081378aeeba38f40f39ee60063c6d4944abb4a44a>
+    <http://data.lblod.info/employee-observations/e4955ecb-fcf4-40c7-bae1-092abbbae853>
+    <http://data.lblod.info/employee-observations/f125c05adee0d1aede92b3023ea12e6f20a27b13ac0b17d312efff34ff556226>
+    <http://data.lblod.info/employee-observations/3294e5b4-aa02-4556-843b-3f86589d3e16>
+    <http://data.lblod.info/employee-observations/51c05266-fc61-4e6e-8c71-37043cc7bc33>
+    <http://data.lblod.info/employee-observations/cd37c5d9-7eb3-405f-8455-9f92ec84fd8b>
+    <http://data.lblod.info/employee-observations/e251a0c2-1b7a-46ea-aae7-f2dc46208af0>
+    <http://data.lblod.info/employee-observations/f0a7324d-25ef-4752-997e-2c8637fbd6f2>
+    <http://data.lblod.info/employee-observations/81079dc6-bded-4561-856b-44f0ad4c7ca3>
+    <http://data.lblod.info/employee-observations/a162d1fc-181a-4561-9aa6-a78f5abffe5e>
+    <http://data.lblod.info/employee-observations/a9bb23c4-4d22-408c-bc3d-6ae7e2cddb72>
+    <http://data.lblod.info/employee-observations/bb23176e-da44-4837-88ec-3a01bf31a34f>
+    <http://data.lblod.info/employee-observations/fbe70854-d21f-4ac4-b1b4-52e33a136186>
+    <http://data.lblod.info/employee-observations/402f4d78-f5a1-4673-bf58-2eb783fd9dfb>
+    <http://data.lblod.info/employee-observations/110e2af9b647d961c87f50fba2fe598bc709517488d96767d574c6b07248f215>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/persoon/cf074a89bb1104b3694d67176f86dd73>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/bestuurseenheden/ba8ffc97-5490-4ecc-b24e-aab26b23c026>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/bestuursorganen/dddb39fb-a19b-491b-b1bf-a431406e383f>
+    <http://data.lblod.info/id/bestuursorganen/be697a9b-248f-431e-90cd-474ee79a5c6a>
+    <http://data.lblod.info/id/bestuursorganen/bfc5523b-6fe8-425e-a65f-6202f73c7d42>
+    <http://data.lblod.info/id/bestuursorganen/a974b0dc-cbd6-4f9b-8211-cd487c4ede35>
+    <http://data.lblod.info/id/bestuursorganen/ea7ecf04-ad05-486e-b77e-437b8577b7df>
+    <http://data.lblod.info/id/bestuursorganen/e5645fd6-ef7b-4705-8eed-9ee7de102f8c>
+    <http://data.lblod.info/id/bestuursorganen/4824c430-9c4f-4258-842e-bd631d910377>
+    <http://data.lblod.info/id/bestuursorganen/0c0b86269ddc09cbcffc2cb4e39f458df15265f24d7a46f3a8f45c9567a1b44d>
+    <http://data.lblod.info/id/bestuursorganen/f5e8775d-b723-4fa3-9ddd-66751057ea34>
+    <http://data.lblod.info/id/bestuursorganen/4a7c956f6d418d0031de1a1b15de74d6a87edf824f464caf02a1145b461cd1d9>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/employee-datasets/41929d67-87d1-44b3-b851-942ddf72ccf5>
+    <http://data.lblod.info/employee-datasets/2c2bac3d-05a2-4108-8653-68e8bcdbdff3>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/employee-time-periods/77e8efb4-a800-4791-81e3-4a618c49e57e>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/berichten/6fa6ce2d-b94f-4fc4-9a98-e2b2e854526a>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/conversaties/f755c3ea-0eee-4f0d-b8ae-a3bdb0effeb0>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/account/e2b1a30d7570b2f8dd77d54f839885ab>
+  }
+
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+;
+
+# For Loket specifically, clear graphs.
+
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/ba8ffc97-5490-4ecc-b24e-aab26b23c026>
+
+;
+
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/ba8ffc97-5490-4ecc-b24e-aab26b23c026/LoketLB-berichtenGebruiker>
+
+;
+
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/ba8ffc97-5490-4ecc-b24e-aab26b23c026/LoketLB-personeelsbeheer>
