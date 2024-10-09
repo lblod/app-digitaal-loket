@@ -1,0 +1,231 @@
+# Remove mandates
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+    <http://www.w3.org/ns/regorg#RegisteredOrganization>
+  }
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+    ?s a <http://data.vlaanderen.be/ns/mandaat#Mandaat>;
+      ?p ?o.
+
+    ?bot a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      <http://www.w3.org/ns/org#hasPost> ?s;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> ?orgaan.
+
+    ?orgaan a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> ?eenheid.
+    ?eenheid a ?typeOfInterest.
+  }
+}
+
+;
+
+# Remove bestuursfuncties
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+    <http://www.w3.org/ns/regorg#RegisteredOrganization>
+  }
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+    ?s a <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie>;
+      ?p ?o.
+
+    ?bot a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      <http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie> ?s;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> ?orgaan.
+
+    ?orgaan a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> ?eenheid.
+    ?eenheid a ?typeOfInterest.
+  }
+}
+
+;
+
+# bestuursorganen in tijd
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+  }
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      ?p ?o;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> ?orgaan.
+    ?orgaan a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> ?eenheid.
+    ?eenheid a ?typeOfInterest.
+  }
+}
+
+;
+
+# bestuursorganen
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+  }
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+      ?p ?o;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> ?eenheid.
+    ?eenheid a ?typeOfInterest.
+  }
+}
+
+;
+
+# Primary site addresses
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+    <http://www.w3.org/ns/regorg#RegisteredOrganization>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://www.w3.org/ns/locn#Address>;
+      ?p ?o.
+    ?eenheid a ?typeOfInterest;
+      <http://www.w3.org/ns/org#hasPrimarySite>/<https://data.vlaanderen.be/ns/organisatie#bestaatUit> ?s .
+  }
+}
+
+;
+
+# Primary site contact points
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+    <http://www.w3.org/ns/regorg#RegisteredOrganization>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://schema.org/ContactPoint>;
+      ?p ?o.
+    ?eenheid a ?typeOfInterest;
+      <http://www.w3.org/ns/org#hasPrimarySite>/<http://www.w3.org/ns/org#siteAddress> ?s .
+  }
+}
+
+;
+
+# Primary sites
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?typeOfInterest {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+    <http://www.w3.org/ns/regorg#RegisteredOrganization>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://www.w3.org/ns/org#Site>;
+      ?p ?o.
+    ?eenheid a ?typeOfInterest;
+      <http://www.w3.org/ns/org#hasPrimarySite> ?s .
+  }
+}
+
+;
+
+# betrokken lokaal bestuur
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.lblod.info/vocabularies/erediensten/betrokkenBestuur> ?o.
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+  }
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a ?type;
+      <http://data.lblod.info/vocabularies/erediensten/betrokkenBestuur> ?o.
+  }
+}
+
+;
+
+# remaining
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  VALUES ?type {
+    <http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst>
+    <http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan>
+    <http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst>
+    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+    <http://www.w3.org/ns/regorg#RegisteredOrganization>
+    <http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen>
+    <http://data.lblod.info/vocabularies/erediensten/PositieBedienaar>
+    <http://www.w3.org/ns/org#ChangeEvent>
+  }
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a ?type;
+      ?p ?o.
+  }
+}
+
+;
+
