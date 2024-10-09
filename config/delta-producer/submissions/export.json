@@ -28,7 +28,20 @@
       "properties": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://purl.org/dc/terms/source"
+        "http://purl.org/dc/terms/source",
+        "http://data.europa.eu/eli/ontology#has_part"
+      ],
+      "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325>."
+    },
+    {
+      "type": "http://data.vlaanderen.be/ns/besluit#Artikel",
+      "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker" ],
+      "hasRegexGraphsFilter": true,
+      "properties": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+        "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://data.europa.eu/eli/ontology#refers_to",
+        "http://data.europa.eu/eli/ontology#type_document"
       ],
       "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325>."
     },
