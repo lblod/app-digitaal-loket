@@ -1,3 +1,18 @@
+import envvar from 'env-var';
+
+const NUM_OF_DAYS = envvar
+  .get('NUM_OF_DAYS')
+  .required()
+  .default('1')
+  .asIntPositive();
+
+const DATE_FILTER = `
+BIND(xsd:date(xsd:dateTime(REPLACE(STR(?sentDate), "Z", ""))) AS ?date)
+BIND(xsd:date(NOW() - "P${NUM_OF_DAYS}D"^^xsd:duration) AS ?cutOffDate)
+
+FILTER (?date >= ?cutOffDate) .
+`;
+
 const ADVANCED_SUBMISSION_FILTER = `
 ?submission
   adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
@@ -48,7 +63,7 @@ BIND(
 
 FILTER (?allowedExport = true) .
 ?submission nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime) .
+${DATE_FILTER}
 `;
 
 export default {
