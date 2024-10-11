@@ -173,7 +173,7 @@ export default {
   dct:source ?resource ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
