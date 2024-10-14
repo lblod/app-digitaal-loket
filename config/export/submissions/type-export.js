@@ -384,7 +384,7 @@ ${ADVANCED_SUBMISSION_FILTER}
   nie:hasPart ?resource ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -408,7 +408,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   a meb:Submission ;
   nie:hasPart ?remoteFile ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -432,7 +432,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   a meb:Submission ;
   nie:hasPart ?remoteFile ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -458,7 +458,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   dct:subject ?submissionDocument ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -484,7 +484,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   dct:subject ?submissionDocument ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -510,7 +510,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   dct:subject ?submissionDocument ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -537,7 +537,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   prov:generated ?formData ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -566,7 +566,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   prov:generated ?formData ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     },
     {
@@ -595,7 +595,7 @@ FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
   prov:generated ?formData ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-FILTER (?sentDate > "2024-05-01T00:00:00.000Z"^^xsd:dateTime)
+${DATE_FILTER}
       `
     }
   ]
