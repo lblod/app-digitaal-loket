@@ -321,7 +321,7 @@ services:
     restart: always
     logging: *default-logging
   export-submissions:
-    image: lblod/mandaten-download-generator-service:1.0.0-beta.4
+    image: lblod/mandaten-download-generator-service:1.0.0
     environment:
       EXPORT_CRON_PATTERN: "0 0 3 * * *"
       EXPORT_FILE_BASE: "submissions"
