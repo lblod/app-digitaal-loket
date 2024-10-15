@@ -321,15 +321,14 @@ services:
     restart: always
     logging: *default-logging
   export-submissions:
-    image: lblod/mandaten-download-generator-service:0.3.6-hotfix_4
-    links:
-      - virtuoso:database
+    image: lblod/mandaten-download-generator-service:1.0.0
     environment:
       EXPORT_CRON_PATTERN: "0 0 3 * * *"
       EXPORT_FILE_BASE: "submissions"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-submissions"
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
     volumes:
-      - ./data/exports/submissions:/data/exports
+      - ./data/exports/submissions:/share/exports
       - ./config/export/submissions:/config
     restart: always
     logging: *default-logging
