@@ -5,8 +5,8 @@
  - Transform toezicht export configuration (DL-6241)
 ### Deploy Notes
 #### Manual commands
- - Set `EXPORT_CRON_PATTERN` manually to trigger the export and observe the logs.
- - If export is successful, update `EXPORT_CRON_PATTERN` to a reasonable value so that the exports is triggered automatically starting from the day after the deploy.
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export for the first time and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to a reasonable value so that exports are triggered automatically starting from the next day.
 #### Docker Commands
  - `drc up -d export-submissions`
 ## 1.104.2 (2024-09-20)
