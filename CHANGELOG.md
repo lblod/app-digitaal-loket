@@ -1,4 +1,14 @@
 # Changelog
+## 1.104.3 (2024-10-15)
+### General
+ - Bump export-submissions (DL-6233)
+ - Transform toezicht export configuration (DL-6241)
+### Deploy Notes
+#### Manual commands
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to a reasonable value so that the exports is triggered automatically starting from the day after the deploy.
+#### Docker Commands
+ - `drc up -d export-submissions`
 ## 1.104.2 (2024-09-20)
 ### General
  - Fix submissions not flagged for export (DL-6182)
