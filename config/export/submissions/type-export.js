@@ -6,12 +6,32 @@ const NUM_OF_DAYS = envvar
   .default('1')
   .asIntPositive();
 
-const DATE_FILTER = `
-BIND(xsd:date(xsd:dateTime(REPLACE(STR(?sentDate), "Z", ""))) AS ?date)
-BIND(xsd:date(NOW() - "P${NUM_OF_DAYS}D"^^xsd:duration) AS ?cutOffDate)
+export const constructDateFilter = () => {
+  const today = new Date();
 
-FILTER (?date >= ?cutOffDate) .
-`;
+  // Set the upper bound of the date comparison.
+  // Example:
+  // If today is 2024-10-16, this will set tomorrow to
+  // 2024-10-17T00:00:00.000Z
+  const tomorrow = new Date(today);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  tomorrow.setUTCHours(0, 0, 0, 0);
+
+  // Set the lower bound of the date comparison.
+  // Example:
+  // If today is 2024-10-16 and NUM_OF_DAYS is 2, this will set cutOffDate
+  // to 2024-10-14T00:00:00.000Z
+  const cutOffDate = new Date(today);
+  cutOffDate.setUTCDate(cutOffDate.getUTCDate() - NUM_OF_DAYS);
+  cutOffDate.setUTCHours(0, 0, 0, 0);
+
+  return `
+    BIND(xsd:dateTime(${sparqlEscapeString(tomorrow.toISOString())}) AS ?tomorrow)
+    BIND(xsd:dateTime(${sparqlEscapeString(cutOffDate.toISOString())}) AS ?cutOffDate)
+
+    FILTER (?sentDate >= ?cutOffDate AND ?sentDate <= ?tomorrow) .
+  `;
+}
 
 const ADVANCED_SUBMISSION_FILTER = `
 ?submission
