@@ -1,4 +1,5 @@
 import envvar from 'env-var';
+import { sparqlEscapeString } from 'mu';
 
 const NUM_OF_DAYS = envvar
   .get('NUM_OF_DAYS')
