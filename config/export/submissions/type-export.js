@@ -1,4 +1,5 @@
 import envvar from 'env-var';
+import { sparqlEscapeString } from 'mu';
 
 const NUM_OF_DAYS = envvar
   .get('NUM_OF_DAYS')
@@ -6,12 +7,32 @@ const NUM_OF_DAYS = envvar
   .default('1')
   .asIntPositive();
 
-const DATE_FILTER = `
-BIND(xsd:date(xsd:dateTime(REPLACE(STR(?sentDate), "Z", ""))) AS ?date)
-BIND(xsd:date(NOW() - "P${NUM_OF_DAYS}D"^^xsd:duration) AS ?cutOffDate)
+export const constructDateFilter = () => {
+  const today = new Date();
 
-FILTER (?date >= ?cutOffDate) .
-`;
+  // Set the upper bound of the date comparison.
+  // Example:
+  // If today is 2024-10-16, this will set tomorrow to
+  // 2024-10-17T00:00:00.000Z
+  const tomorrow = new Date(today);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  tomorrow.setUTCHours(0, 0, 0, 0);
+
+  // Set the lower bound of the date comparison.
+  // Example:
+  // If today is 2024-10-16 and NUM_OF_DAYS is 2, this will set tomorrow
+  // to 2024-10-14T00:00:00.000Z
+  const cutOffDate = new Date(today);
+  cutOffDate.setUTCDate(cutOffDate.getUTCDate() - NUM_OF_DAYS);
+  cutOffDate.setUTCHours(0, 0, 0, 0);
+
+  return `
+    BIND(xsd:dateTime(${sparqlEscapeString(tomorrow.toISOString())}) AS ?tomorrow)
+    BIND(xsd:dateTime(${sparqlEscapeString(cutOffDate.toISOString())}) AS ?cutOffDate)
+
+    FILTER (?sentDate >= ?cutOffDate AND ?sentDate <= ?tomorrow) .
+  `;
+}
 
 const ADVANCED_SUBMISSION_FILTER = `
 ?submission
@@ -63,7 +84,6 @@ BIND(
 
 FILTER (?allowedExport = true) .
 ?submission nmo:sentDate ?sentDate .
-${DATE_FILTER}
 `;
 
 export default {
@@ -173,8 +193,8 @@ export default {
   dct:source ?resource ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "meb:Submission",
@@ -195,7 +215,8 @@ ${DATE_FILTER}
       additionalFilter: `
 BIND (?resource as ?submission)
 ${ADVANCED_SUBMISSION_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "meb:Submission",
@@ -211,7 +232,8 @@ ${ADVANCED_SUBMISSION_FILTER}
       additionalFilter: `
 BIND (?resource as ?submission)
 ${ADVANCED_SUBMISSION_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "ext:SubmissionDocument",
@@ -224,7 +246,8 @@ ${ADVANCED_SUBMISSION_FILTER}
       additionalFilter: `
 BIND (?resource as ?submission)
 ${ADVANCED_SUBMISSION_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "ext:SubmissionDocumentStatus",
@@ -329,7 +352,8 @@ FILTER (?conceptScheme IN (
       additionalFilter: `
 BIND (?resource AS ?formData)
 ${ADVANCED_SUBMISSION_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "melding:FormData",
@@ -346,7 +370,8 @@ ${ADVANCED_SUBMISSION_FILTER}
       additionalFilter: `
 BIND (?resource AS ?formData)
 ${ADVANCED_SUBMISSION_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "melding:FormData",
@@ -364,7 +389,8 @@ ${ADVANCED_SUBMISSION_FILTER}
       additionalFilter: `
 BIND (?resource AS ?formData)
 ${ADVANCED_SUBMISSION_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -384,8 +410,8 @@ ${ADVANCED_SUBMISSION_FILTER}
   nie:hasPart ?resource ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -408,8 +434,8 @@ ${DATE_FILTER}
   a meb:Submission ;
   nie:hasPart ?remoteFile ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -432,8 +458,8 @@ ${DATE_FILTER}
   a meb:Submission ;
   nie:hasPart ?remoteFile ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -458,8 +484,8 @@ ${DATE_FILTER}
   dct:subject ?submissionDocument ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -484,8 +510,8 @@ ${DATE_FILTER}
   dct:subject ?submissionDocument ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -510,8 +536,8 @@ ${DATE_FILTER}
   dct:subject ?submissionDocument ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -537,8 +563,8 @@ ${DATE_FILTER}
   prov:generated ?formData ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:FileDataObject",
@@ -566,8 +592,8 @@ ${DATE_FILTER}
   prov:generated ?formData ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     },
     {
       type: "nfo:RemoteDataObject",
@@ -595,8 +621,8 @@ ${DATE_FILTER}
   prov:generated ?formData ;
   a meb:Submission ;
   nmo:sentDate ?sentDate .
-${DATE_FILTER}
-      `
+      `,
+      hasDateFilter: true,
     }
   ]
 };
