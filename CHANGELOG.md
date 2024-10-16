@@ -72,6 +72,17 @@ drc up -d lmb-private-ldes-client
 ```
 #### frontend
 Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
+## 1.104.4 (2024-10-16)
+### General
+ - Bump export-submissions (DL-6233)
+ - Preprocess dates in toezicht export configuration to lessen load on the database (DL-6241)
+ - Fix bug in the toezicht export configuration for `submissionDocument` types
+### Deploy Notes
+#### Manual commands
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export for the first time and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to a reasonable value so that exports are triggered automatically starting from the next day.
+#### Docker Commands
+ - `drc up -d export-submissions`
 ## 1.104.3 (2024-10-15)
 ### General
  - Bump export-submissions (DL-6233)
