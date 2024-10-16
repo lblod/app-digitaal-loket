@@ -244,7 +244,7 @@ ${ADVANCED_SUBMISSION_FILTER}
         "dct:source"
       ],
       additionalFilter: `
-BIND (?resource as ?submission)
+?submission dct:subject ?resource .
 ${ADVANCED_SUBMISSION_FILTER}
       `,
       hasDateFilter: true,
