@@ -13,7 +13,7 @@ INSERT {
       mu:uuid         ?uuidPersoon ;
       foaf:firstName  ?classificatie ;
       foaf:familyName ?naam ;
-      foaf:member     <https://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> ;
+      foaf:member     <http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> ;
       foaf:account    ?account .
 
     ?account
@@ -24,7 +24,7 @@ INSERT {
   }
 }
 WHERE {
-  <https://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED>
+  <http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED>
     a                                     besluit:Bestuurseenheid ;
     skos:prefLabel                        ?naam ;
     besluit:classificatie/skos:prefLabel  ?classificatie .
