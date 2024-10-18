@@ -12,7 +12,6 @@ WHERE {
       <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
       <http://purl.org/dc/terms/Agent>
       <http://www.w3.org/ns/org#Organization>
-      <http://www.w3.org/ns/regorg#RegisteredOrganization>
     }
   }
   FILTER (?p NOT IN (<http://www.w3.org/ns/adms#identifier>, <http://www.w3.org/ns/org#classification>))
