@@ -1,0 +1,22 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX besluit: <http://lblod.data.gift/vocabularies/besluit/>
+PREFIX BestuurseenheidClassificatieCode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+PREFIX core: <http://mu.semte.ch/vocabularies/core/>
+PREFIX BesluitType: <https://data.vlaanderen.be/id/concept/BesluitType/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    BesluitType:ec8652a6-2c49-4955-8d59-fd08c8c0a6e1
+      a skos:Concept ;
+      core:uuid "ec8652a6-2c49-4955-8d59-fd08c8c0a6e1" ;
+      besluit:decidableBy BestuurseenheidClassificatieCode:36a82ba0-7ff1-4697-a9dd-2e94df73b721 ; # Autonoom gemeentebedrijf
+      besluit:decidableBy BestuurseenheidClassificatieCode:80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d ; # Autonoom provinciebedrijf
+      skos:prefLabel "Besluit AGB/APB over retributies" ;
+      skos:definition "Besluit van de raad van bestuur van het autonoom gemeentebedrijf of autonoom provinciebedrijf betreffende retributies." ;
+      skos:inScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      skos:topConceptOf <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      skos:inScheme <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      skos:topConceptOf <https://data.vlaanderen.be/id/conceptscheme/BesluitType> .
+   }
+}
