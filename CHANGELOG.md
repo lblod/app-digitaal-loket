@@ -1,4 +1,19 @@
 # Changelog
+## 1.104.5 (2024-10-22)
+### General
+ - Bump `export-submissions`.
+ - Only filter tasks related to `export-submissions`.
+ - Run migration to fix task/job that are stuck in a failed state.
+  - The migration will run directly on the production server.
+### Deploy Notes
+#### Manual commands
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export for the first time and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to `"0 0 21 * * *"` so that exports are triggered automatically starting from the next day.
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc up -d export-submissions && drc logs -ft --tail=200 export-submissions`
+ - `drc exec export-submissions curl -X POST http://localhost/export-tasks`
+ - If export finishes successfully: `touch -d "2 hours ago" data/export/submissions/xxx.ttl` where `xxx.ttl` is the latest export file.
 ## 1.104.4 (2024-10-16)
 ### General
  - Bump export-submissions (DL-6233)
