@@ -556,7 +556,7 @@ services:
   # OP PUBLIC CONSUMER
   ################################################################################
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.25-rc.3
+    image: lblod/delta-consumer:0.0.26
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
