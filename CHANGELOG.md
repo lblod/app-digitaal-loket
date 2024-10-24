@@ -1,12 +1,12 @@
 # Changelog
-## unreleased
+## 1.105.0 (2024-10-24)
 ### LMB
  - cut-over to LMB: see DL-6144.
  - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to `SELECT` queries)
 ### Deploy notes
 #### LMB public
-In `docker-compose.override.yml`
-```
+In `docker-compose.override.yml`:
+```yaml
   lmb-public-ldes-client:
     environment:
       LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
@@ -14,41 +14,46 @@ In `docker-compose.override.yml`
       BYPASS_MU_AUTH: "true"
 ```
 
-```
+```sh
 drc down;
+
 # flushing data first
 # Please make sure the correct config file is used for the virtuoso, or it might just get stuck
-cd scripts/purge-lmb-data/;
+cd scripts/purge-lmb-data/
 drc -f docker-compose.script.yml up -d # check logs until finishes
-drc -f docker-compose.script.yml exec virtuoso bash;
-isql-v;
+drc -f docker-compose.script.yml exec virtuoso isql-v
 exec('checkpoint');
-exit;
 exit;
 drc -f docker-compose.script.yml down
 cd -
-drc up -d database virtuoso # wait for proper startup of virtuoso
+drc up -d virtuoso # wait for proper startup of virtuoso
+drc up -d database
 drc up -d lmb-public-ldes-client # Wait until success
+
 # Here comment out all delta-rules in (config/delta/rules.js) except the ones going to:
 #  - delta-producer-publication-graph-maintainer
 #  - delta-producer-dump-file-publisher
 drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs # wait until success of the TASK (not the job)
+drc logs -ft --tail=200 delta-producer-publication-graph-maintainer
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
-drc exec publication-triplestore bash
-isql-v;
+drc exec publication-triplestore isql-v
 exec('checkpoint');
-exit;
 exit;
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs # wait until success of the TASK (not the job)
+drc logs -ft --tail=200 delta-producer-publication-graph-maintainer
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
-git checkout config/delta/rules.js
+
+# The service does not like it when all rules start up at once from scratch.
+# Comment out the publication graph maintainer `deltanotifier` rule after checkout:
+#  - delta-producer-publication-graph-maintainer
 drc restart deltanotifier
 ```
-After that, ensure `docker-compose.override.yml`
-```
+
+After that, ensure `docker-compose.override.yml`:
+```yaml
   lmb-public-ldes-client:
     environment:
       LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
@@ -56,22 +61,31 @@ After that, ensure `docker-compose.override.yml`
       BYPASS_MU_AUTH: "false"
 ```
 
-And now go to `drc up -d`
-#### LMB private
-In `docker-compose.override.yml`
+Set the following env vars in `docker-compose.override.yml`:
 ```
+  loket:
+    environment:
+      EMBER_MANDATENBEHEER: "false" # This disables the Loket mandatenbeheer tile
+      EMBER_MANDATENBEHEER_EXTERNAL_URL: "https://mandatenbeheer.lokaalbestuur.vlaanderen.be"
+```
+
+```
+drc up -d
+```
+
+#### LMB private
+In `docker-compose.override.yml`:
+```yaml
   lmb-private-ldes-client:
     environment:
-      LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
-      FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/1"
       BATCH_SIZE: "500"
-      EXTRA_HEADERS: '{"Authorization": "Basic encodedString}'
+      EXTRA_HEADERS: '{"Authorization": "Basic encodedString"}'
 ```
 ```
 drc up -d lmb-private-ldes-client
 ```
-#### frontend
-Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
 ## 1.104.5 (2024-10-22)
 ### General
  - Bump `export-submissions`.
