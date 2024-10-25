@@ -1,0 +1,112 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/b21b67f7-64a8-4b98-a207-5c156f0ee1d3> a cleanup:Job ;
+  mu:uuid "b21b67f7-64a8-4b98-a207-5c156f0ee1d3" ;
+  dcterms:title "Create data structure to fill personeel data for new administrative units" ;
+  cleanup:randomQuery """
+    PREFIX empl: <http://lblod.data.gift/vocabularies/employee/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX sdmxdim: <http://purl.org/linked-data/sdmx/2009/dimension#>
+    PREFIX sdmxattr: <http://purl.org/linked-data/sdmx/2009/attribute#>
+    PREFIX qb: <http://purl.org/linked-data/cube#>
+    PREFIX dct: <http://purl.org/dc/terms/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+    INSERT {
+      GRAPH ?orgGraph {
+        ?dataset a empl:EmployeeDataset ;
+          mu:uuid ?uuidDataset ;
+          dct:title ?unitMeasureLabel ;
+          dct:description ?datasetDescription ;
+          dct:creator ?bestuurseenheid ;
+          dct:subject ?unitMeasureUri ;
+          qb:slice ?periodSlice .
+
+        ?periodSlice a empl:EmployeePeriodSlice ;
+          mu:uuid ?uuidPeriodSlice ;
+          rdfs:label ?periodSliceLabel ;
+          sdmxdim:timePeriod <http://data.lblod.info/employee-time-periods/77e8efb4-a800-4791-81e3-4a618c49e57e> ;
+          qb:observation ?observation .
+
+        ?observation a empl:EmployeeObservation ;
+          mu:uuid ?uuidObservation ;
+          sdmxattr:unitMeasure ?unitMeasureUri ;
+          sdmxdim:sex ?gender ;
+          empl:workingTimeCategory ?workingTimeCategory ;
+          empl:legalStatus ?employeeLegalStatus ;
+          sdmxdim:educationLev ?educationalLevel .
+      }
+    } WHERE {
+      VALUES (?unitMeasureLabel ?unitMeasureUri) {
+        ("Werknemers - Koppen" <http://lblod.data.gift/concepts/feed220b-f398-456e-8635-94a04dfbdbe8>)
+        ("Voltijds equivalenten - VTE" <http://lblod.data.gift/concepts/a97325c1-f572-4dd8-8952-c2cb254f114a>)
+      }
+
+      VALUES ?educationalLevel {
+        <http://lblod.data.gift/concepts/53abea92-8a33-4d6c-8813-6e3a0d8c70e5>
+        <http://lblod.data.gift/concepts/fe0c5ed6-ee8e-466e-b4eb-4e1a580c2133>
+        <http://lblod.data.gift/concepts/ce9f9a39-ded6-4920-8c69-d2d3ea75b8f6>
+        <http://lblod.data.gift/concepts/78ae17dd-45f6-40d4-ab03-729231c1071e>
+        <http://lblod.data.gift/concepts/92bbd6c5-acee-43ac-9462-f5e260e2b900>
+      }
+
+      VALUES ?employeeLegalStatus {
+        <http://lblod.data.gift/concepts/5ac28613-801b-4b2e-ab79-68a6ad0a584d>
+        <http://lblod.data.gift/concepts/a29dd9d3-f0a2-4e40-b19a-dbc0ffd6f682>
+      }
+
+      VALUES ?workingTimeCategory {
+        <http://lblod.data.gift/concepts/58c0fc8f-1ec9-469d-a13d-87a0e48fc0a3>
+        <http://lblod.data.gift/concepts/00b0467e-4dac-42ff-a5be-2892f0e6eca5>
+      }
+
+      VALUES ?gender {
+        <http://publications.europa.eu/resource/authority/human-sex/MALE>
+        <http://publications.europa.eu/resource/authority/human-sex/FEMALE>
+      }
+
+      ?bestuurseenheid a besluit:Bestuurseenheid ;
+        mu:uuid ?uuidBestuurseenheid ;
+        skos:prefLabel ?bestuuseenheidName ;
+        besluit:classificatie ?classification .
+
+      ?classification skos:prefLabel ?classificationLabel .
+
+      # TODO not sure about those restrictions, double check with Loket team
+      # Current list comes from https://github.com/lblod/app-digitaal-loket/blob/master/config/mock-login/rules.json#L64
+      FILTER(?classification IN (
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/a3922c6d-425b-474f-9a02-ffb71a436bfc>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/ea446861-2c51-45fa-afd3-4e4a37b71562>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71>,
+        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>
+      ))
+
+      FILTER NOT EXISTS { ?existingDataset dct:creator ?bestuurseenheid . }
+
+      BIND(MD5(CONCAT(?bestuurseenheid, ?unitMeasureLabel, "period slice")) as ?uuidPeriodSlice)
+      BIND(IRI(CONCAT("http://data.lblod.info/employee-period-slices/", ?uuidPeriodSlice)) AS ?periodSlice)
+
+      BIND(MD5(CONCAT(?bestuurseenheid, ?unitMeasureLabel, "dataset")) as ?uuidDataset)
+      BIND(IRI(CONCAT("http://data.lblod.info/employee-datasets/", ?uuidDataset)) AS ?dataset)
+
+      BIND(MD5(CONCAT(?bestuurseenheid, ?unitMeasureLabel, ?educationalLevel, ?employeeLegalStatus, ?workingTimeCategory, ?gender, "observation")) as ?uuidObservation)
+      BIND(IRI(CONCAT("http://data.lblod.info/employee-observations/", ?uuidObservation)) AS ?observation)
+
+      BIND(CONCAT(?unitMeasureLabel, "2020") AS ?periodSliceLabel)
+      BIND(CONCAT(?classificationLabel, ?bestuuseenheidName, " personeelsaantallen in ", ?unitMeasureLabel) AS ?datasetDescription)
+      BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?uuidBestuurseenheid, "/LoketLB-personeelsbeheer")) AS ?orgGraph)
+    }
+  """ ;
+  cleanup:cronPattern "16 */1 * * *" .
