@@ -20,7 +20,7 @@ INSERT {
       a                           foaf:OnlineAccount ;
       mu:uuid                     ?uuidAccount ;
       foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service> ;
-      ext:sessionRole             "LoketLB-leidinggevendenGebruiker" , "LoketLB-mandaatGebruiker" , "LoketLB-subsidies" , "LoketLB-toezichtGebruiker" , "LoketLB-ContactOrganisatiegegevensGebruiker" , "LoketLB-bbcdrGebruiker" , "LoketLB-berichtenGebruiker" , "LoketLB-personeelsbeheer" , "LoketLB-LPDCGebruiker" .
+      ext:sessionRole             "LoketLB-leidinggevendenGebruiker" , "LoketLB-mandaatGebruiker" , "LoketLB-subsidies" , "LoketLB-toezichtGebruiker" , "LoketLB-ContactOrganisatiegegevensGebruiker" , "LoketLB-bbcdrGebruiker" , "LoketLB-berichtenGebruiker" , "LoketLB-personeelsbeheer" , "LoketLB-LPDCGebruiker" , "LoketLB-OpenProcesHuisGebruiker" .
   }
 }
 WHERE {
