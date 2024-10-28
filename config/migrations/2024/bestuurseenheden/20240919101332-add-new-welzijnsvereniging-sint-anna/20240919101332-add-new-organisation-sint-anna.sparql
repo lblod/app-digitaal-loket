@@ -7,7 +7,7 @@ INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
 
       # Insert bestuurseenheid
-      <http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>, ;
+      <http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
         <http://mu.semte.ch/vocabularies/core/uuid>	"66DB132B6ABCA6E6BF2DBBED" ;
         skos:prefLabel	"Sint-Anna" ;
         <http://www.w3.org/ns/adms#identifier>	"1011411080" ;
@@ -23,16 +23,19 @@ INSERT DATA {
       # Insert bestuursorganen
       <http://data.lblod.info/id/bestuursorganen/40d628b0-6c5d-11ef-8f29-2728b827bd59> rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
         <http://mu.semte.ch/vocabularies/core/uuid>	"40d628b0-6c5d-11ef-8f29-2728b827bd59" ;
+        skos:prefLabel "Leidend Ambtenaar Welzijnsvereniging Sint-Anna" ;
         <http://data.vlaanderen.be/ns/besluit#classificatie>	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/41caf7e6-b040-4720-9cc2-a96cfffed5b4> ;
         <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> .
 
       <http://data.lblod.info/id/bestuursorganen/40bfba80-6c5d-11ef-8f29-2728b827bd59> rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
 	      <http://mu.semte.ch/vocabularies/core/uuid>	"40bfba80-6c5d-11ef-8f29-2728b827bd59" ;
+        skos:prefLabel "Raad van bestuur Welzijnsvereniging Sint-Anna" ;
 	      <http://data.vlaanderen.be/ns/besluit#classificatie>	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> ;
 	      <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> .
 
       <http://data.lblod.info/id/bestuursorganen/40cab700-6c5d-11ef-8f29-2728b827bd59> rdf:type	<http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
         <http://mu.semte.ch/vocabularies/core/uuid>	"40cab700-6c5d-11ef-8f29-2728b827bd59" ;
+        skos:prefLabel "Algemene vergadering Welzijnsvereniging Sint-Anna" ;
         <http://data.vlaanderen.be/ns/besluit#classificatie>	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> ;
         <http://data.vlaanderen.be/ns/besluit#bestuurt>	<http://data.lblod.info/id/bestuurseenheden/66DB132B6ABCA6E6BF2DBBED> .
 
