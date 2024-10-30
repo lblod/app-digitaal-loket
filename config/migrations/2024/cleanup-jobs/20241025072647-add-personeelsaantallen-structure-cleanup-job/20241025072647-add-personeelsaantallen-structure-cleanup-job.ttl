@@ -111,4 +111,4 @@
       BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?uuidBestuurseenheid, "/LoketLB-personeelsbeheer")) AS ?orgGraph)
     }
   """ ;
-  cleanup:cronPattern "16 */1 * * *" .
+  cleanup:cronPattern "16 20 * * *" .
