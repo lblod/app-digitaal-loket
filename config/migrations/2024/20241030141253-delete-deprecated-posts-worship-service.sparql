@@ -1,0 +1,28 @@
+# Delete the mandatories and ministers that were inserted via Loket for worship
+# service  <http://data.lblod.info/id/besturenVanDeEredienst/a8880f3d8b482788c5f3adbf58f01b4f>
+# Entries for the same posts were entered via vendor software a later time.
+DELETE {
+  GRAPH ?g {
+    ?mandatarisOfBedienaar ?p ?o.
+  }
+} WHERE {
+  GRAPH ?g {
+    ?mandatarisOfBedienaar ?p ?o.
+  }
+  VALUES ?g {
+    <http://mu.semte.ch/graphs/organizations/a8880f3d8b482788c5f3adbf58f01b4f/LoketLB-eredienstBedienaarGebruiker>
+    <http://mu.semte.ch/graphs/organizations/a8880f3d8b482788c5f3adbf58f01b4f/LoketLB-eredienstMandaatGebruiker>
+  }
+  VALUES ?mandatarisOfBedienaar {
+    <http://data.lblod.info/id/mandatarissen/6460CE20BA5B9B11C3B3BC9A>
+    <http://data.lblod.info/id/mandatarissen/6460CDF6BA5B9B11C3B3BC99>
+    <http://data.lblod.info/id/mandatarissen/63E54E99F6C8975F1E179FF9>
+    <http://data.lblod.info/id/mandatarissen/63E5514DF6C8975F1E17A000>
+    <http://data.lblod.info/id/mandatarissen/63EE661BDCBDF2B6AEC81AD1>
+    <http://data.lblod.info/id/mandatarissen/6460CD71BA5B9B11C3B3BC96>
+    <http://data.lblod.info/id/mandatarissen/6460CDA3BA5B9B11C3B3BC97>
+    <http://data.lblod.info/id/mandatarissen/6460CDCCBA5B9B11C3B3BC98>
+    <http://data.lblod.info/id/rollenBedienaar/643435ACD3AE3C402158E59B>
+    <http://data.lblod.info/id/rollenBedienaar/6460CC81BA5B9B11C3B3BC95>
+  }
+}
