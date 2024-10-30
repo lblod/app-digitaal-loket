@@ -37,9 +37,30 @@
           sdmxdim:sex ?gender ;
           empl:workingTimeCategory ?workingTimeCategory ;
           empl:legalStatus ?employeeLegalStatus ;
+          <http://purl.org/linked-data/sdmx/2009/measure#obsValue> 0 ;
           sdmxdim:educationLev ?educationalLevel .
       }
     } WHERE {
+
+      {
+        SELECT DISTINCT ?bestuurseenheid WHERE {
+
+          VALUES ?classification {
+            <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>
+            <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>
+            <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>
+          }
+
+           ?bestuurseenheid a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+             <http://data.vlaanderen.be/ns/besluit#classificatie> ?classification.
+
+          FILTER NOT EXISTS {
+            ?dataSet a <http://lblod.data.gift/vocabularies/employee/EmployeeDataset>;
+             <http://purl.org/dc/terms/creator> ?bestuurseenheid.
+          }
+        }
+      }
+
       VALUES (?unitMeasureLabel ?unitMeasureUri) {
         ("Werknemers - Koppen" <http://lblod.data.gift/concepts/feed220b-f398-456e-8635-94a04dfbdbe8>)
         ("Voltijds equivalenten - VTE" <http://lblod.data.gift/concepts/a97325c1-f572-4dd8-8952-c2cb254f114a>)
@@ -51,6 +72,7 @@
         <http://lblod.data.gift/concepts/ce9f9a39-ded6-4920-8c69-d2d3ea75b8f6>
         <http://lblod.data.gift/concepts/78ae17dd-45f6-40d4-ab03-729231c1071e>
         <http://lblod.data.gift/concepts/92bbd6c5-acee-43ac-9462-f5e260e2b900>
+        <http://lblod.data.gift/concepts/d1a7ac1f-587c-48fb-ba6f-1a3bd19aa853>
       }
 
       VALUES ?employeeLegalStatus {
@@ -74,26 +96,6 @@
         besluit:classificatie ?classification .
 
       ?classification skos:prefLabel ?classificationLabel .
-
-      # TODO not sure about those restrictions, double check with Loket team
-      # Current list comes from https://github.com/lblod/app-digitaal-loket/blob/master/config/mock-login/rules.json#L64
-      FILTER(?classification IN (
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36a82ba0-7ff1-4697-a9dd-2e94df73b721>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/a3922c6d-425b-474f-9a02-ffb71a436bfc>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/ea446861-2c51-45fa-afd3-4e4a37b71562>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71>,
-        <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d90c511e-f827-488c-84ba-432c8f69561c>
-      ))
-
-      FILTER NOT EXISTS { ?existingDataset dct:creator ?bestuurseenheid . }
 
       BIND(MD5(CONCAT(?bestuurseenheid, ?unitMeasureLabel, "period slice")) as ?uuidPeriodSlice)
       BIND(IRI(CONCAT("http://data.lblod.info/employee-period-slices/", ?uuidPeriodSlice)) AS ?periodSlice)
