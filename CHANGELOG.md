@@ -10,6 +10,8 @@
  - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to ``SELECT` queries)
 ### LMB
  - cut-over to LMB: see DL-6144.
+### Toezicht
+  - Bump enrich-submission-service [DL-6245]: add KBO number for erediensten codelist
 ### Deploy notes
 #### LMB public
 In `docker-compose.override.yml`
