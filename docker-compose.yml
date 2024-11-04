@@ -292,8 +292,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    # TODO: Replace this with a version tagged image before merging
-    image: lblod/enrich-submission-service:feature-add-eb-managed-by-cb-concept-scheme
+    image: lblod/enrich-submission-service:0.13.1
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20241016143733-forms.ttl"
     volumes:
@@ -315,7 +314,7 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:1.4.0
+    image: lblod/toezicht-flattened-form-data-generator:1.4.1
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
@@ -323,8 +322,7 @@ services:
     restart: always
     logging: *default-logging
   worship-decisions-cross-reference:
-    # TODO: Replace this with a version tagged image before merging
-    image: lblod/worship-decisions-cross-reference-service:feature-cross-reference-cb-eb-documents
+    image: lblod/worship-decisions-cross-reference-service:0.4.0
     labels:
       - "logging=true"
     restart: always
