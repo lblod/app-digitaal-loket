@@ -14,7 +14,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ccbd6477804e936617731eb049d407de164e36080ff509d7d402fad7c65cfc96> .
 
 <http://data.lblod.info/id/bestuursorganen/93bc609dfe6744771318fd94b7424a8898ea8ac92c6d95115478de443fb9898f> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ccbd6477804e936617731eb049d407de164e36080ff509d7d402fad7c65cfc96>;
   <http://mu.semte.ch/vocabularies/core/uuid> "93bc609dfe6744771318fd94b7424a8898ea8ac92c6d95115478de443fb9898f";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/97c41470c8e63f4709f2aba2697732627330f1c9ef3fda53d813bbf4dbd509c9>;
@@ -38,7 +38,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/075fe8306362528ca6340811c403eeb758d9e797a9071aa47b331f4050a38908> .
 
 <http://data.lblod.info/id/bestuursorganen/be1bd2e3be023a17c1bcc71b06f3d7df85380acd3a5ffdea47da7514ef8d4f1b> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/14398cf66e94a2ad6e27c8ebf74fb798e80de8680ce8748ccfe56166e668c358>;
   <http://mu.semte.ch/vocabularies/core/uuid> "be1bd2e3be023a17c1bcc71b06f3d7df85380acd3a5ffdea47da7514ef8d4f1b";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/97c41470c8e63f4709f2aba2697732627330f1c9ef3fda53d813bbf4dbd509c9>,
@@ -55,7 +55,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/14398cf66e94a2ad6e27c8ebf74fb798e80de8680ce8748ccfe56166e668c358> .
 
 <http://data.lblod.info/id/bestuursorganen/f851350d702fda86897d831bed917e8f1c0f7ce8e2ddbd5046f29e464a2c596f> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/075fe8306362528ca6340811c403eeb758d9e797a9071aa47b331f4050a38908>;
   <http://mu.semte.ch/vocabularies/core/uuid> "f851350d702fda86897d831bed917e8f1c0f7ce8e2ddbd5046f29e464a2c596f";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/5341ce35bbe76519da31a337b6914d928c630ba9b394ab8a7de2ac5337d7b0fe>,
@@ -207,7 +207,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/21fe9ea3f26627b781026fec5d7b938658aeb9cbe9c8cee7417d195e7f8544f5> .
 
 <http://data.lblod.info/id/bestuursorganen/93eee06e53ef07ef4af7134b3492a3e3d2c3e79df6a86c0bf607a77da4d03403> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/bf8e80585fb7bce69c299c6ea39da6625d384cfde5db82ef1025aebb6829a01b>;
   <http://mu.semte.ch/vocabularies/core/uuid> "93eee06e53ef07ef4af7134b3492a3e3d2c3e79df6a86c0bf607a77da4d03403";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/3c5c7fc8f484b9597680d73a2cfefc9a0d13ed49c8506c0a3b5e0af1bcb8cc21>,
@@ -215,7 +215,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/bf8e80585fb7bce69c299c6ea39da6625d384cfde5db82ef1025aebb6829a01b> .
 
 <http://data.lblod.info/id/bestuursorganen/bab2ab18f7e205668ee7ef1e3a56fc45464a908eb6e362bdb1f04a8bd2ed0b80> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/21fe9ea3f26627b781026fec5d7b938658aeb9cbe9c8cee7417d195e7f8544f5>;
   <http://mu.semte.ch/vocabularies/core/uuid> "bab2ab18f7e205668ee7ef1e3a56fc45464a908eb6e362bdb1f04a8bd2ed0b80";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/df2400eab6e46175ccb51ab97575189620e22187be1d072d56504ed7e16bd3b2>,
@@ -239,7 +239,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/bf8e80585fb7bce69c299c6ea39da6625d384cfde5db82ef1025aebb6829a01b> .
 
 <http://data.lblod.info/id/bestuursorganen/c23e9a5acb428ed8e36100beba5218e6e78eeee703a55cd764f1e6441a497f03> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/8da2fd280b430ac626e37fe5bb326d78f4ea11e1b809ea2c52255a5c60e2735f>;
   <http://mu.semte.ch/vocabularies/core/uuid> "c23e9a5acb428ed8e36100beba5218e6e78eeee703a55cd764f1e6441a497f03";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/3c5c7fc8f484b9597680d73a2cfefc9a0d13ed49c8506c0a3b5e0af1bcb8cc21>;
@@ -364,7 +364,7 @@
 
 
 <http://data.lblod.info/id/bestuursorganen/3588b7339ac99987e39d4c2a13b08f4a73d00ae56ddb3c9e8cd1d4ae857d0b8e> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/46ac2dbeb5478311accffafd2e6d1e6a0c3967869c698310470f27f0979f6ced>;
   <http://mu.semte.ch/vocabularies/core/uuid> "3588b7339ac99987e39d4c2a13b08f4a73d00ae56ddb3c9e8cd1d4ae857d0b8e";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/76e7291ec58b0de90bc2146253e8f77d643dc23e308e5a255e88cc9cc6b8bd4e>;
@@ -386,7 +386,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/46ac2dbeb5478311accffafd2e6d1e6a0c3967869c698310470f27f0979f6ced> .
 
 <http://data.lblod.info/id/bestuursorganen/6ece957fddf5e4de0a7b13163a2e07418fc26acff7ae9285ad9fcba9f0ddf192> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/49f13f5071c5967ce8d574a3aa1c22b80fc5e794277015afd0aac7f803775f2a>;
   <http://mu.semte.ch/vocabularies/core/uuid> "6ece957fddf5e4de0a7b13163a2e07418fc26acff7ae9285ad9fcba9f0ddf192";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/9f94c47bbbf27d9907d53d96a51afc3cd752e6130fcc864aaf7cea76f47fcc19>,
@@ -394,7 +394,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/49f13f5071c5967ce8d574a3aa1c22b80fc5e794277015afd0aac7f803775f2a> .
 
 <http://data.lblod.info/id/bestuursorganen/78d25283d84ad24d95bc083c8843c8199ed3b5e5fea1623c0a5dade0dc171908> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/e1f57f0bbc7d6358c5e0d79b603650df7e6f064f37433869b727fab9110d808d>;
   <http://mu.semte.ch/vocabularies/core/uuid> "78d25283d84ad24d95bc083c8843c8199ed3b5e5fea1623c0a5dade0dc171908";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/76e7291ec58b0de90bc2146253e8f77d643dc23e308e5a255e88cc9cc6b8bd4e>,
@@ -555,7 +555,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4e9568f74a8839b37b4a02b45be8d97cdbbe178d555a48592eeceda21abf50ef> .
 
 <http://data.lblod.info/id/bestuursorganen/667697e3cd4950eb8049969aeb178f43438833768b4d228197934464ac4245cf> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/454952ccfa60bfbe74d7dcaab4f558c32026439b8e7ac6da690308c553f9214c>;
   <http://mu.semte.ch/vocabularies/core/uuid> "667697e3cd4950eb8049969aeb178f43438833768b4d228197934464ac4245cf";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/4d64c8b4df991ca64f2ef2ea7ce3a37015cc41e658556c33ecda2aa52e0270b7>;
@@ -570,7 +570,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4e9568f74a8839b37b4a02b45be8d97cdbbe178d555a48592eeceda21abf50ef> .
 
 <http://data.lblod.info/id/bestuursorganen/7b5be2d079985d9fefd3b0814b73ed1a0cd37541d2886468092c6d9f4ba19760> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/b1ddacc7863d5764650ff14c663d769eeb2935035ae60f75d92657299e437e0d>;
   <http://mu.semte.ch/vocabularies/core/uuid> "7b5be2d079985d9fefd3b0814b73ed1a0cd37541d2886468092c6d9f4ba19760";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/51a03708ca08347bf5a63966b5fe5959180654f31844aadb4602bced32531491>,
@@ -586,7 +586,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/b1ddacc7863d5764650ff14c663d769eeb2935035ae60f75d92657299e437e0d> .
 
 <http://data.lblod.info/id/bestuursorganen/cbf16527b916dbae8a0ef187febf23dd134336a438ba4f105e6b3868ff5b2788> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4e9568f74a8839b37b4a02b45be8d97cdbbe178d555a48592eeceda21abf50ef>;
   <http://mu.semte.ch/vocabularies/core/uuid> "cbf16527b916dbae8a0ef187febf23dd134336a438ba4f105e6b3868ff5b2788";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/43abf5f3ac1d7b4b483de76ea77bc1c9a68683d948414502784d153eb2852fa9>,
@@ -735,14 +735,14 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ac33ad3f0df97e4c3b1fdd09e514a04cb7a9332d385cd455307ed63fcd63d39b> .
 
 <http://data.lblod.info/id/bestuursorganen/70419998de2d0019feeb1231ed95b027e9c799288d789d91279061164acb2338> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ac33ad3f0df97e4c3b1fdd09e514a04cb7a9332d385cd455307ed63fcd63d39b>;
   <http://mu.semte.ch/vocabularies/core/uuid> "70419998de2d0019feeb1231ed95b027e9c799288d789d91279061164acb2338";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/5201b7a6d78608e0e1545f7d356d4444919edca56fca754e8f2054ae79e54b57>;
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ac33ad3f0df97e4c3b1fdd09e514a04cb7a9332d385cd455307ed63fcd63d39b> .
 
 <http://data.lblod.info/id/bestuursorganen/8790b741cf9817728052fa953a23ff515b79fa366ed14e52e2a3a157be699f32> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/8f8b50216d68d1c23fe5add87a73c1c43cb47079b38316e36d5bcda329fca327>;
   <http://mu.semte.ch/vocabularies/core/uuid> "8790b741cf9817728052fa953a23ff515b79fa366ed14e52e2a3a157be699f32";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/0001e21b494df8277dd27d80b575addd8ea1f85dd1056c3e4973be9888ecc328>,
@@ -750,7 +750,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/8f8b50216d68d1c23fe5add87a73c1c43cb47079b38316e36d5bcda329fca327> .
 
 <http://data.lblod.info/id/bestuursorganen/89848aadf74701b59c59907b70b5e048101886273bf38e0caa7381a336f43ba2> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/d7dbd2b143094018c8b9bf261e115aa43e151d48dcadf56e99e0f0fe67b8559c>;
   <http://mu.semte.ch/vocabularies/core/uuid> "89848aadf74701b59c59907b70b5e048101886273bf38e0caa7381a336f43ba2";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/de2156f16230ce8ddcbd24166d116772d7977dd00bf7c09334010e33b4b2d599>,
@@ -943,14 +943,14 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ded4eb89c31b49d6a4e54c0f81c81d6d8ba354435624b3689c2391c0ee972af5> .
 
 <http://data.lblod.info/id/bestuursorganen/a35fe4dea9cdd7851cd5c545c5b0351f1bab720b4db209b7a3fe2d2ef5f77d6c> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/503789833b5bb5376076cedbd2cc70405cd6477b13ddd0632635ebdacf4b94a1>;
   <http://mu.semte.ch/vocabularies/core/uuid> "a35fe4dea9cdd7851cd5c545c5b0351f1bab720b4db209b7a3fe2d2ef5f77d6c";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/6b4f34ee059768cf302fec1b1c3e989a79cc41a3903b7a49afec100579e9dc6d>;
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/503789833b5bb5376076cedbd2cc70405cd6477b13ddd0632635ebdacf4b94a1> .
 
 <http://data.lblod.info/id/bestuursorganen/b2fdc06171c2450f36a457197ec2a6a26f5a1603bd6bf5dbbb4b2c376e7039b4> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/5973204f8f20a1563e8549e1bf2c0a780effc3fb82376dc13ef6507b931d09bd>;
   <http://mu.semte.ch/vocabularies/core/uuid> "b2fdc06171c2450f36a457197ec2a6a26f5a1603bd6bf5dbbb4b2c376e7039b4";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/86d372c5084679ac50ab93c3432b25f4fe4007fb1078e6e194bc7c8cbb618d03>,
@@ -966,7 +966,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/5973204f8f20a1563e8549e1bf2c0a780effc3fb82376dc13ef6507b931d09bd> .
 
 <http://data.lblod.info/id/bestuursorganen/d9028bf80c1d8d3c4b87221952388bd70b22e771acee13b8978c48526ed04f79> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ded4eb89c31b49d6a4e54c0f81c81d6d8ba354435624b3689c2391c0ee972af5>;
   <http://mu.semte.ch/vocabularies/core/uuid> "d9028bf80c1d8d3c4b87221952388bd70b22e771acee13b8978c48526ed04f79";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/6b4f34ee059768cf302fec1b1c3e989a79cc41a3903b7a49afec100579e9dc6d>,
@@ -1092,7 +1092,7 @@
 
 
 <http://data.lblod.info/id/bestuursorganen/489ae13940a47e32d428a856602e9dca74554c99fe55fba985e5994024fd47a6> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/01993899287fb075d4e97e1cfea88879b42094e191ca2b29dd1dace4e66560d4>;
   <http://mu.semte.ch/vocabularies/core/uuid> "489ae13940a47e32d428a856602e9dca74554c99fe55fba985e5994024fd47a6";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/5344a4516ac271c82959b37cb3bb8c204cac65d58da7ff5e0035e42827b320da>;
@@ -1106,7 +1106,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/01993899287fb075d4e97e1cfea88879b42094e191ca2b29dd1dace4e66560d4> .
 
 <http://data.lblod.info/id/bestuursorganen/67b3552306d6d00ce7b0528e8e4822cbf01f387b10257ac02b4e6f2caa925c42> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/13fc286fd72663eda5800162a9019eab7e842f0891da095dac94e7b69bb816ad>;
   <http://mu.semte.ch/vocabularies/core/uuid> "67b3552306d6d00ce7b0528e8e4822cbf01f387b10257ac02b4e6f2caa925c42";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/5284d74e25eb8d04843bee950c02a02efe953f4943e33bbdcdc92a4a596c28ad>,
@@ -1114,7 +1114,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/13fc286fd72663eda5800162a9019eab7e842f0891da095dac94e7b69bb816ad> .
 
 <http://data.lblod.info/id/bestuursorganen/86410304361ee3ae44f147ab7069c393b25f1e28d2767df530a76250eab5b713> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/d0532e5bb2ecff58d0b8b04f2d8a0e6f0ab767209428a1ec4a0b58cd7d23dd4a>;
   <http://mu.semte.ch/vocabularies/core/uuid> "86410304361ee3ae44f147ab7069c393b25f1e28d2767df530a76250eab5b713";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/7725d6028776f6b574dbf16ba542b4992b66cd58d1df688def90967f661b1ebe>,
@@ -1274,7 +1274,7 @@
 
 
 <http://data.lblod.info/id/bestuursorganen/1d0ad03bccdfa92f5a2e9c019758cfc085d1922e0999944eb23b15e167d6e573> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4c3f5e06a827580cab2d21a09a804f59885ab7c0b52312949a1322128bbf16d3>;
   <http://mu.semte.ch/vocabularies/core/uuid> "1d0ad03bccdfa92f5a2e9c019758cfc085d1922e0999944eb23b15e167d6e573";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/deaac848b61034502fcd93b95f09e8bdf44ec1ccc7cc497ca9f201493e6a10e4>,
@@ -1282,7 +1282,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4c3f5e06a827580cab2d21a09a804f59885ab7c0b52312949a1322128bbf16d3> .
 
 <http://data.lblod.info/id/bestuursorganen/2e121923afd299b44309c18d7fa7962c9757fb6d80c7a8f8c7bbbdde07f3c1dc> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/22b5002f303475e5ead5b0ea572794ac64518e846c30e8dd13f5ff9966e30bd1>;
   <http://mu.semte.ch/vocabularies/core/uuid> "2e121923afd299b44309c18d7fa7962c9757fb6d80c7a8f8c7bbbdde07f3c1dc";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/9c9d5fb038b3a680e8031ca04b567486641461e90356012cf3f7cedfad2c4f71>,
@@ -1290,7 +1290,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/22b5002f303475e5ead5b0ea572794ac64518e846c30e8dd13f5ff9966e30bd1> .
 
 <http://data.lblod.info/id/bestuursorganen/61df5e57c33b08f3f22ffc8ec48ac72ffad2cf7f3a578a9a76247ec99c4dfe0e> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/8d0a1580636604cf1a708e0542ce08df52ac6b27fe9b83f97c94ddba50dc84ee>;
   <http://mu.semte.ch/vocabularies/core/uuid> "61df5e57c33b08f3f22ffc8ec48ac72ffad2cf7f3a578a9a76247ec99c4dfe0e";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/deaac848b61034502fcd93b95f09e8bdf44ec1ccc7cc497ca9f201493e6a10e4>;
@@ -1464,14 +1464,14 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/3b9108822cdeb01e6857dbb29c0254044e573cc52c4db233452a538b5d29ba73> .
 
 <http://data.lblod.info/id/bestuursorganen/668e0dc2639b7cb309b783ca5886ac72f20747944a82b6f105a465c59a09728a> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/202fa76d46f2234c5c90eae1c08bf76b8e1b6ba48c983184613c601ec37650c1>;
   <http://mu.semte.ch/vocabularies/core/uuid> "668e0dc2639b7cb309b783ca5886ac72f20747944a82b6f105a465c59a09728a";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/b7615706e23f3755ec6d6d0980d43b55b5145353a8ac9fcbb76a4df9a3a95ceb>;
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/202fa76d46f2234c5c90eae1c08bf76b8e1b6ba48c983184613c601ec37650c1> .
 
 <http://data.lblod.info/id/bestuursorganen/7b6866da5f84d5d5c5e583b0e48c03a7fa9d72cbb920da3a542c301b7d32cf67> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/d98ba40e8ef1dac4a6393a08afffa3140ea846e9008d441d61e7135e9e24e6c6>;
   <http://mu.semte.ch/vocabularies/core/uuid> "7b6866da5f84d5d5c5e583b0e48c03a7fa9d72cbb920da3a542c301b7d32cf67";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/7ef8966ec340c3e53abb47e2a797eb1b84e9d807002223c3780821669352b907>,
@@ -1479,7 +1479,7 @@
   <https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/d98ba40e8ef1dac4a6393a08afffa3140ea846e9008d441d61e7135e9e24e6c6> .
 
 <http://data.lblod.info/id/bestuursorganen/c07d6e45819835411b5f7c72d393b2209904ad9a0f05380e3710eabea7bf3d0c> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
-  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2024-12-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+  <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2025-01-02T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/3b9108822cdeb01e6857dbb29c0254044e573cc52c4db233452a538b5d29ba73>;
   <http://mu.semte.ch/vocabularies/core/uuid> "c07d6e45819835411b5f7c72d393b2209904ad9a0f05380e3710eabea7bf3d0c";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/7267c5497ce7e3ab9c26a3d35155c5ecbceed42561dadb3369d71705bb1d846f>,
