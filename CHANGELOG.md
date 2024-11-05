@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+### General
+#### Frontend
+ - `v0.97.4` (DL-6228): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0974-2024-11-04
+
+### Deploy notes
+- remove any overrides from the docker-compose.override.yml file
+- run `drc up -d loket`
+
 ## 1.105.0 (2024-10-24)
 ### LMB
  - cut-over to LMB: see DL-6144.
