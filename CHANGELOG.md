@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.105.1 (2024-11-05)
 ### General
 #### Frontend
  - `v0.97.4` (DL-6228): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0974-2024-11-04
