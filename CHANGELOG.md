@@ -34,6 +34,18 @@ drc up -d update-bestuurseenheid-mock-login
 # Wait until it boots, before running the next command. You can also wait the cron-job kicks in.
 drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins
 # Takes about 20 min with prod data
+```
+Then, update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # choose the correct endpoint
+      DCR_LANDING_ZONE_DATABASE: "database"
+      DCR_REMAPPING_DATABASE: "database"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+```
 drc up -d #(or the usual procedure if you want to avoid error-emails)
 ```
 
