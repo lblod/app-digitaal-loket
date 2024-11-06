@@ -121,6 +121,24 @@
         "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001",
         "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000"
       ]
+    },
+    {
+      "sessionRole": "LoketAdmin",
+      "restrictToClassifications": [
+        "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/52cc9d8d-1c9a-4d92-9936-da9d4a622ec4"
+      ]
+    },
+    {
+      "sessionRole": "LoketLB-vendorManagementGebruiker",
+      "restrictToClassifications": [
+        "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/52cc9d8d-1c9a-4d92-9936-da9d4a622ec4"
+      ]
+    },
+    {
+      "sessionRole": "LoketLB-admin",
+      "restrictToClassifications": [
+        "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/52cc9d8d-1c9a-4d92-9936-da9d4a622ec4"
+      ]
     }
   ]
 }
