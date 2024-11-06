@@ -91,6 +91,20 @@ DELETE {
   }
 }
 
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>.
+  }
+}
+
+
 #######################################################################
 # END
 # First remove the extra mappings.
