@@ -1,12 +1,41 @@
 # Changelog
 ## Unreleased
 ### General
+#### Data
+ - OP-consumer has been extend to ingest everything that is produced by delta-stream `op-public-consumer`
 #### Frontend
  - `v0.97.3` (DGS-383): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0973-2024-09-24
 ### Subsidies
 - Remove all Subsidies services, configuration and old migration files
 ### BBC
  - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to ``SELECT` queries)
+
+### Deploy notes
+
+```
+drc down;
+```
+Update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # choose the correct endpoint
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+Then:
+```
+drc up -d migrations
+drc up -d database op-public-consumer
+# Wait until success of the previous step
+drc up -d update-bestuurseenheid-mock-login
+# Wait until it boots, before running the next command. You can also wait the cron-job kicks in.
+drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins
+# Takes about 20 min with prod data
+drc up -d #(or the usual procedure if you want to avoid error-emails)
+```
 
 ## 1.105.1 (2024-11-05)
 ### General
