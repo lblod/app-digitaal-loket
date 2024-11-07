@@ -432,7 +432,7 @@ services:
     restart: always
     logging: *default-logging
   update-bestuurseenheid-mock-login:
-    image: lblod/update-bestuurseenheid-mock-login-service:0.1.2
+    image: lblod/update-bestuurseenheid-mock-login-service:0.3.1
     volumes:
       - ./config/mock-login:/config
     labels:
@@ -555,7 +555,7 @@ services:
   # OP PUBLIC CONSUMER
   ################################################################################
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.25-rc.3
+    image: lblod/delta-consumer:0.0.26
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
@@ -566,6 +566,7 @@ services:
       DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
       DCR_DISABLE_INITIAL_SYNC: "true"
       DCR_KEEP_DELTA_FILES: "true"
+      DCR_DELTA_JOBS_RETENTION_PERIOD: "30"
       DCR_ENABLE_TRIPLE_REMAPPING: "true"
       DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
       DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"
