@@ -51,34 +51,46 @@ And an `.env` file with following content:
 ```
 COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml:docker-compose.override.yml
 ```
-##### If you start for the first time
-The loket app is huge, and a lot of data is being intialized. We want to make sure you don't overload your machine too much doing this the first time.
-It's an optional step, if you trust your machine is powerful enough, you can move on.
-This step should only be done once.
-First start virtuoso and let it setup itself
-```
-docker-compose up virtuoso
-```
-Wait for the logs
+#### If you start for the first time
+
+You will need to sync the `besluit:Bestuurseenheid` from [app-organization-portal](https://github.com/lblod/app-organization-portal), else you won't be able to use the application. Here is how to proceed.
 
 ```
-HTTP/WebDAV server online at 8890
-Server online at 1111 (pid 1)
+drc down;
 ```
-Stop the service, usually `ctrl+c`
-Then run the migrations
+Update `docker-compose.override.yml` to:
 ```
-drc up migrations
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # or another endpoint
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
 ```
-This will take a while. You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`. When finished it should look similar to this:
-
+Then:
 ```
-[2023-04-07 20:13:15] INFO  WEBrick 1.4.2
-[2023-04-07 20:13:15] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
-== Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
-[2023-04-07 20:13:15] INFO  WEBrick::HTTPServer#start: pid=13 port=80
+drc up -d migrations
+drc up -d database op-public-consumer
+# Wait until success of the previous step
+drc up -d update-bestuurseenheid-mock-login
+# Wait until it boots, before running the next command. You can also wait the cron-job kicks in.
+drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins
+# Takes about 20 min with prod data
 ```
-
+Then, update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # choose the correct endpoint
+      DCR_LANDING_ZONE_DATABASE: "database"
+      DCR_REMAPPING_DATABASE: "database"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+```
+drc up -d
+```
 ##### Normal start
 This should be your go-to way of starting the stack.
 ```
@@ -109,59 +121,6 @@ Once the migrations have ran, you can start developing your application by conne
   The stack is built starting from [mu-project](https://github.com/mu-semtech/mu-project).
 
   OpenAPI documentation can be generated using [cl-resources-openapi-generator](https://github.com/mu-semtech/cl-resources-openapi-generator).
-
-### Ingesting external data
-#### Administrative units
-Only the 'normal' (i.e. non-worship) administrative units are provided by default.
-If you need to ingest the data for worship administrative units, you will need to ingest the data through deltas from:
-
-  * [Organisations portal](https://organisaties.abb.vlaanderen.be)
-    * Note: this app also has a development and qa environment available.
-##### steps
-  - The next steps assume `.env` file has been set, cf. supra.
-  - Ensure the following configuration is defined in the `docker-compose.override.yml`
-    ```
-    op-public-consumer:
-        environment:
-          DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
-          DCR_DISABLE_INITIAL_SYNC: "true"
-          DCR_DISABLE_DELTA_INGEST: "true"
-          DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
-          DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
-    update-bestuurseenheid-mock-login:
-        entrypoint: ["echo", "Service-disabled to not confuse the service"]
-    ```
-  - `docker-compose up -d`
-  - Ensure all migrations have run and the stack is started and running properly.
-  - Extra step in case of a resync, run:
-    ```
-    docker-compose exec op-public-consumer curl -X POST http://localhost/flush
-    docker-compose logs -f --tail=200 op-public-consumer
-    ```
-      - This should end with `Flush successful`.
-  - Update `docker-compose.override.yml` with
-    ```
-      op-public-consumer:
-        environment:
-          DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
-          DCR_DISABLE_INITIAL_SYNC: "false" # -> this changed
-          DCR_DISABLE_DELTA_INGEST: "false" # -> this changed
-          #DCR_LANDING_ZONE_DATABASE: "virtuoso" # -> this changed
-          #DCR_REMAPPING_DATABASE: "virtuoso" # -> this changed
-      update-bestuurseenheid-mock-login:
-        entrypoint: ["echo", "Service-disabled to not confuse the service"]
-    ```
- - `docker-compose up -d`
- - This might take a while if `docker-compose logs op-public-consumer |grep success`
-      Returns: `Initial sync http://redpencil.data.gift/id/job/URI has been successfully run`; you should be good.
-      (Your computer will also stop making noise)
- - In `docker-compose.override.yml`, remove the disabled service
-       ```
-        update-bestuurseenheid-mock-login:
-          entrypoint: ["echo", "Service-disabled to not confuse the service"]
-       ```
-       The mock-logins will be created when a cron job kicks in. You can control the moment it triggers by playing with the `CRON_PATTERN` variable.
-       See the `README.md` of the related service for more options.
 
 ### Setting up the delta-producers related services
 
