@@ -1,4 +1,21 @@
 # Changelog
+
+## 1.105.2 (2024-11-08)
+
+### Toezicht
+
+- Adjusted the export filter to exclude two more type from being exported to Toezicht **(DL-6234)**:
+    * Besluit over budget(wijziging) eredienstbestuur
+    * Besluit over meerjarenplan(aanpassing) eredienstbestuur
+
+### Deploy notes
+
+Restart the `export-submissions` service:
+
+    drc restart export-submissions
+
+Nothing else special to do. Exporting happens at regular time intervals.
+
 ## 1.105.1 (2024-11-05)
 ### General
 #### Frontend
