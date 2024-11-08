@@ -1,0 +1,32 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+INSERT {
+  GRAPH ?g {
+    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole>  "LoketLB-bbcdrGebruiker",
+                                                                "LoketLB-berichtenGebruiker",
+                                                                "LoketLB-leidinggevendenGebruiker",
+                                                                "LoketLB-mandaatGebruiker",
+                                                                "LoketLB-personeelsbeheer",
+                                                                "LoketLB-subsidies",
+                                                                "LoketLB-toezichtGebruiker",
+                                                                "LoketLB-LPDCGebruiker",
+                                                                "LoketLB-ContactOrganisatiegegevensGebruiker",
+                                                                "LoketLB-OpenProcesHuisGebruiker" .
+  }
+}
+WHERE {
+  VALUES ?bestuurseenheid {
+    <http://data.lblod.info/id/bestuurseenheden/4b44e6f1-113b-4692-b149-44a889b215f2> # District Borsbeek
+    <http://data.lblod.info/id/bestuurseenheden/fd41f573-7d9a-4d9f-b7d0-d5b6114d1622> # OCMW Beveren-Kruibeke-Zwijndrecht
+    <http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e> # OCMW Nazareth-De Pinte
+    <http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf> # OCMW Pajottegem
+    <http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6> # OCMW Merelbeke-Melle
+  }
+
+  GRAPH ?g {
+    ?person foaf:member ?bestuurseenheid ;
+      foaf:account ?account .
+
+    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole> ?roles .
+  }
+}

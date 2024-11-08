@@ -1,0 +1,34 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+INSERT {
+  GRAPH ?g {
+    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole>  "LoketLB-bbcdrGebruiker",
+                                                                "LoketLB-berichtenGebruiker",
+                                                                "LoketLB-leidinggevendenGebruiker",
+                                                                "LoketLB-mandaatGebruiker",
+                                                                "LoketLB-personeelsbeheer",
+                                                                "LoketLB-subsidies",
+                                                                "LoketLB-toezichtGebruiker",
+                                                                "LoketLB-LPDCGebruiker",
+                                                                "LoketLB-databankEredienstenGebruiker",
+                                                                "LoketLB-eredienstOrganisatiesGebruiker",
+                                                                "LoketLB-ContactOrganisatiegegevensGebruiker",
+                                                                "LoketLB-verenigingenGebruiker",
+                                                                "LoketLB-OpenProcesHuisGebruiker" .
+  }
+}
+WHERE {
+  VALUES ?bestuurseenheid {
+    <http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9> # Gemeente Beveren-Kruibeke-Zwijndrecht
+    <http://data.lblod.info/id/bestuurseenheden/1ca65d65-54ff-4b44-b750-bd70c91191af> # Gemeente Nazareth-De Pinte
+    <http://data.lblod.info/id/bestuurseenheden/add1e4eb-9ec7-4ea6-af82-335aa76b7d48> # Gemeente Pajottegem
+    <http://data.lblod.info/id/bestuurseenheden/b8bb293d-aa22-4b43-bda4-0b6af76e9493> # Gemeente Merelbeke-Melle
+  }
+
+  GRAPH ?g {
+    ?person foaf:member ?bestuurseenheid ;
+      foaf:account ?account .
+
+    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole> ?roles .
+  }
+}
