@@ -18,20 +18,6 @@
   <http://mu.semte.ch/vocabularies/core/uuid> "d8cedeff-a243-41f9-90ea-15867149aefd";
   <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/c88da288b1c4b01024a70d2a981b4e8ad2a4aea13fa26f87701c52f0052de95b>.
 
-<http://data.lblod.info/vocabularies/erediensten/BestuurVanDeEredienst> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-
-<http://data.lblod.info/vocabularies/erediensten/CentraalBestuurVanDeEredienst> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-
-<http://data.lblod.info/vocabularies/erediensten/RepresentatiefOrgaan> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> .
-
-<http://lblod.data.gift/mappings.owl> a <http://www.w3.org/2002/07/owl#Ontology>,
-    <http://www.w3.org/2000/01/rdf-schema#Resource> .
-
-<https://data.vlaanderen.be/ns/generiek#gestructureerdeIdentificator> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://data.vlaanderen.be/ns/generiek#gestructureerdeIdentificator> .
-
-<https://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://data.vlaanderen.be/ns/generiek#isTijdspecialisatieVan>,
-    <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> .
-
 <http://data.lblod.info/id/mandaten/1f67064969cbcfc3329af6e67831658cb4a382fc9eca002854b11dc38d847d22> a <http://www.w3.org/ns/org#Post>,
     <http://data.vlaanderen.be/ns/mandaat#Mandaat>;
   <http://mu.semte.ch/vocabularies/core/uuid> "1f67064969cbcfc3329af6e67831658cb4a382fc9eca002854b11dc38d847d22";
@@ -73,10 +59,7 @@
   <http://mu.semte.ch/vocabularies/core/uuid> "c88da288b1c4b01024a70d2a981b4e8ad2a4aea13fa26f87701c52f0052de95b";
   <http://www.w3.org/ns/org#role> <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001d> .
 
-<http://data.lblod.info/id/bestuurseenheden/4b44e6f1-113b-4692-b149-44a889b215f2> a <http://www.w3.org/ns/org#Organization>,
-    <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>,
-    <http://purl.org/dc/terms/Agent>,
-    <http://xmlns.com/foaf/0.1/Agent>;
+<http://data.lblod.info/id/bestuurseenheden/4b44e6f1-113b-4692-b149-44a889b215f2> a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid> ;
   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>;
   <http://mu.semte.ch/vocabularies/core/uuid> "4b44e6f1-113b-4692-b149-44a889b215f2";
   <http://www.w3.org/2004/02/skos/core#prefLabel> "Borsbeek";
