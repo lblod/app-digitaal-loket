@@ -1,0 +1,19 @@
+PREFIX BesluitType: <https://data.vlaanderen.be/id/concept/BesluitType/>
+PREFIX conceptscheme: <https://data.vlaanderen.be/id/conceptscheme/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+  BesluitType:7927f4f4-ad4c-4460-9207-2a4b5d21a9d7
+    <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept>;
+    <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf>	conceptscheme:BesluitType ;
+    <http://www.w3.org/2004/02/skos/core#definition>	"Aanduiding en eedaflegging van de aangewezen burgemeester.";
+    <http://www.w3.org/2004/02/skos/core#prefLabel>	"Aanduiding en eedaflegging van de aangewezen burgemeester"@nl;
+    <http://www.w3.org/2004/02/skos/core#inScheme>	conceptscheme:BesluitType;
+    <http://www.w3.org/2004/02/skos/core#inScheme>	<http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5>;
+    <http://mu.semte.ch/vocabularies/core/uuid>	"7927f4f4-ad4c-4460-9207-2a4b5d21a9d7";
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://www.w3.org/2004/02/skos/core#topConceptOf>	<http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> .
+  }
+}
