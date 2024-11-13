@@ -7,7 +7,6 @@
 (add-prefix "mandaat" "http://data.vlaanderen.be/ns/mandaat#")
 (add-prefix "persoon" "http://data.vlaanderen.be/ns/persoon#") ;;  TODO: this is incorrect, should be https
 (add-prefix "generiek" "http://data.vlaanderen.be/ns/generiek#") ;; TODO: this is incorrect, should be https
-(add-prefix "subsidie" "http://data.vlaanderen.be/ns/subsidie#")
 
 (add-prefix "eli" "http://data.europa.eu/eli/ontology#")
 (add-prefix "m8g" "http://data.europa.eu/m8g/")
@@ -58,7 +57,6 @@
 (add-prefix "rdfs" "http://www.w3.org/2000/01/rdf-schema#")
 (add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
 (add-prefix "lblodBesluit" "http://lblod.data.gift/vocabularies/besluit/")
-(add-prefix "lblodSubsidie" "http://lblod.data.gift/vocabularies/subsidie/")
 (add-prefix "gleif" "https://www.gleif.org/ontology/Base/")
 (add-prefix "transactie" "http://data.vlaanderen.be/ns/transactie#")
 (add-prefix "mobiliteit" "https://data.vlaanderen.be/ns/mobiliteit#")

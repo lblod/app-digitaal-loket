@@ -14,15 +14,9 @@ import personsMissingDataReport from './personsMissingDataReport';
 import mandatarissenWithoutPersonReport from './mandatarissenWithoutPersonReport';
 import mandatarissenWithEmptyPersonReport from './mandatarissenWithEmptyPersonReport';
 import electedPersonsReport from './electedPersonsReport';
-import climateSubsidieOproep2PactsReport from './climateSubsidieOproep2PactsReport';
-import climateSubsidie2PactsReport from './climateSubsidie2PactsReport';
-import climateSubsidieOpvolgmomentReport from './climateSubsidieOpvolgmomentReport';
 import gemeentewegenReport from './gemeentewegenReport';
-import fietsSubsidieRequestsReport from './fietsSubsidieRequestsReport';
-import fietsSubsidieBalanceRequestsReport from './fietsSubsidieBalanceRequestsReport';
 import toezichtSubmissionsReport from './toezicht-submissions-report';
 import toezichtTaxRegulationSubmissionReport from './toezicht-tax-regulation-submissions-report';
-import ukraineSubsidyOproepOneReport from './ukraineSubsidyOproep1Report';
 import linksBetweenWorshipServicesAndAdminUnitsReport from './links-between-worship-services-and-admin-units-report';
 import virusScanReport from './virusScanReport';
 import recentEmailsInFailbox from './recentEmailsInFailboxReport';
@@ -54,16 +48,10 @@ export default [
   mandatarissenWithoutPersonReport,
   mandatarissenWithEmptyPersonReport,
   electedPersonsReport,
-  climateSubsidieOproep2PactsReport,
-  climateSubsidie2PactsReport,
-  climateSubsidieOpvolgmomentReport,
   gemeentewegenReport,
-  fietsSubsidieRequestsReport,
-  fietsSubsidieBalanceRequestsReport,
   // submissionsReport, TODO: disabled in favor of more optimised "toezicht-module-report"
   toezichtSubmissionsReport,
   toezichtTaxRegulationSubmissionReport,
-  ukraineSubsidyOproepOneReport,
   linksBetweenWorshipServicesAndAdminUnitsReport,
   virusScanReport,
   recentEmailsInFailbox,

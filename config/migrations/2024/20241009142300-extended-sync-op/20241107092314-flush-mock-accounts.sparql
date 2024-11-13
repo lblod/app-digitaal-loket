@@ -1,0 +1,24 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+DELETE {
+  GRAPH ?g {
+    ?person ?pperson ?operson .
+    ?account ?paccount ?oaccount .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?person a foaf:Person ;
+      foaf:account ?account ;
+      ?pperson ?operson .
+
+    ?account a foaf:OnlineAccount ;
+      ?paccount ?oaccount;
+      foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+  }
+}
