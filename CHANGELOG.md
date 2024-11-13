@@ -1,6 +1,8 @@
 # Changelog
 ## Unreleased
 ### General
+#### Toezicht
+ - Update rules for form `Besluit AGB/APB over retributies` [DL-5977]
 #### Data
  - OP-consumer has been extend to ingest everything that is produced by delta-stream `op-public-consumer`
 #### Frontend
