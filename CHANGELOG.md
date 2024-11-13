@@ -16,6 +16,7 @@
 drc down;
 ```
 Update `docker-compose.override.yml` to:
+
 ```
   op-public-consumer:
     environment:
@@ -45,8 +46,16 @@ Then, update `docker-compose.override.yml` to:
       DCR_DISABLE_DELTA_INGEST: "false"
       DCR_DISABLE_INITIAL_SYNC: "false"
 ```
+
 ```
 drc up -d #(or the usual procedure if you want to avoid error-emails)
+```
+## 1.105.3 (2024-11-13)
+### Toezicht
+ - Update URI form "Aangewezen Burgemeester" [DL-6298]
+### Deploy notes
+```
+drc restart migrations; drc up -d enrich-submission
 ```
 ## 1.105.2 (2024-11-08)
 
