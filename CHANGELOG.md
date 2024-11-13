@@ -55,7 +55,7 @@ drc up -d #(or the usual procedure if you want to avoid error-emails)
  - Update URI form "Aangewezen Burgemeester" [DL-6298]
 ### Deploy notes
 ```
-drc restart migrations; drc up -d enrich-submission
+drc restart migrations berichtencentrum-sync-with-kalliope; drc up -d enrich-submission
 ```
 ## 1.105.2 (2024-11-08)
 
