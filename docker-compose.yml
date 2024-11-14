@@ -291,9 +291,9 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.13.0
+    image: lblod/enrich-submission-service:1.13.2
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20241113122345-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20241113172134-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions

@@ -1,0 +1,21 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX besluit: <http://lblod.data.gift/vocabularies/besluit/>
+PREFIX BestuurseenheidClassificatieCode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+PREFIX core: <http://mu.semte.ch/vocabularies/core/>
+PREFIX BesluitType: <https://data.vlaanderen.be/id/concept/BesluitType/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    BesluitType:48c3290d-d9e3-4a38-b14e-e7c417e3a13a
+      a skos:Concept ;
+      core:uuid "48c3290d-d9e3-4a38-b14e-e7c417e3a13a" ;
+      besluit:decidableBy BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ; # Gemeente
+      skos:prefLabel "Kerkenbeleidsplan eredienstbesturen" ;
+      skos:definition "Besluit van de raad van bestuur van het autonoom gemeentebedrijf of autonoom provinciebedrijf betreffende retributies." ;
+      skos:inScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      skos:topConceptOf <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      skos:inScheme <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      skos:topConceptOf <https://data.vlaanderen.be/id/conceptscheme/BesluitType> .
+   }
+}
