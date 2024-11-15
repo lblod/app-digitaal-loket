@@ -8,7 +8,8 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.97.2
+    # TODO: Replace this with a version tagged image before merging
+    image: lblod/frontend-loket:feature-toezicht-ckb-eb-cross-referencing
     links:
       - identifier:backend
     labels:
@@ -291,9 +292,9 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.12.0
+    image: lblod/enrich-submission-service:0.13.1
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20241009142125-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20241016143733-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -313,7 +314,7 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:1.4.0
+    image: lblod/toezicht-flattened-form-data-generator:1.4.2
     volumes:
       - ./data/files/submissions:/share/submissions
     labels:
@@ -321,7 +322,7 @@ services:
     restart: always
     logging: *default-logging
   worship-decisions-cross-reference:
-    image: lblod/worship-decisions-cross-reference-service:0.3.1
+    image: lblod/worship-decisions-cross-reference-service:0.4.2
     labels:
       - "logging=true"
     restart: always
