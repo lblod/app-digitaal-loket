@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.106.0 (2024-11-18)
 ### General
 #### Toezicht
  - Update rules for form `Besluit AGB/APB over retributies` [DL-5977]
