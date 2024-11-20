@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+### General
+ - Adjust anomalies in names [DL-6278]
+
+### Deploy notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+
 ## 1.106.0 (2024-11-18)
 ### General
 #### Toezicht
