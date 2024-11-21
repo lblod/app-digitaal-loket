@@ -1,0 +1,89 @@
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+
+# Remove "Roepnaam"
+DELETE {
+  GRAPH ?g {
+    ?person foaf:name ?name .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES ?person {
+      <http://data.lblod.info/id/personen/5D9DEE71A3ACB600080000ED>
+      <http://data.lblod.info/id/personen/5D9DED7DA3ACB600080000E8>
+      <http://data.lblod.info/id/personen/5D9DE927A3ACB600080000D9>
+      <http://data.lblod.info/id/personen/5D9DEB69A3ACB600080000E0>
+      <http://data.lblod.info/id/personen/5D9DF2FCA3ACB600080000FA>
+    }
+    ?person foaf:name ?name .
+  }
+};
+
+# Some first- and familyname changes
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/4d5d6354-162d-4b4a-b4ee-5a317fa0bfd2> foaf:familyName ?familyName .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/4d5d6354-162d-4b4a-b4ee-5a317fa0bfd2> foaf:familyName "Paesbrugghe" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/4d5d6354-162d-4b4a-b4ee-5a317fa0bfd2> foaf:familyName ?familyName .
+  }
+};
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/5D9DF2FCA3ACB600080000FA> persoon:gebruikteVoornaam ?name ;
+      foaf:familyName ?familyName .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/5D9DF2FCA3ACB600080000FA> persoon:gebruikteVoornaam "An" ; 
+      foaf:familyName "Schauvlieghe" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/5D9DF2FCA3ACB600080000FA> persoon:gebruikteVoornaam ?name ;
+      foaf:familyName ?familyName .
+  }
+};
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/7fa8a756-7d53-4ebb-b821-55c2b2e153a4> foaf:familyName ?familyName .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/7fa8a756-7d53-4ebb-b821-55c2b2e153a4> foaf:familyName "De Bille" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/7fa8a756-7d53-4ebb-b821-55c2b2e153a4> foaf:familyName ?familyName .
+  }
+};
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/4ff24ac1-3e24-4f70-8ada-2e92c05382ba> foaf:familyName ?familyName .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/4ff24ac1-3e24-4f70-8ada-2e92c05382ba> foaf:familyName "De Ruysscher" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/4ff24ac1-3e24-4f70-8ada-2e92c05382ba> foaf:familyName ?familyName .
+  }
+}
