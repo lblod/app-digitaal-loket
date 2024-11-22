@@ -3,6 +3,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix mu: <http://mu.semte.ch/vocabularies/core/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix fieldOption: <http://lblod.data.gift/vocabularies/form-field-options/> .
 @prefix fieldGroups: <http://data.lblod.info/field-groups/> .
 @prefix fields: <http://data.lblod.info/fields/> .
 @prefix displayTypes: <http://lblod.data.gift/display-types/> .
@@ -1811,6 +1812,75 @@ fields:c0f621fc-4c2c-456b-83f9-f087e64af03a a form:Field ;
     sh:order 5002 ;
     sh:path dct:relation;
     sh:group fields:aDynamicPropertyGroup .
+
+##########################################################
+# Worship Decisions cross reference selector
+##########################################################
+# define the constraint separatly so we can re-use it.
+
+<http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        sh:resultMessage "Dit veld is verplicht."@nl.
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494 a form:Field ;
+    mu:uuid "788b9a98-684e-4d20-ae22-0ae610e6b494" ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> ,
+      [ a form:DecisionArticlesValidator ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+      ] ;
+    form:displayType displayTypes:decisionArticles ;
+    sh:group fields:aDynamicPropertyGroup .
+
+# Flavour with custom configuration to deal with articles where we don't need eli:type_document
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document a form:Field ;
+    sh:name "Artikels" ;
+    sh:order 102 ;
+    sh:path eli:has_part ;
+    form:validations <http://data.lblod.info/id/constraints/55b1ff31-6f75-4e4b-b994-6eb5d35bac3c> ,
+      [ a form:DecisionArticlesValidator ;
+        form:grouping form:Bag ;
+        sh:path eli:has_part ;
+        fieldOption:exclude-type_document "true"^^xsd:boolean ;
+      ] ;
+    fieldOption:exclude-type_document "true"^^xsd:boolean;
+    form:displayType displayTypes:decisionArticles ;
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type a form:Field ;
+    sh:name "Hidden field type artikel" ;
+    sh:order 102 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc a form:Field ;
+    sh:name "Hidden field type document" ;
+    sh:order 1001 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#type_document>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to a form:Field ;
+    sh:name "Hidden field refers to" ;
+    sh:order 1001 ;
+    sh:path (<http://data.europa.eu/eli/ontology#has_part> <http://data.europa.eu/eli/ontology#refers_to>);
+    sh:group fields:aDynamicPropertyGroup .
+
+fields:3b05127d-d3ec-46c5-8e58-664334eed2d3 a form:Field ;
+    sh:name "Gerelateerde documenten" ;
+    sh:order 103 ;
+    sh:path dct:relation ;
+    form:validations
+      [ a form:RequiredConstraint ;
+        form:grouping form:Bag ;
+        sh:resultMessage "Dit veld is verplicht." ;
+        sh:path dct:relation ] ;
+    form:displayType displayTypes:decisionDocuments ;
+    sh:group fields:aDynamicPropertyGroup .
 ########### Aanduiding en eedaflegging van de aangewezen burgemeester ###########
 fieldGroups:215b36a1-5a37-4de0-b1b3-b2ee735d2fed a form:FieldGroup ;
     mu:uuid "215b36a1-5a37-4de0-b1b3-b2ee735d2fed" ; 
@@ -1842,7 +1912,7 @@ fields:8252a10c-f35c-486f-8314-a36c099e726c a form:ConditionalFieldGroup ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/a48f2ded-78a5-45e5-a5d8-077814cec39f> # Aanduiding en eedaflegging van de aangewezen burgemeester
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/7927f4f4-ad4c-4460-9207-2a4b5d21a9d7> # Aanduiding en eedaflegging van de aangewezen burgemeester
       ] ;
     form:hasFieldGroup fieldGroups:215b36a1-5a37-4de0-b1b3-b2ee735d2fed .########### Aanvraag desaffectatie presbyteria/kerken ###########
 
@@ -2003,8 +2073,20 @@ fieldGroups:91045004-2066-40f3-aac1-bf2309eb2b99 a form:FieldGroup ;
     mu:uuid "91045004-2066-40f3-aac1-bf2309eb2b99" ; 
     form:hasField 
                       
-                      ###Eredienst selector###
-                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
               
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
@@ -2693,8 +2775,20 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
     mu:uuid "09fd371f-2afe-4b14-81a9-e780876de077" ; 
     form:hasField 
 
-                      ###Betreffend-bestuur-van-de-eredienst-(eredienst-selector)###
-                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
 
                       ###Welk-beslissingsorgaan-nam-het-besluit?###
                       fields:4c7820f0-4011-4ab4-a16a-e128800e11bc,
@@ -2704,9 +2798,6 @@ fieldGroups:09fd371f-2afe-4b14-81a9-e780876de077 a form:FieldGroup ;
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
-
-                      ###Inhoud-besluit###
-                      fields:ecc2bbf1-c76d-4237-9b7b-a4c42b2b1e29,
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -2812,8 +2903,20 @@ fieldGroups:ae168679-82cf-4df6-8803-cbcbc6610f47 a form:FieldGroup ;
     mu:uuid "ae168679-82cf-4df6-8803-cbcbc6610f47" ; 
     form:hasField 
 
-                      ###Eredienst selector###
-                      fields:00a7bce6-2925-4794-93cb-ebd571b28831,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type_doc,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
 
                       ###Gaat-het-over-het-origineel-document-of-over-een-wijziging?###
                       fields:a8f6a6cb-dbb8-488c-878d-05603791a9eb,
@@ -4212,9 +4315,9 @@ fields:93e4f5f9-79b8-4850-a562-8ce8fa184097 a form:Field;
     sh:order 10002;
     form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
-    sh:group fields:aDynamicPropertyGroup .  
+    sh:group fields:aDynamicPropertyGroup .
 
-###########Budgetten(wijzigingen) - Indiening bij representatief orgaan########### 
+###########Budgetten(wijzigingen) - Indiening bij representatief orgaan###########
 
 fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
     mu:uuid "aaf4f9b2-643f-474d-b1b0-24f37784e5a6" ;
@@ -4227,6 +4330,9 @@ fieldGroups:aaf4f9b2-643f-474d-b1b0-24f37784e5a6 a form:FieldGroup ;
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -4278,7 +4384,7 @@ fields:829f47a1-6d88-4c19-a119-d0baf779972c a form:Field;
     sh:order 10002;
     form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
-    sh:group fields:aDynamicPropertyGroup .  
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie###########
 
@@ -4293,6 +4399,9 @@ fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 a form:FieldGroup ;
 
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -4321,9 +4430,10 @@ fields:4ae23c37-b731-408c-a999-33d0b7183a23 a form:ConditionalFieldGroup ;
         form:grouping form:Bag ;
         sh:path rdf:type ;
         form:conceptScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
-        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29> 
+        form:customValue <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29>
       ];
-    form:hasFieldGroup fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 .########### Code van goed bestuur ###########
+    form:hasFieldGroup fieldGroups:7832d3be-7e6a-4ff8-9e47-be2654174668 .
+########### Code van goed bestuur ###########
 
 # Conditionally add the form fields to the "type dossier" field
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:515dc238-beb7-4888-9f7f-04cbdda5385e.
@@ -4554,6 +4664,9 @@ fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
                       ###Rapportperiode###
                       fields:e578e3ff-240b-421b-a32c-f411489c3806,
 
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
+
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
 
@@ -4565,10 +4678,10 @@ fieldGroups:bef0fd9f-5f60-4e68-b8d7-1b515cc3ccc2 a form:FieldGroup ;
 
                       ###Related decision [hidden]###
                       fields:c0f621fc-4c2c-456b-83f9-f087e64af03a,
-                      
+
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
-                      
+
                       ###Info Upload (CUSTOM)###
                       fields:dd66fed0-c025-44de-80bd-bec8b39f5021.
 
@@ -4629,7 +4742,7 @@ fields:4ee01de8-46b2-4109-84cf-d60bebaeb10e a form:Field;
     sh:order 10002;
     form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
-    sh:group fields:aDynamicPropertyGroup .  
+    sh:group fields:aDynamicPropertyGroup .
 
 ###########Gezamenlijke-inzending-jaarrekeningen###########
 
@@ -4638,6 +4751,9 @@ fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
     form:hasField
                       ###Rapportjaar###
                       fields:41737f90-02d6-4036-8d60-5d5b6ccf939c,
+
+                      ###Gerelateerde documenten###
+                      fields:3b05127d-d3ec-46c5-8e58-664334eed2d3,
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -4653,7 +4769,7 @@ fieldGroups:40fa78b5-4e89-47c0-99cb-a8e936a09d19 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
-                      
+
                       ###Info Upload (CUSTOM)###
                       fields:4ee01de8-46b2-4109-84cf-d60bebaeb10e.
 
@@ -6255,14 +6371,24 @@ fields:99554984-daa3-47e9-8b79-10b27df87064 a form:Field;
 ########### Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn) ###########
 
 fieldGroups:d7fb55d4-1ba1-4c71-9ada-2ebd1969e360 a form:FieldGroup ;
-    mu:uuid "d7fb55d4-1ba1-4c71-9ada-2ebd1969e360" ; 
-    form:hasField 
+    mu:uuid "d7fb55d4-1ba1-4c71-9ada-2ebd1969e360" ;
+    form:hasField
 
                       ###Custom-textual-explanation###
                       fields:949aed0c-8d85-4826-9e88-30891ed34acd,
 
-                      ###Betreffend(centraal)-bestuur-van-de-eredienst###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
 
                       ###Links-naar-documenten###
                       fields:c955d641-b9b3-4ec7-9838-c2a477c7e95b,
@@ -7802,8 +7928,18 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
                       ###Alert (CUSTOM)
                       fields:9db923c8-1498-4c01-b8ad-5f49ad780a45,
 
-                      ###Eredienst selector###
-                      fields:7d0a105f-0c7e-49ab-9ab8-68d5381b3b8b,
+                      ########################################################################
+                      # START: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-exclude-type_document,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-type,
+
+                      fields:788b9a98-684e-4d20-ae22-0ae610e6b494-refers_to,
+
+                      ########################################################################
+                      # END: Worship Decisions cross reference selector (and related fields)
+                      ########################################################################
 
                       ###Datum-zitting/besluit###
                       fields:3dd6ed93-40f7-4d70-a6cb-f4de53dc8bfb,
@@ -7819,7 +7955,7 @@ fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 a form:FieldGroup ;
 
                       ### RemoteDataObject/url ###
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
-                      
+
                       ### Bestuursorgaan classificatie code [hidden input] ###
                       fields:303545a6-705b-43b3-86b7-b96436524be9,
 
@@ -7838,7 +7974,6 @@ fields:40f6d026-11f0-44b3-8594-58210f2860c5 a form:ConditionalFieldGroup ;
         form:customValue <https://data.vlaanderen.be/id/concept/BesluitType/b25faa84-3ab5-47ae-98c0-1b389c77b827> # Schorsing beslissing eredienstbesturen
       ] ;
     form:hasFieldGroup fieldGroups:6745c3c5-ed83-45e2-a9e7-ca77c18f0d05 .
-
 fieldGroups:bd599584-a03b-4930-9a1c-f9d58fb49737 a form:FieldGroup ;
     mu:uuid "bd599584-a03b-4930-9a1c-f9d58fb49737" ;
     form:hasField
