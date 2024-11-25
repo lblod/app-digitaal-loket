@@ -2,11 +2,27 @@
 ## Unreleased
 ### General
  - Adjust anomalies in names [DL-6278]
+ - Submissions cross referencing [DL-5814]
+ - Add kerkenbeleidsplan form [DL-6235]
 
 ### Deploy notes
+#### docker-compose.override.yml
+##### worship-decisions-cross-reference
+Ensure the environment variables are correctly set for `worship-decisions-cross-reference`, e.g. :
+```
+worship-decisions-cross-reference:
+  environment;
+    WORSHIP_DECISIONS_BASE_URL: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+```
+The following links;
+- DEV: "https://dev.databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- QA: "https://databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- PROD: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
- - `drc restart resource cache`
+ - `drc restart dispatcher resource cache vendor-data-distribution delta-producer-publication-graph-maintainer`
+ - `drc up -d`
 
 ## 1.106.0 (2024-11-18)
 ### General
@@ -346,8 +362,24 @@ Ensure the environment variables are correctly set. See https://github.com/lblod
  - `v0.95.0` (DL-6042, DL-6050): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0950-2024-07-11
  - `v0.94.1` (DGS-316): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0941-2024-06-25
  - `v0.94.0` (DL-5816, DGS-161): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0940-2024-06-19
+#### Inzendingen voor toezicht
+ - Enable manual cross referencing [DL-5903] [DL-5865] [DL-5868] [DL-5869] [DL-5870] [DL-5867] [DL-5874].
 ### Deploy Notes
+#### general note
 On production, remove the delta-producer-publication-graph-maintainer image in the docker-compose.override.yml.
+#### docker-compose.override.yml
+##### worship-decisions-cross-reference
+Ensure the environment variables are correctly set for `worship-decisions-cross-reference`, e.g. :
+```
+worship-decisions-cross-reference:
+  environment;
+    WORSHIP_DECISIONS_BASE_URL: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+```
+The following links;
+- DEV: "https://dev.databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- QA: "https://databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- PROD: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
  - `drc restart report-generation resource cache`

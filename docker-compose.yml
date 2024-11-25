@@ -313,9 +313,15 @@ services:
     restart: always
     logging: *default-logging
   toezicht-flattened-form-data-generator:
-    image: lblod/toezicht-flattened-form-data-generator:1.3.0
+    image: lblod/toezicht-flattened-form-data-generator:1.4.2
     volumes:
       - ./data/files/submissions:/share/submissions
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  worship-decisions-cross-reference:
+    image: lblod/worship-decisions-cross-reference-service:0.4.2
     labels:
       - "logging=true"
     restart: always

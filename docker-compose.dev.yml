@@ -80,6 +80,8 @@ services:
     restart: "no"
   enrich-submission:
     restart: "no"
+  worship-decisions-cross-reference:
+    restart: "no"
   validate-submission:
     restart: "no"
   toezicht-flattened-form-data-generator:
