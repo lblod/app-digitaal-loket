@@ -1,0 +1,35 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "c7d95519-9ef1-402b-b824-56ec3b1a0f61" ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Type kerkenbeleidsplan"@nl ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Type kerkenbeleidsplan" .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/60559865-1951-4fe1-b453-6a7bdd0fb469> a <http://www.w3.org/2004/02/skos/core#Concept>,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "60559865-1951-4fe1-b453-6a7bdd0fb469" ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Nieuw"@nl ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/8491b726-32e8-4d45-aa30-8c48456ef197> a <http://www.w3.org/2004/02/skos/core#Concept>,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "8491b726-32e8-4d45-aa30-8c48456ef197" ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "(Her)bevestiging"@nl ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/72377671-19f4-4f57-bc35-75c060f06e2c> a <http://www.w3.org/2004/02/skos/core#Concept>,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "72377671-19f4-4f57-bc35-75c060f06e2c" ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Actualisatie"@nl ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+        <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/c7d95519-9ef1-402b-b824-56ec3b1a0f61> .
+  }
+}
