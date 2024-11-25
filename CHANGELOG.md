@@ -2,11 +2,27 @@
 ## Unreleased
 ### General
  - Adjust anomalies in names [DL-6278]
+ - Submissions cross referencing [DL-5814]
+ - Add kerkenbeleidsplan form [DL-6235]
 
 ### Deploy notes
+#### docker-compose.override.yml
+##### worship-decisions-cross-reference
+Ensure the environment variables are correctly set for `worship-decisions-cross-reference`, e.g. :
+```
+worship-decisions-cross-reference:
+  environment;
+    WORSHIP_DECISIONS_BASE_URL: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+```
+The following links;
+- DEV: "https://dev.databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- QA: "https://databankerediensten.lokaalbestuur.lblod.info/search/submissions/"
+- PROD: "https://databankerediensten.lokaalbestuur.vlaanderen.be/search/submissions/"
+
 #### Docker Commands
  - `drc restart migrations && drc logs -ft --tail=200 migrations`
- - `drc restart resource cache`
+ - `drc restart dispatcher resource cache vendor-data-distribution delta-producer-publication-graph-maintainer`
+ - `drc up -d`
 
 ## 1.106.0 (2024-11-18)
 ### General
