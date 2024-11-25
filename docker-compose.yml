@@ -8,8 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    # TODO: Replace this with a version tagged image before merging
-    image: lblod/frontend-loket:feature-toezicht-ckb-eb-cross-referencing
+    image: lblod/frontend-loket:0.97.4
     links:
       - identifier:backend
     labels:
@@ -328,15 +327,14 @@ services:
     restart: always
     logging: *default-logging
   export-submissions:
-    image: lblod/mandaten-download-generator-service:0.3.6-hotfix_4
-    links:
-      - virtuoso:database
+    image: lblod/mandaten-download-generator-service:1.0.2
     environment:
       EXPORT_CRON_PATTERN: "0 0 3 * * *"
       EXPORT_FILE_BASE: "submissions"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/system/export-submissions"
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
     volumes:
-      - ./data/exports/submissions:/data/exports
+      - ./data/exports/submissions:/share/exports
       - ./config/export/submissions:/config
     restart: always
     logging: *default-logging
@@ -369,20 +367,6 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  subsidy-applications-management:
-    image: lblod/subsidy-applications-management-service:0.11.0
-    environment:
-      # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
-      META_DATA_CRON: "0 */15 8-18 * * 1-5"
-      MAX_BODY_SIZE: "10000kb"
-    volumes:
-      - ./config/subsidy-application-management:/config
-      - ./data/files/subsidies:/data
-      - ./data/files:/share
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
   berichtencentrum-warning:
     image: lblod/berichtencentrum-warning-service:0.0.2
     labels:
@@ -391,18 +375,6 @@ services:
     logging: *default-logging
   download-url-warning:
     image: lblod/download-url-warning-service:0.1.2
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  case-number-generator:
-    image: lblod/case-number-service:2.0.0
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  subsidy-application-flow-management:
-    image: lblod/subsidy-application-flow-management-service:0.3.0
     labels:
       - "logging=true"
     restart: always
@@ -466,7 +438,7 @@ services:
     restart: always
     logging: *default-logging
   update-bestuurseenheid-mock-login:
-    image: lblod/update-bestuurseenheid-mock-login-service:0.1.2
+    image: lblod/update-bestuurseenheid-mock-login-service:0.3.1
     volumes:
       - ./config/mock-login:/config
     labels:
@@ -581,57 +553,6 @@ services:
   ################################################################################
   # DELTA SUBMISSIONS: END
   ################################################################################
-  ################################################################################
-  # DELTA SUBSIDIES: START
-  ################################################################################
-  delta-producer-background-jobs-initiator-subsidies:
-    image: lblod/delta-producer-background-jobs-initiator:0.3.1
-    environment:
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies"
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies"
-      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies"
-      CRON_PATTERN_DUMP_JOB: "0 0 5 * * 6" # weekly on saturday
-      CRON_PATTERN_HEALING_JOB: "0 0 4 * * *" # everyday at 4 AM
-      START_INITIAL_SYNC: "false" # prefer to disable it now. We want to have feeling with how the DB acts.
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  delta-producer-publication-graph-maintainer-subsidies:
-    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
-    environment:
-      MAX_BODY_SIZE: "50mb"
-      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
-      RELATIVE_FILE_PATH: "deltas/subsidies"
-      PUBLICATION_GRAPH: "http://redpencil.data.gift/id/deltas/producer/loket-subsidies"
-      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies"
-      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies"
-      QUEUE_POLL_INTERVAL: 3000
-      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
-      SKIP_MU_AUTH_INITIAL_SYNC: "true"
-      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
-      UPDATE_PUBLICATION_GRAPH_SLEEP: 200
-      SERVE_DELTA_FILES: "true"
-      DELTA_INTERVAL_MS: 10000
-      PRETTY_PRINT_DIFF_JSON: "true"
-      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
-      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
-      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
-      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-subsidies"
-      FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas"
-      ACCOUNT: "http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
-    volumes:
-      - ./config/delta-producer/subsidies:/config
-      - ./data/files/:/share
-    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)<
-    #    labels:
-    #      - "logging=true"
-    restart: always
-    logging: *default-logging
-  ################################################################################
-  # DELTA SUBSIDIES: END
-  ################################################################################
 
   ################################################################################
   # DELTA CONSUMERS
@@ -640,7 +561,7 @@ services:
   # OP PUBLIC CONSUMER
   ################################################################################
   op-public-consumer:
-    image: lblod/delta-consumer:0.0.25-rc.3
+    image: lblod/delta-consumer:0.0.26
     environment:
       DCR_SERVICE_NAME: "op-public-consumer"
       DCR_SYNC_BASE_URL: "https://organisaties.abb.lblod.info" # replace with link to OP API
@@ -651,6 +572,7 @@ services:
       DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
       DCR_DISABLE_INITIAL_SYNC: "true"
       DCR_KEEP_DELTA_FILES: "true"
+      DCR_DELTA_JOBS_RETENTION_PERIOD: "30"
       DCR_ENABLE_TRIPLE_REMAPPING: "true"
       DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
       DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"

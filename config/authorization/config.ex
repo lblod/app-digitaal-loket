@@ -193,12 +193,6 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://www.w3.org/2004/02/skos/core#ConceptScheme",
                         "http://www.w3.org/2004/02/skos/core#Concept",
-                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelConsumptieStatus",
-                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
-                        "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFlow",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationStep",
-                        "http://data.vlaanderen.be/ns/subsidie#Subsidieprocedurestap",
                         "http://data.europa.eu/m8g/PeriodOfTime",
                         "http://data.europa.eu/m8g/Criterion",
                         "http://data.europa.eu/m8g/RequirementGroup",
@@ -315,44 +309,6 @@ defmodule Acl.UserGroups.Config do
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
                         "http://vocab.deri.ie/cogs#ExecutionStatus",
                       ] } } ] },
-
-      # // SUBSIDIES
-      %GroupSpec{
-        name: "o-subs-rwf",
-        useage: [:read, :write, :read_for_write],
-        access: access_by_role( "LoketLB-subsidies" ),
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/organizations/",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationForm",
-                        "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelConsumptie",
-                        "http://data.vlaanderen.be/ns/subsidie#Aanvraag",
-                        "http://schema.org/MonetaryAmount",
-                        "http://data.europa.eu/m8g/Participation",
-                        "http://schema.org/BankAccount",
-                        "https://www.gleif.org/ontology/Base/Period",
-                        "http://lblod.data.gift/vocabularies/subsidie/ApplicationFormTable",
-                        "http://mu.semte.ch/vocabularies/ext/ApplicationFormEntry",
-                        "http://lblod.data.gift/vocabularies/subsidie/EngagementTable",
-                        "http://mu.semte.ch/vocabularies/ext/EngagementEntry",
-                        "http://schema.org/ContactPoint",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                      ] } },
-                      %GraphSpec{
-                        graph: "http://mu.semte.ch/graphs/organizations/",
-                        constraint: %ResourceConstraint{
-                          resource_types: [
-                            "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-                            # Sometimes a very specific list of organisations should be able submit for a subsidy.
-                            # This is unfortunatly the most elegant way.
-                            "http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod",
-                            "http://lblod.data.gift/vocabularies/subsidie/SubsidiemaatregelAanbodReeks"
-                          ],
-                          predicates: %NoPredicates{
-                            except: [
-                              "http://data.europa.eu/m8g/playsRole"
-                            ] } } } ] },
 
       # // VENDOR MANAGEMENT
       %GroupSpec{

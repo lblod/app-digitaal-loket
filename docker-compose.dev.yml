@@ -96,10 +96,6 @@ services:
     restart: "no"
   mandataris-archive:
     restart: "no"
-  subsidy-applications-management:
-    environment:
-      VERSIONED_CONFIGURATION_WATCHER: null
-    restart: "no"
   berichtencentrum-warning:
     environment:
       EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
@@ -109,10 +105,6 @@ services:
     environment:
       EMAIL_FROM: "Loket Local <loket-development@redpencil.io>"
       EMAIL_TO: "loket-development@redpencil.io"
-    restart: "no"
-  case-number-generator:
-    restart: "no"
-  subsidy-application-flow-management:
     restart: "no"
   eredienst-mandatarissen-consumer:
     restart: "no"

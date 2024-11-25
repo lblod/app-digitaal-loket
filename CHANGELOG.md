@@ -1,12 +1,107 @@
 # Changelog
-## unreleased
+## Unreleased
+### General
+ - Adjust anomalies in names [DL-6278]
+
+### Deploy notes
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc restart resource cache`
+
+## 1.106.0 (2024-11-18)
+### General
+#### Toezicht
+ - Update rules for form `Besluit AGB/APB over retributies` [DL-5977]
+#### Data
+ - OP-consumer has been extend to ingest everything that is produced by delta-stream `op-public-consumer`
+#### Frontend
+ - `v0.97.3` (DGS-383): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0973-2024-09-24
+### Subsidies
+- Remove all Subsidies services, configuration and old migration files
+### BBC
+ - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to ``SELECT` queries)
+
+### Deploy notes
+
+```
+drc down;
+```
+Update `docker-compose.override.yml` to:
+
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # choose the correct endpoint
+      DCR_LANDING_ZONE_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_REMAPPING_DATABASE: "virtuoso" # for the initial sync, we go directly to virtuoso
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+Then:
+```
+drc up -d migrations
+drc up -d database op-public-consumer
+# Wait until success of the previous step
+drc up -d update-bestuurseenheid-mock-login
+# Wait until it boots, before running the next command. You can also wait the cron-job kicks in.
+drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins
+# Takes about 20 min with prod data
+```
+Then, update `docker-compose.override.yml` to:
+```
+  op-public-consumer:
+    environment:
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be" # choose the correct endpoint
+      DCR_LANDING_ZONE_DATABASE: "database"
+      DCR_REMAPPING_DATABASE: "database"
+      DCR_DISABLE_DELTA_INGEST: "false"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+```
+
+```
+drc up -d #(or the usual procedure if you want to avoid error-emails)
+```
+## 1.105.3 (2024-11-13)
+### Toezicht
+ - Update URI form "Aangewezen Burgemeester" [DL-6298]
+### Deploy notes
+```
+drc restart migrations berichtencentrum-sync-with-kalliope; drc up -d enrich-submission
+```
+## 1.105.2 (2024-11-08)
+
+### Toezicht
+
+- Adjusted the export filter to exclude two more type from being exported to Toezicht **(DL-6234)**:
+    * Besluit over budget(wijziging) eredienstbestuur
+    * Besluit over meerjarenplan(aanpassing) eredienstbestuur
+
+### Deploy notes
+
+Restart the `export-submissions` service:
+
+    drc restart export-submissions
+
+Nothing else special to do. Exporting happens at regular time intervals.
+
+## 1.105.1 (2024-11-05)
+### General
+#### Frontend
+ - `v0.97.4` (DL-6228): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0974-2024-11-04
+
+### Deploy notes
+- remove any overrides from the docker-compose.override.yml file
+- run `drc up -d loket`
+
+## 1.105.0 (2024-10-24)
 ### LMB
  - cut-over to LMB: see DL-6144.
- - Bump package-bbcdr [DL-6193]. (It basically adds a `DISTINCT` to `SELECT` queries)
+### Toezicht
+  - Bump enrich-submission-service [DL-6245]: add KBO number for erediensten codelist
 ### Deploy notes
 #### LMB public
-In `docker-compose.override.yml`
-```
+In `docker-compose.override.yml`:
+```yaml
   lmb-public-ldes-client:
     environment:
       LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
@@ -14,41 +109,46 @@ In `docker-compose.override.yml`
       BYPASS_MU_AUTH: "true"
 ```
 
-```
+```sh
 drc down;
+
 # flushing data first
 # Please make sure the correct config file is used for the virtuoso, or it might just get stuck
-cd scripts/purge-lmb-data/;
+cd scripts/purge-lmb-data/
 drc -f docker-compose.script.yml up -d # check logs until finishes
-drc -f docker-compose.script.yml exec virtuoso bash;
-isql-v;
+drc -f docker-compose.script.yml exec virtuoso isql-v
 exec('checkpoint');
-exit;
 exit;
 drc -f docker-compose.script.yml down
 cd -
-drc up -d database virtuoso # wait for proper startup of virtuoso
+drc up -d virtuoso # wait for proper startup of virtuoso
+drc up -d database
 drc up -d lmb-public-ldes-client # Wait until success
+
 # Here comment out all delta-rules in (config/delta/rules.js) except the ones going to:
 #  - delta-producer-publication-graph-maintainer
 #  - delta-producer-dump-file-publisher
 drc up -d database virtuoso deltanotifier resource delta-producer-background-jobs-initiator delta-producer-publication-graph-maintainer publication-triplestore delta-producer-dump-file-publisher
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/healing-jobs # wait until success of the TASK (not the job)
+drc logs -ft --tail=200 delta-producer-publication-graph-maintainer
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/healing-jobs
-drc exec publication-triplestore bash
-isql-v;
+drc exec publication-triplestore isql-v
 exec('checkpoint');
-exit;
 exit;
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/mandatarissen/dump-publication-graph-jobs # wait until success of the TASK (not the job)
+drc logs -ft --tail=200 delta-producer-publication-graph-maintainer
 drc exec delta-producer-background-jobs-initiator curl -X DELETE http://localhost/mandatarissen/dump-publication-graph-jobs
-git checkout config/delta/rules.js
+
+# The service does not like it when all rules start up at once from scratch.
+# Comment out the publication graph maintainer `deltanotifier` rule after checkout:
+#  - delta-producer-publication-graph-maintainer
 drc restart deltanotifier
 ```
-After that, ensure `docker-compose.override.yml`
-```
+
+After that, ensure `docker-compose.override.yml`:
+```yaml
   lmb-public-ldes-client:
     environment:
       LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/public/" # Adapt endpoint in function of environment.
@@ -56,22 +156,71 @@ After that, ensure `docker-compose.override.yml`
       BYPASS_MU_AUTH: "false"
 ```
 
-And now go to `drc up -d`
-#### LMB private
-In `docker-compose.override.yml`
+Set the following env vars in `docker-compose.override.yml`:
 ```
+  loket:
+    environment:
+      EMBER_MANDATENBEHEER: "false" # This disables the Loket mandatenbeheer tile
+      EMBER_MANDATENBEHEER_EXTERNAL_URL: "https://mandatenbeheer.lokaalbestuur.vlaanderen.be"
+```
+
+```
+drc up -d
+```
+
+#### LMB private
+In `docker-compose.override.yml`:
+```yaml
   lmb-private-ldes-client:
     environment:
-      LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
-      FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
+      LDES_BASE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/" # Adapt endpoint in function of environment.
+      FIRST_PAGE: "https://mandatenbeheer.lblod.info/streams/ldes/abb/1"
       BATCH_SIZE: "500"
-      EXTRA_HEADERS: '{"Authorization": "Basic encodedString}'
+      EXTRA_HEADERS: '{"Authorization": "Basic encodedString"}'
 ```
 ```
 drc up -d lmb-private-ldes-client
 ```
+
 #### frontend
 Ensure the environment variables are correctly set. See https://github.com/lblod/frontend-loket/pull/408
+
+## 1.104.5 (2024-10-22)
+### General
+ - Bump `export-submissions`.
+ - Only filter tasks related to `export-submissions`.
+ - Run migration to fix task/job that are stuck in a failed state.
+  - The migration will run directly on the production server.
+### Deploy Notes
+#### Manual commands
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export for the first time and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to `"0 0 21 * * *"` so that exports are triggered automatically starting from the next day.
+#### Docker Commands
+ - `drc restart migrations && drc logs -ft --tail=200 migrations`
+ - `drc up -d export-submissions && drc logs -ft --tail=200 export-submissions`
+ - `drc exec export-submissions curl -X POST http://localhost/export-tasks`
+ - If export finishes successfully: `touch -d "2 hours ago" data/export/submissions/xxx.ttl` where `xxx.ttl` is the latest export file.
+## 1.104.4 (2024-10-16)
+### General
+ - Bump export-submissions (DL-6233)
+ - Preprocess dates in toezicht export configuration to lessen load on the database (DL-6241)
+ - Fix bug in the toezicht export configuration for `submissionDocument` types
+### Deploy Notes
+#### Manual commands
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export for the first time and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to a reasonable value so that exports are triggered automatically starting from the next day.
+#### Docker Commands
+ - `drc up -d export-submissions`
+## 1.104.3 (2024-10-15)
+### General
+ - Bump export-submissions (DL-6233)
+ - Transform toezicht export configuration (DL-6241)
+### Deploy Notes
+#### Manual commands
+ - Set `EXPORT_CRON_PATTERN` manually to trigger the export for the first time and observe the logs.
+ - If export is successful, update `EXPORT_CRON_PATTERN` to a reasonable value so that exports are triggered automatically starting from the next day.
+#### Docker Commands
+ - `drc up -d export-submissions`
 ## 1.104.2 (2024-09-20)
 ### General
  - Fix submissions not flagged for export (DL-6182)
