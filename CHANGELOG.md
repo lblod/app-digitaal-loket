@@ -7,6 +7,8 @@
 - Adjust anomalies in names [DL-6278]
 - Submissions cross referencing [DL-5814]
 - Add kerkenbeleidsplan form [DL-6235]
+- Erediensten Dispatching from harvester, for OLV Temse [DL-6280]
+  - Includes 2 migrations and restart command such that dispatching is automatically started.
 
 ### Deploy notes
 
@@ -30,6 +32,7 @@ The following links;
 
 - `drc restart migrations && drc logs -ft --tail=200 migrations`
 - `drc restart dispatcher resource cache vendor-data-distribution delta-producer-publication-graph-maintainer`
+- `drc restart dispatcher-worship-mandates` # For "healing" erediensten positions after migrations
 - `drc up -d`
 
 ## 1.106.0 (2024-11-18)
