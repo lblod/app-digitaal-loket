@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH <http://eredienst-mandatarissen-consumer/temp-discards> {
+    ?s ?p ?o .
+  }
+}
+INSERT {
+  GRAPH <http://eredienst-mandatarissen-consumer/temp-inserts> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://eredienst-mandatarissen-consumer/temp-discards> {
+    ?s ?p ?o .
+  }
+}
