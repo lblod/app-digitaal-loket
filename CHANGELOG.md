@@ -8,7 +8,7 @@
 - Submissions cross referencing [DL-5814]
 - Add kerkenbeleidsplan form [DL-6235]
 - Erediensten Dispatching from harvester, for OLV Temse [DL-6280]
-  - Includes 2 migrations and restart command such that dispatching is automatically started.
+  - Includes 3 migrations and perform a restart such that dispatching is automatically started.
 
 ### Deploy notes
 
