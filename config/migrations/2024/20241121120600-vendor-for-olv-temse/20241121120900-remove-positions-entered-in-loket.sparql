@@ -1,0 +1,51 @@
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX schema: <http://schema.org/>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+
+DELETE {
+  GRAPH ?g {
+    ?rolbedienaar ?rp ?ro .
+    ?contact ?cp ?co .
+    ?address ?ap ?ao .
+    ?persoon ?pp ?po .
+    ?geboorte ?gp ?go .
+  }
+}
+WHERE {
+  VALUES ?positie {
+    <http://data.lblod.info/id/positiesBedienaar/583e4d61115ba9981f8bc1725e2567e5>
+    <http://data.lblod.info/id/positiesBedienaar/5998f47210c3ced12e48d84eae65939b>
+    <http://data.lblod.info/id/positiesBedienaar/66a6d5e5c12dcd00acf32142ce27d336>
+    <http://data.lblod.info/id/positiesBedienaar/e444dd456bcaec5e7166ca95fd1c7967>
+  }
+  VALUES ?g {
+    <http://mu.semte.ch/graphs/organizations/567a1bd8a4e2be8817ff8af27c93efbd/LoketLB-eredienstBedienaarGebruiker>
+    <http://mu.semte.ch/graphs/organizations/567a1bd8a4e2be8817ff8af27c93efbd/LoketLB-eredienstMandaatGebruiker>
+  }
+  GRAPH ?g {
+    ?rolbedienaar org:holds ?positie .
+    FILTER NOT EXISTS {
+      ?rolbedienaar prov:wasGeneratedBy <http://lblod.data.gift/id/app/lblod-harvesting> .
+    }
+    ?rolbedienaar ?rp ?ro .
+    
+    ?rolbedienaar schema:contactPoint ?contact .
+    ?contact ?cp ?co .
+    
+    ?contact locn:address ?address .
+    ?address ?ap ?ao .
+    
+    ?rolbedienaar org:heldBy ?persoon .
+    ?persoon ?pp ?po .
+    
+    ?persoon persoon:heeftGeboorte ?geboorte .
+    ?geboorte ?gp ?go .
+  }
+}
