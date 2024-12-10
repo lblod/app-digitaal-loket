@@ -9,6 +9,7 @@
 - Add kerkenbeleidsplan form [DL-6235]
 - Erediensten Dispatching from harvester, for OLV Temse [DL-6280]
   - Includes 3 migrations and perform a restart such that dispatching is automatically started.
+- Remove wrong labels for some bestuurseenheden. [DL-6323]
 
 ### Deploy notes
 
