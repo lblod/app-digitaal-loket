@@ -1,0 +1,188 @@
+# Some of the URIs have a wrong label inside the automatic submissions graph.
+# We delete that and copy the correct one from the public graph.
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?automaticSubmissionLabel .
+  }
+}
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?publicLabel .
+  }
+}
+WHERE {
+  VALUES ?s {
+    <http://data.lblod.info/id/besturenVanDeEredienst/f257217efa1b9c366ce4f478fb02a205>
+    <http://data.lblod.info/id/bestuurseenheden/0ebab99ea0311baf2e6ac71dabc395f3fd8d457d08b90a6697c4453d1e649572>
+    <http://data.lblod.info/id/bestuurseenheden/0fcef44fd2fe177f4a92674f955d70378098c0e62479e953bf5930962b595b0b>
+    <http://data.lblod.info/id/bestuurseenheden/18014ccee1691f34adb3e438abb02982dc9bbce680063a8effdb213992f3b4cd>
+    <http://data.lblod.info/id/bestuurseenheden/4a2864750000a2d8dafa1128bab23143c8725f2c6d6aef400f9bce917bd4a94a>
+    <http://data.lblod.info/id/bestuurseenheden/56f5706b531b57eacf30076d6f8c51a4653ab2f7173746e7a503cf784f2c1ef2>
+    <http://data.lblod.info/id/bestuurseenheden/62750c0093310bc293d1a89dd44abb34a1402e0ccb5b06f9f7e590d7dfe642ec>
+    <http://data.lblod.info/id/bestuurseenheden/6c19ef9b94965f9ad2eaad940fb63f9ca7e23b3ac440fad96886e12725d61c4a>
+    <http://data.lblod.info/id/bestuurseenheden/6e163ed93509d81fff72ea3fee33318902f3e8b2aea9b1d6af02c5f555c5b925>
+    <http://data.lblod.info/id/bestuurseenheden/76a649af4784166f6dec6079e6fa38acde4d860ab9133c955085018a7875b1c9>
+    <http://data.lblod.info/id/bestuurseenheden/851f0fa90c8c44a593ac497b3fbc01a4a1147172269c4201030c6ff3751a8945>
+    <http://data.lblod.info/id/bestuurseenheden/a20c3dd6a449e3e934ac8e1ae35800d9e86b1286c4dd179da48fbb74068471d0>
+    <http://data.lblod.info/id/bestuurseenheden/a6caec4873f59befa70697c8fb180e501b7314cdf59d45b3b7a69ed9953d5123>
+    <http://data.lblod.info/id/bestuurseenheden/d17190b8c5cd15be8c7417dececcbf9a2410aaf83a5b639fc53cb130a1d1c602>
+    <http://data.lblod.info/id/bestuurseenheden/e1c62a335d473a956bdb049814a4660bf89560ae71b8621f6e7bc20f545838d5>
+    <http://data.lblod.info/id/bestuurseenheden/eee3be76b21c7862631b030da2bf267915cc128801eb35af1ece608dd7d3f169>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?publicLabel .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?automaticSubmissionLabel .
+  }
+}
+
+;
+
+# The URIs below also have mismatching labels but in different graphs. I.e. the correct label is in the
+# public graph whereas the wrong one is in the org/subsidies/eredienstBedienaar/eredienstMandaat graphs.
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/c0a096f256810f9d51c21456d5ee5bc9a5a471f78c8c699cc58c60730d5b0dbe/LoketLB-subsidies> {
+    <http://data.lblod.info/id/bestuurseenheden/c0a096f256810f9d51c21456d5ee5bc9a5a471f78c8c699cc58c60730d5b0dbe> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/c0a096f256810f9d51c21456d5ee5bc9a5a471f78c8c699cc58c60730d5b0dbe/LoketLB-subsidies> {
+    <http://data.lblod.info/id/bestuurseenheden/c0a096f256810f9d51c21456d5ee5bc9a5a471f78c8c699cc58c60730d5b0dbe> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/e45e6ad275ae04001029796b3771fa418b32414269ee741a5cf120a580ff673b> {
+    <http://data.lblod.info/id/bestuurseenheden/e45e6ad275ae04001029796b3771fa418b32414269ee741a5cf120a580ff673b> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/e45e6ad275ae04001029796b3771fa418b32414269ee741a5cf120a580ff673b> {
+    <http://data.lblod.info/id/bestuurseenheden/e45e6ad275ae04001029796b3771fa418b32414269ee741a5cf120a580ff673b> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/bestuurseenheden/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/f257217efa1b9c366ce4f478fb02a205/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/f257217efa1b9c366ce4f478fb02a205> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/f257217efa1b9c366ce4f478fb02a205/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/f257217efa1b9c366ce4f478fb02a205> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/f257217efa1b9c366ce4f478fb02a205/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/f257217efa1b9c366ce4f478fb02a205> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/f257217efa1b9c366ce4f478fb02a205/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/f257217efa1b9c366ce4f478fb02a205> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/27cd432cbfbba42816f0f3f9be6b7dd2/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/27cd432cbfbba42816f0f3f9be6b7dd2> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstBedienaarGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label1 .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/b9c2cc5db5a08d33b049663f9591fba6/LoketLB-eredienstMandaatGebruiker> {
+    <http://data.lblod.info/id/besturenVanDeEredienst/b9c2cc5db5a08d33b049663f9591fba6> <http://www.w3.org/2004/02/skos/core#prefLabel> ?label2 .
+  }
+}
