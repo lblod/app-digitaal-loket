@@ -1,0 +1,124 @@
+# Remove forward properties + mock person/account
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?org ?orgP ?orgO .
+  }
+
+  GRAPH ?g {
+    ?mockPerson ?mockPersonP ?mockPersonO .
+    ?mockAccount ?mockAccountP ?mockAccountO .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6> AS ?org)
+  BIND(<http://data.lblod.info/id/persoon/05ab337fad326fa39ecdfc2aa0bad35b> AS ?mockPerson)
+  BIND(<http://data.lblod.info/id/account/8bcc4a2df7d2f45274fdd911342795eb> AS ?mockAccount)
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?org ?orgP ?orgO .
+  }
+
+  GRAPH ?g {
+    ?mockPerson ?mockPersonP ?mockPersonO .
+    ?mockAccount ?mockAccountP ?mockAccountO .
+  }
+}
+
+;
+
+# Remove bestuursorganen
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorganen ?bestuursorganenP ?bestuursorganenO .
+    ?bestuursorganenInTijd ?bestuursorganenInTijdP ?bestuursorganenInTijdO .
+  }
+}
+WHERE {
+  VALUES ?bestuursorganen {
+    <http://data.lblod.info/id/bestuursorganen/24d8e602a8ddbe0adf3dea8c40277706>
+    <http://data.lblod.info/id/bestuursorganen/dad1789d9b9f8f6cb3c81cc2ca88154f>
+    <http://data.lblod.info/id/bestuursorganen/b90d16f2c8043bc20b88da232c0389fc>
+    <http://data.lblod.info/id/bestuursorganen/2f27a688e1728c1906a4bbd8670d7810>
+  }
+
+  VALUES ?bestuursorganenInTijd {
+    <http://data.lblod.info/id/bestuursorganen/c5bb7bca7363109b94b58b1aef6ed59c>
+    <http://data.lblod.info/id/bestuursorganen/8d43a29c6ed4a8af0cd43d4aba2c7014>
+    <http://data.lblod.info/id/bestuursorganen/f54979f47464bae1cc001788aedb8b86>
+    <http://data.lblod.info/id/bestuursorganen/c9a7d9130e1dd8f26ddb8c96fdd94c64>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorganen ?bestuursorganenP ?bestuursorganenO .
+    ?bestuursorganenInTijd ?bestuursorganenInTijdP ?bestuursorganenInTijdO .
+  }
+}
+
+;
+
+# Remove bestuursorganen in tijd
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorganenInTijd ?bestuursorganenInTijdP ?bestuursorganenInTijdO .
+  }
+}
+WHERE {
+  VALUES ?bestuursorganenInTijd {
+    <http://data.lblod.info/id/bestuursorganen/c5bb7bca7363109b94b58b1aef6ed59c>
+    <http://data.lblod.info/id/bestuursorganen/8d43a29c6ed4a8af0cd43d4aba2c7014>
+    <http://data.lblod.info/id/bestuursorganen/f54979f47464bae1cc001788aedb8b86>
+    <http://data.lblod.info/id/bestuursorganen/c9a7d9130e1dd8f26ddb8c96fdd94c64>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorganenInTijd ?bestuursorganenInTijdP ?bestuursorganenInTijdO .
+  }
+}
+
+;
+
+# Remove sessions
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+    ?session ?sessionP ?sessionO .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/bestuurseenheden/8d6609b4-1a20-46b8-97ed-150c6d53acd6> AS ?org)
+
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+    ?session <http://mu.semte.ch/vocabularies/ext/sessionGroup> ?org ;
+      ?sessionP ?sessionO .
+  }
+}
+
+;
+
+# Clear the org graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/8d6609b4-1a20-46b8-97ed-150c6d53acd6>
+
+;
+
+# Clear the toezichtGebruiker graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/8d6609b4-1a20-46b8-97ed-150c6d53acd6/LoketLB-toezichtGebruiker>
+
+;
+
+# Clear the personeelsbeheer graph
+CLEAR GRAPH <http://mu.semte.ch/graphs/organizations/8d6609b4-1a20-46b8-97ed-150c6d53acd6/LoketLB-personeelsbeheer>
+
+;
+
+# Clear berichtenGebruiker graph with the exception of the `dataSource` property
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/8d6609b4-1a20-46b8-97ed-150c6d53acd6/LoketLB-berichtenGebruiker> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/8d6609b4-1a20-46b8-97ed-150c6d53acd6/LoketLB-berichtenGebruiker> {
+    ?s ?p ?o .
+
+    FILTER (?p != <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource>)
+  }
+}
