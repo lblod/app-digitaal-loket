@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.107.0 (2024-12-13)
 
 ### General
 
