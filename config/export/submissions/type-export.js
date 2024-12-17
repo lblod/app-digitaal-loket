@@ -116,7 +116,8 @@ export default {
     eli: "http://data.europa.eu/eli/ontology#",
     meb: "http://rdf.myexperiment.org/ontologies/base/",
     elod: "http://linkedeconomy.org/ontology#",
-    toezicht: "http://mu.semte.ch/vocabularies/ext/supervision/"
+    toezicht: "http://mu.semte.ch/vocabularies/ext/supervision/",
+    ere: "http://data.lblod.info/vocabularies/erediensten/",
   },
   types: [
     {
@@ -130,7 +131,8 @@ export default {
         "besluit:classificatie",
         "ext:inProvincie",
         "dct:identifier",
-        "skos:altLabel"
+        "skos:altLabel",
+        "ere:betrokkenBestuur",
       ],
       additionalFilter: ""
     },
@@ -625,6 +627,18 @@ ${ADVANCED_SUBMISSION_FILTER}
   nmo:sentDate ?sentDate .
       `,
       hasDateFilter: true,
+    },
+    {
+      type: "ere:BetrokkenLokaleBesturen",
+      requiredProperties: [
+        "mu:uuid"
+      ],
+      optionalProperties: [
+        "ere:financieringspercentage",
+        "ere:typebetrokkenheid",
+        "org:organization"
+      ],
+      additionalFilter: ""
     }
   ]
 };
