@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Export betrokken lokale besturen with submissions [#624]
+
+### Deploy notes
+#### Docker Commands
+
+- `drc restart export-submissions`
+
 ## 1.107.0 (2024-12-13)
 
 ### General
