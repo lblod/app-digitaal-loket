@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+### General
+
+- Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
+
+### Deploy notes
+
+#### Docker commands
+
+- `drc restart migrations`
+- `drc up -d enrich-submission`
+
 ## 1.107.0 (2024-12-13)
 
 ### General
