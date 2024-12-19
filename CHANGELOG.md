@@ -24,6 +24,10 @@ The following links;
 - QA: "https://datamonitoringtool.lblod.info/"
 - PROD: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
 
+#### Docker commands
+
+`drc up -d loket`
+
 ## 1.107.0 (2024-12-13)
 
 ### General
