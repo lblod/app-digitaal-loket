@@ -5,13 +5,14 @@
 ### General
 
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
+- Update frontend for showing rendered HTML in alert form field [DL-6276]
 
 ### Deploy notes
 
 #### Docker commands
 
 - `drc restart migrations`
-- `drc up -d enrich-submission`
+- `drc up -d enrich-submission loket`
 
 ## 1.107.0 (2024-12-13)
 
