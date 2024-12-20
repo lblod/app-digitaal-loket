@@ -4,10 +4,28 @@
 
 ### General
 
+- Bump frontend including data monitoring tool card [DL-6195]
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 
 ### Deploy notes
+
+#### docker-compose.override.yml
+
+##### loket
+
+Ensure the environment variables are correctly set for `loket`, e.g. :
+
+```
+loket:
+  environment;
+    EMBER_DATA_MONITORING_TOOL_URL: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
+```
+
+The following links;
+- DEV: "https://datamonitoringtool.lblod.info/" (same as QA, this is normal, there is no dev monitoring tool)
+- QA: "https://datamonitoringtool.lblod.info/"
+- PROD: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
 
 #### Docker commands
 
