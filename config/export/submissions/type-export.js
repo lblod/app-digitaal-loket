@@ -245,7 +245,8 @@ ${ADVANCED_SUBMISSION_FILTER}
         "mu:uuid"
       ],
       optionalProperties: [
-        "dct:source"
+        "dct:source",
+        "eli:has_part"
       ],
       additionalFilter: `
 ?submission dct:subject ?resource .
@@ -260,6 +261,18 @@ ${ADVANCED_SUBMISSION_FILTER}
       ],
       optionalProperties: [
         "skos:prefLabel"
+      ],
+      additionalFilter: ""
+    },
+    {
+      type: "besluit:Artikel",
+      requiredProperties: [
+      ],
+      optionalProperties: [
+        "mu:uuid",
+        "schema:publication",
+        "eli:type_document",
+        "eli:refers_to"
       ],
       additionalFilter: ""
     },
@@ -347,6 +360,7 @@ FILTER (?conceptScheme IN (
         "eli:date_publication",
         "elod:financialYear",
         "dct:description",
+        "dct:relation",
         "rdfs:comment",
         "eli:first_date_entry_in_force",
         "eli:date_no_longer_in_force",
@@ -386,6 +400,7 @@ ${ADVANCED_SUBMISSION_FILTER}
         "dct:hasPart",
         "ext:taxRateAmount",
         "dct:type",
+        "dct:relation",
         "ext:decisionType",
         "ext:regulationType",
         "ext:taxType"
