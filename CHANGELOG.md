@@ -7,6 +7,12 @@
 - Bump frontend including data monitoring tool card [DL-6195]
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
+- Export betrokken lokale besturen with submissions [DL-6352]
+
+#### Frontend
+- `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
+- `v0.99.2` (DL-6276): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0992-2024-12-20
+- `v0.99.1` & `v0.99.0` (DL-6195): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0991-2024-12-19
 
 ### Deploy notes
 
@@ -31,6 +37,7 @@ The following links;
 
 - `drc restart migrations`
 - `drc up -d enrich-submission loket`
+- `drc restart export-submissions`
 
 ## 1.107.0 (2024-12-13)
 
