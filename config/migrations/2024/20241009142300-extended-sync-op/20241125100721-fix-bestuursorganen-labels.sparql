@@ -1,0 +1,36 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+DELETE {
+   GRAPH <http://mu.semte.ch/graphs/public> {
+     ?s <http://www.w3.org/2004/02/skos/core#prefLabel> ?label.
+  }
+} WHERE {
+   GRAPH <http://mu.semte.ch/graphs/public> {
+     ?s a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> ?label.
+  }
+}
+
+;
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaan skos:prefLabel ?bestuursorgaanLabel.
+  }
+}
+WHERE {
+
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?bestuursorgaan
+      besluit:bestuurt ?bestuurseenheid;
+      org:classification ?classificatie.
+
+    ?classificatie
+      skos:prefLabel ?classificatieLabel.
+    ?bestuurseenheid
+      skos:prefLabel ?bestuurseenheidLabel.
+  }
+  BIND(CONCAT(str(?classificatieLabel), " ", str(?bestuurseenheidLabel)) as ?bestuursorgaanLabel)
+}
