@@ -1,0 +1,50 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+    <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869>
+      a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "27f40c36-141d-42e9-bed8-fea1a47c4869" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Type afschrift"@nl, "Type of statement"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Type afschrift" .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/6572e9fc-8532-473b-8b6e-e801666c7f9e>
+      a <http://www.w3.org/2004/02/skos/core#Concept> ,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "6572e9fc-8532-473b-8b6e-e801666c7f9e" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Verklaring eigenaar eredienstgebouw"@nl ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/01788c86-4ff6-43f7-b9ff-c75e31891a39>
+      a <http://www.w3.org/2004/02/skos/core#Concept> ,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "01788c86-4ff6-43f7-b9ff-c75e31891a39" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Verklaring op eer leden voorlopig bestuursorgaan"@nl ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/c99857a5-364f-4708-b4db-540baa9535cb>
+      a <http://www.w3.org/2004/02/skos/core#Concept> ,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "c99857a5-364f-4708-b4db-540baa9535cb" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Verbintenis wedde bedienaar"@nl ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+
+    <https://data.vlaanderen.be/id/concept/BesluitType/70f529e3-39e2-46a6-ad1f-a5cc832658a5>
+      a <http://www.w3.org/2004/02/skos/core#Concept> ,
+        <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "70f529e3-39e2-46a6-ad1f-a5cc832658a5" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Statuten juridische structuur"@nl ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/27f40c36-141d-42e9-bed8-fea1a47c4869> .
+  }
+}

@@ -4,6 +4,9 @@
 
 ### General
 
+- Bump frontend including data monitoring tool card [DL-6195]
+- Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
+- Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
 
 #### Frontend
@@ -24,6 +27,7 @@ loket:
   environment;
     EMBER_DATA_MONITORING_TOOL_URL: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
 ```
+
 The following links;
 - DEV: "https://datamonitoringtool.lblod.info/" (same as QA, this is normal, there is no dev monitoring tool)
 - QA: "https://datamonitoringtool.lblod.info/"
@@ -31,7 +35,8 @@ The following links;
 
 #### Docker commands
 
-- `drc up -d loket`
+- `drc restart migrations`
+- `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
 
 ## 1.107.0 (2024-12-13)
