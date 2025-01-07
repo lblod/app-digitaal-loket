@@ -5,7 +5,11 @@
 ### General
 
 - Export betrokken lokale besturen with submissions [DL-6352]
-- Bump frontend including data monitoring tool card [DL-6195]
+
+#### Frontend
+- `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
+- `v0.99.2` (DL-6276): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0992-2024-12-20
+- `v0.99.1` & `v0.99.0` (DL-6195): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0991-2024-12-19
 
 ### Deploy notes
 
