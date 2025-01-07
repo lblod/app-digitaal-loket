@@ -4,7 +4,7 @@
 
 ### General
 
-- Export betrokken lokale besturen with submissions [#624]
+- Export betrokken lokale besturen with submissions [DL-6352]
 - Bump frontend including data monitoring tool card [DL-6195]
 
 ### Deploy notes
