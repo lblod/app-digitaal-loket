@@ -4,6 +4,7 @@
 
 ### General
 
+- Export betrokken lokale besturen with submissions [#624]
 - Bump frontend including data monitoring tool card [DL-6195]
 
 ### Deploy notes
@@ -26,7 +27,8 @@ The following links;
 
 #### Docker commands
 
-`drc up -d loket`
+- `drc up -d loket`
+- `drc restart export-submissions`
 
 ## 1.107.0 (2024-12-13)
 

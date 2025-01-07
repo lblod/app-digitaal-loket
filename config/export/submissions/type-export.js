@@ -116,7 +116,8 @@ export default {
     eli: "http://data.europa.eu/eli/ontology#",
     meb: "http://rdf.myexperiment.org/ontologies/base/",
     elod: "http://linkedeconomy.org/ontology#",
-    toezicht: "http://mu.semte.ch/vocabularies/ext/supervision/"
+    toezicht: "http://mu.semte.ch/vocabularies/ext/supervision/",
+    ere: "http://data.lblod.info/vocabularies/erediensten/",
   },
   types: [
     {
@@ -130,7 +131,8 @@ export default {
         "besluit:classificatie",
         "ext:inProvincie",
         "dct:identifier",
-        "skos:altLabel"
+        "skos:altLabel",
+        "ere:betrokkenBestuur",
       ],
       additionalFilter: ""
     },
@@ -243,7 +245,8 @@ ${ADVANCED_SUBMISSION_FILTER}
         "mu:uuid"
       ],
       optionalProperties: [
-        "dct:source"
+        "dct:source",
+        "eli:has_part"
       ],
       additionalFilter: `
 ?submission dct:subject ?resource .
@@ -258,6 +261,18 @@ ${ADVANCED_SUBMISSION_FILTER}
       ],
       optionalProperties: [
         "skos:prefLabel"
+      ],
+      additionalFilter: ""
+    },
+    {
+      type: "besluit:Artikel",
+      requiredProperties: [
+      ],
+      optionalProperties: [
+        "mu:uuid",
+        "schema:publication",
+        "eli:type_document",
+        "eli:refers_to"
       ],
       additionalFilter: ""
     },
@@ -345,6 +360,7 @@ FILTER (?conceptScheme IN (
         "eli:date_publication",
         "elod:financialYear",
         "dct:description",
+        "dct:relation",
         "rdfs:comment",
         "eli:first_date_entry_in_force",
         "eli:date_no_longer_in_force",
@@ -384,6 +400,7 @@ ${ADVANCED_SUBMISSION_FILTER}
         "dct:hasPart",
         "ext:taxRateAmount",
         "dct:type",
+        "dct:relation",
         "ext:decisionType",
         "ext:regulationType",
         "ext:taxType"
@@ -625,6 +642,18 @@ ${ADVANCED_SUBMISSION_FILTER}
   nmo:sentDate ?sentDate .
       `,
       hasDateFilter: true,
+    },
+    {
+      type: "ere:BetrokkenLokaleBesturen",
+      requiredProperties: [
+        "mu:uuid"
+      ],
+      optionalProperties: [
+        "ere:financieringspercentage",
+        "ere:typebetrokkenheid",
+        "org:organization"
+      ],
+      additionalFilter: ""
     }
   ]
 };
