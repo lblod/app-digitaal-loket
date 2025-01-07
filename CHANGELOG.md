@@ -2,11 +2,32 @@
 
 ## Unreleased
 
+### General
+
 - Export betrokken lokale besturen with submissions [#624]
+- Bump frontend including data monitoring tool card [DL-6195]
 
 ### Deploy notes
-#### Docker Commands
 
+#### docker-compose.override.yml
+
+##### loket
+
+Ensure the environment variables are correctly set for `loket`, e.g. :
+
+```
+loket:
+  environment;
+    EMBER_DATA_MONITORING_TOOL_URL: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
+```
+The following links;
+- DEV: "https://datamonitoringtool.lblod.info/" (same as QA, this is normal, there is no dev monitoring tool)
+- QA: "https://datamonitoringtool.lblod.info/"
+- PROD: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
+
+#### Docker commands
+
+- `drc up -d loket`
 - `drc restart export-submissions`
 
 ## 1.107.0 (2024-12-13)
