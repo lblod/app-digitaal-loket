@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.107.1 (2025-01-08)
 ### Eredienst mandatenbeheer & Eredienst bedienarenbeheer
 - Fix an issue where secondary phone numbers couldn't be deleted [DL-5355]
 
