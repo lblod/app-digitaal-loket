@@ -39,6 +39,14 @@ The following links;
 - `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
 
+## 1.107.1 (2025-01-08)
+### Eredienst mandatenbeheer & Eredienst bedienarenbeheer
+- Fix an issue where secondary phone numbers couldn't be deleted [DL-5355]
+
+### Deploy notes
+#### Docker Commands
+- `drc restart resource cache`
+
 ## 1.107.0 (2024-12-13)
 
 ### General
