@@ -1,9 +1,6 @@
 # Changelog
-
 ## Unreleased
-
 ### General
-
 - Bump frontend including data monitoring tool card [DL-6195]
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
@@ -39,6 +36,9 @@ The following links;
 - `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
 
+## 1.107.2 (2025-01-09)
+ - Bump op-public-consumer [DL-6347]
+### General
 ## 1.107.1 (2025-01-08)
 ### Eredienst mandatenbeheer & Eredienst bedienarenbeheer
 - Fix an issue where secondary phone numbers couldn't be deleted [DL-5355]
