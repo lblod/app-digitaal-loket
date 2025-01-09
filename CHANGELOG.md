@@ -1,5 +1,7 @@
 # Changelog
-
+## 1.107.2 (2025-01-09)
+ - Bump op-public-consumer [DL-6347]
+### General
 ## 1.107.1 (2025-01-08)
 ### Eredienst mandatenbeheer & Eredienst bedienarenbeheer
 - Fix an issue where secondary phone numbers couldn't be deleted [DL-5355]
