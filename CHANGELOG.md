@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## 1.107.3
 - Remove old decision type from toezicht decision scheme [DL-6366]
 ### Deploy notes
 #### Docker commands
