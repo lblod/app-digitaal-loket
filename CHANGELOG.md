@@ -36,6 +36,12 @@ The following links;
 - `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
 
+## 1.107.3
+- Remove old decision type from toezicht decision scheme [DL-6366]
+### Deploy notes
+#### Docker commands
+- `drc restart migrations`
+- `drc up -d loket`
 ## 1.107.2 (2025-01-09)
  - Bump op-public-consumer [DL-6347]
 ### General
