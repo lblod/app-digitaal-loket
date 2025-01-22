@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.99.3
+    image: lblod/frontend-loket:0.99.4
     links:
       - identifier:backend
     labels:
@@ -211,7 +211,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.21.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.22.2
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"

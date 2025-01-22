@@ -6,6 +6,7 @@
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
 - Add Jaarrekening PEVA form [DL-6284]
+- Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
 
 #### Frontend
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
@@ -16,6 +17,12 @@
 
 #### docker-compose.override.yml
 
+##### Update in production only
+If still present, remove the hard coded image of `berichtencentrum-sync-with-kalliope-service` in `docker-compose.override.yml`
+```
+  berichtencentrum-sync-with-kalliope:
+    image: lblod/berichtencentrum-sync-with-kalliope-service:x.y.z # <-- this line
+```
 ##### loket
 
 Ensure the environment variables are correctly set for `loket`, e.g. :
@@ -37,6 +44,12 @@ The following links;
 - `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
 
+## 1.107.3
+- Remove old decision type from toezicht decision scheme [DL-6366]
+### Deploy notes
+#### Docker commands
+- `drc restart migrations`
+- `drc up -d loket`
 ## 1.107.2 (2025-01-09)
  - Bump op-public-consumer [DL-6347]
 ### General
