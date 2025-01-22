@@ -7,6 +7,7 @@
 - Export betrokken lokale besturen with submissions [DL-6352]
 - Add Jaarrekening PEVA form [DL-6284]
 - Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
+- Bump `automatic-submission-service` [DL-6382]
 
 #### Frontend
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
@@ -41,7 +42,7 @@ The following links;
 #### Docker commands
 
 - `drc restart migrations`
-- `drc up -d enrich-submission loket`
+- `drc up -d enrich-submission loket automatic-submission`
 - `drc restart export-submissions`
 
 ## 1.107.3
