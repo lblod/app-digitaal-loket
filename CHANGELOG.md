@@ -5,6 +5,7 @@
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
+- Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
 
 #### Frontend
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
@@ -15,6 +16,12 @@
 
 #### docker-compose.override.yml
 
+##### Update in production only
+If still present, remove the hard coded image of `berichtencentrum-sync-with-kalliope-service` in `docker-compose.override.yml`
+```
+  berichtencentrum-sync-with-kalliope:
+    image: lblod/berichtencentrum-sync-with-kalliope-service:x.y.z # <-- this line
+```
 ##### loket
 
 Ensure the environment variables are correctly set for `loket`, e.g. :
