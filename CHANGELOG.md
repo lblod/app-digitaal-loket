@@ -55,33 +55,41 @@ The following links;
 
 For the resync of the harvested data:
 
-- Migrations need to have run
+- `drc restart migrations`
+
 - Add the following overrides to the `eredienst-mandatarissen-consumer` in the `docker-compose.override.yml`:
-
-```
-MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
-```
-
+  ```
+  MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+  BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+  ```
 - `drc stop dispatcher-worship-mandates` to speed up the initial sync later
-- `drc exec bash eredienst-mandatarissen-consumer`
-  * `curl -X POST http://localhost/flush`
-  * `exit`
+- `drc up -d eredienst-mandatarissen-consumer` 
+- `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/flush`
   * Wait for the flush to be successful `drc logs -f eredienst-mandatarissen-consumer`
-- `drc exec bash eredienst-mandatarissen-consumer`
-  * `curl -X POST http://localhost/initial-sync-jobs`
-  * `exit`
+- `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/initial-sync-jobs`
   * Wait for the sync job to be successful `drc logs -f eredienst-mandatarissen-consumer`
 - REMOVE the following overrides to the `eredienst-mandatarissen-consumer` in the `docker-compose.override.yml`:
-
-```
-MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
-```
+  ```
+  MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+  BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+  ```
 - `drc up -d eredienst-mandatarissen-consumer`
+-  Ensure in `docker-compose.override.yml` the following:
+   ```
+    dispatcher-worship-mandates:
+      links:
+        - virtuoso:database
+   ```
 - `drc up -d dispatcher-worship-mandates`
   * Inspect that this dispatcher is working `drc logs -f dispatcher-worship-mandates`
-  * This can take a couple of hours
+  * This can take a couple of hours.
+- Once finished, ensure in `docker-compose.override.yml` the following lines are removed:
+   ```
+    dispatcher-worship-mandates:
+      links:
+        - virtuoso:database # i.e. the link shoud be removed, it could be other config is there too, keep this.
+   ```
+- `drc up -d dispatcher-worship-mandates`
 
 ## 1.107.3
 - Remove old decision type from toezicht decision scheme [DL-6366]
