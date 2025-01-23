@@ -8,7 +8,7 @@
 - Add Jaarrekening PEVA form [DL-6284]
 - Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
 - Bump `automatic-submission-service` [DL-6382]
-
+- Fix bestuursorganen label. 
 #### Frontend
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
 - `v0.99.2` (DL-6276): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0992-2024-12-20
