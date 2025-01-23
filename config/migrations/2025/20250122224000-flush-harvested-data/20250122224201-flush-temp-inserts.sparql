@@ -1,0 +1,10 @@
+DELETE {
+  GRAPH <http://eredienst-mandatarissen-consumer/temp-inserts> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://eredienst-mandatarissen-consumer/temp-inserts> {
+    ?s ?p ?o .
+  }
+}

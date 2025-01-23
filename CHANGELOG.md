@@ -1,15 +1,22 @@
 # Changelog
+
 ## Unreleased
+
 ### General
+
 - Bump frontend including data monitoring tool card [DL-6195]
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
+- Improve language tags on harvested data [DL-6286]
+  * Bump eredienst-mandatarissen-consumer
+  * Migrations to remove previously harvested data
 - Add Jaarrekening PEVA form [DL-6284]
 - Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
 - Bump `automatic-submission-service` [DL-6382]
 - Fix bestuursorganen label. 
 #### Frontend
+
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
 - `v0.99.2` (DL-6276): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0992-2024-12-20
 - `v0.99.1` & `v0.99.0` (DL-6195): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0991-2024-12-19
@@ -35,6 +42,7 @@ loket:
 ```
 
 The following links;
+
 - DEV: "https://datamonitoringtool.lblod.info/" (same as QA, this is normal, there is no dev monitoring tool)
 - QA: "https://datamonitoringtool.lblod.info/"
 - PROD: "https://datamonitoringtool.lokaalbestuur.vlaanderen.be/"
@@ -45,12 +53,51 @@ The following links;
 - `drc up -d enrich-submission loket automatic-submission`
 - `drc restart export-submissions`
 
+For the resync of the harvested data:
+
+- `drc restart migrations`
+
+- Add the following overrides to the `eredienst-mandatarissen-consumer` in the `docker-compose.override.yml`:
+  ```
+  MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+  BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+  ```
+- `drc stop dispatcher-worship-mandates` to speed up the initial sync later
+- `drc up -d eredienst-mandatarissen-consumer` 
+- `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/flush`
+  * Wait for the flush to be successful `drc logs -f eredienst-mandatarissen-consumer`
+- `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/initial-sync-jobs`
+  * Wait for the sync job to be successful `drc logs -f eredienst-mandatarissen-consumer`
+- REMOVE the following overrides to the `eredienst-mandatarissen-consumer` in the `docker-compose.override.yml`:
+  ```
+  MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+  BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+  ```
+- `drc up -d eredienst-mandatarissen-consumer`
+-  Ensure in `docker-compose.override.yml` the following:
+   ```
+    dispatcher-worship-mandates:
+      links:
+        - virtuoso:database
+   ```
+- `drc up -d dispatcher-worship-mandates`
+  * Inspect that this dispatcher is working `drc logs -f dispatcher-worship-mandates`
+  * This can take a couple of hours.
+- Once finished, ensure in `docker-compose.override.yml` the following lines are removed:
+   ```
+    dispatcher-worship-mandates:
+      links:
+        - virtuoso:database # i.e. the link shoud be removed, it could be other config is there too, keep this.
+   ```
+- `drc up -d dispatcher-worship-mandates`
+
 ## 1.107.3
 - Remove old decision type from toezicht decision scheme [DL-6366]
 ### Deploy notes
 #### Docker commands
 - `drc restart migrations`
 - `drc up -d loket`
+
 ## 1.107.2 (2025-01-09)
  - Bump op-public-consumer [DL-6347]
 ### General
