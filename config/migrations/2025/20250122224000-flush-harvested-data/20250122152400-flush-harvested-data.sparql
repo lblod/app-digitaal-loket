@@ -1,0 +1,14 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX app:  <http://lblod.data.gift/id/app/>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s prov:wasGeneratedBy app:lblod-harvesting ;
+       ?p ?o .
+  }
+}
