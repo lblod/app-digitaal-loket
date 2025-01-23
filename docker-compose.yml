@@ -402,7 +402,7 @@ services:
     restart: always
     logging: *default-logging
   eredienst-mandatarissen-consumer:
-    image: lblod/delta-consumer:0.0.23
+    image: lblod/delta-consumer:0.1.0
     volumes:
       - ./config/delta-consumer/eredienst-mandatarissen:/config/triples-dispatching/custom-dispatching
       - ./data/files/consumer-files:/consumer-files
