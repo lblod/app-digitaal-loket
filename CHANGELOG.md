@@ -8,6 +8,9 @@
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
+- Improve language tags on harvested data [DL-6286]
+  * Bump eredienst-mandatarissen-consumer
+  * Migrations to remove previously harvested data
 
 #### Frontend
 
@@ -40,6 +43,36 @@ The following links;
 - `drc restart migrations`
 - `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
+
+For the resync of the harvested data:
+
+- Migrations need to have run
+- Add the following overrides to the `eredienst-mandatarissen-consumer` in the `docker-compose.override.yml`:
+
+```
+MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+```
+
+- `drc stop dispatcher-worship-mandates` to speed up the initial sync later
+- `drc exec bash eredienst-mandatarissen-consumer`
+  * `curl -X POST http://localhost/flush`
+  * `exit`
+  * Wait for the flush to be successful `drc logs -f eredienst-mandatarissen-consumer`
+- `drc exec bash eredienst-mandatarissen-consumer`
+  * `curl -X POST http://localhost/initial-sync-jobs`
+  * `exit`
+  * Wait for the sync job to be successful `drc logs -f eredienst-mandatarissen-consumer`
+- REMOVE the following overrides to the `eredienst-mandatarissen-consumer` in the `docker-compose.override.yml`:
+
+```
+MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
+```
+- `drc up -d eredienst-mandatarissen-consumer`
+- `drc up -d dispatcher-worship-mandates`
+  * Inspect that this dispatcher is working `drc logs -f dispatcher-worship-mandates`
+  * This can take a couple of hours
 
 ## 1.107.2 (2025-01-09)
  - Bump op-public-consumer [DL-6347]
