@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:0.99.3
+    image: lblod/frontend-loket:0.99.4
     links:
       - identifier:backend
     labels:
@@ -211,7 +211,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.21.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.22.2
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -277,7 +277,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:1.4.0
+    image: lblod/automatic-submission-service:1.4.1
     labels:
       - "logging=true"
     restart: always
@@ -293,7 +293,7 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:1.13.2
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20241217025446-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20250114144449-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions

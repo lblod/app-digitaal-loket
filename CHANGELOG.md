@@ -11,6 +11,9 @@
 - Improve language tags on harvested data [DL-6286]
   * Bump eredienst-mandatarissen-consumer
   * Migrations to remove previously harvested data
+- Add Jaarrekening PEVA form [DL-6284]
+- Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
+- Bump `automatic-submission-service` [DL-6382]
 
 #### Frontend
 
@@ -22,6 +25,12 @@
 
 #### docker-compose.override.yml
 
+##### Update in production only
+If still present, remove the hard coded image of `berichtencentrum-sync-with-kalliope-service` in `docker-compose.override.yml`
+```
+  berichtencentrum-sync-with-kalliope:
+    image: lblod/berichtencentrum-sync-with-kalliope-service:x.y.z # <-- this line
+```
 ##### loket
 
 Ensure the environment variables are correctly set for `loket`, e.g. :
@@ -41,7 +50,7 @@ The following links;
 #### Docker commands
 
 - `drc restart migrations`
-- `drc up -d enrich-submission loket`
+- `drc up -d enrich-submission loket automatic-submission`
 - `drc restart export-submissions`
 
 For the resync of the harvested data:
@@ -73,6 +82,13 @@ BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
 - `drc up -d dispatcher-worship-mandates`
   * Inspect that this dispatcher is working `drc logs -f dispatcher-worship-mandates`
   * This can take a couple of hours
+
+## 1.107.3
+- Remove old decision type from toezicht decision scheme [DL-6366]
+### Deploy notes
+#### Docker commands
+- `drc restart migrations`
+- `drc up -d loket`
 
 ## 1.107.2 (2025-01-09)
  - Bump op-public-consumer [DL-6347]

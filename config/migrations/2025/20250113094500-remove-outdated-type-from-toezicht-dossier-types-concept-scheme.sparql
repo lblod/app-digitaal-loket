@@ -1,0 +1,6 @@
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitType/e2928231-d377-48c7-98b4-3bb2f7de65db> <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> .
+    <https://data.vlaanderen.be/id/concept/BesluitType/e2928231-d377-48c7-98b4-3bb2f7de65db> <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> .
+  }
+}
