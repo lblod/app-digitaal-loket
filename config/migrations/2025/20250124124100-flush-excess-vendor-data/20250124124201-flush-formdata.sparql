@@ -7,7 +7,7 @@ DELETE {
 }
 WHERE {
   GRAPH ?g {
-    ?s a am:FromData .
+    ?s a am:FormData .
     ?s ?p ?o .
   }
   FILTER (REGEX(STR(?g), "^http://mu.semte.ch/graphs/vendors/"))
