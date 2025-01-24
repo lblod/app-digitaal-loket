@@ -1,0 +1,14 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s a ext:SubmissionDocument .
+    ?s ?p ?o .
+  }
+  FILTER (REGEX(STR(?g), "^http://mu.semte.ch/graphs/vendors/"))
+}
