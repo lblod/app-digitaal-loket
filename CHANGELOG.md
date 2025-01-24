@@ -5,6 +5,7 @@
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
+- Simplify vendor data [DL-6328]
 
 #### Frontend
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
@@ -35,6 +36,8 @@ The following links;
 - `drc restart migrations`
 - `drc up -d enrich-submission loket`
 - `drc restart export-submissions`
+- `drc restart vendor-data-distribution`
+- `drc exec vendor-data-distribution curl -X POST http://localhost/healing`
 
 ## 1.107.3
 - Remove old decision type from toezicht decision scheme [DL-6366]
