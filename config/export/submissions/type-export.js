@@ -121,37 +121,6 @@ export default {
   },
   types: [
     {
-      type: "besluit:Bestuurseenheid",
-      requiredProperties: [
-        "mu:uuid"
-      ],
-      optionalProperties: [
-        "skos:prefLabel",
-        "besluit:werkingsgebied",
-        "besluit:classificatie",
-        "ext:inProvincie",
-        "dct:identifier",
-        "skos:altLabel",
-        "ere:betrokkenBestuur",
-      ],
-      additionalFilter: ""
-    },
-    {
-      type: "besluit:Bestuursorgaan",
-      requiredProperties: [
-        "mu:uuid"
-      ],
-      optionalProperties: [
-        "skos:prefLabel",
-        "mandaat:bindingEinde",
-        "mandaat:bindingStart",
-        "besluit:bestuurt",
-        "besluit:classificatie",
-        "mandaat:isTijdspecialisatieVan"
-      ],
-      additionalFilter: ""
-    },
-    {
       type: "prov:Location",
       requiredProperties: [
         "mu:uuid"
@@ -344,7 +313,6 @@ FILTER (?conceptScheme IN (
   <http://lblod.data.gift/concept-schemes/ac9bc402-c8e6-41fd-ad57-fad15622e560>,
   <https://data.vlaanderen.be/id/conceptscheme/BesluitType>,
   <https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType>,
-  <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode>,
   <http://lblod.data.gift/concept-schemes/b65b15ba-6755-4cd2-bd07-2c2cf3c0e4d3>,
   <http://lblod.data.gift/concept-schemes/c93ccd41-aee7-488f-86d3-038de890d05a>,
   <http://lblod.data.gift/concept-schemes/ac9bc402-c8e6-41fd-ad57-fad15622e560>,
@@ -642,18 +610,6 @@ ${ADVANCED_SUBMISSION_FILTER}
   nmo:sentDate ?sentDate .
       `,
       hasDateFilter: true,
-    },
-    {
-      type: "ere:BetrokkenLokaleBesturen",
-      requiredProperties: [
-        "mu:uuid"
-      ],
-      optionalProperties: [
-        "ere:financieringspercentage",
-        "ere:typebetrokkenheid",
-        "org:organization"
-      ],
-      additionalFilter: ""
     }
   ]
 };
