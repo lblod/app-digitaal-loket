@@ -14,10 +14,11 @@ export const subjects = [
   //
   // The following queries always copy the whole model at once. E.g. if there
   // is a Submission to be copied to the vendor graph, also copy the FormData,
-  // SubmissionDocument, Artikel (for cross referencing), ... if they exist.
-  // All data is also deleted before copied again. This is to make sure changes
-  // are correctly updated. Otherwise you would see multiple values for the
-  // same predicate because the old values are never deleted.
+  // SubmissionDocument, Artikel (for cross referencing), ... if they exist and
+  // if they are needed (not in this case). All data is also deleted before
+  // copied again. This is to make sure changes are correctly updated.
+  // Otherwise you would see multiple values for the same predicate because the
+  // old values are never deleted.
   // Note: Submissions via Loket are not copied to the vendor graphs. This is
   // because there is no vendor linked to the Submissions from Loket, and
   // vendors don't need to see Submission they haven't posted themselves. It is
@@ -40,245 +41,20 @@ export const subjects = [
     remove: {
       delete: `
         ?subject ?p ?o .
-        ?submissionDocument ?sdp ?sdo .
-        ?formdata ?fp ?fo .
-        ?artikel ?ap ?ao .
       `,
       where: `
         {
           ?subject ?p ?o .
-        } UNION {
-          ?subject <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument ?sdp ?sdo .
-        } UNION {
-          ?subject <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?formdata ?fp ?fo .
-        } UNION {
-          ?subject <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?artikel .
-          ?artikel ?ap ?ao .
         }
       `,
     },
     copy: {
       insert: `
         ?subject ?p ?o .
-        ?submissionDocument ?sdp ?sdo .
-        ?formdata ?fp ?fo .
-        ?artikel ?ap ?ao .
       `,
       where: `
         {
           ?subject ?p ?o .
-        } UNION {
-          ?subject <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument ?sdp ?sdo .
-        } UNION {
-          ?subject <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?formdata ?fp ?fo .
-        } UNION {
-          ?subject <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?artikel .
-          ?artikel ?ap ?ao .
-        }
-      `,
-    },
-  },
-
-  /**
-   * SubmissionDocument
-   */
-
-  {
-    type: 'http://mu.semte.ch/vocabularies/ext/SubmissionDocument',
-    trigger: `
-      ?subject a <http://mu.semte.ch/vocabularies/ext/SubmissionDocument> .
-    `,
-    path: `
-      ?submission <http://purl.org/dc/terms/subject> ?subject .
-      ?submission
-        pav:createdBy ?organisation ;
-        pav:providedBy ?vendor .
-    `,
-    remove: {
-      delete: `
-        ?submission ?sp ?so .
-        ?subject ?sdp ?sdo .
-        ?formdata ?fp ?fo .
-        ?artikel ?ap ?ao .
-      `,
-      where: `
-        {
-          ?submission <http://purl.org/dc/terms/subject> ?subject .
-          ?submission ?p ?o .
-        } UNION {
-          ?subject ?p ?o .
-        } UNION {
-          ?submission <http://purl.org/dc/terms/subject> ?subject .
-          ?submission <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?formdata ?fp ?fo .
-        } UNION {
-          ?subject <http://data.europa.eu/eli/ontology#has_part> ?artikel .
-          ?artikel ?ap ?ao .
-        }
-      `,
-    },
-    copy: {
-      insert: `
-        ?submission ?sp ?so .
-        ?subject ?sdp ?sdo .
-        ?formdata ?fp ?fo .
-        ?artikel ?ap ?ao .
-      `,
-      where: `
-        {
-          ?submission <http://purl.org/dc/terms/subject> ?subject .
-          ?submission ?sp ?so .
-        } UNION {
-          ?subject ?sdp ?sdo .
-        } UNION {
-          ?submission <http://purl.org/dc/terms/subject> ?subject .
-          ?submission <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?formdata ?fp ?fo .
-        } UNION {
-          ?subject <http://data.europa.eu/eli/ontology#has_part> ?artikel .
-          ?artikel ?ap ?ao .
-        }
-      `,
-    },
-  },
-
-  /**
-   * Artikel
-   * This is a cross-referenced document
-   */
-
-  {
-    type: 'http://data.vlaanderen.be/ns/besluit#Artikel',
-    trigger: `
-      ?subject a <http://data.vlaanderen.be/ns/besluit#Artikel> .
-    `,
-    path: `
-      ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-      ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-      ?submission
-        pav:createdBy ?organisation ;
-        pav:providedBy ?vendor .
-    `,
-    remove: {
-      delete: `
-        ?submission ?p ?o .
-        ?submissionDocument ?sdp ?sdo .
-        ?formdata ?fp ?fo .
-        ?subject ?ap ?ao .
-      `,
-      where: `
-        {
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-          ?submission ?p ?o .
-        } UNION {
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-          ?submissionDocument ?sdp ?sdo .
-        } UNION {
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-          ?submission <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?formdata ?fp ?fo .
-        } UNION {
-          ?subject ?ap ?ao .
-        }
-      `,
-    },
-    copy: {
-      insert: `
-        ?submission ?p ?o .
-        ?submissionDocument ?sdp ?sdo .
-        ?formdata ?fp ?fo .
-        ?subject ?ap ?ao .
-      `,
-      where: `
-        {
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-          ?submission ?p ?o .
-        } UNION {
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-          ?submissionDocument ?sdp ?sdo .
-        } UNION {
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?subject .
-          ?submission <http://www.w3.org/ns/prov#generated> ?formdata .
-          ?formdata ?fp ?fo .
-        } UNION {
-          ?subject ?ap ?ao .
-        }
-      `,
-    },
-  },
-
-  /**
-   * FormData
-   */
-
-  {
-    type: 'http://lblod.data.gift/vocabularies/automatische-melding/FormData',
-    trigger: `
-      ?subject a <http://lblod.data.gift/vocabularies/automatische-melding/FormData> .
-    `,
-    path: `
-      ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-      ?submission
-        pav:createdBy ?organisation ;
-        pav:providedBy ?vendor .
-    `,
-    remove: {
-      delete: `
-        ?submission ?p ?o .
-        ?submissionDocument ?sdp ?sdo .
-        ?subject ?fp ?fo .
-        ?artikel ?ap ?ao .
-      `,
-      where: `
-        {
-          ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-          ?submission ?p ?o .
-        } UNION {
-          ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument ?sdp ?sdo .
-        } UNION {
-          ?subject ?fp ?fo .
-        } UNION {
-          ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?artikel .
-          ?artikel ?ap ?ao .
-        }
-      `,
-    },
-    copy: {
-      insert: `
-        ?submission ?p ?o .
-        ?submissionDocument ?sdp ?sdo .
-        ?subject ?fp ?fo .
-        ?artikel ?ap ?ao .
-      `,
-      where: `
-        {
-          ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-          ?submission ?p ?o .
-        } UNION {
-          ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument ?sdp ?sdo .
-        } UNION {
-          ?subject ?fp ?fo .
-        } UNION {
-          ?submission <http://www.w3.org/ns/prov#generated> ?subject .
-          ?submission <http://purl.org/dc/terms/subject> ?submissionDocument .
-          ?submissionDocument <http://data.europa.eu/eli/ontology#has_part> ?artikel .
-          ?artikel ?ap ?ao .
         }
       `,
     },

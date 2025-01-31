@@ -1,0 +1,14 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s a besluit:Artikel .
+    ?s ?p ?o .
+  }
+  FILTER (REGEX(STR(?g), "^http://mu.semte.ch/graphs/vendors/"))
+}
