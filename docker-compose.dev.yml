@@ -33,6 +33,8 @@ services:
     restart: "no"
   migrations:
     restart: "no"
+  migrations-publication-triplestore:
+    restart: "no"
   cache:
     restart: "no"
   resource:

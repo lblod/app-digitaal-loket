@@ -1,5 +1,43 @@
 # Changelog
 
+## Unreleased
+
+### General
+
+- Add `migrations-publication-triplestore` as a migration service for the publication-triplestore [DL-6349]
+- Re-export 12 submissions and their related subjects, because they are missing from Worship Decisions Database, see migrations and deploy instructions [DL-6349]
+
+### Deploy instructions
+
+**For re-exporting submissions**
+
+- Pull and start the new service
+  * `drc up -d migrations-publication-triplestore`
+- Make sure migrations have run `drc logs --tail 1000 -f migrations-publication-triplestore`
+- Run the following commands to send submissions to be marked for publication to Worship Decisions Database:
+
+```
+cd scripts/send-submissions-to-prepare-for-export/
+
+echo 'http://data.lblod.info/form-data/95c393b0-07f1-11ef-8911-1be0e451139c
+http://data.lblod.info/form-data/d86d0350-f8eb-11ee-8911-1be0e451139c
+http://data.lblod.info/form-data/54e5ea70-f89a-11ee-8911-1be0e451139c
+http://data.lblod.info/form-data/2fe55480-f710-11ee-8911-1be0e451139c
+http://data.lblod.info/form-data/dc3c4ab0-e048-11ee-8911-1be0e451139c' > form-data-uris.txt
+
+./run.sh
+
+rm form-data-uris.txt
+
+# Make sure that the prepare service has processed everything
+# This can take about 2 minutes
+drc logs --tail 1000 -f prepare-submissions-for-export
+```
+
+- Start healing on the `delta-producer-publication-graph-maintainer` via the `delta-producer-background-jobs-initiator`
+  * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
+  * This can also take a while, up to an hour.
+
 ## 1.108.0 (2025-01-24)
 
 ### General
