@@ -1,0 +1,14 @@
+PREFIX am: <http://lblod.data.gift/vocabularies/automatische-melding/>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s a am:FormData .
+    ?s ?p ?o .
+  }
+  FILTER (REGEX(STR(?g), "^http://mu.semte.ch/graphs/vendors/"))
+}
