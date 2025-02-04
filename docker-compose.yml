@@ -96,6 +96,18 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  migrations-publication-triplestore:
+    image: semtech/mu-migrations-service:0.9.0
+    links:
+      - publication-triplestore:database
+    environment:
+      MU_SPARQL_TIMEOUT: "300"
+    volumes:
+      - ./config/migrations-publication-triplestore:/data/migrations
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   cache:
     image: semtech/mu-cache:2.0.1
     links:
