@@ -471,10 +471,15 @@ services:
     restart: always
     logging: *default-logging
   vendor-data-distribution:
-    image: lblod/vendor-data-distribution-service:1.6.1
+    image: lblod/vendor-data-distribution-service:1.6.2
     environment:
       LOGLEVEL: "error"
       WRITE_ERRORS: "true"
+      SUDO_QUERY_RETRY: "true"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "500"
+      MIN_DELAY_TO_PROCESS_NEXT_DELTA: "4000"
+      MAX_DELAY_TO_PROCESS_NEXT_DELTA: "5000"
+      SPARQL_ENDPOINT_HEALING_OPERATIONS: "http://virtuoso:8890/sparql"
     volumes:
       - ./config/vendor-data:/config
     restart: always

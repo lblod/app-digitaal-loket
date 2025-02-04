@@ -38,6 +38,16 @@ drc logs --tail 1000 -f prepare-submissions-for-export
   * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
   * This can also take a while, up to an hour.
 
+## 1.108.1 (2025-02-04)
+
+- Bump vendor-data-distribution
+
+### Deploy instructions
+
+```
+drc up -d vendor-data-distribution
+```
+
 ## 1.108.0 (2025-01-24)
 
 ### General
@@ -46,13 +56,15 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 - Update Semantic Forms for adjusted form Afschrift Erkenningszoekende besturen [DL-6276]
 - Update frontend for showing rendered HTML in alert form field [DL-6276]
 - Export betrokken lokale besturen with submissions [DL-6352]
+- Simplify vendor data [DL-6328]
 - Improve language tags on harvested data [DL-6286]
   * Bump eredienst-mandatarissen-consumer
   * Migrations to remove previously harvested data
 - Add Jaarrekening PEVA form [DL-6284]
 - Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
 - Bump `automatic-submission-service` [DL-6382]
-- Fix bestuursorganen label. 
+- Fix bestuursorganen label.
+
 #### Frontend
 
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
@@ -90,6 +102,8 @@ The following links;
 - `drc restart migrations`
 - `drc up -d enrich-submission loket automatic-submission`
 - `drc restart export-submissions`
+- `drc restart vendor-data-distribution`
+- `drc exec vendor-data-distribution curl -X POST http://localhost/healing`
 
 For the resync of the harvested data:
 
