@@ -1,0 +1,26 @@
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?submissionType <http://lblod.data.gift/vocabularies/besluit/decidableBy> ?classification .
+  }
+}
+WHERE {
+  VALUES ?submissionType {
+    <https://data.vlaanderen.be/id/concept/BesluitType/b04bc642-c892-4aae-ac1f-f6ff21362704>
+    <https://data.vlaanderen.be/id/concept/BesluitType/a2836d2f-1fee-4549-bd85-b9c13698b757>
+    <https://data.vlaanderen.be/id/concept/BesluitType/afdb7387-da47-4dc4-bbbe-e86ea5c3df28>
+    <https://data.vlaanderen.be/id/concept/BesluitType/fb21d14b-734b-48f4-bd4e-888163fd08e8>
+    <https://data.vlaanderen.be/id/concept/BesluitType/4511f992-2b52-42fe-9cb6-feae6241ad26>
+    <https://data.vlaanderen.be/id/concept/BesluitType/dbc58656-b0a5-4e43-8e9e-701acb75f9b0>
+    <https://data.vlaanderen.be/id/concept/BesluitType/e27ef237-29de-49b8-be22-4ee2ab2d4e5b>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/0ee460b1-5ef4-4d4a-b5e1-e2d7c1d5086e>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3fa67785-ffdc-4b30-8880-2b99d97b4dee>
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/365d561c-57c7-4523-af04-6e3c91426c56>
+  }
+
+  BIND(<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/4b8450cf-a326-4c66-9e63-b4ec10acc7f6> AS ?classification)
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?submissionType ?p ?o .
+  }
+}
