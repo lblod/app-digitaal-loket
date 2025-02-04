@@ -1,5 +1,10 @@
 # Changelog
-
+## 1.108.1 (2025-02-04)
+- Bump vendor-data-distribution
+### Deploy instructions
+```
+drc up -d vendor-data-distribution
+```
 ## 1.108.0 (2025-01-24)
 
 ### General
