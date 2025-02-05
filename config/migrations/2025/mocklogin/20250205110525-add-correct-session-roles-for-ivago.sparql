@@ -1,0 +1,12 @@
+INSERT {
+  GRAPH ?g {
+    ?account <http://mu.semte.ch/vocabularies/ext/sessionRole> "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-leidinggevendenGebruiker", "LoketLB-LPDCGebruiker" .
+  }
+}
+WHERE {
+  BIND(<http://data.lblod.info/id/account/3dc8db6a00a32125acd2e215225442c8> AS ?account) # Mock-login account belonging to IVAGO
+
+  GRAPH ?g {
+    ?account a ?type .
+  }
+}
