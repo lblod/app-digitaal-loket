@@ -26,6 +26,7 @@ import bedienaren from './worship/bedienaren';
 import mandatarissen from './worship/mandatarissen';
 import tempDeletes from './worship/temp-deletes';
 import tempInserts from './worship/temp-inserts';
+import harvestedAndNonHarvestedMandatarisForSamePosition from './harvested-and-non-harvested-mandataris-for-same-position';
 
 //Berichten reports
 import berichten from './berichten/messages-with-provenance';
@@ -61,6 +62,7 @@ export default [
   mandatarissen,
   tempDeletes,
   tempInserts,
+  harvestedAndNonHarvestedMandatarisForSamePosition,
 
   //Berichten reports
   berichten,
