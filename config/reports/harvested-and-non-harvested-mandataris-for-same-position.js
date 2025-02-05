@@ -2,7 +2,7 @@ import { query } from 'mu';
 import { generateReportFromData } from '../helpers.js';
 
 export default {
-  cronPattern: '0 10 22 * * 6',
+  cronPattern: '0 10 0 * * *',
   name: 'harvested-and-non-harvested-mandatarissen-report',
   execute: async () => {
     const reportData = {
