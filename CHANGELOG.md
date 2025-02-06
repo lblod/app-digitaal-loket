@@ -7,6 +7,7 @@
 - Add `migrations-publication-triplestore` as a migration service for the publication-triplestore [DL-6349]
 - Re-export 12 submissions and their related subjects, because they are missing from Worship Decisions Database, see migrations and deploy instructions [DL-6349]
 - Update form 'Reglementen en verordeningen' decidableBy for 3 more admin units [DL-6357]
+- Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
 
 ### Deploy instructions
 
@@ -38,6 +39,11 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 - Start healing on the `delta-producer-publication-graph-maintainer` via the `delta-producer-background-jobs-initiator`
   * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
   * This can also take a while, up to an hour.
+
+**For adding new classification type**
+
+- `drc restart update-bestuurseenheid-mock-login migrations && drc logs -ft --tail=200 migrations`
+- `drc restart resource cache`
 
 ## 1.108.1 (2025-02-04)
 
@@ -116,7 +122,7 @@ For the resync of the harvested data:
   BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
   ```
 - `drc stop dispatcher-worship-mandates` to speed up the initial sync later
-- `drc up -d eredienst-mandatarissen-consumer` 
+- `drc up -d eredienst-mandatarissen-consumer`
 - `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/flush`
   * Wait for the flush to be successful `drc logs -f eredienst-mandatarissen-consumer`
 - `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/initial-sync-jobs`
