@@ -8,6 +8,8 @@
 - Re-export 12 submissions and their related subjects, because they are missing from Worship Decisions Database, see migrations and deploy instructions [DL-6349]
 - Update form 'Reglementen en verordeningen' decidableBy for 3 more admin units [DL-6357]
 - Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
+- Add report to detect harvested and non-harvested mandatarissen having the same position in the same organization. [DL-6342]
+- Remove submissions export config replaced by op sync [DL-6394]
 - Repair old cross referencing submissions from CKB's. These predate the cross referencing feature. [DL-6415]
 
 ### Deploy instructions
@@ -45,6 +47,10 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 
 - `drc restart update-bestuurseenheid-mock-login migrations && drc logs -ft --tail=200 migrations`
 - `drc restart resource cache`
+
+**For the report**
+
+- `drc restart report-generation`
 
 **For repairing CKB cross referencing submissions**
 
