@@ -18,11 +18,10 @@ export default {
       PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
       PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-      SELECT DISTINCT ?worshipServiceName ?subject ?subjectHarvested WHERE {
+      SELECT DISTINCT ?worshipService ?worshipServiceName ?subject ?subjectHarvested ?post WHERE {
         GRAPH <http://mu.semte.ch/graphs/public> {
           ?timedGoverningBody org:hasPost ?post ;
-            <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> ?governingBody ;
-            <http://data.vlaanderen.be/ns/mandaat#bindingStart> ?startDate .
+            <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> ?governingBody .
 
           ?governingBody besluit:bestuurt ?worshipService .
 
@@ -41,11 +40,13 @@ export default {
 
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((result) => ({
+      worshipService: result.worshipService.value,
       worshipServiceName: result.worshipServiceName.value,
-      subject: result.subject.value,
-      subjectHarvested: result.subjectHarvested.value
+      mandatePositionLoket: result.subject.value,
+      mandatePositionHarvested: result.subjectHarvested.value,
+      governingBodyPost: result.post.value
     }));
 
-    await generateReportFromData(data, ['worshipServiceName', 'subject', 'subjectHarvested'], reportData);
+    await generateReportFromData(data, ['worshipService', 'worshipServiceName', 'mandatePositionLoket', 'mandatePositionHarvested', 'governingBodyPost'], reportData);
   }
 };
