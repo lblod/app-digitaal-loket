@@ -11,7 +11,7 @@ export default {
       filePrefix: 'harvested-and-non-harvested-mandataris-for-same-position'
     };
 
-    console.log('Generate Report for detecting harvested and non-harvested mandatarissen having the same position');
+    console.log('Generating report for detecting harvested and non-harvested mandatarissen having the same position');
 
     const queryString = `
       PREFIX org: <http://www.w3.org/ns/org#>
@@ -41,9 +41,9 @@ export default {
 
     const queryResponse = await query(queryString);
     const data = queryResponse.results.bindings.map((result) => ({
-      worshipServiceName: result.uri.worshipServiceName,
-      subject: result.uri.subject,
-      subjectHarvested: result.uri.subjectHarvested
+      worshipServiceName: result.worshipServiceName.value,
+      subject: result.subject.value,
+      subjectHarvested: result.subjectHarvested.value
     }));
 
     await generateReportFromData(data, ['worshipServiceName', 'subject', 'subjectHarvested'], reportData);
