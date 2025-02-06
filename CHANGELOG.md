@@ -6,6 +6,7 @@
 
 - Add `migrations-publication-triplestore` as a migration service for the publication-triplestore [DL-6349]
 - Re-export 12 submissions and their related subjects, because they are missing from Worship Decisions Database, see migrations and deploy instructions [DL-6349]
+- Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
 - Add report to detect harvested and non-harvested mandatarissen having the same position in the same organization. [DL-6342]
 
 ### Deploy instructions
@@ -38,6 +39,11 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 - Start healing on the `delta-producer-publication-graph-maintainer` via the `delta-producer-background-jobs-initiator`
   * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
   * This can also take a while, up to an hour.
+
+**For adding new classification type**
+
+- `drc restart update-bestuurseenheid-mock-login migrations && drc logs -ft --tail=200 migrations`
+- `drc restart resource cache`
 
 **For the report**
 
