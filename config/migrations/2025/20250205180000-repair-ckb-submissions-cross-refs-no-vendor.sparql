@@ -1,0 +1,132 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX mob: <http://rdf.myexperiment.org/ontologies/base/>
+
+INSERT {
+  GRAPH ?u {
+    ?ckbFormData
+      dct:relation ?subjectCrossRef ;
+      skos:note """Manual cross-reference; see DL-6415""" .
+  }
+}
+WHERE {
+  VALUES (?ckbSubmission ?crossRefeenheid ?crossRefDocument) {
+    (<http://data.lblod.info/submissions/6770406F7BE46E3FBC97C03F> <http://data.lblod.info/id/besturenVanDeEredienst/751f5d42151b4e0b448a69cce04638af> <http://data.lblod.info/submissions/67703F687BE46E3FBC97C03D>)
+    (<http://data.lblod.info/submissions/67644D555E056CD88DBD8445> <http://data.lblod.info/id/besturenVanDeEredienst/3b9b9300ee406116248f82c19cfe0f61> <http://data.lblod.info/submissions/656B2AE56B73131F22099E83>)
+    (<http://data.lblod.info/submissions/67644D555E056CD88DBD8445> <http://data.lblod.info/id/besturenVanDeEredienst/3519d4653df066d7cbda1ad0b132c8ab> <http://data.lblod.info/submissions/675C21B55E056CD88DBD81BD>)
+    (<http://data.lblod.info/submissions/674F00AE4FEB253800CF8D5A> <http://data.lblod.info/id/besturenVanDeEredienst/1ccfe6d166b1bfd797fb0f6edb60f96d> <http://data.lblod.info/submissions/66891EC20479523BCAA0A9E6>)
+    (<http://data.lblod.info/submissions/674F00AE4FEB253800CF8D5A> <http://data.lblod.info/id/besturenVanDeEredienst/819f1bb12ac62cf130339ef0033fcbde> <http://data.lblod.info/submissions/669AB2A840CC83CBD845408F>)
+    (<http://data.lblod.info/submissions/67448AA20F831D52ACB0B741> <http://data.lblod.info/id/besturenVanDeEredienst/8000fb8910f3f7afb10056217339acbe> <http://data.lblod.info/submissions/666B5251F2ABBD75B7C715C1>)
+    (<http://data.lblod.info/submissions/67448AA20F831D52ACB0B741> <http://data.lblod.info/id/besturenVanDeEredienst/a0d960d87251f4f398d927f8ef033608> <http://data.lblod.info/submissions/673E0A7CD4B511EE7DECE939>)
+    (<http://data.lblod.info/submissions/67448AA20F831D52ACB0B741> <http://data.lblod.info/id/besturenVanDeEredienst/beb4a48c99d8f5feed67b8e7443c31ce> <http://data.lblod.info/submissions/66EA76F5F3D5898D930B9CB0>)
+    (<http://data.lblod.info/submissions/6734FBCFA0950B18E91D4748> <http://data.lblod.info/id/besturenVanDeEredienst/5b5730b7c9ed77f3032dcfb258a40fcc> <http://data.lblod.info/submissions/67003B7A6144C975BE2F928F>)
+    (<http://data.lblod.info/submissions/6723EED399B7050C924A57F3> <http://data.lblod.info/id/besturenVanDeEredienst/086a9809bfb18ab50c2e6edb7ccb8035> <http://data.lblod.info/submissions/671014579EBCF6786C845C42>)
+    (<http://data.lblod.info/submissions/6723EED399B7050C924A57F3> <http://data.lblod.info/id/besturenVanDeEredienst/d1fa5ec9a27907a91639f2ea336799b5> <http://data.lblod.info/submissions/67114BA79EBCF6786C845C9B>)
+    (<http://data.lblod.info/submissions/671A32CF9EBCF6786C84601E> <http://data.lblod.info/id/besturenVanDeEredienst/32bd5e066ad3ba95db753b1ad9d3b39e> <http://data.lblod.info/submissions/6718F97D9EBCF6786C845F05>)
+    (<http://data.lblod.info/submissions/67190EC79EBCF6786C845F23> <http://data.lblod.info/id/besturenVanDeEredienst/32bd5e066ad3ba95db753b1ad9d3b39e> <http://data.lblod.info/submissions/6718F97D9EBCF6786C845F05>)
+    (<http://data.lblod.info/submissions/6716945C9EBCF6786C845D77> <http://data.lblod.info/id/besturenVanDeEredienst/e5e92cc5c08da7e4d7b3dadb41996af4> <http://data.lblod.info/submissions/23db94b0-7b5e-11ef-a941-e5d434ccecf0>)
+    (<http://data.lblod.info/submissions/670EC0A1337218FF843C7BAF> <http://data.lblod.info/id/besturenVanDeEredienst/e5e92cc5c08da7e4d7b3dadb41996af4> <http://data.lblod.info/submissions/002260d0-7b5e-11ef-a941-e5d434ccecf0>)
+    (<http://data.lblod.info/submissions/670EBF18337218FF843C7BAD> <http://data.lblod.info/id/besturenVanDeEredienst/8a033a87351ec26df1d5146840ecdb63> <http://data.lblod.info/submissions/670CE87B337218FF843C7A42>)
+    (<http://data.lblod.info/submissions/670EBE53337218FF843C7BAB> <http://data.lblod.info/id/besturenVanDeEredienst/8a033a87351ec26df1d5146840ecdb63> <http://data.lblod.info/submissions/670CE87B337218FF843C7A42>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/7a0c7817abe7193d0d1947248b4cd4eb> <http://data.lblod.info/submissions/66EEBE95F3D5898D930B9EA1>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/25bd035b41f2f7ebe8f34122f4277c82> <http://data.lblod.info/submissions/66B3427CD891100A36A0F515>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/271368d2cd3eacace3f90cf72fad3859> <http://data.lblod.info/submissions/66DAC727C470D991DB7F97AC>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/1ab5215a69b40aa930b4f849c6d260c6> <http://data.lblod.info/submissions/66D82C5DC470D991DB7F96B9>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/dec6f4bfddae8e28890181c24c0a81bc> <http://data.lblod.info/submissions/66D6EF37C470D991DB7F95F7>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/79534a3a1842272a2f402a07019cecb3> <http://data.lblod.info/submissions/66D560AB3851D95F396C7FAA>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/8d32c5298ea8d3b673f4410db4c490fd> <http://data.lblod.info/submissions/668FD0300479523BCAA0AC7F>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/03aedfef02f389c043acb315e80cd29a> <http://data.lblod.info/submissions/8618dd80-8109-11ef-b744-f72ae3ff3822>)
+    (<http://data.lblod.info/submissions/67079403337218FF843C7984> <http://data.lblod.info/id/besturenVanDeEredienst/2e2e8d10097445b223b053146501a51b> <http://data.lblod.info/submissions/66D6F008C470D991DB7F95F9>)
+    (<http://data.lblod.info/submissions/66FBC3AE6144C975BE2F9017> <http://data.lblod.info/id/besturenVanDeEredienst/f6d3cfadf7b82395634d5a510b31b057> <http://data.lblod.info/submissions/66E9E8B4F3D5898D930B9CAC>)
+    (<http://data.lblod.info/submissions/66FBC3AE6144C975BE2F9017> <http://data.lblod.info/id/besturenVanDeEredienst/c99085763c2443814a190fc68654d028> <http://data.lblod.info/submissions/66851891C77ACE4182718BA2>)
+    (<http://data.lblod.info/submissions/66FAF5676144C975BE2F8FE2> <http://data.lblod.info/id/besturenVanDeEredienst/f6d3cfadf7b82395634d5a510b31b057> <http://data.lblod.info/submissions/6665C0C9F2ABBD75B7C712D6>)
+    (<http://data.lblod.info/submissions/66FAF5676144C975BE2F8FE2> <http://data.lblod.info/id/besturenVanDeEredienst/c99085763c2443814a190fc68654d028> <http://data.lblod.info/submissions/668519BDC77ACE4182718BAC>)
+    (<http://data.lblod.info/submissions/66E84D7CF3D5898D930B9C29> <http://data.lblod.info/id/besturenVanDeEredienst/59bdc85df723acfe44c548f8972449f6> <http://data.lblod.info/submissions/66983015640036C3BA75C8DD>)
+    (<http://data.lblod.info/submissions/66E84D7CF3D5898D930B9C29> <http://data.lblod.info/id/besturenVanDeEredienst/81ece4dc5b6c6217a6d3c228f3bf0c1f> <http://data.lblod.info/submissions/66677D16F2ABBD75B7C71389>)
+    (<http://data.lblod.info/submissions/66E84D7CF3D5898D930B9C29> <http://data.lblod.info/id/besturenVanDeEredienst/9de888da3628fefef78408bd8193af66> <http://data.lblod.info/submissions/66B1EDBBD891100A36A0F483>)
+    (<http://data.lblod.info/submissions/66E822C6F3D5898D930B9BC6> <http://data.lblod.info/id/besturenVanDeEredienst/32946ca6db30ae75f5b2adf7af67ebfc> <http://data.lblod.info/submissions/667D3A974F3E49FB4ECC324F>)
+    (<http://data.lblod.info/submissions/66E35586F3D5898D930B9B13> <http://data.lblod.info/id/besturenVanDeEredienst/9de888da3628fefef78408bd8193af66> <http://data.lblod.info/submissions/66B1E2DFD891100A36A0F47F>)
+    (<http://data.lblod.info/submissions/66E33A45F3D5898D930B9B0F> <http://data.lblod.info/id/besturenVanDeEredienst/b0d8d6503289d28cbd94ba95dad20e7b> <http://data.lblod.info/submissions/66B8D8A6ED6F6B0EEA0A2611>)
+    (<http://data.lblod.info/submissions/66E33A45F3D5898D930B9B0F> <http://data.lblod.info/id/besturenVanDeEredienst/8b97c3530f92a92b4e08c8a2240e132c> <http://data.lblod.info/submissions/66BC92E2D477FBFB081D7008>)
+    (<http://data.lblod.info/submissions/66E338BBF3D5898D930B9B0D> <http://data.lblod.info/id/besturenVanDeEredienst/1d0d380cd1a096ade357b1df078dff90> <http://data.lblod.info/submissions/66DADEFBC470D991DB7F97CD>)
+    (<http://data.lblod.info/submissions/66E338BBF3D5898D930B9B0D> <http://data.lblod.info/id/besturenVanDeEredienst/8b97c3530f92a92b4e08c8a2240e132c> <http://data.lblod.info/submissions/66BC9127D477FBFB081D7006>)
+    (<http://data.lblod.info/submissions/66E338BBF3D5898D930B9B0D> <http://data.lblod.info/id/besturenVanDeEredienst/12b64ee62f43f622e8795796b2aa683b> <http://data.lblod.info/submissions/66D74AF4C470D991DB7F9676>)
+    (<http://data.lblod.info/submissions/66E338BBF3D5898D930B9B0D> <http://data.lblod.info/id/besturenVanDeEredienst/b0d8d6503289d28cbd94ba95dad20e7b> <http://data.lblod.info/submissions/66B8D7BCED6F6B0EEA0A260F>)
+    (<http://data.lblod.info/submissions/66D2EE8B3851D95F396C7FA4> <http://data.lblod.info/id/besturenVanDeEredienst/1ce3e84e6bc0b7303f45b339b47e8755> <http://data.lblod.info/submissions/66607CD7444FFF6E4E5B1FB5>)
+    (<http://data.lblod.info/submissions/66D2EE8B3851D95F396C7FA4> <http://data.lblod.info/id/besturenVanDeEredienst/6be88677571d7bf7272e10f3d76a5b6e> <http://data.lblod.info/submissions/669F669240CC83CBD84540FA>)
+    (<http://data.lblod.info/submissions/66D2EE8B3851D95F396C7FA4> <http://data.lblod.info/id/besturenVanDeEredienst/3e0d4dbea78e2fa221d0be5037c63066> <http://data.lblod.info/submissions/663CE571C79464FC1D8E8A47>)
+    (<http://data.lblod.info/submissions/66D2EE8B3851D95F396C7FA4> <http://data.lblod.info/id/besturenVanDeEredienst/d264e200ccd91eb41f794efc98380f7c> <http://data.lblod.info/submissions/668E49EF0479523BCAA0AC0D>)
+    (<http://data.lblod.info/submissions/66D2E7D23851D95F396C7F9E> <http://data.lblod.info/id/besturenVanDeEredienst/1ce3e84e6bc0b7303f45b339b47e8755> <http://data.lblod.info/submissions/66607C3C444FFF6E4E5B1FB3>)
+    (<http://data.lblod.info/submissions/66CC429A3851D95F396C7CE5> <http://data.lblod.info/id/besturenVanDeEredienst/da95046fec68766dda604962409dea98> <http://data.lblod.info/submissions/66C73FF56CFA1DA9628E8C9F>)
+    (<http://data.lblod.info/submissions/66C83077E715585602893B32> <http://data.lblod.info/id/besturenVanDeEredienst/d69d8a3ca0ef4c34acd1a0664301f411> <http://data.lblod.info/submissions/66BC7766D477FBFB081D7000>)
+    (<http://data.lblod.info/submissions/66C83077E715585602893B32> <http://data.lblod.info/id/besturenVanDeEredienst/c31f20c9997e1eac11bda1e9ecf45ab5> <http://data.lblod.info/submissions/66BBBD1CD477FBFB081D6FD5>)
+    (<http://data.lblod.info/submissions/66C45F676CFA1DA9628E8BD5> <http://data.lblod.info/id/besturenVanDeEredienst/30a9f13f37c4f60d6b19c66bca6f16db> <http://data.lblod.info/submissions/6686730E0479523BCAA0A77D>)
+    (<http://data.lblod.info/submissions/66A9D433845F3E2A8FFDC63B> <http://data.lblod.info/id/besturenVanDeEredienst/0d6f1ec8b17b6bb708ffe6c8b77112a7> <http://data.lblod.info/submissions/65EB7C1BAFD3F8E8B11C95AE>)
+    (<http://data.lblod.info/submissions/6696C9BD65E476D284C0E38E> <http://data.lblod.info/id/besturenVanDeEredienst/8a033a87351ec26df1d5146840ecdb63> <http://data.lblod.info/submissions/6696673D0479523BCAA0AD8F>)
+    (<http://data.lblod.info/submissions/668E35F40479523BCAA0ABEF> <http://data.lblod.info/id/besturenVanDeEredienst/e14f825b7542b0d861ed2f586701951a> <http://data.lblod.info/submissions/66814A184F3E49FB4ECC349F>)
+    (<http://data.lblod.info/submissions/668E35F40479523BCAA0ABEF> <http://data.lblod.info/id/besturenVanDeEredienst/32946ca6db30ae75f5b2adf7af67ebfc> <http://data.lblod.info/submissions/667D3A974F3E49FB4ECC324F>)
+    (<http://data.lblod.info/submissions/668E35F40479523BCAA0ABEF> <http://data.lblod.info/id/besturenVanDeEredienst/083d2126fbd34c441899aef659a6aff4> <http://data.lblod.info/submissions/667EABA14F3E49FB4ECC3425>)
+    (<http://data.lblod.info/submissions/668E35660479523BCAA0ABEB> <http://data.lblod.info/id/besturenVanDeEredienst/e14f825b7542b0d861ed2f586701951a> <http://data.lblod.info/submissions/6681497C4F3E49FB4ECC349D>)
+    (<http://data.lblod.info/submissions/668E35660479523BCAA0ABEB> <http://data.lblod.info/id/besturenVanDeEredienst/083d2126fbd34c441899aef659a6aff4> <http://data.lblod.info/submissions/667EAB3E4F3E49FB4ECC3423>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/567a1bd8a4e2be8817ff8af27c93efbd> <http://data.lblod.info/submissions/668BBDD40479523BCAA0AA37>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/3cf7d81613b9cd1add4c5e081f67af8a> <http://data.lblod.info/submissions/6681A8F74F3E49FB4ECC34B3>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/ddd0b8b7481569d905a03ebbd0c57b41> <http://data.lblod.info/submissions/668175254F3E49FB4ECC34AB>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/da95046fec68766dda604962409dea98> <http://data.lblod.info/submissions/66827BA64F3E49FB4ECC3593>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/00b825fd5853836076e60ebd7393e23a> <http://data.lblod.info/submissions/6682D3F6C77ACE418271895E>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/a07c38a4a3929b03ad09ae5abc7284fb> <http://data.lblod.info/submissions/668BB9100479523BCAA0AA33>)
+    (<http://data.lblod.info/submissions/668C0BBB0479523BCAA0AACC> <http://data.lblod.info/id/besturenVanDeEredienst/ee380ce0ad7b5d56f9b75c8b47fa7d51> <http://data.lblod.info/submissions/6681A9AE4F3E49FB4ECC34B5>)
+    (<http://data.lblod.info/submissions/664672A71F8F2C3570D405F9> <http://data.lblod.info/id/besturenVanDeEredienst/1d0d380cd1a096ade357b1df078dff90> <http://data.lblod.info/submissions/65DF6457E9E0E2C72DFD2A3C>)
+    (<http://data.lblod.info/submissions/6597BF0E6DF060864F8206D0> <http://data.lblod.info/id/besturenVanDeEredienst/5b5730b7c9ed77f3032dcfb258a40fcc> <http://data.lblod.info/submissions/652975CD96FC0E4DDF39B05C>)
+    (<http://data.lblod.info/submissions/65874651E3FFD8BBF65D7E5E> <http://data.lblod.info/id/besturenVanDeEredienst/3519d4653df066d7cbda1ad0b132c8ab> <http://data.lblod.info/submissions/6560D1D56B73131F22099895>)
+    (<http://data.lblod.info/submissions/65874651E3FFD8BBF65D7E5E> <http://data.lblod.info/id/besturenVanDeEredienst/3b9b9300ee406116248f82c19cfe0f61> <http://data.lblod.info/submissions/656B2AE56B73131F22099E83>)
+    (<http://data.lblod.info/submissions/6579E06BF32FEB6FCD78B421> <http://data.lblod.info/id/besturenVanDeEredienst/e5e92cc5c08da7e4d7b3dadb41996af4> <http://data.lblod.info/submissions/655C68E548AC6002CD679609>)
+    (<http://data.lblod.info/submissions/6579DF9BF32FEB6FCD78B41F> <http://data.lblod.info/id/besturenVanDeEredienst/8a033a87351ec26df1d5146840ecdb63> <http://data.lblod.info/submissions/65658D2F6B73131F220999C0>)
+    (<http://data.lblod.info/submissions/656F216C6B73131F2209A0EE> <http://data.lblod.info/id/besturenVanDeEredienst/8b97c3530f92a92b4e08c8a2240e132c> <http://data.lblod.info/submissions/647226E5DFFA7D16FCF13866>)
+    (<http://data.lblod.info/submissions/656F216C6B73131F2209A0EE> <http://data.lblod.info/id/besturenVanDeEredienst/b0d8d6503289d28cbd94ba95dad20e7b> <http://data.lblod.info/submissions/64B70649D542342DC92A75AC>)
+    (<http://data.lblod.info/submissions/656F216C6B73131F2209A0EE> <http://data.lblod.info/id/besturenVanDeEredienst/ee39915cfd95476af56294bd84ec344b> <http://data.lblod.info/submissions/64785A7A122065AEA96D80E5>)
+    (<http://data.lblod.info/submissions/6564501C6B73131F220998BE> <http://data.lblod.info/id/besturenVanDeEredienst/100cfb1668b71ea5b0165ab7d80eb9ea> <http://data.lblod.info/submissions/6542BB24B1228B3021C4A2FC>)
+    (<http://data.lblod.info/submissions/656331BD6B73131F220998AF> <http://data.lblod.info/id/besturenVanDeEredienst/3cf7d81613b9cd1add4c5e081f67af8a> <http://data.lblod.info/submissions/64CE2D638211CADE744D5F28>)
+    (<http://data.lblod.info/submissions/656330C26B73131F220998AD> <http://data.lblod.info/id/besturenVanDeEredienst/ee380ce0ad7b5d56f9b75c8b47fa7d51> <http://data.lblod.info/submissions/64CE2CE88211CADE744D5F26>)
+    (<http://data.lblod.info/submissions/6561C1F16B73131F2209989F> <http://data.lblod.info/id/besturenVanDeEredienst/ddd0b8b7481569d905a03ebbd0c57b41> <http://data.lblod.info/submissions/64CD03CD8211CADE744D5F11>)
+    (<http://data.lblod.info/submissions/6561C0776B73131F2209989D> <http://data.lblod.info/id/besturenVanDeEredienst/00b825fd5853836076e60ebd7393e23a> <http://data.lblod.info/submissions/64CFCDC08211CADE744D5F3A>)
+    (<http://data.lblod.info/submissions/6561BFA66B73131F2209989B> <http://data.lblod.info/id/besturenVanDeEredienst/567a1bd8a4e2be8817ff8af27c93efbd> <http://data.lblod.info/submissions/654A1F8FB1228B3021C4A5C2>)
+    (<http://data.lblod.info/submissions/6560C2D66B73131F22099889> <http://data.lblod.info/id/besturenVanDeEredienst/da95046fec68766dda604962409dea98> <http://data.lblod.info/submissions/64D09D538211CADE744D5F45>)
+    (<http://data.lblod.info/submissions/6560C2066B73131F22099887> <http://data.lblod.info/id/besturenVanDeEredienst/a07c38a4a3929b03ad09ae5abc7284fb> <http://data.lblod.info/submissions/64C794003DBB9450D42ECF8F>)
+    (<http://data.lblod.info/submissions/6560B9C26B73131F2209987B> <http://data.lblod.info/id/besturenVanDeEredienst/567a1bd8a4e2be8817ff8af27c93efbd> <http://data.lblod.info/submissions/654A1DF1B1228B3021C4A5C0>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/3ace8ab4dd27af151359ceb597f068cb> <http://data.lblod.info/submissions/645222C013DD59137252E82E>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/bc2f106698d624859de4d476b73c8049> <http://data.lblod.info/submissions/64B9AD3B851D1D3D77246A85>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/2465fbe7482b4e50efec0c04f9f084dd> <http://data.lblod.info/submissions/6457B77296E712C7B93EF39F>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/d7cc95c52b384b0376fedc038323c4c3> <http://data.lblod.info/submissions/6495B0C4466DF3AEF9611AE0>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/d7cc95c52b384b0376fedc038323c4c3> <http://data.lblod.info/submissions/6495B296466DF3AEF9611AE2>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/5e20a06484b267aac944931d0f2dcd37> <http://data.lblod.info/submissions/644258F1E292D660565F8A59>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/5e20a06484b267aac944931d0f2dcd37> <http://data.lblod.info/submissions/64425843E292D660565F8A57>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/46eb78a8651d8e244cfb5e22609193f4> <http://data.lblod.info/submissions/649E76A0DF59915D2D01AC45>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/cf0943d286056ca0c7ca795614634d1f> <http://data.lblod.info/submissions/64C91A9F3DBB9450D42ECFEB>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/2f4cf2989463eb7f4dc5786fb3a2890c> <http://data.lblod.info/submissions/64AB2CD9B3F8FCA3E6EE24DD>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/d3592ca6fb308a0c8aecdd25b84d6368> <http://data.lblod.info/submissions/64980A4D466DF3AEF9611AF0>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/84e24f46db48383c03f01651de6885e8> <http://data.lblod.info/submissions/649ADA4A2B4B0208D6A8E07F>)
+    (<http://data.lblod.info/submissions/655C6C5A48AC6002CD679613> <http://data.lblod.info/id/besturenVanDeEredienst/c3e8451760f1da1cb7b01881ba1b0be7> <http://data.lblod.info/submissions/64AA9723B3F8FCA3E6EE24D5>)
+    (<http://data.lblod.info/submissions/655B604A48AC6002CD6795CE> <http://data.lblod.info/id/besturenVanDeEredienst/3b932d274c79ef5583fb0995686a4357> <http://data.lblod.info/submissions/65369A160D9A7F921679CB5F>)
+    (<http://data.lblod.info/submissions/655B604A48AC6002CD6795CE> <http://data.lblod.info/id/besturenVanDeEredienst/32bd5e066ad3ba95db753b1ad9d3b39e> <http://data.lblod.info/submissions/6553BE2648AC6002CD6793DC>)
+    (<http://data.lblod.info/submissions/655B604A48AC6002CD6795CE> <http://data.lblod.info/id/besturenVanDeEredienst/d69d8a3ca0ef4c34acd1a0664301f411> <http://data.lblod.info/submissions/654938ACB1228B3021C4A50D>)
+    (<http://data.lblod.info/submissions/655B604A48AC6002CD6795CE> <http://data.lblod.info/id/besturenVanDeEredienst/c31f20c9997e1eac11bda1e9ecf45ab5> <http://data.lblod.info/submissions/654DE07436DC16BE0224F1DA>)
+    (<http://data.lblod.info/submissions/653A89810D9A7F921679D023> <http://data.lblod.info/id/besturenVanDeEredienst/8000fb8910f3f7afb10056217339acbe> <http://data.lblod.info/submissions/64B50D25D542342DC92A74C3>)
+    (<http://data.lblod.info/submissions/653A89810D9A7F921679D023> <http://data.lblod.info/id/besturenVanDeEredienst/a0d960d87251f4f398d927f8ef033608> <http://data.lblod.info/submissions/64DCA5E49D63C69321AD8743>)
+    (<http://data.lblod.info/submissions/653A89810D9A7F921679D023> <http://data.lblod.info/id/besturenVanDeEredienst/beb4a48c99d8f5feed67b8e7443c31ce> <http://data.lblod.info/submissions/649EA841DF59915D2D01AD1E>)
+    (<http://data.lblod.info/submissions/6538CD7B0D9A7F921679CD1B> <http://data.lblod.info/id/besturenVanDeEredienst/d112b24e30528365a668f0f4d4a8f8db> <http://data.lblod.info/submissions/64ECD67CAEBD194C3E62B96D>)
+  }
+  GRAPH ?g {
+    ?crossRefDocument
+      a mob:Submission ;
+      pav:createdBy ?crossRefeenheid ;
+      dct:subject ?subjectCrossRef .
+  }
+  GRAPH ?j {
+    ?ckbSubmission
+      a mob:Submission ;
+      prov:generated ?ckbFormData .
+  }
+  BIND (?j AS ?u)
+}
