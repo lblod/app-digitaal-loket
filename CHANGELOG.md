@@ -6,6 +6,7 @@
 
 - Add `migrations-publication-triplestore` as a migration service for the publication-triplestore [DL-6349]
 - Re-export 12 submissions and their related subjects, because they are missing from Worship Decisions Database, see migrations and deploy instructions [DL-6349]
+- Update form 'Reglementen en verordeningen' decidableBy for 3 more admin units [DL-6357]
 - Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
 
 ### Deploy instructions

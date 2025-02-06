@@ -1,0 +1,12 @@
+PREFIX besluit: <http://lblod.data.gift/vocabularies/besluit/>
+PREFIX BestuurseenheidClassificatieCode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+PREFIX BesluitType: <https://data.vlaanderen.be/id/concept/BesluitType/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    BesluitType:67378dd0-5413-474b-8996-d992ef81637a
+      besluit:decidableBy BestuurseenheidClassificatieCode:d01bb1f6-2439-4e33-9c25-1fc295de2e71 ; # Dienstverlenende vereniging
+      besluit:decidableBy BestuurseenheidClassificatieCode:cd93f147-3ece-4308-acab-5c5ada3ec63d ; # Opdrachthoudende vereniging
+      besluit:decidableBy BestuurseenheidClassificatieCode:4b8450cf-a326-4c66-9e63-b4ec10acc7f6 . # Opdrachthoudende vereniging met private deelname
+   }
+}
