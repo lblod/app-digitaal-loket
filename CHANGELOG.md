@@ -9,6 +9,7 @@
 - Update form 'Reglementen en verordeningen' decidableBy for 3 more admin units [DL-6357]
 - Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
 - Add report to detect harvested and non-harvested mandatarissen having the same position in the same organization. [DL-6342]
+- Remove submissions export config replaced by op sync [DL-6394]
 
 ### Deploy instructions
 
