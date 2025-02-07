@@ -10,6 +10,7 @@
 - Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
 - Add report to detect harvested and non-harvested mandatarissen having the same position in the same organization. [DL-6342]
 - Remove submissions export config replaced by op sync [DL-6394]
+- Add migration that removes three older, broken EredienstMandatarissen pointing to non-existing people and contact points [DL-5662]
 
 ### Deploy instructions
 
