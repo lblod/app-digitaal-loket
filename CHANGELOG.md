@@ -10,6 +10,7 @@
 - Add `Opdrachthoudende vereniging met private deelname` classification type for mock-login roles and submission types. [DL-6384]
 - Add report to detect harvested and non-harvested mandatarissen having the same position in the same organization. [DL-6342]
 - Remove submissions export config replaced by op sync [DL-6394]
+- Repair old cross referencing submissions from CKB's. These predate the cross referencing feature. [DL-6415]
 - Add migration that removes three older, broken EredienstMandatarissen pointing to non-existing people and contact points [DL-5662]
 
 ### Deploy instructions
@@ -51,6 +52,14 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 **For the report**
 
 - `drc restart report-generation`
+
+**For repairing CKB cross referencing submissions**
+
+**NOTE:** the following instructions have already been executed by a previous section.
+
+- Start healing on the `delta-producer-publication-graph-maintainer` via the `delta-producer-background-jobs-initiator`
+  * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
+  * This can also take a while, up to an hour.
 
 ## 1.108.1 (2025-02-04)
 
