@@ -1,0 +1,16 @@
+DELETE {
+  GRAPH ?g {
+    ?eredienstmandataris ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES ?eredienstmandataris {
+      <http://data.lblod.info/id/mandatarissen/655261E264C1DE6C7E83956F>
+      <http://data.lblod.info/id/mandatarissen/655261A964C1DE6C7E83956E>
+      <http://data.lblod.info/id/mandatarissen/6552621E64C1DE6C7E839572>
+    }
+    ?eredienstmandataris ?p ?o .
+  }
+}
+
