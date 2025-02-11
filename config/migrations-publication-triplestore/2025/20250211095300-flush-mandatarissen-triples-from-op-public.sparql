@@ -1,0 +1,41 @@
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer> {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer> {
+    ?s ?p ?o .
+
+    FILTER EXISTS {
+      ?s a ?type .
+
+      VALUES ?type {
+        <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>
+        <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>
+        <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+        <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>
+      }
+    }
+
+  }
+}
+
+;
+
+# We need to be able to export aantalHouders but when doing so the type is also automatically produced
+# We don't flush it to avoid it being produced after the next healing
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer> {
+    ?s ?p ?o .
+  }
+} WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer> {
+    ?s a <http://data.vlaanderen.be/ns/mandaat#Mandaat>;
+      ?p ?o .
+
+    FILTER (?p NOT IN (
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>,
+      <http://data.vlaanderen.be/ns/mandaat#aantalHouders>
+    ))
+  }
+}
