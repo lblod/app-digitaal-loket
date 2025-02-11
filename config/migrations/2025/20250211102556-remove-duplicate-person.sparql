@@ -1,0 +1,31 @@
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+
+# Update the reference of the duplicate person to the correct person
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/functionarissen/677CFAAFA0D1558085B90DE6> mandaat:isBestuurlijkeAliasVan <http://data.lblod.info/id/personen/677CFA9FA0D1558085B90DE5> .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/functionarissen/677CFAAFA0D1558085B90DE6> mandaat:isBestuurlijkeAliasVan <http://data.lblod.info/id/personen/5FCFA65879CE53000800061F> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/functionarissen/677CFAAFA0D1558085B90DE6> mandaat:isBestuurlijkeAliasVan <http://data.lblod.info/id/personen/677CFA9FA0D1558085B90DE5> .
+  }
+}
+;
+
+# Cleanup the duplicate person
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/677CFA9FA0D1558085B90DE5> ?p ?o .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/677CFA9FA0D1558085B90DE5> ?p ?o .
+  }
+}
