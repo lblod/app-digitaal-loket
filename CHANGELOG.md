@@ -12,8 +12,15 @@
 - Remove submissions export config replaced by op sync [DL-6394]
 - Repair old cross referencing submissions from CKB's. These predate the cross referencing feature. [DL-6415]
 - Add migration that removes three older, broken EredienstMandatarissen pointing to non-existing people and contact points [DL-5662]
+- Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeent [DL-6431]
 
 ### Deploy instructions
+
+**New migrations**
+
+```
+drc restart migrations
+```
 
 **For re-exporting submissions**
 
