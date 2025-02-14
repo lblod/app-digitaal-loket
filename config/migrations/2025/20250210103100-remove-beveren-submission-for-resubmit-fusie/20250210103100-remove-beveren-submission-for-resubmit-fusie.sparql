@@ -1,0 +1,43 @@
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  GRAPH ?g {
+    ?submission ?sp ?so .
+    ?submissionDocument ?sdp ?sdo .
+    ?pFile ?pp ?po .
+    ?formData ?fp ?fo .
+    ?lFile ?lp ?lo .
+    ?pFile2 ?p2p ?p2o .
+  }
+}
+WHERE {
+  BIND (<http://data.lblod.info/submissions/e584c610-c9cc-11ef-8dbd-999796ee841d> as ?submission)
+  GRAPH ?g {
+    {
+      ?submission ?sp ?so .
+    } UNION {
+      ?submission dct:subject ?submissionDocument .
+      ?submissionDocument ?sdp ?sdo .
+    } UNION {
+      ?submission dct:subject ?submissionDocument .
+      ?submissionDocument dct:source ?pFile .
+      ?pFile ?pp ?po .
+    } UNION {
+      ?submission prov:generated ?formData .
+      ?formData ?fp ?fo .
+    } UNION {
+      ?submission prov:generated ?formData .
+      ?formData dct:hasPart ?lFile .
+      ?lFile ?lp ?lo .
+    } UNION {
+      ?submission prov:generated ?formData .
+      ?formData dct:hasPart ?lFile .
+      ?pFile2 nie:dataSource ?lFile .
+      ?pFile2 ?p2p ?p2o .
+    }
+  }
+}
