@@ -1,0 +1,11 @@
+# Insert missing data for Opdrachthoudende vereniging met private deelname
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/4b8450cf-a326-4c66-9e63-b4ec10acc7f6> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/06bad311-e964-48a4-9b6b-f765819e76e0> ; # "Loket leidinggevenden export" (Check if needed)
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode> ;
+      <http://schema.org/publication> <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> . # "Publicatie op de publieke beslissings database"@nl (Check if needed)
+  }
+}

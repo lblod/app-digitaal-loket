@@ -1,0 +1,19 @@
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dbpedia: <http://dbpedia.org/resource/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <share://semantic-forms/20250213131736-forms.ttl> a nfo:FileDataObject ;
+      dct:type <http://data.lblod.gift/concepts/form-file-type> ;
+      mu:uuid "c96856a6-5497-4c6d-99d4-d24c6f30c79a" ;
+      nfo:fileName "20250213131736-forms.ttl" ;
+      dct:created "2025-02-13T13:17:36"^^xsd:dateTime ;
+      dct:modified "2025-02-13T13:17:36"^^xsd:dateTime ;
+      dct:format "text/turtle";
+      nfo:fileSize "475499"^^xsd:integer;
+      dbpedia:fileExtension "ttl" .
+  }
+}
