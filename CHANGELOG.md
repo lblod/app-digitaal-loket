@@ -14,6 +14,7 @@
 - Add migration that removes three older, broken EredienstMandatarissen pointing to non-existing people and contact points [DL-5662]
 - Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeente [DL-6431]
 - Add migration that cleans up a duplicate person [DL-6378]
+- Add migration that removes mock-logins (impersonation) for certain fusiegemeenten and their OCMWs, for mock-login repair [DL-6375]
 
 ### Deploy instructions
 
@@ -68,6 +69,10 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 - Start healing on the `delta-producer-publication-graph-maintainer` via the `delta-producer-background-jobs-initiator`
   * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
   * This can also take a while, up to an hour.
+
+**For repairing mock-logins (and impersonation)**
+
+- `drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins`
 
 ## 1.108.1 (2025-02-04)
 
