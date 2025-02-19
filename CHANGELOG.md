@@ -16,6 +16,7 @@
 - Add migration that cleans up a duplicate person [DL-6378]
 - Update semantic forms with `Opdrachthoudende vereniging met private deelname` classification. [DL-6447]
 - Bump enrich-submission-serivce to show kbo numbers in dropdowns [DL-6416]
+- Add migration that removes mock-logins (impersonation) for certain fusiegemeenten and their OCMWs, for mock-login repair [DL-6375]
 
 ### Deploy instructions
 
@@ -74,6 +75,10 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 **For updating the semantic forms**
 
 - `drc up -d enrich-submission`
+
+**For repairing mock-logins (and impersonation)**
+
+- `drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins`
 
 ## 1.108.1 (2025-02-04)
 
