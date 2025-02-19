@@ -15,6 +15,7 @@
 - Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeente [DL-6431]
 - Add migration that cleans up a duplicate person [DL-6378]
 - Update semantic forms with `Opdrachthoudende vereniging met private deelname` classification. [DL-6447]
+- Bump enrich-submission-serivce to show kbo numbers in dropdowns [DL-6416]
 
 ### Deploy instructions
 
