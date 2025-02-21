@@ -1,0 +1,60 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    VALUES ?type {
+      <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>
+      <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+      <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>
+    }
+    ?s
+      rfd:type ?type ;
+      ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s
+      rfd:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      ?p ?o .
+
+    FILTER (?p NOT IN (
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ,
+      <http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>
+    ))
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s
+      rfd:type <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie> ;
+      ?p ?o .
+
+    FILTER (?p NOT IN (
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ,
+      <http://schema.org/contactPoint>
+    ))
+  }
+}
+
