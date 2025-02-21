@@ -13,6 +13,7 @@
 - Repair old cross referencing submissions from CKB's. These predate the cross referencing feature. [DL-6415]
 - Add migration that removes three older, broken EredienstMandatarissen pointing to non-existing people and contact points [DL-5662]
 - Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update leidinggevenden producer to stop producing what OP produces [DL-6449]
 
 ### Deploy instructions
 
@@ -54,7 +55,7 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 
 - `drc restart report-generation`
 
-**For the updated mandatarissen producer configuration**
+**For the updated mandatarissen and leidingevenden producer configuration**
 
 - `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
 
