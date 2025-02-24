@@ -21,51 +21,6 @@
   },
   "export": [
     {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
-      ]
-    },
-    {
-      "type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#altLabel",
-        "http://data.vlaanderen.be/ns/besluit#werkingsgebied",
-        "http://data.vlaanderen.be/ns/besluit#classificatie"
-      ]
-    },
-    {
-      "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie"
-      ]
-    },
-    {
       "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "hasRegexGraphsFilter": false,
@@ -76,44 +31,7 @@
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
       "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://data.vlaanderen.be/ns/mandaat#bindingEinde",
-        "http://data.vlaanderen.be/ns/mandaat#bindingStart",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
         "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie"
-      ]
-    },
-    {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
-      ]
-    },
-    {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
       ]
     },
     {
@@ -179,10 +97,7 @@
         "http://www.w3.org/2004/02/skos/core#inScheme"
       ],
       "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/ns/org#role",
-        "http://schema.org/contactPoint",
-        "http://www.w3.org/2004/02/skos/core#prefLabel"
+        "http://schema.org/contactPoint"
       ]
     },
     {
