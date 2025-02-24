@@ -80,6 +80,13 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 
 - `drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins`
 
+## 1.108.2 (2025-02-24)
+### General
+- Cleanup submission export config. [DL-6469]
+### Deploy Notes
+```
+drc restart export-submissions
+```
 ## 1.108.1 (2025-02-04)
 
 - Bump vendor-data-distribution
