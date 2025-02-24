@@ -1,4 +1,11 @@
 # Changelog
+## 1.108.2 (2025-02-24)
+### General
+- Cleanup submission export config. [DL-6469]
+### Deploy Notes
+```
+drc restart export-submissions
+```
 ## 1.108.1 (2025-02-04)
 - Bump vendor-data-distribution
 ### Deploy instructions
@@ -19,7 +26,7 @@ drc up -d vendor-data-distribution
 - Add Jaarrekening PEVA form [DL-6284]
 - Bump `berichtencentrum-sync-with-kalliope-service` [DL-6370]
 - Bump `automatic-submission-service` [DL-6382]
-- Fix bestuursorganen label. 
+- Fix bestuursorganen label.
 #### Frontend
 
 - `v0.99.3` (DL-5449): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v0993-2025-01-07
@@ -68,7 +75,7 @@ For the resync of the harvested data:
   BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: "true"
   ```
 - `drc stop dispatcher-worship-mandates` to speed up the initial sync later
-- `drc up -d eredienst-mandatarissen-consumer` 
+- `drc up -d eredienst-mandatarissen-consumer`
 - `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/flush`
   * Wait for the flush to be successful `drc logs -f eredienst-mandatarissen-consumer`
 - `drc exec eredienst-mandatarissen-consumer curl -X POST http://localhost/initial-sync-jobs`
