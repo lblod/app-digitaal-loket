@@ -13,7 +13,7 @@ WHERE {
       <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>
     }
     ?s
-      rfd:type ?type ;
+      rdf:type ?type ;
       ?p ?o .
   }
 }
@@ -28,7 +28,7 @@ DELETE {
 WHERE {
   GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
     ?s
-      rfd:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
       ?p ?o .
 
     FILTER (?p NOT IN (
@@ -48,7 +48,7 @@ DELETE {
 WHERE {
   GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
     ?s
-      rfd:type <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie> ;
+      rdf:type <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie> ;
       ?p ?o .
 
     FILTER (?p NOT IN (
