@@ -174,17 +174,6 @@ export default {
       additionalFilter: "?s a meb:Submission ; ext:lastModifiedBy ?resource ."
     },
     {
-      type: "melding:AutomaticSubmissionTask",
-      requiredProperties: [
-        "mu:uuid"
-      ],
-      optionalProperties: [
-        "dct:created",
-        "prov:generated"
-      ],
-      additionalFilter: ""
-    },
-    {
       type: "toezicht:InzendingVoorToezicht",
       requiredProperties: [
         "mu:uuid"
