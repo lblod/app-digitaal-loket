@@ -55,7 +55,7 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 
 - `drc restart report-generation`
 
-**For the updated mandatarissen and leidingevenden producer configuration**
+**For the updated mandatarissen and leidinggevenden producer configuration**
 
 - `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
 
