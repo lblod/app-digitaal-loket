@@ -1,0 +1,18 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+    ?session ?sessionP ?sessionO .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+  ?session <http://mu.semte.ch/vocabularies/ext/sessionGroup> ?organization ;
+    <http://mu.semte.ch/vocabularies/ext/sessionRole> ?sessionRole ;
+    <http://purl.org/dc/terms/modified> ?modified ;
+    ?sessionP ?sessionO .
+  }
+
+  BIND(xsd:dateTime(REPLACE(STR(?modified), "Z", "")) AS ?date)
+  BIND(xsd:date(NOW() - "P1M"^^xsd:duration) AS ?lastMonth)
+
+  FILTER(xsd:date(?date) <= ?lastMonth)
+}
