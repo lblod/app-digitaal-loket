@@ -92,6 +92,26 @@ Make sure `dbcleanup` is not currently executing a job:
 drc stop dbcleanup && drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup
 ```
 
+**For adding the new cleanup job**
+
+```shell
+drc restart migrations && drc logs -ft --tail=200 migrations
+```
+
+Make sure `dbcleanup` is not currently executing a job:
+```shell
+drc stop dbcleanup && drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup
+```
+
+## 1.108.3 (2025-02-26)
+### General
+ - Fix load issue with healing submission.
+  - Also updated config in worship-submission, so we won't run into it later
+    - [DL-6469]
+### Deploy Notes
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
 ## 1.108.2 (2025-02-24)
 ### General
 - Cleanup submission export config. [DL-6469]
