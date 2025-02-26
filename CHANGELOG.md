@@ -1,4 +1,12 @@
 # Changelog
+## 1.108.2 (2025-02-26)
+- Fix performance issue (too large strings) for healing of submission.
+  - see also: `https://github.com/lblod/delta-producer-publication-graph-maintainer/pull/37`
+    - DL-6469
+### deploy notes
+```
+drc up -d  delta-producer-publication-graph-maintainer
+```
 ## 1.108.1 (2025-02-04)
 - Bump vendor-data-distribution
 ### Deploy instructions
