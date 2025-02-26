@@ -92,17 +92,6 @@ Make sure `dbcleanup` is not currently executing a job:
 drc stop dbcleanup && drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup
 ```
 
-**For adding the new cleanup job**
-
-```shell
-drc restart migrations && drc logs -ft --tail=200 migrations
-```
-
-Make sure `dbcleanup` is not currently executing a job:
-```shell
-drc stop dbcleanup && drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup
-```
-
 ## 1.108.3 (2025-02-26)
 ### General
  - Fix load issue with healing submission.
