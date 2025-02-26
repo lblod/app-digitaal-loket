@@ -1,4 +1,11 @@
 # Changelog
+## 1.108.3 (2025-02-26)
+- updated the configuration of worship-submissions.
+  See DL-6469
+### deploy notes
+```
+drc up restart delta-producer-publication-graph-maintainer
+```
 ## 1.108.2 (2025-02-26)
 - Fix performance issue (too large strings) for healing of submission.
   - see also: `https://github.com/lblod/delta-producer-publication-graph-maintainer/pull/37`
