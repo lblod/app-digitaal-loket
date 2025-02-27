@@ -1,3 +1,5 @@
+# Clean up user sessions older than 6 months
+
 DELETE {
   GRAPH <http://mu.semte.ch/graphs/sessions> {
     ?session ?sessionP ?sessionO .

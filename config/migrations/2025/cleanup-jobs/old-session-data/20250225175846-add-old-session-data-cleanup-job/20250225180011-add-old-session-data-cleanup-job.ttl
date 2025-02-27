@@ -4,7 +4,7 @@
 
 <http://data.lblod.info/id/cleanup-job/f294e44b-e322-437c-9832-8440cbd18b0e> a cleanup:Job ;
   mu:uuid "f294e44b-e322-437c-9832-8440cbd18b0e" ;
-  dcterms:title "Cleanup user sessions older than a month" ;
+  dcterms:title "Clean up user sessions older than a month" ;
   cleanup:randomQuery """
     DELETE {
       GRAPH <http://mu.semte.ch/graphs/sessions> {
