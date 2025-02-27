@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+### General
+- Update mandatarissen producer to stop producing what OP produces [DL-6210]
+
+### Deploy instructions
+**For the updated mandatarissen producer configuration**
+
+- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
+
 ## 1.109.0 (2025-02-27)
 
 ### General
