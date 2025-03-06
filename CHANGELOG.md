@@ -7,8 +7,13 @@
 - Update mandatarissen producer to stop producing what OP produces [DL-6210]
 - Update mandatarissen producer to stop producing what OP produces [DL-6210]
 - Update leidinggevenden producer to stop producing what OP produces [DL-6449]
+- Bump deliver-bbcdr [DL-6481]
 
 ### Deploy instructions
+
+**General
+
+Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4.0-rc.1` in `docker-compose.override.yml` is removed.
 
 **For the updated mandatarissen producer configuration**
 
@@ -17,6 +22,8 @@
 **For the updated mandatarissen and leidinggevenden producer configuration**
 
 - `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
+
+
 
 ## 1.109.0 (2025-02-27)
 
