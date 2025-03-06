@@ -21,20 +21,6 @@
   },
   "export": [
     {
-      "type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie"
-      ]
-    },
-    {
       "type": "http://schema.org/ContactPoint",
       "graphsFilter": [ "http://mu.semte.ch/graphs/organizations/.*/LoketLB-leidinggevendenGebruiker" ],
       "hasRegexGraphsFilter": true,
