@@ -1,0 +1,38 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+DELETE {
+  GRAPH ?g {
+    ?person ?pperson ?operson .
+    ?account ?paccount ?oaccount .
+  }
+}
+WHERE {
+  VALUES ?bestuur {
+    <http://data.lblod.info/id/bestuurseenheden/104f32d7fb8d4b8b61b71717301656f136fe046eabaf126fb3325896b5c2d625> # Gemeente Tongeren-Borgloon
+    <http://data.lblod.info/id/bestuurseenheden/05441122597e0b20b61a8968ea1247c07f9014aad1f1f0709d0b1234e3dfbc2f> # Gemeente Borgloon
+    <http://data.lblod.info/id/bestuurseenheden/99da98a7a0087d3429b084ebfc4eb5d488c593790d4d5af7253982a2e21a6a5f> # Gemeente Bilzen-Hoeselt
+    <http://data.lblod.info/id/bestuurseenheden/a3bd0845853278f478f90b14436d3efa99e73249a84d462f0ddc2e5b6e37a156> # Gemeente Hoeselt
+    <http://data.lblod.info/id/bestuurseenheden/af8969752f6b28c66b6bc402d7987fa38774901ac72b95c5cb7976570487c3c9> # Gemeente Tessenderlo
+    <http://data.lblod.info/id/bestuurseenheden/05099fa1f6524b8b994d86f61549455d2c00b2a956d5308683ac2d1f810fc729> # Gemeente Tessenderlo-Ham
+
+    <http://data.lblod.info/id/bestuurseenheden/9ae900a5447b7d727ca6496910220d4389aba7f1869923f1bbf9729bdeca28e2> # OCMW Bilzen-Hoeselt
+    <http://data.lblod.info/id/bestuurseenheden/3834647b5e95ea20f5ffe5a12a09fbd3d7fdf0d187fab385cb7b841422176ad6> # OCMW Borgloon
+    <http://data.lblod.info/id/bestuurseenheden/785e8d5516378c7382ad0e7e356d2301496d810c6cd46d72ccebb455d3ac525e> # OCMW Hoeselt
+    <http://data.lblod.info/id/bestuurseenheden/fb1be873c4b31e391613dfae8e68edd694b1fdf126eeecb502b1e5cad6f2f682> # OCMW Tessenderlo
+    <http://data.lblod.info/id/bestuurseenheden/42a43591e0db1dca9432f480f0f49f9bd4056c2b131e2fc997497130f5e099d0> # OCMW Tessenderlo-Ham
+    <http://data.lblod.info/id/bestuurseenheden/ab684633d605d93dbbe6b9ea40667e2bcf03a0856cafe1825e95b7829ed502a3> # OCMW Tongeren-Borgloon
+  }
+  GRAPH ?g {
+    ?person
+      foaf:member ?bestuur ;
+      foaf:account ?account ;
+      ?pperson ?operson .
+
+    ?account ?paccount ?oaccount .
+  }
+}

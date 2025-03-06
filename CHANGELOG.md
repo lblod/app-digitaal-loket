@@ -4,6 +4,24 @@
 
 ### General
 
+- Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update leidinggevenden producer to stop producing what OP produces [DL-6449]
+
+### Deploy instructions
+
+**For the updated mandatarissen producer configuration**
+
+- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
+
+**For the updated mandatarissen and leidinggevenden producer configuration**
+
+- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
+
+## 1.109.0 (2025-02-27)
+
+### General
+
 - Add `migrations-publication-triplestore` as a migration service for the publication-triplestore [DL-6349]
 - Re-export 12 submissions and their related subjects, because they are missing from Worship Decisions Database, see migrations and deploy instructions [DL-6349]
 - Update form 'Reglementen en verordeningen' decidableBy for 3 more admin units [DL-6357]
@@ -12,10 +30,20 @@
 - Remove submissions export config replaced by op sync [DL-6394]
 - Repair old cross referencing submissions from CKB's. These predate the cross referencing feature. [DL-6415]
 - Add migration that removes three older, broken EredienstMandatarissen pointing to non-existing people and contact points [DL-5662]
-- Update mandatarissen producer to stop producing what OP produces [DL-6210]
-- Update leidinggevenden producer to stop producing what OP produces [DL-6449]
+- Add migration that removes two submissions from Gemeente Beveren that should have been submitted under the new fusie gemeente [DL-6431]
+- Add migration that cleans up a duplicate person [DL-6378]
+- Update semantic forms with `Opdrachthoudende vereniging met private deelname` classification. [DL-6447]
+- Bump enrich-submission-serivce to show kbo numbers in dropdowns [DL-6416]
+- Add migration that removes mock-logins (impersonation) for certain fusiegemeenten and their OCMWs, for mock-login repair [DL-6375]
+- Delete user login sessions older than a month. [DL-6467]
 
 ### Deploy instructions
+
+**New migrations**
+
+```
+drc restart migrations
+```
 
 **For re-exporting submissions**
 
@@ -55,10 +83,6 @@ drc logs --tail 1000 -f prepare-submissions-for-export
 
 - `drc restart report-generation`
 
-**For the updated mandatarissen and leidinggevenden producer configuration**
-
-- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
-
 **For repairing CKB cross referencing submissions**
 
 **NOTE:** the following instructions have already been executed by a previous section.
@@ -67,6 +91,41 @@ drc logs --tail 1000 -f prepare-submissions-for-export
   * `drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs`
   * This can also take a while, up to an hour.
 
+**For updating the semantic forms**
+
+- `drc up -d enrich-submission`
+
+**For repairing mock-logins (and impersonation)**
+
+- `drc exec update-bestuurseenheid-mock-login curl -X POST http://localhost/heal-mock-logins`
+
+**For adding the new cleanup job**
+
+```shell
+drc restart migrations && drc logs -ft --tail=200 migrations
+```
+
+Make sure `dbcleanup` is not currently executing a job:
+```shell
+drc stop dbcleanup && drc up -d dbcleanup && drc logs -ft --tail=200 dbcleanup
+```
+
+## 1.108.3 (2025-02-26)
+### General
+ - Fix load issue with healing submission.
+  - Also updated config in worship-submission, so we won't run into it later
+    - [DL-6469]
+### Deploy Notes
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
+## 1.108.2 (2025-02-24)
+### General
+- Cleanup submission export config. [DL-6469]
+### Deploy Notes
+```
+drc restart export-submissions
+```
 ## 1.108.1 (2025-02-04)
 
 - Bump vendor-data-distribution

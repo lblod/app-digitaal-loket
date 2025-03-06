@@ -118,7 +118,42 @@
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource",
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url"
       ],
-      "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1>."
+      "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1>.",
+      "healingOptions": {
+         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+           "queryChunkSize": 500000
+         },
+         "http://mu.semte.ch/vocabularies/core/uuid": {
+           "queryChunkSize": 500000
+         },
+         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName": {
+           "queryChunkSize": 500000
+         },
+         "http://purl.org/dc/terms/format": {
+           "queryChunkSize": 500000
+         },
+         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileSize": {
+           "queryChunkSize": 500000
+         },
+         "http://dbpedia.org/ontology/fileExtension": {
+           "queryChunkSize": 500000
+         },
+         "http://purl.org/dc/terms/created": {
+           "queryChunkSize": 500000
+         },
+         "http://purl.org/dc/terms/modified": {
+           "queryChunkSize": 500000
+         },
+         "http://purl.org/dc/terms/type": {
+           "queryChunkSize": 500000
+         },
+         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource": {
+           "queryChunkSize": 500000
+         },
+         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url": {
+           "queryChunkSize": 500000
+         }
+      }
     },
     {
       "type": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject",
@@ -136,7 +171,45 @@
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource",
         "http://www.w3.org/ns/adms#status"
       ],
-      "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1>."
+      "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1>.",
+      "healingOptions": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+          "queryChunkSize": 500000
+        },
+        "http://mu.semte.ch/vocabularies/core/uuid": {
+          "queryChunkSize": 500000
+        },
+        "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#url": {
+          "queryChunkSize": 500000
+        },
+        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName": {
+          "queryChunkSize": 500000
+        },
+        "http://purl.org/dc/terms/format": {
+          "queryChunkSize": 500000
+        },
+        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileSize": {
+          "queryChunkSize": 500000
+        },
+        "http://dbpedia.org/ontology/fileExtension": {
+          "queryChunkSize": 500000
+        },
+        "http://purl.org/dc/terms/created": {
+          "queryChunkSize": 500000
+        },
+        "http://purl.org/dc/terms/modified": {
+          "queryChunkSize": 500000
+        },
+        "http://purl.org/dc/terms/type": {
+          "queryChunkSize": 500000
+        },
+        "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource": {
+          "queryChunkSize": 500000
+        },
+        "http://www.w3.org/ns/adms#status": {
+          "queryChunkSize": 500000
+        }
+      }
     }
   ]
 }

@@ -303,9 +303,9 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.13.2
+    image: lblod/enrich-submission-service:1.13.3
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20250114144449-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20250213131736-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -551,7 +551,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.2.2
+    image: lblod/delta-producer-publication-graph-maintainer:1.4.0
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
