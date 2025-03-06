@@ -2,25 +2,6 @@
   "conceptScheme": "http://lblod.data.gift/concept-schemes/0887b850-b810-40d4-be0f-cafd01d3259b",
   "export": [
     {
-      "type": "http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://data.vlaanderen.be/ns/mandaat#status",
-        "http://www.w3.org/ns/org#holds",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
-      ]
-    },
-    {
       "type": "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
       "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
       "hasRegexGraphsFilter": false,
@@ -86,38 +67,6 @@
         "https://www.w3.org/ns/regorg#legalName",
         "http://www.w3.org/ns/org#memberOf",
         "http://www.w3.org/ns/org#linkedTo"
-      ]
-    },
-    {
-      "type": "http://data.vlaanderen.be/ns/mandaat#Mandaat",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://data.vlaanderen.be/ns/mandaat#aantalHouders"
-      ]
-    },
-    {
-      "type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://www.w3.org/ns/org#role",
-        "^http://www.w3.org/ns/org#hasPost",
-        "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "http://www.w3.org/2004/02/skos/core#scopeNote"
       ]
     },
     {
