@@ -1,11 +1,20 @@
 # Changelog
 
 ## Unreleased
+
 ### General
+
 - Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update leidinggevenden producer to stop producing what OP produces [DL-6449]
 
 ### Deploy instructions
+
 **For the updated mandatarissen producer configuration**
+
+- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
+
+**For the updated mandatarissen and leidinggevenden producer configuration**
 
 - `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
 

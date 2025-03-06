@@ -1,0 +1,80 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    VALUES ?type {
+      <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>
+      <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>
+      <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>
+    }
+    ?s
+      rdf:type ?type ;
+      ?p ?o .
+  }
+}
+
+;
+
+# With the new configuration of the producer, we only export Bestuursorganen that have a `isTijdspecialisatieVan`
+# relationship. For those, we need to keep the type. For the others (aka organen NOT in time), we want to flush the type.
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> ?orgaan ;
+      ?p ?o .
+
+    FILTER (?p NOT IN (
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ,
+      <http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>
+    ))
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s
+      rdf:type <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan> ;
+      <http://data.vlaanderen.be/ns/besluit#bestuurt> ?eenheid ;
+      ?p ?o .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s
+      rdf:type <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie> ;
+      ?p ?o .
+
+    FILTER (?p NOT IN (
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ,
+      <http://schema.org/contactPoint>
+    ))
+  }
+}
+
