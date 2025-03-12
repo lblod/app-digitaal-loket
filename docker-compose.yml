@@ -140,6 +140,8 @@ services:
     logging: *default-logging
   impersonation:
     image: lblod/impersonation-service:0.2.0
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   validation:
@@ -168,6 +170,8 @@ services:
       - ./data/files:/share
       # TODO: is this required? We'd like to avoid docker-volumes
       # - ./data/files/virus-scanner-signatures:/var/lib/clamav
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   create-bbcdr:
@@ -462,12 +466,16 @@ services:
   ##############################################################################
   vendor-login:
     image: lblod/vendor-login-service:1.0.0
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   sparql-authorization-wrapper:
     image: lblod/sparql-authorization-wrapper-service:1.0.0
     volumes:
       - ./config/sparql-authorization-wrapper:/config
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   vendor-data-distribution:
@@ -482,12 +490,16 @@ services:
       SPARQL_ENDPOINT_HEALING_OPERATIONS: "http://virtuoso:8890/sparql"
     volumes:
       - ./config/vendor-data:/config
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   berichtencentrum-melding:
     image: lblod/berichten-melding-service:1.0.2
     volumes:
       - ./data/files:/share
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   ################################################################################
@@ -537,6 +549,8 @@ services:
     environment:
       ALLOW_SUPER_CONSUMER: "true"
       ALLOWED_ACCOUNTS: "http://services.lblod.info/diff-consumer/account,http://data.lblod.info/foaf/account/id/dd85f516-ee7c-406b-8245-91ce7f9545b7,http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
+    labels:
+      - "logging=true"
     restart: always
     logging: *default-logging
   ################################################################################
