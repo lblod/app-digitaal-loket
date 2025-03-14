@@ -17,7 +17,10 @@ Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4
 
 **For the updated mandatarissen and leidinggevenden producer configuration**
 
-- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations`
+```
+drc up -d op-public-consumers
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations
+```
 
 ## 1.109.0 (2025-02-27)
 
