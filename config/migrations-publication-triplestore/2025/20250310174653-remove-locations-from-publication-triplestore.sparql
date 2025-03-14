@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+} WHERE {
+  VALUES ?g {
+    <http://redpencil.data.gift/id/deltas/producer/loket-mandatarissen-producer>
+    <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer>
+  }
+
+  GRAPH ?g {
+    ?s a <http://www.w3.org/ns/prov#Location>;
+      ?p ?o.
+  }
+}

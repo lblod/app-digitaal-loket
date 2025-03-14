@@ -129,24 +129,6 @@
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
         "http://xmlns.com/foaf/0.1/name"
       ]
-    },
-    {
-      "type": "http://www.w3.org/ns/prov#Location",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
-      "hasRegexGraphsFilter": false,
-      "pathToConceptScheme": [
-        "^http://mu.semte.ch/vocabularies/ext/inProvincie",
-        "^http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "^http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
-        "http://data.vlaanderen.be/ns/besluit#bestuurt",
-        "http://data.vlaanderen.be/ns/besluit#classificatie",
-        "http://www.w3.org/2004/02/skos/core#inScheme"
-      ],
-      "properties": [
-        "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2000/01/rdf-schema#label",
-        "http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau"
-      ]
     }
   ]
 }

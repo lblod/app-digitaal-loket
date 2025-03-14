@@ -1,0 +1,60 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/besluit#werkingsgebied> ?old
+  }
+}
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/besluit#werkingsgebied> ?new
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/besluit#werkingsgebied> ?old
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?s <http://data.vlaanderen.be/ns/besluit#werkingsgebied> ?new
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
+WHERE {
+  VALUES ?p {
+    <http://www.w3.org/2000/01/rdf-schema#label>
+    <http://mu.semte.ch/vocabularies/core/uuid>
+    <http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau>
+    <http://www.opengis.net/ont/geosparql#sfWithin>
+    <http://www.w3.org/2004/02/skos/core#exactMatch>
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
+
+;
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}
+WHERE {
+  VALUES ?p {
+    <http://www.w3.org/2000/01/rdf-schema#label>
+    <http://mu.semte.ch/vocabularies/core/uuid>
+    <http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau>
+    <http://www.opengis.net/ont/geosparql#sfWithin>
+    <http://www.w3.org/2004/02/skos/core#exactMatch>
+  }
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?s a <http://www.w3.org/ns/prov#Location>; ?p ?o
+  }
+}

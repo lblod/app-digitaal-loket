@@ -16,18 +16,11 @@
 
 Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4.0-rc.1` in `docker-compose.override.yml` is removed.
 
-**For the updated mandatarissen producer configuration**
-
-- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
-
 **For the updated mandatarissen and leidinggevenden producer configuration**
 
-- `drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer`
-
-**For adding the missing docker compose keys**
-
 ```
-drc up -d impersonation virus-scanner vendor-login sparql-authorization-wrapper vendor-data-distribution berichtencentrum-melding delta-files-share mocklogin
+drc up -d op-public-consumers
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations
 ```
 
 ## 1.109.0 (2025-02-27)
