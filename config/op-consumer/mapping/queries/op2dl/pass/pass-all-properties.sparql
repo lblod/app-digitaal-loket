@@ -1,6 +1,6 @@
 CONSTRUCT {
   ?s ?p ?o .
-}  
+}
 WHERE {
   ?s ?p ?o .
   FILTER EXISTS {
@@ -26,6 +26,7 @@ WHERE {
       <http://www.w3.org/ns/org#ChangeEvent>
       <http://www.w3.org/ns/org#Post>
       <http://www.w3.org/ns/org#Site>
+      <http://www.w3.org/ns/prov#Location>
     }
   }
 }
