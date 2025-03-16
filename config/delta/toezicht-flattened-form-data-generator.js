@@ -45,7 +45,8 @@ export default [
       ignoreFromSelf: true,
       optOutMuScopeIds: [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
-                          "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance",
+                          "http://redpencil.data.gift/id/concept/muScope/deltas/vendor-data"
       ]
     }
   },
