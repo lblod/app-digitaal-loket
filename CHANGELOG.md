@@ -9,6 +9,7 @@
 - Update leidinggevenden producer to stop producing what OP produces [DL-6449]
 - Bump deliver-bbcdr [DL-6481]
 - Add missing `labels` key for some services. [DL-6490]
+- Opt out of VDDS deltas for `resource` and `toezicht-flattened-form-data-generator`.
 
 ### Deploy instructions
 
@@ -21,6 +22,12 @@ Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4
 ```
 drc up -d op-public-consumers
 drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations
+```
+
+**For the opt out of VDDS deltas**
+
+```
+drc restart deltanotifier
 ```
 
 ## 1.109.0 (2025-02-27)
