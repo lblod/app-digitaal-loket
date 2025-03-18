@@ -420,7 +420,7 @@ services:
   eredienst-mandatarissen-consumer:
     image: lblod/delta-consumer:0.1.0
     volumes:
-      - ./config/delta-consumer/eredienst-mandatarissen:/config/triples-dispatching/custom-dispatching
+      - ./config/delta-consumers/eredienst-mandatarissen:/config/triples-dispatching/custom-dispatching
       - ./data/files/consumer-files:/consumer-files
     environment:
       DCR_SERVICE_NAME: "eredienst-mandatarissen-consumer"
@@ -611,7 +611,7 @@ services:
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
       SUDO_QUERY_RETRY: "true"
     volumes:
-      - ./config/op-consumer/mapping:/config/mapping
+      - ./config/delta-consumers/op-consumer/mapping:/config/mapping
       - ./data/files/consumer-files/op-public:/consumer-files/
     restart: always
     labels:
