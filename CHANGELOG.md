@@ -30,6 +30,16 @@ drc restart migrations-publication-triplestore delta-producer-publication-graph-
 drc restart deltanotifier
 ```
 
+## 1.109.1 (2025-03-18)
+
+- Bump `berichtencentrum-sync-with-kalliope` to `v0.22.3`. [DL-6493]
+
+### Deploy Notes
+
+```
+drc up -d berichtencentrum-sync-with-kalliope
+```
+
 ## 1.109.0 (2025-02-27)
 
 ### General
