@@ -1,0 +1,16 @@
+DELETE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://redpencil.data.gift/id/deltas/producer/loket-leidinggevenden-producer> {
+    VALUES ?type {
+      <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>
+      <http://data.lblod.info/vocabularies/leidinggevenden/FunctionarisStatusCode>
+    }
+
+    ?s a ?type ;
+      ?p ?o .
+  }
+}
