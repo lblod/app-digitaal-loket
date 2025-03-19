@@ -21,7 +21,7 @@ Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4
 
 ```
 drc up -d op-public-consumers
-drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations export-submissions
 ```
 
 
