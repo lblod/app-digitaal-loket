@@ -8,6 +8,8 @@
 - Update mandatarissen producer to stop producing what OP produces [DL-6210]
 - Update leidinggevenden producer to stop producing what OP produces [DL-6449]
 - Bump deliver-bbcdr [DL-6481]
+- Stop production of `Location` in export-submissios.
+  - See also: [DL-6496]
 
 ### Deploy instructions
 
@@ -19,8 +21,9 @@ Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4
 
 ```
 drc up -d op-public-consumers
-drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations export-submissions
 ```
+
 
 ## 1.109.2 (2025-03-19)
 
