@@ -11,6 +11,7 @@
 - Add missing `labels` key for some services. [DL-6490]
 - Reorganize delta consumers config to harmonize with the ecosystem
 - Opt out of VDDS deltas for `resource` and `toezicht-flattened-form-data-generator`.
+- Heal mock-login accounts name when updated in OP [DL-6482]
 
 ### Deploy instructions
 
@@ -34,6 +35,11 @@ drc up -d op-public-consumer eredienst-mandatarissen-consumer
 
 ```
 drc restart deltanotifier
+```
+
+**For the healing of mock-login account names**
+```
+drc up -d update-bestuurseenheid-mock-login
 ```
 
 ## 1.109.2 (2025-03-19)
