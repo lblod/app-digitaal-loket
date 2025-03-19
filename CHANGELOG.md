@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+### General
+ - Stop production of `Location` in export-submissios.
+    - See also: DL-6496
+
 ## 1.109.2 (2025-03-19)
 
 - Bump `berichtencentrum-sync-with-kalliope` to `v0.22.4`. [DL-6493]
