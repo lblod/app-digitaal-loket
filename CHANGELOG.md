@@ -11,6 +11,8 @@
 - Add missing `labels` key for some services. [DL-6490]
 - Reorganize delta consumers config to harmonize with the ecosystem
 - Opt out of VDDS deltas for `resource` and `toezicht-flattened-form-data-generator`.
+- Stop production of `Location` in export-submissios.
+  - See also: [DL-6496]
 
 ### Deploy instructions
 
@@ -34,6 +36,10 @@ drc up -d op-public-consumer eredienst-mandatarissen-consumer
 
 ```
 drc restart deltanotifier
+```
+
+drc up -d op-public-consumers
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations export-submissions
 ```
 
 ## 1.109.2 (2025-03-19)
