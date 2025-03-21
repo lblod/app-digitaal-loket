@@ -16,6 +16,7 @@
 ```
 drc up -d op-public-consumer eredienst-mandatarissen-consumer
 ```
+
 **For the opt out of VDDS deltas**
 
 ```
@@ -23,6 +24,7 @@ drc restart deltanotifier
 ```
 
 **For the healing of mock-login account names**
+
 ```
 drc up -d update-bestuurseenheid-mock-login
 ```
