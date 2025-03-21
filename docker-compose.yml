@@ -454,7 +454,9 @@ services:
     restart: always
     logging: *default-logging
   update-bestuurseenheid-mock-login:
-    image: lblod/update-bestuurseenheid-mock-login-service:0.3.1
+    image: lblod/update-bestuurseenheid-mock-login-service:0.6.0
+    environment:
+      RUN_CRON_ON_START: "true"
     volumes:
       - ./config/mock-login:/config
     labels:
