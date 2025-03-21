@@ -1,32 +1,15 @@
 # Changelog
 
-## 1.110.0 (2025-03-20)
+## Unreleased
 
 ### General
 
-- Update mandatarissen producer to stop producing what OP produces [DL-6210]
-- Update mandatarissen producer to stop producing what OP produces [DL-6210]
-- Update leidinggevenden producer to stop producing what OP produces [DL-6449]
-- Bump deliver-bbcdr [DL-6481]
 - Add missing `labels` key for some services. [DL-6490]
 - Reorganize delta consumers config to harmonize with the ecosystem
 - Opt out of VDDS deltas for `resource` and `toezicht-flattened-form-data-generator`.
 - Heal mock-login accounts name when updated in OP [DL-6482]
-- Stop production of `Location` in export-submissios.
-  - See also: [DL-6496]
 
-### Deploy instructions
-
-**General**
-
-Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4.0-rc.1` in `docker-compose.override.yml` is removed.
-
-**For the updated mandatarissen and leidinggevenden producer configuration**
-
-```
-drc up -d op-public-consumer eredienst-mandatarissen-consumer
-drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations export-submissions
-```
+### Deploy Instructions
 
 **For the updated configuration of the consumers**
 
@@ -42,6 +25,30 @@ drc restart deltanotifier
 **For the healing of mock-login account names**
 ```
 drc up -d update-bestuurseenheid-mock-login
+```
+
+## 1.110.0 (2025-03-20)
+
+### General
+
+- Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update mandatarissen producer to stop producing what OP produces [DL-6210]
+- Update leidinggevenden producer to stop producing what OP produces [DL-6449]
+- Bump deliver-bbcdr [DL-6481]
+- Stop production of `Location` in export-submissios.
+  - See also: [DL-6496]
+
+### Deploy instructions
+
+**General**
+
+Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4.0-rc.1` in `docker-compose.override.yml` is removed.
+
+**For the updated mandatarissen and leidinggevenden producer configuration**
+
+```
+drc up -d op-public-consumer eredienst-mandatarissen-consumer
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations export-submissions
 ```
 
 ## 1.109.2 (2025-03-19)
