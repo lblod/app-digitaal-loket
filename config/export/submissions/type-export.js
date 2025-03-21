@@ -121,17 +121,6 @@ export default {
   },
   types: [
     {
-      type: "prov:Location",
-      requiredProperties: [
-        "mu:uuid"
-      ],
-      optionalProperties: [
-        "rdfs:label",
-        "ext:werkingsgebiedNiveau"
-      ],
-      additionalFilter: ""
-    },
-    {
       type: "foaf:Person",
       requiredProperties: [
         "mu:uuid"

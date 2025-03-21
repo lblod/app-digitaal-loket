@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.110.0 (2025-03-20)
 
 ### General
 
@@ -12,6 +12,8 @@
 - Reorganize delta consumers config to harmonize with the ecosystem
 - Opt out of VDDS deltas for `resource` and `toezicht-flattened-form-data-generator`.
 - Heal mock-login accounts name when updated in OP [DL-6482]
+- Stop production of `Location` in export-submissios.
+  - See also: [DL-6496]
 
 ### Deploy instructions
 
@@ -23,7 +25,7 @@ Ensure on production, the line `image: lblod/deliver-bbcdr-rapporten-service:0.4
 
 ```
 drc up -d op-public-consumer eredienst-mandatarissen-consumer
-drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations
+drc restart migrations-publication-triplestore delta-producer-publication-graph-maintainer migrations export-submissions
 ```
 
 **For the updated configuration of the consumers**
