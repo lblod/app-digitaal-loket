@@ -8,6 +8,8 @@
 - Reorganize delta consumers config to harmonize with the ecosystem
 - Opt out of VDDS deltas for `resource` and `toezicht-flattened-form-data-generator`.
 - Heal mock-login accounts name when updated in OP [DL-6482]
+- Bump VDDS (vendor-data-distribution-service) for more async processing and
+  reduced load on database/Virtuoso. [DL-6595]
 
 ### Deploy Instructions
 
@@ -21,6 +23,19 @@ drc up -d op-public-consumer eredienst-mandatarissen-consumer
 
 ```
 drc restart deltanotifier
+```
+
+**Bump of the VDDS and to run healing**
+
+Set the VDDS healing operations directly onto Virtuoso. See the environment
+variable config here:
+https://github.com/lblod/vendor-data-distribution-service?tab=readme-ov-file#environment-variables,
+and run the new deploy and (full) healing commands. This healing can take a
+while; perhaps something for after work hours?
+
+```
+docker compose up -d vendor-data-distribution
+docker compose exec vendor-data-distribution curl -X POST http://localhost/healing
 ```
 
 **For the healing of mock-login account names**
