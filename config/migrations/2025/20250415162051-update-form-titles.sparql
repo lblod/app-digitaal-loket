@@ -1,0 +1,21 @@
+DELETE {
+  GRAPH ?g {
+    ?besluitType <http://www.w3.org/2004/02/skos/core#prefLabel> ?oldPrefLabel .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?besluitType <http://www.w3.org/2004/02/skos/core#prefLabel> ?newPrefLabel .
+  }
+}
+WHERE {
+  VALUES (?besluitType ?newPrefLabel) {
+    (<https://data.vlaanderen.be/id/concept/BesluitType/d9c3d177-6dc6-4775-8c6a-1055a9cbdcc6> "Wijziging vereniging of vennootschap voor maatschappelijk welzijn") # Previously: "Wijziging ocmw-vereniging"
+    (<https://data.vlaanderen.be/id/concept/BesluitType/afdb7387-da47-4dc4-bbbe-e86ea5c3df28> "Verplicht advies op statutenwijziging"@nl) # Previously: "Niet-bindend advies op statuten"@nl
+    (<https://data.vlaanderen.be/id/concept/BesluitType/a2836d2f-1fee-4549-bd85-b9c13698b757> "Verplicht advies op oprichting"@nl) # Previously: "Niet-bindend advies op oprichting"@nl
+  }
+
+  GRAPH ?g {
+    ?besluitType <http://www.w3.org/2004/02/skos/core#prefLabel> ?oldPrefLabel .
+  }
+}
