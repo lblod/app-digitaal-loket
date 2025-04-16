@@ -10,6 +10,7 @@
 - Heal mock-login accounts name when updated in OP [DL-6482]
 - Bump VDDS (vendor-data-distribution-service) for more async processing and
   reduced load on database/Virtuoso. [DL-6595]
+- Update multiple forms. [DL-6602] [DL-6486] [DL-6487] [DL-6488]
 
 ### Deploy Instructions
 
@@ -42,6 +43,13 @@ docker compose exec vendor-data-distribution curl -X POST http://localhost/heali
 
 ```
 drc up -d update-bestuurseenheid-mock-login
+```
+
+**For updating the forms**
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
 ```
 
 ## 1.110.0 (2025-03-20)
