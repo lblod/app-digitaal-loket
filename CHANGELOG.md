@@ -12,6 +12,10 @@
   reduced load on database/Virtuoso. [DL-6595]
 - Update multiple forms. [DL-6602] [DL-6486] [DL-6487] [DL-6488]
 
+#### Frontend
+
+- `v0.100.0` (DL-6354, DL-6522, DL-6240): https://github.com/lblod/frontend-loket/blob/development/CHANGELOG.md#v01000-2025-04-17
+
 ### Deploy Instructions
 
 **For the updated configuration of the consumers**
@@ -51,6 +55,20 @@ drc up -d update-bestuurseenheid-mock-login
 drc restart migrations && drc logs -ft --tail=200 migrations
 drc up -d enrich-submission
 ```
+
+**For the OVAM card**
+Ensure the environment variables are correctly set for `loket`, e.g. :
+```
+loket:
+  environment;
+    EMBER_DATA_OVAM_URL: "https://beheer-risicolocaties.ovam.be"
+```
+
+The following links;
+
+- DEV: "https://beheer-risicolocaties-test.ovam.be"
+- QA: "https://beheer-risicolocaties-uat.ovam.be"
+- PROD: "https://beheer-risicolocaties.ovam.be"
 
 ## 1.110.0 (2025-03-20)
 
