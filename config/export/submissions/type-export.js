@@ -61,6 +61,7 @@ FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/Be
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b> . }
+FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/95c671c2-3ab7-43e2-a90d-9b096c84bfe7> . }
 
 ?formData dct:type ?typeBesluit .
 
