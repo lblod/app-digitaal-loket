@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.111.0 (2025-04-25)
 
 ### General
 
