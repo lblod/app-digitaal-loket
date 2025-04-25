@@ -227,7 +227,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.22.4
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.22.6
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -307,7 +307,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.13.4
+    image: lblod/enrich-submission-service:1.13.5
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20250418105304-forms.ttl"
     volumes:
