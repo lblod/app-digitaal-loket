@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.111.0 (2025-04-25)
 
 ### General
 
@@ -61,7 +61,7 @@ Ensure the environment variables are correctly set for `loket`, e.g. :
 ```
 loket:
   environment;
-    EMBER_DATA_OVAM_URL: "https://beheer-risicolocaties.ovam.be"
+    EMBER_OVAM_URL: "https://beheer-risicolocaties.ovam.be"
 ```
 
 The following links;
