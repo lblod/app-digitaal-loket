@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+### General
+
+- Added new form 'melding interne beslissing tot samenvoeging' [DL-6361]
+
+### Deploy instructions
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope prepare-submissions-for-export
+```
+
 ## 1.111.0 (2025-04-25)
 
 ### General
