@@ -1,0 +1,21 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX besluit: <http://lblod.data.gift/vocabularies/besluit/>
+PREFIX BestuurseenheidClassificatieCode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+PREFIX core: <http://mu.semte.ch/vocabularies/core/>
+PREFIX BesluitType: <https://data.vlaanderen.be/id/concept/BesluitType/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    BesluitType:95c671c2-3ab7-43e2-a90d-9b096c84bfe7
+      a skos:Concept ;
+      core:uuid "95c671c2-3ab7-43e2-a90d-9b096c84bfe7" ;
+      besluit:decidableBy BestuurseenheidClassificatieCode:36372fad-0358-499c-a4e3-f412d2eae213 ; # Representatief Orgaan
+      skos:prefLabel "Melding interne beslissing tot samenvoeging" ;
+      skos:definition "Het representatief orgaan brengt de betrokken besturen van de eredienst en, in voorkomend geval het centraal bestuur, onmiddellijk op de hoogte van zijn interne beslissing tot samenvoeging." ;
+      skos:inScheme <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      skos:topConceptOf <http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> ;
+      skos:inScheme <https://data.vlaanderen.be/id/conceptscheme/BesluitType> ;
+      skos:topConceptOf <https://data.vlaanderen.be/id/conceptscheme/BesluitType> .
+   }
+}
