@@ -5,6 +5,7 @@
 ### General
 
 - Added new form 'melding interne beslissing tot samenvoeging' [DL-6361]
+- Added next rapportperiode for Meerjarenplan(aanpassing) [DL-6597]
 
 ### Deploy instructions
 
