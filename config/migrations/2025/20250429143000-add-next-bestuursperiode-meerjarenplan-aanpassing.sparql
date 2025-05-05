@@ -1,0 +1,18 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX m8g: <http://data.europa.eu/m8g/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concepts/2bbfee8-0a29-4b5c-b647-c27ccca9f8de>
+      rdf:type
+        skos:Concept ,
+        m8g:PeriodOfTime ;
+      skos:inScheme <http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5> ;
+      skos:prefLabel "2026-2031" ;
+      skos:topConceptOf <http://lblod.data.gift/concept-schemes/4e719768-d43b-4ca1-ab92-b463e15721f5> ;
+      m8g:startTime "2025-12-31T22:59:59Z"^^xsd:dateTime ; # To account for CET -> start of 2026
+      m8g:endTime "2031-12-31T22:59:59Z"^^xsd:dateTime .
+  }
+}
