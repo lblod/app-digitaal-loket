@@ -6,12 +6,22 @@
 
 - Added new form 'melding interne beslissing tot samenvoeging' [DL-6361]
 - Added next rapportperiode for Meerjarenplan(aanpassing) [DL-6597]
+- Bump dashboard frontend to `v1.8.0`. [DL-6588]
+  - This includes the ACM and impersonation changes.
 
 ### Deploy instructions
 
 ```
 drc restart migrations && drc logs -ft --tail=200 migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope prepare-submissions-for-export
+```
+
+**For bumping the dashboard**
+
+When deploying on QA and PROD (DEV does not have an ACM login flow), follow the ACM setup for the Loket frontend image listed in `docker-compose.override.yml`.
+
+```
+drc up -d dashboard
 ```
 
 ## 1.111.0 (2025-04-25)
