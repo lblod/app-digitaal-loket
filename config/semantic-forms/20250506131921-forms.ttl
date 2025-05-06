@@ -5983,9 +5983,9 @@ fields:205c1db4-f132-4e82-b707-48f703ac0d86 a form:ConditionalFieldGroup ;
 ##########################################################
 # Alert for Melding onvolledigheid inzending eredienstbestuur
 ##########################################################
-fields:c6bd0564-b570-4cce-b2f0-dde771f60977 a form:Field;
-    mu:uuid "c6bd0564-b570-4cce-b2f0-dde771f60977" ;
-    sh:name "Met deze melding informeer je de betrokken eredienstbesturen en het centraal bestuur over de interne beslissing tot samenvoeging";
+fields:41877780-7c6e-46d7-a04a-4abc8b21afce a form:Field;
+    mu:uuid "41877780-7c6e-46d7-a04a-4abc8b21afce" ;
+    sh:name "Met deze melding informeer je de betrokken eredienstbesturen en het centraal bestuur over de interne beslissing tot samenvoeging.";
     sh:order 101;
     form:options """{ "skin": "warning", "icon": "alert-triangle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
@@ -5995,21 +5995,21 @@ fields:c6bd0564-b570-4cce-b2f0-dde771f60977 a form:Field;
 #########################################################
 # Info with custom helper text for "Melding onvolledigheid inzending eredienstbestuur"
 #########################################################
-fields:f75de5f0-ac1f-479f-9c05-5c056eb9f5fc a form:Field ;
-    mu:uuid "f75de5f0-ac1f-479f-9c05-5c056eb9f5fc" ;
+fields:8e697dae-a49a-4959-a779-5e3361182128 a form:Field ;
+    mu:uuid "8e697dae-a49a-4959-a779-5e3361182128" ;
     sh:name "Voeg hier de brief toe waarin je het eredienstbestuur en het centraal bestuur op de hoogte brengt van de samenvoeging. Voor de rooms-katholieke eredienst betreft het hier het bisschoppelijk decreet.";
     sh:order 10002;
     form:options """{ "skin": "info", "icon": "info-circle", "size": "small", "closable": false }""";
     form:displayType displayTypes:alert ;
     sh:group fields:aDynamicPropertyGroup .
 
-###########Melding-interne-beslssing-tot-samenvoeging###########
+###########Melding-interne-beslissing-tot-samenvoeging###########
 
 fieldGroups:e568b319-a91c-438f-9c80-d1e773877ecb a form:FieldGroup ;
     mu:uuid "e568b319-a91c-438f-9c80-d1e773877ecb" ;
     form:hasField
                       ###Alert(CUSTOM)###
-                      fields:c6bd0564-b570-4cce-b2f0-dde771f60977,
+                      fields:41877780-7c6e-46d7-a04a-4abc8b21afce,
 
                       ###Eredienst selector linked to RO (Centrale besturen and besturen van eredienst)###
                       fields:4570a6ad-fa04-4500-a988-55cb71485401,
@@ -6027,7 +6027,7 @@ fieldGroups:e568b319-a91c-438f-9c80-d1e773877ecb a form:FieldGroup ;
                       fields:d0052f0d-90bc-4543-a6b0-e90a1c1117db,
 
                       ###Info Upload (CUSTOM)###
-                      fields:f75de5f0-ac1f-479f-9c05-5c056eb9f5fc.
+                      fields:8e697dae-a49a-4959-a779-5e3361182128.
 
 fields:0827fafe-ad19-49e1-8b2e-105d2c08a54a form:hasConditionalFieldGroup fields:c80b4241-572a-47fe-aa0c-7f711705f877.
 
