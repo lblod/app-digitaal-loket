@@ -8,6 +8,7 @@
 - Added next rapportperiode for Meerjarenplan(aanpassing) [DL-6597]
 - Bump dashboard frontend to `v1.8.0`. [DL-6588]
   - This includes the ACM and impersonation changes.
+- Improve the dashboard setup
 
 ### Deploy instructions
 
@@ -16,13 +17,19 @@ drc restart migrations && drc logs -ft --tail=200 migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope prepare-submissions-for-export
 ```
 
-**For bumping the dashboard**
+**For bumping and improving the dashboard setup**
 
 When deploying on QA and PROD (DEV does not have an ACM login flow), follow the ACM setup for the Loket frontend image listed in `docker-compose.override.yml`.
 
 ```
+drc restart dispatcher
+```
+
+```
 drc up -d dashboard
 ```
+
+> NOTE: For now, the `dashboard` virtual host configuration has been moved to `identifier` in `docker-compose.override.yml` for the dashboard to function correctly. This is because the frontend and dashboard base images are different, but [DL-6629](https://binnenland.atlassian.net/browse/DL-6629) should bring things back to normal.
 
 ## 1.111.0 (2025-04-25)
 
