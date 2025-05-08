@@ -328,3 +328,13 @@ This service is configured through a custom [subjectsAndPaths.js](https://github
 ##### Healing Process
 
 The healing process allows the service to "manually" copy data to vendor graphs by the following the same rules defined in `subjectsAndPaths.js`. Trigger a `POST` request to the `/healing` endpoint of the service to start the healing.
+
+## Dashboard
+
+Starting from `v1.7.0`, the dashboard uses a different base image than the Loket frontend. This means that simply mapping ports in `docker-compose.override` to use the dashboard locally will not work anymore. A workaround for now is to have `identifier` be the first point of entry and run `dashboard.localhost:90`:
+* `90` is the mapped port for `identifier` in `docker-compose.override.yml`.
+* For `dashboard.localhost`, there's no need to update anything in `/etc/hosts`. `Docker Compose` seems to set up the necessary proxy functionality for this to work out of the box.
+
+### For DEV and QA Setups
+
+With the dashboard and frontend having different base images, the `dashboard` virtual host config is moved to `identifier` for the time being so that the dashboard can start. As mentioned above, the reason is so that `identifier` becomes the first point of entry for the dashboard.

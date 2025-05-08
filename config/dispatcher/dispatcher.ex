@@ -658,6 +658,20 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/remote-data-objects/"
   end
 
+  get "/assets/*path",  %{ reverse_host: ["dashboard" | _rest] }  do
+    forward conn, path, "http://dashboard/assets/"
+  end
+
+  get "/@appuniversum/*path", %{ reverse_host: ["dashboard" | _rest] } do
+    forward conn, path, "http://dashboard/@appuniversum/"
+  end
+
+  match "/*_path", %{ reverse_host: ["dashboard" | _rest] } do
+    # *_path allows a path to be supplied, but will not yield
+    # an error that we don't use the path variable.
+    forward conn, [], "http://dashboard/index.html"
+  end
+
   #################################################################
   # Other
   #################################################################
