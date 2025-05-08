@@ -19,6 +19,7 @@ services:
     image: lblod/frontend-dashboard:1.8.0
     environment:
       EMBER_LOGIN_ROUTE: "mock-login"
+      EMBER_ADMIN_ROLE: "LoketLB-admin"
     labels:
       - "logging=true"
     restart: always
