@@ -4,20 +4,17 @@
 
 ### General
 
-- Added new form 'melding interne beslissing tot samenvoeging' [DL-6361]
-- Added next rapportperiode for Meerjarenplan(aanpassing) [DL-6597]
 - Bump dashboard frontend to `v1.8.0`. [DL-6588]
   - This includes the ACM and impersonation changes.
 - Improve the dashboard setup
 
 ### Deploy instructions
 
+**For bumping and improving the dashboard setup**
+
 ```
 drc restart migrations && drc logs -ft --tail=200 migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope prepare-submissions-for-export
 ```
-
-**For bumping and improving the dashboard setup**
 
 When deploying on QA and PROD (DEV does not have an ACM login flow), follow the ACM setup for the Loket frontend image listed in `docker-compose.override.yml`.
 
@@ -29,7 +26,23 @@ drc restart dispatcher
 drc up -d dashboard
 ```
 
+> NOTE: The dashboard changes listed are part of `v1.112.0`, but will not be triggered during that deploy. This is an exceptional scenario given the need to deploy the forms, and the fact that the dashboard changes are still in progress. In case future changes end up deploying the dashboard changes before they are ready, you can easily revert the dashboard to `v1.6.0` and check the `dispatcher` config prior to the changes in [https://github.com/lblod/app-digitaal-loket/pull/660](https://github.com/lblod/app-digitaal-loket/pull/660).
+
 > NOTE: For now, the `dashboard` virtual host configuration has been moved to `identifier` in `docker-compose.override.yml` for the dashboard to function correctly. This is because the frontend and dashboard base images are different, but [DL-6629](https://binnenland.atlassian.net/browse/DL-6629) should bring things back to normal.
+
+## 1.112.0 (2025-05-23)
+
+### General
+
+- Added new form 'melding interne beslissing tot samenvoeging' [DL-6361]
+- Added next rapportperiode for Meerjarenplan(aanpassing) [DL-6597]
+
+### Deploy instructions
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope prepare-submissions-for-export
+```
 
 ## 1.111.0 (2025-04-25)
 
