@@ -30,6 +30,18 @@ drc up -d dashboard
 
 > NOTE: For now, the `dashboard` virtual host configuration has been moved to `identifier` in `docker-compose.override.yml` for the dashboard to function correctly. This is because the frontend and dashboard base images are different, but [DL-6629](https://binnenland.atlassian.net/browse/DL-6629) should bring things back to normal.
 
+## 1.112.1 (2025-05-28)
+
+### General
+
+- Fix municipalities not able to reference worship service document when the CKB is inactive [DL-6614]
+
+### Deploy instructions
+
+```
+drc up -d worship-decisions-cross-reference
+```
+
 ## 1.112.0 (2025-05-23)
 
 ### General
