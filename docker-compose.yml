@@ -124,12 +124,36 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  login:
+  login-loket:
     image: lblod/acmidm-login-service:0.11.0
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
       MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lblod.info/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
+      LOG_SINK_URL: "http://sink"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  login-dashboard:
+    image: lblod/acmidm-login-service:0.11.0
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
+      MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://dashboard.lblod.info/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
+      LOG_SINK_URL: "http://sink"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  login-vendor-management:
+    image: lblod/acmidm-login-service:0.11.0
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
+      MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://vendor-management.lblod.info/authorization/callback"
       MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
       LOG_SINK_URL: "http://sink"
     labels:
