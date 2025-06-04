@@ -656,9 +656,13 @@ defmodule Dispatcher do
   # Loket
   #################################################################
 
+  # Login
+
   match "/sessions/*path", %{ reverse_host: ["loket" | _rest] } do
     forward conn, path, "http://login-loket/sessions/"
   end
+
+  # Frontend
 
   get "/assets/*path",  %{ reverse_host: ["loket" | _rest] }  do
     forward conn, path, "http://loket/assets/"
@@ -678,13 +682,13 @@ defmodule Dispatcher do
   # Dashboard
   #################################################################
 
-  match "/remote-data-objects/*path" do
-    forward conn, path, "http://resource/remote-data-objects/"
-  end
+  # Login
 
   match "/sessions/*path", %{ reverse_host: ["dashboard" | _rest] } do
     forward conn, path, "http://login-dashboard/sessions/"
   end
+
+  # Frontend
 
   get "/assets/*path",  %{ reverse_host: ["dashboard" | _rest] }  do
     forward conn, path, "http://dashboard/assets/"
@@ -700,13 +704,23 @@ defmodule Dispatcher do
     forward conn, [], "http://dashboard/index.html"
   end
 
+  # Resources
+
+  match "/remote-data-objects/*path" do
+    forward conn, path, "http://resource/remote-data-objects/"
+  end
+
   #################################################################
   # Vendor Management
   #################################################################
 
+  # Login
+
   match "/sessions/*path", %{ reverse_host: ["vendor-management" | _rest] } do
     forward conn, path, "http://login-vendor-management/sessions/"
   end
+
+  # Frontend
 
   get "/assets/*path",  %{ reverse_host: ["vendor-management" | _rest] }  do
     forward conn, path, "http://vendor-management/assets/"
