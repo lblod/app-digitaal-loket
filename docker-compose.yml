@@ -16,10 +16,9 @@ services:
     restart: always
     logging: *default-logging
   dashboard:
-    image: lblod/frontend-dashboard:1.8.0
+    image: lblod/frontend-dashboard:1.9.0
     environment:
-      EMBER_LOGIN_ROUTE: "mock-login"
-      EMBER_ADMIN_ROLE: "LoketLB-admin"
+      EMBER_LOGIN_ROUTE: "acmidm-login"
     labels:
       - "logging=true"
     restart: always
