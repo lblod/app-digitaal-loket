@@ -90,10 +90,6 @@ defmodule Dispatcher do
     forward conn, path, "http://impersonation/impersonations/"
   end
 
-  match "/sessions/*path" do
-    forward conn, path, "http://login/sessions/"
-  end
-
   match "/gebruikers/*path" do
     forward conn, path, "http://cache/gebruikers/"
   end
@@ -651,11 +647,37 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # Loket
+  #################################################################
+
+  match "/sessions/*path", %{ reverse_host: ["loket" | _rest] } do
+    forward conn, path, "http://login-loket/sessions/"
+  end
+
+  get "/assets/*path",  %{ reverse_host: ["loket" | _rest] }  do
+    forward conn, path, "http://loket/assets/"
+  end
+
+  get "/@appuniversum/*path", %{ reverse_host: ["loket" | _rest] } do
+    forward conn, path, "http://loket/@appuniversum/"
+  end
+
+  match "/*_path", %{ reverse_host: ["loket" | _rest] } do
+    # *_path allows a path to be supplied, but will not yield
+    # an error that we don't use the path variable.
+    forward conn, [], "http://loket/index.html"
+  end
+
+  #################################################################
   # Dashboard
   #################################################################
 
   match "/remote-data-objects/*path" do
     forward conn, path, "http://resource/remote-data-objects/"
+  end
+
+  match "/sessions/*path", %{ reverse_host: ["dashboard" | _rest] } do
+    forward conn, path, "http://login-dashboard/sessions/"
   end
 
   get "/assets/*path",  %{ reverse_host: ["dashboard" | _rest] }  do
@@ -670,6 +692,28 @@ defmodule Dispatcher do
     # *_path allows a path to be supplied, but will not yield
     # an error that we don't use the path variable.
     forward conn, [], "http://dashboard/index.html"
+  end
+
+  #################################################################
+  # Vendor Management
+  #################################################################
+
+  match "/sessions/*path", %{ reverse_host: ["vendor-management" | _rest] } do
+    forward conn, path, "http://login-vendor-management/sessions/"
+  end
+
+  get "/assets/*path",  %{ reverse_host: ["vendor-management" | _rest] }  do
+    forward conn, path, "http://vendor-management/assets/"
+  end
+
+  get "/@appuniversum/*path", %{ reverse_host: ["vendor-management" | _rest] } do
+    forward conn, path, "http://vendor-management/@appuniversum/"
+  end
+
+  match "/*_path", %{ reverse_host: ["vendor-management" | _rest] } do
+    # *_path allows a path to be supplied, but will not yield
+    # an error that we don't use the path variable.
+    forward conn, [], "http://vendor-management/index.html"
   end
 
   #################################################################
