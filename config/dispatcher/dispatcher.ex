@@ -1,6 +1,12 @@
 defmodule Dispatcher do
   use Matcher
-  define_accept_types []
+  
+  define_accept_types [
+    html: ["text/html", "application/xhtml+html"],
+    json: ["application/json", "application/vnd.api+json"],
+    upload: ["multipart/form-data"],
+    any: [ "*/*" ],
+  ]
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule.
@@ -290,7 +296,7 @@ defmodule Dispatcher do
   #################################################################
   # Reports
   #################################################################
-  match "/reports/*path" do
+  match "/reports/*path", %{ accept: %{ json: true } } do
     forward conn, path, "http://resource/reports/"
   end
 
@@ -496,7 +502,7 @@ defmodule Dispatcher do
   #################################################################
   # jobs
   #################################################################
-  match "/jobs/*path" do
+  match "/jobs/*path", %{ accept: %{ json: true } } do
     forward conn, path, "http://cache/jobs/"
   end
 
