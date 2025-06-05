@@ -4,11 +4,16 @@
 
 ### General
 
+- Bump frontend updating privacy policy disclaimer [DL-5635]
 - Bump dashboard frontend to `v1.8.0`. [DL-6588]
   - This includes the ACM and impersonation changes.
 - Improve the dashboard setup
 
 ### Deploy instructions
+
+```
+drc up -d loket
+```
 
 **For bumping and improving the dashboard setup**
 
