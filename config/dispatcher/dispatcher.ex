@@ -658,32 +658,6 @@ defmodule Dispatcher do
   end
 
   #################################################################
-  # Loket
-  #################################################################
-
-  # Login
-
-  match "/sessions/*path", %{ reverse_host: ["loket" | _rest] } do
-    forward conn, path, "http://login-loket/sessions/"
-  end
-
-  # Frontend
-
-  get "/assets/*path",  %{ reverse_host: ["loket" | _rest] }  do
-    forward conn, path, "http://loket/assets/"
-  end
-
-  get "/@appuniversum/*path", %{ reverse_host: ["loket" | _rest] } do
-    forward conn, path, "http://loket/@appuniversum/"
-  end
-
-  match "/*_path", %{ reverse_host: ["loket" | _rest] } do
-    # *_path allows a path to be supplied, but will not yield
-    # an error that we don't use the path variable.
-    forward conn, [], "http://loket/index.html"
-  end
-
-  #################################################################
   # Dashboard
   #################################################################
 
@@ -739,6 +713,36 @@ defmodule Dispatcher do
     # *_path allows a path to be supplied, but will not yield
     # an error that we don't use the path variable.
     forward conn, [], "http://vendor-management/index.html"
+  end
+
+  #################################################################
+  # Loket
+  #################################################################
+
+  # NOTE: keep this as the last frontend. There is no host/reverse_host
+  # matching. This catches all attempts to access a frontend and should,
+  # because of the order sensitivity of mu-auth, come last.
+  # Some loket instances are hosted like "dev.loket.[...]" which make matching
+  # difficult.
+
+  # Login
+
+  match "/sessions/*path" do
+    forward conn, path, "http://login-loket/sessions/"
+  end
+
+  # Frontend
+
+  get "/assets/*path", @any do
+    forward conn, path, "http://loket/assets/"
+  end
+
+  get "/@appuniversum/*path", @any do
+    forward conn, path, "http://loket/@appuniversum/"
+  end
+
+  match "/*_path", @html do
+    forward conn, [], "http://loket/index.html"
   end
 
   #################################################################
