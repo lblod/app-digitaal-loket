@@ -677,8 +677,6 @@ defmodule Dispatcher do
     forward conn, path, "http://dashboard/@appuniversum/"
   end
 
-    # *_path allows a path to be supplied, but will not yield
-    # an error that we don't use the path variable.
   match "/*_path", %{ accept: %{ html: true }, reverse_host: ["dashboard" | _rest] } do
     forward conn, [], "http://dashboard/index.html"
   end
@@ -709,8 +707,6 @@ defmodule Dispatcher do
     forward conn, path, "http://vendor-management/@appuniversum/"
   end
 
-    # *_path allows a path to be supplied, but will not yield
-    # an error that we don't use the path variable.
   match "/*_path", %{ accept: %{ html: true }, reverse_host: ["vendor-management" | _rest] } do
     forward conn, [], "http://vendor-management/index.html"
   end
