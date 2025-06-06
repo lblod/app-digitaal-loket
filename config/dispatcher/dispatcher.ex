@@ -8,6 +8,11 @@ defmodule Dispatcher do
     any: [ "*/*" ],
   ]
 
+  @html %{ accept: %{ html: true } }
+  @json %{ accept: %{ json: true } }
+  @upload %{ accept: %{ upload: true } }
+  @any %{ accept: %{ any: true } }
+
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule.
   #
@@ -296,8 +301,8 @@ defmodule Dispatcher do
   #################################################################
   # Reports
   #################################################################
-  match "/reports/*path", %{ accept: %{ json: true } } do
-    forward conn, path, "http://resource/reports/"
+  match "/reports/*path", @json do
+    forward conn, path, "http://cache/reports/"
   end
 
   #################################################################
@@ -502,7 +507,7 @@ defmodule Dispatcher do
   #################################################################
   # jobs
   #################################################################
-  match "/jobs/*path", %{ accept: %{ json: true } } do
+  match "/jobs/*path", @json do
     forward conn, path, "http://cache/jobs/"
   end
 
