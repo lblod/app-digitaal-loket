@@ -151,7 +151,7 @@
       ]
     },
     {
-      "sessionRole": "LoketLB-vendorManagementGebruiker",
+      "sessionRole": "VMTGebruiker",
       "restrictToClassifications": [
         "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/52cc9d8d-1c9a-4d92-9936-da9d4a622ec4"
       ]

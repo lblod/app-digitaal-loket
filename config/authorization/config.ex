@@ -39,7 +39,7 @@ defmodule Acl.UserGroups.Config do
         SELECT DISTINCT ?session_group ?session_role WHERE {
           <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                        ext:sessionRole ?session_role.
-          FILTER( ?session_role = \"LoketLB-vendorManagementGebruiker\" )
+          FILTER( ?session_role = \"VMTGebruiker\" )
         }"
       }
   end
