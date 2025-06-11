@@ -18,6 +18,7 @@ to unify the login services, and prepare for vendor management
 - Dispatcher rules: added accept types to certain dashboard rules to prevent
   JSON response on browser HTML requests.
 - Remove option from codelist used in the 'lekp rapport - toelichting' form [DL-6613]
+- Enable ACM/IDM logins for the vendor management frontend [DL-5759]
 
 ### Deploy instructions
 
@@ -64,6 +65,17 @@ the single identifier and dispatcher.
 
 Because all frontends go through the sigle identifier, all virtual hosts should
 be configured on it and no longer on the frontends themselves.
+
+### Vendor management
+- move the VIRTUAL_HOST and LETSENCRYT_* environment variables from the vendor-management to the identifier service
+  > Note that the host names for the QA and PROD dashboards will be different now.
+  > QA: https://vendor-management.loket.lblod.info
+  > PROD: https://vendor-management.loket.lokaalbestuur.vlaanderen.be
+- add the correct ACM/IDM environment variables to the vendor-management and  login-vendor-management services.
+
+Once everything is updated in the docker-compose.override.yml file you need to `up -d` and restart some services.
+- `drc up -d vendor-management login-vendor-management identifier`
+- `drc restart dispatcher resource cache database update-bestuurseenheid-mock-login`
 
 ## 1.112.1 (2025-05-28)
 
