@@ -4,6 +4,7 @@
 
 ### General
 
+- Bump frontend updating privacy policy disclaimer [DL-5635]
 - Bump dashboard frontend to `v1.8.0`. [DL-6588]
   - This includes the ACM and impersonation changes.
 - Bump dashboard frontend to `v1.9.0`
@@ -18,6 +19,12 @@ to unify the login services, and prepare for vendor management
   JSON response on browser HTML requests.
 
 ### Deploy instructions
+
+**New version of Loket**
+
+```
+drc up -d loket
+```
 
 **ACM/IDM updates**
 
