@@ -7,33 +7,57 @@
 - Bump frontend updating privacy policy disclaimer [DL-5635]
 - Bump dashboard frontend to `v1.8.0`. [DL-6588]
   - This includes the ACM and impersonation changes.
+- Bump dashboard frontend to `v1.9.0`
+  - This adds a feature to disable routes if not necessary for that
+    application.
 - Improve the dashboard setup
+- Adds login services for all frontends. Originally for [DL-6588]. Added others
+to unify the login services, and prepare for vendor management
+- Dispatcher rules for all login services per frontend
+- Bumped (and renamed!) login service for Loket Frontend
+- Dispatcher rules: added accept types to certain dashboard rules to prevent
+  JSON response on browser HTML requests.
 
 ### Deploy instructions
+
+**New version of Loket**
 
 ```
 drc up -d loket
 ```
 
-**For bumping and improving the dashboard setup**
+**ACM/IDM updates**
+
+Instead of 1 `login` service (for the Loket frontend), there are 3 (one for
+each frontend) and the dashboard version has been bumped again.
+
+**Adjust the `docker-compose.override.yml` to rename `login` to `login-loket`,
+and make two new entries for `login-dashboard` and `login-vendor-management`.**
+
+The deploy for this can be shortened to
 
 ```
-drc restart migrations && drc logs -ft --tail=200 migrations
+docker compose up -d --remove-orphans
 ```
 
-When deploying on QA and PROD (DEV does not have an ACM login flow), follow the ACM setup for the Loket frontend image listed in `docker-compose.override.yml`.
+Make sure that the old `login` service is gone and three new services are
+running (`login-loket`, `login-dashboard`, and `login-vendor-management`).
+
+The dispatcher rules have been updated to accomodate running three frontends.
+Yes, even Loket can be run through the dispatcher now. Restart it for the new
+config.
 
 ```
-drc restart dispatcher
+docker compose restart dispatcher
 ```
 
-```
-drc up -d dashboard
-```
+**Removing controle**
 
-> NOTE: The dashboard changes listed are part of `v1.112.0`, but will not be triggered during that deploy. This is an exceptional scenario given the need to deploy the forms, and the fact that the dashboard changes are still in progress. In case future changes end up deploying the dashboard changes before they are ready, you can easily revert the dashboard to `v1.6.0` and check the `dispatcher` config prior to the changes in [https://github.com/lblod/app-digitaal-loket/pull/660](https://github.com/lblod/app-digitaal-loket/pull/660).
+On production, controle setup can be removed and everything should go through
+the single identifier and dispatcher.
 
-> NOTE: For now, the `dashboard` virtual host configuration has been moved to `identifier` in `docker-compose.override.yml` for the dashboard to function correctly. This is because the frontend and dashboard base images are different, but [DL-6629](https://binnenland.atlassian.net/browse/DL-6629) should bring things back to normal.
+Because all frontends go through the sigle identifier, all virtual hosts should
+be configured on it and no longer on the frontends themselves.
 
 ## 1.112.1 (2025-05-28)
 
