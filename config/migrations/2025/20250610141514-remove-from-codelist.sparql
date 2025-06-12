@@ -1,0 +1,9 @@
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concepts/f6084275-751d-4bf7-a744-904247571f64> a <http://www.w3.org/2004/02/skos/core#Concept>.
+    <http://lblod.data.gift/concepts/f6084275-751d-4bf7-a744-904247571f64> <http://mu.semte.ch/vocabularies/core/uuid> "f6084275-751d-4bf7-a744-904247571f64".
+    <http://lblod.data.gift/concepts/f6084275-751d-4bf7-a744-904247571f64> <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85>.
+    <http://lblod.data.gift/concepts/f6084275-751d-4bf7-a744-904247571f64> <http://www.w3.org/2004/02/skos/core#prefLabel> "Correctie - tekst of cijfers zijn verkeerd"@nl.
+    <http://lblod.data.gift/concepts/f6084275-751d-4bf7-a744-904247571f64> <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/0b93ef1c-4435-4922-8611-31b4f3ca3c85> .
+  }
+}

@@ -17,6 +17,7 @@ to unify the login services, and prepare for vendor management
 - Bumped (and renamed!) login service for Loket Frontend
 - Dispatcher rules: added accept types to certain dashboard rules to prevent
   JSON response on browser HTML requests.
+- Remove option from codelist used in the 'lekp rapport - toelichting' form [DL-6613]
 
 ### Deploy instructions
 
@@ -24,6 +25,11 @@ to unify the login services, and prepare for vendor management
 
 ```
 drc up -d loket
+```
+
+**Migrations for the form changes**
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
 ```
 
 **ACM/IDM updates**
