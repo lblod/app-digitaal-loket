@@ -8,6 +8,7 @@
 - Bump dashboard frontend to `v1.8.0`. [DL-6588]
   - This includes the ACM and impersonation changes.
 - Improve the dashboard setup
+- Remove option from codelist [DL-6613]
 
 ### Deploy instructions
 
