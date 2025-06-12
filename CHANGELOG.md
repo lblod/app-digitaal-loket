@@ -18,6 +18,7 @@ to unify the login services, and prepare for vendor management
 - Dispatcher rules: added accept types to certain dashboard rules to prevent
   JSON response on browser HTML requests.
 - Remove option from codelist used in the 'lekp rapport - toelichting' form [DL-6613]
+- Update form of LEKP - Fietspaden [DL-6612]
 - Enable ACM/IDM logins for the vendor management frontend [DL-5759]
 
 ### Deploy instructions
@@ -31,6 +32,7 @@ drc up -d loket
 **Migrations for the form changes**
 ```
 drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
 ```
 
 **ACM/IDM updates**
