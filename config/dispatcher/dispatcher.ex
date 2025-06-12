@@ -1,6 +1,6 @@
 defmodule Dispatcher do
   use Matcher
-  
+
   define_accept_types [
     html: ["text/html", "application/xhtml+html"],
     json: ["application/json", "application/vnd.api+json"],
@@ -320,7 +320,7 @@ defmodule Dispatcher do
   # Toezicht / supervision
   #################################################################
 
-  match "/vendors/*path" do
+  match "/vendors/*path", @json do
     forward conn, path, "http://cache/vendors/"
   end
 
