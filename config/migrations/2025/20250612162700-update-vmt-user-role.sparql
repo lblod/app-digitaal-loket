@@ -1,0 +1,15 @@
+DELETE {
+  GRAPH ?g {
+    ?mock <http://mu.semte.ch/vocabularies/ext/sessionRole> "LoketLB-vendorManagementGebruiker" .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?mock <http://mu.semte.ch/vocabularies/ext/sessionRole> "VMTGebruiker" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?mock <http://mu.semte.ch/vocabularies/ext/sessionRole> "LoketLB-vendorManagementGebruiker" .
+  }
+}
