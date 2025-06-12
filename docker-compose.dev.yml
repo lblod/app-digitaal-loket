@@ -39,7 +39,11 @@ services:
     restart: "no"
   resource:
     restart: "no"
-  login:
+  login-loket:
+    restart: "no"
+  login-dashboard:
+    restart: "no"
+  login-vendor-management:
     restart: "no"
   impersonation:
     restart: "no"
