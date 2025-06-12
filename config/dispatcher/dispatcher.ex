@@ -1,6 +1,17 @@
 defmodule Dispatcher do
   use Matcher
-  define_accept_types []
+  
+  define_accept_types [
+    html: ["text/html", "application/xhtml+html"],
+    json: ["application/json", "application/vnd.api+json"],
+    upload: ["multipart/form-data"],
+    any: [ "*/*" ],
+  ]
+
+  @html %{ accept: %{ html: true } }
+  @json %{ accept: %{ json: true } }
+  @upload %{ accept: %{ upload: true } }
+  @any %{ accept: %{ any: true } }
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule.
@@ -88,10 +99,6 @@ defmodule Dispatcher do
 
   match "/impersonations/*path" do
     forward conn, path, "http://impersonation/impersonations/"
-  end
-
-  match "/sessions/*path" do
-    forward conn, path, "http://login/sessions/"
   end
 
   match "/gebruikers/*path" do
@@ -294,8 +301,8 @@ defmodule Dispatcher do
   #################################################################
   # Reports
   #################################################################
-  match "/reports/*path" do
-    forward conn, path, "http://resource/reports/"
+  match "/reports/*path", @json do
+    forward conn, path, "http://cache/reports/"
   end
 
   #################################################################
@@ -500,7 +507,7 @@ defmodule Dispatcher do
   #################################################################
   # jobs
   #################################################################
-  match "/jobs/*path" do
+  match "/jobs/*path", @json do
     forward conn, path, "http://cache/jobs/"
   end
 
@@ -654,22 +661,84 @@ defmodule Dispatcher do
   # Dashboard
   #################################################################
 
+  # Login
+
+  match "/sessions/*path", %{ reverse_host: ["dashboard" | _rest] } do
+    forward conn, path, "http://login-dashboard/sessions/"
+  end
+
+  # Frontend
+
+  get "/assets/*path",  %{ accept: %{ any: true }, reverse_host: ["dashboard" | _rest] }  do
+    forward conn, path, "http://dashboard/assets/"
+  end
+
+  get "/@appuniversum/*path", %{ accept: %{ any: true }, reverse_host: ["dashboard" | _rest] } do
+    forward conn, path, "http://dashboard/@appuniversum/"
+  end
+
+  match "/*_path", %{ accept: %{ html: true }, reverse_host: ["dashboard" | _rest] } do
+    forward conn, [], "http://dashboard/index.html"
+  end
+
+  # Resources
+
   match "/remote-data-objects/*path" do
     forward conn, path, "http://resource/remote-data-objects/"
   end
 
-  get "/assets/*path",  %{ reverse_host: ["dashboard" | _rest] }  do
-    forward conn, path, "http://dashboard/assets/"
+  #################################################################
+  # Vendor Management
+  #################################################################
+
+  # Login
+
+  match "/sessions/*path", %{ reverse_host: ["vendor-management" | _rest] } do
+    forward conn, path, "http://login-vendor-management/sessions/"
   end
 
-  get "/@appuniversum/*path", %{ reverse_host: ["dashboard" | _rest] } do
-    forward conn, path, "http://dashboard/@appuniversum/"
+  # Frontend
+
+  get "/assets/*path",  %{ accept: %{ any: true }, reverse_host: ["vendor-management" | _rest] }  do
+    forward conn, path, "http://vendor-management/assets/"
   end
 
-  match "/*_path", %{ reverse_host: ["dashboard" | _rest] } do
-    # *_path allows a path to be supplied, but will not yield
-    # an error that we don't use the path variable.
-    forward conn, [], "http://dashboard/index.html"
+  get "/@appuniversum/*path", %{ accept: %{ any: true }, reverse_host: ["vendor-management" | _rest] } do
+    forward conn, path, "http://vendor-management/@appuniversum/"
+  end
+
+  match "/*_path", %{ accept: %{ html: true }, reverse_host: ["vendor-management" | _rest] } do
+    forward conn, [], "http://vendor-management/index.html"
+  end
+
+  #################################################################
+  # Loket
+  #################################################################
+
+  # NOTE: keep this as the last frontend. There is no host/reverse_host
+  # matching. This catches all attempts to access a frontend and should,
+  # because of the order sensitivity of mu-auth, come last.
+  # Some loket instances are hosted like "dev.loket.[...]" which make matching
+  # difficult.
+
+  # Login
+
+  match "/sessions/*path" do
+    forward conn, path, "http://login-loket/sessions/"
+  end
+
+  # Frontend
+
+  get "/assets/*path", @any do
+    forward conn, path, "http://loket/assets/"
+  end
+
+  get "/@appuniversum/*path", @any do
+    forward conn, path, "http://loket/@appuniversum/"
+  end
+
+  match "/*_path", @html do
+    forward conn, [], "http://loket/index.html"
   end
 
   #################################################################

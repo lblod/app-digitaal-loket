@@ -16,10 +16,10 @@ services:
     restart: always
     logging: *default-logging
   dashboard:
-    image: lblod/frontend-dashboard:1.8.0
+    image: lblod/frontend-dashboard:1.9.0
     environment:
-      EMBER_LOGIN_ROUTE: "mock-login"
-      EMBER_ADMIN_ROLE: "LoketLB-admin"
+      EMBER_LOGIN_ROUTE: "acmidm-login"
+      EMBER_ADMIN_ROLE: "LoketLB-AdminDashboardLoket"
     labels:
       - "logging=true"
     restart: always
@@ -125,13 +125,37 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  login:
-    image: lblod/acmidm-login-service:0.11.0
+  login-loket:
+    image: lblod/acmidm-login-service:0.12.0
     environment:
-      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
-      MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
-      MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lblod.info/authorization/callback"
-      MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie.vlaanderen.be/op/.well-known/openid-configuration"
+      MU_APPLICATION_AUTH_CLIENT_ID: "<CLIENT ID>"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lokaalbestuur.vlaanderen.be/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "<SECRET KEY>"
+      LOG_SINK_URL: "http://sink"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  login-dashboard:
+    image: lblod/acmidm-login-service:0.12.0
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie.vlaanderen.be/op/.well-known/openid-configuration"
+      MU_APPLICATION_AUTH_CLIENT_ID: "<CLIENT ID>"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://dashboard.loket.lokaalbestuur.vlaanderen.be/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "<SECRET KEY>"
+      LOG_SINK_URL: "http://sink"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  login-vendor-management:
+    image: lblod/acmidm-login-service:0.12.0
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie.vlaanderen.be/op/.well-known/openid-configuration"
+      MU_APPLICATION_AUTH_CLIENT_ID: "<CLIENT ID>"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://vendor-management.loket.lokaalbestuur.vlaanderen.be/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "<SECRET KEY>"
       LOG_SINK_URL: "http://sink"
     labels:
       - "logging=true"
