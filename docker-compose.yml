@@ -25,9 +25,13 @@ services:
     restart: always
     logging: *default-logging
   vendor-management:
-    image: lblod/frontend-vendor-access-management:0.8.0
-    links:
-      - identifier:backend
+    image: lblod/frontend-vendor-access-management:0.9.0
+    environment:
+      EMBER_ACMIDM_CLIENT_ID: "<CLIENT ID>"
+      EMBER_ACMIDM_BASE_URL: "https://authenticatie.vlaanderen.be/op/v1/auth"
+      EMBER_ACMIDM_REDIRECT_URL: "https://vendor-management.loket.lokaalbestuur.vlaanderen.be/authorization/callback"
+      EMBER_ACMIDM_LOGOUT_URL: "https://authenticatie.vlaanderen.be/op/v1/logout"
+      EMBER_ACMIDM_SCOPE: "openid rrn profile vo abb_vmt"
     labels:
       - "logging=true"
     restart: always
