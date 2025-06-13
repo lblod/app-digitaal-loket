@@ -20,6 +20,7 @@ to unify the login services, and prepare for vendor management
 - Remove option from codelist used in the 'lekp rapport - toelichting' form [DL-6613]
 - Update form of LEKP - Fietspaden [DL-6612]
 - Enable ACM/IDM logins for the vendor management frontend [DL-5759]
+- Bump frontend - change of base docker image [DL-6629] and allow users to update the modified date without any table changes [DL-6646]
 
 ### Deploy instructions
 
