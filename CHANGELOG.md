@@ -30,6 +30,10 @@ drc up -d dashboard
 
 > NOTE: For now, the `dashboard` virtual host configuration has been moved to `identifier` in `docker-compose.override.yml` for the dashboard to function correctly. This is because the frontend and dashboard base images are different, but [DL-6629](https://binnenland.atlassian.net/browse/DL-6629) should bring things back to normal.
 
+## 1.112.2 (2025-06-17)
+### General
+ - Fix producer mandatarissen config; beleidsdomeincodes were not published correctly.
+
 ## 1.112.1 (2025-05-28)
 
 ### General
