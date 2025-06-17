@@ -79,6 +79,15 @@ Once everything is updated in the docker-compose.override.yml file you need to `
 - `drc up -d vendor-management login-vendor-management identifier`
 - `drc restart dispatcher resource cache database update-bestuurseenheid-mock-login`
 
+## 1.112.2 (2025-06-17)
+### General
+ - Fix producer mandatarissen config; beleidsdomeincodes were not published correctly.
+### Deploy instructions
+
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
+
 ## 1.112.1 (2025-05-28)
 
 ### General
