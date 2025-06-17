@@ -33,6 +33,11 @@ drc up -d dashboard
 ## 1.112.2 (2025-06-17)
 ### General
  - Fix producer mandatarissen config; beleidsdomeincodes were not published correctly.
+### Deploy instructions
+
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
 
 ## 1.112.1 (2025-05-28)
 
