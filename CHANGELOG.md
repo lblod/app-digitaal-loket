@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased (hotfix)
+
+### General
+
+- Remove document in submission from Gemeente Avelgem [DL-6691]
+
+### Deploy Notes
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+```
+
 ## 1.113.0 (2025-06-12)
 
 ### General
