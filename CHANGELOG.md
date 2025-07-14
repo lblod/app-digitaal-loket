@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### General
+
+- Re-enable mocklogin rules for use in DEV and QA environments. Although not
+  needed in PROD and removed because of safety concerns, they were needed in
+  DEV and QA. In PROD, there will be no service to respond to the requests.
+
 ## v1.113.1 (2025-07-14)
 
 Some of these changes are also in v1.112.2, but this tag was created in
