@@ -1,12 +1,16 @@
 # Changelog
 
-## Unreleased
+## v1.113.1 (2025-07-14)
 
 Some of these changes are also in v1.112.2, but this tag was created in
 parallel of v1.113.0 and they didn't include each others changes. Mistakes
 were made whith merging branches, so here is a re-release of what might have
 been missed in one new all-including tag. Other changes where mistakenly added
 to v1.113.0 but were not released yet.
+
+NOTE: There is already a hotfix on the PROD server for the dispatcher rules
+about the reports. Undo those changes, by changing `resources` back into
+`cache`, and continue with the `git pull`.
 
 ### General
 
