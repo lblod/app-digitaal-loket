@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased
+
+Some of these changes are also in v1.112.2. Mistakes where made whith merging
+branches, so here is a re-release of what might have been missed.
+
+### General
+
+- Fix producer mandatarissen config; beleidsdomeincodes were not published correctly.
+- Remove document in submission from Gemeente Avelgem [DL-6691]
+- Bump frontend - change of base docker image [DL-6629] and allow users to update the modified date without any table changes [DL-6646]
+
+### Deploy instructions
+
+```
+drc up -d delta-producer-publication-graph-maintainer
+drc restart migrations && drc logs -ft --tail=200 migrations
+```
+
 ## 1.113.0 (2025-06-12)
 
 ### General
@@ -20,7 +38,6 @@ to unify the login services, and prepare for vendor management
 - Remove option from codelist used in the 'lekp rapport - toelichting' form [DL-6613]
 - Update form of LEKP - Fietspaden [DL-6612]
 - Enable ACM/IDM logins for the vendor management frontend [DL-5759]
-- Bump frontend - change of base docker image [DL-6629] and allow users to update the modified date without any table changes [DL-6646]
 
 ### Deploy instructions
 
@@ -79,6 +96,15 @@ be configured on it and no longer on the frontends themselves.
 Once everything is updated in the docker-compose.override.yml file you need to `up -d` and restart some services.
 - `drc up -d vendor-management login-vendor-management identifier`
 - `drc restart dispatcher resource cache database update-bestuurseenheid-mock-login`
+
+## 1.112.2 (2025-06-17)
+### General
+ - Fix producer mandatarissen config; beleidsdomeincodes were not published correctly.
+### Deploy instructions
+
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
 
 ## 1.112.1 (2025-05-28)
 

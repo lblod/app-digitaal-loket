@@ -3,7 +3,7 @@
   "export": [
     {
       "type": "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode",
-      "graphsFilter": [ "http://mu.semte.ch/graphs/public" ],
+      "graphsFilter": [ "http://mu.semte.ch/graphs/lmb/mandaten/public" ],
       "hasRegexGraphsFilter": false,
       "pathToConceptScheme": [
         "^http://data.vlaanderen.be/ns/mandaat#beleidsdomein",
