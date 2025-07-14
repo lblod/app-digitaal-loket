@@ -2,20 +2,25 @@
 
 ## Unreleased
 
-Some of these changes are also in v1.112.2. Mistakes where made whith merging
-branches, so here is a re-release of what might have been missed.
+Some of these changes are also in v1.112.2, but this tag was created in
+parallel of v1.113.0 and they didn't include each others changes. Mistakes
+were made whith merging branches, so here is a re-release of what might have
+been missed in one new all-including tag. Other changes where mistakenly added
+to v1.113.0 but were not released yet.
 
 ### General
 
 - Fix producer mandatarissen config; beleidsdomeincodes were not published correctly.
 - Remove document in submission from Gemeente Avelgem [DL-6691]
 - Bump frontend - change of base docker image [DL-6629] and allow users to update the modified date without any table changes [DL-6646]
+- New Dashboard Loket didn't show most recent reports, rules where pointing to cache [DL-6729]
 
 ### Deploy instructions
 
 ```
 drc up -d delta-producer-publication-graph-maintainer
 drc restart migrations && drc logs -ft --tail=200 migrations
+drc restart dispatcher
 ```
 
 ## 1.113.0 (2025-06-12)
