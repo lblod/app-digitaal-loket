@@ -1,0 +1,14 @@
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?s ?p ?oString .
+} WHERE {
+  ?s a schema:ContactPoint;
+    ?p ?o.
+
+  FILTER (?p IN (
+    schema:email
+  ))
+
+  BIND(STR(?o) AS ?oString)
+}

@@ -1,0 +1,29 @@
+PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
+PREFIX ch: <http://data.lblod.info/vocabularies/contacthub/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX m8g: <http://data.europa.eu/m8g/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX organisatie: <http://lblod.data.gift/vocabularies/organisatie/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT {
+  ?s ?p ?o.
+} WHERE {
+  ?s a org:ChangeEvent;
+    ?p ?o.
+
+  FILTER (?p IN (
+    rdf:type,
+    mu:uuid,
+    dct:date,
+    ch:typeWijziging,
+    org:resultedFrom,
+    org:changedBy,
+    organisatie:veranderingsgebeurtenisResultaat,
+    org:originalOrganization,
+    org:resultingOrganization,
+    m8g:hasFormalFramework
+  ))
+}

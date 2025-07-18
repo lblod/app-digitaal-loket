@@ -1,0 +1,15 @@
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX regorg: <http://www.w3.org/ns/regorg#>
+
+CONSTRUCT {
+  ?s ?p ?oString .
+} WHERE {
+  ?s a ere:CentraalBestuurVanDeEredienst;
+    ?p ?o.
+
+  FILTER (?p IN (
+    regorg:legalName
+  ))
+
+  BIND(STR(?o) AS ?oString)
+}

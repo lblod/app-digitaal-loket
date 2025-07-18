@@ -1,0 +1,14 @@
+PREFIX locn: <http://www.w3.org/ns/locn#>
+
+CONSTRUCT {
+  ?s ?p ?oString .
+} WHERE {
+  ?s a locn:Address;
+    ?p ?o.
+
+  FILTER (?p IN (
+    locn:fullAddress
+  ))
+
+  BIND(STR(?o) AS ?oString)
+}

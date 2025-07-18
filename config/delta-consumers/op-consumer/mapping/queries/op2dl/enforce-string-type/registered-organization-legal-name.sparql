@@ -1,0 +1,14 @@
+PREFIX regorg: <http://www.w3.org/ns/regorg#RegisteredOrganization>
+
+CONSTRUCT {
+  ?s ?p ?oString .
+} WHERE {
+  ?s a regorg:RegisteredOrganization;
+    ?p ?o.
+
+  FILTER (?p IN (
+    regorg:legalName
+  ))
+
+  BIND(STR(?o) AS ?oString)
+}

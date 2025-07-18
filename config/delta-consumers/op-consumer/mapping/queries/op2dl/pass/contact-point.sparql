@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX organisatie: <http://lblod.data.gift/vocabularies/organisatie/>
+PREFIX schema: <http://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+CONSTRUCT {
+  ?s ?p ?o.
+} WHERE {
+  ?s a schema:ContactPoint;
+    ?p ?o.
+
+  FILTER (?p IN (
+    rdf:type,
+    mu:uuid,
+    locn:address,
+    foaf:page,
+    schema:faxNumber,
+    schema:contactType,
+    schema:telephone
+  ))
+}
