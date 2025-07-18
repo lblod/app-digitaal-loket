@@ -11,5 +11,5 @@ CONSTRUCT {
     adres:land
   ))
 
-  BIND(CONCAT(str(?o)) AS ?oString)
+  BIND(STR(?o) AS ?oString)
 }
