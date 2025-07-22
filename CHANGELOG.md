@@ -7,6 +7,14 @@
 - Re-enable mocklogin rules for use in DEV and QA environments. Although not
   needed in PROD and removed because of safety concerns, they were needed in
   DEV and QA. In PROD, there will be no service to respond to the requests.
+- Add a consumer workaround to delete strings with special characters consumed from OP and fix current data
+
+### Deploy instructions
+
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc restart op-public-consumer
+```
 
 ## v1.113.1 (2025-07-14)
 
