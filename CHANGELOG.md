@@ -8,6 +8,7 @@
   needed in PROD and removed because of safety concerns, they were needed in
   DEV and QA. In PROD, there will be no service to respond to the requests.
 - Add a consumer workaround to delete strings with special characters consumed from OP and fix current data
+- Reorganize op consumer configuration files by type of resource to ease debugging
 
 ### Deploy instructions
 
