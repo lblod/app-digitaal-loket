@@ -10,6 +10,9 @@
   DEV and QA. In PROD, there will be no service to respond to the requests.
 - Add a consumer workaround to delete strings with special characters consumed from OP and fix current data
 - Reorganize op consumer configuration files by type of resource to ease debugging
+- Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
+  Roosdaal/Borchtlombeek via Aartsbisdom Mechelen-Brussel that could not be
+  sent in [DL-6696]
 
 ### Deploy instructions
 
