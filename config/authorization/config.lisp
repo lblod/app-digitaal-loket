@@ -68,6 +68,21 @@
 
 (type-cache::add-type-for-prefix "http://mu.semte.ch/sessions/" "http://mu.semte.ch/vocabularies/session/Session")
 
+(defconstant +role-bbcdr+ "LoketLB-bbcdrGebruiker")
+(defconstant +role-toezicht+ "LoketLB-toezichtGebruiker")
+(defconstant +role-leidinggevenden+ "loketlb-leidinggevendengebruiker")
+(defconstant +role-berichten+ "LoketLB-berichtenGebruiker")
+(defconstant +role-personeelsbeheer+ "LoketLB-personeelsbeheer")
+(defconstant +role-eredienst-mandaat+ "LoketLB-eredienstMandaatGebruiker")
+(defconstant +role-eredienst-bedienaar+ "LoketLB-eredienstBedienaarGebruiker")
+(defconstant +role-admin+ "LoketAdmin")
+
+(defparameter *session-roles* 
+  (list +role-bbcdr+ +role-toezicht+ +role-leidinggevenden+ 
+        +role-berichten+ +role-personeelsbeheer+ 
+        +role-eredienst-mandaat+ +role-eredienst-bedienaar+ 
+        +role-admin+))
+
 ;; TODO allow only logged in users
 (define-graph public ("http://mu.semte.ch/graphs/public")
   ("validation:Execution" -> _)
@@ -157,13 +172,13 @@
   ("foaf:OnlineAccount" -> _)
   ("adms:Identifier" -> _))
 
-(define-graph organizations-bbcdr-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-bbcdr-rw ("http://mu.semte.ch/graphs/organizations/")
   ("ext:bbcdr/Report" -> _)
   ("nfo:FileDataObject" -> _))
 
 
 ; Toezicht
-(define-graph organizations-toez-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-toez-rw ("http://mu.semte.ch/graphs/organizations/")
   ("cogs:Job" -> _)
   ("ext:supervision/InzendingVoorToezicht" -> _)
   ("ext:supervision/TaxRate" -> _)
@@ -187,16 +202,16 @@
 
 
 ; Vendor Management
-(define-graph o-toezicht-vendor-management-rwf ("http://mu.semte.ch/graphs/automatic-submission")
+(define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
   ("ext:Vendor" -> _)
   ("besluit:Bestuurseenheid" -> _))
 ; TODO identical to authenticated-public graph
-(define-graph o-toezicht-vendor-management-rwf-authenticated ("http://mu.semte.ch/graphs/authenticated/public")
+(define-graph o-toezicht-vendor-management-rw-authenticated ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
 
 ; LeidingGevenden
-(define-graph o-leidinggevenden-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-leidinggevenden-rw ("http://mu.semte.ch/graphs/organizations/")
   ("http://data.lblod.info/vocabularies/contacthub/AgentInPositie" -> _)
   ("schema:ContactPoint" -> _)
   ("locn:Address" -> _)
@@ -207,7 +222,7 @@
 
 
 ; Messaging Centre
-(define-graph o-messaging-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-messaging-rw ("http://mu.semte.ch/graphs/organizations/")
   ("schema:Message" -> _)
   ("schema:Conversation" -> _)
   ("nfo:FileDataObject" -> _)
@@ -216,14 +231,14 @@
 
 
 ; Employee Numbers Database
-(define-graph o-employee-database-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-employee-database-rw ("http://mu.semte.ch/graphs/organizations/")
   ("employee:EmployeeDataset" -> _)
   ("employee:EmployeePeriodSlice" -> _)
   ("employee:EmployeeObservation" -> _))
 
 
 ; Worship Mandatees
-(define-graph o-worship-positions-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-worship-positions-rw ("http://mu.semte.ch/graphs/organizations/")
   ("ch:AgentInPositie" -> _)
   ("adms:Identifier" -> _)
   ("person:Person" -> _)
@@ -243,8 +258,9 @@
   ("organisatie:HelftVerkiezing" -> _))
 
 
-; Worship Ministers
-(define-graph o-worship-positions-rwf ("http://mu.semte.ch/graphs/organizations/")
+; Worship Ministers TODO: has the same name as the above in original config
+; This is not allowed, find a good name here
+(define-graph o-worship-positions-bedienaar-rw ("http://mu.semte.ch/graphs/organizations/")
   ("adms:Identifier" -> _)
   ("person:Person" -> _)
   ("persoon:Geboorte" -> _)
@@ -278,10 +294,10 @@
 
 ; TODO, don't understand this one
 ; Loket Admin
-(define-graph o-admin-sessions-rwf ("")
+(define-graph o-admin-sessions-rw ("")
   ())
 
-(define-graph o-admin-rwf ("http://mu.semte.ch/graphs/organizations/")
+(define-graph o-admin-rw ("http://mu.semte.ch/graphs/organizations/")
   ("http://lblod.data.gift/vocabularies/reporting/Report" -> _)
   ("cogs:Job" -> _)
   ("oslc:Error" -> _)
@@ -292,7 +308,7 @@
 
 ; TODO call someone for line 510
 
-(define-graph o-persons-sensitive-deltas-rwf ("http://redpencil.data.gift/id/deltas/producer/")
+(define-graph o-persons-sensitive-deltas-r ("http://redpencil.data.gift/id/deltas/producer/")
   ("nfo:FileDataObject" -> _)
   ("dcat:Dataset" -> _)
   ("dcat:Distribution" -> _))
@@ -348,7 +364,7 @@
     ")
 
 (supply-allowed-group "access-for-vendor-api"
-  :parameters ("vendor_id", "session_group")
+  :parameters ("vendor_id" "session_group")
   :query "
     PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -378,6 +394,66 @@
       }
     } LIMIT 1")
 
+
+(dolist (role *session_roles*)
+  (eval
+   `(supply-allowed-group ,role
+      :parameters ("session_group" "session_role")
+      :query ,(format nil "
+    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    SELECT DISTINCT ?session_group ?session_role WHERE {
+      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                    ext:sessionRole ?session_role.
+      FILTER( ?session_role = \"~a\" )
+    }" role))))
+
 (grant (read)
   :to-graph (public-read)
   :for-allowed-group "public")
+
+(grant (read write)
+  :to-graph (o-bbcdr-rw)
+  :for-allowed-group +role-bbcdr+)
+
+(grant (read write)
+  :to-graph (o-toez-rw)
+  :for-allowed-group +role-toezicht+)
+
+(grant (read write)
+  :to-graph (o-toezicht-vendor-management-rw)
+  :for-allowed-group "access-automatic-submission")
+
+; TODO one is missing here
+
+(grant (read write)
+  :to-graph (o-leidinggevenden-rw)
+  :for-allowed-group +role-leidinggevenden+)
+
+(grant (read write)
+  :to-graph (o-messaging-rw)
+  :for-allowed-group +role-berichten+)
+
+(grant (read write)
+  :to-graph (o-employee-database-rw)
+  :for-allowed-group +role-personeelsbeheer+)
+
+(grant (read write)
+  :to-graph (o-worship-positions-rw)
+  :for-allowed-group +role-eredienst-mandaat+)
+
+(grant (read write)
+  :to-graph (o-worship-positions-bedienaar-rw)
+  :for-allowed-group +role-eredienst-bedienaar+)
+
+(grant (read write)
+  :to-graph (o-vendor-api-r)
+  :for-allowed-group "access-for-vendor-api")
+
+(grant (read write)
+  :to-graph (o-admin-rw)
+  :for-allowed-group +role-admin+)
+
+(grant (read)
+  :to-graph (o-persons-sensitive-deltas-r)
+  :for-allowed-group "access-sensitive-delta-producer-data")
