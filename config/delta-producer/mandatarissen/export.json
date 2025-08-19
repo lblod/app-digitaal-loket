@@ -29,6 +29,7 @@
         "http://data.vlaanderen.be/ns/mandaat#start",
         "http://data.vlaanderen.be/ns/mandaat#einde",
         "http://data.vlaanderen.be/ns/mandaat#rangorde",
+        "http://purl.org/dc/terms/modified",
         "http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
         "http://www.w3.org/ns/org#holds",
         "http://data.vlaanderen.be/ns/mandaat#status",
@@ -45,6 +46,7 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://xmlns.com/foaf/0.1/familyName",
         "http://xmlns.com/foaf/0.1/name",
+        "http://purl.org/dc/terms/modified",
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
         "http://www.w3.org/2002/07/owl#sameAs"
       ]
@@ -55,6 +57,7 @@
       "hasRegexGraphsFilter": false,
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
+        "http://purl.org/dc/terms/modified",
         "http://www.w3.org/ns/org#organisation"
       ]
     },
@@ -66,6 +69,8 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "https://www.w3.org/ns/regorg#legalName",
         "http://www.w3.org/ns/org#memberOf",
+        "http://purl.org/dc/terms/modified",
+        "http://purl.org/dc/terms/modified",
         "http://www.w3.org/ns/org#linkedTo"
       ]
     }
