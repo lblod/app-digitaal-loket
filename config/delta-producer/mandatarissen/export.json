@@ -70,7 +70,6 @@
         "https://www.w3.org/ns/regorg#legalName",
         "http://www.w3.org/ns/org#memberOf",
         "http://purl.org/dc/terms/modified",
-        "http://purl.org/dc/terms/modified",
         "http://www.w3.org/ns/org#linkedTo"
       ]
     }
