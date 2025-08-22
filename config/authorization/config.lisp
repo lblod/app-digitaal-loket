@@ -9,7 +9,7 @@
 ;;; configuration
 (in-package :client)
 (setf *log-sparql-query-roundtrip* t)
-(setf *backend* "http://triplestore:8890/sparql")
+(setf *backend* "http://virtuoso:8890/sparql")
 
 (in-package :server)
 (setf *log-incoming-requests-p* nil)
@@ -68,20 +68,23 @@
 
 (type-cache::add-type-for-prefix "http://mu.semte.ch/sessions/" "http://mu.semte.ch/vocabularies/session/Session")
 
-(defconstant +role-bbcdr+ "LoketLB-bbcdrGebruiker")
-(defconstant +role-toezicht+ "LoketLB-toezichtGebruiker")
-(defconstant +role-leidinggevenden+ "loketlb-leidinggevendengebruiker")
-(defconstant +role-berichten+ "LoketLB-berichtenGebruiker")
-(defconstant +role-personeelsbeheer+ "LoketLB-personeelsbeheer")
-(defconstant +role-eredienst-mandaat+ "LoketLB-eredienstMandaatGebruiker")
-(defconstant +role-eredienst-bedienaar+ "LoketLB-eredienstBedienaarGebruiker")
-(defconstant +role-admin+ "LoketAdmin")
+(defvar *role-bbcdr* "LoketLB-bbcdrGebruiker")
+(defvar *role-toezicht* "LoketLB-toezichtGebruiker")
+(defvar *role-leidinggevenden* "loketlb-leidinggevendengebruiker")
+(defvar *role-berichten* "LoketLB-berichtenGebruiker")
+(defvar *role-personeelsbeheer* "LoketLB-personeelsbeheer")
+(defvar *role-eredienst-mandaat* "LoketLB-eredienstMandaatGebruiker")
+(defvar *role-eredienst-bedienaar* "LoketLB-eredienstBedienaarGebruiker")
+(defvar *role-admin* "LoketAdmin")
 
 (defparameter *session-roles* 
-  (list +role-bbcdr+ +role-toezicht+ +role-leidinggevenden+ 
-        +role-berichten+ +role-personeelsbeheer+ 
-        +role-eredienst-mandaat+ +role-eredienst-bedienaar+ 
-        +role-admin+))
+  (list *role-bbcdr* *role-toezicht* *role-leidinggevenden* 
+        *role-berichten* *role-personeelsbeheer* 
+        *role-eredienst-mandaat* *role-eredienst-bedienaar* 
+        *role-admin*))
+
+(define-graph sessions ("http://mu.semte.ch/graphs/sessions")
+  ("http://mu.semte.ch/vocabularies/session/Session" -> _))
 
 ;; TODO allow only logged in users
 (define-graph public ("http://mu.semte.ch/graphs/public")
@@ -160,14 +163,14 @@
   ("organisatie:TypeEredienst" -> _)
   ("organisatie:HelftVerkiezing" -> _))
 
-(define-graph public-wf ("http://mu.semte.ch/graphs/public")
-  ("ext:BeleidsdomeinCode")
-  ("nfo:Folder")) ; TODO not sure why this is here
+;; (define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
+;;   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
-(define-graph authenticated-public ("http://mu.semte.ch/graphs/authenticated/public")
-  ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
+;; (define-graph public-wf ("http://mu.semte.ch/graphs/public")
+;;   ("ext:BeleidsdomeinCode")
+;;   ("nfo:Folder")) ; TODO not sure why this is here
 
-(define-graph organizations ("http://mu.semte.ch/graphs/organizations/")
+(define-graph org ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
   ("foaf:OnlineAccount" -> _)
   ("adms:Identifier" -> _))
@@ -177,7 +180,7 @@
   ("nfo:FileDataObject" -> _))
 
 
-; Toezicht
+;; Toezicht
 (define-graph o-toez-rw ("http://mu.semte.ch/graphs/organizations/")
   ("cogs:Job" -> _)
   ("ext:supervision/InzendingVoorToezicht" -> _)
@@ -201,16 +204,16 @@
   ("cogs:ExecutionStatus" -> _))
 
 
-; Vendor Management
+;; Vendor Management
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
   ("ext:Vendor" -> _)
   ("besluit:Bestuurseenheid" -> _))
-; TODO identical to authenticated-public graph
-(define-graph o-toezicht-vendor-management-rw-authenticated ("http://mu.semte.ch/graphs/authenticated/public")
+;; TODO identical to authenticated-public graph
+(define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
 
-; LeidingGevenden
+;; LeidingGevenden
 (define-graph o-leidinggevenden-rw ("http://mu.semte.ch/graphs/organizations/")
   ("http://data.lblod.info/vocabularies/contacthub/AgentInPositie" -> _)
   ("schema:ContactPoint" -> _)
@@ -221,7 +224,7 @@
   ("leidinggevenden:Bestuursfunctie" -> "schema:contactPoint"))
 
 
-; Messaging Centre
+;; Messaging Centre
 (define-graph o-messaging-rw ("http://mu.semte.ch/graphs/organizations/")
   ("schema:Message" -> _)
   ("schema:Conversation" -> _)
@@ -230,14 +233,14 @@
   ("besluit:Bestuurseenheid" -> "ext:wilMailOntvangen"))
 
 
-; Employee Numbers Database
+;; Employee Numbers Database
 (define-graph o-employee-database-rw ("http://mu.semte.ch/graphs/organizations/")
   ("employee:EmployeeDataset" -> _)
   ("employee:EmployeePeriodSlice" -> _)
   ("employee:EmployeeObservation" -> _))
 
 
-; Worship Mandatees
+;; Worship Mandatees
 (define-graph o-worship-positions-rw ("http://mu.semte.ch/graphs/organizations/")
   ("ch:AgentInPositie" -> _)
   ("adms:Identifier" -> _)
@@ -258,8 +261,8 @@
   ("organisatie:HelftVerkiezing" -> _))
 
 
-; Worship Ministers TODO: has the same name as the above in original config
-; This is not allowed, find a good name here
+;; Worship Ministers TODO: has the same name as the above in original config
+;; This is not allowed, find a good name here
 (define-graph o-worship-positions-bedienaar-rw ("http://mu.semte.ch/graphs/organizations/")
   ("adms:Identifier" -> _)
   ("person:Person" -> _)
@@ -281,7 +284,7 @@
   ("generiek:GestructureerdeIdentificator" -> _))
 
 
-; Toezicht Vendor API
+;; Toezicht Vendor API
 (define-graph o-vendor-api-r ("http://mu.semte.ch/graphs/vendors/")
   ("http://rdf.myexperiment.org/ontologies/base/Submission" -> _)
   ("ext:SubmissionDocument" -> _)
@@ -292,11 +295,6 @@
   ("nfo:FileDataObject" -> _))
 
 
-; TODO, don't understand this one
-; Loket Admin
-(define-graph o-admin-sessions-rw ("")
-  ())
-
 (define-graph o-admin-rw ("http://mu.semte.ch/graphs/organizations/")
   ("http://lblod.data.gift/vocabularies/reporting/Report" -> _)
   ("cogs:Job" -> _)
@@ -305,8 +303,15 @@
   ("nfo:FileDataObject" -> _)
   ("nfo:DataContainer" -> _))
 
-
-; TODO call someone for line 510
+;; TODO why is this so close to the one above?
+;; Are both necessary?
+(define-graph o-admin-harvesting-rw ("http://mu.semte.ch/graphs/harvesting")
+  ("http://lblod.data.gift/vocabularies/reporting/Report" -> _)
+  ("cogs:Job" -> _)
+  ("oslc:Error" -> _)
+  ("nfo:DataContainer" -> _)
+  ("nfo:FileDataObject" -> _)
+  ("nfo:DataContainer" -> _))
 
 (define-graph o-persons-sensitive-deltas-r ("http://redpencil.data.gift/id/deltas/producer/")
   ("nfo:FileDataObject" -> _)
@@ -317,28 +322,26 @@
 
 (supply-allowed-group "logged-in"
   :parameters ()
-  :query "
-    PREFIX session: <http://mu.semte.ch/vocabularies/session/>
+  :query "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     SELECT ?account WHERE {
         <SESSION_ID> session:account ?account .
     } LIMIT 1")
 
-(supply-allowed-group "authenticated"
-  :parameters ()
-  :query "
-    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-    SELECT DISTINCT ?session_group ?session_role WHERE {
-      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-                    ext:sessionRole ?session_role.
-    }")
+;; (supply-allowed-group "authenticated"
+;;   :parameters ()
+;;   :query "
+;;     PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+;;     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+;;     SELECT DISTINCT ?session_group ?session_role WHERE {
+;;       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+;;                    ext:sessionRole ?session_role.
+;;     }")
 
 (supply-allowed-group "access-automatic-submission"
   :parameters ()
-  :query "
-    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+  :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     SELECT DISTINCT ?session_group ?session_role WHERE {
       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
@@ -348,8 +351,7 @@
 
 (supply-allowed-group "access-sensitive-delta-producer-data"
   :parameters ("group_name")
-  :query "
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+  :query "PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
     SELECT DISTINCT ?group_name WHERE {
       <SESSION_ID> muAccount:account ?onlineAccount.
@@ -361,12 +363,11 @@
 
       ?group foaf:member ?agent;
         foaf:name ?group_name.
-    ")
+    }")
 
 (supply-allowed-group "access-for-vendor-api"
   :parameters ("vendor_id" "session_group")
-  :query "
-    PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+  :query "PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     SELECT DISTINCT ?vendor_id ?session_group WHERE {
       <SESSION_ID> muAccount:canActOnBehalfOf/mu:uuid ?session_group;
@@ -375,8 +376,7 @@
 
 (supply-allowed-group "admin" 
   :parameters ()
-  :query "
-    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+  :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
     SELECT DISTINCT ?session_role WHERE {
       VALUES ?session_role {
@@ -395,12 +395,34 @@
     } LIMIT 1")
 
 
-(dolist (role *session_roles*)
+(supply-allowed-group "loket-admin"
+  :parameters ()
+  :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    SELECT DISTINCT ?session_group ?session_role WHERE {
+      <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                   ext:sessionRole ?session_role.
+      FILTER( ?session_role = \"LoketAdmin\" )
+    }")
+
+(supply-allowed-group "logged-in-or-mock-logged-in"
+  :parameters ("session_group")
+  :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    SELECT DISTINCT ?session_group WHERE {
+      {
+        <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
+      } UNION {
+        <SESSION_ID> ext:originalSessionGroup/mu:uuid ?session_group.
+      }
+    }")
+
+
+(dolist (role *session-roles*)
   (eval
    `(supply-allowed-group ,role
       :parameters ("session_group" "session_role")
-      :query ,(format nil "
-    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+      :query ,(format nil "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     SELECT DISTINCT ?session_group ?session_role WHERE {
       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
@@ -409,50 +431,68 @@
     }" role))))
 
 (grant (read)
-  :to-graph (public-read)
+  :to-graph (public sessions)
   :for-allowed-group "public")
+
+;; (grant (read) 
+;;   :to-graph (public-r)
+;;   :for-allowed-group "authenticated")
+
+(grant (read)
+  :to-graph (org)
+  :for-allowed-group "logged-in-or-mock-logged-in")
 
 (grant (read write)
   :to-graph (o-bbcdr-rw)
-  :for-allowed-group +role-bbcdr+)
+  :for-allowed-group "LoketLB-bbcdrGebruiker")
 
 (grant (read write)
   :to-graph (o-toez-rw)
-  :for-allowed-group +role-toezicht+)
+  :for-allowed-group "LoketLB-toezichtGebruiker")
 
 (grant (read write)
   :to-graph (o-toezicht-vendor-management-rw)
   :for-allowed-group "access-automatic-submission")
 
-; TODO one is missing here
+(grant (read write)
+  :to-graph (o-toezicht-vendor-management-authenticated-rw)
+  :for-allowed-group "access-automatic-submission")
 
 (grant (read write)
   :to-graph (o-leidinggevenden-rw)
-  :for-allowed-group +role-leidinggevenden+)
+  :for-allowed-group "loketlb-leidinggevendengebruiker")
 
 (grant (read write)
   :to-graph (o-messaging-rw)
-  :for-allowed-group +role-berichten+)
+  :for-allowed-group "LoketLB-berichtenGebruiker")
 
 (grant (read write)
   :to-graph (o-employee-database-rw)
-  :for-allowed-group +role-personeelsbeheer+)
+  :for-allowed-group "LoketLB-personeelsbeheer")
 
 (grant (read write)
   :to-graph (o-worship-positions-rw)
-  :for-allowed-group +role-eredienst-mandaat+)
+  :for-allowed-group "LoketLB-eredienstMandaatGebruiker")
 
 (grant (read write)
   :to-graph (o-worship-positions-bedienaar-rw)
-  :for-allowed-group +role-eredienst-bedienaar+)
+  :for-allowed-group "LoketLB-eredienstBedienaarGebruiker")
 
-(grant (read write)
+(grant (read)
   :to-graph (o-vendor-api-r)
   :for-allowed-group "access-for-vendor-api")
 
 (grant (read write)
+  :to-graph (sessions)
+  :for-allowed-group "admin")
+
+(grant (read write)
   :to-graph (o-admin-rw)
-  :for-allowed-group +role-admin+)
+  :for-allowed-group "LoketAdmin")
+
+(grant (read write)
+  :to-graph (o-admin-harvesting-rw)
+  :for-allowed-group "loket-admin")
 
 (grant (read)
   :to-graph (o-persons-sensitive-deltas-r)
