@@ -148,9 +148,11 @@
   ("organisatie:TypeEredienst" -> _)
   ("organisatie:HelftVerkiezing" -> _))
 
+;; For Felix: This type has no matches on production for the given graph.
 ;; (define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
 ;;   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
+;; For Felix: Same here
 ;; (define-graph public-wf ("http://mu.semte.ch/graphs/public")
 ;;   ("ext:BeleidsdomeinCode")
 ;;   ("nfo:Folder")) ; TODO not sure why this is here
@@ -193,7 +195,8 @@
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
   ("ext:Vendor" -> _)
   ("besluit:Bestuurseenheid" -> _))
-;; TODO identical to authenticated-public graph
+
+;; For Felix: Can this be removed? It is identical to the public-r graph above which has no matches
 (define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
@@ -246,8 +249,6 @@
   ("organisatie:HelftVerkiezing" -> _))
 
 
-;; Worship Ministers TODO: has the same name as the above in original config
-;; This is not allowed, find a good name here
 (define-graph o-worship-positions-bedienaar-rw ("http://mu.semte.ch/graphs/organizations/")
   ("adms:Identifier" -> _)
   ("person:Person" -> _)
@@ -288,8 +289,7 @@
   ("nfo:FileDataObject" -> _)
   ("nfo:DataContainer" -> _))
 
-;; TODO why is this so close to the one above?
-;; Are both necessary?
+;; LOKETADMIN -> TODO: duplicate. We need to move the data in this graph to "http://mu.semte.ch/graphs/organizations/"
 (define-graph o-admin-harvesting-rw ("http://mu.semte.ch/graphs/harvesting")
   ("http://lblod.data.gift/vocabularies/reporting/Report" -> _)
   ("cogs:Job" -> _)
