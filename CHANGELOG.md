@@ -1,8 +1,8 @@
 # Changelog
 
 ## Unreleased
-- Add a consumer workaround to delete strings with special characters consumed from OP and fix current data
-- Reorganize op consumer configuration files by type of resource to ease debugging
+- Add a consumer workaround to delete strings with special characters consumed from OP and fix current data [DL-6701]
+- Reorganize op consumer configuration files by type of resource to ease debugging [DL-6701]
 - Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
   Roosdaal/Borchtlombeek via Aartsbisdom Mechelen-Brussel that could not be
   sent in [DL-6696]
