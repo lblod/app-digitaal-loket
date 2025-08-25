@@ -1,13 +1,6 @@
 # Changelog
 
 ## Unreleased
-
-### General
-
-- Bump berichtencentrum-email-notification-service [DL-6471](https://binnenland.atlassian.net/browse/DL-6471)
-- Re-enable mocklogin rules for use in DEV and QA environments. Although not
-  needed in PROD and removed because of safety concerns, they were needed in
-  DEV and QA. In PROD, there will be no service to respond to the requests.
 - Add a consumer workaround to delete strings with special characters consumed from OP and fix current data
 - Reorganize op consumer configuration files by type of resource to ease debugging
 - Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
@@ -21,10 +14,20 @@ drc restart migrations && drc logs -ft --tail=200 migrations
 drc restart op-public-consumer
 ```
 
+## v1.113.2 (2025-08-25)
+
+- Bump berichtencentrum-email-notification-service [DL-6471](https://binnenland.atlassian.net/browse/DL-6471)
+- Re-enable mocklogin rules for use in DEV and QA environments. Although not
+  needed in PROD and removed because of safety concerns, they were needed in
+  DEV and QA. In PROD, there will be no service to respond to the requests.
+- [DL-6773](https://binnenland.atlassian.net/browse/DL-6773)
+   - Fix config beleidsdomeincodes
+   - Add http://purl.org/dc/terms/modified
+
 ### Deploy instructions
 
 ```
-drc restart dispatcher
+drc restart dispatcher delta-producer-publication-graph-maintainer
 drc up -d berichtencentrum-email-notification
 ```
 
