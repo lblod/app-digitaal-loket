@@ -68,21 +68,6 @@
 
 (type-cache::add-type-for-prefix "http://mu.semte.ch/sessions/" "http://mu.semte.ch/vocabularies/session/Session")
 
-(defvar *role-bbcdr* "LoketLB-bbcdrGebruiker")
-(defvar *role-toezicht* "LoketLB-toezichtGebruiker")
-(defvar *role-leidinggevenden* "loketlb-leidinggevendengebruiker")
-(defvar *role-berichten* "LoketLB-berichtenGebruiker")
-(defvar *role-personeelsbeheer* "LoketLB-personeelsbeheer")
-(defvar *role-eredienst-mandaat* "LoketLB-eredienstMandaatGebruiker")
-(defvar *role-eredienst-bedienaar* "LoketLB-eredienstBedienaarGebruiker")
-(defvar *role-admin* "LoketAdmin")
-
-(defparameter *session-roles* 
-  (list *role-bbcdr* *role-toezicht* *role-leidinggevenden* 
-        *role-berichten* *role-personeelsbeheer* 
-        *role-eredienst-mandaat* *role-eredienst-bedienaar* 
-        *role-admin*))
-
 (define-graph sessions ("http://mu.semte.ch/graphs/sessions")
   ("http://mu.semte.ch/vocabularies/session/Session" -> _))
 
@@ -418,7 +403,10 @@
     }")
 
 
-(dolist (role *session-roles*)
+(dolist (role (list "LoketLB-bbcdrGebruiker" "LoketLB-toezichtGebruiker" "loketlb-leidinggevendengebruiker" 
+        "LoketLB-berichtenGebruiker" "LoketLB-personeelsbeheer" 
+        "LoketLB-eredienstMandaatGebruiker" "LoketLB-eredienstBedienaarGebruiker" 
+        "LoketAdmin"))
   (eval
    `(supply-allowed-group ,role
       :parameters ("session_group" "session_role")
