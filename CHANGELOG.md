@@ -2,17 +2,20 @@
 
 ## Unreleased
 
-### General
+## v1.113.2 (2025-08-25)
 
 - Bump berichtencentrum-email-notification-service [DL-6471](https://binnenland.atlassian.net/browse/DL-6471)
 - Re-enable mocklogin rules for use in DEV and QA environments. Although not
   needed in PROD and removed because of safety concerns, they were needed in
   DEV and QA. In PROD, there will be no service to respond to the requests.
+- [DL-6773](https://binnenland.atlassian.net/browse/DL-6773)
+   - Fix config beleidsdomeincodes
+   - Add http://purl.org/dc/terms/modified
 
 ### Deploy instructions
 
 ```
-drc restart dispatcher
+drc restart dispatcher delta-producer-publication-graph-maintainer
 drc up -d berichtencentrum-email-notification
 ```
 
