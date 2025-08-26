@@ -48,6 +48,7 @@
   :m8g "http://data.europa.eu/m8g/"
   :mandaat "http://data.vlaanderen.be/ns/mandaat#"
   :mu "http://mu.semte.ch/vocabularies/core/"
+  :muAccount "http://mu.semte.ch/vocabularies/account//ontologies/base/Submission" -> _)
   :nfo "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#"
   :org "http://www.w3.org/ns/org#"
   :organisatie "http://lblod.data.gift/vocabularies/organisatie/"
@@ -193,7 +194,7 @@
 
 ;; Vendor Management
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
-  ("ext:Vendor" -> _)
+  ("ext:Vendor" x> "muAccount:key")
   ("besluit:Bestuurseenheid" -> _))
 
 ;; For Felix: Can this be removed? It is identical to the public-r graph above which has no matches
