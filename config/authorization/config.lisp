@@ -71,7 +71,6 @@
 (define-graph sessions ("http://mu.semte.ch/graphs/sessions")
   ("http://mu.semte.ch/vocabularies/session/Session" -> _))
 
-;; TODO allow only logged in users
 (define-graph public ("http://mu.semte.ch/graphs/public")
   ("validation:Execution" -> _)
   ("validation:Validation" -> _)
@@ -160,7 +159,6 @@
   ("ext:bbcdr/Report" -> _)
   ("nfo:FileDataObject" -> _))
 
-
 ;; Toezicht
 (define-graph o-toez-rw ("http://mu.semte.ch/graphs/organizations/")
   ("cogs:Job" -> _)
@@ -184,7 +182,6 @@
   ("http://redpencil.data.gift/vocabularies/tasks/Task" -> _)
   ("cogs:ExecutionStatus" -> _))
 
-
 ;; Vendor Management
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
   ("ext:Vendor" -> _)
@@ -192,7 +189,6 @@
 
 (define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
-
 
 ;; LeidingGevenden
 (define-graph o-leidinggevenden-rw ("http://mu.semte.ch/graphs/organizations/")
@@ -352,7 +348,7 @@
                    muAccount:account/mu:uuid ?vendor_id.
     }")
 
-(supply-allowed-group "admin" 
+(supply-allowed-group "admin"
   :parameters ()
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
