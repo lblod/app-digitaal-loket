@@ -404,11 +404,15 @@
       }
     }")
 
+(dolist (role (list "LoketLB-bbcdrGebruiker"
+                    "LoketLB-toezichtGebruiker"
+                    "LoketLB-leidinggevendenGebruiker"
+                    "LoketLB-berichtenGebruiker"
+                    "LoketLB-personeelsbeheer"
+                    "LoketLB-eredienstMandaatGebruiker"
+                    "LoketLB-eredienstBedienaarGebruiker"
+                    "LoketAdmin"))
 
-(dolist (role (list "LoketLB-bbcdrGebruiker" "LoketLB-toezichtGebruiker" "loketlb-leidinggevendengebruiker" 
-        "LoketLB-berichtenGebruiker" "LoketLB-personeelsbeheer" 
-        "LoketLB-eredienstMandaatGebruiker" "LoketLB-eredienstBedienaarGebruiker" 
-        "LoketAdmin"))
   (eval
    `(supply-allowed-group ,role
       :parameters ("session_group" "session_role")
