@@ -8,10 +8,11 @@
 - Re-enable mocklogin rules for use in DEV and QA environments. Although not
   needed in PROD and removed because of safety concerns, they were needed in
   DEV and QA. In PROD, there will be no service to respond to the requests.
-
+- Swap `mu-auth` for `sparql-parser` [DL-6755]
 ### Deploy instructions
 
 ```
+drc up -d database
 drc restart dispatcher
 drc up -d berichtencentrum-email-notification
 ```
