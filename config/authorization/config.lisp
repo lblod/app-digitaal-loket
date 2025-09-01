@@ -454,7 +454,7 @@
 
 (grant (read write)
   :to-graph (o-leidinggevenden-rw)
-  :for-allowed-group "loketlb-leidinggevendengebruiker")
+  :for-allowed-group "LoketLB-leidinggevendenGebruiker")
 
 (grant (read write)
   :to-graph (o-messaging-rw)
