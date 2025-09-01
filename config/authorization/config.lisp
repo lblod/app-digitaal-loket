@@ -152,10 +152,6 @@
 ;; (define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
 ;;   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
-;; For Felix: Same here
-;; (define-graph public-wf ("http://mu.semte.ch/graphs/public")
-;;   ("ext:BeleidsdomeinCode")
-;;   ("nfo:Folder")) ; TODO not sure why this is here
 
 (define-graph org ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
