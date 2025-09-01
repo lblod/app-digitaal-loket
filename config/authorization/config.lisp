@@ -392,7 +392,7 @@
       FILTER( ?session_role = \"LoketAdmin\" )
     }")
 
-(supply-allowed-group "logged-in-or-mock-logged-in"
+(supply-allowed-group "logged-in-or-impersonating"
   :parameters ("session_group")
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -430,7 +430,7 @@
 
 (grant (read)
   :to-graph (org)
-  :for-allowed-group "logged-in-or-mock-logged-in")
+  :for-allowed-group "logged-in-or-impersonating")
 
 (grant (read write)
   :to-graph (o-bbcdr-rw)
