@@ -419,9 +419,9 @@
   :to-graph (public sessions)
   :for-allowed-group "public")
 
-;; (grant (read) 
-;;   :to-graph (public-r)
-;;   :for-allowed-group "authenticated")
+(grant (read)
+  :to-graph (public-r)
+  :for-allowed-group "authenticated")
 
 (grant (read)
   :to-graph (org)
