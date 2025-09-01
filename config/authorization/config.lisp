@@ -148,10 +148,8 @@
   ("organisatie:TypeEredienst" -> _)
   ("organisatie:HelftVerkiezing" -> _))
 
-;; For Felix: This type has no matches on production for the given graph.
-;; (define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
-;;   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
-
+(define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
+  ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
 (define-graph org ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
