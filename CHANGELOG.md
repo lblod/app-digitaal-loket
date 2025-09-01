@@ -6,10 +6,12 @@
 - Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
   Roosdaal/Borchtlombeek via Aartsbisdom Mechelen-Brussel that could not be
   sent in [DL-6696]
+- Swap `mu-auth` for `sparql-parser` [DL-6755]
 
 ### Deploy instructions
 
 ```
+drc up -d database
 drc restart migrations && drc logs -ft --tail=200 migrations
 drc restart op-public-consumer
 ```
