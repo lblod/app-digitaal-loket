@@ -1,0 +1,15 @@
+PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+
+CONSTRUCT {
+  ?s ?p ?oString .
+} WHERE {
+  ?s a locn:Address;
+    ?p ?o.
+
+  FILTER (?p IN (
+    adres:land
+  ))
+
+  BIND(STR(?o) AS ?oString)
+}

@@ -1,0 +1,38 @@
+PREFIX adres: <https://data.vlaanderen.be/ns/adres#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX regorg: <http://www.w3.org/ns/regorg#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?oToRemove .
+  }
+}
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?oToKeep .
+  }
+}
+WHERE {
+   VALUES ?p {
+    adres:land
+    locn:fullAddress
+    skos:prefLabel
+    skos:altLabel
+    regorg:legalName
+    dct:description
+    schema:email
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?oToRemove .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?s ?p ?oToKeep .
+  }
+}

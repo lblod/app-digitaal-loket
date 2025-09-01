@@ -1,0 +1,15 @@
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?s ?p ?oString .
+} WHERE {
+  ?s a ere:RepresentatiefOrgaan;
+    ?p ?o.
+
+  FILTER (?p IN (
+    skos:altLabel
+  ))
+
+  BIND(STR(?o) AS ?oString)
+}

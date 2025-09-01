@@ -20,10 +20,7 @@ WHERE {
       <http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode>
       <http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode>
       <http://mu.semte.ch/vocabularies/ext/OrganizationClassificationCode>
-      <http://schema.org/ContactPoint>
       <http://www.w3.org/2004/02/skos/core#Concept>
-      <http://www.w3.org/ns/locn#Address>
-      <http://www.w3.org/ns/org#ChangeEvent>
       <http://www.w3.org/ns/org#Post>
       <http://www.w3.org/ns/org#Site>
       <http://www.w3.org/ns/prov#Location>
