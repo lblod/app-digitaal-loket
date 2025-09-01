@@ -298,24 +298,15 @@
 
 (supply-allowed-group "public")
 
-(supply-allowed-group "logged-in"
+(supply-allowed-group "authenticated"
   :parameters ()
-  :query "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-    SELECT ?account WHERE {
-        <SESSION_ID> session:account ?account .
-    } LIMIT 1")
-
-;; (supply-allowed-group "authenticated"
-;;   :parameters ()
-;;   :query "
-;;     PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-;;     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-;;     SELECT DISTINCT ?session_group ?session_role WHERE {
-;;       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-;;                    ext:sessionRole ?session_role.
-;;     }")
+  :query  "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+        PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+        SELECT DISTINCT ?session_group ?session_role WHERE {
+          <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                       ext:sessionRole ?session_role.
+        }"
+  )
 
 (supply-allowed-group "access-automatic-submission"
   :parameters ()
