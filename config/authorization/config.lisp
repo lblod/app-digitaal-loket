@@ -332,6 +332,15 @@
   :query "PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
     SELECT DISTINCT ?group_name WHERE {
+
+      VALUES ?group_name {
+        \"persons-sensitive-deltas\"
+        \"subsidies-deltas\"
+        \"worship-submissions-deltas\"
+        \"worship-services-sensitive-deltas\"
+        \"vendor-management-deltas\"
+      }
+
       <SESSION_ID> muAccount:account ?onlineAccount.
 
       ?onlineAccount  a foaf:OnlineAccount.
