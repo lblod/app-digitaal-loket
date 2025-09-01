@@ -190,7 +190,6 @@
   ("ext:Vendor" -> _)
   ("besluit:Bestuurseenheid" -> _))
 
-;; For Felix: Can this be removed? It is identical to the public-r graph above which has no matches
 (define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
