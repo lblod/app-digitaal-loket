@@ -252,7 +252,7 @@ where:
 * `VENDOR_URI` is the URI of the relevant vendor.
 * `VENDOR_API_KEY` is the API key the vendor uses to log in.
 
-`VENDOR_URI`, `VENDOR_API_KEY` and `ORG_URI` can be found by querying the database as follows:
+`VENDOR_URI` and `ORG_URI` can be found by querying the database as follows:
 
 ```sparql
 PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
@@ -262,7 +262,6 @@ PREFIX ext:       <http://mu.semte.ch/vocabularies/ext/>
 
 SELECT DISTINCT ?vendorURI ?vendorName ?vendorAPIKey ?organizationURI WHERE {
   ?s a foaf:Agent, ext:Vendor ;
-    muAccount:key ?key ;
     muAccount:canActOnBehalfOf ?organizationURI ;
     foaf:name ?vendorName .
 }
