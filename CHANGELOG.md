@@ -8,15 +8,32 @@
   sent in [DL-6696]
 - Swap `mu-auth` for `sparql-parser` [DL-6755]
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
+- Check vendor API key against database hash [DL-6543]
 
 ### Deploy instructions
 
+#### Generate migration to remove keys and insert hashs to the database
+
 ```
-drc up -d database worship-decisions-cross-reference
+drc pull vendor-login
+mu script vendor-login hash-vendor-api-keys
+```
+
+Then insert the content of the migration, written in the console by the script, to a local migration file
+
+#### Actual deploy
+
+```
+drc up -d database worship-decisions-cross-reference vendor-login automatic-submission berichtencentrum-melding
 drc restart migrations && drc logs -ft --tail=200 migrations
-drc restart op-public-consumer
+drc restart op-public-consumer database resource
 ```
+
 :warning: on prod, you will have to to remove the 'hot-deploy' of `database worship-decisions-cross-reference` by doing a `git checkout docker-compose.yml`
+
+#### Post deploy cleanup
+
+Delete the local migration with the keys and key hashes from the server
 
 ## v1.113.2 (2025-08-25)
 
