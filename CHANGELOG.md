@@ -1,18 +1,37 @@
 # Changelog
 
 ## Unreleased
+- Add a consumer workaround to delete strings with special characters consumed from OP and fix current data [DL-6701]
+- Reorganize op consumer configuration files by type of resource to ease debugging [DL-6701]
+- Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
+  Roosdaal/Borchtlombeek via Aartsbisdom Mechelen-Brussel that could not be
+  sent in [DL-6696]
+- Swap `mu-auth` for `sparql-parser` [DL-6755]
+- Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
 
-### General
+### Deploy instructions
+
+```
+drc up -d database worship-decisions-cross-reference
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc restart op-public-consumer
+```
+:warning: on prod, you will have to to remove the 'hot-deploy' of `database worship-decisions-cross-reference` by doing a `git checkout docker-compose.yml`
+
+## v1.113.2 (2025-08-25)
 
 - Bump berichtencentrum-email-notification-service [DL-6471](https://binnenland.atlassian.net/browse/DL-6471)
 - Re-enable mocklogin rules for use in DEV and QA environments. Although not
   needed in PROD and removed because of safety concerns, they were needed in
   DEV and QA. In PROD, there will be no service to respond to the requests.
+- [DL-6773](https://binnenland.atlassian.net/browse/DL-6773)
+   - Fix config beleidsdomeincodes
+   - Add http://purl.org/dc/terms/modified
 
 ### Deploy instructions
 
 ```
-drc restart dispatcher
+drc restart dispatcher delta-producer-publication-graph-maintainer
 drc up -d berichtencentrum-email-notification
 ```
 

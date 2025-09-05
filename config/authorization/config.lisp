@@ -3,7 +3,7 @@
 (in-package :delta-messenger)
 
 (add-delta-logger)
-(add-delta-messenger "http://delta-notifier/")
+(add-delta-messenger "http://deltanotifier/")
 
 ;;;;;;;;;;;;;;;;;
 ;;; configuration
@@ -72,7 +72,6 @@
 (define-graph sessions ("http://mu.semte.ch/graphs/sessions")
   ("http://mu.semte.ch/vocabularies/session/Session" -> _))
 
-;; TODO allow only logged in users
 (define-graph public ("http://mu.semte.ch/graphs/public")
   ("validation:Execution" -> _)
   ("validation:Validation" -> _)
@@ -149,14 +148,8 @@
   ("organisatie:TypeEredienst" -> _)
   ("organisatie:HelftVerkiezing" -> _))
 
-;; For Felix: This type has no matches on production for the given graph.
-;; (define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
-;;   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
-
-;; For Felix: Same here
-;; (define-graph public-wf ("http://mu.semte.ch/graphs/public")
-;;   ("ext:BeleidsdomeinCode")
-;;   ("nfo:Folder")) ; TODO not sure why this is here
+(define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
+  ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
 
 (define-graph org ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
@@ -166,7 +159,6 @@
 (define-graph o-bbcdr-rw ("http://mu.semte.ch/graphs/organizations/")
   ("ext:bbcdr/Report" -> _)
   ("nfo:FileDataObject" -> _))
-
 
 ;; Toezicht
 (define-graph o-toez-rw ("http://mu.semte.ch/graphs/organizations/")
@@ -191,16 +183,13 @@
   ("http://redpencil.data.gift/vocabularies/tasks/Task" -> _)
   ("cogs:ExecutionStatus" -> _))
 
-
 ;; Vendor Management
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
   ("ext:Vendor" x> "muAccount:keyHash")
   ("besluit:Bestuurseenheid" -> _))
 
-;; For Felix: Can this be removed? It is identical to the public-r graph above which has no matches
 (define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
-
 
 ;; LeidingGevenden
 (define-graph o-leidinggevenden-rw ("http://mu.semte.ch/graphs/organizations/")
@@ -306,24 +295,15 @@
 
 (supply-allowed-group "public")
 
-(supply-allowed-group "logged-in"
+(supply-allowed-group "authenticated"
   :parameters ()
-  :query "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
-    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-    SELECT ?account WHERE {
-        <SESSION_ID> session:account ?account .
-    } LIMIT 1")
-
-;; (supply-allowed-group "authenticated"
-;;   :parameters ()
-;;   :query "
-;;     PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-;;     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-;;     SELECT DISTINCT ?session_group ?session_role WHERE {
-;;       <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-;;                    ext:sessionRole ?session_role.
-;;     }")
+  :query  "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+        PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+        SELECT DISTINCT ?session_group ?session_role WHERE {
+          <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                       ext:sessionRole ?session_role.
+        }"
+  )
 
 (supply-allowed-group "access-automatic-submission"
   :parameters ()
@@ -340,6 +320,15 @@
   :query "PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
     SELECT DISTINCT ?group_name WHERE {
+
+      VALUES ?group_name {
+        \"persons-sensitive-deltas\"
+        \"subsidies-deltas\"
+        \"worship-submissions-deltas\"
+        \"worship-services-sensitive-deltas\"
+        \"vendor-management-deltas\"
+      }
+
       <SESSION_ID> muAccount:account ?onlineAccount.
 
       ?onlineAccount  a foaf:OnlineAccount.
@@ -360,7 +349,7 @@
                    muAccount:account/mu:uuid ?vendor_id.
     }")
 
-(supply-allowed-group "admin" 
+(supply-allowed-group "admin"
   :parameters ()
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
@@ -391,7 +380,7 @@
       FILTER( ?session_role = \"LoketAdmin\" )
     }")
 
-(supply-allowed-group "logged-in-or-mock-logged-in"
+(supply-allowed-group "logged-in-or-impersonating"
   :parameters ("session_group")
   :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -403,11 +392,15 @@
       }
     }")
 
+(dolist (role (list "LoketLB-bbcdrGebruiker"
+                    "LoketLB-toezichtGebruiker"
+                    "LoketLB-leidinggevendenGebruiker"
+                    "LoketLB-berichtenGebruiker"
+                    "LoketLB-personeelsbeheer"
+                    "LoketLB-eredienstMandaatGebruiker"
+                    "LoketLB-eredienstBedienaarGebruiker"
+                    "LoketAdmin"))
 
-(dolist (role (list "LoketLB-bbcdrGebruiker" "LoketLB-toezichtGebruiker" "loketlb-leidinggevendengebruiker" 
-        "LoketLB-berichtenGebruiker" "LoketLB-personeelsbeheer" 
-        "LoketLB-eredienstMandaatGebruiker" "LoketLB-eredienstBedienaarGebruiker" 
-        "LoketAdmin"))
   (eval
    `(supply-allowed-group ,role
       :parameters ("session_group" "session_role")
@@ -423,13 +416,13 @@
   :to-graph (public sessions)
   :for-allowed-group "public")
 
-;; (grant (read) 
-;;   :to-graph (public-r)
-;;   :for-allowed-group "authenticated")
+(grant (read)
+  :to-graph (public-r)
+  :for-allowed-group "authenticated")
 
 (grant (read)
   :to-graph (org)
-  :for-allowed-group "logged-in-or-mock-logged-in")
+  :for-allowed-group "logged-in-or-impersonating")
 
 (grant (read write)
   :to-graph (o-bbcdr-rw)
@@ -449,7 +442,7 @@
 
 (grant (read write)
   :to-graph (o-leidinggevenden-rw)
-  :for-allowed-group "loketlb-leidinggevendengebruiker")
+  :for-allowed-group "LoketLB-leidinggevendenGebruiker")
 
 (grant (read write)
   :to-graph (o-messaging-rw)
