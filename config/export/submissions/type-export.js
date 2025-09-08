@@ -37,7 +37,8 @@ export const constructDateFilter = () => {
 const ADVANCED_SUBMISSION_FILTER = `
 ?submission
   adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
-  prov:generated ?formData .
+  prov:generated ?formData ;
+  pav:createdBy ?bestuurseenheid .
 
 OPTIONAL {
   ?formData eli:passed_by/mandaat:isTijdspecialisatieVan ?orgaan .
@@ -62,6 +63,55 @@ FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/Be
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/95c671c2-3ab7-43e2-a90d-9b096c84bfe7> . }
+
+FILTER NOT EXISTS {
+  ?formData dct:type ?decisionType .
+  ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+  FILTER(?decisionType IN (<https://data.vlaanderen.be/id/concept/BesluitDocumentType/4f938e44-8bce-4d3a-b5a7-b84754fe981a>,<https://data.vlaanderen.be/id/concept/BesluitType/79414af4-4f57-4ca3-aaa4-f8f1e015e71c>,
+  <https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46>, <https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b>, 
+  <https://data.vlaanderen.be/id/concept/BesluitType/e6425cd1-26f2-4cd8-aa0f-1e9b65619c3a>, <https://data.vlaanderen.be/id/concept/BesluitType/e2928231-d377-48c7-98b4-3bb2f7de65db>, 
+  <https://data.vlaanderen.be/id/concept/BesluitType/8d8a75bf-f639-44ae-bcce-50b8f760cc3c>, <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146>, 
+  <https://data.vlaanderen.be/id/concept/BesluitDocumentType/24743b26-e0fb-4c14-8c82-5cd271289b0e>, <https://data.vlaanderen.be/id/concept/BesluitType/b25faa84-3ab5-47ae-98c0-1b389c77b827>
+    ) && ?bestuurseenheidType IN (<https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/Provincie> ) ) }
+
+FILTER NOT EXISTS {
+  ?formData dct:type ?decisionType .
+  ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+  FILTER(?decisionType IN (<https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349>, <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29>,
+<https://data.vlaanderen.be/id/concept/BesluitDocumentType/672bf096-dccd-40af-ab60-bd7de15cc461>, <https://data.vlaanderen.be/id/concept/BesluitDocumentType/2c9ada23-1229-4c7e-a53e-acddc9014e4e>
+    ) && ?bestuurseenheidType = <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054> ) }
+
+FILTER NOT EXISTS {
+  ?formData dct:type ?decisionType .
+  ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+  FILTER(?decisionType IN (<https://data.vlaanderen.be/id/concept/BesluitDocumentType/a970c99d-c06c-4942-9815-153bf3e87df2>, <https://data.vlaanderen.be/id/concept/BesluitType/d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b>,
+  <https://data.vlaanderen.be/id/concept/BesluitType/d85218e2-a75f-4a30-9182-512b5c9dd1b2>, <https://data.vlaanderen.be/id/concept/BesluitType/54b61cbd-349f-41c4-9c8a-7e8e67d08347>,
+  <https://data.vlaanderen.be/id/concept/BesluitType/e44c535d-4339-4d15-bdbf-d4be6046de2c>,<https://data.vlaanderen.be/id/concept/BesluitType/f56c645d-b8e1-4066-813d-e213f5bc529f>
+    ) && ?bestuurseenheidType = <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86> ) }
+
+FILTER NOT EXISTS {
+  ?formData dct:type ?decisionType .
+  ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+  FILTER(?decisionType IN (<https://data.vlaanderen.be/id/concept/BesluitType/2b12630f-8c4e-40a4-8a61-a0c45621a1e6>, <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8>,
+  <https://data.vlaanderen.be/id/concept/BesluitDocumentType/651525f8-8650-4ce8-8eea-f19b94d50b73>, <https://data.vlaanderen.be/id/concept/BesluitDocumentType/d611364b-007b-49a7-b2bf-b8f4e5568777>,
+  <https://data.vlaanderen.be/id/concept/BesluitDocumentType/6d1a3aea-6773-4e10-924d-38be596c5e2e>, <https://data.vlaanderen.be/id/concept/BesluitDocumentType/14793940-5b9c-4172-b108-c73665ad9d6a>,
+  <https://data.vlaanderen.be/id/concept/BesluitDocumentType/95a6c5a1-05af-4d48-b2ef-5ebb1e58783b>
+    ) && ?bestuurseenheidType = <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> ) }
+
+FILTER NOT EXISTS {
+  ?formData dct:type ?decisionType .
+  ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+  FILTER(?decisionType IN (<https://data.vlaanderen.be/id/concept/BesluitType/41a09f6c-7964-4777-8375-437ef61ed946> , <https://data.vlaanderen.be/id/concept/BesluitDocumentType/8e791b27-7600-4577-b24e-c7c29e0eb773>,
+  <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3a3ea43f-6631-4a7d-94c6-3a77a445d450>
+    ) && ?bestuurseenheidType IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054> ) ) }
+
+FILTER NOT EXISTS {
+  ?formData dct:type ?decisionType .
+  ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+  FILTER(?decisionType = <https://data.vlaanderen.be/id/concept/BesluitDocumentType/802a7e56-54f8-488d-b489-4816321fb9ae>
+    && ?bestuurseenheidType IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054>,
+     <https://data.vlaanderen.be/doc/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/Provincie>,
+     <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> ) ) }
 
 ?formData dct:type ?typeBesluit .
 
