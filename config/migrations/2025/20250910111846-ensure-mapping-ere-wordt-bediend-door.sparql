@@ -1,0 +1,12 @@
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?eenheid ere:wordtBediendDoor ?s.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+      ?eenheid ere:wordtBediendDoor ?s.
+  }
+}
