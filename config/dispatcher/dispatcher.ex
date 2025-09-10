@@ -163,23 +163,6 @@ defmodule Dispatcher do
   end
 
   ###############################################################
-  # dynamic-forms-domain.lisp
-  ###############################################################
-  match "/form-nodes/*path" do
-    forward conn, path, "http://cache/form-nodes/"
-  end
-  match "/form-inputs/*path" do
-    forward conn, path, "http://cache/form-inputs/"
-  end
-  match "/dynamic-subforms/*path" do
-    forward conn, path, "http://cache/dynamic-subforms/"
-  end
-
-  match "/input-states/*path" do
-    forward conn, path, "http://cache/input-states/"
-  end
-
-  ###############################################################
   # master-messages-domain.lisp
   ###############################################################
   match "/conversaties/*path" do
