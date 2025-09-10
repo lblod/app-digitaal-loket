@@ -8,6 +8,7 @@
   sent in [DL-6696]
 - Swap `mu-auth` for `sparql-parser` [DL-6755]
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
+- Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
 
 ### Deploy instructions
 
