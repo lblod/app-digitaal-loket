@@ -6,6 +6,7 @@
 - Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
   Roosdaal/Borchtlombeek via Aartsbisdom Mechelen-Brussel that could not be
   sent in [DL-6696]
+- Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
 
 ### Deploy instructions
 
