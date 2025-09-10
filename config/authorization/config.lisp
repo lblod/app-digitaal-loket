@@ -34,6 +34,7 @@
   :cal "http://www.w3.org/2002/12/cal/ical#"
   :ch "http://data.lblod.info/vocabularies/contacthub/"
   :cogs "http://vocab.deri.ie/cogs#"
+  :cpsv "http://purl.org/vocab/cpsv#"
   :dcat "http://www.w3.org/ns/dcat#"
   :dct "http://purl.org/dc/terms/"
   :eli "http://data.europa.eu/eli/ontology#"
@@ -43,6 +44,7 @@
   :ext "http://mu.semte.ch/vocabularies/ext/"
   :foaf "http://xmlns.com/foaf/0.1/"
   :generiek "https://data.vlaanderen.be/ns/generiek#"
+  :ipdc "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#"
   :leidinggevenden "http://data.lblod.info/vocabularies/leidinggevenden/"
   :locn "http://www.w3.org/ns/locn#"
   :m8g "http://data.europa.eu/m8g/"
@@ -146,6 +148,18 @@
   ("organisatie:TypeBetrokkenheid" -> _)
   ("organisatie:TypeEredienst" -> _)
   ("organisatie:HelftVerkiezing" -> _))
+
+(define-graph ipdc ("http://mu.semte.ch/graphs/ipdc/ldes-data")
+  ("ipdc:InstancePublicServiceSnapshot" -> _)
+  ("ipdc:FinancialAdvantage" -> _)
+  ("schema:WebSite" -> _)
+  ("m8g:Requirement" -> _)
+  ("m8g:Cost" -> _)
+  ("m8g:Evidence" -> _)
+  ("schema:ContactPoint" -> _)
+  ("locn:Address" -> _)
+  ("cpsv:Rule" -> _)
+  ("eli:LegalResource" -> _))
 
 (define-graph public-r ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
@@ -413,7 +427,7 @@
     }" role))))
 
 (grant (read)
-  :to-graph (public sessions)
+  :to-graph (public sessions ipdc)
   :for-allowed-group "public")
 
 (grant (read)
