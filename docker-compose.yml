@@ -703,3 +703,69 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
+  ################################################################################
+  # HOOFDLOKET
+  ################################################################################
+  frontend-new-loket: # can be demoed
+    image: lblod/frontend-poc-future-loket-hoofdloket:latest
+    links:
+      - identifier:backend
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  search:
+    image: semtech/mu-search:0.10.0
+    volumes:
+      - ./config/search:/config
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  elasticsearch:
+    image: semtech/mu-search-elastic-backend:1.2.0
+    volumes:
+      - ./data/elasticsearch/:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  ipdc-ldes-consumer:
+    image: redpencil/ldes-consumer:0.12.0
+    volumes:
+      - ./data/ldes-consumer:/data
+    environment:
+      LDES_ENDPOINT_VIEW: "https://ipdc.tni-vlaanderen.be/doc/instantiesnapshot"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
+      INGEST_MODE: "MATERIALIZE"
+      REPLACE_VERSIONS: "true"
+      PERSIST_STATE: "true"
+      SPARQL_BATCH_SIZE: "500"
+      SUDO_QUERY_RETRY: "true"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      NODE_OPTIONS: "--max-old-space-size=8192"
+      LOG_LEVEL: "debug"
+      # Fill in the below in a override file :)
+      # LDES_ENDPOINT_HEADERS: >
+      #   {
+      #     "HEADER": "VALUE"
+      #   }
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  ipdc-bookmarks:
+    image: lblod/ipdc-bookmarks-service:0.1.0
+  uuid-generation:
+    image: redpencil/uuid-generation:0.4.0
+    environment:
+      RUN_CRON_JOBS: "false"
+      CRON_FREQUENCY: "* */1 * * *" # every minute
+    volumes:
+      - ./config/uuid-generation/:/config
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
