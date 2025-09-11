@@ -1,0 +1,82 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dvcs: <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/> .
+@prefix dvc:  <https://productencatalogus.data.vlaanderen.be/id/concept/Thema/> .
+@prefix mu:   <http://mu.semte.ch/vocabularies/core/>.
+
+dvcs:Thema
+    a                   skos:ConceptScheme ;
+    mu:uuid             "1301f00d-0f46-4ba1-8cdc-c5ccadcedf93" ;
+    skos:prefLabel      "Thema"@nl ;
+    skos:definition     "Thema van een publieke dienst"@nl ;
+    skos:hasTopConcept  dvc:BurgerOverheid ;
+    skos:hasTopConcept  dvc:CultuurSportVrijeTijd ;
+    skos:hasTopConcept  dvc:EconomieWerk ;
+    skos:hasTopConcept  dvc:MilieuEnergie ;
+    skos:hasTopConcept  dvc:MobiliteitOpenbareWerken ;
+    skos:hasTopConcept  dvc:OnderwijsWetenschap ;
+    skos:hasTopConcept  dvc:WelzijnGezondheid ;
+    skos:hasTopConcept  dvc:BouwenWonen .
+
+dvc:BurgerOverheid
+    a                 skos:Concept ;
+    mu:uuid           "6bafa98b-d7b5-4087-b46b-b94740f070e1" ;
+    skos:prefLabel    "Burger en Overheid"@nl ;
+    skos:definition   "Thema: Burger en Overheid"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:CultuurSportVrijeTijd
+    a                 skos:Concept ;
+    mu:uuid           "194805e5-9062-4b5b-82bb-0fa4a372a10e" ;
+    skos:prefLabel    "Cultuur, Sport en Vrije Tijd"@nl ;
+    skos:definition   "Thema: Cultuur, Sport en Vrije Tijd"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:EconomieWerk
+    a                 skos:Concept ;
+    mu:uuid           "4d034ade-f5ff-4cca-8232-62a17940940a" ;
+    skos:prefLabel    "Economie en Werk"@nl ;
+    skos:definition   "Thema: Economie en Werk"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:MilieuEnergie
+    a                 skos:Concept ;
+    mu:uuid           "8d43e0fb-649d-49e7-b45d-2d9df6e602a8" ;
+    skos:prefLabel    "Milieu en Energie"@nl ;
+    skos:definition   "Thema: Milieu en Energie"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:MobiliteitOpenbareWerken
+    a                 skos:Concept ;
+    mu:uuid           "5c8dde4a-4f11-4c9e-b8fd-b588cff9d630" ;
+    skos:prefLabel    "Mobiliteit en Openbare Werken"@nl ;
+    skos:definition   "Thema: Mobiliteit en Openbare Werken"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:OnderwijsWetenschap
+    a                 skos:Concept ;
+    mu:uuid           "ac3f669c-0f32-4d81-b36d-b44a93798ca2" ;
+    skos:prefLabel    "Onderwijs en Wetenschap"@nl ;
+    skos:definition   "Thema: Onderwijs en Wetenschap"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:WelzijnGezondheid
+    a                 skos:Concept ;
+    mu:uuid           "19b84618-7ebe-4b7f-9088-aa35a50002a6" ;
+    skos:prefLabel    "Welzijn en Gezondheid"@nl ;
+    skos:definition   "Thema: Welzijn en Gezondheid"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .
+
+dvc:BouwenWonen
+    a                 skos:Concept ;
+    mu:uuid           "78c2f63d-9071-49fd-b362-551548a19dcd" ;
+    skos:prefLabel    "Bouwen en Wonen"@nl ;
+    skos:definition   "Thema: Bouwen en Wonen"@nl ;
+    skos:inScheme     dvcs:Thema ;
+    skos:topConceptOf dvcs:Thema .

@@ -1,0 +1,76 @@
+# Internal codelist used only inside this application
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix mu:   <http://mu.semte.ch/vocabularies/core/>.
+@prefix dvc:  <https://productencatalogus.data.vlaanderen.be/id/concept/Type/> .
+@prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
+@prefix extScheme: <http://mu.semte.ch/vocabularies/ext/conceptscheme/> . 
+@prefix extConcept: <http://mu.semte.ch/vocabularies/ext/concept/> .
+extScheme:Type
+  a                   skos:ConceptScheme ;
+  mu:uuid             "e5669754-3780-4ab0-b813-5a594d44c0f1" ;
+  skos:prefLabel      "Type"@nl ;
+  skos:definition     "Type van een publieke dienst voor filters"@nl ;
+  skos:hasTopConcept  extConcept:AdviesBegeleiding ;
+  skos:hasTopConcept  extConcept:Steunmaatregelen ;
+  skos:hasTopConcept  extConcept:Vergunningen ;
+  skos:hasTopConcept  extConcept:InfrastructuurMateriaal ;
+  skos:hasTopConcept  extConcept:Documenten ;
+  skos:hasTopConcept  extConcept:Belastingen .
+
+extConcept:AdviesBegeleiding
+  a                 skos:Concept ;
+  skos:narrower     dvc:AdviesBegeleiding ;
+  mu:uuid           "f6dc2b52-7793-4beb-bd06-3a8e882d83bb" ;
+  skos:prefLabel    "Advies en begeleiding"@nl ;
+  skos:definition   "Type: Advies en begeleiding"@nl ;
+  skos:inScheme     extScheme:Type ;
+  skos:topConceptOf extScheme:Type .
+
+extConcept:Steunmaatregelen
+  a                 skos:Concept ;
+  skos:narrower     dvc:FinancieelVoordeel ;
+  mu:uuid           "5e345907-3ab8-450d-b7e1-c97cf1f6ac9f" ;
+  skos:prefLabel    "Steunmaatregelen"@nl ;
+  skos:definition   "Type: Steunmaatregelen"@nl ;
+  skos:inScheme     extScheme:Type ;
+  skos:topConceptOf extScheme:Type .
+
+extConcept:Vergunningen
+  a                 skos:Concept ;
+  skos:narrower     dvc:Toelating ;
+  mu:uuid           "8d597b37-c6f7-45dd-9de1-c7236e93469c" ;
+  skos:prefLabel    "Vergunningen"@nl ;
+  skos:definition   "Type: Vergunningen"@nl ;
+  skos:inScheme     extScheme:Type ;
+  skos:topConceptOf extScheme:Type .
+
+extConcept:InfrastructuurMateriaal
+  a                 skos:Concept ;
+  skos:narrower     dvc:InfrastructuurMateriaal ;
+  skos:narrower     dvc:Voorwerp ;
+  mu:uuid           "ecb3bdf7-3d61-436c-83d3-a8f31a08239c" ;
+  skos:prefLabel    "Infrastructuur en materiaal"@nl ;
+  skos:definition   "Type: Beschikbaar stellen van infrastructuur en materiaal"@nl ;
+  skos:inScheme     extScheme:Type ;
+  skos:topConceptOf extScheme:Type .
+
+extConcept:Documenten
+  a                 skos:Concept ;
+  skos:narrower     dvc:Bewijs ;
+  mu:uuid           "b96816ef-4b57-4df3-97b1-c5a76cdf757a" ;
+  skos:prefLabel    "Documenten"@nl ;
+  skos:definition   "Type: Documenten"@nl ;
+  skos:inScheme     extScheme:Type ;
+  skos:topConceptOf extScheme:Type .
+
+extConcept:Belastingen
+  a                 skos:Concept ;
+  skos:narrower     dvc:FinancieleVerplichting ;
+  mu:uuid           "fe289e31-dc4b-4726-a656-97f4396641e0" ;
+  skos:prefLabel    "Belastingen"@nl ;
+  skos:definition   "Type: Belastingen"@nl ;
+  skos:inScheme     extScheme:Type ;
+  skos:topConceptOf extScheme:Type .
+
+
+

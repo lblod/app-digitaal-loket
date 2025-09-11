@@ -1,0 +1,63 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dvc:  <https://productencatalogus.data.vlaanderen.be/id/concept/BevoegdBestuursniveau/> .
+@prefix mu:   <http://mu.semte.ch/vocabularies/core/>.
+@prefix extScheme: <http://mu.semte.ch/vocabularies/ext/conceptscheme/> . 
+@prefix extConcept: <http://mu.semte.ch/vocabularies/ext/concept/> .
+
+extScheme:BevoegdBestuursniveau
+    a                   skos:ConceptScheme ;
+    mu:uuid             "445e1e4d-7ef0-4de2-b022-5af455258559" ;
+    skos:prefLabel      "Bevoegd bestuursniveau"@nl ;
+    skos:prefLabel      "Competent authority level"@en ;
+    skos:definition     "Bevoegd bestuursniveau van een publieke dienst voor filters"@nl ;
+    skos:definition     "Competent autority level of a public service for filtering"@en ;
+    skos:hasTopConcept  extConcept:Europees ;
+    skos:hasTopConcept  extConcept:Federaal ;
+    skos:hasTopConcept  extConcept:Vlaams ;
+    skos:hasTopConcept  extConcept:Provinciaal ;
+    skos:hasTopConcept  extConcept:Lokaal .
+
+extConcept:Europees
+    a                 skos:Concept ;
+    skos:narrower     dvc:Europees ;
+    mu:uuid           "e2f21435-0ec7-4190-8bed-89f6275475e7" ;
+    skos:prefLabel    "Europees"@nl ;
+    skos:definition   "Bevoegd bestuursniveau: Europees"@nl ;
+    skos:inScheme     extScheme:BevoegdBestuursniveau ;
+    skos:topConceptOf extScheme:BevoegdBestuursniveau .
+
+extConcept:Federaal
+    a                 skos:Concept ;
+    skos:narrower     dvc:Federaal ;
+    mu:uuid           "02dd97f6-4d00-4933-b235-e27e18ce7069" ;
+    skos:prefLabel    "Federaal"@nl ;
+    skos:definition   "Bevoegd bestuursniveau: Federaal"@nl ;
+    skos:inScheme     extScheme:BevoegdBestuursniveau ;
+    skos:topConceptOf extScheme:BevoegdBestuursniveau .
+
+extConcept:Vlaams
+    a                 skos:Concept ;
+    skos:narrower     dvc:Vlaams ;
+    mu:uuid           "ccf5d092-43e5-4e49-a3ce-f45b7e65a074" ;
+    skos:prefLabel    "Vlaams"@nl ;
+    skos:definition   "Bevoegd bestuursniveau: Vlaams"@nl ;
+    skos:inScheme     extScheme:BevoegdBestuursniveau ;
+    skos:topConceptOf extScheme:BevoegdBestuursniveau .
+
+extConcept:Provinciaal
+    a                 skos:Concept ;
+    skos:narrower     dvc:Provinciaal ;
+    mu:uuid           "493d3df1-a79d-4c15-a07d-5ce69fc655a2" ;
+    skos:prefLabel    "Provinciaal"@nl ;
+    skos:definition   "Bevoegd bestuursniveau: Provinciaal"@nl ;
+    skos:inScheme     extScheme:BevoegdBestuursniveau ;
+    skos:topConceptOf extScheme:BevoegdBestuursniveau .
+
+extConcept:Lokaal
+    a                 skos:Concept ;
+    skos:narrower     dvc:Lokaal ;
+    mu:uuid           "3f863c42-5b8d-412a-aee2-3d184cf93b89" ;
+    skos:prefLabel    "Lokaal"@nl ;
+    skos:definition   "Bevoegd bestuursniveau: Lokaal"@nl ;
+    skos:inScheme     extScheme:BevoegdBestuursniveau ;
+    skos:topConceptOf extScheme:BevoegdBestuursniveau .
