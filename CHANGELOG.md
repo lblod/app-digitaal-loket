@@ -10,6 +10,15 @@
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
 - Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
 
+### new loket
+:warning: please shuffle the instructions and follow the conventions once merging
+### deploy instructions
+```
+drc restart database deltanotifier dispatcher migrations resource
+drc up -d
+```
+
+
 ### Deploy instructions
 
 ```
