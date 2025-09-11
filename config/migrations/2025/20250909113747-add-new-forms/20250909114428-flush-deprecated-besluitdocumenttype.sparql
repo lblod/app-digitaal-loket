@@ -1,0 +1,18 @@
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2000/01/rdf-schema#Class> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/b156b67f-c5f4-4584-9b30-4c090be02fdc> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cd93f147-3ece-4308-acab-5c5ada3ec63d> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/d01bb1f6-2439-4e33-9c25-1fc295de2e71> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://lblod.data.gift/vocabularies/besluit/decidableBy>	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/4b8450cf-a326-4c66-9e63-b4ec10acc7f6> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/2004/02/skos/core#definition> "Afwijking principes regiovorming." .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://mu.semte.ch/vocabularies/core/uuid>	"cc831628-95a0-4874-bad5-cdf563896032" .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/2004/02/skos/core#prefLabel>	"Afwijking principes regiovorming"@nl .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/2004/02/skos/core#inScheme>	<http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/2004/02/skos/core#inScheme>	<https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/2004/02/skos/core#topConceptOf>	<http://lblod.data.gift/concept-schemes/71e6455e-1204-46a6-abf4-87319f58eaa5> .
+    <https://data.vlaanderen.be/id/concept/BesluitDocumentType/cc831628-95a0-4874-bad5-cdf563896032> <http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://data.vlaanderen.be/id/conceptscheme/BesluitDocumentType> .
+  }
+}
