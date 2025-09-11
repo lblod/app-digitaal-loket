@@ -648,7 +648,7 @@ defmodule Dispatcher do
   end
 
   post "/public-services/:id/bookmarks" do
-    Proxy.forward conn, path, "http://ipdc-bookmarks/public-services/" <> id <> "/bookmarks"
+    Proxy.forward conn, [], "http://ipdc-bookmarks/public-services/" <> id <> "/bookmarks"
   end
 
   delete "/bookmarks/*path" do
@@ -663,20 +663,14 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/procedures/"
   end
 
-  # TODO: remove once loket is integrated
-  get "/administrative-units/*path" do
-    forward conn, path, "http://cache/bestuurseenheden/"
-  end
-
   get "/websites/*path" do
-    forward conn, path, "http://cache/websites/"
+    Proxy.forward conn, path, "http://cache/websites/"
   end
 
   #################################################################
   # IPDC: HOOFDLOKET FRONTEND
   # TODO: remove once integrated
   #################################################################
-  # Frontend
 
   get "/assets/*path",  %{ accept: %{ any: true }, reverse_host: ["new-loket" | _rest] }  do
     forward conn, path, "http://frontend-new-loket/assets/"
