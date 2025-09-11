@@ -119,6 +119,15 @@ Delete the local migration with the keys and key hashes from the server
 - Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
 - Convert 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
 
+### new loket
+:warning: please shuffle the instructions and follow the conventions once merging
+### deploy instructions
+```
+drc restart database deltanotifier dispatcher migrations resource
+drc up -d
+```
+
+
 ### Deploy instructions
 
 ```
