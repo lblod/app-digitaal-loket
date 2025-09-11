@@ -761,8 +761,8 @@ services:
   uuid-generation:
     image: redpencil/uuid-generation:0.4.0
     environment:
-      RUN_CRON_JOBS: "false"
-      CRON_FREQUENCY: "* */1 * * *" # every minute
+      RUN_CRON_JOBS: "true"
+      CRON_FREQUENCY: "0 * * * *" # every hour
     volumes:
       - ./config/uuid-generation/:/config
     restart: always
