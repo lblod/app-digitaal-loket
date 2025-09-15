@@ -22,6 +22,7 @@ CONSTRUCT {
     org:resultedFrom,
     ere:denominatie,
     ere:grensoverschrijdend,
-    ere:typeEredienst
+    ere:typeEredienst,
+    ere:wordtBediendDoor
   ))
 }

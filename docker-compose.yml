@@ -358,7 +358,7 @@ services:
     restart: always
     logging: *default-logging
   worship-decisions-cross-reference:
-    image: lblod/worship-decisions-cross-reference-service:0.4.8
+    image: lblod/worship-decisions-cross-reference-service:0.4.9
     labels:
       - "logging=true"
     restart: always

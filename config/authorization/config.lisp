@@ -197,7 +197,8 @@
   ("schema:ContactPoint" -> _)
   ("locn:Address" -> _)
   ("http://data.lblod.info/vocabularies/leidinggevenden/Functionaris" -> _)
-  ("persoon:Person" -> _)
+  ("persoon:Geboorte" -> _)
+  ("person:Person" -> _)
   ("adms:Identifier" -> _)
   ("leidinggevenden:Bestuursfunctie" -> "schema:contactPoint"))
 

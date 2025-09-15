@@ -9,6 +9,7 @@
 - Swap `mu-auth` for `sparql-parser` [DL-6755]
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
 - Check vendor API key against database hash [DL-6543]
+- Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
 
 ### Deploy instructions
 
