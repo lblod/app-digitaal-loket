@@ -48,7 +48,6 @@
   :m8g "http://data.europa.eu/m8g/"
   :mandaat "http://data.vlaanderen.be/ns/mandaat#"
   :mu "http://mu.semte.ch/vocabularies/core/"
-  :muAccount "http://mu.semte.ch/vocabularies/account/"
   :nfo "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#"
   :org "http://www.w3.org/ns/org#"
   :organisatie "http://lblod.data.gift/vocabularies/organisatie/"
