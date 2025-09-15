@@ -261,7 +261,7 @@ PREFIX foaf:      <http://xmlns.com/foaf/0.1/>
 PREFIX ext:       <http://mu.semte.ch/vocabularies/ext/>
 
 SELECT DISTINCT ?vendorURI ?vendorName ?vendorAPIKey ?organizationURI WHERE {
-  ?s a foaf:Agent, ext:Vendor ;
+  ?vendorURI a foaf:Agent, ext:Vendor ;
     muAccount:canActOnBehalfOf ?organizationURI ;
     foaf:name ?vendorName .
 }
