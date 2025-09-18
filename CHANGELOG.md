@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v1.114.0 (2025-09-18)
 - Add a consumer workaround to delete strings with special characters consumed from OP and fix current data [DL-6701]
 - Reorganize op consumer configuration files by type of resource to ease debugging [DL-6701]
 - Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
