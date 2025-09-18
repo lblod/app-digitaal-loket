@@ -9,11 +9,13 @@
 - Swap `mu-auth` for `sparql-parser` [DL-6755]
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
 - Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
+- Convert 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
 
 ### Deploy instructions
 
 ```
 drc up -d database worship-decisions-cross-reference
+drc up -d enrich-submission
 drc restart migrations && drc logs -ft --tail=200 migrations
 drc restart op-public-consumer
 ```
