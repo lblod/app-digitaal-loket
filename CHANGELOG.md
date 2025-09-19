@@ -13,6 +13,8 @@ Then insert the content of the migration, written in the console by the script, 
 ```
 drc restart migrations
 drc up -d vendor-management vendor-login automatic-submission berichtencentrum-melding
+drc restart delta-producer-publication-graph-maintainer
+drc exec delta-producer-background-jobs-initiator curl -X http://localhost/vendor-management/healing-jobs
 drc restart resource cache
 ```
 ##### Post deploy cleanup
