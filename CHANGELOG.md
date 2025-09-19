@@ -1,4 +1,7 @@
 # Changelog
+## v1.114.1 (2025-09-19)
+
+- Hotfix 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
 
 ## v1.114.0 (2025-09-18)
 - Add a consumer workaround to delete strings with special characters consumed from OP and fix current data [DL-6701]
