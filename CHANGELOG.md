@@ -1,5 +1,5 @@
 # Changelog
-## Unreleased
+## v1.115.0 (2025-09-19)
 - Check vendor API key against database hash [DL-6543]
 ### Deploy instructions
 #### Vendor key hash feature
