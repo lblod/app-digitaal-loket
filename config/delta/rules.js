@@ -10,8 +10,10 @@ import importSubmission from './import-submission';
 import jobsController from './jobs-controller';
 import prepareSubmissionForExport from './prepare-submission-for-export';
 import resource from './resource';
+import search from './search';
 import syncWithKalliopeErrorNotification from './sync-with-kalliope-error-notification';
 import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-generator';
+import uuidGeneration from './uuid-generation';
 import validateSubmission from './validate-submission';
 import dispatcherWorshipMandates from './dispatcher-worship-mandates';
 import vendorDataDistribution from './vendor-data-distribution';
@@ -30,8 +32,10 @@ export default [
   ...jobsController,
   ...prepareSubmissionForExport,
   ...resource,
+  ...search,
   ...syncWithKalliopeErrorNotification,
   ...toezichtFlattenedFormDataGenerator,
+  ...uuidGeneration,
   ...validateSubmission,
   ...dispatcherWorshipMandates,
   ...vendorDataDistribution,

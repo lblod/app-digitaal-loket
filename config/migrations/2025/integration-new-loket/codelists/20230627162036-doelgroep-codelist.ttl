@@ -1,0 +1,64 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dvcs: <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/> .
+@prefix dvc:  <https://productencatalogus.data.vlaanderen.be/id/concept/Doelgroep/> .
+@prefix mu:   <http://mu.semte.ch/vocabularies/core/>.
+
+dvcs:Doelgroep
+  a                   skos:ConceptScheme ;
+  mu:uuid             "f2a7c095-184c-4956-a2a8-feabb7ef4741" ;
+  skos:prefLabel      "Doelgroep"@nl ;
+  skos:definition     "Doelgroep waarop een publieke dienstverlening gericht is"@nl ;
+  skos:hasTopConcept dvc:Burger ;
+  skos:hasTopConcept dvc:Onderneming ;
+  skos:hasTopConcept dvc:Organisatie ;
+  skos:hasTopConcept dvc:VlaamseOverheid ;
+  skos:hasTopConcept dvc:LokaalBestuur ;
+  skos:hasTopConcept dvc:Vereniging .
+
+dvc:Burger
+  a                 skos:Concept ;
+  mu:uuid           "243480bf-c2f2-4200-8d76-58b779e39904" ;
+  skos:prefLabel    "Burger"@nl ;
+  skos:definition   "Doelgroep burgers"@nl ;
+  skos:inScheme     dvcs:Doelgroep ;
+  skos:topConceptOf dvcs:Doelgroep .
+
+dvc:Onderneming
+  a                 skos:Concept ;
+  mu:uuid           "bcad861a-f971-4363-adc3-3811bf327f95" ;
+  skos:prefLabel    "Onderneming"@nl ;
+  skos:definition   "Doelgroep onderemingen"@nl ;
+  skos:inScheme     dvcs:Doelgroep ;
+  skos:topConceptOf dvcs:Doelgroep .
+
+dvc:Organisatie
+    a                 skos:Concept ;
+    mu:uuid           "98183fca-45dd-4141-a191-9a2cbdba85cb" ;
+    skos:prefLabel    "Organisatie"@nl ;
+    skos:definition   "Doelgroep organisaties"@nl ;
+    skos:inScheme     dvcs:Doelgroep ;
+    skos:topConceptOf dvcs:Doelgroep .
+
+dvc:Vereniging
+  a                 skos:Concept ;
+  mu:uuid           "bd1e7ba5-4b12-4cb5-a303-687277897ace" ;
+  skos:prefLabel    "Vereniging"@nl ;
+  skos:definition   "Doelgroep verenigingen"@nl ;
+  skos:inScheme     dvcs:Doelgroep ;
+  skos:topConceptOf dvcs:Doelgroep .
+
+dvc:LokaalBestuur
+  a                 skos:Concept ;
+  mu:uuid           "01f7b215-3eb6-4997-8bb7-4c2b2ffcb138" ;
+  skos:prefLabel    "Lokaal bestuur"@nl ;
+  skos:definition   "Doelgroep lokaal bestuur"@nl ;
+  skos:inScheme     dvcs:Doelgroep ;
+  skos:topConceptOf dvcs:Doelgroep .
+
+dvc:VlaamseOverheid
+  a                 skos:Concept ;
+  mu:uuid           "093fd217-10db-4985-9fba-699a6b587d32" ;
+  skos:prefLabel    "Vlaamse Overheid"@nl ;
+  skos:definition   "Doelgroep Vlaamse Overheid"@nl ;
+  skos:inScheme     dvcs:Doelgroep ;
+  skos:topConceptOf dvcs:Doelgroep .

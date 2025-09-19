@@ -1,0 +1,145 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dvc:  <https://productencatalogus.data.vlaanderen.be/id/concept/Thema/> .
+@prefix mu:   <http://mu.semte.ch/vocabularies/core/>.
+@prefix extScheme: <http://mu.semte.ch/vocabularies/ext/conceptscheme/> . 
+@prefix extConcept: <http://mu.semte.ch/vocabularies/ext/concept/> .
+
+extScheme:Thema
+    a                   skos:ConceptScheme ;
+    mu:uuid             "cdfdddfd-8d3a-48dd-8013-27f37430ecb5" ;
+    skos:prefLabel      "Thema"@nl ;
+    skos:definition     "Thema van een publieke dienst voor filters"@nl ;
+    skos:hasTopConcept  extConcept:BurgerOverheid ;
+    skos:hasTopConcept  extConcept:WerkenOndernemen ;
+    skos:hasTopConcept  extConcept:Welzijn ;
+    skos:hasTopConcept  extConcept:BouwenWonen ;
+    skos:hasTopConcept  extConcept:Mobiliteit ;
+    skos:hasTopConcept  extConcept:Omgeving ;
+    skos:hasTopConcept  extConcept:VrijeTijd ;
+    skos:hasTopConcept  extConcept:OnderwijsWetenschap ;
+    skos:hasTopConcept  extConcept:Landbouw ;
+    skos:hasTopConcept  extConcept:GemeenteBestuur ;
+    skos:hasTopConcept  extConcept:OnderzoekInnovatie ;
+    skos:hasTopConcept  extConcept:Jeugd ;
+    skos:hasTopConcept  extConcept:Veiligheid ;
+    skos:hasTopConcept  extConcept:EuropaInternationaal .
+
+extConcept:BurgerOverheid
+    a                 skos:Concept ;
+    skos:narrower     dvc:BurgerOverheid ;
+    mu:uuid           "258ffe35-96b4-4ad1-bd2b-e948bb95adc5" ;
+    skos:prefLabel    "Burger en Overheid"@nl ;
+    skos:definition   "Thema: Burger en Overheid"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:WerkenOndernemen
+    a                 skos:Concept ;
+    skos:narrower     dvc:EconomieWerk ;
+    mu:uuid           "d22905f1-283a-414b-96a3-625136f0e7ce" ;
+    skos:prefLabel    "Werken en Ondernemen"@nl ;
+    skos:definition   "Thema: Werken en Ondernemen"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Welzijn
+    a                 skos:Concept ;
+    skos:narrower     dvc:WelzijnGezondheid ;
+    mu:uuid           "dbc31be1-94b1-48a2-8ac9-924acde8994f" ;
+    skos:prefLabel    "Welzijn"@nl ;
+    skos:definition   "Thema: Welzijn"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:BouwenWonen
+    a                 skos:Concept ;
+    skos:narrower     dvc:BouwenWonen ;
+    mu:uuid           "5d564190-0e03-44f8-be73-8c3a70ad4443" ;
+    skos:prefLabel    "Bouwen en Wonen"@nl ;
+    skos:definition   "Thema: Bouwen en Wonen"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Mobiliteit
+    a                 skos:Concept ;
+    skos:narrower     dvc:MobiliteitOpenbareWerken ;
+    mu:uuid           "f3e332f4-62ad-446f-bf37-e982c69de8e1" ;
+    skos:prefLabel    "Mobiliteit"@nl ;
+    skos:definition   "Thema: Mobiliteit"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Omgeving
+    a                 skos:Concept ;
+    skos:narrower     dvc:MilieuEnergie ;
+    mu:uuid           "84d91754-0512-48f7-b783-f5a842122016" ;
+    skos:prefLabel    "Omgeving"@nl ;
+    skos:definition   "Thema: Omgeving"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:VrijeTijd
+    a                 skos:Concept ;
+    skos:narrower     dvc:CultuurSportVrijeTijd ;
+    mu:uuid           "d6fe7cc4-cc3e-4650-a05f-f0209bc68ef5" ;
+    skos:prefLabel    "Vrije Tijd"@nl ;
+    skos:definition   "Thema: Vrije Tijd"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Onderwijs
+    a                 skos:Concept ;
+    skos:narrower     dvc:OnderwijsWetenschap ;
+    mu:uuid           "803a7566-e55b-4ae2-b2ee-4edcc953c3e1" ;
+    skos:prefLabel    "Onderwijs"@nl ;
+    skos:definition   "Thema: Onderwijs"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Landbouw
+    a                 skos:Concept ;
+    mu:uuid           "b866f1f7-eb66-4ef9-8a69-9edf0a85ef08" ;
+    skos:prefLabel    "Landbouw"@nl ;
+    skos:definition   "Thema: Landbouw"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .    
+
+extConcept:GemeenteBestuur
+    a                 skos:Concept ;
+    mu:uuid           "57268c8a-7eb5-45f5-a45b-2d3201c488bf" ;
+    skos:prefLabel    "Gemeente en Bestuur"@nl ;
+    skos:definition   "Thema: Gemeente en Bestuur"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:OnderzoekInnovatie
+    a                 skos:Concept ;
+    mu:uuid           "c501cbf3-cb9d-457d-b20d-a3452c7ecdc6" ;
+    skos:prefLabel    "Onderzoek en Innovatie"@nl ;
+    skos:definition   "Thema: Onderzoek en Innovatie"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Jeugd
+    a                 skos:Concept ;
+    mu:uuid           "ca55e663-89ec-4578-86c9-93ccbd1c2d3d" ;
+    skos:prefLabel    "Jeugd"@nl ;
+    skos:definition   "Thema: Jeugd"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:Veiligheid
+    a                 skos:Concept ;
+    mu:uuid           "ef04b97b-6c16-4e62-a862-1748b9c7337e" ;
+    skos:prefLabel    "Veiligheid"@nl ;
+    skos:definition   "Thema: Veiligheid"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .
+
+extConcept:EuropaInternationaal
+    a                 skos:Concept ;
+    mu:uuid           "85c9d29f-c407-446e-a4cf-4cba4a357802" ;
+    skos:prefLabel    "Europa en internationaal"@nl ;
+    skos:definition   "Thema: Europa en internationaal"@nl ;
+    skos:inScheme     extScheme:Thema ;
+    skos:topConceptOf extScheme:Thema .    
