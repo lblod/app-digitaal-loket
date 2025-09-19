@@ -20,7 +20,7 @@
 drc up -d database worship-decisions-cross-reference
 drc up -d enrich-submission
 drc restart migrations && drc logs -ft --tail=200 migrations
-drc restart op-public-consumer
+drc restart op-public-consumer berichtencentrum-sync-with-kalliope
 ```
 :warning: on prod, you will have to to remove the 'hot-deploy' of `database worship-decisions-cross-reference` by doing a `git checkout docker-compose.yml`
 
