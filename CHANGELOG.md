@@ -1,4 +1,24 @@
 # Changelog
+## Unreleased
+- Check vendor API key against database hash [DL-6543]
+### Deploy instructions
+#### Vendor key hash feature
+##### Preparation
+```
+drc pull vendor-login
+mu script vendor-login hash-vendor-api-keys
+```
+Then insert the content of the migration, written in the console by the script, to a local migration file
+##### Actual deploy
+```
+drc restart migrations
+drc up -d vendor-management vendor-login automatic-submission berichtencentrum-melding
+drc restart resource cache
+```
+##### Post deploy cleanup
+
+Delete the local migration with the keys and key hashes from the server
+
 ## v1.114.1 (2025-09-19)
 
 - Hotfix 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
