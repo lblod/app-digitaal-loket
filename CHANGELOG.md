@@ -1,6 +1,29 @@
 # Changelog
-
 ## Unreleased
+- Check vendor API key against database hash [DL-6543]
+### Deploy instructions
+#### Vendor key hash feature
+##### Preparation
+```
+drc pull vendor-login
+mu script vendor-login hash-vendor-api-keys
+```
+Then insert the content of the migration, written in the console by the script, to a local migration file
+##### Actual deploy
+```
+drc restart migrations
+drc up -d vendor-management vendor-login automatic-submission berichtencentrum-melding
+drc restart resource cache
+```
+##### Post deploy cleanup
+
+Delete the local migration with the keys and key hashes from the server
+
+## v1.114.1 (2025-09-19)
+
+- Hotfix 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
+
+## v1.114.0 (2025-09-18)
 - Add a consumer workaround to delete strings with special characters consumed from OP and fix current data [DL-6701]
 - Reorganize op consumer configuration files by type of resource to ease debugging [DL-6701]
 - Removed submission from kapel O.-L.-Vrouw Onbevlekt Hart van Maria in
@@ -8,33 +31,18 @@
   sent in [DL-6696]
 - Swap `mu-auth` for `sparql-parser` [DL-6755]
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
-- Check vendor API key against database hash [DL-6543]
 - Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
+- Convert 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
 
 ### Deploy instructions
 
-#### Generate migration to remove keys and insert hashs to the database
-
 ```
-drc pull vendor-login
-mu script vendor-login hash-vendor-api-keys
-```
-
-Then insert the content of the migration, written in the console by the script, to a local migration file
-
-#### Actual deploy
-
-```
-drc up -d database worship-decisions-cross-reference vendor-login automatic-submission berichtencentrum-melding
+drc up -d database worship-decisions-cross-reference
+drc up -d enrich-submission
 drc restart migrations && drc logs -ft --tail=200 migrations
-drc restart op-public-consumer database resource
+drc restart op-public-consumer berichtencentrum-sync-with-kalliope
 ```
-
 :warning: on prod, you will have to to remove the 'hot-deploy' of `database worship-decisions-cross-reference` by doing a `git checkout docker-compose.yml`
-
-#### Post deploy cleanup
-
-Delete the local migration with the keys and key hashes from the server
 
 ## v1.113.2 (2025-08-25)
 

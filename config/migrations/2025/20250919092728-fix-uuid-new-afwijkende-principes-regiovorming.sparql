@@ -1,0 +1,17 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+DELETE {
+   GRAPH ?g {
+     <https://data.vlaanderen.be/id/concept/BesluitType/cc831628-95a0-4874-bad5-cdf563896032> mu:uuid ?uuid
+   }
+}
+INSERT {
+   GRAPH ?g {
+     <https://data.vlaanderen.be/id/concept/BesluitType/cc831628-95a0-4874-bad5-cdf563896032> mu:uuid "76de6b92-6f03-44d9-a98f-48c82d23b2eb2"
+   }
+}
+WHERE {
+   GRAPH ?g {
+          <https://data.vlaanderen.be/id/concept/BesluitType/cc831628-95a0-4874-bad5-cdf563896032> mu:uuid ?uuid
+   }
+}
