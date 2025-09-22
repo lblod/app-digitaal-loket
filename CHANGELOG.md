@@ -7,6 +7,7 @@
   Roosdaal/Borchtlombeek via Aartsbisdom Mechelen-Brussel that could not be
   sent in [DL-6696]
 - Swap `mu-auth` for `sparql-parser` [DL-6755]
+- Updated export config for toezicht [DL-6706]
 
 ### Deploy instructions
 
