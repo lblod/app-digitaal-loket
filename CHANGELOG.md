@@ -1,4 +1,16 @@
 # Changelog
+## Unreleased 
+
+### General
+
+- Updated export config for toezicht [DL-6706] 
+
+### Deploy Notes
+
+```
+drc restart export-submissions
+```
+
 ## v1.115.0 (2025-09-19)
 - Check vendor API key against database hash [DL-6543]
 ### Deploy instructions
