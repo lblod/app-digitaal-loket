@@ -184,7 +184,7 @@
 
 ;; Vendor Management
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
-  ("ext:Vendor" -> _)
+  ("ext:Vendor" x> "http://mu.semte.ch/vocabularies/account/keyHash")
   ("besluit:Bestuurseenheid" -> _))
 
 (define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
@@ -196,7 +196,8 @@
   ("schema:ContactPoint" -> _)
   ("locn:Address" -> _)
   ("http://data.lblod.info/vocabularies/leidinggevenden/Functionaris" -> _)
-  ("persoon:Person" -> _)
+  ("persoon:Geboorte" -> _)
+  ("person:Person" -> _)
   ("adms:Identifier" -> _)
   ("leidinggevenden:Bestuursfunctie" -> "schema:contactPoint"))
 
