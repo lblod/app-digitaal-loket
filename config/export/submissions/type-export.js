@@ -48,20 +48,6 @@ OPTIONAL {
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/bea3944f-4f6d-4d2c-9a6e-23264859e1e5> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/1d14cb62-7e57-44a9-ad20-2b08407fbb84> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/91b8b15f-7631-4a21-9a90-489f5c91e73c> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/3a3ea43f-6631-4a7d-94c6-3a77a445d450> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/24743b26-e0fb-4c14-8c82-5cd271289b0e> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/863caf68-97c9-4ee0-adb5-620577ea8146> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/14793940-5b9c-4172-b108-c73665ad9d6a> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/651525f8-8650-4ce8-8eea-f19b94d50b73> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/ce569d3d-25ff-4ce9-a194-e77113597e29> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/18833df2-8c9e-4edd-87fd-b5c252337349> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitDocumentType/2c9ada23-1229-4c7e-a53e-acddc9014e4e> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/d85218e2-a75f-4a30-9182-512b5c9dd1b2> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/2b12630f-8c4e-40a4-8a61-a0c45621a1e6> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/df261490-cc74-4f80-b783-41c35e720b46> . }
-FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/3fcf7dba-2e5b-4955-a489-6dd8285c013b> . }
 FILTER NOT EXISTS { ?formData dct:type <https://data.vlaanderen.be/id/concept/BesluitType/95c671c2-3ab7-43e2-a90d-9b096c84bfe7> . }
 
 FILTER NOT EXISTS {
