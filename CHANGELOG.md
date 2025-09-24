@@ -1,4 +1,18 @@
 # Changelog
+## Unreleased 
+
+### General
+
+- Updated export config for toezicht [DL-6706]
+- Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
+
+### Deploy Notes
+
+```
+drc restart export-submissions
+drc up -d berichtencentrum-sync-with-kalliope
+```
+
 ## v1.115.0 (2025-09-19)
 - Check vendor API key against database hash [DL-6543]
 ### Deploy instructions
