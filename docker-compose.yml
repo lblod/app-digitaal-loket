@@ -49,7 +49,7 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    image: cecemel/delta-notifier:0.2.0-beta.6
+    image: cecemel/delta-notifier:feature-merge-with-upstream-2025-09-29
     volumes:
       - ./config/delta:/config
     labels:
@@ -114,7 +114,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:feature-differently-stable-luckless
+    image: semtech/mu-cl-resources:feature-delta-processing-queue
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
