@@ -11,6 +11,20 @@
 (defparameter sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
 (setf *fetch-all-types-in-construct-queries* t)
 
+(defcall :get (base-path)
+ (list-call (find-resource-by-path base-path)))
+defparameter sparql:*query-log-types* '())
+setf *log-delta-processing-information-p* nil)
+
+defun all-resources-of-itemspecs (item-specs)
+ "Yields all the resources for the supplied item-specs."
+ (with-single-itemspec-classes-retry
+   (loop for item-spec in item-specs
+         for resource = (resource item-spec)
+         for result = (list resource)
+           then (pushnew resource result)
+         finally (return result))))
+
 ;; Note: the organisation of the files is currently a bit of a mess.
 ;; Previously we ordered files by Application Profile/Model.
 ;; However since the introduction of inheritance of mu-resource
