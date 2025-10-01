@@ -8,6 +8,7 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://mu.semte.ch/vocabularies/account/key",
+        "http://mu.semte.ch/vocabularies/account/keyHash",
         "http://mu.semte.ch/vocabularies/account/canActOnBehalfOf"
       ]
     }
