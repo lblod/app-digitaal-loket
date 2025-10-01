@@ -5,16 +5,19 @@
  - Ensure budget for erediensten to toezicht ABB is not exported.
  - Added vendor name to export [OP-3682]
  - Bump frontend loket to `v1.2.0` [DL-6750] [DL-7033]
+ - New Loket [DL-7017]
+
 ## Deploy notes
 (To include the new predicates from the `op-public-consumer`, run migrations.)
 ```
 drc restart migrations delta-producer-publication-graph-maintainer
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc restart op-public-consumer export-submissons
-drc up -d sync-with-kalliope-error-notification-service loket
+drc restart op-public-consumer export-submissons database deltanotifier dispatcher migrations resource
+drc up -d
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
 ```
+
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
@@ -118,15 +121,6 @@ Delete the local migration with the keys and key hashes from the server
 - Bump worship-decisions-cross-reference-service see [#10](https://github.com/lblod/worship-decisions-cross-reference-service/pull/10) [DL-6782]
 - Added missing mapping rule: `ere:wordtBediendDoor` see [DL-6755](https://binnenland.atlassian.net/browse/DL-6755?focusedCommentId=145178&sourceType=mention)
 - Convert 'afwijking principes regiovorming' from BesluitDocumentType to BesluitType [DL-6775]
-
-### new loket
-:warning: please shuffle the instructions and follow the conventions once merging
-### deploy instructions
-```
-drc restart database deltanotifier dispatcher migrations resource
-drc up -d
-```
-
 
 ### Deploy instructions
 
