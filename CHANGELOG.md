@@ -1,5 +1,5 @@
 # Changelog
-## ## v1.115.1 (2025-09-19)
+## ## Unreleased
  - Tweaks for sparql-parser.
    - delta-notifier updates:
      - bump version
