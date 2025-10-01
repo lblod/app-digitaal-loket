@@ -5,7 +5,13 @@
 
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
-
+### new loket
+:warning: please shuffle the instructions and follow the conventions once merging
+### deploy instructions
+```
+drc restart database deltanotifier dispatcher migrations resource
+drc up -d
+```
 ### Deploy Notes
 
 ```

@@ -82,3 +82,4 @@
 (add-prefix "dgftOauth" "http://kanselarij.vo.data.gift/vocabularies/oauth-2.0-session/")
 
 (add-prefix "pera" "http://publications.europa.eu/resource/authority/")
+(add-prefix "ipdc" "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#")

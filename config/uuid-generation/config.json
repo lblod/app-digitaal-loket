@@ -1,0 +1,14 @@
+{
+  "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#InstancePublicServiceSnapshot": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://schema.org/WebSite": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://purl.org/vocab/cpsv#Rule": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://data.europa.eu/m8g/Requirement": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://data.europa.eu/m8g/Cost": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#FinancialAdvantage": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://data.europa.eu/m8g/Evidence": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://schema.org/ContactPoint": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://www.w3.org/ns/locn#Address": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://data.europa.eu/eli/ontology#LegalResource": ["http://mu.semte.ch/graphs/ipdc/ldes-data"],
+  "http://www.w3.org/2004/02/skos/core#ConceptScheme": ["http://mu.semte.ch/graphs/public"],
+  "http://www.w3.org/2004/02/skos/core#Concept": ["http://mu.semte.ch/graphs/public"]
+}

@@ -1,0 +1,11 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?link <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties>.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+       ?link <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties>.
+  }
+}

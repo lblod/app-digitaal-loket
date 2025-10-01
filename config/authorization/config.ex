@@ -215,7 +215,23 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/sessions",
                     constraint: %ResourceFormatConstraint{
                       resource_prefix: "http://mu.semte.ch/sessions/"
-                    } } ] },
+                    } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/ipdc/ldes-data",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#InstancePublicServiceSnapshot",
+                        "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#FinancialAdvantage",
+                        "http://schema.org/WebSite",
+                        "http://data.europa.eu/m8g/Requirement",
+                        "http://data.europa.eu/m8g/Cost",
+                        "http://data.europa.eu/m8g/Evidence",
+                        "http://schema.org/ContactPoint",
+                        "http://www.w3.org/ns/locn#Address",
+                        "http://purl.org/vocab/cpsv#Rule",
+                        "http://data.europa.eu/eli/ontology#LegalResource"
+                        ]
+                   }}] },
       %GroupSpec{
         name: "public-r",
         useage: [:read],
