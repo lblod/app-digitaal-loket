@@ -49,7 +49,7 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    image: cecemel/delta-notifier:0.2.0-beta.6
+    image: cecemel/delta-notifier:feature-merge-with-upstream-2025-09-29
     volumes:
       - ./config/delta:/config
     labels:
@@ -60,7 +60,7 @@ services:
     image: semtech/sparql-parser:0.0.14
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-      LISP_DYNAMIC_SPACE_SIZE: 8192
+      LISP_DYNAMIC_SPACE_SIZE: 16384
     volumes:
       - ./config/authorization:/config
       - ./data/authorization:/data
@@ -75,7 +75,7 @@ services:
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
     volumes:
       - ./data/db:/data
-      - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini # Note: on production override this setting
+      - ./config/virtuoso/virtuoso-production.ini:/data/virtuoso.ini # Note: on production override this setting
       - ./config/virtuoso/:/opt/virtuoso-scripts
     labels:
       - "logging=true"
@@ -114,7 +114,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:feature-differently-stable-luckless
+    image: semtech/mu-cl-resources:feature-delta-processing-queue
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:

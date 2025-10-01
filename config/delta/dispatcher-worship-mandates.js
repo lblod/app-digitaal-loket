@@ -12,7 +12,8 @@ export default [
     },
     options: {
       resourceFormat: 'v0.0.1',
-      gracePeriod: 0,
+      gracePeriod: 0, //TODO: check if this should really be '0' (Ben?)
+      foldEffectiveChanges: true,
       ignoreFromSelf: true,
       optOutMuScopeIds: [ "http://worship-positions-graph-dispatcher/update" ]
     }
@@ -30,7 +31,8 @@ export default [
     },
     options: {
       resourceFormat: 'v0.0.1',
-      gracePeriod: 0,
+      gracePeriod: 0, //TODO: check if this should really be '0' (Ben?)
+      foldEffectiveChanges: true,
       ignoreFromSelf: true,
       optOutMuScopeIds: [ "http://worship-positions-graph-dispatcher/update" ]
     }

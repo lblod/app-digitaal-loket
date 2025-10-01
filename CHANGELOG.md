@@ -1,4 +1,17 @@
 # Changelog
+## ## Unreleased
+ - Tweaks for sparql-parser.
+   - delta-notifier updates:
+     - bump version
+     - updated rules
+   - resource: update version
+
+### deploy notes:
+```
+drc up -d deltanotifier resource
+drc restart virtuoso
+```
+
 ## v1.115.0 (2025-09-19)
 - Check vendor API key against database hash [DL-6543]
 ### Deploy instructions
