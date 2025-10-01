@@ -1,4 +1,5 @@
 # Changelog
+
 ## Unreleased
 ### General
 
@@ -10,6 +11,14 @@
 ```
 drc restart export-submissions
 drc up -d berichtencentrum-sync-with-kalliope
+```
+
+## v1.115.2 (2025-10-01)
+- Fix delta-config mu-auth
+### Deploy instructions
+```
+drc restart database deltanotifier
+
 ```
 ## v1.115.1 (2025-10-01)
 - Revert to mu-auth. Still some improvements needed in sparql-parser
