@@ -1,4 +1,10 @@
 # Changelog
+## v1.115.2 (2025-10-01)
+- Fix delta-config mu-auth
+### Deploy instructions
+```
+drc restart database deltanotifier
+```
 ## v1.115.1 (2025-10-01)
 - Revert to mu-auth. Still some improvements needed in sparql-parser
   - See also https://github.com/lblod/app-digitaal-loket/pull/685
