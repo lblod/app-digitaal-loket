@@ -1,6 +1,5 @@
 # Changelog
-## Unreleased 
-
+## Unreleased
 ### General
 
 - Updated export config for toezicht [DL-6706]
@@ -12,7 +11,13 @@
 drc restart export-submissions
 drc up -d berichtencentrum-sync-with-kalliope
 ```
-
+## v1.115.1 (2025-10-01)
+- Revert to mu-auth. Still some improvements needed in sparql-parser
+  - See also https://github.com/lblod/app-digitaal-loket/pull/685
+### Deploy Notes
+```
+drc up -d database
+```
 ## v1.115.0 (2025-09-19)
 - Check vendor API key against database hash [DL-6543]
 ### Deploy instructions
