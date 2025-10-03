@@ -6,17 +6,112 @@
   "max_batches": 0,
   "update_wait_interval_minutes": 0,
   "automatic_index_updates": true,
+  "ignored_allowed_groups": [
+    {
+      "variables": [],
+      "name": "clean"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-bbcdrGebruiker"
+      ],
+      "name": "o-bbcdr-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-personeelsbeheer"
+      ],
+      "name": "o-employee-database-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-leidinggevendenGebruiker"
+      ],
+      "name": "o-leidinggevende-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-berichtenGebruiker"
+      ],
+      "name": "o-messaging-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-toezichtGebruiker"
+      ],
+      "name": "o-toez-rwf"
+    },
+    {
+      "variables": [
+        "*"
+      ],
+      "name": "org"
+    },
+    {
+      "variables": [],
+      "name": "public-r"
+    },
+    {
+      "variables": [],
+      "name": "public-wf"
+    },
+    {
+      "variables": [],
+      "name": "o-toezicht-vendor-management-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-eredienstMandaatGebruiker"
+      ],
+      "name": "o-worship-positions-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-eredienstBedienaarGebruiker"
+      ],
+      "name": "o-worship-positions-rwf"
+    },
+    {
+      "variables": [],
+      "name": "o-vendor-api-r"
+    },
+    {
+      "variables": [],
+      "name": "o-admin-sessions-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketAdmin"
+      ],
+      "name": "o-admin-rwf"
+    },
+    {
+      "variables": [],
+      "name": "o-admin-rwf"
+    }
+  ],
   "eager_indexing_groups": [
     [
-      { "name": "public", "variables": [] }
+      {
+        "name": "public",
+        "variables": []
+      }
     ]
   ],
-  "types" : [
+  "types": [
     {
-      "type" : "public-service",
-      "on_path" : "public-services",
-      "rdf_type" : "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#InstancePublicServiceSnapshot",
-      "properties" : {
+      "type": "public-service",
+      "on_path": "public-services",
+      "rdf_type": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#InstancePublicServiceSnapshot",
+      "properties": {
         "name": {
           "via": "http://purl.org/dc/terms/title",
           "type": "language-string"
@@ -118,7 +213,7 @@
               }
             }
           },
-          "description":  {
+          "description": {
             "properties": {
               "nl": {
                 "type": "text",
@@ -126,17 +221,39 @@
               }
             }
           },
-          "startDate": { "type": "date" },
-          "endDate": { "type": "date" },
-          "dateCreated": { "type": "date" },
-          "dateModified": { "type": "date" },
-          "isArchived": { "type": "boolean" },
-          "type.label": { "type": "keyword" },
-          "type.broader.label": { "type": "keyword" },
-          "thematicAreas.label": { "type": "keyword" },
-          "thematicAreas.broader.label": { "type": "keyword" },
-          "competentAuthorityLevels.label": { "type": "keyword" },
-          "competentAuthorityLevels.broader.label": { "type": "keyword" }
+          "startDate": {
+            "type": "date"
+          },
+          "endDate": {
+            "type": "date"
+          },
+          "dateCreated": {
+            "type": "date"
+          },
+          "dateModified": {
+            "type": "date"
+          },
+          "isArchived": {
+            "type": "boolean"
+          },
+          "type.label": {
+            "type": "keyword"
+          },
+          "type.broader.label": {
+            "type": "keyword"
+          },
+          "thematicAreas.label": {
+            "type": "keyword"
+          },
+          "thematicAreas.broader.label": {
+            "type": "keyword"
+          },
+          "competentAuthorityLevels.label": {
+            "type": "keyword"
+          },
+          "competentAuthorityLevels.broader.label": {
+            "type": "keyword"
+          }
         },
         "runtime": {
           "filterEndDate": {
