@@ -11,6 +11,7 @@
 (To include the new predicates from the `op-public-consumer`, run migrations.)
 :warning: If you this version is still running with mu-auth, then we should wire virtuoso to ldes-consumer.
 ```
+drc pull search
 drc restart migrations delta-producer-publication-graph-maintainer
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
@@ -46,6 +47,7 @@ On prod: you will have to remove the manually bumped version of vendor-login in 
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
 - Ensure to use latest version of automatic-submission and berichtencentrum-melding [DL-6543]
+
 ### Deploy Notes
 
 ```
