@@ -9,6 +9,7 @@
 
 ## Deploy notes
 (To include the new predicates from the `op-public-consumer`, run migrations.)
+:warning: If you this version is still running with mu-auth, then we should wire virtuoso to ldes-consumer.
 ```
 drc restart migrations delta-producer-publication-graph-maintainer
 # Wait until the process is complete
@@ -17,7 +18,6 @@ drc restart op-public-consumer export-submissons database deltanotifier dispatch
 drc up -d
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
 ```
-
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
@@ -46,7 +46,6 @@ On prod: you will have to remove the manually bumped version of vendor-login in 
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
 - Ensure to use latest version of automatic-submission and berichtencentrum-melding [DL-6543]
-
 ### Deploy Notes
 
 ```
