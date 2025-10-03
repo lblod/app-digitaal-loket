@@ -715,7 +715,7 @@ services:
     labels:
       - "logging=true"
   search:
-    image: semtech/mu-search:0.10.0
+    image: semtech/mu-search:latest
     volumes:
       - ./config/search:/config
     restart: always
