@@ -10,8 +10,9 @@
  - please shuffle the instructions and follow the conventions once merging
  - 
 ### deploy instructions
-If you this version is still running with mu-auth, then we should wire virtuoso to ldes-consumer.
+- If you this version is still running with mu-auth, then we should wire virtuoso to ldes-consumer.
 ```
+drc pull search
 drc restart database deltanotifier dispatcher migrations resource
 drc up -d
 ```
