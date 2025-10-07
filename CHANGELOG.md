@@ -1,4 +1,6 @@
 # Changelog
+## v1.115.3 (2025-10-07)
+- Fix issue delta-producer-publication-graph-maintainer: pagination did not work for file-diffing flow.
 ## v1.115.2 (2025-10-01)
 - Fix delta-config mu-auth
 ### Deploy instructions
