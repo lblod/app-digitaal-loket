@@ -1,5 +1,4 @@
 # Changelog
-
 ## Unreleased
 ### General
 
@@ -11,6 +10,12 @@
 ```
 drc restart export-submissions
 drc up -d berichtencentrum-sync-with-kalliope
+```
+## v1.115.3 (2025-10-07)
+- Fix issue delta-producer-publication-graph-maintainer: pagination did not work for file-diffing flow.
+### Deploy instructions
+```
+drc up -d delta-producer-publication-graph-maintainer
 ```
 
 ## v1.115.2 (2025-10-01)
