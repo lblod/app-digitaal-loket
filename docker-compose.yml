@@ -609,7 +609,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.4.1
+    image: lblod/delta-producer-publication-graph-maintainer:1.4.2
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
