@@ -1,9 +1,10 @@
 # Changelog
-## Unreleased
+## v1.116.0 (2025-10-09)
 ### General
 
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
+- Ensure to use latest version of automatic-submission and berichtencentrum-melding [DL-6543]
 
 ### Deploy Notes
 
