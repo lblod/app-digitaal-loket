@@ -541,7 +541,8 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-melding:
-    image: lblod/berichten-melding-service:2.0.2
+    image: lblod/berichten-melding-service:2.0.1
+    # Note: If you are reading this, you should be able to bump it to 2.0.2 (if the build was successful)
     environment:
       USE_HASHED_KEY: "true"
     volumes:
