@@ -1,4 +1,11 @@
 # Changelog
+# Unreleased
+ - Ensure vendor-login keeps previous behaviour. [DL-6959]
+## Deploy notes
+``` 
+drc up -d vendor-login
+```
+On prod: you will have to remove the manually bumped version in `docker-compose.yml`
 ## v1.116.0 (2025-10-09)
 ### General
 
