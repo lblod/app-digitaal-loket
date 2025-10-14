@@ -511,9 +511,10 @@ services:
   # Vendor endpoint
   ##############################################################################
   vendor-login:
-    image: lblod/vendor-login-service:1.4.0
+    image: lblod/vendor-login-service:1.4.1-rc.1 # Note: this is a temporary implementation. We need to fine tune this.
     environment:
       USE_HASHED_KEY: "true"
+      REMOVE_ALL_SESSIONS_ON_LOGIN: "true"
     labels:
       - "logging=true"
     restart: always
