@@ -1,5 +1,5 @@
 # Changelog
-# Unreleased
+# v1.116.1 (2025-10-15)
 - Ensure vendor-login keeps previous behaviour. [DL-6959]
 - Bump frontend
 
