@@ -1,11 +1,13 @@
 # Changelog
 # Unreleased
- - Ensure vendor-login keeps previous behaviour. [DL-6959]
+- Ensure vendor-login keeps previous behaviour. [DL-6959]
+- Bump frontend
+
 ## Deploy notes
 ``` 
-drc up -d vendor-login
+drc up -d vendor-login loket
 ```
-On prod: you will have to remove the manually bumped version in `docker-compose.yml`
+On prod: you will have to remove the manually bumped version of vendor-login in `docker-compose.yml`
 ## v1.116.0 (2025-10-09)
 ### General
 
