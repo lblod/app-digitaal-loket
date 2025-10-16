@@ -261,7 +261,7 @@ services:
     restart: always
     logging: *default-logging
   deliver-email-service:
-    image: redpencil/deliver-email-service:0.2.0
+    image: redpencil/deliver-email-service:1.0.0
     environment:
       MAILBOX_URI: "http://data.lblod.info/id/mailboxes/1"
     labels:
