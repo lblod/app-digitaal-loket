@@ -1,6 +1,10 @@
 # Changelog
 # Unreleased
 - Bump email deliver service [DL-6792]
+## Deploy notes
+```
+drc up -d deliver-email-service
+```
 # v1.116.1 (2025-10-15)
 - Ensure vendor-login keeps previous behaviour. [DL-6959]
 - Bump frontend
