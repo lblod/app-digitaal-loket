@@ -1,9 +1,13 @@
 # Changelog
 # Unreleased
 - Bump email deliver service [DL-6792]
+- update lekp forms [DL6988]
+
 ## Deploy notes
 ```
 drc up -d deliver-email-service
+drc up -d enrich-submission
+drc restart migrations && drc logs -ft --tail=200 migrations
 ```
 # v1.116.1 (2025-10-15)
 - Ensure vendor-login keeps previous behaviour. [DL-6959]
