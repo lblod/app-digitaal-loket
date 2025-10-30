@@ -1,5 +1,6 @@
 import automaticSubmission from './automatic-submission';
 import berichtencentrumMelding from './berichtencentrum-melding';
+import bookmarks from './bookmarks';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
 import deltaProducerPublicationGraphMaintainer from './delta-producer-publication-graph-maintainer';
 import deltaProducerReportGenerator from './delta-producer-report-generator';
@@ -22,6 +23,7 @@ import virusScanner from './virus-scanner';
 export default [
   ...automaticSubmission,
   ...berichtencentrumMelding,
+  ...bookmarks,
   ...deltaProducerDumpFilePublisher,
   ...deltaProducerPublicationGraphMaintainer,
   ...deltaProducerReportGenerator,
