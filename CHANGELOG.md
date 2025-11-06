@@ -2,19 +2,21 @@
 # Unreleased
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
-
+- Bump download-url [DL-7010]
 ## Deploy notes
 ```
+drc up -d download-url
 drc up -d deliver-email-service
 drc up -d enrich-submission
 drc restart migrations && drc logs -ft --tail=200 migrations
 ```
+:warning: `download-url` has been hot bumped on prod in `docker-compose.override.yml`, please remove this entry.
 # v1.116.1 (2025-10-15)
 - Ensure vendor-login keeps previous behaviour. [DL-6959]
 - Bump frontend
 
 ## Deploy notes
-``` 
+```
 drc up -d vendor-login loket
 ```
 On prod: you will have to remove the manually bumped version of vendor-login in `docker-compose.yml`
