@@ -413,7 +413,7 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
-    image: lblod/sync-with-kalliope-error-notification-service:0.1.3
+    image: lblod/sync-with-kalliope-error-notification-service:0.1.4
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
