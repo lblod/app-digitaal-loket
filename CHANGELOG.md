@@ -1,4 +1,10 @@
 # Changelog
+# Unreleased
+ - Bump `lblod/sync-with-kalliope-error-notification-service`
+## Deploy notes
+```
+drc up -d sync-with-kalliope-error-notification
+```
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
