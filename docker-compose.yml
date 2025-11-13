@@ -325,7 +325,7 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    image: lblod/download-url-service:1.0.3
+    image: lblod/download-url-service:1.0.6
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
@@ -335,7 +335,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:2.0.1
+    image: lblod/automatic-submission-service:2.0.3
     labels:
       - "logging=true"
     restart: always

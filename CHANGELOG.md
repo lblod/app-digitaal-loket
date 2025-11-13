@@ -3,6 +3,7 @@
 ## Unreleased
 ### General
 
+- Add support for OAuth scopes to meldingplicht API [DL-6724]
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
 
@@ -10,7 +11,8 @@
 
 ```
 drc restart export-submissions
-drc up -d berichtencentrum-sync-with-kalliope
+drc up -d berichtencentrum-sync-with-kalliope automatic-submission download-url
+drc pull automatic-submission download-url
 ```
 
 ## v1.115.2 (2025-10-01)
