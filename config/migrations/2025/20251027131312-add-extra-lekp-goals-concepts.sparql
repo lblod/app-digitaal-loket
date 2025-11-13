@@ -1,0 +1,21 @@
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.data.gift/concepts/02697728-6fc2-46e0-ae94-d0ae035fbdc4> a <http://www.w3.org/2004/02/skos/core#Concept>;
+      <http://mu.semte.ch/vocabularies/core/uuid> "02697728-6fc2-46e0-ae94-d0ae035fbdc4";
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a>;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Werf 2: Verrijk je wijk - Renovatietrajecten bij klimaattafels"@nl;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a> .
+
+    <http://lblod.data.gift/concepts/9595d087-55f8-4a38-9bec-5eea5944b79d> a <http://www.w3.org/2004/02/skos/core#Concept>;
+      <http://mu.semte.ch/vocabularies/core/uuid> "9595d087-55f8-4a38-9bec-5eea5944b79d";
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a>;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Werf 2: Verrijk je wijk - Energiegemeenschappen"@nl;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a> .
+
+    <http://lblod.data.gift/concepts/176c9941-cf58-4a55-bd5a-ddcdf88f3ff5> a <http://www.w3.org/2004/02/skos/core#Concept>;
+      <http://mu.semte.ch/vocabularies/core/uuid> "176c9941-cf58-4a55-bd5a-ddcdf88f3ff5";
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a>;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Werf 2: Verrijk je wijk - Wijkverbeteringscontracten"@nl;
+      <http://www.w3.org/2004/02/skos/core#topConceptOf> <http://lblod.data.gift/concept-schemes/5d05a003-4692-4aff-9e93-325db2aefb8a> .
+  }
+}

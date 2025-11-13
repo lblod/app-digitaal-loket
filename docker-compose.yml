@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.0.0
+    image: lblod/frontend-loket:1.0.1
     links:
       - identifier:backend
     labels:
@@ -261,7 +261,7 @@ services:
     restart: always
     logging: *default-logging
   deliver-email-service:
-    image: redpencil/deliver-email-service:0.2.0
+    image: redpencil/deliver-email-service:1.0.0
     environment:
       MAILBOX_URI: "http://data.lblod.info/id/mailboxes/1"
     labels:
@@ -269,7 +269,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.22.7
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.23.0
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -336,6 +336,8 @@ services:
     logging: *default-logging
   automatic-submission:
     image: lblod/automatic-submission-service:2.0.3
+    environment:
+      USE_HASHED_KEY: "true"
     labels:
       - "logging=true"
     restart: always
@@ -351,7 +353,7 @@ services:
   enrich-submission:
     image: lblod/enrich-submission-service:1.13.5
     environment:
-      ACTIVE_FORM_FILE: "share://semantic-forms/20250909113747-forms.ttl"
+      ACTIVE_FORM_FILE: "share://semantic-forms/20251024143047-forms.ttl"
     volumes:
       - ./config/semantic-forms:/share/semantic-forms
       - ./data/files/submissions:/share/submissions
@@ -509,9 +511,10 @@ services:
   # Vendor endpoint
   ##############################################################################
   vendor-login:
-    image: lblod/vendor-login-service:1.4.0
+    image: lblod/vendor-login-service:1.4.1-rc.1 # Note: this is a temporary implementation. We need to fine tune this.
     environment:
       USE_HASHED_KEY: "true"
+      REMOVE_ALL_SESSIONS_ON_LOGIN: "true"
     labels:
       - "logging=true"
     restart: always
@@ -540,6 +543,9 @@ services:
     logging: *default-logging
   berichtencentrum-melding:
     image: lblod/berichten-melding-service:2.0.1
+    # Note: If you are reading this, you should be able to bump it to 2.0.2 (if the build was successful)
+    environment:
+      USE_HASHED_KEY: "true"
     volumes:
       - ./data/files:/share
     labels:
@@ -609,7 +615,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.4.0
+    image: lblod/delta-producer-publication-graph-maintainer:1.4.2
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"

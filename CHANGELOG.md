@@ -1,11 +1,32 @@
 # Changelog
+# v1.117.0 (2025-11-07)
+- Bump email deliver service [DL-6792]
+- update lekp forms [DL6988]
+- Bump download-url [DL-7010]
+## Deploy notes
+```
+drc up -d download-url
+drc up -d deliver-email-service
+drc up -d enrich-submission
+drc restart migrations && drc logs -ft --tail=200 migrations
+```
+:warning: `download-url` has been hot bumped on prod in `docker-compose.override.yml`, please remove this entry.
+# v1.116.1 (2025-10-15)
+- Ensure vendor-login keeps previous behaviour. [DL-6959]
+- Bump frontend
 
-## Unreleased
+## Deploy notes
+```
+drc up -d vendor-login loket
+```
+On prod: you will have to remove the manually bumped version of vendor-login in `docker-compose.yml`
+## v1.116.0 (2025-10-09)
 ### General
 
 - Add support for OAuth scopes to meldingplicht API [DL-6724]
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
+- Ensure to use latest version of automatic-submission and berichtencentrum-melding [DL-6543]
 
 ### Deploy Notes
 
@@ -13,6 +34,22 @@
 drc restart export-submissions
 drc up -d berichtencentrum-sync-with-kalliope automatic-submission download-url
 drc pull automatic-submission download-url
+```
+## v1.115.4 (2025-10-07)
+- Fix build issue delta-producer-publication-graph-maintainer.
+### Deploy instructions
+
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
+#### Notes for Prod
+Don't forget to remove `delta-producer-publication-graph-maintainer` tag in `docker-compose.override.yml`
+
+## v1.115.3 (2025-10-07)
+- Fix issue delta-producer-publication-graph-maintainer: pagination did not work for file-diffing flow.
+### Deploy instructions
+```
+drc up -d delta-producer-publication-graph-maintainer
 ```
 
 ## v1.115.2 (2025-10-01)
