@@ -20,6 +20,7 @@ CONSTRUCT {
     org:hasSite,
     org:changedBy,
     org:resultedFrom,
-    ere:typeEredienst
+    ere:typeEredienst,
+    org:linkedTo
   ))
 }
