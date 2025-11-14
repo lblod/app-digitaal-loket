@@ -29,6 +29,7 @@ On prod: you will have to remove the manually bumped version of vendor-login in 
 ## v1.116.0 (2025-10-09)
 ### General
 
+- Add support for OAuth scopes to meldingplicht API [DL-6724]
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
 - Ensure to use latest version of automatic-submission and berichtencentrum-melding [DL-6543]
@@ -37,7 +38,8 @@ On prod: you will have to remove the manually bumped version of vendor-login in 
 
 ```
 drc restart export-submissions
-drc up -d berichtencentrum-sync-with-kalliope
+drc up -d berichtencentrum-sync-with-kalliope automatic-submission download-url
+drc pull automatic-submission download-url
 ```
 ## v1.115.4 (2025-10-07)
 - Fix build issue delta-producer-publication-graph-maintainer.
