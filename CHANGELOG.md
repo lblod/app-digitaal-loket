@@ -1,10 +1,33 @@
 # Changelog
 # Unreleased
  - Bump `lblod/sync-with-kalliope-error-notification-service`
+ - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
 ## Deploy notes
 ```
 drc up -d sync-with-kalliope-error-notification
 ```
+
+To include the new predicates from the `op-public-consumer`, flush and re-sync
+the consumer.
+
+```
+docker compose exec op-public-consumer curl -X POST http://localhost/flush
+# Wait until the process is complete
+docker compose restart op-public-consumer
+# Verify that the sync is working
+```
+
+**NOTE:** you can temporarily use the config below to speed up the process and
+then restart `resource` and `cache`.
+
+```
+op-public-consumer:
+  environment:
+    DCR_LANDING_ZONE_DATABASE: "virtuoso"
+```
+
+and then restart `resource` and `cache`.
+
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
