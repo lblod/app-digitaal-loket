@@ -51,6 +51,15 @@ And an `.env` file with following content:
 ```
 COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml:docker-compose.override.yml
 ```
+
+#### Docker compose alias
+To make the `docker-compose` command shorter, you can alias it:
+```
+echo "alias drc='docker-compose'" >> ~/.bashrc
+echo "alias drcl='docker-compose logs -ft --tail=100'" >> ~/.bashrc
+```
+Then run `source ~/.bashrc`.
+
 #### If you start for the first time
 
 You will need to sync the `besluit:Bestuurseenheid` from [app-organization-portal](https://github.com/lblod/app-organization-portal), else you won't be able to use the application. Here is how to proceed.
