@@ -1,0 +1,31 @@
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX regorg: <http://www.w3.org/ns/regorg#>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?s
+      rdf:type ere:CentraalBestuurVanDeEredienst ;
+      ?p ?o .
+    FILTER(?p IN(
+      rdf:type,
+      mu:uuid,
+      regorg:orgStatus,
+      org:hasPrimarySite,
+      org:hasSite,
+      org:changedBy,
+      org:resultedFrom,
+      ere:denominatie,
+      ere:grensoverschrijdend,
+      ere:typeEredienst,
+      org:hasSubOrganization)
+    )
+  }
+}

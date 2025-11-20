@@ -23,6 +23,7 @@ CONSTRUCT {
     ere:denominatie,
     ere:grensoverschrijdend,
     ere:typeEredienst,
-    ere:wordtBediendDoor
+    ere:wordtBediendDoor,
+    ere:betrokkenBestuur
   ))
 }

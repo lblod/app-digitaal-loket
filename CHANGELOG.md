@@ -1,10 +1,20 @@
 # Changelog
 # Unreleased
  - Bump `lblod/sync-with-kalliope-error-notification-service`
+ - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
 ## Deploy notes
 ```
 drc up -d sync-with-kalliope-error-notification
 ```
+
+To include the new predicates from the `op-public-consumer`, run migrations.
+
+```
+docker compose restart migrations
+# Wait until the process is complete
+docker compose logs --tail 1000 -f migrations
+```
+
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
