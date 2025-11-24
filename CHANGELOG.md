@@ -9,6 +9,7 @@
 drc restart migrations
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
+drc restart op-public-consumer
 drc up -d sync-with-kalliope-error-notification
 drc up -d database resource
 ```
