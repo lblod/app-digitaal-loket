@@ -1,14 +1,21 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; a hack from madnificent for testing
+
+(in-package #:handle-update-unit)
+
+(setf *allow-construct-query-p* nil)
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; delta messenger
 (in-package :delta-messenger)
 
-(add-delta-logger)
+;; (add-delta-logger) ;; commented out by madnificent on qa
 (add-delta-messenger "http://deltanotifier/")
 
 ;;;;;;;;;;;;;;;;;
 ;;; configuration
 (in-package :client)
-(setf *log-sparql-query-roundtrip* t)
+(setf *log-sparql-query-roundtrip* nil) ;; set to nil by madnificent on qa
 (setf *backend* "http://virtuoso:8890/sparql")
 
 (in-package :server)

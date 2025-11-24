@@ -73,8 +73,15 @@ services:
   #   restart: always
   #   logging: *default-logging
   database:
-    image: semtech/mu-authorization:feature-service-roam-r1.1
+    # image: semtech/mu-authorization:feature-service-roam-r1.1
+    image: semtech/sparql-parser:feature-more-consistent-throughput # sparql-parser
     environment:
+      # sparql-parser
+      LISP_DYNAMIC_SPACE_SIZE: 8000 # you could raise this.  you need 1800 in a good running system today on loket, if
+                                    # it's too low the system crashes when you go out of bounds.  lower numbers make it
+                                    # garbage collect earlier (thus freeing memory earlier) but they will not lower
+                                    # total memory used by the system when it needs it (except for crashing).
+      # mu-authorization
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
       DATABASE_COMPATIBILITY: "Virtuoso"
@@ -84,6 +91,7 @@ services:
       QUERY_MAX_EXECUTION_TIME: 605000
     volumes:
       - ./config/authorization:/config
+      - ./data/authorization/:/data/ # only for sparql-parser
     labels:
       - "logging=true"
     restart: always
@@ -135,7 +143,8 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:feature-differently-stable-luckless
+    # image: semtech/mu-cl-resources:feature-differently-stable-luckless
+    image: semtech/mu-cl-resources:feature-delta-processing-queue
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -413,7 +422,8 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
-    image: lblod/sync-with-kalliope-error-notification-service:0.1.3
+    # image: lblod/sync-with-kalliope-error-notification-service:0.1.3
+    image: lblod/sync-with-kalliope-error-notification-service:0.1.4
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
