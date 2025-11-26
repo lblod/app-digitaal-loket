@@ -59,7 +59,7 @@ services:
   database:
     image: semtech/sparql-parser:feature-more-consistent-throughput
     environment:
-      LISP_DYNAMIC_SPACE_SIZE: 8192
+      LISP_DYNAMIC_SPACE_SIZE: 8192 # On production; change this to 16192
     volumes:
       - ./config/authorization:/config
       - ./data/authorization:/data
