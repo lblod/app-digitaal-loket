@@ -104,14 +104,17 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  cache:
-    image: semtech/mu-cache:2.0.1
-    links:
-      - resource:backend
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
+  # Temporarily disabled cache.
+  # sparql-parser is (currently) too powerful for resource to allow it to properly
+  # clear the caches.
+  # cache:
+  #   image: semtech/mu-cache:2.0.1
+  #   links:
+  #     - resource:backend
+  #   labels:
+  #     - "logging=true"
+  #   restart: always
+  #   logging: *default-logging
   resource:
     image: semtech/mu-cl-resources:feature-delta-processing-queue
     environment:
