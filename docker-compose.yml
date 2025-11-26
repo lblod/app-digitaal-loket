@@ -56,17 +56,39 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  # DATABASE CONFIG NOTES
+  # Currently there are some improvements needed in sparql-parser
+  #  required to allow us to go live.
+  #  Let's keep both configs; so it's easier to swap
+  # database:
+  #   image: semtech/sparql-parser:0.0.14
+  #   environment:
+  #     MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+  #     LISP_DYNAMIC_SPACE_SIZE: 8192
+  #   volumes:
+  #     - ./config/authorization:/config
+  #     - ./data/authorization:/data
+  #   labels:
+  #     - "logging=true"
+  #   restart: always
+  #   logging: *default-logging
   database:
-    image: semtech/sparql-parser:feature-more-consistent-throughput
+    image: semtech/mu-authorization:feature-service-roam-r1.1
     environment:
-      LISP_DYNAMIC_SPACE_SIZE: 8192
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_OVERLOAD_RECOVERY: "true"
+      DATABASE_COMPATIBILITY: "Virtuoso"
+      # Note: not sure wether it gets picked up properly, it is meant for healing-process which may make
+      # heavy queries
+      QUERY_MAX_PROCESSING_TIME: 605000
+      QUERY_MAX_EXECUTION_TIME: 605000
     volumes:
       - ./config/authorization:/config
-      - ./data/authorization:/data
     labels:
       - "logging=true"
     restart: always
     logging: *default-logging
+  # END DATABASE CONFIG NOTES
   virtuoso:
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
@@ -113,7 +135,7 @@ services:
     restart: always
     logging: *default-logging
   resource:
-    image: semtech/mu-cl-resources:feature-delta-processing-queue
+    image: semtech/mu-cl-resources:feature-differently-stable-luckless
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -391,7 +413,7 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
-    image: lblod/sync-with-kalliope-error-notification-service:0.1.4
+    image: lblod/sync-with-kalliope-error-notification-service:0.1.3
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
