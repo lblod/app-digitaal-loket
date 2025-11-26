@@ -413,16 +413,7 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
-<<<<<<< HEAD
-<<<<<<< HEAD
     image: lblod/sync-with-kalliope-error-notification-service:0.1.3
-=======
-    # image: lblod/sync-with-kalliope-error-notification-service:0.1.3
-    image: lblod/sync-with-kalliope-error-notification-service:0.1.4
->>>>>>> parent of 5ea50918 (Fine tune the tweaks done on QA environment of loket)
-=======
-    image: lblod/sync-with-kalliope-error-notification-service:0.1.3
->>>>>>> parent of 9d19bb64 (Bundle all test-config on QA done by Architecture team.)
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"

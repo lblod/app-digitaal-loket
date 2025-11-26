@@ -8,7 +8,7 @@
 ;;;;;;;;;;;;;;;;;
 ;;; configuration
 (in-package :client)
-(setf *log-sparql-query-roundtrip* t)
+(setf *log-sparql-query-roundtrip* nil) ;; set to nil by madnificent on qa
 (setf *backend* "http://virtuoso:8890/sparql")
 
 (in-package :server)
