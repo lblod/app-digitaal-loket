@@ -135,7 +135,12 @@ services:
     restart: always
     logging: *default-logging
   resource:
+<<<<<<< HEAD
     image: semtech/mu-cl-resources:feature-differently-stable-luckless
+=======
+    # image: semtech/mu-cl-resources:feature-differently-stable-luckless
+    image: semtech/mu-cl-resources:feature-delta-processing-queue
+>>>>>>> parent of 5ea50918 (Fine tune the tweaks done on QA environment of loket)
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
@@ -413,7 +418,12 @@ services:
     restart: always
     logging: *default-logging
   sync-with-kalliope-error-notification:
+<<<<<<< HEAD
     image: lblod/sync-with-kalliope-error-notification-service:0.1.3
+=======
+    # image: lblod/sync-with-kalliope-error-notification-service:0.1.3
+    image: lblod/sync-with-kalliope-error-notification-service:0.1.4
+>>>>>>> parent of 5ea50918 (Fine tune the tweaks done on QA environment of loket)
     environment:
       EMAIL_FOLDER: "http://data.lblod.info/id/mail-folders/2"
       EMAIL_GRAPH: "http://mu.semte.ch/graphs/system/email"
