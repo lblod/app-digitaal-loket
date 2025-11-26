@@ -1,8 +1,7 @@
 # Changelog
 # Unreleased
-- SPARQL-parser tweaks
- - Bump `lblod/sync-with-kalliope-error-notification-service`
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
+ - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
 ## Deploy notes
 (To include the new predicates from the `op-public-consumer`, run migrations.)
 ```
@@ -13,6 +12,8 @@ drc restart op-public-consumer deltanotifier dispatcher
 drc up -d sync-with-kalliope-error-notification
 drc up -d database resource
 drc up -d --remove-orphans
+drc restart op-public-consumer
+drc up -d sync-with-kalliope-error-notification-service
 ```
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
