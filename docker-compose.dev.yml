@@ -35,8 +35,8 @@ services:
     restart: "no"
   migrations-publication-triplestore:
     restart: "no"
-  cache:
-    restart: "no"
+  # cache:
+  #   restart: "no"
   resource:
     restart: "no"
   login-loket:

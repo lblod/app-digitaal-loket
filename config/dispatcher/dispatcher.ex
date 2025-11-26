@@ -1,3 +1,8 @@
+##########################################################################
+# WARNING: mu-cache is temporarily disabled.
+# sparql-parser is (currently) too powerful for resource to allow it to properly
+# clear the caches. 
+##########################################################################
 defmodule Dispatcher do
   use Matcher
 
@@ -24,73 +29,73 @@ defmodule Dispatcher do
   # end
 
   match "/bestuurseenheden/*path" do
-    forward conn, path, "http://cache/bestuurseenheden/"
+    forward conn, path, "http://resource/bestuurseenheden/"
   end
   match "/werkingsgebieden/*path" do
-    forward conn, path, "http://cache/werkingsgebieden/"
+    forward conn, path, "http://resource/werkingsgebieden/"
   end
   match "/bestuurseenheid-classificatie-codes/*path" do
-    forward conn, path, "http://cache/bestuurseenheid-classificatie-codes/"
+    forward conn, path, "http://resource/bestuurseenheid-classificatie-codes/"
   end
   match "/bestuursorganen/*path" do
-    forward conn, path, "http://cache/bestuursorganen/"
+    forward conn, path, "http://resource/bestuursorganen/"
   end
   match "/bestuursorgaan-classificatie-codes/*path" do
-    forward conn, path, "http://cache/bestuursorgaan-classificatie-codes/"
+    forward conn, path, "http://resource/bestuursorgaan-classificatie-codes/"
   end
   match "/fracties/*path" do
-    forward conn, path, "http://cache/fracties/"
+    forward conn, path, "http://resource/fracties/"
   end
   match "/fractietypes/*path" do
-    forward conn, path, "http://cache/fractietypes/"
+    forward conn, path, "http://resource/fractietypes/"
   end
   match "/geboortes/*path" do
-    forward conn, path, "http://cache/geboortes/"
+    forward conn, path, "http://resource/geboortes/"
   end
   match "/lijsttypes/*path" do
-    forward conn, path, "http://cache/lijsttypes/"
+    forward conn, path, "http://resource/lijsttypes/"
   end
   match "/kandidatenlijsten/*path" do
-    forward conn, path, "http://cache/kandidatenlijsten/"
+    forward conn, path, "http://resource/kandidatenlijsten/"
   end
   match "/lidmaatschappen/*path" do
-    forward conn, path, "http://cache/lidmaatschappen/"
+    forward conn, path, "http://resource/lidmaatschappen/"
   end
   match "/mandaten/*path" do
-    forward conn, path, "http://cache/mandaten/"
+    forward conn, path, "http://resource/mandaten/"
   end
   match "/bestuursfunctie-codes/*path" do
-    forward conn, path, "http://cache/bestuursfunctie-codes/"
+    forward conn, path, "http://resource/bestuursfunctie-codes/"
   end
   delete "/mandatarissen/:id" do
     forward conn, [], "http://mandataris-archive/" <> id <> "/archive"
   end
   match "/mandatarissen/*path" do
-    forward conn, path, "http://cache/mandatarissen/"
+    forward conn, path, "http://resource/mandatarissen/"
   end
   match "/mandataris-status-codes/*path" do
-    forward conn, path, "http://cache/mandataris-status-codes/"
+    forward conn, path, "http://resource/mandataris-status-codes/"
   end
   match "/beleidsdomein-codes/*path" do
-    forward conn, path, "http://cache/beleidsdomein-codes/"
+    forward conn, path, "http://resource/beleidsdomein-codes/"
   end
   match "/personen/*path" do
-    forward conn, path, "http://cache/personen/"
+    forward conn, path, "http://resource/personen/"
   end
   match "/geslacht-codes/*path" do
-    forward conn, path, "http://cache/geslacht-codes/"
+    forward conn, path, "http://resource/geslacht-codes/"
   end
 
   match "/nationalities/*path" do
-    Proxy.forward conn, path, "http://cache/nationalities/"
+    Proxy.forward conn, path, "http://resource/nationalities/"
   end
 
   match "/identificatoren/*path" do
-    forward conn, path, "http://cache/identificatoren/"
+    forward conn, path, "http://resource/identificatoren/"
   end
 
   match "/tijdsintervallen/*path" do
-    forward conn, path, "http://cache/tijdsintervallen/"
+    forward conn, path, "http://resource/tijdsintervallen/"
   end
 
   match "/mock/sessions/*path" do
@@ -102,14 +107,14 @@ defmodule Dispatcher do
   end
 
   match "/gebruikers/*path" do
-    forward conn, path, "http://cache/gebruikers/"
+    forward conn, path, "http://resource/gebruikers/"
   end
   match "/accounts/*path" do
-    forward conn, path, "http://cache/accounts/"
+    forward conn, path, "http://resource/accounts/"
   end
 
   match "/document-statuses/*path" do
-    forward conn, path, "http://cache/document-statuses/"
+    forward conn, path, "http://resource/document-statuses/"
   end
   get "/files/:id/download" do
     forward conn, [], "http://file/files/" <> id <> "/download"
@@ -134,8 +139,8 @@ defmodule Dispatcher do
   match "/file-addresses/*path" do
     forward conn, path, "http://resource/file-addresses/"
   end
-  match "/file-address-cache-statuses/*path" do
-    forward conn, path, "http://resource/file-address-cache-statuses/"
+  match "/file-address-resource-statuses/*path" do
+    forward conn, path, "http://resource/file-address-resource-statuses/"
   end
   post "/bbcdr-reports/*path" do
     forward conn, path, "http://create-bbcdr/bbcdr-reports/"
@@ -220,58 +225,58 @@ defmodule Dispatcher do
   # slave leidinggevenden
   #################################################################
   match "/bestuursfuncties/*path" do
-    forward conn, path, "http://cache/bestuursfuncties/"
+    forward conn, path, "http://resource/bestuursfuncties/"
   end
 
   match "/functionarissen/*path" do
-    forward conn, path, "http://cache/functionarissen/"
+    forward conn, path, "http://resource/functionarissen/"
   end
 
   match "/contact-punten/*path" do
-    forward conn, path, "http://cache/contact-punten/"
+    forward conn, path, "http://resource/contact-punten/"
   end
 
   match "/adressen/*path" do
-    forward conn, path, "http://cache/adressen/"
+    forward conn, path, "http://resource/adressen/"
   end
 
   match "/functionaris-status-codes/*path" do
-    forward conn, path, "http://cache/functionaris-status-codes/"
+    forward conn, path, "http://resource/functionaris-status-codes/"
   end
 
   #################################################################
   # personeelsdatabank
   #################################################################
   match "/employee-datasets/*path" do
-    forward conn, path, "http://cache/employee-datasets/"
+    forward conn, path, "http://resource/employee-datasets/"
   end
 
   match "/employee-period-slices/*path" do
-    forward conn, path, "http://cache/employee-period-slices/"
+    forward conn, path, "http://resource/employee-period-slices/"
   end
 
   match "/employee-observations/*path" do
-    forward conn, path, "http://cache/employee-observations/"
+    forward conn, path, "http://resource/employee-observations/"
   end
 
   match "/employee-time-periods/*path" do
-    forward conn, path, "http://cache/employee-time-periods/"
+    forward conn, path, "http://resource/employee-time-periods/"
   end
 
   match "/educational-levels/*path" do
-    forward conn, path, "http://cache/educational-levels/"
+    forward conn, path, "http://resource/educational-levels/"
   end
 
   match "/working-time-categories/*path" do
-    forward conn, path, "http://cache/working-time-categories/"
+    forward conn, path, "http://resource/working-time-categories/"
   end
 
   match "/employee-legal-statuses/*path" do
-    forward conn, path, "http://cache/employee-legal-statuses/"
+    forward conn, path, "http://resource/employee-legal-statuses/"
   end
 
   match "/employee-unit-measures/*path" do
-    forward conn, path, "http://cache/employee-unit-measures/"
+    forward conn, path, "http://resource/employee-unit-measures/"
   end
 
   #################################################################
@@ -307,23 +312,23 @@ defmodule Dispatcher do
   #################################################################
 
   match "/vendors/*path", @json do
-    forward conn, path, "http://cache/vendors/"
+    forward conn, path, "http://resource/vendors/"
   end
 
   match "/authenticity-types/*path" do
-    forward conn, path, "http://cache/authenticity-types/"
+    forward conn, path, "http://resource/authenticity-types/"
   end
 
   match "/tax-types/*path" do
-    forward conn, path, "http://cache/tax-types/"
+    forward conn, path, "http://resource/tax-types/"
   end
 
   match "/chart-of-accounts/*path" do
-    forward conn, path, "http://cache/chart-of-accounts/"
+    forward conn, path, "http://resource/chart-of-accounts/"
   end
 
   match "/submission-document-statuses/*path" do
-    forward conn, path, "http://cache/submission-document-statuses/"
+    forward conn, path, "http://resource/submission-document-statuses/"
   end
 
   match "/remote-urls/*path" do
@@ -367,7 +372,7 @@ defmodule Dispatcher do
   end
 
   match "/submission-documents/*path" do
-    forward conn, path, "http://cache/submission-documents/"
+    forward conn, path, "http://resource/submission-documents/"
   end
 
   get "/form-data/*path" do
@@ -375,11 +380,11 @@ defmodule Dispatcher do
   end
 
   get "/concept-schemes/*path" do
-    forward conn, path, "http://cache/concept-schemes/"
+    forward conn, path, "http://resource/concept-schemes/"
   end
 
   get "/concepts/*path" do
-    forward conn, path, "http://cache/concepts/"
+    forward conn, path, "http://resource/concepts/"
   end
 
   get "/worship-decisions-cross-reference/search-documents/*path" do
@@ -494,125 +499,125 @@ defmodule Dispatcher do
   # jobs
   #################################################################
   match "/jobs/*path", @json do
-    forward conn, path, "http://cache/jobs/"
+    forward conn, path, "http://resource/jobs/"
   end
 
   match "/tasks/*path" do
-    forward conn, path, "http://cache/tasks/"
+    forward conn, path, "http://resource/tasks/"
   end
 
   match "/data-containers/*path" do
-    forward conn, path, "http://cache/data-containers/"
+    forward conn, path, "http://resource/data-containers/"
   end
 
   match "/job-errors/*path"  do
-    forward conn, path, "http://cache/job-errors/"
+    forward conn, path, "http://resource/job-errors/"
   end
 
   #################################################################
   # DCAT
   #################################################################
   match "/datasets/*path" do
-    forward conn, path, "http://cache/datasets/"
+    forward conn, path, "http://resource/datasets/"
   end
 
   match "/distributions/*path" do
-    forward conn, path, "http://cache/distributions/"
+    forward conn, path, "http://resource/distributions/"
   end
 
   #################################################################
   # Bedienarenbeheer
   #################################################################
   match "/agents-in-position/*path" do
-    forward conn, path, "http://cache/agents-in-position/"
+    forward conn, path, "http://resource/agents-in-position/"
   end
 
   match "/posts/*path" do
-    forward conn, path, "http://cache/posts/"
+    forward conn, path, "http://resource/posts/"
   end
 
   match "/worship-mandatees/*path" do
-    forward conn, path, "http://cache/worship-mandatees/"
+    forward conn, path, "http://resource/worship-mandatees/"
   end
 
   match "/roles/*path" do
-    forward conn, path, "http://cache/roles/"
+    forward conn, path, "http://resource/roles/"
   end
 
   match "/organizations/*path" do
-    forward conn, path, "http://cache/organizations/"
+    forward conn, path, "http://resource/organizations/"
   end
 
   match "/worship-administrative-units/*path" do
-    forward conn, path, "http://cache/worship-administrative-units/"
+    forward conn, path, "http://resource/worship-administrative-units/"
   end
 
   match "/worship-services/*path" do
-    forward conn, path, "http://cache/worship-services/"
+    forward conn, path, "http://resource/worship-services/"
   end
 
   match "/recognized-worship-types/*path" do
-    forward conn, path, "http://cache/recognized-worship-types/"
+    forward conn, path, "http://resource/recognized-worship-types/"
   end
 
   match "/central-worship-services/*path" do
-    forward conn, path, "http://cache/central-worship-services/"
+    forward conn, path, "http://resource/central-worship-services/"
   end
 
   match "/representative-bodies/*path" do
-    forward conn, path, "http://cache/representative-bodies/"
+    forward conn, path, "http://resource/representative-bodies/"
   end
 
   match "/local-involvements/*path" do
-    forward conn, path, "http://cache/local-involvements/"
+    forward conn, path, "http://resource/local-involvements/"
   end
 
   match "/structured-identifiers/*path" do
-    forward conn, path, "http://cache/structured-identifiers/"
+    forward conn, path, "http://resource/structured-identifiers/"
   end
 
   match "/sites/*path" do
-    forward conn, path, "http://cache/sites/"
+    forward conn, path, "http://resource/sites/"
   end
 
   match "/organization-status-codes/*path" do
-    forward conn, path, "http://cache/organization-status-codes/"
+    forward conn, path, "http://resource/organization-status-codes/"
   end
 
   match "/involvement-types/*path" do
-    forward conn, path, "http://cache/involvement-types/"
+    forward conn, path, "http://resource/involvement-types/"
   end
 
   match "/ministers/*path" do
-    forward conn, path, "http://cache/ministers/"
+    forward conn, path, "http://resource/ministers/"
   end
 
   match "/minister-conditions/*path" do
-    forward conn, path, "http://cache/minister-conditions/"
+    forward conn, path, "http://resource/minister-conditions/"
   end
 
   match "/minister-positions/*path" do
-    forward conn, path, "http://cache/minister-positions/"
+    forward conn, path, "http://resource/minister-positions/"
   end
 
   match "/minister-position-functions/*path" do
-    forward conn, path, "http://cache/minister-position-functions/"
+    forward conn, path, "http://resource/minister-position-functions/"
   end
 
   match "/financing-codes/*path" do
-    forward conn, path, "http://cache/financing-codes/"
+    forward conn, path, "http://resource/financing-codes/"
   end
 
   match "/minister-condition-criterions/*path" do
-    forward conn, path, "http://cache/minister-condition-criterions/"
+    forward conn, path, "http://resource/minister-condition-criterions/"
   end
 
   match "/document-types-criterions/*path" do
-    forward conn, path, "http://cache/document-types-criterions/"
+    forward conn, path, "http://resource/document-types-criterions/"
   end
 
   match "/site-types/*path" do
-    forward conn, path, "http://cache/site-types/"
+    forward conn, path, "http://resource/site-types/"
   end
 
   #################################################################

@@ -29,7 +29,7 @@ export default [
   ...importSubmission,
   ...jobsController,
   ...prepareSubmissionForExport,
-  ...resource,
+//  ...resource,  //Temporary disabled because sparql-parser is generating too much deltas
   ...syncWithKalliopeErrorNotification,
   ...toezichtFlattenedFormDataGenerator,
   ...validateSubmission,
