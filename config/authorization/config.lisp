@@ -1,16 +1,8 @@
-;; START: TWEAKS - WORKAROUNDS
-;; This should be added to all instances of mu-sparql-parser using:
-;; - >= v0.0.15
-;; - semtech/sparql-parser:feature-more-consistent-throughput
-(in-package #:handle-update-unit)
-;; It's a workaround for a yet to be solved virtuoso bug.
-;; Eventually this should be set to 't' again. Be it with a workaround in sparql-parser, or the fix done on virtuoso.
-(setf *allow-construct-query-p* nil)
-;; END: TWEAKS - WORKAROUNDS
-
 ;;;;;;;;;;;;;;;;;;;
 ;;; delta messenger
 (in-package :delta-messenger)
+
+(add-delta-logger)
 (add-delta-messenger "http://deltanotifier/")
 
 ;;;;;;;;;;;;;;;;;
