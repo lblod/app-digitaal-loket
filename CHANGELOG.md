@@ -1,8 +1,8 @@
 # Changelog
 # Unreleased
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
- - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
- - SPARQL-parser tweaks
+ - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4` [DL-7020]
+ - SPARQL-parser tweaks [DL-7020]
 ## Deploy notes
 (To include the new predicates from the `op-public-consumer`, run migrations.)
 ```
