@@ -9,9 +9,10 @@
 drc restart migrations
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc restart op-public-consumer
+drc restart op-public-consumer deltanotifier dispatcher
 drc up -d sync-with-kalliope-error-notification
 drc up -d database resource
+drc up -d --remove-orphans
 ```
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
