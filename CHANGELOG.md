@@ -9,7 +9,7 @@
 drc restart migrations
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc restart op-public-consumer export-submisson
+drc restart op-public-consumer export-submissons
 drc up -d sync-with-kalliope-error-notification-service
 ```
 # v1.117.0 (2025-11-07)
