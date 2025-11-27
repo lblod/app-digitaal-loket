@@ -99,6 +99,18 @@ FILTER NOT EXISTS {
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>,
      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> ) ) }
 
+  FILTER NOT EXISTS {
+    ?formData dct:type ?decisionType .
+    ?bestuurseenheid besluit:classificatie ?bestuurseenheidType .
+
+    FILTER(?decisionType = <https://data.vlaanderen.be/id/concept/BesluitType/40831a2c-771d-4b41-9720-0399998f1873>
+      && ?bestuurseenheidType IN (
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>, 
+      <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054>,
+       <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213> ) )
+   }
+
+
 ?formData dct:type ?typeBesluit .
 
 BIND(
