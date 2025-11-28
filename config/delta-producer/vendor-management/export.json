@@ -9,7 +9,8 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://mu.semte.ch/vocabularies/account/key",
         "http://mu.semte.ch/vocabularies/account/keyHash",
-        "http://mu.semte.ch/vocabularies/account/canActOnBehalfOf"
+        "http://mu.semte.ch/vocabularies/account/canActOnBehalfOf",
+        "http://xmlns.com/foaf/0.1/name"
       ]
     }
   ]
