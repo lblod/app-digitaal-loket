@@ -3,14 +3,16 @@
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
  - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
  - Ensure budget for erediensten to toezicht ABB is not exported.
+ - Added vendor name to export [OP-3682]
 ## Deploy notes
 (To include the new predicates from the `op-public-consumer`, run migrations.)
 ```
-drc restart migrations
+drc restart migrations delta-producer-publication-graph-maintainer
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
 drc restart op-public-consumer export-submissons
 drc up -d sync-with-kalliope-error-notification-service
+drc exec delta-producer-background-jobs-initiator curl -X http://localhost/vendor-management/healing-jobs
 ```
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
