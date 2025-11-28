@@ -12,7 +12,7 @@ drc restart migrations delta-producer-publication-graph-maintainer
 drc logs --tail 1000 -f migrations
 drc restart op-public-consumer export-submissons
 drc up -d sync-with-kalliope-error-notification-service
-drc exec delta-producer-background-jobs-initiator curl -X http://localhost/vendor-management/healing-jobs
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
 ```
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
