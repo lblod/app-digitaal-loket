@@ -1,4 +1,13 @@
 # Changelog
+## Unreleased
+- Add contactapp sessionrole for erediensten [DL-7049]
+
+## Deploy notes
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc restart update-bestuurseenheid-mock-login
+```
+
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
