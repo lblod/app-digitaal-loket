@@ -703,17 +703,6 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
-  ################################################################################
-  # HOOFDLOKET
-  ################################################################################
-  frontend-new-loket: # can be demoed
-    image: lblod/frontend-poc-future-loket-hoofdloket:latest
-    links:
-      - identifier:backend
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
   search:
     image: semtech/mu-search:latest
     volumes:
