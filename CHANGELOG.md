@@ -1,13 +1,21 @@
 # Changelog
-## Unreleased
+# Unreleased
+ - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
+ - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
+ - Ensure budget for erediensten to toezicht ABB is not exported.
+ - Added vendor name to export [OP-3682]
 - Add contactapp sessionrole for erediensten [DL-7049]
 
 ## Deploy notes
+(To include the new predicates from the `op-public-consumer`, run migrations.)
 ```
-drc restart migrations && drc logs -ft --tail=200 migrations
-drc restart update-bestuurseenheid-mock-login
+drc restart migrations delta-producer-publication-graph-maintainer
+# Wait until the process is complete
+drc logs --tail 1000 -f migrations
+drc restart op-public-consumer export-submissons update-bestuurseenheid-mock-login
+drc up -d sync-with-kalliope-error-notification-service
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
 ```
-
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
@@ -32,6 +40,7 @@ On prod: you will have to remove the manually bumped version of vendor-login in 
 ## v1.116.0 (2025-10-09)
 ### General
 
+- Add support for OAuth scopes to meldingplicht API [DL-6724]
 - Updated export config for toezicht [DL-6706]
 - Version bump berichtencentrum-sync-with-kalliope-service [DL-6706]
 - Ensure to use latest version of automatic-submission and berichtencentrum-melding [DL-6543]
@@ -40,7 +49,8 @@ On prod: you will have to remove the manually bumped version of vendor-login in 
 
 ```
 drc restart export-submissions
-drc up -d berichtencentrum-sync-with-kalliope
+drc up -d berichtencentrum-sync-with-kalliope automatic-submission download-url
+drc pull automatic-submission download-url
 ```
 ## v1.115.4 (2025-10-07)
 - Fix build issue delta-producer-publication-graph-maintainer.
