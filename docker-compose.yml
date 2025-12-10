@@ -722,11 +722,11 @@ services:
     labels:
       - "logging=true"
   ipdc-ldes-consumer:
-    image: redpencil/ldes-consumer:0.12.0
+    image: redpencil/ldes-consumer:0.12.2
     volumes:
       - ./data/ldes-consumer:/data
     environment:
-      LDES_ENDPOINT_VIEW: "https://ipdc.tni-vlaanderen.be/doc/instantiesnapshot"
+      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products?page=1"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
       INGEST_MODE: "MATERIALIZE"
       REPLACE_VERSIONS: "true"
@@ -736,11 +736,6 @@ services:
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
       NODE_OPTIONS: "--max-old-space-size=8192"
       LOG_LEVEL: "debug"
-      # Fill in the below in a override file :)
-      # LDES_ENDPOINT_HEADERS: >
-      #   {
-      #     "HEADER": "VALUE"
-      #   }
     restart: always
     logging: *default-logging
     labels:
