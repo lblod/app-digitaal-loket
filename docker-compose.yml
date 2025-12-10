@@ -704,7 +704,7 @@ services:
       - "logging=true"
     logging: *default-logging
   search:
-    image: semtech/mu-search:latest
+    image: semtech/mu-search:0.11.0
     volumes:
       - ./config/search:/config
     restart: always
