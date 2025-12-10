@@ -7,6 +7,8 @@ x-logging: &default-logging
 services:
   loket:
     image: lblod/frontend-loket:1.2.0
+    environment:
+      EMBER_FEATURE_NEW_LOKET: "true"
     links:
       - identifier:backend
     labels:
