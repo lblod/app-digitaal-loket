@@ -747,6 +747,10 @@ services:
       - "logging=true"
   ipdc-bookmarks:
     image: lblod/ipdc-bookmarks-service:0.2.0
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   uuid-generation:
     image: redpencil/uuid-generation:0.4.0
     environment:
