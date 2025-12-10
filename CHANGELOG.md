@@ -8,7 +8,21 @@
  - New Loket [DL-7017]
 
 ## Deploy notes
-(To include the new predicates from the `op-public-consumer`, run migrations.)
+### dev/qa only: new loket -> update mapping for sub-apps
+See: https://github.com/lblod/frontend-loket?tab=readme-ov-file#public-service-environment-url-mapping
+
+#### Dev
+```
+EMBER_PUBLIC_SERVICE_URL_MAP: "https://databankerediensten.lokaalbestuur.vlaanderen.be,https://dev.databankerediensten.lokaalbestuur.lblod.info,https://organisaties.lokaalbestuur.vlaanderen.be,https://dev.organisaties.lokaalbestuur.lblod.info,https://lpdc.lokaalbestuur.vlaanderen.be/,https://test.lpdc.lokaalbestuur.lblod.info/,https://contactgegevens.lokaalbestuur.vlaanderen.be/,https://dev.contactgegevens-loket.lblod.info/,https://verenigingen.lokaalbestuur.vlaanderen.be/,https://dev.verenigingen-loket.lblod.info/,https://subsidiepunt.lokaalbestuur.vlaanderen.be/,https://dev.subsidiepunt.lblod.info/,https://openproceshuis.vlaanderen.be/,https://dev.openproceshuis.lblod.info/,https://mandatenbeheer.lokaalbestuur.vlaanderen.be,https://dev.mandatenbeheer.lblod.info/,https://datamonitoringtool.lokaalbestuur.vlaanderen.be/,https://datamonitoringtool.lblod.info/,https://ovam.vlaanderen.be/beheer-databank-risicolocaties,https://beheer-risicolocaties-test.ovam.be"
+```
+#### QA
+
+```
+EMBER_PUBLIC_SERVICE_URL_MAP: "https://databankerediensten.lokaalbestuur.vlaanderen.be,https://databankerediensten.lokaalbestuur.lblod.info,https://organisaties.lokaalbestuur.vlaanderen.be,https://organisaties.lokaalbestuur.lblod.info,https://lpdc.lokaalbestuur.vlaanderen.be/,https://test.lpdc.lokaalbestuur.lblod.info/,https://contactgegevens.lokaalbestuur.vlaanderen.be/,https://contactgegevens-loket.lblod.info/,https://verenigingen.lokaalbestuur.vlaanderen.be/,https://verenigingen-loket.lblod.info/,https://subsidiepunt.lokaalbestuur.vlaanderen.be/,https://subsidiepunt.lblod.info/,https://openproceshuis.vlaanderen.be/,https://openproceshuis.lblod.info/,https://mandatenbeheer.lokaalbestuur.vlaanderen.be,https://mandatenbeheer.lblod.info/,https://datamonitoringtool.lokaalbestuur.vlaanderen.be/,https://datamonitoringtool.lokaalbestuur.vlaanderen.be/,https://ovam.vlaanderen.be/beheer-databank-risicolocaties,https://beheer-risicolocaties-uat.ovam.be"
+
+```
+
+
 :warning: If you this version is still running with mu-auth, then we should wire virtuoso to ldes-consumer.
 ```
 drc pull search
@@ -19,6 +33,7 @@ drc restart op-public-consumer export-submissons database deltanotifier dispatch
 drc up -d
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
 ```
+
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
