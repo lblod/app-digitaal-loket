@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.2.0
+    image: lblod/frontend-loket:1.2.1
     environment:
       EMBER_FEATURE_NEW_LOKET: "true"
     links:
@@ -724,11 +724,11 @@ services:
     labels:
       - "logging=true"
   ipdc-ldes-consumer:
-    image: redpencil/ldes-consumer:0.12.2
+    image: redpencil/ldes-consumer:feature-dont-persist-unemitted-members-in-state
     volumes:
       - ./data/ldes-consumer:/data
     environment:
-      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products?page=1"
+      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
       INGEST_MODE: "MATERIALIZE"
       REPLACE_VERSIONS: "true"
@@ -738,6 +738,7 @@ services:
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
       NODE_OPTIONS: "--max-old-space-size=8192"
       LOG_LEVEL: "debug"
+      LOG_SPARQL_ALL: true
     restart: always
     logging: *default-logging
     labels:
