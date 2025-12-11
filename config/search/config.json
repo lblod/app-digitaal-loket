@@ -1,0 +1,306 @@
+{
+  "persist_indexes": true,
+  "additive_indexes": true,
+  "number_of_threads": 8,
+  "batch_size": 128,
+  "max_batches": 0,
+  "update_wait_interval_minutes": 0,
+  "automatic_index_updates": true,
+  "ignored_allowed_groups": [
+    {
+      "variables": [],
+      "name": "clean"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-bbcdrGebruiker"
+      ],
+      "name": "o-bbcdr-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-personeelsbeheer"
+      ],
+      "name": "o-employee-database-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-leidinggevendenGebruiker"
+      ],
+      "name": "o-leidinggevende-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-berichtenGebruiker"
+      ],
+      "name": "o-messaging-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-toezichtGebruiker"
+      ],
+      "name": "o-toez-rwf"
+    },
+    {
+      "variables": [
+        "*"
+      ],
+      "name": "org"
+    },
+    {
+      "variables": [],
+      "name": "public-r"
+    },
+    {
+      "variables": [],
+      "name": "public-wf"
+    },
+    {
+      "variables": [],
+      "name": "o-toezicht-vendor-management-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-eredienstMandaatGebruiker"
+      ],
+      "name": "o-worship-positions-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketLB-eredienstBedienaarGebruiker"
+      ],
+      "name": "o-worship-positions-rwf"
+    },
+    {
+      "variables": [],
+      "name": "o-vendor-api-r"
+    },
+    {
+      "variables": [],
+      "name": "o-admin-sessions-rwf"
+    },
+    {
+      "variables": [
+        "*",
+        "LoketAdmin"
+      ],
+      "name": "o-admin-rwf"
+    },
+    {
+      "variables": [],
+      "name": "o-admin-rwf"
+    }
+  ],
+  "eager_indexing_groups": [
+    [
+      {
+        "name": "public",
+        "variables": []
+      }
+    ]
+  ],
+  "types": [
+    {
+      "type": "public-service",
+      "on_path": "public-services",
+      "rdf_type": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#InstancePublicServiceSnapshot",
+      "properties": {
+        "name": {
+          "via": "http://purl.org/dc/terms/title",
+          "type": "language-string"
+        },
+        "description": {
+          "via": "http://purl.org/dc/terms/description",
+          "type": "language-string"
+        },
+        "startDate": "http://schema.org/startDate",
+        "endDate": "http://schema.org/endDate",
+        "dateCreated": "http://schema.org/dateCreated",
+        "dateModified": "http://schema.org/dateModified",
+        "isArchived": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#isArchived",
+        "type": {
+          "via": "http://purl.org/dc/terms/type",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "broader": {
+              "via": "^http://www.w3.org/2004/02/skos/core#narrower",
+              "rdf_type": "http://www.w3.org/2004/02/skos/core#Concept",
+              "properties": {
+                "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+              }
+            }
+          }
+        },
+        "thematicAreas": {
+          "via": "http://data.europa.eu/m8g/thematicArea",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "broader": {
+              "via": "^http://www.w3.org/2004/02/skos/core#narrower",
+              "rdf_type": "http://www.w3.org/2004/02/skos/core#Concept",
+              "properties": {
+                "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+              }
+            }
+          }
+        },
+        "competentAuthority": {
+          "via": "http://data.europa.eu/m8g/hasCompetentAuthority",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "broader": {
+              "via": "^http://www.w3.org/2004/02/skos/core#narrower",
+              "rdf_type": "http://www.w3.org/2004/02/skos/core#Concept",
+              "properties": {
+                "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+              }
+            }
+          }
+        },
+        "competentAuthorityLevels": {
+          "via": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#competentAuthorityLevel",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "broader": {
+              "via": "^http://www.w3.org/2004/02/skos/core#narrower",
+              "rdf_type": "http://www.w3.org/2004/02/skos/core#Concept",
+              "properties": {
+                "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+              }
+            }
+          }
+        },
+        "executingAuthorityLevels": {
+          "via": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#executingAuthorityLevel",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel",
+            "broader": {
+              "via": "^http://www.w3.org/2004/02/skos/core#narrower",
+              "rdf_type": "http://www.w3.org/2004/02/skos/core#Concept",
+              "properties": {
+                "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+              }
+            }
+          }
+        },
+        "targetAudiences": {
+          "via": "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#targetAudience",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+          }
+        }
+      },
+      "mappings": {
+        "properties": {
+          "name": {
+            "properties": {
+              "nl": {
+                "type": "text",
+                "analyzer": "rebuilt_dutch",
+                "fields": {
+                  "raw": {
+                    "type": "keyword",
+                    "normalizer": "names"
+                  }
+                }
+              }
+            }
+          },
+          "description": {
+            "properties": {
+              "nl": {
+                "type": "text",
+                "analyzer": "rebuilt_dutch"
+              }
+            }
+          },
+          "startDate": {
+            "type": "date"
+          },
+          "endDate": {
+            "type": "date"
+          },
+          "dateCreated": {
+            "type": "date"
+          },
+          "dateModified": {
+            "type": "date"
+          },
+          "isArchived": {
+            "type": "boolean"
+          },
+          "type.label": {
+            "type": "keyword"
+          },
+          "type.broader.label": {
+            "type": "keyword"
+          },
+          "thematicAreas.label": {
+            "type": "keyword"
+          },
+          "thematicAreas.broader.label": {
+            "type": "keyword"
+          },
+          "competentAuthorityLevels.label": {
+            "type": "keyword"
+          },
+          "competentAuthorityLevels.broader.label": {
+            "type": "keyword"
+          }
+        },
+        "runtime": {
+          "filterEndDate": {
+            "type": "date",
+            "script": {
+              "source": "if (doc['endDate'].size() > 0) { emit(doc['endDate'].value.toInstant().toEpochMilli()); } else { long thousandYearMillis = 1000*365*24*60*60*1000L; emit (System.currentTimeMillis() + thousandYearMillis); }"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "default_settings": {
+    "analysis": {
+      "normalizer": {
+        "names": {
+          "filter": [
+            "asciifolding",
+            "lowercase",
+            "trim"
+          ]
+        }
+      },
+      "filter": {
+        "dutch_stemmer": {
+          "type": "stemmer",
+          "language": "dutch"
+        }
+      },
+      "analyzer": {
+        "names": {
+          "tokenizer": "standard",
+          "filter": [
+            "asciifolding",
+            "lowercase",
+            "trim"
+          ]
+        },
+        "rebuilt_dutch": {
+          "tokenizer": "standard",
+          "filter": [
+            "asciifolding",
+            "lowercase",
+            "dutch_stemmer"
+          ]
+        }
+      }
+    }
+  }
+}

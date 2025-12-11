@@ -1,5 +1,6 @@
 import automaticSubmission from './automatic-submission';
 import berichtencentrumMelding from './berichtencentrum-melding';
+import bookmarks from './bookmarks';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
 import deltaProducerPublicationGraphMaintainer from './delta-producer-publication-graph-maintainer';
 import deltaProducerReportGenerator from './delta-producer-report-generator';
@@ -10,8 +11,10 @@ import importSubmission from './import-submission';
 import jobsController from './jobs-controller';
 import prepareSubmissionForExport from './prepare-submission-for-export';
 import resource from './resource';
+import search from './search';
 import syncWithKalliopeErrorNotification from './sync-with-kalliope-error-notification';
 import toezichtFlattenedFormDataGenerator from './toezicht-flattened-form-data-generator';
+import uuidGeneration from './uuid-generation';
 import validateSubmission from './validate-submission';
 import dispatcherWorshipMandates from './dispatcher-worship-mandates';
 import vendorDataDistribution from './vendor-data-distribution';
@@ -20,6 +23,7 @@ import virusScanner from './virus-scanner';
 export default [
   ...automaticSubmission,
   ...berichtencentrumMelding,
+  ...bookmarks,
   ...deltaProducerDumpFilePublisher,
   ...deltaProducerPublicationGraphMaintainer,
   ...deltaProducerReportGenerator,
@@ -30,8 +34,10 @@ export default [
   ...jobsController,
   ...prepareSubmissionForExport,
   ...resource,
+  ...search,
   ...syncWithKalliopeErrorNotification,
   ...toezichtFlattenedFormDataGenerator,
+  ...uuidGeneration,
   ...validateSubmission,
   ...dispatcherWorshipMandates,
   ...vendorDataDistribution,

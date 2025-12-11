@@ -6,16 +6,75 @@
  - Added vendor name to export [OP-3682]
  - Add contactapp sessionrole for erediensten [DL-7049]
  - Bump frontend loket to `v1.2.0` [DL-6750] [DL-7033]
+ - New Loket [DL-7017]
+
 ## Deploy notes
-(To include the new predicates from the `op-public-consumer`, run migrations.)
+### dev/qa only: new loket -> update mapping for sub-apps
+See: https://github.com/lblod/frontend-loket?tab=readme-ov-file#public-service-environment-url-mapping
+
+#### Dev
 ```
+EMBER_PUBLIC_SERVICE_URL_MAP: "https://databankerediensten.lokaalbestuur.vlaanderen.be,https://dev.databankerediensten.lokaalbestuur.lblod.info,https://organisaties.lokaalbestuur.vlaanderen.be,https://dev.organisaties.lokaalbestuur.lblod.info,https://lpdc.lokaalbestuur.vlaanderen.be/,https://test.lpdc.lokaalbestuur.lblod.info/,https://contactgegevens.lokaalbestuur.vlaanderen.be/,https://dev.contactgegevens-loket.lblod.info/,https://verenigingen.lokaalbestuur.vlaanderen.be/,https://dev.verenigingen-loket.lblod.info/,https://subsidiepunt.lokaalbestuur.vlaanderen.be/,https://dev.subsidiepunt.lblod.info/,https://openproceshuis.vlaanderen.be/,https://dev.openproceshuis.lblod.info/,https://mandatenbeheer.lokaalbestuur.vlaanderen.be,https://dev.mandatenbeheer.lblod.info/,https://datamonitoringtool.lokaalbestuur.vlaanderen.be/,https://datamonitoringtool.lblod.info/,https://ovam.vlaanderen.be/beheer-databank-risicolocaties,https://beheer-risicolocaties-test.ovam.be"
+```
+#### QA
+
+```
+EMBER_PUBLIC_SERVICE_URL_MAP: "https://databankerediensten.lokaalbestuur.vlaanderen.be,https://databankerediensten.lokaalbestuur.lblod.info,https://organisaties.lokaalbestuur.vlaanderen.be,https://organisaties.lokaalbestuur.lblod.info,https://lpdc.lokaalbestuur.vlaanderen.be/,https://test.lpdc.lokaalbestuur.lblod.info/,https://contactgegevens.lokaalbestuur.vlaanderen.be/,https://contactgegevens-loket.lblod.info/,https://verenigingen.lokaalbestuur.vlaanderen.be/,https://verenigingen-loket.lblod.info/,https://subsidiepunt.lokaalbestuur.vlaanderen.be/,https://subsidiepunt.lblod.info/,https://openproceshuis.vlaanderen.be/,https://openproceshuis.lblod.info/,https://mandatenbeheer.lokaalbestuur.vlaanderen.be,https://mandatenbeheer.lblod.info/,https://datamonitoringtool.lokaalbestuur.vlaanderen.be/,https://datamonitoringtool.lokaalbestuur.vlaanderen.be/,https://ovam.vlaanderen.be/beheer-databank-risicolocaties,https://beheer-risicolocaties-uat.ovam.be"
+
+```
+### Deployement prelude (all environments)
+This version will still use `mu-auth`, and the steps described are only needed because of this.
+In `docker-compose.override.yml` ensure
+```
+  loket:
+    environment:
+      EMBER_FEATURE_NEW_LOKET: "false"
+  ipdc-ldes-consumer:
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+```
+#### Effective deploy
+```
+rm -rf ./data/ldes-consumer/*.json
 drc restart migrations delta-producer-publication-graph-maintainer
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc restart op-public-consumer export-submissons update-bestuurseenheid-mock-login
-drc up -d sync-with-kalliope-error-notification-service loket
+drc restart op-public-consumer export-submissons database deltanotifier dispatcher migrations resource update-bestuurseenheid-mock-login
+drc up -d
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
+drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
 ```
+:warning: Finishing the initial might take a couple of hours.
+To know if the initial sync is finished means checking IF there is a json file under `ls -al data/ldes-consumer/`.
+As soon as there is a file; it should be ok.
+:warning: :warning: If something goes wrong during initial sync, you will have to fiddle to get it started again:
+  - `drc stop ipdc-ldes-consumer`
+  - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
+  - `drc up -d ipdc-ldes-consumer`
+
+### Deployement 'postlude' (all environments)
+
+In `docker-compose.override.yml` remove
+```
+  loket:
+    environment:
+      EMBER_FEATURE_NEW_LOKET: "false"
+  ipdc-ldes-consumer:
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+```
+```
+drc stop ipdc-ldes-consumer
+```
+Then search should be re-indexed.
+```
+mu script search manage-indexes # follow the steps there. Re-index "public-services"
+```
+Once done:
+```
+drc up -d ipdc-ldes-consumer loket
+```
+
 # v1.117.0 (2025-11-07)
 - Bump email deliver service [DL-6792]
 - update lekp forms [DL6988]
