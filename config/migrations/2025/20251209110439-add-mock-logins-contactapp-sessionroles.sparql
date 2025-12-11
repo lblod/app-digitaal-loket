@@ -1,0 +1,30 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+INSERT {
+  GRAPH ?g {
+    ?account ext:sessionRole
+        "LoketLB-ContactOrganisatiegegevensGebruiker"
+  }
+}
+WHERE {
+  VALUES ?classificatie {
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/f9cac08a-13c1-49da-9bcb-f650b0604054>
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/66ec74fd-8cfc-4e16-99c6-350b35012e86>
+    <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/36372fad-0358-499c-a4e3-f412d2eae213>
+   }
+
+  ?bestuurseenheid a besluit:Bestuurseenheid;
+    <http://data.vlaanderen.be/ns/besluit#classificatie> ?classificatie.
+
+  ?persoon a foaf:Person;
+    foaf:member ?bestuurseenheid;
+    foaf:account ?account.
+
+  GRAPH ?g {
+   ?account a foaf:OnlineAccount;
+      foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+       ext:sessionRole ?role.
+  }
+}

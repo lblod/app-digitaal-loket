@@ -4,6 +4,7 @@
  - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
  - Ensure budget for erediensten to toezicht ABB is not exported.
  - Added vendor name to export [OP-3682]
+ - Add contactapp sessionrole for erediensten [DL-7049]
  - Bump frontend loket to `v1.2.0` [DL-6750] [DL-7033]
  - New Loket [DL-7017]
 
@@ -38,7 +39,7 @@ rm -rf ./data/ldes-consumer/*.json
 drc restart migrations delta-producer-publication-graph-maintainer
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc restart op-public-consumer export-submissons database deltanotifier dispatcher migrations resource
+drc restart op-public-consumer export-submissons database deltanotifier dispatcher migrations resource update-bestuurseenheid-mock-login
 drc up -d
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/vendor-management/healing-jobs
 drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
