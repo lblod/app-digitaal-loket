@@ -18,8 +18,13 @@
   :has-many `((concept-scheme :via ,(s-prefix "skos:inScheme")
                               :as "concept-schemes")
               (concept-scheme :via ,(s-prefix "skos:topConceptOf")
-                              :as "top-concept-schemes"))
+                              :as "top-concept-schemes")
+              (concept :via ,(s-prefix "skos:narrower")
+                       :as "narrower")
+              (concept :via ,(s-prefix "skos:narrower")
+                       :inverse t
+                       :as "broader"))
   :resource-base (s-url "http://lblod.data.gift/concepts/")
   :features `(include-uri)
   :on-path "concepts"
-)
+  )

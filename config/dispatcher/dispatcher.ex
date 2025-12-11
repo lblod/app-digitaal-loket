@@ -637,6 +637,54 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # IPDC: HOOFDLOKET BACKEND
+  #################################################################
+  get "/public-services/search/*path" do
+    Proxy.forward conn, path, "http://search/public-services/search/"
+  end
+
+  get "/bookmarks/*path" do
+    Proxy.forward conn, path, "http://ipdc-bookmarks/bookmarks/"
+  end
+
+  post "/public-services/:id/bookmarks" do
+    Proxy.forward conn, [], "http://ipdc-bookmarks/public-services/" <> id <> "/bookmarks"
+  end
+
+  delete "/bookmarks/*path" do
+    Proxy.forward conn, path, "http://ipdc-bookmarks/bookmarks/"
+  end
+
+  get "/public-services/*path" do
+    Proxy.forward conn, path, "http://cache/public-services/"
+  end
+
+  get "/procedures/*path" do
+    Proxy.forward conn, path, "http://cache/procedures/"
+  end
+
+  get "/websites/*path" do
+    Proxy.forward conn, path, "http://cache/websites/"
+  end
+
+  #################################################################
+  # IPDC: HOOFDLOKET FRONTEND
+  # TODO: remove once integrated
+  #################################################################
+
+  get "/assets/*path",  %{ accept: %{ any: true }, reverse_host: ["new-loket" | _rest] }  do
+    forward conn, path, "http://frontend-new-loket/assets/"
+  end
+
+  get "/@appuniversum/*path", %{ accept: %{ any: true }, reverse_host: ["new-loket" | _rest] } do
+    forward conn, path, "http://frontend-new-loket/@appuniversum/"
+  end
+
+  match "/*_path", %{ accept: %{ html: true }, reverse_host: ["new-loket" | _rest] } do
+    forward conn, [], "http://frontend-new-loket/index.html"
+  end
+
+  #################################################################
   # Berichtencentrum: melding
   #################################################################
   post "/vendor/berichtencentrum/melding/*path" do

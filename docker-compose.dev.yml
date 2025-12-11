@@ -147,3 +147,13 @@ services:
     restart: "no"
   berichtencentrum-melding:
     restart: "no"
+  search:
+    restart: "no"
+  elasticsearch:
+    restart: "no"
+  ipdc-ldes-consumer:
+    restart: "no"
+  ipdc-bookmarks:
+    restart: "no"
+  uuid-generation:
+    restart: "no"

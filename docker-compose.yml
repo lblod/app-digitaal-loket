@@ -7,6 +7,8 @@ x-logging: &default-logging
 services:
   loket:
     image: lblod/frontend-loket:1.2.2
+    environment:
+      EMBER_FEATURE_NEW_LOKET: "true"
     links:
       - identifier:backend
     labels:
@@ -703,3 +705,58 @@ services:
     labels:
       - "logging=true"
     logging: *default-logging
+  search:
+    image: semtech/mu-search:0.11.0
+    volumes:
+      - ./config/search:/config
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  elasticsearch:
+    image: semtech/mu-search-elastic-backend:1.2.0
+    volumes:
+      - ./data/elasticsearch/:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  ipdc-ldes-consumer:
+    image: redpencil/ldes-consumer:feature-dont-persist-unemitted-members-in-state
+    volumes:
+      - ./data/ldes-consumer:/data
+    environment:
+      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
+      INGEST_MODE: "MATERIALIZE"
+      REPLACE_VERSIONS: "true"
+      PERSIST_STATE: "true"
+      SPARQL_BATCH_SIZE: "500"
+      SUDO_QUERY_RETRY: "true"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      NODE_OPTIONS: "--max-old-space-size=8192"
+      LOG_LEVEL: "debug"
+      LOG_SPARQL_ALL: true
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  ipdc-bookmarks:
+    image: lblod/ipdc-bookmarks-service:0.2.0
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  uuid-generation:
+    image: redpencil/uuid-generation:0.4.0
+    environment:
+      RUN_CRON_JOBS: "true"
+      CRON_FREQUENCY: "0 * * * *" # every hour
+    volumes:
+      - ./config/uuid-generation/:/config
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
