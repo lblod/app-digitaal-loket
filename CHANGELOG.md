@@ -7,6 +7,7 @@
  - Add contactapp sessionrole for erediensten [DL-7049]
  - Bump frontend loket to `v1.2.3` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
+ - Bump download-url service: DL-7064
 
 ## Deploy notes
 ### dev/qa only: new loket -> update mapping for sub-apps
@@ -33,6 +34,12 @@ In `docker-compose.override.yml` ensure
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
 ```
+#### Extra steps prod:
+ - Ensure from `docker-compose.override.yml` the following is removed
+ ```
+   download-url:
+    image: lblod/download-url-service:1.0.7
+ ```
 #### Effective deploy
 ```
 rm -rf ./data/ldes-consumer/*.json
