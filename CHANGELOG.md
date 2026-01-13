@@ -5,6 +5,7 @@
  - Ensure budget for erediensten to toezicht ABB is not exported.
  - Added vendor name to export [OP-3682]
  - Add contactapp sessionrole for erediensten [DL-7049]
+ - Bump frontend loket to `v1.5.0` [DL-7121] [DL-7122]
  - Bump frontend loket to `v1.4.0` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
  - Bump download-url service: DL-7064
