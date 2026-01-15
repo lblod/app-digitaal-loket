@@ -17,3 +17,5 @@
 docker-compose.override.yml
 .htpasswd
 .env
+
+/config/search/update-handler.store
