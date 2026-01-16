@@ -5,10 +5,14 @@
  - Ensure budget for erediensten to toezicht ABB is not exported.
  - Added vendor name to export [OP-3682]
  - Add contactapp sessionrole for erediensten [DL-7049]
- - Bump frontend loket to `v1.2.3` [DL-6750] [DL-7033] [DL-6815]
+ - Bump frontend loket to `v1.5.1` [DL-7121] [DL-7122]
+ - Bump frontend loket to `v1.4.0` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
  - Bump download-url service: DL-7064
  - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
+ - Added new filters `inzendingen voor toezicht` [DL-6322]
+ - Add openproceshuis sessionrole for missing orgs used in mock-login [DL-7063]
+ - Apply VGC workaround [DL-7105]
 
 ## Deploy notes
 ### dev/qa only: new loket -> update mapping for sub-apps
@@ -36,10 +40,12 @@ In `docker-compose.override.yml` ensure
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
 ```
 #### Extra steps prod:
- - Ensure from `docker-compose.override.yml` the following is removed
+ - Ensure from `docker-compose.yml` the following is removed
  ```
    download-url:
-    image: lblod/download-url-service:1.0.7
+     image: lblod/download-url-service:1.0.7-vgc-workaround.4
+   automatic-submission:
+    image: lblod/automatic-submission-service:2.0.4
  ```
 #### Effective deploy
 ```

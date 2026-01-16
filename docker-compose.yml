@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.2.3
+    image: lblod/frontend-loket:1.5.1
     environment:
       EMBER_FEATURE_NEW_LOKET: "true"
     links:
@@ -327,7 +327,11 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    image: lblod/download-url-service:1.0.7
+    # Note: if you need to update the download-url service, you must apply your changes
+    # in this specific build as well.
+    # This stays like this until VGC finishes the move to MS Graph API.
+    # SeeAlso: https://github.com/lblod/download-url-service/pull/17
+    image: lblod/download-url-service:1.0.7-vgc-workaround.4
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
@@ -337,7 +341,7 @@ services:
     restart: always
     logging: *default-logging
   automatic-submission:
-    image: lblod/automatic-submission-service:2.0.3
+    image: lblod/automatic-submission-service:2.0.4
     environment:
       USE_HASHED_KEY: "true"
     labels:

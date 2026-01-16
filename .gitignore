@@ -4,6 +4,8 @@
 /data/exports/*
 /data/toezicht-reports/*
 /data/db/virtuoso.ini
+/data/elasticsearch
+/data/ldes-consumer
 !/data/db/toLoad
 !/data/db/toLoad/*
 /data/files/*
@@ -19,3 +21,5 @@
 docker-compose.override.yml
 .htpasswd
 .env
+
+/config/search/update-handler.store
