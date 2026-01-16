@@ -9,6 +9,10 @@
 !/data/db/toLoad
 !/data/db/toLoad/*
 /data/files/*
+/config/search/update-handler.store
+/data/authorization/
+/data/elasticsearch/
+/data/ldes-consumer/
 .DS_Store
 *~
 

@@ -9,6 +9,7 @@
  - Bump frontend loket to `v1.4.0` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
  - Bump download-url service: DL-7064
+ - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
  - Added new filters `inzendingen voor toezicht` [DL-6322]
  - Add openproceshuis sessionrole for missing orgs used in mock-login [DL-7063]
  - Apply VGC workaround [DL-7105]
