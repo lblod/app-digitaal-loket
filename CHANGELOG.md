@@ -8,6 +8,7 @@
  - Bump frontend loket to `v1.2.3` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
  - Bump download-url service: DL-7064
+ - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
 
 ## Deploy notes
 ### dev/qa only: new loket -> update mapping for sub-apps
