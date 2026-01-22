@@ -14,6 +14,7 @@
  - Added new filters `inzendingen voor toezicht` [DL-6322]
  - Add openproceshuis sessionrole for missing orgs used in mock-login [DL-7063]
  - Apply VGC workaround [DL-7105]
+ - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
 
 ## Deploy notes
 ### dev/qa only: new loket -> update mapping for sub-apps
