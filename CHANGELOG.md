@@ -15,6 +15,7 @@
  - Add openproceshuis sessionrole for missing orgs used in mock-login [DL-7063]
  - Apply VGC workaround [DL-7105]
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
+ - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
 
 ## Deploy notes
 ### dev/qa only: new loket -> update mapping for sub-apps
