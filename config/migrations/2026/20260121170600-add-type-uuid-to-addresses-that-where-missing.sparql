@@ -1,0 +1,49 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+INSERT {
+  GRAPH ?i {
+    ?ma rdf:type ?type .
+  }
+}
+WHERE {
+  {
+    SELECT DISTINCT ?i ?ma
+    WHERE {
+      GRAPH ?g {
+        ?cp rdf:type schema:ContactPoint .
+        ?cp locn:address ?ma .
+      }
+      GRAPH ?i {
+        ?ma ?p ?o .
+        FILTER NOT EXISTS { ?ma rdf:type ?type . }
+      }
+    }
+  }
+  OPTIONAL { ?ma rdf:type ?type . }
+}
+;
+INSERT {
+  GRAPH ?i {
+    ?ma mu:uuid ?uuid .
+  }
+}
+WHERE {
+  {
+    SELECT DISTINCT ?i ?ma
+    WHERE {
+      GRAPH ?g {
+        ?cp rdf:type schema:ContactPoint .
+        ?cp locn:address ?ma .
+      }
+      GRAPH ?i {
+        ?ma ?p ?o .
+        FILTER NOT EXISTS { ?ma mu:uuid ?uuid . }
+      }
+    }
+  }
+  OPTIONAL { ?ma mu:uuid ?uuid . }
+}
