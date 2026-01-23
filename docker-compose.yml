@@ -271,7 +271,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-sync-with-kalliope:
-    image: lblod/berichtencentrum-sync-with-kalliope-service:0.23.0
+    image: lblod/berichtencentrum-sync-with-kalliope-service:0.23.1
     environment:
       MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
       MU_SPARQL_UPDATEPOINT: "http://database:8890/sparql"
@@ -621,7 +621,7 @@ services:
     restart: always
     logging: *default-logging
   delta-producer-publication-graph-maintainer:
-    image: lblod/delta-producer-publication-graph-maintainer:1.4.2
+    image: lblod/delta-producer-publication-graph-maintainer:1.4.3
     environment:
       MAX_BODY_SIZE: "50mb"
       PRETTY_PRINT_DIFF_JSON: "true"
