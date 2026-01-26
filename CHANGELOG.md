@@ -1,5 +1,5 @@
 # Changelog
-# Unreleased
+# v1.118.0 (2026-01-26)
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
  - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
  - Ensure budget for erediensten to toezicht ABB is not exported.
