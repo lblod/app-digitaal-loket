@@ -1,4 +1,13 @@
 # Changelog
+# Unreleased
+ - Toezicht: adjust rules for decision types [DL-7138]
+
+## Deploy notes
+```
+drc up -d enrich-submission
+drc restart migrations
+```
+
 # v1.118.1 (2026-02-02)
  - Fix issue with URL in submissions not always displaying correctly. [DL-7151] 
  - Fix issues with `download-url` [DL-7154]
@@ -12,6 +21,7 @@ git checkout docker-compose.yml
 ```
 drc up -d loket download-url
 ```
+
 # v1.118.0 (2026-01-26)
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
  - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
