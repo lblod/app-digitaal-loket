@@ -195,6 +195,12 @@
           "properties": {
             "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
           }
+        },
+        "subDoelgroep": {
+          "via": "PREDICATE-TO-DEFINE",
+          "properties": {
+            "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
+          }
         }
       },
       "mappings": {
@@ -252,6 +258,9 @@
             "type": "keyword"
           },
           "competentAuthorityLevels.broader.label": {
+            "type": "keyword"
+          },
+          "subDoelgroep.label": {
             "type": "keyword"
           }
         },
