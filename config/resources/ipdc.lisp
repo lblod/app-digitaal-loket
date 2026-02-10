@@ -32,7 +32,9 @@
                (website :via ,(s-prefix "rdfs:seeAlso")
                  :as "websites")
                (procedure :via ,(s-prefix "cpsv:follows")
-                 :as "procedures"))
+                 :as "procedures")
+               (bestuurseenheid-classificatie-code :via ,(s-prefix "icr:isRelevantForAdministrativeUnit")
+                 :as "sub-doelgroep"))
   :resource-base (s-url "http://data.lblod.info/id/public-service/")
   :features '(include-uri)
   :on-path "public-services"
