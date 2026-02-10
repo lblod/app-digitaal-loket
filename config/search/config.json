@@ -197,7 +197,7 @@
           }
         },
         "subDoelgroep": {
-          "via": "PREDICATE-TO-DEFINE",
+          "via": "http://lblod.data.gift/vocabularies/informationclassification/isRelevantForAdministrativeUnit",
           "properties": {
             "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
           }
