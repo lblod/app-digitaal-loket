@@ -23,4 +23,3 @@ docker-compose.override.yml
 .env
 
 /config/search/update-handler.store
-/config/migrations/dev/*
