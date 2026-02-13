@@ -6,8 +6,8 @@
 /data/db/virtuoso.ini
 /data/elasticsearch
 /data/ldes-consumer
-!/data/db/toLoad
-!/data/db/toLoad/*
+/data/db/toLoad
+/data/db/toLoad/*
 /data/files/*
 /config/search/update-handler.store
 /data/authorization/
