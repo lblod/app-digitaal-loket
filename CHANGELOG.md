@@ -5,6 +5,7 @@
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
+ - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
 
 ## Deploy notes
 ### Only on prod
@@ -18,8 +19,9 @@ Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
 ### All environments
 ```
-drc restart migrations
+drc restart migrations resource
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
+mu script search manage-indexes
 ```
 
 # v1.118.1 (2026-02-02)

@@ -1,5 +1,0 @@
-INSERT DATA {
-   GRAPH <http://mu.semte.ch/graphs/public> {
-     <http://data.lblod.info/id/bestuurseenheden/14278813524c762255aeba149e7d7134ddecfbb43e7d56910731bd4e13e34f39> <http://mu.semte.ch/vocabularies/ext/usesNewLoket> "true"^^xsd:boolean.
-   }
-}
