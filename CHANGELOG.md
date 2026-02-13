@@ -21,7 +21,7 @@ Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
 drc restart migrations resource
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
-mu script search manage-indexes
+mu script search manage-indexes #Follow the steps and re-index "public-service"
 ```
 
 # v1.118.1 (2026-02-02)
