@@ -16,6 +16,10 @@ Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
     "disableHealingJobOperation": false
   }
 ```
+And also
+```
+git checkout docker-compopse.yml
+```
 ### All environments
 ```
 drc restart migrations
