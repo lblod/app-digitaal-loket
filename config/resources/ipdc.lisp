@@ -34,7 +34,7 @@
                (procedure :via ,(s-prefix "cpsv:follows")
                  :as "procedures")
                (bestuurseenheid-classificatie-code :via ,(s-prefix "icr:isRelevantForAdministrativeUnit")
-                 :as "sub-doelgroep"))
+                 :as "relevant-administrative-units"))
   :resource-base (s-url "http://data.lblod.info/id/public-service/")
   :features '(include-uri)
   :on-path "public-services"

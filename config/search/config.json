@@ -196,7 +196,7 @@
             "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
           }
         },
-        "subDoelgroep": {
+        "relevantAdministrativeUnits": {
           "via": "http://lblod.data.gift/vocabularies/informationclassification/isRelevantForAdministrativeUnit",
           "properties": {
             "label": "http://www.w3.org/2004/02/skos/core#prefLabel"
@@ -260,7 +260,7 @@
           "competentAuthorityLevels.broader.label": {
             "type": "keyword"
           },
-          "subDoelgroep.label": {
+          "relevantAdministrativeUnits.label": {
             "type": "keyword"
           }
         },
