@@ -5,6 +5,7 @@
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
+ - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
 
 ## Deploy notes
 ### Only on prod
@@ -25,6 +26,11 @@ git checkout docker-compopse.yml
 drc restart migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
 ```
+
+When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
+if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
+- Adjust the name of the state-file to represent the new `LDES_ENDPOINT_VIEW` url
+- Replace the old URLs in the state-file with the new one
 
 # v1.118.1 (2026-02-02)
  - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
