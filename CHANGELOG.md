@@ -6,6 +6,7 @@
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
+ - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
 
 ## Deploy notes
 ### Only on prod
@@ -26,6 +27,27 @@ git checkout docker-compopse.yml
 drc restart migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
 ```
+
+When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
+if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
+
+### On DEV/QA
+Until now, DEV/QA consumed the production IPDC LDES feed. As IPDC also has a TNI feed, it feels more appropriate to consume that one in our DEV/QA apps. 
+To reset the LDES consumer:
+- `drc down ipdc-ldes-consumer`
+- Remove the state file: `rm ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
+- Remove the ingestion graph: `DROP SILENT GRAPH <http://mu.semte.ch/graphs/ipdc/ldes-data>`
+- Adjust the `LDES_ENDPOINT_VIEW` env var to `https://qa.ipdc-ldes-mirror.lblod.info/instancesnapshots/1`
+- `drc up ipdc-ldes-consumer -d`
+- Ensure the TNI/QA feed is correctly consumed
+
+### On production
+The URL of the IPDC instances LDES mirror has slightly changed:
+- `drc down ipdc-ldes-consumer`
+- Replace the old URLs in the state-file with the new one:
+  `sed -i 's/ipdc-ldes-mirror.lblod.info\/ldes\/ipdc-products/ipdc-ldes-mirror.lblod.info\/instancesnapshots/g' ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
+- `drc up ipdc-ldes-consumer -d`
+- The ldes-consumer should not restart, but continue from where it left off
 
 # v1.118.1 (2026-02-02)
  - Fix issue with URL in submissions not always displaying correctly. [DL-7151]

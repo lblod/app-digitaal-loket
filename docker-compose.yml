@@ -732,7 +732,7 @@ services:
     volumes:
       - ./data/ldes-consumer:/data
     environment:
-      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products"
+      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/instancesnapshots"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
       INGEST_MODE: "MATERIALIZE"
       REPLACE_VERSIONS: "true"
