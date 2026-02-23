@@ -8,6 +8,21 @@
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
 
 ## Deploy notes
+### Deployement prelude (all environments)
+This version will still use `mu-auth`, and these specific steps from the 'prelude' are only needed because of this.
+In `docker-compose.override.yml` ensure
+```
+  # (...)
+  ipdc-ldes-consumer:
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+```
+```
+drc stop ipdc-ldes-consumer
+```
+Then;
+ - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
+
 ### Only on prod
 Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
@@ -19,11 +34,41 @@ Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
 ### All environments
 ```
+rm -rf ./data/ldes-consumer/*.json
 drc restart migrations resource
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
-mu script search manage-indexes #Follow the steps and re-index "public-service"
+# Wait until the process is complete
+drc logs --tail 1000 -f migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer
+drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
 ```
+:warning: Finishing the initial might take a couple of hours.
+To know if the initial sync is finished means checking IF there is a json file under `ls -al data/ldes-consumer/`.
+As soon as there is a file; it should be ok.
+:warning: :warning: If something goes wrong during initial sync, you will have to fiddle to get it started again:
+  - `drc stop ipdc-ldes-consumer`
+  - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
+  - `drc up -d ipdc-ldes-consumer`
 
+### Deployement 'postlude' (all environments)
+
+In `docker-compose.override.yml` *remove*
+```
+  # (...)
+  ipdc-ldes-consumer:
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+```
+```
+drc stop ipdc-ldes-consumer
+```
+Then search should be re-indexed.
+```
+mu script search manage-indexes # follow the steps there. Re-index "public-services"
+```
+Once done:
+```
+drc up -d ipdc-ldes-consumer
+```
 # v1.118.1 (2026-02-02)
  - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
  - Fix issues with `download-url` [DL-7154]
