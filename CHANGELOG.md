@@ -1,9 +1,38 @@
 # Changelog
+# Unreleased
+ - Toezicht: adjust rules for decision types [DL-7138]
+ - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
+ - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
+ - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
+ - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
+
+## Deploy notes
+### Only on prod
+Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
+```
+  {
+    "name": "worship-submissions",
+     # (...)
+    "disableHealingJobOperation": false
+  }
+```
+And also
+```
+git checkout docker-compopse.yml
+```
+### All environments
+```
+drc restart migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
+```
+
 # v1.118.2 (2026-02-23)
 - Cutover download url VGC [DL-7211]
+
 # v1.118.1 (2026-02-02)
- - Fix issue with URL in submissions not always displaying correctly. [DL-7151] 
+ - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
  - Fix issues with `download-url` [DL-7154]
+
 ## Deploy notes
 ### On prod only
 Before deploy
@@ -14,12 +43,14 @@ git checkout docker-compose.yml
 ```
 drc up -d loket download-url
 ```
+
 # v1.118.0 (2026-01-26)
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
  - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
  - Ensure budget for erediensten to toezicht ABB is not exported.
  - Added vendor name to export [OP-3682]
  - Add contactapp sessionrole for erediensten [DL-7049]
+ - Bump frontend loket to `v1.5.2` [DL-7079]
  - Bump frontend loket to `v1.5.1` [DL-7121] [DL-7122]
  - Bump frontend loket to `v1.4.0` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
