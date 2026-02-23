@@ -26,9 +26,13 @@ drc restart migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
 ```
 
+# v1.118.2 (2026-02-23)
+- Cutover download url VGC [DL-7211]
+
 # v1.118.1 (2026-02-02)
  - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
  - Fix issues with `download-url` [DL-7154]
+
 ## Deploy notes
 ### On prod only
 Before deploy
