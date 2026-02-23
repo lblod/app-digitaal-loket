@@ -327,11 +327,7 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    # Note: if you need to update the download-url service, you must apply your changes
-    # in this specific build as well.
-    # This stays like this until VGC finishes the move to MS Graph API.
-    # SeeAlso: https://github.com/lblod/download-url-service/pull/17
-    image: lblod/download-url-service:1.0.7-vgc-workaround.5
+    image: lblod/download-url-service:1.0.7
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
