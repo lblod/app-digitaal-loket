@@ -735,6 +735,8 @@ services:
       # Note: this variable likely changes depending on the environment you are deploying
       LDES_ENDPOINT_VIEW: "https://dev.ipdc-verrijking.lblod.info/ldes-feed/ipdc-enriched"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
+      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
+      LDES_TIMESTAMP_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
       INGEST_MODE: "MATERIALIZE"
       REPLACE_VERSIONS: "true"
       PERSIST_STATE: "true"
