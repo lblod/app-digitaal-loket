@@ -3,6 +3,7 @@
  - Toezicht: adjust rules for decision types [DL-7138]
  - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
  - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
+ - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
