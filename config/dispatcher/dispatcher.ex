@@ -326,10 +326,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/submission-document-statuses/"
   end
 
-  match "/remote-urls/*path" do
-    forward conn, path, "http://resource/remote-urls/"
-  end
-
   get "/submission-forms/*path" do
     forward conn, path, "http://enrich-submission/submission-documents/"
   end
