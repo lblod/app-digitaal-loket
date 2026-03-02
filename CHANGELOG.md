@@ -46,6 +46,7 @@ To know if the initial sync is finished means checking IF there is a json file u
 As soon as there is a file; it should be ok.
 :warning: :warning: If something goes wrong during initial sync, you will have to fiddle to get it started again:
   - `drc stop ipdc-ldes-consumer`
+  - `rm -rf ./data/ldes-consumer/*.json`
   - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
   - `drc up -d ipdc-ldes-consumer`
 
