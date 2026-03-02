@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.5.2
+    image: lblod/frontend-loket:1.5.3
     environment:
       EMBER_FEATURE_NEW_LOKET: "true"
     links:
@@ -327,10 +327,6 @@ services:
     restart: always
     logging: *default-logging
   download-url:
-    # Note: if you need to update the download-url service, you must apply your changes
-    # in this specific build as well.
-    # This stays like this until VGC finishes the move to MS Graph API.
-    # SeeAlso: https://github.com/lblod/download-url-service/pull/17
     image: lblod/download-url-service:1.1.0
     environment:
       CACHING_MAX_RETRIES: "10"
@@ -357,7 +353,7 @@ services:
     restart: always
     logging: *default-logging
   enrich-submission:
-    image: lblod/enrich-submission-service:1.14.0
+    image: lblod/enrich-submission-service:1.14.2
     environment:
       ACTIVE_FORM_FILE: "share://semantic-forms/20251024143047-forms.ttl"
     volumes:
@@ -732,7 +728,7 @@ services:
     volumes:
       - ./data/ldes-consumer:/data
     environment:
-      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products"
+      LDES_ENDPOINT_VIEW: "https://ipdc-ldes-mirror.lblod.info/instancesnapshots"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
       INGEST_MODE: "MATERIALIZE"
       REPLACE_VERSIONS: "true"

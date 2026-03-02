@@ -1,4 +1,74 @@
 # Changelog
+# Unreleased
+ - Toezicht: adjust rules for decision types [DL-7138]
+ - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
+ - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
+ - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
+ - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
+ - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
+ - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
+ - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
+
+## Deploy notes
+### Only on prod
+Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
+```
+  {
+    "name": "worship-submissions",
+     # (...)
+    "disableHealingJobOperation": false
+  }
+```
+And also
+```
+git checkout docker-compopse.yml
+```
+### All environments
+```
+drc restart migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
+```
+
+<<<<<<< HEAD
+When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
+if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
+
+### On DEV/QA
+Until now, DEV/QA consumed the production IPDC LDES feed. As IPDC also has a TNI feed, it feels more appropriate to consume that one in our DEV/QA apps. 
+To reset the LDES consumer:
+- `drc down ipdc-ldes-consumer`
+- Remove the state file: `rm ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
+- Remove the ingestion graph: `DROP SILENT GRAPH <http://mu.semte.ch/graphs/ipdc/ldes-data>`
+- Adjust the `LDES_ENDPOINT_VIEW` env var to `https://qa.ipdc-ldes-mirror.lblod.info/instancesnapshots/1`
+- `drc up ipdc-ldes-consumer -d`
+- Ensure the TNI/QA feed is correctly consumed
+
+### On production
+The URL of the IPDC instances LDES mirror has slightly changed:
+- `drc down ipdc-ldes-consumer`
+- Replace the old URLs in the state-file with the new one:
+  `sed -i 's/ipdc-ldes-mirror.lblod.info\/ldes\/ipdc-products/ipdc-ldes-mirror.lblod.info\/instancesnapshots/g' ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
+- `drc up ipdc-ldes-consumer -d`
+- The ldes-consumer should not restart, but continue from where it left off
+
+# v1.118.2 (2026-02-23)
+- Cutover download url VGC [DL-7211]
+
+# v1.118.1 (2026-02-02)
+ - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
+ - Fix issues with `download-url` [DL-7154]
+
+## Deploy notes
+### On prod only
+Before deploy
+```
+git checkout docker-compose.yml
+```
+### All environments
+```
+drc up -d loket download-url
+```
+
 # v1.118.0 (2026-01-26)
  - Add missing predicates on Worship Services `op-public-consumer` [DL-6799]
  - Bump `lblod/sync-with-kalliope-error-notification-service:0.1.4`
@@ -10,13 +80,9 @@
  - Bump frontend loket to `v1.4.0` [DL-6750] [DL-7033] [DL-6815]
  - New Loket [DL-7017]
  - Bump download-url service: DL-7064
- - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
  - Added new filters `inzendingen voor toezicht` [DL-6322]
  - Add openproceshuis sessionrole for missing orgs used in mock-login [DL-7063]
  - Apply VGC workaround [DL-7105]
- - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
- - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
- - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
 
 ## Deploy notes
 ### dev/qa only: new loket -> update mapping for sub-apps

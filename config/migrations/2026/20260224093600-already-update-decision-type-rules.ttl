@@ -1,0 +1,81 @@
+@prefix conceptscheme:                    <https://data.vlaanderen.be/id/conceptscheme/> .
+@prefix BesluitType:                      <https://data.vlaanderen.be/id/concept/BesluitType/> .
+@prefix BesluitDocumentType:              <https://data.vlaanderen.be/id/concept/BesluitDocumentType/> .
+@prefix skos:                             <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:                              <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:                              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix core:                             <http://mu.semte.ch/vocabularies/core/> .
+@prefix besluit:                          <http://lblod.data.gift/vocabularies/besluit/> .
+@prefix BestuurseenheidClassificatieCode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/> .
+@prefix sch:                              <http://schema.org/> .
+@prefix rule:                             <http://lblod.data.gift/vocabularies/notification/> .
+@prefix lblodRule:                        <http://data.lblod.info/id/notification-rule/> .
+@prefix odrl:                             <https://www.w3.org/ns/odrl/2/> .
+
+lblodRule:36ccf065-decd-40c4-b382-1862fa535bda
+    a rule:NotificationRule ;
+    core:uuid "36ccf065-decd-40c4-b382-1862fa535bda" ;
+    sch:validFrom "2022-05-01T01:00:00"^^xsd:dateTime ;
+    besluit:decidableBy BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000002 ;
+    besluit:obligationToReport "true"^^xsd:boolean ;
+    odrl:target <https://centrale-vindplaats.lblod.info> ,
+            <https://loket.lokaalbestuur.vlaanderen.be> .
+
+lblodRule:7dfd9578-2f73-4e6a-b2d4-0bf3b84e6e06
+    a rule:NotificationRule ;
+    core:uuid "7dfd9578-2f73-4e6a-b2d4-0bf3b84e6e06" ;
+        sch:validFrom "2025-09-18T01:00:00"^^xsd:dateTime ;
+        besluit:decidableBy BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 , BestuurseenheidClassificatieCode:b156b67f-c5f4-4584-9b30-4c090be02fdc ,
+        BestuurseenheidClassificatieCode:cd93f147-3ece-4308-acab-5c5ada3ec63d ,
+        BestuurseenheidClassificatieCode:d01bb1f6-2439-4e33-9c25-1fc295de2e71 ,
+        BestuurseenheidClassificatieCode:4b8450cf-a326-4c66-9e63-b4ec10acc7f6 ; # Opdrachthoudende vereniging met private deelname
+        besluit:obligationToReport "true"^^xsd:boolean ;
+        odrl:target <https://centrale-vindplaats.lblod.info> ,
+                <https://loket.lokaalbestuur.vlaanderen.be> .
+
+BesluitDocumentType:0ee460b1-5ef4-4d4a-b5e1-e2d7c1d5086e
+    a skos:Concept ;
+    core:uuid "0ee460b1-5ef4-4d4a-b5e1-e2d7c1d5086e" ;
+    besluit:notificationRule lblodRule:2d237403-0cbb-4a38-8221-0a201e0ffe5a , lblodRule:b8c853c9-e096-4799-a47a-06fea6cb9b2a ;
+    skos:definition "Andere documenten dan budget, jaarrekening en meerjarenplan(aanpassing) die als onderdeel of bijlage bij een beleidsrapport van de beleids- en beheerscyclus verplicht, vrijwillig of op vraag worden aangeleverd." ;
+    skos:inScheme conceptscheme:BesluitDocumentType ;
+    skos:prefLabel "Andere documenten BBC" ;
+    skos:topConceptOf conceptscheme:BesluitDocumentType .
+
+lblodRule:b8c853c9-e096-4799-a47a-06fea6cb9b2a
+    a rule:NotificationRule ;
+    core:uuid "b8c853c9-e096-4799-a47a-06fea6cb9b2a" ;
+    sch:validFrom "2022-05-01T01:00:00"^^xsd:dateTime ;
+    besluit:decidableBy BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ,             # Gemeente
+                        BestuurseenheidClassificatieCode:36a82ba0-7ff1-4697-a9dd-2e94df73b721 , # Autonoom gemeentebedrijf
+                        BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000002 ,             # OCMW
+                        BestuurseenheidClassificatieCode:cc4e2d67-603b-4784-9b61-e50bac1ec089 , # OCMW vereniging
+                        BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000003 ,             # District
+                        BestuurseenheidClassificatieCode:cd93f147-3ece-4308-acab-5c5ada3ec63d , # Opdrachthoudende vereniging
+                        BestuurseenheidClassificatieCode:d01bb1f6-2439-4e33-9c25-1fc295de2e71 , # Dienstverlenende vereniging
+                        BestuurseenheidClassificatieCode:b156b67f-c5f4-4584-9b30-4c090be02fdc , # Projectvereniging
+                        BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,             # Provincie
+                        BestuurseenheidClassificatieCode:80310756-ce0a-4a1b-9b8e-7c01b6cc7a2d , # Autonoom provinciebedrijf
+                        BestuurseenheidClassificatieCode:4b8450cf-a326-4c66-9e63-b4ec10acc7f6 ; # Opdrachthoudende vereniging met private deelname
+    besluit:obligationToReport "true"^^xsd:boolean ;
+    odrl:target <https://loket.lokaalbestuur.vlaanderen.be> .
+
+lblodRule:eb90d063-5c16-4783-843c-e45e8258d6bb
+    a rule:NotificationRule ;
+    core:uuid "eb90d063-5c16-4783-843c-e45e8258d6bb" ;
+    sch:validFrom "2022-05-01T01:00:00"^^xsd:dateTime ;
+    besluit:decidableBy BestuurseenheidClassificatieCode:cd93f147-3ece-4308-acab-5c5ada3ec63d ,
+                        BestuurseenheidClassificatieCode:d01bb1f6-2439-4e33-9c25-1fc295de2e71 ,
+                        BestuurseenheidClassificatieCode:4b8450cf-a326-4c66-9e63-b4ec10acc7f6 ; # Opdrachthoudende vereniging met private deelname
+    besluit:obligationToReport "true"^^xsd:boolean ;
+    odrl:target <https://centrale-vindplaats.lblod.info> ,
+            <https://loket.lokaalbestuur.vlaanderen.be> .
+
+lblodRule:cb5e825f-440a-468d-a1ea-3aa9d6b8efd9
+    a rule:NotificationRule ;
+    core:uuid "cb5e825f-440a-468d-a1ea-3aa9d6b8efd9" ;
+    sch:validFrom "2022-05-01T01:00:00"^^xsd:dateTime ;
+    besluit:decidableBy BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000002 ;
+    besluit:obligationToReport "true"^^xsd:boolean ;
+    odrl:target <https://centrale-vindplaats.lblod.info> ,
+            <https://loket.lokaalbestuur.vlaanderen.be> .
