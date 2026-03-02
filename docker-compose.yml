@@ -331,7 +331,7 @@ services:
     # in this specific build as well.
     # This stays like this until VGC finishes the move to MS Graph API.
     # SeeAlso: https://github.com/lblod/download-url-service/pull/17
-    image: lblod/download-url-service:1.0.7-vgc-workaround.4
+    image: lblod/download-url-service:1.1.0
     environment:
       CACHING_MAX_RETRIES: "10"
     volumes:
