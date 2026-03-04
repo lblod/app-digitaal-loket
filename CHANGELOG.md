@@ -8,6 +8,7 @@
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
  - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
+ - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
 
 ## Deploy notes
 ### Only on prod
@@ -26,7 +27,7 @@ git checkout docker-compopse.yml
 ### All environments
 ```
 drc restart migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer loket download-url
 ```
 
 <<<<<<< HEAD
