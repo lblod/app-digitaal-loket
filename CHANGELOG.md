@@ -30,7 +30,6 @@ drc restart migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer loket download-url
 ```
 
-<<<<<<< HEAD
 When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
 if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
 
