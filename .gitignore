@@ -24,3 +24,4 @@ docker-compose.override.yml
 
 /config/search/update-handler.store
 /backups/*
+*.override.*

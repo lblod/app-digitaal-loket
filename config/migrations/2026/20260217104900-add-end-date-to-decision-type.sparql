@@ -1,0 +1,10 @@
+PREFIX sch: <http://schema.org/>
+PREFIX lblodRule: <http://data.lblod.info/id/notification-rule/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    lblodRule:0d6d6159-b06c-4498-a25c-a02f9802d38e
+        sch:validThrough "2022-12-01T01:00:00"^^xsd:dateTime .
+  }
+}

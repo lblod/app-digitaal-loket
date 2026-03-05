@@ -2,10 +2,16 @@
 # Unreleased
  - Toezicht: adjust rules for decision types [DL-7138]
  - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
+ - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
+ - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
+ - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
+ - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
+ - Frontend [v1.7.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v170-2026-03-05), [v1.6.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v160-2026-03-03)
+ - Toezicht: bumped `import-submission` service to deal with filenames from VDB. [DL-5428]
 
 ## Deploy notes
 ### Deployement prelude (all environments)
@@ -32,13 +38,17 @@ Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
     "disableHealingJobOperation": false
   }
 ```
+And also
+```
+git checkout docker-compopse.yml
+```
 ### All environments
 ```
 rm -rf ./data/ldes-consumer/*.json
 drc restart migrations resource
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url
 drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
 ```
 :warning: Finishing the initial might take a couple of hours.
@@ -70,9 +80,34 @@ Once done:
 ```
 drc up -d ipdc-ldes-consumer
 ```
+When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
+if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
+
+### On DEV/QA
+Until now, DEV/QA consumed the production IPDC LDES feed. As IPDC also has a TNI feed, it feels more appropriate to consume that one in our DEV/QA apps. 
+To reset the LDES consumer:
+- `drc down ipdc-ldes-consumer`
+- Remove the state file: `rm ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
+- Remove the ingestion graph: `DROP SILENT GRAPH <http://mu.semte.ch/graphs/ipdc/ldes-data>`
+- Adjust the `LDES_ENDPOINT_VIEW` env var to `https://qa.ipdc-ldes-mirror.lblod.info/instancesnapshots/1`
+- `drc up ipdc-ldes-consumer -d`
+- Ensure the TNI/QA feed is correctly consumed
+
+### On production
+The URL of the IPDC instances LDES mirror has slightly changed:
+- `drc down ipdc-ldes-consumer`
+- Replace the old URLs in the state-file with the new one:
+  `sed -i 's/ipdc-ldes-mirror.lblod.info\/ldes\/ipdc-products/ipdc-ldes-mirror.lblod.info\/instancesnapshots/g' ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
+- `drc up ipdc-ldes-consumer -d`
+- The ldes-consumer should not restart, but continue from where it left off
+
+# v1.118.2 (2026-02-23)
+- Cutover download url VGC [DL-7211]
+
 # v1.118.1 (2026-02-02)
  - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
  - Fix issues with `download-url` [DL-7154]
+
 ## Deploy notes
 ### On prod only
 Before deploy
