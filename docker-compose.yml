@@ -728,24 +728,28 @@ services:
     labels:
       - "logging=true"
   ipdc-ldes-consumer:
-    image: redpencil/ldes-consumer:feature-dont-persist-unemitted-members-in-state
+    image: redpencil/ldes-consumer:feature-update-ldes-client
+    links:
+      - virtuoso:database
     volumes:
       - ./data/ldes-consumer:/data
     environment:
       # Note: this variable likely changes depending on the environment you are deploying
       LDES_ENDPOINT_VIEW: "https://dev.ipdc-verrijking.lblod.info/ldes-feed/ipdc-enriched/1"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/ipdc/ldes-data"
-      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
-      LDES_TIMESTAMP_PATH: "http://www.w3.org/ns/prov#generatedAtTime"
       INGEST_MODE: "MATERIALIZE"
       REPLACE_VERSIONS: "true"
+      ORDERING_STRATEGY: "ascending"
+      EMIT_LAST_VERSION_ONLY: false
+      LDES_REQUESTS_PER_MINUTE: 40
       PERSIST_STATE: "true"
       SPARQL_BATCH_SIZE: "50"
       SUDO_QUERY_RETRY: "true"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
       NODE_OPTIONS: "--max-old-space-size=8192"
       LOG_LEVEL: "debug"
-      LOG_SPARQL_ALL: true
+      LOG_SPARQL_ALL: false
+      
     restart: always
     logging: *default-logging
     labels:
