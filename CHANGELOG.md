@@ -10,6 +10,7 @@
  - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
  - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
  - Frontend [v1.7.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v170-2026-03-05), [v1.6.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v160-2026-03-03)
+ - Toezicht: bumped `import-submission` service to deal with filenames from VDB. [DL-5428]
 
 ## Deploy notes
 ### Only on prod
