@@ -9,6 +9,7 @@
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
  - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
  - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
+ - Frontend [v1.7.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v170-2026-03-05), [v1.6.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v160-2026-03-03)
 
 ## Deploy notes
 ### Only on prod
@@ -27,7 +28,7 @@ git checkout docker-compopse.yml
 ### All environments
 ```
 drc restart migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer loket download-url
+drc up -d loket enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer download-url
 ```
 
 When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
