@@ -7,12 +7,28 @@
  - Bump berichtencentrum-sync-with-kalliope to `v0.23.1` [DL-7083]
  - Bump `delta-producer-publication-graph-maintainer` to `1.4.3` [DL-7061]
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
+ - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
  - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
  - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
  - Frontend [v1.7.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v170-2026-03-05), [v1.6.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v160-2026-03-03)
  - Toezicht: bumped `import-submission` service to deal with filenames from VDB. [DL-5428]
 
 ## Deploy notes
+### Deployement prelude (all environments)
+This version will still use `mu-auth`, and these specific steps from the 'prelude' are only needed because of this.
+In `docker-compose.override.yml` ensure
+```
+  # (...)
+  ipdc-ldes-consumer:
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+```
+```
+drc stop ipdc-ldes-consumer
+```
+Then;
+ - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
+
 ### Only on prod
 Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
@@ -28,10 +44,42 @@ git checkout docker-compopse.yml
 ```
 ### All environments
 ```
-drc restart migrations
-drc up -d loket enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer download-url
+rm -rf ./data/ldes-consumer/*.json
+drc restart migrations resource
+# Wait until the process is complete
+drc logs --tail 1000 -f migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url
+drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
 ```
+:warning: Finishing the initial might take a couple of hours.
+To know if the initial sync is finished means checking IF there is a json file under `ls -al data/ldes-consumer/`.
+As soon as there is a file; it should be ok.
+:warning: :warning: If something goes wrong during initial sync, you will have to fiddle to get it started again:
+  - `drc stop ipdc-ldes-consumer`
+  - `rm -rf ./data/ldes-consumer/*.json`
+  - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
+  - `drc up -d ipdc-ldes-consumer`
 
+### Deployement 'postlude' (all environments)
+
+In `docker-compose.override.yml` *remove*
+```
+  # (...)
+  ipdc-ldes-consumer:
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+```
+```
+drc stop ipdc-ldes-consumer
+```
+Then search should be re-indexed.
+```
+mu script search manage-indexes # follow the steps there. Re-index "public-services"
+```
+Once done:
+```
+drc up -d ipdc-ldes-consumer
+```
 When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
 if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
 
