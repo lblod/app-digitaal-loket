@@ -727,8 +727,6 @@ services:
       - "logging=true"
   ipdc-ldes-consumer:
     image: redpencil/ldes-consumer:feature-update-ldes-client
-    links:
-      - virtuoso:database
     volumes:
       - ./data/ldes-consumer:/data
     environment:
