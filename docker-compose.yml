@@ -726,9 +726,10 @@ services:
     labels:
       - "logging=true"
   ipdc-ldes-consumer:
-    image: redpencil/ldes-consumer:feature-update-ldes-client
+    image: redpencil/ldes-consumer:feature-custom-member-processing
     volumes:
       - ./data/ldes-consumer:/data
+      - ./config/ipdc-ldes-consumer/process-member.ts:/config/process-member.ts
     environment:
       # Note: this variable likely changes depending on the environment you are deploying
       LDES_ENDPOINT_VIEW: "https://dev.ipdc-verrijking.lblod.info/ldes-feed/ipdc-enriched/1"
