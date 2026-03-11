@@ -129,7 +129,27 @@
         "http://schema.org/email",
         "http://schema.org/telephone",
         "http://www.w3.org/ns/locn#address"
-      ]
+      ],
+      "healingOptions": {
+        "http://mu.semte.ch/vocabularies/core/uuid": {
+          "queryChunkSize": 5000
+        },
+        "http://mu.semte.ch/vocabularies/ext/secondaryContactPoint": {
+          "queryChunkSize": 5000
+        },
+        "http://schema.org/contactType": {
+          "queryChunkSize": 5000
+        },
+        "http://schema.org/email": {
+          "queryChunkSize": 5000
+        },
+        "http://schema.org/telephone": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/locn#address": {
+          "queryChunkSize": 5000
+        }
+      }
     },
     {
       "type": "http://www.w3.org/ns/adms#Identifier",
@@ -162,7 +182,36 @@
         "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
         "https://data.vlaanderen.be/ns/adres#gemeentenaam"
       ],
-      "additionalFilter": "?contactPoint a <http://schema.org/ContactPoint> ; <http://www.w3.org/ns/locn#address> ?subject ."
+      "additionalFilter": "?contactPoint a <http://schema.org/ContactPoint> ; <http://www.w3.org/ns/locn#address> ?subject .",
+      "healingOptions": {
+        "http://data.lblod.info/vocabularies/leidinggevenden/adresRegisterId": {
+          "queryChunkSize": 5000
+        },
+        "http://mu.semte.ch/vocabularies/core/uuid": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/locn#adminUnitL2": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/locn#fullAddress": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/locn#postCode": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/locn#thoroughfare": {
+          "queryChunkSize": 5000
+        },
+        "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer": {
+          "queryChunkSize": 5000
+        },
+        "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer": {
+          "queryChunkSize": 5000
+        },
+        "https://data.vlaanderen.be/ns/adres#gemeentenaam": {
+          "queryChunkSize": 5000
+        }
+      }
     },
     {
       "type": "http://www.w3.org/ns/person#Person",
@@ -189,7 +238,36 @@
         "http://www.w3.org/ns/adms#identifier",
         "http://xmlns.com/foaf/0.1/familyName",
         "http://xmlns.com/foaf/0.1/name"
-      ]
+      ],
+      "healingOptions": {
+        "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam": {
+          "queryChunkSize": 5000
+        },
+        "http://data.vlaanderen.be/ns/persoon#geslacht": {
+          "queryChunkSize": 5000
+        },
+        "http://data.vlaanderen.be/ns/persoon#heeftGeboorte": {
+          "queryChunkSize": 5000
+        },
+        "http://data.vlaanderen.be/ns/persoon#heeftNationaliteit": {
+          "queryChunkSize": 5000
+        },
+        "http://mu.semte.ch/vocabularies/core/uuid": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/2002/07/owl#sameAs": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/adms#identifier": {
+          "queryChunkSize": 5000
+        },
+        "http://xmlns.com/foaf/0.1/familyName": {
+          "queryChunkSize": 5000
+        },
+        "http://xmlns.com/foaf/0.1/name": {
+          "queryChunkSize": 5000
+        }
+      }
     },
     {
       "type": "http://www.w3.org/ns/person#Person",
@@ -215,7 +293,36 @@
         "http://www.w3.org/ns/adms#identifier",
         "http://xmlns.com/foaf/0.1/familyName",
         "http://xmlns.com/foaf/0.1/name"
-      ]
+      ],
+      "healingOptions": {
+        "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam": {
+          "queryChunkSize": 5000
+        },
+        "http://data.vlaanderen.be/ns/persoon#geslacht": {
+          "queryChunkSize": 5000
+        },
+        "http://data.vlaanderen.be/ns/persoon#heeftGeboorte": {
+          "queryChunkSize": 5000
+        },
+        "http://data.vlaanderen.be/ns/persoon#heeftNationaliteit": {
+          "queryChunkSize": 5000
+        },
+        "http://mu.semte.ch/vocabularies/core/uuid": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/2002/07/owl#sameAs": {
+          "queryChunkSize": 5000
+        },
+        "http://www.w3.org/ns/adms#identifier": {
+          "queryChunkSize": 5000
+        },
+        "http://xmlns.com/foaf/0.1/familyName": {
+          "queryChunkSize": 5000
+        },
+        "http://xmlns.com/foaf/0.1/name": {
+          "queryChunkSize": 5000
+        }
+      }
     }
   ]
 }
