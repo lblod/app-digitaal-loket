@@ -182,7 +182,7 @@
         "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
         "https://data.vlaanderen.be/ns/adres#gemeentenaam"
       ],
-      "additionalFilter": "?contactPoint a <http://schema.org/ContactPoint> ; <http://www.w3.org/ns/locn#address> ?subject .",
+      "additionalFilter": " FILTER EXISTS { ?contactPoint a <http://schema.org/ContactPoint> ; <http://www.w3.org/ns/locn#address> ?subject . }",
       "healingOptions": {
         "http://data.lblod.info/vocabularies/leidinggevenden/adresRegisterId": {
           "queryChunkSize": 5000
