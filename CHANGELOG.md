@@ -26,6 +26,13 @@ drc restart migrations
 drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
 ```
 
+# v1.118.3 (2026-03-12)
+- Fixes some performance issues with the worship-sensitive-healing.
+  - SeeAlso: [DL-7242]
+## Deploy notes
+```
+drc up -d delta-producer-publication-graph-maintainer
+```
 # v1.118.2 (2026-02-23)
 - Cutover download url VGC [DL-7211]
 
