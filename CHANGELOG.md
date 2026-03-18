@@ -1,12 +1,11 @@
 # Changelog
-# v1.119.1 ()
+# v1.119.1 (2026-03-18)
 
  - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
- - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
- - Fix issue with URL in submissions not always displaying correctly. [DL-7151]
 
 ## Deploy notes
 ```
+drc restart migrations
 drc up -d
 ```
 
