@@ -12,6 +12,7 @@
  - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
  - Frontend [v1.7.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v170-2026-03-05), [v1.6.0](https://github.com/lblod/frontend-loket/blob/d120c7377f7a22e52aa8dba3a02baf311ec7e611/CHANGELOG.md#v160-2026-03-03)
  - Toezicht: bumped `import-submission` service to deal with filenames from VDB. [DL-5428]
+ - Bumped `vendor-data-distribution-service` and rewrote the config [DL-7231]
 
 ## Deploy notes
 ### Deployement prelude (all environments)
@@ -48,7 +49,7 @@ rm -rf ./data/ldes-consumer/*.json
 drc restart migrations resource
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url vendor-data-distribution
 drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
 ```
 :warning: Finishing the initial might take a couple of hours.
