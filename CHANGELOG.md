@@ -87,21 +87,6 @@ drc up -d
  - Migration to add missing `rdf:type` and `mu:uuid` for ContactPoint addresses [DL-6784]
 
 ## Deploy notes
-### Deployement prelude (all environments)
-This version will still use `mu-auth`, and these specific steps from the 'prelude' are only needed because of this.
-In `docker-compose.override.yml` ensure
-```
-  # (...)
-  ipdc-ldes-consumer:
-    environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-```
-```
-drc stop ipdc-ldes-consumer
-```
-Then;
- - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
-
 ### Only on prod
 Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
@@ -117,62 +102,9 @@ git checkout docker-compose.yml
 ```
 ### All environments
 ```
-rm -rf ./data/ldes-consumer/*.json
-drc restart migrations resource
-# Wait until the process is complete
-drc logs --tail 1000 -f migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url
-drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
+drc restart migrations
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer
 ```
-:warning: Finishing the initial might take a couple of hours.
-To know if the initial sync is finished means checking IF there is a json file under `ls -al data/ldes-consumer/`.
-As soon as there is a file; it should be ok.
-:warning: :warning: If something goes wrong during initial sync, you will have to fiddle to get it started again:
-  - `drc stop ipdc-ldes-consumer`
-  - `rm -rf ./data/ldes-consumer/*.json`
-  - Flush graph `<http://mu.semte.ch/graphs/ipdc/ldes-data>` in the database
-  - `drc up -d ipdc-ldes-consumer`
-
-### Deployement 'postlude' (all environments)
-
-In `docker-compose.override.yml` *remove*
-```
-  # (...)
-  ipdc-ldes-consumer:
-    environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-```
-```
-drc stop ipdc-ldes-consumer
-```
-Then search should be re-indexed.
-```
-mu script search manage-indexes # follow the steps there. Re-index "public-services"
-```
-Once done:
-```
-drc up -d ipdc-ldes-consumer
-```
-When changing the `LDES_ENDPOINT_VIEW` env var of the IPDC LDES consumer:
-if you want to keep the state (not fully restart the ingestion process), you'll also need to adapt the `state.json` file in the following ways:
-
-### On DEV/QA
-Until now, DEV/QA consumed the production IPDC LDES feed. As IPDC also has a TNI feed, it feels more appropriate to consume that one in our DEV/QA apps.
-To reset the LDES consumer:
-- `drc down ipdc-ldes-consumer`
-- Remove the state file: `rm ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
-- Remove the ingestion graph: `DROP SILENT GRAPH <http://mu.semte.ch/graphs/ipdc/ldes-data>`
-- Adjust the `LDES_ENDPOINT_VIEW` env var to `https://qa.ipdc-ldes-mirror.lblod.info/instancesnapshots/1`
-- `drc up ipdc-ldes-consumer -d`
-- Ensure the TNI/QA feed is correctly consumed
-
-### On production
-The URL of the IPDC instances LDES mirror has slightly changed:
-- `drc down ipdc-ldes-consumer`
-- Replace the old URLs in the state-file with the new one:
-  `sed -i 's/ipdc-ldes-mirror.lblod.info\/ldes\/ipdc-products/ipdc-ldes-mirror.lblod.info\/instancesnapshots/g' ./data/ldes-consumer/ipdc-ldes-mirror.lblod.info-state.json`
-- `drc up ipdc-ldes-consumer -d`
-- The ldes-consumer should not restart, but continue from where it left off
 
 # v1.118.3 (2026-03-12)
 - Fixes some performance issues with the worship-sensitive-healing.
