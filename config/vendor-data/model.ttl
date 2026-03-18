@@ -1,0 +1,270 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vdds:    <https://github.com/lblod/vendor-data-distribution-service#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix core:    <http://mu.semte.ch/vocabularies/core/> .
+@prefix sd:      <http://data.lblod.info/submission-documents/> .
+@prefix fd:      <http://data.lblod.info/form-data/> .
+@prefix nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#> .
+@prefix nmo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#> .
+@prefix ext:     <http://mu.semte.ch/vocabularies/ext/> .
+@prefix pav:     <http://purl.org/pav/> .
+@prefix adms:    <http://www.w3.org/ns/adms#> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+@prefix am:      <http://lblod.data.gift/vocabularies/automatische-melding/> .
+@prefix meb:     <http://rdf.myexperiment.org/ontologies/base/> .
+@prefix cogs:    <http://vocab.deri.ie/cogs#> .
+@prefix osc:     <http://open-services.net/ns/core#> .
+@prefix task:    <http://redpencil.data.gift/vocabularies/tasks/> .
+
+# Extra prefixes for use in queries
+
+@prefix besluit:   <http://data.vlaanderen.be/ns/besluit#> .
+@prefix foaf:      <http://xmlns.com/foaf/0.1/> .
+@prefix mu:        <http://mu.semte.ch/vocabularies/core/> .
+@prefix muAccount: <http://mu.semte.ch/vocabularies/account/> .
+@prefix schema:    <http://schema.org/> .
+
+##############################################################################
+# Submissions
+##############################################################################
+
+meb:Submission
+  rdf:type vdds:Class ;
+  vdds:targetGraphQuery """
+    SELECT DISTINCT ?organisationUuid ?vendorUuid
+    WHERE {
+      ${subject}
+        pav:createdBy ?organisation ;
+        pav:providedBy ?vendor .
+      ?vendor
+        muAccount:canActOnBehalfOf ?organisation ;
+        mu:uuid ?vendorUuid .
+      ?organisation
+        mu:uuid ?organisationUuid .
+    }
+  """ ;
+  vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
+
+##############################################################################
+# Berichten
+##############################################################################
+# via berichten-melding-service
+
+## Failed harvesting jobs
+
+<FailedMessageHarvestJob>
+  rdf:type vdds:Class ;
+  vdds:type cogs:Job ;
+  vdds:trigger """
+    ${subject}
+      adms:status <http://redpencil.data.gift/id/concept/JobStatus/failed> ;
+      task:operation <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> .
+  """ ;
+  vdds:targetGraphQuery """
+    SELECT DISTINCT ?organisationUuid ?vendorUuid
+    WHERE {
+      ${subject}
+        schema:sender ?organisation ;
+        pav:providedBy ?vendor .
+      ?vendor
+        muAccount:canActOnBehalfOf ?organisation ;
+        mu:uuid ?vendorUuid .
+      ?organisation
+        mu:uuid ?organisationUuid .
+    }
+  """ ;
+  vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
+
+osc:Error
+  rdf:type vdds:Subclass .
+
+task:error
+  rdf:type vdds:HierarchyProperty ;
+  rdfs:domain <FailedMessageHarvestJob> ;
+  rdfs:range osc:Error .
+
+## Successful harvesting jobs
+## Also copies the entire Conversation and Message model
+
+<SuccesfulMessageHarvestingJob>
+  rdf:type vdds:Class ;
+  vdds:type cogs:Job ;
+  vdds:trigger """
+    ${subject}
+      adms:status <http://redpencil.data.gift/id/concept/JobStatus/success> ;
+      task:operation <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> .
+  """ ;
+  vdds:targetGraphQuery """
+    SELECT DISTINCT ?organisationUuid ?vendorUuid
+    WHERE {
+      ${subject}
+        schema:sender ?organisation ;
+        pav:providedBy ?vendor .
+      ?vendor
+        muAccount:canActOnBehalfOf ?organisation ;
+        mu:uuid ?vendorUuid .
+      ?organisation
+        mu:uuid ?organisationUuid .
+    }
+  """ ;
+  vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
+
+schema:Conversation
+  rdf:type vdds:Subclass .
+
+<MessageViaSuccesJob>
+  rdf:type vdds:Subclass ;
+  vdds:type schema:Message .
+
+<MessageAttachmentLogicalFile>
+  rdf:type vdds:Subclass ;
+  vdds:type nfo:FileDataObject ;
+  vdds:postProcessInsert """
+    ${subject} nie:url ?bijlageDownloadLink .
+  """ ;
+  vdds:postProcessWhere """
+    ${subject} mu:uuid ?bijlageUUID .
+    BIND (CONCAT("#{HOSTNAME}files/", STR(?bijlageUUID), "/download") AS ?bijlageDownloadLink)
+  """ .
+
+<MessageAttachmentPhysicalFile>
+  rdf:type vdds:Subclass ;
+  vdds:type nfo:FileDataObject .
+
+dct:subject
+  rdf:type vdds:HierarchyProperty ;
+  rdfs:domain <SuccesfulMessageHarvestingJob> ;
+  rdfs:range <MessageViaSuccesJob> .
+
+<RelConversationMessage>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type schema:hasPart ;
+  rdfs:domain schema:Conversation ;
+  rdfs:range <MessageViaSuccesJob> ;
+  vdds:inverse true .
+
+<RelMessageAttachment>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type nie:hasPart ;
+  rdfs:domain <MessageViaSuccesJob> ;
+  rdfs:range <MessageAttachmentLogicalFile> .
+
+nie:dataSource
+  rdf:type vdds:HierarchyProperty ;
+  rdfs:domain <MessageAttachmentPhysicalFile> ;
+  rdfs:range <MessageAttachmentLogicalFile> ;
+  vdds:inverse true .
+
+## Berichten synced via Kaliope
+
+<MessageFromKaliope>
+  rdf:type vdds:Class ;
+  vdds:type schema:Message ;
+  vdds:trigger """
+    ${subject}
+      adms:status <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> .
+  """ ;
+  vdds:targetGraphQuery """
+    SELECT DISTINCT ?organisationUuid ?vendorUuid
+    WHERE {
+      ${subject} schema:recipient ?organisation .
+      ?vendor
+        a foaf:Agent ;
+        muAccount:canActOnBehalfOf ?organisation ;
+        mu:uuid ?vendorUuid .
+      ?organisation
+        a besluit:Bestuurseenheid ;
+        mu:uuid ?organisationUuid .
+    }
+  """ ;
+  vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
+
+<RelConversationMessageKaliope>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type schema:hasPart ;
+  rdfs:domain schema:Conversation ;
+  rdfs:range <MessageFromKaliope> ;
+  vdds:inverse true .
+
+<RelMessageAttachmentKaliope>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type nie:hasPart ;
+  rdfs:domain <MessageFromKaliope> ;
+  rdfs:range <MessageAttachmentLogicalFile> .
+
+# Berichten saved in Loket
+
+<MessageFromLoket>
+  rdf:type vdds:Class ;
+  vdds:type schema:Message ;
+  vdds:trigger """
+    ${subject}
+      ext:creator <https://github.com/lblod/frontend-loket> .
+  """ ;
+  vdds:targetGraphQuery """
+    SELECT DISTINCT ?organisationUuid ?vendorUuid
+    WHERE {
+      ${subject}
+        schema:sender ?organisation .
+      ?vendor
+        muAccount:canActOnBehalfOf ?organisation ;
+        mu:uuid ?vendorUuid .
+      ?organisation
+        mu:uuid ?organisationUuid .
+    }
+  """ ;
+  vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
+
+<RelConversationMessageLoket>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type schema:hasPart ;
+  rdfs:domain schema:Conversation ;
+  rdfs:range <MessageFromLoket> ;
+  vdds:inverse true .
+
+<RelMessageAttachmentLoket>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type nie:hasPart ;
+  rdfs:domain <MessageFromLoket> ;
+  rdfs:range <MessageAttachmentLogicalFile> .
+
+# Berichten saved in Loket, but via Controle as if you were ABB
+
+<MessageFromLoketControle>
+  rdf:type vdds:Class ;
+  vdds:type schema:Message ;
+  vdds:trigger """
+    ${subject}
+      ext:creator <https://github.com/lblod/frontend-loket> ;
+      schema:sender <http://data.lblod.info/id/bestuurseenheden/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> .
+  """ ;
+  vdds:targetGraphQuery """
+    SELECT DISTINCT ?organisationUuid ?vendorUuid
+    WHERE {
+      ${subject}
+        schema:recipient ?organisation .
+      ?vendor
+        muAccount:canActOnBehalfOf ?organisation ;
+        mu:uuid ?vendorUuid .
+      ?organisation
+        mu:uuid ?organisationUuid .
+    }
+  """ ;
+  vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
+
+<RelConversationMessageLoketControle>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type schema:hasPart ;
+  rdfs:domain schema:Conversation ;
+  rdfs:range <MessageFromLoketControle> ;
+  vdds:inverse true .
+
+<RelMessageAttachmentLoketControle>
+  rdf:type vdds:HierarchyProperty ;
+  vdds:type nie:hasPart ;
+  rdfs:domain <MessageFromLoketControle> ;
+  rdfs:range <MessageAttachmentLogicalFile> .
