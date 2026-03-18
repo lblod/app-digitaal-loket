@@ -1,5 +1,5 @@
 # Changelog
-# Unreleased
+# v1.119.0 (2026-03-18)
  - Toezicht: adjust rules for decision types [DL-7138]
  - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
  - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
@@ -19,7 +19,7 @@ Ensure `config/delta-producer/background-jobs-initiator/config.override.json`
 ```
 And also
 ```
-git checkout docker-compopse.yml
+git checkout docker-compose.yml
 ```
 ### All environments
 ```
