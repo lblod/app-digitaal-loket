@@ -1,5 +1,4 @@
 # Changelog
-<<<<<<< HEAD
 # Unreleased
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
  - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
