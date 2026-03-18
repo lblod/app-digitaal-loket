@@ -26,6 +26,7 @@
 (add-prefix "nfo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#")
 (add-prefix "nie" "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#")
 (add-prefix "schema" "http://schema.org/")
+(add-prefix "schema2" "https://schema.org/")
 (add-prefix "dbpedia" "http://dbpedia.org/ontology/")
 (add-prefix "export" "http://mu.semte.ch/vocabularies/ext/export/")
 (add-prefix "bbcdr" "http://mu.semte.ch/vocabularies/ext/bbcdr/")
