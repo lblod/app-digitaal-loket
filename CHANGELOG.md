@@ -1,4 +1,14 @@
 # Changelog
+# v1.119.1 (2026-03-18)
+
+ - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
+
+## Deploy notes
+```
+drc restart migrations
+drc up -d
+```
+
 # v1.119.0 (2026-03-18)
  - Toezicht: adjust rules for decision types [DL-7138]
  - Toezicht: adjust dropdown list 'Type dossier' - show only applicable decision types. See also: [DL-7022]
