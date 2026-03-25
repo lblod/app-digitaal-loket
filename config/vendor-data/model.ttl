@@ -41,9 +41,11 @@ meb:Submission
         pav:createdBy ?organisation ;
         pav:providedBy ?vendor .
       ?vendor
+        a foaf:Agent ;
         muAccount:canActOnBehalfOf ?organisation ;
         mu:uuid ?vendorUuid .
       ?organisation
+        a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
     }
   """ ;
@@ -71,9 +73,11 @@ meb:Submission
         schema:sender ?organisation ;
         pav:providedBy ?vendor .
       ?vendor
+        a foaf:Agent ;
         muAccount:canActOnBehalfOf ?organisation ;
         mu:uuid ?vendorUuid .
       ?organisation
+        a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
     }
   """ ;
@@ -105,9 +109,11 @@ task:error
         schema:sender ?organisation ;
         pav:providedBy ?vendor .
       ?vendor
+        a foaf:Agent ;
         muAccount:canActOnBehalfOf ?organisation ;
         mu:uuid ?vendorUuid .
       ?organisation
+        a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
     }
   """ ;
@@ -211,9 +217,11 @@ nie:dataSource
       ${subject}
         schema:sender ?organisation .
       ?vendor
+        a foaf:Agent ;
         muAccount:canActOnBehalfOf ?organisation ;
         mu:uuid ?vendorUuid .
       ?organisation
+        a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
     }
   """ ;
@@ -248,9 +256,11 @@ nie:dataSource
       ${subject}
         schema:recipient ?organisation .
       ?vendor
+        a foaf:Agent ;
         muAccount:canActOnBehalfOf ?organisation ;
         mu:uuid ?vendorUuid .
       ?organisation
+        a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
     }
   """ ;
