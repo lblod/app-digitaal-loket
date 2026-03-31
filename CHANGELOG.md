@@ -9,6 +9,7 @@
  - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
  - IPDC-enrich service: added datePublished to filter in the overview table [DL-7224]
  - Bump frontend to v1.7.1 [DL-7255]
+ - Bumped `vendor-data-distribution-service` and rewrote the config [DL-7231]
  - Clean up Decision Types to remove duplicates from report 'Toezicht module: Meldingen' [DL-7258]
 
 ## Deploy notes
@@ -40,7 +41,7 @@ rm -rf ./data/ldes-consumer/*.json
 drc restart migrations resource search
 # Wait until the process is complete
 drc logs --tail 1000 -f migrations
-drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url import-submission loket
+drc up -d enrich-submission berichtencentrum-sync-with-kalliope delta-producer-publication-graph-maintainer ipdc-ldes-consumer download-url import-submission loket vendor-data-distribution
 drc logs -f --tail=20 ipdc-ldes-consumer # And ensure it finishes
 ```
 :warning: Finishing the initial might take a couple of hours.
