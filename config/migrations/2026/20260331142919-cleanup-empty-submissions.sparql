@@ -1,0 +1,38 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+DELETE {
+  GRAPH ?g {
+    ?submission ?sp ?so .
+    ?submissionDocument ?sdp ?sdo .
+    ?pFile ?pp ?po .
+    ?formData ?fp ?fo .
+  }
+}
+WHERE {
+  VALUES ?submission {
+    <http://data.lblod.info/submissions/69BBE08C5324D71F255A7AFA>
+    <http://data.lblod.info/submissions/69BAD4C15324D71F255A7A73>
+    <http://data.lblod.info/submissions/69BBEA4B5324D71F255A7B01>
+    <http://data.lblod.info/submissions/69BC099B5324D71F255A7B33>
+  }
+
+  GRAPH ?g {
+    {
+      ?submission ?sp ?so .
+    } UNION {
+      ?submission dct:subject ?submissionDocument .
+      ?submissionDocument ?sdp ?sdo .
+    } UNION {
+      ?submission dct:subject ?submissionDocument .
+      ?submissionDocument dct:source ?pFile .
+      ?pFile ?pp ?po .
+      FILTER NOT EXISTS {
+        ?pFile dct:type <http://data.lblod.gift/concepts/form-file-type> .
+      }
+    } UNION {
+      ?submission prov:generated ?formData .
+      ?formData ?fp ?fo .
+    }
+  }
+}

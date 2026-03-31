@@ -10,6 +10,7 @@
  - IPDC-enrich service: added datePublished to filter in the overview table [DL-7224]
  - Bump frontend to v1.7.1 [DL-7255]
  - Bumped `vendor-data-distribution-service` and rewrote the config [DL-7231]
+ - Removed empty submissions [DL-7260] [DL-7272]
 
 ## Deploy notes
 ### Deployement prelude (all environments)
