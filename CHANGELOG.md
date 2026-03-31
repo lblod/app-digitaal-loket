@@ -9,6 +9,7 @@
  - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
  - IPDC-enrich service: added datePublished to filter in the overview table [DL-7224]
  - Bump frontend to v1.7.1 [DL-7255]
+ - Clean up Decision Types to remove duplicates from report 'Toezicht module: Meldingen' [DL-7258]
 
 ## Deploy notes
 ### Deployement prelude (all environments)
