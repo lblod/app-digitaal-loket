@@ -1,0 +1,25 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX conceptscheme: <https://data.vlaanderen.be/id/conceptscheme/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?decisionType skos:prefLabel ?labelNoLang .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?decisionType a skos:Concept ;
+                  skos:inScheme ?scheme ;
+                  skos:prefLabel ?labelNoLang ;
+                  skos:prefLabel ?labelWithLang .
+
+    FILTER(
+      ?scheme = conceptscheme:BesluitDocumentType ||
+      ?scheme = conceptscheme:BesluitType
+    )
+
+    FILTER(LANG(?labelNoLang) = "")
+    FILTER(LANG(?labelWithLang) != "")
+    FILTER(STR(?labelNoLang) = STR(?labelWithLang))
+  }
+}
