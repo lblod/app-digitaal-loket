@@ -1,0 +1,12 @@
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/222869f0f88b3bb20621f08a58b9a3b3>
+        <http://xmlns.com/foaf/0.1/firstName> "OCMW vereniging" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/persoon/222869f0f88b3bb20621f08a58b9a3b3>
+        <http://xmlns.com/foaf/0.1/firstName> "OCMW vereniging" .
+  }
+}

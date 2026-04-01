@@ -1,0 +1,23 @@
+DELETE {
+  GRAPH ?g {
+    ?old ?p ?o .
+    ?s ?p2 ?old .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?new ?p ?o .
+    ?s ?p2 ?new .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    VALUES (?old ?new) {
+      (<https://data.vlaanderen.be/id/concept/BesluitType/a970c99d-c06c-4942-9815-153bf3e87df2> <https://data.vlaanderen.be/id/concept/BesluitDocumentType/a970c99d-c06c-4942-9815-153bf3e87df2>)
+      (<https://data.vlaanderen.be/id/concept/BesluitType/094cef43-055a-4deb-8692-bc0a91a8a2b6> <https://data.vlaanderen.be/id/concept/BesluitDocumentType/094cef43-055a-4deb-8692-bc0a91a8a2b6>)
+    }
+
+    OPTIONAL { ?old ?p ?o . }
+    OPTIONAL { ?s ?p2 ?old . }
+  }
+}

@@ -7,6 +7,7 @@
  - Toezicht: bumped `import-submission` service to deal with filenames from VDB. [DL-5428]
  - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
  - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
+ - Clean up Decision Types to remove duplicates from report 'Toezicht module: Meldingen' [DL-7258]
 
 ## Deploy notes
 ### Deployement prelude (all environments)
