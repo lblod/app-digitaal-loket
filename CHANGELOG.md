@@ -11,7 +11,7 @@
  - Bump frontend to v1.7.1 [DL-7255]
  - Bumped `vendor-data-distribution-service` and rewrote the config [DL-7231]
  - Clean up Decision Types to remove duplicates from report 'Toezicht module: Meldingen' [DL-7258]
- - Changed scope for Concept and ConceptScheme in `uuid-generation-service` [DL-7289]
+ - Changed scope for Concept and ConceptScheme in `uuid-generation-service` & removed generated uuid for representative organ [DL-7289]
 
 ## Deploy notes
 ### Deployement prelude (all environments)
