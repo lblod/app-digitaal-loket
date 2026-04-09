@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.7.0
+    image: lblod/frontend-loket:1.8.0
     environment:
       EMBER_FEATURE_NEW_LOKET: "true"
     links:
@@ -532,7 +532,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-data-distribution:
-    image: lblod/vendor-data-distribution-service:1.7.1
+    image: lblod/vendor-data-distribution-service:2.0.0
     environment:
       LOGLEVEL: "error"
       WRITE_ERRORS: "true"
