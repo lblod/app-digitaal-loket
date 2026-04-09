@@ -8,7 +8,7 @@
  - Toezicht: add end date to BesluitType "Verlenging duurtijd van projectvereniging" [DL-7158]
  - Toezicht: already adjust rules for decision types in drop-down [DL-7165]
  - IPDC-enrich service: added datePublished to filter in the overview table [DL-7224]
- - Bump frontend to v1.7.1 [DL-7255]
+ - Frontend [v1.9.0](https://github.com/lblod/frontend-loket/blob/5105dc22316dd456350bf5284683c33728358d09/CHANGELOG.md#v190-2026-04-09), [v1.8.0](https://github.com/lblod/frontend-loket/blob/5105dc22316dd456350bf5284683c33728358d09/CHANGELOG.md#v180-2026-03-24), [v1.7.1](https://github.com/lblod/frontend-loket/blob/5105dc22316dd456350bf5284683c33728358d09/CHANGELOG.md#v171-2026-03-24) [DL-7255]
  - Bumped `vendor-data-distribution-service` and rewrote the config [DL-7231]
  - Clean up Decision Types to remove duplicates from report 'Toezicht module: Meldingen' [DL-7258]
  - Changed scope for Concept and ConceptScheme in `uuid-generation-service` & removed generated uuid for representative organ [DL-7289]
