@@ -1,0 +1,10 @@
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+     ?bestuur <http://mu.semte.ch/vocabularies/ext/usesNewLoket> "true"^^xsd:boolean.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuur a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+  }
+}
