@@ -1,0 +1,131 @@
+DELETE {
+  GRAPH ?g {
+    ?s a <http://www.w3.org/2004/02/skos/core#Concept>;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties>;
+      ?p ?o.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s a <http://www.w3.org/2004/02/skos/core#Concept>;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties>;
+      ?p ?o.
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+<https://data.vlaanderen.be/id/organisatie/OVO049152>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000090>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000090>	<http://mu.semte.ch/vocabularies/core/uuid>	"87cad6c3-0600-4ff7-bf59-e448b9bfedfb" .
+<https://data.vlaanderen.be/id/organisatie/OVO000092>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000039>	<http://mu.semte.ch/vocabularies/core/uuid>	"f4372885-0146-4a26-8a47-f8fc44e4fe21" .
+<https://data.vlaanderen.be/id/organisatie/OVO000070>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Sport Vlaanderen"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000076>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Departement Werk en Sociale Economie"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000094>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO003323>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000067>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO049152>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000076>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000096>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000001>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000001>	<http://mu.semte.ch/vocabularies/core/uuid>	"bb5e10ff-9375-4027-a889-e604a0ded63c" .
+<https://data.vlaanderen.be/id/organisatie/OVO000001>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO049152>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000067>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000098>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000098>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Agentschap Wegen en Verkeer"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000070>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001831>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO001832>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO049152>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000104>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000096>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Departement Mobiliteit en Openbare Werken"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000070>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001835>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Agentschap Binnenlands Bestuur"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000096>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000076>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001835>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO001832>	<http://mu.semte.ch/vocabularies/core/uuid>	"bf216089-bc87-4220-b170-8b7244ea496e" .
+<https://data.vlaanderen.be/id/organisatie/OVO000076>	<http://mu.semte.ch/vocabularies/core/uuid>	"dd24bb0f-021a-49d5-98c4-3959be13bbcb" .
+<https://data.vlaanderen.be/id/organisatie/OVO000001>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Administratieve diensten van de Vlaamse overheid" .
+<https://data.vlaanderen.be/id/organisatie/OVO000098>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000092>	<http://mu.semte.ch/vocabularies/core/uuid>	"ea378521-8165-4ebc-abd2-17981213558f" .
+<https://data.vlaanderen.be/id/organisatie/OVO002949>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Agentschap Digitaal Vlaanderen"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000092>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000039>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO004067>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000076>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000090>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO003323>	<http://mu.semte.ch/vocabularies/core/uuid>	"d07024de-e9c7-4067-9d34-b134d7f758ce" .
+<https://data.vlaanderen.be/id/organisatie/OVO001835>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000094>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Vlaamse Landmaatschappij"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000094>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO002949>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000096>	<http://mu.semte.ch/vocabularies/core/uuid>	"5fa02239-d2f3-4a59-aa15-cf0320d4b6ed" .
+<https://data.vlaanderen.be/id/organisatie/OVO004067>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO001835>	<http://mu.semte.ch/vocabularies/core/uuid>	"eadd7fba-9fa0-485f-9fea-1e28f4b17d5f" .
+<https://data.vlaanderen.be/id/organisatie/OVO002949>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000104>	<http://mu.semte.ch/vocabularies/core/uuid>	"578c9a70-a6af-478f-ac9a-af2a277e010d" .
+<https://data.vlaanderen.be/id/organisatie/OVO001831>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Dienst van de Bestuursrechtscolleges"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000090>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000039>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"VLAIO (Agentschap Innoveren en Ondernemen)"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO049152>	<http://mu.semte.ch/vocabularies/core/uuid>	"5e97fcf5-72e0-4a9c-96fa-24b349c7cca9" .
+<https://data.vlaanderen.be/id/organisatie/OVO000039>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO001831>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000092>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000094>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO003323>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000092>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000094>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000104>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO003323>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000067>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO001832>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Audit Vlaanderen"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO001832>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000070>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO000096>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000001>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000067>	<http://mu.semte.ch/vocabularies/core/uuid>	"44eafd17-3219-409a-a45d-9f61cbe93cdd" .
+<https://data.vlaanderen.be/id/organisatie/OVO000098>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO002949>	<http://mu.semte.ch/vocabularies/core/uuid>	"7735dc9d-5207-4567-95e7-4378ec6731eb" .
+<https://data.vlaanderen.be/id/organisatie/OVO000001>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000098>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001831>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001832>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000096>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO004067>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Federale Overheidsdienst Mobiliteit en Vervoer" .
+<https://data.vlaanderen.be/id/organisatie/OVO000070>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000076>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO001832>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001831>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000070>	<http://mu.semte.ch/vocabularies/core/uuid>	"12c04145-9db8-4b67-afef-71b3d245164f" .
+<https://data.vlaanderen.be/id/organisatie/OVO000098>	<http://mu.semte.ch/vocabularies/core/uuid>	"bfa5a43c-e8f6-400f-ae8b-c3e1bdfa98a7" .
+<https://data.vlaanderen.be/id/organisatie/OVO000104>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000067>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Departement Cultuur, Jeugd en Media"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000090>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Vlaams Energie- en Klimaatagentschap"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO000104>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000092>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Vlaamse Milieumaatschappij"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO001835>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO001831>	<http://mu.semte.ch/vocabularies/core/uuid>	"706463ee-f89a-4e0b-8bf3-69faf542de32" .
+<https://data.vlaanderen.be/id/organisatie/OVO000094>	<http://mu.semte.ch/vocabularies/core/uuid>	"8235bd56-bc5d-4c60-b4cd-1796812874d0" .
+<https://data.vlaanderen.be/id/organisatie/OVO001835>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000039>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000067>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO003323>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Departement Omgeving"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO002949>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO003323>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000039>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO004067>	<http://www.w3.org/2004/02/skos/core#topConceptOf>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO000104>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Onroerend Erfgoed"@nl .
+<https://data.vlaanderen.be/id/organisatie/OVO002949>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.vlaanderen.be/id/organisatie/OVO000090>	<http://www.w3.org/2000/01/rdf-schema#seeAlso>	<https://wegwijs.vlaanderen.be> .
+<https://data.vlaanderen.be/id/organisatie/OVO004067>	<http://www.w3.org/2004/02/skos/core#inScheme>	<https://productencatalogus.data.vlaanderen.be/id/conceptscheme/IPDCOrganisaties> .
+<https://data.vlaanderen.be/id/organisatie/OVO004067>	<http://mu.semte.ch/vocabularies/core/uuid>	"f10efe01-ffb7-4ae9-a112-a54427dd325d" .
+<https://data.vlaanderen.be/id/organisatie/OVO049152>	<http://www.w3.org/2004/02/skos/core#prefLabel>	"Agentschap Justitie en Handhaving"@nl .
+  }
+
+}
