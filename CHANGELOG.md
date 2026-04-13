@@ -12,6 +12,7 @@
  - Bumped `vendor-data-distribution-service` and rewrote the config [DL-7231]
  - Clean up Decision Types to remove duplicates from report 'Toezicht module: Meldingen' [DL-7258]
  - Changed scope for Concept and ConceptScheme in `uuid-generation-service` & removed generated uuid for representative organ [DL-7289]
+ - Removed LEKP-forms from dropdown in Toezicht (from 01/05/2026) [DL-7222]
 
 ## Deploy notes
 ### Deployement prelude (all environments)

@@ -1,0 +1,19 @@
+INSERT {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?rule <http://schema.org/validThrough> "2026-05-01T01:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+    }
+}
+WHERE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        VALUES ?rule {
+            <http://data.lblod.info/id/notification-rule/e7cc67b7-8977-49c9-bed9-f758a7c10f51>
+            <http://data.lblod.info/id/notification-rule/c9cdb5d9-9921-4811-8a37-d4cf65bd3178>
+            <http://data.lblod.info/id/notification-rule/7f91d1be-2725-43c2-8e7b-7b3f4af176fc>
+            <http://data.lblod.info/id/notification-rule/4e6fdd0e-2aee-4939-aaaa-ef6d1e055e27>
+            <http://data.lblod.info/id/notification-rule/1ee16f4f-ce45-4938-9b7a-7d511b52ab12>
+            <http://data.lblod.info/id/notification-rule/ae755652-6172-436e-9429-c95939e8521c>
+            <http://data.lblod.info/id/notification-rule/066edf24-d71e-41a4-9b94-86b9fb363623>
+        }
+        ?rule a <http://lblod.data.gift/vocabularies/notification/NotificationRule> .
+    }
+}
