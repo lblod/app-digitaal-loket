@@ -3,6 +3,18 @@
 - Frontend [v1.10.0](https://github.com/lblod/frontend-loket/blob/c94c96240fb2cf49cd82cff5853700722a4cadda/CHANGELOG.md#v1100-2026-04-16)
 
 ## Deploy notes
+
+Add the following env variables to the loket service:
+
+```yml
+loket:
+  environment:
+    EMBER_NEW_LOKET_ANNOUNCEMENT_TITLE: "Bekijk onze korte introductievideo"
+    EMBER_NEW_LOKET_ANNOUNCEMENT_MESSAGE: "Het Loket zit in een nieuw jasje. Wil je snel op de hoogte zijn van de aanpassingen, bekijk dan <a class='au-c-link' target='_blank' href='https://abb-vlaanderen.gitbook.io/hoofdloket-handleiding-loket-lokale-besturen'>hier</a> onze korte introductievideo. Je vind er ook meer uitleg over onze toepassing."
+```
+
+You may need to tweak the messages if new ones are provided.
+
 - `drc up -d loket`
 
 # v1.120.0 (2026-04-20)
