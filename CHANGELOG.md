@@ -16,7 +16,7 @@ loket:
 
 You may need to tweak the messages if new ones are provided.
 
-- `drc up -d loket`
+- `drc up -d loket validate-submission`
 
 # v1.120.0 (2026-04-20)
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
