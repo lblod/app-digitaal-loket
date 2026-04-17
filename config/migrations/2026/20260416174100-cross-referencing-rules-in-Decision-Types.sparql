@@ -1,0 +1,37 @@
+PREFIX BesluitType:         <https://data.vlaanderen.be/id/concept/BesluitType/>
+PREFIX BesluitDocumentType: <https://data.vlaanderen.be/id/concept/BesluitDocumentType/>
+PREFIX ext:                 <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    BesluitType:79414af4-4f57-4ca3-aaa4-f8f1e015e71c
+      ext:can_refer_to BesluitDocumentType:672bf096-dccd-40af-ab60-bd7de15cc461 ;
+      ext:without_relevant_CKB_can_refer_to BesluitType:e44c535d-4339-4d15-bdbf-d4be6046de2c .
+
+    BesluitType:df261490-cc74-4f80-b783-41c35e720b46
+      ext:can_refer_to BesluitDocumentType:ce569d3d-25ff-4ce9-a194-e77113597e29 ;
+      ext:without_relevant_CKB_can_refer_to BesluitType:d85218e2-a75f-4a30-9182-512b5c9dd1b2 .
+
+    BesluitType:3fcf7dba-2e5b-4955-a489-6dd8285c013b
+      ext:can_refer_to BesluitDocumentType:2c9ada23-1229-4c7e-a53e-acddc9014e4e ;
+      ext:without_relevant_CKB_can_refer_to BesluitType:f56c645d-b8e1-4066-813d-e213f5bc529f .
+
+    BesluitDocumentType:672bf096-dccd-40af-ab60-bd7de15cc461
+      ext:can_refer_to BesluitType:e44c535d-4339-4d15-bdbf-d4be6046de2c .
+
+    BesluitDocumentType:18833df2-8c9e-4edd-87fd-b5c252337349
+      ext:can_refer_to BesluitType:d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b .
+
+    BesluitDocumentType:ce569d3d-25ff-4ce9-a194-e77113597e29
+      ext:can_refer_to BesluitType:d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b .
+
+    BesluitDocumentType:2c9ada23-1229-4c7e-a53e-acddc9014e4e
+      ext:can_refer_to BesluitType:f56c645d-b8e1-4066-813d-e213f5bc529f .
+
+    BesluitType:b25faa84-3ab5-47ae-98c0-1b389c77b827
+      ext:without_relevant_CKB_can_refer_to BesluitDocumentType:8e791b27-7600-4577-b24e-c7c29e0eb773 .
+
+    BesluitDocumentType:24743b26-e0fb-4c14-8c82-5cd271289b0e
+      ext:without_relevant_CKB_can_refer_to BesluitDocumentType:8e791b27-7600-4577-b24e-c7c29e0eb773 .
+  }
+}

@@ -1,8 +1,11 @@
 # Changelog
+
 # Unreleased
+
 - Frontend [v1.10.0](https://github.com/lblod/frontend-loket/blob/c94c96240fb2cf49cd82cff5853700722a4cadda/CHANGELOG.md#v1100-2026-04-16)
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
 - Bump frontend to v1.10.1 [DL-7300]
+- Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202]
 
 ## Deploy notes
 
@@ -17,7 +20,19 @@ loket:
 
 You may need to tweak the messages if new ones are provided.
 
-- `drc up -d loket validate-submission`
+**General deploys**
+
+`drc up -d loket validate-submission`
+
+**Maintenance**
+
+Export Cross Referencing rules:
+
+```bash
+docker compose restart migrations
+docker compose exec delta-producer-background-jobs-initiator curl -X POST http://localhost/submissions/healing-jobs
+docker compose exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-submissions/healing-jobs
+```
 
 # v1.120.0 (2026-04-20)
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
