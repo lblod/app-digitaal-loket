@@ -95,7 +95,9 @@
         "http://www.w3.org/2004/02/skos/core#prefLabel",
         "http://www.w3.org/2004/02/skos/core#inScheme",
         "http://www.w3.org/2004/02/skos/core#topConceptOf",
-        "http://www.w3.org/2004/02/skos/core#notation"
+        "http://www.w3.org/2004/02/skos/core#notation",
+        "http://mu.semte.ch/vocabularies/ext/can_refer_to",
+        "http://mu.semte.ch/vocabularies/ext/without_relevant_CKB_can_refer_to"
       ],
       "additionalFilter": "?subject <http://schema.org/publication> <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325>."
     },
