@@ -2,6 +2,7 @@
 # Unreleased
 - Frontend [v1.10.0](https://github.com/lblod/frontend-loket/blob/c94c96240fb2cf49cd82cff5853700722a4cadda/CHANGELOG.md#v1100-2026-04-16)
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
+- Bump frontend to v1.10.1 [DL-7300]
 
 ## Deploy notes
 
