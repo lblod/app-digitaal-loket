@@ -331,7 +331,9 @@ ${ADVANCED_SUBMISSION_FILTER}
         "skos:prefLabel",
         "skos:inScheme",
         "skos:topConceptOf",
-        "skos:notation"
+        "skos:notation",
+        "ext:can_refer_to", // Cross referencing Gemeente - CKB - EB rule
+        "ext:without_relevant_CKB_can_refer_to", // Cross referencing Gemeente - EB rule
       ],
       additionalFilter: `
 ?resource skos:inScheme ?conceptScheme .
