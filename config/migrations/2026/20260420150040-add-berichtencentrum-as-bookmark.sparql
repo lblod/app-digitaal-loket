@@ -1,0 +1,41 @@
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nco: <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#>
+PREFIX muSession: <http://mu.semte.ch/vocabularies/session/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+INSERT {
+  GRAPH ?g {
+    ?newBookmark a nfo:Bookmark ;
+      mu:uuid ?newUuid ;
+      nie:contentCreated "2026-04-20T00:00:00Z"^^xsd:dateTime ;
+      nie:contentLastModified "2026-04-20T00:00:00Z"^^xsd:dateTime ;
+      nfo:bookmarks <https://ipdc.vlaanderen.be/id/instantie/95b94b1c-4afc-4e79-a2e1-97f993bc0cb8> ;
+      nco:creator ?user .
+  }
+}
+WHERE {
+  {
+    SELECT DISTINCT ?instance WHERE {
+      ?bookmark a nfo:Bookmark ;
+        nfo:bookmarks ?instance.
+    }
+    LIMIT 1
+  }
+
+  GRAPH ?g {
+    ?bookmark a nfo:Bookmark;
+      nfo:bookmarks ?instance;
+      nco:creator ?user.
+  }
+
+  FILTER NOT EXISTS {
+    ?bookmark2 a nfo:Bookmark;
+      nfo:bookmarks <https://ipdc.vlaanderen.be/id/instantie/95b94b1c-4afc-4e79-a2e1-97f993bc0cb8> ;
+      nco:creator ?user.
+  }
+
+  BIND(SHA256(CONCAT(STR(?bookmark),"berichtencentrum-bookmark" )) as ?newUuid)
+  BIND(IRI(CONCAT("http://lblod.data.gift/bookmarks/", STR(?newUuid))) as ?newBookmark)
+}
