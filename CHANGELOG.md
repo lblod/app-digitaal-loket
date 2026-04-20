@@ -1,4 +1,11 @@
 # Changelog
+# v1.121.1 (2026-04-20)
+    - Added missing bookmarks: berichtencentrum [DL-7304]
+## Deploy notes
+```
+drc up -d ipdc-bookmarks;
+drc restart migrations
+```
 # v1.121.0 (2026-04-17)
 - Frontend [v1.10.0](https://github.com/lblod/frontend-loket/blob/c94c96240fb2cf49cd82cff5853700722a4cadda/CHANGELOG.md#v1100-2026-04-16)
 - Bump frontend to v1.10.1 [DL-7300]
