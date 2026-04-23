@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.9.0
+    image: lblod/frontend-loket:1.10.1
     environment:
       EMBER_FEATURE_NEW_LOKET: "true"
     links:
@@ -366,7 +366,7 @@ services:
     restart: always
     logging: *default-logging
   validate-submission:
-    image: lblod/validate-submission-service:1.2.1
+    image: lblod/validate-submission-service:1.3.1
     environment:
       MAX_BODY_SIZE: "10000kb"
     volumes:

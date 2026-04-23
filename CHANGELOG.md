@@ -1,5 +1,26 @@
 # Changelog
 # Unreleased
+- Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
+# v1.121.0 (2026-04-17)
+- Frontend [v1.10.0](https://github.com/lblod/frontend-loket/blob/c94c96240fb2cf49cd82cff5853700722a4cadda/CHANGELOG.md#v1100-2026-04-16)
+- Bump frontend to v1.10.1 [DL-7300]
+
+## Deploy notes
+
+Add the following env variables to the loket service:
+
+```yml
+loket:
+  environment:
+    EMBER_NEW_LOKET_ANNOUNCEMENT_TITLE: "Bekijk onze korte introductievideo"
+    EMBER_NEW_LOKET_ANNOUNCEMENT_MESSAGE: "Het Loket zit in een nieuw jasje. Wil je snel op de hoogte zijn van de aanpassingen, bekijk dan <a class='au-c-link' target='_blank' href='https://abb-vlaanderen.gitbook.io/hoofdloket-handleiding-loket-lokale-besturen'>hier</a> onze korte introductievideo. Je vind er ook meer uitleg over onze toepassing."
+```
+
+You may need to tweak the messages if new ones are provided.
+
+- `drc up -d loket validate-submission`
+
+# v1.120.0 (2026-04-15)
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
  - IPDC LDES consumer: change default `LDES_ENDPOINT_VIEW` from https://ipdc-ldes-mirror.lblod.info/ldes/ipdc-products to https://ipdc-ldes-mirror.lblod.info/feedbacksnapshots
  - Toezicht: improve form field "Links naar documenten" with file names and other metadata [DL-5428]
