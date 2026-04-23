@@ -6,6 +6,7 @@
 ## Deploy notes
 ```
 drc up -d prepare-submissions-for-export
+drc up -d migrations
 ```
 
 # v1.121.0 (2026-04-17)
