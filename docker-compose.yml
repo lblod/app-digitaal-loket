@@ -460,7 +460,7 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.12.1
+    image: lblod/prepare-submissions-for-export-service:0.12.2
     labels:
       - "logging=true"
     restart: always
