@@ -1,4 +1,5 @@
 # Changelog
+
 # Unreleased
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
 - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
@@ -7,6 +8,14 @@
 ```
 drc up -d prepare-submissions-for-export
 drc up -d migrations
+```
+
+# v1.121.1 (2026-04-20)
+    - Added missing bookmarks: berichtencentrum [DL-7304]
+## Deploy notes
+```
+drc up -d ipdc-bookmarks;
+drc restart migrations
 ```
 
 # v1.121.0 (2026-04-17)
