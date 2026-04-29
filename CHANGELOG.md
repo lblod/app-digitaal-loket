@@ -7,7 +7,8 @@
 ## Deploy notes
 ```
 drc up -d prepare-submissions-for-export
-drc up -d migrations
+drc restart migrations
+drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 ```
 
 # v1.121.1 (2026-04-20)
