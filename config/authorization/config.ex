@@ -443,6 +443,31 @@ defmodule Acl.UserGroups.Config do
                       ] } }
                 ] },
 
+      # // public vendor data.
+      %GroupSpec{
+        name: "o-vendor-ere-mandaat-r",
+        useage: [:read ],
+        access: access_by_role_for_single_graph( "LoketLB-eredienstMandaatGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/id/public-vendor-data",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://mu.semte.ch/vocabularies/ext/Vendor"
+                      ] } }
+                ] },
+
+      %GroupSpec{
+        name: "o-vendor-ere-bedienaar-r",
+        useage: [:read ],
+        access: access_by_role_for_single_graph( "LoketLB-eredienstBedienaarGebruiker" ),
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/id/public-vendor-data",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://mu.semte.ch/vocabularies/ext/Vendor"
+                      ] } }
+                ] },
+
       # // WORSHIP MINISTERS
       %GroupSpec{
         name: "o-worship-positions-rwf",
