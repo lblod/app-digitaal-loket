@@ -3,12 +3,14 @@
 # Unreleased
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
 - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
+- switch to sparql parser [DL-6577]
 
 ## Deploy notes
 ```
 drc up -d prepare-submissions-for-export
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
+drc pull database resource && drc up -d database resource
 ```
 
 # v1.121.1 (2026-04-20)
