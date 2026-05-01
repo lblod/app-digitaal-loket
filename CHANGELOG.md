@@ -4,6 +4,7 @@
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
 - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
 - switch to sparql parser [DL-6577]
+- Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
 
 ## Deploy notes
 ```
@@ -11,6 +12,7 @@ drc up -d prepare-submissions-for-export
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull database resource && drc up -d database resource
+drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 ```
 
 # v1.121.1 (2026-04-20)
@@ -32,7 +34,7 @@ Add the following env variables to the loket service:
 ```yml
 loket:
   environment:
-    EMBER_NEW_LOKET_ANNOUNCEMENT_TITLE: "Bekijk onze korte introductievideo"
+    EMBER_NEW_LOKET_ANNOUN14CEMENT_TITLE: "Bekijk onze korte introductievideo"
     EMBER_NEW_LOKET_ANNOUNCEMENT_MESSAGE: "Het Loket zit in een nieuw jasje. Wil je snel op de hoogte zijn van de aanpassingen, bekijk dan <a class='au-c-link' target='_blank' href='https://abb-vlaanderen.gitbook.io/hoofdloket-handleiding-loket-lokale-besturen'>hier</a> onze korte introductievideo. Je vind er ook meer uitleg over onze toepassing."
 ```
 
