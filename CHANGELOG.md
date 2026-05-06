@@ -4,6 +4,7 @@
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
 - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
 - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
+- Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
 
 ## Deploy notes
 ```
