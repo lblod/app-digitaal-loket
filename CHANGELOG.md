@@ -13,6 +13,12 @@ drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 ```
+# v1.121.2 (2026-05-06)
+  - Bump acm-login service [DL-7334]
+## Deploy notes
+```
+drc up -d login-dashboard login-loket login-vendor-management
+```
 
 # v1.121.1 (2026-04-20)
     - Added missing bookmarks: berichtencentrum [DL-7304]
