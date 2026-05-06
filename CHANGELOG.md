@@ -1,4 +1,10 @@
 # Changelog
+# v1.121.2 (2026-05-06)
+  - Bump acm-login service [DL-7334]
+## Deploy notes
+```
+drc up -d login-dashboard login-loket login-vendor-management
+```
 # v1.121.1 (2026-04-20)
     - Added missing bookmarks: berichtencentrum [DL-7304]
 ## Deploy notes
