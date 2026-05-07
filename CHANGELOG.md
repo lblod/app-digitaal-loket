@@ -10,6 +10,7 @@
 ## Deploy notes
 ```
 drc up -d prepare-submissions-for-export loket virtuoso
+drc logs --tail 200 -f virtuoso # wait until the logs say the server is online
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
