@@ -5,16 +5,22 @@
 - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
 - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
 - Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
-- Bump virtuoso [DL-7347]
 
 ## Deploy notes
 ```
-drc up -d prepare-submissions-for-export loket virtuoso
-drc logs --tail 200 -f virtuoso # wait until the logs say the server is online
+drc up -d prepare-submissions-for-export loket
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 ```
+
+# v1.121.3 (2026-05-13)
+  - Bump virtuoso [DL-7347]
+## Deploy notes
+```
+drc up -d virtuoso
+```
+
 # v1.121.2 (2026-05-06)
   - Bump acm-login service [DL-7334]
 ## Deploy notes
