@@ -1,0 +1,31 @@
+PREFIX schema: <http://schema.org/>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+# Split 1/7 of prepare-gemeentewegen-attachments.
+# Pattern: ?submission nie:hasPart ?attachment
+# Scope:   submission's form must be one of the gemeentewegen besluit types.
+
+INSERT {
+  GRAPH ?g {
+    ?attachment schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> .
+  }
+}
+WHERE {
+  ?submission schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> ;
+              prov:generated ?form ;
+              nie:hasPart ?attachment .
+  ?form ext:decisionType ?decisionType .
+  VALUES ?decisionType {
+    <https://data.vlaanderen.be/id/concept/BesluitType/b0fcc0c3-bb33-427f-8da2-4ef3833c9060>
+    <https://data.vlaanderen.be/id/concept/BesluitType/f1fd8f88-95b0-4085-b766-008b5867d992>
+  }
+
+  FILTER NOT EXISTS { ?attachment schema:publication <http://lblod.data.gift/concepts/83f7b480-fcaf-4795-b603-7f3bce489325> . }
+
+  GRAPH ?g {
+    ?attachment a ?attachmentType .
+  }
+  FILTER(?g NOT IN (<http://redpencil.data.gift/id/deltas/producer/loket-submissions>))
+}
