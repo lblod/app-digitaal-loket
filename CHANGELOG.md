@@ -24,6 +24,14 @@ drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 ```
+# v1.121.4 (2026-05-10)
+ - Fix migration export gemeentewegen
+
+## Deploy notes
+```
+drc restart migrations # (or up -d migrations on prod)
+```
+
 
 # v1.121.3 (2026-05-13)
   - Bump virtuoso [DL-7347]
