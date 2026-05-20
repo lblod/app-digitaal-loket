@@ -5,21 +5,39 @@
 - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
 - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
 - Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
-- Bump virtuoso [DL-7347]
+- Conditionally redirect to the external login page [DL-7361]
 
 ## Deploy notes
+### Production
+Add the following environment variable to the docker-compose.override.yml file:
+
+```yml
+  dispatcher:
+    environment:
+      LOGIN_PAGE_REDIRECT_URL: "https://vlaanderen.be/loket-lokale-besturen"
 ```
-drc up -d prepare-submissions-for-export loket virtuoso
+
+### All environments
+```
+drc up -d prepare-submissions-for-export loket dispatcher
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 ```
-# v1.121.3 (2026-05-0x)
+# v1.121.4 (2026-05-10)
  - Fix migration export gemeentewegen
 
 ## Deploy notes
 ```
 drc restart migrations # (or up -d migrations on prod)
+```
+
+
+# v1.121.3 (2026-05-13)
+  - Bump virtuoso [DL-7347]
+## Deploy notes
+```
+drc up -d virtuoso
 ```
 
 # v1.121.2 (2026-05-06)
