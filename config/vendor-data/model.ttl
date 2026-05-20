@@ -49,6 +49,7 @@ meb:Submission
         mu:uuid ?organisationUuid .
     }
   """ ;
+  vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-toezichtGebruiker" ;
   vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
 
 ##############################################################################
@@ -81,6 +82,7 @@ meb:Submission
         mu:uuid ?organisationUuid .
     }
   """ ;
+  vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-toezichtGebruiker" ;
   vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
 
 osc:Error
@@ -117,6 +119,7 @@ task:error
         mu:uuid ?organisationUuid .
     }
   """ ;
+  vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-berichtenGebruiker" ;
   vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
 
 schema:Conversation
@@ -187,6 +190,7 @@ nie:dataSource
         mu:uuid ?organisationUuid .
     }
   """ ;
+  vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-berichtenGebruiker" ;
   vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
 
 <RelConversationMessageKaliope>
@@ -225,6 +229,7 @@ nie:dataSource
         mu:uuid ?organisationUuid .
     }
   """ ;
+  vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-berichtenGebruiker" ;
   vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
 
 <RelConversationMessageLoket>
@@ -264,6 +269,7 @@ nie:dataSource
         mu:uuid ?organisationUuid .
     }
   """ ;
+  vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-berichtenGebruiker" ;
   vdds:targetGraphTemplate "http://mu.semte.ch/graphs/vendors/${vendorUuid}/${organisationUuid}" .
 
 <RelConversationMessageLoketControle>
