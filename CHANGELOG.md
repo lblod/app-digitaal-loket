@@ -2,7 +2,6 @@
 
 # Unreleased
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
-- Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
 - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
 - Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
 - Conditionally redirect to the external login page [DL-7361]
@@ -19,12 +18,12 @@ Add the following environment variable to the docker-compose.override.yml file:
 
 ### All environments
 ```
-drc up -d prepare-submissions-for-export loket dispatcher
+drc up -d loket dispatcher
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 ```
-# v1.121.4 (2026-05-10)
+# v1.121.4 (2026-05-20)
  - Fix migration export gemeentewegen
 
 ## Deploy notes
@@ -35,9 +34,11 @@ drc restart migrations # (or up -d migrations on prod)
 
 # v1.121.3 (2026-05-13)
   - Bump virtuoso [DL-7347]
+  - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
 ## Deploy notes
 ```
-drc up -d virtuoso
+drc up -d virtuoso prepare-submissions-for-export
+drc restart migrations
 ```
 
 # v1.121.2 (2026-05-06)
