@@ -11,9 +11,9 @@
 Add the following environment variable to the docker-compose.override.yml file:
 
 ```yml
-  dispatcher:
+  loket:
     environment:
-      LOGIN_PAGE_REDIRECT_URL: "https://vlaanderen.be/loket-lokale-besturen"
+      EMBER_LOGIN_PAGE_REDIRECT_URL: "https://vlaanderen.be/loket-lokale-besturen"
 ```
 
 ### All environments

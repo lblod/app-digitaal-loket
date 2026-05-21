@@ -767,17 +767,6 @@ defmodule Dispatcher do
     forward conn, path, "http://loket/@appuniversum/"
   end
 
-  @login_page_redirect_url System.get_env("LOGIN_PAGE_REDIRECT_URL")
-  if @login_page_redirect_url do
-    # We need to use `""` to match the root path, `"/"` doesn't seem to work and always matches the `/*_path` matcher.
-    get "", @html do
-      conn
-      |> Plug.Conn.put_resp_header("location", @login_page_redirect_url)
-      |> Plug.Conn.send_resp(302, "Redirecting")
-      |> Plug.Conn.halt()
-    end
-  end
-
   match "/*_path", @html do
     forward conn, [], "http://loket/index.html"
   end
