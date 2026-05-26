@@ -1,0 +1,25 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/mandatarissen/65CDD260653C4BA4B205E16C>
+      prov:wasAssociatedWith ?oldVendor .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/mandatarissen/65CDD260653C4BA4B205E16C>
+      prov:wasAssociatedWith <http://data.lblod.info/vendors/b1e41693-639a-4f61-92a9-5b9a3e0b924e> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/mandatarissen/65CDD260653C4BA4B205E16C> ?p ?o .
+  }
+  OPTIONAL {
+    GRAPH ?g {
+      <http://data.lblod.info/id/mandatarissen/65CDD260653C4BA4B205E16C>
+        prov:wasAssociatedWith ?oldVendor .
+    }
+  }
+}
