@@ -1,14 +1,18 @@
 # Changelog
 
 # Unreleased
+
 - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
 - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
 - Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
 - Conditionally redirect to the external login page [DL-7361]
 - Update non-sent-automatic-submissions report [DL-7336]
+- Bump the vendor-data-distribution-service to deal with large datasets caused by Kaliope omzendbrieven [DL-7378]
 
 ## Deploy notes
+
 ### Production
+
 Add the following environment variable to the docker-compose.override.yml file:
 
 ```yml
@@ -18,12 +22,15 @@ Add the following environment variable to the docker-compose.override.yml file:
 ```
 
 ### All environments
+
 ```
 drc up -d loket dispatcher
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
 drc restart report-generation
+drc up -d vendor-data-distribution
+drc exec vendor-data-distribution curl http://localhost/heal # This can take hours
 ```
 # v1.121.4 (2026-05-20)
  - Fix migration export gemeentewegen
