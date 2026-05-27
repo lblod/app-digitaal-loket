@@ -5,6 +5,7 @@
 - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
 - Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
 - Conditionally redirect to the external login page [DL-7361]
+- Update non-sent-automatic-submissions report [DL-7336]
 
 ## Deploy notes
 ### Production
@@ -22,6 +23,7 @@ drc up -d loket dispatcher
 drc restart migrations
 drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
 drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
+drc restart report-generation
 ```
 # v1.121.4 (2026-05-20)
  - Fix migration export gemeentewegen

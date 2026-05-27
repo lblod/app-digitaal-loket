@@ -55,7 +55,6 @@ SELECT DISTINCT
 ?jobCreatedShort
 ?jobStatusShort
 ?dashboardUrl
-?controleUrl
 ?job
 ?jobCreated
 ?jobStatus
@@ -96,8 +95,7 @@ WHERE {
    ?vendor foaf:name ?vendorLabel.
    ?submissionStatus skos:prefLabel ?submissionStatusLabel.
 
-  BIND(CONCAT("https://controle.loket.lblod.info/supervision/submissions/", ?uuid) as ?controleUrl)
-  BIND(CONCAT("https://dashboard.prod.lblod.info/jobs/", ?jobUuid, "/index") as ?dashboardUrl)
+  BIND(CONCAT("https://dashboard.loket.lblod.info/jobs/", ?jobUuid) as ?dashboardUrl)
   BIND(CONCAT(STR(YEAR(?jobCreated)), '-', STR(MONTH(?jobCreated)), '-', STR(DAY(?jobCreated))) as ?jobCreatedShort)
   BIND(STRAFTER(STR(?jobStatus), "http://redpencil.data.gift/id/concept/JobStatus/") as ?jobStatusShort)
 
