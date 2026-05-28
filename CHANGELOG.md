@@ -2,12 +2,20 @@
 
 # Unreleased
 
-- Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
-- Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
-- Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
-- Conditionally redirect to the external login page [DL-7361]
 - Update non-sent-automatic-submissions report [DL-7336]
 - Bump the vendor-data-distribution-service to deal with large datasets caused by Kaliope omzendbrieven [DL-7378]
+
+## Deploy notes
+
+```
+drc restart report-generation
+drc up -d vendor-data-distribution
+drc exec vendor-data-distribution curl http://localhost/heal # This can take hours
+```
+
+# v1.122.0
+
+- Conditionally redirect to the external login page [DL-7361]
 
 ## Deploy notes
 
@@ -24,14 +32,9 @@ Add the following environment variable to the docker-compose.override.yml file:
 ### All environments
 
 ```
-drc up -d loket dispatcher
-drc restart migrations
-drc logs --tail 200 -f migrations # ensure it finishes. it can take a few minutes
-drc pull berichtencentrum-sync-with-kalliope && drc up -d berichtencentrum-sync-with-kalliope
-drc restart report-generation
-drc up -d vendor-data-distribution
-drc exec vendor-data-distribution curl http://localhost/heal # This can take hours
+drc up -d loket
 ```
+
 # v1.121.4 (2026-05-20)
  - Fix migration export gemeentewegen
 
@@ -44,9 +47,12 @@ drc restart migrations # (or up -d migrations on prod)
 # v1.121.3 (2026-05-13)
   - Bump virtuoso [DL-7347]
   - Export gemeenteweg Decision Types and bump `prepare-submissions-for-export-service` [DL-7179]
+  - Bump validate-submission-service [15](https://github.com/lblod/validate-submission-service/pull/15) seeAlso: DL-7200
+  - Bump berichtencentrum-sync-with-kalliope to `v0.23.2` [DL-7253]
+  - Bump frontend-loket [473](https://github.com/lblod/frontend-loket/pull/473)
 ## Deploy notes
 ```
-drc up -d virtuoso prepare-submissions-for-export
+drc up -d loket virtuoso prepare-submissions-for-export berichtencentrum-sync-with-kalliope
 drc restart migrations
 ```
 
