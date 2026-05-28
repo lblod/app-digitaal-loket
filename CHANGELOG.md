@@ -5,6 +5,7 @@
 - Extra view for VDB specific mandatarissen  [DL-7316]
 - Update non-sent-automatic-submissions report [DL-7336]
 - Bump the vendor-data-distribution-service to deal with large datasets caused by Kaliope omzendbrieven [DL-7378]
+- Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
 
 ## Deploy notes
 
@@ -13,6 +14,8 @@ drc up -d loket
 drc restart migrations
 drc restart database dispatcher resource search
 drc restart report-generation
+drc restart migrations
+drc up -d validate-submission worship-decisions-cross-reference
 drc up -d vendor-data-distribution
 drc exec vendor-data-distribution curl http://localhost/heal # This can take hours
 ```
