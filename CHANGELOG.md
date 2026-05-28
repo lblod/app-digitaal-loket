@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# v1.122.0
 - Conditionally redirect to the external login page [DL-7361]
 
 ## Deploy notes
@@ -15,7 +15,7 @@ Add the following environment variable to the docker-compose.override.yml file:
 
 ### All environments
 ```
-drc up -d dispatcher
+drc up -d loket
 ```
 # v1.121.4 (2026-05-20)
  - Fix migration export gemeentewegen
