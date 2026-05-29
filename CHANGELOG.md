@@ -1,13 +1,16 @@
 # Changelog
 
 # Unreleased
-
+- Extra view for VDB specific mandatarissen  [DL-7316]
 - Update non-sent-automatic-submissions report [DL-7336]
 - Bump the vendor-data-distribution-service to deal with large datasets caused by Kaliope omzendbrieven [DL-7378]
 
 ## Deploy notes
 
 ```
+drc up -d loket
+drc restart migrations
+drc restart database dispatcher resource search
 drc restart report-generation
 drc up -d vendor-data-distribution
 drc exec vendor-data-distribution curl http://localhost/heal # This can take hours

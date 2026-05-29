@@ -1,0 +1,19 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu:   <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:  <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/id/public-vendor-data> {
+    ?vendor a ext:Vendor, foaf:Agent ;
+      mu:uuid ?uuid ;
+      foaf:name ?name .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?vendor a ext:Vendor, foaf:Agent ;
+      mu:uuid ?uuid ;
+      foaf:name ?name .
+  }
+}
