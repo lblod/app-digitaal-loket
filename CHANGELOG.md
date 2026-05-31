@@ -1,6 +1,7 @@
 # Changelog
 
-# Unreleased
+# v1.223.0
+
 - Extra view for VDB specific mandatarissen  [DL-7316]
 - Update non-sent-automatic-submissions report [DL-7336]
 - Bump the vendor-data-distribution-service to deal with large datasets caused by Kaliope omzendbrieven [DL-7378]
