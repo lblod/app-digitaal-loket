@@ -1,0 +1,187 @@
+@prefix lblodBesluit:                     <http://lblod.data.gift/vocabularies/besluit/> .
+@prefix BesluitType:                      <https://data.vlaanderen.be/id/concept/BesluitType/> .
+@prefix BesluitDocumentType:              <https://data.vlaanderen.be/id/concept/BesluitDocumentType/> .
+@prefix BestuurseenheidClassificatieCode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/> .
+@prefix ref:                              <http://lblod.data.gift/vocabularies/referencing/> .
+@prefix ere:                              <http://data.lblod.info/vocabularies/erediensten/> .
+@prefix mu:                               <http://mu.semte.ch/vocabularies/core/> .
+@prefix rdf:                              <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:                             <http://www.w3.org/2000/01/rdf-schema#> .
+
+ref:7eabc047-9156-4ffc-a562-1ebda7e31777
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "7eabc047-9156-4ffc-a562-1ebda7e31777" ;
+  # Advies bij jaarrekening eredienstbestuur
+  rdfs:domain BesluitType:79414af4-4f57-4ca3-aaa4-f8f1e015e71c ;
+  # Jaarrekeningen van de besturen van de eredienst
+  rdfs:range BesluitDocumentType:672bf096-dccd-40af-ab60-bd7de15cc461 ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  lblodBesluit:referredDecidableBy
+    ere:CentraalBestuurVanDeEredienst ,
+    # Centraal bestuur van de eredienst
+    BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 .
+
+ref:94255077-192d-4e02-96d9-4d244d4f8b13
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "94255077-192d-4e02-96d9-4d244d4f8b13" ;
+  # Advies bij jaarrekening eredienstbestuur
+  rdfs:domain BesluitType:79414af4-4f57-4ca3-aaa4-f8f1e015e71c ;
+  # Jaarrekening
+  rdfs:range BesluitType:e44c535d-4339-4d15-bdbf-d4be6046de2c ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:93157445-d562-4a01-9c03-efbdf55e0eea
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "93157445-d562-4a01-9c03-efbdf55e0eea" ;
+  # Besluit over budget(wijziging) eredienstbestuur
+  rdfs:domain BesluitType:df261490-cc74-4f80-b783-41c35e720b46 ;
+  # Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie
+  rdfs:range BesluitDocumentType:ce569d3d-25ff-4ce9-a194-e77113597e29 ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  lblodBesluit:referredDecidableBy
+    ere:CentraalBestuurVanDeEredienst ,
+    # Centraal bestuur van de eredienst
+    BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 .
+
+ref:86ac900a-5233-4347-86ec-80e042dcc7cc
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "86ac900a-5233-4347-86ec-80e042dcc7cc" ;
+  # Besluit over budget(wijziging) eredienstbestuur
+  rdfs:domain BesluitType:df261490-cc74-4f80-b783-41c35e720b46 ;
+  # Budget(wijziging) - Indiening bij toezichthoudende gemeente of provincie
+  rdfs:range BesluitType:d85218e2-a75f-4a30-9182-512b5c9dd1b2 ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:16e6ca80-5c8f-4fc9-85f1-b29a1a16fe3a
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "16e6ca80-5c8f-4fc9-85f1-b29a1a16fe3a" ;
+  # Besluit over meerjarenplan(aanpassing) eredienstbestuur
+  rdfs:domain BesluitType:3fcf7dba-2e5b-4955-a489-6dd8285c013b ;
+  # Meerjarenplannen(wijzigingen) van de besturen van de eredienst
+  rdfs:range BesluitDocumentType:2c9ada23-1229-4c7e-a53e-acddc9014e4e ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  lblodBesluit:referredDecidableBy
+    ere:CentraalBestuurVanDeEredienst ,
+    # Centraal bestuur van de eredienst
+    BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 .
+
+ref:5d8f22ba-37a1-49af-a7df-f4e873844d8d
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "5d8f22ba-37a1-49af-a7df-f4e873844d8d" ;
+  # Besluit over meerjarenplan(aanpassing) eredienstbestuur
+  rdfs:domain BesluitType:3fcf7dba-2e5b-4955-a489-6dd8285c013b ;
+  # Meerjarenplan(aanpassing)
+  rdfs:range BesluitType:f56c645d-b8e1-4066-813d-e213f5bc529f ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:16d145fe-88c8-4d1a-8279-adfc3d8021a1
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "16d145fe-88c8-4d1a-8279-adfc3d8021a1" ;
+  # Jaarrekeningen van de besturen van de eredienst
+  rdfs:domain BesluitDocumentType:672bf096-dccd-40af-ab60-bd7de15cc461 ;
+  # Jaarrekening
+  rdfs:range BesluitType:e44c535d-4339-4d15-bdbf-d4be6046de2c ;
+  lblodBesluit:decidableBy ere:CentraalBestuurVanDeEredienst ;
+  # Centraal bestuur van de eredienst
+  lblodBesluit:decidableBy BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:b2700ee0-ff36-438b-b293-40993dc81217
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "b2700ee0-ff36-438b-b293-40993dc81217" ;
+  # Budgetten(wijzigingen) - Indiening bij representatief orgaan
+  rdfs:domain BesluitDocumentType:18833df2-8c9e-4edd-87fd-b5c252337349 ;
+  # Budget(wijziging) - Indiening bij centraal bestuur of representatief orgaan
+  rdfs:range BesluitType:d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b ;
+  lblodBesluit:decidableBy ere:CentraalBestuurVanDeEredienst ;
+  # Centraal bestuur van de eredienst
+  lblodBesluit:decidableBy BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:8ae8df32-7620-4d57-94f1-ddac92d7f495
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "8ae8df32-7620-4d57-94f1-ddac92d7f495" ;
+  # Budgetten(wijzigingen) - Indiening bij toezichthoudende gemeente of provincie
+  rdfs:domain BesluitDocumentType:ce569d3d-25ff-4ce9-a194-e77113597e29 ;
+  # Budget(wijziging) - Indiening bij centraal bestuur of representatief orgaan
+  rdfs:range BesluitType:d463b6d1-c207-4c1a-8c08-f2c7dd1fa53b ;
+  lblodBesluit:decidableBy ere:CentraalBestuurVanDeEredienst ;
+  # Centraal bestuur van de eredienst
+  lblodBesluit:decidableBy BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:6428c3cf-6c27-41ff-8a54-c8c261cd2aaa
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "6428c3cf-6c27-41ff-8a54-c8c261cd2aaa" ;
+  # Meerjarenplannen(wijzigingen) van de besturen van de eredienst
+  rdfs:domain BesluitDocumentType:2c9ada23-1229-4c7e-a53e-acddc9014e4e ;
+  # Meerjarenplan(aanpassing)
+  rdfs:range BesluitType:f56c645d-b8e1-4066-813d-e213f5bc529f ;
+  lblodBesluit:decidableBy ere:CentraalBestuurVanDeEredienst ;
+  # Centraal bestuur van de eredienst
+  lblodBesluit:decidableBy BestuurseenheidClassificatieCode:f9cac08a-13c1-49da-9bcb-f650b0604054 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:516061ad-36c8-4476-bc13-414adad25a54
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "516061ad-36c8-4476-bc13-414adad25a54" ;
+  # Schorsing beslissing eredienstbesturen
+  rdfs:domain BesluitType:b25faa84-3ab5-47ae-98c0-1b389c77b827 ;
+  # Notulen
+  rdfs:range BesluitDocumentType:8e791b27-7600-4577-b24e-c7c29e0eb773 ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .
+
+ref:389e906d-d8f1-4b9b-adf2-8a831f897e86
+  rdf:type ref:ReferencingRule ;
+  mu:uuid "389e906d-d8f1-4b9b-adf2-8a831f897e86" ;
+  # Opvragen bijkomende inlichtingen eredienstbesturen (met als gevolg stuiting termijn)
+  rdfs:domain BesluitDocumentType:24743b26-e0fb-4c14-8c82-5cd271289b0e ;
+  # Notulen
+  rdfs:range BesluitDocumentType:8e791b27-7600-4577-b24e-c7c29e0eb773 ;
+  lblodBesluit:decidableBy
+    # Provincie
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000000 ,
+    # Gemeente
+    BestuurseenheidClassificatieCode:5ab0e9b8a3b2ca7c5e000001 ;
+  # Bestuur van de eredienst
+  lblodBesluit:referredDecidableBy BestuurseenheidClassificatieCode:66ec74fd-8cfc-4e16-99c6-350b35012e86 .

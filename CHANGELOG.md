@@ -1,5 +1,16 @@
 # Changelog
 
+# Unreleased
+
+- Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
+
+## Deploy notes
+
+```
+drc restart migrations
+drc up -d validate-submission worship-decisions-cross-reference
+```
+
 # v1.223.0
 
 - Extra view for VDB specific mandatarissen  [DL-7316]
@@ -76,6 +87,7 @@ drc restart migrations
 ```
 
 # v1.121.0 (2026-04-17)
+
 - Frontend [v1.10.0](https://github.com/lblod/frontend-loket/blob/c94c96240fb2cf49cd82cff5853700722a4cadda/CHANGELOG.md#v1100-2026-04-16)
 - Bump frontend to v1.10.1 [DL-7300]
 
@@ -91,8 +103,6 @@ loket:
 ```
 
 You may need to tweak the messages if new ones are provided.
-
-- `drc up -d loket validate-submission`
 
 # v1.120.0 (2026-04-15)
  - IPDC Enrichment: Integrate the data changes in loket backend [DL-7161]
