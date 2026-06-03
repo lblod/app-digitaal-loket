@@ -24,8 +24,6 @@ Then search should be re-indexed
 mu script search manage-indexes # follow the steps there. Re-index "public-services"
 drc restart migrations 
 drc restart database search dbcleanup
-# Trigger the job immediatly
-drc exec dbcleanup curl "http://localhost/runCronjob?cronJobID=cdf450a5-b4b6-4e19-b538-f778451f14b9"
 ```
 
 # v1.223.1
