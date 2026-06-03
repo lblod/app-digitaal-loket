@@ -167,7 +167,10 @@
 (define-graph org ("http://mu.semte.ch/graphs/organizations/")
   ("foaf:Person" -> _)
   ("foaf:OnlineAccount" -> _)
-  ("adms:Identifier" -> _))
+  ("adms:Identifier" -> _)
+  ;; own vendor data, redistributed per organisation by the
+  ;; "redistribute-vendor-data-per-org" db-cleanup job
+  ("ext:Vendor" -> _))
 
 (define-graph o-bbcdr-rw ("http://mu.semte.ch/graphs/organizations/")
   ("ext:bbcdr/Report" -> _)
@@ -200,9 +203,6 @@
 (define-graph o-toezicht-vendor-management-rw ("http://mu.semte.ch/graphs/automatic-submission")
   ("ext:Vendor" x> "http://mu.semte.ch/vocabularies/account/keyHash")
   ("besluit:Bestuurseenheid" -> _))
-
-(define-graph public-vendor-data-r ("http://mu.semte.ch/graphs/id/public-vendor-data")
-  ("ext:Vendor" -> _))
 
 (define-graph o-toezicht-vendor-management-authenticated-rw ("http://mu.semte.ch/graphs/authenticated/public")
   ("besluit:Bestuurseenheid" -> "ext:viewOnlyModules"))
@@ -480,14 +480,6 @@
 (grant (read)
   :to-graph (o-vendor-api-r)
   :for-allowed-group "access-for-vendor-api")
-
-(grant (read)
-  :to-graph (public-vendor-data-r)
-  :for-allowed-group "LoketLB-eredienstMandaatGebruiker")
-
-(grant (read)
-  :to-graph (public-vendor-data-r)
-  :for-allowed-group "LoketLB-eredienstBedienaarGebruiker")
 
 (grant (read write)
   :to-graph (sessions)
