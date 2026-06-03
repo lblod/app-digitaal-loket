@@ -4,6 +4,15 @@
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
 
+# v1.223.1
+- Fix dispatcher rules. Postfix: [DL-7316].
+
+## Deploy notes
+
+```
+drc restart dispatcher
+```
+
 ## Deploy notes
 
 ```

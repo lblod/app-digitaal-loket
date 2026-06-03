@@ -628,8 +628,8 @@ defmodule Dispatcher do
   #################################################################
 
   # Not only POST. SPARQL via GET is also allowed.
-  match "/sparql" do
-    Proxy.forward conn, [], "http://database/sparql"
+  match "/vendor/sparql" do
+    forward conn, [], "http://sparql-authorization-wrapper/sparql"
   end
 
   #################################################################
