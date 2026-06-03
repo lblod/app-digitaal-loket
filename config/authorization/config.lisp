@@ -431,7 +431,7 @@
 
 (grant (read)
   :to-graph (public sessions ipdc)
-  :for-allowed-group "public")
+  :for-allowed-group "logged-in-or-impersonating")
 
 (grant (read)
   :to-graph (public-r)
