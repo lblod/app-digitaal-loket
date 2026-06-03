@@ -1,5 +1,14 @@
 # Changelog
 
+# v1.223.1
+- Fix dispatcher rules. Postfix: [DL-7316].
+
+## Deploy notes
+
+```
+drc restart dispatcher
+```
+
 # v1.223.0
 
 - Extra view for VDB specific mandatarissen  [DL-7316]
