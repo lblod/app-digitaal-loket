@@ -6,6 +6,7 @@
 - Redistribute vendor information per organisation. Each organisation now only sees the vendor acting on its own behalf. [DL-7373]
 - Fixes to validate-submission-service [DL-7411] [DL-7412]
 - Make ldes-graph not public [DL-7401]
+- Redistribute vendor information per organisation. Each organisation now only sees own vendor. [DL-7373]
 
 ## Deploy notes
 
