@@ -3,6 +3,12 @@
 # Unreleased
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
+- Make ldes-graph not public [DL-7401]
+
+## Deploy notes
+```
+drc restart database identifier
+```
 
 # v1.223.1
 - Fix dispatcher rules. Postfix: [DL-7316].
