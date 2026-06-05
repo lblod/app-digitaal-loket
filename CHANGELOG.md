@@ -9,7 +9,10 @@
 ```
 drc restart database identifier
 ```
-
+Then search should be re-indexed
+```
+mu script search manage-indexes # follow the steps there. Re-index "public-services"
+```
 # v1.223.1
 - Fix dispatcher rules. Postfix: [DL-7316].
 
