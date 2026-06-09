@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "scripts": [
+    {
+      "documentation": {
+        "command": "restore-backup",
+        "description": "Restore the Virtuoso triplestore from an online backup in data/db/backups (made with `mu script virtuoso create-backup`). The `virtuoso` service MUST be stopped first. DESTRUCTIVE: replaces the current database.\n Parameters:\n  prefix: backup prefix up to the numeric suffix (auto-detected when a single backup set is present)\n  --yes : skip the confirmation prompt",
+        "arguments": ["prefix", "--yes"]
+      },
+      "environment": {
+        "image": "redpencil/virtuoso:1.2.2",
+        "interactive": true,
+        "join_networks": false,
+        "script": "restore-virtuoso-backup/run.sh"
+      },
+      "mounts": {
+        "app": "/project/"
+      }
+    }
+  ]
+}
