@@ -1,13 +1,6 @@
 #!/bin/bash
-# Restore the Virtuoso triplestore from an online backup (the .bp files in
-# data/db/backups, as produced by `mu script virtuoso create-backup`).
-#
-# Runs offline in a one-off redpencil/virtuoso container (same image as the
-# `virtuoso` service) with the project mounted at /project. The live `virtuoso`
-# service MUST be stopped first:   docker compose stop virtuoso
-#
-# DESTRUCTIVE: deletes the current database in data/db and rebuilds it from the
-# backup. See ./README.md for usage.
+# Restore Virtuoso from a .bp backup in data/db/backups. Destructive: replaces
+# the current database. Stop the virtuoso service first. See ./README.md.
 set -euo pipefail
 
 PROJECT="${PROJECT_DIR:-/project}"
@@ -15,7 +8,7 @@ DATADIR="$PROJECT/data/db"
 BACKUPS="$DATADIR/backups"
 INI="${VIRTUOSO_INI:-$PROJECT/config/virtuoso/virtuoso.ini}"
 
-# --- args: optional [prefix] and optional --yes (skip confirmation) ----------
+# args: optional prefix, optional --yes
 PREFIX=""
 FORCE=0
 for arg in "$@"; do
@@ -25,7 +18,6 @@ for arg in "$@"; do
   esac
 done
 
-# --- sanity checks -----------------------------------------------------------
 [ -d "$DATADIR" ] || { echo "ERROR: $DATADIR not found (run from the project root)."; exit 1; }
 [ -f "$INI" ]     || { echo "ERROR: virtuoso.ini not found at $INI."; exit 1; }
 [ -d "$BACKUPS" ] || { echo "ERROR: no backups folder at $BACKUPS."; exit 1; }
@@ -37,15 +29,14 @@ if [ -e "$DATADIR/virtuoso.lck" ]; then
   exit 1
 fi
 
-# --- resolve the backup prefix ----------------------------------------------
+# resolve the backup prefix
 shopt -s nullglob
 bpfiles=("$BACKUPS"/*.bp)
 shopt -u nullglob
 [ "${#bpfiles[@]}" -gt 0 ] || { echo "ERROR: no .bp backup files found in $BACKUPS."; exit 1; }
 
 if [ -z "$PREFIX" ]; then
-  # Derive the prefix = filename up to the trailing numeric suffix (e.g.
-  # backup_20260609_120000_3.bp -> backup_20260609_120000_).
+  # prefix = filename up to the trailing numeric suffix (backup_..._3.bp -> backup_..._)
   declare -A seen=()
   for f in "${bpfiles[@]}"; do
     base="${f##*/}"
@@ -68,7 +59,6 @@ shopt -u nullglob
 echo "Backup set : $PREFIX  (${#match[@]} .bp files)"
 echo "Target     : $DATADIR"
 
-# --- confirm (destructive) ---------------------------------------------------
 if [ "$FORCE" -ne 1 ]; then
   if ! read -r -p "This DELETES the current database and restores '$PREFIX'. Type 'yes' to continue: " CONFIRM; then
     echo "Aborted (no input — pass --yes to skip this prompt)."; exit 1
@@ -76,7 +66,6 @@ if [ "$FORCE" -ne 1 ]; then
   [ "$CONFIRM" = "yes" ] || { echo "Aborted."; exit 1; }
 fi
 
-# --- remove the current database (Method 1 prerequisite) ---------------------
 echo "Removing current database files..."
 rm -f "$DATADIR"/virtuoso.db \
       "$DATADIR"/virtuoso.trx \
@@ -85,12 +74,8 @@ rm -f "$DATADIR"/virtuoso.db \
       "$DATADIR"/.dba_pwd_set \
       "$DATADIR"/.backup_restored
 
-# --- restore -----------------------------------------------------------------
-# The live virtuoso.ini points the database files at absolute paths inside the
-# image (/usr/local/.../db, symlinked to /data). In this one-off container the
-# host data dir is at $DATADIR instead, so rewrite the paths onto it — the
-# rebuilt database then lands in ./data/db on the host, where the real service
-# will find it on next start.
+# Rewrite the ini's DB paths onto $DATADIR so the rebuilt files land in ./data/db
+# (the live ini points them at absolute in-image paths).
 RESTORE_INI=/tmp/restore.ini
 cp "$INI" "$RESTORE_INI"
 crudini --set "$RESTORE_INI" Database     DatabaseFile       "$DATADIR/virtuoso.db"
@@ -105,9 +90,8 @@ echo "Restoring..."
 cd "$BACKUPS"
 virtuoso-t +restore-backup "$PREFIX" +configfile "$RESTORE_INI"
 
-# --- stop toLoad/ from re-seeding the restored database ----------------------
-# On startup the entrypoint imports data/db/toLoad/ when .data_loaded is absent.
-# A restored backup is already complete, so guard against a duplicate import.
+# Entrypoint re-imports toLoad/ when .data_loaded is absent; the restore is
+# already complete, so set the marker to skip it.
 if [ -d "$DATADIR/toLoad" ] && [ -n "$(ls -A "$DATADIR/toLoad" 2>/dev/null)" ]; then
   touch "$DATADIR/.data_loaded"
   echo "NOTE: created data/db/.data_loaded so the toLoad/ seed is NOT re-imported on top of"
