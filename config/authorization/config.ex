@@ -215,7 +215,21 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/sessions",
                     constraint: %ResourceFormatConstraint{
                       resource_prefix: "http://mu.semte.ch/sessions/"
-                    } },
+                    } }] },
+      %GroupSpec{
+        name: "public-r",
+        useage: [:read],
+        access: is_authenticated(),
+        graphs: [%GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/authenticated/public",
+                    constraint: %ResourceConstraint{
+                       resource_types: [
+                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
+                       ],
+                       predicates: %NoPredicates{
+                         except: [
+                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
+                         ] } } },
                   %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/ipdc/ldes-data",
                     constraint: %ResourceConstraint{
@@ -231,21 +245,7 @@ defmodule Acl.UserGroups.Config do
                         "http://purl.org/vocab/cpsv#Rule",
                         "http://data.europa.eu/eli/ontology#LegalResource"
                         ]
-                   }}] },
-      %GroupSpec{
-        name: "public-r",
-        useage: [:read],
-        access: is_authenticated(),
-        graphs: [%GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/authenticated/public",
-                    constraint: %ResourceConstraint{
-                       resource_types: [
-                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
-                       ],
-                       predicates: %NoPredicates{
-                         except: [
-                           "http://mu.semte.ch/vocabularies/ext/viewOnlyModules"
-                         ] } } } ] },
+                   }} ] },
     %GroupSpec{
         name: "public-wf",
         useage: [:write, :read_for_write],

@@ -38,6 +38,8 @@ services:
     logging: *default-logging
   identifier:
     image: semtech/mu-identifier:1.10.1
+    environment:
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"clean\"}, {\"variables\":[],\"name\":\"public\"}]"
     labels:
       - "logging=true"
     restart: always

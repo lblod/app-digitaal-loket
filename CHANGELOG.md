@@ -3,7 +3,16 @@
 # Unreleased
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
+- Make ldes-graph not public [DL-7401]
 
+## Deploy notes
+```
+drc restart database identifier
+```
+Then search should be re-indexed
+```
+mu script search manage-indexes # follow the steps there. Re-index "public-services"
+```
 # v1.223.1
 - Fix dispatcher rules. Postfix: [DL-7316].
 
