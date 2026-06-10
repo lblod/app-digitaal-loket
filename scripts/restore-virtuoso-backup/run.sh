@@ -8,15 +8,8 @@ DATADIR="$PROJECT/data/db"
 BACKUPS="$DATADIR/backups"
 INI="${VIRTUOSO_INI:-$PROJECT/config/virtuoso/virtuoso.ini}"
 
-# args: optional prefix, optional --yes
-PREFIX=""
-FORCE=0
-for arg in "$@"; do
-  case "$arg" in
-    --yes|-y) FORCE=1 ;;
-    *)        PREFIX="$arg" ;;
-  esac
-done
+# args: optional prefix
+PREFIX="${1:-}"
 
 [ -d "$DATADIR" ] || { echo "ERROR: $DATADIR not found (run from the project root)."; exit 1; }
 [ -f "$INI" ]     || { echo "ERROR: virtuoso.ini not found at $INI."; exit 1; }
@@ -59,12 +52,10 @@ shopt -u nullglob
 echo "Backup set : $PREFIX  (${#match[@]} .bp files)"
 echo "Target     : $DATADIR"
 
-if [ "$FORCE" -ne 1 ]; then
-  if ! read -r -p "This DELETES the current database and restores '$PREFIX'. Type 'yes' to continue: " CONFIRM; then
-    echo "Aborted (no input — pass --yes to skip this prompt)."; exit 1
-  fi
-  [ "$CONFIRM" = "yes" ] || { echo "Aborted."; exit 1; }
+if ! read -r -p "This DELETES the current database and restores '$PREFIX'. Type 'yes' to continue: " CONFIRM; then
+  echo "Aborted (no input)."; exit 1
 fi
+[ "$CONFIRM" = "yes" ] || { echo "Aborted."; exit 1; }
 
 echo "Removing current database files..."
 rm -f "$DATADIR"/virtuoso.db \
