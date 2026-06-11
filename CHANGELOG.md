@@ -3,9 +3,13 @@
 # Unreleased
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
+- Fixes to validate-submission-service [DL-7411] [DL-7412]
 - Make ldes-graph not public [DL-7401]
 
 ## Deploy notes
+
+**Important:** `validate-submission` could be hotfixed to a previous version in some environments. Revert changes to be able to checkout these most recent changes.
+
 ```
 drc restart migrations
 drc up -d validate-submission worship-decisions-cross-reference
