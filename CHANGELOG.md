@@ -3,6 +3,7 @@
 # Unreleased
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
+- Redistribute vendor information per organisation. Each organisation now only sees the vendor acting on its own behalf. [DL-7373]
 - Fixes to validate-submission-service [DL-7411] [DL-7412]
 - Make ldes-graph not public [DL-7401]
 
@@ -20,6 +21,10 @@ Then search should be re-indexed
 
 ```
 mu script search manage-indexes # follow the steps there. Re-index "public-services"
+drc restart migrations 
+drc restart database search dbcleanup
+# Trigger the job immediatly
+drc exec dbcleanup curl "http://localhost/runCronjob?cronJobID=cdf450a5-b4b6-4e19-b538-f778451f14b9"
 ```
 
 # v1.223.1
