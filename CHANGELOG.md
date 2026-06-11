@@ -7,6 +7,8 @@
 
 ## Deploy notes
 ```
+drc restart migrations
+drc up -d validate-submission worship-decisions-cross-reference
 drc restart database identifier
 ```
 Then search should be re-indexed
@@ -20,13 +22,6 @@ mu script search manage-indexes # follow the steps there. Re-index "public-servi
 
 ```
 drc restart dispatcher
-```
-
-## Deploy notes
-
-```
-drc restart migrations
-drc up -d validate-submission worship-decisions-cross-reference
 ```
 
 # v1.223.0

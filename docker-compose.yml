@@ -368,7 +368,7 @@ services:
     restart: always
     logging: *default-logging
   validate-submission:
-    image: lblod/validate-submission-service:1.4.0
+    image: lblod/validate-submission-service:1.4.1
     environment:
       MAX_BODY_SIZE: "10000kb"
     volumes:
