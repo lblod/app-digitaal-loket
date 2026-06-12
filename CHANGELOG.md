@@ -14,7 +14,7 @@
 
 ```
 drc restart migrations
-drc up -d validate-submission worship-decisions-cross-reference
+drc up -d validate-submission worship-decisions-cross-reference loket
 drc restart database identifier
 ```
 
