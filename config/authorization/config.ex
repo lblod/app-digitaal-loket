@@ -280,6 +280,9 @@ defmodule Acl.UserGroups.Config do
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
                         "http://www.w3.org/ns/adms#Identifier",
+                        # // own vendor data, redistributed per organisation by the
+                        # // "redistribute-vendor-data-per-org" db-cleanup job
+                        "http://mu.semte.ch/vocabularies/ext/Vendor",
                       ] } } ] },
 
       # // BBCDR
@@ -440,31 +443,6 @@ defmodule Acl.UserGroups.Config do
                         "http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen",
                         "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
                         "http://lblod.data.gift/vocabularies/organisatie/HelftVerkiezing",
-                      ] } }
-                ] },
-
-      # // public vendor data.
-      %GroupSpec{
-        name: "o-vendor-ere-mandaat-r",
-        useage: [:read ],
-        access: access_by_role_for_single_graph( "LoketLB-eredienstMandaatGebruiker" ),
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/id/public-vendor-data",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/Vendor"
-                      ] } }
-                ] },
-
-      %GroupSpec{
-        name: "o-vendor-ere-bedienaar-r",
-        useage: [:read ],
-        access: access_by_role_for_single_graph( "LoketLB-eredienstBedienaarGebruiker" ),
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/id/public-vendor-data",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/Vendor"
                       ] } }
                 ] },
 

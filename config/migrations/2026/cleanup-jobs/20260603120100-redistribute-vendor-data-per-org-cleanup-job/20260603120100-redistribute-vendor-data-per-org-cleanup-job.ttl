@@ -1,0 +1,49 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/cdf450a5-b4b6-4e19-b538-f778451f14b9> a cleanup:Job ;
+  mu:uuid "cdf450a5-b4b6-4e19-b538-f778451f14b9" ;
+  dcterms:title "Redistribute vendor data per organisation" ;
+  dcterms:description "Full resync, run as a single DELETE/INSERT. The DELETE branch clears every ext:Vendor in the per-organisation graphs (organizations/<org-uuid>); the INSERT branch re-copies each vendor (type, mu:uuid, foaf:name, and only its muAccount:canActOnBehalfOf link to that organisation) from the automatic-submission source graph. An organisation therefore only ever sees vendors acting on its own behalf, and never that another organisation uses the same vendor. The credential predicates muAccount:key and muAccount:keyHash are never copied." ;
+  cleanup:randomQuery """
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+    PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+
+    DELETE {
+      GRAPH ?staleGraph {
+        ?staleVendor ?staleP ?staleO .
+      }
+    }
+    INSERT {
+      GRAPH ?orgGraph {
+        ?vendor a ext:Vendor, foaf:Agent ;
+          mu:uuid ?uuid ;
+          foaf:name ?name ;
+          muAccount:canActOnBehalfOf ?org .
+      }
+    }
+    WHERE {
+      {
+        GRAPH ?staleGraph {
+          ?staleVendor a ext:Vendor ;
+            ?staleP ?staleO .
+        }
+        FILTER(STRSTARTS(STR(?staleGraph), "http://mu.semte.ch/graphs/organizations/"))
+      }
+      UNION
+      {
+        GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+          ?vendor a ext:Vendor ;
+            mu:uuid ?uuid ;
+            foaf:name ?name ;
+            muAccount:canActOnBehalfOf ?org .
+        }
+        ?org mu:uuid ?orgUuid .
+        BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?orgUuid)) AS ?orgGraph)
+      }
+    }
+  """ ;
+  cleanup:cronPattern "0 5 * * *" .

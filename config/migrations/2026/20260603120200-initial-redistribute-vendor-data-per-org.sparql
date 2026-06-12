@@ -1,0 +1,25 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX muAccount: <http://mu.semte.ch/vocabularies/account/>
+
+INSERT {
+  GRAPH ?orgGraph {
+    ?vendor a ext:Vendor, foaf:Agent ;
+      mu:uuid ?uuid ;
+      foaf:name ?name ;
+      muAccount:canActOnBehalfOf ?org .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/automatic-submission> {
+    ?vendor a ext:Vendor ;
+      mu:uuid ?uuid ;
+      foaf:name ?name ;
+      muAccount:canActOnBehalfOf ?org .
+  }
+  GRAPH ?orgInfoGraph {
+    ?org mu:uuid ?orgUuid .
+  }
+  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?orgUuid)) AS ?orgGraph)
+}

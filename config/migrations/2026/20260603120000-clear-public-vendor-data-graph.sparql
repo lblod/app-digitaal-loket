@@ -1,0 +1,10 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/id/public-vendor-data> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/id/public-vendor-data> {
+    ?s ?p ?o .
+  }
+}

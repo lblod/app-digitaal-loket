@@ -96,14 +96,6 @@
     {
       "variables": [],
       "name": "o-admin-rwf"
-    },
-    {
-      "variables": [],
-      "name": "o-vendor-ere-bedienaar-r"
-    },
-    {
-      "variables": [],
-      "name": "o-vendor-ere-mandaat-r"
     }
   ],
   "eager_indexing_groups": [
