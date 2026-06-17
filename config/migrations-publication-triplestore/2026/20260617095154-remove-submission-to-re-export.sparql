@@ -15,7 +15,7 @@ DELETE {
   }
 }
 WHERE {
-  BIND (<https://data.lblod.info/submissions/657df270-202f-11f0-9e12-c339e04edc63> as ?submission)
+  BIND (<http://data.lblod.info/submissions/a2564cb0-22d1-11f1-be57-3d8f9ba9c3e0> as ?submission)
   GRAPH ?g {
     {
       ?submission ?sp ?so .
