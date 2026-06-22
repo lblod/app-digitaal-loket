@@ -1,0 +1,22 @@
+PREFIX schema: <http://schema.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+INSERT {
+  GRAPH ?g {
+    ?form schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+  }
+}
+WHERE {
+  VALUES ?submission {
+    <http://data.lblod.info/submissions/c547bdc0-4f05-11f1-82a9-29656203390f>
+    <http://data.lblod.info/submissions/42683ed0-3442-11f1-ac91-ad9002c700ea>
+    <http://data.lblod.info/submissions/eea98bc0-3313-11f1-ac91-ad9002c700ea>
+    <http://data.lblod.info/submissions/18e4e890-22a1-11f1-be57-3d8f9ba9c3e0>
+  }
+  ?submission prov:generated ?form .
+  GRAPH ?g {
+    ?form a ?formType .
+  }
+  FILTER(?g NOT IN (<http://redpencil.data.gift/id/deltas/producer/loket-submissions>))
+  FILTER NOT EXISTS { ?form schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> . }
+}
