@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# v1.224.0 (2026-06-22)
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
 - Redistribute vendor information per organisation. Each organisation now only sees the vendor acting on its own behalf. [DL-7373]
