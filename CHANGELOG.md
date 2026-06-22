@@ -14,7 +14,7 @@
 **Important:** `validate-submission` could be hotfixed to a previous version in some environments. Revert changes to be able to checkout these most recent changes.
 
 ```
-drc restart migrations
+drc restart migrations migrations-publication-triplestore
 drc up -d validate-submission worship-decisions-cross-reference loket
 drc restart database identifier
 ```
