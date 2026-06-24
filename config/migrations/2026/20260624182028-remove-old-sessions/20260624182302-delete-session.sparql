@@ -9,7 +9,7 @@ WHERE {
       ?s <http://mu.semte.ch/vocabularies/account/account> ?account.
       FILTER(STRSTARTS(STR(?s), "http://mu.semte.ch/sessions/"))
     }
-    LIMIT 10000
+    LIMIT 2500
   }
  GRAPH ?g {
   ?s ?p ?o
