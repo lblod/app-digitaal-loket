@@ -54,10 +54,6 @@
     },
     {
       "variables": [],
-      "name": "public-r"
-    },
-    {
-      "variables": [],
       "name": "public-wf"
     },
     {
@@ -103,6 +99,10 @@
       {
         "name": "public",
         "variables": []
+      },
+      {
+        "variables": [],
+        "name": "public-r"
       }
     ]
   ],
