@@ -1,5 +1,16 @@
 # Changelog
 
+# v1.224.1 (2026-06-24)
+ - Bump vendor-login-service  see [PR#14](https://github.com/lblod/vendor-login-service/pull/14) and [DL-7446]
+   - Issue with indexing, `public-r` should also be eagerly indexed.
+   - Clean up old sessions.
+## Deploy notes
+```
+drc restart migrations
+drc up -d vendor-login-service
+drc restart search
+```
+
 # v1.224.0 (2026-06-22)
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
