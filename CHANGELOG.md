@@ -1,5 +1,15 @@
 # Changelog
 
+# v1.224.2 (2026-06-24)
+  - Fix config vendor-login-service [DL-7446]
+  - Clean up old sessions. (less heavy on database)
+
+## Deploy notes
+```
+drc restart migrations
+drc up -d vendor-login-service
+```
+
 # v1.224.1 (2026-06-24)
  - Bump vendor-login-service  see [PR#14](https://github.com/lblod/vendor-login-service/pull/14) and [DL-7446]
    - Issue with indexing, `public-r` should also be eagerly indexed.
