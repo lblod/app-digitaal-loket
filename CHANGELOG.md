@@ -1,8 +1,16 @@
 # Changelog
 
-# Unreleased
+# v1.224.5 (2026-06-26)
 
 - VDDS: optimise query for vendor and organisation info. A needed speedup after re-distrubition of vendor info in [PR #741](https://github.com/lblod/app-digitaal-loket/pull/741)! No ticket.
+- Added a bunch of migrations to remove sessions [DL-7451]
+
+## Deploy notes
+```
+drc restart migrations
+drc restart vendor-data-distribution
+drc exec vendor-data-distribution curl -X POST http://localhost/heal
+```
 
 # v1.224.4 (2026-06-26)
   - Bump worship-cross-referencing. [DL-7450]
@@ -18,6 +26,7 @@ drc up -d worship-decisions-cross-reference
 ## Deploy notes
 ```
 drc up -d prepare-submissions-for-export
+drc exec prepare-submissions-for-export wget --post-data=''  http://localhost/healing?since=2026-06-20
 ```
 
 # v1.224.2 (2026-06-24)
