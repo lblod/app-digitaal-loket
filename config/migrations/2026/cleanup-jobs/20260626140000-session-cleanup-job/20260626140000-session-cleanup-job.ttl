@@ -1,0 +1,49 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/4c257cce-4852-4fdb-8412-99007eda42a8> a cleanup:Job ;
+  mu:uuid "4c257cce-4852-4fdb-8412-99007eda42a8" ;
+  dcterms:title "Clean up user sessions older than a week" ;
+  cleanup:randomQuery """
+    PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+    PREFIX account: <http://mu.semte.ch/vocabularies/account/>
+    PREFIX dct:     <http://purl.org/dc/terms/>
+    PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+    DELETE {
+      GRAPH <http://mu.semte.ch/graphs/sessions> {
+        ?session ?sessionP ?sessionO .
+      }
+    }
+    WHERE {
+      {
+        GRAPH <http://mu.semte.ch/graphs/sessions> {
+          ?session account:account ?value.
+          FILTER(STRSTARTS(STR(?session), "http://mu.semte.ch/sessions/"))
+        }
+      }
+      UNION
+      {
+        GRAPH <http://mu.semte.ch/graphs/sessions> {
+          ?session ext:sessionGroup ?value.
+          FILTER(STRSTARTS(STR(?session), "http://mu.semte.ch/sessions/"))
+        }
+      }
+      UNION
+      {
+        GRAPH <http://mu.semte.ch/graphs/sessions> {
+          ?session ext:sessionRole ?value.
+          FILTER(STRSTARTS(STR(?session), "http://mu.semte.ch/sessions/"))
+        }
+      }
+      GRAPH <http://mu.semte.ch/graphs/sessions> {
+        ?session dct:modified ?modified ;
+          ?sessionP ?sessionO .
+      }
+
+      FILTER( xsd:date(xsd:dateTime(REPLACE(STR(?modified), "Z", "")))
+            <= xsd:date(NOW() - "P7D"^^xsd:dayTimeDuration) )
+    }
+  """ ;
+  cleanup:cronPattern "0 22 * * 5" . # Every Friday at 22:00 UTC
