@@ -1,5 +1,55 @@
 # Changelog
 
+# v1.224.5 (2026-06-26)
+
+- VDDS: optimise query for vendor and organisation info. A needed speedup after re-distrubition of vendor info in [PR #741](https://github.com/lblod/app-digitaal-loket/pull/741)! No ticket.
+- Added a bunch of migrations to remove sessions [DL-7451]
+
+## Deploy notes
+```
+drc restart migrations
+drc restart vendor-data-distribution
+drc exec vendor-data-distribution curl -X POST http://localhost/heal
+```
+
+# v1.224.4 (2026-06-26)
+  - Bump worship-cross-referencing. [DL-7450]
+
+## Deploy notes
+```
+drc up -d worship-decisions-cross-reference
+```
+
+# v1.224.3 (2026-06-26)
+  - Bump submissions for export: added mini healing. [DL-7446]
+
+## Deploy notes
+```
+drc up -d prepare-submissions-for-export
+drc exec prepare-submissions-for-export wget --post-data=''  http://localhost/healing?since=2026-06-20
+```
+
+# v1.224.2 (2026-06-24)
+  - Fix config vendor-login-service [DL-7446]
+  - Clean up old sessions. (less heavy on database)
+
+## Deploy notes
+```
+drc restart migrations
+drc up -d vendor-login-service
+```
+
+# v1.224.1 (2026-06-24)
+ - Bump vendor-login-service  see [PR#14](https://github.com/lblod/vendor-login-service/pull/14) and [DL-7446]
+   - Issue with indexing, `public-r` should also be eagerly indexed.
+   - Clean up old sessions.
+## Deploy notes
+```
+drc restart migrations
+drc up -d vendor-login-service
+drc restart search
+```
+
 # v1.224.0 (2026-06-22)
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
@@ -23,7 +73,7 @@ Then search should be re-indexed
 
 ```
 mu script search manage-indexes # follow the steps there. Re-index "public-services"
-drc restart migrations 
+drc restart migrations
 drc restart database search dbcleanup
 ```
 

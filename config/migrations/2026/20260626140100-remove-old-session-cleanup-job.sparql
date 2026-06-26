@@ -1,0 +1,13 @@
+# Remove the previous session cleanup job (f294e44b-..., P1M cron) so the
+# replacement job (4c257cce-..., P1W, UNION selector) takes over.
+# Append-only convention: the old job's TTL is not edited in place; it is deleted
+# from graphs/public here, and the new job is loaded by its sibling TTL migration
+# in cleanup-jobs/20260626140000-session-cleanup-job/.
+
+PREFIX cleanup: <http://mu.semte.ch/vocabularies/ext/cleanup/>
+
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/cleanup-job/f294e44b-e322-437c-9832-8440cbd18b0e> ?p ?o .
+  }
+}

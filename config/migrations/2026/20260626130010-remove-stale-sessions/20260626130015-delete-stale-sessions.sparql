@@ -1,0 +1,31 @@
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX account: <http://mu.semte.ch/vocabularies/account/>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+    ?session ?sessionP ?sessionO .
+  }
+}
+WHERE {
+  {
+    SELECT DISTINCT ?session WHERE {
+      GRAPH <http://mu.semte.ch/graphs/sessions> {
+        { ?session account:account  ?value. }
+        UNION
+        { ?session ext:sessionGroup ?value. }
+        UNION
+        { ?session ext:sessionRole  ?value. }
+        ?session dct:modified ?modified .
+        FILTER(STRSTARTS(STR(?session), "http://mu.semte.ch/sessions/"))
+      }
+      FILTER( xsd:date(xsd:dateTime(REPLACE(STR(?modified), "Z", "")))
+            <= xsd:date(NOW() - "P7D"^^xsd:dayTimeDuration) )
+    }
+    LIMIT 10000
+  }
+  GRAPH <http://mu.semte.ch/graphs/sessions> {
+    ?session ?sessionP ?sessionO .
+  }
+}
