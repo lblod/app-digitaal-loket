@@ -1,5 +1,8 @@
 # Changelog
 
+# v1.224.3 (2026-06-26)
+  - Bump submissions for export: added mini healing. [DL-7446]
+
 # v1.224.2 (2026-06-24)
   - Fix config vendor-login-service [DL-7446]
   - Clean up old sessions. (less heavy on database)
