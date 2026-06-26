@@ -1,5 +1,9 @@
 # Changelog
 
+# Unreleased
+
+- VDDS: optimise query for vendor and organisation info. A needed speedup after re-distrubition of vendor info in [PR #741](https://github.com/lblod/app-digitaal-loket/pull/741)! No ticket.
+
 # v1.224.0 (2026-06-22)
 
 - Add Cross Referencing rules on the BesluitType and BesluitDocumentType [DL-7202] [DL-7204] [DL-7325]
