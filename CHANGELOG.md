@@ -1,7 +1,20 @@
 # Changelog
 
+# v1.224.4 (2026-06-26)
+  - Bump worship-cross-referencing. [DL-7450]
+
+## Deploy notes
+```
+drc up -d worship-decisions-cross-reference
+```
+
 # v1.224.3 (2026-06-26)
   - Bump submissions for export: added mini healing. [DL-7446]
+
+## Deploy notes
+```
+drc up -d prepare-submissions-for-export
+```
 
 # v1.224.2 (2026-06-24)
   - Fix config vendor-login-service [DL-7446]
@@ -47,7 +60,7 @@ Then search should be re-indexed
 
 ```
 mu script search manage-indexes # follow the steps there. Re-index "public-services"
-drc restart migrations 
+drc restart migrations
 drc restart database search dbcleanup
 ```
 
