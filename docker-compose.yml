@@ -462,7 +462,11 @@ services:
     restart: always
     logging: *default-logging
   prepare-submissions-for-export:
-    image: lblod/prepare-submissions-for-export-service:0.12.2
+    image: lblod/prepare-submissions-for-export-service:0.13.0
+    environment:
+      MINI_HEALING_ENABLED: true
+      MINI_HEALING_CRON: "0 21 * * 4" # weekly thursday
+      MINI_HEALING_DAYS: 8
     labels:
       - "logging=true"
     restart: always
