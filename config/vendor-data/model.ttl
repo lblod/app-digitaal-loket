@@ -40,13 +40,16 @@ meb:Submission
       ${subject}
         pav:createdBy ?organisation ;
         pav:providedBy ?vendor .
-      ?vendor
-        a foaf:Agent ;
-        muAccount:canActOnBehalfOf ?organisation ;
-        mu:uuid ?vendorUuid .
       ?organisation
         a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
+      BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?organisationUuid)) AS ?orgGraph)
+      GRAPH ?orgGraph {
+        ?vendor
+          a foaf:Agent ;
+          muAccount:canActOnBehalfOf ?organisation ;
+          mu:uuid ?vendorUuid .
+      }
     }
   """ ;
   vdds:sourceGraphTemplate "http://mu.semte.ch/graphs/organizations/${organisationUuid}/LoketLB-toezichtGebruiker" ;
