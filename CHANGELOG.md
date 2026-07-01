@@ -1,5 +1,13 @@
 # Changelog
 
+# v1.224.5 (2026-06-27)
+  - More liberal query for the report of hanging submissions. [DL-7461]
+
+## Deploy notes
+```
+drc restart report-generation
+```
+
 # v1.224.4 (2026-06-26)
   - Bump worship-cross-referencing. [DL-7450]
 
