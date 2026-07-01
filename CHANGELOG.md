@@ -1,5 +1,13 @@
 # Changelog
 
+# v1.224.6 (2026-06-27)
+  - More liberal query for the report of hanging submissions. [DL-7461]
+
+## Deploy notes
+```
+drc restart report-generation
+```
+
 # v1.224.5 (2026-06-26)
 
 - VDDS: optimise query for vendor and organisation info. A needed speedup after re-distrubition of vendor info in [PR #741](https://github.com/lblod/app-digitaal-loket/pull/741)! No ticket.
