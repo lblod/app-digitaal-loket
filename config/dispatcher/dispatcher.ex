@@ -633,6 +633,14 @@ defmodule Dispatcher do
   end
 
   #################################################################
+  # Change event management
+  #################################################################
+
+  match "/change-event-management-loket/*path" do
+    forward conn, path, "http://change-event-management-loket/"
+  end
+
+  #################################################################
   # IPDC: HOOFDLOKET BACKEND
   #################################################################
   get "/public-services/search/*path" do

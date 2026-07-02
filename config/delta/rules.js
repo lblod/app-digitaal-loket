@@ -1,6 +1,7 @@
 import automaticSubmission from './automatic-submission';
 import berichtencentrumMelding from './berichtencentrum-melding';
 import bookmarks from './bookmarks';
+import changeEventManagement from './change-event-management';
 import deltaProducerDumpFilePublisher from './delta-producer-dump-file-publisher';
 import deltaProducerPublicationGraphMaintainer from './delta-producer-publication-graph-maintainer';
 import deltaProducerReportGenerator from './delta-producer-report-generator';
@@ -24,6 +25,7 @@ export default [
   ...automaticSubmission,
   ...berichtencentrumMelding,
   ...bookmarks,
+  ...changeEventManagement,
   ...deltaProducerDumpFilePublisher,
   ...deltaProducerPublicationGraphMaintainer,
   ...deltaProducerReportGenerator,
