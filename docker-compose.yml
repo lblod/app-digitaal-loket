@@ -776,3 +776,7 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  change-event-management-loket:
+    image: lblod/change-event-management-loket:1.0.0
+    restart: always
+    logging: *default-logging

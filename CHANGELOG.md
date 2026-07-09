@@ -1,10 +1,13 @@
 # Changelog
 # Unreleased
 - Bump download-url-service [DL-7447]
+- In oprichting bestuursorgaan lifecycle OP [DL-7451]
+
 
 ## Deploy notes
 ```
-drc up -d download-url
+drc up -d download-url change-event-management-loket
+drc restart deltanotifier
 ```
 
 # v1.224.6 (2026-06-27)
