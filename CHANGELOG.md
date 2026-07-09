@@ -1,4 +1,13 @@
 # Changelog
+# unreleased
+
+- In oprichting bestuursorgaan lifecycle OP [DL-7451]
+
+## Deploy notes
+```
+drc up -d change-event-management-loket
+drc restart deltanotifier
+```
 
 # v1.224.5 (2026-06-26)
 

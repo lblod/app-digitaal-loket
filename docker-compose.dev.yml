@@ -157,3 +157,5 @@ services:
     restart: "no"
   uuid-generation:
     restart: "no"
+  change-event-management-loket:
+    restart: "no"
