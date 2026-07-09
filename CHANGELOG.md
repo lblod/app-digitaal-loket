@@ -1,12 +1,21 @@
 # Changelog
-# unreleased
-
+# Unreleased
+- Bump download-url-service [DL-7447]
 - In oprichting bestuursorgaan lifecycle OP [DL-7451]
+
 
 ## Deploy notes
 ```
-drc up -d change-event-management-loket
+drc up -d download-url change-event-management-loket
 drc restart deltanotifier
+```
+
+# v1.224.6 (2026-06-27)
+  - More liberal query for the report of hanging submissions. [DL-7461]
+
+## Deploy notes
+```
+drc restart report-generation
 ```
 
 # v1.224.5 (2026-06-26)
