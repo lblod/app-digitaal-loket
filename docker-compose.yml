@@ -368,7 +368,7 @@ services:
     restart: always
     logging: *default-logging
   validate-submission:
-    image: lblod/validate-submission-service:1.4.1
+    image: lblod/validate-submission-service:1.5.0
     environment:
       MAX_BODY_SIZE: "10000kb"
     volumes:
@@ -387,7 +387,7 @@ services:
     restart: always
     logging: *default-logging
   worship-decisions-cross-reference:
-    image: lblod/worship-decisions-cross-reference-service:0.5.1
+    image: lblod/worship-decisions-cross-reference-service:0.5.2
     labels:
       - "logging=true"
     restart: always
