@@ -2,11 +2,12 @@
 # Unreleased
 - Bump download-url-service [DL-7447]
 - In oprichting bestuursorgaan lifecycle OP [DL-7451]
+- bump frontend [DL-7363]
 
 
 ## Deploy notes
 ```
-drc up -d download-url change-event-management-loket
+drc up -d download-url change-event-management-loket loket
 drc restart deltanotifier
 ```
 
