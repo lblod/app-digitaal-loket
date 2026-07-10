@@ -1,5 +1,12 @@
 # Changelog
 
+# v1.224.7 (2026-07-10)
+- Fixes related to cross-referencing: [DL-7456] [DL-7450]
+## Deploy notes
+```
+drc up -d validate-submission worship-decisions-cross-reference
+```
+
 # v1.224.6 (2026-06-27)
   - More liberal query for the report of hanging submissions. [DL-7461]
 
