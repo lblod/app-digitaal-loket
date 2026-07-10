@@ -3,11 +3,13 @@
 - Bump download-url-service [DL-7447]
 - In oprichting bestuursorgaan lifecycle OP [DL-7451]
 - bump frontend [DL-7363]
+- Bump lblod/ipdc-bookmarks-service:0.2.2 [DL-7478]
+  - Unrelated change, but it was cluttering logs.
 
 
 ## Deploy notes
 ```
-drc up -d download-url change-event-management-loket loket
+drc up -d download-url change-event-management-loket loket ipdc-bookmarks
 drc restart deltanotifier
 ```
 
