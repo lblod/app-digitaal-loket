@@ -1,0 +1,8 @@
+(define-resource invalidation ()
+  :class (s-prefix "prov:Invalidation")
+  :properties `((:time :date-time ,(s-prefix "prov:atTime"))
+                (:type :uri ,(s-prefix "dct:type"))
+                (:comment :string ,(s-prefix "rdfs:comment"))
+                (:see-also :uri ,(s-prefix "rdfs:seeAlso")))
+  :resource-base (s-url "http://data.lblod.info/invalidations/")
+  :on-path "invalidations")

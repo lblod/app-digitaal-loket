@@ -17,7 +17,8 @@
              ;; This is a workaround to allow filtering on properties of child-class, which come through the parent-class.
              (persoon :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
                       :as "is-bestuurlijke-alias-van")
-             )
+             (invalidation :via ,(s-prefix "prov:qualifiedInvalidation")
+                      :as "invalidation"))
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contacts"))
   :resource-base (s-url "http://data.lblod.info/id/agentenInPositie/")

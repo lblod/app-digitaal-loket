@@ -46,6 +46,7 @@
 (read-domain-file "master-harvest-domain.lisp")
 (read-domain-file "dcat.json")
 (read-domain-file "ipdc.lisp")
+(read-domain-file "invalidation.lisp")
 
 ;; Extra security layer to return 403 on GET /files
 ;; It should be ok for mu-auth; but devs can make bugs and add files to the wrong graph (i.e. public)

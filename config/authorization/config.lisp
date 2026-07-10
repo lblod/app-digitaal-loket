@@ -253,7 +253,8 @@
   ("ered:RepresentatiefOrgaan" -> _)
   ("ered:BetrokkenLokaleBesturen" -> _)
   ("generiek:GestructureerdeIdentificator" -> _)
-  ("organisatie:HelftVerkiezing" -> _))
+  ("organisatie:HelftVerkiezing" -> _)
+  ("prov:Invalidation" -> _))
 
 
 (define-graph o-worship-positions-bedienaar-rw ("http://mu.semte.ch/graphs/organizations/")

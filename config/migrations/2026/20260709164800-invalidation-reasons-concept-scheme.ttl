@@ -1,0 +1,19 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+
+<http://data.lblod.info/concept-schemes/6edef6b4-7c2a-4753-ab89-34f84ee0c79b> a skos:ConceptScheme ;
+  skos:prefLabel "Invalidation reasons"@en ;
+  skos:definition "List of possible reasons why an entity can be invalidated."@en .
+
+<http://data.lblod.info/concepts/InvalidationReason/0f07dbee-277e-4925-9f98-db860c8c4595> a skos:Concept ;
+  mu:uuid "0f07dbee-277e-4925-9f98-db860c8c4595" ;
+  skos:prefLabel "Duplicate data"@en ;
+  skos:inScheme <http://data.lblod.info/concept-schemes/6edef6b4-7c2a-4753-ab89-34f84ee0c79b> ;
+  skos:topConceptOf <http://data.lblod.info/concept-schemes/6edef6b4-7c2a-4753-ab89-34f84ee0c79b> .
+
+<http://data.lblod.info/concepts/InvalidationReason/c959422c-0cac-4fb3-a906-fee80e2a3f4e> a skos:Concept ;
+  mu:uuid "c959422c-0cac-4fb3-a906-fee80e2a3f4e" ;
+  skos:prefLabel "Invalid Data"@en ;
+  skos:inScheme <http://data.lblod.info/concept-schemes/6edef6b4-7c2a-4753-ab89-34f84ee0c79b> ;
+  skos:topConceptOf <http://data.lblod.info/concept-schemes/6edef6b4-7c2a-4753-ab89-34f84ee0c79b> .
