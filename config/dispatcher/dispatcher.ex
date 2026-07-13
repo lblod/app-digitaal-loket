@@ -162,6 +162,11 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/validation-errors/"
   end
 
+  # Soft deletes and duplication marking
+  match "/invalidations/*path" do
+    forward conn, path, "http://resource/invalidations/"
+  end
+
   ###############################################################
   # master-messages-domain.lisp
   ###############################################################

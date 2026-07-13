@@ -443,6 +443,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.lblod.info/vocabularies/erediensten/BetrokkenLokaleBesturen",
                         "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
                         "http://lblod.data.gift/vocabularies/organisatie/HelftVerkiezing",
+                        "http://www.w3.org/ns/prov#Invalidation"
                       ] } }
                 ] },
 
