@@ -18,7 +18,7 @@
     INSERT {
       GRAPH ?graph {
         ?submission nmo:sentDate ?modified;
-          skos:note """Manually set date see: DL-7478""".
+          skos:note "Manually set date see: DL-7478".
       }
     }
     WHERE {
@@ -37,4 +37,4 @@
         }
     }
   """ ;
-  cleanup:cronPattern "0 * * * *" .
+  cleanup:cronPattern "13 * * * *" .
