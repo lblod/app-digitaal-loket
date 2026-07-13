@@ -6,7 +6,8 @@
 
 ## Deploy notes
 ```
-drc restart migrations db-cleanup
+drc restart migrations dbcleanup 
+drc up -d ipdc-bookmarks
 ```
 
 # v1.224.7 (2026-07-10)
