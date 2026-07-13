@@ -1,0 +1,40 @@
+@prefix cleanup:  <http://mu.semte.ch/vocabularies/ext/cleanup/> .
+@prefix mu:       <http://mu.semte.ch/vocabularies/core/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+<http://data.lblod.info/id/cleanup-job/c5002103-5269-493e-beaa-a82856f12101> a cleanup:Job ;
+  mu:uuid "c5002103-5269-493e-beaa-a82856f12101" ;
+  dcterms:title "Set nmo:sentDate on submissions missing it (DL-7478)" ;
+  cleanup:randomQuery """
+    PREFIX meb:  <http://rdf.myexperiment.org/ontologies/base/>
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    PREFIX dct:  <http://purl.org/dc/terms/>
+    PREFIX adms: <http://www.w3.org/ns/adms#>
+    PREFIX nmo:  <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
+    PREFIX mu:   <http://mu.semte.ch/vocabularies/core/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+    INSERT {
+      GRAPH ?graph {
+        ?submission nmo:sentDate ?modified;
+          skos:note """Manually set date see: DL-7478""".
+      }
+    }
+    WHERE {
+        GRAPH ?graph {
+          ?submission a meb:Submission ;
+              adms:status <http://lblod.data.gift/concepts/9bd8d86d-bb10-4456-a84e-91e9507c374c> ;
+             <http://purl.org/pav/createdBy> ?createdBy;
+              dct:modified ?modified;
+              prov:generated ?formData.
+
+          ?formData dct:type ?decisionType.
+
+          FILTER NOT EXISTS { ?submission nmo:sentDate ?sent . }
+          FILTER(REGEX(STR(?graph), "^http://mu\\.semte\\.ch/graphs/organizations/.*/LoketLB-toezichtGebruiker"))
+          FILTER(?modified > "2026-05-01"^^xsd:date)
+        }
+    }
+  """ ;
+  cleanup:cronPattern "0 * * * *" .
