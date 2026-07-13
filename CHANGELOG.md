@@ -5,10 +5,12 @@
 - bump frontend [DL-7363]
 - Bump lblod/ipdc-bookmarks-service:0.2.2 [DL-7478]
   - Unrelated change, but it was cluttering logs.
+- Add support for invalidating worship mandatees [DL-7374]
 
 
 ## Deploy notes
 ```
+drc restart migrations database dispatcher resource
 drc up -d download-url change-event-management-loket loket ipdc-bookmarks
 drc restart deltanotifier
 ```
