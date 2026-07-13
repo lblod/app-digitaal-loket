@@ -1,5 +1,14 @@
 # Changelog
 
+# Unreleased
+
+- Cleanup job that sets `nmo:sentDate` on submissions missing it, scoped to eredienst/toezicht-gebruiker org graphs and submissions modified after 2026-05-01. [DL-7478] [DL-7479]
+
+## Deploy notes
+```
+drc restart migrations db-cleanup
+```
+
 # v1.224.7 (2026-07-10)
 - Fixes related to cross-referencing: [DL-7456] [DL-7450]
 ## Deploy notes
