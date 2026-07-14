@@ -1,5 +1,18 @@
 # Changelog
 
+# # v1.224.8 (2026-07-13)
+
+- Cleanup job that sets `nmo:sentDate` on submissions missing it, scoped to eredienst/toezicht-gebruiker org graphs and submissions modified after 2026-05-01. [DL-7478] [DL-7479]
+  - Bump ipdc-bookmarks, the likely cause: erroring on deltas, botteling the whole delta-notification flow.
+    - This combined with `https://github.com/lblod/frontend-loket/blob/d4e405d63958202350cc72d143c4e276ee522e8a/app/controllers/supervision/submissions/edit.js#L93`
+      and deltas not clearing cache/resource by https://github.com/lblod/frontend-loket/blob/d4e405d63958202350cc72d143c4e276ee522e8a/app/controllers/supervision/submissions/edit.js#L140
+
+## Deploy notes
+```
+drc restart migrations dbcleanup 
+drc up -d ipdc-bookmarks
+```
+
 # v1.224.7 (2026-07-10)
 - Fixes related to cross-referencing: [DL-7456] [DL-7450]
 ## Deploy notes
