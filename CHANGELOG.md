@@ -1,6 +1,15 @@
 # Changelog
 
-# # v1.224.8 (2026-07-13)
+# v1.225.0 (2026-07-14)
+- Update forms [DL-7470]
+
+## Deploy notes
+```
+drc restart migrations && drc logs -ft --tail=200 migrations
+drc up -d enrich-submission
+```
+
+# v1.224.8 (2026-07-13)
 
 - Cleanup job that sets `nmo:sentDate` on submissions missing it, scoped to eredienst/toezicht-gebruiker org graphs and submissions modified after 2026-05-01. [DL-7478] [DL-7479]
   - Bump ipdc-bookmarks, the likely cause: erroring on deltas, botteling the whole delta-notification flow.
