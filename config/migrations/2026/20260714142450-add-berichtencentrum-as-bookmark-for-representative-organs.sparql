@@ -1,0 +1,48 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nco: <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX bestuurseenheidclassificatiecode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+
+INSERT {
+    GRAPH ?g {
+        ?newBookmark a nfo:Bookmark ;
+            mu:uuid ?newUuid ;
+            nie:contentCreated "2026-07-20T00:00:00Z"^^xsd:dateTime ;
+            nie:contentLastModified "2026-07-20T00:00:00Z"^^xsd:dateTime ;
+            nfo:bookmarks <https://ipdc.vlaanderen.be/id/instantie/95b94b1c-4afc-4e79-a2e1-97f993bc0cb8> ;
+            nco:creator ?user .
+    }
+}
+WHERE {
+    {
+        SELECT DISTINCT ?user ?g
+        WHERE {
+            ?user a foaf:Person ;
+                foaf:member ?representativeOrgan .
+
+            ?representativeOrgan a ere:RepresentatiefOrgaan ;
+                besluit:classificatie bestuurseenheidclassificatiecode:36372fad-0358-499c-a4e3-f412d2eae213 .
+
+            GRAPH ?g {
+                ?existingBookmark a nfo:Bookmark ;
+                    nco:creator ?user .
+            }
+
+            FILTER NOT EXISTS {
+                GRAPH ?g {
+                ?alreadyExists a nfo:Bookmark ;
+                    nfo:bookmarks <https://ipdc.vlaanderen.be/id/instantie/95b94b1c-4afc-4e79-a2e1-97f993bc0cb8> ;
+                    nco:creator ?user .
+                }
+            }
+        }
+    }
+
+    BIND(SHA256(CONCAT(STR(?user), "berichtencentrum-bookmark")) AS ?newUuid)
+    BIND(IRI(CONCAT("http://lblod.data.gift/bookmarks/", STR(?newUuid))) AS ?newBookmark)
+}

@@ -6,7 +6,7 @@
 - Bump lblod/ipdc-bookmarks-service:0.2.2 [DL-7478]
   - Unrelated change, but it was cluttering logs.
 - Add support for invalidating worship mandatees [DL-7374]
-
+- Add berichtencentrum bookmark for representative organs [DL-7449]
 
 ## Deploy notes
 ```
