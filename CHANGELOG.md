@@ -1,17 +1,21 @@
 # Changelog
+
 # Unreleased
+
 - Bump download-url-service [DL-7447]
 - In oprichting bestuursorgaan lifecycle OP [DL-7451]
 - Frontend [v1.14.0](https://github.com/lblod/frontend-loket/blob/5490c9bce9da3fb964b359b618bb19de2418c397/CHANGELOG.md#v1140-2026-07-13), [v1.13.1](https://github.com/lblod/frontend-loket/blob/5490c9bce9da3fb964b359b618bb19de2418c397/CHANGELOG.md#v1131-2026-07-10)
 - Bump lblod/ipdc-bookmarks-service:0.2.2 [DL-7478]
   - Unrelated change, but it was cluttering logs.
 - Add support for invalidating worship mandatees [DL-7374]
+- Bump vendor-login-service [DL-7452]
 
 
 ## Deploy notes
+
 ```
 drc restart migrations database dispatcher resource
-drc up -d download-url change-event-management-loket loket ipdc-bookmarks
+drc up -d download-url change-event-management-loket loket ipdc-bookmarks vendor-login
 drc restart deltanotifier
 ```
 
