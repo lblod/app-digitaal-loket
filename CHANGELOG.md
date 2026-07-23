@@ -7,6 +7,7 @@
   - Unrelated change, but it was cluttering logs.
 - Add support for invalidating worship mandatees [DL-7374]
 - Add berichtencentrum bookmark for representative organs [DL-7449]
+- Bump frontend [DL-7449]
 
 ## Deploy notes
 ```
