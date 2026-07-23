@@ -10,6 +10,7 @@
 - Add support for invalidating worship mandatees [DL-7374]
 - Bump vendor-login-service [DL-7452]
 - Add berichtencentrum bookmark for representative organs [DL-7449]
+- Bump frontend [DL-7449]
 
 ## Deploy notes
 
