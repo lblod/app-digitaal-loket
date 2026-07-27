@@ -25,7 +25,11 @@
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
         "http://www.w3.org/ns/org#holds",
-        "http://data.vlaanderen.be/ns/mandaat#status"
+        "http://data.vlaanderen.be/ns/mandaat#status",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ]
     },
     {
@@ -51,7 +55,11 @@
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
         "http://www.w3.org/ns/org#holds",
-        "http://data.vlaanderen.be/ns/mandaat#status"
+        "http://data.vlaanderen.be/ns/mandaat#status",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ]
     },
     {
@@ -73,7 +81,11 @@
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
-        "http://www.w3.org/ns/org#holds"
+        "http://www.w3.org/ns/org#holds",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ]
     },
     {
@@ -99,7 +111,11 @@
         "http://schema.org/contactPoint",
         "http://www.w3.org/ns/org#heldBy",
         "http://www.w3.org/ns/org#holds",
-        "http://data.vlaanderen.be/ns/mandaat#status"
+        "http://data.vlaanderen.be/ns/mandaat#status",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ]
     },
     {
@@ -112,7 +128,11 @@
       "properties": [
         "http://data.vlaanderen.be/ns/persoon#datum",
         "http://mu.semte.ch/vocabularies/core/uuid",
-        "http://www.w3.org/2002/07/owl#sameAs"
+        "http://www.w3.org/2002/07/owl#sameAs",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ]
     },
     {
@@ -128,7 +148,11 @@
         "http://schema.org/contactType",
         "http://schema.org/email",
         "http://schema.org/telephone",
-        "http://www.w3.org/ns/locn#address"
+        "http://www.w3.org/ns/locn#address",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
       "healingOptions": {
         "http://mu.semte.ch/vocabularies/core/uuid": {
@@ -161,7 +185,11 @@
       "properties": [
         "http://mu.semte.ch/vocabularies/core/uuid",
         "http://www.w3.org/2002/07/owl#sameAs",
-        "http://www.w3.org/2004/02/skos/core#notation"
+        "http://www.w3.org/2004/02/skos/core#notation",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ]
     },
     {
@@ -180,7 +208,11 @@
         "http://www.w3.org/ns/locn#thoroughfare",
         "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
         "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
-        "https://data.vlaanderen.be/ns/adres#gemeentenaam"
+        "https://data.vlaanderen.be/ns/adres#gemeentenaam",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
       "additionalFilter": " FILTER EXISTS { ?contactPoint a <http://schema.org/ContactPoint> ; <http://www.w3.org/ns/locn#address> ?subject . }",
       "healingOptions": {
@@ -237,7 +269,11 @@
         "http://www.w3.org/2002/07/owl#sameAs",
         "http://www.w3.org/ns/adms#identifier",
         "http://xmlns.com/foaf/0.1/familyName",
-        "http://xmlns.com/foaf/0.1/name"
+        "http://xmlns.com/foaf/0.1/name",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
       "healingOptions": {
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam": {
@@ -292,7 +328,11 @@
         "http://www.w3.org/2002/07/owl#sameAs",
         "http://www.w3.org/ns/adms#identifier",
         "http://xmlns.com/foaf/0.1/familyName",
-        "http://xmlns.com/foaf/0.1/name"
+        "http://xmlns.com/foaf/0.1/name",
+        "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "http://www.w3.org/ns/prov#wasAssociatedWith",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
+        "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
       "healingOptions": {
         "http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam": {
