@@ -4,7 +4,7 @@
 
 - Bump download-url-service [DL-7447]
 - In oprichting bestuursorgaan lifecycle OP [DL-7451]
-- Frontend [v1.14.0](https://github.com/lblod/frontend-loket/blob/5490c9bce9da3fb964b359b618bb19de2418c397/CHANGELOG.md#v1140-2026-07-13), [v1.13.1](https://github.com/lblod/frontend-loket/blob/5490c9bce9da3fb964b359b618bb19de2418c397/CHANGELOG.md#v1131-2026-07-10)
+- Frontend [v1.14.2](https://github.com/lblod/frontend-loket/blob/4b6e7594b9bc776ce30e0bba654dd2d4a40bc8f8/CHANGELOG.md#v1142-2026-07-27), [v1.14.1](https://github.com/lblod/frontend-loket/blob/4b6e7594b9bc776ce30e0bba654dd2d4a40bc8f8/CHANGELOG.md#v1141-2026-07-23), [v1.14.0](https://github.com/lblod/frontend-loket/blob/5490c9bce9da3fb964b359b618bb19de2418c397/CHANGELOG.md#v1140-2026-07-13), [v1.13.1](https://github.com/lblod/frontend-loket/blob/5490c9bce9da3fb964b359b618bb19de2418c397/CHANGELOG.md#v1131-2026-07-10)
 - Bump lblod/ipdc-bookmarks-service:0.2.2 [DL-7478]
   - Unrelated change, but it was cluttering logs.
 - Add support for invalidating worship mandatees [DL-7374]
