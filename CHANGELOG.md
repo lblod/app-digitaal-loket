@@ -11,12 +11,13 @@
 - Bump vendor-login-service [DL-7452]
 - Add berichtencentrum bookmark for representative organs [DL-7449]
 - Bump frontend [DL-7449]
+- Bump clean-up-submission service
 
 ## Deploy notes
 
 ```
 drc restart migrations database dispatcher resource
-drc up -d download-url change-event-management-loket loket ipdc-bookmarks vendor-login
+drc up -d download-url change-event-management-loket loket ipdc-bookmarks vendor-login clean-up-submission
 drc restart deltanotifier
 ```
 
