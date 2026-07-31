@@ -1,4 +1,11 @@
 # Changelog
+# v1.226.0 (2026-07-31)
+ - added explicit healtchecks [DL-7466]
+
+## Deploy notes
+```
+drc restart dispatcher
+```
 
 # Unreleased
 
