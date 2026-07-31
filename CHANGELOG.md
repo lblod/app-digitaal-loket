@@ -1,12 +1,10 @@
 # Changelog
 # v1.226.0 (2026-07-31)
  - added explicit healtchecks [DL-7466]
- - bump enrich-submission-service: show 'Afschrift erkenningszoekende besturen' only for worship services 'in oprichting' [DL-7366]
 
 ## Deploy notes
 ```
 drc restart dispatcher
-drc up -d enrich-submission
 ```
 
 # Unreleased
@@ -21,12 +19,13 @@ drc up -d enrich-submission
 - Add berichtencentrum bookmark for representative organs [DL-7449]
 - Bump frontend [DL-7449]
 - Bump clean-up-submission service
+- bump enrich-submission-service: show 'Afschrift erkenningszoekende besturen' only for worship services 'in oprichting' [DL-7366]
 
 ## Deploy notes
 
 ```
 drc restart migrations database dispatcher resource
-drc up -d download-url change-event-management-loket loket ipdc-bookmarks vendor-login clean-up-submission
+drc up -d download-url change-event-management-loket loket ipdc-bookmarks vendor-login clean-up-submission enrich-submission
 drc restart deltanotifier
 ```
 
