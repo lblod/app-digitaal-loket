@@ -129,6 +129,8 @@
 (define-resource minister-position-function ()
   :class (s-prefix "code:EredienstBeroepen")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :has-many `((organization-status-code :via ,(s-prefix "ere:vanToepassingBijStatus")
+                                        :as "applicable-statuses"))
   :resource-base (s-url "http://lblod.data.gift/concepts/")
   :features '(include-uri)
   :on-path "minister-position-functions"
