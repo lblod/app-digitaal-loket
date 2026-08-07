@@ -2,11 +2,14 @@
 
 # Unreleased
 - Bump clean-up-submission service
+- Adding provenance triples to the export to OP, coming from the Worship Positions Harvester. Added extra proprties to erediensten flow.
+  - see also: [DL-7435]
 
 ## Deploy notes
 
 ```
 drc up -d clean-up-submission
+drc restart delta-producer-publication-graph-maintainer
 ```
 
 # v1.227.0 (2026-08-03)
