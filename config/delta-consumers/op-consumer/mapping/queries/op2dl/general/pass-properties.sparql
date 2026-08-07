@@ -13,6 +13,7 @@ WHERE {
       <http://data.vlaanderen.be/ns/mandaat#Mandaat>
       <http://lblod.data.gift/vocabularies/organisatie/BestuurseenheidClassificatieCode>
       <http://lblod.data.gift/vocabularies/organisatie/BestuursorgaanClassificatieCode>
+      <http://lblod.data.gift/vocabularies/organisatie/EredienstBeroepen>
       <http://lblod.data.gift/vocabularies/organisatie/OrganisatieStatusCode>
       <http://lblod.data.gift/vocabularies/organisatie/TypeEredienst>
       <http://lblod.data.gift/vocabularies/organisatie/TypeVestiging>

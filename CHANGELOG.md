@@ -2,14 +2,17 @@
 
 # Unreleased
 - Bump clean-up-submission service
+- Bump frontend
+- Restrict available imam roles based on worship organisation status [DL-7485]
+  - It's important to first deploy the migration on loket before deploying [DL-7485] on OP + wait for data flow to OP!
 - Adding provenance triples to the export to OP, coming from the Worship Positions Harvester. Added extra proprties to erediensten flow.
   - see also: [DL-7435]
 
 ## Deploy notes
 
 ```
-drc up -d clean-up-submission
-drc restart delta-producer-publication-graph-maintainer
+drc up -d clean-up-submission frontend
+drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer
 ```
 
 # v1.227.0 (2026-08-03)

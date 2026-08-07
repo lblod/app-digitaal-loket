@@ -1,0 +1,38 @@
+PREFIX ere: <http://data.lblod.info/vocabularies/erediensten/>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+# Step 1:
+# Consolidates every bedienaar for a duplicated function onto one position,
+# so no minister is orphaned by OP's later position cleanup.
+DELETE {
+    GRAPH ?g {
+        ?minister org:holds ?position .
+    }
+}
+INSERT {
+    GRAPH ?g {
+        ?minister org:holds ?keptPosition .
+    }
+}
+WHERE {
+    ?worshipService a ere:BestuurVanDeEredienst ;
+    ere:typeEredienst <http://lblod.data.gift/concepts/9d8bd472a00bf0a5c7b7186606365a52> ;
+    ere:wordtBediendDoor ?position .
+
+    ?position ere:functie ?functie .
+
+    GRAPH ?g {
+        ?minister a ere:RolBedienaar ;
+        org:holds ?position .
+    }
+
+    {
+        SELECT ?worshipService ?functie (IRI(MIN(STR(?anyPosition))) AS ?keptPosition) WHERE {
+            ?worshipService ere:wordtBediendDoor ?anyPosition .
+            ?anyPosition ere:functie ?functie .
+        }
+        GROUP BY ?worshipService ?functie
+    }
+
+    FILTER(?position != ?keptPosition)
+}
