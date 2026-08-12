@@ -1,0 +1,23 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/landing-zone/op-public> {
+    ?s
+      rdf:type org:Membership ;
+      ?p ?o .
+    FILTER(?p IN(
+      rdf:type,
+      mu:uuid,
+      org:organization,
+      org:member,
+      org:role)
+    )
+  }
+}
