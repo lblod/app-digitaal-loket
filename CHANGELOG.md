@@ -7,6 +7,8 @@
   - It's important to first deploy the migration on loket before deploying [DL-7485] on OP + wait for data flow to OP!
 - Adding provenance triples to the export to OP, coming from the Worship Positions Harvester. Added extra proprties to erediensten flow.
   - see also: [DL-7435]
+- fix mandate holders of duplicate rechtswege/grote helft mandates [OP-3851]
+  - It's important to first deploy the migration on loket before deploying [OP-3851] on OP + wait for data flow to OP!
 
 ## Deploy notes
 
