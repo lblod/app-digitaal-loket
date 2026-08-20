@@ -2,7 +2,7 @@
 
 # Unreleased
 - Bump clean-up-submission service
-- Bump frontend
+- frontend [v1.14.4](https://github.com/lblod/frontend-loket/blob/26c8ce3e5c33d4ec2a0219f3b95e38404cc0e460/CHANGELOG.md#v1144-2026-08-20), [v1.14.3](https://github.com/lblod/frontend-loket/blob/26c8ce3e5c33d4ec2a0219f3b95e38404cc0e460/CHANGELOG.md#v1143-2026-08-07)
 - Restrict available imam roles based on worship organisation status [DL-7485]
   - It's important to first deploy the migration on loket before deploying [DL-7485] on OP + wait for data flow to OP!
 - Adding provenance triples to the export to OP, coming from the Worship Positions Harvester. Added extra proprties to erediensten flow.
