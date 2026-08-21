@@ -15,6 +15,7 @@
 ```
 drc up -d clean-up-submission frontend
 drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
 ```
 
 # v1.227.0 (2026-08-03)
