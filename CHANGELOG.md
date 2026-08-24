@@ -9,12 +9,14 @@
   - see also: [DL-7435]
 - fix mandate holders of duplicate rechtswege/grote helft mandates [OP-3851]
   - It's important to first deploy the migration on loket before deploying [OP-3851] on OP + wait for data flow to OP!
+- Migrations for historic missing erediensten instances [DL-7531]
+
 
 ## Deploy notes
 
 ```
 drc up -d clean-up-submission frontend
-drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer
+drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer migrations-publication-triplestore
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
 ```
 
@@ -140,7 +142,7 @@ drc restart search
 - Fixes to validate-submission-service [DL-7411] [DL-7412]
 - Make ldes-graph not public [DL-7401]
 - Redistribute vendor information per organisation. Each organisation now only sees own vendor. [DL-7373]
-- Ensure some missing submissions are flagged again [DL-7423]
+- Ensure some missing submissions are flagged again [DL-7531]
 
 ## Deploy notes
 
