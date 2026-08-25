@@ -142,7 +142,7 @@ drc restart search
 - Fixes to validate-submission-service [DL-7411] [DL-7412]
 - Make ldes-graph not public [DL-7401]
 - Redistribute vendor information per organisation. Each organisation now only sees own vendor. [DL-7373]
-- Ensure some missing submissions are flagged again [DL-7531]
+- Ensure some missing submissions are flagged again [DL-7423]
 
 ## Deploy notes
 
