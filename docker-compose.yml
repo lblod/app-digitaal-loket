@@ -778,3 +778,11 @@ services:
     image: lblod/change-event-management-service-loket:1.0.0
     restart: always
     logging: *default-logging
+  link-adressenregister-uri:
+    image: lblod/link-adressenregister-uri-service:0.3.0
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://virtuoso:8890/sparql"
+      CRON_SCHEDULE: "0 0 * * *"
+    restart: always
+    logging: *default-logging
