@@ -1,0 +1,67 @@
+PREFIX schema: <http://schema.org/>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT {
+  GRAPH ?g {
+    ?attachment schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> .
+  }
+}
+WHERE {
+  VALUES ?submission {
+    <http://data.lblod.info/submissions/e13b2b50-4104-11ee-a495-8b45eb04f930>
+    <http://data.lblod.info/submissions/643E72D48277F97CEBD683B6>
+    <http://data.lblod.info/submissions/642D81E30562E77202C3063A>
+    <http://data.lblod.info/submissions/642692B1FE3038A9D4168E45>
+    <http://data.lblod.info/submissions/6426891FFE3038A9D4168E39>
+    <http://data.lblod.info/submissions/640987065440073AC9469E95>
+    <http://data.lblod.info/submissions/057e8410-b8cc-11ed-bbe8-2b1a58f1804a>
+    <http://data.lblod.info/submissions/1e5cce50-b84b-11ed-bbe8-2b1a58f1804a>
+    <http://data.lblod.info/submissions/37da0360-9cbd-11ed-80fa-0f6e12cc6e38>
+    <http://data.lblod.info/submissions/953b8ee0-9bf3-11ed-80fa-0f6e12cc6e38>
+    <http://data.lblod.info/submissions/9318fd00-9bf3-11ed-80fa-0f6e12cc6e38>
+    <http://data.lblod.info/submissions/c0abc590-97de-11ed-80fa-0f6e12cc6e38>
+    <http://data.lblod.info/submissions/1d0ad790-9267-11ed-80fa-0f6e12cc6e38>
+    <http://data.lblod.info/submissions/63BEB99B82C93176D903B6BC>
+    <http://data.lblod.info/submissions/63BEB8E282C93176D903B6BA>
+    <http://data.lblod.info/submissions/63BEB7E482C93176D903B6B8>
+    <http://data.lblod.info/submissions/c703d3f0-9000-11ed-80fa-0f6e12cc6e38>
+    <http://data.lblod.info/submissions/63B2C2B14B6B4804E09362F2>
+    <http://data.lblod.info/submissions/63B2AD104B6B4804E093628B>
+    <http://data.lblod.info/submissions/63B2AB934B6B4804E0936289>
+    <http://data.lblod.info/submissions/63B2AB0F4B6B4804E0936287>
+    <http://data.lblod.info/submissions/63B2AA694B6B4804E0936285>
+  }
+
+  {
+    ?submission nie:hasPart ?attachment .
+  } UNION {
+    ?submission nie:hasPart/^nie:dataSource ?attachment .
+  } UNION {
+    ?submission dct:hasPart/^nie:dataSource ?attachment .
+  } UNION {
+    ?submission nie:hasPart/^nie:dataSource/^nie:dataSource ?attachment .
+  } UNION {
+    ?submission prov:generated ?form .
+    ?form dct:hasPart ?attachment .
+  } UNION {
+    ?submission prov:generated ?form .
+    ?form dct:hasPart/nie:dataSource ?attachment .
+  } UNION {
+    ?submission dct:subject/dct:source ?attachment .
+    ?attachment dct:type ?type .
+    FILTER (?type IN (
+      <http://data.lblod.gift/concepts/meta-file-type>,
+      <http://data.lblod.gift/concepts/form-data-file-type>,
+      <http://data.lblod.gift/concepts/form-file-type>
+    ))
+  }
+
+  FILTER NOT EXISTS { ?attachment schema:publication <http://lblod.data.gift/concepts/403b71bd-5ab9-4c92-8990-4bb19d5469d1> . }
+
+  GRAPH ?g {
+    ?attachment a ?attachmentType .
+  }
+  FILTER(?g NOT IN (<http://redpencil.data.gift/id/deltas/producer/loket-submissions>))
+}

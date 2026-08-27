@@ -1,0 +1,62 @@
+# Move mandatarissen to a single grote helft mandaat in case of duplicates within election cycle periods
+# Must be run BEFORE the OP migration
+
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX generiek: <https://data.vlaanderen.be/ns/generiek#>
+
+DELETE {
+  GRAPH ?orgGraph {
+    ?mandataris org:holds ?mandaat .
+  }
+}
+INSERT {
+  GRAPH ?orgGraph {
+    ?mandataris org:holds ?canonicalMandaat .
+  }
+}
+WHERE {
+  GRAPH ?orgGraph {
+    ?mandataris a mandaat:Mandataris ;
+      org:holds ?mandaat .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/a8b5509b-f86b-48f8-94d6-fe463a9b77e3> .
+    ?orgaanInTime generiek:isTijdspecialisatieVan ?orgaan ;
+      mandaat:bindingStart ?start ;
+      org:hasPost ?mandaat .
+  }
+
+  BIND(YEAR(?start) AS ?startYear)
+  VALUES (?startYear ?pairIndex) {
+    (2017 0)
+    (2020 1)
+    (2023 1)
+    (2026 2)
+    (2029 2)
+  }
+
+  {
+    SELECT ?orgaan ?pairIndex (IRI(MIN(STR(?anyMandaat))) AS ?canonicalMandaat) WHERE {
+      GRAPH <http://mu.semte.ch/graphs/public> {
+        ?anyOrgaanInTime generiek:isTijdspecialisatieVan ?orgaan ;
+          mandaat:bindingStart ?anyStart ;
+          org:hasPost ?anyMandaat .
+        ?anyMandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/a8b5509b-f86b-48f8-94d6-fe463a9b77e3> .
+      }
+
+      BIND(YEAR(?anyStart) AS ?anyStartYear)
+      VALUES (?anyStartYear ?pairIndex) {
+        (2017 0)
+        (2020 1)
+        (2023 1)
+        (2026 2)
+        (2029 2)
+      }
+    }
+    GROUP BY ?orgaan ?pairIndex
+  }
+
+  FILTER(?mandaat != ?canonicalMandaat)
+}

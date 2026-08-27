@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.14.2
+    image: lblod/frontend-loket:1.15.0
     links:
       - identifier:backend
     labels:
@@ -403,7 +403,7 @@ services:
     restart: always
     logging: *default-logging
   clean-up-submission:
-    image: lblod/clean-up-submission-service:1.1.0
+    image: lblod/clean-up-submission-service:2.0.1
     volumes:
       - ./data/files:/share
     labels:
@@ -776,5 +776,13 @@ services:
       - "logging=true"
   change-event-management-loket:
     image: lblod/change-event-management-service-loket:1.0.0
+    restart: always
+    logging: *default-logging
+  link-adressenregister-uri:
+    image: lblod/link-adressenregister-uri-service:0.3.0
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://virtuoso:8890/sparql"
+      CRON_SCHEDULE: "0 0 * * *"
     restart: always
     logging: *default-logging

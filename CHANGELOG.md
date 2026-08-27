@@ -1,5 +1,28 @@
 # Changelog
 
+# Unreleased
+- Bump clean-up-submission service
+- frontend [v1.15.0](https://github.com/lblod/frontend-loket/blob/cd58dbbf4b570a96d89ce77971aad83773c28c7c/CHANGELOG.md#v1150-2026-08-20),[v1.14.4](https://github.com/lblod/frontend-loket/blob/26c8ce3e5c33d4ec2a0219f3b95e38404cc0e460/CHANGELOG.md#v1144-2026-08-20), [v1.14.3](https://github.com/lblod/frontend-loket/blob/26c8ce3e5c33d4ec2a0219f3b95e38404cc0e460/CHANGELOG.md#v1143-2026-08-07)
+- Restrict available imam roles based on worship organisation status [DL-7485]
+  - It's important to first deploy the migration on loket before deploying [DL-7485] on OP + wait for data flow to OP!
+- Adding provenance triples to the export to OP, coming from the Worship Positions Harvester. Added extra proprties to erediensten flow.
+  - see also: [DL-7435]
+- fix mandate holders of duplicate rechtswege/grote helft mandates [OP-3851]
+  - It's important to first deploy the migration on loket before deploying [OP-3851] on OP + wait for data flow to OP!
+- Migrations for historic missing erediensten instances [DL-7531]
+- Add link-adressenregister-uri service [OP-3873]
+- Use refactored ACMIDM service [DGS-657]
+
+
+## Deploy notes
+!important: We updated the ACMIDM image. Double check that the testing passed since this is a sentitive service
+
+```
+drc up -d clean-up-submission frontend link-adressenregister-uri login
+drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer migrations-publication-triplestore
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
+```
+
 # v1.227.0 (2026-08-03)
 - Bump download-url-service [DL-7447]
 - In oprichting bestuursorgaan lifecycle OP [DL-7451]
