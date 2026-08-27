@@ -11,12 +11,14 @@
   - It's important to first deploy the migration on loket before deploying [OP-3851] on OP + wait for data flow to OP!
 - Migrations for historic missing erediensten instances [DL-7531]
 - Add link-adressenregister-uri service [OP-3873]
+- Use refactored ACMIDM service [DGS-657]
 
 
 ## Deploy notes
+!important: We updated the ACMIDM image. Double check that the testing passed since this is a sentitive service
 
 ```
-drc up -d clean-up-submission frontend link-adressenregister-uri
+drc up -d clean-up-submission frontend link-adressenregister-uri login
 drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer migrations-publication-triplestore
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
 ```
