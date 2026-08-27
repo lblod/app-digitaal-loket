@@ -147,7 +147,7 @@ services:
     restart: always
     logging: *default-logging
   login-loket:
-    image: lblod/acmidm-login-service:0.12.1.rc-2
+    image: aatauil/acmidm-login-service:0.1.0-verenigingen
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie.vlaanderen.be/op/.well-known/openid-configuration"
       MU_APPLICATION_AUTH_CLIENT_ID: "<CLIENT ID>"
