@@ -11,12 +11,14 @@
   - It's important to first deploy the migration on loket before deploying [OP-3851] on OP + wait for data flow to OP!
 - Stop propagating soft-deleted/duplicate-marked worship mandatees to OP, WOP and DWH [OP-3859]
   - The worship-services-sensitive healing run (already in deploy notes) also retracts previously propagated invalidated mandatees from the consumers.
+- Bump delta-producer-publication-graph-maintainer to 1.4.4 [OP-3859]
 
 ## Deploy notes
 
 ```
 drc up -d clean-up-submission frontend
-drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer
+drc pull delta-producer-publication-graph-maintainer && drc up -d delta-producer-publication-graph-maintainer
+drc restart migrations resource op-public-consumer
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
 ```
 
