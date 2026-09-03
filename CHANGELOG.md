@@ -12,6 +12,7 @@
 - Stop propagating soft-deleted/duplicate-marked worship mandatees to OP, WOP and DWH [OP-3859]
   - The worship-services-sensitive healing run (already in deploy notes) also retracts previously propagated invalidated mandatees from the consumers.
 - Bump delta-producer-publication-graph-maintainer to 1.4.4 [OP-3859]
+- Add invalidatie columns (verwijderd/duplicaat + reden) to the eredienst mandatarissen report [OP-3859]
 
 ## Deploy notes
 
@@ -19,6 +20,7 @@
 drc up -d clean-up-submission frontend
 drc pull delta-producer-publication-graph-maintainer && drc up -d delta-producer-publication-graph-maintainer
 drc restart migrations resource op-public-consumer
+drc restart report-generation
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
 ```
 
