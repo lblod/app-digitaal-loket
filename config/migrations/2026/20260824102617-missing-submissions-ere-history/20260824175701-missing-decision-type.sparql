@@ -1,0 +1,14 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2267e8e132b5556bd4d0b454c9383ca0/LoketLB-toezichtGebruiker> {
+    <http://data.lblod.info/form-data/e990a730-4104-11ee-b4bc-d1192d49e98f>
+      ext:decisionType
+      <https://data.vlaanderen.be/id/concept/BesluitType/0fc2c27d-a03c-4e3f-9db1-f10f026f76f8> .
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/2267e8e132b5556bd4d0b454c9383ca0/LoketLB-toezichtGebruiker> {
+    <http://data.lblod.info/form-data/e990a730-4104-11ee-b4bc-d1192d49e98f> ?p ?o .
+  }
+}

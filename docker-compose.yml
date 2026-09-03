@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.15.0
+    image: lblod/frontend-loket:1.15.1
     links:
       - identifier:backend
     labels:
@@ -147,7 +147,7 @@ services:
     restart: always
     logging: *default-logging
   login-loket:
-    image: lblod/acmidm-login-service:0.12.1.rc-2
+    image: aatauil/acmidm-login-service:0.1.0-verenigingen
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie.vlaanderen.be/op/.well-known/openid-configuration"
       MU_APPLICATION_AUTH_CLIENT_ID: "<CLIENT ID>"
@@ -776,5 +776,13 @@ services:
       - "logging=true"
   change-event-management-loket:
     image: lblod/change-event-management-service-loket:1.0.0
+    restart: always
+    logging: *default-logging
+  link-adressenregister-uri:
+    image: lblod/link-adressenregister-uri-service:0.3.0
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      MU_SPARQL_UPDATEPOINT: "http://virtuoso:8890/sparql"
+      CRON_SCHEDULE: "0 0 * * *"
     restart: always
     logging: *default-logging

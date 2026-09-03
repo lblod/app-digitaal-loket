@@ -159,3 +159,5 @@ services:
     restart: "no"
   change-event-management-loket:
     restart: "no"
+  link-adressenregister-uri:
+    restart: "no"
