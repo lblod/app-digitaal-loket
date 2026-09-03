@@ -31,7 +31,7 @@
         "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
         "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
-      "additionalFilter": " FILTER (!BOUND(?subject) || NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . })"
+      "additionalFilter": " FILTER NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . }"
     },
     {
       "type": "http://data.lblod.info/vocabularies/erediensten/EredienstMandataris",
@@ -62,7 +62,7 @@
         "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
         "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
-      "additionalFilter": " FILTER (!BOUND(?subject) || NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . })"
+      "additionalFilter": " FILTER NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . }"
     },
     {
       "type": "http://data.lblod.info/vocabularies/erediensten/RolBedienaar",
@@ -89,7 +89,7 @@
         "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
         "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
-      "additionalFilter": " FILTER (!BOUND(?subject) || NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . })"
+      "additionalFilter": " FILTER NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . }"
     },
     {
       "type": "http://data.vlaanderen.be/ns/mandaat#Mandataris",
@@ -120,7 +120,7 @@
         "http://redpencil.data.gift/vocabularies/tasks/modifiedOn",
         "http://redpencil.data.gift/vocabularies/tasks/modifiedBy"
       ],
-      "additionalFilter": " FILTER (!BOUND(?subject) || NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . })"
+      "additionalFilter": " FILTER NOT EXISTS { ?subject <http://www.w3.org/ns/prov#qualifiedInvalidation> ?invalidation . }"
     },
     {
       "type": "http://data.vlaanderen.be/ns/persoon#Geboorte",
