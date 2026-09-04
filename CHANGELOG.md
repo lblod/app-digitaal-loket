@@ -9,6 +9,10 @@
   - see also: [DL-7435]
 - fix mandate holders of duplicate rechtswege/grote helft mandates [OP-3851]
   - It's important to first deploy the migration on loket before deploying [OP-3851] on OP + wait for data flow to OP!
+- Stop propagating soft-deleted/duplicate-marked worship mandatees to OP, WOP and DWH [OP-3859]
+  - The worship-services-sensitive healing run (already in deploy notes) also retracts previously propagated invalidated mandatees from the consumers.
+- Bump delta-producer-publication-graph-maintainer to 1.4.4 [OP-3859]
+- Add invalidatie columns (verwijderd/duplicaat + reden) to the eredienst mandatarissen report [OP-3859]
 - Migrations for historic missing erediensten instances [DL-7531]
 - Add link-adressenregister-uri service [OP-3873]
 - Use refactored ACMIDM service [DGS-657]
@@ -19,7 +23,9 @@
 
 ```
 drc up -d clean-up-submission frontend link-adressenregister-uri login
-drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer migrations-publication-triplestore
+drc pull delta-producer-publication-graph-maintainer && drc up -d delta-producer-publication-graph-maintainer
+drc restart migrations resource op-public-consumer migrations-publication-triplestore
+drc restart report-generation
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
 ```
 

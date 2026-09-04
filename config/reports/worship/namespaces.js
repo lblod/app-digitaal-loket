@@ -22,6 +22,8 @@ const PREFIXES = {
   ext: 'http://mu.semte.ch/vocabularies/ext/',
   besluit: 'http://data.vlaanderen.be/ns/besluit#',
   owl: 'http://www.w3.org/2002/07/owl#',
+  dct: 'http://purl.org/dc/terms/',
+  rdfs: 'http://www.w3.org/2000/01/rdf-schema#',
 };
 
 export const NAMESPACES = (() => {

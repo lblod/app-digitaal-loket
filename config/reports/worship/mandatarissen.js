@@ -15,6 +15,14 @@ const connectionOptions = {
   mayRetry: true,
 };
 
+// Concepts from the invalidation reasons concept scheme (DL-7374)
+const INVALIDATION_REASON_LABELS = {
+  'http://data.lblod.info/concepts/InvalidationReason/0f07dbee-277e-4925-9f98-db860c8c4595':
+    'duplicaat',
+  'http://data.lblod.info/concepts/InvalidationReason/c959422c-0cac-4fb3-a906-fee80e2a3f4e':
+    'verwijderd',
+};
+
 async function generate() {
   const mandatarissenResponse = await hel.batchedQuery(
     queries.allMandatarissen(),
@@ -80,6 +88,21 @@ async function generate() {
     );
     const geboortes = sparqlJsonParser
       .parseJsonResults(geboortesResponse)
+      .map((i) => i.range);
+
+    //Invalidations (soft deletes and duplicate markings)
+    const invalidationQuery = queries.domainToRange(
+      mandatarissenSlice,
+      ns.prov`qualifiedInvalidation`,
+      ns.prov`Invalidation`
+    );
+    const invalidationResponse = await mas.querySudo(
+      invalidationQuery,
+      undefined,
+      connectionOptions
+    );
+    const invalidations = sparqlJsonParser
+      .parseJsonResults(invalidationResponse)
       .map((i) => i.range);
 
     //Contacts
@@ -215,6 +238,7 @@ async function generate() {
         ...besturen,
         ...eenheden,
         ...typeEredienst,
+        ...invalidations,
       ],
       'value'
     );
@@ -254,6 +278,8 @@ async function generate() {
       'startDatum',
       'eindeDatum',
       'geplandEinde',
+      'invalidatie',
+      'invalidatieReden',
       'persoon',
       'familienaam',
       'voornaam',
@@ -302,6 +328,18 @@ function combineMandatarissenData(store) {
       .readQuads(mandataris, ns.ere`geplandeEinddatumAanstelling`)
       .next().value?.object?.value;
 
+    const invalidation = store
+      .getObjects(mandataris, ns.prov`qualifiedInvalidation`)
+      .filter((i) => store.has(i, ns.rdf`type`, ns.prov`Invalidation`))[0];
+    let invalidatie, invalidatieReden;
+    if (invalidation) {
+      const reason = store.readQuads(invalidation, ns.dct`type`).next().value
+        ?.object?.value;
+      invalidatie = INVALIDATION_REASON_LABELS[reason] || reason;
+      invalidatieReden = store.readQuads(invalidation, ns.rdfs`comment`).next()
+        .value?.object?.value;
+    }
+
     const collect = {
       mandataris: mandataris.value,
       afkomstGegevens,
@@ -309,6 +347,8 @@ function combineMandatarissenData(store) {
       startDatum,
       eindeDatum,
       geplandEinde,
+      invalidatie,
+      invalidatieReden,
     };
 
     const persoon = store
