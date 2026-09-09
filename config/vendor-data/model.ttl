@@ -38,8 +38,7 @@ meb:Submission
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
       ${subject}
-        pav:createdBy ?organisation ;
-        pav:providedBy ?vendor .
+        pav:createdBy ?organisation .
       ?organisation
         a besluit:Bestuurseenheid ;
         mu:uuid ?organisationUuid .
