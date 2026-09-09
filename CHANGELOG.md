@@ -16,6 +16,7 @@
 - Migrations for historic missing erediensten instances [DL-7531]
 - Add link-adressenregister-uri service [OP-3873]
 - Use refactored ACMIDM service [DGS-657]
+- VDDS: change config (not retrieving vendor from submission itself, ignore sessions when looking for vendors)
 
 
 ## Deploy notes
@@ -27,6 +28,7 @@ drc pull delta-producer-publication-graph-maintainer && drc up -d delta-producer
 drc restart migrations resource op-public-consumer migrations-publication-triplestore
 drc restart report-generation
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
+drc exec vendor-data-distribution curl -X POST http://localhost/heal
 ```
 
 # v1.227.0 (2026-08-03)
