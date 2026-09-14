@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# v1.228.0 (2026-09-14)
 - Bump clean-up-submission service
 - frontend [v1.15.1](https://github.com/lblod/frontend-loket/blob/v1.15.1/CHANGELOG.md),[v1.15.0](https://github.com/lblod/frontend-loket/blob/cd58dbbf4b570a96d89ce77971aad83773c28c7c/CHANGELOG.md#v1150-2026-08-20),[v1.14.4](https://github.com/lblod/frontend-loket/blob/26c8ce3e5c33d4ec2a0219f3b95e38404cc0e460/CHANGELOG.md#v1144-2026-08-20), [v1.14.3](https://github.com/lblod/frontend-loket/blob/26c8ce3e5c33d4ec2a0219f3b95e38404cc0e460/CHANGELOG.md#v1143-2026-08-07)
 - Restrict available imam roles based on worship organisation status [DL-7485]
