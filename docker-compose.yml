@@ -51,6 +51,7 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
+    #    image: nvdk/mu-delta-notifier:1.1.0
     image: cecemel/delta-notifier:0.2.0-beta.6
     volumes:
       - ./config/delta:/config
@@ -132,7 +133,7 @@ services:
     restart: always
     logging: *default-logging
   cache:
-    image: semtech/mu-cache:2.0.1
+    image: semtech/mu-cache:2.0.2
     links:
       - resource:backend
     labels:
@@ -141,7 +142,7 @@ services:
     logging: *default-logging
   resource:
     image: semtech/mu-cl-resources:feature-differently-stable-luckless
-    #image: semtech/mu-cl-resources:feature-delta-processing-queue
+    #    image: semtech/mu-cl-resources:1.27.2
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
