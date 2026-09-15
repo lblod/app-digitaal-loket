@@ -758,7 +758,7 @@ services:
     labels:
       - "logging=true"
   ipdc-bookmarks:
-    image: lblod/ipdc-bookmarks-service:0.2.2
+    image: lblod/ipdc-bookmarks-service:0.2.3
     restart: always
     logging: *default-logging
     labels:
