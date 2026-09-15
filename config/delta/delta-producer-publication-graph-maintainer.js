@@ -11,6 +11,7 @@ export default [
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
       ignoreFromSelf: true,
+      foldEffectiveChanges: true,
       optOutMuScopeIds: [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
                           "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"

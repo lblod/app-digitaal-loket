@@ -2,6 +2,7 @@
 ;;; delta messenger
 (in-package :delta-messenger)
 
+(setf *delta-handlers* nil)
 (add-delta-logger)
 (add-delta-messenger "http://deltanotifier/")
 
@@ -12,7 +13,7 @@
 (setf *backend* "http://virtuoso:8890/sparql")
 
 (in-package :server)
-(setf *log-incoming-requests-p* nil)
+(setf *log-incoming-requests-p* t)
 
 ;;;;;;;;;;;;;;;;;
 ;;; access rights
@@ -430,17 +431,20 @@
       FILTER( ?session_role = \"~a\" )
     }" role))))
 
+(define-graph bookmarks ("http://mu.semte.ch/graphs/ipdc/bookmarks")
+  ("nfo:Bookmark" -> _))
+
 (grant (read)
-  :to-graph (public sessions ipdc)
+  :to-graph (public)
+  :for-allowed-group "public")
+
+(grant (read)
+  :to-graph (public sessions ipdc bookmarks org)
   :for-allowed-group "logged-in-or-impersonating")
 
 (grant (read)
-  :to-graph (public-r)
+  :to-graph ( public-r )
   :for-allowed-group "authenticated")
-
-(grant (read)
-  :to-graph (org)
-  :for-allowed-group "logged-in-or-impersonating")
 
 (grant (read write)
   :to-graph (o-bbcdr-rw)
