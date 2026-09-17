@@ -51,7 +51,6 @@ services:
     restart: always
     logging: *default-logging
   deltanotifier:
-    #    image: nvdk/mu-delta-notifier:1.1.0
     image: cecemel/delta-notifier:0.2.0-beta.6
     volumes:
       - ./config/delta:/config
@@ -77,7 +76,6 @@ services:
   #   logging: *default-logging
   database:
     image: semtech/mu-authorization:feature-service-roam-r1.1
-    #image: semtech/sparql-parser:0.0.15
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_OVERLOAD_RECOVERY: "true"
@@ -89,7 +87,6 @@ services:
       #LISP_DYNAMIC_SPACE_SIZE: 16384
     volumes:
       - ./config/authorization:/config
-      # - ./data/authorization:/data/
     labels:
       - "logging=true"
     restart: always
@@ -133,7 +130,7 @@ services:
     restart: always
     logging: *default-logging
   cache:
-    image: semtech/mu-cache:2.0.2
+    image: semtech/mu-cache:2.0.1
     links:
       - resource:backend
     labels:
@@ -142,7 +139,6 @@ services:
     logging: *default-logging
   resource:
     image: semtech/mu-cl-resources:feature-differently-stable-luckless
-    #    image: semtech/mu-cl-resources:1.27.2
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     volumes:
