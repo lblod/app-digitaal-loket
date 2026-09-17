@@ -439,11 +439,11 @@
   :for-allowed-group "public")
 
 (grant (read)
-  :to-graph (public sessions ipdc bookmarks org)
+  :to-graph (public   bookmarks org)
   :for-allowed-group "logged-in-or-impersonating")
 
 (grant (read)
-  :to-graph ( public-r )
+  :to-graph ( public-r ipdc sessions)
   :for-allowed-group "authenticated")
 
 (grant (read write)
