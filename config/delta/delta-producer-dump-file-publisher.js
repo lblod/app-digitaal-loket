@@ -19,7 +19,6 @@ export default [
       gracePeriod: 1000,
       ignoreFromSelf: true,
       optOutMuScopeIds: [ "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync" ],
-      foldEffectiveChanges: true
     }
   },
 ];
