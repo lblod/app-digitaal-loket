@@ -1,4 +1,13 @@
 # Changelog
+# unreleased
+- update `ipdc-ldes-consumer` [DL-7589]
+- `ipdc-ldes-consumer`: increase SPARQL_BATCH_SIZE to `1000`
+
+## Deploy notes
+
+```
+drc pull ipdc-ldes-consumer && drc up -d ipdc-ldes-consumer
+```
 
 # v1.228.0 (2026-09-14)
 - Bump clean-up-submission service
