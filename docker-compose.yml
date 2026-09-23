@@ -732,7 +732,7 @@ services:
     labels:
       - "logging=true"
   ipdc-ldes-consumer:
-    image: redpencil/ldes-consumer:feature-custom-member-processing
+    image: redpencil/ldes-consumer:feature-query-delay
     volumes:
       - ./data/ldes-consumer:/data
       - ./config/ipdc-ldes-consumer/process-member.ts:/config/process-member.ts
@@ -745,8 +745,9 @@ services:
       ORDERING_STRATEGY: "ascending"
       EMIT_LAST_VERSION_ONLY: false
       LDES_REQUESTS_PER_MINUTE: 40
+      SPARQL_BATCH_SIZE: 1000
+      SPARQL_QUERY_DELAY_MS: 100
       PERSIST_STATE: "true"
-      SPARQL_BATCH_SIZE: "50"
       SUDO_QUERY_RETRY: "true"
       SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
       NODE_OPTIONS: "--max-old-space-size=8192"
