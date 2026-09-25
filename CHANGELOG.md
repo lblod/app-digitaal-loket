@@ -8,6 +8,7 @@
 - bump ipdc-bookmarks [DL-7577]
 - update `ipdc-ldes-consumer` to `feature-query-delay` tag [DL-7589]
 - `ipdc-ldes-consumer`: increase SPARQL_BATCH_SIZE to `1000`
+- Bump vendor-data-distribution service - periodic healing via cron job [DL-7536]
 
 ## Deploy notes
 
@@ -18,6 +19,7 @@ drc pull ipdc-ldes-consumer && drc up -d ipdc-ldes-consumer
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs
 drc exec vendor-data-distribution curl -X POST http://localhost/heal
 drc restart report-generation
+drc up -d vendor-data-distribution
 ```
 
 # v1.228.0 (2026-09-14)
