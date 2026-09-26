@@ -732,7 +732,7 @@ services:
     labels:
       - "logging=true"
   ipdc-ldes-consumer:
-    image: redpencil/ldes-consumer:feature-query-delay
+    image: redpencil/ldes-consumer:feature-custom-member-processing
     volumes:
       - ./data/ldes-consumer:/data
       - ./config/ipdc-ldes-consumer/process-member.ts:/config/process-member.ts

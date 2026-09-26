@@ -6,7 +6,7 @@
 - Add invalidatie columns (verwijderd/duplicaat + reden) to the eredienst mandatarissen report [OP-3859]
 - VDDS: change config (not retrieving vendor from submission itself, ignore sessions when looking for vendors)
 - bump ipdc-bookmarks [DL-7577]
-- update `ipdc-ldes-consumer` to `feature-query-delay` tag [DL-7589]
+- update `ipdc-ldes-consumer` [DL-7589]
 - `ipdc-ldes-consumer`: increase SPARQL_BATCH_SIZE to `1000`
 - Bump vendor-data-distribution service - periodic healing via cron job [DL-7536]
 
