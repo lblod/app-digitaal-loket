@@ -9,12 +9,13 @@ import {
   MU_APPLICATION_GRAPH,
   SPARQL_BATCH_SIZE,
   ENABLE_SPARQL_BATCHING,
+  SPARQL_QUERY_DELAY_MS
   // @ts-expect-error from service
 } from "../cfg";
 //@ts-expect-error from service
 import { executeDeleteQuery } from "../lib/sparql-queries";
 //@ts-expect-error from service
-import { convertBlankNodes } from "../lib/utils";
+import { convertBlankNodes, sleep } from "../lib/utils";
 //@ts-expect-error from service
 import { sparqlEscapeString, sparqlEscapeUri } from "mu";
 // @ts-expect-error from service
@@ -108,11 +109,11 @@ async function executeInsertQuery(quads: RDF.Quad[]) {
     nBatches = quads.length ? 1 : 0;
     batchSize = quads.length;
   }
-
   for (let index = 0; index < nBatches; index++) {
     const iQuads = index * batchSize;
     const quadsBatch = quads.slice(iQuads, iQuads + batchSize);
     const queryStr = constructInsertQuery(quadsBatch);
     await updateSudo(queryStr);
+    await sleep(SPARQL_QUERY_DELAY_MS);
   }
 }
