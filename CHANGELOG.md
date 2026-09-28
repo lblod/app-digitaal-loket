@@ -1,5 +1,5 @@
 # Changelog
-# unreleased
+# v1.228.1 (2026-09-28)
 - update `ipdc-ldes-consumer` [DL-7589]
 - `ipdc-ldes-consumer`: increase SPARQL_BATCH_SIZE to `1000`
 
