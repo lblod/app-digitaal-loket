@@ -6,8 +6,6 @@
 - Add invalidatie columns (verwijderd/duplicaat + reden) to the eredienst mandatarissen report [OP-3859]
 - VDDS: change config (not retrieving vendor from submission itself, ignore sessions when looking for vendors)
 - bump ipdc-bookmarks [DL-7577]
-- update `ipdc-ldes-consumer` [DL-7589]
-- `ipdc-ldes-consumer`: increase SPARQL_BATCH_SIZE to `1000`
 - Bump vendor-data-distribution service - periodic healing via cron job [DL-7536]
 
 ## Deploy notes
@@ -15,11 +13,19 @@
 ```
 drc pull delta-producer-publication-graph-maintainer && drc up -d delta-producer-publication-graph-maintainer
 drc pull ipdc-bookmarks && drc up -d ipdc-bookmarks
-drc pull ipdc-ldes-consumer && drc up -d ipdc-ldes-consumer
 drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs
 drc exec vendor-data-distribution curl -X POST http://localhost/heal
 drc restart report-generation
 drc up -d vendor-data-distribution
+```
+
+# v1.228.1 (2026-09-28)
+- update `ipdc-ldes-consumer` [DL-7589]
+- `ipdc-ldes-consumer`: increase SPARQL_BATCH_SIZE to `1000`
+
+## Deploy notes
+```bash
+drc pull ipdc-ldes-consumer && drc up -d ipdc-ldes-consumer
 ```
 
 # v1.228.0 (2026-09-14)
