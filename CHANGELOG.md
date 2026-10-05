@@ -1,5 +1,5 @@
 # Changelog
-# unreleased
+# v1.229.0 (2026-10-05)
 - Stop propagating soft-deleted/duplicate-marked worship mandatees to OP, WOP and DWH [OP-3859]
   - The worship-services-sensitive healing run (already in deploy notes) also retracts previously propagated invalidated mandatees from the consumers.
 - Bump delta-producer-publication-graph-maintainer to 1.4.4 [OP-3859]
