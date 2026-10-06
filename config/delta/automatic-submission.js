@@ -18,6 +18,7 @@ export default [
       resourceFormat: 'v0.0.1',
       gracePeriod: 0,
       ignoreFromSelf: true,
+      foldEffectiveChanges: true,
       optOutMuScopeIds: [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
                           "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"
@@ -42,6 +43,7 @@ export default [
     options: {
       resourceFormat: 'v0.0.1',
       gracePeriod: 1000,
+      foldEffectiveChanges: true,
       ignoreFromSelf: true,
       optOutMuScopeIds: [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
@@ -68,6 +70,7 @@ export default [
       resourceFormat: 'v0.0.1',
       gracePeriod: 0,
       ignoreFromSelf: true,
+      foldEffectiveChanges: true,
       optOutMuScopeIds: [
                           "http://redpencil.data.gift/id/concept/muScope/deltas/initialSync",
                           "http://redpencil.data.gift/id/concept/muScope/deltas/publicationGraphMaintenance"

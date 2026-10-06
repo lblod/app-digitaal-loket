@@ -84,6 +84,7 @@ services:
       # heavy queries
       QUERY_MAX_PROCESSING_TIME: 605000
       QUERY_MAX_EXECUTION_TIME: 605000
+      #LISP_DYNAMIC_SPACE_SIZE: 16384
     volumes:
       - ./config/authorization:/config
     labels:
