@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "scripts": [
+    {
+      "documentation": {
+        "command": "restore-backup",
+        "description": "Restore the Virtuoso triplestore from an backup in data/db/backups. The `virtuoso` service MUST be stopped first. REPLACES the current database.\n Parameters:\n  prefix: backup prefix up to the numeric suffix (auto-detected when a single backup set is present)",
+        "arguments": ["prefix"]
+      },
+      "environment": {
+        "image": "redpencil/virtuoso:1.2.2",
+        "interactive": true,
+        "join_networks": false,
+        "script": "restore-virtuoso-backup/run.sh"
+      },
+      "mounts": {
+        "app": "/project/"
+      }
+    }
+  ]
+}
