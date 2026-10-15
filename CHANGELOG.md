@@ -7,6 +7,7 @@
 - VDDS: change config (not retrieving vendor from submission itself, ignore sessions when looking for vendors)
 - bump ipdc-bookmarks [DL-7577]
 - Bump vendor-data-distribution service - periodic healing via cron job [DL-7536]
+- Show harvest metadata in frontend [DL-7436]
 
 ## Deploy notes
 
@@ -17,6 +18,7 @@ drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/
 drc exec vendor-data-distribution curl -X POST http://localhost/heal
 drc restart report-generation
 drc up -d vendor-data-distribution
+drc restart resource op-public-consumer
 ```
 
 # v1.228.1 (2026-09-28)
