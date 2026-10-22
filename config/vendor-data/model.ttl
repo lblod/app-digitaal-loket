@@ -34,6 +34,14 @@
 
 meb:Submission
   rdf:type vdds:Class ;
+  vdds:partialHealingTrigger """
+    ${subject}
+      dct:modified ?modified .
+
+    BIND ((NOW() - (86400 * 10)) AS ?thresholdDate)
+    BIND (STRDT(?modified, xsd:dateTime) AS ?modifiedDate)
+    FILTER (?modifiedDate > ?thresholdDate)
+  """;
   vdds:graphQuery """
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
@@ -68,6 +76,16 @@ meb:Submission
       adms:status <http://redpencil.data.gift/id/concept/JobStatus/failed> ;
       task:operation <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> .
   """ ;
+  vdds:partialHealingTrigger """
+    ${subject}
+      adms:status <http://redpencil.data.gift/id/concept/JobStatus/failed> ;
+      task:operation <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> ;
+      dct:modified ?modified .
+
+    BIND ((NOW() - (86400 * 10)) AS ?thresholdDate)
+    BIND (STRDT(?modified, xsd:dateTime) AS ?modifiedDate)
+    FILTER (?modifiedDate > ?thresholdDate)
+  """;
   vdds:graphQuery """
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
@@ -107,6 +125,16 @@ task:error
       adms:status <http://redpencil.data.gift/id/concept/JobStatus/success> ;
       task:operation <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> .
   """ ;
+  vdds:partialHealingTrigger """
+    ${subject}
+      adms:status <http://redpencil.data.gift/id/concept/JobStatus/success> ;
+      task:operation <http://lblod.data.gift/id/jobs/concept/JobOperation/harvestBericht> ;
+      dct:modified ?modified .
+
+    BIND ((NOW() - (86400 * 10)) AS ?thresholdDate)
+    BIND (STRDT(?modified, xsd:dateTime) AS ?modifiedDate)
+    FILTER (?modifiedDate > ?thresholdDate)
+  """;
   vdds:graphQuery """
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
@@ -182,6 +210,15 @@ nie:dataSource
     ${subject}
       adms:status <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> .
   """ ;
+  vdds:partialHealingTrigger """
+    ${subject}
+      adms:status <http://data.lblod.info/id/status/berichtencentrum/sync-with-kalliope/delivered/confirmed> ;
+      schema:dateSent ?modified .
+
+    BIND ((NOW() - (86400 * 10)) AS ?thresholdDate)
+    BIND (STRDT(?modified, xsd:dateTime) AS ?modifiedDate)
+    FILTER (?modifiedDate > ?thresholdDate)
+  """;
   vdds:graphQuery """
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
@@ -222,6 +259,15 @@ nie:dataSource
     ${subject}
       ext:creator <https://github.com/lblod/frontend-loket> .
   """ ;
+  vdds:partialHealingTrigger """
+    ${subject}
+      ext:creator <https://github.com/lblod/frontend-loket> ;
+      schema:dateSent ?modified .
+
+    BIND ((NOW() - (86400 * 10)) AS ?thresholdDate)
+    BIND (STRDT(?modified, xsd:dateTime) AS ?modifiedDate)
+    FILTER (?modifiedDate > ?thresholdDate)
+  """;
   vdds:graphQuery """
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
@@ -264,6 +310,16 @@ nie:dataSource
       ext:creator <https://github.com/lblod/frontend-loket> ;
       schema:sender <http://data.lblod.info/id/bestuurseenheden/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> .
   """ ;
+  vdds:partialHealingTrigger """
+    ${subject}
+      ext:creator <https://github.com/lblod/frontend-loket> ;
+      schema:sender <http://data.lblod.info/id/bestuurseenheden/141d9d6b-54af-4d17-b313-8d1c30bc3f5b> ;
+      schema:dateSent ?modified .
+
+    BIND ((NOW() - (86400 * 10)) AS ?thresholdDate)
+    BIND (STRDT(?modified, xsd:dateTime) AS ?modifiedDate)
+    FILTER (?modifiedDate > ?thresholdDate)
+  """;
   vdds:graphQuery """
     SELECT DISTINCT ?organisationUuid ?vendorUuid
     WHERE {
