@@ -104,6 +104,11 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  project-scripts:
+    image: semtech/mu-scripts:1.0.0
+    volumes:
+      - ./scripts/:/app/scripts/
+    restart: "no"
   migrations:
     image: semtech/mu-migrations-service:0.9.0
     links:
