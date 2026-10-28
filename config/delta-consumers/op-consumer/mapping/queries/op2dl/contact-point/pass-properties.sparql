@@ -4,9 +4,6 @@ PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 PREFIX organisatie: <http://lblod.data.gift/vocabularies/organisatie/>
 PREFIX schema: <http://schema.org/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX task: <http://redpencil.data.gift/vocabularies/tasks/>
 
 CONSTRUCT {
   ?s ?p ?o.
@@ -21,11 +18,6 @@ CONSTRUCT {
     foaf:page,
     schema:faxNumber,
     schema:contactType,
-    schema:telephone,
-    prov:wasGeneratedBy,
-    owl:sameAs,
-    task:modifiedOn,
-    task:modifiedBy,
-    prov:wasAssociatedWith
+    schema:telephone
   ))
 }

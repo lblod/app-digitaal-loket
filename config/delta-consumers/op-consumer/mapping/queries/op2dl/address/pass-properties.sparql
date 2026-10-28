@@ -3,9 +3,6 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX locn: <http://www.w3.org/ns/locn#>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX task: <http://redpencil.data.gift/vocabularies/tasks/>
 
 CONSTRUCT {
   ?s ?p ?o.
@@ -23,11 +20,6 @@ CONSTRUCT {
     adres:gemeentenaam,
     locn:adminUnitL2,
     adres:verwijstNaar,
-    dct:source,
-    prov:wasGeneratedBy,
-    owl:sameAs,
-    task:modifiedOn,
-    task:modifiedBy,
-    prov:wasAssociatedWith
+    dct:source
   ))
 }
