@@ -18,7 +18,7 @@ drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/
 drc exec vendor-data-distribution curl -X POST http://localhost/heal
 drc restart report-generation
 drc up -d vendor-data-distribution
-drc restart resource op-public-consumer
+drc restart resource
 ```
 
 # v1.228.1 (2026-09-28)
