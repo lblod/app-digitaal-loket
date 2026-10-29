@@ -1,4 +1,12 @@
 # Changelog
+# Unreleased
+- Show harvest metadata in frontend [DL-7436]
+
+## Deploy notes
+```
+drc up -d loket
+drc restart resource
+```
 
 # v1.229.1 (2026-10-22)
 
