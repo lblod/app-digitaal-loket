@@ -1,4 +1,13 @@
 # Changelog
+# Unreleased
+- Show harvest metadata in frontend [DL-7436]
+
+## Deploy notes
+```
+drc up -d loket
+drc restart resource
+```
+
 # v1.229.0 (2026-10-05)
 - Stop propagating soft-deleted/duplicate-marked worship mandatees to OP, WOP and DWH [OP-3859]
   - The worship-services-sensitive healing run (already in deploy notes) also retracts previously propagated invalidated mandatees from the consumers.
@@ -7,7 +16,6 @@
 - VDDS: change config (not retrieving vendor from submission itself, ignore sessions when looking for vendors)
 - bump ipdc-bookmarks [DL-7577]
 - Bump vendor-data-distribution service - periodic healing via cron job [DL-7536]
-- Show harvest metadata in frontend [DL-7436]
 
 ## Deploy notes
 
@@ -18,7 +26,6 @@ drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/
 drc exec vendor-data-distribution curl -X POST http://localhost/heal
 drc restart report-generation
 drc up -d vendor-data-distribution
-drc restart resource
 ```
 
 # v1.228.1 (2026-09-28)
