@@ -403,7 +403,7 @@ services:
     restart: always
     logging: *default-logging
   clean-up-submission:
-    image: lblod/clean-up-submission-service:2.0.1
+    image: lblod/clean-up-submission-service:2.1.0
     volumes:
       - ./data/files:/share
     labels:
@@ -538,7 +538,7 @@ services:
     restart: always
     logging: *default-logging
   vendor-data-distribution:
-    image: lblod/vendor-data-distribution-service:2.5.0
+    image: lblod/vendor-data-distribution-service:2.6.0
     environment:
       LOGLEVEL: "error"
       WRITE_ERRORS: "true"

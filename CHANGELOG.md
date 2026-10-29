@@ -8,6 +8,17 @@ drc up -d loket
 drc restart resource
 ```
 
+# v1.229.1 (2026-10-22)
+
+- Bump `clean-up-submission` service to allow vendors to remove submissions again, related to [DL-7553]
+- Bump `vendor-data-distribution` service to have quicker partial and periodic healing [DL-7537]
+
+## Deploy notes
+
+```
+docker compose up -d clean-up-submission vendor-data-distribution
+```
+
 # v1.229.0 (2026-10-05)
 - Stop propagating soft-deleted/duplicate-marked worship mandatees to OP, WOP and DWH [OP-3859]
   - The worship-services-sensitive healing run (already in deploy notes) also retracts previously propagated invalidated mandatees from the consumers.
