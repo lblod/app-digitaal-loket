@@ -161,3 +161,5 @@ services:
     restart: "no"
   link-adressenregister-uri:
     restart: "no"
+  check-url:
+    restart: "no"
