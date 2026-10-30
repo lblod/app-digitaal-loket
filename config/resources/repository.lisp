@@ -86,3 +86,5 @@
 (add-prefix "pera" "http://publications.europa.eu/resource/authority/")
 (add-prefix "ipdc" "https://productencatalogus.data.vlaanderen.be/ns/ipdc-lpdc#")
 (add-prefix "icr" "http://lblod.data.gift/vocabularies/informationclassification/")
+
+(add-prefix "owl" "http://www.w3.org/2002/07/owl#")
