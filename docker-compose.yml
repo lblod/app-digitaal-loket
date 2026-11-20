@@ -197,7 +197,7 @@ services:
     restart: always
     logging: *default-logging
   file:
-    image: cecemel/file-service:3.3.0
+    image: cecemel/file-service:3.5.3
     volumes:
       - ./data/files:/share
     labels:
@@ -432,7 +432,7 @@ services:
     restart: always
     logging: *default-logging
   berichtencentrum-warning:
-    image: lblod/berichtencentrum-warning-service:0.0.2
+    image: lblod/berichtencentrum-warning-service:0.1.0
     labels:
       - "logging=true"
     restart: always

@@ -6,7 +6,7 @@ services:
     ports:
       - "443:443"
   mocklogin:
-    image: lblod/mock-login-service:0.5.0
+    image: lblod/mock-login-service:0.8.0
     restart: "no"
   loket:
     restart: "no"
