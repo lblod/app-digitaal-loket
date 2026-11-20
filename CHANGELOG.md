@@ -1,5 +1,12 @@
 # Changelog
+# v1.229.2 (2026-11-20)
+- Bump warning service berichtencentrum: Fixes [DL-7649].
+- ARW-122 - CVE-2026-132825 - ruby2ßhell. Multiple services were bumped
 
+## Deploy notes
+```
+drc up -d 
+```
 # v1.229.1 (2026-10-22)
 
 - Bump `clean-up-submission` service to allow vendors to remove submissions again, related to [DL-7553]
