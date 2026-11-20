@@ -8,6 +8,13 @@
 drc up -d loket
 drc restart resource
 ```
+# v1.229.4 (2026-11-20)
+- ARW-122 - CVE-2026-132825 - ruby2ßhell. Multiple services were bumped (bis, fix in deploy)
+
+## Deploy notes
+```
+drc up -d
+```
 # v1.229.3 (2026-11-20)
 - Bump warning service berichtencentrum: Fixes [DL-7649].
 

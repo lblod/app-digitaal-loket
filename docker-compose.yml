@@ -197,7 +197,7 @@ services:
     restart: always
     logging: *default-logging
   file:
-    image: cecemel/file-service:3.5.3
+    image: semtech/mu-file-service:3.5.3
     volumes:
       - ./data/files:/share
     labels:
