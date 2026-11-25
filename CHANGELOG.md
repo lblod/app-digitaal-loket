@@ -7,7 +7,7 @@
 ## Deploy notes
 ```
 drc restart resource dispatcher
-drc up -d loket check-url
+drc up -d loket check-url dispatcher database
 ```
 # v1.229.5 (2026-11-25)
 - Bump `download-url-service` to 1.3.1 to trust the new GlobalSign R46 certificate chain [DL-7701]
