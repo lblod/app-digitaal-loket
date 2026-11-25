@@ -167,6 +167,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/invalidations/"
   end
 
+  match "/check-link/*path", @json do
+    forward conn, path, "http://check-url/"
+  end
+
   ###############################################################
   # master-messages-domain.lisp
   ###############################################################

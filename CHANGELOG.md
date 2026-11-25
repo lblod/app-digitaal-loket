@@ -2,11 +2,12 @@
 
 # Unreleased
 - Show harvest metadata in frontend [DL-7436]
+- Add `check-url-service` to show accessibility of url [DL-7568]
 
 ## Deploy notes
 ```
-drc up -d loket
-drc restart resource
+drc restart resource dispatcher
+drc up -d loket check-url
 ```
 # v1.229.5 (2026-11-25)
 - Bump `download-url-service` to 1.3.1 to trust the new GlobalSign R46 certificate chain [DL-7701]
