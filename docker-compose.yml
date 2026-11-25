@@ -46,6 +46,9 @@ services:
     image: semtech/mu-dispatcher:2.1.0-beta.2
     volumes:
       - ./config/dispatcher:/config
+    networks:
+      - default
+      - check-url-net
     labels:
       - "logging=true"
     restart: always
@@ -86,6 +89,9 @@ services:
       QUERY_MAX_EXECUTION_TIME: 605000
     volumes:
       - ./config/authorization:/config
+    networks:
+      - default
+      - check-url-net
     labels:
       - "logging=true"
     restart: always
@@ -517,7 +523,10 @@ services:
     logging: *default-logging
   check-url:
     image: lblod/check-url-service:0.2.0
+    networks:
+      - check-url-net
     environment:
+      VALIDATE_URL_ALLOW_HTTP: "false"
       ALLOW_MU_AUTH_SUDO: "true"
     labels:
       - "logging=true"
@@ -795,3 +804,6 @@ services:
       CRON_SCHEDULE: "0 0 * * *"
     restart: always
     logging: *default-logging
+
+networks:
+  check-url-net: {}
