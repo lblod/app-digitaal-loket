@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   loket:
-    image: lblod/frontend-loket:1.16.0
+    image: lblod/frontend-loket:1.17.0
     links:
       - identifier:backend
     labels:
@@ -516,7 +516,9 @@ services:
     restart: always
     logging: *default-logging
   check-url:
-    image: lblod/check-url-service:0.1.0
+    image: lblod/check-url-service:0.2.0
+    environment:
+      ALLOW_MU_AUTH_SUDO: "true"
     labels:
       - "logging=true"
     restart: always

@@ -1,12 +1,12 @@
 # Changelog
 # Unreleased
 - Show harvest metadata in frontend [DL-7436]
-- Add `check-url` to dispatcher [DL-7568]
+- Add `check-url-service` to show accessibility of url [DL-7568]
 
 ## Deploy notes
 ```
-drc up -d loket check-url
 drc restart resource dispatcher
+drc up -d loket check-url
 ```
 
 # v1.229.1 (2026-10-22)
