@@ -1,4 +1,5 @@
 # Changelog
+
 # Unreleased
 - Show harvest metadata in frontend [DL-7436]
 - Add `check-url-service` to show accessibility of url [DL-7568]
@@ -8,7 +9,35 @@
 drc restart resource dispatcher
 drc up -d loket check-url
 ```
+# v1.229.5 (2026-11-25)
+- Bump `download-url-service` to 1.3.1 to trust the new GlobalSign R46 certificate chain [DL-7701]
 
+## Deploy notes
+```
+drc pull download-url && drc up -d download-url
+```
+# v1.229.4 (2026-11-20)
+- ARW-122 - CVE-2026-132825 - ruby2ßhell. Multiple services were bumped (bis, fix in deploy)
+
+## Deploy notes
+```
+drc up -d
+```
+# v1.229.3 (2026-11-20)
+- Bump warning service berichtencentrum: Fixes [DL-7649].
+
+## Deploy notes
+```
+drc up -d
+```
+# v1.229.2 (2026-11-20)
+- Bump warning service berichtencentrum: Fixes [DL-7649].
+- ARW-122 - CVE-2026-132825 - ruby2ßhell. Multiple services were bumped
+
+## Deploy notes
+```
+drc up -d
+```
 # v1.229.1 (2026-10-22)
 
 - Bump `clean-up-submission` service to allow vendors to remove submissions again, related to [DL-7553]
@@ -68,7 +97,7 @@ drc pull ipdc-ldes-consumer && drc up -d ipdc-ldes-consumer
 ```
 drc up -d clean-up-submission frontend link-adressenregister-uri login
 drc restart delta-producer-publication-graph-maintainer migrations resource op-public-consumer migrations-publication-triplestore
-drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs   
+drc exec delta-producer-background-jobs-initiator curl -X POST http://localhost/worship-services-sensitive/healing-jobs
 ```
 
 # v1.227.0 (2026-08-03)
@@ -117,7 +146,7 @@ drc up -d enrich-submission
 
 ## Deploy notes
 ```
-drc restart migrations dbcleanup 
+drc restart migrations dbcleanup
 drc up -d ipdc-bookmarks
 ```
 
