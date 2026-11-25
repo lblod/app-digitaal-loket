@@ -8,6 +8,13 @@
 drc up -d loket
 drc restart resource
 ```
+# v1.229.5 (2026-11-25)
+- Bump `download-url-service` to 1.3.1 to trust the new GlobalSign R46 certificate chain [DL-7701]
+
+## Deploy notes
+```
+drc pull download-url && drc up -d download-url
+```
 # v1.229.4 (2026-11-20)
 - ARW-122 - CVE-2026-132825 - ruby2ßhell. Multiple services were bumped (bis, fix in deploy)
 
